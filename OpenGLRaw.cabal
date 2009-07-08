@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 1.0.0.0
+version: 1.0.1.0
 license: BSD3
 license-file: LICENSE
 maintainer: Sven Panne <sven.panne@aedion.de>
@@ -105,7 +105,14 @@ library
       Graphics.Rendering.OpenGL.Raw.EXT.VertexArray,
       Graphics.Rendering.OpenGL.Raw.EXT.VertexShader,
       Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting,
-      Graphics.Rendering.OpenGL.Raw.GetProcAddress
+      Graphics.Rendering.OpenGL.Raw.GetProcAddress,
+      Graphics.Rendering.OpenGL.Raw.NV,
+      Graphics.Rendering.OpenGL.Raw.NV.FogDistance,
+      Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent,
+      Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart,
+      Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners,
+      Graphics.Rendering.OpenGL.Raw.NV.TexgenEmboss,
+      Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange
    other-modules:
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Functions,
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens,
