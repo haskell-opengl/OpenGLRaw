@@ -93,7 +93,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 #include "HsOpenGLRaw.h"
 
 extensionNameString :: String
-extensionNameString = "GL_register_combiners"
+extensionNameString = "GL_NV_register_combiners"
 
 EXTENSION_ENTRY(glCombinerParameterfv,GLenum -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glCombinerParameteriv,GLenum -> Ptr GLint -> IO ())
