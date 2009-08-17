@@ -143,10 +143,10 @@ library
       cc-options: "-DUSE_WGLGETPROCADDRESS"
    else
       cpp-options: "-DCALLCONV=ccall"
-      extra-libraries: GL
       if os(darwin)
          cc-options: "-DUSE_NSADDRESSOFSYMBOL"
       else
+         extra-libraries: GL
          if flag(UseGlXGetProcAddress)
             cc-options: "-DUSE_GLXGETPROCADDRESS"
          else
