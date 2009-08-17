@@ -52,6 +52,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend,
       Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram,
       Graphics.Rendering.OpenGL.Raw.Core31,
+      Graphics.Rendering.OpenGL.Raw.Core32,
       Graphics.Rendering.OpenGL.Raw.EXT,
       Graphics.Rendering.OpenGL.Raw.EXT.Abgr,
       Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform,
