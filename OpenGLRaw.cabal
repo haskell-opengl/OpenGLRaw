@@ -27,6 +27,7 @@ description:
 build-type: Simple
 cabal-version:  >= 1.2
 extra-source-files:
+   include/CTypes.h
    include/HsOpenGLRaw.h
 
 flag UseNativeWindowsLibraries
@@ -130,6 +131,7 @@ library
       Graphics.Rendering.OpenGL.Raw.Core31.Functions,
       Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
       Graphics.Rendering.OpenGL.Raw.Core31.Types,
+      Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal,
       Graphics.Rendering.OpenGL.Raw.Extensions
    c-sources:
       cbits/HsOpenGLRaw.c
@@ -137,6 +139,8 @@ library
    include-dirs: include
    build-depends: base >= 3 && < 5
    ghc-options: -Wall -fno-warn-duplicate-exports
+   if impl(ghc)
+      build-depends: ghc-prim
    if os(windows) && flag(UseNativeWindowsLibraries)
       cpp-options: "-DCALLCONV=stdcall"
       extra-libraries: opengl32

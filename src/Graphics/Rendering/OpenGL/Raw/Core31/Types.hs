@@ -13,25 +13,27 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.Core31.Types where
+module Graphics.Rendering.OpenGL.Raw.Core31.Types (
+   GLbitfield,
+   GLboolean,
+   GLbyte,
+   GLchar,
+   GLclampd,
+   GLclampf,
+   GLdouble,
+   GLenum,
+   GLfloat,
+   GLhalf,
+   GLint,
+   GLintptr,
+   GLshort,
+   GLsizei,
+   GLsizeiptr,
+   GLubyte,
+   GLuint,
+   GLushort
+) where
 
-import Foreign.C.Types
-
-type GLbitfield = CUInt
-type GLboolean = CUChar
-type GLbyte = CSChar
-type GLchar = CChar
-type GLclampd = CDouble
-type GLclampf = CFloat
-type GLdouble = CDouble
-type GLenum = CUInt
-type GLfloat = CFloat
-type GLhalf = CUShort
-type GLint = CInt
-type GLintptr = CPtrdiff
-type GLshort = CShort
-type GLsizei = CInt
-type GLsizeiptr = CPtrdiff
-type GLubyte = CUChar
-type GLuint = CUInt
-type GLushort = CUShort
+-- Just re-export the types in an opaque way, without introducing any warnings
+-- about unused constructors.
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
