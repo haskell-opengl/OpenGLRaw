@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_matrix_palette extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the ARB_matrix_palette, see
 -- <http://www.opengl.org/registry/specs/ARB/matrix_palette.txt>.
 --
 --------------------------------------------------------------------------------
@@ -36,7 +35,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.MatrixPalette (
 ) where
 
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

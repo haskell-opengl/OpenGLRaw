@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_vertex_blend extension not already
--- in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the ARB_vertex_blend extension, see
 -- <http://www.opengl.org/registry/specs/ARB/vertex_blend.txt>.
 --
 --------------------------------------------------------------------------------
@@ -73,7 +72,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend (
 ) where
 
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"
