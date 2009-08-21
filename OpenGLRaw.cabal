@@ -189,15 +189,15 @@ library
       build-depends: ghc-prim
    if os(windows) && flag(UseNativeWindowsLibraries)
       cpp-options: "-DCALLCONV=stdcall"
-      extra-libraries: opengl32
       cc-options: "-DUSE_WGLGETPROCADDRESS"
+      extra-libraries: opengl32
    else
       cpp-options: "-DCALLCONV=ccall"
+      if !os(darwin) && flag(UseGlXGetProcAddress)
+         cc-options: "-DUSE_GLXGETPROCADDRESS"
+      else
+         cc-options: "-DUSE_DLSYM"
       if os(darwin)
-         cc-options: "-DUSE_NSADDRESSOFSYMBOL"
+         frameworks: OpenGL
       else
          extra-libraries: GL
-         if flag(UseGlXGetProcAddress)
-            cc-options: "-DUSE_GLXGETPROCADDRESS"
-         else
-            cc-options: "-DUSE_DLSYM"
