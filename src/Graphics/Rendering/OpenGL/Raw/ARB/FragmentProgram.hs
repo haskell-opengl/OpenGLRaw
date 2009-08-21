@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_fragment_program extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the ARB_fragment_program extension, see
 -- <http://www.opengl.org/registry/specs/ARB/fragment_program.txt>.
 --
 --------------------------------------------------------------------------------
@@ -32,7 +31,9 @@ module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram (
    glGetProgramEnvParameterfv,
    glGetProgramLocalParameterdv,
    glGetProgramLocalParameterfv,
+   glGetProgramiv,
    glGetProgramString,
+   glIsProgram,
    -- * Tokens
    gl_FRAGMENT_PROGRAM,
    gl_PROGRAM_FORMAT_ASCII,
@@ -78,6 +79,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram (
    gl_MAX_PROGRAM_MATRICES,
    gl_MAX_PROGRAM_MATRIX_STACK_DEPTH,
    gl_MAX_TEXTURE_COORDS,
+   gl_MAX_TEXTURE_IMAGE_UNITS,
    gl_PROGRAM_ERROR_STRING,
    gl_MATRIX0,
    gl_MATRIX1,
@@ -115,13 +117,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram (
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram
-import Graphics.Rendering.OpenGL.Raw.Core31
-
--- functions/tokens already in the OpenGL 3.1 core:
---
--- glGetProgramiv
--- glIsProgram
--- gl_MAX_TEXTURE_IMAGE_UNITS
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_FRAGMENT_PROGRAM :: GLenum
 gl_FRAGMENT_PROGRAM = 0x8804

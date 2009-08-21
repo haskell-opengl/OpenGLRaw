@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_shadow_ambient extension not
--- already in the OpenGL 3.1 core, see
+-- All tokens from the ARB_shadow_ambient extension, see
 -- <http://www.opengl.org/registry/specs/ARB/shadow_ambient.txt>.
 --
 --------------------------------------------------------------------------------
@@ -19,7 +18,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient (
    gl_TEXTURE_COMPARE_FAIL_VALUE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_TEXTURE_COMPARE_FAIL_VALUE :: GLenum
 gl_TEXTURE_COMPARE_FAIL_VALUE = 0x80BF

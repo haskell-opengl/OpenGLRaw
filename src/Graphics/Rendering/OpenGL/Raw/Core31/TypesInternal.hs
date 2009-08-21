@@ -18,8 +18,11 @@
 module Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal where
 
 import Data.Bits
+import Data.Int
+import Data.Word
 import Data.Typeable
 import Foreign.C.Types
+import Foreign.Ptr
 import Foreign.Storable
 
 #ifdef __GLASGOW_HASKELL__
@@ -49,3 +52,10 @@ INTEGRAL_TYPE(GLsizeiptr,tyConGLsizeiptr,"GLsizeiptr",CPtrdiff)
 INTEGRAL_TYPE(GLubyte,tyConGLubyte,"GLubyte",CUChar)
 INTEGRAL_TYPE(GLuint,tyConGLuint,"GLuint",CUInt)
 INTEGRAL_TYPE(GLushort,tyConGLushort,"GLushort",CUShort)
+INTEGRAL_TYPE(GLint64,tyConGLint64,"GLint64",Int64)
+INTEGRAL_TYPE(GLuint64,tyConGLuint64,"GLuint64",Word64)
+
+newtype GLsync = GLSync (Ptr GLsync)
+
+-- Not part of the core, but it is very handy to define this here
+INTEGRAL_TYPE(GLhandle,tyConGLhandle,"GLhandle",CUInt)

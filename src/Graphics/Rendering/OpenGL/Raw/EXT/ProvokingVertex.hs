@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex
@@ -9,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_provoking_vertex extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_provoking_vertex, see
 -- <http://www.opengl.org/registry/specs/EXT/EXT_provoking_vertex.txt>.
 --
 --------------------------------------------------------------------------------
@@ -25,24 +23,4 @@ module Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex (
    gl_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
-import Graphics.Rendering.OpenGL.Raw.Extensions
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_provoking_vertex"
-
-EXTENSION_ENTRY(glProvokingVertex,GLenum -> IO ())
-
-gl_FIRST_VERTEX_CONVENTION :: GLenum
-gl_FIRST_VERTEX_CONVENTION = 0x8E4D
-
-gl_LAST_VERTEX_CONVENTION :: GLenum
-gl_LAST_VERTEX_CONVENTION = 0x8E4E
-
-gl_PROVOKING_VERTEX :: GLenum
-gl_PROVOKING_VERTEX = 0x8E4F
-
-gl_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION :: GLenum
-gl_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION = 0x8E4C
+import Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex

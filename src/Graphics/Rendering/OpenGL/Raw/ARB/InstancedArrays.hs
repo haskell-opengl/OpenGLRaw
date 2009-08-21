@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_instanced_arrays extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the ARB_instanced_arrays extension, see
 -- <http://www.opengl.org/registry/specs/ARB/instanced_arrays.txt>.
 --
 --------------------------------------------------------------------------------
@@ -22,7 +21,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.InstancedArrays (
    gl_VERTEX_ATTRIB_ARRAY_DIVISOR
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

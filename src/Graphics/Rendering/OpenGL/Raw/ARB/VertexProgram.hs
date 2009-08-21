@@ -9,14 +9,52 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_vertex_program extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the ARB_vertex_program extension, see
 -- <http://www.opengl.org/registry/specs/ARB/vertex_program.txt>.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram (
    -- * Functions
+   glVertexAttrib1s,
+   glVertexAttrib1f,
+   glVertexAttrib1d,
+   glVertexAttrib2s,
+   glVertexAttrib2f,
+   glVertexAttrib2d,
+   glVertexAttrib3s,
+   glVertexAttrib3f,
+   glVertexAttrib3d,
+   glVertexAttrib4s,
+   glVertexAttrib4f,
+   glVertexAttrib4d,
+   glVertexAttrib4Nub,
+   glVertexAttrib1sv,
+   glVertexAttrib1fv,
+   glVertexAttrib1dv,
+   glVertexAttrib2sv,
+   glVertexAttrib2fv,
+   glVertexAttrib2dv,
+   glVertexAttrib3sv,
+   glVertexAttrib3fv,
+   glVertexAttrib3dv,
+   glVertexAttrib4bv,
+   glVertexAttrib4sv,
+   glVertexAttrib4iv,
+   glVertexAttrib4ubv,
+   glVertexAttrib4usv,
+   glVertexAttrib4uiv,
+   glVertexAttrib4fv,
+   glVertexAttrib4dv,
+   glVertexAttrib4Nbv,
+   glVertexAttrib4Nsv,
+   glVertexAttrib4Niv,
+   glVertexAttrib4Nubv,
+   glVertexAttrib4Nusv,
+   glVertexAttrib4Nuiv,
+   glVertexAttribPointer,
+   glEnableVertexAttribArray,
+   glDisableVertexAttribArray,
    glProgramString,
    glBindProgram,
    glDeletePrograms,
@@ -33,10 +71,26 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram (
    glGetProgramEnvParameterfv,
    glGetProgramLocalParameterdv,
    glGetProgramLocalParameterfv,
+   glGetProgramiv,
    glGetProgramString,
+   glGetVertexAttribdv,
+   glGetVertexAttribfv,
+   glGetVertexAttribiv,
+   glGetVertexAttribPointerv,
+   glIsProgram,
    -- * Tokens
    gl_VERTEX_PROGRAM,
+   gl_VERTEX_PROGRAM_POINT_SIZE,
+   gl_VERTEX_PROGRAM_TWO_SIDE,
+   gl_COLOR_SUM,
    gl_PROGRAM_FORMAT_ASCII,
+   gl_VERTEX_ATTRIB_ARRAY_ENABLED,
+   gl_VERTEX_ATTRIB_ARRAY_SIZE,
+   gl_VERTEX_ATTRIB_ARRAY_STRIDE,
+   gl_VERTEX_ATTRIB_ARRAY_TYPE,
+   gl_VERTEX_ATTRIB_ARRAY_NORMALIZED,
+   gl_CURRENT_VERTEX_ATTRIB,
+   gl_VERTEX_ATTRIB_ARRAY_POINTER,
    gl_PROGRAM_LENGTH,
    gl_PROGRAM_FORMAT,
    gl_PROGRAM_BINDING,
@@ -68,6 +122,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram (
    gl_CURRENT_MATRIX,
    gl_TRANSPOSE_CURRENT_MATRIX,
    gl_CURRENT_MATRIX_STACK_DEPTH,
+   gl_MAX_VERTEX_ATTRIBS,
    gl_MAX_PROGRAM_MATRICES,
    gl_MAX_PROGRAM_MATRIX_STACK_DEPTH,
    gl_PROGRAM_ERROR_STRING,
@@ -106,115 +161,32 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram (
 ) where
 
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Extensions
 
--- functions/tokens already in the OpenGL 3.1 core:
---
--- glVertexAttrib1s
--- glVertexAttrib1f
--- glVertexAttrib1d
--- glVertexAttrib2s
--- glVertexAttrib2f
--- glVertexAttrib2d
--- glVertexAttrib3s
--- glVertexAttrib3f
--- glVertexAttrib3d
--- glVertexAttrib4s
--- glVertexAttrib4f
--- glVertexAttrib4d
--- glVertexAttrib4Nub
--- glVertexAttrib1sv
--- glVertexAttrib1fv
--- glVertexAttrib1dv
--- glVertexAttrib2sv
--- glVertexAttrib2fv
--- glVertexAttrib2dv
--- glVertexAttrib3sv
--- glVertexAttrib3fv
--- glVertexAttrib3dv
--- glVertexAttrib4bv
--- glVertexAttrib4sv
--- glVertexAttrib4iv
--- glVertexAttrib4ubv
--- glVertexAttrib4usv
--- glVertexAttrib4uiv
--- glVertexAttrib4fv
--- glVertexAttrib4dv
--- glVertexAttrib4Nbv
--- glVertexAttrib4Nsv
--- glVertexAttrib4Niv
--- glVertexAttrib4Nubv
--- glVertexAttrib4Nusv
--- glVertexAttrib4Nuiv
--- glVertexAttribPointer
--- glEnableVertexAttribArray
--- glDisableVertexAttribArray
--- glGetProgramiv
--- glGetVertexAttribdv
--- glGetVertexAttribfv
--- glGetVertexAttribiv
--- glGetVertexAttribPointerv
--- glIsProgram
--- gl_VERTEX_PROGRAM_POINT_SIZE
--- gl_VERTEX_ATTRIB_ARRAY_ENABLED
--- gl_VERTEX_ATTRIB_ARRAY_SIZE
--- gl_VERTEX_ATTRIB_ARRAY_STRIDE
--- gl_VERTEX_ATTRIB_ARRAY_TYPE
--- gl_VERTEX_ATTRIB_ARRAY_NORMALIZED
--- gl_CURRENT_VERTEX_ATTRIB
--- gl_VERTEX_ATTRIB_ARRAY_POINTER
--- gl_MAX_VERTEX_ATTRIBS
+#include "HsOpenGLRaw.h"
 
-glProgramString :: GLenum -> GLenum -> GLsizei -> Ptr a -> IO ()
-glProgramString = undefined
+extensionNameString :: String
+extensionNameString = "GL_ARB_vertex_program"
 
-glBindProgram :: GLenum -> GLuint -> IO ()
-glBindProgram = undefined
-
-glDeletePrograms :: GLsizei -> Ptr GLuint -> IO ()
-glDeletePrograms = undefined
-
-glGenPrograms :: GLsizei -> Ptr GLuint -> IO ()
-glGenPrograms = undefined
-
-glProgramEnvParameter4d :: GLenum -> GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ()
-glProgramEnvParameter4d = undefined
-
-glProgramEnvParameter4dv :: GLenum -> GLuint -> Ptr GLdouble -> IO ()
-glProgramEnvParameter4dv = undefined
-
-glProgramEnvParameter4f :: GLenum -> GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ()
-glProgramEnvParameter4f = undefined
-
-glProgramEnvParameter4fv :: GLenum -> GLuint -> Ptr GLfloat -> IO ()
-glProgramEnvParameter4fv = undefined
-
-glProgramLocalParameter4d :: GLenum -> GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ()
-glProgramLocalParameter4d = undefined
-
-glProgramLocalParameter4dv :: GLenum -> GLuint -> Ptr GLdouble -> IO ()
-glProgramLocalParameter4dv = undefined
-
-glProgramLocalParameter4f :: GLenum -> GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ()
-glProgramLocalParameter4f = undefined
-
-glProgramLocalParameter4fv :: GLenum -> GLuint -> Ptr GLfloat -> IO ()
-glProgramLocalParameter4fv = undefined
-
-glGetProgramEnvParameterdv :: GLenum -> GLuint -> Ptr GLdouble -> IO ()
-glGetProgramEnvParameterdv = undefined
-
-glGetProgramEnvParameterfv :: GLenum -> GLuint -> Ptr GLfloat -> IO ()
-glGetProgramEnvParameterfv = undefined
-
-glGetProgramLocalParameterdv :: GLenum -> GLuint -> Ptr GLdouble -> IO ()
-glGetProgramLocalParameterdv = undefined
-
-glGetProgramLocalParameterfv :: GLenum -> GLuint -> Ptr GLfloat -> IO ()
-glGetProgramLocalParameterfv = undefined
-
-glGetProgramString :: GLenum -> GLenum -> Ptr a -> IO ()
-glGetProgramString = undefined
+EXTENSION_ENTRY(glProgramString,GLenum -> GLenum -> GLsizei -> Ptr a -> IO ())
+EXTENSION_ENTRY(glBindProgram,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glDeletePrograms,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glGenPrograms,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glProgramEnvParameter4d,GLenum -> GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble  -> IO ())
+EXTENSION_ENTRY(glProgramEnvParameter4dv,GLenum -> GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(glProgramEnvParameter4f,GLenum -> GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat  -> IO ())
+EXTENSION_ENTRY(glProgramEnvParameter4fv,GLenum -> GLuint -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(glProgramLocalParameter4d,GLenum -> GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble  -> IO ())
+EXTENSION_ENTRY(glProgramLocalParameter4dv,GLenum -> GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(glProgramLocalParameter4f,GLenum -> GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat  -> IO ())
+EXTENSION_ENTRY(glProgramLocalParameter4fv,GLenum -> GLuint -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(glGetProgramEnvParameterdv,GLenum -> GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(glGetProgramEnvParameterfv,GLenum -> GLuint -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(glGetProgramLocalParameterdv,GLenum -> GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(glGetProgramLocalParameterfv,GLenum -> GLuint -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(glGetProgramString,GLenum -> GLenum -> Ptr a -> IO ())
 
 gl_VERTEX_PROGRAM :: GLenum
 gl_VERTEX_PROGRAM = 0x8620

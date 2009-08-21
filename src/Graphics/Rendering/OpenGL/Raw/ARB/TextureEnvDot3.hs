@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_texture_env_dot3 extension, see
+-- All tokens from the ARB_texture_env_dot3 extension, see
 -- <http://www.opengl.org/registry/specs/ARB/texture_env_dot3.txt>.
 --
 --------------------------------------------------------------------------------

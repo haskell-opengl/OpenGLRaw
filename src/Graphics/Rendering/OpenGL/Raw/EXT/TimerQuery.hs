@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_timer_query extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions, tokens and type from the EXT_timer_query extension, see
 -- <http://www.opengl.org/registry/specs/EXT/timer_query.txt>.
 --
 --------------------------------------------------------------------------------
@@ -26,9 +25,9 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery (
    GLuint64
 ) where
 
-import Foreign.C.Types
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.ARB.Sync
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"
@@ -41,6 +40,3 @@ EXTENSION_ENTRY(glGetQueryObjectui64v,GLuint -> GLenum -> Ptr GLuint64 -> IO ())
 
 gl_TIME_ELAPSED :: GLenum
 gl_TIME_ELAPSED = 0x88BF
-
-type GLint64 = CLLong
-type GLuint64 = CULLong

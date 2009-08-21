@@ -8,8 +8,8 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_texture_mirrored_repeat extension,
--- see <http://www.opengl.org/registry/specs/ARB/texture_mirrored_repeat.txt>.
+-- All tokens from the ARB_texture_mirrored_repeat extension, see
+-- <http://www.opengl.org/registry/specs/ARB/texture_mirrored_repeat.txt>.
 --
 --------------------------------------------------------------------------------
 

@@ -9,7 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_matrix_palette, see
+-- All raw functions and tokens from the ARB_matrix_palette extension, see
 -- <http://www.opengl.org/registry/specs/ARB/matrix_palette.txt>.
 --
 --------------------------------------------------------------------------------

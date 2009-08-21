@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the NV_depth_clamp extension not
--- already in the OpenGL 3.1 core, see
+-- All tokens from the NV_depth_clamp extension, see
 -- <http://www.opengl.org/registry/specs/NV/depth_clamp.txt>.
 --
 --------------------------------------------------------------------------------
@@ -19,7 +18,4 @@ module Graphics.Rendering.OpenGL.Raw.NV.DepthClamp (
    gl_DEPTH_CLAMP
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
-
-gl_DEPTH_CLAMP :: GLenum
-gl_DEPTH_CLAMP = 0x864F
+import Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp

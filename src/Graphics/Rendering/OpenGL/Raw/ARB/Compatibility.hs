@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_compatibility extension not already
--- in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the ARB_compatibility extension, see
 -- <http://www.opengl.org/registry/specs/ARB/compatibility.txt>.
 --
 --------------------------------------------------------------------------------
