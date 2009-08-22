@@ -1,7 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.PerturbNormal
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal
 -- Copyright   :  (c) Sven Panne 2009
 -- License     :  BSD-style (see the file LICENSE)
 --
@@ -9,13 +9,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_perturb_normal extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_texture_perturb_normal, see
 -- <http://www.opengl.org/registry/specs/EXT/perturb_normal.txt>.
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.PerturbNormal (
+module Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal (
    -- * Functions
    glTextureNormal,
    -- * Tokens
@@ -23,13 +22,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PerturbNormal (
    gl_TEXTURE_NORMAL
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"
 
 extensionNameString :: String
-extensionNameString = "GL_EXT_perturb_normal"
+extensionNameString = "GL_EXT_texture_perturb_normal"
 
 EXTENSION_ENTRY(glTextureNormal,GLenum -> IO ())
 
