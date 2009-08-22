@@ -21,7 +21,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
    glSamplePattern,
    -- * Tokens
    gl_SAMPLE_ALPHA_TO_MASK,
-   gl_SAMPLE_MASK,
+   gl_SAMPLE_MASK_EXT,
    gl_MULTISAMPLE_BIT,
    gl_1PASS,
    gl_2PASS_0,
@@ -30,7 +30,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
    gl_4PASS_1,
    gl_4PASS_2,
    gl_4PASS_3,
-   gl_SAMPLE_MASK_VALUE,
+   gl_SAMPLE_MASK_VALUE_EXT,
    gl_SAMPLE_MASK_INVERT,
    gl_SAMPLE_PATTERN
 ) where
@@ -50,8 +50,9 @@ EXTENSION_ENTRY(glSamplePattern,GLenum -> IO ())
 gl_SAMPLE_ALPHA_TO_MASK :: GLenum
 gl_SAMPLE_ALPHA_TO_MASK = 0x809E
 
-gl_SAMPLE_MASK :: GLenum
-gl_SAMPLE_MASK = 0x80A0
+-- | Note: We use the EXT suffix here, because the name clashes with the ARB_texture_multisample extension.
+gl_SAMPLE_MASK_EXT :: GLenum
+gl_SAMPLE_MASK_EXT = 0x80A0
 
 gl_1PASS :: GLenum
 gl_1PASS = 0x80A1
@@ -74,8 +75,9 @@ gl_4PASS_2 = 0x80A6
 gl_4PASS_3 :: GLenum
 gl_4PASS_3 = 0x80A7
 
-gl_SAMPLE_MASK_VALUE :: GLenum
-gl_SAMPLE_MASK_VALUE = 0x80AA
+-- | Note: We use the EXT suffix here, because the name clashes with the ARB_texture_multisample extension.
+gl_SAMPLE_MASK_VALUE_EXT :: GLenum
+gl_SAMPLE_MASK_VALUE_EXT = 0x80AA
 
 gl_SAMPLE_MASK_INVERT :: GLenum
 gl_SAMPLE_MASK_INVERT = 0x80AB

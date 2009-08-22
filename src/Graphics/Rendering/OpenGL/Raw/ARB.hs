@@ -20,6 +20,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp,
    module Graphics.Rendering.OpenGL.Raw.ARB.DepthTexture,
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers,
+   module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend,
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex,
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
    module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram,
@@ -39,6 +40,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.PointParameters,
    module Graphics.Rendering.OpenGL.Raw.ARB.PointSprite,
    module Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex,
+   module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,
    module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects,
    module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage100,
@@ -50,12 +52,15 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionRGTC,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap,
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvAdd,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCrossbar,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat,
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat,
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureRG,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle,
    module Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix,
@@ -75,6 +80,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.DepthBufferFloat
 import Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp
 import Graphics.Rendering.OpenGL.Raw.ARB.DepthTexture
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers
+import Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced
 import Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram
@@ -94,6 +100,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.PointParameters
 import Graphics.Rendering.OpenGL.Raw.ARB.PointSprite
 import Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex
+import Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
 import Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects
 import Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage100
@@ -105,12 +112,15 @@ import Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionRGTC
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvAdd
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCrossbar
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureRG
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle
 import Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix
