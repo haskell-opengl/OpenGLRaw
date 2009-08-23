@@ -23,8 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glBeginTransformFeedback,
    glBindAttribLocation,
    glBindBuffer,
-   glBindBufferBase,
-   glBindBufferRange,
    glBindFragDataLocation,
    glBindFramebuffer,
    glBindRenderbuffer,
@@ -57,7 +55,6 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glCompressedTexSubImage1D,
    glCompressedTexSubImage2D,
    glCompressedTexSubImage3D,
-   glCopyBufferSubData,
    glCopyTexImage1D,
    glCopyTexImage2D,
    glCopyTexSubImage1D,
@@ -82,11 +79,9 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glDisableVertexAttribArray,
    glDisablei,
    glDrawArrays,
-   glDrawArraysInstanced,
    glDrawBuffer,
    glDrawBuffers,
    glDrawElements,
-   glDrawElementsInstanced,
    glDrawRangeElements,
    glEnable,
    glEnableVertexAttribArray,
@@ -112,10 +107,6 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glGenerateMipmap,
    glGetActiveAttrib,
    glGetActiveUniform,
-   glGetActiveUniformBlockName,
-   glGetActiveUniformBlockiv,
-   glGetActiveUniformName,
-   glGetActiveUniformsiv,
    glGetAttachedShaders,
    glGetAttribLocation,
    glGetBooleani_v,
@@ -129,7 +120,6 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glGetFloatv,
    glGetFragDataLocation,
    glGetFramebufferAttachmentParameteriv,
-   glGetIntegeri_v,
    glGetIntegerv,
    glGetPointerv,
    glGetProgramInfoLog,
@@ -151,8 +141,6 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glGetTexParameterfv,
    glGetTexParameteriv,
    glGetTransformFeedbackVarying,
-   glGetUniformBlockIndex,
-   glGetUniformIndices,
    glGetUniformLocation,
    glGetUniformfv,
    glGetUniformiv,
@@ -204,7 +192,6 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glStencilMaskSeparate,
    glStencilOp,
    glStencilOpSeparate,
-   glTexBuffer,
    glTexImage1D,
    glTexImage2D,
    glTexImage3D,
@@ -242,7 +229,6 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glUniform4iv,
    glUniform4ui,
    glUniform4uiv,
-   glUniformBlockBinding,
    glUniformMatrix2fv,
    glUniformMatrix2x3fv,
    glUniformMatrix2x4fv,
@@ -332,8 +318,6 @@ EXTENSION_ENTRY(glBeginQuery,GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(glBeginTransformFeedback,GLenum -> IO ())
 EXTENSION_ENTRY(glBindAttribLocation,GLuint -> GLuint -> Ptr GLchar -> IO ())
 EXTENSION_ENTRY(glBindBuffer,GLenum -> GLuint -> IO ())
-EXTENSION_ENTRY(glBindBufferBase,GLenum -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glBindBufferRange,GLenum -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
 EXTENSION_ENTRY(glBindFragDataLocation,GLuint -> GLuint -> Ptr GLchar -> IO ())
 EXTENSION_ENTRY(glBindFramebuffer,GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(glBindRenderbuffer,GLenum -> GLuint -> IO ())
@@ -366,7 +350,6 @@ EXTENSION_ENTRY(glCompressedTexImage3D,GLenum -> GLint -> GLenum -> GLsizei -> G
 EXTENSION_ENTRY(glCompressedTexSubImage1D,GLenum -> GLint -> GLint -> GLsizei -> GLenum -> GLsizei -> Ptr a -> IO ())
 EXTENSION_ENTRY(glCompressedTexSubImage2D,GLenum -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLenum -> GLsizei -> Ptr a -> IO ())
 EXTENSION_ENTRY(glCompressedTexSubImage3D,GLenum -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLsizei -> Ptr a -> IO ())
-EXTENSION_ENTRY(glCopyBufferSubData,GLenum -> GLenum -> GLintptr -> GLintptr -> GLsizeiptr -> IO ())
 EXTENSION_ENTRY(glCopyTexImage1D,GLenum -> GLint -> GLenum -> GLint -> GLint -> GLsizei -> GLint -> IO ())
 EXTENSION_ENTRY(glCopyTexImage2D,GLenum -> GLint -> GLenum -> GLint -> GLint -> GLsizei -> GLsizei -> GLint -> IO ())
 EXTENSION_ENTRY(glCopyTexSubImage1D,GLenum -> GLint -> GLint -> GLint -> GLint -> GLsizei -> IO ())
@@ -391,11 +374,9 @@ EXTENSION_ENTRY(glDisable,GLenum -> IO ())
 EXTENSION_ENTRY(glDisableVertexAttribArray,GLuint -> IO ())
 EXTENSION_ENTRY(glDisablei,GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(glDrawArrays,GLenum -> GLint -> GLsizei -> IO ())
-EXTENSION_ENTRY(glDrawArraysInstanced,GLenum -> GLint -> GLsizei -> GLsizei -> IO ())
 EXTENSION_ENTRY(glDrawBuffer,GLenum -> IO ())
 EXTENSION_ENTRY(glDrawBuffers,GLsizei -> Ptr GLenum -> IO ())
 EXTENSION_ENTRY(glDrawElements,GLenum -> GLsizei -> GLenum -> Ptr a -> IO ())
-EXTENSION_ENTRY(glDrawElementsInstanced,GLenum -> GLsizei -> GLenum -> Ptr a -> GLsizei -> IO ())
 EXTENSION_ENTRY(glDrawRangeElements,GLenum -> GLuint -> GLuint -> GLsizei -> GLenum -> Ptr a -> IO ())
 EXTENSION_ENTRY(glEnable,GLenum -> IO ())
 EXTENSION_ENTRY(glEnableVertexAttribArray,GLuint -> IO ())
@@ -421,10 +402,6 @@ EXTENSION_ENTRY(glGenVertexArrays,GLsizei -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(glGenerateMipmap,GLenum -> IO ())
 EXTENSION_ENTRY(glGetActiveAttrib,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLint -> Ptr GLenum -> Ptr GLchar -> IO ())
 EXTENSION_ENTRY(glGetActiveUniform,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLint -> Ptr GLenum -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetActiveUniformBlockName,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetActiveUniformBlockiv,GLuint -> GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetActiveUniformName,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetActiveUniformsiv,GLuint -> GLsizei -> Ptr GLuint -> GLenum -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glGetAttachedShaders,GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(glGetAttribLocation,GLuint -> Ptr GLchar -> IO GLint)
 EXTENSION_ENTRY(glGetBooleani_v,GLenum -> GLuint -> Ptr GLboolean -> IO ())
@@ -438,7 +415,6 @@ EXTENSION_ENTRY(glGetError,IO GLenum)
 EXTENSION_ENTRY(glGetFloatv,GLenum -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glGetFragDataLocation,GLuint -> Ptr GLchar -> IO GLint)
 EXTENSION_ENTRY(glGetFramebufferAttachmentParameteriv,GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetIntegeri_v,GLenum -> GLuint -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glGetIntegerv,GLenum -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glGetPointerv,GLenum -> Ptr (Ptr a) -> IO ())
 EXTENSION_ENTRY(glGetProgramInfoLog,GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -460,8 +436,6 @@ EXTENSION_ENTRY(glGetTexParameterIuiv,GLenum -> GLenum -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(glGetTexParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glGetTexParameteriv,GLenum -> GLenum -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glGetTransformFeedbackVarying,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetUniformBlockIndex,GLuint -> Ptr GLchar -> IO GLuint)
-EXTENSION_ENTRY(glGetUniformIndices,GLuint -> GLsizei -> Ptr (Ptr GLchar) -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(glGetUniformLocation,GLuint -> Ptr GLchar -> IO GLint)
 EXTENSION_ENTRY(glGetUniformfv,GLuint -> GLint -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glGetUniformiv,GLuint -> GLint -> Ptr GLint -> IO ())
@@ -513,7 +487,6 @@ EXTENSION_ENTRY(glStencilMask,GLuint -> IO ())
 EXTENSION_ENTRY(glStencilMaskSeparate,GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(glStencilOp,GLenum -> GLenum -> GLenum -> IO ())
 EXTENSION_ENTRY(glStencilOpSeparate,GLenum -> GLenum -> GLenum -> GLenum -> IO ())
-EXTENSION_ENTRY(glTexBuffer,GLenum -> GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(glTexImage1D,GLenum -> GLint -> GLint -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
 EXTENSION_ENTRY(glTexImage2D,GLenum -> GLint -> GLint -> GLsizei -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
 EXTENSION_ENTRY(glTexImage3D,GLenum -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -551,7 +524,6 @@ EXTENSION_ENTRY(glUniform4i,GLint -> GLint -> GLint -> GLint -> GLint -> IO ())
 EXTENSION_ENTRY(glUniform4iv,GLint -> GLsizei -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glUniform4ui,GLint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
 EXTENSION_ENTRY(glUniform4uiv,GLint -> GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glUniformBlockBinding,GLuint -> GLuint -> GLuint -> IO ())
 EXTENSION_ENTRY(glUniformMatrix2fv,GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glUniformMatrix2x3fv,GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glUniformMatrix2x4fv,GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())

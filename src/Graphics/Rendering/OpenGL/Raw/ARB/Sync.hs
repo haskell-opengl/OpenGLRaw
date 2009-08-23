@@ -47,7 +47,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.Sync (
 
 import Foreign.Ptr
 import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
-import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

@@ -45,7 +45,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample (
 ) where
 
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

@@ -19,9 +19,24 @@ module Graphics.Rendering.OpenGL.Raw.Core31 (
    -- * Tokens
    module Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
    -- * Types
-   module Graphics.Rendering.OpenGL.Raw.Core31.Types
+   module Graphics.Rendering.OpenGL.Raw.Core31.Types,
+   -- * Extensions promoted to OpenGL 3.2 core
+   module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
+   module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer,
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject,
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle,
+   module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.Core31.Functions
 import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
+
+import Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced
+import Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle
+import Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject hiding (
+   gl_MAX_GEOMETRY_UNIFORM_BLOCKS,
+   gl_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS,
+   gl_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER )

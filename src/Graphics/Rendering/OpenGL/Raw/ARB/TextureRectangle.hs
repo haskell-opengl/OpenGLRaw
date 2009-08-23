@@ -23,4 +23,22 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle (
    gl_SAMPLER_2D_RECT_SHADOW
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
+
+gl_TEXTURE_RECTANGLE :: GLenum
+gl_TEXTURE_RECTANGLE = 0x84F5
+
+gl_TEXTURE_BINDING_RECTANGLE :: GLenum
+gl_TEXTURE_BINDING_RECTANGLE = 0x84F6
+
+gl_PROXY_TEXTURE_RECTANGLE :: GLenum
+gl_PROXY_TEXTURE_RECTANGLE = 0x84F7
+
+gl_MAX_RECTANGLE_TEXTURE_SIZE :: GLenum
+gl_MAX_RECTANGLE_TEXTURE_SIZE = 0x84F8
+
+gl_SAMPLER_2D_RECT :: GLenum
+gl_SAMPLER_2D_RECT = 0x8B63
+
+gl_SAMPLER_2D_RECT_SHADOW :: GLenum
+gl_SAMPLER_2D_RECT_SHADOW = 0x8B64

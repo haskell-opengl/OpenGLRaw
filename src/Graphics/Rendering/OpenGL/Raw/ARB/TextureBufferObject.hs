@@ -1,3 +1,4 @@
+{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject
@@ -24,4 +25,27 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject (
    gl_TEXTURE_BUFFER_FORMAT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Extensions
+
+#include "HsOpenGLRaw.h"
+
+extensionNameString :: String
+extensionNameString = "GL_ARB_texture_buffer_object"
+
+EXTENSION_ENTRY(glTexBuffer,GLenum -> GLenum -> GLuint -> IO ())
+
+gl_TEXTURE_BUFFER :: GLenum
+gl_TEXTURE_BUFFER = 0x8C2A
+
+gl_MAX_TEXTURE_BUFFER_SIZE :: GLenum
+gl_MAX_TEXTURE_BUFFER_SIZE = 0x8C2B
+
+gl_TEXTURE_BINDING_BUFFER :: GLenum
+gl_TEXTURE_BINDING_BUFFER = 0x8C2C
+
+gl_TEXTURE_BUFFER_DATA_STORE_BINDING :: GLenum
+gl_TEXTURE_BUFFER_DATA_STORE_BINDING = 0x8C2D
+
+gl_TEXTURE_BUFFER_FORMAT :: GLenum
+gl_TEXTURE_BUFFER_FORMAT = 0x8C2E

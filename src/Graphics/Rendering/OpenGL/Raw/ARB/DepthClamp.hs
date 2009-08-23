@@ -18,7 +18,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp (
    gl_DEPTH_CLAMP
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 
 gl_DEPTH_CLAMP :: GLenum
 gl_DEPTH_CLAMP = 0x864F

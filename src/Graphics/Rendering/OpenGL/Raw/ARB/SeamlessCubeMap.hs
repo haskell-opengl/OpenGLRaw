@@ -18,7 +18,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap (
    gl_TEXTURE_CUBE_MAP_SEAMLESS
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 
 gl_TEXTURE_CUBE_MAP_SEAMLESS :: GLenum
 gl_TEXTURE_CUBE_MAP_SEAMLESS = 0x884F

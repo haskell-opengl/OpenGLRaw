@@ -14,29 +14,30 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.Core32 (
-   -- * Functions
-   module Graphics.Rendering.OpenGL.Raw.Core31.Functions,
-   -- * Tokens
-   module Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
-   gl_CONTEXT_CORE_PROFILE_BIT,
-   gl_CONTEXT_COMPATIBILITY_PROFILE_BIT,
-   gl_CONTEXT_PROFILE_MASK,
-   -- * Types
-   module Graphics.Rendering.OpenGL.Raw.Core31.Types
+   -- * OpenGL 3.1 core
+   module Graphics.Rendering.OpenGL.Raw.Core31,
+   -- * Extensions which had some hidden entitites in OpenGL 3.1 core
+   module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject,
+   -- * Extensions promoted to OpenGL 3.2 core
+   module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,
+   module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex,
+   module Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex,
+   module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample,
+   module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp,
+   module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4,
+   module Graphics.Rendering.OpenGL.Raw.ARB.Sync
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Functions
-import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Core31
 
---------------------------------------------------------------------------------
--- ARB_create_context_profile
+import Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject
 
-gl_CONTEXT_CORE_PROFILE_BIT :: GLenum
-gl_CONTEXT_CORE_PROFILE_BIT = 0x00000001
-
-gl_CONTEXT_COMPATIBILITY_PROFILE_BIT :: GLenum
-gl_CONTEXT_COMPATIBILITY_PROFILE_BIT = 0x00000002
-
-gl_CONTEXT_PROFILE_MASK :: GLenum
-gl_CONTEXT_PROFILE_MASK = 0x9126
+import Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
+import Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex
+import Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex
+import Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample
+import Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp
+import Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
+import Graphics.Rendering.OpenGL.Raw.ARB.Sync

@@ -1,3 +1,4 @@
+{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer
@@ -22,4 +23,18 @@ module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer (
 
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Extensions
+
+#include "HsOpenGLRaw.h"
+
+extensionNameString :: String
+extensionNameString = "GL_ARB_copy_buffer"
+
+EXTENSION_ENTRY(glCopyBufferSubData,GLenum -> GLenum -> GLintptr -> GLintptr -> GLsizeiptr -> IO ())
+
+gl_COPY_READ_BUFFER :: GLenum
+gl_COPY_READ_BUFFER = 0x8F36
+
+gl_COPY_WRITE_BUFFER :: GLenum
+gl_COPY_WRITE_BUFFER = 0x8F37

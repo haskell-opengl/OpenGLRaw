@@ -27,7 +27,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery (
 
 import Foreign.Ptr
 import Graphics.Rendering.OpenGL.Raw.ARB.Sync
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"
