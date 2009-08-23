@@ -75,8 +75,9 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend,
    module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather,
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod,
+   module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
@@ -143,3 +144,4 @@ import Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
 -- import Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod
+import Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile

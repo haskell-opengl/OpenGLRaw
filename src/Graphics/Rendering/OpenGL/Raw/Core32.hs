@@ -18,6 +18,9 @@ module Graphics.Rendering.OpenGL.Raw.Core32 (
    module Graphics.Rendering.OpenGL.Raw.Core31.Functions,
    -- * Tokens
    module Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
+   gl_CONTEXT_CORE_PROFILE_BIT,
+   gl_CONTEXT_COMPATIBILITY_PROFILE_BIT,
+   gl_CONTEXT_PROFILE_MASK,
    -- * Types
    module Graphics.Rendering.OpenGL.Raw.Core31.Types
 ) where
@@ -25,3 +28,15 @@ module Graphics.Rendering.OpenGL.Raw.Core32 (
 import Graphics.Rendering.OpenGL.Raw.Core31.Functions
 import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
+
+--------------------------------------------------------------------------------
+-- ARB_create_context_profile
+
+gl_CONTEXT_CORE_PROFILE_BIT :: GLenum
+gl_CONTEXT_CORE_PROFILE_BIT = 0x00000001
+
+gl_CONTEXT_COMPATIBILITY_PROFILE_BIT :: GLenum
+gl_CONTEXT_COMPATIBILITY_PROFILE_BIT = 0x00000002
+
+gl_CONTEXT_PROFILE_MASK :: GLenum
+gl_CONTEXT_PROFILE_MASK = 0x9126
