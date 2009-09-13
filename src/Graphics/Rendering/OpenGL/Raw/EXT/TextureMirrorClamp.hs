@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_mirror_clamp extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_texture_mirror_clamp extension, see
 -- <http://www.opengl.org/registry/specs/EXT/texture_mirror_clamp.txt>.
 --
 --------------------------------------------------------------------------------
@@ -21,7 +20,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp (
   gl_MIRROR_CLAMP_TO_BORDER
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_MIRROR_CLAMP :: GLenum
 gl_MIRROR_CLAMP = 0x8742

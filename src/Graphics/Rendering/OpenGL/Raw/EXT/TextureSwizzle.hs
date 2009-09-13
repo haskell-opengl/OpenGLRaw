@@ -22,7 +22,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle (
    gl_TEXTURE_SWIZZLE_A
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_TEXTURE_SWIZZLE_R :: GLenum
 gl_TEXTURE_SWIZZLE_R = 0x8E42

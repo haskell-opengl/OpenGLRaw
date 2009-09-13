@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_compression_s3tc extension
--- not already in the OpenGL 3.1 core, see
+-- All tokens from the EXT_texture_compression_s3tc extension, see
 -- <http://www.opengl.org/registry/specs/EXT/texture_compression_s3tc.txt>.
 --
 --------------------------------------------------------------------------------
@@ -22,7 +21,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3tc (
    gl_COMPRESSED_RGBA_S3TC_DXT5
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_COMPRESSED_RGB_S3TC_DXT1 :: GLenum
 gl_COMPRESSED_RGB_S3TC_DXT1 = 0x83F0

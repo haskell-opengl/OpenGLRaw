@@ -8,21 +8,21 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_vertex_array extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_vertex_array extension, see
 -- <http://www.opengl.org/registry/specs/EXT/vertex_array.txt>.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray (
    -- * Functions
-   glArrayElement,
+   glDrawArrays,
    glVertexPointer,
    glNormalPointer,
    glColorPointer,
    glIndexPointer,
    glTexCoordPointer,
    glEdgeFlagPointer,
+   glGetPointerv,
    -- * Tokens
    gl_VERTEX_ARRAY,
    gl_NORMAL_ARRAY,
@@ -30,6 +30,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray (
    gl_INDEX_ARRAY,
    gl_TEXTURE_COORD_ARRAY,
    gl_EDGE_FLAG_ARRAY,
+   gl_DOUBLE,
    gl_VERTEX_ARRAY_SIZE,
    gl_VERTEX_ARRAY_TYPE,
    gl_VERTEX_ARRAY_STRIDE,
@@ -59,3 +60,4 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray (
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Core32

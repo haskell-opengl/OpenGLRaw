@@ -20,7 +20,7 @@ module Graphics.Rendering.OpenGL.Raw.Core31 (
    module Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
    -- * Types
    module Graphics.Rendering.OpenGL.Raw.Core31.Types,
-   -- * Extensions promoted to OpenGL 3.2 core
+   -- * Extensions promoted to OpenGL 3.1 core
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
    module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject,

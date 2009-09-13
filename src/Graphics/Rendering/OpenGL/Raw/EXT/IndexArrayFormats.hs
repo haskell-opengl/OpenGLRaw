@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_index_array_formats extension not
--- already in the OpenGL 3.1 core, see
+-- All tokens from the EXT_index_array_formats extension, see
 -- <http://www.opengl.org/registry/specs/EXT/index_array_formats.txt>.
 --
 --------------------------------------------------------------------------------
@@ -26,7 +25,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.IndexArrayFormats (
    gl_T2F_IUI_N3F_V3F
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_IUI_V2F :: GLenum
 gl_IUI_V2F = 0x81AD

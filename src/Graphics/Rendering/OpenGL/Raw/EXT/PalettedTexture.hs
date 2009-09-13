@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_paletted_texture extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_paletted_texture extension, see
 -- <http://www.opengl.org/registry/specs/EXT/paletted_texture.txt>.
 --
 --------------------------------------------------------------------------------
@@ -36,11 +35,19 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PalettedTexture (
    gl_COLOR_TABLE_ALPHA_SIZE,
    gl_COLOR_TABLE_LUMINANCE_SIZE,
    gl_COLOR_TABLE_INTENSITY_SIZE,
-   gl_TEXTURE_INDEX_SIZE
+   gl_TEXTURE_INDEX_SIZE,
+   gl_TEXTURE_1D,
+   gl_TEXTURE_2D,
+   gl_TEXTURE_3D,
+   gl_TEXTURE_CUBE_MAP,
+   gl_PROXY_TEXTURE_1D,
+   gl_PROXY_TEXTURE_2D,
+   gl_PROXY_TEXTURE_3D,
+   gl_PROXY_TEXTURE_CUBE_MAP
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_COLOR_INDEX1 :: GLenum
 gl_COLOR_INDEX1 = 0x80E2

@@ -46,7 +46,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureShader2 (
    gl_DSDT8_MAG8_INTENSITY8
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.NV.TextureShader
 
 gl_DOT_PRODUCT_TEXTURE_3D :: GLenum

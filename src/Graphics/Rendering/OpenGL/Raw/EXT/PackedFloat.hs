@@ -19,7 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat (
    gl_RGBA_SIGNED_COMPONENTS
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_RGBA_SIGNED_COMPONENTS :: GLenum
 gl_RGBA_SIGNED_COMPONENTS = 0x8C3C

@@ -20,7 +20,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent (
    gl_MAX_SPOT_EXPONENT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_MAX_SHININESS :: GLenum
 gl_MAX_SHININESS = 0x8504

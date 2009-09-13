@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_vertex_weighting extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_vertex_weighting extension, see
 -- <http://www.opengl.org/registry/specs/EXT/vertex_weighting.txt>.
 --
 --------------------------------------------------------------------------------
@@ -38,7 +37,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting (
 
 import Foreign.Ptr
 import Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

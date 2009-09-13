@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_fragment_lighting extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_fragment_lighting extension, see
 -- <http://www.opengl.org/registry/specs/EXT/fragment_lighting.txt>.
 --
 --------------------------------------------------------------------------------
@@ -59,7 +58,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting (
 ) where
 
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

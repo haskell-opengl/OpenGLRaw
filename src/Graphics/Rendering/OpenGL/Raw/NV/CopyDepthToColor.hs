@@ -20,7 +20,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.CopyDepthToColor (
    gl_DEPTH_STENCIL_TO_BGRA
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_DEPTH_STENCIL_TO_RGBA :: GLenum
 gl_DEPTH_STENCIL_TO_RGBA = 0x886E

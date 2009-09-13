@@ -29,7 +29,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB (
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_COMPRESSED_SRGB_S3TC_DXT1 :: GLenum
 gl_COMPRESSED_SRGB_S3TC_DXT1 = 0x8C4C

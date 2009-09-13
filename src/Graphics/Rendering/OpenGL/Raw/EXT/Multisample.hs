@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_multisample extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_multisample extension, see
 -- <http://www.opengl.org/registry/specs/EXT/multisample.txt>.
 --
 --------------------------------------------------------------------------------
@@ -20,7 +19,9 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
    glSampleMask,
    glSamplePattern,
    -- * Tokens
+   gl_MULTISAMPLE,
    gl_SAMPLE_ALPHA_TO_MASK,
+   gl_SAMPLE_ALPHA_TO_ONE,
    gl_SAMPLE_MASK_EXT,
    gl_MULTISAMPLE_BIT,
    gl_1PASS,
@@ -30,13 +31,15 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
    gl_4PASS_1,
    gl_4PASS_2,
    gl_4PASS_3,
+   gl_SAMPLE_BUFFERS,
+   gl_SAMPLES,
    gl_SAMPLE_MASK_VALUE_EXT,
    gl_SAMPLE_MASK_INVERT,
    gl_SAMPLE_PATTERN
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

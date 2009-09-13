@@ -22,7 +22,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLatc (
    gl_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_COMPRESSED_LUMINANCE_LATC1 :: GLenum
 gl_COMPRESSED_LUMINANCE_LATC1 = 0x8C70

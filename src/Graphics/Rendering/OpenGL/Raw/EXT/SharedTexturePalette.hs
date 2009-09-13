@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_shared_texture_palette extension
--- not already in the OpenGL 3.1 core, see
+-- All tokens from the EXT_shared_texture_palette extension, see
 -- <http://www.opengl.org/registry/specs/EXT/shared_texture_palette.txt>.
 --
 --------------------------------------------------------------------------------
@@ -19,7 +18,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.SharedTexturePalette (
    gl_SHARED_TEXTURE_PALETTE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_SHARED_TEXTURE_PALETTE :: GLenum
 gl_SHARED_TEXTURE_PALETTE = 0x81FB

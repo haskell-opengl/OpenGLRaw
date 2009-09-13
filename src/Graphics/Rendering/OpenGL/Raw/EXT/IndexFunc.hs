@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_index_func extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_index_func extension, see
 -- <http://www.opengl.org/registry/specs/EXT/index_func.txt>.
 --
 --------------------------------------------------------------------------------
@@ -24,7 +23,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.IndexFunc (
    gl_INDEX_TEST_REF
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

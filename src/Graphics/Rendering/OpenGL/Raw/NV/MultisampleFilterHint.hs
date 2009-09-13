@@ -19,7 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.MultisampleFilterHint (
    gl_MULTISAMPLE_FILTER_HINT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_MULTISAMPLE_FILTER_HINT :: GLenum
 gl_MULTISAMPLE_FILTER_HINT = 0x8534

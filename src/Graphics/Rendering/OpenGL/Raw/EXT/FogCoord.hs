@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_fog_coord extension not already
--- in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_fog_coord extension, see
 -- <http://www.opengl.org/registry/specs/EXT/fog_coord.txt>.
 --
 --------------------------------------------------------------------------------

@@ -19,7 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange2 (
    gl_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH :: GLenum
 gl_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH = 0x8533

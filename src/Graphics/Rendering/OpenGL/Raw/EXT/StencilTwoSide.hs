@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_stencil_two_side extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_stencil_two_side extension, see
 -- <http://www.opengl.org/registry/specs/EXT/stencil_two_side.txt>.
 --
 --------------------------------------------------------------------------------
@@ -23,7 +22,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide (
    gl_ACTIVE_STENCIL_FACE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

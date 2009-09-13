@@ -19,7 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB (
    gl_FRAMEBUFFER_SRGB_CAPABLE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_FRAMEBUFFER_SRGB_CAPABLE :: GLenum
 gl_FRAMEBUFFER_SRGB_CAPABLE = 0x8DBA

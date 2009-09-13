@@ -8,14 +8,13 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_secondary_color extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_secondary_color extension, see
 -- <http://www.opengl.org/registry/specs/EXT/secondary_color.txt>.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor (
-   -- * Tokens
+   -- * Functions
    glSecondaryColor3b,
    glSecondaryColor3s,
    glSecondaryColor3i,

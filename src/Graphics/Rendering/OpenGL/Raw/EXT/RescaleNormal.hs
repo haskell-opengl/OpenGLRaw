@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_rescale_normal extension not
--- already in the OpenGL 3.1 core, see
+-- All tokens from the EXT_rescale_normal extension, see
 -- <http://www.opengl.org/registry/specs/EXT/rescale_normal.txt>.
 --
 --------------------------------------------------------------------------------

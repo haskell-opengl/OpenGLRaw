@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_color_subtable extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_color_subtable extension, see
 -- <http://www.opengl.org/registry/specs/EXT/color_subtable.txt>.
 --
 --------------------------------------------------------------------------------

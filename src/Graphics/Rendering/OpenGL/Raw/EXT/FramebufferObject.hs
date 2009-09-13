@@ -20,7 +20,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject (
    gl_FRAMEBUFFER_INCOMPLETE_FORMATS
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_FRAMEBUFFER_INCOMPLETE_DIMENSIONS :: GLenum
 gl_FRAMEBUFFER_INCOMPLETE_DIMENSIONS = 0x8CD9

@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_coordinate_frame extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_coordinate_frame extension, see
 -- <http://www.opengl.org/registry/specs/EXT/coordinate_frame.txt>.
 --
 --------------------------------------------------------------------------------
@@ -34,8 +33,8 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame (
    glBinormal3s,
    glBinormal3bv,
    glBinormal3dv,
-   glBinormal3iv,
    glBinormal3fv,
+   glBinormal3iv,
    glBinormal3sv,
    glTangentPointer,
    glBinormalPointer,
@@ -57,7 +56,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame (
 ) where
 
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

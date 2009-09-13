@@ -14,22 +14,22 @@
 
 module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.Abgr,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.BlendColor,
+   module Graphics.Rendering.OpenGL.Raw.EXT.BlendColor,
    module Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset,
    module Graphics.Rendering.OpenGL.Raw.EXT.Texture,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.Texture3d,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.Subtexture,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.Histogram,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.Convolution,
+   module Graphics.Rendering.OpenGL.Raw.EXT.Texture3D,
+   module Graphics.Rendering.OpenGL.Raw.EXT.Subtexture,
+   module Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture,
+   module Graphics.Rendering.OpenGL.Raw.EXT.Histogram,
+   module Graphics.Rendering.OpenGL.Raw.EXT.Convolution,
    module Graphics.Rendering.OpenGL.Raw.EXT.Cmyka,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureObject,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels,
+   module Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels,
    module Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal,
    module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.MiscAttribute,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract,
+   module Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax,
+   module Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.BlendLogicOp,
    module Graphics.Rendering.OpenGL.Raw.EXT.PointParameters,
    module Graphics.Rendering.OpenGL.Raw.EXT.ColorSubtable,
@@ -42,10 +42,10 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.CompiledVertexArray,
    module Graphics.Rendering.OpenGL.Raw.EXT.CullVertex,
    module Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements,
+   module Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements,
    module Graphics.Rendering.OpenGL.Raw.EXT.LightTexture,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.Bgra,
+   module Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker,
+   module Graphics.Rendering.OpenGL.Raw.EXT.Bgra,
    module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransformColorTable,
    module Graphics.Rendering.OpenGL.Raw.EXT.SharedTexturePalette,
@@ -53,12 +53,12 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnv,
    module Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.MultiDrawArrays,
+   module Graphics.Rendering.OpenGL.Raw.EXT.MultiDrawArrays,
    module Graphics.Rendering.OpenGL.Raw.EXT.FogCoord,
    module Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap,
+   module Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate,
+   module Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap,
    module Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvAdd,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias,
@@ -72,7 +72,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide,
    module Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate,
+   module Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDxt1,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject,
@@ -105,22 +105,22 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.EXT.Abgr
--- import Graphics.Rendering.OpenGL.Raw.EXT.BlendColor
+import Graphics.Rendering.OpenGL.Raw.EXT.BlendColor
 import Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset
 import Graphics.Rendering.OpenGL.Raw.EXT.Texture
--- import Graphics.Rendering.OpenGL.Raw.EXT.Texture3d
--- import Graphics.Rendering.OpenGL.Raw.EXT.Subtexture
--- import Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture
--- import Graphics.Rendering.OpenGL.Raw.EXT.Histogram
--- import Graphics.Rendering.OpenGL.Raw.EXT.Convolution
+import Graphics.Rendering.OpenGL.Raw.EXT.Texture3D
+import Graphics.Rendering.OpenGL.Raw.EXT.Subtexture
+import Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture
+import Graphics.Rendering.OpenGL.Raw.EXT.Histogram
+import Graphics.Rendering.OpenGL.Raw.EXT.Convolution
 import Graphics.Rendering.OpenGL.Raw.EXT.Cmyka
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureObject
--- import Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels
+import Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels
 import Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexArray
 -- import Graphics.Rendering.OpenGL.Raw.EXT.MiscAttribute
--- import Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax
--- import Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract
+import Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax
+import Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract
 -- import Graphics.Rendering.OpenGL.Raw.EXT.BlendLogicOp
 import Graphics.Rendering.OpenGL.Raw.EXT.PointParameters
 import Graphics.Rendering.OpenGL.Raw.EXT.ColorSubtable
@@ -133,10 +133,10 @@ import Graphics.Rendering.OpenGL.Raw.EXT.IndexArrayFormats
 import Graphics.Rendering.OpenGL.Raw.EXT.CompiledVertexArray
 import Graphics.Rendering.OpenGL.Raw.EXT.CullVertex
 import Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting
--- import Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements
+import Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements
 import Graphics.Rendering.OpenGL.Raw.EXT.LightTexture
--- import Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker
--- import Graphics.Rendering.OpenGL.Raw.EXT.Bgra
+import Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker
+import Graphics.Rendering.OpenGL.Raw.EXT.Bgra
 import Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform
 -- import Graphics.Rendering.OpenGL.Raw.EXT.PixelTransformColorTable
 import Graphics.Rendering.OpenGL.Raw.EXT.SharedTexturePalette
@@ -144,12 +144,12 @@ import Graphics.Rendering.OpenGL.Raw.EXT.SeparateSpecularColor
 import Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnv
 import Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal
--- import Graphics.Rendering.OpenGL.Raw.EXT.MultiDrawArrays
+import Graphics.Rendering.OpenGL.Raw.EXT.MultiDrawArrays
 import Graphics.Rendering.OpenGL.Raw.EXT.FogCoord
 import Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine
--- import Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate
--- import Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap
+import Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate
+import Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap
 import Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvAdd
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias
@@ -163,7 +163,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.VertexShader
 import Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide
 import Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp
--- import Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate
+import Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate
 -- import Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDxt1
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject

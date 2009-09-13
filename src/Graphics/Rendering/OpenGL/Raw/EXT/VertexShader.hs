@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_vertex_shader extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_vertex_shader extension, see
 -- <http://www.opengl.org/registry/specs/EXT/vertex_shader.txt>.
 --
 --------------------------------------------------------------------------------
@@ -60,6 +59,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader (
    glGetLocalConstantIntegerv,
    glGetLocalConstantFloatv,
    -- * Tokens
+   gl_VERTEX_SHADER,
    gl_VARIANT_VALUE,
    gl_VARIANT_DATATYPE,
    gl_VARIANT_ARRAY_STRIDE,
@@ -162,6 +162,8 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader (
    gl_NEGATIVE_Y,
    gl_NEGATIVE_Z,
    gl_NEGATIVE_W,
+   gl_ZERO,
+   gl_ONE,
    gl_NEGATIVE_ONE,
    gl_NORMALIZED_RANGE,
    gl_FULL_RANGE,
@@ -170,7 +172,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader (
 ) where
 
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

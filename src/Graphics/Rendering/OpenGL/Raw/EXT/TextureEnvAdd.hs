@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_env_add extension not
--- already in the OpenGL 3.1 core, see
+-- All tokens from the EXT_texture_env_add extension, see
 -- <http://www.opengl.org/registry/specs/EXT/texture_env_add.txt>.
 --
 --------------------------------------------------------------------------------

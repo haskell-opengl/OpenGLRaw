@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_422_pixels extension not already in
--- the OpenGL 3.1 core, see
+-- All tokens from the EXT_422_pixels extension, see
 -- <http://www.opengl.org/registry/specs/EXT/422_pixels.txt>.
 --
 --------------------------------------------------------------------------------
@@ -22,7 +21,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels (
    gl_422_REV_AVERAGE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_422 :: GLenum
 gl_422 = 0x80CC

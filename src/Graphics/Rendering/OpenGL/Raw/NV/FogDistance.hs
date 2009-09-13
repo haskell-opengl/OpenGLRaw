@@ -23,7 +23,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.FogDistance (
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_FOG_DISTANCE_MODE :: GLenum
 gl_FOG_DISTANCE_MODE = 0x855A

@@ -21,7 +21,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.TexgenEmboss (
    gl_EMBOSS_CONSTANT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_EMBOSS_MAP :: GLenum
 gl_EMBOSS_MAP = 0x855F

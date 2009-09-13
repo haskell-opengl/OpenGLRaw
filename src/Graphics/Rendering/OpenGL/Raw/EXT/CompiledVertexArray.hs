@@ -9,8 +9,8 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_compiled_vertex_array extension
--- not already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_compiled_vertex_array extension,
+-- see
 -- <http://www.opengl.org/registry/specs/EXT/compiled_vertex_array.txt>.
 --
 --------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CompiledVertexArray (
    gl_ARRAY_ELEMENT_LOCK_COUNT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

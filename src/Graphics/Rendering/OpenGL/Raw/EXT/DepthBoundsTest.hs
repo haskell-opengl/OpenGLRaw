@@ -9,8 +9,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_depth_bounds_test extension not
--- already in the OpenGL 3.1 core, see
+-- All raw functions and tokens from the EXT_depth_bounds_test extension, see
 -- <http://www.opengl.org/registry/specs/EXT/depth_bounds_test.txt>.
 --
 --------------------------------------------------------------------------------
@@ -23,7 +22,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest (
    gl_DEPTH_BOUNDS
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

@@ -97,7 +97,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureShader (
    gl_TEXTURE_MAG_SIZE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
 
 gl_TEXTURE_SHADER :: GLenum

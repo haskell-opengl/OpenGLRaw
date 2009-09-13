@@ -23,7 +23,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureEnvCombine4 (
    gl_OPERAND3_ALPHA
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_COMBINE4 :: GLenum
 gl_COMBINE4 = 0x8503

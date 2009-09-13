@@ -8,8 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_filter_anisotropic
--- extension not already in the OpenGL 3.1 core, see
+-- All tokens from the EXT_texture_filter_anisotropic, see
 -- <http://www.opengl.org/registry/specs/EXT/texture_filter_anisotropic.txt>.
 --
 --------------------------------------------------------------------------------
@@ -20,7 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic (
    gl_MAX_TEXTURE_MAX_ANISOTROPY
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31
+import Graphics.Rendering.OpenGL.Raw.Core32
 
 gl_TEXTURE_MAX_ANISOTROPY :: GLenum
 gl_TEXTURE_MAX_ANISOTROPY = 0x84FE
