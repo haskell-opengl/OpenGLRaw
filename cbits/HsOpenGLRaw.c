@@ -15,10 +15,27 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
+static void*
+getProcAddress(const char *name)
+{
+  static int firstTime = 1;
+  static HMODULE handle = NULL;
+
+  if (firstTime) {
+    firstTime = 0;
+    handle = LoadLibrary(TEXT("opengl32"));
+  }
+  return handle ? GetProcAddress(handle, name) : NULL;
+}
+
+
 void*
 hs_OpenGLRaw_getProcAddress(const char *name)
 {
-  return wglGetProcAddress((LPCSTR)name);
+  void *apiEntry = wglGetProcAddress(name);
+  /* Sometimes core API entries are not returned via wglGetProcAddress, so
+     we fall back to GetProcAddress in these cases. */
+  return (apiEntry == NULL) ? getProcAddress(name) : apiEntry;
 }
 
 /* -------------------------------------------------------------------------- */
