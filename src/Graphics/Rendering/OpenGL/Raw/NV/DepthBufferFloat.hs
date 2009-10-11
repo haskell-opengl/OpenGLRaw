@@ -26,7 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.DepthBufferFloat (
    gl_DEPTH_BUFFER_FLOAT_MODE
 ) where
 
-import Foreign.Ptr
 import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 

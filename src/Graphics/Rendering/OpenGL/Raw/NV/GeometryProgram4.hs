@@ -36,8 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4 (
    gl_PROGRAM_POINT_SIZE
 ) where
 
-import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
 import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
