@@ -25,7 +25,7 @@ description:
    please see <http://www.opengl.org/>
    and <http://www.opengl.org/registry/>.
 build-type: Simple
-cabal-version:  >= 1.2
+cabal-version:  >= 1.6
 extra-source-files:
    include/CTypes.h
    include/HsOpenGLRaw.h
