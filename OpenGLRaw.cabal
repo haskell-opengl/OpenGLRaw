@@ -250,5 +250,5 @@ library
          extra-libraries: GL
 
 source-repository head
-  type:     darcs
-  location: http://code.haskell.org/OpenGL/OpenGLRaw/
+  type:     git
+  location: https://github.com/haskell-opengl/OpenGLRaw
