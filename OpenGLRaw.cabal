@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 1.1.0.2
+version: 1.2.0.0
 license: BSD3
 license-file: LICENSE
 maintainer: Jason Dagit <dagitj@gmail.com>, Sven Panne <sven.panne@aedion.de>
@@ -103,6 +103,8 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.VertexShader,
       Graphics.Rendering.OpenGL.Raw.ARB.WindowPos,
       Graphics.Rendering.OpenGL.Raw.Core31,
+      Graphics.Rendering.OpenGL.Raw.Core31.Types,
+      Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal,
       Graphics.Rendering.OpenGL.Raw.Core32,
       Graphics.Rendering.OpenGL.Raw.EXT,
       Graphics.Rendering.OpenGL.Raw.EXT.Abgr,
@@ -223,8 +225,6 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens,
       Graphics.Rendering.OpenGL.Raw.Core31.Functions,
       Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
-      Graphics.Rendering.OpenGL.Raw.Core31.Types,
-      Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal,
       Graphics.Rendering.OpenGL.Raw.Extensions
    c-sources:
       cbits/HsOpenGLRaw.c
