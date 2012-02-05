@@ -46,6 +46,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.Sync (
 ) where
 
 import Foreign.Ptr
+import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 import Graphics.Rendering.OpenGL.Raw.Extensions
 

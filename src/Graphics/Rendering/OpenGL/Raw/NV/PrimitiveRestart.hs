@@ -26,7 +26,8 @@ module Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart (
    gl_PRIMITIVE_RESTART_INDEX_NV
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Foreign.C.Types
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

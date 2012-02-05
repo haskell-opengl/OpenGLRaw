@@ -25,7 +25,8 @@ module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage (
    gl_MULTISAMPLE_COVERAGE_MODES
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Foreign.C.Types
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

@@ -44,6 +44,8 @@ module Graphics.Rendering.OpenGL.Raw.NV.GpuProgram4 (
 ) where
 
 import Foreign.Ptr
+import Foreign.C.Types
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 

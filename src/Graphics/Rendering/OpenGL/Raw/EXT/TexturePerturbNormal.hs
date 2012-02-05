@@ -22,7 +22,8 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal (
    gl_TEXTURE_NORMAL
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Foreign.C.Types
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

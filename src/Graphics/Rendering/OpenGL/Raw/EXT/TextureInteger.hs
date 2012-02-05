@@ -49,8 +49,9 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger (
    gl_LUMINANCE_ALPHA_INTEGER
 ) where
 
+import Foreign.C.Types
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

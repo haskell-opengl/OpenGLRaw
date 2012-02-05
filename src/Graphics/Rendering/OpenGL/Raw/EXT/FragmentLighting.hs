@@ -58,8 +58,10 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting (
 ) where
 
 import Foreign.Ptr
+import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 
 #include "HsOpenGLRaw.h"
 
