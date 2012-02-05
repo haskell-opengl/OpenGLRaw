@@ -16,13 +16,13 @@
 #ifndef CTYPES_H
 #define CTYPES_H
 
+--  // A hacked version for GHC follows the Haskell 98 version...
+#ifndef __GLASGOW_HASKELL__
+
 #define INSTANCE_TYPEABLE0(tycon,tcname,str) \
 tcname :: TyCon; \
 tcname = mkTyCon str; \
 instance Typeable tycon where { typeOf _ = mkTyConApp tcname [] }
-
---  // A hacked version for GHC follows the Haskell 98 version...
-#ifndef __GLASGOW_HASKELL__
 
 #define ARITHMETIC_TYPE(T,C,S,B) \
 newtype T = T B deriving (Eq, Ord) ; \
@@ -173,6 +173,8 @@ instance Storable T where { \
 #else /* __GLASGOW_HASKELL__ */
 
 --  // GHC can derive any class for a newtype, so we make use of that here...
+
+#define INSTANCE_TYPEABLE0(tycon,tcname,str) deriving instance Typeable tycon
 
 #define ARITHMETIC_CLASSES  Eq,Ord,Num,Enum,Storable,Real
 #define INTEGRAL_CLASSES Bounded,Integral,Bits

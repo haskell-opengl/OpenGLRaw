@@ -233,6 +233,8 @@ library
    build-depends: base >= 3 && < 5
    ghc-options: -Wall -fno-warn-duplicate-exports
    if impl(ghc)
+      -- these require 6.8, but that's pretty conservative these days
+      extensions: StandaloneDeriving, DeriveDataTypeable
       build-depends: ghc-prim
    if os(windows) && flag(UseNativeWindowsLibraries)
       cpp-options: "-DCALLCONV=stdcall"
