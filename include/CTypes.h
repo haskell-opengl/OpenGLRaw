@@ -175,6 +175,7 @@ instance Storable T where { \
 --  // GHC can derive any class for a newtype, so we make use of that here...
 
 #define INSTANCE_TYPEABLE0(tycon,tcname,str) deriving instance Typeable tycon
+#define GHC_RULE(N,R) {-# RULES "N" R #-}
 
 #define ARITHMETIC_CLASSES  Eq,Ord,Num,Enum,Storable,Real
 #define INTEGRAL_CLASSES Bounded,Integral,Bits
@@ -196,7 +197,9 @@ INSTANCE_TYPEABLE0(T,C,S) ;
 newtype T = T B deriving (ARITHMETIC_CLASSES, FLOATING_CLASSES); \
 INSTANCE_READ(T,B); \
 INSTANCE_SHOW(T,B); \
-INSTANCE_TYPEABLE0(T,C,S) ;
+INSTANCE_TYPEABLE0(T,C,S) ; \
+GHC_RULE(realToFrac/a->T,realToFrac = \x -> T (realToFrac x)) ; \
+GHC_RULE(realToFrac/T->a,realToFrac = \(T x) -> realToFrac x)
 
 #define INSTANCE_READ(T,B) \
 instance Read T where { \
