@@ -191,7 +191,9 @@ INSTANCE_TYPEABLE0(T,C,S) ;
 newtype T = T B deriving (ARITHMETIC_CLASSES, INTEGRAL_CLASSES); \
 INSTANCE_READ(T,B); \
 INSTANCE_SHOW(T,B); \
-INSTANCE_TYPEABLE0(T,C,S) ;
+INSTANCE_TYPEABLE0(T,C,S) ; \
+GHC_RULE(fromIntegral/a->T,fromIntegral = \x -> T (fromIntegral x)) ; \
+GHC_RULE(fromIntegral/T->a,fromIntegral = \(T x) -> fromIntegral x)
 
 #define FLOATING_TYPE(T,C,S,B) \
 newtype T = T B deriving (ARITHMETIC_CLASSES, FLOATING_CLASSES); \
