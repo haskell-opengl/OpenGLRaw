@@ -37,7 +37,6 @@ import Foreign.Ptr
 INTEGRAL_TYPE(GLbitfield,tyConGLbitfield,"GLbitfield",CUInt)
 INTEGRAL_TYPE(GLboolean,tyConGLboolean,"GLboolean",CUChar)
 INTEGRAL_TYPE(GLbyte,tyConGLbyte,"GLbyte",CSChar)
-INTEGRAL_TYPE(GLchar,tyConGLchar,"GLchar",CChar)
 FLOATING_TYPE(GLclampd,tyConGLclampd,"GLclampd",CDouble)
 FLOATING_TYPE(GLclampf,tyConGLclampf,"GLclampf",CFloat)
 FLOATING_TYPE(GLdouble,tyConGLdouble,"GLdouble",CDouble)
@@ -56,6 +55,7 @@ INTEGRAL_TYPE(GLint64,tyConGLint64,"GLint64",Int64)
 INTEGRAL_TYPE(GLuint64,tyConGLuint64,"GLuint64",Word64)
 
 newtype GLsync = GLSync (Ptr GLsync)
+type    GLchar = CChar
 
 -- Not part of the core, but it is very handy to define this here
 INTEGRAL_TYPE(GLhandle,tyConGLhandle,"GLhandle",CUInt)
