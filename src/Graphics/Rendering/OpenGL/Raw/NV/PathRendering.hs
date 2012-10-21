@@ -19,7 +19,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.PathRendering (
 -- * Functions
    glPathCommandsNV,
    glPathCoordsNV,
-   glPathCoordsNV,
    glPathSubCommandsNV,
    glPathSubCoordsNV,
    glPathStringNV,
