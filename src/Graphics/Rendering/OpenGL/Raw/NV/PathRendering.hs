@@ -262,6 +262,8 @@ EXTENSION_ENTRY(glIsPointInStrokePathNV,GLuint -> GLfloat -> GLfloat -> IO GLboo
 EXTENSION_ENTRY(glGetPathLengthNV,GLuint -> GLsizei -> GLsizei -> IO GLfloat)
 EXTENSION_ENTRY(glPointAlongPathNV,GLuint -> GLsizei -> GLsizei -> GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> IO GLboolean)
 
+-- Accepted in elements of the <commands> array parameter of
+-- PathCommandsNV and PathSubCommandsNV:
 
 gl_CLOSE_PATH_NV :: GLubyte
 gl_CLOSE_PATH_NV = 0x00
@@ -365,12 +367,15 @@ gl_ARC_TO_NV = 0xFE
 gl_RELATIVE_ARC_TO_NV :: GLubyte
 gl_RELATIVE_ARC_TO_NV = 0xFF
 
+-- Accepted by the <format> parameter of PathStringNV
 gl_PATH_FORMAT_SVG_NV :: GLenum
 gl_PATH_FORMAT_SVG_NV = 0x9070
 
 gl_PATH_FORMAT_PS_NV :: GLenum
 gl_PATH_FORMAT_PS_NV = 0x9071
 
+-- Accepted by the <fontTarget> parameter of PathGlyphsNV and
+-- PathGlyphRangeNV:
 gl_STANDARD_FONT_NAME_NV :: GLenum
 gl_STANDARD_FONT_NAME_NV =  0x9072
 
@@ -380,12 +385,17 @@ gl_SYSTEM_FONT_NAME_NV =  0x9073
 gl_FILE_NAME_NV :: GLenum
 gl_FILE_NAME_NV =  0x9074
 
+-- Accepted by the <handleMissingGlyph> parameter of PathGlyphsNV and
+-- PathGlyphRangeNV:
 gl_SKIP_MISSING_GLYPH_NV :: GLenum
 gl_SKIP_MISSING_GLYPH_NV = 0x90A9
 
 gl_USE_MISSING_GLYPH_NV :: GLenum
 gl_USE_MISSING_GLYPH_NV = 0x90AA
 
+-- Accepted by the <pname> parameter of PathParameterfNV,
+-- PathParameterfvNV, GetPathParameterfvNV, PathParameteriNV,
+-- PathParameterivNV, and GetPathParameterivNV:
 gl_PATH_STROKE_WIDTH_NV :: GLenum
 gl_PATH_STROKE_WIDTH_NV = 0x9075
 
@@ -431,27 +441,38 @@ gl_PATH_STROKE_COVER_MODE_NV = 0x9083
 gl_PATH_STROKE_MASK_NV :: GLenum
 gl_PATH_STROKE_MASK_NV = 0x9084
 
+-- Accepted by the <pname> parameter of PathParameterfNV and
+-- PathParameterfvNV:
 gl_PATH_END_CAPS_NV :: GLenum
 gl_PATH_END_CAPS_NV = 0x9076
 
 gl_PATH_DASH_CAPS_NV :: GLenum
 gl_PATH_DASH_CAPS_NV = 0x907B
 
+-- Accepted by the <fillMode> parameter of StencilFillPathNV and
+-- StencilFillPathInstancedNV:
 gl_COUNT_UP_NV :: GLenum
 gl_COUNT_UP_NV = 0x9088
 
 gl_COUNT_DOWN_NV :: GLenum
 gl_COUNT_DOWN_NV = 0x9089
 
+-- Accepted by the <genMode> parameter of PathColorGenNV and
+-- PathTexGenNV:
 gl_PATH_OBJECT_BOUNDING_BOX_NV :: GLenum
 gl_PATH_OBJECT_BOUNDING_BOX_NV = 0x908A
 
+-- Accepted by the <coverMode> parameter of CoverFillPathNV and
+-- CoverFillPathInstancedNV:
 gl_CONVEX_HULL_NV :: GLenum
 gl_CONVEX_HULL_NV = 0x908B
 
 gl_BOUNDING_BOX_NV :: GLenum
 gl_BOUNDING_BOX_NV = 0x908D
 
+-- Accepted by the <transformType> parameter of
+-- StencilFillPathInstancedNV, StencilStrokePathInstancedNV,
+-- CoverFillPathInstancedNV, and CoverStrokePathInstancedNV:
 gl_TRANSLATE_X_NV :: GLenum
 gl_TRANSLATE_X_NV = 0x908E
 
@@ -476,15 +497,22 @@ gl_TRANSPOSE_AFFINE_2D_NV = 0x9096
 gl_TRANSPOSE_AFFINE_3D_NV :: GLenum
 gl_TRANSPOSE_AFFINE_3D_NV = 0x9098
 
+-- Accepted by the <type> or <pathNameType> parameter of
+-- StencilFillPathInstancedNV, StencilStrokePathInstancedNV,
+-- CoverFillPathInstancedNV, CoverStrokePathInstancedNV,
+-- GetPathMetricsNV, and GetPathSpacingNV:
 gl_UTF8_NV :: GLenum
 gl_UTF8_NV = 0x909A
 
 gl_UTF16_NV :: GLenum
 gl_UTF16_NV = 0x909B
 
+-- Accepted by the <coverMode> parameter of CoverFillPathInstancedNV:
 gl_BOUNDING_BOX_OF_BOUNDING_BOXES_NV :: GLenum
 gl_BOUNDING_BOX_OF_BOUNDING_BOXES_NV = 0x909C
 
+-- Accepted by the <pname> parameter of GetPathParameterfvNV and
+-- GetPathParameterivNV:
 gl_PATH_COMMAND_COUNT_NV :: GLenum
 gl_PATH_COMMAND_COUNT_NV = 0x909D
 
@@ -503,6 +531,11 @@ gl_PATH_FILL_BOUNDING_BOX_NV = 0x90A1
 gl_PATH_STROKE_BOUNDING_BOX_NV :: GLenum
 gl_PATH_STROKE_BOUNDING_BOX_NV = 0x90A2
 
+-- Accepted by the <value> parameter of PathParameterfNV,
+-- PathParameterfvNV, PathParameteriNV, and PathParameterivNV
+-- when <pname> is one of PATH_END_CAPS_NV, PATH_INTIAL_END_CAP_NV,
+-- PATH_TERMINAL_END_CAP_NV, PATH_DASH_CAPS_NV, PATH_INITIAL_DASH_CAP_NV,
+-- and PATH_TERMINAL_DASH_CAP_NV:
 gl_SQUARE_NV :: GLint
 gl_SQUARE_NV = 0x90A3
 
@@ -521,18 +554,24 @@ gl_MITER_REVERT_NV = 0x90A7
 gl_MITER_TRUNCATE_NV :: GLint
 gl_MITER_TRUNCATE_NV = 0x90A8
 
-gl_MOVE_TO_RESETS_NV :: GLenum
+-- Accepted by the <value> parameter of PathParameterfNV,
+-- PathParameterfvNV, PathParameteriNV, and PathParameterivNV when
+-- <pname> is PATH_DASH_OFFSET_RESET_NV
+gl_MOVE_TO_RESETS_NV :: GLint
 gl_MOVE_TO_RESETS_NV = 0x90B5
 
-gl_MOVE_TO_CONTINUES_NV :: GLenum
+gl_MOVE_TO_CONTINUES_NV :: GLint
 gl_MOVE_TO_CONTINUES_NV = 0x90B6
 
+-- Accepted by the <fontStyle> parameter of PathStringNV:
 gl_BOLD_BIT_NV :: GLbitfield
 gl_BOLD_BIT_NV = 0x01
 
 gl_ITALIC_BIT_NV :: GLbitfield
 gl_ITALIC_BIT_NV = 0x02
 
+-- Accepted by the <pname> parameter of GetBooleanv, GetIntegerv,
+-- GetInteger64v, GetFloatv, and GetDoublev:
 gl_PATH_ERROR_POSITION_NV :: GLenum
 gl_PATH_ERROR_POSITION_NV = 0x90AB
 
@@ -557,6 +596,8 @@ gl_PATH_STENCIL_DEPTH_OFFSET_UNITS_NV = 0x90BE
 gl_PATH_COVER_DEPTH_FUNC_NV :: GLenum
 gl_PATH_COVER_DEPTH_FUNC_NV = 0x90BF
 
+-- Accepted as a bit within the <metricQueryMask> parameter of
+-- GetPathMetricRangeNV or GetPathMetricsNV:
 gl_GLYPH_WIDTH_BIT_NV :: GLbitfield
 gl_GLYPH_WIDTH_BIT_NV = 0x01
 
@@ -623,6 +664,7 @@ gl_FONT_UNDERLINE_THICKNESS_BIT_NV = 0x08000000
 gl_FONT_HAS_KERNING_BIT_NV :: GLbitfield
 gl_FONT_HAS_KERNING_BIT_NV = 0x10000000
 
+-- Accepted by the <pathListMode> parameter of GetPathSpacingNV:
 gl_ACCUM_ADJACENT_PAIRS_NV :: GLenum
 gl_ACCUM_ADJACENT_PAIRS_NV = 0x90AD
 
@@ -632,6 +674,8 @@ gl_ADJACENT_PAIRS_NV = 0x90AE
 gl_FIRST_TO_REST_NV :: GLenum
 gl_FIRST_TO_REST_NV = 0x90AF
 
+-- Accepted by the <pname> parameter of GetPathColorGenivNV,
+-- GetPathColorGenfvNV, GetPathTexGenivNV and GetPathTexGenfvNV:
 gl_PATH_GEN_MODE_NV :: GLenum
 gl_PATH_GEN_MODE_NV = 0x90B0
 
