@@ -23,7 +23,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.PathRendering (
    glPathSubCoordsNV,
    glPathStringNV,
    glPathGlyphsNV,
-   glRangeNV,
+   glPathGlyphRangeNV,
    glWeightPathsNV,
    glCopyPathNV,
    glInterpolatePathsNV,
@@ -217,7 +217,7 @@ EXTENSION_ENTRY(glPathSubCommandsNV,GLuint -> GLsizei -> GLsizei -> GLsizei -> P
 EXTENSION_ENTRY(glPathSubCoordsNV,GLuint -> GLsizei -> GLsizei -> GLenum -> Ptr GLubyte -> IO ())
 EXTENSION_ENTRY(glPathStringNV,GLuint -> GLenum -> GLsizei -> Ptr GLubyte -> IO ())
 EXTENSION_ENTRY(glPathGlyphsNV,GLuint -> GLenum -> Ptr GLubyte -> GLbitfield -> GLsizei -> GLenum -> Ptr GLubyte -> GLenum -> GLuint -> GLfloat -> IO ())
-EXTENSION_ENTRY(glRangeNV,GLuint -> GLenum -> Ptr GLubyte -> GLbitfield -> GLuint -> GLsizei -> GLenum -> GLuint -> GLfloat -> IO ())
+EXTENSION_ENTRY(glPathGlyphRangeNV,GLuint -> GLenum -> Ptr GLubyte -> GLbitfield -> GLuint -> GLsizei -> GLenum -> GLuint -> GLfloat -> IO ())
 EXTENSION_ENTRY(glWeightPathsNV,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glCopyPathNV,GLuint -> GLuint -> IO ())
 EXTENSION_ENTRY(glInterpolatePathsNV,GLuint -> GLuint -> GLuint -> GLfloat -> IO ())
