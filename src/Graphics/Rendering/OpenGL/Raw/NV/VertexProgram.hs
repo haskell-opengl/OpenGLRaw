@@ -168,7 +168,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram (
 
 import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
