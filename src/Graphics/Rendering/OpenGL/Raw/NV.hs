@@ -61,7 +61,8 @@ module Graphics.Rendering.OpenGL.Raw.NV (
    module Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender,
    module Graphics.Rendering.OpenGL.Raw.NV.PresentVideo,
    module Graphics.Rendering.OpenGL.Raw.NV.ExplicitMultisample,
-   module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2
+   module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2,
+   module Graphics.Rendering.OpenGL.Raw.NV.PathRendering
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.NV.TexgenReflection
@@ -113,3 +114,4 @@ import Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
 import Graphics.Rendering.OpenGL.Raw.NV.PresentVideo
 import Graphics.Rendering.OpenGL.Raw.NV.ExplicitMultisample
 import Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2
+import Graphics.Rendering.OpenGL.Raw.NV.PathRendering

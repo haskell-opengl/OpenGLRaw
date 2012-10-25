@@ -196,6 +196,7 @@ library
       Graphics.Rendering.OpenGL.Raw.NV.OcclusionQuery,
       Graphics.Rendering.OpenGL.Raw.NV.PackedDepthStencil,
       Graphics.Rendering.OpenGL.Raw.NV.ParameterBufferObject,
+      Graphics.Rendering.OpenGL.Raw.NV.PathRendering,
       Graphics.Rendering.OpenGL.Raw.NV.PixelDataRange,
       Graphics.Rendering.OpenGL.Raw.NV.PointSprite,
       Graphics.Rendering.OpenGL.Raw.NV.PresentVideo,
