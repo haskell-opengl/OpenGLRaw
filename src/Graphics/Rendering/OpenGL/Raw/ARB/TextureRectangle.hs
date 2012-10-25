@@ -23,7 +23,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle (
    gl_SAMPLER_2D_RECT_SHADOW
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 
 gl_TEXTURE_RECTANGLE :: GLenum
 gl_TEXTURE_RECTANGLE = 0x84F5

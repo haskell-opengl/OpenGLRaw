@@ -24,7 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex (
 
 import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 
