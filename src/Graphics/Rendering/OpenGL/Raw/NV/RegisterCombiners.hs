@@ -87,7 +87,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners (
 
 import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
