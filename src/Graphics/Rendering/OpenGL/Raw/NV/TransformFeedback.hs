@@ -74,7 +74,6 @@ import Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
 import Graphics.Rendering.OpenGL.Raw.Extensions
 import Graphics.Rendering.OpenGL.Raw.NV.ParameterBufferObject
 import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
 
 #include "HsOpenGLRaw.h"
 

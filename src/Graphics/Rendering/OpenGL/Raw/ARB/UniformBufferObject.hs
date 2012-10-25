@@ -64,9 +64,8 @@ module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject (
 
 import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 
 #include "HsOpenGLRaw.h"
 
