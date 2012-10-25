@@ -39,7 +39,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
