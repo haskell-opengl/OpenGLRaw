@@ -15,7 +15,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal where
+module Graphics.Rendering.OpenGL.Raw.Core31.Types where
 
 import Data.Int
 import Data.Word

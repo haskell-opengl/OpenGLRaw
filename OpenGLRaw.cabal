@@ -103,7 +103,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.VertexShader,
       Graphics.Rendering.OpenGL.Raw.ARB.WindowPos,
       Graphics.Rendering.OpenGL.Raw.Core31,
-      Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal,
+      Graphics.Rendering.OpenGL.Raw.Core31.Types,
       Graphics.Rendering.OpenGL.Raw.Core32,
       Graphics.Rendering.OpenGL.Raw.EXT,
       Graphics.Rendering.OpenGL.Raw.EXT.Abgr,

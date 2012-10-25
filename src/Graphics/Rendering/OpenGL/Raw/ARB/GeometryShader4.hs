@@ -46,7 +46,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4 (
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core31.Functions ( glFramebufferTextureLayer )
 import Graphics.Rendering.OpenGL.Raw.Core31.Tokens ( gl_MAX_VARYING_COMPONENTS, gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER )
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"

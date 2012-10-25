@@ -20,7 +20,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile (
    gl_CONTEXT_PROFILE_MASK
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 
 gl_CONTEXT_CORE_PROFILE_BIT :: GLenum
 gl_CONTEXT_CORE_PROFILE_BIT = 0x00000001

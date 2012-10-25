@@ -15,7 +15,7 @@
 
 module Graphics.Rendering.OpenGL.Raw.Core31.Tokens where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 
 gl_ACTIVE_ATTRIBUTES :: GLenum
 gl_ACTIVE_ATTRIBUTES = 0x8B89

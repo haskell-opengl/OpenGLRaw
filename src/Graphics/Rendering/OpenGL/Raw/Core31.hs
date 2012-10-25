@@ -19,7 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.Core31 (
    -- * Tokens
    module Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
    -- * Types
-   module Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal,
+   module Graphics.Rendering.OpenGL.Raw.Core31.Types,
    -- * Extensions promoted to OpenGL 3.1 core
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
    module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer,
@@ -30,7 +30,7 @@ module Graphics.Rendering.OpenGL.Raw.Core31 (
 
 import Graphics.Rendering.OpenGL.Raw.Core31.Functions
 import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced
 import Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer

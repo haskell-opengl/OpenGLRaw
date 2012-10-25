@@ -199,10 +199,7 @@ module Graphics.Rendering.OpenGL.Raw.NV.PathRendering (
 
 import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
-import Graphics.Rendering.OpenGL.Raw.Core31(gl_INVERT)
-import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners(gl_PRIMARY_COLOR_NV, gl_SECONDARY_COLOR)
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility(gl_PRIMARY_COLOR, gl_FLAT, gl_EYE_LINEAR, gl_OBJECT_LINEAR)
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"
