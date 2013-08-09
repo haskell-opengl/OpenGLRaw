@@ -1,8 +1,8 @@
 name: OpenGLRaw
-version: 1.3.0.0
+version: 1.4.0.0
 license: BSD3
 license-file: LICENSE
-maintainer: Jason Dagit <dagitj@gmail.com>, Sven Panne <sven.panne@aedion.de>
+maintainer: Jason Dagit <dagitj@gmail.com>, Sven Panne <svenpanne@gmail.com>
 bug-reports: https://github.com/haskell-opengl/OpenGLRaw/issues
 homepage: http://www.haskell.org/haskellwiki/Opengl
 category: Graphics
