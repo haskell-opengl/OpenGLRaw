@@ -9,8 +9,8 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_shader_objects extension, see
--- <http://www.opengl.org/registry/specs/ARB/shader_objects.txt>.
+-- All raw functions, tokens and types from the ARB_shader_objects extension,
+-- see <http://www.opengl.org/registry/specs/ARB/shader_objects.txt>.
 --
 --------------------------------------------------------------------------------
 
@@ -158,3 +158,9 @@ gl_OBJECT_SHADER_SOURCE_LENGTH = 0x8B88
 
 gl_SHADER_OBJECT :: GLenum
 gl_SHADER_OBJECT = 0x8B48
+
+#if HANDLE_IS_POINTER
+type GLhandle = Ptr ()
+#else
+type GLhandle = CUInt
+#endif
