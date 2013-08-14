@@ -45,8 +45,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine (
    gl_SRC_COLOR,
    gl_ONE_MINUS_SRC_COLOR,
    gl_SRC_ALPHA,
-   gl_ONE_MINUS_SRC_ALPHA,
-   gl_SRC_ALPHA,
    gl_ONE_MINUS_SRC_ALPHA
 ) where
 

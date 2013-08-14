@@ -39,11 +39,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureRG (
    gl_RG,
    gl_COMPRESSED_RED,
    gl_COMPRESSED_RG,
-   gl_RG,
-   gl_RG_INTEGER,
-   gl_RG,
-   gl_RED,
-   gl_RG,
    gl_RG_INTEGER
 ) where
 
