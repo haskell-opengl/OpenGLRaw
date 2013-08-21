@@ -1,1 +1,5 @@
 language: haskell
+before_install:
+  - ghc-pkg list
+script:
+  - cabal install --enable-documentation
