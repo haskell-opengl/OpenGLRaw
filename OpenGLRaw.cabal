@@ -237,7 +237,10 @@ library
       extensions: StandaloneDeriving, DeriveDataTypeable
       build-depends: ghc-prim
    if os(windows) && flag(UseNativeWindowsLibraries)
-      cpp-options: "-DCALLCONV=stdcall"
+      if arch(i386)
+         cpp-options: "-DCALLCONV=stdcall"
+      else
+         cpp-options: "-DCALLCONV=ccall"
       cc-options: "-DUSE_WGLGETPROCADDRESS"
       extra-libraries: opengl32
    else
