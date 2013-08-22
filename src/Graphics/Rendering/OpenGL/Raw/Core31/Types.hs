@@ -1,11 +1,10 @@
--- #hide
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.Core31.TypesInternal
--- Copyright   :  (c) Sven Panne 2009
+-- Module      :  Graphics.Rendering.OpenGL.Raw.Core31.Types
+-- Copyright   :  (c) Sven Panne 2009-2013
 -- License     :  BSD-style (see the file LICENSE)
 --
--- Maintainer  :  sven.panne@aedion.de
+-- Maintainer  :  svenpanne@gmail.com
 -- Stability   :  stable
 -- Portability :  portable
 --
