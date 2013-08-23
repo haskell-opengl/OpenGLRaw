@@ -2,9 +2,9 @@
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.Core31.Types
 -- Copyright   :  (c) Sven Panne 2009-2013
--- License     :  BSD-style (see the file LICENSE)
+-- License     :  BSD3
 --
--- Maintainer  :  svenpanne@gmail.com
+-- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
