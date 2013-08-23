@@ -67,6 +67,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.Multisample,
       Graphics.Rendering.OpenGL.Raw.ARB.Multitexture,
       Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery,
+      Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,
       Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.PointParameters,
       Graphics.Rendering.OpenGL.Raw.ARB.PointSprite,
