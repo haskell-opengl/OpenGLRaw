@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery
@@ -25,19 +24,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery (
    GLuint64
 ) where
 
-import Foreign.Ptr
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.ARB.Sync
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_timer_query"
-
-EXTENSION_ENTRY(glGetQueryObjecti64v,GLuint -> GLenum -> Ptr GLint64 -> IO ())
-EXTENSION_ENTRY(glGetQueryObjectui64v,GLuint -> GLenum -> Ptr GLuint64 -> IO ())
-
-gl_TIME_ELAPSED :: GLenum
-gl_TIME_ELAPSED = 0x88BF
+import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
