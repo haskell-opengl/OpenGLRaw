@@ -54,6 +54,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend,
       Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex,
       Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
+      Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility,
       Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram,
       Graphics.Rendering.OpenGL.Raw.ARB.FragmentShader,
       Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObject,

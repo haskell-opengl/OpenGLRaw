@@ -80,7 +80,8 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,
    module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,
    module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
+   module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3,
+   module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
@@ -151,3 +152,4 @@ import Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
 import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
 import Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
+import Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
