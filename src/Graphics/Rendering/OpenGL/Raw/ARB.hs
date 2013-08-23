@@ -77,7 +77,8 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather,
    -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod,
-   module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
+   module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,
+   module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
@@ -145,3 +146,4 @@ import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
 -- import Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod
 import Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
+import Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
