@@ -52,7 +52,7 @@ extensionNameString :: String
 extensionNameString = "GL_ARB_ES2_compatibility"
 
 EXTENSION_ENTRY(glReleaseShaderCompiler,IO ())
-EXTENSION_ENTRY(glShaderBinary,GLsizei -> Ptr GLuint -> GLenum -> Ptr () -> GLsizei -> IO ())
+EXTENSION_ENTRY(glShaderBinary,GLsizei -> Ptr GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
 EXTENSION_ENTRY(glGetShaderPrecisionFormat,GLenum -> GLenum -> Ptr GLint -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glDepthRangef,GLfloat -> GLfloat -> IO ())
 EXTENSION_ENTRY(glClearDepthf,GLfloat -> IO ())
