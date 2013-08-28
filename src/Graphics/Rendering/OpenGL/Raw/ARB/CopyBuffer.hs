@@ -18,8 +18,8 @@ module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer (
    -- * Functions
     glCopyBufferSubData,
    -- * Tokens
-   gl_COPY_READ_BUFFER,
-   gl_COPY_WRITE_BUFFER
+   gl_COPY_READ_BUFFER_BINDING, gl_COPY_READ_BUFFER,
+   gl_COPY_WRITE_BUFFER_BINDING, gl_COPY_WRITE_BUFFER
 
 ) where
 
@@ -34,8 +34,14 @@ extensionNameString = "GL_ARB_copy_buffer"
 
 EXTENSION_ENTRY(glCopyBufferSubData,GLenum -> GLenum -> GLintptr -> GLintptr -> GLsizeiptr -> IO ())
 
+gl_COPY_READ_BUFFER_BINDING :: GLenum
+gl_COPY_READ_BUFFER_BINDING = 0x8F36
+
 gl_COPY_READ_BUFFER :: GLenum
-gl_COPY_READ_BUFFER = 0x8F36
+gl_COPY_READ_BUFFER = gl_COPY_READ_BUFFER
+
+gl_COPY_WRITE_BUFFER_BINDING :: GLenum
+gl_COPY_WRITE_BUFFER_BINDING = 0x8F37
 
 gl_COPY_WRITE_BUFFER :: GLenum
-gl_COPY_WRITE_BUFFER = 0x8F37
+gl_COPY_WRITE_BUFFER = gl_COPY_WRITE_BUFFER_BINDING
