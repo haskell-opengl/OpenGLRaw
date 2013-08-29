@@ -76,6 +76,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex,
       Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,
       Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,
+      Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,
       Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects,
       Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage100,
       Graphics.Rendering.OpenGL.Raw.ARB.Shadow,

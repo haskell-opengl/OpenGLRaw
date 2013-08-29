@@ -13,76 +13,82 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB (
-   module Graphics.Rendering.OpenGL.Raw.ARB.Multitexture,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix,
-   module Graphics.Rendering.OpenGL.Raw.ARB.Multisample,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvAdd,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureBorderClamp,
-   module Graphics.Rendering.OpenGL.Raw.ARB.PointParameters,
-   module Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend,
-   module Graphics.Rendering.OpenGL.Raw.ARB.MatrixPalette,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCrossbar,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat,
-   module Graphics.Rendering.OpenGL.Raw.ARB.DepthTexture,
-   module Graphics.Rendering.OpenGL.Raw.ARB.Shadow,
-   module Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient,
-   module Graphics.Rendering.OpenGL.Raw.ARB.WindowPos,
-   module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram,
-   module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram,
-   module Graphics.Rendering.OpenGL.Raw.ARB.VertexBufferObject,
-   module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery,
-   module Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects,
-   module Graphics.Rendering.OpenGL.Raw.ARB.VertexShader,
-   module Graphics.Rendering.OpenGL.Raw.ARB.FragmentShader,
-   module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage100,
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureNonPowerOfTwo,
-   module Graphics.Rendering.OpenGL.Raw.ARB.PointSprite,
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgramShadow,
-   module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle,
-   module Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat,
-   module Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatPixel,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat,
-   module Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject,
-   module Graphics.Rendering.OpenGL.Raw.ARB.DepthBufferFloat,
-   module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
-   module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObject,
-   module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferSRGB,
-   module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4,
-   module Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatVertex,
-   module Graphics.Rendering.OpenGL.Raw.ARB.InstancedArrays,
-   module Graphics.Rendering.OpenGL.Raw.ARB.MapBufferRange,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionRGTC,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureRG,
-   module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayObject,
-   module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject,
-   module Graphics.Rendering.OpenGL.Raw.ARB.Compatibility,
-   module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer,
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderTextureLod,
-   module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp,
-   module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex,
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.FragmentCoordConventions,
-   module Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex,
-   module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,
-   module Graphics.Rendering.OpenGL.Raw.ARB.Sync,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample,
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBgra,
-   module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend,
-   module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather,
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod,
-   module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,
-   module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,
-   module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3,
-   module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,
-   module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
+   module Graphics.Rendering.OpenGL.Raw.ARB.Multitexture,                -- #1
+   module Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix,             -- #3
+   module Graphics.Rendering.OpenGL.Raw.ARB.Multisample,                 -- #5
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvAdd,               -- #6
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap,              -- #7
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression,          -- #12
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureBorderClamp,          -- #13
+   module Graphics.Rendering.OpenGL.Raw.ARB.PointParameters,             -- #14
+   module Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend,                 -- #15
+   module Graphics.Rendering.OpenGL.Raw.ARB.MatrixPalette,               -- #16
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine,           -- #17
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCrossbar,          -- #18
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3,              -- #19
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat,       -- #21
+   module Graphics.Rendering.OpenGL.Raw.ARB.DepthTexture,                -- #22
+   module Graphics.Rendering.OpenGL.Raw.ARB.Shadow,                      -- #23
+   module Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient,               -- #24
+   module Graphics.Rendering.OpenGL.Raw.ARB.WindowPos,                   -- #25
+   module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram,               -- #26
+   module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram,             -- #27
+   module Graphics.Rendering.OpenGL.Raw.ARB.VertexBufferObject,          -- #28
+   module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery,              -- #29
+   module Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects,               -- #30
+   module Graphics.Rendering.OpenGL.Raw.ARB.VertexShader,                -- #31
+   module Graphics.Rendering.OpenGL.Raw.ARB.FragmentShader,              -- #32
+   module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage100,          -- #33
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureNonPowerOfTwo,     -- #34
+   module Graphics.Rendering.OpenGL.Raw.ARB.PointSprite,                 -- #35
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgramShadow,    -- #36
+   module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers,                 -- #37
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle,            -- #38
+   module Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat,            -- #39
+   module Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatPixel,              -- #40
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat,                -- #41
+   module Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject,           -- #42
+   module Graphics.Rendering.OpenGL.Raw.ARB.DepthBufferFloat,            -- #43
+   module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,               -- #44
+   module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObject,           -- #45
+   module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferSRGB,             -- #46
+   module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4,             -- #47
+   module Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatVertex,             -- #48
+   module Graphics.Rendering.OpenGL.Raw.ARB.InstancedArrays,             -- #49
+   module Graphics.Rendering.OpenGL.Raw.ARB.MapBufferRange,              -- #50
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject,         -- #51
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionRGTC,      -- #52
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureRG,                   -- #53
+   module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayObject,           -- #54
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.WGLCreateContext,         -- #55
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.GLXCreateContext,         -- #56
+   module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject,         -- #57
+   module Graphics.Rendering.OpenGL.Raw.ARB.Compatibility,               -- #58
+   module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer,                  -- #59
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderTextureLod,         -- #60
+   module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp,                  -- #61
+   module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex,      -- #62
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.FragmentCoordConventions, -- #63
+   module Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex,             -- #64
+   module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,             -- #65
+   module Graphics.Rendering.OpenGL.Raw.ARB.Sync,                        -- #66
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample,          -- #67
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBgra,          -- #68
+   module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend,            -- #69
+   module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,               -- #70
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,         -- #71
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather,               -- #72
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod,          -- #73
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.WGLCreateContextProfile,  -- #74
+   module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,        -- #75
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitAttribLocation,   -- #79
+   module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,             -- #80
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderBitEncoding,        -- #82
+   module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,                  -- #85
+   module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3,          -- #94
+   module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,            -- #95
+   module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,        -- #114
+   module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility             -- #127
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
@@ -154,4 +160,5 @@ import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
 import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
 import Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
 import Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
+import Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters
 import Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
