@@ -1,0 +1,101 @@
+{-# LANGUAGE ForeignFunctionInterface, CPP #-}
+--------------------------------------------------------------------------------
+-- |
+-- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject
+-- Copyright   :  (c) Sven Panne 2013
+-- License     :  BSD3
+--
+-- Maintainer  :  Sven Panne <svenpanne@gmail.com>
+-- Stability   :  stable
+-- Portability :  portable
+--
+-- All raw functions and tokens from the ARB_shader_storage_buffer_object, see
+-- <http://www.opengl.org/registry/specs/ARB/shader_storage_buffer_object.txt>.
+--
+--------------------------------------------------------------------------------
+
+module Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject (
+   -- * Functions
+   glShaderStorageBlockBinding,
+
+   -- * Tokens
+   gl_SHADER_STORAGE_BUFFER,
+   gl_SHADER_STORAGE_BUFFER_BINDING,
+   gl_SHADER_STORAGE_BUFFER_START,
+   gl_SHADER_STORAGE_BUFFER_SIZE,
+   gl_MAX_VERTEX_SHADER_STORAGE_BLOCKS,
+   gl_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS,
+   gl_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS,
+   gl_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS,
+   gl_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS,
+   gl_MAX_COMPUTE_SHADER_STORAGE_BLOCKS,
+   gl_MAX_COMBINED_SHADER_STORAGE_BLOCKS,
+   gl_MAX_SHADER_STORAGE_BUFFER_BINDINGS,
+   gl_MAX_SHADER_STORAGE_BLOCK_SIZE,
+   gl_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT,
+   gl_SHADER_STORAGE_BARRIER_BIT,
+   gl_MAX_COMBINED_SHADER_OUTPUT_RESOURCES,
+   gl_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS
+) where
+
+import Foreign.C.Types
+import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Core31.Types
+
+#include "HsOpenGLRaw.h"
+
+extensionNameString :: String
+extensionNameString = "GL_ARB_shader_storage_buffer_object"
+
+EXTENSION_ENTRY(glShaderStorageBlockBinding, GLuint -> GLuint -> GLuint -> IO())
+
+gl_SHADER_STORAGE_BUFFER :: GLenum
+gl_SHADER_STORAGE_BUFFER = 0x90D2
+
+gl_SHADER_STORAGE_BUFFER_BINDING :: GLenum
+gl_SHADER_STORAGE_BUFFER_BINDING = 0x90D3
+
+gl_SHADER_STORAGE_BUFFER_START :: GLenum
+gl_SHADER_STORAGE_BUFFER_START = 0x90D4
+
+gl_SHADER_STORAGE_BUFFER_SIZE :: GLenum
+gl_SHADER_STORAGE_BUFFER_SIZE = 0x90D5
+
+gl_MAX_VERTEX_SHADER_STORAGE_BLOCKS :: GLenum
+gl_MAX_VERTEX_SHADER_STORAGE_BLOCKS = 0x90D6
+
+gl_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS :: GLenum
+gl_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS = 0x90D7
+
+gl_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS :: GLenum
+gl_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS = 0x90D8
+
+gl_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS :: GLenum
+gl_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS = 0x90D9
+
+gl_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS :: GLenum
+gl_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS = 0x90DA
+
+gl_MAX_COMPUTE_SHADER_STORAGE_BLOCKS :: GLenum
+gl_MAX_COMPUTE_SHADER_STORAGE_BLOCKS = 0x90DB
+
+gl_MAX_COMBINED_SHADER_STORAGE_BLOCKS :: GLenum
+gl_MAX_COMBINED_SHADER_STORAGE_BLOCKS = 0x90DC
+
+gl_MAX_SHADER_STORAGE_BUFFER_BINDINGS :: GLenum
+gl_MAX_SHADER_STORAGE_BUFFER_BINDINGS = 0x90DD
+
+gl_MAX_SHADER_STORAGE_BLOCK_SIZE :: GLenum
+gl_MAX_SHADER_STORAGE_BLOCK_SIZE = 0x90DE
+
+gl_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT :: GLenum
+gl_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT = 0x90DF
+
+gl_SHADER_STORAGE_BARRIER_BIT :: GLbitfield
+gl_SHADER_STORAGE_BARRIER_BIT = 0x00002000
+
+gl_MAX_COMBINED_SHADER_OUTPUT_RESOURCES :: GLenum
+gl_MAX_COMBINED_SHADER_OUTPUT_RESOURCES = 0x8F39
+
+gl_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS :: GLenum
+gl_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS = 0x8F39
