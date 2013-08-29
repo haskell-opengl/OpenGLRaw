@@ -53,6 +53,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers,
       Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend,
       Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex,
+      Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect,
       Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
       Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,
       Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility,
