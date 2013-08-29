@@ -74,6 +74,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.PointParameters,
       Graphics.Rendering.OpenGL.Raw.ARB.PointSprite,
       Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex,
+      Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,
       Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,
       Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,
