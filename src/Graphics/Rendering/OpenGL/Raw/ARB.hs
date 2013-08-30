@@ -86,6 +86,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderBitEncoding,        -- #82
    module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,                  -- #85
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect,                -- #87
+   module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader,          -- #91
    module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3,          -- #94
    module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,            -- #95
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,        -- #114
@@ -163,6 +164,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
 import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect
+import Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader
 import Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
 import Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters

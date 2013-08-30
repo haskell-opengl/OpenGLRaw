@@ -86,6 +86,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.Shadow,
       Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient,
       Graphics.Rendering.OpenGL.Raw.ARB.Sync,
+      Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureBorderClamp,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression,
