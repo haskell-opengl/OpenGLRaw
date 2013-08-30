@@ -45,6 +45,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB,
       Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat,
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility,
+      Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader,
       Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer,
       Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,
       Graphics.Rendering.OpenGL.Raw.ARB.DepthBufferFloat,

@@ -89,6 +89,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3,          -- #94
    module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,            -- #95
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,        -- #114
+   module Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader,               -- #122
    module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility,            -- #127
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject,   -- #137
    module Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject            -- #148
@@ -165,6 +166,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect
 import Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
 import Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters
+import Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader
 import Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject
