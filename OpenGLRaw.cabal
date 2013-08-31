@@ -256,7 +256,7 @@ library
       extra-libraries: opengl32
    else
       cpp-options: "-DCALLCONV=ccall"
-      if !os(darwin) && flag(UseGlXGetProcAddress)
+      if !os(darwin) && !os(ios) && flag(UseGlXGetProcAddress)
          cc-options: "-DUSE_GLXGETPROCADDRESS"
       else
          cc-options: "-DUSE_DLSYM"
@@ -264,7 +264,10 @@ library
          cpp-options: "-DHANDLE_IS_POINTER"
          frameworks: OpenGL
       else
-         extra-libraries: GL
+         if os(ios)
+            frameworks: OpenGLES
+         else
+            extra-libraries: GL
 
 source-repository head
   type:     git
