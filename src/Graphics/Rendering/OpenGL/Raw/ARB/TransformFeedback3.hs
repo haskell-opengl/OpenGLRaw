@@ -29,8 +29,11 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3 (
 
 import Foreign.C.Types
 import Foreign.Ptr
+import Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
+
+--------------------------------------------------------------------------------
 
 #include "HsOpenGLRaw.h"
 
@@ -44,6 +47,3 @@ EXTENSION_ENTRY(glGetQueryIndexediv, GLenum -> GLuint -> GLenum -> Ptr GLint -> 
 
 gl_MAX_TRANSFORM_FEEDBACK_BUFFERS :: GLenum
 gl_MAX_TRANSFORM_FEEDBACK_BUFFERS = 0x8E70
-
-gl_MAX_VERTEX_STREAMS :: GLenum
-gl_MAX_VERTEX_STREAMS = 0x8E71
