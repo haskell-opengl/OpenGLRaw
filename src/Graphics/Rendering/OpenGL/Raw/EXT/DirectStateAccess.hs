@@ -214,8 +214,9 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess (
    gl_PROGRAM_MATRIX_STACK_DEPTH
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
+import Foreign.Ptr
+import Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
@@ -342,31 +343,6 @@ EXTENSION_ENTRY(glUnmapNamedBuffer,GLuint -> IO GLboolean)
 EXTENSION_ENTRY(glGetNamedBufferParameteriv,GLuint -> GLenum -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glGetNamedBufferPointerv,GLuint -> GLenum -> Ptr (Ptr a) -> IO ())
 EXTENSION_ENTRY(glGetNamedBufferSubData,GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
-EXTENSION_ENTRY(glProgramUniform1f,GLuint -> GLint -> GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform2f,GLuint -> GLint -> GLfloat -> GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform3f,GLuint -> GLint -> GLfloat -> GLfloat -> GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform4f,GLuint -> GLint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform1i,GLuint -> GLint -> GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniform2i,GLuint -> GLint -> GLint -> GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniform3i,GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniform4i,GLuint -> GLint -> GLint -> GLint -> GLint -> GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniform1fv,GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform2fv,GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform3fv,GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform4fv,GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniform1iv,GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniform2iv,GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniform3iv,GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniform4iv,GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix2fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix3fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix4fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix2x3fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix3x2fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix2x4fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix4x2fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix3x4fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramUniformMatrix4x3fv,GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glTextureBuffer,GLuint -> GLenum -> GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(glMultiTexBuffer,GLenum -> GLenum -> GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(glTextureParameterIiv,GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -377,14 +353,6 @@ EXTENSION_ENTRY(glMultiTexParameterIiv,GLenum -> GLenum -> GLenum -> Ptr GLint -
 EXTENSION_ENTRY(glMultiTexParameterIuiv,GLenum -> GLenum -> GLenum -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(glGetMultiTexParameterIiv,GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glGetMultiTexParameterIuiv,GLenum -> GLenum -> GLenum -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform1ui,GLuint -> GLint -> GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform2ui,GLuint -> GLint -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform3ui,GLuint -> GLint -> GLuint -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform4ui,GLuint -> GLint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform1uiv,GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform2uiv,GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform3uiv,GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glProgramUniform4uiv,GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(glNamedProgramLocalParameters4fv,GLuint -> GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(glNamedProgramLocalParameterI4i,GLuint -> GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
 EXTENSION_ENTRY(glNamedProgramLocalParameterI4iv,GLuint -> GLenum -> GLuint -> Ptr GLint -> IO ())

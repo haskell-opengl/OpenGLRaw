@@ -80,6 +80,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,
       Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,
+      Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects,
       Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,
       Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects,
       Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject,
