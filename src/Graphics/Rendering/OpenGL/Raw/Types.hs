@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.Core31.Types
+-- Module      :  Graphics.Rendering.OpenGL.Raw.Types
 -- Copyright   :  (c) Sven Panne 2009-2013
 -- License     :  BSD3
 --
@@ -13,7 +13,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.Core31.Types where
+module Graphics.Rendering.OpenGL.Raw.Types where
 
 import Data.Int
 import Data.Word

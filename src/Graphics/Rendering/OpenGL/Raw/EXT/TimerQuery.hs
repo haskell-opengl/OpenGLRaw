@@ -24,5 +24,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery (
    GLuint64
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery

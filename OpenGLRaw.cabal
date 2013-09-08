@@ -233,7 +233,8 @@ library
       Graphics.Rendering.OpenGL.Raw.NV.VertexProgram,
       Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option,
       Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3,
-      Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4
+      Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4,
+      Graphics.Rendering.OpenGL.Raw.Types
    other-modules:
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Functions,
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens,
