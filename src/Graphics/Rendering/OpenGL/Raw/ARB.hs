@@ -95,6 +95,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,        -- #114
    module Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader,               -- #122
    module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility,            -- #127
+   module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments,    -- #130
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject,   -- #137
    module Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject            -- #148
 ) where
@@ -176,5 +177,6 @@ import Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters
 import Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader
 import Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
+import Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject

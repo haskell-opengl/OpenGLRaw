@@ -216,6 +216,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess (
 
 import Foreign.C.Types
 import Foreign.Ptr
+import Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments
 import Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
@@ -377,7 +378,6 @@ EXTENSION_ENTRY(glGenerateMultiTexMipmap,GLenum -> GLenum -> IO ())
 EXTENSION_ENTRY(glFramebufferDrawBuffer,GLuint -> GLenum -> IO ())
 EXTENSION_ENTRY(glFramebufferDrawBuffers,GLuint -> GLsizei -> Ptr GLenum -> IO ())
 EXTENSION_ENTRY(glFramebufferReadBuffer,GLuint -> GLenum -> IO ())
-EXTENSION_ENTRY(glGetFramebufferParameteriv,GLuint -> GLenum -> Ptr GLint -> IO ())
 EXTENSION_ENTRY(glNamedFramebufferTexture,GLuint -> GLenum -> GLuint -> GLint -> IO ())
 EXTENSION_ENTRY(glNamedFramebufferTextureLayer,GLuint -> GLenum -> GLuint -> GLint -> GLint -> IO ())
 EXTENSION_ENTRY(glNamedFramebufferTextureFace,GLuint -> GLenum -> GLuint -> GLint -> GLenum -> IO ())

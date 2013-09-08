@@ -143,6 +143,7 @@ library
       Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels,
       Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting,
       Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject,
+      Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments,
       Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB,
       Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4,
       Graphics.Rendering.OpenGL.Raw.EXT.GpuProgramParameters,
