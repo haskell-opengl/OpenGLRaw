@@ -17,6 +17,7 @@ install:
  - ghc-pkg list
 
 script:
- - cabal-1.18 install --enable-documentation
- - cabal-1.18 check
- - cabal-1.18 sdist
+ - cabal-1.18 install --verbose=2 --enable-documentation
+# It is a pity that -O2 causes a warning...
+# - cabal-1.18 check --verbose=2
+ - cabal-1.18 sdist --verbose=2
