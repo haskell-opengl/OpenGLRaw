@@ -1,3 +1,4 @@
+{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.Core32
@@ -26,7 +27,9 @@ module Graphics.Rendering.OpenGL.Raw.Core32 (
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample,
    module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp,
    module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4,
-   module Graphics.Rendering.OpenGL.Raw.ARB.Sync
+   module Graphics.Rendering.OpenGL.Raw.ARB.Sync,
+   -- * Additional OpenGL 3.2 entities
+   glGetInteger64i_v
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.Core31
@@ -41,3 +44,14 @@ import Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample
 import Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp
 import Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
 import Graphics.Rendering.OpenGL.Raw.ARB.Sync
+
+import Foreign.Ptr
+import Foreign.C.Types
+import Graphics.Rendering.OpenGL.Raw.Extensions
+
+#include "HsOpenGLRaw.h"
+
+extensionNameString :: String
+extensionNameString = "OpenGL 3.2"
+
+EXTENSION_ENTRY(glGetInteger64i_v,GLenum -> GLuint -> Ptr GLint64 -> IO ())
