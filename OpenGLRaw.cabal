@@ -65,6 +65,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4,
       Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary,
       Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5,
+      Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64,
       Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatPixel,
       Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatVertex,
       Graphics.Rendering.OpenGL.Raw.ARB.InstancedArrays,
