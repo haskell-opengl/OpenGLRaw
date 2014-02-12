@@ -31,6 +31,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader (
    gl_TESS_GEN_POINT_MODE,
    gl_TRIANGLES,
    gl_ISOLINES,
+   gl_QUADS,
    gl_EQUAL,
    gl_FRACTIONAL_ODD,
    gl_FRACTIONAL_EVEN,
@@ -60,9 +61,10 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader (
 
 import Foreign.C.Types
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens
 import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"
 
