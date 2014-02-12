@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -13,7 +13,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias (
+module Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias (
    -- * Tokens
    gl_TEXTURE_FILTER_CONTROL,
    gl_TEXTURE_LOD_BIAS,

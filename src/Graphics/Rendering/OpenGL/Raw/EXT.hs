@@ -61,7 +61,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap,
    module Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvAdd,
-   module Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias,
+   module Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic,
    module Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC,
@@ -152,7 +152,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate
 import Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap
 import Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvAdd
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC

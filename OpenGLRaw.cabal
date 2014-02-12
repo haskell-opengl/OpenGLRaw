@@ -182,7 +182,7 @@ library
       Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvDot3,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger,
-      Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias,
+      Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureObject,
       Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal,
