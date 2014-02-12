@@ -1,7 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64
+-- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFP64
 -- Copyright   :  (c) Sven Panne 2014
 -- License     :  BSD3
 --
@@ -14,7 +14,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64 (
+module Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFP64 (
    -- * Functions
    glUniform1d,
    glUniform2d,

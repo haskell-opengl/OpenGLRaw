@@ -87,7 +87,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,                  -- #85
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect,                -- #87
    module Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5,                  -- #88
-   module Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64,               -- #89
+   module Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFP64,               -- #89
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine,            -- #90
    module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader,          -- #91
    -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObjectRGB32, -- #92
@@ -172,7 +172,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
 import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect
 import Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5
-import Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64
+import Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFP64
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine
 import Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader
 -- import Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObjectRGB32

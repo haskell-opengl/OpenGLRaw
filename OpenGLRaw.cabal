@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 1.4.1.0
+version: 1.5.0.0
 license: BSD3
 license-file: LICENSE
 maintainer: Sven Panne <svenpanne@gmail.com>, Jason Dagit <dagitj@gmail.com>
@@ -65,7 +65,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4,
       Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary,
       Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5,
-      Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64,
+      Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFP64,
       Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatPixel,
       Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatVertex,
       Graphics.Rendering.OpenGL.Raw.ARB.InstancedArrays,
