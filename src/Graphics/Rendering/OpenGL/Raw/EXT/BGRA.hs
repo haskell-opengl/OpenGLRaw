@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.Abgr
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.BGRA
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -8,17 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_abgr extension, see
--- <http://www.opengl.org/registry/specs/EXT/abgr.txt>.
+-- All tokens from the EXT_bgra extension, see
+-- <http://www.opengl.org/registry/specs/EXT/bgra.txt>.
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.Abgr (
+module Graphics.Rendering.OpenGL.Raw.EXT.BGRA (
    -- * Tokens
-   gl_ABGR
+   gl_BGR,
+   gl_BGRA
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_ABGR :: GLenum
-gl_ABGR = 0x8000

@@ -13,7 +13,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT (
-   module Graphics.Rendering.OpenGL.Raw.EXT.Abgr,
+   module Graphics.Rendering.OpenGL.Raw.EXT.ABGR,
    module Graphics.Rendering.OpenGL.Raw.EXT.BlendColor,
    module Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset,
    module Graphics.Rendering.OpenGL.Raw.EXT.Texture,
@@ -22,7 +22,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture,
    module Graphics.Rendering.OpenGL.Raw.EXT.Histogram,
    module Graphics.Rendering.OpenGL.Raw.EXT.Convolution,
-   module Graphics.Rendering.OpenGL.Raw.EXT.Cmyka,
+   module Graphics.Rendering.OpenGL.Raw.EXT.CMYKA,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureObject,
    module Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels,
    module Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal,
@@ -45,7 +45,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements,
    module Graphics.Rendering.OpenGL.Raw.EXT.LightTexture,
    module Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker,
-   module Graphics.Rendering.OpenGL.Raw.EXT.Bgra,
+   module Graphics.Rendering.OpenGL.Raw.EXT.BGRA,
    module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransformColorTable,
    module Graphics.Rendering.OpenGL.Raw.EXT.SharedTexturePalette,
@@ -98,13 +98,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback,
    module Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBgra,
+   -- module Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle,
    module Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureSnorm
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.EXT.Abgr
+import Graphics.Rendering.OpenGL.Raw.EXT.ABGR
 import Graphics.Rendering.OpenGL.Raw.EXT.BlendColor
 import Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset
 import Graphics.Rendering.OpenGL.Raw.EXT.Texture
@@ -136,7 +136,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting
 import Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements
 import Graphics.Rendering.OpenGL.Raw.EXT.LightTexture
 import Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker
-import Graphics.Rendering.OpenGL.Raw.EXT.Bgra
+import Graphics.Rendering.OpenGL.Raw.EXT.BGRA
 import Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform
 -- import Graphics.Rendering.OpenGL.Raw.EXT.PixelTransformColorTable
 import Graphics.Rendering.OpenGL.Raw.EXT.SharedTexturePalette
@@ -189,7 +189,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback
 import Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
--- import Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBgra
+-- import Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle
 import Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureSnorm

@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.Cmyka
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.CMYKA
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -13,7 +13,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.Cmyka (
+module Graphics.Rendering.OpenGL.Raw.EXT.CMYKA (
    -- * Tokens
    gl_CMYK,
    gl_CMYKA,
