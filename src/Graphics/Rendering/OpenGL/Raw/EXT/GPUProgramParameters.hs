@@ -1,7 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.GpuProgramParameters
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -15,7 +15,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.GpuProgramParameters (
+module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters (
    -- * Functions
    glProgramEnvParameters4fv,
    glProgramLocalParameters4fv

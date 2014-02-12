@@ -49,7 +49,7 @@ module Graphics.Rendering.OpenGL.Raw.NV (
    module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2,
    module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option,
    module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3,
-   module Graphics.Rendering.OpenGL.Raw.NV.GpuProgram4,
+   module Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4,
    module Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4,
    module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4,
    module Graphics.Rendering.OpenGL.Raw.NV.DepthBufferFloat,
@@ -101,7 +101,7 @@ import Graphics.Rendering.OpenGL.Raw.NV.TextureExpandNormal
 import Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2
 import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option
 import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3
-import Graphics.Rendering.OpenGL.Raw.NV.GpuProgram4
+import Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4
 import Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4
 import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4
 import Graphics.Rendering.OpenGL.Raw.NV.DepthBufferFloat

@@ -82,9 +82,9 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    -- module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample,
    module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery,
-   module Graphics.Rendering.OpenGL.Raw.EXT.GpuProgramParameters,
+   module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters,
    module Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.GpuShader4,
+   -- module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced,
    module Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
@@ -173,9 +173,9 @@ import Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB
 -- import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit
 -- import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample
 import Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery
-import Graphics.Rendering.OpenGL.Raw.EXT.GpuProgramParameters
+import Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters
 import Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4
--- import Graphics.Rendering.OpenGL.Raw.EXT.GpuShader4
+-- import Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4
 -- import Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced
 import Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureArray

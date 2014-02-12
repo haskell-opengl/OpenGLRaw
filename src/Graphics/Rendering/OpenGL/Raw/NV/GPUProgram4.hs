@@ -1,7 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.NV.GpuProgram4
+-- Module      :  Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -14,7 +14,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.NV.GpuProgram4 (
+module Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4 (
    -- * Functions
    glProgramLocalParameterI4i,
    glProgramLocalParameterI4iv,

@@ -29,7 +29,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3 (
 
 import Foreign.C.Types
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5
+import Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 

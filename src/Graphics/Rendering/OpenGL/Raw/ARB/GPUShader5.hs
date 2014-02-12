@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5
+-- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -13,7 +13,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5 (
+module Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5 (
    gl_GEOMETRY_SHADER_INVOCATIONS,
    gl_MAX_GEOMETRY_SHADER_INVOCATIONS,
    gl_MIN_FRAGMENT_INTERPOLATION_OFFSET,
