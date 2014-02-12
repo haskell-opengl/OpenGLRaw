@@ -90,6 +90,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64,               -- #89
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine,            -- #90
    module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader,          -- #91
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObjectRGB32, -- #92
    module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3,          -- #94
    module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,            -- #95
    module Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary,            -- #96
@@ -174,6 +175,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5
 import Graphics.Rendering.OpenGL.Raw.ARB.GpuShaderFp64
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine
 import Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObjectRGB32
 import Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
 import Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary
