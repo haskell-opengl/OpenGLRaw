@@ -65,7 +65,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject,         -- #57
    module Graphics.Rendering.OpenGL.Raw.ARB.Compatibility,               -- #58
    module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer,                  -- #59
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderTextureLod,         -- #60
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderTextureLOD,         -- #60
    module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp,                  -- #61
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex,      -- #62
    -- module Graphics.Rendering.OpenGL.Raw.ARB.FragmentCoordConventions, -- #63
@@ -78,7 +78,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,               -- #70
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,         -- #71
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather,               -- #72
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod,          -- #73
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLOD,          -- #73
    -- module Graphics.Rendering.OpenGL.Raw.ARB.WGLCreateContextProfile,  -- #74
    module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,        -- #75
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitAttribLocation,   -- #79
@@ -153,7 +153,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayObject
 import Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer
--- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderTextureLod
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderTextureLOD
 import Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex
 -- import Graphics.Rendering.OpenGL.Raw.ARB.FragmentCoordConventions
@@ -166,7 +166,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend
 import Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
--- import Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLod
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLOD
 import Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
 import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
