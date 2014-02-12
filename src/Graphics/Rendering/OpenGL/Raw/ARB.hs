@@ -80,7 +80,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,             -- #65
    module Graphics.Rendering.OpenGL.Raw.ARB.Sync,                        -- #66
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample,          -- #67
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBgra,          -- #68
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBGRA,          -- #68
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend,            -- #69
    module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,               -- #70
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,         -- #71
@@ -188,7 +188,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex
 import Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap
 import Graphics.Rendering.OpenGL.Raw.ARB.Sync
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample
--- import Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBgra
+-- import Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBGRA
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend
 import Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
