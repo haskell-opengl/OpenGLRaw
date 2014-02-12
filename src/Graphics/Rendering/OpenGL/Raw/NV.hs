@@ -25,7 +25,7 @@ module Graphics.Rendering.OpenGL.Raw.NV (
    -- module Graphics.Rendering.OpenGL.Raw.NV.Evaluators,
    module Graphics.Rendering.OpenGL.Raw.NV.PackedDepthStencil,
    module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2,
-   module Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVtc,
+   module Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVTC,
    module Graphics.Rendering.OpenGL.Raw.NV.TextureRectangle,
    module Graphics.Rendering.OpenGL.Raw.NV.TextureShader,
    module Graphics.Rendering.OpenGL.Raw.NV.TextureShader2,
@@ -77,7 +77,7 @@ import Graphics.Rendering.OpenGL.Raw.NV.Fence
 -- import Graphics.Rendering.OpenGL.Raw.NV.Evaluators
 import Graphics.Rendering.OpenGL.Raw.NV.PackedDepthStencil
 import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2
-import Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVtc
+import Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVTC
 import Graphics.Rendering.OpenGL.Raw.NV.TextureRectangle
 import Graphics.Rendering.OpenGL.Raw.NV.TextureShader
 import Graphics.Rendering.OpenGL.Raw.NV.TextureShader2

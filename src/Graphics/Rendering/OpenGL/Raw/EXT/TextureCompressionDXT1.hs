@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDxt1
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -14,10 +14,10 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDxt1 (
+module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1 (
    -- * Tokens
    gl_COMPRESSED_RGB_S3TC_DXT1,
    gl_COMPRESSED_RGBA_S3TC_DXT1
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3tc
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC

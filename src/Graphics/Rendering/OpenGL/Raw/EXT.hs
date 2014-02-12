@@ -64,7 +64,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic,
    module Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting,
-   module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3tc,
+   module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC,
    module Graphics.Rendering.OpenGL.Raw.EXT.Multisample,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvDot3,
    module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader,
@@ -74,7 +74,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp,
    module Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject,
-   module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDxt1,
+   module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil,
    module Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag,
@@ -89,7 +89,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject,
-   module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLatc,
+   module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRgtc,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB,
@@ -113,7 +113,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.Subtexture
 import Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture
 import Graphics.Rendering.OpenGL.Raw.EXT.Histogram
 import Graphics.Rendering.OpenGL.Raw.EXT.Convolution
-import Graphics.Rendering.OpenGL.Raw.EXT.Cmyka
+import Graphics.Rendering.OpenGL.Raw.EXT.CMYKA
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureObject
 import Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels
 import Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal
@@ -155,7 +155,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvAdd
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureLodBias
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3tc
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC
 import Graphics.Rendering.OpenGL.Raw.EXT.Multisample
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvDot3
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexShader
@@ -165,7 +165,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp
 import Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate
 -- import Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDxt1
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject
 -- import Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil
 import Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag
@@ -180,7 +180,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4
 import Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureArray
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLatc
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRgtc
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB

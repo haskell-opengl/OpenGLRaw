@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLatc
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -14,7 +14,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLatc (
+module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC (
    -- * Tokens
    gl_COMPRESSED_LUMINANCE_LATC1,
    gl_COMPRESSED_SIGNED_LUMINANCE_LATC1,

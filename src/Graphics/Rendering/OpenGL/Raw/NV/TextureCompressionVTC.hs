@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVtc
+-- Module      :  Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVTC
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -14,7 +14,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVtc (
+module Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVTC (
    -- * Tokens
    gl_COMPRESSED_RGB_S3TC_DXT1,
    gl_COMPRESSED_RGBA_S3TC_DXT1,
@@ -22,4 +22,4 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVtc (
    gl_COMPRESSED_RGBA_S3TC_DXT5
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3tc
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC
