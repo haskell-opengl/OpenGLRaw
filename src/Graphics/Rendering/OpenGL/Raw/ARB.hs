@@ -93,7 +93,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended,           -- #78
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitAttribLocation,   -- #79
    module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,             -- #80
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects,           -- #81 TODO
+   module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects,              -- #81
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderBitEncoding,        -- #82
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI,            -- #83
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle,              -- #84
@@ -201,7 +201,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC
 import Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ExplicitAttribLocation
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
--- import Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
+import Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderBitEncoding
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle
