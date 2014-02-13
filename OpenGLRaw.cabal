@@ -110,6 +110,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.TextureRG,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle,
       Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,
+      Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback2,
       Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3,
       Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix,
       Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject,
