@@ -96,6 +96,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.TextureBorderClamp,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression,
+      Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionRGTC,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,
