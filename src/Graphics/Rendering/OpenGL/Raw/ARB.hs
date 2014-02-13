@@ -95,7 +95,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,             -- #80
    -- module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects,           -- #81 TODO
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderBitEncoding,        -- #82
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI,         -- #83 TODO
+   module Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI,            -- #83
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle,              -- #84
    module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,                  -- #85
    -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010Rev,     -- #86 TODO
@@ -203,7 +203,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
 -- import Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderBitEncoding
--- import Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle
 import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
 -- import Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010Rev

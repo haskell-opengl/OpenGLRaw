@@ -110,6 +110,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureRG,
+      Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle,
       Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle,
       Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,
