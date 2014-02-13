@@ -19,19 +19,8 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle (
    gl_TEXTURE_SWIZZLE_R,
    gl_TEXTURE_SWIZZLE_G,
    gl_TEXTURE_SWIZZLE_B,
-   gl_TEXTURE_SWIZZLE_A
+   gl_TEXTURE_SWIZZLE_A,
+   gl_TEXTURE_SWIZZLE_RGBA
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_TEXTURE_SWIZZLE_R :: GLenum
-gl_TEXTURE_SWIZZLE_R = 0x8E42
-
-gl_TEXTURE_SWIZZLE_G :: GLenum
-gl_TEXTURE_SWIZZLE_G = 0x8E43
-
-gl_TEXTURE_SWIZZLE_B :: GLenum
-gl_TEXTURE_SWIZZLE_B = 0x8E44
-
-gl_TEXTURE_SWIZZLE_A :: GLenum
-gl_TEXTURE_SWIZZLE_A = 0x8E45
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle
