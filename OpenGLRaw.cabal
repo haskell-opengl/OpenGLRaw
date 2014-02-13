@@ -88,6 +88,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine,
       Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage100,
+      Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguageInclude,
       Graphics.Rendering.OpenGL.Raw.ARB.Shadow,
       Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient,
       Graphics.Rendering.OpenGL.Raw.ARB.Sync,
