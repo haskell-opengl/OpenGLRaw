@@ -43,6 +43,7 @@ library
    exposed-modules:
       Graphics.Rendering.OpenGL.Raw,
       Graphics.Rendering.OpenGL.Raw.ARB,
+      Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended,
       Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat,
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility,
       Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader,

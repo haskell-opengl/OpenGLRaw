@@ -90,7 +90,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile,        -- #75
    module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguageInclude,      -- #76
    module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC,      -- #77
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended,        -- #78 TODO
+   module Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended,           -- #78
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitAttribLocation,   -- #79
    module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,             -- #80
    -- module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects,           -- #81 TODO
@@ -198,7 +198,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
 import Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
 import Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguageInclude
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC
--- import Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended
+import Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ExplicitAttribLocation
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
 -- import Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
