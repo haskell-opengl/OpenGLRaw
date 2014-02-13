@@ -125,6 +125,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.VertexBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram,
       Graphics.Rendering.OpenGL.Raw.ARB.VertexShader,
+      Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010Rev,
       Graphics.Rendering.OpenGL.Raw.ARB.WindowPos,
       Graphics.Rendering.OpenGL.Raw.Core31,
       Graphics.Rendering.OpenGL.Raw.Core31.Types,
