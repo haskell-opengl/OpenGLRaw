@@ -9,8 +9,8 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_gpu_shader_fp64 extension, see
--- <http://www.opengl.org/registry/specs/ARB/gpu_shader_fp64.txt>.
+-- All raw functions and tokens from the ARB_shading_language_include extension,
+-- see <http://www.opengl.org/registry/specs/ARB/shading_language_include.txt>.
 --
 --------------------------------------------------------------------------------
 
