@@ -93,12 +93,12 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    -- module Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended,        -- #78 TODO
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitAttribLocation,   -- #79
    module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,             -- #80
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects            -- #81 TODO
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects,           -- #81 TODO
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderBitEncoding,        -- #82
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI          -- #83 TODO
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle            -- #84 TODO
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI,         -- #83 TODO
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle,           -- #84 TODO
    module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery,                  -- #85
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010Rev      -- #86 TODO
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010Rev,     -- #86 TODO
    module Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect,                -- #87
    module Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5,                  -- #88
    module Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderFP64,               -- #89
@@ -110,9 +110,9 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,            -- #95
    module Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary,            -- #96
    module Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects,       -- #97
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderPrecision           -- #98
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit         -- #99 TODO
-   -- module Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray             -- #100
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderPrecision,          -- #98
+   module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit,           -- #99
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray,            -- #100
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,        -- #114
    module Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader,               -- #122
    module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility,            -- #127
@@ -219,7 +219,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary
 import Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderPrecision
--- import Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit
+import Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters
 import Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader

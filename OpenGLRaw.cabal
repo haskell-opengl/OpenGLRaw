@@ -115,6 +115,7 @@ library
       Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix,
       Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayObject,
+      Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit,
       Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend,
       Graphics.Rendering.OpenGL.Raw.ARB.VertexBufferObject,
       Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram,
