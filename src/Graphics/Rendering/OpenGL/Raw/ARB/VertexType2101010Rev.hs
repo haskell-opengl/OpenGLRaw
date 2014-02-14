@@ -74,44 +74,44 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_vertex_type_2_10_10_10_rev"
 
-glVertexAttribP1ui = undefined
-glVertexAttribP1uiv = undefined
-glVertexAttribP2ui = undefined
-glVertexAttribP2uiv = undefined
-glVertexAttribP3ui = undefined
-glVertexAttribP3uiv = undefined
-glVertexAttribP4ui = undefined
-glVertexAttribP4uiv = undefined
-glVertexP2ui = undefined
-glVertexP2uiv = undefined
-glVertexP3ui = undefined
-glVertexP3uiv = undefined
-glVertexP4ui = undefined
-glVertexP4uiv = undefined
-glTexCoordP1ui = undefined
-glTexCoordP1uiv = undefined
-glTexCoordP2ui = undefined
-glTexCoordP2uiv = undefined
-glTexCoordP3ui = undefined
-glTexCoordP3uiv = undefined
-glTexCoordP4ui = undefined
-glTexCoordP4uiv = undefined
-glMultiTexCoordP1ui = undefined
-glMultiTexCoordP1uiv = undefined
-glMultiTexCoordP2ui = undefined
-glMultiTexCoordP2uiv = undefined
-glMultiTexCoordP3ui = undefined
-glMultiTexCoordP3uiv = undefined
-glMultiTexCoordP4ui = undefined
-glMultiTexCoordP4uiv = undefined
-glNormalP3ui = undefined
-glNormalP3uiv = undefined
-glColorP3ui = undefined
-glColorP3uiv = undefined
-glColorP4ui = undefined
-glColorP4uiv = undefined
-glSecondaryColorP3ui = undefined
-glSecondaryColorP3uiv = undefined
+EXTENSION_ENTRY(glVertexAttribP1ui,GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
+EXTENSION_ENTRY(glVertexAttribP1uiv,GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glVertexAttribP2ui,GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
+EXTENSION_ENTRY(glVertexAttribP2uiv,GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glVertexAttribP3ui,GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
+EXTENSION_ENTRY(glVertexAttribP3uiv,GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glVertexAttribP4ui,GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
+EXTENSION_ENTRY(glVertexAttribP4uiv,GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glVertexP2ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glVertexP2uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glVertexP3ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glVertexP3uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glVertexP4ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glVertexP4uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP1ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP1uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP2ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP2uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP3ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP3uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP4ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glTexCoordP4uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP1ui,GLenum -> GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP1uiv,GLenum -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP2ui,GLenum -> GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP2uiv,GLenum -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP3ui,GLenum -> GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP3uiv,GLenum -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP4ui,GLenum -> GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glMultiTexCoordP4uiv,GLenum -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glNormalP3ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glNormalP3uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glColorP3ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glColorP3uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glColorP4ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glColorP4uiv,GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(glSecondaryColorP3ui,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(glSecondaryColorP3uiv,GLenum -> Ptr GLuint -> IO ())
 
 gl_INT_2_10_10_10_REV :: GLenum
 gl_INT_2_10_10_10_REV = 0x8D9F
