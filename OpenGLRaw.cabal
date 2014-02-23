@@ -188,6 +188,7 @@ library
       Graphics.Rendering.OpenGL.Raw.EXT.Texture3D,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC,
+      Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvAdd,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine,

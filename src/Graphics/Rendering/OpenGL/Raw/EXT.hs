@@ -90,7 +90,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRgtc,
+   module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2,
@@ -181,7 +181,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureArray
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC
--- import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRgtc
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB
 -- import Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2
