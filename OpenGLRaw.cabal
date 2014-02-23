@@ -42,6 +42,7 @@ flag UseGlXGetProcAddress
 library
    exposed-modules:
       Graphics.Rendering.OpenGL.Raw,
+      Graphics.Rendering.OpenGL.Raw.APPLE,
       Graphics.Rendering.OpenGL.Raw.ARB,
       Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended,
       Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat,
