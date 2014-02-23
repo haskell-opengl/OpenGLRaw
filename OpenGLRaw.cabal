@@ -186,6 +186,7 @@ library
       Graphics.Rendering.OpenGL.Raw.EXT.Subtexture,
       Graphics.Rendering.OpenGL.Raw.EXT.Texture,
       Graphics.Rendering.OpenGL.Raw.EXT.Texture3D,
+      Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC,
       Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC,

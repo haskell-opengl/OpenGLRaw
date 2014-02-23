@@ -87,7 +87,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    -- module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced,
    module Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
+   module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC,
@@ -178,7 +178,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4
 -- import Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4
 -- import Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced
 import Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat
--- import Graphics.Rendering.OpenGL.Raw.EXT.TextureArray
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureArray
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC
