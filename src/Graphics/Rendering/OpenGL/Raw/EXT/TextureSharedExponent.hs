@@ -8,8 +8,8 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_compression_rgtc extension
--- <http://www.opengl.org/registry/specs/EXT/texture_compression_rgtc.txt>.
+-- All raw functions and tokens from the EXT_texture_shared_exponent extension
+-- <http://www.opengl.org/registry/specs/EXT/texture_shared_exponent.txt>.
 --
 --------------------------------------------------------------------------------
 

@@ -9,7 +9,6 @@
 -- Portability :  portable
 --
 -- All raw functions and tokens from the EXT_texture_compression_rgtc extension
--- not already in the OpenGL 3.1 core, see
 -- <http://www.opengl.org/registry/specs/EXT/texture_compression_rgtc.txt>.
 --
 --------------------------------------------------------------------------------
