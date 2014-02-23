@@ -19,7 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.APPLE (
    -- module Graphics.Rendering.OpenGL.Raw.APPLE.ElementArray,           -- # 271
    -- module Graphics.Rendering.OpenGL.Raw.APPLE.Fence,                  -- # 272
    -- module Graphics.Rendering.OpenGL.Raw.APPLE.FloatPixels,            -- # 368
-   -- module Graphics.Rendering.OpenGL.Raw.APPLE.FlushBufferRange,       -- # 321
+   module Graphics.Rendering.OpenGL.Raw.APPLE.FlushBufferRange           -- # 321
    -- module Graphics.Rendering.OpenGL.Raw.APPLE.FramebufferMultisample, -- # ES 78
    -- module Graphics.Rendering.OpenGL.Raw.APPLE.ObjectPurgeable,        -- # 371
    -- module Graphics.Rendering.OpenGL.Raw.APPLE.RGB422,                 -- # 373
@@ -43,7 +43,7 @@ module Graphics.Rendering.OpenGL.Raw.APPLE (
 -- import Graphics.Rendering.OpenGL.Raw.APPLE.ElementArray
 -- import Graphics.Rendering.OpenGL.Raw.APPLE.Fence
 -- import Graphics.Rendering.OpenGL.Raw.APPLE.FloatPixels
--- import Graphics.Rendering.OpenGL.Raw.APPLE.FlushBufferRange
+import Graphics.Rendering.OpenGL.Raw.APPLE.FlushBufferRange
 -- import Graphics.Rendering.OpenGL.Raw.APPLE.FramebufferMultisample
 -- import Graphics.Rendering.OpenGL.Raw.APPLE.ObjectPurgeable
 -- import Graphics.Rendering.OpenGL.Raw.APPLE.RGB422
