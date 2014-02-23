@@ -79,7 +79,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    -- module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil,
    module Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit,
+   module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample,
    module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery,
    module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters,
@@ -170,7 +170,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject
 -- import Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil
 import Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB
--- import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit
+import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample
 import Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery
 import Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters

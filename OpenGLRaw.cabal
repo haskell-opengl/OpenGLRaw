@@ -157,6 +157,7 @@ library
       Graphics.Rendering.OpenGL.Raw.EXT.FogCoord,
       Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels,
       Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting,
+      Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit,
       Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample,
       Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject,
       Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB,
