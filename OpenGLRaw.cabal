@@ -179,6 +179,7 @@ library
       Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker,
       Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor,
       Graphics.Rendering.OpenGL.Raw.EXT.SeparateSpecularColor,
+      Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent,
       Graphics.Rendering.OpenGL.Raw.EXT.SharedTexturePalette,
       Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag,
       Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide,
