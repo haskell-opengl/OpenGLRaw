@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -8,16 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw tokens from the EXT_texture_shared_exponent extension, see
--- <http://www.opengl.org/registry/specs/EXT/texture_shared_exponent.txt>.
+-- All raw functions and tokens from the EXT_packed_depth_stencil extension, see
+-- <http://www.opengl.org/registry/specs/EXT/packed_depth_stencil.txt>.
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent (
+module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil (
    -- * Tokens
-   gl_RGB9_E5,
-   gl_UNSIGNED_INT_5_9_9_9_REV,
-   gl_TEXTURE_SHARED_SIZE
+   gl_DEPTH_STENCIL,
+   gl_UNSIGNED_INT_24_8,
+   gl_DEPTH24_STENCIL8,
+   gl_TEXTURE_STENCIL_SIZE
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.Core31.Tokens

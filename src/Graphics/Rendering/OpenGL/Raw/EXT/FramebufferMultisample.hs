@@ -8,8 +8,8 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_framebuffer_multisample extension
--- <http://www.opengl.org/registry/specs/EXT/framebuffer_multisample.txt>.
+-- All raw functions and tokens from the EXT_framebuffer_multisample extension,
+-- see <http://www.opengl.org/registry/specs/EXT/framebuffer_multisample.txt>.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_framebuffer_blit extension
+-- All raw functions and tokens from the EXT_framebuffer_blit extension, see
 -- <http://www.opengl.org/registry/specs/EXT/framebuffer_blit.txt>.
 --
 --------------------------------------------------------------------------------

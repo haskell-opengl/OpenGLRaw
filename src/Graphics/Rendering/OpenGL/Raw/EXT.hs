@@ -76,7 +76,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    -- module Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil,
+   module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil,
    module Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit,
@@ -93,7 +93,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent,
    module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2,
+   module Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2,
    module Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback,
@@ -167,7 +167,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate
 -- import Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject
--- import Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil
+import Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil
 import Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit
@@ -184,7 +184,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB
--- import Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2
+import Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2
 import Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger
 -- import Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback
