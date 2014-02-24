@@ -84,7 +84,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery,
    module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters,
    module Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4,
+   module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced,
    module Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
@@ -96,7 +96,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
    module Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2,
    module Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger,
-   -- module Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback,
+   module Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback,
    module Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess,
    -- module Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA,
    module Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle,
@@ -175,7 +175,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample
 import Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery
 import Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters
 import Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4
--- import Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4
+import Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4
 -- import Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced
 import Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureArray
@@ -187,7 +187,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB
 import Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2
 import Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger
--- import Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback
+import Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback
 import Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
 -- import Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle
