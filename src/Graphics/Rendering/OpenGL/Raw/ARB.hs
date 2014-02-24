@@ -113,12 +113,58 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderPrecision,          -- #98
    module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit,           -- #99
    -- module Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray,            -- #100
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.CLEvent,                  -- #103
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.DebugOutput,              -- #104
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.Robustness,               -- #105
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderStencilExport,      -- #106
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.BaseInstance,             -- #107
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage420pack,   -- #108
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedbackInstanced, -- #109
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.CompressedTexturePixelStorage, -- #110
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ConservativeDepth,        -- #111
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery,      -- #112
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.MapBufferAlignment,       -- #113
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters,        -- #114
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderImageLoadStore,     -- #115
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguagePacking,   -- #116
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureStorage,           -- #117
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ArraysOfArrays,           -- #120
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ClearBufferObject,        -- #121
    module Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader,               -- #122
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.CopyImage,                -- #123
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureView,              -- #124
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttribBinding,      -- #125
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.RobustnessIsolation,      -- #126
    module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility,            -- #127
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitUniformLocation,  -- #128
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.FragmentLayerViewport,    -- #129
    module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments,    -- #130
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery2,     -- #131
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.InvalidateSubdata,        -- #132
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.MultiDrawIndirect,        -- #133
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ProgramInterfaceQuery,    -- #134
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.RobustBufferAccessBehavior, -- #135
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderImageSize,          -- #136
    module Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject,   -- #137
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.StencilTexturing,         -- #138
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferRange,       -- #139
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLevels,       -- #140
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureStorageMultisample,-- #141
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.BufferStorage,            -- #144
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ClearTexture,             -- #145
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts,          -- #146
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.MultiBind,                -- #147
    module Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject            -- #148
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirrorClampToEdge, -- #149
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.TextureStencil8,          -- #150
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.VertexType10f11f11fRev,   -- #151
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.BindlessTexture,          -- #152
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ComputeVariableGroupSize, -- #153
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.IndirectParameters,       -- #154
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubemapPerTexture,-- #155
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderDrawParameters,     -- #156
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.ShaderGroupVote,          -- #157
+   -- module Graphics.Rendering.OpenGL.Raw.ARB.SparseTexture             -- #158
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
@@ -221,9 +267,55 @@ import Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderPrecision
 import Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit
 -- import Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray
+-- import Graphics.Rendering.OpenGL.Raw.ARB.CLEvent
+-- import Graphics.Rendering.OpenGL.Raw.ARB.DebugOutput
+-- import Graphics.Rendering.OpenGL.Raw.ARB.Robustness
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderStencilExport
+-- import Graphics.Rendering.OpenGL.Raw.ARB.BaseInstance
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage420pack
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedbackInstanced
+-- import Graphics.Rendering.OpenGL.Raw.ARB.CompressedTexturePixelStorage
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ConservativeDepth
+-- import Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery
+-- import Graphics.Rendering.OpenGL.Raw.ARB.MapBufferAlignment
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderImageLoadStore
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguagePacking
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureStorage
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ArraysOfArrays
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ClearBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader
+-- import Graphics.Rendering.OpenGL.Raw.ARB.CopyImage
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureView
+-- import Graphics.Rendering.OpenGL.Raw.ARB.VertexAttribBinding
+-- import Graphics.Rendering.OpenGL.Raw.ARB.RobustnessIsolation
 import Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ExplicitUniformLocation
+-- import Graphics.Rendering.OpenGL.Raw.ARB.FragmentLayerViewport
 import Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments
+-- import Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery2
+-- import Graphics.Rendering.OpenGL.Raw.ARB.InvalidateSubdata
+-- import Graphics.Rendering.OpenGL.Raw.ARB.MultiDrawIndirect
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ProgramInterfaceQuery
+-- import Graphics.Rendering.OpenGL.Raw.ARB.RobustBufferAccessBehavior
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderImageSize
 import Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject
+-- import Graphics.Rendering.OpenGL.Raw.ARB.StencilTexturing
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferRange
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureQueryLevels
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureStorageMultisample
+-- import Graphics.Rendering.OpenGL.Raw.ARB.BufferStorage
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ClearTexture
+-- import Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts
+-- import Graphics.Rendering.OpenGL.Raw.ARB.MultiBind
 import Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureMirrorClampToEdge
+-- import Graphics.Rendering.OpenGL.Raw.ARB.TextureStencil8
+-- import Graphics.Rendering.OpenGL.Raw.ARB.VertexType10f11f11fRev
+-- import Graphics.Rendering.OpenGL.Raw.ARB.BindlessTexture
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ComputeVariableGroupSize
+-- import Graphics.Rendering.OpenGL.Raw.ARB.IndirectParameters
+-- import Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubemapPerTexture
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderDrawParameters
+-- import Graphics.Rendering.OpenGL.Raw.ARB.ShaderGroupVote
+-- import Graphics.Rendering.OpenGL.Raw.ARB.SparseTexture
