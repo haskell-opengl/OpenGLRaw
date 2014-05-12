@@ -96,19 +96,19 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_register_combiners"
 
-EXTENSION_ENTRY(glCombinerParameterfv,GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glCombinerParameteriv,GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glCombinerParameterf,GLenum -> GLfloat -> IO ())
-EXTENSION_ENTRY(glCombinerParameteri,GLenum -> GLint -> IO ())
-EXTENSION_ENTRY(glCombinerInput,GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
-EXTENSION_ENTRY(glCombinerOutput,GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLboolean -> GLboolean -> GLboolean -> IO ())
-EXTENSION_ENTRY(glFinalCombinerInput,GLenum -> GLenum -> GLenum -> GLenum -> IO ())
-EXTENSION_ENTRY(glGetCombinerInputParameterfv,GLenum -> GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glGetCombinerInputParameteriv,GLenum -> GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetCombinerOutputParameterfv,GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glGetCombinerOutputParameteriv,GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetFinalCombinerInputParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glGetFinalCombinerInputParameteriv,GLenum -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glCombinerParameterfv,ptr_glCombinerParameterfv,glCombinerParameterfv,GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glCombinerParameteriv,ptr_glCombinerParameteriv,glCombinerParameteriv,GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glCombinerParameterf,ptr_glCombinerParameterf,glCombinerParameterf,GLenum -> GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glCombinerParameteri,ptr_glCombinerParameteri,glCombinerParameteri,GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glCombinerInput,ptr_glCombinerInput,glCombinerInput,GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glCombinerOutput,ptr_glCombinerOutput,glCombinerOutput,GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLboolean -> GLboolean -> GLboolean -> IO ())
+EXTENSION_ENTRY(dyn_glFinalCombinerInput,ptr_glFinalCombinerInput,glFinalCombinerInput,GLenum -> GLenum -> GLenum -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glGetCombinerInputParameterfv,ptr_glGetCombinerInputParameterfv,glGetCombinerInputParameterfv,GLenum -> GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetCombinerInputParameteriv,ptr_glGetCombinerInputParameteriv,glGetCombinerInputParameteriv,GLenum -> GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetCombinerOutputParameterfv,ptr_glGetCombinerOutputParameterfv,glGetCombinerOutputParameterfv,GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetCombinerOutputParameteriv,ptr_glGetCombinerOutputParameteriv,glGetCombinerOutputParameteriv,GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetFinalCombinerInputParameterfv,ptr_glGetFinalCombinerInputParameterfv,glGetFinalCombinerInputParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetFinalCombinerInputParameteriv,ptr_glGetFinalCombinerInputParameteriv,glGetFinalCombinerInputParameteriv,GLenum -> GLenum -> Ptr GLint -> IO ())
 
 gl_REGISTER_COMBINERS :: GLenum
 gl_REGISTER_COMBINERS = 0x8522

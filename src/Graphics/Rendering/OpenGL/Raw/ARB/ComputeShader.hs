@@ -48,8 +48,8 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_compute_shader"
 
-EXTENSION_ENTRY(glDispatchCompute,GLuint -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glDispatchComputeIndirect,GLintptr -> IO ())
+EXTENSION_ENTRY(dyn_glDispatchCompute,ptr_glDispatchCompute,glDispatchCompute,GLuint -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glDispatchComputeIndirect,ptr_glDispatchComputeIndirect,glDispatchComputeIndirect,GLintptr -> IO ())
 
 gl_COMPUTE_SHADER :: GLenum
 gl_COMPUTE_SHADER = 0x91B9

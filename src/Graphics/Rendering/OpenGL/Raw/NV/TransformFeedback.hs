@@ -80,12 +80,12 @@ import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
 extensionNameString :: String
 extensionNameString = "GL_NV_transform_feedback"
 
-EXTENSION_ENTRY(glTransformFeedbackAttribs,GLsizei -> Ptr GLint -> GLenum -> IO ())
-EXTENSION_ENTRY(glTransformFeedbackVaryingsNV,GLuint -> GLsizei -> Ptr GLint -> GLenum -> IO ())
-EXTENSION_ENTRY(glGetVaryingLocation,GLuint -> Ptr GLchar -> IO GLint)
-EXTENSION_ENTRY(glGetActiveVarying,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glActiveVarying,GLuint -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetTransformFeedbackVaryingNV,GLuint -> GLuint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glTransformFeedbackAttribs,ptr_glTransformFeedbackAttribs,glTransformFeedbackAttribs,GLsizei -> Ptr GLint -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glTransformFeedbackVaryingsNV,ptr_glTransformFeedbackVaryingsNV,glTransformFeedbackVaryingsNV,GLuint -> GLsizei -> Ptr GLint -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glGetVaryingLocation,ptr_glGetVaryingLocation,glGetVaryingLocation,GLuint -> Ptr GLchar -> IO GLint)
+EXTENSION_ENTRY(dyn_glGetActiveVarying,ptr_glGetActiveVarying,glGetActiveVarying,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glActiveVarying,ptr_glActiveVarying,glActiveVarying,GLuint -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glGetTransformFeedbackVaryingNV,ptr_glGetTransformFeedbackVaryingNV,glGetTransformFeedbackVaryingNV,GLuint -> GLuint -> Ptr GLint -> IO ())
 
 gl_TRANSFORM_FEEDBACK_RECORD :: GLenum
 gl_TRANSFORM_FEEDBACK_RECORD = 0x8C86

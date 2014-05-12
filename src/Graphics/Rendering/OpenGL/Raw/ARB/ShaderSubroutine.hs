@@ -52,14 +52,14 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_shader_subroutine"
 
-EXTENSION_ENTRY(glGetSubroutineUniformLocation,GLuint -> GLenum -> Ptr GLchar -> IO GLint)
-EXTENSION_ENTRY(glGetSubroutineIndex,GLuint -> GLenum -> Ptr GLchar -> IO GLuint)
-EXTENSION_ENTRY(glGetActiveSubroutineUniformiv,GLuint -> GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetActiveSubroutineUniformName,GLuint -> GLenum -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetActiveSubroutineName,GLuint -> GLenum -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glUniformSubroutinesuiv,GLenum -> GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glGetUniformSubroutineuiv,GLenum -> GLint -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glGetProgramStageiv,GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetSubroutineUniformLocation,ptr_glGetSubroutineUniformLocation,glGetSubroutineUniformLocation,GLuint -> GLenum -> Ptr GLchar -> IO GLint)
+EXTENSION_ENTRY(dyn_glGetSubroutineIndex,ptr_glGetSubroutineIndex,glGetSubroutineIndex,GLuint -> GLenum -> Ptr GLchar -> IO GLuint)
+EXTENSION_ENTRY(dyn_glGetActiveSubroutineUniformiv,ptr_glGetActiveSubroutineUniformiv,glGetActiveSubroutineUniformiv,GLuint -> GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetActiveSubroutineUniformName,ptr_glGetActiveSubroutineUniformName,glGetActiveSubroutineUniformName,GLuint -> GLenum -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glGetActiveSubroutineName,ptr_glGetActiveSubroutineName,glGetActiveSubroutineName,GLuint -> GLenum -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glUniformSubroutinesuiv,ptr_glUniformSubroutinesuiv,glUniformSubroutinesuiv,GLenum -> GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetUniformSubroutineuiv,ptr_glGetUniformSubroutineuiv,glGetUniformSubroutineuiv,GLenum -> GLint -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramStageiv,ptr_glGetProgramStageiv,glGetProgramStageiv,GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
 
 gl_ACTIVE_SUBROUTINES :: GLenum
 gl_ACTIVE_SUBROUTINES = 0x8DE5

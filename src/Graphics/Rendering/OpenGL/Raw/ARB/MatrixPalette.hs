@@ -44,11 +44,11 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_matrix_palette"
 
-EXTENSION_ENTRY(glCurrentPaletteMatrix,GLint -> IO ())
-EXTENSION_ENTRY(glMatrixIndexubv,GLint -> Ptr GLubyte -> IO ())
-EXTENSION_ENTRY(glMatrixIndexusv,GLint -> Ptr GLushort -> IO ())
-EXTENSION_ENTRY(glMatrixIndexuiv,GLint -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glMatrixIndexPointer,GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glCurrentPaletteMatrix,ptr_glCurrentPaletteMatrix,glCurrentPaletteMatrix,GLint -> IO ())
+EXTENSION_ENTRY(dyn_glMatrixIndexubv,ptr_glMatrixIndexubv,glMatrixIndexubv,GLint -> Ptr GLubyte -> IO ())
+EXTENSION_ENTRY(dyn_glMatrixIndexusv,ptr_glMatrixIndexusv,glMatrixIndexusv,GLint -> Ptr GLushort -> IO ())
+EXTENSION_ENTRY(dyn_glMatrixIndexuiv,ptr_glMatrixIndexuiv,glMatrixIndexuiv,GLint -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glMatrixIndexPointer,ptr_glMatrixIndexPointer,glMatrixIndexPointer,GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
 
 gl_MATRIX_PALETTE :: GLenum
 gl_MATRIX_PALETTE = 0x8840

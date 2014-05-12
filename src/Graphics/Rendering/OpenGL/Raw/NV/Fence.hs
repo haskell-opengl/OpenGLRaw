@@ -39,13 +39,13 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_fence"
 
-EXTENSION_ENTRY(glGenFences,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glDeleteFences,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glSetFence,GLuint -> GLenum -> IO ())
-EXTENSION_ENTRY(glTestFence,GLuint -> IO GLboolean)
-EXTENSION_ENTRY(glFinishFence,GLuint -> IO ())
-EXTENSION_ENTRY(glIsFence,GLuint -> IO GLboolean)
-EXTENSION_ENTRY(glGetFenceiv,GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGenFences,ptr_glGenFences,glGenFences,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glDeleteFences,ptr_glDeleteFences,glDeleteFences,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glSetFence,ptr_glSetFence,glSetFence,GLuint -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glTestFence,ptr_glTestFence,glTestFence,GLuint -> IO GLboolean)
+EXTENSION_ENTRY(dyn_glFinishFence,ptr_glFinishFence,glFinishFence,GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glIsFence,ptr_glIsFence,glIsFence,GLuint -> IO GLboolean)
+EXTENSION_ENTRY(dyn_glGetFenceiv,ptr_glGetFenceiv,glGetFenceiv,GLuint -> GLenum -> Ptr GLint -> IO ())
 
 gl_ALL_COMPLETED :: GLenum
 gl_ALL_COMPLETED = 0x84F2

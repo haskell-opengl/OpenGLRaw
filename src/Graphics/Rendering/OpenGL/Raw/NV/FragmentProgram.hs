@@ -48,12 +48,12 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_fragment_program"
 
-EXTENSION_ENTRY(glProgramNamedParameter4f,GLuint -> GLsizei -> Ptr GLubyte -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramNamedParameter4d,GLuint -> GLsizei -> Ptr GLubyte -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
-EXTENSION_ENTRY(glProgramNamedParameter4fv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramNamedParameter4dv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLdouble -> IO ())
-EXTENSION_ENTRY(glGetProgramNamedParameterfv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glGetProgramNamedParameterdv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glProgramNamedParameter4f,ptr_glProgramNamedParameter4f,glProgramNamedParameter4f,GLuint -> GLsizei -> Ptr GLubyte -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glProgramNamedParameter4d,ptr_glProgramNamedParameter4d,glProgramNamedParameter4d,GLuint -> GLsizei -> Ptr GLubyte -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glProgramNamedParameter4fv,ptr_glProgramNamedParameter4fv,glProgramNamedParameter4fv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glProgramNamedParameter4dv,ptr_glProgramNamedParameter4dv,glProgramNamedParameter4dv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramNamedParameterfv,ptr_glGetProgramNamedParameterfv,glGetProgramNamedParameterfv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramNamedParameterdv,ptr_glGetProgramNamedParameterdv,glGetProgramNamedParameterdv,GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLdouble -> IO ())
 
 gl_FRAGMENT_PROGRAM_NV :: GLenum
 gl_FRAGMENT_PROGRAM_NV = 0x8870

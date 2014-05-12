@@ -54,10 +54,10 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_texture_multisample"
 
-EXTENSION_ENTRY(glTexImage2DMultisample,GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLboolean -> IO ())
-EXTENSION_ENTRY(glTexImage3DMultisample,GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
-EXTENSION_ENTRY(glGetMultisamplefv,GLenum -> GLuint -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glSampleMaski,GLuint -> GLbitfield -> IO ())
+EXTENSION_ENTRY(dyn_glTexImage2DMultisample,ptr_glTexImage2DMultisample,glTexImage2DMultisample,GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLboolean -> IO ())
+EXTENSION_ENTRY(dyn_glTexImage3DMultisample,ptr_glTexImage3DMultisample,glTexImage3DMultisample,GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
+EXTENSION_ENTRY(dyn_glGetMultisamplefv,ptr_glGetMultisamplefv,glGetMultisamplefv,GLenum -> GLuint -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glSampleMaski,ptr_glSampleMaski,glSampleMaski,GLuint -> GLbitfield -> IO ())
 
 
 gl_SAMPLE_POSITION :: GLenum

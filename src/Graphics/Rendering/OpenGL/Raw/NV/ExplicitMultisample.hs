@@ -44,8 +44,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_explicit_multisample"
 
-EXTENSION_ENTRY(glSampleMaskIndexed,GLuint -> GLbitfield -> IO ())
-EXTENSION_ENTRY(glTexRenderbuffer,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glSampleMaskIndexed,ptr_glSampleMaskIndexed,glSampleMaskIndexed,GLuint -> GLbitfield -> IO ())
+EXTENSION_ENTRY(dyn_glTexRenderbuffer,ptr_glTexRenderbuffer,glTexRenderbuffer,GLenum -> GLuint -> IO ())
 
 gl_TEXTURE_BINDING_RENDERBUFFER :: GLenum
 gl_TEXTURE_BINDING_RENDERBUFFER = 0x8E53

@@ -59,8 +59,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_texture_integer"
 
-EXTENSION_ENTRY(glClearColorIi,GLint -> GLint -> GLint -> GLint -> IO ())
-EXTENSION_ENTRY(glClearColorIui,GLuint -> GLuint -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glClearColorIi,ptr_glClearColorIi,glClearColorIi,GLint -> GLint -> GLint -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glClearColorIui,ptr_glClearColorIui,glClearColorIui,GLuint -> GLuint -> GLuint -> GLuint -> IO ())
 
 gl_ALPHA32UI :: GLenum
 gl_ALPHA32UI = 0x8D72

@@ -42,9 +42,9 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_light_texture"
 
-EXTENSION_ENTRY(glApplyTexture,GLenum -> IO ())
-EXTENSION_ENTRY(glTextureLight,GLenum -> IO ())
-EXTENSION_ENTRY(glTextureMaterial,GLenum -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glApplyTexture,ptr_glApplyTexture,glApplyTexture,GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glTextureLight,ptr_glTextureLight,glTextureLight,GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glTextureMaterial,ptr_glTextureMaterial,glTextureMaterial,GLenum -> GLenum -> IO ())
 
 gl_FRAGMENT_MATERIAL :: GLenum
 gl_FRAGMENT_MATERIAL = 0x8349

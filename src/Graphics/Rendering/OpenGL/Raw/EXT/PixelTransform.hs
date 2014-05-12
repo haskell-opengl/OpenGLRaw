@@ -44,12 +44,12 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_pixel_transform"
 
-EXTENSION_ENTRY(glPixelTransformParameteri,GLenum -> GLenum -> GLint -> IO ())
-EXTENSION_ENTRY(glPixelTransformParameterf,GLenum -> GLenum -> GLfloat -> IO ())
-EXTENSION_ENTRY(glPixelTransformParameteriv,GLenum -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glPixelTransformParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glGetPixelTransformParameteriv,GLenum -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetPixelTransformParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glPixelTransformParameteri,ptr_glPixelTransformParameteri,glPixelTransformParameteri,GLenum -> GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glPixelTransformParameterf,ptr_glPixelTransformParameterf,glPixelTransformParameterf,GLenum -> GLenum -> GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glPixelTransformParameteriv,ptr_glPixelTransformParameteriv,glPixelTransformParameteriv,GLenum -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glPixelTransformParameterfv,ptr_glPixelTransformParameterfv,glPixelTransformParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetPixelTransformParameteriv,ptr_glGetPixelTransformParameteriv,glGetPixelTransformParameteriv,GLenum -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetPixelTransformParameterfv,ptr_glGetPixelTransformParameterfv,glGetPixelTransformParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
 
 gl_PIXEL_MAG_FILTER :: GLenum
 gl_PIXEL_MAG_FILTER = 0x8331

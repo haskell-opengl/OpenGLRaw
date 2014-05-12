@@ -41,12 +41,12 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_shading_language_include"
 
-EXTENSION_ENTRY(glNamedString,GLenum -> GLint -> Ptr GLchar -> GLint -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glDeleteNamedString,GLint -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glCompileShaderInclude,GLuint -> GLsizei -> Ptr (Ptr GLchar) -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glIsNamedString,GLint -> Ptr GLchar -> IO GLboolean)
-EXTENSION_ENTRY(glGetNamedString,GLint -> Ptr GLchar -> GLsizei -> Ptr GLint -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetNamedStringiv,GLint -> Ptr GLchar -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glNamedString,ptr_glNamedString,glNamedString,GLenum -> GLint -> Ptr GLchar -> GLint -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glDeleteNamedString,ptr_glDeleteNamedString,glDeleteNamedString,GLint -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glCompileShaderInclude,ptr_glCompileShaderInclude,glCompileShaderInclude,GLuint -> GLsizei -> Ptr (Ptr GLchar) -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glIsNamedString,ptr_glIsNamedString,glIsNamedString,GLint -> Ptr GLchar -> IO GLboolean)
+EXTENSION_ENTRY(dyn_glGetNamedString,ptr_glGetNamedString,glGetNamedString,GLint -> Ptr GLchar -> GLsizei -> Ptr GLint -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glGetNamedStringiv,ptr_glGetNamedStringiv,glGetNamedStringiv,GLint -> Ptr GLchar -> GLenum -> Ptr GLint -> IO ())
 
 gl_SHADER_INCLUDE :: GLenum
 gl_SHADER_INCLUDE = 0x8DAE

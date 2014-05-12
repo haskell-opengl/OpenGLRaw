@@ -34,7 +34,7 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_texture_buffer_object"
 
-EXTENSION_ENTRY(glTexBuffer,GLenum -> GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glTexBuffer,ptr_glTexBuffer,glTexBuffer,GLenum -> GLenum -> GLuint -> IO ())
 
 gl_TEXTURE_BUFFER :: GLenum
 gl_TEXTURE_BUFFER = 0x8C2A

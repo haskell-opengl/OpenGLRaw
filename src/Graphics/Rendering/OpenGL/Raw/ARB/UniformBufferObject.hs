@@ -72,16 +72,16 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_uniform_buffer_object"
 
-EXTENSION_ENTRY(glGetUniformIndices,GLuint -> GLsizei -> Ptr (Ptr GLchar) -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glGetActiveUniformsiv,GLuint -> GLsizei -> Ptr GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetActiveUniformName,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glGetUniformBlockIndex,GLuint -> Ptr GLchar -> IO GLuint)
-EXTENSION_ENTRY(glGetActiveUniformBlockiv,GLuint -> GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glGetActiveUniformBlockName,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(glBindBufferRange,GLenum -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
-EXTENSION_ENTRY(glBindBufferBase,GLenum -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glGetIntegeri_v,GLenum -> GLuint -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glUniformBlockBinding,GLuint -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetUniformIndices,ptr_glGetUniformIndices,glGetUniformIndices,GLuint -> GLsizei -> Ptr (Ptr GLchar) -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetActiveUniformsiv,ptr_glGetActiveUniformsiv,glGetActiveUniformsiv,GLuint -> GLsizei -> Ptr GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetActiveUniformName,ptr_glGetActiveUniformName,glGetActiveUniformName,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glGetUniformBlockIndex,ptr_glGetUniformBlockIndex,glGetUniformBlockIndex,GLuint -> Ptr GLchar -> IO GLuint)
+EXTENSION_ENTRY(dyn_glGetActiveUniformBlockiv,ptr_glGetActiveUniformBlockiv,glGetActiveUniformBlockiv,GLuint -> GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetActiveUniformBlockName,ptr_glGetActiveUniformBlockName,glGetActiveUniformBlockName,GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glBindBufferRange,ptr_glBindBufferRange,glBindBufferRange,GLenum -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
+EXTENSION_ENTRY(dyn_glBindBufferBase,ptr_glBindBufferBase,glBindBufferBase,GLenum -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetIntegeri_v,ptr_glGetIntegeri_v,glGetIntegeri_v,GLenum -> GLuint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glUniformBlockBinding,ptr_glUniformBlockBinding,glUniformBlockBinding,GLuint -> GLuint -> GLuint -> IO ())
 
 gl_UNIFORM_BUFFER :: GLenum
 gl_UNIFORM_BUFFER = 0x8A11

@@ -31,8 +31,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_draw_buffers_blend"
 
-EXTENSION_ENTRY(glBlendEquationi,GLuint -> GLenum -> IO ())
-EXTENSION_ENTRY(glBlendEquationSeparatei,GLuint -> GLenum -> GLenum -> IO ())
-EXTENSION_ENTRY(glBlendFunci,GLuint -> GLenum -> GLenum -> IO ())
-EXTENSION_ENTRY(glBlendFuncSeparatei,GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glBlendEquationi,ptr_glBlendEquationi,glBlendEquationi,GLuint -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glBlendEquationSeparatei,ptr_glBlendEquationSeparatei,glBlendEquationSeparatei,GLuint -> GLenum -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glBlendFunci,ptr_glBlendFunci,glBlendFunci,GLuint -> GLenum -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glBlendFuncSeparatei,ptr_glBlendFuncSeparatei,glBlendFuncSeparatei,GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
 

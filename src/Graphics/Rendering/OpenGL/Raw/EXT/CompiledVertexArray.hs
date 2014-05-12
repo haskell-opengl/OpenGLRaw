@@ -33,8 +33,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_compiled_vertex_array"
 
-EXTENSION_ENTRY(glLockArrays,GLint -> GLsizei -> IO ())
-EXTENSION_ENTRY(glUnlockArrays,IO ())
+EXTENSION_ENTRY(dyn_glLockArrays,ptr_glLockArrays,glLockArrays,GLint -> GLsizei -> IO ())
+EXTENSION_ENTRY(dyn_glUnlockArrays,ptr_glUnlockArrays,glUnlockArrays,IO ())
 
 gl_ARRAY_ELEMENT_LOCK_FIRST :: GLenum
 gl_ARRAY_ELEMENT_LOCK_FIRST = 0x81A8
