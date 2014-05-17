@@ -31,7 +31,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_sample_shading"
 
-EXTENSION_ENTRY(dyn_glMinSampleShading,ptr_glMinSampleShading,glMinSampleShading,GLclampf -> IO ())
+EXTENSION_ENTRY(dyn_glMinSampleShading,ptr_glMinSampleShading,"glMinSampleShading",glMinSampleShading,GLclampf -> IO ())
 
 gl_SAMPLE_SHADING :: GLenum
 gl_SAMPLE_SHADING = 0x8C36

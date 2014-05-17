@@ -71,8 +71,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_ARB_tessellation_shader"
 
-EXTENSION_ENTRY(dyn_glPatchParameteri,ptr_glPatchParameteri,glPatchParameteri,GLenum -> GLint -> IO ())
-EXTENSION_ENTRY(dyn_glPatchParameterfv,ptr_glPatchParameterfv,glPatchParameterfv,GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glPatchParameteri,ptr_glPatchParameteri,"glPatchParameteri",glPatchParameteri,GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glPatchParameterfv,ptr_glPatchParameterfv,"glPatchParameterfv",glPatchParameterfv,GLenum -> Ptr GLfloat -> IO ())
 
 gl_PATCHES :: GLenum
 gl_PATCHES = 0x000E

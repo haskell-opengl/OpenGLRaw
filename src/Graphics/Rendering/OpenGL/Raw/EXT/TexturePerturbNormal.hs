@@ -31,7 +31,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_texture_perturb_normal"
 
-EXTENSION_ENTRY(dyn_glTextureNormal,ptr_glTextureNormal,glTextureNormal,GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glTextureNormal,ptr_glTextureNormal,"glTextureNormal",glTextureNormal,GLenum -> IO ())
 
 gl_PERTURB :: GLenum
 gl_PERTURB = 0x85AE

@@ -40,8 +40,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_blend_func_extended"
 
-EXTENSION_ENTRY(dyn_glBindFragDataLocationIndexed,ptr_glBindFragDataLocationIndexed,glBindFragDataLocationIndexed,GLuint -> GLuint -> GLuint -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(dyn_glGetFragDataIndex,ptr_glGetFragDataIndex,glGetFragDataIndex,GLuint -> Ptr GLchar -> IO GLint)
+EXTENSION_ENTRY(dyn_glBindFragDataLocationIndexed,ptr_glBindFragDataLocationIndexed,"glBindFragDataLocationIndexed",glBindFragDataLocationIndexed,GLuint -> GLuint -> GLuint -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glGetFragDataIndex,ptr_glGetFragDataIndex,"glGetFragDataIndex",glGetFragDataIndex,GLuint -> Ptr GLchar -> IO GLint)
 
 gl_SRC1_COLOR :: GLenum
 gl_SRC1_COLOR = 0x88F9

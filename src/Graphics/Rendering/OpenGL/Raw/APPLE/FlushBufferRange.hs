@@ -36,7 +36,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_APPLE_flush_buffer_range"
 
-EXTENSION_ENTRY(dyn_glBufferParameteri,ptr_glBufferParameteri,glBufferParameteri, GLenum -> GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glBufferParameteri,ptr_glBufferParameteri,"glBufferParameteri",glBufferParameteri, GLenum -> GLenum -> GLint -> IO ())
 
 gl__BUFFER_SERIALIZED_MODIFY :: GLenum
 gl__BUFFER_SERIALIZED_MODIFY = 0x8A12

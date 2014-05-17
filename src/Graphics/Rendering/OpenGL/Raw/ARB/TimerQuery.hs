@@ -35,9 +35,9 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_timer_query"
 
-EXTENSION_ENTRY(dyn_glQueryCounter,ptr_glQueryCounter,glQueryCounter, GLuint -> GLenum -> IO ())
-EXTENSION_ENTRY(dyn_glGetQueryObjecti64v,ptr_glGetQueryObjecti64v,glGetQueryObjecti64v,GLuint -> GLenum -> Ptr GLint64 -> IO ())
-EXTENSION_ENTRY(dyn_glGetQueryObjectui64v,ptr_glGetQueryObjectui64v,glGetQueryObjectui64v,GLuint -> GLenum -> Ptr GLuint64 -> IO ())
+EXTENSION_ENTRY(dyn_glQueryCounter,ptr_glQueryCounter,"glQueryCounter",glQueryCounter, GLuint -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glGetQueryObjecti64v,ptr_glGetQueryObjecti64v,"glGetQueryObjecti64v",glGetQueryObjecti64v,GLuint -> GLenum -> Ptr GLint64 -> IO ())
+EXTENSION_ENTRY(dyn_glGetQueryObjectui64v,ptr_glGetQueryObjectui64v,"glGetQueryObjectui64v",glGetQueryObjectui64v,GLuint -> GLenum -> Ptr GLuint64 -> IO ())
 
 gl_TIME_ELAPSED :: GLenum
 gl_TIME_ELAPSED = 0x88BF

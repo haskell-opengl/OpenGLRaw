@@ -30,5 +30,5 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_draw_instanced"
 
-EXTENSION_ENTRY(dyn_glDrawArraysInstanced,ptr_glDrawArraysInstanced,glDrawArraysInstanced,GLenum -> GLint -> GLsizei -> GLsizei -> IO ())
-EXTENSION_ENTRY(dyn_glDrawElementsInstanced,ptr_glDrawElementsInstanced,glDrawElementsInstanced,GLenum -> GLsizei -> GLenum -> Ptr a -> GLsizei -> IO ())
+EXTENSION_ENTRY(dyn_glDrawArraysInstanced,ptr_glDrawArraysInstanced,"glDrawArraysInstanced",glDrawArraysInstanced,GLenum -> GLint -> GLsizei -> GLsizei -> IO ())
+EXTENSION_ENTRY(dyn_glDrawElementsInstanced,ptr_glDrawElementsInstanced,"glDrawElementsInstanced",glDrawElementsInstanced,GLenum -> GLsizei -> GLenum -> Ptr a -> GLsizei -> IO ())

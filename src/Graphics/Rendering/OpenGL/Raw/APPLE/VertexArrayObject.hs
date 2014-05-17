@@ -37,4 +37,4 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_APPLE_vertex_array_object"
 
-EXTENSION_ENTRY(dyn_glBindVertexArrayAPPLE,ptr_glBindVertexArrayAPPLE,glBindVertexArrayAPPLE,GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glBindVertexArrayAPPLE,ptr_glBindVertexArrayAPPLE,"glBindVertexArrayAPPLE",glBindVertexArrayAPPLE,GLuint -> IO ())

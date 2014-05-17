@@ -34,8 +34,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_cull_vertex"
 
-EXTENSION_ENTRY(dyn_glCullParameterfv,ptr_glCullParameterfv,glCullParameterfv,GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glCullParameterdv,ptr_glCullParameterdv,glCullParameterdv,GLenum -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glCullParameterfv,ptr_glCullParameterfv,"glCullParameterfv",glCullParameterfv,GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glCullParameterdv,ptr_glCullParameterdv,"glCullParameterdv",glCullParameterdv,GLenum -> Ptr GLdouble -> IO ())
 
 
 gl_CULL_VERTEX :: GLenum

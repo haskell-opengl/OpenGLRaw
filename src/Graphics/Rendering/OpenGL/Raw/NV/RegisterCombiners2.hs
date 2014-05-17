@@ -44,8 +44,8 @@ import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
 extensionNameString :: String
 extensionNameString = "GL_NV_register_combiners2"
 
-EXTENSION_ENTRY(dyn_glCombinerStageParameterfv,ptr_glCombinerStageParameterfv,glCombinerStageParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glGetCombinerStageParameterfv,ptr_glGetCombinerStageParameterfv,glGetCombinerStageParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glCombinerStageParameterfv,ptr_glCombinerStageParameterfv,"glCombinerStageParameterfv",glCombinerStageParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetCombinerStageParameterfv,ptr_glGetCombinerStageParameterfv,"glGetCombinerStageParameterfv",glGetCombinerStageParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
 
 gl_PER_STAGE_CONSTANTS :: GLenum
 gl_PER_STAGE_CONSTANTS = 0x8535

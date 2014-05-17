@@ -32,7 +32,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_index_material"
 
-EXTENSION_ENTRY(dyn_glIndexMaterial,ptr_glIndexMaterial,glIndexMaterial,GLenum -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glIndexMaterial,ptr_glIndexMaterial,"glIndexMaterial",glIndexMaterial,GLenum -> GLenum -> IO ())
 
 gl_INDEX_MATERIAL :: GLenum
 gl_INDEX_MATERIAL = 0x81B8

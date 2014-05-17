@@ -31,5 +31,5 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_program_parameters"
 
-EXTENSION_ENTRY(dyn_glProgramEnvParameters4fv,ptr_glProgramEnvParameters4fv,glProgramEnvParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glProgramLocalParameters4fv,ptr_glProgramLocalParameters4fv,glProgramLocalParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParameters4fv,ptr_glProgramEnvParameters4fv,"glProgramEnvParameters4fv",glProgramEnvParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParameters4fv,ptr_glProgramLocalParameters4fv,"glProgramLocalParameters4fv",glProgramLocalParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())

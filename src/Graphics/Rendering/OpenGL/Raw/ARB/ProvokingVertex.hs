@@ -33,7 +33,7 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_provoking_vertex"
 
-EXTENSION_ENTRY(dyn_glProvokingVertex,ptr_glProvokingVertex,glProvokingVertex,GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glProvokingVertex,ptr_glProvokingVertex,"glProvokingVertex",glProvokingVertex,GLenum -> IO ())
 
 gl_FIRST_VERTEX_CONVENTION :: GLenum
 gl_FIRST_VERTEX_CONVENTION = 0x8E4D

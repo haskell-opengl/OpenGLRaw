@@ -47,7 +47,7 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_shader_storage_buffer_object"
 
-EXTENSION_ENTRY(dyn_glShaderStorageBlockBinding,ptr_glShaderStorageBlockBinding,glShaderStorageBlockBinding, GLuint -> GLuint -> GLuint -> IO())
+EXTENSION_ENTRY(dyn_glShaderStorageBlockBinding,ptr_glShaderStorageBlockBinding,"glShaderStorageBlockBinding",glShaderStorageBlockBinding, GLuint -> GLuint -> GLuint -> IO())
 
 gl_SHADER_STORAGE_BUFFER :: GLenum
 gl_SHADER_STORAGE_BUFFER = 0x90D2

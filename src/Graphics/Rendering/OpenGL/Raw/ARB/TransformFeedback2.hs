@@ -45,13 +45,13 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_transform_feedback2"
 
-EXTENSION_ENTRY(dyn_glBindTransformFeedback,ptr_glBindTransformFeedback,glBindTransformFeedback,GLenum -> GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glDeleteTransformFeedbacks,ptr_glDeleteTransformFeedbacks,glDeleteTransformFeedbacks,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glGenTransformFeedbacks,ptr_glGenTransformFeedbacks,glGenTransformFeedbacks,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glIsTransformFeedback,ptr_glIsTransformFeedback,glIsTransformFeedback,GLuint -> IO GLboolean)
-EXTENSION_ENTRY(dyn_glPauseTransformFeedback,ptr_glPauseTransformFeedback,glPauseTransformFeedback,IO ())
-EXTENSION_ENTRY(dyn_glResumeTransformFeedback,ptr_glResumeTransformFeedback,glResumeTransformFeedback,IO ())
-EXTENSION_ENTRY(dyn_glDrawTransformFeedback,ptr_glDrawTransformFeedback,glDrawTransformFeedback,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glBindTransformFeedback,ptr_glBindTransformFeedback,"glBindTransformFeedback",glBindTransformFeedback,GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glDeleteTransformFeedbacks,ptr_glDeleteTransformFeedbacks,"glDeleteTransformFeedbacks",glDeleteTransformFeedbacks,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGenTransformFeedbacks,ptr_glGenTransformFeedbacks,"glGenTransformFeedbacks",glGenTransformFeedbacks,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glIsTransformFeedback,ptr_glIsTransformFeedback,"glIsTransformFeedback",glIsTransformFeedback,GLuint -> IO GLboolean)
+EXTENSION_ENTRY(dyn_glPauseTransformFeedback,ptr_glPauseTransformFeedback,"glPauseTransformFeedback",glPauseTransformFeedback,IO ())
+EXTENSION_ENTRY(dyn_glResumeTransformFeedback,ptr_glResumeTransformFeedback,"glResumeTransformFeedback",glResumeTransformFeedback,IO ())
+EXTENSION_ENTRY(dyn_glDrawTransformFeedback,ptr_glDrawTransformFeedback,"glDrawTransformFeedback",glDrawTransformFeedback,GLenum -> GLuint -> IO ())
 
 gl_TRANSFORM_FEEDBACK :: GLenum
 gl_TRANSFORM_FEEDBACK = 0x8E22

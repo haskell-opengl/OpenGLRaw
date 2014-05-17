@@ -43,10 +43,10 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_parameter_buffer_object"
 
-EXTENSION_ENTRY(dyn_glBindBufferOffset,ptr_glBindBufferOffset,glBindBufferOffset,GLenum -> GLuint -> GLuint -> GLintptr -> IO ())
-EXTENSION_ENTRY(dyn_glProgramBufferParametersfv,ptr_glProgramBufferParametersfv,glProgramBufferParametersfv,GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glProgramBufferParametersIiv,ptr_glProgramBufferParametersIiv,glProgramBufferParametersIiv,GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramBufferParametersIuiv,ptr_glProgramBufferParametersIuiv,glProgramBufferParametersIuiv,GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glBindBufferOffset,ptr_glBindBufferOffset,"glBindBufferOffset",glBindBufferOffset,GLenum -> GLuint -> GLuint -> GLintptr -> IO ())
+EXTENSION_ENTRY(dyn_glProgramBufferParametersfv,ptr_glProgramBufferParametersfv,"glProgramBufferParametersfv",glProgramBufferParametersfv,GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glProgramBufferParametersIiv,ptr_glProgramBufferParametersIiv,"glProgramBufferParametersIiv",glProgramBufferParametersIiv,GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramBufferParametersIuiv,ptr_glProgramBufferParametersIuiv,"glProgramBufferParametersIuiv",glProgramBufferParametersIuiv,GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLuint -> IO ())
 
 gl_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS :: GLenum
 gl_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS = 0x8DA0

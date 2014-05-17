@@ -51,11 +51,11 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_ES2_compatibility"
 
-EXTENSION_ENTRY(dyn_glReleaseShaderCompiler,ptr_glReleaseShaderCompiler,glReleaseShaderCompiler,IO ())
-EXTENSION_ENTRY(dyn_glShaderBinary,ptr_glShaderBinary,glShaderBinary,GLsizei -> Ptr GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
-EXTENSION_ENTRY(dyn_glGetShaderPrecisionFormat,ptr_glGetShaderPrecisionFormat,glGetShaderPrecisionFormat,GLenum -> GLenum -> Ptr GLint -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glDepthRangef,ptr_glDepthRangef,glDepthRangef,GLfloat -> GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glClearDepthf,ptr_glClearDepthf,glClearDepthf,GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glReleaseShaderCompiler,ptr_glReleaseShaderCompiler,"glReleaseShaderCompiler",glReleaseShaderCompiler,IO ())
+EXTENSION_ENTRY(dyn_glShaderBinary,ptr_glShaderBinary,"glShaderBinary",glShaderBinary,GLsizei -> Ptr GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
+EXTENSION_ENTRY(dyn_glGetShaderPrecisionFormat,ptr_glGetShaderPrecisionFormat,"glGetShaderPrecisionFormat",glGetShaderPrecisionFormat,GLenum -> GLenum -> Ptr GLint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glDepthRangef,ptr_glDepthRangef,"glDepthRangef",glDepthRangef,GLfloat -> GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glClearDepthf,ptr_glClearDepthf,"glClearDepthf",glClearDepthf,GLfloat -> IO ())
 
 gl_FIXED :: GLenum
 gl_FIXED = 0x140C

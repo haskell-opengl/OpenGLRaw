@@ -46,9 +46,9 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_vertex_weighting"
 
-EXTENSION_ENTRY(dyn_glVertexWeightf,ptr_glVertexWeightf,glVertexWeightf,GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glVertexWeightfv,ptr_glVertexWeightfv,glVertexWeightfv,Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glVertexWeightPointer,ptr_glVertexWeightPointer,glVertexWeightPointer,GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glVertexWeightf,ptr_glVertexWeightf,"glVertexWeightf",glVertexWeightf,GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glVertexWeightfv,ptr_glVertexWeightfv,"glVertexWeightfv",glVertexWeightfv,Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glVertexWeightPointer,ptr_glVertexWeightPointer,"glVertexWeightPointer",glVertexWeightPointer,GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
 
 gl_VERTEX_WEIGHTING :: GLenum
 gl_VERTEX_WEIGHTING = 0x8509

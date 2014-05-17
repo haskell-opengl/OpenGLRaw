@@ -38,9 +38,9 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_bindable_uniform"
 
-EXTENSION_ENTRY(dyn_glUniformBuffer,ptr_glUniformBuffer,glUniformBuffer,GLuint -> GLint -> GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glGetUniformBufferSize,ptr_glGetUniformBufferSize,glGetUniformBufferSize,GLuint -> GLint -> IO GLint)
-EXTENSION_ENTRY(dyn_glGetUniformOffset,ptr_glGetUniformOffset,glGetUniformOffset,GLuint -> GLint -> IO GLintptr)
+EXTENSION_ENTRY(dyn_glUniformBuffer,ptr_glUniformBuffer,"glUniformBuffer",glUniformBuffer,GLuint -> GLint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetUniformBufferSize,ptr_glGetUniformBufferSize,"glGetUniformBufferSize",glGetUniformBufferSize,GLuint -> GLint -> IO GLint)
+EXTENSION_ENTRY(dyn_glGetUniformOffset,ptr_glGetUniformOffset,"glGetUniformOffset",glGetUniformOffset,GLuint -> GLint -> IO GLintptr)
 
 gl_MAX_VERTEX_BINDABLE_UNIFORMS :: GLenum
 gl_MAX_VERTEX_BINDABLE_UNIFORMS = 0x8DE2

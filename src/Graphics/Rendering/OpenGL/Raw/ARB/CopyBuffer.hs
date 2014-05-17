@@ -32,7 +32,7 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_copy_buffer"
 
-EXTENSION_ENTRY(dyn_glCopyBufferSubData,ptr_glCopyBufferSubData,glCopyBufferSubData,GLenum -> GLenum -> GLintptr -> GLintptr -> GLsizeiptr -> IO ())
+EXTENSION_ENTRY(dyn_glCopyBufferSubData,ptr_glCopyBufferSubData,"glCopyBufferSubData",glCopyBufferSubData,GLenum -> GLenum -> GLintptr -> GLintptr -> GLsizeiptr -> IO ())
 
 gl_COPY_READ_BUFFER_BINDING :: GLenum
 gl_COPY_READ_BUFFER_BINDING = 0x8F36

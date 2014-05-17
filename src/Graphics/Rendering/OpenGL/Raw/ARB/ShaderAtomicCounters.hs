@@ -59,7 +59,7 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_shader_atomic_counter"
 
-EXTENSION_ENTRY(dyn_glGetActiveAtomicCounterBufferiv,ptr_glGetActiveAtomicCounterBufferiv,glGetActiveAtomicCounterBufferiv,GLuint -> GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetActiveAtomicCounterBufferiv,ptr_glGetActiveAtomicCounterBufferiv,"glGetActiveAtomicCounterBufferiv",glGetActiveAtomicCounterBufferiv,GLuint -> GLuint -> GLenum -> Ptr GLint -> IO ())
 
 gl_ATOMIC_COUNTER_BUFFER :: GLenum
 gl_ATOMIC_COUNTER_BUFFER = 0x92C0

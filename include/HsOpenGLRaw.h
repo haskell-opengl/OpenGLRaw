@@ -20,12 +20,12 @@
 /* NOTE: The macro must immediately start with the foreign declaration,
    otherwise the magic mangler (hack_foreign) in the Hugs build system
    doesn't recognize it. */
-#define EXTENSION_ENTRY(dyn_entry, ptr_entry, _entry, _ty) \
-foreign import CALLCONV unsafe "dynamic" dyn_entry :: Graphics.Rendering.OpenGL.Raw.Extensions.Invoker (_ty) ; \
+#define EXTENSION_ENTRY(_dyn_entry,_ptr_entry,_str_entry,_entry,_ty) \
+foreign import CALLCONV unsafe "dynamic" _dyn_entry :: Graphics.Rendering.OpenGL.Raw.Extensions.Invoker (_ty) ; \
 _entry :: (_ty) ; \
-_entry = dyn_entry ptr_entry ; \
-ptr_entry :: FunPtr a ; \
-ptr_entry = unsafePerformIO (Graphics.Rendering.OpenGL.Raw.Extensions.getExtensionEntry extensionNameString "_entry") ; \
-{-HASH NOINLINE ptr_entry HASH-}
+_entry = _dyn_entry _ptr_entry ; \
+_ptr_entry :: FunPtr a ; \
+_ptr_entry = unsafePerformIO (Graphics.Rendering.OpenGL.Raw.Extensions.getExtensionEntry extensionNameString _str_entry) ; \
+{-HASH NOINLINE _ptr_entry HASH-}
 
 #endif

@@ -41,12 +41,12 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_present_video"
 
-EXTENSION_ENTRY(dyn_glPresentFrameKeyed,ptr_glPresentFrameKeyed,glPresentFrameKeyed,GLuint -> GLuint64 -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLuint -> GLenum -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glPresentFrameDualFill,ptr_glPresentFrameDualFill,glPresentFrameDualFill,GLuint -> GLuint64 -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glGetVideoiv,ptr_glGetVideoiv,glGetVideoiv,GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetVideouiv,ptr_glGetVideouiv,glGetVideouiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glGetVideoi64v,ptr_glGetVideoi64v,glGetVideoi64v,GLuint -> GLenum -> Ptr GLint64 -> IO ())
-EXTENSION_ENTRY(dyn_glGetVideoui64v,ptr_glGetVideoui64v,glGetVideoui64v,GLuint -> GLenum -> Ptr GLuint64 -> IO ())
+EXTENSION_ENTRY(dyn_glPresentFrameKeyed,ptr_glPresentFrameKeyed,"glPresentFrameKeyed",glPresentFrameKeyed,GLuint -> GLuint64 -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLuint -> GLenum -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glPresentFrameDualFill,ptr_glPresentFrameDualFill,"glPresentFrameDualFill",glPresentFrameDualFill,GLuint -> GLuint64 -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetVideoiv,ptr_glGetVideoiv,"glGetVideoiv",glGetVideoiv,GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetVideouiv,ptr_glGetVideouiv,"glGetVideouiv",glGetVideouiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetVideoi64v,ptr_glGetVideoi64v,"glGetVideoi64v",glGetVideoi64v,GLuint -> GLenum -> Ptr GLint64 -> IO ())
+EXTENSION_ENTRY(dyn_glGetVideoui64v,ptr_glGetVideoui64v,"glGetVideoui64v",glGetVideoui64v,GLuint -> GLenum -> Ptr GLuint64 -> IO ())
 
 gl_FRAME :: GLenum
 gl_FRAME = 0x8E26

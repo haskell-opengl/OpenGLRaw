@@ -36,9 +36,9 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_depth_buffer_float"
 
-EXTENSION_ENTRY(dyn_glDepthRanged,ptr_glDepthRanged,glDepthRanged,GLdouble -> GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glClearDepthd,ptr_glClearDepthd,glClearDepthd,GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glDepthBoundsd,ptr_glDepthBoundsd,glDepthBoundsd,GLdouble -> GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glDepthRanged,ptr_glDepthRanged,"glDepthRanged",glDepthRanged,GLdouble -> GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glClearDepthd,ptr_glClearDepthd,"glClearDepthd",glClearDepthd,GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glDepthBoundsd,ptr_glDepthBoundsd,"glDepthBoundsd",glDepthBoundsd,GLdouble -> GLdouble -> IO ())
 
 gl_DEPTH_BUFFER_FLOAT_MODE :: GLenum
 gl_DEPTH_BUFFER_FLOAT_MODE = 0x8DAF

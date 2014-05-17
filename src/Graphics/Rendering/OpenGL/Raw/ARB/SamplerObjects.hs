@@ -47,20 +47,20 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_sampler_objects"
 
-EXTENSION_ENTRY(dyn_glGenSamplers,ptr_glGenSamplers,glGenSamplers,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glDeleteSamplers,ptr_glDeleteSamplers,glDeleteSamplers,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glIsSampler,ptr_glIsSampler,glIsSampler,GLuint -> IO GLboolean)
-EXTENSION_ENTRY(dyn_glBindSampler,ptr_glBindSampler,glBindSampler,GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glSamplerParameteri,ptr_glSamplerParameteri,glSamplerParameteri,GLuint -> GLenum -> GLint -> IO ())
-EXTENSION_ENTRY(dyn_glSamplerParameteriv,ptr_glSamplerParameteriv,glSamplerParameteriv,GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glSamplerParameterf,ptr_glSamplerParameterf,glSamplerParameterf,GLuint -> GLenum -> GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glSamplerParameterfv,ptr_glSamplerParameterfv,glSamplerParameterfv,GLuint -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glSamplerParameterIiv,ptr_glSamplerParameterIiv,glSamplerParameterIiv,GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glSamplerParameterIuiv,ptr_glSamplerParameterIuiv,glSamplerParameterIuiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glGetSamplerParameteriv,ptr_glGetSamplerParameteriv,glGetSamplerParameteriv,GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetSamplerParameterIiv,ptr_glGetSamplerParameterIiv,glGetSamplerParameterIiv,GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetSamplerParameterfv,ptr_glGetSamplerParameterfv,glGetSamplerParameterfv,GLuint -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glGetSamplerParameterIuiv,ptr_glGetSamplerParameterIuiv,glGetSamplerParameterIuiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGenSamplers,ptr_glGenSamplers,"glGenSamplers",glGenSamplers,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glDeleteSamplers,ptr_glDeleteSamplers,"glDeleteSamplers",glDeleteSamplers,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glIsSampler,ptr_glIsSampler,"glIsSampler",glIsSampler,GLuint -> IO GLboolean)
+EXTENSION_ENTRY(dyn_glBindSampler,ptr_glBindSampler,"glBindSampler",glBindSampler,GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glSamplerParameteri,ptr_glSamplerParameteri,"glSamplerParameteri",glSamplerParameteri,GLuint -> GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glSamplerParameteriv,ptr_glSamplerParameteriv,"glSamplerParameteriv",glSamplerParameteriv,GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glSamplerParameterf,ptr_glSamplerParameterf,"glSamplerParameterf",glSamplerParameterf,GLuint -> GLenum -> GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glSamplerParameterfv,ptr_glSamplerParameterfv,"glSamplerParameterfv",glSamplerParameterfv,GLuint -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glSamplerParameterIiv,ptr_glSamplerParameterIiv,"glSamplerParameterIiv",glSamplerParameterIiv,GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glSamplerParameterIuiv,ptr_glSamplerParameterIuiv,"glSamplerParameterIuiv",glSamplerParameterIuiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetSamplerParameteriv,ptr_glGetSamplerParameteriv,"glGetSamplerParameteriv",glGetSamplerParameteriv,GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetSamplerParameterIiv,ptr_glGetSamplerParameterIiv,"glGetSamplerParameterIiv",glGetSamplerParameterIiv,GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetSamplerParameterfv,ptr_glGetSamplerParameterfv,"glGetSamplerParameterfv",glGetSamplerParameterfv,GLuint -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetSamplerParameterIuiv,ptr_glGetSamplerParameterIuiv,"glGetSamplerParameterIuiv",glGetSamplerParameterIuiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
 
 gl_SAMPLER_BINDING :: GLenum
 gl_SAMPLER_BINDING = 0x8919

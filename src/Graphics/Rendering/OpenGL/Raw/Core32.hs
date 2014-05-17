@@ -54,4 +54,4 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "OpenGL 3.2"
 
-EXTENSION_ENTRY(dyn_glGetInteger64i_v,ptr_glGetInteger64i_v,glGetInteger64i_v,GLenum -> GLuint -> Ptr GLint64 -> IO ())
+EXTENSION_ENTRY(dyn_glGetInteger64i_v,ptr_glGetInteger64i_v,"glGetInteger64i_v",glGetInteger64i_v,GLenum -> GLuint -> Ptr GLint64 -> IO ())

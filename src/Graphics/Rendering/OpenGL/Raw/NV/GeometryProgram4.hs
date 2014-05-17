@@ -46,7 +46,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_geometry_program4"
 
-EXTENSION_ENTRY(dyn_glProgramVertexLimit,ptr_glProgramVertexLimit,glProgramVertexLimit,GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramVertexLimit,ptr_glProgramVertexLimit,"glProgramVertexLimit",glProgramVertexLimit,GLenum -> GLint -> IO ())
 
 gl_GEOMETRY_PROGRAM :: GLenum
 gl_GEOMETRY_PROGRAM = 0x8C26

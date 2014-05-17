@@ -43,13 +43,13 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_occlusion_query"
 
-EXTENSION_ENTRY(dyn_glGenOcclusionQueries,ptr_glGenOcclusionQueries,glGenOcclusionQueries,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glDeleteOcclusionQueries,ptr_glDeleteOcclusionQueries,glDeleteOcclusionQueries,GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glIsOcclusionQuery,ptr_glIsOcclusionQuery,glIsOcclusionQuery,GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glBeginOcclusionQuery,ptr_glBeginOcclusionQuery,glBeginOcclusionQuery,GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glEndOcclusionQuery,ptr_glEndOcclusionQuery,glEndOcclusionQuery,IO ())
-EXTENSION_ENTRY(dyn_glGetOcclusionQueryiv,ptr_glGetOcclusionQueryiv,glGetOcclusionQueryiv,GLuint -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetOcclusionQueryuiv,ptr_glGetOcclusionQueryuiv,glGetOcclusionQueryuiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGenOcclusionQueries,ptr_glGenOcclusionQueries,"glGenOcclusionQueries",glGenOcclusionQueries,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glDeleteOcclusionQueries,ptr_glDeleteOcclusionQueries,"glDeleteOcclusionQueries",glDeleteOcclusionQueries,GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glIsOcclusionQuery,ptr_glIsOcclusionQuery,"glIsOcclusionQuery",glIsOcclusionQuery,GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glBeginOcclusionQuery,ptr_glBeginOcclusionQuery,"glBeginOcclusionQuery",glBeginOcclusionQuery,GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glEndOcclusionQuery,ptr_glEndOcclusionQuery,"glEndOcclusionQuery",glEndOcclusionQuery,IO ())
+EXTENSION_ENTRY(dyn_glGetOcclusionQueryiv,ptr_glGetOcclusionQueryiv,"glGetOcclusionQueryiv",glGetOcclusionQueryiv,GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetOcclusionQueryuiv,ptr_glGetOcclusionQueryuiv,"glGetOcclusionQueryuiv",glGetOcclusionQueryuiv,GLuint -> GLenum -> Ptr GLuint -> IO ())
 
 gl_OCCLUSION_TEST :: GLenum
 gl_OCCLUSION_TEST = 0x8165

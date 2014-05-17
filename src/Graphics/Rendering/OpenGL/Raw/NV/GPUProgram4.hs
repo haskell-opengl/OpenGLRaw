@@ -54,22 +54,22 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_gpu_program4"
 
-EXTENSION_ENTRY(dyn_glProgramLocalParameterI4i,ptr_glProgramLocalParameterI4i,glProgramLocalParameterI4i,GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramLocalParameterI4iv,ptr_glProgramLocalParameterI4iv,glProgramLocalParameterI4iv,GLenum -> GLuint -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramLocalParametersI4iv,ptr_glProgramLocalParametersI4iv,glProgramLocalParametersI4iv,GLenum -> GLuint -> GLsizei -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramLocalParameterI4ui,ptr_glProgramLocalParameterI4ui,glProgramLocalParameterI4ui,GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramLocalParameterI4uiv,ptr_glProgramLocalParameterI4uiv,glProgramLocalParameterI4uiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramLocalParametersI4uiv,ptr_glProgramLocalParametersI4uiv,glProgramLocalParametersI4uiv,GLenum -> GLuint -> GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramEnvParameterI4i,ptr_glProgramEnvParameterI4i,glProgramEnvParameterI4i,GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramEnvParameterI4iv,ptr_glProgramEnvParameterI4iv,glProgramEnvParameterI4iv,GLenum -> GLuint -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramEnvParametersI4iv,ptr_glProgramEnvParametersI4iv,glProgramEnvParametersI4iv,GLenum -> GLuint -> GLsizei -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramEnvParameterI4ui,ptr_glProgramEnvParameterI4ui,glProgramEnvParameterI4ui,GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramEnvParameterI4uiv,ptr_glProgramEnvParameterI4uiv,glProgramEnvParameterI4uiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glProgramEnvParametersI4uiv,ptr_glProgramEnvParametersI4uiv,glProgramEnvParametersI4uiv,GLenum -> GLuint -> GLsizei -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glGetProgramLocalParameterIiv,ptr_glGetProgramLocalParameterIiv,glGetProgramLocalParameterIiv,GLenum -> GLuint -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetProgramLocalParameterIuiv,ptr_glGetProgramLocalParameterIuiv,glGetProgramLocalParameterIuiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(dyn_glGetProgramEnvParameterIiv,ptr_glGetProgramEnvParameterIiv,glGetProgramEnvParameterIiv,GLenum -> GLuint -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetProgramEnvParameterIuiv,ptr_glGetProgramEnvParameterIuiv,glGetProgramEnvParameterIuiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParameterI4i,ptr_glProgramLocalParameterI4i,"glProgramLocalParameterI4i",glProgramLocalParameterI4i,GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParameterI4iv,ptr_glProgramLocalParameterI4iv,"glProgramLocalParameterI4iv",glProgramLocalParameterI4iv,GLenum -> GLuint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParametersI4iv,ptr_glProgramLocalParametersI4iv,"glProgramLocalParametersI4iv",glProgramLocalParametersI4iv,GLenum -> GLuint -> GLsizei -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParameterI4ui,ptr_glProgramLocalParameterI4ui,"glProgramLocalParameterI4ui",glProgramLocalParameterI4ui,GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParameterI4uiv,ptr_glProgramLocalParameterI4uiv,"glProgramLocalParameterI4uiv",glProgramLocalParameterI4uiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParametersI4uiv,ptr_glProgramLocalParametersI4uiv,"glProgramLocalParametersI4uiv",glProgramLocalParametersI4uiv,GLenum -> GLuint -> GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParameterI4i,ptr_glProgramEnvParameterI4i,"glProgramEnvParameterI4i",glProgramEnvParameterI4i,GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParameterI4iv,ptr_glProgramEnvParameterI4iv,"glProgramEnvParameterI4iv",glProgramEnvParameterI4iv,GLenum -> GLuint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParametersI4iv,ptr_glProgramEnvParametersI4iv,"glProgramEnvParametersI4iv",glProgramEnvParametersI4iv,GLenum -> GLuint -> GLsizei -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParameterI4ui,ptr_glProgramEnvParameterI4ui,"glProgramEnvParameterI4ui",glProgramEnvParameterI4ui,GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParameterI4uiv,ptr_glProgramEnvParameterI4uiv,"glProgramEnvParameterI4uiv",glProgramEnvParameterI4uiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParametersI4uiv,ptr_glProgramEnvParametersI4uiv,"glProgramEnvParametersI4uiv",glProgramEnvParametersI4uiv,GLenum -> GLuint -> GLsizei -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramLocalParameterIiv,ptr_glGetProgramLocalParameterIiv,"glGetProgramLocalParameterIiv",glGetProgramLocalParameterIiv,GLenum -> GLuint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramLocalParameterIuiv,ptr_glGetProgramLocalParameterIuiv,"glGetProgramLocalParameterIuiv",glGetProgramLocalParameterIuiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramEnvParameterIiv,ptr_glGetProgramEnvParameterIiv,"glGetProgramEnvParameterIiv",glGetProgramEnvParameterIiv,GLenum -> GLuint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramEnvParameterIuiv,ptr_glGetProgramEnvParameterIuiv,"glGetProgramEnvParameterIuiv",glGetProgramEnvParameterIuiv,GLenum -> GLuint -> Ptr GLuint -> IO ())
 
 gl_PROGRAM_ATTRIB_COMPONENTS :: GLenum
 gl_PROGRAM_ATTRIB_COMPONENTS = 0x8906

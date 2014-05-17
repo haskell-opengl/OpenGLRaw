@@ -107,17 +107,17 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_shader_objects"
 
-EXTENSION_ENTRY(dyn_glDeleteObject,ptr_glDeleteObject,glDeleteObject,GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glGetHandle,ptr_glGetHandle,glGetHandle,GLenum -> IO GLhandle)
-EXTENSION_ENTRY(dyn_glDetachObject,ptr_glDetachObject,glDetachObject,GLhandle -> GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glCreateShaderObject,ptr_glCreateShaderObject,glCreateShaderObject,GLenum -> IO GLhandle)
-EXTENSION_ENTRY(dyn_glCreateProgramObject,ptr_glCreateProgramObject,glCreateProgramObject,IO GLhandle)
-EXTENSION_ENTRY(dyn_glAttachObject,ptr_glAttachObject,glAttachObject,GLhandle -> GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glUseProgramObject,ptr_glUseProgramObject,glUseProgramObject,GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glGetObjectParameterfv,ptr_glGetObjectParameterfv,glGetObjectParameterfv,GLhandle -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glGetObjectParameteriv,ptr_glGetObjectParameteriv,glGetObjectParameteriv,GLhandle -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetInfoLog,ptr_glGetInfoLog,glGetInfoLog,GLhandle -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(dyn_glGetAttachedObjects,ptr_glGetAttachedObjects,glGetAttachedObjects,GLhandle -> GLsizei -> Ptr GLsizei -> Ptr GLhandle -> IO ())
+EXTENSION_ENTRY(dyn_glDeleteObject,ptr_glDeleteObject,"glDeleteObject",glDeleteObject,GLhandle -> IO ())
+EXTENSION_ENTRY(dyn_glGetHandle,ptr_glGetHandle,"glGetHandle",glGetHandle,GLenum -> IO GLhandle)
+EXTENSION_ENTRY(dyn_glDetachObject,ptr_glDetachObject,"glDetachObject",glDetachObject,GLhandle -> GLhandle -> IO ())
+EXTENSION_ENTRY(dyn_glCreateShaderObject,ptr_glCreateShaderObject,"glCreateShaderObject",glCreateShaderObject,GLenum -> IO GLhandle)
+EXTENSION_ENTRY(dyn_glCreateProgramObject,ptr_glCreateProgramObject,"glCreateProgramObject",glCreateProgramObject,IO GLhandle)
+EXTENSION_ENTRY(dyn_glAttachObject,ptr_glAttachObject,"glAttachObject",glAttachObject,GLhandle -> GLhandle -> IO ())
+EXTENSION_ENTRY(dyn_glUseProgramObject,ptr_glUseProgramObject,"glUseProgramObject",glUseProgramObject,GLhandle -> IO ())
+EXTENSION_ENTRY(dyn_glGetObjectParameterfv,ptr_glGetObjectParameterfv,"glGetObjectParameterfv",glGetObjectParameterfv,GLhandle -> GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glGetObjectParameteriv,ptr_glGetObjectParameteriv,"glGetObjectParameteriv",glGetObjectParameteriv,GLhandle -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetInfoLog,ptr_glGetInfoLog,"glGetInfoLog",glGetInfoLog,GLhandle -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
+EXTENSION_ENTRY(dyn_glGetAttachedObjects,ptr_glGetAttachedObjects,"glGetAttachedObjects",glGetAttachedObjects,GLhandle -> GLsizei -> Ptr GLsizei -> Ptr GLhandle -> IO ())
 
 gl_PROGRAM_OBJECT :: GLenum
 gl_PROGRAM_OBJECT = 0x8B40

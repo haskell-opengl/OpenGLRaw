@@ -34,7 +34,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_framebuffer_multisample_coverage"
 
-EXTENSION_ENTRY(dyn_glRenderbufferStorageMultisampleCoverage,ptr_glRenderbufferStorageMultisampleCoverage,glRenderbufferStorageMultisampleCoverage,GLenum -> GLsizei -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
+EXTENSION_ENTRY(dyn_glRenderbufferStorageMultisampleCoverage,ptr_glRenderbufferStorageMultisampleCoverage,"glRenderbufferStorageMultisampleCoverage",glRenderbufferStorageMultisampleCoverage,GLenum -> GLsizei -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
 
 gl_RENDERBUFFER_COVERAGE_SAMPLES :: GLenum
 gl_RENDERBUFFER_COVERAGE_SAMPLES = 0x8CAB

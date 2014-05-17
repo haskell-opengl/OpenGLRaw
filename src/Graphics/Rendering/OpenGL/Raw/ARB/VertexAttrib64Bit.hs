@@ -57,13 +57,13 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_vertex_attrib_64bit"
 
-EXTENSION_ENTRY(dyn_glVertexAttribL1d,ptr_glVertexAttribL1d,glVertexAttribL1d,GLuint -> GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribL2d,ptr_glVertexAttribL2d,glVertexAttribL2d,GLuint -> GLdouble -> GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribL3d,ptr_glVertexAttribL3d,glVertexAttribL3d,GLuint -> GLdouble -> GLdouble -> GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribL4d,ptr_glVertexAttribL4d,glVertexAttribL4d,GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribL1dv,ptr_glVertexAttribL1dv,glVertexAttribL1dv,GLuint -> Ptr GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribL2dv,ptr_glVertexAttribL2dv,glVertexAttribL2dv,GLuint -> Ptr GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribL3dv,ptr_glVertexAttribL3dv,glVertexAttribL3dv,GLuint -> Ptr GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribL4dv,ptr_glVertexAttribL4dv,glVertexAttribL4dv,GLuint -> Ptr GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glVertexAttribLPointer,ptr_glVertexAttribLPointer,glVertexAttribLPointer,GLuint -> GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
-EXTENSION_ENTRY(dyn_glGetVertexAttribLdv,ptr_glGetVertexAttribLdv,glGetVertexAttribLdv,GLuint -> GLenum -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL1d,ptr_glVertexAttribL1d,"glVertexAttribL1d",glVertexAttribL1d,GLuint -> GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL2d,ptr_glVertexAttribL2d,"glVertexAttribL2d",glVertexAttribL2d,GLuint -> GLdouble -> GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL3d,ptr_glVertexAttribL3d,"glVertexAttribL3d",glVertexAttribL3d,GLuint -> GLdouble -> GLdouble -> GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL4d,ptr_glVertexAttribL4d,"glVertexAttribL4d",glVertexAttribL4d,GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL1dv,ptr_glVertexAttribL1dv,"glVertexAttribL1dv",glVertexAttribL1dv,GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL2dv,ptr_glVertexAttribL2dv,"glVertexAttribL2dv",glVertexAttribL2dv,GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL3dv,ptr_glVertexAttribL3dv,"glVertexAttribL3dv",glVertexAttribL3dv,GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribL4dv,ptr_glVertexAttribL4dv,"glVertexAttribL4dv",glVertexAttribL4dv,GLuint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribLPointer,ptr_glVertexAttribLPointer,"glVertexAttribLPointer",glVertexAttribLPointer,GLuint -> GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glGetVertexAttribLdv,ptr_glGetVertexAttribLdv,"glGetVertexAttribLdv",glGetVertexAttribLdv,GLuint -> GLenum -> Ptr GLdouble -> IO ())

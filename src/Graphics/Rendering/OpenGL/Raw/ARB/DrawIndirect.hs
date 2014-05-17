@@ -33,8 +33,8 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_draw_indirect"
 
-EXTENSION_ENTRY(dyn_glDrawArraysIndirect,ptr_glDrawArraysIndirect,glDrawArraysIndirect,GLenum -> Ptr a -> IO ())
-EXTENSION_ENTRY(dyn_glDrawElementsIndirect,ptr_glDrawElementsIndirect,glDrawElementsIndirect,GLenum -> GLenum -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glDrawArraysIndirect,ptr_glDrawArraysIndirect,"glDrawArraysIndirect",glDrawArraysIndirect,GLenum -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glDrawElementsIndirect,ptr_glDrawElementsIndirect,"glDrawElementsIndirect",glDrawElementsIndirect,GLenum -> GLenum -> Ptr a -> IO ())
 
 gl_DRAW_INDIRECT_BUFFER :: GLenum
 gl_DRAW_INDIRECT_BUFFER = 0x8F3F

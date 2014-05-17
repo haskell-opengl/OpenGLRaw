@@ -49,8 +49,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_multisample"
 
-EXTENSION_ENTRY(dyn_glSampleMask,ptr_glSampleMask,glSampleMask,GLclampf -> GLboolean -> IO ())
-EXTENSION_ENTRY(dyn_glSamplePattern,ptr_glSamplePattern,glSamplePattern,GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glSampleMask,ptr_glSampleMask,"glSampleMask",glSampleMask,GLclampf -> GLboolean -> IO ())
+EXTENSION_ENTRY(dyn_glSamplePattern,ptr_glSamplePattern,"glSamplePattern",glSamplePattern,GLenum -> IO ())
 
 gl_SAMPLE_ALPHA_TO_MASK :: GLenum
 gl_SAMPLE_ALPHA_TO_MASK = 0x809E
