@@ -37,8 +37,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_vertex_array_range"
 
-EXTENSION_ENTRY(glVertexArrayRange,GLsizei -> Ptr a -> IO ())
-EXTENSION_ENTRY(glFlushVertexArrayRange,IO ())
+EXTENSION_ENTRY(dyn_glVertexArrayRange,ptr_glVertexArrayRange,glVertexArrayRange,GLsizei -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glFlushVertexArrayRange,ptr_glFlushVertexArrayRange,glFlushVertexArrayRange,IO ())
 
 gl_VERTEX_ARRAY_RANGE :: GLenum
 gl_VERTEX_ARRAY_RANGE = 0x851D

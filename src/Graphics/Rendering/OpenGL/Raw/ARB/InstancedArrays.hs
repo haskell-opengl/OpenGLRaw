@@ -30,7 +30,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_instanced_arrays"
 
-EXTENSION_ENTRY(glVertexAttribDivisor,GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glVertexAttribDivisor,ptr_glVertexAttribDivisor,glVertexAttribDivisor,GLuint -> GLuint -> IO ())
 
 gl_VERTEX_ATTRIB_ARRAY_DIVISOR :: GLenum
 gl_VERTEX_ATTRIB_ARRAY_DIVISOR = 0x88FE

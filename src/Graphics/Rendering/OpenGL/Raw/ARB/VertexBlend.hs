@@ -81,16 +81,16 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_vertex_blend"
 
-EXTENSION_ENTRY(glWeightbv,GLint -> Ptr GLbyte -> IO ())
-EXTENSION_ENTRY(glWeightsv,GLint -> Ptr GLshort -> IO ())
-EXTENSION_ENTRY(glWeightiv,GLint -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(glWeightfv,GLint -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glWeightdv,GLint -> Ptr GLdouble -> IO ())
-EXTENSION_ENTRY(glWeightubv,GLint -> Ptr GLubyte -> IO ())
-EXTENSION_ENTRY(glWeightusv,GLint -> Ptr GLushort -> IO ())
-EXTENSION_ENTRY(glWeightuiv,GLint -> Ptr GLuint -> IO ())
-EXTENSION_ENTRY(glWeightPointer,GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
-EXTENSION_ENTRY(glVertexBlend,GLint -> IO ())
+EXTENSION_ENTRY(dyn_glWeightbv,ptr_glWeightbv,glWeightbv,GLint -> Ptr GLbyte -> IO ())
+EXTENSION_ENTRY(dyn_glWeightsv,ptr_glWeightsv,glWeightsv,GLint -> Ptr GLshort -> IO ())
+EXTENSION_ENTRY(dyn_glWeightiv,ptr_glWeightiv,glWeightiv,GLint -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glWeightfv,ptr_glWeightfv,glWeightfv,GLint -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glWeightdv,ptr_glWeightdv,glWeightdv,GLint -> Ptr GLdouble -> IO ())
+EXTENSION_ENTRY(dyn_glWeightubv,ptr_glWeightubv,glWeightubv,GLint -> Ptr GLubyte -> IO ())
+EXTENSION_ENTRY(dyn_glWeightusv,ptr_glWeightusv,glWeightusv,GLint -> Ptr GLushort -> IO ())
+EXTENSION_ENTRY(dyn_glWeightuiv,ptr_glWeightuiv,glWeightuiv,GLint -> Ptr GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glWeightPointer,ptr_glWeightPointer,glWeightPointer,GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glVertexBlend,ptr_glVertexBlend,glVertexBlend,GLint -> IO ())
 
 gl_MAX_VERTEX_UNITS :: GLenum
 gl_MAX_VERTEX_UNITS = 0x86A4

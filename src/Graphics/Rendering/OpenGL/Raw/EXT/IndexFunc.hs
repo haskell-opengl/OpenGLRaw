@@ -32,7 +32,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_index_func"
 
-EXTENSION_ENTRY(glIndexFunc,GLenum -> GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glIndexFunc,ptr_glIndexFunc,glIndexFunc,GLenum -> GLfloat -> IO ())
 
 gl_INDEX_TEST :: GLenum
 gl_INDEX_TEST = 0x81B5

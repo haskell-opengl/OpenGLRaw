@@ -42,8 +42,8 @@ import Graphics.Rendering.OpenGL.Raw.Types
 extensionNameString :: String
 extensionNameString = "GL_ARB_framebuffer_no_attachments"
 
-EXTENSION_ENTRY(glFramebufferParameteri,GLenum -> GLenum -> GLint -> IO ())
-EXTENSION_ENTRY(glGetFramebufferParameteriv,GLenum -> GLenum -> Ptr GLint)
+EXTENSION_ENTRY(dyn_glFramebufferParameteri,ptr_glFramebufferParameteri,glFramebufferParameteri,GLenum -> GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glGetFramebufferParameteriv,ptr_glGetFramebufferParameteriv,glGetFramebufferParameteriv,GLenum -> GLenum -> Ptr GLint)
 
 gl_FRAMEBUFFER_DEFAULT_WIDTH :: GLenum
 gl_FRAMEBUFFER_DEFAULT_WIDTH = 0x9310

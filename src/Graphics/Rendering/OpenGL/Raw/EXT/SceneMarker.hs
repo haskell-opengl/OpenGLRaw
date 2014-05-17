@@ -27,5 +27,5 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_scene_marker"
 
-EXTENSION_ENTRY(glBeginScene,IO ())
-EXTENSION_ENTRY(glEndScene,IO ())
+EXTENSION_ENTRY(dyn_glBeginScene,ptr_glBeginScene,glBeginScene,IO ())
+EXTENSION_ENTRY(dyn_glEndScene,ptr_glEndScene,glEndScene,IO ())

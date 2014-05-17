@@ -31,7 +31,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_stencil_two_side"
 
-EXTENSION_ENTRY(glActiveStencilFace,GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glActiveStencilFace,ptr_glActiveStencilFace,glActiveStencilFace,GLenum -> IO ())
 
 gl_STENCIL_TEST_TWO_SIDE :: GLenum
 gl_STENCIL_TEST_TWO_SIDE = 0x8910

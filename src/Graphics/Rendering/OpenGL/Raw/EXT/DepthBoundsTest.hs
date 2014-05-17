@@ -31,7 +31,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_depth_bounds_test"
 
-EXTENSION_ENTRY(glDepthBounds,GLclampd -> GLclampd -> IO())
+EXTENSION_ENTRY(dyn_glDepthBounds,ptr_glDepthBounds,glDepthBounds,GLclampd -> GLclampd -> IO())
 
 gl_DEPTH_BOUNDS_TEST :: GLenum
 gl_DEPTH_BOUNDS_TEST = 0x8890

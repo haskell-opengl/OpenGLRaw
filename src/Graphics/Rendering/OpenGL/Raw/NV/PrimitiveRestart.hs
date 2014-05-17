@@ -35,8 +35,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_NV_primitive_restart"
 
-EXTENSION_ENTRY(glPrimitiveRestart, IO ())
-EXTENSION_ENTRY(glPrimitiveRestartIndexNV,GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glPrimitiveRestart,ptr_glPrimitiveRestart,glPrimitiveRestart, IO ())
+EXTENSION_ENTRY(dyn_glPrimitiveRestartIndexNV,ptr_glPrimitiveRestartIndexNV,glPrimitiveRestartIndexNV,GLuint -> IO ())
 
 gl_PRIMITIVE_RESTART_NV :: GLenum
 gl_PRIMITIVE_RESTART_NV = 0x8558

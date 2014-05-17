@@ -57,9 +57,9 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_geometry_shader4"
 
-EXTENSION_ENTRY(glProgramParameteri,GLuint -> GLenum -> GLint -> IO ())
-EXTENSION_ENTRY(glFramebufferTexture,GLenum -> GLenum -> GLuint -> GLint -> IO ())
-EXTENSION_ENTRY(glFramebufferTextureFace,GLenum -> GLenum -> GLuint -> GLint -> GLenum -> IO ())
+EXTENSION_ENTRY(dyn_glProgramParameteri,ptr_glProgramParameteri,glProgramParameteri,GLuint -> GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glFramebufferTexture,ptr_glFramebufferTexture,glFramebufferTexture,GLenum -> GLenum -> GLuint -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glFramebufferTextureFace,ptr_glFramebufferTextureFace,glFramebufferTextureFace,GLenum -> GLenum -> GLuint -> GLint -> GLenum -> IO ())
 
 gl_LINES_ADJACENCY :: GLenum
 gl_LINES_ADJACENCY = 0x000A

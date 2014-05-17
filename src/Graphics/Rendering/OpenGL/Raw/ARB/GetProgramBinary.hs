@@ -37,8 +37,8 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_get_program_binary"
 
-EXTENSION_ENTRY(glGetProgramBinary,GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr a -> IO ())
-EXTENSION_ENTRY(glProgramBinary,GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
+EXTENSION_ENTRY(dyn_glGetProgramBinary,ptr_glGetProgramBinary,glGetProgramBinary,GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr a -> IO ())
+EXTENSION_ENTRY(dyn_glProgramBinary,ptr_glProgramBinary,glProgramBinary,GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
 
 gl_PROGRAM_BINARY_RETRIEVABLE_HINT :: GLenum
 gl_PROGRAM_BINARY_RETRIEVABLE_HINT = 0x8257

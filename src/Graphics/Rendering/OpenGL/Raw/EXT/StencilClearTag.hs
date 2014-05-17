@@ -32,7 +32,7 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_stencil_clear_tag"
 
-EXTENSION_ENTRY(glStencilClearTag,GLsizei -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glStencilClearTag,ptr_glStencilClearTag,glStencilClearTag,GLsizei -> GLuint -> IO ())
 
 gl_STENCIL_TAG_BITS :: GLenum
 gl_STENCIL_TAG_BITS = 0x88F2
