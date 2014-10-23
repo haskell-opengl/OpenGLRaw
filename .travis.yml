@@ -23,4 +23,6 @@ script:
  - ls -l
  - ls -l dist
  - cabal-1.18 sdist --verbose=3
+ - ls -l dist
+ - wc dist/setup-config
  - ghc-pkg list
