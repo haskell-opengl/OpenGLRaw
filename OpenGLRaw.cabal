@@ -267,7 +267,7 @@ library
       Graphics.Rendering.OpenGL.Raw.Extensions
    c-sources:
       cbits/HsOpenGLRaw.c
-   hs-Source-Dirs: src
+   hs-source-dirs: src
    include-dirs: include
    build-depends: base >= 3 && < 5
    ghc-options: -Wall -O2
