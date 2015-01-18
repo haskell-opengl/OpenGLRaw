@@ -30,6 +30,12 @@ cabal-version: >= 1.10
 extra-source-files:
   README.md
   include/HsOpenGLRaw.h
+  RegistryProcessor/LICENSE
+  RegistryProcessor/RegistryProcessor.cabal
+  RegistryProcessor/Setup.hs
+  RegistryProcessor/src/Main.hs
+  RegistryProcessor/src/MangledRegistry.hs
+  RegistryProcessor/src/Registry.hs
 
 flag UseNativeWindowsLibraries
   description:
