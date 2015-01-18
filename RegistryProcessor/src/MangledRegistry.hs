@@ -10,7 +10,9 @@ module MangledRegistry (
   Extension(..)
 ) where
 
+import Data.List
 import Data.Maybe
+import qualified DeclarationParser as D
 import qualified Data.Set as S
 import qualified Registry as R
 
@@ -139,15 +141,21 @@ toCommand c = Command {
         ps = map R.paramProto (R.commandParams c)
 
 toCType :: R.Proto -> CType
-toCType p = CType {
-  baseType = maybe (R.TypeName "NOCLUE") id $ R.protoPtype p,
-  numPointer = 99 }
+toCType p =
+  either error (\(b,n) -> CType { baseType = R.TypeName b, numPointer = n }) $
+  D.parse $
+  intercalate " " $
+  map ($ p) [
+    R.protoText1,
+    maybe "" R.unTypeName . R.protoPtype,
+    R.protoText2,
+    R.protoName,
+    R.protoText3 ]
 
 data CType = CType {
   baseType :: R.TypeName,
   numPointer :: Int
   } deriving (Eq, Ord, Show)
-
 
 data Feature = Feature
   deriving (Eq, Ord, Show)

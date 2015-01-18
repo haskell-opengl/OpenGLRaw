@@ -33,6 +33,7 @@ extra-source-files:
   RegistryProcessor/LICENSE
   RegistryProcessor/RegistryProcessor.cabal
   RegistryProcessor/Setup.hs
+  RegistryProcessor/src/DeclarationParser.hs
   RegistryProcessor/src/Main.hs
   RegistryProcessor/src/MangledRegistry.hs
   RegistryProcessor/src/Registry.hs
