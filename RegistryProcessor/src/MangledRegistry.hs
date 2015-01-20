@@ -6,6 +6,7 @@ module MangledRegistry (
   Enum'(..),
   R.TypeName(..),
   Command(..),
+  CType(..),
   Feature(..),
   Extension(..)
 ) where
@@ -150,7 +151,16 @@ showIntUsingDigits ds x = N.showIntAtBase (length ds) (ds !!) x ""
 data CType = CType {
   baseType :: R.TypeName,
   numPointer :: Int
-  } deriving (Eq, Ord, Show)
+  } deriving (Eq, Ord)
+
+instance Show CType where
+  showsPrec d ct
+    | numPointer ct == 0 = showString (R.unTypeName (baseType ct))
+    | otherwise =
+        showParen (d > 10) $
+        showString "Ptr " . showsPrec 11 (ct{numPointer = numPointer ct - 1})
+
+  showList = flip . foldr  $ \x -> shows x . showString " -> "
 
 -- We want to get 'Ptr a' instead of 'Ptr ()', so we might have to rename.
 toCType :: [R.TypeName] -> R.Proto -> ([R.TypeName], CType)

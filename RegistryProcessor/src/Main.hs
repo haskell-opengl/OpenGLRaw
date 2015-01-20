@@ -14,6 +14,7 @@ data Option
   | PrintProcessed
   | PrintEnums
   | PrintCommands
+  | PrintCommandTypes
   deriving Eq
 
 options :: [OptDescr Option]
@@ -22,7 +23,8 @@ options =
   , Option ['r'] ["print-raw"] (NoArg PrintRaw) "print raw registry"
   , Option ['p'] ["print-processed"] (NoArg PrintProcessed) "print processed registry"
   , Option ['e'] ["print-enums"] (NoArg PrintEnums) "print enums"
-  , Option ['c'] ["print-enums"] (NoArg PrintCommands) "print commands" ]
+  , Option ['c'] ["print-commands"] (NoArg PrintCommands) "print commands"
+  , Option ['t'] ["print-command-types"] (NoArg PrintCommandTypes) "print command types" ]
 
 getPaths :: IO ([Option], FilePath)
 getPaths = do
@@ -53,6 +55,9 @@ main = do
   when (PrintCommands `elem` opts) $ do
     putStrLn "---------------------------------------- commands"
     either putStrLn (mapM_ print . commands) $ parseRegistry str
+  when (PrintCommandTypes `elem` opts) $ do
+    putStrLn "---------------------------------------- command types"
+    either putStrLn (mapM_ (putStrLn . showCommandType) . commands) $ parseRegistry str
 
 convertEnum :: Enum' -> [String]
 convertEnum e =
@@ -70,3 +75,10 @@ splitBy _ [] = []
 splitBy p xs = case break p xs of
                 (ys, []  ) -> [ys]
                 (ys, _:zs) -> ys : splitBy p zs
+
+showCommandType :: Command -> String
+showCommandType c =
+  showString (proto c) .
+  showString " :: " .
+  shows (paramTypes c) .
+  showString "IO " . showsPrec 11 (resultType c) $ ""
