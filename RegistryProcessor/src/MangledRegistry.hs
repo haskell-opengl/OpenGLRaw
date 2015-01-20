@@ -10,10 +10,12 @@ module MangledRegistry (
   Extension(..)
 ) where
 
-import Data.List
-import Data.Maybe
-import qualified DeclarationParser as D
+import qualified Data.List as L
+import qualified Data.Maybe as M
 import qualified Data.Set as S
+import qualified Numeric as N
+
+import qualified DeclarationParser as D
 import qualified Registry as R
 
 parseRegistry :: String -> Either String Registry
@@ -132,19 +134,33 @@ data Command = Command {
 toCommand :: R.Command -> Command
 toCommand c = Command {
   proto = R.protoName pr,
-  resultType = toCType pr,
+  resultType = resTy,
   params = map R.protoName ps,
-  paramTypes = map toCType ps,
+  paramTypes = paramTys,
   referencedTypes =
-    S.fromList $ map R.unTypeName $ catMaybes $ map R.protoPtype (pr : ps) }
+    S.fromList $ map R.unTypeName $ M.catMaybes $ map R.protoPtype (pr : ps) }
   where pr = R.commandProto c
         ps = map R.paramProto (R.commandParams c)
+        varSupply = map (R.TypeName . showIntUsingDigits ['a' .. 'z']) [0 ..]
+        (resTy:paramTys) = snd $ L.mapAccumL toCType varSupply (pr : ps)
 
-toCType :: R.Proto -> CType
-toCType p =
-  either error (\(b,n) -> CType { baseType = R.TypeName b, numPointer = n }) $
+showIntUsingDigits :: [Char] -> Int -> String
+showIntUsingDigits ds x = N.showIntAtBase (length ds) (ds !!) x ""
+
+data CType = CType {
+  baseType :: R.TypeName,
+  numPointer :: Int
+  } deriving (Eq, Ord, Show)
+
+-- We want to get 'Ptr a' instead of 'Ptr ()', so we might have to rename.
+toCType :: [R.TypeName] -> R.Proto -> ([R.TypeName], CType)
+toCType varSupply p =
+  either error (\(b,n) ->
+    renameIf (b == "()" && n > 0)
+             varSupply
+             (CType { baseType = R.TypeName b, numPointer = n })) $
   D.parse $
-  intercalate " " $
+  L.intercalate " " $
   map ($ p) [
     R.protoText1,
     maybe "" R.unTypeName . R.protoPtype,
@@ -152,10 +168,9 @@ toCType p =
     R.protoName,
     R.protoText3 ]
 
-data CType = CType {
-  baseType :: R.TypeName,
-  numPointer :: Int
-  } deriving (Eq, Ord, Show)
+renameIf :: Bool -> [R.TypeName] -> CType -> ([R.TypeName], CType)
+renameIf False varSupply ct = (varSupply, ct)
+renameIf True  varSupply ct = (tail varSupply, ct{ baseType = head varSupply })
 
 data Feature = Feature
   deriving (Eq, Ord, Show)
