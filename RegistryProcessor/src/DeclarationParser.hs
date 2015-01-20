@@ -30,6 +30,8 @@ parseTypeSpecifier = choice' [
   token "void" >> return "()",
   token "float" >> return "CFloat",
   token "double" >> return "CDouble",
+  token "int32_t" >> return "Int32",
+  token "int64_t" >> return "Int64",
   do c <- option' "CChar" (token "signed" >> return "CSChar")
      choice' [
        token "char" >> return c,
