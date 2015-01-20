@@ -44,6 +44,7 @@ parseTypeSpecifier = choice' [
        token "int" >> return "CUInt",
        token "long" >> choice' [token "long" >> return "CULLong",
                                 return "CULong"]],
+  token "struct" >> parseIdentifier >> return "()",  -- Hmmm...
   parseIdentifier ]
 
 parseIdentifier :: ReadP String
