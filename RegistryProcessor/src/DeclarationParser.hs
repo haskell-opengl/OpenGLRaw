@@ -47,6 +47,7 @@ parseTypeSpecifier = choice' [
        token "long" >> choice' [token "long" >> return "CULLong",
                                 return "CULong"]],
   token "struct" >> parseIdentifier >> return "()",  -- Hmmm...
+  token "GLvoid" >> return "()",  -- glGetPerfQueryDataINTEL still mentions this
   parseIdentifier ]
 
 parseIdentifier :: ReadP String
