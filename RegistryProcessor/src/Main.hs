@@ -3,6 +3,7 @@ module Main where
 import Control.Monad
 import Data.Char
 import Data.List
+import qualified Data.Map as Map
 import System.Console.GetOpt
 import System.Environment
 import qualified Registry as R
@@ -51,19 +52,32 @@ main = do
     either putStrLn print $ parseRegistry str
   when (PrintEnums `elem` opts) $ do
     putStrLn "---------------------------------------- enums"
-    either putStrLn (mapM_ (putStrLn . unlines . convertEnum) . enums) $ parseRegistry str
+    either putStrLn (mapM_ (putStrLn . unlines . convertEnum) . enumsFor "gl") $ parseRegistry str
   when (PrintCommands `elem` opts) $ do
     putStrLn "---------------------------------------- commands"
-    either putStrLn (mapM_ print . commands) $ parseRegistry str
+    either putStrLn (mapM_ print . Map.elems . commands) $ parseRegistry str
   when (PrintCommandTypes `elem` opts) $ do
     putStrLn "---------------------------------------- command types"
-    either putStrLn (mapM_ (putStrLn . showCommandType) . commands) $ parseRegistry str
+    either putStrLn (mapM_ (putStrLn . showCommandType) . Map.elems . commands) $ parseRegistry str
+
+-- lookup' :: (Ord k, Show k) => k -> Map.Map k a -> a
+-- lookup' k m = Map.findWithDefault (error ("unknown name " ++ show k)) k m
+
+enumsFor :: String -> Registry -> [Enum']
+enumsFor api r =
+  [ e | es <- Map.elems (enums r)
+  , e <- es
+  , api `matchesAPI` enumAPI e ]
+
+matchesAPI :: String -> Maybe String -> Bool
+_ `matchesAPI` Nothing = True
+s `matchesAPI` Just t = s == t
 
 convertEnum :: Enum' -> [String]
 convertEnum e =
   [ n ++ " :: " ++ unTypeName (enumType e)
   , n ++ " = " ++ enumValue e ]
-  where n = mangleEnumName (enumName e) ++ maybe "" ("_" ++) (enumAPI e)
+  where n = mangleEnumName (enumName e)
 
 mangleEnumName :: String -> String
 mangleEnumName = intercalate [splitChar] . headToLower . splitBy (== splitChar)

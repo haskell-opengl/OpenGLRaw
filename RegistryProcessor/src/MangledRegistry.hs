@@ -12,6 +12,7 @@ module MangledRegistry (
 ) where
 
 import qualified Data.List as L
+import qualified Data.Map as Map
 import qualified Data.Maybe as M
 import qualified Data.Set as S
 import qualified Numeric as N
@@ -25,8 +26,8 @@ parseRegistry = fmap toRegistry . R.parseRegistry
 data Registry = Registry {
   types :: [Type],
   groups :: [Group],
-  enums :: [Enum'],
-  commands :: [Command],
+  enums :: Map.Map String [Enum'],
+  commands :: Map.Map String Command,
   features :: [Feature],
   extensions :: [Extension]
   } deriving (Eq, Ord, Show)
@@ -41,12 +42,13 @@ toRegistry r = Registry {
     [ toGroup g
     | R.GroupsElement ge <- rs
     , g <- R.unGroups ge ],
-  enums =
-   [ toEnum' (R.enumsNamespace ee) (R.enumsGroup ee) (R.enumsType ee) e
+  enums = Map.fromListWith (++)
+   [ (R.enumName e,
+      [toEnum' (R.enumsNamespace ee) (R.enumsGroup ee) (R.enumsType ee) e])
    | R.EnumsElement ee <- rs
    , Left e <- R.enumsEnumOrUnuseds ee ],
-  commands =
-   [ toCommand c
+  commands = fromList'
+   [ (R.protoName . R.commandProto $ c, toCommand c)
    | R.CommandsElement ce <- rs
    , c <- R.commandsCommands ce ],
   features =
@@ -57,6 +59,10 @@ toRegistry r = Registry {
     | R.ExtensionsElement ee <- R.unRegistry r
     , x <- R.unExtensions ee ]
   } where rs = R.unRegistry r
+
+fromList' :: (Ord k, Show a) => [(k,a)] -> Map.Map k a
+fromList' =
+  Map.fromListWith (\n o -> error $ "clash for " ++ show n ++ " and " ++ show o)
 
 data Type = Type
   deriving (Eq, Ord, Show)
