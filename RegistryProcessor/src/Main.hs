@@ -52,35 +52,36 @@ main = do
     either putStrLn print $ parseRegistry str
   when (PrintEnums `elem` opts) $ do
     putStrLn "---------------------------------------- enums"
-    either putStrLn (mapM_ (putStrLn . unlines . convertEnum) . enumsFor "gl") $ parseRegistry str
+    either putStrLn (mapM_ (putStrLn . unlines . convertEnum) . enumsFor (API "gl")) $ parseRegistry str
   when (PrintCommands `elem` opts) $ do
     putStrLn "---------------------------------------- commands"
     either putStrLn (mapM_ print . Map.elems . commands) $ parseRegistry str
   when (PrintCommandTypes `elem` opts) $ do
     putStrLn "---------------------------------------- command types"
-    either putStrLn (mapM_ (putStrLn . showCommandType) . Map.elems . commands) $ parseRegistry str
+    either putStrLn (mapM_ (putStrLn . showCommand) . Map.elems . commands) $ parseRegistry str
 
 -- lookup' :: (Ord k, Show k) => k -> Map.Map k a -> a
 -- lookup' k m = Map.findWithDefault (error ("unknown name " ++ show k)) k m
 
-enumsFor :: String -> Registry -> [Enum']
+enumsFor :: API -> Registry -> [Enum']
 enumsFor api r =
   [ e | es <- Map.elems (enums r)
   , e <- es
-  , api `matchesAPI` enumAPI e ]
+  , api `matches` enumAPI e ]
 
-matchesAPI :: String -> Maybe String -> Bool
-_ `matchesAPI` Nothing = True
-s `matchesAPI` Just t = s == t
+matches :: Eq a => a -> Maybe a -> Bool
+_ `matches` Nothing = True
+s `matches` Just t = s == t
 
 convertEnum :: Enum' -> [String]
 convertEnum e =
   [ n ++ " :: " ++ unTypeName (enumType e)
-  , n ++ " = " ++ enumValue e ]
-  where n = mangleEnumName (enumName e)
+  , n ++ " = " ++ unEnumValue (enumValue e) ]
+  where n = unEnumName . mangleEnumName . enumName $ e
 
-mangleEnumName :: String -> String
-mangleEnumName = intercalate [splitChar] . headToLower . splitBy (== splitChar)
+mangleEnumName :: EnumName -> EnumName
+mangleEnumName =
+  EnumName . intercalate [splitChar] . headToLower . splitBy (== splitChar) . unEnumName
   where splitChar = '_'
         headToLower xs = map toLower (head xs) : tail xs
 
@@ -90,9 +91,28 @@ splitBy p xs = case break p xs of
                 (ys, []  ) -> [ys]
                 (ys, _:zs) -> ys : splitBy p zs
 
-showCommandType :: Command -> String
-showCommandType c =
-  showString (proto c) .
-  showString " :: " .
-  shows (paramTypes c) .
-  showString "IO " . showsPrec 11 (resultType c) $ ""
+showCommand :: Command -> String
+showCommand c =
+  showString (signatureElementName (resultType c)) .
+  showString "\n" .
+  showString (concat (zipWith showParam ("::" : repeat "->") (paramTypes c))) .
+  showString ("  " ++ (if null (paramTypes c) then "::" else "->") ++ " IO ") . showsPrec 11 (resultType c) . showString (showSignatureElement "" (resultType c)) .
+
+  showString (signatureElementName (resultType c)) .
+  showString " = undefined\n" $
+  ""
+
+showParam :: String -> SignatureElement -> String
+showParam sep e = "  " ++ sep ++ " " ++ show e ++ showSignatureElement (inlineCode (signatureElementName e)) e
+
+showSignatureElement :: String -> SignatureElement -> String
+showSignatureElement name e
+  | null comment = "\n"
+  | otherwise = " -- ^ " ++ comment ++ ".\n"
+  where comment =
+          name ++
+          maybe "" (\g -> " of type " ++ concat (replicate (numPointer e) "pointer to ") ++ inlineCode (unGroupName g)) (belongsToGroup e) ++
+          maybe "" (\l -> " of length " ++ inlineCode l) (arrayLength e)
+
+inlineCode :: String -> String
+inlineCode s = "@" ++ s ++ "@"

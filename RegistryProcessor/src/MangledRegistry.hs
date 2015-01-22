@@ -5,15 +5,20 @@ module MangledRegistry (
   Group(..),
   Enum'(..),
   R.TypeName(..),
-  Command(..),
-  CType(..),
+  Command(..), commandName,
+  SignatureElement(..),
   Feature(..),
-  Extension(..)
+  Extension(..),
+  GroupName(..),
+  EnumName(..),
+  EnumValue(..),
+  CommandName(..),
+  API(..)
 ) where
 
 import qualified Data.List as L
-import qualified Data.Map as Map
-import qualified Data.Maybe as M
+import qualified Data.Map as M
+import qualified Data.Maybe as MB
 import qualified Data.Set as S
 import qualified Numeric as N
 
@@ -26,8 +31,8 @@ parseRegistry = fmap toRegistry . R.parseRegistry
 data Registry = Registry {
   types :: [Type],
   groups :: [Group],
-  enums :: Map.Map String [Enum'],
-  commands :: Map.Map String Command,
+  enums :: M.Map EnumName [Enum'],
+  commands :: M.Map CommandName Command,
   features :: [Feature],
   extensions :: [Extension]
   } deriving (Eq, Ord, Show)
@@ -42,13 +47,13 @@ toRegistry r = Registry {
     [ toGroup g
     | R.GroupsElement ge <- rs
     , g <- R.unGroups ge ],
-  enums = Map.fromListWith (++)
-   [ (R.enumName e,
+  enums = M.fromListWith (++)
+   [ (EnumName (R.enumName e),
       [toEnum' (R.enumsNamespace ee) (R.enumsGroup ee) (R.enumsType ee) e])
    | R.EnumsElement ee <- rs
    , Left e <- R.enumsEnumOrUnuseds ee ],
   commands = fromList'
-   [ (R.protoName . R.commandProto $ c, toCommand c)
+   [ (CommandName . R.protoName . R.commandProto $ c, toCommand c)
    | R.CommandsElement ce <- rs
    , c <- R.commandsCommands ce ],
   features =
@@ -60,9 +65,9 @@ toRegistry r = Registry {
     , x <- R.unExtensions ee ]
   } where rs = R.unRegistry r
 
-fromList' :: (Ord k, Show a) => [(k,a)] -> Map.Map k a
+fromList' :: (Ord k, Show a) => [(k,a)] -> M.Map k a
 fromList' =
-  Map.fromListWith (\n o -> error $ "clash for " ++ show n ++ " and " ++ show o)
+  M.fromListWith (\n o -> error $ "clash for " ++ show n ++ " and " ++ show o)
 
 data Type = Type
   deriving (Eq, Ord, Show)
@@ -76,32 +81,26 @@ data Group = Group
 toGroup :: R.Group -> Group
 toGroup _ = Group
 
--- Conceptually enumValue should be an Integer, but the registry cheats a bit:
---
---   * xsd:decimal doesn't allow hex notation, which is used everywhere.
---   * egl.xml uses expression strings like "((EGLint)-1)".
---   * glx.xml uses "&quot;GLX&quot;", totally abusing it.
---
--- Furthermore, due to an oversight in the OpenGL ES spec, an enum can have
--- different values for different APIs (happens only for GL_ACTIVE_PROGRAM_EXT).
+-- NOTE: Due to an oversight in the OpenGL ES spec, an enum can have different
+-- values for different APIs (happens only for GL_ACTIVE_PROGRAM_EXT).
 data Enum' = Enum {
-  enumValue :: String,
-  enumAPI :: Maybe String,
+  enumValue :: EnumValue,
+  enumAPI :: Maybe API,
   enumType :: R.TypeName,
-  enumName :: String
+  enumName :: EnumName
   } deriving (Eq, Ord, Show)
 
 toEnum' :: Maybe String -> Maybe String -> Maybe String -> R.Enum' -> Enum'
 toEnum' eNamespace eGroup eType  e = Enum {
-  enumValue = R.enumValue e,
-  enumAPI = R.enumAPI e,
+  enumValue = EnumValue (R.enumValue e),
+  enumAPI = API `fmap` R.enumAPI e,
   enumType = toEnumType eNamespace eGroup eType (R.enumType e),
-  enumName = R.enumName e }
+  enumName = EnumName (R.enumName e) }
 
 -- TODO: Use Either instead of error below?
 toEnumType :: Maybe String -> Maybe String -> Maybe String -> Maybe R.TypeSuffix -> R.TypeName
 toEnumType eNamespace eGroup eType suffix = R.TypeName $
-  case (eNamespace, eGroup, eType, fmap R.unTypeSuffix suffix) of
+  case (eNamespace, eGroup, eType, R.unTypeSuffix `fmap` suffix) of
     -- glx.xml
     (Just "GLXStrings", _, _, _) -> "String"
     (Just ('G':'L':'X':_), _, _, _) -> "CInt"
@@ -131,35 +130,37 @@ toEnumType eNamespace eGroup eType suffix = R.TypeName $
     (_, _, _, _) -> error "can't determine enum type"
 
 data Command = Command {
-  proto :: String,
-  resultType :: CType,
-  params :: [String],
-  paramTypes :: [CType],
-  referencedTypes :: S.Set String -- TODO: Use TypeName
+  resultType :: SignatureElement,
+  paramTypes :: [SignatureElement],
+  referencedTypes :: S.Set R.TypeName
   } deriving (Eq, Ord, Show)
 
 toCommand :: R.Command -> Command
 toCommand c = Command {
-  proto = R.protoName pr,
   resultType = resTy,
-  params = map R.protoName ps,
   paramTypes = paramTys,
   referencedTypes =
-    S.fromList $ map R.unTypeName $ M.catMaybes $ map R.protoPtype (pr : ps) }
-  where pr = R.commandProto c
-        ps = map R.paramProto (R.commandParams c)
+    S.fromList $ MB.catMaybes $ map (R.protoPtype . R.paramProto) (pr : ps) }
+  where pr = R.Param { R.paramLen = Nothing, R.paramProto = R.commandProto c }
+        ps = R.commandParams c
         varSupply = map (R.TypeName . showIntUsingDigits ['a' .. 'z']) [0 ..]
-        (resTy:paramTys) = snd $ L.mapAccumL toCType varSupply (pr : ps)
+        (resTy:paramTys) = snd $ L.mapAccumL toSignatureElement varSupply (pr : ps)
 
 showIntUsingDigits :: [Char] -> Int -> String
 showIntUsingDigits ds x = N.showIntAtBase (length ds) (ds !!) x ""
 
-data CType = CType {
+commandName :: Command -> CommandName
+commandName = CommandName . signatureElementName . resultType
+
+data SignatureElement = SignatureElement {
+  arrayLength :: Maybe String,
+  belongsToGroup :: Maybe GroupName,
   baseType :: R.TypeName,
-  numPointer :: Int
+  numPointer :: Int,
+  signatureElementName :: String
   } deriving (Eq, Ord)
 
-instance Show CType where
+instance Show SignatureElement where
   showsPrec d ct
     | numPointer ct == 0 = showString (R.unTypeName (baseType ct))
     | otherwise =
@@ -169,22 +170,28 @@ instance Show CType where
   showList = flip . foldr  $ \x -> shows x . showString " -> "
 
 -- We want to get 'Ptr a' instead of 'Ptr ()', so we might have to rename.
-toCType :: [R.TypeName] -> R.Proto -> ([R.TypeName], CType)
-toCType varSupply p =
+toSignatureElement :: [R.TypeName] -> R.Param -> ([R.TypeName], SignatureElement)
+toSignatureElement varSupply param =
   either error (\(b,n) ->
     renameIf (b == "()" && n > 0)
              varSupply
-             (CType { baseType = R.TypeName b, numPointer = n })) $
+             (SignatureElement {
+                arrayLength = R.paramLen param,
+                belongsToGroup = GroupName `fmap` R.protoGroup proto,
+                numPointer = n,
+                baseType = R.TypeName b,
+                signatureElementName = R.protoName proto})) $
   D.parse $
   L.intercalate " " $
-  map ($ p) [
+  map ($ proto) [
     R.protoText1,
     maybe "" R.unTypeName . R.protoPtype,
     R.protoText2,
     R.protoName,
     R.protoText3 ]
+  where proto = R.paramProto param
 
-renameIf :: Bool -> [R.TypeName] -> CType -> ([R.TypeName], CType)
+renameIf :: Bool -> [R.TypeName] -> SignatureElement -> ([R.TypeName], SignatureElement)
 renameIf False varSupply ct = (varSupply, ct)
 renameIf True  varSupply ct = (tail varSupply, ct{ baseType = head varSupply })
 
@@ -199,3 +206,18 @@ data Extension = Extension
 
 toExtension :: R.Extension -> Extension
 toExtension _ = Extension
+
+newtype GroupName = GroupName { unGroupName :: String } deriving (Eq, Ord, Show)
+
+newtype EnumName = EnumName { unEnumName :: String } deriving (Eq, Ord, Show)
+
+-- Conceptually EnumValue should be an Integer, but the registry cheats a bit:
+--
+--   * xsd:decimal doesn't allow hex notation, which is used everywhere.
+--   * egl.xml uses expression strings like "((EGLint)-1)".
+--   * glx.xml uses "&quot;GLX&quot;", totally abusing it.
+newtype EnumValue = EnumValue { unEnumValue :: String } deriving (Eq, Ord, Show)
+
+newtype CommandName = CommandName { unCommandName :: String } deriving (Eq, Ord, Show)
+
+newtype API = API { unAPI :: String } deriving (Eq, Ord, Show)
