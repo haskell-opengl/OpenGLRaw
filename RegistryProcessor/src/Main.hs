@@ -3,6 +3,7 @@ module Main where
 import Control.Monad
 import Data.Char
 import Data.List
+import Data.Maybe
 import qualified Data.Map as Map
 import System.Console.GetOpt
 import System.Environment
@@ -95,24 +96,40 @@ showCommand :: Command -> String
 showCommand c =
   showString (signatureElementName (resultType c)) .
   showString "\n" .
-  showString (concat (zipWith showParam ("::" : repeat "->") (paramTypes c))) .
-  showString ("  " ++ (if null (paramTypes c) then "::" else "->") ++ " IO ") . showsPrec 11 (resultType c) . showString (showSignatureElement "" (resultType c)) .
+  showString (concat (zipWith3 showSignatureElement
+                     ("::" : repeat "->")
+                     (map (const False) (paramTypes c) ++ [True])
+                     (paramTypes c ++ [resultType c]))) $ ""
 
-  showString (signatureElementName (resultType c)) .
-  showString " = undefined\n" $
-  ""
+showSignatureElement :: String -> Bool -> SignatureElement -> String
+showSignatureElement separator isResult sigElem =
+  "  " ++ separator ++ " " ++
+  (if isResult then "IO " ++ showsPrec 11 sigElem "" else show sigElem) ++
+  showComment (if isResult then "" else signatureElementName sigElem) sigElem ++
+  "\n"
 
-showParam :: String -> SignatureElement -> String
-showParam sep e = "  " ++ sep ++ " " ++ show e ++ showSignatureElement (inlineCode (signatureElementName e)) e
+showComment :: String -> SignatureElement -> String
+showComment name sigElem
+  | null name' && null info = ""
+  | otherwise = " -- ^" ++ name' ++ info ++ "."
 
-showSignatureElement :: String -> SignatureElement -> String
-showSignatureElement name e
-  | null comment = "\n"
-  | otherwise = " -- ^ " ++ comment ++ ".\n"
-  where comment =
-          name ++
-          maybe "" (\g -> " of type " ++ concat (replicate (numPointer e) "pointer to ") ++ inlineCode (unGroupName g)) (belongsToGroup e) ++
-          maybe "" (\l -> " of length " ++ inlineCode l) (arrayLength e)
+  where name' | null name = ""
+              | otherwise = " " ++ inlineCode name
+
+        info | isInteresting = elms ++ " of type " ++ inlineCode (show (base sigElem))
+             | otherwise     = ""
+
+        isInteresting = isJust (arrayLength sigElem) || isJust (belongsToGroup sigElem)
+
+        elms | numPointer sigElem > 0 = " pointing to" ++ len ++ " elements"
+             | otherwise = ""
+
+        len = maybe "" (\l -> " " ++ inlineCode l) (arrayLength sigElem)
+
+        base = maybeDeref . maybeSetBaseType
+        maybeDeref e | numPointer e > 0 = e{numPointer = numPointer e - 1}
+                     | otherwise = e
+        maybeSetBaseType e = maybe e (\g -> e{baseType = TypeName (unGroupName g)}) (belongsToGroup e)
 
 inlineCode :: String -> String
 inlineCode s = "@" ++ s ++ "@"
