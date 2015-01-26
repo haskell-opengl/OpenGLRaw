@@ -58,8 +58,8 @@ main = do
     putStrLn "---------------------------------------- commands"
     either putStrLn (mapM_ print . Map.elems . commands) $ parseRegistry str
   when (PrintCommandTypes `elem` opts) $ do
-    putStrLn "---------------------------------------- command types"
-    either putStrLn (mapM_ (putStrLn . showCommand) . Map.elems . commands) $ parseRegistry str
+    either putStrLn (\r -> do putStr moduleHeader
+                              mapM_ (putStrLn . showCommand) . Map.elems . commands $ r) $ parseRegistry str
 
 -- lookup' :: (Ord k, Show k) => k -> Map.Map k a -> a
 -- lookup' k m = Map.findWithDefault (error ("unknown name " ++ show k)) k m
@@ -92,26 +92,86 @@ splitBy p xs = case break p xs of
                 (ys, []  ) -> [ys]
                 (ys, _:zs) -> ys : splitBy p zs
 
+-- TODO: Everything below is currently a cruel hack, clean this up!
+
+moduleHeader :: String
+moduleHeader = unlines [
+  "module Foo where",
+  "",
+  "import Foreign.C.Types",
+  "import Foreign.Ptr",
+  "import System.IO.Unsafe",
+  "",
+  "import Graphics.Rendering.OpenGL.Raw.GetProcAddress",
+  "import Graphics.Rendering.OpenGL.Raw.Types",
+  "import Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects ( GLhandle )",
+  "",
+  "type GLhandleARB = GLhandle",
+  "type GLsizeiARB = GLsizei",
+  "type GLcharARB = GLchar",
+  "type GLintptrARB = GLintptr",
+  "type GLsizeiptrARB = GLsizeiptr",
+  "type GLint64EXT = GLint64",
+  "type GLuint64EXT = GLuint64",
+  "type GLhalfNV = GLshort",
+  "type GLclampx = GLclampf",
+  "type GLvdpauSurfaceNV = Ptr ()",
+  "type GLeglImageOES = Ptr ()",
+  "type GLDEBUGPROC = FunPtr ()",
+  "type GLDEBUGPROCAMD = FunPtr ()",
+  "type GLDEBUGPROCARB = FunPtr ()",
+  "type GLDEBUGPROCKHR = FunPtr ()",
+  "",
+  "getExtensionEntry :: String -> String -> IO (FunPtr a)",
+  "getExtensionEntry _ = getProcAddress",
+  "",
+  "extensionNameString :: String",
+  "extensionNameString = \"OpenGL 4.5\"",
+  ""]
+
 showCommand :: Command -> String
 showCommand c =
-  showString (signatureElementName (resultType c)) .
-  showString "\n" .
-  showString (concat (zipWith3 showSignatureElement
-                     ("::" : repeat "->")
-                     (map (const False) (paramTypes c) ++ [True])
-                     (paramTypes c ++ [resultType c]))) $ ""
+  showString (take 80 ("-- " ++ name ++ repeat '-') ++ "\n\n") .
 
-showSignatureElement :: String -> Bool -> SignatureElement -> String
-showSignatureElement separator isResult sigElem =
-  "  " ++ separator ++ " " ++
-  (if isResult then "IO " ++ showsPrec 11 sigElem "" else show sigElem) ++
-  showComment (if isResult then "" else signatureElementName sigElem) sigElem ++
-  "\n"
+  showString (name ++ "\n") .
+  showString ("  :: " ++ signature True) .
+  showString (name ++ " = " ++ dyn_name ++ " " ++ ptr_name ++ "\n\n") .
+
+  showString ("foreign import" ++ callconv ++ " unsafe \"dynamic\" " ++ dyn_name ++ "\n" ++
+              "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
+              "  ->         " ++ compactSignature ++ "\n\n") .
+
+  showString ("{-# NOINLINE " ++ ptr_name ++ " #-}\n") .
+  showString (ptr_name ++ " :: FunPtr (" ++ compactSignature ++ ")\n") .
+  showString (ptr_name ++ " = unsafePerformIO $\n" ++
+              "  getExtensionEntry extensionNameString " ++ str_name ++ "\n") .
+
+  id $ ""
+
+  where name = signatureElementName (resultType c)
+        dyn_name = "dyn_" ++ name
+        ptr_name = "ptr_" ++ name
+        str_name = show name
+        callconv = " ccall"
+        compactSignature = signature False
+        signature withComment =
+          intercalate ((if withComment then " " else "") ++ " -> ")
+            ([showSignatureElement withComment False t | t <- paramTypes c] ++
+             [showSignatureElement withComment True (resultType c)])
+
+showSignatureElement :: Bool -> Bool -> SignatureElement -> String
+showSignatureElement withComment isResult sigElem = el ++ comment
+  where el | isResult  = "IO " ++ showsPrec 11 sigElem ""
+           | otherwise = show sigElem
+        comment | withComment = showComment name sigElem
+                | otherwise   = ""
+        name | isResult  = ""
+             | otherwise = signatureElementName sigElem
 
 showComment :: String -> SignatureElement -> String
 showComment name sigElem
-  | null name' && null info = ""
-  | otherwise = " -- ^" ++ name' ++ info ++ "."
+  | null name' && null info = "\n"
+  | otherwise = " -- ^" ++ name' ++ info ++ ".\n"
 
   where name' | null name = ""
               | otherwise = " " ++ inlineCode name
