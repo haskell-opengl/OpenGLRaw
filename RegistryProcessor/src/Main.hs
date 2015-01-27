@@ -17,6 +17,9 @@ data Option
   | PrintEnums
   | PrintCommands
   | PrintCommandTypes
+  | PrintFeature
+  | UseApi API
+  | UseVersion Version
   deriving Eq
 
 options :: [OptDescr Option]
@@ -26,7 +29,10 @@ options =
   , Option ['p'] ["print-processed"] (NoArg PrintProcessed) "print processed registry"
   , Option ['e'] ["print-enums"] (NoArg PrintEnums) "print enums"
   , Option ['c'] ["print-commands"] (NoArg PrintCommands) "print commands"
-  , Option ['t'] ["print-command-types"] (NoArg PrintCommandTypes) "print command types" ]
+  , Option ['t'] ["print-command-types"] (NoArg PrintCommandTypes) "print command types"
+  , Option ['f'] ["print-feature"] (NoArg PrintFeature) "print feature"
+  , Option ['a'] ["api"] (ReqArg (UseApi . API) "API") "extract features for API (default: gl)"
+  , Option ['v'] ["version"] (ReqArg (UseVersion . Version) "VERSION") "extract features for version (default: 1.0)" ]
 
 getPaths :: IO ([Option], FilePath)
 getPaths = do
@@ -41,6 +47,8 @@ getPaths = do
 main :: IO ()
 main = do
   (opts, path) <- getPaths
+  let api = head ([ a | UseApi a <- opts ] ++ [ API "gl" ])
+      version = head ([ v | UseVersion v <- opts ] ++ [ Version "1.0" ])
   str <- readFile path
   when (PrintXML `elem` opts) $ do
     putStrLn "---------------------------------------- XML registry"
@@ -53,20 +61,24 @@ main = do
     either putStrLn print $ parseRegistry str
   when (PrintEnums `elem` opts) $ do
     putStrLn "---------------------------------------- enums"
-    either putStrLn (mapM_ (putStrLn . unlines . convertEnum) . enumsFor (API "gl")) $ parseRegistry str
+    either putStrLn (mapM_ (putStrLn . unlines . convertEnum) . enumsFor api) $ parseRegistry str
   when (PrintCommands `elem` opts) $ do
     putStrLn "---------------------------------------- commands"
     either putStrLn (mapM_ print . Map.elems . commands) $ parseRegistry str
   when (PrintCommandTypes `elem` opts) $ do
     either putStrLn (\r -> do putStr moduleHeader
                               mapM_ (putStrLn . showCommand) . Map.elems . commands $ r) $ parseRegistry str
+  when (PrintFeature `elem` opts) $ do
+    putStrLn $ "---------------------------------------- feature " ++ unAPI api ++ " " ++ unVersion version
+    either putStrLn (mapM_ print . lookup' (api, version) . features) $ parseRegistry str
 
--- lookup' :: (Ord k, Show k) => k -> Map.Map k a -> a
--- lookup' k m = Map.findWithDefault (error ("unknown name " ++ show k)) k m
+lookup' :: (Ord k, Show k) => k -> Map.Map k a -> a
+lookup' k m = Map.findWithDefault (error ("unknown name " ++ show k)) k m
 
 enumsFor :: API -> Registry -> [Enum']
 enumsFor api r =
-  [ e | es <- Map.elems (enums r)
+  [ e
+  | es <- Map.elems (enums r)
   , e <- es
   , api `matches` enumAPI e ]
 

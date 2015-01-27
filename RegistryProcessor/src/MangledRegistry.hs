@@ -7,13 +7,14 @@ module MangledRegistry (
   R.TypeName(..),
   Command(..), commandName,
   SignatureElement(..),
-  Feature(..),
+  Modification(..),
   Extension(..),
   GroupName(..),
   EnumName(..),
   EnumValue(..),
   CommandName(..),
-  API(..)
+  API(..),
+  Version(..)
 ) where
 
 import qualified Data.List as L
@@ -29,22 +30,22 @@ parseRegistry :: String -> Either String Registry
 parseRegistry = fmap toRegistry . R.parseRegistry
 
 data Registry = Registry {
-  types :: [Type],
-  groups :: [Group],
+  types :: M.Map R.TypeName Type,
+  groups :: M.Map GroupName Group,
   enums :: M.Map EnumName [Enum'],
   commands :: M.Map CommandName Command,
-  features :: [Feature],
+  features :: M.Map (API, Version) [Modification],
   extensions :: [Extension]
   } deriving (Eq, Ord, Show)
 
 toRegistry :: R.Registry -> Registry
 toRegistry r = Registry {
-  types =
-    [ toType t
+  types = fromList'
+    [ (typeNameOf t, toType t)
     | R.TypesElement te <- rs
     , t <- R.unTypes te ],
-  groups =
-    [ toGroup g
+  groups = fromList'
+    [ (GroupName . R.unName . R.groupName $ g, toGroup g)
     | R.GroupsElement ge <- rs
     , g <- R.unGroups ge ],
   enums = M.fromListWith (++)
@@ -56,8 +57,9 @@ toRegistry r = Registry {
    [ (CommandName . R.protoName . R.commandProto $ c, toCommand c)
    | R.CommandsElement ce <- rs
    , c <- R.commandsCommands ce ],
-  features =
-    [ toFeature f
+  features = fromList'
+    [ ((API (R.featureAPI f), Version (R.featureNumber f)),
+       map toModification (R.featureModifications f))
     | R.FeatureElement f <- rs ],
   extensions =
     [ toExtension x
@@ -69,17 +71,31 @@ fromList' :: (Ord k, Show a) => [(k,a)] -> M.Map k a
 fromList' =
   M.fromListWith (\n o -> error $ "clash for " ++ show n ++ " and " ++ show o)
 
-data Type = Type
-  deriving (Eq, Ord, Show)
+typeNameOf :: R.Type -> R.TypeName
+typeNameOf t = case (R.typeName1 t, R.typeName2 t) of
+  (Nothing, Nothing) -> error ("missing type name in " ++ show t)
+  (Just n1, Nothing) -> n1
+  (Nothing, Just n2) -> n2
+  (Just n1, Just n2) | n1 == n2 -> n1
+                     | otherwise -> error ("conflicting type name in " ++ show t)
+
+data Type = Type {
+  typeAPI :: Maybe API,
+  typeRequires :: Maybe R.TypeName
+  } deriving (Eq, Ord, Show)
 
 toType :: R.Type -> Type
-toType _ = Type
+toType t = Type {
+  typeAPI = API `fmap` R.typeAPI t,
+  typeRequires = R.TypeName `fmap` R.typeRequires t }
 
-data Group = Group
-  deriving (Eq, Ord, Show)
+data Group = Group {
+  groupEnums :: [EnumName]
+  } deriving (Eq, Ord, Show)
 
 toGroup :: R.Group -> Group
-toGroup _ = Group
+toGroup g = Group {
+  groupEnums = map (EnumName . R.unName) (R.groupEnums g) }
 
 -- NOTE: Due to an oversight in the OpenGL ES spec, an enum can have different
 -- values for different APIs (happens only for GL_ACTIVE_PROGRAM_EXT).
@@ -195,11 +211,15 @@ renameIf :: Bool -> [R.TypeName] -> SignatureElement -> ([R.TypeName], Signature
 renameIf False varSupply ct = (varSupply, ct)
 renameIf True  varSupply ct = (tail varSupply, ct{ baseType = head varSupply })
 
-data Feature = Feature
-  deriving (Eq, Ord, Show)
+data Modification = Modification {
+  modificationKind :: R.ModificationKind,
+  modificationProfile :: Maybe R.ProfileName
+  } deriving (Eq, Ord, Show)
 
-toFeature :: R.Feature -> Feature
-toFeature _ = Feature
+toModification :: R.Modification -> Modification
+toModification m = Modification {
+  modificationKind = R.modificationModificationKind m,
+  modificationProfile = R.modificationProfileName m }
 
 data Extension = Extension
   deriving (Eq, Ord, Show)
@@ -221,3 +241,5 @@ newtype EnumValue = EnumValue { unEnumValue :: String } deriving (Eq, Ord, Show)
 newtype CommandName = CommandName { unCommandName :: String } deriving (Eq, Ord, Show)
 
 newtype API = API { unAPI :: String } deriving (Eq, Ord, Show)
+
+newtype Version = Version { unVersion :: String } deriving (Eq, Ord, Show)
