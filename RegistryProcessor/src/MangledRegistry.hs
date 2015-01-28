@@ -8,7 +8,9 @@ module MangledRegistry (
   Command(..), commandName,
   SignatureElement(..),
   Modification(..),
+  R.ProfileName(..),
   Extension(..),
+  InterfaceElement(..),
   GroupName(..),
   EnumName(..),
   EnumValue(..),
@@ -213,19 +215,35 @@ renameIf True  varSupply ct = (tail varSupply, ct{ baseType = head varSupply })
 
 data Modification = Modification {
   modificationKind :: R.ModificationKind,
-  modificationProfile :: Maybe R.ProfileName
+  modificationProfile :: Maybe R.ProfileName,
+  modificationInterfaceElements :: [InterfaceElement]
   } deriving (Eq, Ord, Show)
 
 toModification :: R.Modification -> Modification
 toModification m = Modification {
   modificationKind = R.modificationModificationKind m,
-  modificationProfile = R.modificationProfileName m }
+  modificationProfile = R.modificationProfileName m,
+  modificationInterfaceElements = map toInterfaceElement (R.modificationInterfaceElements m) }
 
 data Extension = Extension
   deriving (Eq, Ord, Show)
 
 toExtension :: R.Extension -> Extension
 toExtension _ = Extension
+
+data InterfaceElement
+  = TypeElement R.TypeName
+  | EnumElement EnumName
+  | CommandElement CommandName
+  deriving (Eq, Ord, Show)
+
+toInterfaceElement :: R.InterfaceElement -> InterfaceElement
+toInterfaceElement i =
+  (case R.interfaceElementKind i of
+     R.InterfaceElementType -> TypeElement . R.TypeName
+     R.InterfaceElementEnum -> EnumElement . EnumName
+     R.InterfaceElementCommand -> CommandElement . CommandName)
+  (R.unName (R.interfaceElementName i))
 
 newtype GroupName = GroupName { unGroupName :: String } deriving (Eq, Ord, Show)
 

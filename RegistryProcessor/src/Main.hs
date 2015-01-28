@@ -18,8 +18,10 @@ data Option
   | PrintCommands
   | PrintCommandTypes
   | PrintFeature
+  | PrintFeatureCommands
   | UseApi API
   | UseVersion Version
+  | UseProfile ProfileName
   deriving Eq
 
 options :: [OptDescr Option]
@@ -31,8 +33,10 @@ options =
   , Option ['c'] ["print-commands"] (NoArg PrintCommands) "print commands"
   , Option ['t'] ["print-command-types"] (NoArg PrintCommandTypes) "print command types"
   , Option ['f'] ["print-feature"] (NoArg PrintFeature) "print feature"
+  , Option ['C'] ["print-feature-commands"] (NoArg PrintFeatureCommands) "print feature commands"
   , Option ['a'] ["api"] (ReqArg (UseApi . API) "API") "extract features for API (default: gl)"
-  , Option ['v'] ["version"] (ReqArg (UseVersion . Version) "VERSION") "extract features for version (default: 1.0)" ]
+  , Option ['v'] ["version"] (ReqArg (UseVersion . Version) "VERSION") "extract features for version (default: 1.0)"
+  , Option ['P'] ["profile"] (ReqArg (UseProfile . ProfileName) "PROFILE") "extract features for profile (default: core)" ]
 
 getPaths :: IO ([Option], FilePath)
 getPaths = do
@@ -49,6 +53,7 @@ main = do
   (opts, path) <- getPaths
   let api = head ([ a | UseApi a <- opts ] ++ [ API "gl" ])
       version = head ([ v | UseVersion v <- opts ] ++ [ Version "1.0" ])
+      profile = head ([ p | UseProfile p <- opts ] ++ [ ProfileName "core" ])
   str <- readFile path
   when (PrintXML `elem` opts) $ do
     putStrLn "---------------------------------------- XML registry"
@@ -69,8 +74,24 @@ main = do
     either putStrLn (\r -> do putStr moduleHeader
                               mapM_ (putStrLn . showCommand) . Map.elems . commands $ r) $ parseRegistry str
   when (PrintFeature `elem` opts) $ do
-    putStrLn $ "---------------------------------------- feature " ++ unAPI api ++ " " ++ unVersion version
-    either putStrLn (mapM_ print . lookup' (api, version) . features) $ parseRegistry str
+    putStrLn $ "---------------------------------------- feature " ++ unAPI api ++ " " ++ unVersion version ++ " " ++ unProfileName profile
+    either putStrLn (mapM_ print . modificationsFor api version profile) $ parseRegistry str
+  when (PrintFeatureCommands `elem` opts) $ do
+    putStrLn $ "---------------------------------------- commands for feature " ++ unAPI api ++ " " ++ unVersion version ++ " " ++ unProfileName profile
+    either putStrLn (\r -> do putStr moduleHeader
+                              mapM_ (putStrLn . showCommand) . commandsFor r . modificationsFor api version profile $ r) $ parseRegistry str
+
+commandsFor :: Registry -> [Modification] -> [Command]
+commandsFor r ms =
+  [ lookup' n (commands r)
+  | m <- ms
+  , modificationKind m == R.Require  -- TODO: *Really* handle require/remove
+  , CommandElement n <- modificationInterfaceElements m ]
+
+modificationsFor :: API -> Version -> ProfileName -> Registry -> [Modification]
+modificationsFor api version profile =
+  filterModifications . lookup' (api, version) . features
+  where filterModifications = filter (matches profile . modificationProfile)
 
 lookup' :: (Ord k, Show k) => k -> Map.Map k a -> a
 lookup' k m = Map.findWithDefault (error ("unknown name " ++ show k)) k m
