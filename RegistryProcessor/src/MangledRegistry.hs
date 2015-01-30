@@ -8,6 +8,7 @@ module MangledRegistry (
   Command(..), commandName,
   SignatureElement(..),
   Modification(..),
+  R.ModificationKind(..),
   R.ProfileName(..),
   Extension(..),
   InterfaceElement(..),
@@ -60,7 +61,7 @@ toRegistry r = Registry {
    | R.CommandsElement ce <- rs
    , c <- R.commandsCommands ce ],
   features = fromList'
-    [ ((API (R.featureAPI f), Version (R.featureNumber f)),
+    [ ((API (R.featureAPI f), read (R.featureNumber f)),
        map toModification (R.featureModifications f))
     | R.FeatureElement f <- rs ],
   extensions =
@@ -260,4 +261,16 @@ newtype CommandName = CommandName { unCommandName :: String } deriving (Eq, Ord,
 
 newtype API = API { unAPI :: String } deriving (Eq, Ord, Show)
 
-newtype Version = Version { unVersion :: String } deriving (Eq, Ord, Show)
+data Version = Version {
+  major :: Int,
+  minor :: Int
+  } deriving (Eq, Ord)
+
+instance Show Version where
+  showsPrec _ v = shows (major v) . showChar '.' . shows (minor v)
+
+instance Read Version where
+  readsPrec _ s = [ (Version ma mi, r3)
+                  | (ma, r1) <- N.readDec s
+                  , ('.':r2) <- [r1]
+                  , (mi, r3) <- N.readDec r2 ]

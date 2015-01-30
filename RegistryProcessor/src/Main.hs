@@ -4,7 +4,8 @@ import Control.Monad
 import Data.Char
 import Data.List
 import Data.Maybe
-import qualified Data.Map as Map
+import qualified Data.Map as M
+import qualified Data.Set as S
 import System.Console.GetOpt
 import System.Environment
 import qualified Registry as R
@@ -14,10 +15,8 @@ data Option
   = PrintXML
   | PrintRaw
   | PrintProcessed
-  | PrintEnums
   | PrintCommands
   | PrintCommandTypes
-  | PrintFeature
   | PrintFeatureCommands
   | UseApi API
   | UseVersion Version
@@ -29,13 +28,11 @@ options =
   [ Option ['x'] ["print-xml"] (NoArg PrintXML) "print XML"
   , Option ['r'] ["print-raw"] (NoArg PrintRaw) "print raw registry"
   , Option ['p'] ["print-processed"] (NoArg PrintProcessed) "print processed registry"
-  , Option ['e'] ["print-enums"] (NoArg PrintEnums) "print enums"
   , Option ['c'] ["print-commands"] (NoArg PrintCommands) "print commands"
   , Option ['t'] ["print-command-types"] (NoArg PrintCommandTypes) "print command types"
-  , Option ['f'] ["print-feature"] (NoArg PrintFeature) "print feature"
   , Option ['C'] ["print-feature-commands"] (NoArg PrintFeatureCommands) "print feature commands"
   , Option ['a'] ["api"] (ReqArg (UseApi . API) "API") "extract features for API (default: gl)"
-  , Option ['v'] ["version"] (ReqArg (UseVersion . Version) "VERSION") "extract features for version (default: 1.0)"
+  , Option ['v'] ["version"] (ReqArg (UseVersion . read) "VERSION") "extract features for version (default: 1.0)"
   , Option ['P'] ["profile"] (ReqArg (UseProfile . ProfileName) "PROFILE") "extract features for profile (default: core)" ]
 
 getPaths :: IO ([Option], FilePath)
@@ -52,7 +49,7 @@ main :: IO ()
 main = do
   (opts, path) <- getPaths
   let api = head ([ a | UseApi a <- opts ] ++ [ API "gl" ])
-      version = head ([ v | UseVersion v <- opts ] ++ [ Version "1.0" ])
+      version = head ([ v | UseVersion v <- opts ] ++ [ read "1.0" ])
       profile = head ([ p | UseProfile p <- opts ] ++ [ ProfileName "core" ])
   str <- readFile path
   when (PrintXML `elem` opts) $ do
@@ -64,44 +61,57 @@ main = do
   when (PrintProcessed `elem` opts) $ do
     putStrLn "---------------------------------------- processed registry"
     either putStrLn print $ parseRegistry str
-  when (PrintEnums `elem` opts) $ do
-    putStrLn "---------------------------------------- enums"
-    either putStrLn (mapM_ (putStrLn . unlines . convertEnum) . enumsFor api) $ parseRegistry str
   when (PrintCommands `elem` opts) $ do
     putStrLn "---------------------------------------- commands"
-    either putStrLn (mapM_ print . Map.elems . commands) $ parseRegistry str
+    either putStrLn (mapM_ print . M.elems . commands) $ parseRegistry str
   when (PrintCommandTypes `elem` opts) $ do
     either putStrLn (\r -> do putStr moduleHeader
-                              mapM_ (putStrLn . showCommand) . Map.elems . commands $ r) $ parseRegistry str
-  when (PrintFeature `elem` opts) $ do
-    putStrLn $ "---------------------------------------- feature " ++ unAPI api ++ " " ++ unVersion version ++ " " ++ unProfileName profile
-    either putStrLn (mapM_ print . modificationsFor api version profile) $ parseRegistry str
+                              mapM_ (putStrLn . showCommand) . M.elems . commands $ r) $ parseRegistry str
   when (PrintFeatureCommands `elem` opts) $ do
-    putStrLn $ "---------------------------------------- commands for feature " ++ unAPI api ++ " " ++ unVersion version ++ " " ++ unProfileName profile
-    either putStrLn (\r -> do putStr moduleHeader
-                              mapM_ (putStrLn . showCommand) . commandsFor r . modificationsFor api version profile $ r) $ parseRegistry str
+    putStrLn $ "---------------------------------------- commands for feature " ++ unAPI api ++ " " ++ show version ++ " " ++ unProfileName profile
+    either putStrLn (\r -> do let ies = (interfaceElementsFor api version profile r)
+                              -- mapM_ (putStrLn . ("-- " ++) . show) (S.toList ies)
+                              putStr "module Foo (\n  "
+                              putStr (intercalate ",\n  " (exports ies))
+                              putStrLn "\n) where"
+                              putStrLn moduleHeader
+                              mapM_ (putStrLn . unlines . convertEnum) (enumsFor api r ies)
+                              mapM_ (putStrLn . showCommand) (commandsFor r ies)
+                    ) $ parseRegistry str
 
-commandsFor :: Registry -> [Modification] -> [Command]
-commandsFor r ms =
-  [ lookup' n (commands r)
-  | m <- ms
-  , modificationKind m == R.Require  -- TODO: *Really* handle require/remove
-  , CommandElement n <- modificationInterfaceElements m ]
+exports :: S.Set InterfaceElement -> [String]
+exports s = map toStr (S.toList s)
+  where toStr ie = case ie of
+          TypeElement t -> unTypeName t
+          EnumElement e -> unEnumName (mangleEnumName e)
+          CommandElement c -> unCommandName c
 
-modificationsFor :: API -> Version -> ProfileName -> Registry -> [Modification]
-modificationsFor api version profile =
-  filterModifications . lookup' (api, version) . features
-  where filterModifications = filter (matches profile . modificationProfile)
+enumsFor :: API -> Registry -> S.Set InterfaceElement -> [Enum']
+enumsFor api r ies = [ e | EnumElement n <- S.toList ies, e <- lookup' n (enums r), api `matches` enumAPI e ]
 
-lookup' :: (Ord k, Show k) => k -> Map.Map k a -> a
-lookup' k m = Map.findWithDefault (error ("unknown name " ++ show k)) k m
+commandsFor :: Registry -> S.Set InterfaceElement -> [Command]
+commandsFor r ies = [ lookup' n (commands r) | CommandElement n <- S.toList ies ]
 
-enumsFor :: API -> Registry -> [Enum']
-enumsFor api r =
-  [ e
-  | es <- Map.elems (enums r)
-  , e <- es
-  , api `matches` enumAPI e ]
+-- Here is the heart of the feature construction logic: Chronologically replay
+-- the whole version history for the given API/version/profile triple.
+interfaceElementsFor :: API -> Version -> ProfileName -> Registry -> S.Set InterfaceElement
+interfaceElementsFor api version profile registry =
+  foldl (flip ($)) S.empty modificationsFor
+  where modificationsFor =
+          [ op (modificationKind m) ie
+          | key <- sort keys
+          , m <- lookup' key (features registry)
+          , profile `matches` modificationProfile m
+          , ie <- modificationInterfaceElements m ]
+        keys = [ key
+               | key@(a,v) <- M.keys (features registry)
+               , a == api
+               , v <= version ]
+        op Require = S.insert
+        op Remove = S.delete
+
+lookup' :: (Ord k, Show k) => k -> M.Map k a -> a
+lookup' k m = M.findWithDefault (error ("unknown name " ++ show k)) k m
 
 matches :: Eq a => a -> Maybe a -> Bool
 _ `matches` Nothing = True
@@ -113,6 +123,7 @@ convertEnum e =
   , n ++ " = " ++ unEnumValue (enumValue e) ]
   where n = unEnumName . mangleEnumName . enumName $ e
 
+-- TODO: Move to MangledRegistry?
 mangleEnumName :: EnumName -> EnumName
 mangleEnumName =
   EnumName . intercalate [splitChar] . headToLower . splitBy (== splitChar) . unEnumName
@@ -129,8 +140,6 @@ splitBy p xs = case break p xs of
 
 moduleHeader :: String
 moduleHeader = unlines [
-  "module Foo where",
-  "",
   "import Foreign.C.Types",
   "import Foreign.Ptr",
   "import System.IO.Unsafe",
@@ -139,6 +148,7 @@ moduleHeader = unlines [
   "import Graphics.Rendering.OpenGL.Raw.Types",
   "import Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects ( GLhandle )",
   "",
+  "type GLvoid = ()",
   "type GLhandleARB = GLhandle",
   "type GLsizeiARB = GLsizei",
   "type GLcharARB = GLchar",
@@ -164,7 +174,7 @@ moduleHeader = unlines [
 
 showCommand :: Command -> String
 showCommand c =
-  showString (take 80 ("-- " ++ name ++ repeat '-') ++ "\n\n") .
+  showString (take 80 ("-- " ++ name ++ " " ++ repeat '-') ++ "\n\n") .
 
   showString (name ++ "\n") .
   showString ("  :: " ++ signature True) .
