@@ -69,28 +69,34 @@ main = do
                               mapM_ (putStrLn . showCommand) . M.elems . commands $ r) $ parseRegistry str
   when (PrintFeatureCommands `elem` opts) $ do
     putStrLn $ "---------------------------------------- commands for feature " ++ unAPI api ++ " " ++ show version ++ " " ++ unProfileName profile
-    either putStrLn (\r -> do let ies = (interfaceElementsFor api version profile r)
-                              -- mapM_ (putStrLn . ("-- " ++) . show) (S.toList ies)
+    either putStrLn (\r -> do let tec@(_ts,es,cs) = getTyEnCo api version profile r
                               putStr "module Foo (\n  "
-                              putStr (intercalate ",\n  " (exports ies))
+                              putStr (intercalate ",\n  " (exports tec))
                               putStrLn "\n) where"
                               putStrLn moduleHeader
-                              mapM_ (putStrLn . unlines . convertEnum) (enumsFor api r ies)
-                              mapM_ (putStrLn . showCommand) (commandsFor r ies)
+                              mapM_ (putStrLn . unlines . convertEnum) es
+                              mapM_ (putStrLn . showCommand) cs
                     ) $ parseRegistry str
 
-exports :: S.Set InterfaceElement -> [String]
-exports s = map toStr (S.toList s)
-  where toStr ie = case ie of
-          TypeElement t -> unTypeName t
-          EnumElement e -> unEnumName (mangleEnumName e)
-          CommandElement c -> unCommandName c
+exports :: ([TypeName],[Enum'],[Command]) -> [String]
+exports (ts,es,cs) =
+  ["-- * Types"] ++
+  map unTypeName ts ++
+  ["-- * Enums"] ++
+  map (unEnumName . mangleEnumName . enumName) es ++
+  ["-- * Commands"] ++
+  map (unCommandName . commandName) cs
 
-enumsFor :: API -> Registry -> S.Set InterfaceElement -> [Enum']
-enumsFor api r ies = [ e | EnumElement n <- S.toList ies, e <- lookup' n (enums r), api `matches` enumAPI e ]
-
-commandsFor :: Registry -> S.Set InterfaceElement -> [Command]
-commandsFor r ies = [ lookup' n (commands r) | CommandElement n <- S.toList ies ]
+getTyEnCo :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
+getTyEnCo api version profile registry = (ts', es, cs)
+  where ts = [ n | TypeElement n <- lst ]
+        es = [ e | EnumElement n <- lst
+                 , e <- lookup' n (enums registry)
+                 , api `matches` enumAPI e ]
+        cs = [ lookup' n (commands registry) | CommandElement n <- lst ]
+        -- Features don't explicitly list the types referenced by commands.
+        ts' = S.toList (S.unions (S.fromList ts : map referencedTypes cs))
+        lst = S.toList (interfaceElementsFor api version profile registry)
 
 -- Here is the heart of the feature construction logic: Chronologically replay
 -- the whole version history for the given API/version/profile triple.
