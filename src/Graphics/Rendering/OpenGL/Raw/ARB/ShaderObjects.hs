@@ -99,6 +99,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects (
 import Foreign.Ptr
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types ( GLhandleARB )
 import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
@@ -159,8 +160,4 @@ gl_OBJECT_SHADER_SOURCE_LENGTH = 0x8B88
 gl_SHADER_OBJECT :: GLenum
 gl_SHADER_OBJECT = 0x8B48
 
-#if HANDLE_IS_POINTER
-type GLhandle = Ptr ()
-#else
-type GLhandle = CUInt
-#endif
+type GLhandle = GLhandleARB

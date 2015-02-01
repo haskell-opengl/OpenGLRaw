@@ -1,19 +1,62 @@
+{-# LANGUAGE CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.Types
--- Copyright   :  (c) Sven Panne 2009-2013
+-- Copyright   :  (c) Sven Panne 2009-2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- This module corresponds to table 2.2 in section 2.2 (Command Syntax) of the
--- OpenGL 4.4 specs.
+-- All types from the whole OpenGL registry.
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.Types where
+module Graphics.Rendering.OpenGL.Raw.Types (
+  -- * Types from OpenGL itself.
+  GLboolean,
+  GLbyte,
+  GLubyte,
+  GLchar,
+  GLshort,
+  GLushort,
+  GLint,
+  GLuint,
+  GLfixed,
+  GLint64,
+  GLuint64,
+  GLsizei,
+  GLenum,
+  GLintptr,
+  GLsizeiptr,
+  GLsync,
+  GLbitfield,
+  GLhalf,
+  GLfloat,
+  GLclampf,
+  GLdouble,
+  GLclampd,
+  GLDEBUGPROC,
+  GLvoid,
+
+  -- * Pre-standard OpenGL types.
+  GLcharARB,
+  GLint64EXT,
+  GLuint64EXT,
+  GLintptrARB,
+  GLsizeiptrARB,
+  GLhalfARB,
+  GLhalfNV,
+  GLDEBUGPROCAMD,
+  GLDEBUGPROCARB,
+  GLDEBUGPROCKHR,
+
+  -- * Types from various extensions.
+  GLclampx,
+  GLhandleARB,
+  GLvdpauSurfaceNV
+) where
 
 import Data.Int
 import Data.Word
@@ -22,7 +65,7 @@ import Foreign.Ptr
 
 --------------------------------------------------------------------------------
 
--- | 1bit boolean.
+-- | 8bit boolean.
 type GLboolean = CUChar
 
 -- | 8bit signed two\'s complement binary integer.
@@ -46,14 +89,13 @@ type GLint = CInt
 -- | 32bit unsigned binary integer.
 type GLuint = CUInt
 
--- | 32bit signed two\'s complement 16.16 scaled integer (introduced in OpenGL
--- 4.1).
+-- | 32bit signed two\'s complement 16.16 scaled integer.
 type GLfixed = CInt
 
--- | 64bit signed two\'s complement binary integer (introduced in OpenGL 3.2).
+-- | 64bit signed two\'s complement binary integer.
 type GLint64 = Int64
 
--- | 64bit unsigned binary integer (introduced in OpenGL 3.2).
+-- | 64bit unsigned binary integer.
 type GLuint64 = Word64
 
 -- | 32bit non-negative binary integer size.
@@ -68,7 +110,7 @@ type GLintptr = CPtrdiff
 -- | Pointer-sized non-negative binary integer size.
 type GLsizeiptr = CPtrdiff
 
--- | Pointer-sized sync object handle (introduced in OpenGL 3.2).
+-- | Pointer-sized sync object handle.
 type GLsync = Ptr ()
 
 -- | 32bit bit field.
@@ -80,11 +122,51 @@ type GLhalf = CUShort
 -- | 32bit floating-point value.
 type GLfloat = CFloat
 
--- | 32bit floating-point value clamped to [0, 1] (no longer used in OpenGL 4.3).
+-- | 32bit floating-point value clamped to [0, 1].
 type GLclampf = CFloat
 
 -- | 64bit floating-point value.
 type GLdouble = CDouble
 
--- | 64bit floating-point value clamped to [0, 1]  (no longer used in OpenGL 4.3).
+-- | 64bit floating-point value clamped to [0, 1].
 type GLclampd = CDouble
+
+-- | Debug callback.
+type GLDEBUGPROC = FunPtr (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
+-- TODO: calling convention, parameter documentation
+
+-- | Not an actual GL type, though used in headers in the past.
+type GLvoid = ()
+
+type GLcharARB = CChar
+
+type GLint64EXT = Int64
+
+type GLuint64EXT = Word64
+
+type GLintptrARB = CPtrdiff
+
+type GLsizeiptrARB = CPtrdiff
+
+type GLhalfARB = CUShort
+
+type GLhalfNV = CUShort
+
+-- TODO: calling convention, parameter documentation
+type GLDEBUGPROCAMD = FunPtr(GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
+
+-- TODO: calling convention, parameter documentation
+type GLDEBUGPROCARB = FunPtr(GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
+
+-- TODO: calling convention, parameter documentation
+type GLDEBUGPROCKHR = FunPtr(GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
+
+type GLclampx = CInt
+
+#if HANDLE_IS_POINTER
+type GLhandleARB = Ptr ()
+#else
+type GLhandleARB = CUInt
+#endif
+
+type GLvdpauSurfaceNV = GLintptr
