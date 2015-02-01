@@ -159,7 +159,13 @@ toCommand c = Command {
   resultType = resTy,
   paramTypes = paramTys,
   referencedTypes =
-    S.fromList $ MB.catMaybes $ map (R.protoPtype . R.paramProto) (pr : ps) }
+    S.fromList $
+    -- Make sure that we don't reference pointers to structs, they are mapped to
+    -- 'Ptr a' etc., anyway (glCreateSyncFromCLeventARB is an exmaple for this).
+    filter (not . ("struct " `L.isPrefixOf`) . R.unTypeName) $
+    MB.catMaybes $
+    map (R.protoPtype . R.paramProto) $
+    (pr : ps) }
   where pr = R.Param { R.paramLen = Nothing, R.paramProto = R.commandProto c }
         ps = R.commandParams c
         varSupply = map (R.TypeName . showIntUsingDigits ['a' .. 'z']) [0 ..]
