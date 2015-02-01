@@ -91,6 +91,7 @@ type GLuint = CUInt
 
 -- | 32bit signed two\'s complement 16.16 scaled integer.
 type GLfixed = CInt
+-- NOTE: OpenGL ES uses khronos_int32_t for this.
 
 -- | 64bit signed two\'s complement binary integer.
 type GLint64 = Int64
@@ -106,9 +107,11 @@ type GLenum = CUInt
 
 -- | Pointer-sized signed two\'s complement binary integer.
 type GLintptr = CPtrdiff
+-- NOTE: OpenGL ES uses khronos_intptr_t for this.
 
 -- | Pointer-sized non-negative binary integer size.
 type GLsizeiptr = CPtrdiff
+-- NOTE: OpenGL ES uses khronos_ssize_t for this.
 
 -- | Pointer-sized sync object handle.
 type GLsync = Ptr ()
@@ -152,16 +155,17 @@ type GLhalfARB = CUShort
 
 type GLhalfNV = CUShort
 
--- TODO: calling convention, parameter documentation
 type GLDEBUGPROCAMD = FunPtr(GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
-
 -- TODO: calling convention, parameter documentation
+
 type GLDEBUGPROCARB = FunPtr(GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
-
 -- TODO: calling convention, parameter documentation
+
 type GLDEBUGPROCKHR = FunPtr(GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
+-- TODO: calling convention, parameter documentation
 
 type GLclampx = CInt
+-- NOTE: OpenGL ES uses khronos_int32_t for this.
 
 #if HANDLE_IS_POINTER
 type GLhandleARB = Ptr ()
