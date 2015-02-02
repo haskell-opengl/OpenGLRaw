@@ -20,9 +20,10 @@ module MangledRegistry (
   Version(..)
 ) where
 
+import qualified Data.Char as C
 import qualified Data.List as L
 import qualified Data.Map as M
-import qualified Data.Maybe as MB
+import qualified Data.Maybe as DM
 import qualified Data.Set as S
 import qualified Numeric as N
 
@@ -52,10 +53,10 @@ toRegistry r = Registry {
     | R.GroupsElement ge <- rs
     , g <- R.unGroups ge ],
   enums = M.fromListWith (++)
-   [ (EnumName (R.enumName e),
-      [toEnum' (R.enumsNamespace ee) (R.enumsGroup ee) (R.enumsType ee) e])
+   [ (enumName en, [en])
    | R.EnumsElement ee <- rs
-   , Left e <- R.enumsEnumOrUnuseds ee ],
+   , Left e <- R.enumsEnumOrUnuseds ee
+   , let en = toEnum' (R.enumsNamespace ee) (R.enumsGroup ee) (R.enumsType ee) e ],
   commands = fromList'
    [ (CommandName . R.protoName . R.commandProto $ c, toCommand c)
    | R.CommandsElement ce <- rs
@@ -98,7 +99,7 @@ data Group = Group {
 
 toGroup :: R.Group -> Group
 toGroup g = Group {
-  groupEnums = map (EnumName . R.unName) (R.groupEnums g) }
+  groupEnums = map (mangleEnumName . R.unName) (R.groupEnums g) }
 
 -- NOTE: Due to an oversight in the OpenGL ES spec, an enum can have different
 -- values for different APIs (happens only for GL_ACTIVE_PROGRAM_EXT).
@@ -114,7 +115,19 @@ toEnum' eNamespace eGroup eType  e = Enum {
   enumValue = EnumValue (R.enumValue e),
   enumAPI = API `fmap` R.enumAPI e,
   enumType = toEnumType eNamespace eGroup eType (R.enumType e),
-  enumName = EnumName (R.enumName e) }
+  enumName = mangleEnumName (R.enumName e) }
+
+mangleEnumName :: String -> EnumName
+mangleEnumName =
+  EnumName . L.intercalate [splitChar] . headToLower . splitBy (== splitChar)
+  where splitChar = '_'
+        headToLower xs = map C.toLower (head xs) : tail xs
+
+splitBy :: (a -> Bool) -> [a] -> [[a]]
+splitBy _ [] = []
+splitBy p xs = case break p xs of
+                (ys, []  ) -> [ys]
+                (ys, _:zs) -> ys : splitBy p zs
 
 -- TODO: Use Either instead of error below?
 toEnumType :: Maybe String -> Maybe String -> Maybe String -> Maybe R.TypeSuffix -> R.TypeName
@@ -163,7 +176,7 @@ toCommand c = Command {
     -- Make sure that we don't reference pointers to structs, they are mapped to
     -- 'Ptr a' etc., anyway (glCreateSyncFromCLeventARB is an exmaple for this).
     filter (not . ("struct " `L.isPrefixOf`) . R.unTypeName) $
-    MB.catMaybes $
+    DM.catMaybes $
     map (R.protoPtype . R.paramProto) $
     (pr : ps) }
   where pr = R.Param { R.paramLen = Nothing, R.paramProto = R.commandProto c }
@@ -248,7 +261,7 @@ toInterfaceElement :: R.InterfaceElement -> InterfaceElement
 toInterfaceElement i =
   (case R.interfaceElementKind i of
      R.InterfaceElementType -> TypeElement . R.TypeName
-     R.InterfaceElementEnum -> EnumElement . EnumName
+     R.InterfaceElementEnum -> EnumElement . mangleEnumName
      R.InterfaceElementCommand -> CommandElement . CommandName)
   (R.unName (R.interfaceElementName i))
 
