@@ -55,7 +55,8 @@ module Graphics.Rendering.OpenGL.Raw.Types (
   -- * Types from various extensions.
   GLclampx,
   GLhandleARB,
-  GLvdpauSurfaceNV
+  GLvdpauSurfaceNV,
+  GLeglImageOES
 ) where
 
 import Data.Int
@@ -174,3 +175,5 @@ type GLhandleARB = CUInt
 #endif
 
 type GLvdpauSurfaceNV = GLintptr
+
+type GLeglImageOES = Ptr ()
