@@ -20,4 +20,4 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent (
    gl_TEXTURE_SHARED_SIZE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
+import Graphics.Rendering.OpenGL.Raw.Tokens

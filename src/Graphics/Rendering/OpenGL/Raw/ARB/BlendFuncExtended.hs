@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended
@@ -27,30 +26,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended (
    gl_MAX_DUAL_SOURCE_DRAW_BUFFERS
 ) where
 
-import Foreign.C.Types
-import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
-
---------------------------------------------------------------------------------
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_ARB_blend_func_extended"
-
-EXTENSION_ENTRY(dyn_glBindFragDataLocationIndexed,ptr_glBindFragDataLocationIndexed,"glBindFragDataLocationIndexed",glBindFragDataLocationIndexed,GLuint -> GLuint -> GLuint -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(dyn_glGetFragDataIndex,ptr_glGetFragDataIndex,"glGetFragDataIndex",glGetFragDataIndex,GLuint -> Ptr GLchar -> IO GLint)
-
-gl_SRC1_COLOR :: GLenum
-gl_SRC1_COLOR = 0x88F9
-
-gl_ONE_MINUS_SRC1_COLOR :: GLenum
-gl_ONE_MINUS_SRC1_COLOR = 0x88FA
-
-gl_ONE_MINUS_SRC1_ALPHA :: GLenum
-gl_ONE_MINUS_SRC1_ALPHA = 0x88FB
-
-gl_MAX_DUAL_SOURCE_DRAW_BUFFERS :: GLenum
-gl_MAX_DUAL_SOURCE_DRAW_BUFFERS = 0x88FC
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

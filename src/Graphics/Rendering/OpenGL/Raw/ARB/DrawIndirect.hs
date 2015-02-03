@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect
@@ -16,28 +15,14 @@
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect (
    -- * Functions
-   glDrawArraysIndirect, glDrawElementsIndirect,
+   glDrawArraysIndirect,
+   glDrawElementsIndirect,
 
    -- * Tokens
-   gl_DRAW_INDIRECT_BUFFER, gl_DRAW_INDIRECT_BUFFER_BINDING
+   gl_DRAW_INDIRECT_BUFFER,
+   gl_DRAW_INDIRECT_BUFFER_BINDING
 
 ) where
 
-import Foreign.C.Types
-import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Extensions
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_ARB_draw_indirect"
-
-EXTENSION_ENTRY(dyn_glDrawArraysIndirect,ptr_glDrawArraysIndirect,"glDrawArraysIndirect",glDrawArraysIndirect,GLenum -> Ptr a -> IO ())
-EXTENSION_ENTRY(dyn_glDrawElementsIndirect,ptr_glDrawElementsIndirect,"glDrawElementsIndirect",glDrawElementsIndirect,GLenum -> GLenum -> Ptr a -> IO ())
-
-gl_DRAW_INDIRECT_BUFFER :: GLenum
-gl_DRAW_INDIRECT_BUFFER = 0x8F3F
-
-gl_DRAW_INDIRECT_BUFFER_BINDING :: GLenum
-gl_DRAW_INDIRECT_BUFFER_BINDING = 0x8F43
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

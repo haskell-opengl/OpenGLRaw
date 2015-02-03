@@ -34,23 +34,23 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray (
    gl_VERTEX_ARRAY_SIZE,
    gl_VERTEX_ARRAY_TYPE,
    gl_VERTEX_ARRAY_STRIDE,
-   gl_VERTEX_ARRAY_COUNT,
+   gl_VERTEX_ARRAY_COUNT_EXT,
    gl_NORMAL_ARRAY_TYPE,
    gl_NORMAL_ARRAY_STRIDE,
-   gl_NORMAL_ARRAY_COUNT,
+   gl_NORMAL_ARRAY_COUNT_EXT,
    gl_COLOR_ARRAY_SIZE,
    gl_COLOR_ARRAY_TYPE,
    gl_COLOR_ARRAY_STRIDE,
-   gl_COLOR_ARRAY_COUNT,
+   gl_COLOR_ARRAY_COUNT_EXT,
    gl_INDEX_ARRAY_TYPE,
    gl_INDEX_ARRAY_STRIDE,
-   gl_INDEX_ARRAY_COUNT,
+   gl_INDEX_ARRAY_COUNT_EXT,
    gl_TEXTURE_COORD_ARRAY_SIZE,
    gl_TEXTURE_COORD_ARRAY_TYPE,
    gl_TEXTURE_COORD_ARRAY_STRIDE,
-   gl_TEXTURE_COORD_ARRAY_COUNT,
+   gl_TEXTURE_COORD_ARRAY_COUNT_EXT,
    gl_EDGE_FLAG_ARRAY_STRIDE,
-   gl_EDGE_FLAG_ARRAY_COUNT,
+   gl_EDGE_FLAG_ARRAY_COUNT_EXT,
    gl_VERTEX_ARRAY_POINTER,
    gl_NORMAL_ARRAY_POINTER,
    gl_COLOR_ARRAY_POINTER,
@@ -59,5 +59,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray (
    gl_EDGE_FLAG_ARRAY_POINTER
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

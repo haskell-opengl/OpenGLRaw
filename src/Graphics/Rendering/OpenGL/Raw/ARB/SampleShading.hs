@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
@@ -22,19 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading (
    gl_MIN_SAMPLE_SHADING_VALUE
 ) where
 
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_ARB_sample_shading"
-
-EXTENSION_ENTRY(dyn_glMinSampleShading,ptr_glMinSampleShading,"glMinSampleShading",glMinSampleShading,GLclampf -> IO ())
-
-gl_SAMPLE_SHADING :: GLenum
-gl_SAMPLE_SHADING = 0x8C36
-
-gl_MIN_SAMPLE_SHADING_VALUE :: GLenum
-gl_MIN_SAMPLE_SHADING_VALUE = 0x8C37
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

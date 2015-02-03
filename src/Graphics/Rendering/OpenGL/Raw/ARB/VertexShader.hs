@@ -90,12 +90,8 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexShader (
    gl_FLOAT_MAT4
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens
 
-gl_OBJECT_ACTIVE_ATTRIBUTES :: GLenum
-gl_OBJECT_ACTIVE_ATTRIBUTES = 0x8B89
-
-gl_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH :: GLenum
-gl_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH = 0x8B8A
-
+gl_OBJECT_ACTIVE_ATTRIBUTES = gl_OBJECT_ACTIVE_ATTRIBUTES_ARB
+gl_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH = gl_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH_ARB

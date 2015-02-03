@@ -68,16 +68,14 @@ module Graphics.Rendering.OpenGL.Raw.NV.HalfFloat (
    GLhalf
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_half_float"
 
 EXTENSION_ENTRY(dyn_glVertex2h,ptr_glVertex2h,"glVertex2h",glVertex2h,GLhalf -> GLhalf -> IO ())
 EXTENSION_ENTRY(dyn_glVertex2hv,ptr_glVertex2hv,"glVertex2hv",glVertex2hv,Ptr GLhalf -> IO ())

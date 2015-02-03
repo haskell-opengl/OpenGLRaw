@@ -20,13 +20,11 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp (
   gl_MIRROR_CLAMP_TO_BORDER
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Types
+import Graphics.Rendering.OpenGL.Raw.Tokens
 
 gl_MIRROR_CLAMP :: GLenum
 gl_MIRROR_CLAMP = 0x8742
-
-gl_MIRROR_CLAMP_TO_EDGE :: GLenum
-gl_MIRROR_CLAMP_TO_EDGE = 0x8743
 
 gl_MIRROR_CLAMP_TO_BORDER :: GLenum
 gl_MIRROR_CLAMP_TO_BORDER = 0x8912

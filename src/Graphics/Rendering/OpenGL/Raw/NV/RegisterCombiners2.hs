@@ -33,16 +33,14 @@ module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2 (
    gl_COMBINER7
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_register_combiners2"
 
 EXTENSION_ENTRY(dyn_glCombinerStageParameterfv,ptr_glCombinerStageParameterfv,"glCombinerStageParameterfv",glCombinerStageParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(dyn_glGetCombinerStageParameterfv,ptr_glGetCombinerStageParameterfv,"glGetCombinerStageParameterfv",glGetCombinerStageParameterfv,GLenum -> GLenum -> Ptr GLfloat -> IO ())

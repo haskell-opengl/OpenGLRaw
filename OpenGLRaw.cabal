@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 1.5.0.2
+version: 2.0.0.0
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 3.2 graphics system and
@@ -139,9 +139,26 @@ library
     Graphics.Rendering.OpenGL.Raw.ARB.VertexShader
     Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010Rev
     Graphics.Rendering.OpenGL.Raw.ARB.WindowPos
+    Graphics.Rendering.OpenGL.Raw.Compatibility30
+    Graphics.Rendering.OpenGL.Raw.Compatibility31
+    Graphics.Rendering.OpenGL.Raw.Compatibility32
+    Graphics.Rendering.OpenGL.Raw.Compatibility33
+    Graphics.Rendering.OpenGL.Raw.Compatibility40
+    Graphics.Rendering.OpenGL.Raw.Compatibility41
+    Graphics.Rendering.OpenGL.Raw.Compatibility42
+    Graphics.Rendering.OpenGL.Raw.Compatibility43
+    Graphics.Rendering.OpenGL.Raw.Compatibility44
+    Graphics.Rendering.OpenGL.Raw.Compatibility45
+    Graphics.Rendering.OpenGL.Raw.Core30
     Graphics.Rendering.OpenGL.Raw.Core31
-    Graphics.Rendering.OpenGL.Raw.Core31.Types
     Graphics.Rendering.OpenGL.Raw.Core32
+    Graphics.Rendering.OpenGL.Raw.Core33
+    Graphics.Rendering.OpenGL.Raw.Core40
+    Graphics.Rendering.OpenGL.Raw.Core41
+    Graphics.Rendering.OpenGL.Raw.Core42
+    Graphics.Rendering.OpenGL.Raw.Core43
+    Graphics.Rendering.OpenGL.Raw.Core44
+    Graphics.Rendering.OpenGL.Raw.Core45
     Graphics.Rendering.OpenGL.Raw.EXT
     Graphics.Rendering.OpenGL.Raw.EXT.ABGR
     Graphics.Rendering.OpenGL.Raw.EXT.BGRA
@@ -221,6 +238,7 @@ library
     Graphics.Rendering.OpenGL.Raw.EXT.VertexArray
     Graphics.Rendering.OpenGL.Raw.EXT.VertexShader
     Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting
+    Graphics.Rendering.OpenGL.Raw.Functions
     Graphics.Rendering.OpenGL.Raw.GetProcAddress
     Graphics.Rendering.OpenGL.Raw.NV
     Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
@@ -266,13 +284,16 @@ library
     Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option
     Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3
     Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4
+    Graphics.Rendering.OpenGL.Raw.Tokens
     Graphics.Rendering.OpenGL.Raw.Types
-  other-modules:
-    Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Functions
-    Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens
-    Graphics.Rendering.OpenGL.Raw.Core31.Functions
-    Graphics.Rendering.OpenGL.Raw.Core31.Tokens
-    Graphics.Rendering.OpenGL.Raw.Extensions
+    Graphics.Rendering.OpenGL.Raw.Version10
+    Graphics.Rendering.OpenGL.Raw.Version11
+    Graphics.Rendering.OpenGL.Raw.Version12
+    Graphics.Rendering.OpenGL.Raw.Version13
+    Graphics.Rendering.OpenGL.Raw.Version14
+    Graphics.Rendering.OpenGL.Raw.Version15
+    Graphics.Rendering.OpenGL.Raw.Version20
+    Graphics.Rendering.OpenGL.Raw.Version21
   c-sources:
     cbits/HsOpenGLRaw.c
   hs-source-dirs: src

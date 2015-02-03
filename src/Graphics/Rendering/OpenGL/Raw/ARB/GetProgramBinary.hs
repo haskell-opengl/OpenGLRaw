@@ -1,4 +1,3 @@
-{-# LANGUAGE CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary
@@ -16,7 +15,9 @@
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary (
    -- * Functions
-   glGetProgramBinary, glProgramBinary, glProgramParameteri,
+   glGetProgramBinary,
+   glProgramBinary,
+   glProgramParameteri,
 
    -- * Tokens
    gl_PROGRAM_BINARY_RETRIEVABLE_HINT,
@@ -26,28 +27,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary (
 
 ) where
 
-import Foreign.C.Types
-import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_ARB_get_program_binary"
-
-EXTENSION_ENTRY(dyn_glGetProgramBinary,ptr_glGetProgramBinary,"glGetProgramBinary",glGetProgramBinary,GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr a -> IO ())
-EXTENSION_ENTRY(dyn_glProgramBinary,ptr_glProgramBinary,"glProgramBinary",glProgramBinary,GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
-
-gl_PROGRAM_BINARY_RETRIEVABLE_HINT :: GLenum
-gl_PROGRAM_BINARY_RETRIEVABLE_HINT = 0x8257
-
-gl_PROGRAM_BINARY_LENGTH :: GLenum
-gl_PROGRAM_BINARY_LENGTH = 0x8741
-
-gl_NUM_PROGRAM_BINARY_FORMATS :: GLenum
-gl_NUM_PROGRAM_BINARY_FORMATS = 0x87FE
-
-gl_PROGRAM_BINARY_FORMATS :: GLenum
-gl_PROGRAM_BINARY_FORMATS = 0x87FF
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

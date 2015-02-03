@@ -55,15 +55,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame (
    gl_MAP2_BINORMAL
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_coordinate_frame"
 
 EXTENSION_ENTRY(dyn_glTangent3b,ptr_glTangent3b,"glTangent3b",glTangent3b,GLbyte -> IO ())
 EXTENSION_ENTRY(dyn_glTangent3d,ptr_glTangent3d,"glTangent3d",glTangent3d,GLdouble -> IO ())

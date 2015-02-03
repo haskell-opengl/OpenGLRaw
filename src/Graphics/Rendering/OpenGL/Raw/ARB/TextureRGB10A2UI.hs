@@ -14,12 +14,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI (
+   -- * Tokens
    gl_RGB10_A2UI
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-
---------------------------------------------------------------------------------
-
-gl_RGB10_A2UI :: GLenum
-gl_RGB10_A2UI = 0x906F
+import Graphics.Rendering.OpenGL.Raw.Tokens

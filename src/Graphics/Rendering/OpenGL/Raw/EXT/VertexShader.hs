@@ -171,16 +171,14 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader (
    gl_MVP_MATRIX
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_vertex_shader"
 
 EXTENSION_ENTRY(dyn_glBeginVertexShader,ptr_glBeginVertexShader,"glBeginVertexShader",glBeginVertexShader,IO ())
 EXTENSION_ENTRY(dyn_glEndVertexShader,ptr_glEndVertexShader,"glEndVertexShader",glEndVertexShader,IO ())

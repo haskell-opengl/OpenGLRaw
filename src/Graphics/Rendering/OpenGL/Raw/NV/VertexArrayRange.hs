@@ -27,15 +27,13 @@ module Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange (
    gl_VERTEX_ARRAY_RANGE_POINTER
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_vertex_array_range"
 
 EXTENSION_ENTRY(dyn_glVertexArrayRange,ptr_glVertexArrayRange,"glVertexArrayRange",glVertexArrayRange,GLsizei -> Ptr a -> IO ())
 EXTENSION_ENTRY(dyn_glFlushVertexArrayRange,ptr_glFlushVertexArrayRange,"glFlushVertexArrayRange",glFlushVertexArrayRange,IO ())

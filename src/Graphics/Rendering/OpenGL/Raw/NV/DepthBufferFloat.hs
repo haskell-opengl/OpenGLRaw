@@ -27,14 +27,13 @@ module Graphics.Rendering.OpenGL.Raw.NV.DepthBufferFloat (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_depth_buffer_float"
 
 EXTENSION_ENTRY(dyn_glDepthRanged,ptr_glDepthRanged,"glDepthRanged",glDepthRanged,GLdouble -> GLdouble -> IO ())
 EXTENSION_ENTRY(dyn_glClearDepthd,ptr_glClearDepthd,"glClearDepthd",glClearDepthd,GLdouble -> IO ())

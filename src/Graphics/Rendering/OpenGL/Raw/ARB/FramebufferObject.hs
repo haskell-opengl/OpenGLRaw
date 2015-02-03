@@ -113,5 +113,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObject (
 ) where
 
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core31.Functions
-import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

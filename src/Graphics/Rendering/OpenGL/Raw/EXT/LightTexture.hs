@@ -35,12 +35,11 @@ module Graphics.Rendering.OpenGL.Raw.EXT.LightTexture (
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_light_texture"
 
 EXTENSION_ENTRY(dyn_glApplyTexture,ptr_glApplyTexture,"glApplyTexture",glApplyTexture,GLenum -> IO ())
 EXTENSION_ENTRY(dyn_glTextureLight,ptr_glTextureLight,"glTextureLight",glTextureLight,GLenum -> IO ())

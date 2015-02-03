@@ -85,16 +85,14 @@ module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners (
    gl_MAX_GENERAL_COMBINERS
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_register_combiners"
 
 EXTENSION_ENTRY(dyn_glCombinerParameterfv,ptr_glCombinerParameterfv,"glCombinerParameterfv",glCombinerParameterfv,GLenum -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(dyn_glCombinerParameteriv,ptr_glCombinerParameteriv,"glCombinerParameteriv",glCombinerParameteriv,GLenum -> Ptr GLint -> IO ())

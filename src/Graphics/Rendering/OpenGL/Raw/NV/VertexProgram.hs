@@ -166,16 +166,14 @@ module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram (
    gl_MAP2_VERTEX_ATTRIB15_4
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_vertex_program"
 
 EXTENSION_ENTRY(dyn_glBindProgramNV,ptr_glBindProgramNV,"glBindProgramNV",glBindProgramNV,GLenum -> GLuint -> IO ())
 EXTENSION_ENTRY(dyn_glDeleteProgramsNV,ptr_glDeleteProgramsNV,"glDeleteProgramsNV",glDeleteProgramsNV,GLsizei -> Ptr GLuint -> IO ())

@@ -23,13 +23,12 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_depth_bounds_test"
 
 EXTENSION_ENTRY(dyn_glDepthBounds,ptr_glDepthBounds,"glDepthBounds",glDepthBounds,GLclampd -> GLclampd -> IO())
 

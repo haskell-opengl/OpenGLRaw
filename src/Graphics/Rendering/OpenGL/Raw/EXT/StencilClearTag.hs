@@ -24,13 +24,12 @@ module Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_stencil_clear_tag"
 
 EXTENSION_ENTRY(dyn_glStencilClearTag,ptr_glStencilClearTag,"glStencilClearTag",glStencilClearTag,GLsizei -> GLuint -> IO ())
 

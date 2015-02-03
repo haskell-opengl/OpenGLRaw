@@ -20,12 +20,11 @@ module Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker (
    glEndScene
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_scene_marker"
 
 EXTENSION_ENTRY(dyn_glBeginScene,ptr_glBeginScene,"glBeginScene",glBeginScene,IO ())
 EXTENSION_ENTRY(dyn_glEndScene,ptr_glEndScene,"glEndScene",glEndScene,IO ())

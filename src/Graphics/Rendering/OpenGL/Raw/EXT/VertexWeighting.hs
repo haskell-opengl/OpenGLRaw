@@ -35,16 +35,14 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting (
    gl_VERTEX_WEIGHT_ARRAY_POINTER
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_vertex_weighting"
 
 EXTENSION_ENTRY(dyn_glVertexWeightf,ptr_glVertexWeightf,"glVertexWeightf",glVertexWeightf,GLfloat -> IO ())
 EXTENSION_ENTRY(dyn_glVertexWeightfv,ptr_glVertexWeightfv,"glVertexWeightfv",glVertexWeightfv,Ptr GLfloat -> IO ())

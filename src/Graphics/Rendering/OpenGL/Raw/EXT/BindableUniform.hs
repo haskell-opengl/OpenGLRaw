@@ -30,13 +30,12 @@ module Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_bindable_uniform"
 
 EXTENSION_ENTRY(dyn_glUniformBuffer,ptr_glUniformBuffer,"glUniformBuffer",glUniformBuffer,GLuint -> GLint -> GLuint -> IO ())
 EXTENSION_ENTRY(dyn_glGetUniformBufferSize,ptr_glGetUniformBufferSize,"glGetUniformBufferSize",glGetUniformBufferSize,GLuint -> GLint -> IO GLint)

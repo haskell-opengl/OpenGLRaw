@@ -26,13 +26,12 @@ module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_framebuffer_multisample_coverage"
 
 EXTENSION_ENTRY(dyn_glRenderbufferStorageMultisampleCoverage,ptr_glRenderbufferStorageMultisampleCoverage,"glRenderbufferStorageMultisampleCoverage",glRenderbufferStorageMultisampleCoverage,GLenum -> GLsizei -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
 

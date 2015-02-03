@@ -33,15 +33,13 @@ module Graphics.Rendering.OpenGL.Raw.NV.OcclusionQuery (
    gl_PIXEL_COUNT_AVAILABLE
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_occlusion_query"
 
 EXTENSION_ENTRY(dyn_glGenOcclusionQueries,ptr_glGenOcclusionQueries,"glGenOcclusionQueries",glGenOcclusionQueries,GLsizei -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(dyn_glDeleteOcclusionQueries,ptr_glDeleteOcclusionQueries,"glDeleteOcclusionQueries",glDeleteOcclusionQueries,GLsizei -> Ptr GLuint -> IO ())

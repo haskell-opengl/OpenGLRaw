@@ -29,15 +29,13 @@ module Graphics.Rendering.OpenGL.Raw.NV.Fence (
    gl_FENCE_CONDITION
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_fence"
 
 EXTENSION_ENTRY(dyn_glGenFences,ptr_glGenFences,"glGenFences",glGenFences,GLsizei -> Ptr GLuint -> IO ())
 EXTENSION_ENTRY(dyn_glDeleteFences,ptr_glDeleteFences,"glDeleteFences",glDeleteFences,GLsizei -> Ptr GLuint -> IO ())

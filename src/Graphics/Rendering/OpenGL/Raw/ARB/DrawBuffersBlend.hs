@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend
@@ -22,17 +21,4 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend (
    glBlendFuncSeparatei
 ) where
 
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_ARB_draw_buffers_blend"
-
-EXTENSION_ENTRY(dyn_glBlendEquationi,ptr_glBlendEquationi,"glBlendEquationi",glBlendEquationi,GLuint -> GLenum -> IO ())
-EXTENSION_ENTRY(dyn_glBlendEquationSeparatei,ptr_glBlendEquationSeparatei,"glBlendEquationSeparatei",glBlendEquationSeparatei,GLuint -> GLenum -> GLenum -> IO ())
-EXTENSION_ENTRY(dyn_glBlendFunci,ptr_glBlendFunci,"glBlendFunci",glBlendFunci,GLuint -> GLenum -> GLenum -> IO ())
-EXTENSION_ENTRY(dyn_glBlendFuncSeparatei,ptr_glBlendFuncSeparatei,"glBlendFuncSeparatei",glBlendFuncSeparatei,GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
-
+import Graphics.Rendering.OpenGL.Raw.Functions

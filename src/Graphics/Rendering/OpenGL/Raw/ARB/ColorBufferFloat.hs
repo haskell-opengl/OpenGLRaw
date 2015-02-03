@@ -22,8 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat (
    gl_FIXED_ONLY
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens
 
-gl_RGBA_FLOAT_MODE :: GLenum
-gl_RGBA_FLOAT_MODE = 0x8820
+gl_RGBA_FLOAT_MODE = gl_RGBA_FLOAT_MODE_ARB

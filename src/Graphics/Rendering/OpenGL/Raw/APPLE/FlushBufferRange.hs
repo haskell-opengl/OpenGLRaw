@@ -26,15 +26,14 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.FlushBufferRange (
 
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.MapBufferRange
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 --------------------------------------------------------------------------------
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_APPLE_flush_buffer_range"
 
 EXTENSION_ENTRY(dyn_glBufferParameteri,ptr_glBufferParameteri,"glBufferParameteri",glBufferParameteri, GLenum -> GLenum -> GLint -> IO ())
 

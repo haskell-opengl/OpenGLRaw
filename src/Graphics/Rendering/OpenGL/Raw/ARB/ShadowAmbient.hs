@@ -18,7 +18,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient (
    gl_TEXTURE_COMPARE_FAIL_VALUE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens
 
-gl_TEXTURE_COMPARE_FAIL_VALUE :: GLenum
-gl_TEXTURE_COMPARE_FAIL_VALUE = 0x80BF
+gl_TEXTURE_COMPARE_FAIL_VALUE = gl_TEXTURE_COMPARE_FAIL_VALUE_ARB

@@ -21,4 +21,4 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil (
    gl_TEXTURE_STENCIL_SIZE
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
+import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -39,15 +39,14 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_multisample"
 
 EXTENSION_ENTRY(dyn_glSampleMask,ptr_glSampleMask,"glSampleMask",glSampleMask,GLclampf -> GLboolean -> IO ())
 EXTENSION_ENTRY(dyn_glSamplePattern,ptr_glSamplePattern,"glSamplePattern",glSamplePattern,GLenum -> IO ())

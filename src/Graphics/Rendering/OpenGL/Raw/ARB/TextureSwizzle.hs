@@ -21,21 +21,4 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle (
    gl_TEXTURE_SWIZZLE_RGBA
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-
---------------------------------------------------------------------------------
-
-gl_TEXTURE_SWIZZLE_R :: GLenum
-gl_TEXTURE_SWIZZLE_R = 0x8E42
-
-gl_TEXTURE_SWIZZLE_G :: GLenum
-gl_TEXTURE_SWIZZLE_G = 0x8E43
-
-gl_TEXTURE_SWIZZLE_B :: GLenum
-gl_TEXTURE_SWIZZLE_B = 0x8E44
-
-gl_TEXTURE_SWIZZLE_A :: GLenum
-gl_TEXTURE_SWIZZLE_A = 0x8E45
-
-gl_TEXTURE_SWIZZLE_RGBA :: GLenum
-gl_TEXTURE_SWIZZLE_RGBA = 0x8E46
+import Graphics.Rendering.OpenGL.Raw.Tokens

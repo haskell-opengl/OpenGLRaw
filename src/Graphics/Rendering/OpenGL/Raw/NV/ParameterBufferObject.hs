@@ -31,17 +31,15 @@ module Graphics.Rendering.OpenGL.Raw.NV.ParameterBufferObject (
    gl_FRAGMENT_PROGRAM_PARAMETER_BUFFER
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_parameter_buffer_object"
 
 EXTENSION_ENTRY(dyn_glBindBufferOffset,ptr_glBindBufferOffset,"glBindBufferOffset",glBindBufferOffset,GLenum -> GLuint -> GLuint -> GLintptr -> IO ())
 EXTENSION_ENTRY(dyn_glProgramBufferParametersfv,ptr_glProgramBufferParametersfv,"glProgramBufferParametersfv",glProgramBufferParametersfv,GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())

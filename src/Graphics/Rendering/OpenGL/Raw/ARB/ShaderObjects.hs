@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects
@@ -96,68 +95,33 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects (
    GLhandle
 ) where
 
-import Foreign.Ptr
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Types ( GLhandleARB )
-import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Types
 
-#include "HsOpenGLRaw.h"
+glDeleteObject = glDeleteObjectARB
+glGetHandle = glGetHandleARB
+glDetachObject = glDetachObjectARB
+glCreateShaderObject = glCreateShaderObjectARB
+glCreateProgramObject = glCreateProgramObjectARB
+glAttachObject = glAttachObjectARB
+glUseProgramObject = glUseProgramObjectARB
+glGetObjectParameterfv = glGetObjectParameterfvARB
+glGetObjectParameteriv = glGetObjectParameterivARB
+glGetInfoLog = glGetInfoLogARB
+glGetAttachedObjects = glGetAttachedObjectsARB
 
-extensionNameString :: String
-extensionNameString = "GL_ARB_shader_objects"
-
-EXTENSION_ENTRY(dyn_glDeleteObject,ptr_glDeleteObject,"glDeleteObject",glDeleteObject,GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glGetHandle,ptr_glGetHandle,"glGetHandle",glGetHandle,GLenum -> IO GLhandle)
-EXTENSION_ENTRY(dyn_glDetachObject,ptr_glDetachObject,"glDetachObject",glDetachObject,GLhandle -> GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glCreateShaderObject,ptr_glCreateShaderObject,"glCreateShaderObject",glCreateShaderObject,GLenum -> IO GLhandle)
-EXTENSION_ENTRY(dyn_glCreateProgramObject,ptr_glCreateProgramObject,"glCreateProgramObject",glCreateProgramObject,IO GLhandle)
-EXTENSION_ENTRY(dyn_glAttachObject,ptr_glAttachObject,"glAttachObject",glAttachObject,GLhandle -> GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glUseProgramObject,ptr_glUseProgramObject,"glUseProgramObject",glUseProgramObject,GLhandle -> IO ())
-EXTENSION_ENTRY(dyn_glGetObjectParameterfv,ptr_glGetObjectParameterfv,"glGetObjectParameterfv",glGetObjectParameterfv,GLhandle -> GLenum -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glGetObjectParameteriv,ptr_glGetObjectParameteriv,"glGetObjectParameteriv",glGetObjectParameteriv,GLhandle -> GLenum -> Ptr GLint -> IO ())
-EXTENSION_ENTRY(dyn_glGetInfoLog,ptr_glGetInfoLog,"glGetInfoLog",glGetInfoLog,GLhandle -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
-EXTENSION_ENTRY(dyn_glGetAttachedObjects,ptr_glGetAttachedObjects,"glGetAttachedObjects",glGetAttachedObjects,GLhandle -> GLsizei -> Ptr GLsizei -> Ptr GLhandle -> IO ())
-
-gl_PROGRAM_OBJECT :: GLenum
-gl_PROGRAM_OBJECT = 0x8B40
-
--- | Note: We use the ARB suffix here, because the name clashes with the ARB_sync extension.
-gl_OBJECT_TYPE_ARB :: GLenum
-gl_OBJECT_TYPE_ARB = 0x8B4E
-
-gl_OBJECT_SUBTYPE :: GLenum
-gl_OBJECT_SUBTYPE = 0x8B4F
-
-gl_OBJECT_DELETE_STATUS :: GLenum
-gl_OBJECT_DELETE_STATUS = 0x8B80
-
-gl_OBJECT_COMPILE_STATUS :: GLenum
-gl_OBJECT_COMPILE_STATUS = 0x8B81
-
-gl_OBJECT_LINK_STATUS :: GLenum
-gl_OBJECT_LINK_STATUS = 0x8B82
-
-gl_OBJECT_VALIDATE_STATUS :: GLenum
-gl_OBJECT_VALIDATE_STATUS = 0x8B83
-
-gl_OBJECT_INFO_LOG_LENGTH :: GLenum
-gl_OBJECT_INFO_LOG_LENGTH = 0x8B84
-
-gl_OBJECT_ATTACHED_OBJECTS :: GLenum
-gl_OBJECT_ATTACHED_OBJECTS = 0x8B85
-
-gl_OBJECT_ACTIVE_UNIFORMS :: GLenum
-gl_OBJECT_ACTIVE_UNIFORMS = 0x8B86
-
-gl_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH :: GLenum
-gl_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH = 0x8B87
-
-gl_OBJECT_SHADER_SOURCE_LENGTH :: GLenum
-gl_OBJECT_SHADER_SOURCE_LENGTH = 0x8B88
-
-gl_SHADER_OBJECT :: GLenum
-gl_SHADER_OBJECT = 0x8B48
+gl_PROGRAM_OBJECT = gl_PROGRAM_OBJECT_ARB
+gl_OBJECT_SUBTYPE = gl_OBJECT_SUBTYPE_ARB
+gl_OBJECT_DELETE_STATUS = gl_OBJECT_DELETE_STATUS_ARB
+gl_OBJECT_COMPILE_STATUS = gl_OBJECT_COMPILE_STATUS_ARB
+gl_OBJECT_LINK_STATUS = gl_OBJECT_LINK_STATUS_ARB
+gl_OBJECT_VALIDATE_STATUS = gl_OBJECT_VALIDATE_STATUS_ARB
+gl_OBJECT_INFO_LOG_LENGTH = gl_OBJECT_INFO_LOG_LENGTH_ARB
+gl_OBJECT_ATTACHED_OBJECTS = gl_OBJECT_ATTACHED_OBJECTS_ARB
+gl_OBJECT_ACTIVE_UNIFORMS = gl_OBJECT_ACTIVE_UNIFORMS_ARB
+gl_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH = gl_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH_ARB
+gl_OBJECT_SHADER_SOURCE_LENGTH = gl_OBJECT_SHADER_SOURCE_LENGTH_ARB
+gl_SHADER_OBJECT = gl_SHADER_OBJECT_ARB
 
 type GLhandle = GLhandleARB

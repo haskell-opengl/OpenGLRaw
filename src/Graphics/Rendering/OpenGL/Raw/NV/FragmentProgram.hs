@@ -37,16 +37,14 @@ module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram (
    gl_PROGRAM_ERROR_STRING
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_fragment_program"
 
 EXTENSION_ENTRY(dyn_glProgramNamedParameter4f,ptr_glProgramNamedParameter4f,"glProgramNamedParameter4f",glProgramNamedParameter4f,GLuint -> GLsizei -> Ptr GLubyte -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
 EXTENSION_ENTRY(dyn_glProgramNamedParameter4d,ptr_glProgramNamedParameter4d,"glProgramNamedParameter4d",glProgramNamedParameter4d,GLuint -> GLsizei -> Ptr GLubyte -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())

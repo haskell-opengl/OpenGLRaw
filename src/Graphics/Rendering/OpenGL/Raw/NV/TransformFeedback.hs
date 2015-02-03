@@ -66,19 +66,17 @@ module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback (
    gl_UNSIGNED_INT_VEC4
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.Core32
 import Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 import Graphics.Rendering.OpenGL.Raw.NV.ParameterBufferObject
 import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_transform_feedback"
 
 EXTENSION_ENTRY(dyn_glTransformFeedbackAttribs,ptr_glTransformFeedbackAttribs,"glTransformFeedbackAttribs",glTransformFeedbackAttribs,GLsizei -> Ptr GLint -> GLenum -> IO ())
 EXTENSION_ENTRY(dyn_glTransformFeedbackVaryingsNV,ptr_glTransformFeedbackVaryingsNV,"glTransformFeedbackVaryingsNV",glTransformFeedbackVaryingsNV,GLuint -> GLsizei -> Ptr GLint -> GLenum -> IO ())

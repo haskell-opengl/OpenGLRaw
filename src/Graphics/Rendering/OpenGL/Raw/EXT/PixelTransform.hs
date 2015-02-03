@@ -34,15 +34,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform (
    gl_PIXEL_TRANSFORM_2D_MATRIX
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_pixel_transform"
 
 EXTENSION_ENTRY(dyn_glPixelTransformParameteri,ptr_glPixelTransformParameteri,"glPixelTransformParameteri",glPixelTransformParameteri,GLenum -> GLenum -> GLint -> IO ())
 EXTENSION_ENTRY(dyn_glPixelTransformParameterf,ptr_glPixelTransformParameterf,"glPixelTransformParameterf",glPixelTransformParameterf,GLenum -> GLenum -> GLfloat -> IO ())

@@ -14,24 +14,11 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC (
+   -- * Tokens
    gl_COMPRESSED_RGBA_BPTC_UNORM,
    gl_COMPRESSED_SRGB_ALPHA_BPTC_UNORM,
    gl_COMPRESSED_RGB_BPTC_SIGNED_FLOAT,
    gl_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-
---------------------------------------------------------------------------------
-
-gl_COMPRESSED_RGBA_BPTC_UNORM :: GLenum
-gl_COMPRESSED_RGBA_BPTC_UNORM = 0x8E8C
-
-gl_COMPRESSED_SRGB_ALPHA_BPTC_UNORM :: GLenum
-gl_COMPRESSED_SRGB_ALPHA_BPTC_UNORM = 0x8E8D
-
-gl_COMPRESSED_RGB_BPTC_SIGNED_FLOAT :: GLenum
-gl_COMPRESSED_RGB_BPTC_SIGNED_FLOAT = 0x8E8E
-
-gl_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT :: GLenum
-gl_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT = 0x8E8F
+import Graphics.Rendering.OpenGL.Raw.Tokens

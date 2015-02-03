@@ -37,12 +37,11 @@ module Graphics.Rendering.OpenGL.Raw.NV.ExplicitMultisample (
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_explicit_multisample"
 
 EXTENSION_ENTRY(dyn_glSampleMaskIndexed,ptr_glSampleMaskIndexed,"glSampleMaskIndexed",glSampleMaskIndexed,GLuint -> GLbitfield -> IO ())
 EXTENSION_ENTRY(dyn_glTexRenderbuffer,ptr_glTexRenderbuffer,"glTexRenderbuffer",glTexRenderbuffer,GLenum -> GLuint -> IO ())

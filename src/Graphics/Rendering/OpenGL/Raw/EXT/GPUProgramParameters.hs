@@ -21,15 +21,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters (
    glProgramLocalParameters4fv
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_program_parameters"
 
 EXTENSION_ENTRY(dyn_glProgramEnvParameters4fv,ptr_glProgramEnvParameters4fv,"glProgramEnvParameters4fv",glProgramEnvParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(dyn_glProgramLocalParameters4fv,ptr_glProgramLocalParameters4fv,"glProgramLocalParameters4fv",glProgramLocalParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())

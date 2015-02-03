@@ -14,6 +14,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5 (
+   -- * Tokens
    gl_GEOMETRY_SHADER_INVOCATIONS,
    gl_MAX_GEOMETRY_SHADER_INVOCATIONS,
    gl_MIN_FRAGMENT_INTERPOLATION_OFFSET,
@@ -22,24 +23,4 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5 (
    gl_MAX_VERTEX_STREAMS
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-
---------------------------------------------------------------------------------
-
-gl_GEOMETRY_SHADER_INVOCATIONS :: GLenum
-gl_GEOMETRY_SHADER_INVOCATIONS = 0x887F
-
-gl_MAX_GEOMETRY_SHADER_INVOCATIONS :: GLenum
-gl_MAX_GEOMETRY_SHADER_INVOCATIONS = 0x8E5A
-
-gl_MIN_FRAGMENT_INTERPOLATION_OFFSET :: GLenum
-gl_MIN_FRAGMENT_INTERPOLATION_OFFSET = 0x8E5B
-
-gl_MAX_FRAGMENT_INTERPOLATION_OFFSET :: GLenum
-gl_MAX_FRAGMENT_INTERPOLATION_OFFSET = 0x8E5C
-
-gl_FRAGMENT_INTERPOLATION_OFFSET_BITS :: GLenum
-gl_FRAGMENT_INTERPOLATION_OFFSET_BITS = 0x8E5D
-
-gl_MAX_VERTEX_STREAMS :: GLenum
-gl_MAX_VERTEX_STREAMS = 0x8E71
+import Graphics.Rendering.OpenGL.Raw.Tokens

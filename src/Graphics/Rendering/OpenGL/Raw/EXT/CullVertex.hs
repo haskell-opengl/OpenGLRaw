@@ -24,15 +24,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CullVertex (
    gl_CULL_VERTEX_OBJECT_POSITION
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_cull_vertex"
 
 EXTENSION_ENTRY(dyn_glCullParameterfv,ptr_glCullParameterfv,"glCullParameterfv",glCullParameterfv,GLenum -> Ptr GLfloat -> IO ())
 EXTENSION_ENTRY(dyn_glCullParameterdv,ptr_glCullParameterdv,"glCullParameterdv",glCullParameterdv,GLenum -> Ptr GLdouble -> IO ())

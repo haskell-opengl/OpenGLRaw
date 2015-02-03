@@ -23,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax (
    gl_BLEND_EQUATION
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

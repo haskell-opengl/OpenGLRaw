@@ -57,15 +57,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting (
    gl_FRAGMENT_LIGHT7
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_fragment_lighting"
 
 EXTENSION_ENTRY(dyn_glFragmentLightModeli,ptr_glFragmentLightModeli,"glFragmentLightModeli",glFragmentLightModeli,GLenum -> GLint -> IO ())
 EXTENSION_ENTRY(dyn_glFragmentLightModelf,ptr_glFragmentLightModelf,"glFragmentLightModelf",glFragmentLightModelf,GLenum -> GLfloat -> IO ())

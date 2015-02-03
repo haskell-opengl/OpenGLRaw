@@ -43,16 +43,14 @@ module Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4 (
    gl_MAX_PROGRAM_GENERIC_RESULTS
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_gpu_program4"
 
 EXTENSION_ENTRY(dyn_glProgramLocalParameterI4i,ptr_glProgramLocalParameterI4i,"glProgramLocalParameterI4i",glProgramLocalParameterI4i,GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
 EXTENSION_ENTRY(dyn_glProgramLocalParameterI4iv,ptr_glProgramLocalParameterI4iv,"glProgramLocalParameterI4iv",glProgramLocalParameterI4iv,GLenum -> GLuint -> Ptr GLint -> IO ())

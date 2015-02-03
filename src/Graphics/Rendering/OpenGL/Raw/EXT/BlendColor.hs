@@ -24,4 +24,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.BlendColor (
    gl_BLEND_COLOR
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

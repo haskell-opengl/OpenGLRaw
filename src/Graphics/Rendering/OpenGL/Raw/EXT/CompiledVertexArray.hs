@@ -26,12 +26,11 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CompiledVertexArray (
 
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_compiled_vertex_array"
 
 EXTENSION_ENTRY(dyn_glLockArrays,ptr_glLockArrays,"glLockArrays",glLockArrays,GLint -> GLsizei -> IO ())
 EXTENSION_ENTRY(dyn_glUnlockArrays,ptr_glUnlockArrays,"glUnlockArrays",glUnlockArrays,IO ())

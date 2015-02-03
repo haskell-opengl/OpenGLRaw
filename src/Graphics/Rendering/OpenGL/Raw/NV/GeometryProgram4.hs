@@ -30,21 +30,20 @@ module Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4 (
    gl_TRIANGLES_ADJACENCY,
    gl_TRIANGLE_STRIP_ADJACENCY,
    gl_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS,
-   gl_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT,
+   gl_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_ARB,
    gl_FRAMEBUFFER_ATTACHMENT_LAYERED,
    gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER,
    gl_PROGRAM_POINT_SIZE
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_geometry_program4"
 
 EXTENSION_ENTRY(dyn_glProgramVertexLimit,ptr_glProgramVertexLimit,"glProgramVertexLimit",glProgramVertexLimit,GLenum -> GLint -> IO ())
 

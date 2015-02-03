@@ -31,15 +31,13 @@ module Graphics.Rendering.OpenGL.Raw.NV.PresentVideo (
    gl_PRESENT_DURATION
 ) where
 
-import Foreign.Ptr
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( Ptr, FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_present_video"
 
 EXTENSION_ENTRY(dyn_glPresentFrameKeyed,ptr_glPresentFrameKeyed,"glPresentFrameKeyed",glPresentFrameKeyed,GLuint -> GLuint64 -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLuint -> GLenum -> GLuint -> GLuint -> IO ())
 EXTENSION_ENTRY(dyn_glPresentFrameDualFill,ptr_glPresentFrameDualFill,"glPresentFrameDualFill",glPresentFrameDualFill,GLuint -> GLuint64 -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> IO ())

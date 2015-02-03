@@ -18,7 +18,4 @@ module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2 (
    gl_ANY_SAMPLES_PASSED
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-
-gl_ANY_SAMPLES_PASSED :: GLenum
-gl_ANY_SAMPLES_PASSED = 0x8C2F
+import Graphics.Rendering.OpenGL.Raw.Tokens

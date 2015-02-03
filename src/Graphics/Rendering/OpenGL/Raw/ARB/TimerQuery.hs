@@ -1,4 +1,3 @@
-{-# LANGUAGE CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
@@ -25,22 +24,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery (
    gl_TIMESTAMP
 ) where
 
-import Foreign.C.Types
-import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_ARB_timer_query"
-
-EXTENSION_ENTRY(dyn_glQueryCounter,ptr_glQueryCounter,"glQueryCounter",glQueryCounter, GLuint -> GLenum -> IO ())
-EXTENSION_ENTRY(dyn_glGetQueryObjecti64v,ptr_glGetQueryObjecti64v,"glGetQueryObjecti64v",glGetQueryObjecti64v,GLuint -> GLenum -> Ptr GLint64 -> IO ())
-EXTENSION_ENTRY(dyn_glGetQueryObjectui64v,ptr_glGetQueryObjectui64v,"glGetQueryObjectui64v",glGetQueryObjectui64v,GLuint -> GLenum -> Ptr GLuint64 -> IO ())
-
-gl_TIME_ELAPSED :: GLenum
-gl_TIME_ELAPSED = 0x88BF
-
-gl_TIMESTAMP :: GLenum
-gl_TIMESTAMP = 0x8E28
+import Graphics.Rendering.OpenGL.Raw.Functions
+import Graphics.Rendering.OpenGL.Raw.Tokens

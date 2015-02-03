@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced
@@ -20,15 +19,4 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced (
    glDrawElementsInstanced
 ) where
 
-import Foreign.Ptr
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-
-#include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_ARB_draw_instanced"
-
-EXTENSION_ENTRY(dyn_glDrawArraysInstanced,ptr_glDrawArraysInstanced,"glDrawArraysInstanced",glDrawArraysInstanced,GLenum -> GLint -> GLsizei -> GLsizei -> IO ())
-EXTENSION_ENTRY(dyn_glDrawElementsInstanced,ptr_glDrawElementsInstanced,"glDrawElementsInstanced",glDrawElementsInstanced,GLenum -> GLsizei -> GLenum -> Ptr a -> GLsizei -> IO ())
+import Graphics.Rendering.OpenGL.Raw.Functions

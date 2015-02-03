@@ -27,13 +27,12 @@ module Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.Types
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_NV_primitive_restart"
 
 EXTENSION_ENTRY(dyn_glPrimitiveRestart,ptr_glPrimitiveRestart,"glPrimitiveRestart",glPrimitiveRestart, IO ())
 EXTENSION_ENTRY(dyn_glPrimitiveRestartIndexNV,ptr_glPrimitiveRestartIndexNV,"glPrimitiveRestartIndexNV",glPrimitiveRestartIndexNV,GLuint -> IO ())

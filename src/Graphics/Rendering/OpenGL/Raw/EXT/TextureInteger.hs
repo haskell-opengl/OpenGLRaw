@@ -50,14 +50,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger (
 ) where
 
 import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_texture_integer"
 
 EXTENSION_ENTRY(dyn_glClearColorIi,ptr_glClearColorIi,"glClearColorIi",glClearColorIi,GLint -> GLint -> GLint -> GLint -> IO ())
 EXTENSION_ENTRY(dyn_glClearColorIui,ptr_glClearColorIui,"glClearColorIui",glClearColorIui,GLuint -> GLuint -> GLuint -> GLuint -> IO ())

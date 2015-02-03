@@ -25,12 +25,11 @@ module Graphics.Rendering.OpenGL.Raw.EXT.IndexFunc (
 
 import Foreign.C.Types
 import Graphics.Rendering.OpenGL.Raw.Core32
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Foreign.Ptr ( FunPtr )
+import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
+import System.IO.Unsafe ( unsafePerformIO )
 
 #include "HsOpenGLRaw.h"
-
-extensionNameString :: String
-extensionNameString = "GL_EXT_index_func"
 
 EXTENSION_ENTRY(dyn_glIndexFunc,ptr_glIndexFunc,"glIndexFunc",glIndexFunc,GLenum -> GLfloat -> IO ())
 
