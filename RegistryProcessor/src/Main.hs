@@ -234,12 +234,12 @@ showCommand api c =
             ([showSignatureElement withComment False t | t <- paramTypes c] ++
              [showSignatureElement withComment True (resultType c)])
         urls = M.findWithDefault [] (api, CommandName name) manPageURLs
-        links = L.intercalate ", " (map renderURL urls)  ++ "\n"
+        links = L.intercalate " or " (map renderURL urls)  ++ "\n"
         man = case urls of
                 []  -> ""
-                [_] ->  "-- | Manual page: "  ++ links
-                _   ->  "-- | Manual pages: " ++ links
-        renderURL u = "<" ++ u ++ ">"
+                [_] ->  "-- | Manual page for "  ++ links
+                _   ->  "-- | Manual pages for " ++ links
+        renderURL (u, l) = "<" ++ u ++ " " ++ l ++ ">"
 
 showSignatureElement :: Bool -> Bool -> SignatureElement -> String
 showSignatureElement withComment isResult sigElem = el ++ comment

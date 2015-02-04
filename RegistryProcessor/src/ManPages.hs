@@ -7,10 +7,11 @@ import MangledRegistry ( API(..), CommandName(..) )
 
 type ManPageKey = (API, CommandName)
 type URL = String
+type Label = String
 
-assocsGL2 :: [(ManPageKey, [URL])]
+assocsGL2 :: [(ManPageKey, [(URL, Label)])]
 assocsGL2 =
-  entriesFor "gl" "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
+  entriesFor "gl" "OpenGL 2.x" "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
   ("glAccum", "glAccum"),
   ("glActiveTexture", "glActiveTexture"),
   ("glAlphaFunc", "glAlphaFunc"),
@@ -655,9 +656,9 @@ assocsGL2 =
   ("glWindowPos3dv", "glWindowPos")
   ]
 
-assocsGLX1 :: [(ManPageKey, [URL])]
+assocsGLX1 :: [(ManPageKey, [(URL, Label)])]
 assocsGLX1 =
-  entriesFor "glx" "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
+  entriesFor "glx" "GLX 1.x" "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
   ("glXChooseFBConfig", "glXChooseFBConfig"),
   ("glXChooseVisual", "glXChooseVisual"),
   ("glXCopyContext", "glXCopyContext"),
@@ -703,9 +704,9 @@ assocsGLX1 =
   ("glXWaitX", "glXWaitX")
   ]
 
-assocsGL3 :: [(ManPageKey, [URL])]
+assocsGL3 :: [(ManPageKey, [(URL, Label)])]
 assocsGL3 =
-  entriesFor "gl" "https://www.opengl.org/sdk/docs/man3/xhtml/" ".xml" [
+  entriesFor "gl" "OpenGL 3.x" "https://www.opengl.org/sdk/docs/man3/xhtml/" ".xml" [
   ("glActiveTexture", "glActiveTexture"),
   ("glAttachShader", "glAttachShader"),
   ("glBeginConditionalRender", "glBeginConditionalRender"),
@@ -1080,9 +1081,9 @@ assocsGL3 =
   ("glWaitSync", "glWaitSync")
   ]
 
-assocsGL4 :: [(ManPageKey, [URL])]
+assocsGL4 :: [(ManPageKey, [(URL, Label)])]
 assocsGL4 =
-  entriesFor "gl" "https://www.opengl.org/sdk/docs/man4/html/" ".xhtml" [
+  entriesFor "gl" "OpenGL 4.x" "https://www.opengl.org/sdk/docs/man4/html/" ".xhtml" [
   ("glActiveShaderProgram", "glActiveShaderProgram"),
   ("glActiveTexture", "glActiveTexture"),
   ("glAttachShader", "glAttachShader"),
@@ -1696,12 +1697,12 @@ assocsGL4 =
   ("glWaitSync", "glWaitSync")
   ]
 
-entriesFor :: String -> String -> String -> [(String, String)] -> [(ManPageKey, [URL])]
-entriesFor api baseURL extension assocs =
-  [ ((API api, CommandName n), [baseURL ++ u ++ extension])
+entriesFor :: String -> Label -> String -> String -> [(String, String)] -> [(ManPageKey, [(URL, Label)])]
+entriesFor api label baseURL extension assocs =
+  [ ((API api, CommandName n), [(baseURL ++ u ++ extension, label)])
   | (n, u) <- assocs ]
 
-manPageURLs :: M.Map ManPageKey [URL]
+manPageURLs :: M.Map ManPageKey [(URL, Label)]
 manPageURLs =
   M.fromListWith (++) .
   concat $
