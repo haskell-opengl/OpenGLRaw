@@ -6,21 +6,23 @@ MODDIR="$OUTDIR/Graphics/Rendering/OpenGL/Raw"
 REGISTRY="OpenGL-Registry/gl.xml"
 API="gl"
 
-function runconverter() {
+runconverter() {
   echo "running" $@ 1>&2
-  cabal run -v0 -- "$REGISTRY" "--api=$API" $@
+  cabal run -v0 -- "${REGISTRY}" "--api=$API" $@
 }
 
-mkdir -p "$MODDIR"
+mkdir -p "${MODDIR}"
 
-runconverter --print-tokens > "$MODDIR/Tokens.hs"
-runconverter --print-functions > "$MODDIR/Functions.hs"
+runconverter --print-tokens > "${MODDIR}/Tokens.hs"
+runconverter --print-functions > "${MODDIR}/Functions.hs"
 
 for i in 1.0 1.1 1.2 1.3 1.4 1.5 2.0 2.1; do
-  runconverter --print-feature --version=$i --profile=version > "$MODDIR/Version"${i/\./}.hs
+  VER=`echo $i | sed 's/\.//'`
+  runconverter --print-feature --version=$i --profile=version > "${MODDIR}/Version${VER}.hs"
 done
 
 for i in 3.0 3.1 3.2 3.3 4.0 4.1 4.2 4.3 4.4 4.5; do
-  runconverter --print-feature --version=$i --profile=core > "$MODDIR/Core"${i/\./}.hs
-  runconverter --print-feature --version=$i --profile=compatibility > "$MODDIR/Compatibility"${i/\./}.hs
+  VER=`echo $i | sed 's/\.//'`
+  runconverter --print-feature --version=$i --profile=core > "${MODDIR}/Core${VER}.hs"
+  runconverter --print-feature --version=$i --profile=compatibility > "${MODDIR}/Compatibility${VER}.hs"
 done
