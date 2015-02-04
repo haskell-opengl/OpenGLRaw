@@ -9,6 +9,7 @@ import qualified Data.Set as S
 import qualified System.Console.GetOpt as G
 import qualified System.Environment as E
 import MangledRegistry
+import ManPages
 
 data Option
   = PrintFeature
@@ -64,7 +65,7 @@ main = do
         putStrLn "--"
         putStrLn "--------------------------------------------------------------------------------"
         putStrLn ""
-        let (ts,es,cs) = getTyEnCo api version profile registry
+        let (ts,es,cs) = fixedGetTyEnCo api version profile registry
         putStrLn $ "module "++ modName ++ " ("
         CM.unless (null ts) $ do
           putStrLn "  -- * Types"
@@ -144,13 +145,22 @@ main = do
         putStrLn "throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)"
         putStrLn "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
         putStrLn ""
-        mapM_ (putStrLn . showCommand) (M.elems (commands registry))
+        mapM_ (putStrLn . showCommand api) (M.elems (commands registry))
 
 capitalize :: String -> String
 capitalize str = C.toUpper (head str) : tail str
 
 separate :: (a -> String) -> [a] -> String
 separate f = L.intercalate ",\n" . map ("  " ++) . map f
+
+-- Annoyingly enough, the OpenGL registry doesn't contain any enums for
+-- OpenGL 1.0, so let's just use the OpenGL 1.1 ones.
+fixedGetTyEnCo :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
+fixedGetTyEnCo api version profile registry
+  | api == API "gl" && version == read "1.0" = (ts, es11, cs)
+  | otherwise = tec
+  where tec@(ts, _, cs) = getTyEnCo api version profile registry
+        (_, es11, _) = getTyEnCo api (read "1.1") profile registry
 
 getTyEnCo :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
 getTyEnCo api version profile registry = (ts', es, cs)
@@ -194,9 +204,11 @@ convertEnum e =
   , n ++ " = " ++ unEnumValue (enumValue e) ]
   where n = unEnumName . enumName $ e
 
-showCommand :: Command -> String
-showCommand c =
+showCommand :: API -> Command -> String
+showCommand api c =
   showString (take 80 ("-- " ++ name ++ " " ++ repeat '-') ++ "\n\n") .
+
+  showString url .
 
   showString (name ++ "\n") .
   showString ("  :: " ++ signature True) .
@@ -221,6 +233,9 @@ showCommand c =
           L.intercalate ((if withComment then " " else "") ++ " -> ")
             ([showSignatureElement withComment False t | t <- paramTypes c] ++
              [showSignatureElement withComment True (resultType c)])
+        url = maybe "" (\u -> "-- | Manual page: <" ++ u ++ ">\n") $
+                M.lookup (api, CommandName name) manPageURLs
+
 
 showSignatureElement :: Bool -> Bool -> SignatureElement -> String
 showSignatureElement withComment isResult sigElem = el ++ comment
