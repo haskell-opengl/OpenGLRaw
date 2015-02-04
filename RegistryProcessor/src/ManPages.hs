@@ -8,9 +8,9 @@ import MangledRegistry ( API(..), CommandName(..) )
 type ManPageKey = (API, CommandName)
 type URL = String
 
-assocsGL2 :: [(ManPageKey, URL)]
+assocsGL2 :: [(ManPageKey, [URL])]
 assocsGL2 =
-  entriesFor "gl" 2 "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
+  entriesFor "gl" "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
   ("glAccum", "glAccum"),
   ("glActiveTexture", "glActiveTexture"),
   ("glAlphaFunc", "glAlphaFunc"),
@@ -655,9 +655,9 @@ assocsGL2 =
   ("glWindowPos3dv", "glWindowPos")
   ]
 
-assocsGLX1 :: [(ManPageKey, URL)]
+assocsGLX1 :: [(ManPageKey, [URL])]
 assocsGLX1 =
-  entriesFor "glx" 1 "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
+  entriesFor "glx" "https://www.opengl.org/sdk/docs/man2/xhtml/" ".xml" [
   ("glXChooseFBConfig", "glXChooseFBConfig"),
   ("glXChooseVisual", "glXChooseVisual"),
   ("glXCopyContext", "glXCopyContext"),
@@ -703,9 +703,9 @@ assocsGLX1 =
   ("glXWaitX", "glXWaitX")
   ]
 
-assocsGL3 :: [(ManPageKey, URL)]
+assocsGL3 :: [(ManPageKey, [URL])]
 assocsGL3 =
-  entriesFor "gl" 3 "https://www.opengl.org/sdk/docs/man3/xhtml/" ".xml" [
+  entriesFor "gl" "https://www.opengl.org/sdk/docs/man3/xhtml/" ".xml" [
   ("glActiveTexture", "glActiveTexture"),
   ("glAttachShader", "glAttachShader"),
   ("glBeginConditionalRender", "glBeginConditionalRender"),
@@ -1080,9 +1080,9 @@ assocsGL3 =
   ("glWaitSync", "glWaitSync")
   ]
 
-assocsGL4 :: [(ManPageKey, URL)]
+assocsGL4 :: [(ManPageKey, [URL])]
 assocsGL4 =
-  entriesFor "gl" 4 "https://www.opengl.org/sdk/docs/man4/html/" ".xhtml" [
+  entriesFor "gl" "https://www.opengl.org/sdk/docs/man4/html/" ".xhtml" [
   ("glActiveShaderProgram", "glActiveShaderProgram"),
   ("glActiveTexture", "glActiveTexture"),
   ("glAttachShader", "glAttachShader"),
@@ -1696,11 +1696,13 @@ assocsGL4 =
   ("glWaitSync", "glWaitSync")
   ]
 
-entriesFor :: String -> Int -> String -> String -> [(String, String)] -> [(ManPageKey, URL)]
-entriesFor api _majorVersion baseURL extension assocs =
-  [ ((API api, CommandName n), baseURL ++ u ++ extension)
+entriesFor :: String -> String -> String -> [(String, String)] -> [(ManPageKey, [URL])]
+entriesFor api baseURL extension assocs =
+  [ ((API api, CommandName n), [baseURL ++ u ++ extension])
   | (n, u) <- assocs ]
 
--- More recent man pages override older ones.
-manPageURLs :: M.Map ManPageKey URL
-manPageURLs = M.fromList $ concat [ assocsGL2, assocsGL3, assocsGL4, assocsGLX1 ]
+manPageURLs :: M.Map ManPageKey [URL]
+manPageURLs =
+  M.fromListWith (++) .
+  concat $
+  reverse [ assocsGL2, assocsGL3, assocsGL4, assocsGLX1 ]

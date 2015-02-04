@@ -3192,7 +3192,7 @@ ptr_glActiveStencilFaceEXT = unsafePerformIO $ getCommand "glActiveStencilFaceEX
 
 -- glActiveTexture -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glActiveTexture.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glActiveTexture.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glActiveTexture.xml>, <https://www.opengl.org/sdk/docs/man4/html/glActiveTexture.xhtml>
 glActiveTexture
   :: GLenum -- ^ @texture@ of type @TextureUnit@.
   -> IO ()
@@ -3522,7 +3522,7 @@ ptr_glAttachObjectARB = unsafePerformIO $ getCommand "glAttachObjectARB"
 
 -- glAttachShader --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glAttachShader.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glAttachShader.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glAttachShader.xml>, <https://www.opengl.org/sdk/docs/man4/html/glAttachShader.xhtml>
 glAttachShader
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @shader@.
@@ -3555,7 +3555,7 @@ ptr_glBegin = unsafePerformIO $ getCommand "glBegin"
 
 -- glBeginConditionalRender ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginConditionalRender.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml>
 glBeginConditionalRender
   :: GLuint -- ^ @id@.
   -> GLenum -- ^ @mode@ of type @TypeEnum@.
@@ -3662,7 +3662,7 @@ ptr_glBeginPerfQueryINTEL = unsafePerformIO $ getCommand "glBeginPerfQueryINTEL"
 
 -- glBeginQuery ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBeginQuery.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginQuery.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml>
 glBeginQuery
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @id@.
@@ -3729,7 +3729,7 @@ ptr_glBeginQueryIndexed = unsafePerformIO $ getCommand "glBeginQueryIndexed"
 
 -- glBeginTransformFeedback ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginTransformFeedback.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml>
 glBeginTransformFeedback
   :: GLenum -- ^ @primitiveMode@.
   -> IO ()
@@ -3804,7 +3804,7 @@ ptr_glBeginVideoCaptureNV = unsafePerformIO $ getCommand "glBeginVideoCaptureNV"
 
 -- glBindAttribLocation --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindAttribLocation.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBindAttribLocation.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBindAttribLocation.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindAttribLocation.xhtml>
 glBindAttribLocation
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
@@ -3839,7 +3839,7 @@ ptr_glBindAttribLocationARB = unsafePerformIO $ getCommand "glBindAttribLocation
 
 -- glBindBuffer ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBindBuffer.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindBuffer.xhtml>
 glBindBuffer
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLuint -- ^ @buffer@.
@@ -3872,7 +3872,7 @@ ptr_glBindBufferARB = unsafePerformIO $ getCommand "glBindBufferARB"
 
 -- glBindBufferBase ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindBufferBase.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferBase.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindBufferBase.xhtml>
 glBindBufferBase
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -3960,7 +3960,7 @@ ptr_glBindBufferOffsetNV = unsafePerformIO $ getCommand "glBindBufferOffsetNV"
 
 -- glBindBufferRange -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindBufferRange.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferRange.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindBufferRange.xhtml>
 glBindBufferRange
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -4058,7 +4058,7 @@ ptr_glBindBuffersRange = unsafePerformIO $ getCommand "glBindBuffersRange"
 
 -- glBindFragDataLocation ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocation.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFragDataLocation.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocation.xhtml>
 glBindFragDataLocation
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @color@.
@@ -4093,7 +4093,7 @@ ptr_glBindFragDataLocationEXT = unsafePerformIO $ getCommand "glBindFragDataLoca
 
 -- glBindFragDataLocationIndexed -----------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocationIndexed.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFragDataLocationIndexed.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocationIndexed.xhtml>
 glBindFragDataLocationIndexed
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @colorNumber@.
@@ -4127,7 +4127,7 @@ ptr_glBindFragmentShaderATI = unsafePerformIO $ getCommand "glBindFragmentShader
 
 -- glBindFramebuffer -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindFramebuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFramebuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindFramebuffer.xhtml>
 glBindFramebuffer
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> GLuint -- ^ @framebuffer@.
@@ -4364,7 +4364,7 @@ ptr_glBindProgramPipelineEXT = unsafePerformIO $ getCommand "glBindProgramPipeli
 
 -- glBindRenderbuffer ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindRenderbuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindRenderbuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindRenderbuffer.xhtml>
 glBindRenderbuffer
   :: GLenum -- ^ @target@ of type @RenderbufferTarget@.
   -> GLuint -- ^ @renderbuffer@.
@@ -4413,7 +4413,7 @@ ptr_glBindRenderbufferOES = unsafePerformIO $ getCommand "glBindRenderbufferOES"
 
 -- glBindSampler ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindSampler.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindSampler.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindSampler.xhtml>
 glBindSampler
   :: GLuint -- ^ @unit@.
   -> GLuint -- ^ @sampler@.
@@ -4465,7 +4465,7 @@ ptr_glBindTexGenParameterEXT = unsafePerformIO $ getCommand "glBindTexGenParamet
 
 -- glBindTexture ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindTexture.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBindTexture.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBindTexture.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindTexture.xhtml>
 glBindTexture
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLuint -- ^ @texture@ of type @Texture@.
@@ -4582,7 +4582,7 @@ ptr_glBindTransformFeedbackNV = unsafePerformIO $ getCommand "glBindTransformFee
 
 -- glBindVertexArray -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBindVertexArray.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBindVertexArray.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBindVertexArray.xhtml>
 glBindVertexArray
   :: GLuint -- ^ @array@.
   -> IO ()
@@ -4967,7 +4967,7 @@ ptr_glBlendBarrierNV = unsafePerformIO $ getCommand "glBlendBarrierNV"
 
 -- glBlendColor ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBlendColor.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendColor.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendColor.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBlendColor.xhtml>
 glBlendColor
   :: GLfloat -- ^ @red@ of type @ColorF@.
   -> GLfloat -- ^ @green@ of type @ColorF@.
@@ -5022,7 +5022,7 @@ ptr_glBlendColorxOES = unsafePerformIO $ getCommand "glBlendColorxOES"
 
 -- glBlendEquation -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBlendEquation.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquation.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquation.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBlendEquation.xhtml>
 glBlendEquation
   :: GLenum -- ^ @mode@ of type @BlendEquationMode@.
   -> IO ()
@@ -5084,7 +5084,7 @@ ptr_glBlendEquationOES = unsafePerformIO $ getCommand "glBlendEquationOES"
 
 -- glBlendEquationSeparate -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBlendEquationSeparate.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquationSeparate.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquationSeparate.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBlendEquationSeparate.xhtml>
 glBlendEquationSeparate
   :: GLenum -- ^ @modeRGB@ of type @BlendEquationModeEXT@.
   -> GLenum -- ^ @modeAlpha@ of type @BlendEquationModeEXT@.
@@ -5284,7 +5284,7 @@ ptr_glBlendEquationiOES = unsafePerformIO $ getCommand "glBlendEquationiOES"
 
 -- glBlendFunc -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFunc.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFunc.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml>
 glBlendFunc
   :: GLenum -- ^ @sfactor@ of type @BlendingFactorSrc@.
   -> GLenum -- ^ @dfactor@ of type @BlendingFactorDest@.
@@ -5318,7 +5318,7 @@ ptr_glBlendFuncIndexedAMD = unsafePerformIO $ getCommand "glBlendFuncIndexedAMD"
 
 -- glBlendFuncSeparate ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBlendFuncSeparate.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFuncSeparate.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFuncSeparate.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBlendFuncSeparate.xhtml>
 glBlendFuncSeparate
   :: GLenum -- ^ @sfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
   -> GLenum -- ^ @dfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
@@ -5572,7 +5572,7 @@ ptr_glBlendParameteriNV = unsafePerformIO $ getCommand "glBlendParameteriNV"
 
 -- glBlitFramebuffer -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBlitFramebuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBlitFramebuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBlitFramebuffer.xhtml>
 glBlitFramebuffer
   :: GLint -- ^ @srcX0@.
   -> GLint -- ^ @srcY0@.
@@ -5714,7 +5714,7 @@ ptr_glBufferAddressRangeNV = unsafePerformIO $ getCommand "glBufferAddressRangeN
 
 -- glBufferData ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBufferData.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBufferData.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBufferData.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBufferData.xhtml>
 glBufferData
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
@@ -5805,7 +5805,7 @@ ptr_glBufferStorage = unsafePerformIO $ getCommand "glBufferStorage"
 
 -- glBufferSubData -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBufferSubData.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBufferSubData.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml>
 glBufferSubData
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -5876,7 +5876,7 @@ ptr_glCallLists = unsafePerformIO $ getCommand "glCallLists"
 
 -- glCheckFramebufferStatus ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCheckFramebufferStatus.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glCheckFramebufferStatus.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCheckFramebufferStatus.xhtml>
 glCheckFramebufferStatus
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> IO GLenum
@@ -5955,7 +5955,7 @@ ptr_glCheckNamedFramebufferStatusEXT = unsafePerformIO $ getCommand "glCheckName
 
 -- glClampColor ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClampColor.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glClampColor.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClampColor.xhtml>
 glClampColor
   :: GLenum -- ^ @target@ of type @ClampColorTargetARB@.
   -> GLenum -- ^ @clamp@ of type @ClampColorModeARB@.
@@ -5988,7 +5988,7 @@ ptr_glClampColorARB = unsafePerformIO $ getCommand "glClampColorARB"
 
 -- glClear ---------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClear.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glClear.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glClear.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClear.xhtml>
 glClear
   :: GLbitfield -- ^ @mask@ of type @ClearBufferMask@.
   -> IO ()
@@ -6083,7 +6083,7 @@ ptr_glClearBufferSubData = unsafePerformIO $ getCommand "glClearBufferSubData"
 
 -- glClearBufferfi -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
 glClearBufferfi
   :: GLenum -- ^ @buffer@.
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
@@ -6102,7 +6102,7 @@ ptr_glClearBufferfi = unsafePerformIO $ getCommand "glClearBufferfi"
 
 -- glClearBufferfv -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
 glClearBufferfv
   :: GLenum -- ^ @buffer@.
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
@@ -6120,7 +6120,7 @@ ptr_glClearBufferfv = unsafePerformIO $ getCommand "glClearBufferfv"
 
 -- glClearBufferiv -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
 glClearBufferiv
   :: GLenum -- ^ @buffer@.
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
@@ -6138,7 +6138,7 @@ ptr_glClearBufferiv = unsafePerformIO $ getCommand "glClearBufferiv"
 
 -- glClearBufferuiv ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml>
 glClearBufferuiv
   :: GLenum -- ^ @buffer@.
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
@@ -6156,7 +6156,7 @@ ptr_glClearBufferuiv = unsafePerformIO $ getCommand "glClearBufferuiv"
 
 -- glClearColor ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClearColor.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glClearColor.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glClearColor.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClearColor.xhtml>
 glClearColor
   :: GLfloat -- ^ @red@ of type @ColorF@.
   -> GLfloat -- ^ @green@ of type @ColorF@.
@@ -6247,7 +6247,7 @@ ptr_glClearColorxOES = unsafePerformIO $ getCommand "glClearColorxOES"
 
 -- glClearDepth ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClearDepth.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glClearDepth.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glClearDepth.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClearDepth.xhtml>
 glClearDepth
   :: GLdouble -- ^ @depth@.
   -> IO ()
@@ -6513,7 +6513,7 @@ ptr_glClearNamedFramebufferuiv = unsafePerformIO $ getCommand "glClearNamedFrame
 
 -- glClearStencil --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClearStencil.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glClearStencil.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glClearStencil.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClearStencil.xhtml>
 glClearStencil
   :: GLint -- ^ @s@ of type @StencilValue@.
   -> IO ()
@@ -6636,7 +6636,7 @@ ptr_glClientAttribDefaultEXT = unsafePerformIO $ getCommand "glClientAttribDefau
 
 -- glClientWaitSync ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glClientWaitSync.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glClientWaitSync.xml>, <https://www.opengl.org/sdk/docs/man4/html/glClientWaitSync.xhtml>
 glClientWaitSync
   :: GLsync -- ^ @sync@ of type @sync@.
   -> GLbitfield -- ^ @flags@.
@@ -7740,7 +7740,7 @@ ptr_glColorFragmentOp3ATI = unsafePerformIO $ getCommand "glColorFragmentOp3ATI"
 
 -- glColorMask -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glColorMask.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glColorMask.xml>, <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml>
 glColorMask
   :: GLboolean -- ^ @red@ of type @Boolean@.
   -> GLboolean -- ^ @green@ of type @Boolean@.
@@ -7778,7 +7778,7 @@ ptr_glColorMaskIndexedEXT = unsafePerformIO $ getCommand "glColorMaskIndexedEXT"
 
 -- glColorMaski ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glColorMask.xml>, <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml>
 glColorMaski
   :: GLuint -- ^ @index@.
   -> GLboolean -- ^ @r@ of type @Boolean@.
@@ -8288,7 +8288,7 @@ ptr_glCombinerStageParameterfvNV = unsafePerformIO $ getCommand "glCombinerStage
 
 -- glCompileShader -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCompileShader.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCompileShader.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCompileShader.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCompileShader.xhtml>
 glCompileShader
   :: GLuint -- ^ @shader@.
   -> IO ()
@@ -8478,7 +8478,7 @@ ptr_glCompressedMultiTexSubImage3DEXT = unsafePerformIO $ getCommand "glCompress
 
 -- glCompressedTexImage1D ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage1D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage1D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage1D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage1D.xhtml>
 glCompressedTexImage1D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -8521,7 +8521,7 @@ ptr_glCompressedTexImage1DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 
 -- glCompressedTexImage2D ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage2D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage2D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage2D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage2D.xhtml>
 glCompressedTexImage2D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -8566,7 +8566,7 @@ ptr_glCompressedTexImage2DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 
 -- glCompressedTexImage3D ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage3D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage3D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage3D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage3D.xhtml>
 glCompressedTexImage3D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -8636,7 +8636,7 @@ ptr_glCompressedTexImage3DOES = unsafePerformIO $ getCommand "glCompressedTexIma
 
 -- glCompressedTexSubImage1D ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage1D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage1D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage1D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage1D.xhtml>
 glCompressedTexSubImage1D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -8679,7 +8679,7 @@ ptr_glCompressedTexSubImage1DARB = unsafePerformIO $ getCommand "glCompressedTex
 
 -- glCompressedTexSubImage2D ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage2D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage2D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage2D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage2D.xhtml>
 glCompressedTexSubImage2D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -8726,7 +8726,7 @@ ptr_glCompressedTexSubImage2DARB = unsafePerformIO $ getCommand "glCompressedTex
 
 -- glCompressedTexSubImage3D ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage3D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage3D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage3D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage3D.xhtml>
 glCompressedTexSubImage3D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -9273,7 +9273,7 @@ ptr_glConvolutionParameterxvOES = unsafePerformIO $ getCommand "glConvolutionPar
 
 -- glCopyBufferSubData ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCopyBufferSubData.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyBufferSubData.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCopyBufferSubData.xhtml>
 glCopyBufferSubData
   :: GLenum -- ^ @readTarget@.
   -> GLenum -- ^ @writeTarget@.
@@ -9756,7 +9756,7 @@ ptr_glCopyPixels = unsafePerformIO $ getCommand "glCopyPixels"
 
 -- glCopyTexImage1D ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage1D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage1D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage1D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage1D.xhtml>
 glCopyTexImage1D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -9799,7 +9799,7 @@ ptr_glCopyTexImage1DEXT = unsafePerformIO $ getCommand "glCopyTexImage1DEXT"
 
 -- glCopyTexImage2D ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage2D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage2D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage2D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage2D.xhtml>
 glCopyTexImage2D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -9844,7 +9844,7 @@ ptr_glCopyTexImage2DEXT = unsafePerformIO $ getCommand "glCopyTexImage2DEXT"
 
 -- glCopyTexSubImage1D ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage1D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage1D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage1D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage1D.xhtml>
 glCopyTexSubImage1D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -9885,7 +9885,7 @@ ptr_glCopyTexSubImage1DEXT = unsafePerformIO $ getCommand "glCopyTexSubImage1DEX
 
 -- glCopyTexSubImage2D ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage2D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage2D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage2D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage2D.xhtml>
 glCopyTexSubImage2D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -9930,7 +9930,7 @@ ptr_glCopyTexSubImage2DEXT = unsafePerformIO $ getCommand "glCopyTexSubImage2DEX
 
 -- glCopyTexSubImage3D ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage3D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage3D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml>
 glCopyTexSubImage3D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -10384,7 +10384,7 @@ ptr_glCreatePerfQueryINTEL = unsafePerformIO $ getCommand "glCreatePerfQueryINTE
 
 -- glCreateProgram -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCreateProgram.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCreateProgram.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCreateProgram.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCreateProgram.xhtml>
 glCreateProgram
   :: IO GLuint
 glCreateProgram = dyn_glCreateProgram ptr_glCreateProgram
@@ -10482,7 +10482,7 @@ ptr_glCreateSamplers = unsafePerformIO $ getCommand "glCreateSamplers"
 
 -- glCreateShader --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCreateShader.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCreateShader.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCreateShader.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCreateShader.xhtml>
 glCreateShader
   :: GLenum -- ^ @type@.
   -> IO GLuint
@@ -10633,7 +10633,7 @@ ptr_glCreateVertexArrays = unsafePerformIO $ getCommand "glCreateVertexArrays"
 
 -- glCullFace ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glCullFace.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glCullFace.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glCullFace.xml>, <https://www.opengl.org/sdk/docs/man4/html/glCullFace.xhtml>
 glCullFace
   :: GLenum -- ^ @mode@ of type @CullFaceMode@.
   -> IO ()
@@ -11023,7 +11023,7 @@ ptr_glDeleteAsyncMarkersSGIX = unsafePerformIO $ getCommand "glDeleteAsyncMarker
 
 -- glDeleteBuffers -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteBuffers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteBuffers.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteBuffers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteBuffers.xhtml>
 glDeleteBuffers
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @buffers@ pointing to @n@ elements of type @GLuint@.
@@ -11103,7 +11103,7 @@ ptr_glDeleteFragmentShaderATI = unsafePerformIO $ getCommand "glDeleteFragmentSh
 
 -- glDeleteFramebuffers --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteFramebuffers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteFramebuffers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteFramebuffers.xhtml>
 glDeleteFramebuffers
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @framebuffers@ pointing to @n@ elements of type @GLuint@.
@@ -11280,7 +11280,7 @@ ptr_glDeletePerfQueryINTEL = unsafePerformIO $ getCommand "glDeletePerfQueryINTE
 
 -- glDeleteProgram -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteProgram.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteProgram.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteProgram.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteProgram.xhtml>
 glDeleteProgram
   :: GLuint -- ^ @program@.
   -> IO ()
@@ -11361,7 +11361,7 @@ ptr_glDeleteProgramsNV = unsafePerformIO $ getCommand "glDeleteProgramsNV"
 
 -- glDeleteQueries -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteQueries.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteQueries.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteQueries.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteQueries.xhtml>
 glDeleteQueries
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @ids@ pointing to @n@ elements of type @GLuint@.
@@ -11410,7 +11410,7 @@ ptr_glDeleteQueriesEXT = unsafePerformIO $ getCommand "glDeleteQueriesEXT"
 
 -- glDeleteRenderbuffers -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteRenderbuffers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteRenderbuffers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteRenderbuffers.xhtml>
 glDeleteRenderbuffers
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @renderbuffers@ pointing to @n@ elements of type @GLuint@.
@@ -11459,7 +11459,7 @@ ptr_glDeleteRenderbuffersOES = unsafePerformIO $ getCommand "glDeleteRenderbuffe
 
 -- glDeleteSamplers ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteSamplers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteSamplers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteSamplers.xhtml>
 glDeleteSamplers
   :: GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @samplers@ pointing to @count@ elements of type @GLuint@.
@@ -11476,7 +11476,7 @@ ptr_glDeleteSamplers = unsafePerformIO $ getCommand "glDeleteSamplers"
 
 -- glDeleteShader --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteShader.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteShader.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteShader.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteShader.xhtml>
 glDeleteShader
   :: GLuint -- ^ @shader@.
   -> IO ()
@@ -11492,7 +11492,7 @@ ptr_glDeleteShader = unsafePerformIO $ getCommand "glDeleteShader"
 
 -- glDeleteSync ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteSync.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteSync.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteSync.xhtml>
 glDeleteSync
   :: GLsync -- ^ @sync@ of type @sync@.
   -> IO ()
@@ -11523,7 +11523,7 @@ ptr_glDeleteSyncAPPLE = unsafePerformIO $ getCommand "glDeleteSyncAPPLE"
 
 -- glDeleteTextures ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteTextures.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteTextures.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteTextures.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteTextures.xhtml>
 glDeleteTextures
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @Texture@.
@@ -11589,7 +11589,7 @@ ptr_glDeleteTransformFeedbacksNV = unsafePerformIO $ getCommand "glDeleteTransfo
 
 -- glDeleteVertexArrays --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDeleteVertexArrays.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteVertexArrays.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDeleteVertexArrays.xhtml>
 glDeleteVertexArrays
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @arrays@ pointing to @n@ elements of type @GLuint@.
@@ -11685,7 +11685,7 @@ ptr_glDepthBoundsdNV = unsafePerformIO $ getCommand "glDepthBoundsdNV"
 
 -- glDepthFunc -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDepthFunc.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthFunc.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthFunc.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDepthFunc.xhtml>
 glDepthFunc
   :: GLenum -- ^ @func@ of type @DepthFunction@.
   -> IO ()
@@ -11701,7 +11701,7 @@ ptr_glDepthFunc = unsafePerformIO $ getCommand "glDepthFunc"
 
 -- glDepthMask -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDepthMask.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthMask.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthMask.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDepthMask.xhtml>
 glDepthMask
   :: GLboolean -- ^ @flag@ of type @Boolean@.
   -> IO ()
@@ -11717,7 +11717,7 @@ ptr_glDepthMask = unsafePerformIO $ getCommand "glDepthMask"
 
 -- glDepthRange ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthRange.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthRange.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml>
 glDepthRange
   :: GLdouble -- ^ @near@.
   -> GLdouble -- ^ @far@.
@@ -11901,7 +11901,7 @@ ptr_glDetachObjectARB = unsafePerformIO $ getCommand "glDetachObjectARB"
 
 -- glDetachShader --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDetachShader.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDetachShader.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDetachShader.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDetachShader.xhtml>
 glDetachShader
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @shader@.
@@ -11935,7 +11935,7 @@ ptr_glDetailTexFuncSGIS = unsafePerformIO $ getCommand "glDetailTexFuncSGIS"
 
 -- glDisable -------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml>, <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
 glDisable
   :: GLenum -- ^ @cap@ of type @EnableCap@.
   -> IO ()
@@ -12110,7 +12110,7 @@ ptr_glDisableVertexAttribAPPLE = unsafePerformIO $ getCommand "glDisableVertexAt
 
 -- glDisableVertexAttribArray --------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableVertexAttribArray.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glEnableVertexAttribArray.xml>, <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml>
 glDisableVertexAttribArray
   :: GLuint -- ^ @index@.
   -> IO ()
@@ -12141,7 +12141,7 @@ ptr_glDisableVertexAttribArrayARB = unsafePerformIO $ getCommand "glDisableVerte
 
 -- glDisablei ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml>, <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
 glDisablei
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -12277,7 +12277,7 @@ ptr_glDispatchComputeIndirect = unsafePerformIO $ getCommand "glDispatchComputeI
 
 -- glDrawArrays ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawArrays.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawArrays.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArrays.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawArrays.xhtml>
 glDrawArrays
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLint -- ^ @first@.
@@ -12329,7 +12329,7 @@ ptr_glDrawArraysIndirect = unsafePerformIO $ getCommand "glDrawArraysIndirect"
 
 -- glDrawArraysInstanced -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstanced.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArraysInstanced.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstanced.xhtml>
 glDrawArraysInstanced
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLint -- ^ @first@.
@@ -12459,7 +12459,7 @@ ptr_glDrawArraysInstancedNV = unsafePerformIO $ getCommand "glDrawArraysInstance
 
 -- glDrawBuffer ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffer.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffer.xhtml>
 glDrawBuffer
   :: GLenum -- ^ @buf@ of type @DrawBufferMode@.
   -> IO ()
@@ -12475,7 +12475,7 @@ ptr_glDrawBuffer = unsafePerformIO $ getCommand "glDrawBuffer"
 
 -- glDrawBuffers ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffers.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawBuffers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffers.xhtml>
 glDrawBuffers
   :: GLsizei -- ^ @n@.
   -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type @DrawBufferModeATI@.
@@ -12606,7 +12606,7 @@ ptr_glDrawElementArrayATI = unsafePerformIO $ getCommand "glDrawElementArrayATI"
 
 -- glDrawElements --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawElements.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawElements.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElements.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawElements.xhtml>
 glDrawElements
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLsizei -- ^ @count@.
@@ -12625,7 +12625,7 @@ ptr_glDrawElements = unsafePerformIO $ getCommand "glDrawElements"
 
 -- glDrawElementsBaseVertex ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsBaseVertex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsBaseVertex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsBaseVertex.xhtml>
 glDrawElementsBaseVertex
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLsizei -- ^ @count@.
@@ -12701,7 +12701,7 @@ ptr_glDrawElementsIndirect = unsafePerformIO $ getCommand "glDrawElementsIndirec
 
 -- glDrawElementsInstanced -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstanced.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstanced.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstanced.xhtml>
 glDrawElementsInstanced
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLsizei -- ^ @count@.
@@ -12800,7 +12800,7 @@ ptr_glDrawElementsInstancedBaseInstanceEXT = unsafePerformIO $ getCommand "glDra
 
 -- glDrawElementsInstancedBaseVertex -------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstancedBaseVertex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertex.xhtml>
 glDrawElementsInstancedBaseVertex
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLsizei -- ^ @count@.
@@ -13017,7 +13017,7 @@ ptr_glDrawRangeElementArrayATI = unsafePerformIO $ getCommand "glDrawRangeElemen
 
 -- glDrawRangeElements ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElements.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawRangeElements.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElements.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElements.xhtml>
 glDrawRangeElements
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLuint -- ^ @start@.
@@ -13038,7 +13038,7 @@ ptr_glDrawRangeElements = unsafePerformIO $ getCommand "glDrawRangeElements"
 
 -- glDrawRangeElementsBaseVertex -----------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElementsBaseVertex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElementsBaseVertex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElementsBaseVertex.xhtml>
 glDrawRangeElementsBaseVertex
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> GLuint -- ^ @start@.
@@ -13533,7 +13533,7 @@ ptr_glElementPointerATI = unsafePerformIO $ getCommand "glElementPointerATI"
 
 -- glEnable --------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml>, <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
 glEnable
   :: GLenum -- ^ @cap@ of type @EnableCap@.
   -> IO ()
@@ -13708,7 +13708,7 @@ ptr_glEnableVertexAttribAPPLE = unsafePerformIO $ getCommand "glEnableVertexAttr
 
 -- glEnableVertexAttribArray ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableVertexAttribArray.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glEnableVertexAttribArray.xml>, <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml>
 glEnableVertexAttribArray
   :: GLuint -- ^ @index@.
   -> IO ()
@@ -13739,7 +13739,7 @@ ptr_glEnableVertexAttribArrayARB = unsafePerformIO $ getCommand "glEnableVertexA
 
 -- glEnablei -------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml>, <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml>
 glEnablei
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -13819,7 +13819,7 @@ ptr_glEnd = unsafePerformIO $ getCommand "glEnd"
 
 -- glEndConditionalRender ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginConditionalRender.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml>
 glEndConditionalRender
   :: IO ()
 glEndConditionalRender = dyn_glEndConditionalRender ptr_glEndConditionalRender
@@ -13935,7 +13935,7 @@ ptr_glEndPerfQueryINTEL = unsafePerformIO $ getCommand "glEndPerfQueryINTEL"
 
 -- glEndQuery ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glBeginQuery.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginQuery.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml>
 glEndQuery
   :: GLenum -- ^ @target@.
   -> IO ()
@@ -14013,7 +14013,7 @@ ptr_glEndTilingQCOM = unsafePerformIO $ getCommand "glEndTilingQCOM"
 
 -- glEndTransformFeedback ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginTransformFeedback.xml>, <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml>
 glEndTransformFeedback
   :: IO ()
 glEndTransformFeedback = dyn_glEndTransformFeedback ptr_glEndTransformFeedback
@@ -14644,7 +14644,7 @@ ptr_glFeedbackBufferxOES = unsafePerformIO $ getCommand "glFeedbackBufferxOES"
 
 -- glFenceSync -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFenceSync.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFenceSync.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFenceSync.xhtml>
 glFenceSync
   :: GLenum -- ^ @condition@.
   -> GLbitfield -- ^ @flags@.
@@ -14695,7 +14695,7 @@ ptr_glFinalCombinerInputNV = unsafePerformIO $ getCommand "glFinalCombinerInputN
 
 -- glFinish --------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFinish.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glFinish.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glFinish.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFinish.xhtml>
 glFinish
   :: IO ()
 glFinish = dyn_glFinish ptr_glFinish
@@ -14785,7 +14785,7 @@ ptr_glFinishTextureSUNX = unsafePerformIO $ getCommand "glFinishTextureSUNX"
 
 -- glFlush ---------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFlush.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glFlush.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glFlush.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFlush.xhtml>
 glFlush
   :: IO ()
 glFlush = dyn_glFlush ptr_glFlush
@@ -14800,7 +14800,7 @@ ptr_glFlush = unsafePerformIO $ getCommand "glFlush"
 
 -- glFlushMappedBufferRange ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFlushMappedBufferRange.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFlushMappedBufferRange.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFlushMappedBufferRange.xhtml>
 glFlushMappedBufferRange
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -15659,7 +15659,7 @@ ptr_glFramebufferReadBufferEXT = unsafePerformIO $ getCommand "glFramebufferRead
 
 -- glFramebufferRenderbuffer ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFramebufferRenderbuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferRenderbuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFramebufferRenderbuffer.xhtml>
 glFramebufferRenderbuffer
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
@@ -15732,7 +15732,7 @@ ptr_glFramebufferSampleLocationsfvNV = unsafePerformIO $ getCommand "glFramebuff
 
 -- glFramebufferTexture --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
 glFramebufferTexture
   :: GLenum -- ^ @target@.
   -> GLenum -- ^ @attachment@.
@@ -15751,7 +15751,7 @@ ptr_glFramebufferTexture = unsafePerformIO $ getCommand "glFramebufferTexture"
 
 -- glFramebufferTexture1D ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
 glFramebufferTexture1D
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
@@ -15790,7 +15790,7 @@ ptr_glFramebufferTexture1DEXT = unsafePerformIO $ getCommand "glFramebufferTextu
 
 -- glFramebufferTexture2D ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
 glFramebufferTexture2D
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
@@ -15888,7 +15888,7 @@ ptr_glFramebufferTexture2DOES = unsafePerformIO $ getCommand "glFramebufferTextu
 
 -- glFramebufferTexture3D ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml>
 glFramebufferTexture3D
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
@@ -16023,7 +16023,7 @@ ptr_glFramebufferTextureFaceEXT = unsafePerformIO $ getCommand "glFramebufferTex
 
 -- glFramebufferTextureLayer ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTextureLayer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTextureLayer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTextureLayer.xhtml>
 glFramebufferTextureLayer
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
@@ -16114,7 +16114,7 @@ ptr_glFreeObjectBufferATI = unsafePerformIO $ getCommand "glFreeObjectBufferATI"
 
 -- glFrontFace -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glFrontFace.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glFrontFace.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glFrontFace.xml>, <https://www.opengl.org/sdk/docs/man4/html/glFrontFace.xhtml>
 glFrontFace
   :: GLenum -- ^ @mode@ of type @FrontFaceDirection@.
   -> IO ()
@@ -16246,7 +16246,7 @@ ptr_glGenAsyncMarkersSGIX = unsafePerformIO $ getCommand "glGenAsyncMarkersSGIX"
 
 -- glGenBuffers ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenBuffers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGenBuffers.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGenBuffers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenBuffers.xhtml>
 glGenBuffers
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @buffers@ pointing to @n@ elements of type @GLuint@.
@@ -16326,7 +16326,7 @@ ptr_glGenFragmentShadersATI = unsafePerformIO $ getCommand "glGenFragmentShaders
 
 -- glGenFramebuffers -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenFramebuffers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGenFramebuffers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenFramebuffers.xhtml>
 glGenFramebuffers
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @framebuffers@ pointing to @n@ elements of type @GLuint@.
@@ -16520,7 +16520,7 @@ ptr_glGenProgramsNV = unsafePerformIO $ getCommand "glGenProgramsNV"
 
 -- glGenQueries ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenQueries.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGenQueries.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGenQueries.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenQueries.xhtml>
 glGenQueries
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @ids@ pointing to @n@ elements of type @GLuint@.
@@ -16569,7 +16569,7 @@ ptr_glGenQueriesEXT = unsafePerformIO $ getCommand "glGenQueriesEXT"
 
 -- glGenRenderbuffers ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenRenderbuffers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGenRenderbuffers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenRenderbuffers.xhtml>
 glGenRenderbuffers
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @renderbuffers@ pointing to @n@ elements of type @GLuint@.
@@ -16618,7 +16618,7 @@ ptr_glGenRenderbuffersOES = unsafePerformIO $ getCommand "glGenRenderbuffersOES"
 
 -- glGenSamplers ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenSamplers.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGenSamplers.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenSamplers.xhtml>
 glGenSamplers
   :: GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @samplers@ pointing to @count@ elements of type @GLuint@.
@@ -16653,7 +16653,7 @@ ptr_glGenSymbolsEXT = unsafePerformIO $ getCommand "glGenSymbolsEXT"
 
 -- glGenTextures ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenTextures.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGenTextures.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGenTextures.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenTextures.xhtml>
 glGenTextures
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @Texture@.
@@ -16719,7 +16719,7 @@ ptr_glGenTransformFeedbacksNV = unsafePerformIO $ getCommand "glGenTransformFeed
 
 -- glGenVertexArrays -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenVertexArrays.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGenVertexArrays.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenVertexArrays.xhtml>
 glGenVertexArrays
   :: GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @arrays@ pointing to @n@ elements of type @GLuint@.
@@ -16783,7 +16783,7 @@ ptr_glGenVertexShadersEXT = unsafePerformIO $ getCommand "glGenVertexShadersEXT"
 
 -- glGenerateMipmap ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGenerateMipmap.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml>
 glGenerateMipmap
   :: GLenum -- ^ @target@.
   -> IO ()
@@ -16896,7 +16896,7 @@ ptr_glGetActiveAtomicCounterBufferiv = unsafePerformIO $ getCommand "glGetActive
 
 -- glGetActiveAttrib -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetActiveAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetActiveAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetActiveAttrib.xhtml>
 glGetActiveAttrib
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
@@ -17001,7 +17001,7 @@ ptr_glGetActiveSubroutineUniformiv = unsafePerformIO $ getCommand "glGetActiveSu
 
 -- glGetActiveUniform ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetActiveUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniform.xhtml>
 glGetActiveUniform
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
@@ -17044,7 +17044,7 @@ ptr_glGetActiveUniformARB = unsafePerformIO $ getCommand "glGetActiveUniformARB"
 
 -- glGetActiveUniformBlockName -------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlockName.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformBlockName.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlockName.xhtml>
 glGetActiveUniformBlockName
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @uniformBlockIndex@.
@@ -17064,7 +17064,7 @@ ptr_glGetActiveUniformBlockName = unsafePerformIO $ getCommand "glGetActiveUnifo
 
 -- glGetActiveUniformBlockiv ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlock.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformBlock.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlock.xhtml>
 glGetActiveUniformBlockiv
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @uniformBlockIndex@.
@@ -17083,7 +17083,7 @@ ptr_glGetActiveUniformBlockiv = unsafePerformIO $ getCommand "glGetActiveUniform
 
 -- glGetActiveUniformName ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformName.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformName.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformName.xhtml>
 glGetActiveUniformName
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @uniformIndex@.
@@ -17103,7 +17103,7 @@ ptr_glGetActiveUniformName = unsafePerformIO $ getCommand "glGetActiveUniformNam
 
 -- glGetActiveUniformsiv -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformsiv.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformsiv.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformsiv.xhtml>
 glGetActiveUniformsiv
   :: GLuint -- ^ @program@.
   -> GLsizei -- ^ @uniformCount@.
@@ -17196,7 +17196,7 @@ ptr_glGetAttachedObjectsARB = unsafePerformIO $ getCommand "glGetAttachedObjects
 
 -- glGetAttachedShaders --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetAttachedShaders.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetAttachedShaders.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetAttachedShaders.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetAttachedShaders.xhtml>
 glGetAttachedShaders
   :: GLuint -- ^ @program@.
   -> GLsizei -- ^ @maxCount@.
@@ -17215,7 +17215,7 @@ ptr_glGetAttachedShaders = unsafePerformIO $ getCommand "glGetAttachedShaders"
 
 -- glGetAttribLocation ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetAttribLocation.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetAttribLocation.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetAttribLocation.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetAttribLocation.xhtml>
 glGetAttribLocation
   :: GLuint -- ^ @program@.
   -> Ptr GLchar -- ^ @name@.
@@ -17265,7 +17265,7 @@ ptr_glGetBooleanIndexedvEXT = unsafePerformIO $ getCommand "glGetBooleanIndexedv
 
 -- glGetBooleani_v -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetBooleani_v
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -17283,7 +17283,7 @@ ptr_glGetBooleani_v = unsafePerformIO $ getCommand "glGetBooleani_v"
 
 -- glGetBooleanv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetBooleanv
   :: GLenum -- ^ @pname@ of type @GetPName@.
   -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @Boolean@.
@@ -17300,7 +17300,7 @@ ptr_glGetBooleanv = unsafePerformIO $ getCommand "glGetBooleanv"
 
 -- glGetBufferParameteri64v ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml>
 glGetBufferParameteri64v
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @pname@ of type @BufferPNameARB@.
@@ -17318,7 +17318,7 @@ ptr_glGetBufferParameteri64v = unsafePerformIO $ getCommand "glGetBufferParamete
 
 -- glGetBufferParameteriv ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferParameteriv.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml>
 glGetBufferParameteriv
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @pname@ of type @BufferPNameARB@.
@@ -17370,7 +17370,7 @@ ptr_glGetBufferParameterui64vNV = unsafePerformIO $ getCommand "glGetBufferParam
 
 -- glGetBufferPointerv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetBufferPointerv.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferPointerv.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferPointerv.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetBufferPointerv.xhtml>
 glGetBufferPointerv
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @pname@ of type @BufferPointerNameARB@.
@@ -17422,7 +17422,7 @@ ptr_glGetBufferPointervOES = unsafePerformIO $ getCommand "glGetBufferPointervOE
 
 -- glGetBufferSubData ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetBufferSubData.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferSubData.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferSubData.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetBufferSubData.xhtml>
 glGetBufferSubData
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -17808,7 +17808,7 @@ ptr_glGetCompressedMultiTexImageEXT = unsafePerformIO $ getCommand "glGetCompres
 
 -- glGetCompressedTexImage -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetCompressedTexImage.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetCompressedTexImage.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml>
 glGetCompressedTexImage
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -18201,7 +18201,7 @@ ptr_glGetDoublei_vEXT = unsafePerformIO $ getCommand "glGetDoublei_vEXT"
 
 -- glGetDoublev ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetDoublev
   :: GLenum -- ^ @pname@ of type @GetPName@.
   -> Ptr GLdouble -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
@@ -18253,7 +18253,7 @@ ptr_glGetDriverControlsQCOM = unsafePerformIO $ getCommand "glGetDriverControlsQ
 
 -- glGetError ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetError.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetError.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetError.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetError.xhtml>
 glGetError
   :: IO GLenum -- ^ of type @ErrorCode@.
 glGetError = dyn_glGetError ptr_glGetError
@@ -18435,7 +18435,7 @@ ptr_glGetFloati_vNV = unsafePerformIO $ getCommand "glGetFloati_vNV"
 
 -- glGetFloatv -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetFloatv
   :: GLenum -- ^ @pname@ of type @GetPName@.
   -> Ptr GLfloat -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
@@ -18467,7 +18467,7 @@ ptr_glGetFogFuncSGIS = unsafePerformIO $ getCommand "glGetFogFuncSGIS"
 
 -- glGetFragDataIndex ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataIndex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataIndex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataIndex.xhtml>
 glGetFragDataIndex
   :: GLuint -- ^ @program@.
   -> Ptr GLchar -- ^ @name@.
@@ -18484,7 +18484,7 @@ ptr_glGetFragDataIndex = unsafePerformIO $ getCommand "glGetFragDataIndex"
 
 -- glGetFragDataLocation -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataLocation.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataLocation.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataLocation.xhtml>
 glGetFragDataLocation
   :: GLuint -- ^ @program@.
   -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
@@ -18585,7 +18585,7 @@ ptr_glGetFragmentMaterialivSGIX = unsafePerformIO $ getCommand "glGetFragmentMat
 
 -- glGetFramebufferAttachmentParameteriv ---------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferAttachmentParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFramebufferAttachmentParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferAttachmentParameter.xhtml>
 glGetFramebufferAttachmentParameteriv
   :: GLenum -- ^ @target@ of type @FramebufferTarget@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
@@ -18977,7 +18977,7 @@ ptr_glGetInstrumentsSGIX = unsafePerformIO $ getCommand "glGetInstrumentsSGIX"
 
 -- glGetInteger64i_v -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetInteger64i_v
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -18995,7 +18995,7 @@ ptr_glGetInteger64i_v = unsafePerformIO $ getCommand "glGetInteger64i_v"
 
 -- glGetInteger64v -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetInteger64v
   :: GLenum -- ^ @pname@.
   -> Ptr GLint64 -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @GLint64@.
@@ -19045,7 +19045,7 @@ ptr_glGetIntegerIndexedvEXT = unsafePerformIO $ getCommand "glGetIntegerIndexedv
 
 -- glGetIntegeri_v -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetIntegeri_v
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -19113,7 +19113,7 @@ ptr_glGetIntegerui64vNV = unsafePerformIO $ getCommand "glGetIntegerui64vNV"
 
 -- glGetIntegerv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml>
 glGetIntegerv
   :: GLenum -- ^ @pname@ of type @GetPName@.
   -> Ptr GLint -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
@@ -19991,7 +19991,7 @@ ptr_glGetMultiTexParameterivEXT = unsafePerformIO $ getCommand "glGetMultiTexPar
 
 -- glGetMultisamplefv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetMultisample.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetMultisample.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetMultisample.xhtml>
 glGetMultisamplefv
   :: GLenum -- ^ @pname@.
   -> GLuint -- ^ @index@.
@@ -21240,7 +21240,7 @@ ptr_glGetPointeri_vEXT = unsafePerformIO $ getCommand "glGetPointeri_vEXT"
 
 -- glGetPointerv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetPointerv.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPointerv.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetPointerv.xhtml>
 glGetPointerv
   :: GLenum -- ^ @pname@ of type @GetPointervPName@.
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
@@ -21412,7 +21412,7 @@ ptr_glGetProgramEnvParameterfvARB = unsafePerformIO $ getCommand "glGetProgramEn
 
 -- glGetProgramInfoLog ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetProgramInfoLog.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgramInfoLog.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetProgramInfoLog.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetProgramInfoLog.xhtml>
 glGetProgramInfoLog
   :: GLuint -- ^ @program@.
   -> GLsizei -- ^ @bufSize@.
@@ -21852,7 +21852,7 @@ ptr_glGetProgramSubroutineParameteruivNV = unsafePerformIO $ getCommand "glGetPr
 
 -- glGetProgramiv --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetProgram.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgram.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetProgram.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetProgram.xhtml>
 glGetProgramiv
   :: GLuint -- ^ @program@.
   -> GLenum -- ^ @pname@.
@@ -21995,7 +21995,7 @@ ptr_glGetQueryIndexediv = unsafePerformIO $ getCommand "glGetQueryIndexediv"
 
 -- glGetQueryObjecti64v --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
 glGetQueryObjecti64v
   :: GLuint -- ^ @id@.
   -> GLenum -- ^ @pname@.
@@ -22030,7 +22030,7 @@ ptr_glGetQueryObjecti64vEXT = unsafePerformIO $ getCommand "glGetQueryObjecti64v
 
 -- glGetQueryObjectiv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
 glGetQueryObjectiv
   :: GLuint -- ^ @id@.
   -> GLenum -- ^ @pname@.
@@ -22082,7 +22082,7 @@ ptr_glGetQueryObjectivEXT = unsafePerformIO $ getCommand "glGetQueryObjectivEXT"
 
 -- glGetQueryObjectui64v -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
 glGetQueryObjectui64v
   :: GLuint -- ^ @id@.
   -> GLenum -- ^ @pname@.
@@ -22117,7 +22117,7 @@ ptr_glGetQueryObjectui64vEXT = unsafePerformIO $ getCommand "glGetQueryObjectui6
 
 -- glGetQueryObjectuiv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml>
 glGetQueryObjectuiv
   :: GLuint -- ^ @id@.
   -> GLenum -- ^ @pname@.
@@ -22169,7 +22169,7 @@ ptr_glGetQueryObjectuivEXT = unsafePerformIO $ getCommand "glGetQueryObjectuivEX
 
 -- glGetQueryiv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetQueryiv.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryiv.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryiv.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetQueryiv.xhtml>
 glGetQueryiv
   :: GLenum -- ^ @target@.
   -> GLenum -- ^ @pname@.
@@ -22221,7 +22221,7 @@ ptr_glGetQueryivEXT = unsafePerformIO $ getCommand "glGetQueryivEXT"
 
 -- glGetRenderbufferParameteriv ------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetRenderbufferParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetRenderbufferParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetRenderbufferParameter.xhtml>
 glGetRenderbufferParameteriv
   :: GLenum -- ^ @target@ of type @RenderbufferTarget@.
   -> GLenum -- ^ @pname@.
@@ -22273,7 +22273,7 @@ ptr_glGetRenderbufferParameterivOES = unsafePerformIO $ getCommand "glGetRenderb
 
 -- glGetSamplerParameterIiv ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
 glGetSamplerParameterIiv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -22325,7 +22325,7 @@ ptr_glGetSamplerParameterIivOES = unsafePerformIO $ getCommand "glGetSamplerPara
 
 -- glGetSamplerParameterIuiv ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
 glGetSamplerParameterIuiv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -22377,7 +22377,7 @@ ptr_glGetSamplerParameterIuivOES = unsafePerformIO $ getCommand "glGetSamplerPar
 
 -- glGetSamplerParameterfv -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
 glGetSamplerParameterfv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -22395,7 +22395,7 @@ ptr_glGetSamplerParameterfv = unsafePerformIO $ getCommand "glGetSamplerParamete
 
 -- glGetSamplerParameteriv -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml>
 glGetSamplerParameteriv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -22454,7 +22454,7 @@ ptr_glGetSeparableFilterEXT = unsafePerformIO $ getCommand "glGetSeparableFilter
 
 -- glGetShaderInfoLog ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetShaderInfoLog.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderInfoLog.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderInfoLog.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetShaderInfoLog.xhtml>
 glGetShaderInfoLog
   :: GLuint -- ^ @shader@.
   -> GLsizei -- ^ @bufSize@.
@@ -22492,7 +22492,7 @@ ptr_glGetShaderPrecisionFormat = unsafePerformIO $ getCommand "glGetShaderPrecis
 
 -- glGetShaderSource -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetShaderSource.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderSource.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderSource.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetShaderSource.xhtml>
 glGetShaderSource
   :: GLuint -- ^ @shader@.
   -> GLsizei -- ^ @bufSize@.
@@ -22529,7 +22529,7 @@ ptr_glGetShaderSourceARB = unsafePerformIO $ getCommand "glGetShaderSourceARB"
 
 -- glGetShaderiv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetShader.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShader.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShader.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetShader.xhtml>
 glGetShaderiv
   :: GLuint -- ^ @shader@.
   -> GLenum -- ^ @pname@.
@@ -22563,7 +22563,7 @@ ptr_glGetSharpenTexFuncSGIS = unsafePerformIO $ getCommand "glGetSharpenTexFuncS
 
 -- glGetString -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetString.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetString.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml>
 glGetString
   :: GLenum -- ^ @name@ of type @StringName@.
   -> IO (Ptr GLubyte) -- ^ pointing to elements of type @String@.
@@ -22579,7 +22579,7 @@ ptr_glGetString = unsafePerformIO $ getCommand "glGetString"
 
 -- glGetStringi ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetString.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml>
 glGetStringi
   :: GLenum -- ^ @name@.
   -> GLuint -- ^ @index@.
@@ -22632,7 +22632,7 @@ ptr_glGetSubroutineUniformLocation = unsafePerformIO $ getCommand "glGetSubrouti
 
 -- glGetSynciv -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetSync.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSync.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetSync.xhtml>
 glGetSynciv
   :: GLsync -- ^ @sync@ of type @sync@.
   -> GLenum -- ^ @pname@.
@@ -22895,7 +22895,7 @@ ptr_glGetTexGenxvOES = unsafePerformIO $ getCommand "glGetTexGenxvOES"
 
 -- glGetTexImage ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexImage.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexImage.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml>
 glGetTexImage
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -22915,7 +22915,7 @@ ptr_glGetTexImage = unsafePerformIO $ getCommand "glGetTexImage"
 
 -- glGetTexLevelParameterfv ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml>
 glGetTexLevelParameterfv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -22934,7 +22934,7 @@ ptr_glGetTexLevelParameterfv = unsafePerformIO $ getCommand "glGetTexLevelParame
 
 -- glGetTexLevelParameteriv ----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml>
 glGetTexLevelParameteriv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -22971,7 +22971,7 @@ ptr_glGetTexLevelParameterxvOES = unsafePerformIO $ getCommand "glGetTexLevelPar
 
 -- glGetTexParameterIiv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
 glGetTexParameterIiv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
@@ -23023,7 +23023,7 @@ ptr_glGetTexParameterIivOES = unsafePerformIO $ getCommand "glGetTexParameterIiv
 
 -- glGetTexParameterIuiv -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
 glGetTexParameterIuiv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
@@ -23092,7 +23092,7 @@ ptr_glGetTexParameterPointervAPPLE = unsafePerformIO $ getCommand "glGetTexParam
 
 -- glGetTexParameterfv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
 glGetTexParameterfv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
@@ -23110,7 +23110,7 @@ ptr_glGetTexParameterfv = unsafePerformIO $ getCommand "glGetTexParameterfv"
 
 -- glGetTexParameteriv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml>
 glGetTexParameteriv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
@@ -23530,7 +23530,7 @@ ptr_glGetTrackMatrixivNV = unsafePerformIO $ getCommand "glGetTrackMatrixivNV"
 
 -- glGetTransformFeedbackVarying -----------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedbackVarying.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTransformFeedbackVarying.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedbackVarying.xhtml>
 glGetTransformFeedbackVarying
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
@@ -23664,7 +23664,7 @@ ptr_glGetTranslatedShaderSourceANGLE = unsafePerformIO $ getCommand "glGetTransl
 
 -- glGetUniformBlockIndex ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetUniformBlockIndex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformBlockIndex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetUniformBlockIndex.xhtml>
 glGetUniformBlockIndex
   :: GLuint -- ^ @program@.
   -> Ptr GLchar -- ^ @uniformBlockName@ pointing to @COMPSIZE()@ elements of type @GLchar@.
@@ -23697,7 +23697,7 @@ ptr_glGetUniformBufferSizeEXT = unsafePerformIO $ getCommand "glGetUniformBuffer
 
 -- glGetUniformIndices ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetUniformIndices.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformIndices.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetUniformIndices.xhtml>
 glGetUniformIndices
   :: GLuint -- ^ @program@.
   -> GLsizei -- ^ @uniformCount@.
@@ -23716,7 +23716,7 @@ ptr_glGetUniformIndices = unsafePerformIO $ getCommand "glGetUniformIndices"
 
 -- glGetUniformLocation --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetUniformLocation.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniformLocation.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformLocation.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetUniformLocation.xhtml>
 glGetUniformLocation
   :: GLuint -- ^ @program@.
   -> Ptr GLchar -- ^ @name@.
@@ -23801,7 +23801,7 @@ ptr_glGetUniformdv = unsafePerformIO $ getCommand "glGetUniformdv"
 
 -- glGetUniformfv --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml>
 glGetUniformfv
   :: GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
@@ -23853,7 +23853,7 @@ ptr_glGetUniformi64vNV = unsafePerformIO $ getCommand "glGetUniformi64vNV"
 
 -- glGetUniformiv --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml>
 glGetUniformiv
   :: GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
@@ -23905,7 +23905,7 @@ ptr_glGetUniformui64vNV = unsafePerformIO $ getCommand "glGetUniformui64vNV"
 
 -- glGetUniformuiv -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml>
 glGetUniformuiv
   :: GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
@@ -24218,7 +24218,7 @@ ptr_glGetVertexAttribArrayObjectivATI = unsafePerformIO $ getCommand "glGetVerte
 
 -- glGetVertexAttribIiv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
 glGetVertexAttribIiv
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnum@.
@@ -24253,7 +24253,7 @@ ptr_glGetVertexAttribIivEXT = unsafePerformIO $ getCommand "glGetVertexAttribIiv
 
 -- glGetVertexAttribIuiv -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
 glGetVertexAttribIuiv
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnum@.
@@ -24374,7 +24374,7 @@ ptr_glGetVertexAttribLui64vNV = unsafePerformIO $ getCommand "glGetVertexAttribL
 
 -- glGetVertexAttribPointerv ---------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttribPointerv.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttribPointerv.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttribPointerv.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttribPointerv.xhtml>
 glGetVertexAttribPointerv
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribPointerPropertyARB@.
@@ -24426,7 +24426,7 @@ ptr_glGetVertexAttribPointervNV = unsafePerformIO $ getCommand "glGetVertexAttri
 
 -- glGetVertexAttribdv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
 glGetVertexAttribdv
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
@@ -24478,7 +24478,7 @@ ptr_glGetVertexAttribdvNV = unsafePerformIO $ getCommand "glGetVertexAttribdvNV"
 
 -- glGetVertexAttribfv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
 glGetVertexAttribfv
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
@@ -24530,7 +24530,7 @@ ptr_glGetVertexAttribfvNV = unsafePerformIO $ getCommand "glGetVertexAttribfvNV"
 
 -- glGetVertexAttribiv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml>
 glGetVertexAttribiv
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
@@ -25599,7 +25599,7 @@ ptr_glGlobalAlphaFactorusSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactor
 
 -- glHint ----------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glHint.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glHint.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glHint.xml>, <https://www.opengl.org/sdk/docs/man4/html/glHint.xhtml>
 glHint
   :: GLenum -- ^ @target@ of type @HintTarget@.
   -> GLenum -- ^ @mode@ of type @HintMode@.
@@ -26347,7 +26347,7 @@ ptr_glIsAsyncMarkerSGIX = unsafePerformIO $ getCommand "glIsAsyncMarkerSGIX"
 
 -- glIsBuffer ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glIsBuffer.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glIsBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsBuffer.xhtml>
 glIsBuffer
   :: GLuint -- ^ @buffer@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26393,7 +26393,7 @@ ptr_glIsBufferResidentNV = unsafePerformIO $ getCommand "glIsBufferResidentNV"
 
 -- glIsEnabled -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glIsEnabled.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glIsEnabled.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml>
 glIsEnabled
   :: GLenum -- ^ @cap@ of type @EnableCap@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26425,7 +26425,7 @@ ptr_glIsEnabledIndexedEXT = unsafePerformIO $ getCommand "glIsEnabledIndexedEXT"
 
 -- glIsEnabledi ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glIsEnabled.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml>
 glIsEnabledi
   :: GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
@@ -26520,7 +26520,7 @@ ptr_glIsFenceNV = unsafePerformIO $ getCommand "glIsFenceNV"
 
 -- glIsFramebuffer -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsFramebuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glIsFramebuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsFramebuffer.xhtml>
 glIsFramebuffer
   :: GLuint -- ^ @framebuffer@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26739,7 +26739,7 @@ ptr_glIsPointInStrokePathNV = unsafePerformIO $ getCommand "glIsPointInStrokePat
 
 -- glIsProgram -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsProgram.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glIsProgram.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glIsProgram.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsProgram.xhtml>
 glIsProgram
   :: GLuint -- ^ @program@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26816,7 +26816,7 @@ ptr_glIsProgramPipelineEXT = unsafePerformIO $ getCommand "glIsProgramPipelineEX
 
 -- glIsQuery -------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsQuery.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glIsQuery.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glIsQuery.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsQuery.xhtml>
 glIsQuery
   :: GLuint -- ^ @id@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26862,7 +26862,7 @@ ptr_glIsQueryEXT = unsafePerformIO $ getCommand "glIsQueryEXT"
 
 -- glIsRenderbuffer ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsRenderbuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glIsRenderbuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsRenderbuffer.xhtml>
 glIsRenderbuffer
   :: GLuint -- ^ @renderbuffer@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26908,7 +26908,7 @@ ptr_glIsRenderbufferOES = unsafePerformIO $ getCommand "glIsRenderbufferOES"
 
 -- glIsSampler -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsSampler.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glIsSampler.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsSampler.xhtml>
 glIsSampler
   :: GLuint -- ^ @sampler@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26924,7 +26924,7 @@ ptr_glIsSampler = unsafePerformIO $ getCommand "glIsSampler"
 
 -- glIsShader ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsShader.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glIsShader.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glIsShader.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsShader.xhtml>
 glIsShader
   :: GLuint -- ^ @shader@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26940,7 +26940,7 @@ ptr_glIsShader = unsafePerformIO $ getCommand "glIsShader"
 
 -- glIsSync --------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsSync.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glIsSync.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsSync.xhtml>
 glIsSync
   :: GLsync -- ^ @sync@ of type @sync@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -26971,7 +26971,7 @@ ptr_glIsSyncAPPLE = unsafePerformIO $ getCommand "glIsSyncAPPLE"
 
 -- glIsTexture -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsTexture.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glIsTexture.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glIsTexture.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsTexture.xhtml>
 glIsTexture
   :: GLuint -- ^ @texture@ of type @Texture@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -27079,7 +27079,7 @@ ptr_glIsVariantEnabledEXT = unsafePerformIO $ getCommand "glIsVariantEnabledEXT"
 
 -- glIsVertexArray -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glIsVertexArray.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glIsVertexArray.xml>, <https://www.opengl.org/sdk/docs/man4/html/glIsVertexArray.xhtml>
 glIsVertexArray
   :: GLuint -- ^ @array@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -27464,7 +27464,7 @@ ptr_glLineStipple = unsafePerformIO $ getCommand "glLineStipple"
 
 -- glLineWidth -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glLineWidth.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glLineWidth.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glLineWidth.xml>, <https://www.opengl.org/sdk/docs/man4/html/glLineWidth.xhtml>
 glLineWidth
   :: GLfloat -- ^ @width@ of type @CheckedFloat32@.
   -> IO ()
@@ -27510,7 +27510,7 @@ ptr_glLineWidthxOES = unsafePerformIO $ getCommand "glLineWidthxOES"
 
 -- glLinkProgram ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glLinkProgram.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glLinkProgram.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glLinkProgram.xml>, <https://www.opengl.org/sdk/docs/man4/html/glLinkProgram.xhtml>
 glLinkProgram
   :: GLuint -- ^ @program@.
   -> IO ()
@@ -27858,7 +27858,7 @@ ptr_glLockArraysEXT = unsafePerformIO $ getCommand "glLockArraysEXT"
 
 -- glLogicOp -------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glLogicOp.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glLogicOp.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glLogicOp.xml>, <https://www.opengl.org/sdk/docs/man4/html/glLogicOp.xhtml>
 glLogicOp
   :: GLenum -- ^ @opcode@ of type @LogicOp@.
   -> IO ()
@@ -28194,7 +28194,7 @@ ptr_glMap2xOES = unsafePerformIO $ getCommand "glMap2xOES"
 
 -- glMapBuffer -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glMapBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMapBuffer.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glMapBuffer.xhtml>
 glMapBuffer
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @access@ of type @BufferAccessARB@.
@@ -28243,7 +28243,7 @@ ptr_glMapBufferOES = unsafePerformIO $ getCommand "glMapBufferOES"
 
 -- glMapBufferRange ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glMapBufferRange.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBufferRange.xml>, <https://www.opengl.org/sdk/docs/man4/html/glMapBufferRange.xhtml>
 glMapBufferRange
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -29575,7 +29575,7 @@ ptr_glMultTransposeMatrixxOES = unsafePerformIO $ getCommand "glMultTransposeMat
 
 -- glMultiDrawArrays -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawArrays.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawArrays.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawArrays.xml>, <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawArrays.xhtml>
 glMultiDrawArrays
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> Ptr GLint -- ^ @first@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
@@ -29743,7 +29743,7 @@ ptr_glMultiDrawElementArrayAPPLE = unsafePerformIO $ getCommand "glMultiDrawElem
 
 -- glMultiDrawElements ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElements.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawElements.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElements.xml>, <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElements.xhtml>
 glMultiDrawElements
   :: GLenum -- ^ @mode@ of type @PrimitiveType@.
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
@@ -29763,7 +29763,7 @@ ptr_glMultiDrawElements = unsafePerformIO $ getCommand "glMultiDrawElements"
 
 -- glMultiDrawElementsBaseVertex -----------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElementsBaseVertex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElementsBaseVertex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElementsBaseVertex.xhtml>
 glMultiDrawElementsBaseVertex
   :: GLenum -- ^ @mode@.
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
@@ -30071,7 +30071,7 @@ ptr_glMultiTexCoord1bvOES = unsafePerformIO $ getCommand "glMultiTexCoord1bvOES"
 
 -- glMultiTexCoord1d -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1d
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLdouble -- ^ @s@ of type @CoordD@.
@@ -30104,7 +30104,7 @@ ptr_glMultiTexCoord1dARB = unsafePerformIO $ getCommand "glMultiTexCoord1dARB"
 
 -- glMultiTexCoord1dv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1dv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @CoordD@.
@@ -30137,7 +30137,7 @@ ptr_glMultiTexCoord1dvARB = unsafePerformIO $ getCommand "glMultiTexCoord1dvARB"
 
 -- glMultiTexCoord1f -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1f
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLfloat -- ^ @s@ of type @CoordF@.
@@ -30170,7 +30170,7 @@ ptr_glMultiTexCoord1fARB = unsafePerformIO $ getCommand "glMultiTexCoord1fARB"
 
 -- glMultiTexCoord1fv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1fv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @CoordF@.
@@ -30235,7 +30235,7 @@ ptr_glMultiTexCoord1hvNV = unsafePerformIO $ getCommand "glMultiTexCoord1hvNV"
 
 -- glMultiTexCoord1i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1i
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLint -- ^ @s@ of type @CoordI@.
@@ -30268,7 +30268,7 @@ ptr_glMultiTexCoord1iARB = unsafePerformIO $ getCommand "glMultiTexCoord1iARB"
 
 -- glMultiTexCoord1iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1iv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLint -- ^ @v@ pointing to @1@ elements of type @CoordI@.
@@ -30301,7 +30301,7 @@ ptr_glMultiTexCoord1ivARB = unsafePerformIO $ getCommand "glMultiTexCoord1ivARB"
 
 -- glMultiTexCoord1s -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1s
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLshort -- ^ @s@ of type @CoordS@.
@@ -30334,7 +30334,7 @@ ptr_glMultiTexCoord1sARB = unsafePerformIO $ getCommand "glMultiTexCoord1sARB"
 
 -- glMultiTexCoord1sv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord1sv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @CoordS@.
@@ -30432,7 +30432,7 @@ ptr_glMultiTexCoord2bvOES = unsafePerformIO $ getCommand "glMultiTexCoord2bvOES"
 
 -- glMultiTexCoord2d -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2d
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLdouble -- ^ @s@ of type @CoordD@.
@@ -30467,7 +30467,7 @@ ptr_glMultiTexCoord2dARB = unsafePerformIO $ getCommand "glMultiTexCoord2dARB"
 
 -- glMultiTexCoord2dv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2dv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
@@ -30500,7 +30500,7 @@ ptr_glMultiTexCoord2dvARB = unsafePerformIO $ getCommand "glMultiTexCoord2dvARB"
 
 -- glMultiTexCoord2f -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2f
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLfloat -- ^ @s@ of type @CoordF@.
@@ -30535,7 +30535,7 @@ ptr_glMultiTexCoord2fARB = unsafePerformIO $ getCommand "glMultiTexCoord2fARB"
 
 -- glMultiTexCoord2fv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2fv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
@@ -30601,7 +30601,7 @@ ptr_glMultiTexCoord2hvNV = unsafePerformIO $ getCommand "glMultiTexCoord2hvNV"
 
 -- glMultiTexCoord2i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2i
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLint -- ^ @s@ of type @CoordI@.
@@ -30636,7 +30636,7 @@ ptr_glMultiTexCoord2iARB = unsafePerformIO $ getCommand "glMultiTexCoord2iARB"
 
 -- glMultiTexCoord2iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2iv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
@@ -30669,7 +30669,7 @@ ptr_glMultiTexCoord2ivARB = unsafePerformIO $ getCommand "glMultiTexCoord2ivARB"
 
 -- glMultiTexCoord2s -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2s
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLshort -- ^ @s@ of type @CoordS@.
@@ -30704,7 +30704,7 @@ ptr_glMultiTexCoord2sARB = unsafePerformIO $ getCommand "glMultiTexCoord2sARB"
 
 -- glMultiTexCoord2sv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord2sv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
@@ -30804,7 +30804,7 @@ ptr_glMultiTexCoord3bvOES = unsafePerformIO $ getCommand "glMultiTexCoord3bvOES"
 
 -- glMultiTexCoord3d -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3d
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLdouble -- ^ @s@ of type @CoordD@.
@@ -30841,7 +30841,7 @@ ptr_glMultiTexCoord3dARB = unsafePerformIO $ getCommand "glMultiTexCoord3dARB"
 
 -- glMultiTexCoord3dv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3dv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -30874,7 +30874,7 @@ ptr_glMultiTexCoord3dvARB = unsafePerformIO $ getCommand "glMultiTexCoord3dvARB"
 
 -- glMultiTexCoord3f -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3f
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLfloat -- ^ @s@ of type @CoordF@.
@@ -30911,7 +30911,7 @@ ptr_glMultiTexCoord3fARB = unsafePerformIO $ getCommand "glMultiTexCoord3fARB"
 
 -- glMultiTexCoord3fv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3fv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -30978,7 +30978,7 @@ ptr_glMultiTexCoord3hvNV = unsafePerformIO $ getCommand "glMultiTexCoord3hvNV"
 
 -- glMultiTexCoord3i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3i
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLint -- ^ @s@ of type @CoordI@.
@@ -31015,7 +31015,7 @@ ptr_glMultiTexCoord3iARB = unsafePerformIO $ getCommand "glMultiTexCoord3iARB"
 
 -- glMultiTexCoord3iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3iv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
@@ -31048,7 +31048,7 @@ ptr_glMultiTexCoord3ivARB = unsafePerformIO $ getCommand "glMultiTexCoord3ivARB"
 
 -- glMultiTexCoord3s -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3s
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLshort -- ^ @s@ of type @CoordS@.
@@ -31085,7 +31085,7 @@ ptr_glMultiTexCoord3sARB = unsafePerformIO $ getCommand "glMultiTexCoord3sARB"
 
 -- glMultiTexCoord3sv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord3sv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
@@ -31187,7 +31187,7 @@ ptr_glMultiTexCoord4bvOES = unsafePerformIO $ getCommand "glMultiTexCoord4bvOES"
 
 -- glMultiTexCoord4d -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4d
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLdouble -- ^ @s@ of type @CoordD@.
@@ -31226,7 +31226,7 @@ ptr_glMultiTexCoord4dARB = unsafePerformIO $ getCommand "glMultiTexCoord4dARB"
 
 -- glMultiTexCoord4dv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4dv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @CoordD@.
@@ -31259,7 +31259,7 @@ ptr_glMultiTexCoord4dvARB = unsafePerformIO $ getCommand "glMultiTexCoord4dvARB"
 
 -- glMultiTexCoord4f -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4f
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLfloat -- ^ @s@ of type @CoordF@.
@@ -31298,7 +31298,7 @@ ptr_glMultiTexCoord4fARB = unsafePerformIO $ getCommand "glMultiTexCoord4fARB"
 
 -- glMultiTexCoord4fv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4fv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @CoordF@.
@@ -31366,7 +31366,7 @@ ptr_glMultiTexCoord4hvNV = unsafePerformIO $ getCommand "glMultiTexCoord4hvNV"
 
 -- glMultiTexCoord4i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4i
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLint -- ^ @s@ of type @CoordI@.
@@ -31405,7 +31405,7 @@ ptr_glMultiTexCoord4iARB = unsafePerformIO $ getCommand "glMultiTexCoord4iARB"
 
 -- glMultiTexCoord4iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4iv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLint -- ^ @v@ pointing to @4@ elements of type @CoordI@.
@@ -31438,7 +31438,7 @@ ptr_glMultiTexCoord4ivARB = unsafePerformIO $ getCommand "glMultiTexCoord4ivARB"
 
 -- glMultiTexCoord4s -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4s
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> GLshort -- ^ @s@ of type @CoordS@.
@@ -31477,7 +31477,7 @@ ptr_glMultiTexCoord4sARB = unsafePerformIO $ getCommand "glMultiTexCoord4sARB"
 
 -- glMultiTexCoord4sv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml>
 glMultiTexCoord4sv
   :: GLenum -- ^ @target@ of type @TextureUnit@.
   -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
@@ -34448,7 +34448,7 @@ ptr_glPixelMapx = unsafePerformIO $ getCommand "glPixelMapx"
 
 -- glPixelStoref ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml>
 glPixelStoref
   :: GLenum -- ^ @pname@ of type @PixelStoreParameter@.
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
@@ -34465,7 +34465,7 @@ ptr_glPixelStoref = unsafePerformIO $ getCommand "glPixelStoref"
 
 -- glPixelStorei ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml>
 glPixelStorei
   :: GLenum -- ^ @pname@ of type @PixelStoreParameter@.
   -> GLint -- ^ @param@ of type @CheckedInt32@.
@@ -34750,7 +34750,7 @@ ptr_glPointAlongPathNV = unsafePerformIO $ getCommand "glPointAlongPathNV"
 
 -- glPointParameterf -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
 glPointParameterf
   :: GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
@@ -34815,7 +34815,7 @@ ptr_glPointParameterfSGIS = unsafePerformIO $ getCommand "glPointParameterfSGIS"
 
 -- glPointParameterfv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
 glPointParameterfv
   :: GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
@@ -34880,7 +34880,7 @@ ptr_glPointParameterfvSGIS = unsafePerformIO $ getCommand "glPointParameterfvSGI
 
 -- glPointParameteri -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
 glPointParameteri
   :: GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> GLint -- ^ @param@.
@@ -34913,7 +34913,7 @@ ptr_glPointParameteriNV = unsafePerformIO $ getCommand "glPointParameteriNV"
 
 -- glPointParameteriv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml>
 glPointParameteriv
   :: GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
@@ -35010,7 +35010,7 @@ ptr_glPointParameterxvOES = unsafePerformIO $ getCommand "glPointParameterxvOES"
 
 -- glPointSize -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPointSize.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPointSize.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPointSize.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPointSize.xhtml>
 glPointSize
   :: GLfloat -- ^ @size@ of type @CheckedFloat32@.
   -> IO ()
@@ -35103,7 +35103,7 @@ ptr_glPollInstrumentsSGIX = unsafePerformIO $ getCommand "glPollInstrumentsSGIX"
 
 -- glPolygonMode ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPolygonMode.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonMode.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonMode.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPolygonMode.xhtml>
 glPolygonMode
   :: GLenum -- ^ @face@ of type @MaterialFace@.
   -> GLenum -- ^ @mode@ of type @PolygonMode@.
@@ -35120,7 +35120,7 @@ ptr_glPolygonMode = unsafePerformIO $ getCommand "glPolygonMode"
 
 -- glPolygonOffset -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPolygonOffset.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonOffset.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonOffset.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPolygonOffset.xhtml>
 glPolygonOffset
   :: GLfloat -- ^ @factor@.
   -> GLfloat -- ^ @units@.
@@ -35417,7 +35417,7 @@ ptr_glPrimitiveBoundingBoxOES = unsafePerformIO $ getCommand "glPrimitiveBoundin
 
 -- glPrimitiveRestartIndex -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glPrimitiveRestartIndex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glPrimitiveRestartIndex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glPrimitiveRestartIndex.xhtml>
 glPrimitiveRestartIndex
   :: GLuint -- ^ @index@.
   -> IO ()
@@ -38604,7 +38604,7 @@ ptr_glProgramVertexLimitNV = unsafePerformIO $ getCommand "glProgramVertexLimitN
 
 -- glProvokingVertex -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glProvokingVertex.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glProvokingVertex.xml>, <https://www.opengl.org/sdk/docs/man4/html/glProvokingVertex.xhtml>
 glProvokingVertex
   :: GLenum -- ^ @mode@.
   -> IO ()
@@ -38766,7 +38766,7 @@ ptr_glPushName = unsafePerformIO $ getCommand "glPushName"
 
 -- glQueryCounter --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glQueryCounter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glQueryCounter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glQueryCounter.xhtml>
 glQueryCounter
   :: GLuint -- ^ @id@.
   -> GLenum -- ^ @target@.
@@ -39353,7 +39353,7 @@ ptr_glRasterSamplesEXT = unsafePerformIO $ getCommand "glRasterSamplesEXT"
 
 -- glReadBuffer ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glReadBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glReadBuffer.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glReadBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glReadBuffer.xhtml>
 glReadBuffer
   :: GLenum -- ^ @src@ of type @ReadBufferMode@.
   -> IO ()
@@ -39415,7 +39415,7 @@ ptr_glReadInstrumentsSGIX = unsafePerformIO $ getCommand "glReadInstrumentsSGIX"
 
 -- glReadPixels ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glReadPixels.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glReadPixels.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glReadPixels.xml>, <https://www.opengl.org/sdk/docs/man4/html/glReadPixels.xhtml>
 glReadPixels
   :: GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -39750,7 +39750,7 @@ ptr_glRenderMode = unsafePerformIO $ getCommand "glRenderMode"
 
 -- glRenderbufferStorage -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorage.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glRenderbufferStorage.xml>, <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorage.xhtml>
 glRenderbufferStorage
   :: GLenum -- ^ @target@ of type @RenderbufferTarget@.
   -> GLenum -- ^ @internalformat@.
@@ -39787,7 +39787,7 @@ ptr_glRenderbufferStorageEXT = unsafePerformIO $ getCommand "glRenderbufferStora
 
 -- glRenderbufferStorageMultisample --------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorageMultisample.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glRenderbufferStorageMultisample.xml>, <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorageMultisample.xhtml>
 glRenderbufferStorageMultisample
   :: GLenum -- ^ @target@.
   -> GLsizei -- ^ @samples@.
@@ -40586,7 +40586,7 @@ ptr_glRotatexOES = unsafePerformIO $ getCommand "glRotatexOES"
 
 -- glSampleCoverage ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSampleCoverage.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glSampleCoverage.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glSampleCoverage.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSampleCoverage.xhtml>
 glSampleCoverage
   :: GLfloat -- ^ @value@.
   -> GLboolean -- ^ @invert@ of type @Boolean@.
@@ -40732,7 +40732,7 @@ ptr_glSampleMaskSGIS = unsafePerformIO $ getCommand "glSampleMaskSGIS"
 
 -- glSampleMaski ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSampleMaski.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glSampleMaski.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSampleMaski.xhtml>
 glSampleMaski
   :: GLuint -- ^ @maskNumber@.
   -> GLbitfield -- ^ @mask@.
@@ -40779,7 +40779,7 @@ ptr_glSamplePatternSGIS = unsafePerformIO $ getCommand "glSamplePatternSGIS"
 
 -- glSamplerParameterIiv -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
 glSamplerParameterIiv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -40831,7 +40831,7 @@ ptr_glSamplerParameterIivOES = unsafePerformIO $ getCommand "glSamplerParameterI
 
 -- glSamplerParameterIuiv ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
 glSamplerParameterIuiv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -40883,7 +40883,7 @@ ptr_glSamplerParameterIuivOES = unsafePerformIO $ getCommand "glSamplerParameter
 
 -- glSamplerParameterf ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
 glSamplerParameterf
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -40901,7 +40901,7 @@ ptr_glSamplerParameterf = unsafePerformIO $ getCommand "glSamplerParameterf"
 
 -- glSamplerParameterfv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
 glSamplerParameterfv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -40919,7 +40919,7 @@ ptr_glSamplerParameterfv = unsafePerformIO $ getCommand "glSamplerParameterfv"
 
 -- glSamplerParameteri ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
 glSamplerParameteri
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -40937,7 +40937,7 @@ ptr_glSamplerParameteri = unsafePerformIO $ getCommand "glSamplerParameteri"
 
 -- glSamplerParameteriv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml>
 glSamplerParameteriv
   :: GLuint -- ^ @sampler@.
   -> GLenum -- ^ @pname@.
@@ -41025,7 +41025,7 @@ ptr_glScalexOES = unsafePerformIO $ getCommand "glScalexOES"
 
 -- glScissor -------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glScissor.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glScissor.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glScissor.xml>, <https://www.opengl.org/sdk/docs/man4/html/glScissor.xhtml>
 glScissor
   :: GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -42085,7 +42085,7 @@ ptr_glShaderOp3EXT = unsafePerformIO $ getCommand "glShaderOp3EXT"
 
 -- glShaderSource --------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glShaderSource.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glShaderSource.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glShaderSource.xml>, <https://www.opengl.org/sdk/docs/man4/html/glShaderSource.xhtml>
 glShaderSource
   :: GLuint -- ^ @shader@.
   -> GLsizei -- ^ @count@.
@@ -42309,7 +42309,7 @@ ptr_glStencilFillPathNV = unsafePerformIO $ getCommand "glStencilFillPathNV"
 
 -- glStencilFunc ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glStencilFunc.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilFunc.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilFunc.xml>, <https://www.opengl.org/sdk/docs/man4/html/glStencilFunc.xhtml>
 glStencilFunc
   :: GLenum -- ^ @func@ of type @StencilFunction@.
   -> GLint -- ^ @ref@ of type @StencilValue@.
@@ -42327,7 +42327,7 @@ ptr_glStencilFunc = unsafePerformIO $ getCommand "glStencilFunc"
 
 -- glStencilFuncSeparate -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glStencilFuncSeparate.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilFuncSeparate.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilFuncSeparate.xml>, <https://www.opengl.org/sdk/docs/man4/html/glStencilFuncSeparate.xhtml>
 glStencilFuncSeparate
   :: GLenum -- ^ @face@ of type @StencilFaceDirection@.
   -> GLenum -- ^ @func@ of type @StencilFunction@.
@@ -42364,7 +42364,7 @@ ptr_glStencilFuncSeparateATI = unsafePerformIO $ getCommand "glStencilFuncSepara
 
 -- glStencilMask ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glStencilMask.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilMask.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilMask.xml>, <https://www.opengl.org/sdk/docs/man4/html/glStencilMask.xhtml>
 glStencilMask
   :: GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> IO ()
@@ -42380,7 +42380,7 @@ ptr_glStencilMask = unsafePerformIO $ getCommand "glStencilMask"
 
 -- glStencilMaskSeparate -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glStencilMaskSeparate.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilMaskSeparate.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilMaskSeparate.xml>, <https://www.opengl.org/sdk/docs/man4/html/glStencilMaskSeparate.xhtml>
 glStencilMaskSeparate
   :: GLenum -- ^ @face@ of type @StencilFaceDirection@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
@@ -42397,7 +42397,7 @@ ptr_glStencilMaskSeparate = unsafePerformIO $ getCommand "glStencilMaskSeparate"
 
 -- glStencilOp -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glStencilOp.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOp.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOp.xml>, <https://www.opengl.org/sdk/docs/man4/html/glStencilOp.xhtml>
 glStencilOp
   :: GLenum -- ^ @fail@ of type @StencilOp@.
   -> GLenum -- ^ @zfail@ of type @StencilOp@.
@@ -42415,7 +42415,7 @@ ptr_glStencilOp = unsafePerformIO $ getCommand "glStencilOp"
 
 -- glStencilOpSeparate ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glStencilOpSeparate.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOpSeparate.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOpSeparate.xml>, <https://www.opengl.org/sdk/docs/man4/html/glStencilOpSeparate.xhtml>
 glStencilOpSeparate
   :: GLenum -- ^ @face@ of type @StencilFaceDirection@.
   -> GLenum -- ^ @sfail@ of type @StencilOp@.
@@ -42953,7 +42953,7 @@ ptr_glTestObjectAPPLE = unsafePerformIO $ getCommand "glTestObjectAPPLE"
 
 -- glTexBuffer -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glTexBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml>
 glTexBuffer
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @internalformat@.
@@ -44895,7 +44895,7 @@ ptr_glTexGenxvOES = unsafePerformIO $ getCommand "glTexGenxvOES"
 
 -- glTexImage1D ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexImage1D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage1D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage1D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexImage1D.xhtml>
 glTexImage1D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -44918,7 +44918,7 @@ ptr_glTexImage1D = unsafePerformIO $ getCommand "glTexImage1D"
 
 -- glTexImage2D ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexImage2D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage2D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexImage2D.xhtml>
 glTexImage2D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -44942,7 +44942,7 @@ ptr_glTexImage2D = unsafePerformIO $ getCommand "glTexImage2D"
 
 -- glTexImage2DMultisample -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexImage2DMultisample.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2DMultisample.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexImage2DMultisample.xhtml>
 glTexImage2DMultisample
   :: GLenum -- ^ @target@.
   -> GLsizei -- ^ @samples@.
@@ -44984,7 +44984,7 @@ ptr_glTexImage2DMultisampleCoverageNV = unsafePerformIO $ getCommand "glTexImage
 
 -- glTexImage3D ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexImage3D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage3D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage3D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexImage3D.xhtml>
 glTexImage3D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -45033,7 +45033,7 @@ ptr_glTexImage3DEXT = unsafePerformIO $ getCommand "glTexImage3DEXT"
 
 -- glTexImage3DMultisample -----------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexImage3DMultisample.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage3DMultisample.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexImage3DMultisample.xhtml>
 glTexImage3DMultisample
   :: GLenum -- ^ @target@.
   -> GLsizei -- ^ @samples@.
@@ -45149,7 +45149,7 @@ ptr_glTexPageCommitmentARB = unsafePerformIO $ getCommand "glTexPageCommitmentAR
 
 -- glTexParameterIiv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
 glTexParameterIiv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @TextureParameterName@.
@@ -45201,7 +45201,7 @@ ptr_glTexParameterIivOES = unsafePerformIO $ getCommand "glTexParameterIivOES"
 
 -- glTexParameterIuiv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
 glTexParameterIuiv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @TextureParameterName@.
@@ -45253,7 +45253,7 @@ ptr_glTexParameterIuivOES = unsafePerformIO $ getCommand "glTexParameterIuivOES"
 
 -- glTexParameterf -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
 glTexParameterf
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @TextureParameterName@.
@@ -45271,7 +45271,7 @@ ptr_glTexParameterf = unsafePerformIO $ getCommand "glTexParameterf"
 
 -- glTexParameterfv ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
 glTexParameterfv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @TextureParameterName@.
@@ -45289,7 +45289,7 @@ ptr_glTexParameterfv = unsafePerformIO $ getCommand "glTexParameterfv"
 
 -- glTexParameteri -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
 glTexParameteri
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @TextureParameterName@.
@@ -45307,7 +45307,7 @@ ptr_glTexParameteri = unsafePerformIO $ getCommand "glTexParameteri"
 
 -- glTexParameteriv ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml>
 glTexParameteriv
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLenum -- ^ @pname@ of type @TextureParameterName@.
@@ -45611,7 +45611,7 @@ ptr_glTexStorageSparseAMD = unsafePerformIO $ getCommand "glTexStorageSparseAMD"
 
 -- glTexSubImage1D -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage1D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage1D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage1D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage1D.xhtml>
 glTexSubImage1D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -45654,7 +45654,7 @@ ptr_glTexSubImage1DEXT = unsafePerformIO $ getCommand "glTexSubImage1DEXT"
 
 -- glTexSubImage2D -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage2D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage2D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml>
 glTexSubImage2D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -45701,7 +45701,7 @@ ptr_glTexSubImage2DEXT = unsafePerformIO $ getCommand "glTexSubImage2DEXT"
 
 -- glTexSubImage3D -------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage3D.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage3D.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml>
 glTexSubImage3D
   :: GLenum -- ^ @target@ of type @TextureTarget@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -46937,7 +46937,7 @@ ptr_glTransformFeedbackStreamAttribsNV = unsafePerformIO $ getCommand "glTransfo
 
 -- glTransformFeedbackVaryings -------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackVaryings.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glTransformFeedbackVaryings.xml>, <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackVaryings.xhtml>
 glTransformFeedbackVaryings
   :: GLuint -- ^ @program@.
   -> GLsizei -- ^ @count@.
@@ -47113,7 +47113,7 @@ ptr_glUniform1dv = unsafePerformIO $ getCommand "glUniform1dv"
 
 -- glUniform1f -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform1f
   :: GLint -- ^ @location@.
   -> GLfloat -- ^ @v0@.
@@ -47146,7 +47146,7 @@ ptr_glUniform1fARB = unsafePerformIO $ getCommand "glUniform1fARB"
 
 -- glUniform1fv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform1fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47181,7 +47181,7 @@ ptr_glUniform1fvARB = unsafePerformIO $ getCommand "glUniform1fvARB"
 
 -- glUniform1i -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform1i
   :: GLint -- ^ @location@.
   -> GLint -- ^ @v0@.
@@ -47247,7 +47247,7 @@ ptr_glUniform1iARB = unsafePerformIO $ getCommand "glUniform1iARB"
 
 -- glUniform1iv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform1iv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47282,7 +47282,7 @@ ptr_glUniform1ivARB = unsafePerformIO $ getCommand "glUniform1ivARB"
 
 -- glUniform1ui ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform1ui
   :: GLint -- ^ @location@.
   -> GLuint -- ^ @v0@.
@@ -47348,7 +47348,7 @@ ptr_glUniform1uiEXT = unsafePerformIO $ getCommand "glUniform1uiEXT"
 
 -- glUniform1uiv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform1uiv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47417,7 +47417,7 @@ ptr_glUniform2dv = unsafePerformIO $ getCommand "glUniform2dv"
 
 -- glUniform2f -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform2f
   :: GLint -- ^ @location@.
   -> GLfloat -- ^ @v0@.
@@ -47452,7 +47452,7 @@ ptr_glUniform2fARB = unsafePerformIO $ getCommand "glUniform2fARB"
 
 -- glUniform2fv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform2fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47487,7 +47487,7 @@ ptr_glUniform2fvARB = unsafePerformIO $ getCommand "glUniform2fvARB"
 
 -- glUniform2i -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform2i
   :: GLint -- ^ @location@.
   -> GLint -- ^ @v0@.
@@ -47556,7 +47556,7 @@ ptr_glUniform2iARB = unsafePerformIO $ getCommand "glUniform2iARB"
 
 -- glUniform2iv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform2iv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47591,7 +47591,7 @@ ptr_glUniform2ivARB = unsafePerformIO $ getCommand "glUniform2ivARB"
 
 -- glUniform2ui ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform2ui
   :: GLint -- ^ @location@.
   -> GLuint -- ^ @v0@.
@@ -47660,7 +47660,7 @@ ptr_glUniform2uiEXT = unsafePerformIO $ getCommand "glUniform2uiEXT"
 
 -- glUniform2uiv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform2uiv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47730,7 +47730,7 @@ ptr_glUniform3dv = unsafePerformIO $ getCommand "glUniform3dv"
 
 -- glUniform3f -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform3f
   :: GLint -- ^ @location@.
   -> GLfloat -- ^ @v0@.
@@ -47767,7 +47767,7 @@ ptr_glUniform3fARB = unsafePerformIO $ getCommand "glUniform3fARB"
 
 -- glUniform3fv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform3fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47802,7 +47802,7 @@ ptr_glUniform3fvARB = unsafePerformIO $ getCommand "glUniform3fvARB"
 
 -- glUniform3i -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform3i
   :: GLint -- ^ @location@.
   -> GLint -- ^ @v0@.
@@ -47874,7 +47874,7 @@ ptr_glUniform3iARB = unsafePerformIO $ getCommand "glUniform3iARB"
 
 -- glUniform3iv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform3iv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -47909,7 +47909,7 @@ ptr_glUniform3ivARB = unsafePerformIO $ getCommand "glUniform3ivARB"
 
 -- glUniform3ui ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform3ui
   :: GLint -- ^ @location@.
   -> GLuint -- ^ @v0@.
@@ -47981,7 +47981,7 @@ ptr_glUniform3uiEXT = unsafePerformIO $ getCommand "glUniform3uiEXT"
 
 -- glUniform3uiv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform3uiv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48052,7 +48052,7 @@ ptr_glUniform4dv = unsafePerformIO $ getCommand "glUniform4dv"
 
 -- glUniform4f -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform4f
   :: GLint -- ^ @location@.
   -> GLfloat -- ^ @v0@.
@@ -48091,7 +48091,7 @@ ptr_glUniform4fARB = unsafePerformIO $ getCommand "glUniform4fARB"
 
 -- glUniform4fv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform4fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48126,7 +48126,7 @@ ptr_glUniform4fvARB = unsafePerformIO $ getCommand "glUniform4fvARB"
 
 -- glUniform4i -----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform4i
   :: GLint -- ^ @location@.
   -> GLint -- ^ @v0@.
@@ -48201,7 +48201,7 @@ ptr_glUniform4iARB = unsafePerformIO $ getCommand "glUniform4iARB"
 
 -- glUniform4iv ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform4iv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48236,7 +48236,7 @@ ptr_glUniform4ivARB = unsafePerformIO $ getCommand "glUniform4ivARB"
 
 -- glUniform4ui ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform4ui
   :: GLint -- ^ @location@.
   -> GLuint -- ^ @v0@.
@@ -48311,7 +48311,7 @@ ptr_glUniform4uiEXT = unsafePerformIO $ getCommand "glUniform4uiEXT"
 
 -- glUniform4uiv ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniform4uiv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48346,7 +48346,7 @@ ptr_glUniform4uivEXT = unsafePerformIO $ getCommand "glUniform4uivEXT"
 
 -- glUniformBlockBinding -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniformBlockBinding.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glUniformBlockBinding.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniformBlockBinding.xhtml>
 glUniformBlockBinding
   :: GLuint -- ^ @program@.
   -> GLuint -- ^ @uniformBlockIndex@.
@@ -48465,7 +48465,7 @@ ptr_glUniformMatrix2dv = unsafePerformIO $ getCommand "glUniformMatrix2dv"
 
 -- glUniformMatrix2fv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix2fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48520,7 +48520,7 @@ ptr_glUniformMatrix2x3dv = unsafePerformIO $ getCommand "glUniformMatrix2x3dv"
 
 -- glUniformMatrix2x3fv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix2x3fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48575,7 +48575,7 @@ ptr_glUniformMatrix2x4dv = unsafePerformIO $ getCommand "glUniformMatrix2x4dv"
 
 -- glUniformMatrix2x4fv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix2x4fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48630,7 +48630,7 @@ ptr_glUniformMatrix3dv = unsafePerformIO $ getCommand "glUniformMatrix3dv"
 
 -- glUniformMatrix3fv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix3fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48685,7 +48685,7 @@ ptr_glUniformMatrix3x2dv = unsafePerformIO $ getCommand "glUniformMatrix3x2dv"
 
 -- glUniformMatrix3x2fv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix3x2fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48740,7 +48740,7 @@ ptr_glUniformMatrix3x4dv = unsafePerformIO $ getCommand "glUniformMatrix3x4dv"
 
 -- glUniformMatrix3x4fv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix3x4fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48795,7 +48795,7 @@ ptr_glUniformMatrix4dv = unsafePerformIO $ getCommand "glUniformMatrix4dv"
 
 -- glUniformMatrix4fv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix4fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48850,7 +48850,7 @@ ptr_glUniformMatrix4x2dv = unsafePerformIO $ getCommand "glUniformMatrix4x2dv"
 
 -- glUniformMatrix4x2fv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix4x2fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -48905,7 +48905,7 @@ ptr_glUniformMatrix4x3dv = unsafePerformIO $ getCommand "glUniformMatrix4x3dv"
 
 -- glUniformMatrix4x3fv --------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml>
 glUniformMatrix4x3fv
   :: GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
@@ -49007,7 +49007,7 @@ ptr_glUnlockArraysEXT = unsafePerformIO $ getCommand "glUnlockArraysEXT"
 
 -- glUnmapBuffer ---------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glMapBuffer.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBuffer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml>
 glUnmapBuffer
   :: GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> IO GLboolean -- ^ of type @Boolean@.
@@ -49134,7 +49134,7 @@ ptr_glUpdateObjectBufferATI = unsafePerformIO $ getCommand "glUpdateObjectBuffer
 
 -- glUseProgram ----------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glUseProgram.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glUseProgram.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glUseProgram.xml>, <https://www.opengl.org/sdk/docs/man4/html/glUseProgram.xhtml>
 glUseProgram
   :: GLuint -- ^ @program@.
   -> IO ()
@@ -49379,7 +49379,7 @@ ptr_glVDPAUUnregisterSurfaceNV = unsafePerformIO $ getCommand "glVDPAUUnregister
 
 -- glValidateProgram -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glValidateProgram.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glValidateProgram.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glValidateProgram.xml>, <https://www.opengl.org/sdk/docs/man4/html/glValidateProgram.xhtml>
 glValidateProgram
   :: GLuint -- ^ @program@.
   -> IO ()
@@ -50870,7 +50870,7 @@ ptr_glVertexArrayVertexOffsetEXT = unsafePerformIO $ getCommand "glVertexArrayVe
 
 -- glVertexAttrib1d ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib1d
   :: GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
@@ -50919,7 +50919,7 @@ ptr_glVertexAttrib1dNV = unsafePerformIO $ getCommand "glVertexAttrib1dNV"
 
 -- glVertexAttrib1dv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib1dv
   :: GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @GLdouble@.
@@ -50968,7 +50968,7 @@ ptr_glVertexAttrib1dvNV = unsafePerformIO $ getCommand "glVertexAttrib1dvNV"
 
 -- glVertexAttrib1f ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib1f
   :: GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
@@ -51017,7 +51017,7 @@ ptr_glVertexAttrib1fNV = unsafePerformIO $ getCommand "glVertexAttrib1fNV"
 
 -- glVertexAttrib1fv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib1fv
   :: GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @GLfloat@.
@@ -51098,7 +51098,7 @@ ptr_glVertexAttrib1hvNV = unsafePerformIO $ getCommand "glVertexAttrib1hvNV"
 
 -- glVertexAttrib1s ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib1s
   :: GLuint -- ^ @index@.
   -> GLshort -- ^ @x@.
@@ -51147,7 +51147,7 @@ ptr_glVertexAttrib1sNV = unsafePerformIO $ getCommand "glVertexAttrib1sNV"
 
 -- glVertexAttrib1sv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib1sv
   :: GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @GLshort@.
@@ -51196,7 +51196,7 @@ ptr_glVertexAttrib1svNV = unsafePerformIO $ getCommand "glVertexAttrib1svNV"
 
 -- glVertexAttrib2d ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib2d
   :: GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
@@ -51248,7 +51248,7 @@ ptr_glVertexAttrib2dNV = unsafePerformIO $ getCommand "glVertexAttrib2dNV"
 
 -- glVertexAttrib2dv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib2dv
   :: GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @GLdouble@.
@@ -51297,7 +51297,7 @@ ptr_glVertexAttrib2dvNV = unsafePerformIO $ getCommand "glVertexAttrib2dvNV"
 
 -- glVertexAttrib2f ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib2f
   :: GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
@@ -51349,7 +51349,7 @@ ptr_glVertexAttrib2fNV = unsafePerformIO $ getCommand "glVertexAttrib2fNV"
 
 -- glVertexAttrib2fv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib2fv
   :: GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @GLfloat@.
@@ -51431,7 +51431,7 @@ ptr_glVertexAttrib2hvNV = unsafePerformIO $ getCommand "glVertexAttrib2hvNV"
 
 -- glVertexAttrib2s ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib2s
   :: GLuint -- ^ @index@.
   -> GLshort -- ^ @x@.
@@ -51483,7 +51483,7 @@ ptr_glVertexAttrib2sNV = unsafePerformIO $ getCommand "glVertexAttrib2sNV"
 
 -- glVertexAttrib2sv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib2sv
   :: GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @GLshort@.
@@ -51532,7 +51532,7 @@ ptr_glVertexAttrib2svNV = unsafePerformIO $ getCommand "glVertexAttrib2svNV"
 
 -- glVertexAttrib3d ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib3d
   :: GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
@@ -51587,7 +51587,7 @@ ptr_glVertexAttrib3dNV = unsafePerformIO $ getCommand "glVertexAttrib3dNV"
 
 -- glVertexAttrib3dv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib3dv
   :: GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @GLdouble@.
@@ -51636,7 +51636,7 @@ ptr_glVertexAttrib3dvNV = unsafePerformIO $ getCommand "glVertexAttrib3dvNV"
 
 -- glVertexAttrib3f ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib3f
   :: GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
@@ -51691,7 +51691,7 @@ ptr_glVertexAttrib3fNV = unsafePerformIO $ getCommand "glVertexAttrib3fNV"
 
 -- glVertexAttrib3fv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib3fv
   :: GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
@@ -51774,7 +51774,7 @@ ptr_glVertexAttrib3hvNV = unsafePerformIO $ getCommand "glVertexAttrib3hvNV"
 
 -- glVertexAttrib3s ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib3s
   :: GLuint -- ^ @index@.
   -> GLshort -- ^ @x@.
@@ -51829,7 +51829,7 @@ ptr_glVertexAttrib3sNV = unsafePerformIO $ getCommand "glVertexAttrib3sNV"
 
 -- glVertexAttrib3sv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib3sv
   :: GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @GLshort@.
@@ -51878,7 +51878,7 @@ ptr_glVertexAttrib3svNV = unsafePerformIO $ getCommand "glVertexAttrib3svNV"
 
 -- glVertexAttrib4Nbv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4Nbv
   :: GLuint -- ^ @index@.
   -> Ptr GLbyte -- ^ @v@ pointing to @4@ elements of type @GLbyte@.
@@ -51911,7 +51911,7 @@ ptr_glVertexAttrib4NbvARB = unsafePerformIO $ getCommand "glVertexAttrib4NbvARB"
 
 -- glVertexAttrib4Niv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4Niv
   :: GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @4@ elements of type @GLint@.
@@ -51944,7 +51944,7 @@ ptr_glVertexAttrib4NivARB = unsafePerformIO $ getCommand "glVertexAttrib4NivARB"
 
 -- glVertexAttrib4Nsv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4Nsv
   :: GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @GLshort@.
@@ -51977,7 +51977,7 @@ ptr_glVertexAttrib4NsvARB = unsafePerformIO $ getCommand "glVertexAttrib4NsvARB"
 
 -- glVertexAttrib4Nub ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4Nub
   :: GLuint -- ^ @index@.
   -> GLubyte -- ^ @x@.
@@ -52016,7 +52016,7 @@ ptr_glVertexAttrib4NubARB = unsafePerformIO $ getCommand "glVertexAttrib4NubARB"
 
 -- glVertexAttrib4Nubv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4Nubv
   :: GLuint -- ^ @index@.
   -> Ptr GLubyte -- ^ @v@ pointing to @4@ elements of type @GLubyte@.
@@ -52049,7 +52049,7 @@ ptr_glVertexAttrib4NubvARB = unsafePerformIO $ getCommand "glVertexAttrib4NubvAR
 
 -- glVertexAttrib4Nuiv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4Nuiv
   :: GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @v@ pointing to @4@ elements of type @GLuint@.
@@ -52082,7 +52082,7 @@ ptr_glVertexAttrib4NuivARB = unsafePerformIO $ getCommand "glVertexAttrib4NuivAR
 
 -- glVertexAttrib4Nusv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4Nusv
   :: GLuint -- ^ @index@.
   -> Ptr GLushort -- ^ @v@ pointing to @4@ elements of type @GLushort@.
@@ -52115,7 +52115,7 @@ ptr_glVertexAttrib4NusvARB = unsafePerformIO $ getCommand "glVertexAttrib4NusvAR
 
 -- glVertexAttrib4bv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4bv
   :: GLuint -- ^ @index@.
   -> Ptr GLbyte -- ^ @v@ pointing to @4@ elements of type @GLbyte@.
@@ -52148,7 +52148,7 @@ ptr_glVertexAttrib4bvARB = unsafePerformIO $ getCommand "glVertexAttrib4bvARB"
 
 -- glVertexAttrib4d ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4d
   :: GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
@@ -52206,7 +52206,7 @@ ptr_glVertexAttrib4dNV = unsafePerformIO $ getCommand "glVertexAttrib4dNV"
 
 -- glVertexAttrib4dv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4dv
   :: GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @GLdouble@.
@@ -52255,7 +52255,7 @@ ptr_glVertexAttrib4dvNV = unsafePerformIO $ getCommand "glVertexAttrib4dvNV"
 
 -- glVertexAttrib4f ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4f
   :: GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
@@ -52313,7 +52313,7 @@ ptr_glVertexAttrib4fNV = unsafePerformIO $ getCommand "glVertexAttrib4fNV"
 
 -- glVertexAttrib4fv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4fv
   :: GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
@@ -52397,7 +52397,7 @@ ptr_glVertexAttrib4hvNV = unsafePerformIO $ getCommand "glVertexAttrib4hvNV"
 
 -- glVertexAttrib4iv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4iv
   :: GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @4@ elements of type @GLint@.
@@ -52430,7 +52430,7 @@ ptr_glVertexAttrib4ivARB = unsafePerformIO $ getCommand "glVertexAttrib4ivARB"
 
 -- glVertexAttrib4s ------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4s
   :: GLuint -- ^ @index@.
   -> GLshort -- ^ @x@.
@@ -52488,7 +52488,7 @@ ptr_glVertexAttrib4sNV = unsafePerformIO $ getCommand "glVertexAttrib4sNV"
 
 -- glVertexAttrib4sv -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4sv
   :: GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @GLshort@.
@@ -52556,7 +52556,7 @@ ptr_glVertexAttrib4ubNV = unsafePerformIO $ getCommand "glVertexAttrib4ubNV"
 
 -- glVertexAttrib4ubv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4ubv
   :: GLuint -- ^ @index@.
   -> Ptr GLubyte -- ^ @v@ pointing to @4@ elements of type @GLubyte@.
@@ -52605,7 +52605,7 @@ ptr_glVertexAttrib4ubvNV = unsafePerformIO $ getCommand "glVertexAttrib4ubvNV"
 
 -- glVertexAttrib4uiv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4uiv
   :: GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @v@ pointing to @4@ elements of type @GLuint@.
@@ -52638,7 +52638,7 @@ ptr_glVertexAttrib4uivARB = unsafePerformIO $ getCommand "glVertexAttrib4uivARB"
 
 -- glVertexAttrib4usv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttrib4usv
   :: GLuint -- ^ @index@.
   -> Ptr GLushort -- ^ @v@ pointing to @4@ elements of type @GLushort@.
@@ -52709,7 +52709,7 @@ ptr_glVertexAttribBinding = unsafePerformIO $ getCommand "glVertexAttribBinding"
 
 -- glVertexAttribDivisor -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribDivisor.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribDivisor.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribDivisor.xhtml>
 glVertexAttribDivisor
   :: GLuint -- ^ @index@.
   -> GLuint -- ^ @divisor@.
@@ -52829,7 +52829,7 @@ ptr_glVertexAttribFormatNV = unsafePerformIO $ getCommand "glVertexAttribFormatN
 
 -- glVertexAttribI1i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI1i
   :: GLuint -- ^ @index@.
   -> GLint -- ^ @x@.
@@ -52862,7 +52862,7 @@ ptr_glVertexAttribI1iEXT = unsafePerformIO $ getCommand "glVertexAttribI1iEXT"
 
 -- glVertexAttribI1iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI1iv
   :: GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @1@ elements of type @GLint@.
@@ -52895,7 +52895,7 @@ ptr_glVertexAttribI1ivEXT = unsafePerformIO $ getCommand "glVertexAttribI1ivEXT"
 
 -- glVertexAttribI1ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI1ui
   :: GLuint -- ^ @index@.
   -> GLuint -- ^ @x@.
@@ -52928,7 +52928,7 @@ ptr_glVertexAttribI1uiEXT = unsafePerformIO $ getCommand "glVertexAttribI1uiEXT"
 
 -- glVertexAttribI1uiv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI1uiv
   :: GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @v@ pointing to @1@ elements of type @GLuint@.
@@ -52961,7 +52961,7 @@ ptr_glVertexAttribI1uivEXT = unsafePerformIO $ getCommand "glVertexAttribI1uivEX
 
 -- glVertexAttribI2i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI2i
   :: GLuint -- ^ @index@.
   -> GLint -- ^ @x@.
@@ -52996,7 +52996,7 @@ ptr_glVertexAttribI2iEXT = unsafePerformIO $ getCommand "glVertexAttribI2iEXT"
 
 -- glVertexAttribI2iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI2iv
   :: GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @2@ elements of type @GLint@.
@@ -53029,7 +53029,7 @@ ptr_glVertexAttribI2ivEXT = unsafePerformIO $ getCommand "glVertexAttribI2ivEXT"
 
 -- glVertexAttribI2ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI2ui
   :: GLuint -- ^ @index@.
   -> GLuint -- ^ @x@.
@@ -53064,7 +53064,7 @@ ptr_glVertexAttribI2uiEXT = unsafePerformIO $ getCommand "glVertexAttribI2uiEXT"
 
 -- glVertexAttribI2uiv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI2uiv
   :: GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @v@ pointing to @2@ elements of type @GLuint@.
@@ -53097,7 +53097,7 @@ ptr_glVertexAttribI2uivEXT = unsafePerformIO $ getCommand "glVertexAttribI2uivEX
 
 -- glVertexAttribI3i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI3i
   :: GLuint -- ^ @index@.
   -> GLint -- ^ @x@.
@@ -53134,7 +53134,7 @@ ptr_glVertexAttribI3iEXT = unsafePerformIO $ getCommand "glVertexAttribI3iEXT"
 
 -- glVertexAttribI3iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI3iv
   :: GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @3@ elements of type @GLint@.
@@ -53167,7 +53167,7 @@ ptr_glVertexAttribI3ivEXT = unsafePerformIO $ getCommand "glVertexAttribI3ivEXT"
 
 -- glVertexAttribI3ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI3ui
   :: GLuint -- ^ @index@.
   -> GLuint -- ^ @x@.
@@ -53204,7 +53204,7 @@ ptr_glVertexAttribI3uiEXT = unsafePerformIO $ getCommand "glVertexAttribI3uiEXT"
 
 -- glVertexAttribI3uiv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI3uiv
   :: GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @v@ pointing to @3@ elements of type @GLuint@.
@@ -53237,7 +53237,7 @@ ptr_glVertexAttribI3uivEXT = unsafePerformIO $ getCommand "glVertexAttribI3uivEX
 
 -- glVertexAttribI4bv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4bv
   :: GLuint -- ^ @index@.
   -> Ptr GLbyte -- ^ @v@ pointing to @4@ elements of type @GLbyte@.
@@ -53270,7 +53270,7 @@ ptr_glVertexAttribI4bvEXT = unsafePerformIO $ getCommand "glVertexAttribI4bvEXT"
 
 -- glVertexAttribI4i -----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4i
   :: GLuint -- ^ @index@.
   -> GLint -- ^ @x@.
@@ -53309,7 +53309,7 @@ ptr_glVertexAttribI4iEXT = unsafePerformIO $ getCommand "glVertexAttribI4iEXT"
 
 -- glVertexAttribI4iv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4iv
   :: GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @4@ elements of type @GLint@.
@@ -53342,7 +53342,7 @@ ptr_glVertexAttribI4ivEXT = unsafePerformIO $ getCommand "glVertexAttribI4ivEXT"
 
 -- glVertexAttribI4sv ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4sv
   :: GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @GLshort@.
@@ -53375,7 +53375,7 @@ ptr_glVertexAttribI4svEXT = unsafePerformIO $ getCommand "glVertexAttribI4svEXT"
 
 -- glVertexAttribI4ubv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4ubv
   :: GLuint -- ^ @index@.
   -> Ptr GLubyte -- ^ @v@ pointing to @4@ elements of type @GLubyte@.
@@ -53408,7 +53408,7 @@ ptr_glVertexAttribI4ubvEXT = unsafePerformIO $ getCommand "glVertexAttribI4ubvEX
 
 -- glVertexAttribI4ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4ui
   :: GLuint -- ^ @index@.
   -> GLuint -- ^ @x@.
@@ -53447,7 +53447,7 @@ ptr_glVertexAttribI4uiEXT = unsafePerformIO $ getCommand "glVertexAttribI4uiEXT"
 
 -- glVertexAttribI4uiv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4uiv
   :: GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @v@ pointing to @4@ elements of type @GLuint@.
@@ -53480,7 +53480,7 @@ ptr_glVertexAttribI4uivEXT = unsafePerformIO $ getCommand "glVertexAttribI4uivEX
 
 -- glVertexAttribI4usv ---------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribI4usv
   :: GLuint -- ^ @index@.
   -> Ptr GLushort -- ^ @v@ pointing to @4@ elements of type @GLushort@.
@@ -53550,7 +53550,7 @@ ptr_glVertexAttribIFormatNV = unsafePerformIO $ getCommand "glVertexAttribIForma
 
 -- glVertexAttribIPointer ------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml>
 glVertexAttribIPointer
   :: GLuint -- ^ @index@.
   -> GLint -- ^ @size@.
@@ -54241,7 +54241,7 @@ ptr_glVertexAttribLPointerEXT = unsafePerformIO $ getCommand "glVertexAttribLPoi
 
 -- glVertexAttribP1ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribP1ui
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
@@ -54278,7 +54278,7 @@ ptr_glVertexAttribP1uiv = unsafePerformIO $ getCommand "glVertexAttribP1uiv"
 
 -- glVertexAttribP2ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribP2ui
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
@@ -54315,7 +54315,7 @@ ptr_glVertexAttribP2uiv = unsafePerformIO $ getCommand "glVertexAttribP2uiv"
 
 -- glVertexAttribP3ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribP3ui
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
@@ -54352,7 +54352,7 @@ ptr_glVertexAttribP3uiv = unsafePerformIO $ getCommand "glVertexAttribP3uiv"
 
 -- glVertexAttribP4ui ----------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml>
 glVertexAttribP4ui
   :: GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
@@ -54406,7 +54406,7 @@ ptr_glVertexAttribParameteriAMD = unsafePerformIO $ getCommand "glVertexAttribPa
 
 -- glVertexAttribPointer -------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttribPointer.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml>, <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml>
 glVertexAttribPointer
   :: GLuint -- ^ @index@.
   -> GLint -- ^ @size@.
@@ -55691,7 +55691,7 @@ ptr_glVideoCaptureStreamParameterivNV = unsafePerformIO $ getCommand "glVideoCap
 
 -- glViewport ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glViewport.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man2/xhtml/glViewport.xml>, <https://www.opengl.org/sdk/docs/man3/xhtml/glViewport.xml>, <https://www.opengl.org/sdk/docs/man4/html/glViewport.xhtml>
 glViewport
   :: GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -55817,7 +55817,7 @@ ptr_glViewportIndexedfvNV = unsafePerformIO $ getCommand "glViewportIndexedfvNV"
 
 -- glWaitSync ------------------------------------------------------------------
 
--- | Manual page: <https://www.opengl.org/sdk/docs/man4/html/glWaitSync.xhtml>
+-- | Manual pages: <https://www.opengl.org/sdk/docs/man3/xhtml/glWaitSync.xml>, <https://www.opengl.org/sdk/docs/man4/html/glWaitSync.xhtml>
 glWaitSync
   :: GLsync -- ^ @sync@ of type @sync@.
   -> GLbitfield -- ^ @flags@.

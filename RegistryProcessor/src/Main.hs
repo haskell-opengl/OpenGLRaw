@@ -208,7 +208,7 @@ showCommand :: API -> Command -> String
 showCommand api c =
   showString (take 80 ("-- " ++ name ++ " " ++ repeat '-') ++ "\n\n") .
 
-  showString url .
+  showString man .
 
   showString (name ++ "\n") .
   showString ("  :: " ++ signature True) .
@@ -233,9 +233,13 @@ showCommand api c =
           L.intercalate ((if withComment then " " else "") ++ " -> ")
             ([showSignatureElement withComment False t | t <- paramTypes c] ++
              [showSignatureElement withComment True (resultType c)])
-        url = maybe "" (\u -> "-- | Manual page: <" ++ u ++ ">\n") $
-                M.lookup (api, CommandName name) manPageURLs
-
+        urls = M.findWithDefault [] (api, CommandName name) manPageURLs
+        links = L.intercalate ", " (map renderURL urls)  ++ "\n"
+        man = case urls of
+                []  -> ""
+                [_] ->  "-- | Manual page: "  ++ links
+                _   ->  "-- | Manual pages: " ++ links
+        renderURL u = "<" ++ u ++ ">"
 
 showSignatureElement :: Bool -> Bool -> SignatureElement -> String
 showSignatureElement withComment isResult sigElem = el ++ comment
