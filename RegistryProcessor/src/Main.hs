@@ -52,11 +52,10 @@ main = do
     Left msg -> putStrLn msg
     Right registry -> do
       CM.when (PrintFeature `elem` opts) $ do
-        let modName = "Graphics.Rendering.OpenGL.Raw." ++
-                      capitalize (unProfileName profile) ++
+        let relName = capitalize (unProfileName profile) ++
                       show (major version) ++ show (minor version)
-            (ts,es,cs) = fixedReplay api version profile registry
-        printMod modName ts es cs
+            modName = buildModulePath Nothing [relName]
+        printMod modName $ fixedReplay api version profile registry
       CM.when (PrintTokens `elem` opts) $ do
         putStrLn "--------------------------------------------------------------------------------"
         putStrLn "-- |"
@@ -126,39 +125,44 @@ main = do
               | ext <- extensions registry
               , api `supports` extensionSupported ext
               , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
+        CM.forM_ supportedExtensions $ \(n,mods) -> do
+          let profileAndModName =
+                if isProfileDependent (n,mods)
+                  then [(ProfileName p, extendExtensionName n p)
+                       | p <- ["core", "compatibility"] ]
+                  else [(profile, n)]
+          CM.forM_ profileAndModName $ \(prof, modName) -> do
+            printMod (mangleExtensionName modName) $
+              executeModifications api prof registry mods
 
-        let (profileDependent, profileIndependent) =
-              L.partition (any (DM.isJust . modificationProfile) . snd) supportedExtensions
-        putStrLn "======================================== profile-dependent extensions"
-        CM.forM_ ["core", "compatibility"] $ \prof -> do
-          CM.forM_ profileDependent $ \(n,mods) -> do
-            let (_vendor, modName) = mangleExtensionName (extendExtensionName n (ProfileName prof))
-                (ts,es,cs) = executeModifications api (ProfileName prof) registry mods
-            printMod modName ts es cs
+isProfileDependent :: (ExtensionName, [Modification]) -> Bool
+isProfileDependent = any (DM.isJust . modificationProfile) . snd
 
-        putStrLn "======================================== profile-independent extensions"
-        CM.forM_ profileIndependent $ \(n,mods) -> do
-          let (_vendor, modName) = mangleExtensionName n
-              (ts,es,cs) = executeModifications api profile registry mods
-          printMod modName ts es cs
-
-extendExtensionName :: ExtensionName -> ProfileName -> ExtensionName
+extendExtensionName :: ExtensionName -> String -> ExtensionName
 extendExtensionName n profile =
-  ExtensionName . (++ ("_" ++ unProfileName profile)). unExtensionName $ n
+  ExtensionName . (++ ("_" ++ profile)). unExtensionName $ n
 
-mangleExtensionName :: ExtensionName -> (String,String)
-mangleExtensionName n =  (vendor, modName)
-   where ("GL":vendor:rest) = splitBy (== '_') (unExtensionName n)
-         modName = "Graphics.Rendering.OpenGL.Raw." ++ fixVendor vendor ++ "." ++ concatMap fixExtensionWord rest
+mangleExtensionName :: ExtensionName -> String
+mangleExtensionName n =  buildModulePath (Just vendor) extWords
+   where ("GL":vendor:extWords) = splitBy (== '_') (unExtensionName n)
+
+buildModulePath :: Maybe String -> [String] -> String
+buildModulePath mbVendor extWords =
+   modulePath ++ "." ++
+   maybe "" (\vendor -> fixVendor vendor ++ ".") mbVendor ++
+   concat (zipWith fixExtensionWord extWords [0 ..])
+
+modulePath :: String
+modulePath = "Graphics.Rendering.OpenGL.Raw"
 
 fixVendor :: String -> String
 fixVendor v = case v of
   "3DFX" -> "ThreeDFX"
   _ -> v
 
-fixExtensionWord :: String -> String
-fixExtensionWord w = case w of
-  "422" -> "FourTwoTwo" -- !!!!!!!!!!!!!!!!!!!
+fixExtensionWord :: String -> Int -> String
+fixExtensionWord w  pos = case w of
+  "422" | pos == 0-> "FourTwoTwo"
   "64bit" -> "64Bit"
   "ES2" -> "ES2"
   "ES3" -> "ES3"
@@ -182,11 +186,11 @@ fixExtensionWord w = case w of
   "rg" -> "RG"
   "rgb" -> "RGB"
   "rgb10" -> "RGB10"
+  "rgb32" -> "RGB32"
   "rgtc" -> "RGTC"
   "s3tc" -> "S3TC"
   "sRGB" -> "SRGB"
   "snorm" -> "SNorm"
-  "tbuffer" -> "TBuffer"
   "texture3D" -> "Texture3D"
   "texture4D" -> "Texture4D"
   "vdpau" -> "VDPAU"
@@ -212,8 +216,8 @@ capitalize str = C.toUpper (head str) : map C.toLower (tail str)
 separate :: (a -> String) -> [a] -> String
 separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
-printMod :: String -> [TypeName] -> [Enum'] -> [Command] -> IO ()
-printMod modName ts es cs= do
+printMod :: String -> ([TypeName], [Enum'], [Command]) -> IO ()
+printMod modName (ts, es, cs) = do
   putStrLn "--------------------------------------------------------------------------------"
   putStrLn "-- |"
   putStrLn $ "-- Module      :  " ++ modName
@@ -251,7 +255,7 @@ printMod modName ts es cs= do
 -- Annoyingly enough, the OpenGL registry doesn't contain any enums for
 -- OpenGL 1.0, so let's just use the OpenGL 1.1 ones. Furthermore, features
 -- don't explicitly list the types referenced by commands, so we add them.
-fixedReplay :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
+fixedReplay :: API -> Version -> ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
 fixedReplay api version profile registry
   | api == API "gl" && version == read "1.0" = (ts', es11, cs)
   | otherwise = (ts', es, cs)
@@ -261,7 +265,7 @@ fixedReplay api version profile registry
 
 -- Here is the heart of the feature construction logic: Chronologically replay
 -- the whole version history for the given API/version/profile triple.
-replay :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
+replay :: API -> Version -> ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
 replay api version profile registry =
   executeModifications api profile registry modifications
   where modifications = concatMap modificationsFor history
