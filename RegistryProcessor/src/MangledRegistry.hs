@@ -11,13 +11,16 @@ module MangledRegistry (
   R.ModificationKind(..),
   R.ProfileName(..),
   Extension(..),
+  ConditionalModification(..),
   InterfaceElement(..),
   GroupName(..),
   EnumName(..),
   EnumValue(..),
   CommandName(..),
+  ExtensionName(..),
   API(..),
-  Version(..)
+  Version(..),
+  splitBy
 ) where
 
 import qualified Data.Char as C
@@ -245,11 +248,28 @@ toModification m = Modification {
   modificationProfile = R.modificationProfileName m,
   modificationInterfaceElements = map toInterfaceElement (R.modificationInterfaceElements m) }
 
-data Extension = Extension
-  deriving (Eq, Ord, Show)
+data Extension = Extension {
+  extensionName :: ExtensionName,
+  extensionSupported :: Maybe [API],
+  extensionsRequireRemove :: [ConditionalModification]
+  } deriving (Eq, Ord, Show)
 
 toExtension :: R.Extension -> Extension
-toExtension _ = Extension
+toExtension e = Extension {
+  extensionName = ExtensionName . R.unName . R.extensionName $ e,
+  extensionSupported = supp `fmap` R.extensionSupported e,
+  extensionsRequireRemove = map toConditionalModification (R.extensionsRequireRemove e) }
+  where supp = map API . splitBy (== '|') . R.unStringGroup
+
+data ConditionalModification = ConditionalModification {
+  conditionalModificationAPI :: Maybe API,
+  conditionalModificationModification :: Modification
+  } deriving (Eq, Ord, Show)
+
+toConditionalModification :: R.ConditionalModification -> ConditionalModification
+toConditionalModification c = ConditionalModification {
+  conditionalModificationAPI = API `fmap` R.conditionalModificationAPI c,
+  conditionalModificationModification = toModification (R.conditionalModificationModification c) }
 
 data InterfaceElement
   = TypeElement R.TypeName
@@ -277,6 +297,8 @@ newtype EnumName = EnumName { unEnumName :: String } deriving (Eq, Ord, Show)
 newtype EnumValue = EnumValue { unEnumValue :: String } deriving (Eq, Ord, Show)
 
 newtype CommandName = CommandName { unCommandName :: String } deriving (Eq, Ord, Show)
+
+newtype ExtensionName = ExtensionName { unExtensionName :: String } deriving (Eq, Ord, Show)
 
 newtype API = API { unAPI :: String } deriving (Eq, Ord, Show)
 

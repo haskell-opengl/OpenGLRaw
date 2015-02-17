@@ -15,6 +15,7 @@ data Option
   = PrintFeature
   | PrintTokens
   | PrintFunctions
+  | PrintExtensions
   | UseApi API
   | UseVersion Version
   | UseProfile ProfileName
@@ -25,6 +26,7 @@ options =
   [ G.Option ['F'] ["print-feature"] (G.NoArg PrintFeature) "print feature"
   , G.Option ['t'] ["print-tokens"] (G.NoArg PrintTokens) "print tokens"
   , G.Option ['f'] ["print-functions"] (G.NoArg PrintFunctions) "print functions"
+  , G.Option ['x'] ["print-extensions"] (G.NoArg PrintExtensions) "print extensions"
   , G.Option ['a'] ["api"] (G.ReqArg (UseApi . API) "API") "extract features for API (default: gl)"
   , G.Option ['v'] ["version"] (G.ReqArg (UseVersion . read) "VERSION") "extract features for version (default: 4.5)"
   , G.Option ['p'] ["profile"] (G.ReqArg (UseProfile . ProfileName) "PROFILE") "extract features for profile (default: compatibility)" ]
@@ -53,37 +55,8 @@ main = do
         let modName = "Graphics.Rendering.OpenGL.Raw." ++
                       capitalize (unProfileName profile) ++
                       show (major version) ++ show (minor version)
-        putStrLn "--------------------------------------------------------------------------------"
-        putStrLn "-- |"
-        putStrLn $ "-- Module      :  " ++ modName
-        putStrLn "-- Copyright   :  (c) Sven Panne 2015"
-        putStrLn "-- License     :  BSD3"
-        putStrLn "--"
-        putStrLn "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
-        putStrLn "-- Stability   :  stable"
-        putStrLn "-- Portability :  portable"
-        putStrLn "--"
-        putStrLn "--------------------------------------------------------------------------------"
-        putStrLn ""
-        let (ts,es,cs) = fixedGetTyEnCo api version profile registry
-        putStrLn $ "module "++ modName ++ " ("
-        CM.unless (null ts) $ do
-          putStrLn "  -- * Types"
-          putStr $ separate unTypeName ts
-          putStrLn $ if null es && null cs then "" else ","
-        CM.unless (null es) $ do
-          putStrLn "  -- * Enums"
-          putStr $ separate (unEnumName . enumName) es
-          putStrLn $ if null cs then "" else ","
-        CM.unless (null cs) $ do
-          putStrLn "  -- * Functions"
-          putStr $ separate (unCommandName . commandName) cs
-        putStrLn ""
-        putStrLn ") where"
-        putStrLn ""
-        putStrLn "import Graphics.Rendering.OpenGL.Raw.Types"
-        putStrLn "import Graphics.Rendering.OpenGL.Raw.Tokens"
-        putStrLn "import Graphics.Rendering.OpenGL.Raw.Functions"
+            (ts,es,cs) = fixedReplay api version profile registry
+        printMod modName ts es cs
       CM.when (PrintTokens `elem` opts) $ do
         putStrLn "--------------------------------------------------------------------------------"
         putStrLn "-- |"
@@ -146,48 +119,175 @@ main = do
         putStrLn "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
         putStrLn ""
         mapM_ (putStrLn . showCommand api) (M.elems (commands registry))
+      CM.when (PrintExtensions `elem` opts) $ do
+        -- only consider non-empty supported extensions/modifications for the given API
+        let supportedExtensions =
+              [ nameAndMods
+              | ext <- extensions registry
+              , api `supports` extensionSupported ext
+              , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
+
+        let (profileDependent, profileIndependent) =
+              L.partition (any (DM.isJust . modificationProfile) . snd) supportedExtensions
+        putStrLn "======================================== profile-dependent extensions"
+        CM.forM_ ["core", "compatibility"] $ \prof -> do
+          CM.forM_ profileDependent $ \(n,mods) -> do
+            let (_vendor, modName) = mangleExtensionName (extendExtensionName n (ProfileName prof))
+                (ts,es,cs) = executeModifications api (ProfileName prof) registry mods
+            printMod modName ts es cs
+
+        putStrLn "======================================== profile-independent extensions"
+        CM.forM_ profileIndependent $ \(n,mods) -> do
+          let (_vendor, modName) = mangleExtensionName n
+              (ts,es,cs) = executeModifications api profile registry mods
+          printMod modName ts es cs
+
+extendExtensionName :: ExtensionName -> ProfileName -> ExtensionName
+extendExtensionName n profile =
+  ExtensionName . (++ ("_" ++ unProfileName profile)). unExtensionName $ n
+
+mangleExtensionName :: ExtensionName -> (String,String)
+mangleExtensionName n =  (vendor, modName)
+   where ("GL":vendor:rest) = splitBy (== '_') (unExtensionName n)
+         modName = "Graphics.Rendering.OpenGL.Raw." ++ fixVendor vendor ++ "." ++ concatMap fixExtensionWord rest
+
+fixVendor :: String -> String
+fixVendor v = case v of
+  "3DFX" -> "ThreeDFX"
+  _ -> v
+
+fixExtensionWord :: String -> String
+fixExtensionWord w = case w of
+  "422" -> "FourTwoTwo" -- !!!!!!!!!!!!!!!!!!!
+  "64bit" -> "64Bit"
+  "ES2" -> "ES2"
+  "ES3" -> "ES3"
+  "FXT1" -> "FXT1"
+  "a2ui" -> "A2UI"
+  "abgr" -> "ABGR"
+  "astc" -> "ASTC"
+  "bgra" -> "BGRA"
+  "bptc" -> "BPTC"
+  "cl" -> "CL"
+  "cmyka" -> "CMYKA"
+  "dxt1" -> "DXT1"
+  "es" -> "ES"
+  "fp64" -> "FP64"
+  "gpu" -> "GPU"
+  "hdr" -> "HDR"
+  "latc" -> "LATC"
+  "ldr" -> "LDR"
+  "lod" -> "LOD"
+  "pn" -> "PN"
+  "rg" -> "RG"
+  "rgb" -> "RGB"
+  "rgb10" -> "RGB10"
+  "rgtc" -> "RGTC"
+  "s3tc" -> "S3TC"
+  "sRGB" -> "SRGB"
+  "snorm" -> "SNorm"
+  "tbuffer" -> "TBuffer"
+  "texture3D" -> "Texture3D"
+  "texture4D" -> "Texture4D"
+  "vdpau" -> "VDPAU"
+  "ycbcr" -> "YCbCr"
+  "ycrcb" -> "YCrCb"
+  "ycrcba" -> "YCrCbA"
+  _ -> capitalize w
+
+nameAndModifications :: API -> Extension -> (ExtensionName, [Modification])
+nameAndModifications api e =
+  (extensionName e,
+   [ conditionalModificationModification cm
+   | cm <- extensionsRequireRemove e
+   , api `matches` conditionalModificationAPI cm ])
+
+supports :: API -> Maybe [API] -> Bool
+_ `supports` Nothing = True
+a `supports` Just apis = a `elem` apis
 
 capitalize :: String -> String
-capitalize str = C.toUpper (head str) : tail str
+capitalize str = C.toUpper (head str) : map C.toLower (tail str)
 
 separate :: (a -> String) -> [a] -> String
 separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
--- Annoyingly enough, the OpenGL registry doesn't contain any enums for
--- OpenGL 1.0, so let's just use the OpenGL 1.1 ones.
-fixedGetTyEnCo :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
-fixedGetTyEnCo api version profile registry
-  | api == API "gl" && version == read "1.0" = (ts, es11, cs)
-  | otherwise = tec
-  where tec@(ts, _, cs) = getTyEnCo api version profile registry
-        (_, es11, _) = getTyEnCo api (read "1.1") profile registry
+printMod :: String -> [TypeName] -> [Enum'] -> [Command] -> IO ()
+printMod modName ts es cs= do
+  putStrLn "--------------------------------------------------------------------------------"
+  putStrLn "-- |"
+  putStrLn $ "-- Module      :  " ++ modName
+  putStrLn "-- Copyright   :  (c) Sven Panne 2015"
+  putStrLn "-- License     :  BSD3"
+  putStrLn "--"
+  putStrLn "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
+  putStrLn "-- Stability   :  stable"
+  putStrLn "-- Portability :  portable"
+  putStrLn "--"
+  putStrLn "--------------------------------------------------------------------------------"
+  putStrLn ""
+  putStrLn $ "module "++ modName ++ " ("
+  CM.unless (null ts) $ do
+    putStrLn "  -- * Types"
+    putStr $ separate unTypeName ts
+    putStrLn $ if null es && null cs then "" else ","
+  CM.unless (null es) $ do
+    putStrLn "  -- * Enums"
+    putStr $ separate (unEnumName . enumName) es
+    putStrLn $ if null cs then "" else ","
+  CM.unless (null cs) $ do
+    putStrLn "  -- * Functions"
+    putStr $ separate (unCommandName . commandName) cs
+    putStrLn ""
+  putStrLn ") where"
+  putStrLn ""
+  CM.unless (null ts) $
+    putStrLn "import Graphics.Rendering.OpenGL.Raw.Types"
+  CM.unless (null es) $
+    putStrLn "import Graphics.Rendering.OpenGL.Raw.Tokens"
+  CM.unless (null cs) $
+    putStrLn "import Graphics.Rendering.OpenGL.Raw.Functions"
 
-getTyEnCo :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
-getTyEnCo api version profile registry = (ts', es, cs)
+-- Annoyingly enough, the OpenGL registry doesn't contain any enums for
+-- OpenGL 1.0, so let's just use the OpenGL 1.1 ones. Furthermore, features
+-- don't explicitly list the types referenced by commands, so we add them.
+fixedReplay :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
+fixedReplay api version profile registry
+  | api == API "gl" && version == read "1.0" = (ts', es11, cs)
+  | otherwise = (ts', es, cs)
+  where (ts, es, cs) = replay api version profile registry
+        (_, es11, _) = replay api (read "1.1") profile registry
+        ts' = S.toList . S.unions  $ S.fromList ts : map referencedTypes cs
+
+-- Here is the heart of the feature construction logic: Chronologically replay
+-- the whole version history for the given API/version/profile triple.
+replay :: API -> Version -> ProfileName -> Registry -> ([TypeName],[Enum'],[Command])
+replay api version profile registry =
+  executeModifications api profile registry modifications
+  where modifications = concatMap modificationsFor history
+        modificationsFor = flip lookup' (features registry)
+        history = L.sort [ key
+                         | key@(a,v) <- M.keys (features registry)
+                         , a == api
+                         , v <= version ]
+
+executeModifications :: API -> ProfileName -> Registry -> [Modification] -> ([TypeName], [Enum'], [Command])
+executeModifications api profile registry modifications = (ts, es, cs)
   where ts = [ n | TypeElement n <- lst ]
         es = [ e | EnumElement n <- lst
                  , e <- lookup' n (enums registry)
                  , api `matches` enumAPI e ]
         cs = [ lookup' n (commands registry) | CommandElement n <- lst ]
-        -- Features don't explicitly list the types referenced by commands.
-        ts' = S.toList . S.unions  $ S.fromList ts : map referencedTypes cs
-        lst = S.toList $ interfaceElementsFor api version profile registry
+        lst = S.toList $ interfaceElementsFor profile modifications
 
--- Here is the heart of the feature construction logic: Chronologically replay
--- the whole version history for the given API/version/profile triple.
-interfaceElementsFor :: API -> Version -> ProfileName -> Registry -> S.Set InterfaceElement
-interfaceElementsFor api version profile registry =
+interfaceElementsFor :: ProfileName -> [Modification] -> S.Set InterfaceElement
+interfaceElementsFor profile modifications =
   foldl (flip ($)) S.empty modificationsFor
   where modificationsFor =
           [ op (modificationKind m) ie
-          | key <- L.sort keys
-          , m <- lookup' key (features registry)
+          | m <- modifications
           , profile `matches` modificationProfile m
           , ie <- modificationInterfaceElements m ]
-        keys = [ key
-               | key@(a,v) <- M.keys (features registry)
-               , a == api
-               , v <= version ]
         op Require = S.insert
         op Remove = S.delete
 
