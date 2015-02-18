@@ -1,37 +1,23 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_compression_latc extension
--- not already in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/EXT/texture_compression_latc.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/texture_compression_latc.txt EXT_texture_compression_latc> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC (
-   -- * Tokens
-   gl_COMPRESSED_LUMINANCE_LATC1,
-   gl_COMPRESSED_SIGNED_LUMINANCE_LATC1,
-   gl_COMPRESSED_LUMINANCE_ALPHA_LATC2,
-   gl_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2
+  -- * Enums
+  gl_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT,
+  gl_COMPRESSED_LUMINANCE_LATC1_EXT,
+  gl_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT,
+  gl_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_COMPRESSED_LUMINANCE_LATC1 :: GLenum
-gl_COMPRESSED_LUMINANCE_LATC1 = 0x8C70
-
-gl_COMPRESSED_SIGNED_LUMINANCE_LATC1 :: GLenum
-gl_COMPRESSED_SIGNED_LUMINANCE_LATC1 = 0x8C71
-
-gl_COMPRESSED_LUMINANCE_ALPHA_LATC2 :: GLenum
-gl_COMPRESSED_LUMINANCE_ALPHA_LATC2 = 0x8C72
-
-gl_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2 :: GLenum
-gl_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2 = 0x8C73
+import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -1,26 +1,25 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_polygon_offset extension, see
---  <http://www.opengl.org/registry/specs/EXT/polygon_offset.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/polygon_offset.txt EXT_polygon_offset> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset (
-   -- * Functions
-   glPolygonOffset,
-   -- * Tokens
-   gl_POLYGON_OFFSET_BIAS
+  -- * Enums
+  gl_POLYGON_OFFSET_BIAS_EXT,
+  gl_POLYGON_OFFSET_EXT,
+  gl_POLYGON_OFFSET_FACTOR_EXT,
+  -- * Functions
+  glPolygonOffsetEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_POLYGON_OFFSET_BIAS :: GLenum
-gl_POLYGON_OFFSET_BIAS = 0x8039
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

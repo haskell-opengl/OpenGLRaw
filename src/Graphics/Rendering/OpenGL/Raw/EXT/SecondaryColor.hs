@@ -1,45 +1,45 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_secondary_color extension, see
--- <http://www.opengl.org/registry/specs/EXT/secondary_color.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/secondary_color.txt EXT_secondary_color> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor (
-   -- * Functions
-   glSecondaryColor3b,
-   glSecondaryColor3s,
-   glSecondaryColor3i,
-   glSecondaryColor3f,
-   glSecondaryColor3d,
-   glSecondaryColor3ub,
-   glSecondaryColor3us,
-   glSecondaryColor3ui,
-   glSecondaryColor3bv,
-   glSecondaryColor3sv,
-   glSecondaryColor3iv,
-   glSecondaryColor3fv,
-   glSecondaryColor3dv,
-   glSecondaryColor3ubv,
-   glSecondaryColor3usv,
-   glSecondaryColor3uiv,
-   glSecondaryColorPointer,
-   -- * Tokens
-   gl_COLOR_SUM,
-   gl_CURRENT_SECONDARY_COLOR,
-   gl_SECONDARY_COLOR_ARRAY_SIZE,
-   gl_SECONDARY_COLOR_ARRAY_TYPE,
-   gl_SECONDARY_COLOR_ARRAY_STRIDE,
-   gl_SECONDARY_COLOR_ARRAY_POINTER,
-   gl_SECONDARY_COLOR_ARRAY
+  -- * Enums
+  gl_COLOR_SUM_EXT,
+  gl_CURRENT_SECONDARY_COLOR_EXT,
+  gl_SECONDARY_COLOR_ARRAY_EXT,
+  gl_SECONDARY_COLOR_ARRAY_POINTER_EXT,
+  gl_SECONDARY_COLOR_ARRAY_SIZE_EXT,
+  gl_SECONDARY_COLOR_ARRAY_STRIDE_EXT,
+  gl_SECONDARY_COLOR_ARRAY_TYPE_EXT,
+  -- * Functions
+  glSecondaryColor3bEXT,
+  glSecondaryColor3bvEXT,
+  glSecondaryColor3dEXT,
+  glSecondaryColor3dvEXT,
+  glSecondaryColor3fEXT,
+  glSecondaryColor3fvEXT,
+  glSecondaryColor3iEXT,
+  glSecondaryColor3ivEXT,
+  glSecondaryColor3sEXT,
+  glSecondaryColor3svEXT,
+  glSecondaryColor3ubEXT,
+  glSecondaryColor3ubvEXT,
+  glSecondaryColor3uiEXT,
+  glSecondaryColor3uivEXT,
+  glSecondaryColor3usEXT,
+  glSecondaryColor3usvEXT,
+  glSecondaryColorPointerEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

@@ -1,40 +1,39 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_texture_compression extension, see
--- <http://www.opengl.org/registry/specs/ARB/texture_compression.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/texture_compression.txt ARB_texture_compression> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression (
-   -- * Functions
-   glCompressedTexImage3D,
-   glCompressedTexImage2D,
-   glCompressedTexImage1D,
-   glCompressedTexSubImage3D,
-   glCompressedTexSubImage2D,
-   glCompressedTexSubImage1D,
-   glGetCompressedTexImage,
-   -- * Tokens
-   gl_COMPRESSED_ALPHA,
-   gl_COMPRESSED_LUMINANCE,
-   gl_COMPRESSED_LUMINANCE_ALPHA,
-   gl_COMPRESSED_INTENSITY,
-   gl_COMPRESSED_RGB,
-   gl_COMPRESSED_RGBA,
-   gl_TEXTURE_COMPRESSION_HINT,
-   gl_TEXTURE_COMPRESSED_IMAGE_SIZE,
-   gl_TEXTURE_COMPRESSED,
-   gl_NUM_COMPRESSED_TEXTURE_FORMATS,
-   gl_COMPRESSED_TEXTURE_FORMATS
+  -- * Enums
+  gl_COMPRESSED_ALPHA_ARB,
+  gl_COMPRESSED_INTENSITY_ARB,
+  gl_COMPRESSED_LUMINANCE_ALPHA_ARB,
+  gl_COMPRESSED_LUMINANCE_ARB,
+  gl_COMPRESSED_RGBA_ARB,
+  gl_COMPRESSED_RGB_ARB,
+  gl_COMPRESSED_TEXTURE_FORMATS_ARB,
+  gl_NUM_COMPRESSED_TEXTURE_FORMATS_ARB,
+  gl_TEXTURE_COMPRESSED_ARB,
+  gl_TEXTURE_COMPRESSED_IMAGE_SIZE_ARB,
+  gl_TEXTURE_COMPRESSION_HINT_ARB,
+  -- * Functions
+  glCompressedTexImage1DARB,
+  glCompressedTexImage2DARB,
+  glCompressedTexImage3DARB,
+  glCompressedTexSubImage1DARB,
+  glCompressedTexSubImage2DARB,
+  glCompressedTexSubImage3DARB,
+  glGetCompressedTexImageARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

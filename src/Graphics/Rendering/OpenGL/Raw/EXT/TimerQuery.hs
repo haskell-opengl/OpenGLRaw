@@ -1,28 +1,24 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions, tokens and type from the EXT_timer_query extension, see
--- <http://www.opengl.org/registry/specs/EXT/timer_query.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/timer_query.txt EXT_timer_query> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery (
-   -- * Functions
-   glGetQueryObjecti64v,
-   glGetQueryObjectui64v,
-   -- * Tokens
-   gl_TIME_ELAPSED,
-   -- * Types
-   GLint64,
-   GLuint64
+  -- * Enums
+  gl_TIME_ELAPSED_EXT,
+  -- * Functions
+  glGetQueryObjecti64vEXT,
+  glGetQueryObjectui64vEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Types
-import Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

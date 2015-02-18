@@ -1,36 +1,23 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_422_pixels extension, see
--- <http://www.opengl.org/registry/specs/EXT/422_pixels.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/422_pixels.txt EXT_422_pixels> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels (
-   -- * Tokens
-   gl_422,
-   gl_422_REV,
-   gl_422_AVERAGE,
-   gl_422_REV_AVERAGE
+  -- * Enums
+  gl_422_AVERAGE_EXT,
+  gl_422_EXT,
+  gl_422_REV_AVERAGE_EXT,
+  gl_422_REV_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_422 :: GLenum
-gl_422 = 0x80CC
-
-gl_422_REV :: GLenum
-gl_422_REV = 0x80CD
-
-gl_422_AVERAGE :: GLenum
-gl_422_AVERAGE = 0x80CE
-
-gl_422_REV_AVERAGE :: GLenum
-gl_422_REV_AVERAGE = 0x80CF
+import Graphics.Rendering.OpenGL.Raw.Tokens

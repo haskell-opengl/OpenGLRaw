@@ -1,36 +1,35 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.WindowPos
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions from the ARB_shadow extension, see
--- <http://www.opengl.org/registry/specs/ARB/shadow.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/window_pos.txt ARB_window_pos> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.WindowPos (
-   -- * Functions
-   glWindowPos2d,
-   glWindowPos2f,
-   glWindowPos2i,
-   glWindowPos2s,
-   glWindowPos2dv,
-   glWindowPos2fv,
-   glWindowPos2iv,
-   glWindowPos2sv,
-   glWindowPos3d,
-   glWindowPos3f,
-   glWindowPos3i,
-   glWindowPos3s,
-   glWindowPos3dv,
-   glWindowPos3fv,
-   glWindowPos3iv,
-   glWindowPos3sv
+  -- * Functions
+  glWindowPos2dARB,
+  glWindowPos2dvARB,
+  glWindowPos2fARB,
+  glWindowPos2fvARB,
+  glWindowPos2iARB,
+  glWindowPos2ivARB,
+  glWindowPos2sARB,
+  glWindowPos2svARB,
+  glWindowPos3dARB,
+  glWindowPos3dvARB,
+  glWindowPos3fARB,
+  glWindowPos3fvARB,
+  glWindowPos3iARB,
+  glWindowPos3ivARB,
+  glWindowPos3sARB,
+  glWindowPos3svARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Functions

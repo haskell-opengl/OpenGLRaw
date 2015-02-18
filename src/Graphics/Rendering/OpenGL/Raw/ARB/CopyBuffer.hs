@@ -1,27 +1,24 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_copy_buffer extension, see
--- <http://www.opengl.org/registry/specs/ARB/copy_buffer.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/copy_buffer.txt ARB_copy_buffer> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer (
-   -- * Functions
-   glCopyBufferSubData,
-   -- * Tokens
-   gl_COPY_READ_BUFFER_BINDING,
-   gl_COPY_READ_BUFFER,
-   gl_COPY_WRITE_BUFFER_BINDING,
-   gl_COPY_WRITE_BUFFER
+  -- * Enums
+  gl_COPY_READ_BUFFER,
+  gl_COPY_WRITE_BUFFER,
+  -- * Functions
+  glCopyBufferSubData
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

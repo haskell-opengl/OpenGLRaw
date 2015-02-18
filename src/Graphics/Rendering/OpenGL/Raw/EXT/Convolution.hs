@@ -1,54 +1,54 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.Convolution
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_convolution extension, see
--- <http://www.opengl.org/registry/specs/EXT/convolution.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/convolution.txt EXT_convolution> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Convolution (
-   -- * Functions
-   glConvolutionFilter1D,
-   glConvolutionFilter2D,
-   glCopyConvolutionFilter1D,
-   glCopyConvolutionFilter2D,
-   glGetConvolutionFilter,
-   glSeparableFilter2D,
-   glGetSeparableFilter,
-   glConvolutionParameteri,
-   glConvolutionParameteriv,
-   glConvolutionParameterf,
-   glConvolutionParameterfv,
-   glGetConvolutionParameteriv,
-   glGetConvolutionParameterfv,
-   -- * Tokens
-   gl_CONVOLUTION_1D,
-   gl_CONVOLUTION_2D,
-   gl_SEPARABLE_2D,
-   gl_CONVOLUTION_BORDER_MODE,
-   gl_CONVOLUTION_FILTER_SCALE,
-   gl_CONVOLUTION_FILTER_BIAS,
-   gl_REDUCE,
-   gl_CONVOLUTION_FORMAT,
-   gl_CONVOLUTION_WIDTH,
-   gl_CONVOLUTION_HEIGHT,
-   gl_MAX_CONVOLUTION_WIDTH,
-   gl_MAX_CONVOLUTION_HEIGHT,
-   gl_POST_CONVOLUTION_RED_SCALE,
-   gl_POST_CONVOLUTION_GREEN_SCALE,
-   gl_POST_CONVOLUTION_BLUE_SCALE,
-   gl_POST_CONVOLUTION_ALPHA_SCALE,
-   gl_POST_CONVOLUTION_RED_BIAS,
-   gl_POST_CONVOLUTION_GREEN_BIAS,
-   gl_POST_CONVOLUTION_BLUE_BIAS,
-   gl_POST_CONVOLUTION_ALPHA_BIAS
+  -- * Enums
+  gl_CONVOLUTION_1D_EXT,
+  gl_CONVOLUTION_2D_EXT,
+  gl_CONVOLUTION_BORDER_MODE_EXT,
+  gl_CONVOLUTION_FILTER_BIAS_EXT,
+  gl_CONVOLUTION_FILTER_SCALE_EXT,
+  gl_CONVOLUTION_FORMAT_EXT,
+  gl_CONVOLUTION_HEIGHT_EXT,
+  gl_CONVOLUTION_WIDTH_EXT,
+  gl_MAX_CONVOLUTION_HEIGHT_EXT,
+  gl_MAX_CONVOLUTION_WIDTH_EXT,
+  gl_POST_CONVOLUTION_ALPHA_BIAS_EXT,
+  gl_POST_CONVOLUTION_ALPHA_SCALE_EXT,
+  gl_POST_CONVOLUTION_BLUE_BIAS_EXT,
+  gl_POST_CONVOLUTION_BLUE_SCALE_EXT,
+  gl_POST_CONVOLUTION_GREEN_BIAS_EXT,
+  gl_POST_CONVOLUTION_GREEN_SCALE_EXT,
+  gl_POST_CONVOLUTION_RED_BIAS_EXT,
+  gl_POST_CONVOLUTION_RED_SCALE_EXT,
+  gl_REDUCE_EXT,
+  gl_SEPARABLE_2D_EXT,
+  -- * Functions
+  glConvolutionFilter1DEXT,
+  glConvolutionFilter2DEXT,
+  glConvolutionParameterfEXT,
+  glConvolutionParameterfvEXT,
+  glConvolutionParameteriEXT,
+  glConvolutionParameterivEXT,
+  glCopyConvolutionFilter1DEXT,
+  glCopyConvolutionFilter2DEXT,
+  glGetConvolutionFilterEXT,
+  glGetConvolutionParameterfvEXT,
+  glGetConvolutionParameterivEXT,
+  glGetSeparableFilterEXT,
+  glSeparableFilter2DEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

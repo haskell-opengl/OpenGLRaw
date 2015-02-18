@@ -1,21 +1,20 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_rescale_normal extension, see
--- <http://www.opengl.org/registry/specs/EXT/rescale_normal.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/rescale_normal.txt EXT_rescale_normal> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal (
-   -- * Tokens
-   gl_RESCALE_NORMAL
+  -- * Enums
+  gl_RESCALE_NORMAL_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Tokens

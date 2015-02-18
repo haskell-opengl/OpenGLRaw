@@ -1,42 +1,40 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_env_combine extension not
--- already in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/EXT/texture_env_combine.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/texture_env_combine.txt EXT_texture_env_combine> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine (
-   -- * Tokens
-   gl_COMBINE,
-   gl_COMBINE_RGB,
-   gl_COMBINE_ALPHA,
-   gl_SOURCE0_RGB,
-   gl_SOURCE1_RGB,
-   gl_SOURCE2_RGB,
-   gl_SOURCE0_ALPHA,
-   gl_SOURCE1_ALPHA,
-   gl_SOURCE2_ALPHA,
-   gl_OPERAND0_RGB,
-   gl_OPERAND1_RGB,
-   gl_OPERAND2_RGB,
-   gl_OPERAND0_ALPHA,
-   gl_OPERAND1_ALPHA,
-   gl_OPERAND2_ALPHA,
-   gl_RGB_SCALE,
-   gl_ADD_SIGNED,
-   gl_INTERPOLATE,
-   gl_CONSTANT,
-   gl_PRIMARY_COLOR,
-   gl_PREVIOUS
+  -- * Enums
+  gl_ADD_SIGNED_EXT,
+  gl_COMBINE_ALPHA_EXT,
+  gl_COMBINE_EXT,
+  gl_COMBINE_RGB_EXT,
+  gl_CONSTANT_EXT,
+  gl_INTERPOLATE_EXT,
+  gl_OPERAND0_ALPHA_EXT,
+  gl_OPERAND0_RGB_EXT,
+  gl_OPERAND1_ALPHA_EXT,
+  gl_OPERAND1_RGB_EXT,
+  gl_OPERAND2_ALPHA_EXT,
+  gl_OPERAND2_RGB_EXT,
+  gl_PREVIOUS_EXT,
+  gl_PRIMARY_COLOR_EXT,
+  gl_RGB_SCALE_EXT,
+  gl_SOURCE0_ALPHA_EXT,
+  gl_SOURCE0_RGB_EXT,
+  gl_SOURCE1_ALPHA_EXT,
+  gl_SOURCE1_RGB_EXT,
+  gl_SOURCE2_ALPHA_EXT,
+  gl_SOURCE2_RGB_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Tokens

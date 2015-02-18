@@ -1,48 +1,26 @@
-{-# LANGUAGE CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the NV_framebuffer_multisample_coverage
--- extension, see
--- <http://www.opengl.org/registry/specs/NV/framebuffer_multisample_coverage.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/framebuffer_multisample_coverage.txt NV_framebuffer_multisample_coverage> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage (
-   -- * Functions
-   glRenderbufferStorageMultisampleCoverage,
-   -- * Tokens
-   gl_RENDERBUFFER_COVERAGE_SAMPLES,
-   gl_RENDERBUFFER_COLOR_SAMPLES,
-   gl_MAX_MULTISAMPLE_COVERAGE_MODES,
-   gl_MULTISAMPLE_COVERAGE_MODES
+  -- * Enums
+  gl_MAX_MULTISAMPLE_COVERAGE_MODES_NV,
+  gl_MULTISAMPLE_COVERAGE_MODES_NV,
+  gl_RENDERBUFFER_COLOR_SAMPLES_NV,
+  gl_RENDERBUFFER_COVERAGE_SAMPLES_NV,
+  -- * Functions
+  glRenderbufferStorageMultisampleCoverageNV
 ) where
 
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Types
-import Foreign.Ptr ( FunPtr )
-import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
-import System.IO.Unsafe ( unsafePerformIO )
-
-#include "HsOpenGLRaw.h"
-
-EXTENSION_ENTRY(dyn_glRenderbufferStorageMultisampleCoverage,ptr_glRenderbufferStorageMultisampleCoverage,"glRenderbufferStorageMultisampleCoverage",glRenderbufferStorageMultisampleCoverage,GLenum -> GLsizei -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
-
-gl_RENDERBUFFER_COVERAGE_SAMPLES :: GLenum
-gl_RENDERBUFFER_COVERAGE_SAMPLES = 0x8CAB
-
-gl_RENDERBUFFER_COLOR_SAMPLES :: GLenum
-gl_RENDERBUFFER_COLOR_SAMPLES = 0x8E10
-
-gl_MAX_MULTISAMPLE_COVERAGE_MODES :: GLenum
-gl_MAX_MULTISAMPLE_COVERAGE_MODES = 0x8E11
-
-gl_MULTISAMPLE_COVERAGE_MODES :: GLenum
-gl_MULTISAMPLE_COVERAGE_MODES = 0x8E12
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

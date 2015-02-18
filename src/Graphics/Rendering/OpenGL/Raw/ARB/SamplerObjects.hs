@@ -1,38 +1,36 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
--- Copyright   :  (c) Sven Panne 2014
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_sampler_objects extension, see
--- <http://www.opengl.org/registry/specs/ARB/sampler_objects.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/sampler_objects.txt ARB_sampler_objects> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects (
-   -- * Functions
-   glGenSamplers,
-   glDeleteSamplers,
-   glIsSampler,
-   glBindSampler,
-   glSamplerParameteri,
-   glSamplerParameteriv,
-   glSamplerParameterf,
-   glSamplerParameterfv,
-   glSamplerParameterIiv,
-   glSamplerParameterIuiv,
-   glGetSamplerParameteriv,
-   glGetSamplerParameterIiv,
-   glGetSamplerParameterfv,
-   glGetSamplerParameterIuiv,
-
-   -- * Tokens
-   gl_SAMPLER_BINDING
+  -- * Enums
+  gl_SAMPLER_BINDING,
+  -- * Functions
+  glBindSampler,
+  glDeleteSamplers,
+  glGenSamplers,
+  glGetSamplerParameterIiv,
+  glGetSamplerParameterIuiv,
+  glGetSamplerParameterfv,
+  glGetSamplerParameteriv,
+  glIsSampler,
+  glSamplerParameterIiv,
+  glSamplerParameterIuiv,
+  glSamplerParameterf,
+  glSamplerParameterfv,
+  glSamplerParameteri,
+  glSamplerParameteriv
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

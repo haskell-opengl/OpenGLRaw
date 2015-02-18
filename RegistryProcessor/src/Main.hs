@@ -6,154 +6,117 @@ import qualified Data.List as L
 import qualified Data.Map as M
 import qualified Data.Maybe as DM
 import qualified Data.Set as S
-import qualified System.Console.GetOpt as G
+import qualified System.Directory as D
 import qualified System.Environment as E
+import qualified System.FilePath as F
+import qualified System.IO as SI
 import MangledRegistry
 import ManPages
 
-data Option
-  = PrintFeature
-  | PrintTokens
-  | PrintFunctions
-  | PrintExtensions
-  | UseApi API
-  | UseVersion Version
-  | UseProfile ProfileName
-  deriving Eq
-
-options :: [G.OptDescr Option]
-options =
-  [ G.Option ['F'] ["print-feature"] (G.NoArg PrintFeature) "print feature"
-  , G.Option ['t'] ["print-tokens"] (G.NoArg PrintTokens) "print tokens"
-  , G.Option ['f'] ["print-functions"] (G.NoArg PrintFunctions) "print functions"
-  , G.Option ['x'] ["print-extensions"] (G.NoArg PrintExtensions) "print extensions"
-  , G.Option ['a'] ["api"] (G.ReqArg (UseApi . API) "API") "extract features for API (default: gl)"
-  , G.Option ['v'] ["version"] (G.ReqArg (UseVersion . read) "VERSION") "extract features for version (default: 4.5)"
-  , G.Option ['p'] ["profile"] (G.ReqArg (UseProfile . ProfileName) "PROFILE") "extract features for profile (default: compatibility)" ]
-
-getPaths :: IO ([Option], FilePath)
-getPaths = do
-  args <- E.getArgs
-  case G.getOpt G.Permute options args of
-    (opts, [path], []) -> return (opts, path)
-    (_, _, errs) -> do
-       n <- E.getProgName
-       let header = "Usage: " ++ n ++ " [OPTION]... file"
-       ioError (userError (concat errs ++ G.usageInfo header options))
-
 main :: IO ()
 main = do
-  (opts, path) <- getPaths
-  let api = head ([ a | UseApi a <- opts ] ++ [ API "gl" ])
-      version = head ([ v | UseVersion v <- opts ] ++ [ read "4.5" ])
-      profile = head ([ p | UseProfile p <- opts ] ++ [ ProfileName "compatibility" ])
-  res <- fmap parseRegistry $ readFile path
+  [registryPath] <- E.getArgs
+  let api = API "gl"
+  res <- fmap parseRegistry $ readFile registryPath
   case res of
-    Left msg -> putStrLn msg
+    Left msg -> SI.hPutStrLn SI.stderr msg
     Right registry -> do
-      CM.when (PrintFeature `elem` opts) $ do
-        let relName = capitalize (unProfileName profile) ++
-                      show (major version) ++ show (minor version)
-            modName = buildModulePath Nothing [relName]
-        printMod modName $ fixedReplay api version profile registry
-      CM.when (PrintTokens `elem` opts) $ do
-        putStrLn "--------------------------------------------------------------------------------"
-        putStrLn "-- |"
-        putStrLn "-- Module      :  Graphics.Rendering.OpenGL.Raw.Tokens"
-        putStrLn "-- Copyright   :  (c) Sven Panne 2015"
-        putStrLn "-- License     :  BSD3"
-        putStrLn "--"
-        putStrLn "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
-        putStrLn "-- Stability   :  stable"
-        putStrLn "-- Portability :  portable"
-        putStrLn "--"
-        putStrLn "-- All enumeration tokens from the OpenGL registry, see"
-        putStrLn "-- <http://www.opengl.org/registry/>."
-        putStrLn "--"
-        putStrLn "--------------------------------------------------------------------------------"
-        putStrLn ""
-        putStrLn "module Graphics.Rendering.OpenGL.Raw.Tokens where"
-        putStrLn ""
-        putStrLn "import Graphics.Rendering.OpenGL.Raw.Types"
-        putStrLn ""
-        mapM_ (putStrLn . unlines . convertEnum)
-          [ e
-          | es <- M.elems (enums registry)
-          , e <- es
-          , api `matches` enumAPI e ]
-      CM.when (PrintFunctions `elem` opts) $ do
-        putStrLn "{-# LANGUAGE CPP #-}"
-        putStrLn "--------------------------------------------------------------------------------"
-        putStrLn "-- |"
-        putStrLn "-- Module      :  Graphics.Rendering.OpenGL.Raw.Functions"
-        putStrLn "-- Copyright   :  (c) Sven Panne 2015"
-        putStrLn "-- License     :  BSD3"
-        putStrLn "--"
-        putStrLn "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
-        putStrLn "-- Stability   :  stable"
-        putStrLn "-- Portability :  portable"
-        putStrLn "--"
-        putStrLn "-- All raw functions from the OpenGL registry, see"
-        putStrLn "-- <http://www.opengl.org/registry/>."
-        putStrLn "--"
-        putStrLn "--------------------------------------------------------------------------------"
-        putStrLn ""
-        putStrLn "module Graphics.Rendering.OpenGL.Raw.Functions ("
-        putStrLn . separate unCommandName . M.keys . commands $registry
-        putStrLn ") where"
-        putStrLn ""
-        putStrLn "import Foreign.C.Types"
-        putStrLn "import Foreign.Marshal.Error ( throwIf )"
-        putStrLn "import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )"
-        putStrLn "import System.IO.Unsafe ( unsafePerformIO )"
-        putStrLn ""
-        putStrLn "import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getProcAddress )"
-        putStrLn "import Graphics.Rendering.OpenGL.Raw.Types"
-        putStrLn ""
-        putStrLn "getCommand :: String -> IO (FunPtr a)"
-        putStrLn "getCommand cmd ="
-        putStrLn "  throwIfNullFunPtr (\"unknown OpenGL command \" ++ cmd) $ getProcAddress cmd"
-        putStrLn ""
-        putStrLn "throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)"
-        putStrLn "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
-        putStrLn ""
-        mapM_ (putStrLn . showCommand api) (M.elems (commands registry))
-      CM.when (PrintExtensions `elem` opts) $ do
-        -- only consider non-empty supported extensions/modifications for the given API
-        let supportedExtensions =
-              [ nameAndMods
-              | ext <- extensions registry
-              , api `supports` extensionSupported ext
-              , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
-        CM.forM_ supportedExtensions $ \(n,mods) -> do
-          let profileAndModName =
-                if isProfileDependent (n,mods)
-                  then [(ProfileName p, extendExtensionName n p)
-                       | p <- ["core", "compatibility"] ]
-                  else [(profile, n)]
-          CM.forM_ profileAndModName $ \(prof, modName) -> do
-            printMod (mangleExtensionName modName) $
-              executeModifications api prof registry mods
+      printTokens api registry
+      printFunctions api registry
+      printExtensions api registry
+      CM.forM_ ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "2.0", "2.1"] $ \v ->
+        printFeature api (read v) (ProfileName "version") registry
+      CM.forM_ ["3.0", "3.1", "3.2", "3.3", "4.0", "4.1", "4.2", "4.3", "4.4", "4.5"] $ \v -> do
+        printFeature api (read v) (ProfileName "core") registry
+        printFeature api (read v) (ProfileName "compatibility") registry
 
-isProfileDependent :: (ExtensionName, [Modification]) -> Bool
-isProfileDependent = any (DM.isJust . modificationProfile) . snd
+printFeature :: API -> Version -> ProfileName -> Registry -> IO ()
+printFeature api version profile registry = do
+  let relName = capitalize (unProfileName profile) ++
+                show (major version) ++ show (minor version)
+  printExtension Nothing [relName] $ fixedReplay api version profile registry
+
+printTokens :: API -> Registry -> IO ()
+printTokens api registry = do
+  let comment =
+        ["All enumeration tokens from the",
+         "<http://www.opengl.org/registry/ OpenGL registry>."]
+  startModule Nothing ["Tokens"] Nothing comment $ \moduleName h -> do
+    SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
+    SI.hPutStrLn h ""
+    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+    SI.hPutStrLn h ""
+    mapM_ (SI.hPutStrLn h . unlines . convertEnum)
+      [ e
+      | es <- M.elems (enums registry)
+      , e <- es
+      , api `matches` enumAPI e ]
+
+printFunctions :: API -> Registry -> IO ()
+printFunctions api registry = do
+  let comment =
+        ["All raw functions from the",
+         "<http://www.opengl.org/registry/ OpenGL registry>."]
+  startModule Nothing ["Functions"] (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
+    SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
+    SI.hPutStrLn h . separate unCommandName . M.keys . commands $registry
+    SI.hPutStrLn h ") where"
+    SI.hPutStrLn h ""
+    SI.hPutStrLn h "import Foreign.C.Types"
+    SI.hPutStrLn h "import Foreign.Marshal.Error ( throwIf )"
+    SI.hPutStrLn h "import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )"
+    SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"
+    SI.hPutStrLn h ""
+    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getProcAddress )"
+    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+    SI.hPutStrLn h ""
+    SI.hPutStrLn h "getCommand :: String -> IO (FunPtr a)"
+    SI.hPutStrLn h "getCommand cmd ="
+    SI.hPutStrLn h "  throwIfNullFunPtr (\"unknown OpenGL command \" ++ cmd) $ getProcAddress cmd"
+    SI.hPutStrLn h ""
+    SI.hPutStrLn h "throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)"
+    SI.hPutStrLn h "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
+    SI.hPutStrLn h ""
+    mapM_ (SI.hPutStrLn h . showCommand api) (M.elems (commands registry))
+
+printExtensions :: API -> Registry -> IO ()
+printExtensions api registry = do
+  -- only consider non-empty supported extensions/modifications for the given API
+  let supportedExtensions =
+        [ nameAndMods
+        | ext <- extensions registry
+        , api `supports` extensionSupported ext
+        , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
+  CM.forM_ supportedExtensions $ \(n,mods) -> do
+    let profileAndModName =
+          if any isProfileDependent mods
+            then [(ProfileName p, extendExtensionName n p)
+                 | p <- ["core", "compatibility"] ]
+            else [(ProfileName "core", n)]  -- the actual profile doesn't matter
+    CM.forM_ profileAndModName $ \(prof, modName) -> do
+      let ("GL":vendor:extWords) = splitBy (== '_') (unExtensionName modName)
+      printExtension (Just vendor) extWords $
+        executeModifications api prof registry mods
+
+isProfileDependent :: Modification -> Bool
+isProfileDependent = DM.isJust . modificationProfile
 
 extendExtensionName :: ExtensionName -> String -> ExtensionName
 extendExtensionName n profile =
   ExtensionName . (++ ("_" ++ profile)). unExtensionName $ n
 
-mangleExtensionName :: ExtensionName -> String
-mangleExtensionName n =  buildModulePath (Just vendor) extWords
-   where ("GL":vendor:extWords) = splitBy (== '_') (unExtensionName n)
-
-buildModulePath :: Maybe String -> [String] -> String
-buildModulePath mbVendor extWords =
-   modulePath ++ "." ++
-   maybe "" (\vendor -> fixVendor vendor ++ ".") mbVendor ++
-   concat (zipWith fixExtensionWord extWords [0 ..])
-
-modulePath :: String
-modulePath = "Graphics.Rendering.OpenGL.Raw"
+startModule :: Maybe String -> [String] -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
+startModule mbVendor extWords mbPragma comments action = do
+  let moduleNameParts =
+        ["Graphics", "Rendering", "OpenGL", "Raw"] ++
+        maybe [] (\vendor -> [fixVendor vendor]) mbVendor ++
+        [concat (zipWith fixExtensionWord extWords [0 ..])]
+      path = F.joinPath moduleNameParts `F.addExtension` "hs"
+      moduleName = L.intercalate "." moduleNameParts
+  D.createDirectoryIfMissing True $ F.takeDirectory path
+  SI.withFile path SI.WriteMode $ \h -> do
+    printModuleHeader h mbPragma moduleName comments
+    action moduleName h
 
 fixVendor :: String -> String
 fixVendor v = case v of
@@ -176,6 +139,7 @@ fixExtensionWord w  pos = case w of
   "cmyka" -> "CMYKA"
   "dxt1" -> "DXT1"
   "es" -> "ES"
+  "ffd" -> "FFD"
   "fp64" -> "FP64"
   "gpu" -> "GPU"
   "hdr" -> "HDR"
@@ -216,41 +180,57 @@ capitalize str = C.toUpper (head str) : map C.toLower (tail str)
 separate :: (a -> String) -> [a] -> String
 separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
-printMod :: String -> ([TypeName], [Enum'], [Command]) -> IO ()
-printMod modName (ts, es, cs) = do
-  putStrLn "--------------------------------------------------------------------------------"
-  putStrLn "-- |"
-  putStrLn $ "-- Module      :  " ++ modName
-  putStrLn "-- Copyright   :  (c) Sven Panne 2015"
-  putStrLn "-- License     :  BSD3"
-  putStrLn "--"
-  putStrLn "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
-  putStrLn "-- Stability   :  stable"
-  putStrLn "-- Portability :  portable"
-  putStrLn "--"
-  putStrLn "--------------------------------------------------------------------------------"
-  putStrLn ""
-  putStrLn $ "module "++ modName ++ " ("
-  CM.unless (null ts) $ do
-    putStrLn "  -- * Types"
-    putStr $ separate unTypeName ts
-    putStrLn $ if null es && null cs then "" else ","
-  CM.unless (null es) $ do
-    putStrLn "  -- * Enums"
-    putStr $ separate (unEnumName . enumName) es
-    putStrLn $ if null cs then "" else ","
-  CM.unless (null cs) $ do
-    putStrLn "  -- * Functions"
-    putStr $ separate (unCommandName . commandName) cs
-    putStrLn ""
-  putStrLn ") where"
-  putStrLn ""
-  CM.unless (null ts) $
-    putStrLn "import Graphics.Rendering.OpenGL.Raw.Types"
-  CM.unless (null es) $
-    putStrLn "import Graphics.Rendering.OpenGL.Raw.Tokens"
-  CM.unless (null cs) $
-    putStrLn "import Graphics.Rendering.OpenGL.Raw.Functions"
+-- Note that we handle features just like extensions.
+printExtension :: Maybe String -> [String] -> ([TypeName], [Enum'], [Command]) -> IO ()
+printExtension mbVendor extWords (ts, es, cs) = do
+  let comment = maybe [] (makeExtensionURL extWords) mbVendor
+  startModule mbVendor extWords Nothing comment $ \moduleName h -> do
+    SI.hPutStrLn h $ "module "++ moduleName ++ " ("
+    CM.unless (null ts) $ do
+      SI.hPutStrLn h "  -- * Types"
+      SI.hPutStr h $ separate unTypeName ts
+      SI.hPutStrLn h $ if null es && null cs then "" else ","
+    CM.unless (null es) $ do
+      SI.hPutStrLn h "  -- * Enums"
+      SI.hPutStr h $ separate (unEnumName . enumName) es
+      SI.hPutStrLn h $ if null cs then "" else ","
+    CM.unless (null cs) $ do
+      SI.hPutStrLn h "  -- * Functions"
+      SI.hPutStr h $ separate (unCommandName . commandName) cs
+      SI.hPutStrLn h ""
+    SI.hPutStrLn h ") where"
+    SI.hPutStrLn h ""
+    CM.unless (null ts) $
+      SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+    CM.unless (null es) $
+      SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Tokens"
+    CM.unless (null cs) $
+      SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Functions"
+
+makeExtensionURL :: [String] -> String -> [String]
+makeExtensionURL extWords vendor =
+  ["The <https://www.opengl.org/registry/specs/" ++
+   vendor ++ "/" ++ L.intercalate "_" extWords ++ ".txt " ++
+   L.intercalate "_" (vendor : extWords) ++ "> extension."]
+
+printModuleHeader :: SI.Handle -> Maybe String -> String -> [String] -> IO ()
+printModuleHeader h mbPragma moduleName comments = do
+  maybe (return ()) (SI.hPutStrLn h) mbPragma
+  SI.hPutStrLn h "--------------------------------------------------------------------------------"
+  SI.hPutStrLn h "-- |"
+  SI.hPutStrLn h $ "-- Module      :  " ++ moduleName
+  SI.hPutStrLn h "-- Copyright   :  (c) Sven Panne 2015"
+  SI.hPutStrLn h "-- License     :  BSD3"
+  SI.hPutStrLn h "--"
+  SI.hPutStrLn h "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
+  SI.hPutStrLn h "-- Stability   :  stable"
+  SI.hPutStrLn h "-- Portability :  portable"
+  SI.hPutStrLn h "--"
+  CM.unless (null comments) $ do
+    mapM_ (SI.hPutStrLn h . ("-- " ++)) comments
+    SI.hPutStrLn h "--"
+  SI.hPutStrLn h "--------------------------------------------------------------------------------"
+  SI.hPutStrLn h ""
 
 -- Annoyingly enough, the OpenGL registry doesn't contain any enums for
 -- OpenGL 1.0, so let's just use the OpenGL 1.1 ones. Furthermore, features
@@ -318,7 +298,7 @@ showCommand api c =
   showString ("  :: " ++ signature True) .
   showString (name ++ " = " ++ dyn_name ++ " " ++ ptr_name ++ "\n\n") .
 
-  showString ("foreign import CALLCONV unsafe \"dynamic\" " ++ dyn_name ++ "\n" ++
+  showString ("foreign import CALLCONV \"dynamic\" " ++ dyn_name ++ "\n" ++
               "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
               "  ->         " ++ compactSignature ++ "\n\n") .
 

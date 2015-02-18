@@ -1,28 +1,27 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.PointParameters
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_point_parameters extension, see
--- <http://www.opengl.org/registry/specs/ARB/point_parameters.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/point_parameters.txt ARB_point_parameters> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.PointParameters (
-   -- * Functions
-   glPointParameterf,
-   glPointParameterfv,
-   -- * Tokens
-   gl_POINT_SIZE_MIN,
-   gl_POINT_SIZE_MAX,
-   gl_POINT_FADE_THRESHOLD_SIZE,
-   gl_POINT_DISTANCE_ATTENUATION,
+  -- * Enums
+  gl_POINT_DISTANCE_ATTENUATION_ARB,
+  gl_POINT_FADE_THRESHOLD_SIZE_ARB,
+  gl_POINT_SIZE_MAX_ARB,
+  gl_POINT_SIZE_MIN_ARB,
+  -- * Functions
+  glPointParameterfARB,
+  glPointParameterfvARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

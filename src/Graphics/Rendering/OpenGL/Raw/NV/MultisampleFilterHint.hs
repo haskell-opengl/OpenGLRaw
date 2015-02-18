@@ -1,25 +1,20 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.MultisampleFilterHint
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the NV_multisample_filter_hint extension not
--- already in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/NV/multisample_filter_hint.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/multisample_filter_hint.txt NV_multisample_filter_hint> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.MultisampleFilterHint (
-   -- * Tokens
-   gl_MULTISAMPLE_FILTER_HINT
+  -- * Enums
+  gl_MULTISAMPLE_FILTER_HINT_NV
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_MULTISAMPLE_FILTER_HINT :: GLenum
-gl_MULTISAMPLE_FILTER_HINT = 0x8534
+import Graphics.Rendering.OpenGL.Raw.Tokens

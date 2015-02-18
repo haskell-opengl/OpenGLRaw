@@ -1,25 +1,21 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_framebuffer_sRGB extension not
--- already in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/EXT/framebuffer_sRGB.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/framebuffer_sRGB.txt EXT_framebuffer_sRGB> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB (
-   -- * Tokens
-   gl_FRAMEBUFFER_SRGB_CAPABLE
+  -- * Enums
+  gl_FRAMEBUFFER_SRGB_CAPABLE_EXT,
+  gl_FRAMEBUFFER_SRGB_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_FRAMEBUFFER_SRGB_CAPABLE :: GLenum
-gl_FRAMEBUFFER_SRGB_CAPABLE = 0x8DBA
+import Graphics.Rendering.OpenGL.Raw.Tokens

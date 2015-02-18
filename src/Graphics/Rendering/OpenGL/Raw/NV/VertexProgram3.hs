@@ -1,21 +1,20 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the NV_vertex_program3 extension, see
--- <http://www.opengl.org/registry/specs/NV/vertex_program3.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/vertex_program3.txt NV_vertex_program3> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3 (
-   -- * Tokens
-   gl_MAX_VERTEX_TEXTURE_IMAGE_UNITS
+  -- * Enums
+  gl_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.VertexShader
+import Graphics.Rendering.OpenGL.Raw.Tokens

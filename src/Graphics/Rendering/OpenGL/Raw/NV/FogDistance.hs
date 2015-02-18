@@ -1,35 +1,23 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.FogDistance
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the NV_fog_distance extension not already
--- in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/NV/fog_distance.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/fog_distance.txt NV_fog_distance> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FogDistance (
-   -- * Tokens
-   gl_FOG_DISTANCE_MODE,
-   gl_EYE_RADIAL,
-   gl_EYE_PLANE,
-   gl_EYE_PLANE_ABSOLUTE
+  -- * Enums
+  gl_EYE_PLANE,
+  gl_EYE_PLANE_ABSOLUTE_NV,
+  gl_EYE_RADIAL_NV,
+  gl_FOG_DISTANCE_MODE_NV
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_FOG_DISTANCE_MODE :: GLenum
-gl_FOG_DISTANCE_MODE = 0x855A
-
-gl_EYE_RADIAL :: GLenum
-gl_EYE_RADIAL = 0x855B
-
-gl_EYE_PLANE_ABSOLUTE :: GLenum
-gl_EYE_PLANE_ABSOLUTE = 0x855C
+import Graphics.Rendering.OpenGL.Raw.Tokens

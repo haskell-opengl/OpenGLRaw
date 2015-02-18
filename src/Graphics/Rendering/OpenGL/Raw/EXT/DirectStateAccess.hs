@@ -1,346 +1,279 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_direct_state_access extension not
--- already in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/EXT/direct_state_access.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/direct_state_access.txt EXT_direct_state_access> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess (
-   -- * Functions
-   glClientAttribDefault,
-   glPushClientAttribDefault,
-   glMatrixLoadf,
-   glMatrixLoadd,
-   glMatrixMultf,
-   glMatrixMultd,
-   glMatrixLoadIdentity,
-   glMatrixRotatef,
-   glMatrixRotated,
-   glMatrixScalef,
-   glMatrixScaled,
-   glMatrixTranslatef,
-   glMatrixTranslated,
-   glMatrixOrtho,
-   glMatrixFrustum,
-   glMatrixPush,
-   glMatrixPop,
-   glTextureParameteri,
-   glTextureParameteriv,
-   glTextureParameterf,
-   glTextureParameterfv,
-   glTextureImage1D,
-   glTextureImage2D,
-   glTextureSubImage1D,
-   glTextureSubImage2D,
-   glCopyTextureImage1D,
-   glCopyTextureImage2D,
-   glCopyTextureSubImage1D,
-   glCopyTextureSubImage2D,
-   glGetTextureImage,
-   glGetTextureParameterfv,
-   glGetTextureParameteriv,
-   glGetTextureLevelParameterfv,
-   glGetTextureLevelParameteriv,
-   glTextureImage3D,
-   glTextureSubImage3D,
-   glCopyTextureSubImage3D,
-   glBindMultiTexture,
-   glMultiTexCoordPointer,
-   glMultiTexEnvf,
-   glMultiTexEnvfv,
-   glMultiTexEnvi,
-   glMultiTexEnviv,
-   glMultiTexGend,
-   glMultiTexGendv,
-   glMultiTexGenf,
-   glMultiTexGenfv,
-   glMultiTexGeni,
-   glMultiTexGeniv,
-   glGetMultiTexEnvfv,
-   glGetMultiTexEnviv,
-   glGetMultiTexGendv,
-   glGetMultiTexGenfv,
-   glGetMultiTexGeniv,
-   glMultiTexParameteri,
-   glMultiTexParameteriv,
-   glMultiTexParameterf,
-   glMultiTexParameterfv,
-   glMultiTexImage1D,
-   glMultiTexImage2D,
-   glMultiTexSubImage1D,
-   glMultiTexSubImage2D,
-   glCopyMultiTexImage1D,
-   glCopyMultiTexImage2D,
-   glCopyMultiTexSubImage1D,
-   glCopyMultiTexSubImage2D,
-   glGetMultiTexImage,
-   glGetMultiTexParameterfv,
-   glGetMultiTexParameteriv,
-   glGetMultiTexLevelParameterfv,
-   glGetMultiTexLevelParameteriv,
-   glMultiTexImage3D,
-   glMultiTexSubImage3D,
-   glCopyMultiTexSubImage3D,
-   glEnableClientStateIndexed,
-   glDisableClientStateIndexed,
-   glGetFloatIndexedv,
-   glGetDoubleIndexedv,
-   glGetPointerIndexedv,
-   glEnableIndexed,
-   glDisableIndexed,
-   glIsEnabledIndexed,
-   glGetIntegerIndexedv,
-   glGetBooleanIndexedv,
-   glNamedProgramString,
-   glNamedProgramLocalParameter4d,
-   glNamedProgramLocalParameter4dv,
-   glNamedProgramLocalParameter4f,
-   glNamedProgramLocalParameter4fv,
-   glGetNamedProgramLocalParameterdv,
-   glGetNamedProgramLocalParameterfv,
-   glGetNamedProgramiv,
-   glGetNamedProgramString,
-   glCompressedTextureImage3D,
-   glCompressedTextureImage2D,
-   glCompressedTextureImage1D,
-   glCompressedTextureSubImage3D,
-   glCompressedTextureSubImage2D,
-   glCompressedTextureSubImage1D,
-   glGetCompressedTextureImage,
-   glCompressedMultiTexImage3D,
-   glCompressedMultiTexImage2D,
-   glCompressedMultiTexImage1D,
-   glCompressedMultiTexSubImage3D,
-   glCompressedMultiTexSubImage2D,
-   glCompressedMultiTexSubImage1D,
-   glGetCompressedMultiTexImage,
-   glMatrixLoadTransposef,
-   glMatrixLoadTransposed,
-   glMatrixMultTransposef,
-   glMatrixMultTransposed,
-   glNamedBufferData,
-   glNamedBufferSubData,
-   glMapNamedBuffer,
-   glUnmapNamedBuffer,
-   glGetNamedBufferParameteriv,
-   glGetNamedBufferPointerv,
-   glGetNamedBufferSubData,
-   glProgramUniform1f,
-   glProgramUniform2f,
-   glProgramUniform3f,
-   glProgramUniform4f,
-   glProgramUniform1i,
-   glProgramUniform2i,
-   glProgramUniform3i,
-   glProgramUniform4i,
-   glProgramUniform1fv,
-   glProgramUniform2fv,
-   glProgramUniform3fv,
-   glProgramUniform4fv,
-   glProgramUniform1iv,
-   glProgramUniform2iv,
-   glProgramUniform3iv,
-   glProgramUniform4iv,
-   glProgramUniformMatrix2fv,
-   glProgramUniformMatrix3fv,
-   glProgramUniformMatrix4fv,
-   glProgramUniformMatrix2x3fv,
-   glProgramUniformMatrix3x2fv,
-   glProgramUniformMatrix2x4fv,
-   glProgramUniformMatrix4x2fv,
-   glProgramUniformMatrix3x4fv,
-   glProgramUniformMatrix4x3fv,
-   glTextureBuffer,
-   glMultiTexBuffer,
-   glTextureParameterIiv,
-   glTextureParameterIuiv,
-   glGetTextureParameterIiv,
-   glGetTextureParameterIuiv,
-   glMultiTexParameterIiv,
-   glMultiTexParameterIuiv,
-   glGetMultiTexParameterIiv,
-   glGetMultiTexParameterIuiv,
-   glProgramUniform1ui,
-   glProgramUniform2ui,
-   glProgramUniform3ui,
-   glProgramUniform4ui,
-   glProgramUniform1uiv,
-   glProgramUniform2uiv,
-   glProgramUniform3uiv,
-   glProgramUniform4uiv,
-   glNamedProgramLocalParameters4fv,
-   glNamedProgramLocalParameterI4i,
-   glNamedProgramLocalParameterI4iv,
-   glNamedProgramLocalParametersI4iv,
-   glNamedProgramLocalParameterI4ui,
-   glNamedProgramLocalParameterI4uiv,
-   glNamedProgramLocalParametersI4uiv,
-   glGetNamedProgramLocalParameterIiv,
-   glGetNamedProgramLocalParameterIuiv,
-   glNamedRenderbufferStorage,
-   glGetNamedRenderbufferParameteriv,
-   glNamedRenderbufferStorageMultisample,
-   glNamedRenderbufferStorageMultisampleCoverage,
-   glCheckNamedFramebufferStatus,
-   glNamedFramebufferTexture1D,
-   glNamedFramebufferTexture2D,
-   glNamedFramebufferTexture3D,
-   glNamedFramebufferRenderbuffer,
-   glGetNamedFramebufferAttachmentParameteriv,
-   glGenerateTextureMipmap,
-   glGenerateMultiTexMipmap,
-   glFramebufferDrawBuffer,
-   glFramebufferDrawBuffers,
-   glFramebufferReadBuffer,
-   glGetFramebufferParameteriv,
-   glNamedFramebufferTexture,
-   glNamedFramebufferTextureLayer,
-   glNamedFramebufferTextureFace,
-   glTextureRenderbuffer,
-   glMultiTexRenderbuffer,
-   -- * Tokens
-   gl_PROGRAM_MATRIX,
-   gl_TRANSPOSE_PROGRAM_MATRIX,
-   gl_PROGRAM_MATRIX_STACK_DEPTH
+  -- * Enums
+  gl_PROGRAM_MATRIX_EXT,
+  gl_PROGRAM_MATRIX_STACK_DEPTH_EXT,
+  gl_TRANSPOSE_PROGRAM_MATRIX_EXT,
+  -- * Functions
+  glBindMultiTextureEXT,
+  glCheckNamedFramebufferStatusEXT,
+  glClearNamedBufferDataEXT,
+  glClearNamedBufferSubDataEXT,
+  glClientAttribDefaultEXT,
+  glCompressedMultiTexImage1DEXT,
+  glCompressedMultiTexImage2DEXT,
+  glCompressedMultiTexImage3DEXT,
+  glCompressedMultiTexSubImage1DEXT,
+  glCompressedMultiTexSubImage2DEXT,
+  glCompressedMultiTexSubImage3DEXT,
+  glCompressedTextureImage1DEXT,
+  glCompressedTextureImage2DEXT,
+  glCompressedTextureImage3DEXT,
+  glCompressedTextureSubImage1DEXT,
+  glCompressedTextureSubImage2DEXT,
+  glCompressedTextureSubImage3DEXT,
+  glCopyMultiTexImage1DEXT,
+  glCopyMultiTexImage2DEXT,
+  glCopyMultiTexSubImage1DEXT,
+  glCopyMultiTexSubImage2DEXT,
+  glCopyMultiTexSubImage3DEXT,
+  glCopyTextureImage1DEXT,
+  glCopyTextureImage2DEXT,
+  glCopyTextureSubImage1DEXT,
+  glCopyTextureSubImage2DEXT,
+  glCopyTextureSubImage3DEXT,
+  glDisableClientStateIndexedEXT,
+  glDisableClientStateiEXT,
+  glDisableIndexedEXT,
+  glDisableVertexArrayAttribEXT,
+  glDisableVertexArrayEXT,
+  glEnableClientStateIndexedEXT,
+  glEnableClientStateiEXT,
+  glEnableIndexedEXT,
+  glEnableVertexArrayAttribEXT,
+  glEnableVertexArrayEXT,
+  glFlushMappedNamedBufferRangeEXT,
+  glFramebufferDrawBufferEXT,
+  glFramebufferDrawBuffersEXT,
+  glFramebufferReadBufferEXT,
+  glGenerateMultiTexMipmapEXT,
+  glGenerateTextureMipmapEXT,
+  glGetBooleanIndexedvEXT,
+  glGetCompressedMultiTexImageEXT,
+  glGetCompressedTextureImageEXT,
+  glGetDoubleIndexedvEXT,
+  glGetDoublei_vEXT,
+  glGetFloatIndexedvEXT,
+  glGetFloati_vEXT,
+  glGetFramebufferParameterivEXT,
+  glGetIntegerIndexedvEXT,
+  glGetMultiTexEnvfvEXT,
+  glGetMultiTexEnvivEXT,
+  glGetMultiTexGendvEXT,
+  glGetMultiTexGenfvEXT,
+  glGetMultiTexGenivEXT,
+  glGetMultiTexImageEXT,
+  glGetMultiTexLevelParameterfvEXT,
+  glGetMultiTexLevelParameterivEXT,
+  glGetMultiTexParameterIivEXT,
+  glGetMultiTexParameterIuivEXT,
+  glGetMultiTexParameterfvEXT,
+  glGetMultiTexParameterivEXT,
+  glGetNamedBufferParameterivEXT,
+  glGetNamedBufferPointervEXT,
+  glGetNamedBufferSubDataEXT,
+  glGetNamedFramebufferAttachmentParameterivEXT,
+  glGetNamedFramebufferParameterivEXT,
+  glGetNamedProgramLocalParameterIivEXT,
+  glGetNamedProgramLocalParameterIuivEXT,
+  glGetNamedProgramLocalParameterdvEXT,
+  glGetNamedProgramLocalParameterfvEXT,
+  glGetNamedProgramStringEXT,
+  glGetNamedProgramivEXT,
+  glGetNamedRenderbufferParameterivEXT,
+  glGetPointerIndexedvEXT,
+  glGetPointeri_vEXT,
+  glGetTextureImageEXT,
+  glGetTextureLevelParameterfvEXT,
+  glGetTextureLevelParameterivEXT,
+  glGetTextureParameterIivEXT,
+  glGetTextureParameterIuivEXT,
+  glGetTextureParameterfvEXT,
+  glGetTextureParameterivEXT,
+  glGetVertexArrayIntegeri_vEXT,
+  glGetVertexArrayIntegervEXT,
+  glGetVertexArrayPointeri_vEXT,
+  glGetVertexArrayPointervEXT,
+  glIsEnabledIndexedEXT,
+  glMapNamedBufferEXT,
+  glMapNamedBufferRangeEXT,
+  glMatrixFrustumEXT,
+  glMatrixLoadIdentityEXT,
+  glMatrixLoadTransposedEXT,
+  glMatrixLoadTransposefEXT,
+  glMatrixLoaddEXT,
+  glMatrixLoadfEXT,
+  glMatrixMultTransposedEXT,
+  glMatrixMultTransposefEXT,
+  glMatrixMultdEXT,
+  glMatrixMultfEXT,
+  glMatrixOrthoEXT,
+  glMatrixPopEXT,
+  glMatrixPushEXT,
+  glMatrixRotatedEXT,
+  glMatrixRotatefEXT,
+  glMatrixScaledEXT,
+  glMatrixScalefEXT,
+  glMatrixTranslatedEXT,
+  glMatrixTranslatefEXT,
+  glMultiTexBufferEXT,
+  glMultiTexCoordPointerEXT,
+  glMultiTexEnvfEXT,
+  glMultiTexEnvfvEXT,
+  glMultiTexEnviEXT,
+  glMultiTexEnvivEXT,
+  glMultiTexGendEXT,
+  glMultiTexGendvEXT,
+  glMultiTexGenfEXT,
+  glMultiTexGenfvEXT,
+  glMultiTexGeniEXT,
+  glMultiTexGenivEXT,
+  glMultiTexImage1DEXT,
+  glMultiTexImage2DEXT,
+  glMultiTexImage3DEXT,
+  glMultiTexParameterIivEXT,
+  glMultiTexParameterIuivEXT,
+  glMultiTexParameterfEXT,
+  glMultiTexParameterfvEXT,
+  glMultiTexParameteriEXT,
+  glMultiTexParameterivEXT,
+  glMultiTexRenderbufferEXT,
+  glMultiTexSubImage1DEXT,
+  glMultiTexSubImage2DEXT,
+  glMultiTexSubImage3DEXT,
+  glNamedBufferDataEXT,
+  glNamedBufferStorageEXT,
+  glNamedBufferSubDataEXT,
+  glNamedCopyBufferSubDataEXT,
+  glNamedFramebufferParameteriEXT,
+  glNamedFramebufferRenderbufferEXT,
+  glNamedFramebufferTexture1DEXT,
+  glNamedFramebufferTexture2DEXT,
+  glNamedFramebufferTexture3DEXT,
+  glNamedFramebufferTextureEXT,
+  glNamedFramebufferTextureFaceEXT,
+  glNamedFramebufferTextureLayerEXT,
+  glNamedProgramLocalParameter4dEXT,
+  glNamedProgramLocalParameter4dvEXT,
+  glNamedProgramLocalParameter4fEXT,
+  glNamedProgramLocalParameter4fvEXT,
+  glNamedProgramLocalParameterI4iEXT,
+  glNamedProgramLocalParameterI4ivEXT,
+  glNamedProgramLocalParameterI4uiEXT,
+  glNamedProgramLocalParameterI4uivEXT,
+  glNamedProgramLocalParameters4fvEXT,
+  glNamedProgramLocalParametersI4ivEXT,
+  glNamedProgramLocalParametersI4uivEXT,
+  glNamedProgramStringEXT,
+  glNamedRenderbufferStorageEXT,
+  glNamedRenderbufferStorageMultisampleCoverageEXT,
+  glNamedRenderbufferStorageMultisampleEXT,
+  glProgramUniform1dEXT,
+  glProgramUniform1dvEXT,
+  glProgramUniform1fEXT,
+  glProgramUniform1fvEXT,
+  glProgramUniform1iEXT,
+  glProgramUniform1ivEXT,
+  glProgramUniform1uiEXT,
+  glProgramUniform1uivEXT,
+  glProgramUniform2dEXT,
+  glProgramUniform2dvEXT,
+  glProgramUniform2fEXT,
+  glProgramUniform2fvEXT,
+  glProgramUniform2iEXT,
+  glProgramUniform2ivEXT,
+  glProgramUniform2uiEXT,
+  glProgramUniform2uivEXT,
+  glProgramUniform3dEXT,
+  glProgramUniform3dvEXT,
+  glProgramUniform3fEXT,
+  glProgramUniform3fvEXT,
+  glProgramUniform3iEXT,
+  glProgramUniform3ivEXT,
+  glProgramUniform3uiEXT,
+  glProgramUniform3uivEXT,
+  glProgramUniform4dEXT,
+  glProgramUniform4dvEXT,
+  glProgramUniform4fEXT,
+  glProgramUniform4fvEXT,
+  glProgramUniform4iEXT,
+  glProgramUniform4ivEXT,
+  glProgramUniform4uiEXT,
+  glProgramUniform4uivEXT,
+  glProgramUniformMatrix2dvEXT,
+  glProgramUniformMatrix2fvEXT,
+  glProgramUniformMatrix2x3dvEXT,
+  glProgramUniformMatrix2x3fvEXT,
+  glProgramUniformMatrix2x4dvEXT,
+  glProgramUniformMatrix2x4fvEXT,
+  glProgramUniformMatrix3dvEXT,
+  glProgramUniformMatrix3fvEXT,
+  glProgramUniformMatrix3x2dvEXT,
+  glProgramUniformMatrix3x2fvEXT,
+  glProgramUniformMatrix3x4dvEXT,
+  glProgramUniformMatrix3x4fvEXT,
+  glProgramUniformMatrix4dvEXT,
+  glProgramUniformMatrix4fvEXT,
+  glProgramUniformMatrix4x2dvEXT,
+  glProgramUniformMatrix4x2fvEXT,
+  glProgramUniformMatrix4x3dvEXT,
+  glProgramUniformMatrix4x3fvEXT,
+  glPushClientAttribDefaultEXT,
+  glTextureBufferEXT,
+  glTextureBufferRangeEXT,
+  glTextureImage1DEXT,
+  glTextureImage2DEXT,
+  glTextureImage3DEXT,
+  glTexturePageCommitmentEXT,
+  glTextureParameterIivEXT,
+  glTextureParameterIuivEXT,
+  glTextureParameterfEXT,
+  glTextureParameterfvEXT,
+  glTextureParameteriEXT,
+  glTextureParameterivEXT,
+  glTextureRenderbufferEXT,
+  glTextureStorage1DEXT,
+  glTextureStorage2DEXT,
+  glTextureStorage2DMultisampleEXT,
+  glTextureStorage3DEXT,
+  glTextureStorage3DMultisampleEXT,
+  glTextureSubImage1DEXT,
+  glTextureSubImage2DEXT,
+  glTextureSubImage3DEXT,
+  glUnmapNamedBufferEXT,
+  glVertexArrayBindVertexBufferEXT,
+  glVertexArrayColorOffsetEXT,
+  glVertexArrayEdgeFlagOffsetEXT,
+  glVertexArrayFogCoordOffsetEXT,
+  glVertexArrayIndexOffsetEXT,
+  glVertexArrayMultiTexCoordOffsetEXT,
+  glVertexArrayNormalOffsetEXT,
+  glVertexArraySecondaryColorOffsetEXT,
+  glVertexArrayTexCoordOffsetEXT,
+  glVertexArrayVertexAttribBindingEXT,
+  glVertexArrayVertexAttribDivisorEXT,
+  glVertexArrayVertexAttribFormatEXT,
+  glVertexArrayVertexAttribIFormatEXT,
+  glVertexArrayVertexAttribIOffsetEXT,
+  glVertexArrayVertexAttribLFormatEXT,
+  glVertexArrayVertexAttribLOffsetEXT,
+  glVertexArrayVertexAttribOffsetEXT,
+  glVertexArrayVertexBindingDivisorEXT,
+  glVertexArrayVertexOffsetEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Types
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
-
-glClientAttribDefault = glClientAttribDefaultEXT
-glPushClientAttribDefault = glPushClientAttribDefaultEXT
-glMatrixLoadf = glMatrixLoadfEXT
-glMatrixLoadd = glMatrixLoaddEXT
-glMatrixMultf = glMatrixMultfEXT
-glMatrixMultd = glMatrixMultdEXT
-glMatrixLoadIdentity = glMatrixLoadIdentityEXT
-glMatrixRotatef = glMatrixRotatefEXT
-glMatrixRotated = glMatrixRotatedEXT
-glMatrixScalef = glMatrixScalefEXT
-glMatrixScaled = glMatrixScaledEXT
-glMatrixTranslatef = glMatrixTranslatefEXT
-glMatrixTranslated = glMatrixTranslatedEXT
-glMatrixOrtho = glMatrixOrthoEXT
-glMatrixFrustum = glMatrixFrustumEXT
-glMatrixPush = glMatrixPushEXT
-glMatrixPop = glMatrixPopEXT
-glTextureImage1D = glTextureImage1DEXT
-glTextureImage2D = glTextureImage2DEXT
-glCopyTextureImage1D = glCopyTextureImage1DEXT
-glCopyTextureImage2D = glCopyTextureImage2DEXT
-glTextureImage3D = glTextureImage3DEXT
-glBindMultiTexture = glBindMultiTextureEXT
-glMultiTexCoordPointer = glMultiTexCoordPointerEXT
-glMultiTexEnvf = glMultiTexEnvfEXT
-glMultiTexEnvfv = glMultiTexEnvfvEXT
-glMultiTexEnvi = glMultiTexEnviEXT
-glMultiTexEnviv = glMultiTexEnvivEXT
-glMultiTexGend = glMultiTexGendEXT
-glMultiTexGendv = glMultiTexGendvEXT
-glMultiTexGenf = glMultiTexGenfEXT
-glMultiTexGenfv = glMultiTexGenfvEXT
-glMultiTexGeni = glMultiTexGeniEXT
-glMultiTexGeniv = glMultiTexGenivEXT
-glGetMultiTexEnvfv = glGetMultiTexEnvfvEXT
-glGetMultiTexEnviv = glGetMultiTexEnvivEXT
-glGetMultiTexGendv = glGetMultiTexGendvEXT
-glGetMultiTexGenfv = glGetMultiTexGenfvEXT
-glGetMultiTexGeniv = glGetMultiTexGenivEXT
-glMultiTexParameteri = glMultiTexParameteriEXT
-glMultiTexParameteriv = glMultiTexParameterivEXT
-glMultiTexParameterf = glMultiTexParameterfEXT
-glMultiTexParameterfv = glMultiTexParameterfvEXT
-glMultiTexImage1D = glMultiTexImage1DEXT
-glMultiTexImage2D = glMultiTexImage2DEXT
-glMultiTexSubImage1D = glMultiTexSubImage1DEXT
-glMultiTexSubImage2D = glMultiTexSubImage2DEXT
-glCopyMultiTexImage1D = glCopyMultiTexImage1DEXT
-glCopyMultiTexImage2D = glCopyMultiTexImage2DEXT
-glCopyMultiTexSubImage1D = glCopyMultiTexSubImage1DEXT
-glCopyMultiTexSubImage2D = glCopyMultiTexSubImage2DEXT
-glGetMultiTexImage = glGetMultiTexImageEXT
-glGetMultiTexParameterfv = glGetMultiTexParameterfvEXT
-glGetMultiTexParameteriv = glGetMultiTexParameterivEXT
-glGetMultiTexLevelParameterfv = glGetMultiTexLevelParameterfvEXT
-glGetMultiTexLevelParameteriv = glGetMultiTexLevelParameterivEXT
-glMultiTexImage3D = glMultiTexImage3DEXT
-glMultiTexSubImage3D = glMultiTexSubImage3DEXT
-glCopyMultiTexSubImage3D = glCopyMultiTexSubImage3DEXT
-glEnableClientStateIndexed = glEnableClientStateIndexedEXT
-glDisableClientStateIndexed = glDisableClientStateIndexedEXT
-glGetFloatIndexedv = glGetFloatIndexedvEXT
-glGetDoubleIndexedv = glGetDoubleIndexedvEXT
-glGetPointerIndexedv = glGetPointerIndexedvEXT
-glEnableIndexed = glEnableIndexedEXT
-glDisableIndexed = glDisableIndexedEXT
-glIsEnabledIndexed = glIsEnabledIndexedEXT
-glGetIntegerIndexedv = glGetIntegerIndexedvEXT
-glGetBooleanIndexedv = glGetBooleanIndexedvEXT
-glNamedProgramString = glNamedProgramStringEXT
-glNamedProgramLocalParameter4d = glNamedProgramLocalParameter4dEXT
-glNamedProgramLocalParameter4dv = glNamedProgramLocalParameter4dvEXT
-glNamedProgramLocalParameter4f = glNamedProgramLocalParameter4fEXT
-glNamedProgramLocalParameter4fv = glNamedProgramLocalParameter4fvEXT
-glGetNamedProgramLocalParameterdv = glGetNamedProgramLocalParameterdvEXT
-glGetNamedProgramLocalParameterfv = glGetNamedProgramLocalParameterfvEXT
-glGetNamedProgramiv = glGetNamedProgramivEXT
-glGetNamedProgramString = glGetNamedProgramStringEXT
-glCompressedTextureImage3D = glCompressedTextureImage3DEXT
-glCompressedTextureImage2D = glCompressedTextureImage2DEXT
-glCompressedTextureImage1D = glCompressedTextureImage1DEXT
-glCompressedMultiTexImage3D = glCompressedMultiTexImage3DEXT
-glCompressedMultiTexImage2D = glCompressedMultiTexImage2DEXT
-glCompressedMultiTexImage1D = glCompressedMultiTexImage1DEXT
-glCompressedMultiTexSubImage3D = glCompressedMultiTexSubImage3DEXT
-glCompressedMultiTexSubImage2D = glCompressedMultiTexSubImage2DEXT
-glCompressedMultiTexSubImage1D = glCompressedMultiTexSubImage1DEXT
-glGetCompressedMultiTexImage = glGetCompressedMultiTexImageEXT
-glMatrixLoadTransposef = glMatrixLoadTransposefEXT
-glMatrixLoadTransposed = glMatrixLoadTransposedEXT
-glMatrixMultTransposef = glMatrixMultTransposefEXT
-glMatrixMultTransposed = glMatrixMultTransposedEXT
-glMultiTexBuffer = glMultiTexBufferEXT
-glMultiTexParameterIiv = glMultiTexParameterIivEXT
-glMultiTexParameterIuiv = glMultiTexParameterIuivEXT
-glGetMultiTexParameterIiv = glGetMultiTexParameterIivEXT
-glGetMultiTexParameterIuiv = glGetMultiTexParameterIuivEXT
-glNamedProgramLocalParameters4fv = glNamedProgramLocalParameters4fvEXT
-glNamedProgramLocalParameterI4i = glNamedProgramLocalParameterI4iEXT
-glNamedProgramLocalParameterI4iv = glNamedProgramLocalParameterI4ivEXT
-glNamedProgramLocalParametersI4iv = glNamedProgramLocalParametersI4ivEXT
-glNamedProgramLocalParameterI4ui = glNamedProgramLocalParameterI4uiEXT
-glNamedProgramLocalParameterI4uiv = glNamedProgramLocalParameterI4uivEXT
-glNamedProgramLocalParametersI4uiv = glNamedProgramLocalParametersI4uivEXT
-glGetNamedProgramLocalParameterIiv = glGetNamedProgramLocalParameterIivEXT
-glGetNamedProgramLocalParameterIuiv = glGetNamedProgramLocalParameterIuivEXT
-glNamedRenderbufferStorageMultisampleCoverage = glNamedRenderbufferStorageMultisampleCoverageEXT
-glNamedFramebufferTexture1D = glNamedFramebufferTexture1DEXT
-glNamedFramebufferTexture2D = glNamedFramebufferTexture2DEXT
-glNamedFramebufferTexture3D = glNamedFramebufferTexture3DEXT
-glGenerateMultiTexMipmap = glGenerateMultiTexMipmapEXT
-glFramebufferDrawBuffer = glFramebufferDrawBufferEXT
-glFramebufferDrawBuffers = glFramebufferDrawBuffersEXT
-glFramebufferReadBuffer = glFramebufferReadBufferEXT
-glNamedFramebufferTextureFace = glNamedFramebufferTextureFaceEXT
-glTextureRenderbuffer = glTextureRenderbufferEXT
-glMultiTexRenderbuffer = glMultiTexRenderbufferEXT
-
-
-gl_PROGRAM_MATRIX :: GLenum
-gl_PROGRAM_MATRIX = gl_PROGRAM_MATRIX_EXT
-
-gl_TRANSPOSE_PROGRAM_MATRIX :: GLenum
-gl_TRANSPOSE_PROGRAM_MATRIX = gl_TRANSPOSE_PROGRAM_MATRIX_EXT
-
-gl_PROGRAM_MATRIX_STACK_DEPTH :: GLenum
-gl_PROGRAM_MATRIX_STACK_DEPTH = gl_PROGRAM_MATRIX_STACK_DEPTH_EXT
+import Graphics.Rendering.OpenGL.Raw.Functions

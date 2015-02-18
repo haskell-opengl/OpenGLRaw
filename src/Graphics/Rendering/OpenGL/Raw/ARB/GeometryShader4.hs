@@ -1,53 +1,45 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_geometry_shader4 extension, see
--- <http://www.opengl.org/registry/specs/ARB/geometry_shader4.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/geometry_shader4.txt ARB_geometry_shader4> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4 (
-   -- * Functions
-   glProgramParameteri,
-   glFramebufferTexture,
-   glFramebufferTextureLayer,
-   glFramebufferTextureFace,
-
-   -- * Tokens
-   gl_LINES_ADJACENCY,
-   gl_LINE_STRIP_ADJACENCY,
-   gl_TRIANGLES_ADJACENCY,
-   gl_TRIANGLE_STRIP_ADJACENCY,
-   gl_PROGRAM_POINT_SIZE,
-   gl_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS,
-   gl_FRAMEBUFFER_ATTACHMENT_LAYERED,
-   gl_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS,
-   gl_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT,
-   gl_GEOMETRY_SHADER,
-   gl_GEOMETRY_VERTICES_OUT,
-   gl_GEOMETRY_INPUT_TYPE,
-   gl_GEOMETRY_OUTPUT_TYPE,
-   gl_MAX_GEOMETRY_VARYING_COMPONENTS,
-   gl_MAX_VERTEX_VARYING_COMPONENTS,
-   gl_MAX_GEOMETRY_UNIFORM_COMPONENTS,
-   gl_MAX_GEOMETRY_OUTPUT_VERTICES,
-   gl_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS,
-   gl_MAX_VARYING_COMPONENTS,
-   gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER
+  -- * Enums
+  gl_FRAMEBUFFER_ATTACHMENT_LAYERED_ARB,
+  gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER,
+  gl_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_ARB,
+  gl_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_ARB,
+  gl_GEOMETRY_INPUT_TYPE_ARB,
+  gl_GEOMETRY_OUTPUT_TYPE_ARB,
+  gl_GEOMETRY_SHADER_ARB,
+  gl_GEOMETRY_VERTICES_OUT_ARB,
+  gl_LINES_ADJACENCY_ARB,
+  gl_LINE_STRIP_ADJACENCY_ARB,
+  gl_MAX_GEOMETRY_OUTPUT_VERTICES_ARB,
+  gl_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_ARB,
+  gl_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_ARB,
+  gl_MAX_GEOMETRY_UNIFORM_COMPONENTS_ARB,
+  gl_MAX_GEOMETRY_VARYING_COMPONENTS_ARB,
+  gl_MAX_VARYING_COMPONENTS,
+  gl_MAX_VERTEX_VARYING_COMPONENTS_ARB,
+  gl_PROGRAM_POINT_SIZE_ARB,
+  gl_TRIANGLES_ADJACENCY_ARB,
+  gl_TRIANGLE_STRIP_ADJACENCY_ARB,
+  -- * Functions
+  glFramebufferTextureARB,
+  glFramebufferTextureFaceARB,
+  glFramebufferTextureLayerARB,
+  glProgramParameteriARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
-
-glFramebufferTextureFace = glFramebufferTextureFaceARB
-
-gl_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT = gl_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_ARB
-gl_MAX_GEOMETRY_VARYING_COMPONENTS = gl_MAX_GEOMETRY_VARYING_COMPONENTS_ARB
-gl_MAX_VERTEX_VARYING_COMPONENTS = gl_MAX_VERTEX_VARYING_COMPONENTS_ARB
+import Graphics.Rendering.OpenGL.Raw.Functions

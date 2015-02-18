@@ -1,22 +1,21 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.ColorSubtable
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_color_subtable extension, see
--- <http://www.opengl.org/registry/specs/EXT/color_subtable.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/color_subtable.txt EXT_color_subtable> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.ColorSubtable (
-   -- * Functions
-   glColorSubTable,
-   glCopyColorSubTable
+  -- * Functions
+  glColorSubTableEXT,
+  glCopyColorSubTableEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Functions

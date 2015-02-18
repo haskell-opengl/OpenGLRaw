@@ -1,36 +1,23 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.CMYKA
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_cmyka extension, see
--- <http://www.opengl.org/registry/specs/EXT/cmyka.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/cmyka.txt EXT_cmyka> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.CMYKA (
-   -- * Tokens
-   gl_CMYK,
-   gl_CMYKA,
-   gl_PACK_CMYK_HINT,
-   gl_UNPACK_CMYK_HINT
+  -- * Enums
+  gl_CMYKA_EXT,
+  gl_CMYK_EXT,
+  gl_PACK_CMYK_HINT_EXT,
+  gl_UNPACK_CMYK_HINT_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_CMYK :: GLenum
-gl_CMYK = 0x800C
-
-gl_CMYKA :: GLenum
-gl_CMYKA = 0x800D
-
-gl_PACK_CMYK_HINT :: GLenum
-gl_PACK_CMYK_HINT = 0x800E
-
-gl_UNPACK_CMYK_HINT :: GLenum
-gl_UNPACK_CMYK_HINT = 0x800F
+import Graphics.Rendering.OpenGL.Raw.Tokens

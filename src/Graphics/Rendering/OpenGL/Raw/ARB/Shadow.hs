@@ -1,24 +1,22 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.Shadow
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the ARB_shadow extension, see
--- <http://www.opengl.org/registry/specs/ARB/shadow.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/shadow.txt ARB_shadow> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.Shadow (
-   -- * Tokens
-   gl_TEXTURE_COMPARE_MODE,
-   gl_TEXTURE_COMPARE_FUNC,
-   gl_COMPARE_R_TO_TEXTURE
+  -- * Enums
+  gl_COMPARE_R_TO_TEXTURE_ARB,
+  gl_TEXTURE_COMPARE_FUNC_ARB,
+  gl_TEXTURE_COMPARE_MODE_ARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens

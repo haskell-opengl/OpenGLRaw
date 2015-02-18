@@ -1,33 +1,31 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_texture_cube_map extension, see
--- <http://www.opengl.org/registry/specs/ARB/texture_cube_map.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/texture_cube_map.txt ARB_texture_cube_map> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap (
-   -- * Tokens
-   gl_NORMAL_MAP,
-   gl_REFLECTION_MAP,
-   gl_TEXTURE_CUBE_MAP,
-   gl_TEXTURE_BINDING_CUBE_MAP,
-   gl_TEXTURE_CUBE_MAP_POSITIVE_X,
-   gl_TEXTURE_CUBE_MAP_NEGATIVE_X,
-   gl_TEXTURE_CUBE_MAP_POSITIVE_Y,
-   gl_TEXTURE_CUBE_MAP_NEGATIVE_Y,
-   gl_TEXTURE_CUBE_MAP_POSITIVE_Z,
-   gl_TEXTURE_CUBE_MAP_NEGATIVE_Z,
-   gl_PROXY_TEXTURE_CUBE_MAP,
-   gl_MAX_CUBE_MAP_TEXTURE_SIZE
+  -- * Enums
+  gl_MAX_CUBE_MAP_TEXTURE_SIZE_ARB,
+  gl_NORMAL_MAP_ARB,
+  gl_PROXY_TEXTURE_CUBE_MAP_ARB,
+  gl_REFLECTION_MAP_ARB,
+  gl_TEXTURE_BINDING_CUBE_MAP_ARB,
+  gl_TEXTURE_CUBE_MAP_ARB,
+  gl_TEXTURE_CUBE_MAP_NEGATIVE_X_ARB,
+  gl_TEXTURE_CUBE_MAP_NEGATIVE_Y_ARB,
+  gl_TEXTURE_CUBE_MAP_NEGATIVE_Z_ARB,
+  gl_TEXTURE_CUBE_MAP_POSITIVE_X_ARB,
+  gl_TEXTURE_CUBE_MAP_POSITIVE_Y_ARB,
+  gl_TEXTURE_CUBE_MAP_POSITIVE_Z_ARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens

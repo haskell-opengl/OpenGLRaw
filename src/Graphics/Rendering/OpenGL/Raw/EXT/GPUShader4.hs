@@ -1,61 +1,60 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4
--- Copyright   :  (c) Sven Panne 2014
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_gpu_shader4 extension, see
--- <http://www.opengl.org/registry/specs/EXT/gpu_shader4.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/gpu_shader4.txt EXT_gpu_shader4> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4 (
-   -- * Functions
-   glGetUniformuiv,
-   glBindFragDataLocation,
-   glGetFragDataLocation,
-   glUniform1ui,
-   glUniform2ui,
-   glUniform3ui,
-   glUniform4ui,
-   glUniform1uiv,
-   glUniform2uiv,
-   glUniform3uiv,
-   glUniform4uiv,
-
-   -- * Tokens
-   gl_VERTEX_ATTRIB_ARRAY_INTEGER,
-   gl_SAMPLER_1D_ARRAY,
-   gl_SAMPLER_2D_ARRAY,
-   gl_SAMPLER_BUFFER,
-   gl_SAMPLER_1D_ARRAY_SHADOW,
-   gl_SAMPLER_2D_ARRAY_SHADOW,
-   gl_SAMPLER_CUBE_SHADOW,
-   gl_UNSIGNED_INT_VEC2,
-   gl_UNSIGNED_INT_VEC3,
-   gl_UNSIGNED_INT_VEC4,
-   gl_INT_SAMPLER_1D,
-   gl_INT_SAMPLER_2D,
-   gl_INT_SAMPLER_3D,
-   gl_INT_SAMPLER_CUBE,
-   gl_INT_SAMPLER_2D_RECT,
-   gl_INT_SAMPLER_1D_ARRAY,
-   gl_INT_SAMPLER_2D_ARRAY,
-   gl_INT_SAMPLER_BUFFER,
-   gl_UNSIGNED_INT_SAMPLER_1D,
-   gl_UNSIGNED_INT_SAMPLER_2D,
-   gl_UNSIGNED_INT_SAMPLER_3D,
-   gl_UNSIGNED_INT_SAMPLER_CUBE,
-   gl_UNSIGNED_INT_SAMPLER_2D_RECT,
-   gl_UNSIGNED_INT_SAMPLER_1D_ARRAY,
-   gl_UNSIGNED_INT_SAMPLER_2D_ARRAY,
-   gl_UNSIGNED_INT_SAMPLER_BUFFER,
-   gl_MIN_PROGRAM_TEXEL_OFFSET,
-   gl_MAX_PROGRAM_TEXEL_OFFSET
+  -- * Enums
+  gl_INT_SAMPLER_1D_ARRAY_EXT,
+  gl_INT_SAMPLER_1D_EXT,
+  gl_INT_SAMPLER_2D_ARRAY_EXT,
+  gl_INT_SAMPLER_2D_EXT,
+  gl_INT_SAMPLER_2D_RECT_EXT,
+  gl_INT_SAMPLER_3D_EXT,
+  gl_INT_SAMPLER_BUFFER_EXT,
+  gl_INT_SAMPLER_CUBE_EXT,
+  gl_MAX_PROGRAM_TEXEL_OFFSET_EXT,
+  gl_MIN_PROGRAM_TEXEL_OFFSET_EXT,
+  gl_SAMPLER_1D_ARRAY_EXT,
+  gl_SAMPLER_1D_ARRAY_SHADOW_EXT,
+  gl_SAMPLER_2D_ARRAY_EXT,
+  gl_SAMPLER_2D_ARRAY_SHADOW_EXT,
+  gl_SAMPLER_BUFFER_EXT,
+  gl_SAMPLER_CUBE_SHADOW_EXT,
+  gl_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT,
+  gl_UNSIGNED_INT_SAMPLER_1D_EXT,
+  gl_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT,
+  gl_UNSIGNED_INT_SAMPLER_2D_EXT,
+  gl_UNSIGNED_INT_SAMPLER_2D_RECT_EXT,
+  gl_UNSIGNED_INT_SAMPLER_3D_EXT,
+  gl_UNSIGNED_INT_SAMPLER_BUFFER_EXT,
+  gl_UNSIGNED_INT_SAMPLER_CUBE_EXT,
+  gl_UNSIGNED_INT_VEC2_EXT,
+  gl_UNSIGNED_INT_VEC3_EXT,
+  gl_UNSIGNED_INT_VEC4_EXT,
+  gl_VERTEX_ATTRIB_ARRAY_INTEGER_EXT,
+  -- * Functions
+  glBindFragDataLocationEXT,
+  glGetFragDataLocationEXT,
+  glGetUniformuivEXT,
+  glUniform1uiEXT,
+  glUniform1uivEXT,
+  glUniform2uiEXT,
+  glUniform2uivEXT,
+  glUniform3uiEXT,
+  glUniform3uivEXT,
+  glUniform4uiEXT,
+  glUniform4uivEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

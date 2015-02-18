@@ -1,36 +1,23 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_texture_compression_s3tc extension, see
--- <http://www.opengl.org/registry/specs/EXT/texture_compression_s3tc.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/texture_compression_s3tc.txt EXT_texture_compression_s3tc> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC (
-   -- * Tokens
-   gl_COMPRESSED_RGB_S3TC_DXT1,
-   gl_COMPRESSED_RGBA_S3TC_DXT1,
-   gl_COMPRESSED_RGBA_S3TC_DXT3,
-   gl_COMPRESSED_RGBA_S3TC_DXT5
+  -- * Enums
+  gl_COMPRESSED_RGBA_S3TC_DXT1_EXT,
+  gl_COMPRESSED_RGBA_S3TC_DXT3_EXT,
+  gl_COMPRESSED_RGBA_S3TC_DXT5_EXT,
+  gl_COMPRESSED_RGB_S3TC_DXT1_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_COMPRESSED_RGB_S3TC_DXT1 :: GLenum
-gl_COMPRESSED_RGB_S3TC_DXT1 = 0x83F0
-
-gl_COMPRESSED_RGBA_S3TC_DXT1 :: GLenum
-gl_COMPRESSED_RGBA_S3TC_DXT1 = 0x83F1
-
-gl_COMPRESSED_RGBA_S3TC_DXT3 :: GLenum
-gl_COMPRESSED_RGBA_S3TC_DXT3 = 0x83F2
-
-gl_COMPRESSED_RGBA_S3TC_DXT5 :: GLenum
-gl_COMPRESSED_RGBA_S3TC_DXT5 = 0x83F3
+import Graphics.Rendering.OpenGL.Raw.Tokens

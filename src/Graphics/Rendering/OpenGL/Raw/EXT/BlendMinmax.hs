@@ -1,27 +1,26 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_blend_minmax extension, see
--- <http://www.opengl.org/registry/specs/EXT/blend_minmax.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/blend_minmax.txt EXT_blend_minmax> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax (
-   -- * Functions
-   glBlendEquation,
-   -- * Tokens
-   gl_FUNC_ADD,
-   gl_MIN,
-   gl_MAX,
-   gl_BLEND_EQUATION
+  -- * Enums
+  gl_BLEND_EQUATION_EXT,
+  gl_FUNC_ADD_EXT,
+  gl_MAX_EXT,
+  gl_MIN_EXT,
+  -- * Functions
+  glBlendEquationEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

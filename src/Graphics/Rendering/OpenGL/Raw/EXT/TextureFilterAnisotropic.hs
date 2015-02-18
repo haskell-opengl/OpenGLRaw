@@ -1,28 +1,21 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_texture_filter_anisotropic, see
--- <http://www.opengl.org/registry/specs/EXT/texture_filter_anisotropic.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/texture_filter_anisotropic.txt EXT_texture_filter_anisotropic> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic (
-   -- * Tokens
-   gl_TEXTURE_MAX_ANISOTROPY,
-   gl_MAX_TEXTURE_MAX_ANISOTROPY
+  -- * Enums
+  gl_MAX_TEXTURE_MAX_ANISOTROPY_EXT,
+  gl_TEXTURE_MAX_ANISOTROPY_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_TEXTURE_MAX_ANISOTROPY :: GLenum
-gl_TEXTURE_MAX_ANISOTROPY = 0x84FE
-
-gl_MAX_TEXTURE_MAX_ANISOTROPY :: GLenum
-gl_MAX_TEXTURE_MAX_ANISOTROPY = 0x84FF
+import Graphics.Rendering.OpenGL.Raw.Tokens

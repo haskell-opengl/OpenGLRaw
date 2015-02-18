@@ -1,39 +1,24 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_stencil_two_side extension, see
--- <http://www.opengl.org/registry/specs/EXT/stencil_two_side.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/stencil_two_side.txt EXT_stencil_two_side> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide (
-   -- * Functions
-   glActiveStencilFace,
-   -- * Tokens
-   gl_STENCIL_TEST_TWO_SIDE,
-   gl_ACTIVE_STENCIL_FACE
+  -- * Enums
+  gl_ACTIVE_STENCIL_FACE_EXT,
+  gl_STENCIL_TEST_TWO_SIDE_EXT,
+  -- * Functions
+  glActiveStencilFaceEXT
 ) where
 
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Types
-import Foreign.Ptr ( FunPtr )
-import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
-import System.IO.Unsafe ( unsafePerformIO )
-
-#include "HsOpenGLRaw.h"
-
-EXTENSION_ENTRY(dyn_glActiveStencilFace,ptr_glActiveStencilFace,"glActiveStencilFace",glActiveStencilFace,GLenum -> IO ())
-
-gl_STENCIL_TEST_TWO_SIDE :: GLenum
-gl_STENCIL_TEST_TWO_SIDE = 0x8910
-
-gl_ACTIVE_STENCIL_FACE :: GLenum
-gl_ACTIVE_STENCIL_FACE = 0x8911
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

@@ -1,28 +1,25 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_draw_indirect extension, see
--- <http://www.opengl.org/registry/specs/ARB/draw_indirect.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/draw_indirect.txt ARB_draw_indirect> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect (
-   -- * Functions
-   glDrawArraysIndirect,
-   glDrawElementsIndirect,
-
-   -- * Tokens
-   gl_DRAW_INDIRECT_BUFFER,
-   gl_DRAW_INDIRECT_BUFFER_BINDING
-
+  -- * Enums
+  gl_DRAW_INDIRECT_BUFFER,
+  gl_DRAW_INDIRECT_BUFFER_BINDING,
+  -- * Functions
+  glDrawArraysIndirect,
+  glDrawElementsIndirect
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

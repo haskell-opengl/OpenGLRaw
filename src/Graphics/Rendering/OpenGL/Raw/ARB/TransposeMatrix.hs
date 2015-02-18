@@ -1,29 +1,29 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_transpose_matrix extension, see
--- <http://www.opengl.org/registry/specs/ARB/transpose_matrix.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/transpose_matrix.txt ARB_transpose_matrix> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix (
-   -- * Functions
-   glLoadTransposeMatrixf,
-   glLoadTransposeMatrixd,
-   glMultTransposeMatrixf,
-   glMultTransposeMatrixd,
-   -- * Tokens
-   gl_TRANSPOSE_MODELVIEW_MATRIX,
-   gl_TRANSPOSE_PROJECTION_MATRIX,
-   gl_TRANSPOSE_TEXTURE_MATRIX,
-   gl_TRANSPOSE_COLOR_MATRIX
+  -- * Enums
+  gl_TRANSPOSE_COLOR_MATRIX_ARB,
+  gl_TRANSPOSE_MODELVIEW_MATRIX_ARB,
+  gl_TRANSPOSE_PROJECTION_MATRIX_ARB,
+  gl_TRANSPOSE_TEXTURE_MATRIX_ARB,
+  -- * Functions
+  glLoadTransposeMatrixdARB,
+  glLoadTransposeMatrixfARB,
+  glMultTransposeMatrixdARB,
+  glMultTransposeMatrixfARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

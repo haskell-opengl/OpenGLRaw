@@ -1,22 +1,21 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.MultiDrawArrays
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_multi_draw_arrays extension, see
--- <http://www.opengl.org/registry/specs/EXT/multi_draw_arrays.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/multi_draw_arrays.txt EXT_multi_draw_arrays> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.MultiDrawArrays (
-   -- * Functions
-   glMultiDrawArrays,
-   glMultiDrawElements
+  -- * Functions
+  glMultiDrawArraysEXT,
+  glMultiDrawElementsEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Functions

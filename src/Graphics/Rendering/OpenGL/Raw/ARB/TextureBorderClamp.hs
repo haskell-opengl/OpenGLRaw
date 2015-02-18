@@ -1,21 +1,20 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TextureBorderClamp
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_texture_border_clamp extension, see
--- <http://www.opengl.org/registry/specs/ARB/texture_border_clamp.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/texture_border_clamp.txt ARB_texture_border_clamp> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureBorderClamp (
-   -- * Tokens
- gl_CLAMP_TO_BORDER
+  -- * Enums
+  gl_CLAMP_TO_BORDER_ARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -1,25 +1,24 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_packed_pixel extension, see
--- <http://www.opengl.org/registry/specs/EXT/packed_pixel.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/packed_pixels.txt EXT_packed_pixels> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels (
-   -- * Tokens
-   gl_UNSIGNED_BYTE_3_3_2,
-   gl_UNSIGNED_SHORT_4_4_4_4,
-   gl_UNSIGNED_SHORT_5_5_5_1,
-   gl_UNSIGNED_INT_8_8_8_8,
-   gl_UNSIGNED_INT_10_10_10_2
+  -- * Enums
+  gl_UNSIGNED_BYTE_3_3_2_EXT,
+  gl_UNSIGNED_INT_10_10_10_2_EXT,
+  gl_UNSIGNED_INT_8_8_8_8_EXT,
+  gl_UNSIGNED_SHORT_4_4_4_4_EXT,
+  gl_UNSIGNED_SHORT_5_5_5_1_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens

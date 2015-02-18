@@ -1,28 +1,26 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions, tokens and types from the ARB_timer_query, see
--- <http://www.opengl.org/registry/specs/ARB/timer_query.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/timer_query.txt ARB_timer_query> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery (
-   -- * Functions
-   glQueryCounter,
-   glGetQueryObjecti64v,
-   glGetQueryObjectui64v,
-
-   -- * Tokens
-   gl_TIME_ELAPSED,
-   gl_TIMESTAMP
+  -- * Enums
+  gl_TIMESTAMP,
+  gl_TIME_ELAPSED,
+  -- * Functions
+  glGetQueryObjecti64v,
+  glGetQueryObjectui64v,
+  glQueryCounter
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

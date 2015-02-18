@@ -1,29 +1,21 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the NV_light_max_exponent extension not
--- already in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/NV/light_max_exponent.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/light_max_exponent.txt NV_light_max_exponent> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent (
-   -- * Tokens
-   gl_MAX_SHININESS,
-   gl_MAX_SPOT_EXPONENT
+  -- * Enums
+  gl_MAX_SHININESS_NV,
+  gl_MAX_SPOT_EXPONENT_NV
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_MAX_SHININESS :: GLenum
-gl_MAX_SHININESS = 0x8504
-
-gl_MAX_SPOT_EXPONENT :: GLenum
-gl_MAX_SPOT_EXPONENT = 0x8505
+import Graphics.Rendering.OpenGL.Raw.Tokens

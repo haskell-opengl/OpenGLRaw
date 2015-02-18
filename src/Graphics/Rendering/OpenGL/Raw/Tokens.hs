@@ -8,8 +8,8 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All enumeration tokens from the OpenGL registry, see
--- <http://www.opengl.org/registry/>.
+-- All enumeration tokens from the
+-- <http://www.opengl.org/registry/ OpenGL registry>.
 --
 --------------------------------------------------------------------------------
 

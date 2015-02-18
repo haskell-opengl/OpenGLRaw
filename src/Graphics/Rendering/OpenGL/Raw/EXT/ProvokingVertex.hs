@@ -1,26 +1,26 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_provoking_vertex, see
--- <http://www.opengl.org/registry/specs/EXT/EXT_provoking_vertex.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/provoking_vertex.txt EXT_provoking_vertex> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex (
-   -- * Functions
-   glProvokingVertex,
-   -- * Tokens
-   gl_FIRST_VERTEX_CONVENTION,
-   gl_LAST_VERTEX_CONVENTION,
-   gl_PROVOKING_VERTEX,
-   gl_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION
+  -- * Enums
+  gl_FIRST_VERTEX_CONVENTION_EXT,
+  gl_LAST_VERTEX_CONVENTION_EXT,
+  gl_PROVOKING_VERTEX_EXT,
+  gl_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT,
+  -- * Functions
+  glProvokingVertexEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

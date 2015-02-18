@@ -1,21 +1,20 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the ARB_texture_mirrored_repeat extension, see
--- <http://www.opengl.org/registry/specs/ARB/texture_mirrored_repeat.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/texture_mirrored_repeat.txt ARB_texture_mirrored_repeat> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat (
-   -- * Tokens
-   gl_MIRRORED_REPEAT
+  -- * Enums
+  gl_MIRRORED_REPEAT_ARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -1,33 +1,21 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_gpu_program_parameters extension
--- not already in the OpenGL 3.1 core, see
--- <http://www.opengl.org/registry/specs/EXT/gpu_program_parameters.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/gpu_program_parameters.txt EXT_gpu_program_parameters> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters (
-   -- * Functions
-   glProgramEnvParameters4fv,
-   glProgramLocalParameters4fv
+  -- * Functions
+  glProgramEnvParameters4fvEXT,
+  glProgramLocalParameters4fvEXT
 ) where
 
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Types
-import Foreign.Ptr ( Ptr, FunPtr )
-import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
-import System.IO.Unsafe ( unsafePerformIO )
-
-#include "HsOpenGLRaw.h"
-
-EXTENSION_ENTRY(dyn_glProgramEnvParameters4fv,ptr_glProgramEnvParameters4fv,"glProgramEnvParameters4fv",glProgramEnvParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(dyn_glProgramLocalParameters4fv,ptr_glProgramLocalParameters4fv,"glProgramLocalParameters4fv",glProgramLocalParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+import Graphics.Rendering.OpenGL.Raw.Functions

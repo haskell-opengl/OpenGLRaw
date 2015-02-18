@@ -1,25 +1,24 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions from the EXT_copy_texture extension, see
--- <http://www.opengl.org/registry/specs/EXT/copy_texture.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/copy_texture.txt EXT_copy_texture> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture (
-   -- * Functions
-   glCopyTexImage1D,
-   glCopyTexImage2D,
-   glCopyTexSubImage1D,
-   glCopyTexSubImage2D,
-   glCopyTexSubImage3D,
+  -- * Functions
+  glCopyTexImage1DEXT,
+  glCopyTexImage2DEXT,
+  glCopyTexSubImage1DEXT,
+  glCopyTexSubImage2DEXT,
+  glCopyTexSubImage3DEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Functions

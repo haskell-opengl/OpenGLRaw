@@ -1,43 +1,28 @@
-{-# LANGUAGE CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.DepthBufferFloat
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the NV_depth_buffer_float extension, see
--- <http://www.opengl.org/registry/specs/NV/NV_depth_buffer_float.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/depth_buffer_float.txt NV_depth_buffer_float> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.DepthBufferFloat (
-   -- * Functions
-   glDepthRanged,
-   glClearDepthd,
-   glDepthBoundsd,
-   -- * Tokens
-   gl_DEPTH_COMPONENT32F,
-   gl_DEPTH32F_STENCIL8,
-   gl_FLOAT_32_UNSIGNED_INT_24_8_REV,
-   gl_DEPTH_BUFFER_FLOAT_MODE
+  -- * Enums
+  gl_DEPTH32F_STENCIL8_NV,
+  gl_DEPTH_BUFFER_FLOAT_MODE_NV,
+  gl_DEPTH_COMPONENT32F_NV,
+  gl_FLOAT_32_UNSIGNED_INT_24_8_REV_NV,
+  -- * Functions
+  glClearDepthdNV,
+  glDepthBoundsdNV,
+  glDepthRangedNV
 ) where
 
-import Foreign.C.Types
-import Graphics.Rendering.OpenGL.Raw.Types
-import Graphics.Rendering.OpenGL.Raw.Core32
-import Foreign.Ptr ( FunPtr )
-import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensionChecked )
-import System.IO.Unsafe ( unsafePerformIO )
-
-#include "HsOpenGLRaw.h"
-
-EXTENSION_ENTRY(dyn_glDepthRanged,ptr_glDepthRanged,"glDepthRanged",glDepthRanged,GLdouble -> GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glClearDepthd,ptr_glClearDepthd,"glClearDepthd",glClearDepthd,GLdouble -> IO ())
-EXTENSION_ENTRY(dyn_glDepthBoundsd,ptr_glDepthBoundsd,"glDepthBoundsd",glDepthBoundsd,GLdouble -> GLdouble -> IO ())
-
-gl_DEPTH_BUFFER_FLOAT_MODE :: GLenum
-gl_DEPTH_BUFFER_FLOAT_MODE = 0x8DAF
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

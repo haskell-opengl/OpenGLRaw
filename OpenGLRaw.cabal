@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 2.0.0.0
+version: 2.1.0.0
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 3.2 graphics system and
@@ -51,54 +51,120 @@ flag UseGlXGetProcAddress
 library
   exposed-modules:
     Graphics.Rendering.OpenGL.Raw
+    Graphics.Rendering.OpenGL.Raw.AMD
+    Graphics.Rendering.OpenGL.Raw.AMD.BlendMinmaxFactor
+    Graphics.Rendering.OpenGL.Raw.AMD.DebugOutput
+    Graphics.Rendering.OpenGL.Raw.AMD.DepthClampSeparate
+    Graphics.Rendering.OpenGL.Raw.AMD.DrawBuffersBlend
+    Graphics.Rendering.OpenGL.Raw.AMD.GPUShaderInt64
+    Graphics.Rendering.OpenGL.Raw.AMD.InterleavedElements
+    Graphics.Rendering.OpenGL.Raw.AMD.MultiDrawIndirect
+    Graphics.Rendering.OpenGL.Raw.AMD.NameGenDelete
+    Graphics.Rendering.OpenGL.Raw.AMD.OcclusionQueryEvent
+    Graphics.Rendering.OpenGL.Raw.AMD.PerformanceMonitor
+    Graphics.Rendering.OpenGL.Raw.AMD.PinnedMemory
+    Graphics.Rendering.OpenGL.Raw.AMD.QueryBufferObject
+    Graphics.Rendering.OpenGL.Raw.AMD.SamplePositions
+    Graphics.Rendering.OpenGL.Raw.AMD.SeamlessCubemapPerTexture
+    Graphics.Rendering.OpenGL.Raw.AMD.SparseTexture
+    Graphics.Rendering.OpenGL.Raw.AMD.StencilOperationExtended
+    Graphics.Rendering.OpenGL.Raw.AMD.TransformFeedback4
+    Graphics.Rendering.OpenGL.Raw.AMD.VertexShaderTessellator
     Graphics.Rendering.OpenGL.Raw.APPLE
+    Graphics.Rendering.OpenGL.Raw.APPLE.AuxDepthStencil
+    Graphics.Rendering.OpenGL.Raw.APPLE.ClientStorage
+    Graphics.Rendering.OpenGL.Raw.APPLE.ElementArray
+    Graphics.Rendering.OpenGL.Raw.APPLE.Fence
+    Graphics.Rendering.OpenGL.Raw.APPLE.FloatPixels
     Graphics.Rendering.OpenGL.Raw.APPLE.FlushBufferRange
+    Graphics.Rendering.OpenGL.Raw.APPLE.ObjectPurgeable
+    Graphics.Rendering.OpenGL.Raw.APPLE.RGB422
+    Graphics.Rendering.OpenGL.Raw.APPLE.RowBytes
+    Graphics.Rendering.OpenGL.Raw.APPLE.SpecularVector
+    Graphics.Rendering.OpenGL.Raw.APPLE.TextureRange
+    Graphics.Rendering.OpenGL.Raw.APPLE.TransformHint
     Graphics.Rendering.OpenGL.Raw.APPLE.VertexArrayObject
+    Graphics.Rendering.OpenGL.Raw.APPLE.VertexArrayRange
+    Graphics.Rendering.OpenGL.Raw.APPLE.VertexProgramEvaluators
+    Graphics.Rendering.OpenGL.Raw.APPLE.YCbCr422
     Graphics.Rendering.OpenGL.Raw.ARB
+    Graphics.Rendering.OpenGL.Raw.ARB.BaseInstance
+    Graphics.Rendering.OpenGL.Raw.ARB.BindlessTexture
     Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended
+    Graphics.Rendering.OpenGL.Raw.ARB.BufferStorage
+    Graphics.Rendering.OpenGL.Raw.ARB.CLEvent
+    Graphics.Rendering.OpenGL.Raw.ARB.ClearBufferObject
+    Graphics.Rendering.OpenGL.Raw.ARB.ClearTexture
+    Graphics.Rendering.OpenGL.Raw.ARB.ClipControl
     Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat
     Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.CompressedTexturePixelStorage
     Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader
+    Graphics.Rendering.OpenGL.Raw.ARB.ComputeVariableGroupSize
+    Graphics.Rendering.OpenGL.Raw.ARB.ConditionalRenderInverted
     Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer
-    Graphics.Rendering.OpenGL.Raw.ARB.CreateContextProfile
+    Graphics.Rendering.OpenGL.Raw.ARB.CopyImage
+    Graphics.Rendering.OpenGL.Raw.ARB.CullDistance
+    Graphics.Rendering.OpenGL.Raw.ARB.DebugOutput
     Graphics.Rendering.OpenGL.Raw.ARB.DepthBufferFloat
     Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp
     Graphics.Rendering.OpenGL.Raw.ARB.DepthTexture
+    Graphics.Rendering.OpenGL.Raw.ARB.DirectStateAccess
     Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers
     Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend
     Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex
     Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect
     Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced
     Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.ES31Compatibility
     Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts
+    Graphics.Rendering.OpenGL.Raw.ARB.ExplicitUniformLocation
     Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram
     Graphics.Rendering.OpenGL.Raw.ARB.FragmentShader
     Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments
-    Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObject
+    Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObjectCompatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObjectCore
     Graphics.Rendering.OpenGL.Raw.ARB.FramebufferSRGB
     Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5
     Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderFP64
     Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
     Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary
+    Graphics.Rendering.OpenGL.Raw.ARB.GetTextureSubImage
     Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatPixel
     Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatVertex
+    Graphics.Rendering.OpenGL.Raw.ARB.ImagingCompatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.ImagingCore
+    Graphics.Rendering.OpenGL.Raw.ARB.IndirectParameters
     Graphics.Rendering.OpenGL.Raw.ARB.InstancedArrays
+    Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery
+    Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery2
+    Graphics.Rendering.OpenGL.Raw.ARB.InvalidateSubdata
+    Graphics.Rendering.OpenGL.Raw.ARB.MapBufferAlignment
     Graphics.Rendering.OpenGL.Raw.ARB.MapBufferRange
     Graphics.Rendering.OpenGL.Raw.ARB.MatrixPalette
+    Graphics.Rendering.OpenGL.Raw.ARB.MultiBind
+    Graphics.Rendering.OpenGL.Raw.ARB.MultiDrawIndirect
     Graphics.Rendering.OpenGL.Raw.ARB.Multisample
     Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
     Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery
     Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
+    Graphics.Rendering.OpenGL.Raw.ARB.PipelineStatisticsQuery
     Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject
     Graphics.Rendering.OpenGL.Raw.ARB.PointParameters
     Graphics.Rendering.OpenGL.Raw.ARB.PointSprite
+    Graphics.Rendering.OpenGL.Raw.ARB.ProgramInterfaceQuery
     Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex
     Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject
+    Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCompatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCore
     Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
     Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
     Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap
+    Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubemapPerTexture
     Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects
     Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters
+    Graphics.Rendering.OpenGL.Raw.ARB.ShaderImageLoadStore
     Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects
     Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject
     Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine
@@ -106,40 +172,73 @@ library
     Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguageInclude
     Graphics.Rendering.OpenGL.Raw.ARB.Shadow
     Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient
+    Graphics.Rendering.OpenGL.Raw.ARB.SparseBuffer
+    Graphics.Rendering.OpenGL.Raw.ARB.SparseTexture
+    Graphics.Rendering.OpenGL.Raw.ARB.StencilTexturing
     Graphics.Rendering.OpenGL.Raw.ARB.Sync
     Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureBarrier
     Graphics.Rendering.OpenGL.Raw.ARB.TextureBorderClamp
     Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObjectRGB32
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferRange
     Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression
     Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC
     Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionRGTC
     Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap
     Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
-    Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvAdd
     Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine
-    Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCrossbar
     Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3
     Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat
     Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureMirrorClampToEdge
     Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat
     Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample
     Graphics.Rendering.OpenGL.Raw.ARB.TextureRG
     Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI
     Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureStencil8
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureStorage
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureStorageMultisample
     Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureView
     Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery
     Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback2
     Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3
+    Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedbackInstanced
+    Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedbackOverflowQuery
     Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix
     Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject
+    Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBGRA
     Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayObject
     Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit
+    Graphics.Rendering.OpenGL.Raw.ARB.VertexAttribBinding
     Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend
     Graphics.Rendering.OpenGL.Raw.ARB.VertexBufferObject
     Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram
     Graphics.Rendering.OpenGL.Raw.ARB.VertexShader
-    Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010Rev
+    Graphics.Rendering.OpenGL.Raw.ARB.VertexType10f11f11fRev
+    Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010RevCompatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010RevCore
+    Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray
     Graphics.Rendering.OpenGL.Raw.ARB.WindowPos
+    Graphics.Rendering.OpenGL.Raw.ATI
+    Graphics.Rendering.OpenGL.Raw.ATI.DrawBuffers
+    Graphics.Rendering.OpenGL.Raw.ATI.ElementArray
+    Graphics.Rendering.OpenGL.Raw.ATI.EnvmapBumpmap
+    Graphics.Rendering.OpenGL.Raw.ATI.FragmentShader
+    Graphics.Rendering.OpenGL.Raw.ATI.MapObjectBuffer
+    Graphics.Rendering.OpenGL.Raw.ATI.Meminfo
+    Graphics.Rendering.OpenGL.Raw.ATI.PNTriangles
+    Graphics.Rendering.OpenGL.Raw.ATI.PixelFormatFloat
+    Graphics.Rendering.OpenGL.Raw.ATI.SeparateStencil
+    Graphics.Rendering.OpenGL.Raw.ATI.TextFragmentShader
+    Graphics.Rendering.OpenGL.Raw.ATI.TextureEnvCombine3
+    Graphics.Rendering.OpenGL.Raw.ATI.TextureFloat
+    Graphics.Rendering.OpenGL.Raw.ATI.TextureMirrorOnce
+    Graphics.Rendering.OpenGL.Raw.ATI.VertexArrayObject
+    Graphics.Rendering.OpenGL.Raw.ATI.VertexAttribArrayObject
+    Graphics.Rendering.OpenGL.Raw.ATI.VertexStreams
     Graphics.Rendering.OpenGL.Raw.Compatibility30
     Graphics.Rendering.OpenGL.Raw.Compatibility31
     Graphics.Rendering.OpenGL.Raw.Compatibility32
@@ -177,15 +276,18 @@ library
     Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame
     Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture
     Graphics.Rendering.OpenGL.Raw.EXT.CullVertex
+    Graphics.Rendering.OpenGL.Raw.EXT.DebugLabel
+    Graphics.Rendering.OpenGL.Raw.EXT.DebugMarker
     Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest
     Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess
     Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2
+    Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced
     Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements
     Graphics.Rendering.OpenGL.Raw.EXT.FogCoord
     Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels
-    Graphics.Rendering.OpenGL.Raw.EXT.FragmentLighting
     Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit
     Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample
+    Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisampleBlitScaled
     Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject
     Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB
     Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters
@@ -202,14 +304,18 @@ library
     Graphics.Rendering.OpenGL.Raw.EXT.PackedFloat
     Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels
     Graphics.Rendering.OpenGL.Raw.EXT.PalettedTexture
+    Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject
     Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform
     Graphics.Rendering.OpenGL.Raw.EXT.PointParameters
     Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset
+    Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffsetClamp
     Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex
+    Graphics.Rendering.OpenGL.Raw.EXT.RasterMultisample
     Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal
-    Graphics.Rendering.OpenGL.Raw.EXT.SceneMarker
     Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor
+    Graphics.Rendering.OpenGL.Raw.EXT.SeparateShaderObjects
     Graphics.Rendering.OpenGL.Raw.EXT.SeparateSpecularColor
+    Graphics.Rendering.OpenGL.Raw.EXT.ShaderImageLoadStore
     Graphics.Rendering.OpenGL.Raw.EXT.SharedTexturePalette
     Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag
     Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide
@@ -218,73 +324,240 @@ library
     Graphics.Rendering.OpenGL.Raw.EXT.Texture
     Graphics.Rendering.OpenGL.Raw.EXT.Texture3D
     Graphics.Rendering.OpenGL.Raw.EXT.TextureArray
-    Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionDXT1
+    Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject
     Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionLATC
     Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionRGTC
     Graphics.Rendering.OpenGL.Raw.EXT.TextureCompressionS3TC
-    Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvAdd
+    Graphics.Rendering.OpenGL.Raw.EXT.TextureCubeMap
     Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine
     Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvDot3
     Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic
+    Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterMinmax
     Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger
     Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias
     Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp
     Graphics.Rendering.OpenGL.Raw.EXT.TextureObject
     Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal
+    Graphics.Rendering.OpenGL.Raw.EXT.TextureSNorm
     Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB
+    Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGBDecode
     Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent
     Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle
     Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery
     Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback
     Graphics.Rendering.OpenGL.Raw.EXT.VertexArray
+    Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA
+    Graphics.Rendering.OpenGL.Raw.EXT.VertexAttrib64Bit
     Graphics.Rendering.OpenGL.Raw.EXT.VertexShader
     Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting
+    Graphics.Rendering.OpenGL.Raw.EXT.X11SyncObject
     Graphics.Rendering.OpenGL.Raw.Functions
+    Graphics.Rendering.OpenGL.Raw.GREMEDY
+    Graphics.Rendering.OpenGL.Raw.GREMEDY.FrameTerminator
+    Graphics.Rendering.OpenGL.Raw.GREMEDY.StringMarker
     Graphics.Rendering.OpenGL.Raw.GetProcAddress
+    Graphics.Rendering.OpenGL.Raw.HP
+    Graphics.Rendering.OpenGL.Raw.HP.ConvolutionBorderModes
+    Graphics.Rendering.OpenGL.Raw.HP.ImageTransform
+    Graphics.Rendering.OpenGL.Raw.HP.OcclusionTest
+    Graphics.Rendering.OpenGL.Raw.HP.TextureLighting
+    Graphics.Rendering.OpenGL.Raw.IBM
+    Graphics.Rendering.OpenGL.Raw.IBM.CullVertex
+    Graphics.Rendering.OpenGL.Raw.IBM.MultimodeDrawArrays
+    Graphics.Rendering.OpenGL.Raw.IBM.RasterposClip
+    Graphics.Rendering.OpenGL.Raw.IBM.StaticData
+    Graphics.Rendering.OpenGL.Raw.IBM.TextureMirroredRepeat
+    Graphics.Rendering.OpenGL.Raw.IBM.VertexArrayLists
+    Graphics.Rendering.OpenGL.Raw.INGR
+    Graphics.Rendering.OpenGL.Raw.INGR.BlendFuncSeparate
+    Graphics.Rendering.OpenGL.Raw.INGR.ColorClamp
+    Graphics.Rendering.OpenGL.Raw.INGR.InterlaceRead
+    Graphics.Rendering.OpenGL.Raw.INTEL
+    Graphics.Rendering.OpenGL.Raw.INTEL.MapTexture
+    Graphics.Rendering.OpenGL.Raw.INTEL.ParallelArrays
+    Graphics.Rendering.OpenGL.Raw.INTEL.PerformanceQuery
+    Graphics.Rendering.OpenGL.Raw.KHR
+    Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvanced
+    Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvancedCoherent
+    Graphics.Rendering.OpenGL.Raw.KHR.ContextFlushControl
+    Graphics.Rendering.OpenGL.Raw.KHR.DebugCompatibility
+    Graphics.Rendering.OpenGL.Raw.KHR.DebugCore
+    Graphics.Rendering.OpenGL.Raw.KHR.Robustness
+    Graphics.Rendering.OpenGL.Raw.KHR.TextureCompressionASTCHDR
+    Graphics.Rendering.OpenGL.Raw.KHR.TextureCompressionASTCLDR
+    Graphics.Rendering.OpenGL.Raw.MESA
+    Graphics.Rendering.OpenGL.Raw.MESA.PackInvert
+    Graphics.Rendering.OpenGL.Raw.MESA.ResizeBuffers
+    Graphics.Rendering.OpenGL.Raw.MESA.WindowPos
+    Graphics.Rendering.OpenGL.Raw.MESA.YCbCrTexture
+    Graphics.Rendering.OpenGL.Raw.MESAX
+    Graphics.Rendering.OpenGL.Raw.MESAX.TextureStack
     Graphics.Rendering.OpenGL.Raw.NV
+    Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirect
+    Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirectCount
+    Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture
+    Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced
+    Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent
+    Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5
     Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
+    Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster
     Graphics.Rendering.OpenGL.Raw.NV.CopyDepthToColor
+    Graphics.Rendering.OpenGL.Raw.NV.CopyImage
+    Graphics.Rendering.OpenGL.Raw.NV.DeepTexture3D
     Graphics.Rendering.OpenGL.Raw.NV.DepthBufferFloat
     Graphics.Rendering.OpenGL.Raw.NV.DepthClamp
+    Graphics.Rendering.OpenGL.Raw.NV.DrawTexture
+    Graphics.Rendering.OpenGL.Raw.NV.Evaluators
     Graphics.Rendering.OpenGL.Raw.NV.ExplicitMultisample
     Graphics.Rendering.OpenGL.Raw.NV.Fence
+    Graphics.Rendering.OpenGL.Raw.NV.FillRectangle
     Graphics.Rendering.OpenGL.Raw.NV.FloatBuffer
     Graphics.Rendering.OpenGL.Raw.NV.FogDistance
+    Graphics.Rendering.OpenGL.Raw.NV.FragmentCoverageToColor
     Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram
     Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2
+    Graphics.Rendering.OpenGL.Raw.NV.FramebufferMixedSamples
     Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage
     Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4
+    Graphics.Rendering.OpenGL.Raw.NV.GPUProgram5
+    Graphics.Rendering.OpenGL.Raw.NV.GPUShader5
     Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4
     Graphics.Rendering.OpenGL.Raw.NV.HalfFloat
+    Graphics.Rendering.OpenGL.Raw.NV.InternalformatSampleQuery
     Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent
+    Graphics.Rendering.OpenGL.Raw.NV.MultisampleCoverage
     Graphics.Rendering.OpenGL.Raw.NV.MultisampleFilterHint
     Graphics.Rendering.OpenGL.Raw.NV.OcclusionQuery
     Graphics.Rendering.OpenGL.Raw.NV.PackedDepthStencil
     Graphics.Rendering.OpenGL.Raw.NV.ParameterBufferObject
-    Graphics.Rendering.OpenGL.Raw.NV.PathRendering
+    Graphics.Rendering.OpenGL.Raw.NV.PathRenderingCompatibility
+    Graphics.Rendering.OpenGL.Raw.NV.PathRenderingCore
+    Graphics.Rendering.OpenGL.Raw.NV.PathRenderingSharedEdge
     Graphics.Rendering.OpenGL.Raw.NV.PixelDataRange
     Graphics.Rendering.OpenGL.Raw.NV.PointSprite
     Graphics.Rendering.OpenGL.Raw.NV.PresentVideo
     Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart
     Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
     Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2
+    Graphics.Rendering.OpenGL.Raw.NV.SampleLocations
+    Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferLoad
+    Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferStore
+    Graphics.Rendering.OpenGL.Raw.NV.ShaderThreadGroup
+    Graphics.Rendering.OpenGL.Raw.NV.TessellationProgram5
     Graphics.Rendering.OpenGL.Raw.NV.TexgenEmboss
     Graphics.Rendering.OpenGL.Raw.NV.TexgenReflection
-    Graphics.Rendering.OpenGL.Raw.NV.TextureCompressionVTC
+    Graphics.Rendering.OpenGL.Raw.NV.TextureBarrier
     Graphics.Rendering.OpenGL.Raw.NV.TextureEnvCombine4
     Graphics.Rendering.OpenGL.Raw.NV.TextureExpandNormal
+    Graphics.Rendering.OpenGL.Raw.NV.TextureMultisample
     Graphics.Rendering.OpenGL.Raw.NV.TextureRectangle
     Graphics.Rendering.OpenGL.Raw.NV.TextureShader
     Graphics.Rendering.OpenGL.Raw.NV.TextureShader2
     Graphics.Rendering.OpenGL.Raw.NV.TextureShader3
     Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback
     Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2
+    Graphics.Rendering.OpenGL.Raw.NV.UniformBufferUnifiedMemory
+    Graphics.Rendering.OpenGL.Raw.NV.VDPAUInterop
     Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange
     Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange2
+    Graphics.Rendering.OpenGL.Raw.NV.VertexAttribInteger64Bit
+    Graphics.Rendering.OpenGL.Raw.NV.VertexBufferUnifiedMemory
     Graphics.Rendering.OpenGL.Raw.NV.VertexProgram
     Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option
     Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3
     Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4
+    Graphics.Rendering.OpenGL.Raw.NV.VideoCapture
+    Graphics.Rendering.OpenGL.Raw.NVX
+    Graphics.Rendering.OpenGL.Raw.NVX.ConditionalRender
+    Graphics.Rendering.OpenGL.Raw.NVX.GPUMemoryInfo
+    Graphics.Rendering.OpenGL.Raw.OES
+    Graphics.Rendering.OpenGL.Raw.OES.ByteCoordinates
+    Graphics.Rendering.OpenGL.Raw.OES.CompressedPalettedTexture
+    Graphics.Rendering.OpenGL.Raw.OES.FixedPoint
+    Graphics.Rendering.OpenGL.Raw.OES.QueryMatrix
+    Graphics.Rendering.OpenGL.Raw.OES.ReadFormat
+    Graphics.Rendering.OpenGL.Raw.OES.SinglePrecision
+    Graphics.Rendering.OpenGL.Raw.OML
+    Graphics.Rendering.OpenGL.Raw.OML.Interlace
+    Graphics.Rendering.OpenGL.Raw.OML.Resample
+    Graphics.Rendering.OpenGL.Raw.OML.Subsample
+    Graphics.Rendering.OpenGL.Raw.PGI
+    Graphics.Rendering.OpenGL.Raw.PGI.MiscHints
+    Graphics.Rendering.OpenGL.Raw.PGI.VertexHints
+    Graphics.Rendering.OpenGL.Raw.REND
+    Graphics.Rendering.OpenGL.Raw.REND.ScreenCoordinates
+    Graphics.Rendering.OpenGL.Raw.S3
+    Graphics.Rendering.OpenGL.Raw.S3.S3TC
+    Graphics.Rendering.OpenGL.Raw.SGI
+    Graphics.Rendering.OpenGL.Raw.SGI.ColorMatrix
+    Graphics.Rendering.OpenGL.Raw.SGI.ColorTable
+    Graphics.Rendering.OpenGL.Raw.SGI.TextureColorTable
+    Graphics.Rendering.OpenGL.Raw.SGIS
+    Graphics.Rendering.OpenGL.Raw.SGIS.DetailTexture
+    Graphics.Rendering.OpenGL.Raw.SGIS.FogFunction
+    Graphics.Rendering.OpenGL.Raw.SGIS.GenerateMipmap
+    Graphics.Rendering.OpenGL.Raw.SGIS.Multisample
+    Graphics.Rendering.OpenGL.Raw.SGIS.PixelTexture
+    Graphics.Rendering.OpenGL.Raw.SGIS.PointLineTexgen
+    Graphics.Rendering.OpenGL.Raw.SGIS.PointParameters
+    Graphics.Rendering.OpenGL.Raw.SGIS.SharpenTexture
+    Graphics.Rendering.OpenGL.Raw.SGIS.Texture4D
+    Graphics.Rendering.OpenGL.Raw.SGIS.TextureBorderClamp
+    Graphics.Rendering.OpenGL.Raw.SGIS.TextureColorMask
+    Graphics.Rendering.OpenGL.Raw.SGIS.TextureEdgeClamp
+    Graphics.Rendering.OpenGL.Raw.SGIS.TextureFilter4
+    Graphics.Rendering.OpenGL.Raw.SGIS.TextureLOD
+    Graphics.Rendering.OpenGL.Raw.SGIS.TextureSelect
+    Graphics.Rendering.OpenGL.Raw.SGIX
+    Graphics.Rendering.OpenGL.Raw.SGIX.Async
+    Graphics.Rendering.OpenGL.Raw.SGIX.AsyncHistogram
+    Graphics.Rendering.OpenGL.Raw.SGIX.AsyncPixel
+    Graphics.Rendering.OpenGL.Raw.SGIX.BlendAlphaMinmax
+    Graphics.Rendering.OpenGL.Raw.SGIX.CalligraphicFragment
+    Graphics.Rendering.OpenGL.Raw.SGIX.Clipmap
+    Graphics.Rendering.OpenGL.Raw.SGIX.ConvolutionAccuracy
+    Graphics.Rendering.OpenGL.Raw.SGIX.DepthTexture
+    Graphics.Rendering.OpenGL.Raw.SGIX.FlushRaster
+    Graphics.Rendering.OpenGL.Raw.SGIX.FogOffset
+    Graphics.Rendering.OpenGL.Raw.SGIX.FragmentLighting
+    Graphics.Rendering.OpenGL.Raw.SGIX.Framezoom
+    Graphics.Rendering.OpenGL.Raw.SGIX.IglooInterface
+    Graphics.Rendering.OpenGL.Raw.SGIX.Instruments
+    Graphics.Rendering.OpenGL.Raw.SGIX.Interlace
+    Graphics.Rendering.OpenGL.Raw.SGIX.IrInstrument1
+    Graphics.Rendering.OpenGL.Raw.SGIX.ListPriority
+    Graphics.Rendering.OpenGL.Raw.SGIX.PixelTexture
+    Graphics.Rendering.OpenGL.Raw.SGIX.PixelTiles
+    Graphics.Rendering.OpenGL.Raw.SGIX.PolynomialFFD
+    Graphics.Rendering.OpenGL.Raw.SGIX.ReferencePlane
+    Graphics.Rendering.OpenGL.Raw.SGIX.Resample
+    Graphics.Rendering.OpenGL.Raw.SGIX.ScalebiasHint
+    Graphics.Rendering.OpenGL.Raw.SGIX.Shadow
+    Graphics.Rendering.OpenGL.Raw.SGIX.ShadowAmbient
+    Graphics.Rendering.OpenGL.Raw.SGIX.Sprite
+    Graphics.Rendering.OpenGL.Raw.SGIX.Subsample
+    Graphics.Rendering.OpenGL.Raw.SGIX.TagSampleBuffer
+    Graphics.Rendering.OpenGL.Raw.SGIX.TextureAddEnv
+    Graphics.Rendering.OpenGL.Raw.SGIX.TextureCoordinateClamp
+    Graphics.Rendering.OpenGL.Raw.SGIX.TextureLODBias
+    Graphics.Rendering.OpenGL.Raw.SGIX.TextureMultiBuffer
+    Graphics.Rendering.OpenGL.Raw.SGIX.TextureScaleBias
+    Graphics.Rendering.OpenGL.Raw.SGIX.VertexPreclip
+    Graphics.Rendering.OpenGL.Raw.SGIX.YCrCb
+    Graphics.Rendering.OpenGL.Raw.SGIX.YCrCbA
+    Graphics.Rendering.OpenGL.Raw.SUN
+    Graphics.Rendering.OpenGL.Raw.SUN.ConvolutionBorderModes
+    Graphics.Rendering.OpenGL.Raw.SUN.GlobalAlpha
+    Graphics.Rendering.OpenGL.Raw.SUN.MeshArray
+    Graphics.Rendering.OpenGL.Raw.SUN.SliceAccum
+    Graphics.Rendering.OpenGL.Raw.SUN.TriangleList
+    Graphics.Rendering.OpenGL.Raw.SUN.Vertex
+    Graphics.Rendering.OpenGL.Raw.SUNX
+    Graphics.Rendering.OpenGL.Raw.SUNX.ConstantData
+    Graphics.Rendering.OpenGL.Raw.ThreeDFX
+    Graphics.Rendering.OpenGL.Raw.ThreeDFX.Multisample
+    Graphics.Rendering.OpenGL.Raw.ThreeDFX.Tbuffer
+    Graphics.Rendering.OpenGL.Raw.ThreeDFX.TextureCompressionFXT1
     Graphics.Rendering.OpenGL.Raw.Tokens
     Graphics.Rendering.OpenGL.Raw.Types
     Graphics.Rendering.OpenGL.Raw.Version10
@@ -295,6 +568,9 @@ library
     Graphics.Rendering.OpenGL.Raw.Version15
     Graphics.Rendering.OpenGL.Raw.Version20
     Graphics.Rendering.OpenGL.Raw.Version21
+    Graphics.Rendering.OpenGL.Raw.WIN
+    Graphics.Rendering.OpenGL.Raw.WIN.PhongShading
+    Graphics.Rendering.OpenGL.Raw.WIN.SpecularFog
   c-sources:
     cbits/HsOpenGLRaw.c
   hs-source-dirs: src

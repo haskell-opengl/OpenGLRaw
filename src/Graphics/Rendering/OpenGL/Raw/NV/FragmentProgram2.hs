@@ -1,40 +1,24 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the NV_fragment_program, see
--- <http://www.opengl.org/registry/specs/NV/fragment_program.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/fragment_program2.txt NV_fragment_program2> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2 (
-   -- * Tokens
-   gl_MAX_PROGRAM_EXEC_INSTRUCTIONS,
-   gl_MAX_PROGRAM_CALL_DEPTH,
-   gl_MAX_PROGRAM_IF_DEPTH,
-   gl_MAX_PROGRAM_LOOP_DEPTH,
-   gl_MAX_PROGRAM_LOOP_COUNT
+  -- * Enums
+  gl_MAX_PROGRAM_CALL_DEPTH_NV,
+  gl_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV,
+  gl_MAX_PROGRAM_IF_DEPTH_NV,
+  gl_MAX_PROGRAM_LOOP_COUNT_NV,
+  gl_MAX_PROGRAM_LOOP_DEPTH_NV
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_MAX_PROGRAM_EXEC_INSTRUCTIONS :: GLenum
-gl_MAX_PROGRAM_EXEC_INSTRUCTIONS = 0x88F4
-
-gl_MAX_PROGRAM_CALL_DEPTH :: GLenum
-gl_MAX_PROGRAM_CALL_DEPTH = 0x88F5
-
-gl_MAX_PROGRAM_IF_DEPTH :: GLenum
-gl_MAX_PROGRAM_IF_DEPTH = 0x88F6
-
-gl_MAX_PROGRAM_LOOP_DEPTH :: GLenum
-gl_MAX_PROGRAM_LOOP_DEPTH = 0x88F7
-
-gl_MAX_PROGRAM_LOOP_COUNT :: GLenum
-gl_MAX_PROGRAM_LOOP_COUNT = 0x88F8
+import Graphics.Rendering.OpenGL.Raw.Tokens

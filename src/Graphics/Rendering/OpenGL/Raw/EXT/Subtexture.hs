@@ -1,23 +1,21 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.Subtexture
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions from the EXT_subtexture extension, see
--- <http://www.opengl.org/registry/specs/EXT/subtexture.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/subtexture.txt EXT_subtexture> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Subtexture (
-   -- * Functions
-   glTexSubImage1D,
-   glTexSubImage2D,
-   glTexSubImage3D
+  -- * Functions
+  glTexSubImage1DEXT,
+  glTexSubImage2DEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Functions

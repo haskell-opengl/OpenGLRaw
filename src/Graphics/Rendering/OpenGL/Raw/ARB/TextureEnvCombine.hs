@@ -1,52 +1,41 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the ARB_texture_env_combine extension, see
--- <http://www.opengl.org/registry/specs/ARB/texture_env_combine.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/texture_env_combine.txt ARB_texture_env_combine> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine (
-   -- * Tokens
-   gl_COMBINE,
-   gl_COMBINE_RGB,
-   gl_COMBINE_ALPHA,
-   gl_SOURCE0_RGB,
-   gl_SOURCE1_RGB,
-   gl_SOURCE2_RGB,
-   gl_SOURCE0_ALPHA,
-   gl_SOURCE1_ALPHA,
-   gl_SOURCE2_ALPHA,
-   gl_OPERAND0_RGB,
-   gl_OPERAND1_RGB,
-   gl_OPERAND2_RGB,
-   gl_OPERAND0_ALPHA,
-   gl_OPERAND1_ALPHA,
-   gl_OPERAND2_ALPHA,
-   gl_RGB_SCALE,
-   gl_ALPHA_SCALE,
-   gl_REPLACE,
-   gl_MODULATE,
-   gl_ADD,
-   gl_ADD_SIGNED,
-   gl_INTERPOLATE,
-   gl_SUBTRACT,
-   gl_TEXTURE,
-   gl_CONSTANT,
-   gl_PRIMARY_COLOR,
-   gl_PREVIOUS,
-   gl_SRC_COLOR,
-   gl_ONE_MINUS_SRC_COLOR,
-   gl_SRC_ALPHA,
-   gl_ONE_MINUS_SRC_ALPHA
+  -- * Enums
+  gl_ADD_SIGNED_ARB,
+  gl_COMBINE_ALPHA_ARB,
+  gl_COMBINE_ARB,
+  gl_COMBINE_RGB_ARB,
+  gl_CONSTANT_ARB,
+  gl_INTERPOLATE_ARB,
+  gl_OPERAND0_ALPHA_ARB,
+  gl_OPERAND0_RGB_ARB,
+  gl_OPERAND1_ALPHA_ARB,
+  gl_OPERAND1_RGB_ARB,
+  gl_OPERAND2_ALPHA_ARB,
+  gl_OPERAND2_RGB_ARB,
+  gl_PREVIOUS_ARB,
+  gl_PRIMARY_COLOR_ARB,
+  gl_RGB_SCALE_ARB,
+  gl_SOURCE0_ALPHA_ARB,
+  gl_SOURCE0_RGB_ARB,
+  gl_SOURCE1_ALPHA_ARB,
+  gl_SOURCE1_RGB_ARB,
+  gl_SOURCE2_ALPHA_ARB,
+  gl_SOURCE2_RGB_ARB,
+  gl_SUBTRACT_ARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens

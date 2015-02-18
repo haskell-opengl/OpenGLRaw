@@ -37,7 +37,7 @@ module Graphics.Rendering.OpenGL.Raw.Types (
   GLclampf,
   GLdouble,
   GLclampd,
-  GLDEBUGPROC,
+  GLDEBUGPROC, GLDEBUGPROCFunc, makeGLDEBUGPROC,
   GLvoid,
 
   -- * Pre-standard OpenGL types.
@@ -48,7 +48,7 @@ module Graphics.Rendering.OpenGL.Raw.Types (
   GLsizeiptrARB,
   GLhalfARB,
   GLhalfNV,
-  GLDEBUGPROCAMD,
+  GLDEBUGPROCAMD, GLDEBUGPROCAMDFunc, makeGLDEBUGPROCAMD,
   GLDEBUGPROCARB,
   GLDEBUGPROCKHR,
 
@@ -135,9 +135,24 @@ type GLdouble = CDouble
 -- | 64bit floating-point value clamped to [0, 1].
 type GLclampd = CDouble
 
+-- | A pointer to a debug callback.
+type GLDEBUGPROC = FunPtr GLDEBUGPROCFunc
+
 -- | Debug callback.
-type GLDEBUGPROC = FunPtr (GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
--- TODO: calling convention, parameter documentation
+type GLDEBUGPROCFunc
+  =  GLenum -- ^ @source@.
+  -> GLenum -- ^ @type@.
+  -> GLuint -- ^ @id@.
+  -> GLenum -- ^ @severity@.
+  -> GLsizei -- ^ @length@.
+  -> Ptr GLchar -- ^ @message@.
+  -> Ptr () -- ^ @userParam@.
+  -> IO ()
+
+-- | The storage associated with the resulting 'FunPtr' has to be released with
+-- 'freeHaskellFunPtr' when it is no longer required.
+foreign import CALLCONV "wrapper"
+   makeGLDEBUGPROC :: GLDEBUGPROCFunc -> IO (FunPtr GLDEBUGPROCFunc)
 
 -- | Not an actual GL type, though used in headers in the past.
 type GLvoid = ()
@@ -156,14 +171,26 @@ type GLhalfARB = CUShort
 
 type GLhalfNV = CUShort
 
-type GLDEBUGPROCAMD = FunPtr(GLuint -> GLenum -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
--- TODO: calling convention, parameter documentation
+type GLDEBUGPROCAMD = FunPtr GLDEBUGPROCAMDFunc
 
-type GLDEBUGPROCARB = FunPtr(GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
--- TODO: calling convention, parameter documentation
+-- | Debug callback.
+type GLDEBUGPROCAMDFunc
+  =  GLuint -- ^ @id@.
+  -> GLenum -- ^ @category@.
+  -> GLenum -- ^ @severity@.
+  -> GLsizei -- ^ @length@.
+  -> Ptr GLchar -- ^ @message@.
+  -> Ptr () -- ^ @userParam@.
+  -> IO ()
 
-type GLDEBUGPROCKHR = FunPtr(GLenum -> GLenum -> GLuint -> GLenum -> GLsizei -> Ptr GLchar -> Ptr () -> IO ())
--- TODO: calling convention, parameter documentation
+-- | The storage associated with the resulting 'FunPtr' has to be released with
+-- 'freeHaskellFunPtr' when it is no longer required.
+foreign import CALLCONV "wrapper"
+  makeGLDEBUGPROCAMD :: GLDEBUGPROCAMDFunc -> IO (FunPtr GLDEBUGPROCAMDFunc)
+
+type GLDEBUGPROCARB = GLDEBUGPROC
+
+type GLDEBUGPROCKHR = GLDEBUGPROC
 
 type GLclampx = CInt
 -- NOTE: OpenGL ES uses khronos_int32_t for this.

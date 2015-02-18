@@ -1,71 +1,32 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.PalettedTexture
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_paletted_texture extension, see
--- <http://www.opengl.org/registry/specs/EXT/paletted_texture.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/paletted_texture.txt EXT_paletted_texture> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PalettedTexture (
-   -- * Functions
-   glColorTable,
-   glColorSubTable,
-   glGetColorTable,
-   glGetColorTableParameteriv,
-   glGetColorTableParameterfv,
-   -- * Tokens
-   gl_COLOR_INDEX1,
-   gl_COLOR_INDEX2,
-   gl_COLOR_INDEX4,
-   gl_COLOR_INDEX8,
-   gl_COLOR_INDEX12,
-   gl_COLOR_INDEX16,
-   gl_COLOR_TABLE_FORMAT,
-   gl_COLOR_TABLE_WIDTH,
-   gl_COLOR_TABLE_RED_SIZE,
-   gl_COLOR_TABLE_GREEN_SIZE,
-   gl_COLOR_TABLE_BLUE_SIZE,
-   gl_COLOR_TABLE_ALPHA_SIZE,
-   gl_COLOR_TABLE_LUMINANCE_SIZE,
-   gl_COLOR_TABLE_INTENSITY_SIZE,
-   gl_TEXTURE_INDEX_SIZE,
-   gl_TEXTURE_1D,
-   gl_TEXTURE_2D,
-   gl_TEXTURE_3D,
-   gl_TEXTURE_CUBE_MAP,
-   gl_PROXY_TEXTURE_1D,
-   gl_PROXY_TEXTURE_2D,
-   gl_PROXY_TEXTURE_3D,
-   gl_PROXY_TEXTURE_CUBE_MAP
+  -- * Enums
+  gl_COLOR_INDEX12_EXT,
+  gl_COLOR_INDEX16_EXT,
+  gl_COLOR_INDEX1_EXT,
+  gl_COLOR_INDEX2_EXT,
+  gl_COLOR_INDEX4_EXT,
+  gl_COLOR_INDEX8_EXT,
+  gl_TEXTURE_INDEX_SIZE_EXT,
+  -- * Functions
+  glColorTableEXT,
+  glGetColorTableEXT,
+  glGetColorTableParameterfvEXT,
+  glGetColorTableParameterivEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_COLOR_INDEX1 :: GLenum
-gl_COLOR_INDEX1 = 0x80E2
-
-gl_COLOR_INDEX2 :: GLenum
-gl_COLOR_INDEX2 = 0x80E3
-
-gl_COLOR_INDEX4 :: GLenum
-gl_COLOR_INDEX4 = 0x80E4
-
-gl_COLOR_INDEX8 :: GLenum
-gl_COLOR_INDEX8 = 0x80E5
-
-gl_COLOR_INDEX12 :: GLenum
-gl_COLOR_INDEX12 = 0x80E6
-
-gl_COLOR_INDEX16 :: GLenum
-gl_COLOR_INDEX16 = 0x80E7
-
-gl_TEXTURE_INDEX_SIZE :: GLenum
-gl_TEXTURE_INDEX_SIZE = 0x80ED
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

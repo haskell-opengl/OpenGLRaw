@@ -1,42 +1,32 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.TextureObject
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_texture_object extension, see
--- <http://www.opengl.org/registry/specs/EXT/texture_object.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/texture_object.txt EXT_texture_object> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureObject (
-   -- * Functions
-   glGenTextures,
-   glDeleteTextures,
-   glBindTexture,
-   glPrioritizeTextures,
-   glAreTexturesResident,
-   glIsTexture,
-   -- * Tokens
-   gl_TEXTURE_PRIORITY,
-   gl_TEXTURE_RESIDENT,
-   gl_TEXTURE_1D_BINDING,
-   gl_TEXTURE_2D_BINDING,
-   gl_TEXTURE_3D_BINDING
+  -- * Enums
+  gl_TEXTURE_1D_BINDING_EXT,
+  gl_TEXTURE_2D_BINDING_EXT,
+  gl_TEXTURE_3D_BINDING_EXT,
+  gl_TEXTURE_PRIORITY_EXT,
+  gl_TEXTURE_RESIDENT_EXT,
+  -- * Functions
+  glAreTexturesResidentEXT,
+  glBindTextureEXT,
+  glDeleteTexturesEXT,
+  glGenTexturesEXT,
+  glIsTextureEXT,
+  glPrioritizeTexturesEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_TEXTURE_1D_BINDING :: GLenum
-gl_TEXTURE_1D_BINDING = gl_TEXTURE_BINDING_1D
-
-gl_TEXTURE_2D_BINDING :: GLenum
-gl_TEXTURE_2D_BINDING = gl_TEXTURE_BINDING_2D
-
-gl_TEXTURE_3D_BINDING :: GLenum
-gl_TEXTURE_3D_BINDING = gl_TEXTURE_BINDING_3D
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

@@ -1,22 +1,21 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the EXT_blend_subtract extension, see
--- <http://www.opengl.org/registry/specs/EXT/blend_subtract.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/blend_subtract.txt EXT_blend_subtract> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract (
-   -- * Tokens
-   gl_FUNC_SUBTRACT,
-   gl_FUNC_REVERSE_SUBTRACT
+  -- * Enums
+  gl_FUNC_REVERSE_SUBTRACT_EXT,
+  gl_FUNC_SUBTRACT_EXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens

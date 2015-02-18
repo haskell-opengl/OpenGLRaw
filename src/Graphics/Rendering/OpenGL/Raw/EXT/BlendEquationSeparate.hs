@@ -1,24 +1,24 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the EXT_blend_equation_separate extension, see
--- <http://www.opengl.org/registry/specs/EXT/blend_equation_separate.txt>.
+-- The <https://www.opengl.org/registry/specs/EXT/blend_equation_separate.txt EXT_blend_equation_separate> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate (
-   -- * Functions
-   glBlendEquationSeparate,
-   -- * Tokens
-   gl_BLEND_EQUATION_RGB,
-   gl_BLEND_EQUATION_ALPHA
+  -- * Enums
+  gl_BLEND_EQUATION_ALPHA_EXT,
+  gl_BLEND_EQUATION_RGB_EXT,
+  -- * Functions
+  glBlendEquationSeparateEXT
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

@@ -1,44 +1,29 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.PixelDataRange
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All tokens from the NV_pixel_data_range extension, see
--- <http://www.opengl.org/registry/specs/NV/pixel_data_range.txt>.
+-- The <https://www.opengl.org/registry/specs/NV/pixel_data_range.txt NV_pixel_data_range> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.PixelDataRange (
-   -- * Tokens
-   gl_WRITE_PIXEL_DATA_RANGE,
-   gl_READ_PIXEL_DATA_RANGE,
-   gl_WRITE_PIXEL_DATA_RANGE_LENGTH,
-   gl_READ_PIXEL_DATA_RANGE_LENGTH,
-   gl_WRITE_PIXEL_DATA_RANGE_POINTER,
-   gl_READ_PIXEL_DATA_RANGE_POINTER
+  -- * Enums
+  gl_READ_PIXEL_DATA_RANGE_LENGTH_NV,
+  gl_READ_PIXEL_DATA_RANGE_NV,
+  gl_READ_PIXEL_DATA_RANGE_POINTER_NV,
+  gl_WRITE_PIXEL_DATA_RANGE_LENGTH_NV,
+  gl_WRITE_PIXEL_DATA_RANGE_NV,
+  gl_WRITE_PIXEL_DATA_RANGE_POINTER_NV,
+  -- * Functions
+  glFlushPixelDataRangeNV,
+  glPixelDataRangeNV
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Core32
-
-gl_WRITE_PIXEL_DATA_RANGE :: GLenum
-gl_WRITE_PIXEL_DATA_RANGE = 0x8878
-
-gl_READ_PIXEL_DATA_RANGE :: GLenum
-gl_READ_PIXEL_DATA_RANGE = 0x8879
-
-gl_WRITE_PIXEL_DATA_RANGE_LENGTH :: GLenum
-gl_WRITE_PIXEL_DATA_RANGE_LENGTH = 0x887A
-
-gl_READ_PIXEL_DATA_RANGE_LENGTH :: GLenum
-gl_READ_PIXEL_DATA_RANGE_LENGTH = 0x887B
-
-gl_WRITE_PIXEL_DATA_RANGE_POINTER :: GLenum
-gl_WRITE_PIXEL_DATA_RANGE_POINTER = 0x887C
-
-gl_READ_PIXEL_DATA_RANGE_POINTER :: GLenum
-gl_READ_PIXEL_DATA_RANGE_POINTER = 0x887D
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions

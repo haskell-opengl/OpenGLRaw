@@ -1,25 +1,24 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
--- Copyright   :  (c) Sven Panne 2013
+-- Copyright   :  (c) Sven Panne 2015
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
 -- Stability   :  stable
 -- Portability :  portable
 --
--- All raw functions and tokens from the ARB_sample_shading extension, see
--- <http://www.opengl.org/registry/specs/ARB/sample_shading.txt>.
+-- The <https://www.opengl.org/registry/specs/ARB/sample_shading.txt ARB_sample_shading> extension.
 --
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading (
-   -- * Functions
-   glMinSampleShading,
-   -- * Tokens
-   gl_SAMPLE_SHADING,
-   gl_MIN_SAMPLE_SHADING_VALUE
+  -- * Enums
+  gl_MIN_SAMPLE_SHADING_VALUE_ARB,
+  gl_SAMPLE_SHADING_ARB,
+  -- * Functions
+  glMinSampleShadingARB
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.Functions
 import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Functions
