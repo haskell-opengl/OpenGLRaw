@@ -13,6 +13,7 @@
 module Graphics.Rendering.OpenGL.Raw.Compatibility45 (
   -- * Types
   GLDEBUGPROC,
+  GLDEBUGPROCFunc,
   GLbitfield,
   GLboolean,
   GLbyte,
@@ -35,6 +36,7 @@ module Graphics.Rendering.OpenGL.Raw.Compatibility45 (
   GLuint64,
   GLushort,
   GLvoid,
+  makeGLDEBUGPROC,
   -- * Enums
   gl_2D,
   gl_2_BYTES,

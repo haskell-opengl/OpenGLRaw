@@ -13,6 +13,7 @@
 module Graphics.Rendering.OpenGL.Raw.Core43 (
   -- * Types
   GLDEBUGPROC,
+  GLDEBUGPROCFunc,
   GLbitfield,
   GLboolean,
   GLbyte,
@@ -35,6 +36,7 @@ module Graphics.Rendering.OpenGL.Raw.Core43 (
   GLuint64,
   GLushort,
   GLvoid,
+  makeGLDEBUGPROC,
   -- * Enums
   gl_ACTIVE_ATOMIC_COUNTER_BUFFERS,
   gl_ACTIVE_ATTRIBUTES,

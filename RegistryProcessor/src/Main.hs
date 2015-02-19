@@ -242,7 +242,20 @@ fixedReplay api version profile registry
   | otherwise = (ts', es, cs)
   where (ts, es, cs) = replay api version profile registry
         (_, es11, _) = replay api (read "1.1") profile registry
-        ts' = S.toList . S.unions  $ S.fromList ts : map referencedTypes cs
+        ts' = S.toList . addFuncsAndMakes . S.unions  $ S.fromList ts : map referencedTypes cs
+
+-- For debug callbacks, we want to export the Haskell types and their creators, too.
+addFuncsAndMakes :: S.Set TypeName -> S.Set TypeName
+addFuncsAndMakes =
+   flip (foldr addFuncAndMake) [
+     "GLDEBUGPROC",
+     "GLDEBUGPROCAMD",
+     "GLDEBUGPROCARB",
+     "GLDEBUGPROCKHR" ]
+   where addFuncAndMake t ts
+           | TypeName t `S.member` ts =
+               ts `S.union` S.fromList (map TypeName [ t ++ "Func", "make" ++ t ])
+           | otherwise = ts
 
 -- Here is the heart of the feature construction logic: Chronologically replay
 -- the whole version history for the given API/version/profile triple.
