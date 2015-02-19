@@ -62,6 +62,11 @@ printFunctions api registry = do
     SI.hPutStrLn h . separate unCommandName . M.keys . commands $registry
     SI.hPutStrLn h ") where"
     SI.hPutStrLn h ""
+    SI.hPutStrLn h "-- Make the foreign imports happy."
+    SI.hPutStrLn h "import Data.Int"
+    SI.hPutStrLn h "import Data.Word"
+    SI.hPutStrLn h "import Foreign.C.Types"
+    SI.hPutStrLn h ""
     SI.hPutStrLn h "import Foreign.Marshal.Error ( throwIf )"
     SI.hPutStrLn h "import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )"
     SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"

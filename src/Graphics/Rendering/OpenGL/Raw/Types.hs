@@ -56,25 +56,7 @@ module Graphics.Rendering.OpenGL.Raw.Types (
   GLclampx,
   GLhandleARB,
   GLvdpauSurfaceNV,
-  GLeglImageOES,
-
-  -- * Re-exports
-  CChar(..),
-  CDouble(..),
-  CFloat(..),
-  CInt(..),
-  CPtrdiff(..),
-  CSChar(..),
-  CShort(..),
-  CUChar(..),
-  CUInt(..),
-  CUShort(..),
-
-  Int64(..),
-  Word64(..),
-
-  FunPtr(..),
-  Ptr(..)
+  GLeglImageOES
 ) where
 
 import Data.Int
