@@ -62,7 +62,6 @@ printFunctions api registry = do
     SI.hPutStrLn h . separate unCommandName . M.keys . commands $registry
     SI.hPutStrLn h ") where"
     SI.hPutStrLn h ""
-    SI.hPutStrLn h "import Foreign.C.Types"
     SI.hPutStrLn h "import Foreign.Marshal.Error ( throwIf )"
     SI.hPutStrLn h "import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )"
     SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"
@@ -168,7 +167,9 @@ nameAndModifications api e =
   (extensionName e,
    [ conditionalModificationModification cm
    | cm <- extensionsRequireRemove e
-   , api `matches` conditionalModificationAPI cm ])
+   , api `matches` conditionalModificationAPI cm
+   -- ARB_compatibility has an empty "require" element only
+   , not . null . modificationInterfaceElements . conditionalModificationModification $ cm ])
 
 supports :: API -> Maybe [API] -> Bool
 _ `supports` Nothing = True

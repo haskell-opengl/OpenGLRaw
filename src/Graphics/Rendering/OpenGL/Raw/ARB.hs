@@ -22,7 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
   module Graphics.Rendering.OpenGL.Raw.ARB.CLEvent,
   module Graphics.Rendering.OpenGL.Raw.ARB.ClipControl,
   module Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat,
-  module Graphics.Rendering.OpenGL.Raw.ARB.Compatibility,
   module Graphics.Rendering.OpenGL.Raw.ARB.CompressedTexturePixelStorage,
   module Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader,
   module Graphics.Rendering.OpenGL.Raw.ARB.ComputeVariableGroupSize,

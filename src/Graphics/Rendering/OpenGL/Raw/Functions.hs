@@ -3079,7 +3079,6 @@ module Graphics.Rendering.OpenGL.Raw.Functions (
   glWriteMaskEXT
 ) where
 
-import Foreign.C.Types
 import Foreign.Marshal.Error ( throwIf )
 import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )
 import System.IO.Unsafe ( unsafePerformIO )
