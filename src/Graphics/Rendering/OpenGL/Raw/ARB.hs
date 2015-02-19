@@ -157,7 +157,6 @@ import Graphics.Rendering.OpenGL.Raw.ARB.ClearTexture
 import Graphics.Rendering.OpenGL.Raw.ARB.CLEvent
 import Graphics.Rendering.OpenGL.Raw.ARB.ClipControl
 import Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat
-import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.CompressedTexturePixelStorage
 import Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader
 import Graphics.Rendering.OpenGL.Raw.ARB.ComputeVariableGroupSize
