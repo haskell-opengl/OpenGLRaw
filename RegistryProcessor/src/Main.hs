@@ -63,8 +63,6 @@ printFunctions api registry = do
     SI.hPutStrLn h ") where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h "-- Make the foreign imports happy."
-    SI.hPutStrLn h "import Data.Int"
-    SI.hPutStrLn h "import Data.Word"
     SI.hPutStrLn h "import Foreign.C.Types"
     SI.hPutStrLn h ""
     SI.hPutStrLn h "import Foreign.Marshal.Error ( throwIf )"

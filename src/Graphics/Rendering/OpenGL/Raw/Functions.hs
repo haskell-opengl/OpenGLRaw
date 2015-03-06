@@ -3080,8 +3080,6 @@ module Graphics.Rendering.OpenGL.Raw.Functions (
 ) where
 
 -- Make the foreign imports happy.
-import Data.Int
-import Data.Word
 import Foreign.C.Types
 
 import Foreign.Marshal.Error ( throwIf )
