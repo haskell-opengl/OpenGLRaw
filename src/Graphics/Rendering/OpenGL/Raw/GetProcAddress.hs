@@ -28,6 +28,7 @@ module Graphics.Rendering.OpenGL.Raw.GetProcAddress (
 ) where
 
 import Control.Monad ( foldM )
+import Control.Monad.IO.Class ( MonadIO(..) )
 import Foreign.C.String ( withCString, CString )
 import Foreign.Marshal.Error ( throwIf )
 import Foreign.Ptr ( FunPtr, nullFunPtr )
@@ -40,21 +41,21 @@ import Foreign.Ptr ( FunPtr, nullFunPtr )
 
 -- | Retrieve an OpenGL function by name. Returns 'nullFunPtr' when no function
 -- with the given name was found.
-getProcAddress :: String -> IO (FunPtr a)
-getProcAddress cmd = withCString cmd hs_OpenGLRaw_getProcAddress
+getProcAddress :: MonadIO m => String -> m (FunPtr a)
+getProcAddress cmd = liftIO $ withCString cmd hs_OpenGLRaw_getProcAddress
 
 foreign import ccall unsafe "hs_OpenGLRaw_getProcAddress"
    hs_OpenGLRaw_getProcAddress :: CString -> IO (FunPtr a)
 
 -- | Retrieve an OpenGL function by name. Throws an 'userError' when no function
 -- with the given name was found.
-getProcAddressChecked :: String -> IO (FunPtr a)
-getProcAddressChecked cmd = check cmd $ getProcAddress cmd
+getProcAddressChecked :: MonadIO m => String -> m (FunPtr a)
+getProcAddressChecked cmd = liftIO $ check cmd $ getProcAddress cmd
 
 -- | Retrieve an OpenGL function by name, trying a list of name suffixes in the
 -- given order. Returns 'nullFunPtr' when no function with the given name plus
 -- any of the suffixes was found.
-getProcAddressWithSuffixes :: String -> [String] -> IO (FunPtr a)
+getProcAddressWithSuffixes :: MonadIO m => String -> [String] -> m (FunPtr a)
 getProcAddressWithSuffixes cmd = foldM gpa nullFunPtr
    where gpa p s | p == nullFunPtr = getProcAddress (cmd ++ s)
                  | otherwise       = return p
@@ -62,21 +63,23 @@ getProcAddressWithSuffixes cmd = foldM gpa nullFunPtr
 -- | Retrieve an OpenGL function by name, trying a list of name suffixes in the
 -- given order. Throws an 'userError' when no function with the given name plus
 -- any of the suffixes was found.
-getProcAddressWithSuffixesChecked :: String -> [String] -> IO (FunPtr a)
+getProcAddressWithSuffixesChecked :: MonadIO m
+                                  => String -> [String] -> m (FunPtr a)
 getProcAddressWithSuffixesChecked cmd suffixes =
-   check cmd $ getProcAddressWithSuffixes cmd suffixes
+   liftIO $ check cmd $ getProcAddressWithSuffixes cmd suffixes
 
 -- | Retrieve an OpenGL function by name, additionally trying a list of all
 -- known vendor suffixes. Returns 'nullFunPtr' when no function with the given
 -- name plus any of the suffixes was found.
-getExtension :: String -> IO (FunPtr a)
-getExtension = flip getProcAddressWithSuffixes vendorSuffixes
+getExtension :: MonadIO m => String -> m (FunPtr a)
+getExtension cmd = liftIO $ getProcAddressWithSuffixes cmd vendorSuffixes
 
 -- | Retrieve an OpenGL function by name, additionally trying a list of all
 -- known vendor suffixes. Throws an 'userError' when no function with the given
 -- name plus any of the suffixes was found.
-getExtensionChecked :: String -> IO (FunPtr a)
-getExtensionChecked = flip getProcAddressWithSuffixesChecked vendorSuffixes
+getExtensionChecked :: MonadIO m => String -> m (FunPtr a)
+getExtensionChecked cmd =
+  liftIO $ getProcAddressWithSuffixesChecked cmd vendorSuffixes
 
 check :: String -> IO (FunPtr a) -> IO (FunPtr a)
 check = throwIfNullFunPtr . ("unknown OpenGL command " ++)

@@ -65,6 +65,7 @@ printFunctions api registry = do
     SI.hPutStrLn h "-- Make the foreign imports happy."
     SI.hPutStrLn h "import Foreign.C.Types"
     SI.hPutStrLn h ""
+    SI.hPutStrLn h "import Control.Monad.IO.Class ( MonadIO(..) )"
     SI.hPutStrLn h "import Foreign.Marshal.Error ( throwIf )"
     SI.hPutStrLn h "import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )"
     SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"
@@ -312,8 +313,9 @@ showCommand api c =
   showString man .
 
   showString (name ++ "\n") .
-  showString ("  :: " ++ signature True) .
-  showString (name ++ " = " ++ dyn_name ++ " " ++ ptr_name ++ "\n\n") .
+  showString ("  :: MonadIO m\n") .
+  showString ("  => " ++ signature True) .
+  showString (name ++ args ++ " = liftIO $ " ++ dyn_name ++ " " ++ ptr_name ++ args ++ "\n\n") .
 
   showString ("foreign import CALLCONV \"dynamic\" " ++ dyn_name ++ "\n" ++
               "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
@@ -341,11 +343,14 @@ showCommand api c =
                 [_] ->  "-- | Manual page for "  ++ links
                 _   ->  "-- | Manual pages for " ++ links
         renderURL (u, l) = "<" ++ u ++ " " ++ l ++ ">"
+        args = concat [" v" ++ show i | i <- [1 .. length (paramTypes c)]]
 
 showSignatureElement :: Bool -> Bool -> SignatureElement -> String
 showSignatureElement withComment isResult sigElem = el ++ comment
-  where el | isResult  = "IO " ++ showsPrec 11 sigElem ""
+  where el | isResult  = monad ++ " " ++ showsPrec 11 sigElem ""
            | otherwise = show sigElem
+        monad | withComment = "m"
+              | otherwise = "IO"
         comment | withComment = showComment name sigElem
                 | otherwise   = ""
         name | isResult  = ""
