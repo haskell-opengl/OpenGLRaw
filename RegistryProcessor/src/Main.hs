@@ -3,7 +3,7 @@ module Main ( main ) where
 import qualified Control.Monad as CM
 import qualified Data.Char as C
 import qualified Data.List as L
-import qualified Data.Map as M
+import qualified Data.Map.Strict as M
 import qualified Data.Maybe as DM
 import qualified Data.Set as S
 import qualified System.Directory as D
@@ -79,6 +79,8 @@ printFunctions api registry = do
     SI.hPutStrLn h ""
     SI.hPutStrLn h "throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)"
     SI.hPutStrLn h "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
+    SI.hPutStrLn h ""
+    mapM_ (SI.hPutStrLn h) (S.toList (M.foldl' makeImportDynamic S.empty (commands registry)))
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . showCommand api) (M.elems (commands registry))
 
@@ -317,10 +319,6 @@ showCommand api c =
   showString ("  => " ++ signature True) .
   showString (name ++ args ++ " = liftIO $ " ++ dyn_name ++ " " ++ ptr_name ++ args ++ "\n\n") .
 
-  showString ("foreign import CALLCONV \"dynamic\" " ++ dyn_name ++ "\n" ++
-              "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
-              "  ->         " ++ compactSignature ++ "\n\n") .
-
   showString ("{-# NOINLINE " ++ ptr_name ++ " #-}\n") .
   showString (ptr_name ++ " :: FunPtr (" ++ compactSignature ++ ")\n") .
   showString (ptr_name ++ " = unsafePerformIO $ getCommand " ++ str_name ++ "\n") .
@@ -328,14 +326,11 @@ showCommand api c =
   id $ ""
 
   where name = signatureElementName (resultType c)
-        dyn_name = "dyn_" ++ name
+        dyn_name = getDynName compactSignature
         ptr_name = "ptr_" ++ name
         str_name = show name
         compactSignature = signature False
-        signature withComment =
-          L.intercalate ((if withComment then " " else "") ++ " -> ")
-            ([showSignatureElement withComment False t | t <- paramTypes c] ++
-             [showSignatureElement withComment True (resultType c)])
+        signature withComment = showSignatureFromCommand c withComment
         urls = M.findWithDefault [] (api, CommandName name) manPageURLs
         links = L.intercalate " or " (map renderURL urls)  ++ "\n"
         man = case urls of
@@ -344,6 +339,23 @@ showCommand api c =
                 _   ->  "-- | Manual pages for " ++ links
         renderURL (u, l) = "<" ++ u ++ " " ++ l ++ ">"
         args = concat [" v" ++ show i | i <- [1 .. length (paramTypes c)]]
+
+makeImportDynamic :: S.Set String -> Command -> S.Set String
+makeImportDynamic sigmap c = S.insert sig sigmap
+  where sig = "foreign import CALLCONV \"dynamic\" " ++ dyn_name ++ "\n" ++
+              "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
+              "  ->         " ++ compactSignature ++ "\n"
+        dyn_name = getDynName compactSignature
+        compactSignature = showSignatureFromCommand c False
+
+getDynName :: String -> String
+getDynName sig = "dyn_" ++ (map (\x -> if x == '-' then '_' else x) $ filter (\x -> x `elem` ("-" ++ ['0'..'9'] ++ ['A'..'Z'] ++ ['a'..'z'])) sig)
+
+showSignatureFromCommand :: Command -> Bool -> String
+showSignatureFromCommand c withComment =
+  L.intercalate ((if withComment then " " else "") ++ " -> ")
+    ([showSignatureElement withComment False t | t <- paramTypes c] ++
+     [showSignatureElement withComment True (resultType c)])
 
 showSignatureElement :: Bool -> Bool -> SignatureElement -> String
 showSignatureElement withComment isResult sigElem = el ++ comment
