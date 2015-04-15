@@ -27,7 +27,6 @@ module Graphics.Rendering.OpenGL.Raw.GetProcAddress (
 
 ) where
 
-import Control.Monad ( foldM )
 import Control.Monad.IO.Class ( MonadIO(..) )
 import Foreign.C.String ( withCString, CString )
 import Foreign.Marshal.Error ( throwIf )
@@ -56,9 +55,12 @@ getProcAddressChecked cmd = liftIO $ check cmd $ getProcAddress cmd
 -- given order. Returns 'nullFunPtr' when no function with the given name plus
 -- any of the suffixes was found.
 getProcAddressWithSuffixes :: MonadIO m => String -> [String] -> m (FunPtr a)
-getProcAddressWithSuffixes cmd = foldM gpa nullFunPtr
-   where gpa p s | p == nullFunPtr = getProcAddress (cmd ++ s)
-                 | otherwise       = return p
+getProcAddressWithSuffixes _ [] = return nullFunPtr
+getProcAddressWithSuffixes cmd (x:xs) = do
+   p <- getProcAddress (cmd ++ x)
+   if p == nullFunPtr
+      then getProcAddressWithSuffixes cmd xs
+      else return p
 
 -- | Retrieve an OpenGL function by name, trying a list of name suffixes in the
 -- given order. Throws an 'userError' when no function with the given name plus
