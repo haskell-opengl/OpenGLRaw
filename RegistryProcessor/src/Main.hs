@@ -52,6 +52,16 @@ printTokens api registry = do
       , e <- es
       , api `matches` enumAPI e ]
 
+-- Calulate a map from compact signature to short names.
+signatureMap :: Registry -> M.Map String String
+signatureMap registry = fst $ M.foldl' step (M.empty, 0) (commands registry)
+  where step (m,n) command = memberAndInsert (n+1) n (sig command) (dyn n) m
+        sig = flip showSignatureFromCommand False
+        dyn n = "dyn" ++ show n
+        memberAndInsert notFound found key value map =
+          (newMap, maybe notFound (const found) maybeValue)
+          where (maybeValue, newMap) = M.insertLookupWithKey (\_ _ s -> s) key value map
+
 printFunctions :: API -> Registry -> IO ()
 printFunctions api registry = do
   let comment =
@@ -80,9 +90,10 @@ printFunctions api registry = do
     SI.hPutStrLn h "throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)"
     SI.hPutStrLn h "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
     SI.hPutStrLn h ""
-    mapM_ (SI.hPutStrLn h) (S.toList (M.foldl' makeImportDynamic S.empty (commands registry)))
+    let sigMap = signatureMap registry
+    mapM_ (SI.hPutStrLn h . uncurry makeImportDynamic) (M.assocs sigMap)
     SI.hPutStrLn h ""
-    mapM_ (SI.hPutStrLn h . showCommand api) (M.elems (commands registry))
+    mapM_ (SI.hPutStrLn h . showCommand api sigMap) (M.elems (commands registry))
 
 printExtensions :: API -> Registry -> IO ()
 printExtensions api registry = do
@@ -308,8 +319,8 @@ convertEnum e =
   , n ++ " = " ++ unEnumValue (enumValue e) ]
   where n = unEnumName . enumName $ e
 
-showCommand :: API -> Command -> String
-showCommand api c =
+showCommand :: API -> M.Map String String -> Command -> String
+showCommand api sigMap c =
   showString (take 80 ("-- " ++ name ++ " " ++ repeat '-') ++ "\n\n") .
 
   showString man .
@@ -326,7 +337,7 @@ showCommand api c =
   id $ ""
 
   where name = signatureElementName (resultType c)
-        dyn_name = getDynName compactSignature
+        dyn_name = lookup' compactSignature sigMap
         ptr_name = "ptr_" ++ name
         str_name = show name
         compactSignature = signature False
@@ -340,16 +351,11 @@ showCommand api c =
         renderURL (u, l) = "<" ++ u ++ " " ++ l ++ ">"
         args = concat [" v" ++ show i | i <- [1 .. length (paramTypes c)]]
 
-makeImportDynamic :: S.Set String -> Command -> S.Set String
-makeImportDynamic sigmap c = S.insert sig sigmap
-  where sig = "foreign import CALLCONV \"dynamic\" " ++ dyn_name ++ "\n" ++
-              "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
-              "  ->         " ++ compactSignature ++ "\n"
-        dyn_name = getDynName compactSignature
-        compactSignature = showSignatureFromCommand c False
-
-getDynName :: String -> String
-getDynName sig = "dyn_" ++ (map (\x -> if x == '-' then '_' else x) $ filter (\x -> x `elem` ("-" ++ ['0'..'9'] ++ ['A'..'Z'] ++ ['a'..'z'])) sig)
+makeImportDynamic :: String -> String -> String
+makeImportDynamic compactSignature dyn_name =
+  "foreign import CALLCONV \"dynamic\" " ++ dyn_name ++ "\n" ++
+  "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
+  "  ->         " ++ compactSignature ++ "\n"
 
 showSignatureFromCommand :: Command -> Bool -> String
 showSignatureFromCommand c withComment =
