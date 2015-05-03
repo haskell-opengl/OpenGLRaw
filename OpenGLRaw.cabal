@@ -574,6 +574,8 @@ library
     Graphics.Rendering.OpenGL.Raw.WIN
     Graphics.Rendering.OpenGL.Raw.WIN.PhongShading
     Graphics.Rendering.OpenGL.Raw.WIN.SpecularFog
+  other-modules:
+    Graphics.Rendering.OpenGL.Raw.Foreign
   c-sources:
     cbits/HsOpenGLRaw.c
   hs-source-dirs: src

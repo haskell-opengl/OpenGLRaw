@@ -22,7 +22,9 @@ main = do
     Left msg -> SI.hPutStrLn SI.stderr msg
     Right registry -> do
       printTokens api registry
-      printFunctions api registry
+      let sigMap = signatureMap registry
+      printForeign sigMap
+      printFunctions api registry sigMap
       printExtensions api registry
       CM.forM_ ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "2.0", "2.1"] $ \v ->
         printFeature api (read v) (ProfileName "version") registry
@@ -62,24 +64,34 @@ signatureMap registry = fst $ M.foldl' step (M.empty, 0) (commands registry)
           (newMap, maybe notFound (const found) maybeValue)
           where (maybeValue, newMap) = M.insertLookupWithKey (\_ _ s -> s) key value map
 
-printFunctions :: API -> Registry -> IO ()
-printFunctions api registry = do
+printForeign :: M.Map String String -> IO ()
+printForeign sigMap = do
+  let comment = ["All foreign imports."]
+  startModule Nothing ["Foreign"] (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
+    SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
+    SI.hPutStrLn h ""
+    SI.hPutStrLn h "import Foreign.C.Types"
+    SI.hPutStrLn h "import Foreign.Ptr"
+    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+    SI.hPutStrLn h ""
+    mapM_ (SI.hPutStrLn h . uncurry makeImportDynamic) (M.assocs sigMap)
+
+printFunctions :: API -> Registry -> M.Map String String -> IO ()
+printFunctions api registry sigMap = do
   let comment =
         ["All raw functions from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule Nothing ["Functions"] (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
+  startModule Nothing ["Functions"] Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
-    SI.hPutStrLn h . separate unCommandName . M.keys . commands $registry
+    SI.hPutStrLn h . separate unCommandName . M.keys . commands $ registry
     SI.hPutStrLn h ") where"
-    SI.hPutStrLn h ""
-    SI.hPutStrLn h "-- Make the foreign imports happy."
-    SI.hPutStrLn h "import Foreign.C.Types"
     SI.hPutStrLn h ""
     SI.hPutStrLn h "import Control.Monad.IO.Class ( MonadIO(..) )"
     SI.hPutStrLn h "import Foreign.Marshal.Error ( throwIf )"
     SI.hPutStrLn h "import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )"
     SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"
     SI.hPutStrLn h ""
+    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Foreign"
     SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getProcAddress )"
     SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
     SI.hPutStrLn h ""
@@ -89,9 +101,6 @@ printFunctions api registry = do
     SI.hPutStrLn h ""
     SI.hPutStrLn h "throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)"
     SI.hPutStrLn h "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
-    SI.hPutStrLn h ""
-    let sigMap = signatureMap registry
-    mapM_ (SI.hPutStrLn h . uncurry makeImportDynamic) (M.assocs sigMap)
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . showCommand api sigMap) (M.elems (commands registry))
 
