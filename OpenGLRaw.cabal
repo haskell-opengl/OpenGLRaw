@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 2.4.1.0
+version: 2.5.0.0
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 4.5 graphics system and
@@ -398,6 +398,7 @@ library
     Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture
     Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced
     Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent
+    Graphics.Rendering.OpenGL.Raw.NV.CommandList
     Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5
     Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
     Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster
@@ -481,6 +482,8 @@ library
     Graphics.Rendering.OpenGL.Raw.OML.Interlace
     Graphics.Rendering.OpenGL.Raw.OML.Resample
     Graphics.Rendering.OpenGL.Raw.OML.Subsample
+    Graphics.Rendering.OpenGL.Raw.OVR
+    Graphics.Rendering.OpenGL.Raw.OVR.Multiview
     Graphics.Rendering.OpenGL.Raw.PGI
     Graphics.Rendering.OpenGL.Raw.PGI.MiscHints
     Graphics.Rendering.OpenGL.Raw.PGI.VertexHints

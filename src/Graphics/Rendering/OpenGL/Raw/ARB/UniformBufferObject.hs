@@ -48,10 +48,13 @@ module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject (
   gl_UNIFORM_SIZE,
   gl_UNIFORM_TYPE,
   -- * Functions
+  glBindBufferBase,
+  glBindBufferRange,
   glGetActiveUniformBlockName,
   glGetActiveUniformBlockiv,
   glGetActiveUniformName,
   glGetActiveUniformsiv,
+  glGetIntegeri_v,
   glGetUniformBlockIndex,
   glGetUniformIndices,
   glUniformBlockBinding

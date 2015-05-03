@@ -33,6 +33,7 @@ module Graphics.Rendering.OpenGL.Raw (
   module Graphics.Rendering.OpenGL.Raw.NVX,
   module Graphics.Rendering.OpenGL.Raw.OES,
   module Graphics.Rendering.OpenGL.Raw.OML,
+  module Graphics.Rendering.OpenGL.Raw.OVR,
   module Graphics.Rendering.OpenGL.Raw.PGI,
   module Graphics.Rendering.OpenGL.Raw.REND,
   module Graphics.Rendering.OpenGL.Raw.S3,
@@ -64,6 +65,7 @@ import Graphics.Rendering.OpenGL.Raw.NV
 import Graphics.Rendering.OpenGL.Raw.NVX
 import Graphics.Rendering.OpenGL.Raw.OES
 import Graphics.Rendering.OpenGL.Raw.OML
+import Graphics.Rendering.OpenGL.Raw.OVR
 import Graphics.Rendering.OpenGL.Raw.PGI
 import Graphics.Rendering.OpenGL.Raw.REND
 import Graphics.Rendering.OpenGL.Raw.S3

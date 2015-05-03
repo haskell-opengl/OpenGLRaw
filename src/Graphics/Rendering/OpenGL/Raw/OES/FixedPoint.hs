@@ -97,7 +97,6 @@ module Graphics.Rendering.OpenGL.Raw.OES.FixedPoint (
   glRectxOES,
   glRectxvOES,
   glRotatexOES,
-  glSampleCoverageOES,
   glScalexOES,
   glTexCoord1xOES,
   glTexCoord1xvOES,

@@ -18,6 +18,7 @@ module Graphics.Rendering.OpenGL.Raw.NV (
   module Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture,
   module Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent,
   module Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced,
+  module Graphics.Rendering.OpenGL.Raw.NV.CommandList,
   module Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5,
   module Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender,
   module Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster,
@@ -94,6 +95,7 @@ import Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirect
 import Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture
 import Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent
 import Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced
+import Graphics.Rendering.OpenGL.Raw.NV.CommandList
 import Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5
 import Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
 import Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster
