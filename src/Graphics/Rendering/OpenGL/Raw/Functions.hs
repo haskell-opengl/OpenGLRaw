@@ -25741,7 +25741,7 @@ ptr_glMultiTexCoord1bvOES = unsafePerformIO $ getCommand "glMultiTexCoord1bvOES"
 
 -- glMultiTexCoord1d -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25768,7 +25768,7 @@ ptr_glMultiTexCoord1dARB = unsafePerformIO $ getCommand "glMultiTexCoord1dARB"
 
 -- glMultiTexCoord1dv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25795,7 +25795,7 @@ ptr_glMultiTexCoord1dvARB = unsafePerformIO $ getCommand "glMultiTexCoord1dvARB"
 
 -- glMultiTexCoord1f -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25822,7 +25822,7 @@ ptr_glMultiTexCoord1fARB = unsafePerformIO $ getCommand "glMultiTexCoord1fARB"
 
 -- glMultiTexCoord1fv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25875,7 +25875,7 @@ ptr_glMultiTexCoord1hvNV = unsafePerformIO $ getCommand "glMultiTexCoord1hvNV"
 
 -- glMultiTexCoord1i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25902,7 +25902,7 @@ ptr_glMultiTexCoord1iARB = unsafePerformIO $ getCommand "glMultiTexCoord1iARB"
 
 -- glMultiTexCoord1iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25929,7 +25929,7 @@ ptr_glMultiTexCoord1ivARB = unsafePerformIO $ getCommand "glMultiTexCoord1ivARB"
 
 -- glMultiTexCoord1s -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25956,7 +25956,7 @@ ptr_glMultiTexCoord1sARB = unsafePerformIO $ getCommand "glMultiTexCoord1sARB"
 
 -- glMultiTexCoord1sv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord1sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26036,7 +26036,7 @@ ptr_glMultiTexCoord2bvOES = unsafePerformIO $ getCommand "glMultiTexCoord2bvOES"
 
 -- glMultiTexCoord2d -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26065,7 +26065,7 @@ ptr_glMultiTexCoord2dARB = unsafePerformIO $ getCommand "glMultiTexCoord2dARB"
 
 -- glMultiTexCoord2dv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26092,7 +26092,7 @@ ptr_glMultiTexCoord2dvARB = unsafePerformIO $ getCommand "glMultiTexCoord2dvARB"
 
 -- glMultiTexCoord2f -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26121,7 +26121,7 @@ ptr_glMultiTexCoord2fARB = unsafePerformIO $ getCommand "glMultiTexCoord2fARB"
 
 -- glMultiTexCoord2fv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26175,7 +26175,7 @@ ptr_glMultiTexCoord2hvNV = unsafePerformIO $ getCommand "glMultiTexCoord2hvNV"
 
 -- glMultiTexCoord2i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26204,7 +26204,7 @@ ptr_glMultiTexCoord2iARB = unsafePerformIO $ getCommand "glMultiTexCoord2iARB"
 
 -- glMultiTexCoord2iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26231,7 +26231,7 @@ ptr_glMultiTexCoord2ivARB = unsafePerformIO $ getCommand "glMultiTexCoord2ivARB"
 
 -- glMultiTexCoord2s -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26260,7 +26260,7 @@ ptr_glMultiTexCoord2sARB = unsafePerformIO $ getCommand "glMultiTexCoord2sARB"
 
 -- glMultiTexCoord2sv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord2sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26342,7 +26342,7 @@ ptr_glMultiTexCoord3bvOES = unsafePerformIO $ getCommand "glMultiTexCoord3bvOES"
 
 -- glMultiTexCoord3d -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26373,7 +26373,7 @@ ptr_glMultiTexCoord3dARB = unsafePerformIO $ getCommand "glMultiTexCoord3dARB"
 
 -- glMultiTexCoord3dv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26400,7 +26400,7 @@ ptr_glMultiTexCoord3dvARB = unsafePerformIO $ getCommand "glMultiTexCoord3dvARB"
 
 -- glMultiTexCoord3f -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26431,7 +26431,7 @@ ptr_glMultiTexCoord3fARB = unsafePerformIO $ getCommand "glMultiTexCoord3fARB"
 
 -- glMultiTexCoord3fv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26486,7 +26486,7 @@ ptr_glMultiTexCoord3hvNV = unsafePerformIO $ getCommand "glMultiTexCoord3hvNV"
 
 -- glMultiTexCoord3i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26517,7 +26517,7 @@ ptr_glMultiTexCoord3iARB = unsafePerformIO $ getCommand "glMultiTexCoord3iARB"
 
 -- glMultiTexCoord3iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26544,7 +26544,7 @@ ptr_glMultiTexCoord3ivARB = unsafePerformIO $ getCommand "glMultiTexCoord3ivARB"
 
 -- glMultiTexCoord3s -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26575,7 +26575,7 @@ ptr_glMultiTexCoord3sARB = unsafePerformIO $ getCommand "glMultiTexCoord3sARB"
 
 -- glMultiTexCoord3sv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord3sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26659,7 +26659,7 @@ ptr_glMultiTexCoord4bvOES = unsafePerformIO $ getCommand "glMultiTexCoord4bvOES"
 
 -- glMultiTexCoord4d -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26692,7 +26692,7 @@ ptr_glMultiTexCoord4dARB = unsafePerformIO $ getCommand "glMultiTexCoord4dARB"
 
 -- glMultiTexCoord4dv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26719,7 +26719,7 @@ ptr_glMultiTexCoord4dvARB = unsafePerformIO $ getCommand "glMultiTexCoord4dvARB"
 
 -- glMultiTexCoord4f -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26752,7 +26752,7 @@ ptr_glMultiTexCoord4fARB = unsafePerformIO $ getCommand "glMultiTexCoord4fARB"
 
 -- glMultiTexCoord4fv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26808,7 +26808,7 @@ ptr_glMultiTexCoord4hvNV = unsafePerformIO $ getCommand "glMultiTexCoord4hvNV"
 
 -- glMultiTexCoord4i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26841,7 +26841,7 @@ ptr_glMultiTexCoord4iARB = unsafePerformIO $ getCommand "glMultiTexCoord4iARB"
 
 -- glMultiTexCoord4iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26868,7 +26868,7 @@ ptr_glMultiTexCoord4ivARB = unsafePerformIO $ getCommand "glMultiTexCoord4ivARB"
 
 -- glMultiTexCoord4s -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26901,7 +26901,7 @@ ptr_glMultiTexCoord4sARB = unsafePerformIO $ getCommand "glMultiTexCoord4sARB"
 
 -- glMultiTexCoord4sv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiTexCoord.xml OpenGL 3.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
 glMultiTexCoord4sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
