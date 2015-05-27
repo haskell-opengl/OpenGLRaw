@@ -1,5 +1,5 @@
 name: RegistryProcessor
-version: 0.1.0.0
+version: 0.1.0.1
 synopsis: A processor for the OpenGL Registry
 description: A tool for generating OpenGLRaw from the OpenGL Registry
 license: BSD3
@@ -9,13 +9,8 @@ maintainer: Sven Panne <svenpanne@gmail.com>
 category: Graphics
 build-type: Simple
 extra-source-files:
-  TODO
-  registry/egl.xml
-  registry/gl.xml
-  registry/glx.xml
-  registry/registry.rnc
-  registry/registry.rng
-  registry/wgl.xml
+  OpenGL-Registry/gl.xml
+  OpenGL-Registry/registry.rnc
 cabal-version: >=1.10
 
 executable RegistryProcessor

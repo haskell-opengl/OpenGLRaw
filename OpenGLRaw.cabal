@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 2.5.0.0
+version: 2.5.0.1
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 4.5 graphics system and
@@ -30,8 +30,9 @@ build-type: Simple
 cabal-version: >= 1.10
 extra-source-files:
   README.md
-  include/HsOpenGLRaw.h
   RegistryProcessor/LICENSE
+  RegistryProcessor/OpenGL-Registry/gl.xml
+  RegistryProcessor/OpenGL-Registry/registry.rnc
   RegistryProcessor/RegistryProcessor.cabal
   RegistryProcessor/Setup.hs
   RegistryProcessor/src/DeclarationParser.hs
@@ -579,7 +580,6 @@ library
   c-sources:
     cbits/HsOpenGLRaw.c
   hs-source-dirs: src
-  include-dirs: include
   build-depends:
     base         >= 4   && < 5,
     transformers >= 0.2 && < 0.5
