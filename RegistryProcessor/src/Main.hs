@@ -396,8 +396,11 @@ showComment name sigElem
 
         isInteresting = DM.isJust (arrayLength sigElem) || DM.isJust (belongsToGroup sigElem)
 
-        elms | numPointer sigElem > 0 = " pointing to" ++ len ++ " elements"
+        elms | numPointer sigElem > 0 = " pointing to" ++ len ++ " " ++ elements
              | otherwise = ""
+
+        elements | arrayLength sigElem == Just "1" = "element"
+                 | otherwise = "elements"
 
         len = maybe "" (\l -> " " ++ inlineCode l) (arrayLength sigElem)
 

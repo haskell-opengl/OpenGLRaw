@@ -7097,7 +7097,7 @@ ptr_glColorP3ui = unsafePerformIO $ getCommand "glColorP3ui"
 glColorP3uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @color@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @color@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glColorP3uiv v1 v2 = liftIO $ dyn124 ptr_glColorP3uiv v1 v2
 
@@ -7123,7 +7123,7 @@ ptr_glColorP4ui = unsafePerformIO $ getCommand "glColorP4ui"
 glColorP4uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @color@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @color@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glColorP4uiv v1 v2 = liftIO $ dyn124 ptr_glColorP4uiv v1 v2
 
@@ -11951,7 +11951,7 @@ ptr_glEdgeFlagPointerListIBM = unsafePerformIO $ getCommand "glEdgeFlagPointerLi
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml OpenGL 2.x>
 glEdgeFlagv
   :: MonadIO m
-  => Ptr GLboolean -- ^ @flag@ pointing to @1@ elements of type @Boolean@.
+  => Ptr GLboolean -- ^ @flag@ pointing to @1@ element of type @Boolean@.
   -> m ()
 glEdgeFlagv v1 = liftIO $ dyn262 ptr_glEdgeFlagv v1
 
@@ -12447,7 +12447,7 @@ ptr_glEvalCoord1d = unsafePerformIO $ getCommand "glEvalCoord1d"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
 glEvalCoord1dv
   :: MonadIO m
-  => Ptr GLdouble -- ^ @u@ pointing to @1@ elements of type @CoordD@.
+  => Ptr GLdouble -- ^ @u@ pointing to @1@ element of type @CoordD@.
   -> m ()
 glEvalCoord1dv v1 = liftIO $ dyn39 ptr_glEvalCoord1dv v1
 
@@ -12473,7 +12473,7 @@ ptr_glEvalCoord1f = unsafePerformIO $ getCommand "glEvalCoord1f"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
 glEvalCoord1fv
   :: MonadIO m
-  => Ptr GLfloat -- ^ @u@ pointing to @1@ elements of type @CoordF@.
+  => Ptr GLfloat -- ^ @u@ pointing to @1@ element of type @CoordF@.
   -> m ()
 glEvalCoord1fv v1 = liftIO $ dyn41 ptr_glEvalCoord1fv v1
 
@@ -12497,7 +12497,7 @@ ptr_glEvalCoord1xOES = unsafePerformIO $ getCommand "glEvalCoord1xOES"
 
 glEvalCoord1xvOES
   :: MonadIO m
-  => Ptr GLfixed -- ^ @coords@ pointing to @1@ elements of type @GLfixed@.
+  => Ptr GLfixed -- ^ @coords@ pointing to @1@ element of type @GLfixed@.
   -> m ()
 glEvalCoord1xvOES v1 = liftIO $ dyn106 ptr_glEvalCoord1xvOES v1
 
@@ -12689,7 +12689,7 @@ glExtGetBuffersQCOM
   :: MonadIO m
   => Ptr GLuint -- ^ @buffers@ pointing to @maxBuffers@ elements of type @GLuint@.
   -> GLint -- ^ @maxBuffers@.
-  -> Ptr GLint -- ^ @numBuffers@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @numBuffers@ pointing to @1@ element of type @GLint@.
   -> m ()
 glExtGetBuffersQCOM v1 v2 v3 = liftIO $ dyn268 ptr_glExtGetBuffersQCOM v1 v2 v3
 
@@ -12703,7 +12703,7 @@ glExtGetFramebuffersQCOM
   :: MonadIO m
   => Ptr GLuint -- ^ @framebuffers@ pointing to @maxFramebuffers@ elements of type @GLuint@.
   -> GLint -- ^ @maxFramebuffers@.
-  -> Ptr GLint -- ^ @numFramebuffers@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @numFramebuffers@ pointing to @1@ element of type @GLint@.
   -> m ()
 glExtGetFramebuffersQCOM v1 v2 v3 = liftIO $ dyn268 ptr_glExtGetFramebuffersQCOM v1 v2 v3
 
@@ -12732,7 +12732,7 @@ glExtGetProgramsQCOM
   :: MonadIO m
   => Ptr GLuint -- ^ @programs@ pointing to @maxPrograms@ elements of type @GLuint@.
   -> GLint -- ^ @maxPrograms@.
-  -> Ptr GLint -- ^ @numPrograms@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @numPrograms@ pointing to @1@ element of type @GLint@.
   -> m ()
 glExtGetProgramsQCOM v1 v2 v3 = liftIO $ dyn268 ptr_glExtGetProgramsQCOM v1 v2 v3
 
@@ -12746,7 +12746,7 @@ glExtGetRenderbuffersQCOM
   :: MonadIO m
   => Ptr GLuint -- ^ @renderbuffers@ pointing to @maxRenderbuffers@ elements of type @GLuint@.
   -> GLint -- ^ @maxRenderbuffers@.
-  -> Ptr GLint -- ^ @numRenderbuffers@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @numRenderbuffers@ pointing to @1@ element of type @GLint@.
   -> m ()
 glExtGetRenderbuffersQCOM v1 v2 v3 = liftIO $ dyn268 ptr_glExtGetRenderbuffersQCOM v1 v2 v3
 
@@ -12760,7 +12760,7 @@ glExtGetShadersQCOM
   :: MonadIO m
   => Ptr GLuint -- ^ @shaders@ pointing to @maxShaders@ elements of type @GLuint@.
   -> GLint -- ^ @maxShaders@.
-  -> Ptr GLint -- ^ @numShaders@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @numShaders@ pointing to @1@ element of type @GLint@.
   -> m ()
 glExtGetShadersQCOM v1 v2 v3 = liftIO $ dyn268 ptr_glExtGetShadersQCOM v1 v2 v3
 
@@ -12947,7 +12947,7 @@ ptr_glFinish = unsafePerformIO $ getCommand "glFinish"
 
 glFinishAsyncSGIX
   :: MonadIO m
-  => Ptr GLuint -- ^ @markerp@ pointing to @1@ elements of type @GLuint@.
+  => Ptr GLuint -- ^ @markerp@ pointing to @1@ element of type @GLuint@.
   -> m GLint
 glFinishAsyncSGIX v1 = liftIO $ dyn276 ptr_glFinishAsyncSGIX v1
 
@@ -13233,7 +13233,7 @@ ptr_glFogCoorddEXT = unsafePerformIO $ getCommand "glFogCoorddEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>
 glFogCoorddv
   :: MonadIO m
-  => Ptr GLdouble -- ^ @coord@ pointing to @1@ elements of type @CoordD@.
+  => Ptr GLdouble -- ^ @coord@ pointing to @1@ element of type @CoordD@.
   -> m ()
 glFogCoorddv v1 = liftIO $ dyn39 ptr_glFogCoorddv v1
 
@@ -13245,7 +13245,7 @@ ptr_glFogCoorddv = unsafePerformIO $ getCommand "glFogCoorddv"
 
 glFogCoorddvEXT
   :: MonadIO m
-  => Ptr GLdouble -- ^ @coord@ pointing to @1@ elements of type @CoordD@.
+  => Ptr GLdouble -- ^ @coord@ pointing to @1@ element of type @CoordD@.
   -> m ()
 glFogCoorddvEXT v1 = liftIO $ dyn39 ptr_glFogCoorddvEXT v1
 
@@ -13283,7 +13283,7 @@ ptr_glFogCoordfEXT = unsafePerformIO $ getCommand "glFogCoordfEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>
 glFogCoordfv
   :: MonadIO m
-  => Ptr GLfloat -- ^ @coord@ pointing to @1@ elements of type @CoordF@.
+  => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
   -> m ()
 glFogCoordfv v1 = liftIO $ dyn41 ptr_glFogCoordfv v1
 
@@ -13295,7 +13295,7 @@ ptr_glFogCoordfv = unsafePerformIO $ getCommand "glFogCoordfv"
 
 glFogCoordfvEXT
   :: MonadIO m
-  => Ptr GLfloat -- ^ @coord@ pointing to @1@ elements of type @CoordF@.
+  => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
   -> m ()
 glFogCoordfvEXT v1 = liftIO $ dyn41 ptr_glFogCoordfvEXT v1
 
@@ -13319,7 +13319,7 @@ ptr_glFogCoordhNV = unsafePerformIO $ getCommand "glFogCoordhNV"
 
 glFogCoordhvNV
   :: MonadIO m
-  => Ptr GLhalfNV -- ^ @fog@ pointing to @1@ elements of type @Half16NV@.
+  => Ptr GLhalfNV -- ^ @fog@ pointing to @1@ element of type @Half16NV@.
   -> m ()
 glFogCoordhvNV v1 = liftIO $ dyn98 ptr_glFogCoordhvNV v1
 
@@ -14764,9 +14764,9 @@ glGetActiveAttrib
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLint -- ^ @size@ pointing to @1@ elements of type @GLint@.
-  -> Ptr GLenum -- ^ @type@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLint -- ^ @size@ pointing to @1@ element of type @GLint@.
+  -> Ptr GLenum -- ^ @type@ pointing to @1@ element of type @GLenum@.
   -> Ptr GLchar -- ^ @name@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetActiveAttrib v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn297 ptr_glGetActiveAttrib v1 v2 v3 v4 v5 v6 v7
@@ -14782,9 +14782,9 @@ glGetActiveAttribARB
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @maxLength@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLint -- ^ @size@ pointing to @1@ elements of type @GLint@.
-  -> Ptr GLenum -- ^ @type@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLint -- ^ @size@ pointing to @1@ element of type @GLint@.
+  -> Ptr GLenum -- ^ @type@ pointing to @1@ element of type @GLenum@.
   -> Ptr GLcharARB -- ^ @name@ pointing to @maxLength@ elements of type @GLcharARB@.
   -> m ()
 glGetActiveAttribARB v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn298 ptr_glGetActiveAttribARB v1 v2 v3 v4 v5 v6 v7
@@ -14802,7 +14802,7 @@ glGetActiveSubroutineName
   -> GLenum -- ^ @shadertype@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufsize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @name@ pointing to @bufsize@ elements of type @GLchar@.
   -> m ()
 glGetActiveSubroutineName v1 v2 v3 v4 v5 v6 = liftIO $ dyn299 ptr_glGetActiveSubroutineName v1 v2 v3 v4 v5 v6
@@ -14820,7 +14820,7 @@ glGetActiveSubroutineUniformName
   -> GLenum -- ^ @shadertype@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufsize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @name@ pointing to @bufsize@ elements of type @GLchar@.
   -> m ()
 glGetActiveSubroutineUniformName v1 v2 v3 v4 v5 v6 = liftIO $ dyn299 ptr_glGetActiveSubroutineUniformName v1 v2 v3 v4 v5 v6
@@ -14854,9 +14854,9 @@ glGetActiveUniform
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLint -- ^ @size@ pointing to @1@ elements of type @GLint@.
-  -> Ptr GLenum -- ^ @type@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLint -- ^ @size@ pointing to @1@ element of type @GLint@.
+  -> Ptr GLenum -- ^ @type@ pointing to @1@ element of type @GLenum@.
   -> Ptr GLchar -- ^ @name@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetActiveUniform v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn297 ptr_glGetActiveUniform v1 v2 v3 v4 v5 v6 v7
@@ -14872,9 +14872,9 @@ glGetActiveUniformARB
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @maxLength@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLint -- ^ @size@ pointing to @1@ elements of type @GLint@.
-  -> Ptr GLenum -- ^ @type@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLint -- ^ @size@ pointing to @1@ element of type @GLint@.
+  -> Ptr GLenum -- ^ @type@ pointing to @1@ element of type @GLenum@.
   -> Ptr GLcharARB -- ^ @name@ pointing to @maxLength@ elements of type @GLcharARB@.
   -> m ()
 glGetActiveUniformARB v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn298 ptr_glGetActiveUniformARB v1 v2 v3 v4 v5 v6 v7
@@ -14891,7 +14891,7 @@ glGetActiveUniformBlockName
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @uniformBlockIndex@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @uniformBlockName@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetActiveUniformBlockName v1 v2 v3 v4 v5 = liftIO $ dyn301 ptr_glGetActiveUniformBlockName v1 v2 v3 v4 v5
@@ -14924,7 +14924,7 @@ glGetActiveUniformName
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @uniformIndex@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @uniformName@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetActiveUniformName v1 v2 v3 v4 v5 = liftIO $ dyn301 ptr_glGetActiveUniformName v1 v2 v3 v4 v5
@@ -14957,9 +14957,9 @@ glGetActiveVaryingNV
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLsizei -- ^ @size@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLenum -- ^ @type@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @size@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLenum -- ^ @type@ pointing to @1@ element of type @GLenum@.
   -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(program,index,bufSize)@ elements of type @GLchar@.
   -> m ()
 glGetActiveVaryingNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn303 ptr_glGetActiveVaryingNV v1 v2 v3 v4 v5 v6 v7
@@ -14974,7 +14974,7 @@ glGetArrayObjectfvATI
   :: MonadIO m
   => GLenum -- ^ @array@ of type @EnableCap@.
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetArrayObjectfvATI v1 v2 v3 = liftIO $ dyn131 ptr_glGetArrayObjectfvATI v1 v2 v3
 
@@ -14988,7 +14988,7 @@ glGetArrayObjectivATI
   :: MonadIO m
   => GLenum -- ^ @array@ of type @EnableCap@.
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetArrayObjectivATI v1 v2 v3 = liftIO $ dyn132 ptr_glGetArrayObjectivATI v1 v2 v3
 
@@ -15002,7 +15002,7 @@ glGetAttachedObjectsARB
   :: MonadIO m
   => GLhandleARB -- ^ @containerObj@ of type @handleARB@.
   -> GLsizei -- ^ @maxCount@.
-  -> Ptr GLsizei -- ^ @count@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @count@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLhandleARB -- ^ @obj@ pointing to @maxCount@ elements of type @handleARB@.
   -> m ()
 glGetAttachedObjectsARB v1 v2 v3 v4 = liftIO $ dyn304 ptr_glGetAttachedObjectsARB v1 v2 v3 v4
@@ -15018,7 +15018,7 @@ glGetAttachedShaders
   :: MonadIO m
   => GLuint -- ^ @program@.
   -> GLsizei -- ^ @maxCount@.
-  -> Ptr GLsizei -- ^ @count@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @count@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLuint -- ^ @shaders@ pointing to @maxCount@ elements of type @GLuint@.
   -> m ()
 glGetAttachedShaders v1 v2 v3 v4 = liftIO $ dyn305 ptr_glGetAttachedShaders v1 v2 v3 v4
@@ -15162,7 +15162,7 @@ glGetBufferPointerv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @pname@ of type @BufferPointerNameARB@.
-  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetBufferPointerv v1 v2 v3 = liftIO $ dyn312 ptr_glGetBufferPointerv v1 v2 v3
 
@@ -15176,7 +15176,7 @@ glGetBufferPointervARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @pname@ of type @BufferPointerNameARB@.
-  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetBufferPointervARB v1 v2 v3 = liftIO $ dyn312 ptr_glGetBufferPointervARB v1 v2 v3
 
@@ -16479,7 +16479,7 @@ glGetInfoLogARB
   :: MonadIO m
   => GLhandleARB -- ^ @obj@ of type @handleARB@.
   -> GLsizei -- ^ @maxLength@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLcharARB -- ^ @infoLog@ pointing to @maxLength@ elements of type @GLcharARB@.
   -> m ()
 glGetInfoLogARB v1 v2 v3 v4 = liftIO $ dyn333 ptr_glGetInfoLogARB v1 v2 v3 v4
@@ -17450,7 +17450,7 @@ glGetNamedBufferPointervEXT
   :: MonadIO m
   => GLuint -- ^ @buffer@.
   -> GLenum -- ^ @pname@ of type @VertexBufferObjectParameter@.
-  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetNamedBufferPointervEXT v1 v2 v3 = liftIO $ dyn356 ptr_glGetNamedBufferPointervEXT v1 v2 v3
 
@@ -17631,7 +17631,7 @@ glGetNamedProgramivEXT
   => GLuint -- ^ @program@.
   -> GLenum -- ^ @target@ of type @ProgramTarget@.
   -> GLenum -- ^ @pname@ of type @ProgramProperty@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetNamedProgramivEXT v1 v2 v3 v4 = liftIO $ dyn358 ptr_glGetNamedProgramivEXT v1 v2 v3 v4
 
@@ -17675,7 +17675,7 @@ glGetNamedStringARB
   => GLint -- ^ @namelen@.
   -> Ptr GLchar -- ^ @name@ pointing to @namelen@ elements of type @GLchar@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLint -- ^ @stringlen@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @stringlen@ pointing to @1@ element of type @GLint@.
   -> Ptr GLchar -- ^ @string@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetNamedStringARB v1 v2 v3 v4 v5 = liftIO $ dyn364 ptr_glGetNamedStringARB v1 v2 v3 v4 v5
@@ -17718,7 +17718,7 @@ glGetObjectBufferfvATI
   :: MonadIO m
   => GLuint -- ^ @buffer@.
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetObjectBufferfvATI v1 v2 v3 = liftIO $ dyn344 ptr_glGetObjectBufferfvATI v1 v2 v3
 
@@ -17732,7 +17732,7 @@ glGetObjectBufferivATI
   :: MonadIO m
   => GLuint -- ^ @buffer@.
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetObjectBufferivATI v1 v2 v3 = liftIO $ dyn330 ptr_glGetObjectBufferivATI v1 v2 v3
 
@@ -17748,7 +17748,7 @@ glGetObjectLabel
   => GLenum -- ^ @identifier@.
   -> GLuint -- ^ @name@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetObjectLabel v1 v2 v3 v4 v5 = liftIO $ dyn366 ptr_glGetObjectLabel v1 v2 v3 v4 v5
@@ -17764,7 +17764,7 @@ glGetObjectLabelEXT
   => GLenum -- ^ @type@.
   -> GLuint -- ^ @object@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetObjectLabelEXT v1 v2 v3 v4 v5 = liftIO $ dyn366 ptr_glGetObjectLabelEXT v1 v2 v3 v4 v5
@@ -17839,7 +17839,7 @@ glGetObjectPtrLabel
   :: MonadIO m
   => Ptr a -- ^ @ptr@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetObjectPtrLabel v1 v2 v3 v4 = liftIO $ dyn369 ptr_glGetObjectPtrLabel v1 v2 v3 v4
@@ -17854,7 +17854,7 @@ glGetObjectPtrLabelKHR
   :: MonadIO m
   => Ptr a -- ^ @ptr@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetObjectPtrLabelKHR v1 v2 v3 v4 = liftIO $ dyn369 ptr_glGetObjectPtrLabelKHR v1 v2 v3 v4
@@ -18112,7 +18112,7 @@ glGetPerfMonitorCounterDataAMD
   -> GLenum -- ^ @pname@.
   -> GLsizei -- ^ @dataSize@.
   -> Ptr GLuint -- ^ @data@ pointing to @dataSize@ elements of type @GLuint@.
-  -> Ptr GLint -- ^ @bytesWritten@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @bytesWritten@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetPerfMonitorCounterDataAMD v1 v2 v3 v4 v5 = liftIO $ dyn378 ptr_glGetPerfMonitorCounterDataAMD v1 v2 v3 v4 v5
 
@@ -18142,7 +18142,7 @@ glGetPerfMonitorCounterStringAMD
   => GLuint -- ^ @group@.
   -> GLuint -- ^ @counter@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @counterString@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetPerfMonitorCounterStringAMD v1 v2 v3 v4 v5 = liftIO $ dyn301 ptr_glGetPerfMonitorCounterStringAMD v1 v2 v3 v4 v5
@@ -18156,8 +18156,8 @@ ptr_glGetPerfMonitorCounterStringAMD = unsafePerformIO $ getCommand "glGetPerfMo
 glGetPerfMonitorCountersAMD
   :: MonadIO m
   => GLuint -- ^ @group@.
-  -> Ptr GLint -- ^ @numCounters@ pointing to @1@ elements of type @GLint@.
-  -> Ptr GLint -- ^ @maxActiveCounters@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @numCounters@ pointing to @1@ element of type @GLint@.
+  -> Ptr GLint -- ^ @maxActiveCounters@ pointing to @1@ element of type @GLint@.
   -> GLsizei -- ^ @counterSize@.
   -> Ptr GLuint -- ^ @counters@ pointing to @counterSize@ elements of type @GLuint@.
   -> m ()
@@ -18173,7 +18173,7 @@ glGetPerfMonitorGroupStringAMD
   :: MonadIO m
   => GLuint -- ^ @group@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @groupString@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetPerfMonitorGroupStringAMD v1 v2 v3 v4 = liftIO $ dyn327 ptr_glGetPerfMonitorGroupStringAMD v1 v2 v3 v4
@@ -18186,7 +18186,7 @@ ptr_glGetPerfMonitorGroupStringAMD = unsafePerformIO $ getCommand "glGetPerfMoni
 
 glGetPerfMonitorGroupsAMD
   :: MonadIO m
-  => Ptr GLint -- ^ @numGroups@ pointing to @1@ elements of type @GLint@.
+  => Ptr GLint -- ^ @numGroups@ pointing to @1@ element of type @GLint@.
   -> GLsizei -- ^ @groupsSize@.
   -> Ptr GLuint -- ^ @groups@ pointing to @groupsSize@ elements of type @GLuint@.
   -> m ()
@@ -18359,7 +18359,7 @@ glGetPointerIndexedvEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TypeEnum@.
   -> GLuint -- ^ @index@.
-  -> Ptr (Ptr a) -- ^ @data@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @data@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetPointerIndexedvEXT v1 v2 v3 = liftIO $ dyn386 ptr_glGetPointerIndexedvEXT v1 v2 v3
 
@@ -18373,7 +18373,7 @@ glGetPointeri_vEXT
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @TypeEnum@.
   -> GLuint -- ^ @index@.
-  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetPointeri_vEXT v1 v2 v3 = liftIO $ dyn386 ptr_glGetPointeri_vEXT v1 v2 v3
 
@@ -18387,7 +18387,7 @@ ptr_glGetPointeri_vEXT = unsafePerformIO $ getCommand "glGetPointeri_vEXT"
 glGetPointerv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @GetPointervPName@.
-  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetPointerv v1 v2 = liftIO $ dyn267 ptr_glGetPointerv v1 v2
 
@@ -18400,7 +18400,7 @@ ptr_glGetPointerv = unsafePerformIO $ getCommand "glGetPointerv"
 glGetPointervEXT
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @GetPointervPName@.
-  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetPointervEXT v1 v2 = liftIO $ dyn267 ptr_glGetPointervEXT v1 v2
 
@@ -18441,8 +18441,8 @@ glGetProgramBinary
   :: MonadIO m
   => GLuint -- ^ @program@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLenum -- ^ @binaryFormat@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLenum -- ^ @binaryFormat@ pointing to @1@ element of type @GLenum@.
   -> Ptr a -- ^ @binary@ pointing to @bufSize@ elements of type @a@.
   -> m ()
 glGetProgramBinary v1 v2 v3 v4 v5 = liftIO $ dyn387 ptr_glGetProgramBinary v1 v2 v3 v4 v5
@@ -18457,8 +18457,8 @@ glGetProgramBinaryOES
   :: MonadIO m
   => GLuint -- ^ @program@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLenum -- ^ @binaryFormat@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLenum -- ^ @binaryFormat@ pointing to @1@ element of type @GLenum@.
   -> Ptr a -- ^ @binary@ pointing to @bufSize@ elements of type @a@.
   -> m ()
 glGetProgramBinaryOES v1 v2 v3 v4 v5 = liftIO $ dyn387 ptr_glGetProgramBinaryOES v1 v2 v3 v4 v5
@@ -18530,7 +18530,7 @@ glGetProgramInfoLog
   :: MonadIO m
   => GLuint -- ^ @program@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @infoLog@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetProgramInfoLog v1 v2 v3 v4 = liftIO $ dyn327 ptr_glGetProgramInfoLog v1 v2 v3 v4
@@ -18617,7 +18617,7 @@ glGetProgramNamedParameterdvNV
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ elements of type @GLubyte@.
+  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glGetProgramNamedParameterdvNV v1 v2 v3 v4 = liftIO $ dyn388 ptr_glGetProgramNamedParameterdvNV v1 v2 v3 v4
@@ -18632,7 +18632,7 @@ glGetProgramNamedParameterfvNV
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ elements of type @GLubyte@.
+  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glGetProgramNamedParameterfvNV v1 v2 v3 v4 = liftIO $ dyn389 ptr_glGetProgramNamedParameterfvNV v1 v2 v3 v4
@@ -18678,7 +18678,7 @@ glGetProgramPipelineInfoLog
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @infoLog@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetProgramPipelineInfoLog v1 v2 v3 v4 = liftIO $ dyn327 ptr_glGetProgramPipelineInfoLog v1 v2 v3 v4
@@ -18693,7 +18693,7 @@ glGetProgramPipelineInfoLogEXT
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @infoLog@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetProgramPipelineInfoLogEXT v1 v2 v3 v4 = liftIO $ dyn327 ptr_glGetProgramPipelineInfoLogEXT v1 v2 v3 v4
@@ -18785,7 +18785,7 @@ glGetProgramResourceName
   -> GLenum -- ^ @programInterface@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @name@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetProgramResourceName v1 v2 v3 v4 v5 v6 = liftIO $ dyn299 ptr_glGetProgramResourceName v1 v2 v3 v4 v5 v6
@@ -18824,7 +18824,7 @@ glGetProgramResourceiv
   -> GLsizei -- ^ @propCount@.
   -> Ptr GLenum -- ^ @props@ pointing to @propCount@ elements of type @GLenum@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLint -- ^ @params@ pointing to @bufSize@ elements of type @GLint@.
   -> m ()
 glGetProgramResourceiv v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn394 ptr_glGetProgramResourceiv v1 v2 v3 v4 v5 v6 v7 v8
@@ -18841,7 +18841,7 @@ glGetProgramStageiv
   => GLuint -- ^ @program@.
   -> GLenum -- ^ @shadertype@.
   -> GLenum -- ^ @pname@.
-  -> Ptr GLint -- ^ @values@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @values@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetProgramStageiv v1 v2 v3 v4 = liftIO $ dyn358 ptr_glGetProgramStageiv v1 v2 v3 v4
 
@@ -18912,7 +18912,7 @@ glGetProgramivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTargetARB@.
   -> GLenum -- ^ @pname@ of type @ProgramPropertyARB@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetProgramivARB v1 v2 v3 = liftIO $ dyn132 ptr_glGetProgramivARB v1 v2 v3
 
@@ -19398,7 +19398,7 @@ glGetShaderInfoLog
   :: MonadIO m
   => GLuint -- ^ @shader@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @infoLog@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetShaderInfoLog v1 v2 v3 v4 = liftIO $ dyn327 ptr_glGetShaderInfoLog v1 v2 v3 v4
@@ -19430,7 +19430,7 @@ glGetShaderSource
   :: MonadIO m
   => GLuint -- ^ @shader@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @source@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetShaderSource v1 v2 v3 v4 = liftIO $ dyn327 ptr_glGetShaderSource v1 v2 v3 v4
@@ -19445,7 +19445,7 @@ glGetShaderSourceARB
   :: MonadIO m
   => GLhandleARB -- ^ @obj@ of type @handleARB@.
   -> GLsizei -- ^ @maxLength@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLcharARB -- ^ @source@ pointing to @maxLength@ elements of type @GLcharARB@.
   -> m ()
 glGetShaderSourceARB v1 v2 v3 v4 = liftIO $ dyn333 ptr_glGetShaderSourceARB v1 v2 v3 v4
@@ -19559,7 +19559,7 @@ glGetSynciv
   => GLsync -- ^ @sync@ of type @sync@.
   -> GLenum -- ^ @pname@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLint -- ^ @values@ pointing to @bufSize@ elements of type @GLint@.
   -> m ()
 glGetSynciv v1 v2 v3 v4 v5 = liftIO $ dyn403 ptr_glGetSynciv v1 v2 v3 v4 v5
@@ -19925,7 +19925,7 @@ glGetTexParameterPointervAPPLE
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLenum -- ^ @pname@.
-  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetTexParameterPointervAPPLE v1 v2 v3 = liftIO $ dyn312 ptr_glGetTexParameterPointervAPPLE v1 v2 v3
 
@@ -20291,7 +20291,7 @@ glGetTrackMatrixivNV
   => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
   -> GLuint -- ^ @address@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetTrackMatrixivNV v1 v2 v3 v4 = liftIO $ dyn346 ptr_glGetTrackMatrixivNV v1 v2 v3 v4
 
@@ -20307,9 +20307,9 @@ glGetTransformFeedbackVarying
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLsizei -- ^ @size@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLenum -- ^ @type@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @size@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLenum -- ^ @type@ pointing to @1@ element of type @GLenum@.
   -> Ptr GLchar -- ^ @name@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetTransformFeedbackVarying v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn303 ptr_glGetTransformFeedbackVarying v1 v2 v3 v4 v5 v6 v7
@@ -20325,9 +20325,9 @@ glGetTransformFeedbackVaryingEXT
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLsizei -- ^ @size@ pointing to @1@ elements of type @GLsizei@.
-  -> Ptr GLenum -- ^ @type@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @size@ pointing to @1@ element of type @GLsizei@.
+  -> Ptr GLenum -- ^ @type@ pointing to @1@ element of type @GLenum@.
   -> Ptr GLchar -- ^ @name@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
 glGetTransformFeedbackVaryingEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn303 ptr_glGetTransformFeedbackVaryingEXT v1 v2 v3 v4 v5 v6 v7
@@ -20342,7 +20342,7 @@ glGetTransformFeedbackVaryingNV
   :: MonadIO m
   => GLuint -- ^ @program@.
   -> GLuint -- ^ @index@.
-  -> Ptr GLint -- ^ @location@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @location@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetTransformFeedbackVaryingNV v1 v2 v3 = liftIO $ dyn419 ptr_glGetTransformFeedbackVaryingNV v1 v2 v3
 
@@ -20403,7 +20403,7 @@ glGetTranslatedShaderSourceANGLE
   :: MonadIO m
   => GLuint -- ^ @shader@.
   -> GLsizei -- ^ @bufsize@.
-  -> Ptr GLsizei -- ^ @length@ pointing to @1@ elements of type @GLsizei@.
+  -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @source@.
   -> m ()
 glGetTranslatedShaderSourceANGLE v1 v2 v3 v4 = liftIO $ dyn327 ptr_glGetTranslatedShaderSourceANGLE v1 v2 v3 v4
@@ -20502,7 +20502,7 @@ glGetUniformSubroutineuiv
   :: MonadIO m
   => GLenum -- ^ @shadertype@.
   -> GLint -- ^ @location@.
-  -> Ptr GLuint -- ^ @params@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @params@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glGetUniformSubroutineuiv v1 v2 v3 = liftIO $ dyn75 ptr_glGetUniformSubroutineuiv v1 v2 v3
 
@@ -20646,7 +20646,7 @@ glGetVariantArrayObjectfvATI
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetVariantArrayObjectfvATI v1 v2 v3 = liftIO $ dyn344 ptr_glGetVariantArrayObjectfvATI v1 v2 v3
 
@@ -20660,7 +20660,7 @@ glGetVariantArrayObjectivATI
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetVariantArrayObjectivATI v1 v2 v3 = liftIO $ dyn330 ptr_glGetVariantArrayObjectivATI v1 v2 v3
 
@@ -20819,7 +20819,7 @@ glGetVertexArrayPointervEXT
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
   -> GLenum -- ^ @pname@.
-  -> Ptr (Ptr a) -- ^ @param@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @param@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetVertexArrayPointervEXT v1 v2 v3 = liftIO $ dyn356 ptr_glGetVertexArrayPointervEXT v1 v2 v3
 
@@ -20877,7 +20877,7 @@ glGetVertexAttribIiv
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnum@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetVertexAttribIiv v1 v2 v3 = liftIO $ dyn330 ptr_glGetVertexAttribIiv v1 v2 v3
 
@@ -20891,7 +20891,7 @@ glGetVertexAttribIivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnum@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetVertexAttribIivEXT v1 v2 v3 = liftIO $ dyn330 ptr_glGetVertexAttribIivEXT v1 v2 v3
 
@@ -20906,7 +20906,7 @@ glGetVertexAttribIuiv
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnum@.
-  -> Ptr GLuint -- ^ @params@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @params@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glGetVertexAttribIuiv v1 v2 v3 = liftIO $ dyn370 ptr_glGetVertexAttribIuiv v1 v2 v3
 
@@ -20920,7 +20920,7 @@ glGetVertexAttribIuivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnum@.
-  -> Ptr GLuint -- ^ @params@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @params@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glGetVertexAttribIuivEXT v1 v2 v3 = liftIO $ dyn370 ptr_glGetVertexAttribIuivEXT v1 v2 v3
 
@@ -21006,7 +21006,7 @@ glGetVertexAttribPointerv
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribPointerPropertyARB@.
-  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetVertexAttribPointerv v1 v2 v3 = liftIO $ dyn356 ptr_glGetVertexAttribPointerv v1 v2 v3
 
@@ -21020,7 +21020,7 @@ glGetVertexAttribPointervARB
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribPointerPropertyARB@.
-  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetVertexAttribPointervARB v1 v2 v3 = liftIO $ dyn356 ptr_glGetVertexAttribPointervARB v1 v2 v3
 
@@ -21034,7 +21034,7 @@ glGetVertexAttribPointervNV
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
-  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ elements of type @Ptr a@.
+  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetVertexAttribPointervNV v1 v2 v3 = liftIO $ dyn356 ptr_glGetVertexAttribPointervNV v1 v2 v3
 
@@ -21077,7 +21077,7 @@ glGetVertexAttribdvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
-  -> Ptr GLdouble -- ^ @params@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @params@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glGetVertexAttribdvNV v1 v2 v3 = liftIO $ dyn435 ptr_glGetVertexAttribdvNV v1 v2 v3
 
@@ -21120,7 +21120,7 @@ glGetVertexAttribfvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetVertexAttribfvNV v1 v2 v3 = liftIO $ dyn344 ptr_glGetVertexAttribfvNV v1 v2 v3
 
@@ -21163,7 +21163,7 @@ glGetVertexAttribivNV
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetVertexAttribivNV v1 v2 v3 = liftIO $ dyn330 ptr_glGetVertexAttribivNV v1 v2 v3
 
@@ -22273,7 +22273,7 @@ ptr_glIndexd = unsafePerformIO $ getCommand "glIndexd"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
 glIndexdv
   :: MonadIO m
-  => Ptr GLdouble -- ^ @c@ pointing to @1@ elements of type @ColorIndexValueD@.
+  => Ptr GLdouble -- ^ @c@ pointing to @1@ element of type @ColorIndexValueD@.
   -> m ()
 glIndexdv v1 = liftIO $ dyn39 ptr_glIndexdv v1
 
@@ -22299,7 +22299,7 @@ ptr_glIndexf = unsafePerformIO $ getCommand "glIndexf"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
 glIndexfv
   :: MonadIO m
-  => Ptr GLfloat -- ^ @c@ pointing to @1@ elements of type @ColorIndexValueF@.
+  => Ptr GLfloat -- ^ @c@ pointing to @1@ element of type @ColorIndexValueF@.
   -> m ()
 glIndexfv v1 = liftIO $ dyn41 ptr_glIndexfv v1
 
@@ -22325,7 +22325,7 @@ ptr_glIndexi = unsafePerformIO $ getCommand "glIndexi"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
 glIndexiv
   :: MonadIO m
-  => Ptr GLint -- ^ @c@ pointing to @1@ elements of type @ColorIndexValueI@.
+  => Ptr GLint -- ^ @c@ pointing to @1@ element of type @ColorIndexValueI@.
   -> m ()
 glIndexiv v1 = liftIO $ dyn43 ptr_glIndexiv v1
 
@@ -22351,7 +22351,7 @@ ptr_glIndexs = unsafePerformIO $ getCommand "glIndexs"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
 glIndexsv
   :: MonadIO m
-  => Ptr GLshort -- ^ @c@ pointing to @1@ elements of type @ColorIndexValueS@.
+  => Ptr GLshort -- ^ @c@ pointing to @1@ element of type @ColorIndexValueS@.
   -> m ()
 glIndexsv v1 = liftIO $ dyn45 ptr_glIndexsv v1
 
@@ -22377,7 +22377,7 @@ ptr_glIndexub = unsafePerformIO $ getCommand "glIndexub"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
 glIndexubv
   :: MonadIO m
-  => Ptr GLubyte -- ^ @c@ pointing to @1@ elements of type @ColorIndexValueUB@.
+  => Ptr GLubyte -- ^ @c@ pointing to @1@ element of type @ColorIndexValueUB@.
   -> m ()
 glIndexubv v1 = liftIO $ dyn100 ptr_glIndexubv v1
 
@@ -22401,7 +22401,7 @@ ptr_glIndexxOES = unsafePerformIO $ getCommand "glIndexxOES"
 
 glIndexxvOES
   :: MonadIO m
-  => Ptr GLfixed -- ^ @component@ pointing to @1@ elements of type @GLfixed@.
+  => Ptr GLfixed -- ^ @component@ pointing to @1@ element of type @GLfixed@.
   -> m ()
 glIndexxvOES v1 = liftIO $ dyn106 ptr_glIndexxvOES v1
 
@@ -24472,8 +24472,8 @@ glMapTexture2DINTEL
   => GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLbitfield -- ^ @access@.
-  -> Ptr GLint -- ^ @stride@ pointing to @1@ elements of type @GLint@.
-  -> Ptr GLenum -- ^ @layout@ pointing to @1@ elements of type @GLenum@.
+  -> Ptr GLint -- ^ @stride@ pointing to @1@ element of type @GLint@.
+  -> Ptr GLenum -- ^ @layout@ pointing to @1@ element of type @GLenum@.
   -> m (Ptr a)
 glMapTexture2DINTEL v1 v2 v3 v4 v5 = liftIO $ dyn502 ptr_glMapTexture2DINTEL v1 v2 v3 v4 v5
 
@@ -25731,7 +25731,7 @@ ptr_glMultiTexCoord1bOES = unsafePerformIO $ getCommand "glMultiTexCoord1bOES"
 glMultiTexCoord1bvOES
   :: MonadIO m
   => GLenum -- ^ @texture@.
-  -> Ptr GLbyte -- ^ @coords@ pointing to @1@ elements of type @GLbyte@.
+  -> Ptr GLbyte -- ^ @coords@ pointing to @1@ element of type @GLbyte@.
   -> m ()
 glMultiTexCoord1bvOES v1 v2 = liftIO $ dyn531 ptr_glMultiTexCoord1bvOES v1 v2
 
@@ -25772,7 +25772,7 @@ ptr_glMultiTexCoord1dARB = unsafePerformIO $ getCommand "glMultiTexCoord1dARB"
 glMultiTexCoord1dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @CoordD@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @CoordD@.
   -> m ()
 glMultiTexCoord1dv v1 v2 = liftIO $ dyn92 ptr_glMultiTexCoord1dv v1 v2
 
@@ -25785,7 +25785,7 @@ ptr_glMultiTexCoord1dv = unsafePerformIO $ getCommand "glMultiTexCoord1dv"
 glMultiTexCoord1dvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @CoordD@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @CoordD@.
   -> m ()
 glMultiTexCoord1dvARB v1 v2 = liftIO $ dyn92 ptr_glMultiTexCoord1dvARB v1 v2
 
@@ -25826,7 +25826,7 @@ ptr_glMultiTexCoord1fARB = unsafePerformIO $ getCommand "glMultiTexCoord1fARB"
 glMultiTexCoord1fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @CoordF@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @CoordF@.
   -> m ()
 glMultiTexCoord1fv v1 v2 = liftIO $ dyn93 ptr_glMultiTexCoord1fv v1 v2
 
@@ -25839,7 +25839,7 @@ ptr_glMultiTexCoord1fv = unsafePerformIO $ getCommand "glMultiTexCoord1fv"
 glMultiTexCoord1fvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @CoordF@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @CoordF@.
   -> m ()
 glMultiTexCoord1fvARB v1 v2 = liftIO $ dyn93 ptr_glMultiTexCoord1fvARB v1 v2
 
@@ -25865,7 +25865,7 @@ ptr_glMultiTexCoord1hNV = unsafePerformIO $ getCommand "glMultiTexCoord1hNV"
 glMultiTexCoord1hvNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLhalfNV -- ^ @v@ pointing to @1@ elements of type @Half16NV@.
+  -> Ptr GLhalfNV -- ^ @v@ pointing to @1@ element of type @Half16NV@.
   -> m ()
 glMultiTexCoord1hvNV v1 v2 = liftIO $ dyn534 ptr_glMultiTexCoord1hvNV v1 v2
 
@@ -25906,7 +25906,7 @@ ptr_glMultiTexCoord1iARB = unsafePerformIO $ getCommand "glMultiTexCoord1iARB"
 glMultiTexCoord1iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLint -- ^ @v@ pointing to @1@ elements of type @CoordI@.
+  -> Ptr GLint -- ^ @v@ pointing to @1@ element of type @CoordI@.
   -> m ()
 glMultiTexCoord1iv v1 v2 = liftIO $ dyn135 ptr_glMultiTexCoord1iv v1 v2
 
@@ -25919,7 +25919,7 @@ ptr_glMultiTexCoord1iv = unsafePerformIO $ getCommand "glMultiTexCoord1iv"
 glMultiTexCoord1ivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLint -- ^ @v@ pointing to @1@ elements of type @CoordI@.
+  -> Ptr GLint -- ^ @v@ pointing to @1@ element of type @CoordI@.
   -> m ()
 glMultiTexCoord1ivARB v1 v2 = liftIO $ dyn135 ptr_glMultiTexCoord1ivARB v1 v2
 
@@ -25960,7 +25960,7 @@ ptr_glMultiTexCoord1sARB = unsafePerformIO $ getCommand "glMultiTexCoord1sARB"
 glMultiTexCoord1sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @CoordS@.
+  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @CoordS@.
   -> m ()
 glMultiTexCoord1sv v1 v2 = liftIO $ dyn536 ptr_glMultiTexCoord1sv v1 v2
 
@@ -25973,7 +25973,7 @@ ptr_glMultiTexCoord1sv = unsafePerformIO $ getCommand "glMultiTexCoord1sv"
 glMultiTexCoord1svARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @CoordS@.
+  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @CoordS@.
   -> m ()
 glMultiTexCoord1svARB v1 v2 = liftIO $ dyn536 ptr_glMultiTexCoord1svARB v1 v2
 
@@ -25999,7 +25999,7 @@ ptr_glMultiTexCoord1xOES = unsafePerformIO $ getCommand "glMultiTexCoord1xOES"
 glMultiTexCoord1xvOES
   :: MonadIO m
   => GLenum -- ^ @texture@.
-  -> Ptr GLfixed -- ^ @coords@ pointing to @1@ elements of type @GLfixed@.
+  -> Ptr GLfixed -- ^ @coords@ pointing to @1@ element of type @GLfixed@.
   -> m ()
 glMultiTexCoord1xvOES v1 v2 = liftIO $ dyn94 ptr_glMultiTexCoord1xvOES v1 v2
 
@@ -26991,7 +26991,7 @@ glMultiTexCoordP1uiv
   :: MonadIO m
   => GLenum -- ^ @texture@.
   -> GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glMultiTexCoordP1uiv v1 v2 v3 = liftIO $ dyn408 ptr_glMultiTexCoordP1uiv v1 v2 v3
 
@@ -27019,7 +27019,7 @@ glMultiTexCoordP2uiv
   :: MonadIO m
   => GLenum -- ^ @texture@.
   -> GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glMultiTexCoordP2uiv v1 v2 v3 = liftIO $ dyn408 ptr_glMultiTexCoordP2uiv v1 v2 v3
 
@@ -27047,7 +27047,7 @@ glMultiTexCoordP3uiv
   :: MonadIO m
   => GLenum -- ^ @texture@.
   -> GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glMultiTexCoordP3uiv v1 v2 v3 = liftIO $ dyn408 ptr_glMultiTexCoordP3uiv v1 v2 v3
 
@@ -27075,7 +27075,7 @@ glMultiTexCoordP4uiv
   :: MonadIO m
   => GLenum -- ^ @texture@.
   -> GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glMultiTexCoordP4uiv v1 v2 v3 = liftIO $ dyn408 ptr_glMultiTexCoordP4uiv v1 v2 v3
 
@@ -28453,7 +28453,7 @@ ptr_glNormalP3ui = unsafePerformIO $ getCommand "glNormalP3ui"
 glNormalP3uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glNormalP3uiv v1 v2 = liftIO $ dyn124 ptr_glNormalP3uiv v1 v2
 
@@ -29544,7 +29544,7 @@ glPixelTransformParameterfvEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @PixelTransformTargetEXT@.
   -> GLenum -- ^ @pname@ of type @PixelTransformPNameEXT@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glPixelTransformParameterfvEXT v1 v2 v3 = liftIO $ dyn131 ptr_glPixelTransformParameterfvEXT v1 v2 v3
 
@@ -29572,7 +29572,7 @@ glPixelTransformParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @PixelTransformTargetEXT@.
   -> GLenum -- ^ @pname@ of type @PixelTransformPNameEXT@.
-  -> Ptr GLint -- ^ @params@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glPixelTransformParameterivEXT v1 v2 v3 = liftIO $ dyn132 ptr_glPixelTransformParameterivEXT v1 v2 v3
 
@@ -29615,10 +29615,10 @@ glPointAlongPathNV
   -> GLsizei -- ^ @startSegment@.
   -> GLsizei -- ^ @numSegments@.
   -> GLfloat -- ^ @distance@.
-  -> Ptr GLfloat -- ^ @x@ pointing to @1@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @y@ pointing to @1@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @tangentX@ pointing to @1@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @tangentY@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @x@ pointing to @1@ element of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @y@ pointing to @1@ element of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @tangentX@ pointing to @1@ element of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @tangentY@ pointing to @1@ element of type @GLfloat@.
   -> m GLboolean -- ^ of type @Boolean@.
 glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn600 ptr_glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8
 
@@ -29893,7 +29893,7 @@ ptr_glPointSizexOES = unsafePerformIO $ getCommand "glPointSizexOES"
 
 glPollAsyncSGIX
   :: MonadIO m
-  => Ptr GLuint -- ^ @markerp@ pointing to @1@ elements of type @GLuint@.
+  => Ptr GLuint -- ^ @markerp@ pointing to @1@ element of type @GLuint@.
   -> m GLint
 glPollAsyncSGIX v1 = liftIO $ dyn276 ptr_glPollAsyncSGIX v1
 
@@ -29905,7 +29905,7 @@ ptr_glPollAsyncSGIX = unsafePerformIO $ getCommand "glPollAsyncSGIX"
 
 glPollInstrumentsSGIX
   :: MonadIO m
-  => Ptr GLint -- ^ @marker_p@ pointing to @1@ elements of type @GLint@.
+  => Ptr GLint -- ^ @marker_p@ pointing to @1@ element of type @GLint@.
   -> m GLint
 glPollInstrumentsSGIX v1 = liftIO $ dyn601 ptr_glPollInstrumentsSGIX v1
 
@@ -30688,7 +30688,7 @@ glProgramNamedParameter4dNV
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ elements of type @GLubyte@.
+  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
@@ -30706,7 +30706,7 @@ glProgramNamedParameter4dvNV
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ elements of type @GLubyte@.
+  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
   -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glProgramNamedParameter4dvNV v1 v2 v3 v4 = liftIO $ dyn388 ptr_glProgramNamedParameter4dvNV v1 v2 v3 v4
@@ -30721,7 +30721,7 @@ glProgramNamedParameter4fNV
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ elements of type @GLubyte@.
+  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
   -> GLfloat -- ^ @z@.
@@ -30739,7 +30739,7 @@ glProgramNamedParameter4fvNV
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ elements of type @GLubyte@.
+  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
   -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glProgramNamedParameter4fvNV v1 v2 v3 v4 = liftIO $ dyn389 ptr_glProgramNamedParameter4fvNV v1 v2 v3 v4
@@ -30963,7 +30963,7 @@ glProgramUniform1dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> Ptr GLdouble -- ^ @value@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @value@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glProgramUniform1dv v1 v2 v3 v4 = liftIO $ dyn449 ptr_glProgramUniform1dv v1 v2 v3 v4
 
@@ -31023,7 +31023,7 @@ glProgramUniform1fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> Ptr GLfloat -- ^ @value@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glProgramUniform1fv v1 v2 v3 v4 = liftIO $ dyn450 ptr_glProgramUniform1fv v1 v2 v3 v4
 
@@ -31112,7 +31112,7 @@ glProgramUniform1iv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> Ptr GLint -- ^ @value@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @value@ pointing to @1@ element of type @GLint@.
   -> m ()
 glProgramUniform1iv v1 v2 v3 v4 = liftIO $ dyn451 ptr_glProgramUniform1iv v1 v2 v3 v4
 
@@ -31201,7 +31201,7 @@ glProgramUniform1uiv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glProgramUniform1uiv v1 v2 v3 v4 = liftIO $ dyn452 ptr_glProgramUniform1uiv v1 v2 v3 v4
 
@@ -34022,7 +34022,7 @@ ptr_glReplacementCodeuiColor3fVertex3fSUN = unsafePerformIO $ getCommand "glRepl
 
 glReplacementCodeuiColor3fVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLfloat -- ^ @c@ pointing to @3@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
@@ -34058,7 +34058,7 @@ ptr_glReplacementCodeuiColor4fNormal3fVertex3fSUN = unsafePerformIO $ getCommand
 
 glReplacementCodeuiColor4fNormal3fVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLfloat -- ^ @c@ pointing to @4@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @n@ pointing to @3@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
@@ -34092,7 +34092,7 @@ ptr_glReplacementCodeuiColor4ubVertex3fSUN = unsafePerformIO $ getCommand "glRep
 
 glReplacementCodeuiColor4ubVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLubyte -- ^ @c@ pointing to @4@ elements of type @GLubyte@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
@@ -34124,7 +34124,7 @@ ptr_glReplacementCodeuiNormal3fVertex3fSUN = unsafePerformIO $ getCommand "glRep
 
 glReplacementCodeuiNormal3fVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLfloat -- ^ @n@ pointing to @3@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
@@ -34174,7 +34174,7 @@ ptr_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN = unsafePerformIO $ 
 
 glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLfloat -- ^ @tc@ pointing to @2@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @c@ pointing to @4@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @n@ pointing to @3@ elements of type @GLfloat@.
@@ -34210,7 +34210,7 @@ ptr_glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN = unsafePerformIO $ getComm
 
 glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLfloat -- ^ @tc@ pointing to @2@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @n@ pointing to @3@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
@@ -34242,7 +34242,7 @@ ptr_glReplacementCodeuiTexCoord2fVertex3fSUN = unsafePerformIO $ getCommand "glR
 
 glReplacementCodeuiTexCoord2fVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLfloat -- ^ @tc@ pointing to @2@ elements of type @GLfloat@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
@@ -34271,7 +34271,7 @@ ptr_glReplacementCodeuiVertex3fSUN = unsafePerformIO $ getCommand "glReplacement
 
 glReplacementCodeuiVertex3fvSUN
   :: MonadIO m
-  => Ptr GLuint -- ^ @rc@ pointing to @1@ elements of type @ReplacementCodeSUN@.
+  => Ptr GLuint -- ^ @rc@ pointing to @1@ element of type @ReplacementCodeSUN@.
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
 glReplacementCodeuiVertex3fvSUN v1 v2 = liftIO $ dyn678 ptr_glReplacementCodeuiVertex3fvSUN v1 v2
@@ -35440,7 +35440,7 @@ ptr_glSecondaryColorP3ui = unsafePerformIO $ getCommand "glSecondaryColorP3ui"
 glSecondaryColorP3uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @color@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @color@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glSecondaryColorP3uiv v1 v2 = liftIO $ dyn124 ptr_glSecondaryColorP3uiv v1 v2
 
@@ -36595,7 +36595,7 @@ ptr_glTexCoord1bOES = unsafePerformIO $ getCommand "glTexCoord1bOES"
 
 glTexCoord1bvOES
   :: MonadIO m
-  => Ptr GLbyte -- ^ @coords@ pointing to @1@ elements of type @GLbyte@.
+  => Ptr GLbyte -- ^ @coords@ pointing to @1@ element of type @GLbyte@.
   -> m ()
 glTexCoord1bvOES v1 = liftIO $ dyn37 ptr_glTexCoord1bvOES v1
 
@@ -36621,7 +36621,7 @@ ptr_glTexCoord1d = unsafePerformIO $ getCommand "glTexCoord1d"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
 glTexCoord1dv
   :: MonadIO m
-  => Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @CoordD@.
+  => Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @CoordD@.
   -> m ()
 glTexCoord1dv v1 = liftIO $ dyn39 ptr_glTexCoord1dv v1
 
@@ -36647,7 +36647,7 @@ ptr_glTexCoord1f = unsafePerformIO $ getCommand "glTexCoord1f"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
 glTexCoord1fv
   :: MonadIO m
-  => Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @CoordF@.
+  => Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @CoordF@.
   -> m ()
 glTexCoord1fv v1 = liftIO $ dyn41 ptr_glTexCoord1fv v1
 
@@ -36671,7 +36671,7 @@ ptr_glTexCoord1hNV = unsafePerformIO $ getCommand "glTexCoord1hNV"
 
 glTexCoord1hvNV
   :: MonadIO m
-  => Ptr GLhalfNV -- ^ @v@ pointing to @1@ elements of type @Half16NV@.
+  => Ptr GLhalfNV -- ^ @v@ pointing to @1@ element of type @Half16NV@.
   -> m ()
 glTexCoord1hvNV v1 = liftIO $ dyn98 ptr_glTexCoord1hvNV v1
 
@@ -36697,7 +36697,7 @@ ptr_glTexCoord1i = unsafePerformIO $ getCommand "glTexCoord1i"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
 glTexCoord1iv
   :: MonadIO m
-  => Ptr GLint -- ^ @v@ pointing to @1@ elements of type @CoordI@.
+  => Ptr GLint -- ^ @v@ pointing to @1@ element of type @CoordI@.
   -> m ()
 glTexCoord1iv v1 = liftIO $ dyn43 ptr_glTexCoord1iv v1
 
@@ -36723,7 +36723,7 @@ ptr_glTexCoord1s = unsafePerformIO $ getCommand "glTexCoord1s"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
 glTexCoord1sv
   :: MonadIO m
-  => Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @CoordS@.
+  => Ptr GLshort -- ^ @v@ pointing to @1@ element of type @CoordS@.
   -> m ()
 glTexCoord1sv v1 = liftIO $ dyn45 ptr_glTexCoord1sv v1
 
@@ -36747,7 +36747,7 @@ ptr_glTexCoord1xOES = unsafePerformIO $ getCommand "glTexCoord1xOES"
 
 glTexCoord1xvOES
   :: MonadIO m
-  => Ptr GLfixed -- ^ @coords@ pointing to @1@ elements of type @GLfixed@.
+  => Ptr GLfixed -- ^ @coords@ pointing to @1@ element of type @GLfixed@.
   -> m ()
 glTexCoord1xvOES v1 = liftIO $ dyn106 ptr_glTexCoord1xvOES v1
 
@@ -37597,7 +37597,7 @@ ptr_glTexCoordP1ui = unsafePerformIO $ getCommand "glTexCoordP1ui"
 glTexCoordP1uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glTexCoordP1uiv v1 v2 = liftIO $ dyn124 ptr_glTexCoordP1uiv v1 v2
 
@@ -37623,7 +37623,7 @@ ptr_glTexCoordP2ui = unsafePerformIO $ getCommand "glTexCoordP2ui"
 glTexCoordP2uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glTexCoordP2uiv v1 v2 = liftIO $ dyn124 ptr_glTexCoordP2uiv v1 v2
 
@@ -37649,7 +37649,7 @@ ptr_glTexCoordP3ui = unsafePerformIO $ getCommand "glTexCoordP3ui"
 glTexCoordP3uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glTexCoordP3uiv v1 v2 = liftIO $ dyn124 ptr_glTexCoordP3uiv v1 v2
 
@@ -37675,7 +37675,7 @@ ptr_glTexCoordP4ui = unsafePerformIO $ getCommand "glTexCoordP4ui"
 glTexCoordP4uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @coords@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glTexCoordP4uiv v1 v2 = liftIO $ dyn124 ptr_glTexCoordP4uiv v1 v2
 
@@ -43110,7 +43110,7 @@ ptr_glVertexAttrib1dNV = unsafePerformIO $ getCommand "glVertexAttrib1dNV"
 glVertexAttrib1dv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glVertexAttrib1dv v1 v2 = liftIO $ dyn805 ptr_glVertexAttrib1dv v1 v2
 
@@ -43123,7 +43123,7 @@ ptr_glVertexAttrib1dv = unsafePerformIO $ getCommand "glVertexAttrib1dv"
 glVertexAttrib1dvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glVertexAttrib1dvARB v1 v2 = liftIO $ dyn805 ptr_glVertexAttrib1dvARB v1 v2
 
@@ -43136,7 +43136,7 @@ ptr_glVertexAttrib1dvARB = unsafePerformIO $ getCommand "glVertexAttrib1dvARB"
 glVertexAttrib1dvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glVertexAttrib1dvNV v1 v2 = liftIO $ dyn805 ptr_glVertexAttrib1dvNV v1 v2
 
@@ -43190,7 +43190,7 @@ ptr_glVertexAttrib1fNV = unsafePerformIO $ getCommand "glVertexAttrib1fNV"
 glVertexAttrib1fv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glVertexAttrib1fv v1 v2 = liftIO $ dyn372 ptr_glVertexAttrib1fv v1 v2
 
@@ -43203,7 +43203,7 @@ ptr_glVertexAttrib1fv = unsafePerformIO $ getCommand "glVertexAttrib1fv"
 glVertexAttrib1fvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glVertexAttrib1fvARB v1 v2 = liftIO $ dyn372 ptr_glVertexAttrib1fvARB v1 v2
 
@@ -43216,7 +43216,7 @@ ptr_glVertexAttrib1fvARB = unsafePerformIO $ getCommand "glVertexAttrib1fvARB"
 glVertexAttrib1fvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glVertexAttrib1fvNV v1 v2 = liftIO $ dyn372 ptr_glVertexAttrib1fvNV v1 v2
 
@@ -43242,7 +43242,7 @@ ptr_glVertexAttrib1hNV = unsafePerformIO $ getCommand "glVertexAttrib1hNV"
 glVertexAttrib1hvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLhalfNV -- ^ @v@ pointing to @1@ elements of type @Half16NV@.
+  -> Ptr GLhalfNV -- ^ @v@ pointing to @1@ element of type @Half16NV@.
   -> m ()
 glVertexAttrib1hvNV v1 v2 = liftIO $ dyn821 ptr_glVertexAttrib1hvNV v1 v2
 
@@ -43296,7 +43296,7 @@ ptr_glVertexAttrib1sNV = unsafePerformIO $ getCommand "glVertexAttrib1sNV"
 glVertexAttrib1sv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @GLshort@.
+  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @GLshort@.
   -> m ()
 glVertexAttrib1sv v1 v2 = liftIO $ dyn806 ptr_glVertexAttrib1sv v1 v2
 
@@ -43309,7 +43309,7 @@ ptr_glVertexAttrib1sv = unsafePerformIO $ getCommand "glVertexAttrib1sv"
 glVertexAttrib1svARB
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @GLshort@.
+  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @GLshort@.
   -> m ()
 glVertexAttrib1svARB v1 v2 = liftIO $ dyn806 ptr_glVertexAttrib1svARB v1 v2
 
@@ -43322,7 +43322,7 @@ ptr_glVertexAttrib1svARB = unsafePerformIO $ getCommand "glVertexAttrib1svARB"
 glVertexAttrib1svNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ elements of type @GLshort@.
+  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @GLshort@.
   -> m ()
 glVertexAttrib1svNV v1 v2 = liftIO $ dyn806 ptr_glVertexAttrib1svNV v1 v2
 
@@ -44711,7 +44711,7 @@ ptr_glVertexAttribI1iEXT = unsafePerformIO $ getCommand "glVertexAttribI1iEXT"
 glVertexAttribI1iv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLint -- ^ @v@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @v@ pointing to @1@ element of type @GLint@.
   -> m ()
 glVertexAttribI1iv v1 v2 = liftIO $ dyn686 ptr_glVertexAttribI1iv v1 v2
 
@@ -44724,7 +44724,7 @@ ptr_glVertexAttribI1iv = unsafePerformIO $ getCommand "glVertexAttribI1iv"
 glVertexAttribI1ivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLint -- ^ @v@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @v@ pointing to @1@ element of type @GLint@.
   -> m ()
 glVertexAttribI1ivEXT v1 v2 = liftIO $ dyn686 ptr_glVertexAttribI1ivEXT v1 v2
 
@@ -44765,7 +44765,7 @@ ptr_glVertexAttribI1uiEXT = unsafePerformIO $ getCommand "glVertexAttribI1uiEXT"
 glVertexAttribI1uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLuint -- ^ @v@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @v@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribI1uiv v1 v2 = liftIO $ dyn193 ptr_glVertexAttribI1uiv v1 v2
 
@@ -44778,7 +44778,7 @@ ptr_glVertexAttribI1uiv = unsafePerformIO $ getCommand "glVertexAttribI1uiv"
 glVertexAttribI1uivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLuint -- ^ @v@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @v@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribI1uivEXT v1 v2 = liftIO $ dyn193 ptr_glVertexAttribI1uivEXT v1 v2
 
@@ -45339,7 +45339,7 @@ ptr_glVertexAttribL1dEXT = unsafePerformIO $ getCommand "glVertexAttribL1dEXT"
 glVertexAttribL1dv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glVertexAttribL1dv v1 v2 = liftIO $ dyn805 ptr_glVertexAttribL1dv v1 v2
 
@@ -45352,7 +45352,7 @@ ptr_glVertexAttribL1dv = unsafePerformIO $ getCommand "glVertexAttribL1dv"
 glVertexAttribL1dvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glVertexAttribL1dvEXT v1 v2 = liftIO $ dyn805 ptr_glVertexAttribL1dvEXT v1 v2
 
@@ -45378,7 +45378,7 @@ ptr_glVertexAttribL1i64NV = unsafePerformIO $ getCommand "glVertexAttribL1i64NV"
 glVertexAttribL1i64vNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLint64EXT -- ^ @v@ pointing to @1@ elements of type @GLint64EXT@.
+  -> Ptr GLint64EXT -- ^ @v@ pointing to @1@ element of type @GLint64EXT@.
   -> m ()
 glVertexAttribL1i64vNV v1 v2 = liftIO $ dyn841 ptr_glVertexAttribL1i64vNV v1 v2
 
@@ -45430,7 +45430,7 @@ ptr_glVertexAttribL1ui64vARB = unsafePerformIO $ getCommand "glVertexAttribL1ui6
 glVertexAttribL1ui64vNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> Ptr GLuint64EXT -- ^ @v@ pointing to @1@ elements of type @GLuint64EXT@.
+  -> Ptr GLuint64EXT -- ^ @v@ pointing to @1@ element of type @GLuint64EXT@.
   -> m ()
 glVertexAttribL1ui64vNV v1 v2 = liftIO $ dyn843 ptr_glVertexAttribL1ui64vNV v1 v2
 
@@ -45867,7 +45867,7 @@ glVertexAttribP1uiv
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
   -> GLboolean -- ^ @normalized@ of type @Boolean@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP1uiv v1 v2 v3 v4 = liftIO $ dyn851 ptr_glVertexAttribP1uiv v1 v2 v3 v4
 
@@ -45898,7 +45898,7 @@ glVertexAttribP2uiv
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
   -> GLboolean -- ^ @normalized@ of type @Boolean@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP2uiv v1 v2 v3 v4 = liftIO $ dyn851 ptr_glVertexAttribP2uiv v1 v2 v3 v4
 
@@ -45929,7 +45929,7 @@ glVertexAttribP3uiv
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
   -> GLboolean -- ^ @normalized@ of type @Boolean@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP3uiv v1 v2 v3 v4 = liftIO $ dyn851 ptr_glVertexAttribP3uiv v1 v2 v3 v4
 
@@ -45960,7 +45960,7 @@ glVertexAttribP4uiv
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
   -> GLboolean -- ^ @normalized@ of type @Boolean@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP4uiv v1 v2 v3 v4 = liftIO $ dyn851 ptr_glVertexAttribP4uiv v1 v2 v3 v4
 
@@ -46355,7 +46355,7 @@ ptr_glVertexP2ui = unsafePerformIO $ getCommand "glVertexP2ui"
 glVertexP2uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexP2uiv v1 v2 = liftIO $ dyn124 ptr_glVertexP2uiv v1 v2
 
@@ -46381,7 +46381,7 @@ ptr_glVertexP3ui = unsafePerformIO $ getCommand "glVertexP3ui"
 glVertexP3uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexP3uiv v1 v2 = liftIO $ dyn124 ptr_glVertexP3uiv v1 v2
 
@@ -46407,7 +46407,7 @@ ptr_glVertexP4ui = unsafePerformIO $ getCommand "glVertexP4ui"
 glVertexP4uiv
   :: MonadIO m
   => GLenum -- ^ @type@.
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexP4uiv v1 v2 = liftIO $ dyn124 ptr_glVertexP4uiv v1 v2
 
@@ -46495,7 +46495,7 @@ ptr_glVertexStream1dATI = unsafePerformIO $ getCommand "glVertexStream1dATI"
 glVertexStream1dvATI
   :: MonadIO m
   => GLenum -- ^ @stream@ of type @VertexStreamATI@.
-  -> Ptr GLdouble -- ^ @coords@ pointing to @1@ elements of type @GLdouble@.
+  -> Ptr GLdouble -- ^ @coords@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glVertexStream1dvATI v1 v2 = liftIO $ dyn92 ptr_glVertexStream1dvATI v1 v2
 
@@ -46521,7 +46521,7 @@ ptr_glVertexStream1fATI = unsafePerformIO $ getCommand "glVertexStream1fATI"
 glVertexStream1fvATI
   :: MonadIO m
   => GLenum -- ^ @stream@ of type @VertexStreamATI@.
-  -> Ptr GLfloat -- ^ @coords@ pointing to @1@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @coords@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glVertexStream1fvATI v1 v2 = liftIO $ dyn93 ptr_glVertexStream1fvATI v1 v2
 
@@ -46547,7 +46547,7 @@ ptr_glVertexStream1iATI = unsafePerformIO $ getCommand "glVertexStream1iATI"
 glVertexStream1ivATI
   :: MonadIO m
   => GLenum -- ^ @stream@ of type @VertexStreamATI@.
-  -> Ptr GLint -- ^ @coords@ pointing to @1@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @coords@ pointing to @1@ element of type @GLint@.
   -> m ()
 glVertexStream1ivATI v1 v2 = liftIO $ dyn135 ptr_glVertexStream1ivATI v1 v2
 
@@ -46573,7 +46573,7 @@ ptr_glVertexStream1sATI = unsafePerformIO $ getCommand "glVertexStream1sATI"
 glVertexStream1svATI
   :: MonadIO m
   => GLenum -- ^ @stream@ of type @VertexStreamATI@.
-  -> Ptr GLshort -- ^ @coords@ pointing to @1@ elements of type @GLshort@.
+  -> Ptr GLshort -- ^ @coords@ pointing to @1@ element of type @GLshort@.
   -> m ()
 glVertexStream1svATI v1 v2 = liftIO $ dyn536 ptr_glVertexStream1svATI v1 v2
 
@@ -46948,7 +46948,7 @@ ptr_glVertexWeightfEXT = unsafePerformIO $ getCommand "glVertexWeightfEXT"
 
 glVertexWeightfvEXT
   :: MonadIO m
-  => Ptr GLfloat -- ^ @weight@ pointing to @1@ elements of type @GLfloat@.
+  => Ptr GLfloat -- ^ @weight@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glVertexWeightfvEXT v1 = liftIO $ dyn41 ptr_glVertexWeightfvEXT v1
 
@@ -46972,7 +46972,7 @@ ptr_glVertexWeighthNV = unsafePerformIO $ getCommand "glVertexWeighthNV"
 
 glVertexWeighthvNV
   :: MonadIO m
-  => Ptr GLhalfNV -- ^ @weight@ pointing to @1@ elements of type @Half16NV@.
+  => Ptr GLhalfNV -- ^ @weight@ pointing to @1@ element of type @Half16NV@.
   -> m ()
 glVertexWeighthvNV v1 = liftIO $ dyn98 ptr_glVertexWeighthvNV v1
 
