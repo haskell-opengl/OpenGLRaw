@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/INGR/blend_func_separate.txt INGR_blend_func_separate> extension.
+-- The <https://www.opengl.org/registry/specs/EXT/blend_func_separate.txt INGR_blend_func_separate> extension.
 --
 --------------------------------------------------------------------------------
 

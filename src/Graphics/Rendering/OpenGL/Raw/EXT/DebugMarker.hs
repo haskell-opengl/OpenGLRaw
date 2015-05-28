@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/debug_marker.txt EXT_debug_marker> extension.
+-- The <https://www.opengl.org/registry/specs/EXT/EXT_debug_marker.txt EXT_debug_marker> extension.
 --
 --------------------------------------------------------------------------------
 

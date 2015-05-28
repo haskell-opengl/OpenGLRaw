@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/compressed_paletted_texture.txt OES_compressed_paletted_texture> extension.
+-- The <https://www.opengl.org/registry/specs/OES/OES_compressed_paletted_texture.txt OES_compressed_paletted_texture> extension.
 --
 --------------------------------------------------------------------------------
 

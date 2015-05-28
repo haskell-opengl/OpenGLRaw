@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/fragment_lighting.txt SGIX_fragment_lighting> extension.
+-- The <https://www.opengl.org/registry/specs/EXT/fragment_lighting.txt SGIX_fragment_lighting> extension.
 --
 --------------------------------------------------------------------------------
 

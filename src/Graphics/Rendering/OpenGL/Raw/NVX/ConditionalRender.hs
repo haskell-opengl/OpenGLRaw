@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NVX/conditional_render.txt NVX_conditional_render> extension.
+-- The <https://www.opengl.org/registry/specs/NVX/nvx_conditional_render.txt NVX_conditional_render> extension.
 --
 --------------------------------------------------------------------------------
 

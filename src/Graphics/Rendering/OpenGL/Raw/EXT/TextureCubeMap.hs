@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_cube_map.txt EXT_texture_cube_map> extension.
+-- The <https://www.opengl.org/registry/specs/ARB/texture_cube_map.txt EXT_texture_cube_map> extension.
 --
 --------------------------------------------------------------------------------
 

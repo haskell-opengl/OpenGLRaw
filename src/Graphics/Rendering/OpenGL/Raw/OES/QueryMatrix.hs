@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/query_matrix.txt OES_query_matrix> extension.
+-- The <https://www.opengl.org/registry/specs/OES/OES_query_matrix.txt OES_query_matrix> extension.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/fog_function.txt SGIS_fog_function> extension.
+-- The <https://www.opengl.org/registry/specs/SGIS/fog_func.txt SGIS_fog_function> extension.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/read_format.txt OES_read_format> extension.
+-- The <https://www.opengl.org/registry/specs/OES/OES_read_format.txt OES_read_format> extension.
 --
 --------------------------------------------------------------------------------
 

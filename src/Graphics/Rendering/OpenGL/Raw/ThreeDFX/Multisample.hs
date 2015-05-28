@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/3DFX/multisample.txt 3DFX_multisample> extension.
+-- The <https://www.opengl.org/registry/specs/3DFX/3dfx_multisample.txt 3DFX_multisample> extension.
 --
 --------------------------------------------------------------------------------
 

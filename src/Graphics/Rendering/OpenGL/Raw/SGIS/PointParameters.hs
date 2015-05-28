@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/point_parameters.txt SGIS_point_parameters> extension.
+-- The <https://www.opengl.org/registry/specs/EXT/point_parameters.txt SGIS_point_parameters> extension.
 --
 --------------------------------------------------------------------------------
 

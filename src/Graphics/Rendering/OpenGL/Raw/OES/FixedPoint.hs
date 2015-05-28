@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/fixed_point.txt OES_fixed_point> extension.
+-- The <https://www.opengl.org/registry/specs/OES/OES_fixed_point.txt OES_fixed_point> extension.
 --
 --------------------------------------------------------------------------------
 

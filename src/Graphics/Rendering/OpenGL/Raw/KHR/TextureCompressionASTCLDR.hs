@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_ldr.txt KHR_texture_compression_astc_ldr> extension.
+-- The <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_hdr.txt KHR_texture_compression_astc_ldr> extension.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/KHR/blend_equation_advanced_coherent.txt KHR_blend_equation_advanced_coherent> extension.
+-- The <https://www.opengl.org/registry/specs/KHR/blend_equation_advanced.txt KHR_blend_equation_advanced_coherent> extension.
 --
 --------------------------------------------------------------------------------
 

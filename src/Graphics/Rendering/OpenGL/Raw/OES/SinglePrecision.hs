@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/single_precision.txt OES_single_precision> extension.
+-- The <https://www.opengl.org/registry/specs/OES/OES_single_precision.txt OES_single_precision> extension.
 --
 --------------------------------------------------------------------------------
 

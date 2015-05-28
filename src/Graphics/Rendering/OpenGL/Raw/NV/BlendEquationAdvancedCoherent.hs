@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/blend_equation_advanced_coherent.txt NV_blend_equation_advanced_coherent> extension.
+-- The <https://www.opengl.org/registry/specs/NV/blend_equation_advanced.txt NV_blend_equation_advanced_coherent> extension.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/pixel_texture.txt SGIX_pixel_texture> extension.
+-- The <https://www.opengl.org/registry/specs/SGIX/sgix_pixel_texture.txt SGIX_pixel_texture> extension.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/texture_add_env.txt SGIX_texture_add_env> extension.
+-- The <https://www.opengl.org/registry/specs/SGIX/texture_env_add.txt SGIX_texture_add_env> extension.
 --
 --------------------------------------------------------------------------------
 

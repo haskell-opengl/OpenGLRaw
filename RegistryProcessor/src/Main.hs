@@ -122,11 +122,36 @@ printExtensions api registry = do
             else [(ProfileName "core", modSuff)]  -- the actual profile doesn't matter
         ext = L.intercalate "_" extWords
         comment = ["The <https://www.opengl.org/registry/specs/" ++
-                   vendor ++ "/" ++ ext ++ ".txt " ++
+                   fixRegistryPath (vendor ++ "/" ++ ext) ++ ".txt " ++
                    vendor ++ "_" ++ ext ++ "> extension."]
     CM.forM_ profileAndModuleNameSuffix $ \(prof, moduleNameSuffix) ->
       printExtension (Just vendor) moduleNameSuffix comment $
         executeModifications api prof registry mods
+
+fixRegistryPath :: String -> String
+fixRegistryPath path = case path of
+  "3DFX/multisample" -> "3DFX/3dfx_multisample"
+  "EXT/debug_label" -> "EXT/EXT_debug_label"
+  "EXT/debug_marker" -> "EXT/EXT_debug_marker"
+  "EXT/multisample" -> "EXT/wgl_multisample"
+  "EXT/texture_cube_map" -> "ARB/texture_cube_map"
+  "INGR/blend_func_separate" -> "EXT/blend_func_separate"
+  "KHR/blend_equation_advanced_coherent" -> "KHR/blend_equation_advanced"
+  "KHR/texture_compression_astc_ldr" -> "KHR/texture_compression_astc_hdr"
+  "NV/blend_equation_advanced_coherent" -> "NV/blend_equation_advanced"
+  "NVX/conditional_render" -> "NVX/nvx_conditional_render"
+  "OES/byte_coordinates" -> "OES/OES_byte_coordinates"
+  "OES/compressed_paletted_texture" -> "OES/OES_compressed_paletted_texture"
+  "OES/fixed_point" -> "OES/OES_fixed_point"
+  "OES/query_matrix" -> "OES/OES_query_matrix"
+  "OES/read_format" -> "OES/OES_read_format"
+  "OES/single_precision" -> "OES/OES_single_precision"
+  "SGIS/fog_function" -> "SGIS/fog_func"
+  "SGIS/point_parameters" -> "EXT/point_parameters"
+  "SGIX/fragment_lighting" -> "EXT/fragment_lighting"
+  "SGIX/pixel_texture" -> "SGIX/sgix_pixel_texture"
+  "SGIX/texture_add_env" -> "SGIX/texture_env_add"
+  _ -> path
 
 isProfileDependent :: Modification -> Bool
 isProfileDependent = DM.isJust . modificationProfile

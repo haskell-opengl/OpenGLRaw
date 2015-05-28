@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/debug_label.txt EXT_debug_label> extension.
+-- The <https://www.opengl.org/registry/specs/EXT/EXT_debug_label.txt EXT_debug_label> extension.
 --
 --------------------------------------------------------------------------------
 

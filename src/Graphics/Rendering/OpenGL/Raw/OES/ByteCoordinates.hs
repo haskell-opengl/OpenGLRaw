@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/byte_coordinates.txt OES_byte_coordinates> extension.
+-- The <https://www.opengl.org/registry/specs/OES/OES_byte_coordinates.txt OES_byte_coordinates> extension.
 --
 --------------------------------------------------------------------------------
 

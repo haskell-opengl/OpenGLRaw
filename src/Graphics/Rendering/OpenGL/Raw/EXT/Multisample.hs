@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/multisample.txt EXT_multisample> extension.
+-- The <https://www.opengl.org/registry/specs/EXT/wgl_multisample.txt EXT_multisample> extension.
 --
 --------------------------------------------------------------------------------
 
