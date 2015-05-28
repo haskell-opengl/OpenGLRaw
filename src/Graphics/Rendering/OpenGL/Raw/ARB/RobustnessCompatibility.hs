@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/robustness_compatibility.txt ARB_robustness_compatibility> extension.
+-- The <https://www.opengl.org/registry/specs/ARB/robustness.txt ARB_robustness> extension.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/KHR/debug_compatibility.txt KHR_debug_compatibility> extension.
+-- The <https://www.opengl.org/registry/specs/KHR/debug.txt KHR_debug> extension.
 --
 --------------------------------------------------------------------------------
 

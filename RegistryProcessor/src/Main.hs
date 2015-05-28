@@ -36,14 +36,14 @@ printFeature :: API -> Version -> ProfileName -> Registry -> IO ()
 printFeature api version profile registry = do
   let relName = capitalize (unProfileName profile) ++
                 show (major version) ++ show (minor version)
-  printExtension Nothing [relName] $ fixedReplay api version profile registry
+  printExtension Nothing relName [] $ fixedReplay api version profile registry
 
 printTokens :: API -> Registry -> IO ()
 printTokens api registry = do
   let comment =
         ["All enumeration tokens from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule Nothing ["Tokens"] Nothing comment $ \moduleName h -> do
+  startModule Nothing "Tokens" Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
@@ -67,7 +67,7 @@ signatureMap registry = fst $ M.foldl' step (M.empty, 0) (commands registry)
 printForeign :: M.Map String String -> IO ()
 printForeign sigMap = do
   let comment = ["All foreign imports."]
-  startModule Nothing ["Foreign"] (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
+  startModule Nothing "Foreign" (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h "import Foreign.C.Types"
@@ -81,7 +81,7 @@ printFunctions api registry sigMap = do
   let comment =
         ["All raw functions from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule Nothing ["Functions"] Nothing comment $ \moduleName h -> do
+  startModule Nothing "Functions" Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
     SI.hPutStrLn h . separate unCommandName . M.keys . commands $ registry
     SI.hPutStrLn h ") where"
@@ -113,29 +113,30 @@ printExtensions api registry = do
         , api `supports` extensionSupported ext
         , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
   CM.forM_ supportedExtensions $ \(n,mods) -> do
-    let profileAndModName =
+    let ("GL":vendor:extWords) = splitBy (== '_') (unExtensionName n)
+        modSuff = concat (zipWith fixExtensionWord extWords [0 ..])
+        profileAndModuleNameSuffix =
           if any isProfileDependent mods
-            then [(ProfileName p, extendExtensionName n p)
+            then [(ProfileName p, modSuff ++ capitalize p)
                  | p <- ["core", "compatibility"] ]
-            else [(ProfileName "core", n)]  -- the actual profile doesn't matter
-    CM.forM_ profileAndModName $ \(prof, modName) -> do
-      let ("GL":vendor:extWords) = splitBy (== '_') (unExtensionName modName)
-      printExtension (Just vendor) extWords $
+            else [(ProfileName "core", modSuff)]  -- the actual profile doesn't matter
+        ext = L.intercalate "_" extWords
+        comment = ["The <https://www.opengl.org/registry/specs/" ++
+                   vendor ++ "/" ++ ext ++ ".txt " ++
+                   vendor ++ "_" ++ ext ++ "> extension."]
+    CM.forM_ profileAndModuleNameSuffix $ \(prof, moduleNameSuffix) ->
+      printExtension (Just vendor) moduleNameSuffix comment $
         executeModifications api prof registry mods
 
 isProfileDependent :: Modification -> Bool
 isProfileDependent = DM.isJust . modificationProfile
 
-extendExtensionName :: ExtensionName -> String -> ExtensionName
-extendExtensionName n profile =
-  ExtensionName . (++ ("_" ++ profile)). unExtensionName $ n
-
-startModule :: Maybe String -> [String] -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
-startModule mbVendor extWords mbPragma comments action = do
+startModule :: Maybe String -> String -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
+startModule mbVendor moduleNameSuffix mbPragma comments action = do
   let moduleNameParts =
         ["Graphics", "Rendering", "OpenGL", "Raw"] ++
         maybe [] (\vendor -> [fixVendor vendor]) mbVendor ++
-        [concat (zipWith fixExtensionWord extWords [0 ..])]
+        [moduleNameSuffix]
       path = F.joinPath moduleNameParts `F.addExtension` "hs"
       moduleName = L.intercalate "." moduleNameParts
   D.createDirectoryIfMissing True $ F.takeDirectory path
@@ -208,10 +209,9 @@ separate :: (a -> String) -> [a] -> String
 separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
 -- Note that we handle features just like extensions.
-printExtension :: Maybe String -> [String] -> ([TypeName], [Enum'], [Command]) -> IO ()
-printExtension mbVendor extWords (ts, es, cs) = do
-  let comment = maybe [] (makeExtensionURL extWords) mbVendor
-  startModule mbVendor extWords Nothing comment $ \moduleName h -> do
+printExtension :: Maybe String -> String -> [String] -> ([TypeName], [Enum'], [Command]) -> IO ()
+printExtension mbVendor moduleNameSuffix comment (ts, es, cs) =
+  startModule mbVendor moduleNameSuffix Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module "++ moduleName ++ " ("
     CM.unless (null ts) $ do
       SI.hPutStrLn h "  -- * Types"
@@ -233,12 +233,6 @@ printExtension mbVendor extWords (ts, es, cs) = do
       SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Tokens"
     CM.unless (null cs) $
       SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Functions"
-
-makeExtensionURL :: [String] -> String -> [String]
-makeExtensionURL extWords vendor =
-  ["The <https://www.opengl.org/registry/specs/" ++
-   vendor ++ "/" ++ L.intercalate "_" extWords ++ ".txt " ++
-   L.intercalate "_" (vendor : extWords) ++ "> extension."]
 
 printModuleHeader :: SI.Handle -> Maybe String -> String -> [String] -> IO ()
 printModuleHeader h mbPragma moduleName comments = do

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/path_rendering_core.txt NV_path_rendering_core> extension.
+-- The <https://www.opengl.org/registry/specs/NV/path_rendering.txt NV_path_rendering> extension.
 --
 --------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_type_2_10_10_10_rev_compatibility.txt ARB_vertex_type_2_10_10_10_rev_compatibility> extension.
+-- The <https://www.opengl.org/registry/specs/ARB/vertex_type_2_10_10_10_rev.txt ARB_vertex_type_2_10_10_10_rev> extension.
 --
 --------------------------------------------------------------------------------
 

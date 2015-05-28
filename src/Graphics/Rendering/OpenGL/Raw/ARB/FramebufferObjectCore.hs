@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/framebuffer_object_core.txt ARB_framebuffer_object_core> extension.
+-- The <https://www.opengl.org/registry/specs/ARB/framebuffer_object.txt ARB_framebuffer_object> extension.
 --
 --------------------------------------------------------------------------------
 

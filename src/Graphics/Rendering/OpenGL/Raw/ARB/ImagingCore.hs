@@ -8,7 +8,7 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/imaging_core.txt ARB_imaging_core> extension.
+-- The <https://www.opengl.org/registry/specs/ARB/imaging.txt ARB_imaging> extension.
 --
 --------------------------------------------------------------------------------
 
