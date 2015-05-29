@@ -1,10 +1,14 @@
+-- This module is a convenience layer upon the Registry module which knows
+-- nothing about GL/GLX/EGL/WGL-specific things.
 module MangledRegistry (
+  ToEnumType,
   parseRegistry,
   Registry(..),
   Type(..),
   Group(..),
   Enum'(..),
   R.TypeName(..),
+  R.TypeSuffix(..),
   Command(..), commandName,
   SignatureElement(..),
   Modification(..),
@@ -33,8 +37,10 @@ import qualified Numeric as N
 import qualified DeclarationParser as D
 import qualified Registry as R
 
-parseRegistry :: String -> Either String Registry
-parseRegistry = fmap toRegistry . R.parseRegistry
+type ToEnumType = Maybe String -> Maybe String -> Maybe String -> Maybe R.TypeSuffix -> R.TypeName
+
+parseRegistry :: ToEnumType -> String -> Either String Registry
+parseRegistry toEnumType str = toRegistry toEnumType `fmap` R.parseRegistry str
 
 data Registry = Registry {
   types :: M.Map R.TypeName Type,
@@ -45,8 +51,8 @@ data Registry = Registry {
   extensions :: [Extension]
   } deriving (Eq, Ord, Show)
 
-toRegistry :: R.Registry -> Registry
-toRegistry r = Registry {
+toRegistry :: ToEnumType -> R.Registry -> Registry
+toRegistry toEnumType r = Registry {
   types = fromList'
     [ (typeNameOf t, toType t)
     | R.TypesElement te <- rs
@@ -59,7 +65,7 @@ toRegistry r = Registry {
    [ (enumName en, [en])
    | R.EnumsElement ee <- rs
    , Left e <- R.enumsEnumOrUnuseds ee
-   , let en = toEnum' (R.enumsNamespace ee) (R.enumsGroup ee) (R.enumsType ee) e ],
+   , let en = toEnum' (toEnumType (R.enumsNamespace ee) (R.enumsGroup ee) (R.enumsType ee)) e ],
   commands = fromList'
    [ (CommandName . R.protoName . R.commandProto $ c, toCommand c)
    | R.CommandsElement ce <- rs
@@ -113,11 +119,11 @@ data Enum' = Enum {
   enumName :: EnumName
   } deriving (Eq, Ord, Show)
 
-toEnum' :: Maybe String -> Maybe String -> Maybe String -> R.Enum' -> Enum'
-toEnum' eNamespace eGroup eType  e = Enum {
+toEnum' :: (Maybe R.TypeSuffix -> R.TypeName) -> R.Enum' -> Enum'
+toEnum' toTypeName e = Enum {
   enumValue = EnumValue (R.enumValue e),
   enumAPI = API `fmap` R.enumAPI e,
-  enumType = toEnumType eNamespace eGroup eType (R.enumType e),
+  enumType = toTypeName (R.enumType e),
   enumName = mangleEnumName (R.enumName e) }
 
 mangleEnumName :: String -> EnumName
@@ -131,38 +137,6 @@ splitBy _ [] = []
 splitBy p xs = case break p xs of
                 (ys, []  ) -> [ys]
                 (ys, _:zs) -> ys : splitBy p zs
-
--- TODO: Use Either instead of error below?
-toEnumType :: Maybe String -> Maybe String -> Maybe String -> Maybe R.TypeSuffix -> R.TypeName
-toEnumType eNamespace eGroup eType suffix = R.TypeName $
-  case (eNamespace, eGroup, eType, R.unTypeSuffix `fmap` suffix) of
-    -- glx.xml
-    (Just "GLXStrings", _, _, _) -> "String"
-    (Just ('G':'L':'X':_), _, _, _) -> "CInt"
-
-    -- egl.xml
-    -- TODO: EGLenum for EGL_OPENGL_API, EGL_OPENGL_ES_API, EGL_OPENVG_API, EGL_OPENVG_IMAGE?
-    (Just ('E':'G':'L':_), _, Nothing, Just "ull") -> "EGLTime"
-    (Just ('E':'G':'L':_), _, _, _) -> "EGLint"
- 
-    -- wgl.xml
-    (Just "WGLLayerPlaneMask", _, _, _) -> "UINT"
-    (Just "WGLColorBufferMask", _, _, _) -> "UINT"
-    (Just "WGLContextFlagsMask", _, _, _) -> "INT"
-    (Just "WGLContextProfileMask", _, _, _) -> "INT"
-    (Just "WGLImageBufferMaskI3D" , _, _, _) -> "UINT"
-    (Just "WGLDXInteropMaskNV", _, _, _) -> "GLenum"
-    (Just ('W':'G':'L':_), _, _, _) -> "CInt"
-
-    -- gl.xml
-    (Just "OcclusionQueryEventMaskAMD", _, _, _) -> "GLuint"
-    (Just "GL", Just "PathRenderingTokenNV", _, _) -> "GLubyte"
-    (Just "GL", _, Just "bitmask", _) -> "GLbitfield"
-    (Just "GL", _, Nothing, Just "u") -> "GLuint"
-    (Just "GL", _, Nothing, Just "ull") -> "GLuint64"
-    (Just "GL", _, Nothing, Nothing) -> "GLenum"
-
-    (_, _, _, _) -> error "can't determine enum type"
 
 data Command = Command {
   resultType :: SignatureElement,
@@ -256,7 +230,7 @@ data Extension = Extension {
 
 toExtension :: R.Extension -> Extension
 toExtension e = Extension {
-  extensionName = ExtensionName . R.unName . R.extensionName $ e,
+  extensionName = toExtensionName $ R.extensionName e,
   extensionSupported = supp `fmap` R.extensionSupported e,
   extensionsRequireRemove = map toConditionalModification (R.extensionsRequireRemove e) }
   where supp = map API . splitBy (== '|') . R.unStringGroup
@@ -298,7 +272,20 @@ newtype EnumValue = EnumValue { unEnumValue :: String } deriving (Eq, Ord, Show)
 
 newtype CommandName = CommandName { unCommandName :: String } deriving (Eq, Ord, Show)
 
-newtype ExtensionName = ExtensionName { unExtensionName :: String } deriving (Eq, Ord, Show)
+-- See https://www.opengl.org/registry/doc/rules.html#spec_naming
+data ExtensionName = ExtensionName {
+  extensionNameAPI :: String,
+  extensionNameCategory :: String,
+  extensionNameName :: String
+  } deriving (Eq, Ord, Show)
+
+toExtensionName :: R.Name -> ExtensionName
+toExtensionName name = ExtensionName {
+   extensionNameAPI = a,
+   extensionNameCategory = c,
+   extensionNameName = n }
+   where (a, _:rest) = break (== '_') (R.unName name)
+         (c, _:n) = break (== '_') rest
 
 newtype API = API { unAPI :: String } deriving (Eq, Ord, Show)
 

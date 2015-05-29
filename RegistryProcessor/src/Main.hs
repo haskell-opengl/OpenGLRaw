@@ -17,7 +17,7 @@ main :: IO ()
 main = do
   [registryPath] <- E.getArgs
   let api = API "gl"
-  res <- fmap parseRegistry $ readFile registryPath
+  res <- parseRegistry toEnumType `fmap` readFile registryPath
   case res of
     Left msg -> SI.hPutStrLn SI.stderr msg
     Right registry -> do
@@ -106,27 +106,35 @@ printFunctions api registry sigMap = do
 
 printExtensions :: API -> Registry -> IO ()
 printExtensions api registry = do
-  -- only consider non-empty supported extensions/modifications for the given API
-  let supportedExtensions =
-        [ nameAndMods
-        | ext <- extensions registry
-        , api `supports` extensionSupported ext
-        , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
-  CM.forM_ supportedExtensions $ \(n,mods) -> do
-    let ("GL":vendor:extWords) = splitBy (== '_') (unExtensionName n)
-        modSuff = concat (zipWith fixExtensionWord extWords [0 ..])
+  CM.forM_ (supportedExtensions api registry) $ \(n,mods) -> do
+    let modSuff = concat (zipWith fixExtensionWord (splitBy (== '_') (extensionNameName n)) [0 ..])
         profileAndModuleNameSuffix =
           if any isProfileDependent mods
             then [(ProfileName p, modSuff ++ capitalize p)
                  | p <- ["core", "compatibility"] ]
             else [(ProfileName "core", modSuff)]  -- the actual profile doesn't matter
-        ext = L.intercalate "_" extWords
         comment = ["The <https://www.opengl.org/registry/specs/" ++
-                   fixRegistryPath (vendor ++ "/" ++ ext) ++ ".txt " ++
-                   vendor ++ "_" ++ ext ++ "> extension."]
+                   fixRegistryPath (extensionNameCategory n ++ "/" ++ extensionNameName n) ++ ".txt " ++
+                   extensionNameCategory n ++ "_" ++ extensionNameName n ++ "> extension."]
     CM.forM_ profileAndModuleNameSuffix $ \(prof, moduleNameSuffix) ->
-      printExtension (Just vendor) moduleNameSuffix comment $
+      printExtension (Just (extensionNameCategory n)) moduleNameSuffix comment $
         executeModifications api prof registry mods
+
+-- We only consider non-empty supported extensions/modifications for the given API.
+supportedExtensions :: API -> Registry -> [(ExtensionName, [Modification])]
+supportedExtensions api registry =
+  [ nameAndMods
+  | ext <- extensions registry
+  , api `supports` extensionSupported ext
+  , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
+  where nameAndModifications :: API -> Extension -> (ExtensionName, [Modification])
+        nameAndModifications api e =
+          (extensionName e,
+           [ conditionalModificationModification cm
+           | cm <- extensionsRequireRemove e
+           , api `matches` conditionalModificationAPI cm
+           -- ARB_compatibility has an empty "require" element only
+           , not . null . modificationInterfaceElements . conditionalModificationModification $ cm ])
 
 fixRegistryPath :: String -> String
 fixRegistryPath path = case path of
@@ -157,10 +165,10 @@ isProfileDependent :: Modification -> Bool
 isProfileDependent = DM.isJust . modificationProfile
 
 startModule :: Maybe String -> String -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
-startModule mbVendor moduleNameSuffix mbPragma comments action = do
+startModule mbCategory moduleNameSuffix mbPragma comments action = do
   let moduleNameParts =
         ["Graphics", "Rendering", "OpenGL", "Raw"] ++
-        maybe [] (\vendor -> [fixVendor vendor]) mbVendor ++
+        maybe [] (\category -> [fixCategory category]) mbCategory ++
         [moduleNameSuffix]
       path = F.joinPath moduleNameParts `F.addExtension` "hs"
       moduleName = L.intercalate "." moduleNameParts
@@ -169,8 +177,8 @@ startModule mbVendor moduleNameSuffix mbPragma comments action = do
     printModuleHeader h mbPragma moduleName comments
     action moduleName h
 
-fixVendor :: String -> String
-fixVendor v = case v of
+fixCategory :: String -> String
+fixCategory v = case v of
   "3DFX" -> "ThreeDFX"
   _ -> v
 
@@ -214,15 +222,6 @@ fixExtensionWord w  pos = case w of
   "ycrcba" -> "YCrCbA"
   _ -> capitalize w
 
-nameAndModifications :: API -> Extension -> (ExtensionName, [Modification])
-nameAndModifications api e =
-  (extensionName e,
-   [ conditionalModificationModification cm
-   | cm <- extensionsRequireRemove e
-   , api `matches` conditionalModificationAPI cm
-   -- ARB_compatibility has an empty "require" element only
-   , not . null . modificationInterfaceElements . conditionalModificationModification $ cm ])
-
 supports :: API -> Maybe [API] -> Bool
 _ `supports` Nothing = True
 a `supports` Just apis = a `elem` apis
@@ -235,8 +234,8 @@ separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
 -- Note that we handle features just like extensions.
 printExtension :: Maybe String -> String -> [String] -> ([TypeName], [Enum'], [Command]) -> IO ()
-printExtension mbVendor moduleNameSuffix comment (ts, es, cs) =
-  startModule mbVendor moduleNameSuffix Nothing comment $ \moduleName h -> do
+printExtension mbCategory moduleNameSuffix comment (ts, es, cs) =
+  startModule mbCategory moduleNameSuffix Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module "++ moduleName ++ " ("
     CM.unless (null ts) $ do
       SI.hPutStrLn h "  -- * Types"
@@ -430,3 +429,35 @@ showComment name sigElem
 
 inlineCode :: String -> String
 inlineCode s = "@" ++ s ++ "@"
+
+-- TODO: Use Either instead of error below?
+toEnumType :: ToEnumType
+toEnumType eNamespace eGroup eType suffix = TypeName $
+  case (eNamespace, eGroup, eType, unTypeSuffix `fmap` suffix) of
+    -- glx.xml
+    (Just "GLXStrings", _, _, _) -> "String"
+    (Just ('G':'L':'X':_), _, _, _) -> "CInt"
+
+    -- egl.xml
+    -- TODO: EGLenum for EGL_OPENGL_API, EGL_OPENGL_ES_API, EGL_OPENVG_API, EGL_OPENVG_IMAGE?
+    (Just ('E':'G':'L':_), _, Nothing, Just "ull") -> "EGLTime"
+    (Just ('E':'G':'L':_), _, _, _) -> "EGLint"
+
+    -- wgl.xml
+    (Just "WGLLayerPlaneMask", _, _, _) -> "UINT"
+    (Just "WGLColorBufferMask", _, _, _) -> "UINT"
+    (Just "WGLContextFlagsMask", _, _, _) -> "INT"
+    (Just "WGLContextProfileMask", _, _, _) -> "INT"
+    (Just "WGLImageBufferMaskI3D" , _, _, _) -> "UINT"
+    (Just "WGLDXInteropMaskNV", _, _, _) -> "GLenum"
+    (Just ('W':'G':'L':_), _, _, _) -> "CInt"
+
+    -- gl.xml
+    (Just "OcclusionQueryEventMaskAMD", _, _, _) -> "GLuint"
+    (Just "GL", Just "PathRenderingTokenNV", _, _) -> "GLubyte"
+    (Just "GL", _, Just "bitmask", _) -> "GLbitfield"
+    (Just "GL", _, Nothing, Just "u") -> "GLuint"
+    (Just "GL", _, Nothing, Just "ull") -> "GLuint64"
+    (Just "GL", _, Nothing, Nothing) -> "GLenum"
+
+    (_, _, _, _) -> error "can't determine enum type"
