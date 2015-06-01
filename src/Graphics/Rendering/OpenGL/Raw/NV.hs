@@ -13,11 +13,11 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV (
-  module Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirectCount,
   module Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirect,
+  module Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirectCount,
   module Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture,
-  module Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent,
   module Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced,
+  module Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent,
   module Graphics.Rendering.OpenGL.Raw.NV.CommandList,
   module Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5,
   module Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender,
@@ -35,14 +35,14 @@ module Graphics.Rendering.OpenGL.Raw.NV (
   module Graphics.Rendering.OpenGL.Raw.NV.FloatBuffer,
   module Graphics.Rendering.OpenGL.Raw.NV.FogDistance,
   module Graphics.Rendering.OpenGL.Raw.NV.FragmentCoverageToColor,
-  module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2,
   module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram,
+  module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2,
   module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMixedSamples,
   module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage,
-  module Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4,
   module Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4,
   module Graphics.Rendering.OpenGL.Raw.NV.GPUProgram5,
   module Graphics.Rendering.OpenGL.Raw.NV.GPUShader5,
+  module Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4,
   module Graphics.Rendering.OpenGL.Raw.NV.HalfFloat,
   module Graphics.Rendering.OpenGL.Raw.NV.InternalformatSampleQuery,
   module Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent,
@@ -58,8 +58,8 @@ module Graphics.Rendering.OpenGL.Raw.NV (
   module Graphics.Rendering.OpenGL.Raw.NV.PointSprite,
   module Graphics.Rendering.OpenGL.Raw.NV.PresentVideo,
   module Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart,
-  module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2,
   module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners,
+  module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2,
   module Graphics.Rendering.OpenGL.Raw.NV.SampleLocations,
   module Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferLoad,
   module Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferStore,
@@ -72,29 +72,29 @@ module Graphics.Rendering.OpenGL.Raw.NV (
   module Graphics.Rendering.OpenGL.Raw.NV.TextureExpandNormal,
   module Graphics.Rendering.OpenGL.Raw.NV.TextureMultisample,
   module Graphics.Rendering.OpenGL.Raw.NV.TextureRectangle,
+  module Graphics.Rendering.OpenGL.Raw.NV.TextureShader,
   module Graphics.Rendering.OpenGL.Raw.NV.TextureShader2,
   module Graphics.Rendering.OpenGL.Raw.NV.TextureShader3,
-  module Graphics.Rendering.OpenGL.Raw.NV.TextureShader,
-  module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2,
   module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback,
+  module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2,
   module Graphics.Rendering.OpenGL.Raw.NV.UniformBufferUnifiedMemory,
   module Graphics.Rendering.OpenGL.Raw.NV.VDPAUInterop,
-  module Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange2,
   module Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange,
+  module Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange2,
   module Graphics.Rendering.OpenGL.Raw.NV.VertexAttribInteger64Bit,
   module Graphics.Rendering.OpenGL.Raw.NV.VertexBufferUnifiedMemory,
+  module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram,
   module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option,
   module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3,
   module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4,
-  module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram,
   module Graphics.Rendering.OpenGL.Raw.NV.VideoCapture
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirectCount
 import Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirect
+import Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirectCount
 import Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture
-import Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent
 import Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced
+import Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvancedCoherent
 import Graphics.Rendering.OpenGL.Raw.NV.CommandList
 import Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5
 import Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
@@ -112,14 +112,14 @@ import Graphics.Rendering.OpenGL.Raw.NV.FillRectangle
 import Graphics.Rendering.OpenGL.Raw.NV.FloatBuffer
 import Graphics.Rendering.OpenGL.Raw.NV.FogDistance
 import Graphics.Rendering.OpenGL.Raw.NV.FragmentCoverageToColor
-import Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2
 import Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram
+import Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2
 import Graphics.Rendering.OpenGL.Raw.NV.FramebufferMixedSamples
 import Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage
-import Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4
 import Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4
 import Graphics.Rendering.OpenGL.Raw.NV.GPUProgram5
 import Graphics.Rendering.OpenGL.Raw.NV.GPUShader5
+import Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4
 import Graphics.Rendering.OpenGL.Raw.NV.HalfFloat
 import Graphics.Rendering.OpenGL.Raw.NV.InternalformatSampleQuery
 import Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent
@@ -135,8 +135,8 @@ import Graphics.Rendering.OpenGL.Raw.NV.PixelDataRange
 import Graphics.Rendering.OpenGL.Raw.NV.PointSprite
 import Graphics.Rendering.OpenGL.Raw.NV.PresentVideo
 import Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart
-import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2
 import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners
+import Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2
 import Graphics.Rendering.OpenGL.Raw.NV.SampleLocations
 import Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferLoad
 import Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferStore
@@ -149,19 +149,19 @@ import Graphics.Rendering.OpenGL.Raw.NV.TextureEnvCombine4
 import Graphics.Rendering.OpenGL.Raw.NV.TextureExpandNormal
 import Graphics.Rendering.OpenGL.Raw.NV.TextureMultisample
 import Graphics.Rendering.OpenGL.Raw.NV.TextureRectangle
+import Graphics.Rendering.OpenGL.Raw.NV.TextureShader
 import Graphics.Rendering.OpenGL.Raw.NV.TextureShader2
 import Graphics.Rendering.OpenGL.Raw.NV.TextureShader3
-import Graphics.Rendering.OpenGL.Raw.NV.TextureShader
-import Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2
 import Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback
+import Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback2
 import Graphics.Rendering.OpenGL.Raw.NV.UniformBufferUnifiedMemory
 import Graphics.Rendering.OpenGL.Raw.NV.VDPAUInterop
-import Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange2
 import Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange
+import Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange2
 import Graphics.Rendering.OpenGL.Raw.NV.VertexAttribInteger64Bit
 import Graphics.Rendering.OpenGL.Raw.NV.VertexBufferUnifiedMemory
+import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram
 import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option
 import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3
 import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4
-import Graphics.Rendering.OpenGL.Raw.NV.VertexProgram
 import Graphics.Rendering.OpenGL.Raw.NV.VideoCapture

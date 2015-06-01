@@ -23,4 +23,3 @@ import Graphics.Rendering.OpenGL.Raw.HP.ConvolutionBorderModes
 import Graphics.Rendering.OpenGL.Raw.HP.ImageTransform
 import Graphics.Rendering.OpenGL.Raw.HP.OcclusionTest
 import Graphics.Rendering.OpenGL.Raw.HP.TextureLighting
-

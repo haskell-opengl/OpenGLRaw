@@ -25,28 +25,30 @@ main = do
       let sigMap = signatureMap registry
       printForeign sigMap
       printFunctions api registry sigMap
-      printExtensions api registry
+      let extModules = extensionModules api registry
+      CM.forM_ extModules printExtensionModule
+      printReExports extModules
       CM.forM_ ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "2.0", "2.1"] $ \v ->
         printFeature api (read v) (ProfileName "version") registry
-      CM.forM_ ["3.0", "3.1", "3.2", "3.3", "4.0", "4.1", "4.2", "4.3", "4.4", "4.5"] $ \v -> do
-        printFeature api (read v) (ProfileName "core") registry
-        printFeature api (read v) (ProfileName "compatibility") registry
+      CM.forM_ ["3.0", "3.1", "3.2", "3.3", "4.0", "4.1", "4.2", "4.3", "4.4", "4.5"] $ \v ->
+        CM.forM_ [ProfileName "core", ProfileName "compatibility"] $ \p ->
+          printFeature api (read v) p registry
 
 printFeature :: API -> Version -> ProfileName -> Registry -> IO ()
 printFeature api version profile registry = do
   let relName = capitalize (unProfileName profile) ++
                 show (major version) ++ show (minor version)
-  printExtension Nothing relName [] $ fixedReplay api version profile registry
+  printExtension [relName] [] $ fixedReplay api version profile registry
 
 printTokens :: API -> Registry -> IO ()
 printTokens api registry = do
   let comment =
         ["All enumeration tokens from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule Nothing "Tokens" Nothing comment $ \moduleName h -> do
+  startModule ["Tokens"] Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
-    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . unlines . convertEnum)
       [ e
@@ -67,12 +69,12 @@ signatureMap registry = fst $ M.foldl' step (M.empty, 0) (commands registry)
 printForeign :: M.Map String String -> IO ()
 printForeign sigMap = do
   let comment = ["All foreign imports."]
-  startModule Nothing "Foreign" (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
+  startModule ["Foreign"] (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h "import Foreign.C.Types"
     SI.hPutStrLn h "import Foreign.Ptr"
-    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . uncurry makeImportDynamic) (M.assocs sigMap)
 
@@ -81,7 +83,7 @@ printFunctions api registry sigMap = do
   let comment =
         ["All raw functions from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule Nothing "Functions" Nothing comment $ \moduleName h -> do
+  startModule ["Functions"] Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
     SI.hPutStrLn h . separate unCommandName . M.keys . commands $ registry
     SI.hPutStrLn h ") where"
@@ -91,9 +93,9 @@ printFunctions api registry sigMap = do
     SI.hPutStrLn h "import Foreign.Ptr ( Ptr, FunPtr, nullFunPtr )"
     SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"
     SI.hPutStrLn h ""
-    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Foreign"
-    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getProcAddress )"
-    SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Foreign"]
+    SI.hPutStrLn h $ "import " ++ moduleNameFor ["GetProcAddress"] ++" ( getProcAddress )"
+    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
     SI.hPutStrLn h ""
     SI.hPutStrLn h "getCommand :: String -> IO (FunPtr a)"
     SI.hPutStrLn h "getCommand cmd ="
@@ -104,21 +106,73 @@ printFunctions api registry sigMap = do
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . showCommand api sigMap) (M.elems (commands registry))
 
-printExtensions :: API -> Registry -> IO ()
-printExtensions api registry = do
-  CM.forM_ (supportedExtensions api registry) $ \(n,mods) -> do
-    let modSuff = concat (zipWith fixExtensionWord (splitBy (== '_') (extensionNameName n)) [0 ..])
-        profileAndModuleNameSuffix =
-          if any isProfileDependent mods
-            then [(ProfileName p, modSuff ++ capitalize p)
-                 | p <- ["core", "compatibility"] ]
-            else [(ProfileName "core", modSuff)]  -- the actual profile doesn't matter
-        comment = ["The <https://www.opengl.org/registry/specs/" ++
-                   fixRegistryPath (extensionNameCategory n ++ "/" ++ extensionNameName n) ++ ".txt " ++
-                   extensionNameCategory n ++ "_" ++ extensionNameName n ++ "> extension."]
-    CM.forM_ profileAndModuleNameSuffix $ \(prof, moduleNameSuffix) ->
-      printExtension (Just (extensionNameCategory n)) moduleNameSuffix comment $
-        executeModifications api prof registry mods
+printExtensionModule :: (ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command])) -> IO ()
+printExtensionModule (extName, mangledExtName, extensionParts) =
+  printExtension [extensionNameCategory mangledExtName, extensionNameName mangledExtName]
+                 (commentForExension extName)
+                 extensionParts
+
+extendWithProfile :: ExtensionName -> Maybe ProfileName -> ExtensionName
+extendWithProfile extName =
+  maybe extName (\p -> extName { extensionNameName = joinWords [extensionNameName extName, capitalize (unProfileName p)]})
+
+mangleExtensionName :: ExtensionName -> ExtensionName
+mangleExtensionName extName = extName {
+  extensionNameCategory = fixCategory $ extensionNameCategory extName,
+  extensionNameName = zip (splitWords (extensionNameName extName)) [0 ..] >>= fixExtensionWord }
+  where fixCategory c = case c of
+          "3DFX" -> "ThreeDFX"
+          _ -> c
+        fixExtensionWord (w, pos) = case w of
+          "422" | pos == 0-> "FourTwoTwo"
+          "64bit" -> "64Bit"
+          "ES2" -> "ES2"
+          "ES3" -> "ES3"
+          "FXT1" -> "FXT1"
+          "a2ui" -> "A2UI"
+          "abgr" -> "ABGR"
+          "astc" -> "ASTC"
+          "bgra" -> "BGRA"
+          "bptc" -> "BPTC"
+          "cl" -> "CL"
+          "cmyka" -> "CMYKA"
+          "dxt1" -> "DXT1"
+          "es" -> "ES"
+          "ffd" -> "FFD"
+          "fp64" -> "FP64"
+          "gpu" -> "GPU"
+          "hdr" -> "HDR"
+          "latc" -> "LATC"
+          "ldr" -> "LDR"
+          "lod" -> "LOD"
+          "pn" -> "PN"
+          "rg" -> "RG"
+          "rgb" -> "RGB"
+          "rgb10" -> "RGB10"
+          "rgb32" -> "RGB32"
+          "rgtc" -> "RGTC"
+          "s3tc" -> "S3TC"
+          "sRGB" -> "SRGB"
+          "snorm" -> "SNorm"
+          "texture3D" -> "Texture3D"
+          "texture4D" -> "Texture4D"
+          "vdpau" -> "VDPAU"
+          "ycbcr" -> "YCbCr"
+          "ycrcb" -> "YCrCb"
+          "ycrcba" -> "YCrCbA"
+          _ -> capitalize w
+
+extensionModules :: API -> Registry -> [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))]
+extensionModules api registry =
+  [ (extName, mangledExtName, executeModifications api prof registry mods)
+  | (extName, mods) <- supportedExtensions api registry
+  , let profDep = any isProfileDependent mods
+  , prof <- map ProfileName $ [ "core" ] ++ if profDep then [ "compatibility" ] else []
+  , let mbProfileName = if profDep then Just prof else Nothing
+  , let mangledExtName = mangleExtensionName (extendWithProfile extName mbProfileName)
+  ]
+  where isProfileDependent :: Modification -> Bool
+        isProfileDependent = DM.isJust . modificationProfile
 
 -- We only consider non-empty supported extensions/modifications for the given API.
 supportedExtensions :: API -> Registry -> [(ExtensionName, [Modification])]
@@ -136,91 +190,54 @@ supportedExtensions api registry =
            -- ARB_compatibility has an empty "require" element only
            , not . null . modificationInterfaceElements . conditionalModificationModification $ cm ])
 
-fixRegistryPath :: String -> String
-fixRegistryPath path = case path of
-  "3DFX/multisample" -> "3DFX/3dfx_multisample"
-  "EXT/debug_label" -> "EXT/EXT_debug_label"
-  "EXT/debug_marker" -> "EXT/EXT_debug_marker"
-  "EXT/multisample" -> "EXT/wgl_multisample"
-  "EXT/texture_cube_map" -> "ARB/texture_cube_map"
-  "INGR/blend_func_separate" -> "EXT/blend_func_separate"
-  "KHR/blend_equation_advanced_coherent" -> "KHR/blend_equation_advanced"
-  "KHR/texture_compression_astc_ldr" -> "KHR/texture_compression_astc_hdr"
-  "NV/blend_equation_advanced_coherent" -> "NV/blend_equation_advanced"
-  "NVX/conditional_render" -> "NVX/nvx_conditional_render"
-  "OES/byte_coordinates" -> "OES/OES_byte_coordinates"
-  "OES/compressed_paletted_texture" -> "OES/OES_compressed_paletted_texture"
-  "OES/fixed_point" -> "OES/OES_fixed_point"
-  "OES/query_matrix" -> "OES/OES_query_matrix"
-  "OES/read_format" -> "OES/OES_read_format"
-  "OES/single_precision" -> "OES/OES_single_precision"
-  "SGIS/fog_function" -> "SGIS/fog_func"
-  "SGIS/point_parameters" -> "EXT/point_parameters"
-  "SGIX/fragment_lighting" -> "EXT/fragment_lighting"
-  "SGIX/pixel_texture" -> "SGIX/sgix_pixel_texture"
-  "SGIX/texture_add_env" -> "SGIX/texture_env_add"
-  _ -> path
+commentForExension :: ExtensionName -> [String]
+commentForExension n = [
+  "The <https://www.opengl.org/registry/specs/" ++
+  fixRegistryPath (extensionNameCategory n ++ "/" ++ extensionNameName n) ++ ".txt " ++
+  joinWords [extensionNameCategory n, extensionNameName n] ++ "> extension."]
+  where fixRegistryPath :: String -> String
+        fixRegistryPath path = case path of
+          "3DFX/multisample" -> "3DFX/3dfx_multisample"
+          "EXT/debug_label" -> "EXT/EXT_debug_label"
+          "EXT/debug_marker" -> "EXT/EXT_debug_marker"
+          "EXT/multisample" -> "EXT/wgl_multisample"
+          "EXT/texture_cube_map" -> "ARB/texture_cube_map"
+          "INGR/blend_func_separate" -> "EXT/blend_func_separate"
+          "KHR/blend_equation_advanced_coherent" -> "KHR/blend_equation_advanced"
+          "KHR/texture_compression_astc_ldr" -> "KHR/texture_compression_astc_hdr"
+          "NV/blend_equation_advanced_coherent" -> "NV/blend_equation_advanced"
+          "NVX/conditional_render" -> "NVX/nvx_conditional_render"
+          "OES/byte_coordinates" -> "OES/OES_byte_coordinates"
+          "OES/compressed_paletted_texture" -> "OES/OES_compressed_paletted_texture"
+          "OES/fixed_point" -> "OES/OES_fixed_point"
+          "OES/query_matrix" -> "OES/OES_query_matrix"
+          "OES/read_format" -> "OES/OES_read_format"
+          "OES/single_precision" -> "OES/OES_single_precision"
+          "SGIS/fog_function" -> "SGIS/fog_func"
+          "SGIS/point_parameters" -> "EXT/point_parameters"
+          "SGIX/fragment_lighting" -> "EXT/fragment_lighting"
+          "SGIX/pixel_texture" -> "SGIX/sgix_pixel_texture"
+          "SGIX/texture_add_env" -> "SGIX/texture_env_add"
+          _ -> path
 
-isProfileDependent :: Modification -> Bool
-isProfileDependent = DM.isJust . modificationProfile
+printReExports :: [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))] -> IO ()
+printReExports extModules = do
+  let extMap = M.fromListWith (++) [((extensionNameCategory extName, extensionNameCategory mangledExtName), [mangledExtName])
+                                   | (extName, mangledExtName, _) <- extModules ]
+      reExports = [ (cat, L.sort mangledExtNames)
+                  | (cat, mangledExtNames) <- M.toList extMap ]
+  CM.forM_ reExports $ \((category, mangledCategory), mangledExtNames) -> do
+    let comment = ["A convenience module, combining all raw modules containing " ++ category ++ " extensions."]
+    startModule [mangledCategory] Nothing comment $ \moduleName h -> do
+      SI.hPutStrLn h $ "module "++ moduleName ++ " ("
+      SI.hPutStrLn h $ separate (\mangledExtName -> "module " ++ extensionNameFor mangledExtName) mangledExtNames
+      SI.hPutStrLn h ") where"
+      SI.hPutStrLn h ""
+      CM.forM_ mangledExtNames $ \mangledExtName ->
+        SI.hPutStrLn h $ "import " ++ extensionNameFor mangledExtName
 
-startModule :: Maybe String -> String -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
-startModule mbCategory moduleNameSuffix mbPragma comments action = do
-  let moduleNameParts =
-        ["Graphics", "Rendering", "OpenGL", "Raw"] ++
-        maybe [] (\category -> [fixCategory category]) mbCategory ++
-        [moduleNameSuffix]
-      path = F.joinPath moduleNameParts `F.addExtension` "hs"
-      moduleName = L.intercalate "." moduleNameParts
-  D.createDirectoryIfMissing True $ F.takeDirectory path
-  SI.withFile path SI.WriteMode $ \h -> do
-    printModuleHeader h mbPragma moduleName comments
-    action moduleName h
-
-fixCategory :: String -> String
-fixCategory v = case v of
-  "3DFX" -> "ThreeDFX"
-  _ -> v
-
-fixExtensionWord :: String -> Int -> String
-fixExtensionWord w  pos = case w of
-  "422" | pos == 0-> "FourTwoTwo"
-  "64bit" -> "64Bit"
-  "ES2" -> "ES2"
-  "ES3" -> "ES3"
-  "FXT1" -> "FXT1"
-  "a2ui" -> "A2UI"
-  "abgr" -> "ABGR"
-  "astc" -> "ASTC"
-  "bgra" -> "BGRA"
-  "bptc" -> "BPTC"
-  "cl" -> "CL"
-  "cmyka" -> "CMYKA"
-  "dxt1" -> "DXT1"
-  "es" -> "ES"
-  "ffd" -> "FFD"
-  "fp64" -> "FP64"
-  "gpu" -> "GPU"
-  "hdr" -> "HDR"
-  "latc" -> "LATC"
-  "ldr" -> "LDR"
-  "lod" -> "LOD"
-  "pn" -> "PN"
-  "rg" -> "RG"
-  "rgb" -> "RGB"
-  "rgb10" -> "RGB10"
-  "rgb32" -> "RGB32"
-  "rgtc" -> "RGTC"
-  "s3tc" -> "S3TC"
-  "sRGB" -> "SRGB"
-  "snorm" -> "SNorm"
-  "texture3D" -> "Texture3D"
-  "texture4D" -> "Texture4D"
-  "vdpau" -> "VDPAU"
-  "ycbcr" -> "YCbCr"
-  "ycrcb" -> "YCrCb"
-  "ycrcba" -> "YCrCbA"
-  _ -> capitalize w
+extensionNameFor :: ExtensionName -> String
+extensionNameFor mangledExtName = moduleNameFor [extensionNameCategory mangledExtName, extensionNameName mangledExtName]
 
 supports :: API -> Maybe [API] -> Bool
 _ `supports` Nothing = True
@@ -233,9 +250,9 @@ separate :: (a -> String) -> [a] -> String
 separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
 -- Note that we handle features just like extensions.
-printExtension :: Maybe String -> String -> [String] -> ([TypeName], [Enum'], [Command]) -> IO ()
-printExtension mbCategory moduleNameSuffix comment (ts, es, cs) =
-  startModule mbCategory moduleNameSuffix Nothing comment $ \moduleName h -> do
+printExtension :: [String] -> [String] -> ([TypeName], [Enum'], [Command]) -> IO ()
+printExtension moduleNameSuffix comment (ts, es, cs) =
+  startModule moduleNameSuffix Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module "++ moduleName ++ " ("
     CM.unless (null ts) $ do
       SI.hPutStrLn h "  -- * Types"
@@ -252,11 +269,29 @@ printExtension mbCategory moduleNameSuffix comment (ts, es, cs) =
     SI.hPutStrLn h ") where"
     SI.hPutStrLn h ""
     CM.unless (null ts) $
-      SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Types"
+      SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
     CM.unless (null es) $
-      SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Tokens"
+      SI.hPutStrLn h $ "import " ++ moduleNameFor ["Tokens"]
     CM.unless (null cs) $
-      SI.hPutStrLn h "import Graphics.Rendering.OpenGL.Raw.Functions"
+      SI.hPutStrLn h $ "import " ++ moduleNameFor ["Functions"]
+
+startModule :: [String] -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
+startModule moduleNameSuffix mbPragma comments action = do
+  let path = modulePathFor moduleNameSuffix
+      moduleName = moduleNameFor moduleNameSuffix
+  D.createDirectoryIfMissing True $ F.takeDirectory path
+  SI.withFile path SI.WriteMode $ \h -> do
+    printModuleHeader h mbPragma moduleName comments
+    action moduleName h
+
+moduleNameFor :: [String] -> String
+moduleNameFor = L.intercalate "." . moduleNameParts
+
+modulePathFor :: [String] -> FilePath
+modulePathFor moduleNameSuffix = F.joinPath (moduleNameParts moduleNameSuffix) `F.addExtension` "hs"
+
+moduleNameParts :: [String] -> [String]
+moduleNameParts = (["Graphics", "Rendering", "OpenGL", "Raw"] ++)
 
 printModuleHeader :: SI.Handle -> Maybe String -> String -> [String] -> IO ()
 printModuleHeader h mbPragma moduleName comments = do
@@ -306,8 +341,7 @@ addFuncsAndMakes =
 replay :: API -> Version -> ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
 replay api version profile registry =
   executeModifications api profile registry modifications
-  where modifications = concatMap modificationsFor history
-        modificationsFor = flip lookup' (features registry)
+  where modifications = history >>= flip lookup' (features registry)
         history = L.sort [ key
                          | key@(a,v) <- M.keys (features registry)
                          , a == api
@@ -376,7 +410,7 @@ showCommand api sigMap c =
                 [_] ->  "-- | Manual page for "  ++ links
                 _   ->  "-- | Manual pages for " ++ links
         renderURL (u, l) = "<" ++ u ++ " " ++ l ++ ">"
-        args = concat [" v" ++ show i | i <- [1 .. length (paramTypes c)]]
+        args = [1 .. length (paramTypes c)] >>= \i -> " v" ++ show i
 
 makeImportDynamic :: String -> String -> String
 makeImportDynamic compactSignature dyn_name =

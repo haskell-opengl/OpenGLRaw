@@ -21,8 +21,8 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
   module Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate,
   module Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax,
   module Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract,
-  module Graphics.Rendering.OpenGL.Raw.EXT.ClipVolumeHint,
   module Graphics.Rendering.OpenGL.Raw.EXT.CMYKA,
+  module Graphics.Rendering.OpenGL.Raw.EXT.ClipVolumeHint,
   module Graphics.Rendering.OpenGL.Raw.EXT.ColorSubtable,
   module Graphics.Rendering.OpenGL.Raw.EXT.CompiledVertexArray,
   module Graphics.Rendering.OpenGL.Raw.EXT.Convolution,
@@ -39,13 +39,13 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
   module Graphics.Rendering.OpenGL.Raw.EXT.FogCoord,
   module Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels,
   module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit,
-  module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisampleBlitScaled,
   module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample,
+  module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisampleBlitScaled,
   module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject,
   module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB,
-  module Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4,
   module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters,
   module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4,
+  module Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4,
   module Graphics.Rendering.OpenGL.Raw.EXT.Histogram,
   module Graphics.Rendering.OpenGL.Raw.EXT.IndexArrayFormats,
   module Graphics.Rendering.OpenGL.Raw.EXT.IndexFunc,
@@ -60,8 +60,8 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
   module Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject,
   module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform,
   module Graphics.Rendering.OpenGL.Raw.EXT.PointParameters,
-  module Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffsetClamp,
   module Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset,
+  module Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffsetClamp,
   module Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex,
   module Graphics.Rendering.OpenGL.Raw.EXT.RasterMultisample,
   module Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal,
@@ -74,6 +74,7 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
   module Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide,
   module Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap,
   module Graphics.Rendering.OpenGL.Raw.EXT.Subtexture,
+  module Graphics.Rendering.OpenGL.Raw.EXT.Texture,
   module Graphics.Rendering.OpenGL.Raw.EXT.Texture3D,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject,
@@ -85,21 +86,20 @@ module Graphics.Rendering.OpenGL.Raw.EXT (
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvDot3,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterMinmax,
-  module Graphics.Rendering.OpenGL.Raw.EXT.Texture,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureObject,
   module Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal,
-  module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureSNorm,
-  module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGBDecode,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB,
+  module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGBDecode,
+  module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent,
   module Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle,
   module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery,
   module Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback,
-  module Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA,
   module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray,
+  module Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA,
   module Graphics.Rendering.OpenGL.Raw.EXT.VertexAttrib64Bit,
   module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader,
   module Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting,
@@ -114,8 +114,8 @@ import Graphics.Rendering.OpenGL.Raw.EXT.BlendEquationSeparate
 import Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate
 import Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax
 import Graphics.Rendering.OpenGL.Raw.EXT.BlendSubtract
-import Graphics.Rendering.OpenGL.Raw.EXT.ClipVolumeHint
 import Graphics.Rendering.OpenGL.Raw.EXT.CMYKA
+import Graphics.Rendering.OpenGL.Raw.EXT.ClipVolumeHint
 import Graphics.Rendering.OpenGL.Raw.EXT.ColorSubtable
 import Graphics.Rendering.OpenGL.Raw.EXT.CompiledVertexArray
 import Graphics.Rendering.OpenGL.Raw.EXT.Convolution
@@ -132,13 +132,13 @@ import Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements
 import Graphics.Rendering.OpenGL.Raw.EXT.FogCoord
 import Graphics.Rendering.OpenGL.Raw.EXT.FourTwoTwoPixels
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferBlit
-import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisampleBlitScaled
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample
+import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisampleBlitScaled
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject
 import Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB
-import Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4
 import Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters
 import Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4
+import Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4
 import Graphics.Rendering.OpenGL.Raw.EXT.Histogram
 import Graphics.Rendering.OpenGL.Raw.EXT.IndexArrayFormats
 import Graphics.Rendering.OpenGL.Raw.EXT.IndexFunc
@@ -153,8 +153,8 @@ import Graphics.Rendering.OpenGL.Raw.EXT.PalettedTexture
 import Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject
 import Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform
 import Graphics.Rendering.OpenGL.Raw.EXT.PointParameters
-import Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffsetClamp
 import Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffset
+import Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffsetClamp
 import Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex
 import Graphics.Rendering.OpenGL.Raw.EXT.RasterMultisample
 import Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal
@@ -167,6 +167,7 @@ import Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag
 import Graphics.Rendering.OpenGL.Raw.EXT.StencilTwoSide
 import Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap
 import Graphics.Rendering.OpenGL.Raw.EXT.Subtexture
+import Graphics.Rendering.OpenGL.Raw.EXT.Texture
 import Graphics.Rendering.OpenGL.Raw.EXT.Texture3D
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureArray
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject
@@ -178,21 +179,20 @@ import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvDot3
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterMinmax
-import Graphics.Rendering.OpenGL.Raw.EXT.Texture
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureMirrorClamp
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureObject
 import Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSNorm
-import Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGBDecode
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGBDecode
+import Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent
 import Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle
 import Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery
 import Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback
-import Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexArray
+import Graphics.Rendering.OpenGL.Raw.EXT.VertexArrayBGRA
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexAttrib64Bit
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexShader
 import Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting

@@ -24,7 +24,7 @@ module MangledRegistry (
   ExtensionName(..),
   API(..),
   Version(..),
-  splitBy
+  splitWords, joinWords
 ) where
 
 import qualified Data.Char as C
@@ -128,15 +128,23 @@ toEnum' toTypeName e = Enum {
 
 mangleEnumName :: String -> EnumName
 mangleEnumName =
-  EnumName . L.intercalate [splitChar] . headToLower . splitBy (== splitChar)
-  where splitChar = '_'
-        headToLower xs = map C.toLower (head xs) : tail xs
+  EnumName . joinWords . headToLower . splitWords
+  where headToLower xs = map C.toLower (head xs) : tail xs
+
+splitChar :: Char
+splitChar = '_'
+
+splitWords :: String -> [String]
+splitWords = splitBy (== splitChar)
 
 splitBy :: (a -> Bool) -> [a] -> [[a]]
 splitBy _ [] = []
 splitBy p xs = case break p xs of
                 (ys, []  ) -> [ys]
                 (ys, _:zs) -> ys : splitBy p zs
+
+joinWords :: [String] -> String
+joinWords = L.intercalate [splitChar]
 
 data Command = Command {
   resultType :: SignatureElement,
@@ -283,9 +291,8 @@ toExtensionName :: R.Name -> ExtensionName
 toExtensionName name = ExtensionName {
    extensionNameAPI = a,
    extensionNameCategory = c,
-   extensionNameName = n }
-   where (a, _:rest) = break (== '_') (R.unName name)
-         (c, _:n) = break (== '_') rest
+   extensionNameName = joinWords rest }
+   where (a:c:rest) = splitWords (R.unName name)
 
 newtype API = API { unAPI :: String } deriving (Eq, Ord, Show)
 

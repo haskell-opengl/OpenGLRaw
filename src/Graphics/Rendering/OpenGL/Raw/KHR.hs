@@ -13,8 +13,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.KHR (
-  module Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvancedCoherent,
   module Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvanced,
+  module Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvancedCoherent,
   module Graphics.Rendering.OpenGL.Raw.KHR.ContextFlushControl,
   module Graphics.Rendering.OpenGL.Raw.KHR.DebugCompatibility,
   module Graphics.Rendering.OpenGL.Raw.KHR.DebugCore,
@@ -24,8 +24,8 @@ module Graphics.Rendering.OpenGL.Raw.KHR (
   module Graphics.Rendering.OpenGL.Raw.KHR.TextureCompressionASTCLDR
 ) where
 
-import Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvancedCoherent
 import Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvanced
+import Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvancedCoherent
 import Graphics.Rendering.OpenGL.Raw.KHR.ContextFlushControl
 import Graphics.Rendering.OpenGL.Raw.KHR.DebugCompatibility
 import Graphics.Rendering.OpenGL.Raw.KHR.DebugCore
