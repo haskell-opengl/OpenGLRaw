@@ -383,6 +383,7 @@ library
     Graphics.Rendering.OpenGL.Raw.KHR.ContextFlushControl
     Graphics.Rendering.OpenGL.Raw.KHR.DebugCompatibility
     Graphics.Rendering.OpenGL.Raw.KHR.DebugCore
+    Graphics.Rendering.OpenGL.Raw.KHR.NoError
     Graphics.Rendering.OpenGL.Raw.KHR.Robustness
     Graphics.Rendering.OpenGL.Raw.KHR.TextureCompressionASTCHDR
     Graphics.Rendering.OpenGL.Raw.KHR.TextureCompressionASTCLDR
