@@ -28,17 +28,32 @@ main = do
       let extModules = extensionModules api registry
       CM.forM_ extModules printExtensionModule
       printReExports extModules
-      CM.forM_ ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "2.0", "2.1"] $ \v ->
-        printFeature api (read v) (ProfileName "version") registry
-      CM.forM_ ["3.0", "3.1", "3.2", "3.3", "4.0", "4.1", "4.2", "4.3", "4.4", "4.5"] $ \v ->
-        CM.forM_ [ProfileName "core", ProfileName "compatibility"] $ \p ->
-          printFeature api (read v) p registry
+      CM.forM_ openGLVersions $ \v ->
+        CM.forM_ (supportedProfiles v) $ \p ->
+          printFeature api v p registry
+      printTopLevel extModules
 
-printFeature :: API -> Version -> ProfileName -> Registry -> IO ()
-printFeature api version profile registry = do
-  let relName = capitalize (unProfileName profile) ++
-                show (major version) ++ show (minor version)
-  printExtension [relName] [] $ fixedReplay api version profile registry
+openGLVersions :: [Version]
+openGLVersions = map read $ [
+  "1.0", "1.1", "1.2", "1.3", "1.4", "1.5",
+  "2.0", "2.1",
+  "3.0", "3.1", "3.2", "3.3",
+  "4.0", "4.1", "4.2", "4.3", "4.4", "4.5" ]
+
+supportedProfiles :: Version -> [Maybe ProfileName]
+supportedProfiles v
+  | major v < 3 = [ Nothing ]
+  | otherwise =  map (Just . ProfileName) [ "core", "compatibility" ]
+
+printFeature :: API -> Version -> Maybe ProfileName -> Registry -> IO ()
+printFeature api version mbProfile registry = do
+  printExtension [featureName version mbProfile] [] $
+    fixedReplay api version mbProfile registry
+
+featureName :: Version -> Maybe ProfileName -> String
+featureName version mbProfile =
+  maybe "Version" (capitalize . unProfileName) mbProfile ++
+  show (major version) ++ show (minor version)
 
 printTokens :: API -> Registry -> IO ()
 printTokens api registry = do
@@ -164,12 +179,10 @@ mangleExtensionName extName = extName {
 
 extensionModules :: API -> Registry -> [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))]
 extensionModules api registry =
-  [ (extName, mangledExtName, executeModifications api prof registry mods)
+  [ (extName, mangledExtName, executeModifications api mbProfile registry mods)
   | (extName, mods) <- supportedExtensions api registry
-  , let profDep = any isProfileDependent mods
-  , prof <- map ProfileName $ [ "core" ] ++ if profDep then [ "compatibility" ] else []
-  , let mbProfileName = if profDep then Just prof else Nothing
-  , let mangledExtName = mangleExtensionName (extendWithProfile extName mbProfileName)
+  , mbProfile <- supportedProfiles $ (if any isProfileDependent mods then last else head) openGLVersions
+  , let mangledExtName = mangleExtensionName (extendWithProfile extName mbProfile)
   ]
   where isProfileDependent :: Modification -> Bool
         isProfileDependent = DM.isJust . modificationProfile
@@ -275,6 +288,25 @@ printExtension moduleNameSuffix comment (ts, es, cs) =
     CM.unless (null cs) $
       SI.hPutStrLn h $ "import " ++ moduleNameFor ["Functions"]
 
+printTopLevel :: [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))] -> IO ()
+printTopLevel extModules = do
+  let mangledCategories = sortUnique [ extensionNameCategory mangledExtName
+                                     | (_, mangledExtName, _) <- extModules ]
+      lastComp = featureName (last openGLVersions) (Just (ProfileName "compatibility"))
+      moduleNames = [ moduleNameFor [c] | c <- [ lastComp, "GetProcAddress" ] ++ mangledCategories ]
+      comment = [ "A convenience module, combining the latest OpenGL compatibility profile plus"
+                , "all extensions." ]
+  startModule [] Nothing comment $ \moduleName h -> do
+    SI.hPutStrLn h $ "module "++ moduleName ++ " ("
+    SI.hPutStrLn h $ separate (\m -> "module " ++ m) moduleNames
+    SI.hPutStrLn h ") where"
+    SI.hPutStrLn h ""
+    CM.forM_ moduleNames $ \moduleName ->
+      SI.hPutStrLn h $ "import " ++ moduleName
+
+sortUnique :: Ord a => [a] -> [a]
+sortUnique = S.toList . S.fromList
+
 startModule :: [String] -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
 startModule moduleNameSuffix mbPragma comments action = do
   let path = modulePathFor moduleNameSuffix
@@ -315,12 +347,12 @@ printModuleHeader h mbPragma moduleName comments = do
 -- Annoyingly enough, the OpenGL registry doesn't contain any enums for
 -- OpenGL 1.0, so let's just use the OpenGL 1.1 ones. Furthermore, features
 -- don't explicitly list the types referenced by commands, so we add them.
-fixedReplay :: API -> Version -> ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
-fixedReplay api version profile registry
+fixedReplay :: API -> Version -> Maybe ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
+fixedReplay api version mbProfile registry
   | api == API "gl" && version == read "1.0" = (ts', es11, cs)
   | otherwise = (ts', es, cs)
-  where (ts, es, cs) = replay api version profile registry
-        (_, es11, _) = replay api (read "1.1") profile registry
+  where (ts, es, cs) = replay api version mbProfile registry
+        (_, es11, _) = replay api (read "1.1") mbProfile registry
         ts' = S.toList . addFuncsAndMakes . S.unions  $ S.fromList ts : map referencedTypes cs
 
 -- For debug callbacks, we want to export the Haskell types and their creators, too.
@@ -338,31 +370,31 @@ addFuncsAndMakes =
 
 -- Here is the heart of the feature construction logic: Chronologically replay
 -- the whole version history for the given API/version/profile triple.
-replay :: API -> Version -> ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
-replay api version profile registry =
-  executeModifications api profile registry modifications
+replay :: API -> Version -> Maybe ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
+replay api version mbProfile registry =
+  executeModifications api mbProfile registry modifications
   where modifications = history >>= flip lookup' (features registry)
         history = L.sort [ key
                          | key@(a,v) <- M.keys (features registry)
                          , a == api
                          , v <= version ]
 
-executeModifications :: API -> ProfileName -> Registry -> [Modification] -> ([TypeName], [Enum'], [Command])
-executeModifications api profile registry modifications = (ts, es, cs)
+executeModifications :: API -> Maybe ProfileName -> Registry -> [Modification] -> ([TypeName], [Enum'], [Command])
+executeModifications api mbProfile registry modifications = (ts, es, cs)
   where ts = [ n | TypeElement n <- lst ]
         es = [ e | EnumElement n <- lst
                  , e <- lookup' n (enums registry)
                  , api `matches` enumAPI e ]
         cs = [ lookup' n (commands registry) | CommandElement n <- lst ]
-        lst = S.toList $ interfaceElementsFor profile modifications
+        lst = S.toList $ interfaceElementsFor mbProfile modifications
 
-interfaceElementsFor :: ProfileName -> [Modification] -> S.Set InterfaceElement
-interfaceElementsFor profile modifications =
+interfaceElementsFor :: Maybe ProfileName -> [Modification] -> S.Set InterfaceElement
+interfaceElementsFor mbProfile modifications =
   foldl (flip ($)) S.empty modificationsFor
   where modificationsFor =
           [ op (modificationKind m) ie
           | m <- modifications
-          , profile `matches` modificationProfile m
+          , maybe True (`matches` modificationProfile m) mbProfile
           , ie <- modificationInterfaceElements m ]
         op Require = S.insert
         op Remove = S.delete
