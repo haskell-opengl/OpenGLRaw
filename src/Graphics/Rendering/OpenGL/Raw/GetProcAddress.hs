@@ -1,4 +1,3 @@
-{-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.GetProcAddress
@@ -24,17 +23,12 @@ module Graphics.Rendering.OpenGL.Raw.GetProcAddress (
    getProcAddressChecked,
    getProcAddressWithSuffixesChecked,
    getExtensionChecked
-
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
 import Foreign.C.String ( withCString, CString )
 import Foreign.Marshal.Error ( throwIf )
 import Foreign.Ptr ( FunPtr, nullFunPtr )
-
-#ifdef __HUGS__
-{-# CFILES cbits/HsOpenGLRaw.c #-}
-#endif
 
 --------------------------------------------------------------------------------
 
