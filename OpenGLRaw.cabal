@@ -48,7 +48,17 @@ flag UseNativeWindowsLibraries
 
 flag UseGlXGetProcAddress
   description:
-    Use glXGetProcAddress instead of dlsym on non-Windows/-Darwin platforms.
+    Use glXGetProcAddress instead of dlsym on non-Windows/-Darwin/-Android platforms.
+
+flag UseGLES2
+  description:
+    Use OpenGL ES 2.x instead of OpenGL ES 3.x on Android.
+
+flag OsAndroid
+  description:
+    Compile for Android. This flag goes away when cabal supports os(android).
+  default:
+    False
 
 library
   exposed-modules:
@@ -596,10 +606,11 @@ library
     extra-libraries: opengl32
   else
     cpp-options: "-DCALLCONV=ccall"
-    if !os(darwin) && !os(ios) && flag(UseGlXGetProcAddress)
-      cc-options: "-DUSE_GLXGETPROCADDRESS"
-    else
+    if os(darwin) || os(ios) || flag(OsAndroid) || !flag(UseGlXGetProcAddress)
+      -- TODO: Figure out if/when eglGetProcAddress should be used.
       cc-options: "-DUSE_DLSYM"
+    else
+      cc-options: "-DUSE_GLXGETPROCADDRESS"
     if os(darwin)
       cpp-options: "-DHANDLE_IS_POINTER"
       frameworks: OpenGL
@@ -607,7 +618,13 @@ library
       if os(ios)
         frameworks: OpenGLES
       else
-        extra-libraries: GL
+        if flag(OsAndroid)
+          if flag(UseGLES2)
+            extra-libraries: GLESv2
+          else
+            extra-libraries: GLESv3
+        else
+          extra-libraries: GL
 
 source-repository head
   type: git
