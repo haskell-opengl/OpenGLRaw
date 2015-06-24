@@ -15,8 +15,8 @@ import ManPages
 
 main :: IO ()
 main = do
-  [registryPath] <- E.getArgs
-  let api = API "gl"
+  [a, registryPath] <- E.getArgs
+  let api = API a
   res <- parseRegistry toEnumType `fmap` readFile registryPath
   case res of
     Left msg -> SI.hPutStrLn SI.stderr msg
@@ -28,25 +28,40 @@ main = do
       let extModules = extensionModules api registry
       CM.forM_ extModules printExtensionModule
       printReExports extModules
-      CM.forM_ openGLVersions $ \v ->
-        CM.forM_ (supportedProfiles v) $ \p ->
+      CM.forM_ (openGLVersions api) $ \v ->
+        CM.forM_ (supportedProfiles api v) $ \p ->
           printFeature api v p registry
-      printTopLevel extModules
+      printTopLevel api extModules
 
-openGLVersions :: [Version]
-openGLVersions = map read $ [
-  "1.0", "1.1", "1.2", "1.3", "1.4", "1.5",
-  "2.0", "2.1",
-  "3.0", "3.1", "3.2", "3.3",
-  "4.0", "4.1", "4.2", "4.3", "4.4", "4.5" ]
+openGLVersions :: API -> [Version]
+openGLVersions api = map read $ case unAPI api of
+  "gl" -> [ "1.0", "1.1", "1.2", "1.3", "1.4", "1.5",
+            "2.0", "2.1",
+            "3.0", "3.1", "3.2", "3.3",
+            "4.0", "4.1", "4.2", "4.3", "4.4", "4.5" ]
+  "gles1" -> [ "1.0" ]
+  "gles2" -> [ "2.0", "3.0", "3.1" ]
+  a -> error $ "unknown API " ++ a
 
-supportedProfiles :: Version -> [Maybe ProfileName]
-supportedProfiles v
-  | major v < 3 = [ Nothing ]
-  | otherwise =  map (Just . ProfileName) [ "core", "compatibility" ]
+latestVersion :: API -> Version
+latestVersion = last . openGLVersions
+
+supportedProfiles :: API -> Version -> [Maybe ProfileName]
+supportedProfiles api v = case unAPI api of
+  "gl" | major v < 3 -> [ Nothing ]
+       | otherwise ->  map (Just . ProfileName) [ "core", "compatibility" ]
+  "gles1" -> map (Just . ProfileName) [ "lite", "common" ]
+  "gles2" -> [ Nothing ]
+  a -> error $ "unknown API " ++ a
+
+latestProfiles :: API -> [Maybe ProfileName]
+latestProfiles api = supportedProfiles api (latestVersion api)
+
+profileToReExport :: API -> Maybe ProfileName
+profileToReExport = last . latestProfiles
 
 printFeature :: API -> Version -> Maybe ProfileName -> Registry -> IO ()
-printFeature api version mbProfile registry = do
+printFeature api version mbProfile registry =
   printExtension [featureName version mbProfile] [] $
     fixedReplay api version mbProfile registry
 
@@ -181,11 +196,13 @@ extensionModules :: API -> Registry -> [(ExtensionName, ExtensionName, ([TypeNam
 extensionModules api registry =
   [ (extName, mangledExtName, executeModifications api mbProfile registry mods)
   | (extName, mods) <- supportedExtensions api registry
-  , mbProfile <- supportedProfiles $ (if any isProfileDependent mods then last else head) openGLVersions
+  , mbProfile <- if isProfileDependent mods then suppProfs else [ Nothing ]
   , let mangledExtName = mangleExtensionName (extendWithProfile extName mbProfile)
   ]
-  where isProfileDependent :: Modification -> Bool
-        isProfileDependent = DM.isJust . modificationProfile
+  where suppProfs = latestProfiles api
+        isProfileDependent mods = any (`S.member` allProfileNames) (mentionedProfileNames mods)
+        mentionedProfileNames mods = DM.catMaybes . map modificationProfile $ mods
+        allProfileNames = S.fromList . DM.catMaybes $ suppProfs
 
 -- We only consider non-empty supported extensions/modifications for the given API.
 supportedExtensions :: API -> Registry -> [(ExtensionName, [Modification])]
@@ -288,13 +305,18 @@ printExtension moduleNameSuffix comment (ts, es, cs) =
     CM.unless (null cs) $
       SI.hPutStrLn h $ "import " ++ moduleNameFor ["Functions"]
 
-printTopLevel :: [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))] -> IO ()
-printTopLevel extModules = do
+printTopLevel :: API -> [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))] -> IO ()
+printTopLevel api extModules = do
   let mangledCategories = sortUnique [ extensionNameCategory mangledExtName
                                      | (_, mangledExtName, _) <- extModules ]
-      lastComp = featureName (last openGLVersions) (Just (ProfileName "compatibility"))
+      profToReExport = profileToReExport api
+      lastComp = featureName (latestVersion api) profToReExport
       moduleNames = [ moduleNameFor [c] | c <- [ lastComp, "GetProcAddress" ] ++ mangledCategories ]
-      comment = [ "A convenience module, combining the latest OpenGL compatibility profile plus"
+      comment = [ L.intercalate " "
+                    [ "A convenience module, combining the latest"
+                    , apiName api
+                    , maybe "version" (\p -> unProfileName p ++ " profile") profToReExport
+                    , "plus" ]
                 , "all extensions." ]
   startModule [] Nothing comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module "++ moduleName ++ " ("
@@ -303,6 +325,13 @@ printTopLevel extModules = do
     SI.hPutStrLn h ""
     CM.forM_ moduleNames $ \moduleName ->
       SI.hPutStrLn h $ "import " ++ moduleName
+
+apiName :: API -> String
+apiName api = case unAPI api of
+  "gl" -> "OpenGL"
+  "gles1" -> "OpenGL ES 1.x"
+  "gles2" -> "OpenGL ES"
+  a -> error $ "unknown API " ++ a
 
 sortUnique :: Ord a => [a] -> [a]
 sortUnique = S.toList . S.fromList
