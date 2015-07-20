@@ -347,6 +347,7 @@ module Graphics.Rendering.OpenGL.Raw.Functions (
   glCompressedTextureSubImage2DEXT,
   glCompressedTextureSubImage3D,
   glCompressedTextureSubImage3DEXT,
+  glConservativeRasterParameterfNV,
   glConvolutionFilter1D,
   glConvolutionFilter1DEXT,
   glConvolutionFilter2D,
@@ -8097,6 +8098,19 @@ glCompressedTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO
 {-# NOINLINE ptr_glCompressedTextureSubImage3DEXT #-}
 ptr_glCompressedTextureSubImage3DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLsizei -> Ptr a -> IO ())
 ptr_glCompressedTextureSubImage3DEXT = unsafePerformIO $ getCommand "glCompressedTextureSubImage3DEXT"
+
+-- glConservativeRasterParameterfNV --------------------------------------------
+
+glConservativeRasterParameterfNV
+  :: MonadIO m
+  => GLenum -- ^ @pname@.
+  -> GLfloat -- ^ @value@.
+  -> m ()
+glConservativeRasterParameterfNV v1 v2 = liftIO $ dyn0 ptr_glConservativeRasterParameterfNV v1 v2
+
+{-# NOINLINE ptr_glConservativeRasterParameterfNV #-}
+ptr_glConservativeRasterParameterfNV :: FunPtr (GLenum -> GLfloat -> IO ())
+ptr_glConservativeRasterParameterfNV = unsafePerformIO $ getCommand "glConservativeRasterParameterfNV"
 
 -- glConvolutionFilter1D -------------------------------------------------------
 

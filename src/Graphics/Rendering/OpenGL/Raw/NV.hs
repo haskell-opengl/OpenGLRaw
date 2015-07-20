@@ -22,6 +22,7 @@ module Graphics.Rendering.OpenGL.Raw.NV (
   module Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5,
   module Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender,
   module Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster,
+  module Graphics.Rendering.OpenGL.Raw.NV.ConservativeRasterDilate,
   module Graphics.Rendering.OpenGL.Raw.NV.CopyDepthToColor,
   module Graphics.Rendering.OpenGL.Raw.NV.CopyImage,
   module Graphics.Rendering.OpenGL.Raw.NV.DeepTexture3D,
@@ -99,6 +100,7 @@ import Graphics.Rendering.OpenGL.Raw.NV.CommandList
 import Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5
 import Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
 import Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster
+import Graphics.Rendering.OpenGL.Raw.NV.ConservativeRasterDilate
 import Graphics.Rendering.OpenGL.Raw.NV.CopyDepthToColor
 import Graphics.Rendering.OpenGL.Raw.NV.CopyImage
 import Graphics.Rendering.OpenGL.Raw.NV.DeepTexture3D
