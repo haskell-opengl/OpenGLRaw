@@ -414,6 +414,7 @@ library
     Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5
     Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender
     Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster
+    Graphics.Rendering.OpenGL.Raw.NV.ConservativeRasterDilate
     Graphics.Rendering.OpenGL.Raw.NV.CopyDepthToColor
     Graphics.Rendering.OpenGL.Raw.NV.CopyImage
     Graphics.Rendering.OpenGL.Raw.NV.DeepTexture3D
