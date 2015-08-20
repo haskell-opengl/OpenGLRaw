@@ -41,6 +41,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
   module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced,
   module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility,
   module Graphics.Rendering.OpenGL.Raw.ARB.ES31Compatibility,
+  module Graphics.Rendering.OpenGL.Raw.ARB.ES32Compatibility,
   module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility,
   module Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts,
   module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitUniformLocation,
@@ -52,6 +53,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
   module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferSRGB,
   module Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5,
   module Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderFP64,
+  module Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderInt64,
   module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4,
   module Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary,
   module Graphics.Rendering.OpenGL.Raw.ARB.GetTextureSubImage,
@@ -73,6 +75,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
   module Graphics.Rendering.OpenGL.Raw.ARB.Multitexture,
   module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery,
   module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2,
+  module Graphics.Rendering.OpenGL.Raw.ARB.ParallelShaderCompile,
   module Graphics.Rendering.OpenGL.Raw.ARB.PipelineStatisticsQuery,
   module Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject,
   module Graphics.Rendering.OpenGL.Raw.ARB.PointParameters,
@@ -82,6 +85,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
   module Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject,
   module Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCompatibility,
   module Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCore,
+  module Graphics.Rendering.OpenGL.Raw.ARB.SampleLocations,
   module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading,
   module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects,
   module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap,
@@ -113,6 +117,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB (
   module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray,
   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine,
   module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3,
+  module Graphics.Rendering.OpenGL.Raw.ARB.TextureFilterMinmax,
   module Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat,
   module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather,
   module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirrorClampToEdge,
@@ -176,6 +181,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect
 import Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced
 import Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.ES31Compatibility
+import Graphics.Rendering.OpenGL.Raw.ARB.ES32Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts
 import Graphics.Rendering.OpenGL.Raw.ARB.ExplicitUniformLocation
@@ -187,6 +193,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObjectCore
 import Graphics.Rendering.OpenGL.Raw.ARB.FramebufferSRGB
 import Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5
 import Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderFP64
+import Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderInt64
 import Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
 import Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary
 import Graphics.Rendering.OpenGL.Raw.ARB.GetTextureSubImage
@@ -208,6 +215,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.Multisample
 import Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery
 import Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
+import Graphics.Rendering.OpenGL.Raw.ARB.ParallelShaderCompile
 import Graphics.Rendering.OpenGL.Raw.ARB.PipelineStatisticsQuery
 import Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.PointParameters
@@ -217,6 +225,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex
 import Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject
 import Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCompatibility
 import Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCore
+import Graphics.Rendering.OpenGL.Raw.ARB.SampleLocations
 import Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
 import Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
 import Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap
@@ -248,6 +257,7 @@ import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMap
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3
+import Graphics.Rendering.OpenGL.Raw.ARB.TextureFilterMinmax
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
 import Graphics.Rendering.OpenGL.Raw.ARB.TextureMirrorClampToEdge

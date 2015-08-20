@@ -128,6 +128,7 @@ library
     Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced
     Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility
     Graphics.Rendering.OpenGL.Raw.ARB.ES31Compatibility
+    Graphics.Rendering.OpenGL.Raw.ARB.ES32Compatibility
     Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility
     Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts
     Graphics.Rendering.OpenGL.Raw.ARB.ExplicitUniformLocation
@@ -139,6 +140,7 @@ library
     Graphics.Rendering.OpenGL.Raw.ARB.FramebufferSRGB
     Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5
     Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderFP64
+    Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderInt64
     Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4
     Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary
     Graphics.Rendering.OpenGL.Raw.ARB.GetTextureSubImage
@@ -160,6 +162,7 @@ library
     Graphics.Rendering.OpenGL.Raw.ARB.Multitexture
     Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery
     Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery2
+    Graphics.Rendering.OpenGL.Raw.ARB.ParallelShaderCompile
     Graphics.Rendering.OpenGL.Raw.ARB.PipelineStatisticsQuery
     Graphics.Rendering.OpenGL.Raw.ARB.PixelBufferObject
     Graphics.Rendering.OpenGL.Raw.ARB.PointParameters
@@ -169,6 +172,7 @@ library
     Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject
     Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCompatibility
     Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCore
+    Graphics.Rendering.OpenGL.Raw.ARB.SampleLocations
     Graphics.Rendering.OpenGL.Raw.ARB.SampleShading
     Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects
     Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubeMap
@@ -200,6 +204,7 @@ library
     Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray
     Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine
     Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvDot3
+    Graphics.Rendering.OpenGL.Raw.ARB.TextureFilterMinmax
     Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat
     Graphics.Rendering.OpenGL.Raw.ARB.TextureGather
     Graphics.Rendering.OpenGL.Raw.ARB.TextureMirrorClampToEdge
@@ -384,6 +389,7 @@ library
     Graphics.Rendering.OpenGL.Raw.INGR.ColorClamp
     Graphics.Rendering.OpenGL.Raw.INGR.InterlaceRead
     Graphics.Rendering.OpenGL.Raw.INTEL
+    Graphics.Rendering.OpenGL.Raw.INTEL.FramebufferCmaa
     Graphics.Rendering.OpenGL.Raw.INTEL.MapTexture
     Graphics.Rendering.OpenGL.Raw.INTEL.ParallelArrays
     Graphics.Rendering.OpenGL.Raw.INTEL.PerformanceQuery

@@ -13,11 +13,13 @@
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.INTEL (
+  module Graphics.Rendering.OpenGL.Raw.INTEL.FramebufferCmaa,
   module Graphics.Rendering.OpenGL.Raw.INTEL.MapTexture,
   module Graphics.Rendering.OpenGL.Raw.INTEL.ParallelArrays,
   module Graphics.Rendering.OpenGL.Raw.INTEL.PerformanceQuery
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.INTEL.FramebufferCmaa
 import Graphics.Rendering.OpenGL.Raw.INTEL.MapTexture
 import Graphics.Rendering.OpenGL.Raw.INTEL.ParallelArrays
 import Graphics.Rendering.OpenGL.Raw.INTEL.PerformanceQuery
