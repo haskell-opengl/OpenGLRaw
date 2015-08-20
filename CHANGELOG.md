@@ -1,3 +1,6 @@
+2.5.2.1
+-------
+
 2.5.2.0
 -------
 * Updated OpenGL registry to r31811.
