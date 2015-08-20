@@ -1,5 +1,6 @@
 2.5.2.1
 -------
+* Added CHANGELOG.md to distribution.
 
 2.5.2.0
 -------
