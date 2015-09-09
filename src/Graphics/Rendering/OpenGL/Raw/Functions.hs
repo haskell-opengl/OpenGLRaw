@@ -75,6 +75,7 @@ module Graphics.Rendering.OpenGL.Raw.Functions (
   glBindFragDataLocation,
   glBindFragDataLocationEXT,
   glBindFragDataLocationIndexed,
+  glBindFragDataLocationIndexedEXT,
   glBindFragmentShaderATI,
   glBindFramebuffer,
   glBindFramebufferEXT,
@@ -902,6 +903,7 @@ module Graphics.Rendering.OpenGL.Raw.Functions (
   glGetFloatv,
   glGetFogFuncSGIS,
   glGetFragDataIndex,
+  glGetFragDataIndexEXT,
   glGetFragDataLocation,
   glGetFragDataLocationEXT,
   glGetFragmentLightfvSGIX,
@@ -1085,6 +1087,7 @@ module Graphics.Rendering.OpenGL.Raw.Functions (
   glGetProgramResourceIndex,
   glGetProgramResourceLocation,
   glGetProgramResourceLocationIndex,
+  glGetProgramResourceLocationIndexEXT,
   glGetProgramResourceName,
   glGetProgramResourcefvNV,
   glGetProgramResourceiv,
@@ -4005,6 +4008,21 @@ glBindFragDataLocationIndexed v1 v2 v3 v4 = liftIO $ dyn24 ptr_glBindFragDataLoc
 {-# NOINLINE ptr_glBindFragDataLocationIndexed #-}
 ptr_glBindFragDataLocationIndexed :: FunPtr (GLuint -> GLuint -> GLuint -> Ptr GLchar -> IO ())
 ptr_glBindFragDataLocationIndexed = unsafePerformIO $ getCommand "glBindFragDataLocationIndexed"
+
+-- glBindFragDataLocationIndexedEXT --------------------------------------------
+
+glBindFragDataLocationIndexedEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLuint -- ^ @colorNumber@.
+  -> GLuint -- ^ @index@.
+  -> Ptr GLchar -- ^ @name@.
+  -> m ()
+glBindFragDataLocationIndexedEXT v1 v2 v3 v4 = liftIO $ dyn24 ptr_glBindFragDataLocationIndexedEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glBindFragDataLocationIndexedEXT #-}
+ptr_glBindFragDataLocationIndexedEXT :: FunPtr (GLuint -> GLuint -> GLuint -> Ptr GLchar -> IO ())
+ptr_glBindFragDataLocationIndexedEXT = unsafePerformIO $ getCommand "glBindFragDataLocationIndexedEXT"
 
 -- glBindFragmentShaderATI -----------------------------------------------------
 
@@ -16199,6 +16217,19 @@ glGetFragDataIndex v1 v2 = liftIO $ dyn306 ptr_glGetFragDataIndex v1 v2
 ptr_glGetFragDataIndex :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
 ptr_glGetFragDataIndex = unsafePerformIO $ getCommand "glGetFragDataIndex"
 
+-- glGetFragDataIndexEXT -------------------------------------------------------
+
+glGetFragDataIndexEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> Ptr GLchar -- ^ @name@.
+  -> m GLint
+glGetFragDataIndexEXT v1 v2 = liftIO $ dyn306 ptr_glGetFragDataIndexEXT v1 v2
+
+{-# NOINLINE ptr_glGetFragDataIndexEXT #-}
+ptr_glGetFragDataIndexEXT :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
+ptr_glGetFragDataIndexEXT = unsafePerformIO $ getCommand "glGetFragDataIndexEXT"
+
 -- glGetFragDataLocation -------------------------------------------------------
 
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataLocation.xhtml OpenGL 4.x>
@@ -18881,6 +18912,20 @@ glGetProgramResourceLocationIndex v1 v2 v3 = liftIO $ dyn392 ptr_glGetProgramRes
 {-# NOINLINE ptr_glGetProgramResourceLocationIndex #-}
 ptr_glGetProgramResourceLocationIndex :: FunPtr (GLuint -> GLenum -> Ptr GLchar -> IO GLint)
 ptr_glGetProgramResourceLocationIndex = unsafePerformIO $ getCommand "glGetProgramResourceLocationIndex"
+
+-- glGetProgramResourceLocationIndexEXT ----------------------------------------
+
+glGetProgramResourceLocationIndexEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLenum -- ^ @programInterface@.
+  -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
+  -> m GLint
+glGetProgramResourceLocationIndexEXT v1 v2 v3 = liftIO $ dyn392 ptr_glGetProgramResourceLocationIndexEXT v1 v2 v3
+
+{-# NOINLINE ptr_glGetProgramResourceLocationIndexEXT #-}
+ptr_glGetProgramResourceLocationIndexEXT :: FunPtr (GLuint -> GLenum -> Ptr GLchar -> IO GLint)
+ptr_glGetProgramResourceLocationIndexEXT = unsafePerformIO $ getCommand "glGetProgramResourceLocationIndexEXT"
 
 -- glGetProgramResourceName ----------------------------------------------------
 

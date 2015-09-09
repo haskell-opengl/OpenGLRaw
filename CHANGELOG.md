@@ -1,3 +1,8 @@
+2.5.3.0
+-------
+* Updated OpenGL registry to r31903.
+* Added `GL_EXT_multisampled_compatibility` tokens and functions (gles2 extension only).
+
 2.5.2.1
 -------
 * Added CHANGELOG.md to distribution.
