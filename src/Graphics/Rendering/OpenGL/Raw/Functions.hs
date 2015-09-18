@@ -3167,7 +3167,7 @@ throwIfNullFunPtr = throwIf (== nullFunPtr) . const
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAccum.xml OpenGL 2.x>
 glAccum
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @AccumOp@.
+  => GLenum -- ^ @op@ of type [AccumOp](Graphics-Rendering-OpenGL-Raw-Groups.html#AccumOp).
   -> GLfloat -- ^ @value@ of type @CoordF@.
   -> m ()
 glAccum v1 v2 = liftIO $ dyn0 ptr_glAccum v1 v2
@@ -3343,7 +3343,7 @@ ptr_glAlphaFragmentOp3ATI = unsafePerformIO $ getCommand "glAlphaFragmentOp3ATI"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAlphaFunc.xml OpenGL 2.x>
 glAlphaFunc
   :: MonadIO m
-  => GLenum -- ^ @func@ of type @AlphaFunction@.
+  => GLenum -- ^ @func@ of type [AlphaFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#AlphaFunction).
   -> GLfloat -- ^ @ref@.
   -> m ()
 glAlphaFunc v1 v2 = liftIO $ dyn0 ptr_glAlphaFunc v1 v2
@@ -3420,8 +3420,8 @@ glAreProgramsResidentNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @programs@ pointing to @n@ elements of type @GLuint@.
-  -> Ptr GLboolean -- ^ @residences@ pointing to @n@ elements of type @Boolean@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> Ptr GLboolean -- ^ @residences@ pointing to @n@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glAreProgramsResidentNV v1 v2 v3 = liftIO $ dyn11 ptr_glAreProgramsResidentNV v1 v2 v3
 
 {-# NOINLINE ptr_glAreProgramsResidentNV #-}
@@ -3435,8 +3435,8 @@ glAreTexturesResident
   :: MonadIO m
   => GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @Texture@.
-  -> Ptr GLboolean -- ^ @residences@ pointing to @n@ elements of type @Boolean@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> Ptr GLboolean -- ^ @residences@ pointing to @n@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glAreTexturesResident v1 v2 v3 = liftIO $ dyn11 ptr_glAreTexturesResident v1 v2 v3
 
 {-# NOINLINE ptr_glAreTexturesResident #-}
@@ -3449,8 +3449,8 @@ glAreTexturesResidentEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
   -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @Texture@.
-  -> Ptr GLboolean -- ^ @residences@ pointing to @n@ elements of type @Boolean@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> Ptr GLboolean -- ^ @residences@ pointing to @n@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glAreTexturesResidentEXT v1 v2 v3 = liftIO $ dyn11 ptr_glAreTexturesResidentEXT v1 v2 v3
 
 {-# NOINLINE ptr_glAreTexturesResidentEXT #-}
@@ -3486,7 +3486,7 @@ ptr_glArrayElementEXT = unsafePerformIO $ getCommand "glArrayElementEXT"
 
 glArrayObjectATI
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@ of type @ScalarType@.
   -> GLsizei -- ^ @stride@.
@@ -3543,7 +3543,7 @@ ptr_glAttachShader = unsafePerformIO $ getCommand "glAttachShader"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glBegin.xml OpenGL 2.x>
 glBegin
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> m ()
 glBegin v1 = liftIO $ dyn4 ptr_glBegin v1
 
@@ -4084,7 +4084,7 @@ glBindImageTexture
   => GLuint -- ^ @unit@.
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
-  -> GLboolean -- ^ @layered@ of type @Boolean@.
+  -> GLboolean -- ^ @layered@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLint -- ^ @layer@.
   -> GLenum -- ^ @access@.
   -> GLenum -- ^ @format@.
@@ -4102,7 +4102,7 @@ glBindImageTextureEXT
   => GLuint -- ^ @index@.
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
-  -> GLboolean -- ^ @layered@ of type @Boolean@.
+  -> GLboolean -- ^ @layered@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLint -- ^ @layer@.
   -> GLenum -- ^ @access@.
   -> GLint -- ^ @format@.
@@ -4132,8 +4132,8 @@ ptr_glBindImageTextures = unsafePerformIO $ getCommand "glBindImageTextures"
 
 glBindLightParameterEXT
   :: MonadIO m
-  => GLenum -- ^ @light@ of type @LightName@.
-  -> GLenum -- ^ @value@ of type @LightParameter@.
+  => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
+  -> GLenum -- ^ @value@ of type [LightParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightParameter).
   -> m GLuint
 glBindLightParameterEXT v1 v2 = liftIO $ dyn28 ptr_glBindLightParameterEXT v1 v2
 
@@ -4145,8 +4145,8 @@ ptr_glBindLightParameterEXT = unsafePerformIO $ getCommand "glBindLightParameter
 
 glBindMaterialParameterEXT
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @value@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @value@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> m GLuint
 glBindMaterialParameterEXT v1 v2 = liftIO $ dyn28 ptr_glBindMaterialParameterEXT v1 v2
 
@@ -4159,7 +4159,7 @@ ptr_glBindMaterialParameterEXT = unsafePerformIO $ getCommand "glBindMaterialPar
 glBindMultiTextureEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> m ()
 glBindMultiTextureEXT v1 v2 v3 = liftIO $ dyn29 ptr_glBindMultiTextureEXT v1 v2 v3
@@ -4305,8 +4305,8 @@ ptr_glBindSamplers = unsafePerformIO $ getCommand "glBindSamplers"
 glBindTexGenParameterEXT
   :: MonadIO m
   => GLenum -- ^ @unit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @value@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @value@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> m GLuint
 glBindTexGenParameterEXT v1 v2 v3 = liftIO $ dyn31 ptr_glBindTexGenParameterEXT v1 v2 v3
 
@@ -4319,7 +4319,7 @@ ptr_glBindTexGenParameterEXT = unsafePerformIO $ getCommand "glBindTexGenParamet
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBindTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBindTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindTexture.xhtml OpenGL 4.x>
 glBindTexture
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> m ()
 glBindTexture v1 v2 = liftIO $ dyn16 ptr_glBindTexture v1 v2
@@ -4332,7 +4332,7 @@ ptr_glBindTexture = unsafePerformIO $ getCommand "glBindTexture"
 
 glBindTextureEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> m ()
 glBindTextureEXT v1 v2 = liftIO $ dyn16 ptr_glBindTextureEXT v1 v2
@@ -4800,7 +4800,7 @@ ptr_glBlendEquation = unsafePerformIO $ getCommand "glBlendEquation"
 
 glBlendEquationEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @BlendEquationModeEXT@.
+  => GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationEXT v1 = liftIO $ dyn4 ptr_glBlendEquationEXT v1
 
@@ -4838,8 +4838,8 @@ ptr_glBlendEquationOES = unsafePerformIO $ getCommand "glBlendEquationOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquationSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquationSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendEquationSeparate.xhtml OpenGL 4.x>
 glBlendEquationSeparate
   :: MonadIO m
-  => GLenum -- ^ @modeRGB@ of type @BlendEquationModeEXT@.
-  -> GLenum -- ^ @modeAlpha@ of type @BlendEquationModeEXT@.
+  => GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparate v1 v2 = liftIO $ dyn51 ptr_glBlendEquationSeparate v1 v2
 
@@ -4851,8 +4851,8 @@ ptr_glBlendEquationSeparate = unsafePerformIO $ getCommand "glBlendEquationSepar
 
 glBlendEquationSeparateEXT
   :: MonadIO m
-  => GLenum -- ^ @modeRGB@ of type @BlendEquationModeEXT@.
-  -> GLenum -- ^ @modeAlpha@ of type @BlendEquationModeEXT@.
+  => GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparateEXT v1 v2 = liftIO $ dyn51 ptr_glBlendEquationSeparateEXT v1 v2
 
@@ -5002,8 +5002,8 @@ ptr_glBlendEquationiOES = unsafePerformIO $ getCommand "glBlendEquationiOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml OpenGL 4.x>
 glBlendFunc
   :: MonadIO m
-  => GLenum -- ^ @sfactor@ of type @BlendingFactorSrc@.
-  -> GLenum -- ^ @dfactor@ of type @BlendingFactorDest@.
+  => GLenum -- ^ @sfactor@ of type [BlendingFactorSrc](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendingFactorSrc).
+  -> GLenum -- ^ @dfactor@ of type [BlendingFactorDest](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendingFactorDest).
   -> m ()
 glBlendFunc v1 v2 = liftIO $ dyn51 ptr_glBlendFunc v1 v2
 
@@ -5250,7 +5250,7 @@ glBlitFramebuffer
   -> GLint -- ^ @dstY0@.
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
-  -> GLbitfield -- ^ @mask@ of type @ClearBufferMask@.
+  -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClearBufferMask).
   -> GLenum -- ^ @filter@.
   -> m ()
 glBlitFramebuffer v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn56 ptr_glBlitFramebuffer v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -5292,7 +5292,7 @@ glBlitFramebufferEXT
   -> GLint -- ^ @dstY0@.
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
-  -> GLbitfield -- ^ @mask@ of type @ClearBufferMask@.
+  -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClearBufferMask).
   -> GLenum -- ^ @filter@.
   -> m ()
 glBlitFramebufferEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn56 ptr_glBlitFramebufferEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -5514,7 +5514,7 @@ ptr_glCallList = unsafePerformIO $ getCommand "glCallList"
 glCallLists
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> GLenum -- ^ @type@ of type @ListNameType@.
+  -> GLenum -- ^ @type@ of type [ListNameType](Graphics-Rendering-OpenGL-Raw-Groups.html#ListNameType).
   -> Ptr a -- ^ @lists@ pointing to @COMPSIZE(n,type)@ elements of type @a@.
   -> m ()
 glCallLists v1 v2 v3 = liftIO $ dyn66 ptr_glCallLists v1 v2 v3
@@ -5619,7 +5619,7 @@ ptr_glClampColorARB = unsafePerformIO $ getCommand "glClampColorARB"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClear.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClear.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClear.xhtml OpenGL 4.x>
 glClear
   :: MonadIO m
-  => GLbitfield -- ^ @mask@ of type @ClearBufferMask@.
+  => GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClearBufferMask).
   -> m ()
 glClear v1 = liftIO $ dyn69 ptr_glClear v1
 
@@ -5941,8 +5941,8 @@ glClearNamedBufferDataEXT
   :: MonadIO m
   => GLuint -- ^ @buffer@.
   -> GLenum -- ^ @internalformat@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearNamedBufferDataEXT v1 v2 v3 v4 v5 = liftIO $ dyn82 ptr_glClearNamedBufferDataEXT v1 v2 v3 v4 v5
@@ -5978,8 +5978,8 @@ glClearNamedBufferSubDataEXT
   -> GLenum -- ^ @internalformat@.
   -> GLsizeiptr -- ^ @offset@ of type @BufferSize@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearNamedBufferSubDataEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn84 ptr_glClearNamedBufferSubDataEXT v1 v2 v3 v4 v5 v6 v7
@@ -6146,7 +6146,7 @@ ptr_glClientActiveVertexStreamATI = unsafePerformIO $ getCommand "glClientActive
 
 glClientAttribDefaultEXT
   :: MonadIO m
-  => GLbitfield -- ^ @mask@ of type @ClientAttribMask@.
+  => GLbitfield -- ^ @mask@ of type [ClientAttribMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClientAttribMask).
   -> m ()
 glClientAttribDefaultEXT v1 = liftIO $ dyn69 ptr_glClientAttribDefaultEXT v1
 
@@ -6202,7 +6202,7 @@ ptr_glClipControl = unsafePerformIO $ getCommand "glClipControl"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClipPlane.xml OpenGL 2.x>
 glClipPlane
   :: MonadIO m
-  => GLenum -- ^ @plane@ of type @ClipPlaneName@.
+  => GLenum -- ^ @plane@ of type [ClipPlaneName](Graphics-Rendering-OpenGL-Raw-Groups.html#ClipPlaneName).
   -> Ptr GLdouble -- ^ @equation@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glClipPlane v1 v2 = liftIO $ dyn92 ptr_glClipPlane v1 v2
@@ -7074,10 +7074,10 @@ ptr_glColorFragmentOp3ATI = unsafePerformIO $ getCommand "glColorFragmentOp3ATI"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glColorMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml OpenGL 4.x>
 glColorMask
   :: MonadIO m
-  => GLboolean -- ^ @red@ of type @Boolean@.
-  -> GLboolean -- ^ @green@ of type @Boolean@.
-  -> GLboolean -- ^ @blue@ of type @Boolean@.
-  -> GLboolean -- ^ @alpha@ of type @Boolean@.
+  => GLboolean -- ^ @red@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @green@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @blue@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @alpha@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glColorMask v1 v2 v3 v4 = liftIO $ dyn122 ptr_glColorMask v1 v2 v3 v4
 
@@ -7090,10 +7090,10 @@ ptr_glColorMask = unsafePerformIO $ getCommand "glColorMask"
 glColorMaskIndexedEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLboolean -- ^ @r@ of type @Boolean@.
-  -> GLboolean -- ^ @g@ of type @Boolean@.
-  -> GLboolean -- ^ @b@ of type @Boolean@.
-  -> GLboolean -- ^ @a@ of type @Boolean@.
+  -> GLboolean -- ^ @r@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @g@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @b@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @a@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glColorMaskIndexedEXT v1 v2 v3 v4 v5 = liftIO $ dyn123 ptr_glColorMaskIndexedEXT v1 v2 v3 v4 v5
 
@@ -7107,10 +7107,10 @@ ptr_glColorMaskIndexedEXT = unsafePerformIO $ getCommand "glColorMaskIndexedEXT"
 glColorMaski
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLboolean -- ^ @r@ of type @Boolean@.
-  -> GLboolean -- ^ @g@ of type @Boolean@.
-  -> GLboolean -- ^ @b@ of type @Boolean@.
-  -> GLboolean -- ^ @a@ of type @Boolean@.
+  -> GLboolean -- ^ @r@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @g@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @b@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @a@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glColorMaski v1 v2 v3 v4 v5 = liftIO $ dyn123 ptr_glColorMaski v1 v2 v3 v4 v5
 
@@ -7123,10 +7123,10 @@ ptr_glColorMaski = unsafePerformIO $ getCommand "glColorMaski"
 glColorMaskiEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLboolean -- ^ @r@ of type @Boolean@.
-  -> GLboolean -- ^ @g@ of type @Boolean@.
-  -> GLboolean -- ^ @b@ of type @Boolean@.
-  -> GLboolean -- ^ @a@ of type @Boolean@.
+  -> GLboolean -- ^ @r@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @g@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @b@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @a@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glColorMaskiEXT v1 v2 v3 v4 v5 = liftIO $ dyn123 ptr_glColorMaskiEXT v1 v2 v3 v4 v5
 
@@ -7139,10 +7139,10 @@ ptr_glColorMaskiEXT = unsafePerformIO $ getCommand "glColorMaskiEXT"
 glColorMaskiOES
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLboolean -- ^ @r@ of type @Boolean@.
-  -> GLboolean -- ^ @g@ of type @Boolean@.
-  -> GLboolean -- ^ @b@ of type @Boolean@.
-  -> GLboolean -- ^ @a@ of type @Boolean@.
+  -> GLboolean -- ^ @r@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @g@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @b@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @a@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glColorMaskiOES v1 v2 v3 v4 v5 = liftIO $ dyn123 ptr_glColorMaskiOES v1 v2 v3 v4 v5
 
@@ -7155,8 +7155,8 @@ ptr_glColorMaskiOES = unsafePerformIO $ getCommand "glColorMaskiOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorMaterial.xml OpenGL 2.x>
 glColorMaterial
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @mode@ of type @ColorMaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @mode@ of type [ColorMaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorMaterialParameter).
   -> m ()
 glColorMaterial v1 v2 = liftIO $ dyn51 ptr_glColorMaterial v1 v2
 
@@ -7222,7 +7222,7 @@ ptr_glColorP4uiv = unsafePerformIO $ getCommand "glColorP4uiv"
 glColorPointer
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ColorPointerType@.
+  -> GLenum -- ^ @type@ of type [ColorPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -7237,7 +7237,7 @@ ptr_glColorPointer = unsafePerformIO $ getCommand "glColorPointer"
 glColorPointerEXT
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ColorPointerType@.
+  -> GLenum -- ^ @type@ of type [ColorPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLsizei -- ^ @count@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride,count)@ elements of type @a@.
@@ -7253,7 +7253,7 @@ ptr_glColorPointerEXT = unsafePerformIO $ getCommand "glColorPointerEXT"
 glColorPointerListIBM
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ColorPointerType@.
+  -> GLenum -- ^ @type@ of type [ColorPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorPointerType).
   -> GLint -- ^ @stride@.
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @Ptr a@.
   -> GLint -- ^ @ptrstride@.
@@ -7269,7 +7269,7 @@ ptr_glColorPointerListIBM = unsafePerformIO $ getCommand "glColorPointerListIBM"
 glColorPointervINTEL
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @VertexPointerType@.
+  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#VertexPointerType).
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @4@ elements of type @Ptr a@.
   -> m ()
 glColorPointervINTEL v1 v2 v3 = liftIO $ dyn128 ptr_glColorPointervINTEL v1 v2 v3
@@ -7286,8 +7286,8 @@ glColorSubTable
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
   -> GLsizei -- ^ @start@.
   -> GLsizei -- ^ @count@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type,count)@ elements of type @a@.
   -> m ()
 glColorSubTable v1 v2 v3 v4 v5 v6 = liftIO $ dyn129 ptr_glColorSubTable v1 v2 v3 v4 v5 v6
@@ -7303,8 +7303,8 @@ glColorSubTableEXT
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
   -> GLsizei -- ^ @start@.
   -> GLsizei -- ^ @count@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type,count)@ elements of type @a@.
   -> m ()
 glColorSubTableEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn129 ptr_glColorSubTableEXT v1 v2 v3 v4 v5 v6
@@ -7321,8 +7321,8 @@ glColorTable
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @table@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glColorTable v1 v2 v3 v4 v5 v6 = liftIO $ dyn130 ptr_glColorTable v1 v2 v3 v4 v5 v6
@@ -7338,8 +7338,8 @@ glColorTableEXT
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
   -> GLenum -- ^ @internalFormat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @table@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glColorTableEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn130 ptr_glColorTableEXT v1 v2 v3 v4 v5 v6
@@ -7367,8 +7367,8 @@ ptr_glColorTableParameterfv = unsafePerformIO $ getCommand "glColorTableParamete
 
 glColorTableParameterfvSGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTargetSGI@.
-  -> GLenum -- ^ @pname@ of type @ColorTableParameterPNameSGI@.
+  => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
+  -> GLenum -- ^ @pname@ of type [ColorTableParameterPNameSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableParameterPNameSGI).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glColorTableParameterfvSGI v1 v2 v3 = liftIO $ dyn131 ptr_glColorTableParameterfvSGI v1 v2 v3
@@ -7396,8 +7396,8 @@ ptr_glColorTableParameteriv = unsafePerformIO $ getCommand "glColorTableParamete
 
 glColorTableParameterivSGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTargetSGI@.
-  -> GLenum -- ^ @pname@ of type @ColorTableParameterPNameSGI@.
+  => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
+  -> GLenum -- ^ @pname@ of type [ColorTableParameterPNameSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableParameterPNameSGI).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glColorTableParameterivSGI v1 v2 v3 = liftIO $ dyn132 ptr_glColorTableParameterivSGI v1 v2 v3
@@ -7410,11 +7410,11 @@ ptr_glColorTableParameterivSGI = unsafePerformIO $ getCommand "glColorTableParam
 
 glColorTableSGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTargetSGI@.
+  => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @table@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glColorTableSGI v1 v2 v3 v4 v5 v6 = liftIO $ dyn130 ptr_glColorTableSGI v1 v2 v3 v4 v5 v6
@@ -7451,9 +7451,9 @@ glCombinerOutputNV
   -> GLenum -- ^ @sumOutput@ of type @CombinerRegisterNV@.
   -> GLenum -- ^ @scale@ of type @CombinerScaleNV@.
   -> GLenum -- ^ @bias@ of type @CombinerBiasNV@.
-  -> GLboolean -- ^ @abDotProduct@ of type @Boolean@.
-  -> GLboolean -- ^ @cdDotProduct@ of type @Boolean@.
-  -> GLboolean -- ^ @muxSum@ of type @Boolean@.
+  -> GLboolean -- ^ @abDotProduct@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @cdDotProduct@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @muxSum@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glCombinerOutputNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn134 ptr_glCombinerOutputNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
@@ -7597,7 +7597,7 @@ ptr_glCompileShaderIncludeARB = unsafePerformIO $ getCommand "glCompileShaderInc
 glCompressedMultiTexImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7616,7 +7616,7 @@ ptr_glCompressedMultiTexImage1DEXT = unsafePerformIO $ getCommand "glCompressedM
 glCompressedMultiTexImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7636,7 +7636,7 @@ ptr_glCompressedMultiTexImage2DEXT = unsafePerformIO $ getCommand "glCompressedM
 glCompressedMultiTexImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7657,11 +7657,11 @@ ptr_glCompressedMultiTexImage3DEXT = unsafePerformIO $ getCommand "glCompressedM
 glCompressedMultiTexSubImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @bits@ pointing to @imageSize@ elements of type @a@.
   -> m ()
@@ -7676,13 +7676,13 @@ ptr_glCompressedMultiTexSubImage1DEXT = unsafePerformIO $ getCommand "glCompress
 glCompressedMultiTexSubImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @bits@ pointing to @imageSize@ elements of type @a@.
   -> m ()
@@ -7697,7 +7697,7 @@ ptr_glCompressedMultiTexSubImage2DEXT = unsafePerformIO $ getCommand "glCompress
 glCompressedMultiTexSubImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -7705,7 +7705,7 @@ glCompressedMultiTexSubImage3DEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @bits@ pointing to @imageSize@ elements of type @a@.
   -> m ()
@@ -7720,7 +7720,7 @@ ptr_glCompressedMultiTexSubImage3DEXT = unsafePerformIO $ getCommand "glCompress
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage1D.xhtml OpenGL 4.x>
 glCompressedTexImage1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7738,7 +7738,7 @@ ptr_glCompressedTexImage1D = unsafePerformIO $ getCommand "glCompressedTexImage1
 
 glCompressedTexImage1DARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7757,7 +7757,7 @@ ptr_glCompressedTexImage1DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage2D.xhtml OpenGL 4.x>
 glCompressedTexImage2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7776,7 +7776,7 @@ ptr_glCompressedTexImage2D = unsafePerformIO $ getCommand "glCompressedTexImage2
 
 glCompressedTexImage2DARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7796,7 +7796,7 @@ ptr_glCompressedTexImage2DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage3D.xhtml OpenGL 4.x>
 glCompressedTexImage3D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7816,7 +7816,7 @@ ptr_glCompressedTexImage3D = unsafePerformIO $ getCommand "glCompressedTexImage3
 
 glCompressedTexImage3DARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -7857,11 +7857,11 @@ ptr_glCompressedTexImage3DOES = unsafePerformIO $ getCommand "glCompressedTexIma
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage1D.xhtml OpenGL 4.x>
 glCompressedTexSubImage1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@ pointing to @imageSize@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -7875,11 +7875,11 @@ ptr_glCompressedTexSubImage1D = unsafePerformIO $ getCommand "glCompressedTexSub
 
 glCompressedTexSubImage1DARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@ pointing to @imageSize@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -7894,13 +7894,13 @@ ptr_glCompressedTexSubImage1DARB = unsafePerformIO $ getCommand "glCompressedTex
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage2D.xhtml OpenGL 4.x>
 glCompressedTexSubImage2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@ pointing to @imageSize@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -7914,13 +7914,13 @@ ptr_glCompressedTexSubImage2D = unsafePerformIO $ getCommand "glCompressedTexSub
 
 glCompressedTexSubImage2DARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@ pointing to @imageSize@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -7935,7 +7935,7 @@ ptr_glCompressedTexSubImage2DARB = unsafePerformIO $ getCommand "glCompressedTex
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage3D.xhtml OpenGL 4.x>
 glCompressedTexSubImage3D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -7943,7 +7943,7 @@ glCompressedTexSubImage3D
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@ pointing to @imageSize@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -7957,7 +7957,7 @@ ptr_glCompressedTexSubImage3D = unsafePerformIO $ getCommand "glCompressedTexSub
 
 glCompressedTexSubImage3DARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -7965,7 +7965,7 @@ glCompressedTexSubImage3DARB
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@ pointing to @imageSize@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -8002,7 +8002,7 @@ ptr_glCompressedTexSubImage3DOES = unsafePerformIO $ getCommand "glCompressedTex
 glCompressedTextureImage1DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -8021,7 +8021,7 @@ ptr_glCompressedTextureImage1DEXT = unsafePerformIO $ getCommand "glCompressedTe
 glCompressedTextureImage2DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -8041,7 +8041,7 @@ ptr_glCompressedTextureImage2DEXT = unsafePerformIO $ getCommand "glCompressedTe
 glCompressedTextureImage3DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -8081,11 +8081,11 @@ ptr_glCompressedTextureSubImage1D = unsafePerformIO $ getCommand "glCompressedTe
 glCompressedTextureSubImage1DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @bits@ pointing to @imageSize@ elements of type @a@.
   -> m ()
@@ -8121,13 +8121,13 @@ ptr_glCompressedTextureSubImage2D = unsafePerformIO $ getCommand "glCompressedTe
 glCompressedTextureSubImage2DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @bits@ pointing to @imageSize@ elements of type @a@.
   -> m ()
@@ -8165,7 +8165,7 @@ ptr_glCompressedTextureSubImage3D = unsafePerformIO $ getCommand "glCompressedTe
 glCompressedTextureSubImage3DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -8173,7 +8173,7 @@ glCompressedTextureSubImage3DEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @bits@ pointing to @imageSize@ elements of type @a@.
   -> m ()
@@ -8204,8 +8204,8 @@ glConvolutionFilter1D
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @image@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glConvolutionFilter1D v1 v2 v3 v4 v5 v6 = liftIO $ dyn130 ptr_glConvolutionFilter1D v1 v2 v3 v4 v5 v6
@@ -8218,11 +8218,11 @@ ptr_glConvolutionFilter1D = unsafePerformIO $ getCommand "glConvolutionFilter1D"
 
 glConvolutionFilter1DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @image@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glConvolutionFilter1DEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn130 ptr_glConvolutionFilter1DEXT v1 v2 v3 v4 v5 v6
@@ -8240,8 +8240,8 @@ glConvolutionFilter2D
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @image@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glConvolutionFilter2D v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn159 ptr_glConvolutionFilter2D v1 v2 v3 v4 v5 v6 v7
@@ -8254,12 +8254,12 @@ ptr_glConvolutionFilter2D = unsafePerformIO $ getCommand "glConvolutionFilter2D"
 
 glConvolutionFilter2DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @image@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glConvolutionFilter2DEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn159 ptr_glConvolutionFilter2DEXT v1 v2 v3 v4 v5 v6 v7
@@ -8287,8 +8287,8 @@ ptr_glConvolutionParameterf = unsafePerformIO $ getCommand "glConvolutionParamet
 
 glConvolutionParameterfEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameterEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionParameterEXT).
   -> GLfloat -- ^ @params@ of type @CheckedFloat32@.
   -> m ()
 glConvolutionParameterfEXT v1 v2 v3 = liftIO $ dyn160 ptr_glConvolutionParameterfEXT v1 v2 v3
@@ -8316,8 +8316,8 @@ ptr_glConvolutionParameterfv = unsafePerformIO $ getCommand "glConvolutionParame
 
 glConvolutionParameterfvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameterEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionParameterEXT).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glConvolutionParameterfvEXT v1 v2 v3 = liftIO $ dyn131 ptr_glConvolutionParameterfvEXT v1 v2 v3
@@ -8345,8 +8345,8 @@ ptr_glConvolutionParameteri = unsafePerformIO $ getCommand "glConvolutionParamet
 
 glConvolutionParameteriEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameterEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionParameterEXT).
   -> GLint -- ^ @params@ of type @CheckedInt32@.
   -> m ()
 glConvolutionParameteriEXT v1 v2 v3 = liftIO $ dyn62 ptr_glConvolutionParameteriEXT v1 v2 v3
@@ -8374,8 +8374,8 @@ ptr_glConvolutionParameteriv = unsafePerformIO $ getCommand "glConvolutionParame
 
 glConvolutionParameterivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameterEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionParameterEXT).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glConvolutionParameterivEXT v1 v2 v3 = liftIO $ dyn132 ptr_glConvolutionParameterivEXT v1 v2 v3
@@ -8499,7 +8499,7 @@ ptr_glCopyColorTable = unsafePerformIO $ getCommand "glCopyColorTable"
 
 glCopyColorTableSGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTargetSGI@.
+  => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -8532,7 +8532,7 @@ ptr_glCopyConvolutionFilter1D = unsafePerformIO $ getCommand "glCopyConvolutionF
 
 glCopyConvolutionFilter1DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -8566,7 +8566,7 @@ ptr_glCopyConvolutionFilter2D = unsafePerformIO $ getCommand "glCopyConvolutionF
 
 glCopyConvolutionFilter2DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -8689,7 +8689,7 @@ ptr_glCopyImageSubDataOES = unsafePerformIO $ getCommand "glCopyImageSubDataOES"
 glCopyMultiTexImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8708,7 +8708,7 @@ ptr_glCopyMultiTexImage1DEXT = unsafePerformIO $ getCommand "glCopyMultiTexImage
 glCopyMultiTexImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8728,7 +8728,7 @@ ptr_glCopyMultiTexImage2DEXT = unsafePerformIO $ getCommand "glCopyMultiTexImage
 glCopyMultiTexSubImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8746,7 +8746,7 @@ ptr_glCopyMultiTexSubImage1DEXT = unsafePerformIO $ getCommand "glCopyMultiTexSu
 glCopyMultiTexSubImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -8766,7 +8766,7 @@ ptr_glCopyMultiTexSubImage2DEXT = unsafePerformIO $ getCommand "glCopyMultiTexSu
 glCopyMultiTexSubImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -8821,7 +8821,7 @@ glCopyPixels
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @type@ of type @PixelCopyType@.
+  -> GLenum -- ^ @type@ of type [PixelCopyType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelCopyType).
   -> m ()
 glCopyPixels v1 v2 v3 v4 v5 = liftIO $ dyn174 ptr_glCopyPixels v1 v2 v3 v4 v5
 
@@ -8834,7 +8834,7 @@ ptr_glCopyPixels = unsafePerformIO $ getCommand "glCopyPixels"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage1D.xhtml OpenGL 4.x>
 glCopyTexImage1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8852,7 +8852,7 @@ ptr_glCopyTexImage1D = unsafePerformIO $ getCommand "glCopyTexImage1D"
 
 glCopyTexImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8871,7 +8871,7 @@ ptr_glCopyTexImage1DEXT = unsafePerformIO $ getCommand "glCopyTexImage1DEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage2D.xhtml OpenGL 4.x>
 glCopyTexImage2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8890,7 +8890,7 @@ ptr_glCopyTexImage2D = unsafePerformIO $ getCommand "glCopyTexImage2D"
 
 glCopyTexImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8910,7 +8910,7 @@ ptr_glCopyTexImage2DEXT = unsafePerformIO $ getCommand "glCopyTexImage2DEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage1D.xhtml OpenGL 4.x>
 glCopyTexSubImage1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8927,7 +8927,7 @@ ptr_glCopyTexSubImage1D = unsafePerformIO $ getCommand "glCopyTexSubImage1D"
 
 glCopyTexSubImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -8945,7 +8945,7 @@ ptr_glCopyTexSubImage1DEXT = unsafePerformIO $ getCommand "glCopyTexSubImage1DEX
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage2D.xhtml OpenGL 4.x>
 glCopyTexSubImage2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -8964,7 +8964,7 @@ ptr_glCopyTexSubImage2D = unsafePerformIO $ getCommand "glCopyTexSubImage2D"
 
 glCopyTexSubImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -8984,7 +8984,7 @@ ptr_glCopyTexSubImage2DEXT = unsafePerformIO $ getCommand "glCopyTexSubImage2DEX
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml OpenGL 4.x>
 glCopyTexSubImage3D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -9004,7 +9004,7 @@ ptr_glCopyTexSubImage3D = unsafePerformIO $ getCommand "glCopyTexSubImage3D"
 
 glCopyTexSubImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -9045,7 +9045,7 @@ ptr_glCopyTexSubImage3DOES = unsafePerformIO $ getCommand "glCopyTexSubImage3DOE
 glCopyTextureImage1DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -9064,7 +9064,7 @@ ptr_glCopyTextureImage1DEXT = unsafePerformIO $ getCommand "glCopyTextureImage1D
 glCopyTextureImage2DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -9117,7 +9117,7 @@ ptr_glCopyTextureSubImage1D = unsafePerformIO $ getCommand "glCopyTextureSubImag
 glCopyTextureSubImage1DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @x@ of type @WinCoord@.
@@ -9155,7 +9155,7 @@ ptr_glCopyTextureSubImage2D = unsafePerformIO $ getCommand "glCopyTextureSubImag
 glCopyTextureSubImage2DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -9196,7 +9196,7 @@ ptr_glCopyTextureSubImage3D = unsafePerformIO $ getCommand "glCopyTextureSubImag
 glCopyTextureSubImage3DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -9599,7 +9599,7 @@ ptr_glCreateVertexArrays = unsafePerformIO $ getCommand "glCreateVertexArrays"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCullFace.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCullFace.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCullFace.xhtml OpenGL 4.x>
 glCullFace
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @CullFaceMode@.
+  => GLenum -- ^ @mode@ of type [CullFaceMode](Graphics-Rendering-OpenGL-Raw-Groups.html#CullFaceMode).
   -> m ()
 glCullFace v1 = liftIO $ dyn4 ptr_glCullFace v1
 
@@ -9720,7 +9720,7 @@ glDebugMessageControl
   -> GLenum -- ^ @severity@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @ids@ pointing to @count@ elements of type @GLuint@.
-  -> GLboolean -- ^ @enabled@ of type @Boolean@.
+  -> GLboolean -- ^ @enabled@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glDebugMessageControl v1 v2 v3 v4 v5 v6 = liftIO $ dyn205 ptr_glDebugMessageControl v1 v2 v3 v4 v5 v6
 
@@ -9737,7 +9737,7 @@ glDebugMessageControlARB
   -> GLenum -- ^ @severity@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @ids@ pointing to @count@ elements of type @GLuint@.
-  -> GLboolean -- ^ @enabled@ of type @Boolean@.
+  -> GLboolean -- ^ @enabled@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glDebugMessageControlARB v1 v2 v3 v4 v5 v6 = liftIO $ dyn205 ptr_glDebugMessageControlARB v1 v2 v3 v4 v5 v6
 
@@ -9770,7 +9770,7 @@ glDebugMessageEnableAMD
   -> GLenum -- ^ @severity@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @ids@ pointing to @count@ elements of type @GLuint@.
-  -> GLboolean -- ^ @enabled@ of type @Boolean@.
+  -> GLboolean -- ^ @enabled@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glDebugMessageEnableAMD v1 v2 v3 v4 v5 = liftIO $ dyn206 ptr_glDebugMessageEnableAMD v1 v2 v3 v4 v5
 
@@ -9850,7 +9850,7 @@ ptr_glDebugMessageInsertKHR = unsafePerformIO $ getCommand "glDebugMessageInsert
 
 glDeformSGIX
   :: MonadIO m
-  => GLbitfield -- ^ @mask@ of type @FfdMaskSGIX@.
+  => GLbitfield -- ^ @mask@ of type [FfdMaskSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FfdMaskSGIX).
   -> m ()
 glDeformSGIX v1 = liftIO $ dyn69 ptr_glDeformSGIX v1
 
@@ -9862,7 +9862,7 @@ ptr_glDeformSGIX = unsafePerformIO $ getCommand "glDeformSGIX"
 
 glDeformationMap3dSGIX
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FfdTargetSGIX@.
+  => GLenum -- ^ @target@ of type [FfdTargetSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FfdTargetSGIX).
   -> GLdouble -- ^ @u1@ of type @CoordD@.
   -> GLdouble -- ^ @u2@ of type @CoordD@.
   -> GLint -- ^ @ustride@.
@@ -9887,7 +9887,7 @@ ptr_glDeformationMap3dSGIX = unsafePerformIO $ getCommand "glDeformationMap3dSGI
 
 glDeformationMap3fSGIX
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FfdTargetSGIX@.
+  => GLenum -- ^ @target@ of type [FfdTargetSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FfdTargetSGIX).
   -> GLfloat -- ^ @u1@ of type @CoordF@.
   -> GLfloat -- ^ @u2@ of type @CoordF@.
   -> GLint -- ^ @ustride@.
@@ -10491,7 +10491,7 @@ ptr_glDepthBoundsdNV = unsafePerformIO $ getCommand "glDepthBoundsdNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthFunc.xhtml OpenGL 4.x>
 glDepthFunc
   :: MonadIO m
-  => GLenum -- ^ @func@ of type @DepthFunction@.
+  => GLenum -- ^ @func@ of type [DepthFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#DepthFunction).
   -> m ()
 glDepthFunc v1 = liftIO $ dyn4 ptr_glDepthFunc v1
 
@@ -10504,7 +10504,7 @@ ptr_glDepthFunc = unsafePerformIO $ getCommand "glDepthFunc"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthMask.xhtml OpenGL 4.x>
 glDepthMask
   :: MonadIO m
-  => GLboolean -- ^ @flag@ of type @Boolean@.
+  => GLboolean -- ^ @flag@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glDepthMask v1 = liftIO $ dyn190 ptr_glDepthMask v1
 
@@ -10681,7 +10681,7 @@ ptr_glDetachShader = unsafePerformIO $ getCommand "glDetachShader"
 
 glDetailTexFuncSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLsizei -- ^ @n@.
   -> Ptr GLfloat -- ^ @points@ pointing to @n*2@ elements of type @GLfloat@.
   -> m ()
@@ -10696,7 +10696,7 @@ ptr_glDetailTexFuncSGIS = unsafePerformIO $ getCommand "glDetailTexFuncSGIS"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>
 glDisable
   :: MonadIO m
-  => GLenum -- ^ @cap@ of type @EnableCap@.
+  => GLenum -- ^ @cap@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> m ()
 glDisable v1 = liftIO $ dyn4 ptr_glDisable v1
 
@@ -10709,7 +10709,7 @@ ptr_glDisable = unsafePerformIO $ getCommand "glDisable"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>
 glDisableClientState
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> m ()
 glDisableClientState v1 = liftIO $ dyn4 ptr_glDisableClientState v1
 
@@ -10721,7 +10721,7 @@ ptr_glDisableClientState = unsafePerformIO $ getCommand "glDisableClientState"
 
 glDisableClientStateIndexedEXT
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> GLuint -- ^ @index@.
   -> m ()
 glDisableClientStateIndexedEXT v1 v2 = liftIO $ dyn16 ptr_glDisableClientStateIndexedEXT v1 v2
@@ -10734,7 +10734,7 @@ ptr_glDisableClientStateIndexedEXT = unsafePerformIO $ getCommand "glDisableClie
 
 glDisableClientStateiEXT
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> GLuint -- ^ @index@.
   -> m ()
 glDisableClientStateiEXT v1 v2 = liftIO $ dyn16 ptr_glDisableClientStateiEXT v1 v2
@@ -10812,7 +10812,7 @@ ptr_glDisableVertexArrayAttribEXT = unsafePerformIO $ getCommand "glDisableVerte
 glDisableVertexArrayEXT
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
-  -> GLenum -- ^ @array@ of type @EnableCap@.
+  -> GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> m ()
 glDisableVertexArrayEXT v1 v2 = liftIO $ dyn15 ptr_glDisableVertexArrayEXT v1 v2
 
@@ -10975,7 +10975,7 @@ ptr_glDispatchComputeIndirect = unsafePerformIO $ getCommand "glDispatchComputeI
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawArrays.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawArrays.xhtml OpenGL 4.x>
 glDrawArrays
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> m ()
@@ -10989,7 +10989,7 @@ ptr_glDrawArrays = unsafePerformIO $ getCommand "glDrawArrays"
 
 glDrawArraysEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> m ()
@@ -11004,7 +11004,7 @@ ptr_glDrawArraysEXT = unsafePerformIO $ getCommand "glDrawArraysEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysIndirect.xhtml OpenGL 4.x>
 glDrawArraysIndirect
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr a -- ^ @indirect@.
   -> m ()
 glDrawArraysIndirect v1 v2 = liftIO $ dyn229 ptr_glDrawArraysIndirect v1 v2
@@ -11018,7 +11018,7 @@ ptr_glDrawArraysIndirect = unsafePerformIO $ getCommand "glDrawArraysIndirect"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArraysInstanced.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstanced.xhtml OpenGL 4.x>
 glDrawArraysInstanced
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @instancecount@.
@@ -11033,7 +11033,7 @@ ptr_glDrawArraysInstanced = unsafePerformIO $ getCommand "glDrawArraysInstanced"
 
 glDrawArraysInstancedANGLE
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @primcount@.
@@ -11048,7 +11048,7 @@ ptr_glDrawArraysInstancedANGLE = unsafePerformIO $ getCommand "glDrawArraysInsta
 
 glDrawArraysInstancedARB
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @primcount@.
@@ -11064,7 +11064,7 @@ ptr_glDrawArraysInstancedARB = unsafePerformIO $ getCommand "glDrawArraysInstanc
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstancedBaseInstance.xhtml OpenGL 4.x>
 glDrawArraysInstancedBaseInstance
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @instancecount@.
@@ -11080,7 +11080,7 @@ ptr_glDrawArraysInstancedBaseInstance = unsafePerformIO $ getCommand "glDrawArra
 
 glDrawArraysInstancedBaseInstanceEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @instancecount@.
@@ -11096,7 +11096,7 @@ ptr_glDrawArraysInstancedBaseInstanceEXT = unsafePerformIO $ getCommand "glDrawA
 
 glDrawArraysInstancedEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @start@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @primcount@.
@@ -11111,7 +11111,7 @@ ptr_glDrawArraysInstancedEXT = unsafePerformIO $ getCommand "glDrawArraysInstanc
 
 glDrawArraysInstancedNV
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @primcount@.
@@ -11127,7 +11127,7 @@ ptr_glDrawArraysInstancedNV = unsafePerformIO $ getCommand "glDrawArraysInstance
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffer.xhtml OpenGL 4.x>
 glDrawBuffer
   :: MonadIO m
-  => GLenum -- ^ @buf@ of type @DrawBufferMode@.
+  => GLenum -- ^ @buf@ of type [DrawBufferMode](Graphics-Rendering-OpenGL-Raw-Groups.html#DrawBufferMode).
   -> m ()
 glDrawBuffer v1 = liftIO $ dyn4 ptr_glDrawBuffer v1
 
@@ -11283,7 +11283,7 @@ ptr_glDrawCommandsStatesNV = unsafePerformIO $ getCommand "glDrawCommandsStatesN
 
 glDrawElementArrayAPPLE
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> m ()
@@ -11297,7 +11297,7 @@ ptr_glDrawElementArrayAPPLE = unsafePerformIO $ getCommand "glDrawElementArrayAP
 
 glDrawElementArrayATI
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> m ()
 glDrawElementArrayATI v1 v2 = liftIO $ dyn238 ptr_glDrawElementArrayATI v1 v2
@@ -11311,7 +11311,7 @@ ptr_glDrawElementArrayATI = unsafePerformIO $ getCommand "glDrawElementArrayATI"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElements.xhtml OpenGL 4.x>
 glDrawElements
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11327,7 +11327,7 @@ ptr_glDrawElements = unsafePerformIO $ getCommand "glDrawElements"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsBaseVertex.xhtml OpenGL 4.x>
 glDrawElementsBaseVertex
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11343,7 +11343,7 @@ ptr_glDrawElementsBaseVertex = unsafePerformIO $ getCommand "glDrawElementsBaseV
 
 glDrawElementsBaseVertexEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11359,7 +11359,7 @@ ptr_glDrawElementsBaseVertexEXT = unsafePerformIO $ getCommand "glDrawElementsBa
 
 glDrawElementsBaseVertexOES
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11376,7 +11376,7 @@ ptr_glDrawElementsBaseVertexOES = unsafePerformIO $ getCommand "glDrawElementsBa
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsIndirect.xhtml OpenGL 4.x>
 glDrawElementsIndirect
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @indirect@.
   -> m ()
@@ -11391,7 +11391,7 @@ ptr_glDrawElementsIndirect = unsafePerformIO $ getCommand "glDrawElementsIndirec
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstanced.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstanced.xhtml OpenGL 4.x>
 glDrawElementsInstanced
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11407,7 +11407,7 @@ ptr_glDrawElementsInstanced = unsafePerformIO $ getCommand "glDrawElementsInstan
 
 glDrawElementsInstancedANGLE
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11423,7 +11423,7 @@ ptr_glDrawElementsInstancedANGLE = unsafePerformIO $ getCommand "glDrawElementsI
 
 glDrawElementsInstancedARB
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11440,7 +11440,7 @@ ptr_glDrawElementsInstancedARB = unsafePerformIO $ getCommand "glDrawElementsIns
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseInstance.xhtml OpenGL 4.x>
 glDrawElementsInstancedBaseInstance
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @indices@ pointing to @count@ elements of type @a@.
@@ -11457,7 +11457,7 @@ ptr_glDrawElementsInstancedBaseInstance = unsafePerformIO $ getCommand "glDrawEl
 
 glDrawElementsInstancedBaseInstanceEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @indices@ pointing to @count@ elements of type @a@.
@@ -11475,7 +11475,7 @@ ptr_glDrawElementsInstancedBaseInstanceEXT = unsafePerformIO $ getCommand "glDra
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstancedBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertex.xhtml OpenGL 4.x>
 glDrawElementsInstancedBaseVertex
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11493,7 +11493,7 @@ ptr_glDrawElementsInstancedBaseVertex = unsafePerformIO $ getCommand "glDrawElem
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertexBaseInstance.xhtml OpenGL 4.x>
 glDrawElementsInstancedBaseVertexBaseInstance
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @indices@ pointing to @count@ elements of type @a@.
@@ -11511,7 +11511,7 @@ ptr_glDrawElementsInstancedBaseVertexBaseInstance = unsafePerformIO $ getCommand
 
 glDrawElementsInstancedBaseVertexBaseInstanceEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @indices@ pointing to @count@ elements of type @a@.
@@ -11529,7 +11529,7 @@ ptr_glDrawElementsInstancedBaseVertexBaseInstanceEXT = unsafePerformIO $ getComm
 
 glDrawElementsInstancedBaseVertexEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11546,7 +11546,7 @@ ptr_glDrawElementsInstancedBaseVertexEXT = unsafePerformIO $ getCommand "glDrawE
 
 glDrawElementsInstancedBaseVertexOES
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11563,7 +11563,7 @@ ptr_glDrawElementsInstancedBaseVertexOES = unsafePerformIO $ getCommand "glDrawE
 
 glDrawElementsInstancedEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11579,7 +11579,7 @@ ptr_glDrawElementsInstancedEXT = unsafePerformIO $ getCommand "glDrawElementsIns
 
 glDrawElementsInstancedNV
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @indices@ pointing to @COMPSIZE(count,type)@ elements of type @a@.
@@ -11595,7 +11595,7 @@ ptr_glDrawElementsInstancedNV = unsafePerformIO $ getCommand "glDrawElementsInst
 
 glDrawMeshArraysSUN
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> GLsizei -- ^ @width@.
@@ -11613,8 +11613,8 @@ glDrawPixels
   :: MonadIO m
   => GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glDrawPixels v1 v2 v3 v4 v5 = liftIO $ dyn246 ptr_glDrawPixels v1 v2 v3 v4 v5
@@ -11627,7 +11627,7 @@ ptr_glDrawPixels = unsafePerformIO $ getCommand "glDrawPixels"
 
 glDrawRangeElementArrayAPPLE
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> GLint -- ^ @first@.
@@ -11643,7 +11643,7 @@ ptr_glDrawRangeElementArrayAPPLE = unsafePerformIO $ getCommand "glDrawRangeElem
 
 glDrawRangeElementArrayATI
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> GLsizei -- ^ @count@.
@@ -11659,7 +11659,7 @@ ptr_glDrawRangeElementArrayATI = unsafePerformIO $ getCommand "glDrawRangeElemen
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawRangeElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElements.xhtml OpenGL 4.x>
 glDrawRangeElements
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> GLsizei -- ^ @count@.
@@ -11677,7 +11677,7 @@ ptr_glDrawRangeElements = unsafePerformIO $ getCommand "glDrawRangeElements"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElementsBaseVertex.xhtml OpenGL 4.x>
 glDrawRangeElementsBaseVertex
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> GLsizei -- ^ @count@.
@@ -11695,7 +11695,7 @@ ptr_glDrawRangeElementsBaseVertex = unsafePerformIO $ getCommand "glDrawRangeEle
 
 glDrawRangeElementsBaseVertexEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> GLsizei -- ^ @count@.
@@ -11713,7 +11713,7 @@ ptr_glDrawRangeElementsBaseVertexEXT = unsafePerformIO $ getCommand "glDrawRange
 
 glDrawRangeElementsBaseVertexOES
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> GLsizei -- ^ @count@.
@@ -11731,7 +11731,7 @@ ptr_glDrawRangeElementsBaseVertexOES = unsafePerformIO $ getCommand "glDrawRange
 
 glDrawRangeElementsEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> GLsizei -- ^ @count@.
@@ -11883,7 +11883,7 @@ ptr_glDrawTexxvOES = unsafePerformIO $ getCommand "glDrawTexxvOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedback.xhtml OpenGL 4.x>
 glDrawTransformFeedback
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @id@.
   -> m ()
 glDrawTransformFeedback v1 v2 = liftIO $ dyn16 ptr_glDrawTransformFeedback v1 v2
@@ -11897,7 +11897,7 @@ ptr_glDrawTransformFeedback = unsafePerformIO $ getCommand "glDrawTransformFeedb
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackInstanced.xhtml OpenGL 4.x>
 glDrawTransformFeedbackInstanced
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @id@.
   -> GLsizei -- ^ @instancecount@.
   -> m ()
@@ -11911,7 +11911,7 @@ ptr_glDrawTransformFeedbackInstanced = unsafePerformIO $ getCommand "glDrawTrans
 
 glDrawTransformFeedbackNV
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @id@.
   -> m ()
 glDrawTransformFeedbackNV v1 v2 = liftIO $ dyn16 ptr_glDrawTransformFeedbackNV v1 v2
@@ -11925,7 +11925,7 @@ ptr_glDrawTransformFeedbackNV = unsafePerformIO $ getCommand "glDrawTransformFee
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackStream.xhtml OpenGL 4.x>
 glDrawTransformFeedbackStream
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @id@.
   -> GLuint -- ^ @stream@.
   -> m ()
@@ -11940,7 +11940,7 @@ ptr_glDrawTransformFeedbackStream = unsafePerformIO $ getCommand "glDrawTransfor
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackStreamInstanced.xhtml OpenGL 4.x>
 glDrawTransformFeedbackStreamInstanced
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @id@.
   -> GLuint -- ^ @stream@.
   -> GLsizei -- ^ @instancecount@.
@@ -11982,7 +11982,7 @@ ptr_glEGLImageTargetTexture2DOES = unsafePerformIO $ getCommand "glEGLImageTarge
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml OpenGL 2.x>
 glEdgeFlag
   :: MonadIO m
-  => GLboolean -- ^ @flag@ of type @Boolean@.
+  => GLboolean -- ^ @flag@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glEdgeFlag v1 = liftIO $ dyn190 ptr_glEdgeFlag v1
 
@@ -12022,7 +12022,7 @@ glEdgeFlagPointerEXT
   :: MonadIO m
   => GLsizei -- ^ @stride@.
   -> GLsizei -- ^ @count@.
-  -> Ptr GLboolean -- ^ @pointer@ pointing to @COMPSIZE(stride,count)@ elements of type @Boolean@.
+  -> Ptr GLboolean -- ^ @pointer@ pointing to @COMPSIZE(stride,count)@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glEdgeFlagPointerEXT v1 v2 v3 = liftIO $ dyn260 ptr_glEdgeFlagPointerEXT v1 v2 v3
 
@@ -12049,7 +12049,7 @@ ptr_glEdgeFlagPointerListIBM = unsafePerformIO $ getCommand "glEdgeFlagPointerLi
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml OpenGL 2.x>
 glEdgeFlagv
   :: MonadIO m
-  => Ptr GLboolean -- ^ @flag@ pointing to @1@ element of type @Boolean@.
+  => Ptr GLboolean -- ^ @flag@ pointing to @1@ element of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glEdgeFlagv v1 = liftIO $ dyn262 ptr_glEdgeFlagv v1
 
@@ -12088,7 +12088,7 @@ ptr_glElementPointerATI = unsafePerformIO $ getCommand "glElementPointerATI"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>
 glEnable
   :: MonadIO m
-  => GLenum -- ^ @cap@ of type @EnableCap@.
+  => GLenum -- ^ @cap@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> m ()
 glEnable v1 = liftIO $ dyn4 ptr_glEnable v1
 
@@ -12101,7 +12101,7 @@ ptr_glEnable = unsafePerformIO $ getCommand "glEnable"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>
 glEnableClientState
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> m ()
 glEnableClientState v1 = liftIO $ dyn4 ptr_glEnableClientState v1
 
@@ -12113,7 +12113,7 @@ ptr_glEnableClientState = unsafePerformIO $ getCommand "glEnableClientState"
 
 glEnableClientStateIndexedEXT
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> GLuint -- ^ @index@.
   -> m ()
 glEnableClientStateIndexedEXT v1 v2 = liftIO $ dyn16 ptr_glEnableClientStateIndexedEXT v1 v2
@@ -12126,7 +12126,7 @@ ptr_glEnableClientStateIndexedEXT = unsafePerformIO $ getCommand "glEnableClient
 
 glEnableClientStateiEXT
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> GLuint -- ^ @index@.
   -> m ()
 glEnableClientStateiEXT v1 v2 = liftIO $ dyn16 ptr_glEnableClientStateiEXT v1 v2
@@ -12204,7 +12204,7 @@ ptr_glEnableVertexArrayAttribEXT = unsafePerformIO $ getCommand "glEnableVertexA
 glEnableVertexArrayEXT
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
-  -> GLenum -- ^ @array@ of type @EnableCap@.
+  -> GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> m ()
 glEnableVertexArrayEXT v1 v2 = liftIO $ dyn15 ptr_glEnableVertexArrayEXT v1 v2
 
@@ -12700,7 +12700,7 @@ ptr_glEvalMapsNV = unsafePerformIO $ getCommand "glEvalMapsNV"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalMesh.xml OpenGL 2.x>
 glEvalMesh1
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MeshMode1@.
+  => GLenum -- ^ @mode@ of type [MeshMode1](Graphics-Rendering-OpenGL-Raw-Groups.html#MeshMode1).
   -> GLint -- ^ @i1@ of type @CheckedInt32@.
   -> GLint -- ^ @i2@ of type @CheckedInt32@.
   -> m ()
@@ -12715,7 +12715,7 @@ ptr_glEvalMesh1 = unsafePerformIO $ getCommand "glEvalMesh1"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalMesh.xml OpenGL 2.x>
 glEvalMesh2
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MeshMode2@.
+  => GLenum -- ^ @mode@ of type [MeshMode2](Graphics-Rendering-OpenGL-Raw-Groups.html#MeshMode2).
   -> GLint -- ^ @i1@ of type @CheckedInt32@.
   -> GLint -- ^ @i2@ of type @CheckedInt32@.
   -> GLint -- ^ @j1@ of type @CheckedInt32@.
@@ -12975,7 +12975,7 @@ ptr_glExtractComponentEXT = unsafePerformIO $ getCommand "glExtractComponentEXT"
 glFeedbackBuffer
   :: MonadIO m
   => GLsizei -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @FeedbackType@.
+  -> GLenum -- ^ @type@ of type [FeedbackType](Graphics-Rendering-OpenGL-Raw-Groups.html#FeedbackType).
   -> Ptr GLfloat -- ^ @buffer@ pointing to @size@ elements of type @FeedbackElement@.
   -> m ()
 glFeedbackBuffer v1 v2 v3 = liftIO $ dyn273 ptr_glFeedbackBuffer v1 v2 v3
@@ -13273,7 +13273,7 @@ ptr_glFogCoordFormatNV = unsafePerformIO $ getCommand "glFogCoordFormatNV"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoordPointer.xml OpenGL 2.x>
 glFogCoordPointer
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @FogPointerTypeEXT@.
+  => GLenum -- ^ @type@ of type [FogPointerTypeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#FogPointerTypeEXT).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
   -> m ()
@@ -13287,7 +13287,7 @@ ptr_glFogCoordPointer = unsafePerformIO $ getCommand "glFogCoordPointer"
 
 glFogCoordPointerEXT
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @FogPointerTypeEXT@.
+  => GLenum -- ^ @type@ of type [FogPointerTypeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#FogPointerTypeEXT).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
   -> m ()
@@ -13301,7 +13301,7 @@ ptr_glFogCoordPointerEXT = unsafePerformIO $ getCommand "glFogCoordPointerEXT"
 
 glFogCoordPointerListIBM
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @FogPointerTypeIBM@.
+  => GLenum -- ^ @type@ of type [FogPointerTypeIBM](Graphics-Rendering-OpenGL-Raw-Groups.html#FogPointerTypeIBM).
   -> GLint -- ^ @stride@.
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @Ptr a@.
   -> GLint -- ^ @ptrstride@.
@@ -13454,7 +13454,7 @@ ptr_glFogFuncSGIS = unsafePerformIO $ getCommand "glFogFuncSGIS"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
 glFogf
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FogParameter@.
+  => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glFogf v1 v2 = liftIO $ dyn0 ptr_glFogf v1 v2
@@ -13468,7 +13468,7 @@ ptr_glFogf = unsafePerformIO $ getCommand "glFogf"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
 glFogfv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FogParameter@.
+  => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glFogfv v1 v2 = liftIO $ dyn93 ptr_glFogfv v1 v2
@@ -13482,7 +13482,7 @@ ptr_glFogfv = unsafePerformIO $ getCommand "glFogfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
 glFogi
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FogParameter@.
+  => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glFogi v1 v2 = liftIO $ dyn55 ptr_glFogi v1 v2
@@ -13496,7 +13496,7 @@ ptr_glFogi = unsafePerformIO $ getCommand "glFogi"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
 glFogiv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FogParameter@.
+  => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glFogiv v1 v2 = liftIO $ dyn135 ptr_glFogiv v1 v2
@@ -13561,8 +13561,8 @@ ptr_glFogxvOES = unsafePerformIO $ getCommand "glFogxvOES"
 
 glFragmentColorMaterialSGIX
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @mode@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @mode@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> m ()
 glFragmentColorMaterialSGIX v1 v2 = liftIO $ dyn51 ptr_glFragmentColorMaterialSGIX v1 v2
 
@@ -13586,7 +13586,7 @@ ptr_glFragmentCoverageColorNV = unsafePerformIO $ getCommand "glFragmentCoverage
 
 glFragmentLightModelfSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FragmentLightModelParameterSGIX@.
+  => GLenum -- ^ @pname@ of type [FragmentLightModelParameterSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FragmentLightModelParameterSGIX).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glFragmentLightModelfSGIX v1 v2 = liftIO $ dyn0 ptr_glFragmentLightModelfSGIX v1 v2
@@ -13599,7 +13599,7 @@ ptr_glFragmentLightModelfSGIX = unsafePerformIO $ getCommand "glFragmentLightMod
 
 glFragmentLightModelfvSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FragmentLightModelParameterSGIX@.
+  => GLenum -- ^ @pname@ of type [FragmentLightModelParameterSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FragmentLightModelParameterSGIX).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glFragmentLightModelfvSGIX v1 v2 = liftIO $ dyn93 ptr_glFragmentLightModelfvSGIX v1 v2
@@ -13612,7 +13612,7 @@ ptr_glFragmentLightModelfvSGIX = unsafePerformIO $ getCommand "glFragmentLightMo
 
 glFragmentLightModeliSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FragmentLightModelParameterSGIX@.
+  => GLenum -- ^ @pname@ of type [FragmentLightModelParameterSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FragmentLightModelParameterSGIX).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glFragmentLightModeliSGIX v1 v2 = liftIO $ dyn55 ptr_glFragmentLightModeliSGIX v1 v2
@@ -13625,7 +13625,7 @@ ptr_glFragmentLightModeliSGIX = unsafePerformIO $ getCommand "glFragmentLightMod
 
 glFragmentLightModelivSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @FragmentLightModelParameterSGIX@.
+  => GLenum -- ^ @pname@ of type [FragmentLightModelParameterSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FragmentLightModelParameterSGIX).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glFragmentLightModelivSGIX v1 v2 = liftIO $ dyn135 ptr_glFragmentLightModelivSGIX v1 v2
@@ -13694,8 +13694,8 @@ ptr_glFragmentLightivSGIX = unsafePerformIO $ getCommand "glFragmentLightivSGIX"
 
 glFragmentMaterialfSGIX
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glFragmentMaterialfSGIX v1 v2 v3 = liftIO $ dyn160 ptr_glFragmentMaterialfSGIX v1 v2 v3
@@ -13708,8 +13708,8 @@ ptr_glFragmentMaterialfSGIX = unsafePerformIO $ getCommand "glFragmentMaterialfS
 
 glFragmentMaterialfvSGIX
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glFragmentMaterialfvSGIX v1 v2 v3 = liftIO $ dyn131 ptr_glFragmentMaterialfvSGIX v1 v2 v3
@@ -13722,8 +13722,8 @@ ptr_glFragmentMaterialfvSGIX = unsafePerformIO $ getCommand "glFragmentMaterialf
 
 glFragmentMaterialiSGIX
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glFragmentMaterialiSGIX v1 v2 v3 = liftIO $ dyn62 ptr_glFragmentMaterialiSGIX v1 v2 v3
@@ -13736,8 +13736,8 @@ ptr_glFragmentMaterialiSGIX = unsafePerformIO $ getCommand "glFragmentMaterialiS
 
 glFragmentMaterialivSGIX
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glFragmentMaterialivSGIX v1 v2 v3 = liftIO $ dyn132 ptr_glFragmentMaterialivSGIX v1 v2 v3
@@ -13774,7 +13774,7 @@ ptr_glFrameZoomSGIX = unsafePerformIO $ getCommand "glFrameZoomSGIX"
 glFramebufferDrawBufferEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @mode@ of type @DrawBufferMode@.
+  -> GLenum -- ^ @mode@ of type [DrawBufferMode](Graphics-Rendering-OpenGL-Raw-Groups.html#DrawBufferMode).
   -> m ()
 glFramebufferDrawBufferEXT v1 v2 = liftIO $ dyn15 ptr_glFramebufferDrawBufferEXT v1 v2
 
@@ -13788,7 +13788,7 @@ glFramebufferDrawBuffersEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
   -> GLsizei -- ^ @n@.
-  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type @DrawBufferMode@.
+  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type [DrawBufferMode](Graphics-Rendering-OpenGL-Raw-Groups.html#DrawBufferMode).
   -> m ()
 glFramebufferDrawBuffersEXT v1 v2 v3 = liftIO $ dyn281 ptr_glFramebufferDrawBuffersEXT v1 v2 v3
 
@@ -13816,7 +13816,7 @@ ptr_glFramebufferParameteri = unsafePerformIO $ getCommand "glFramebufferParamet
 glFramebufferReadBufferEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @mode@ of type @ReadBufferMode@.
+  -> GLenum -- ^ @mode@ of type [ReadBufferMode](Graphics-Rendering-OpenGL-Raw-Groups.html#ReadBufferMode).
   -> m ()
 glFramebufferReadBufferEXT v1 v2 = liftIO $ dyn15 ptr_glFramebufferReadBufferEXT v1 v2
 
@@ -14122,7 +14122,7 @@ glFramebufferTextureFaceARB
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @face@ of type @TextureTarget@.
+  -> GLenum -- ^ @face@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> m ()
 glFramebufferTextureFaceARB v1 v2 v3 v4 v5 = liftIO $ dyn288 ptr_glFramebufferTextureFaceARB v1 v2 v3 v4 v5
 
@@ -14138,7 +14138,7 @@ glFramebufferTextureFaceEXT
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @face@ of type @TextureTarget@.
+  -> GLenum -- ^ @face@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> m ()
 glFramebufferTextureFaceEXT v1 v2 v3 v4 v5 = liftIO $ dyn288 ptr_glFramebufferTextureFaceEXT v1 v2 v3 v4 v5
 
@@ -14244,7 +14244,7 @@ ptr_glFreeObjectBufferATI = unsafePerformIO $ getCommand "glFreeObjectBufferATI"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glFrontFace.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glFrontFace.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFrontFace.xhtml OpenGL 4.x>
 glFrontFace
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @FrontFaceDirection@.
+  => GLenum -- ^ @mode@ of type [FrontFaceDirection](Graphics-Rendering-OpenGL-Raw-Groups.html#FrontFaceDirection).
   -> m ()
 glFrontFace v1 = liftIO $ dyn4 ptr_glFrontFace v1
 
@@ -14830,7 +14830,7 @@ ptr_glGenerateMipmapOES = unsafePerformIO $ getCommand "glGenerateMipmapOES"
 glGenerateMultiTexMipmapEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> m ()
 glGenerateMultiTexMipmapEXT v1 v2 = liftIO $ dyn51 ptr_glGenerateMultiTexMipmapEXT v1 v2
 
@@ -14856,7 +14856,7 @@ ptr_glGenerateTextureMipmap = unsafePerformIO $ getCommand "glGenerateTextureMip
 glGenerateTextureMipmapEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> m ()
 glGenerateTextureMipmapEXT v1 v2 = liftIO $ dyn15 ptr_glGenerateTextureMipmapEXT v1 v2
 
@@ -15096,7 +15096,7 @@ ptr_glGetActiveVaryingNV = unsafePerformIO $ getCommand "glGetActiveVaryingNV"
 
 glGetArrayObjectfvATI
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
   -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
@@ -15110,7 +15110,7 @@ ptr_glGetArrayObjectfvATI = unsafePerformIO $ getCommand "glGetArrayObjectfvATI"
 
 glGetArrayObjectivATI
   :: MonadIO m
-  => GLenum -- ^ @array@ of type @EnableCap@.
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
@@ -15184,7 +15184,7 @@ glGetBooleanIndexedvEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
-  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @Boolean@.
+  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glGetBooleanIndexedvEXT v1 v2 v3 = liftIO $ dyn308 ptr_glGetBooleanIndexedvEXT v1 v2 v3
 
@@ -15199,7 +15199,7 @@ glGetBooleani_v
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
-  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @Boolean@.
+  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glGetBooleani_v v1 v2 v3 = liftIO $ dyn308 ptr_glGetBooleani_v v1 v2 v3
 
@@ -15212,8 +15212,8 @@ ptr_glGetBooleani_v = unsafePerformIO $ getCommand "glGetBooleani_v"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
 glGetBooleanv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetPName@.
-  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @Boolean@.
+  => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
+  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glGetBooleanv v1 v2 = liftIO $ dyn309 ptr_glGetBooleanv v1 v2
 
@@ -15358,7 +15358,7 @@ ptr_glGetBufferSubDataARB = unsafePerformIO $ getCommand "glGetBufferSubDataARB"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetClipPlane.xml OpenGL 2.x>
 glGetClipPlane
   :: MonadIO m
-  => GLenum -- ^ @plane@ of type @ClipPlaneName@.
+  => GLenum -- ^ @plane@ of type [ClipPlaneName](Graphics-Rendering-OpenGL-Raw-Groups.html#ClipPlaneName).
   -> Ptr GLdouble -- ^ @equation@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glGetClipPlane v1 v2 = liftIO $ dyn92 ptr_glGetClipPlane v1 v2
@@ -15425,8 +15425,8 @@ ptr_glGetClipPlanexOES = unsafePerformIO $ getCommand "glGetClipPlanexOES"
 glGetColorTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @table@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetColorTable v1 v2 v3 v4 = liftIO $ dyn313 ptr_glGetColorTable v1 v2 v3 v4
@@ -15440,8 +15440,8 @@ ptr_glGetColorTable = unsafePerformIO $ getCommand "glGetColorTable"
 glGetColorTableEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetColorTableEXT v1 v2 v3 v4 = liftIO $ dyn313 ptr_glGetColorTableEXT v1 v2 v3 v4
@@ -15483,8 +15483,8 @@ ptr_glGetColorTableParameterfvEXT = unsafePerformIO $ getCommand "glGetColorTabl
 
 glGetColorTableParameterfvSGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTargetSGI@.
-  -> GLenum -- ^ @pname@ of type @GetColorTableParameterPNameSGI@.
+  => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
+  -> GLenum -- ^ @pname@ of type [GetColorTableParameterPNameSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#GetColorTableParameterPNameSGI).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetColorTableParameterfvSGI v1 v2 v3 = liftIO $ dyn131 ptr_glGetColorTableParameterfvSGI v1 v2 v3
@@ -15526,8 +15526,8 @@ ptr_glGetColorTableParameterivEXT = unsafePerformIO $ getCommand "glGetColorTabl
 
 glGetColorTableParameterivSGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTargetSGI@.
-  -> GLenum -- ^ @pname@ of type @GetColorTableParameterPNameSGI@.
+  => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
+  -> GLenum -- ^ @pname@ of type [GetColorTableParameterPNameSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#GetColorTableParameterPNameSGI).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetColorTableParameterivSGI v1 v2 v3 = liftIO $ dyn132 ptr_glGetColorTableParameterivSGI v1 v2 v3
@@ -15540,9 +15540,9 @@ ptr_glGetColorTableParameterivSGI = unsafePerformIO $ getCommand "glGetColorTabl
 
 glGetColorTableSGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTargetSGI@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @table@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetColorTableSGI v1 v2 v3 v4 = liftIO $ dyn313 ptr_glGetColorTableSGI v1 v2 v3 v4
@@ -15645,7 +15645,7 @@ ptr_glGetCommandHeaderNV = unsafePerformIO $ getCommand "glGetCommandHeaderNV"
 glGetCompressedMultiTexImageEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @lod@ of type @CheckedInt32@.
   -> Ptr a -- ^ @img@ pointing to @COMPSIZE(target,lod)@ elements of type @a@.
   -> m ()
@@ -15660,7 +15660,7 @@ ptr_glGetCompressedMultiTexImageEXT = unsafePerformIO $ getCommand "glGetCompres
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetCompressedTexImage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetCompressedTexImage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml OpenGL 4.x>
 glGetCompressedTexImage
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> Ptr a -- ^ @img@ pointing to @COMPSIZE(target,level)@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -15674,7 +15674,7 @@ ptr_glGetCompressedTexImage = unsafePerformIO $ getCommand "glGetCompressedTexIm
 
 glGetCompressedTexImageARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> Ptr a -- ^ @img@ pointing to @COMPSIZE(target,level)@ elements of type @CompressedTextureARB@.
   -> m ()
@@ -15705,7 +15705,7 @@ ptr_glGetCompressedTextureImage = unsafePerformIO $ getCommand "glGetCompressedT
 glGetCompressedTextureImageEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @lod@ of type @CheckedInt32@.
   -> Ptr a -- ^ @img@ pointing to @COMPSIZE(target,lod)@ elements of type @a@.
   -> m ()
@@ -15743,8 +15743,8 @@ ptr_glGetCompressedTextureSubImage = unsafePerformIO $ getCommand "glGetCompress
 glGetConvolutionFilter
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @image@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetConvolutionFilter v1 v2 v3 v4 = liftIO $ dyn313 ptr_glGetConvolutionFilter v1 v2 v3 v4
@@ -15757,9 +15757,9 @@ ptr_glGetConvolutionFilter = unsafePerformIO $ getCommand "glGetConvolutionFilte
 
 glGetConvolutionFilterEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @image@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetConvolutionFilterEXT v1 v2 v3 v4 = liftIO $ dyn313 ptr_glGetConvolutionFilterEXT v1 v2 v3 v4
@@ -15787,8 +15787,8 @@ ptr_glGetConvolutionParameterfv = unsafePerformIO $ getCommand "glGetConvolution
 
 glGetConvolutionParameterfvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameterEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionParameterEXT).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetConvolutionParameterfvEXT v1 v2 v3 = liftIO $ dyn131 ptr_glGetConvolutionParameterfvEXT v1 v2 v3
@@ -15816,8 +15816,8 @@ ptr_glGetConvolutionParameteriv = unsafePerformIO $ getCommand "glGetConvolution
 
 glGetConvolutionParameterivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameterEXT@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionParameterEXT).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetConvolutionParameterivEXT v1 v2 v3 = liftIO $ dyn132 ptr_glGetConvolutionParameterivEXT v1 v2 v3
@@ -15933,7 +15933,7 @@ ptr_glGetDebugMessageLogKHR = unsafePerformIO $ getCommand "glGetDebugMessageLog
 
 glGetDetailTexFuncSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> Ptr GLfloat -- ^ @points@ pointing to @COMPSIZE(target)@ elements of type @GLfloat@.
   -> m ()
 glGetDetailTexFuncSGIS v1 v2 = liftIO $ dyn93 ptr_glGetDetailTexFuncSGIS v1 v2
@@ -15990,7 +15990,7 @@ ptr_glGetDoublei_vEXT = unsafePerformIO $ getCommand "glGetDoublei_vEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
 glGetDoublev
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetPName@.
+  => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
   -> Ptr GLdouble -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
 glGetDoublev v1 v2 = liftIO $ dyn92 ptr_glGetDoublev v1 v2
@@ -16033,7 +16033,7 @@ ptr_glGetDriverControlsQCOM = unsafePerformIO $ getCommand "glGetDriverControlsQ
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetError.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetError.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetError.xhtml OpenGL 4.x>
 glGetError
   :: MonadIO m
-  => m GLenum -- ^ of type @ErrorCode@.
+  => m GLenum -- ^ of type [ErrorCode](Graphics-Rendering-OpenGL-Raw-Groups.html#ErrorCode).
 glGetError = liftIO $ dyn329 ptr_glGetError
 
 {-# NOINLINE ptr_glGetError #-}
@@ -16182,7 +16182,7 @@ ptr_glGetFloati_vNV = unsafePerformIO $ getCommand "glGetFloati_vNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
 glGetFloatv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetPName@.
+  => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
   -> Ptr GLfloat -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetFloatv v1 v2 = liftIO $ dyn93 ptr_glGetFloatv v1 v2
@@ -16289,8 +16289,8 @@ ptr_glGetFragmentLightivSGIX = unsafePerformIO $ getCommand "glGetFragmentLighti
 
 glGetFragmentMaterialfvSGIX
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetFragmentMaterialfvSGIX v1 v2 v3 = liftIO $ dyn131 ptr_glGetFragmentMaterialfvSGIX v1 v2 v3
@@ -16303,8 +16303,8 @@ ptr_glGetFragmentMaterialfvSGIX = unsafePerformIO $ getCommand "glGetFragmentMat
 
 glGetFragmentMaterialivSGIX
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetFragmentMaterialivSGIX v1 v2 v3 = liftIO $ dyn132 ptr_glGetFragmentMaterialivSGIX v1 v2 v3
@@ -16451,9 +16451,9 @@ ptr_glGetHandleARB = unsafePerformIO $ getCommand "glGetHandleARB"
 glGetHistogram
   :: MonadIO m
   => GLenum -- ^ @target@ of type @HistogramTarget@.
-  -> GLboolean -- ^ @reset@ of type @Boolean@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLboolean -- ^ @reset@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @values@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetHistogram v1 v2 v3 v4 v5 = liftIO $ dyn331 ptr_glGetHistogram v1 v2 v3 v4 v5
@@ -16466,10 +16466,10 @@ ptr_glGetHistogram = unsafePerformIO $ getCommand "glGetHistogram"
 
 glGetHistogramEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @HistogramTargetEXT@.
-  -> GLboolean -- ^ @reset@ of type @Boolean@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
+  -> GLboolean -- ^ @reset@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @values@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetHistogramEXT v1 v2 v3 v4 v5 = liftIO $ dyn331 ptr_glGetHistogramEXT v1 v2 v3 v4 v5
@@ -16497,8 +16497,8 @@ ptr_glGetHistogramParameterfv = unsafePerformIO $ getCommand "glGetHistogramPara
 
 glGetHistogramParameterfvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @HistogramTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @GetHistogramParameterPNameEXT@.
+  => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetHistogramParameterPNameEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#GetHistogramParameterPNameEXT).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetHistogramParameterfvEXT v1 v2 v3 = liftIO $ dyn131 ptr_glGetHistogramParameterfvEXT v1 v2 v3
@@ -16526,8 +16526,8 @@ ptr_glGetHistogramParameteriv = unsafePerformIO $ getCommand "glGetHistogramPara
 
 glGetHistogramParameterivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @HistogramTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @GetHistogramParameterPNameEXT@.
+  => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetHistogramParameterPNameEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#GetHistogramParameterPNameEXT).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetHistogramParameterivEXT v1 v2 v3 = liftIO $ dyn132 ptr_glGetHistogramParameterivEXT v1 v2 v3
@@ -16572,7 +16572,7 @@ glGetImageHandleNV
   :: MonadIO m
   => GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
-  -> GLboolean -- ^ @layered@ of type @Boolean@.
+  -> GLboolean -- ^ @layered@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLint -- ^ @layer@.
   -> GLenum -- ^ @format@.
   -> m GLuint64
@@ -16753,7 +16753,7 @@ ptr_glGetIntegerui64vNV = unsafePerformIO $ getCommand "glGetIntegerui64vNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
 glGetIntegerv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetPName@.
+  => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
   -> Ptr GLint -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetIntegerv v1 v2 = liftIO $ dyn135 ptr_glGetIntegerv v1 v2
@@ -16819,7 +16819,7 @@ glGetInvariantBooleanvEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @value@ of type @GetVariantValueEXT@.
-  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(id)@ elements of type @Boolean@.
+  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(id)@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glGetInvariantBooleanvEXT v1 v2 v3 = liftIO $ dyn343 ptr_glGetInvariantBooleanvEXT v1 v2 v3
 
@@ -16860,8 +16860,8 @@ ptr_glGetInvariantIntegervEXT = unsafePerformIO $ getCommand "glGetInvariantInte
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetLight.xml OpenGL 2.x>
 glGetLightfv
   :: MonadIO m
-  => GLenum -- ^ @light@ of type @LightName@.
-  -> GLenum -- ^ @pname@ of type @LightParameter@.
+  => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
+  -> GLenum -- ^ @pname@ of type [LightParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetLightfv v1 v2 v3 = liftIO $ dyn131 ptr_glGetLightfv v1 v2 v3
@@ -16875,8 +16875,8 @@ ptr_glGetLightfv = unsafePerformIO $ getCommand "glGetLightfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetLight.xml OpenGL 2.x>
 glGetLightiv
   :: MonadIO m
-  => GLenum -- ^ @light@ of type @LightName@.
-  -> GLenum -- ^ @pname@ of type @LightParameter@.
+  => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
+  -> GLenum -- ^ @pname@ of type [LightParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetLightiv v1 v2 v3 = liftIO $ dyn132 ptr_glGetLightiv v1 v2 v3
@@ -16932,7 +16932,7 @@ ptr_glGetLightxvOES = unsafePerformIO $ getCommand "glGetLightxvOES"
 glGetListParameterfvSGIX
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> GLenum -- ^ @pname@ of type @ListParameterName@.
+  -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#ListParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glGetListParameterfvSGIX v1 v2 v3 = liftIO $ dyn344 ptr_glGetListParameterfvSGIX v1 v2 v3
@@ -16946,7 +16946,7 @@ ptr_glGetListParameterfvSGIX = unsafePerformIO $ getCommand "glGetListParameterf
 glGetListParameterivSGIX
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> GLenum -- ^ @pname@ of type @ListParameterName@.
+  -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#ListParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glGetListParameterivSGIX v1 v2 v3 = liftIO $ dyn330 ptr_glGetListParameterivSGIX v1 v2 v3
@@ -16961,7 +16961,7 @@ glGetLocalConstantBooleanvEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @value@ of type @GetVariantValueEXT@.
-  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(id)@ elements of type @Boolean@.
+  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(id)@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glGetLocalConstantBooleanvEXT v1 v2 v3 = liftIO $ dyn343 ptr_glGetLocalConstantBooleanvEXT v1 v2 v3
 
@@ -17036,7 +17036,7 @@ glGetMapControlPointsNV
   -> GLenum -- ^ @type@ of type @MapTypeNV@.
   -> GLsizei -- ^ @ustride@.
   -> GLsizei -- ^ @vstride@.
-  -> GLboolean -- ^ @packed@ of type @Boolean@.
+  -> GLboolean -- ^ @packed@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr a -- ^ @points@ pointing to @COMPSIZE(target)@ elements of type @a@.
   -> m ()
 glGetMapControlPointsNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn347 ptr_glGetMapControlPointsNV v1 v2 v3 v4 v5 v6 v7
@@ -17078,8 +17078,8 @@ ptr_glGetMapParameterivNV = unsafePerformIO $ getCommand "glGetMapParameterivNV"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>
 glGetMapdv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MapTarget@.
-  -> GLenum -- ^ @query@ of type @GetMapQuery@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
+  -> GLenum -- ^ @query@ of type [GetMapQuery](Graphics-Rendering-OpenGL-Raw-Groups.html#GetMapQuery).
   -> Ptr GLdouble -- ^ @v@ pointing to @COMPSIZE(target,query)@ elements of type @GLdouble@.
   -> m ()
 glGetMapdv v1 v2 v3 = liftIO $ dyn348 ptr_glGetMapdv v1 v2 v3
@@ -17093,8 +17093,8 @@ ptr_glGetMapdv = unsafePerformIO $ getCommand "glGetMapdv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>
 glGetMapfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MapTarget@.
-  -> GLenum -- ^ @query@ of type @GetMapQuery@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
+  -> GLenum -- ^ @query@ of type [GetMapQuery](Graphics-Rendering-OpenGL-Raw-Groups.html#GetMapQuery).
   -> Ptr GLfloat -- ^ @v@ pointing to @COMPSIZE(target,query)@ elements of type @GLfloat@.
   -> m ()
 glGetMapfv v1 v2 v3 = liftIO $ dyn131 ptr_glGetMapfv v1 v2 v3
@@ -17108,8 +17108,8 @@ ptr_glGetMapfv = unsafePerformIO $ getCommand "glGetMapfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>
 glGetMapiv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MapTarget@.
-  -> GLenum -- ^ @query@ of type @GetMapQuery@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
+  -> GLenum -- ^ @query@ of type [GetMapQuery](Graphics-Rendering-OpenGL-Raw-Groups.html#GetMapQuery).
   -> Ptr GLint -- ^ @v@ pointing to @COMPSIZE(target,query)@ elements of type @GLint@.
   -> m ()
 glGetMapiv v1 v2 v3 = liftIO $ dyn132 ptr_glGetMapiv v1 v2 v3
@@ -17137,8 +17137,8 @@ ptr_glGetMapxvOES = unsafePerformIO $ getCommand "glGetMapxvOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMaterial.xml OpenGL 2.x>
 glGetMaterialfv
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMaterialfv v1 v2 v3 = liftIO $ dyn131 ptr_glGetMaterialfv v1 v2 v3
@@ -17152,8 +17152,8 @@ ptr_glGetMaterialfv = unsafePerformIO $ getCommand "glGetMaterialfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMaterial.xml OpenGL 2.x>
 glGetMaterialiv
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMaterialiv v1 v2 v3 = liftIO $ dyn132 ptr_glGetMaterialiv v1 v2 v3
@@ -17210,9 +17210,9 @@ ptr_glGetMaterialxvOES = unsafePerformIO $ getCommand "glGetMaterialxvOES"
 glGetMinmax
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
-  -> GLboolean -- ^ @reset@ of type @Boolean@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLboolean -- ^ @reset@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @values@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetMinmax v1 v2 v3 v4 v5 = liftIO $ dyn331 ptr_glGetMinmax v1 v2 v3 v4 v5
@@ -17225,10 +17225,10 @@ ptr_glGetMinmax = unsafePerformIO $ getCommand "glGetMinmax"
 
 glGetMinmaxEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MinmaxTargetEXT@.
-  -> GLboolean -- ^ @reset@ of type @Boolean@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
+  -> GLboolean -- ^ @reset@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @values@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> m ()
 glGetMinmaxEXT v1 v2 v3 v4 v5 = liftIO $ dyn331 ptr_glGetMinmaxEXT v1 v2 v3 v4 v5
@@ -17256,8 +17256,8 @@ ptr_glGetMinmaxParameterfv = unsafePerformIO $ getCommand "glGetMinmaxParameterf
 
 glGetMinmaxParameterfvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MinmaxTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @GetMinmaxParameterPNameEXT@.
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetMinmaxParameterPNameEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#GetMinmaxParameterPNameEXT).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMinmaxParameterfvEXT v1 v2 v3 = liftIO $ dyn131 ptr_glGetMinmaxParameterfvEXT v1 v2 v3
@@ -17285,8 +17285,8 @@ ptr_glGetMinmaxParameteriv = unsafePerformIO $ getCommand "glGetMinmaxParameteri
 
 glGetMinmaxParameterivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MinmaxTargetEXT@.
-  -> GLenum -- ^ @pname@ of type @GetMinmaxParameterPNameEXT@.
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetMinmaxParameterPNameEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#GetMinmaxParameterPNameEXT).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMinmaxParameterivEXT v1 v2 v3 = liftIO $ dyn132 ptr_glGetMinmaxParameterivEXT v1 v2 v3
@@ -17300,8 +17300,8 @@ ptr_glGetMinmaxParameterivEXT = unsafePerformIO $ getCommand "glGetMinmaxParamet
 glGetMultiTexEnvfvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMultiTexEnvfvEXT v1 v2 v3 v4 = liftIO $ dyn316 ptr_glGetMultiTexEnvfvEXT v1 v2 v3 v4
@@ -17315,8 +17315,8 @@ ptr_glGetMultiTexEnvfvEXT = unsafePerformIO $ getCommand "glGetMultiTexEnvfvEXT"
 glGetMultiTexEnvivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMultiTexEnvivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glGetMultiTexEnvivEXT v1 v2 v3 v4
@@ -17330,8 +17330,8 @@ ptr_glGetMultiTexEnvivEXT = unsafePerformIO $ getCommand "glGetMultiTexEnvivEXT"
 glGetMultiTexGendvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
 glGetMultiTexGendvEXT v1 v2 v3 v4 = liftIO $ dyn349 ptr_glGetMultiTexGendvEXT v1 v2 v3 v4
@@ -17345,8 +17345,8 @@ ptr_glGetMultiTexGendvEXT = unsafePerformIO $ getCommand "glGetMultiTexGendvEXT"
 glGetMultiTexGenfvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMultiTexGenfvEXT v1 v2 v3 v4 = liftIO $ dyn316 ptr_glGetMultiTexGenfvEXT v1 v2 v3 v4
@@ -17360,8 +17360,8 @@ ptr_glGetMultiTexGenfvEXT = unsafePerformIO $ getCommand "glGetMultiTexGenfvEXT"
 glGetMultiTexGenivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMultiTexGenivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glGetMultiTexGenivEXT v1 v2 v3 v4
@@ -17375,10 +17375,10 @@ ptr_glGetMultiTexGenivEXT = unsafePerformIO $ getCommand "glGetMultiTexGenivEXT"
 glGetMultiTexImageEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(target,level,format,type)@ elements of type @a@.
   -> m ()
 glGetMultiTexImageEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn350 ptr_glGetMultiTexImageEXT v1 v2 v3 v4 v5 v6
@@ -17392,9 +17392,9 @@ ptr_glGetMultiTexImageEXT = unsafePerformIO $ getCommand "glGetMultiTexImageEXT"
 glGetMultiTexLevelParameterfvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMultiTexLevelParameterfvEXT v1 v2 v3 v4 v5 = liftIO $ dyn351 ptr_glGetMultiTexLevelParameterfvEXT v1 v2 v3 v4 v5
@@ -17408,9 +17408,9 @@ ptr_glGetMultiTexLevelParameterfvEXT = unsafePerformIO $ getCommand "glGetMultiT
 glGetMultiTexLevelParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMultiTexLevelParameterivEXT v1 v2 v3 v4 v5 = liftIO $ dyn352 ptr_glGetMultiTexLevelParameterivEXT v1 v2 v3 v4 v5
@@ -17424,8 +17424,8 @@ ptr_glGetMultiTexLevelParameterivEXT = unsafePerformIO $ getCommand "glGetMultiT
 glGetMultiTexParameterIivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMultiTexParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glGetMultiTexParameterIivEXT v1 v2 v3 v4
@@ -17439,8 +17439,8 @@ ptr_glGetMultiTexParameterIivEXT = unsafePerformIO $ getCommand "glGetMultiTexPa
 glGetMultiTexParameterIuivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glGetMultiTexParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn353 ptr_glGetMultiTexParameterIuivEXT v1 v2 v3 v4
@@ -17454,8 +17454,8 @@ ptr_glGetMultiTexParameterIuivEXT = unsafePerformIO $ getCommand "glGetMultiTexP
 glGetMultiTexParameterfvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMultiTexParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn316 ptr_glGetMultiTexParameterfvEXT v1 v2 v3 v4
@@ -17469,8 +17469,8 @@ ptr_glGetMultiTexParameterfvEXT = unsafePerformIO $ getCommand "glGetMultiTexPar
 glGetMultiTexParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMultiTexParameterivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glGetMultiTexParameterivEXT v1 v2 v3 v4
@@ -18385,7 +18385,7 @@ ptr_glGetPerfQueryInfoINTEL = unsafePerformIO $ getCommand "glGetPerfQueryInfoIN
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>
 glGetPixelMapfv
   :: MonadIO m
-  => GLenum -- ^ @map@ of type @PixelMap@.
+  => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
   -> Ptr GLfloat -- ^ @values@ pointing to @COMPSIZE(map)@ elements of type @GLfloat@.
   -> m ()
 glGetPixelMapfv v1 v2 = liftIO $ dyn93 ptr_glGetPixelMapfv v1 v2
@@ -18399,7 +18399,7 @@ ptr_glGetPixelMapfv = unsafePerformIO $ getCommand "glGetPixelMapfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>
 glGetPixelMapuiv
   :: MonadIO m
-  => GLenum -- ^ @map@ of type @PixelMap@.
+  => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
   -> Ptr GLuint -- ^ @values@ pointing to @COMPSIZE(map)@ elements of type @GLuint@.
   -> m ()
 glGetPixelMapuiv v1 v2 = liftIO $ dyn124 ptr_glGetPixelMapuiv v1 v2
@@ -18413,7 +18413,7 @@ ptr_glGetPixelMapuiv = unsafePerformIO $ getCommand "glGetPixelMapuiv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>
 glGetPixelMapusv
   :: MonadIO m
-  => GLenum -- ^ @map@ of type @PixelMap@.
+  => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
   -> Ptr GLushort -- ^ @values@ pointing to @COMPSIZE(map)@ elements of type @GLushort@.
   -> m ()
 glGetPixelMapusv v1 v2 = liftIO $ dyn384 ptr_glGetPixelMapusv v1 v2
@@ -18440,7 +18440,7 @@ ptr_glGetPixelMapxv = unsafePerformIO $ getCommand "glGetPixelMapxv"
 
 glGetPixelTexGenParameterfvSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTexGenParameterNameSGIS@.
+  => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glGetPixelTexGenParameterfvSGIS v1 v2 = liftIO $ dyn93 ptr_glGetPixelTexGenParameterfvSGIS v1 v2
@@ -18453,7 +18453,7 @@ ptr_glGetPixelTexGenParameterfvSGIS = unsafePerformIO $ getCommand "glGetPixelTe
 
 glGetPixelTexGenParameterivSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTexGenParameterNameSGIS@.
+  => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glGetPixelTexGenParameterivSGIS v1 v2 = liftIO $ dyn135 ptr_glGetPixelTexGenParameterivSGIS v1 v2
@@ -18523,7 +18523,7 @@ ptr_glGetPointeri_vEXT = unsafePerformIO $ getCommand "glGetPointeri_vEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPointerv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetPointerv.xhtml OpenGL 4.x>
 glGetPointerv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetPointervPName@.
+  => GLenum -- ^ @pname@ of type [GetPointervPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPointervPName).
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetPointerv v1 v2 = liftIO $ dyn267 ptr_glGetPointerv v1 v2
@@ -18536,7 +18536,7 @@ ptr_glGetPointerv = unsafePerformIO $ getCommand "glGetPointerv"
 
 glGetPointervEXT
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetPointervPName@.
+  => GLenum -- ^ @pname@ of type [GetPointervPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPointervPName).
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetPointervEXT v1 v2 = liftIO $ dyn267 ptr_glGetPointervEXT v1 v2
@@ -19513,8 +19513,8 @@ ptr_glGetSamplerParameteriv = unsafePerformIO $ getCommand "glGetSamplerParamete
 glGetSeparableFilter
   :: MonadIO m
   => GLenum -- ^ @target@ of type @SeparableTarget@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @row@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> Ptr b -- ^ @column@ pointing to @COMPSIZE(target,format,type)@ elements of type @b@.
   -> Ptr c -- ^ @span@ pointing to @COMPSIZE(target,format,type)@ elements of type @c@.
@@ -19529,9 +19529,9 @@ ptr_glGetSeparableFilter = unsafePerformIO $ getCommand "glGetSeparableFilter"
 
 glGetSeparableFilterEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @SeparableTargetEXT@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  => GLenum -- ^ @target@ of type [SeparableTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#SeparableTargetEXT).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @row@ pointing to @COMPSIZE(target,format,type)@ elements of type @a@.
   -> Ptr b -- ^ @column@ pointing to @COMPSIZE(target,format,type)@ elements of type @b@.
   -> Ptr c -- ^ @span@ pointing to @COMPSIZE(target,format,type)@ elements of type @c@.
@@ -19624,7 +19624,7 @@ ptr_glGetShaderiv = unsafePerformIO $ getCommand "glGetShaderiv"
 
 glGetSharpenTexFuncSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> Ptr GLfloat -- ^ @points@ pointing to @COMPSIZE(target)@ elements of type @GLfloat@.
   -> m ()
 glGetSharpenTexFuncSGIS v1 v2 = liftIO $ dyn93 ptr_glGetSharpenTexFuncSGIS v1 v2
@@ -19650,7 +19650,7 @@ ptr_glGetStageIndexNV = unsafePerformIO $ getCommand "glGetStageIndexNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetString.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetString.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml OpenGL 4.x>
 glGetString
   :: MonadIO m
-  => GLenum -- ^ @name@ of type @StringName@.
+  => GLenum -- ^ @name@ of type [StringName](Graphics-Rendering-OpenGL-Raw-Groups.html#StringName).
   -> m (Ptr GLubyte) -- ^ pointing to elements of type @String@.
 glGetString v1 = liftIO $ dyn401 ptr_glGetString v1
 
@@ -19766,8 +19766,8 @@ ptr_glGetTexBumpParameterivATI = unsafePerformIO $ getCommand "glGetTexBumpParam
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexEnv.xml OpenGL 2.x>
 glGetTexEnvfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetTexEnvfv v1 v2 v3 = liftIO $ dyn131 ptr_glGetTexEnvfv v1 v2 v3
@@ -19781,8 +19781,8 @@ ptr_glGetTexEnvfv = unsafePerformIO $ getCommand "glGetTexEnvfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexEnv.xml OpenGL 2.x>
 glGetTexEnviv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexEnviv v1 v2 v3 = liftIO $ dyn132 ptr_glGetTexEnviv v1 v2 v3
@@ -19823,7 +19823,7 @@ ptr_glGetTexEnvxvOES = unsafePerformIO $ getCommand "glGetTexEnvxvOES"
 
 glGetTexFilterFuncSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @filter@ of type @TextureFilterSGIS@.
   -> Ptr GLfloat -- ^ @weights@ pointing to @COMPSIZE(target,filter)@ elements of type @GLfloat@.
   -> m ()
@@ -19838,8 +19838,8 @@ ptr_glGetTexFilterFuncSGIS = unsafePerformIO $ getCommand "glGetTexFilterFuncSGI
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>
 glGetTexGendv
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
 glGetTexGendv v1 v2 v3 = liftIO $ dyn348 ptr_glGetTexGendv v1 v2 v3
@@ -19853,8 +19853,8 @@ ptr_glGetTexGendv = unsafePerformIO $ getCommand "glGetTexGendv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>
 glGetTexGenfv
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetTexGenfv v1 v2 v3 = liftIO $ dyn131 ptr_glGetTexGenfv v1 v2 v3
@@ -19882,8 +19882,8 @@ ptr_glGetTexGenfvOES = unsafePerformIO $ getCommand "glGetTexGenfvOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>
 glGetTexGeniv
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexGeniv v1 v2 v3 = liftIO $ dyn132 ptr_glGetTexGeniv v1 v2 v3
@@ -19925,10 +19925,10 @@ ptr_glGetTexGenxvOES = unsafePerformIO $ getCommand "glGetTexGenxvOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexImage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexImage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml OpenGL 4.x>
 glGetTexImage
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(target,level,format,type)@ elements of type @a@.
   -> m ()
 glGetTexImage v1 v2 v3 v4 v5 = liftIO $ dyn404 ptr_glGetTexImage v1 v2 v3 v4 v5
@@ -19942,9 +19942,9 @@ ptr_glGetTexImage = unsafePerformIO $ getCommand "glGetTexImage"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>
 glGetTexLevelParameterfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetTexLevelParameterfv v1 v2 v3 v4 = liftIO $ dyn405 ptr_glGetTexLevelParameterfv v1 v2 v3 v4
@@ -19958,9 +19958,9 @@ ptr_glGetTexLevelParameterfv = unsafePerformIO $ getCommand "glGetTexLevelParame
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>
 glGetTexLevelParameteriv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexLevelParameteriv v1 v2 v3 v4 = liftIO $ dyn406 ptr_glGetTexLevelParameteriv v1 v2 v3 v4
@@ -19989,8 +19989,8 @@ ptr_glGetTexLevelParameterxvOES = unsafePerformIO $ getCommand "glGetTexLevelPar
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
 glGetTexParameterIiv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexParameterIiv v1 v2 v3 = liftIO $ dyn132 ptr_glGetTexParameterIiv v1 v2 v3
@@ -20003,8 +20003,8 @@ ptr_glGetTexParameterIiv = unsafePerformIO $ getCommand "glGetTexParameterIiv"
 
 glGetTexParameterIivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexParameterIivEXT v1 v2 v3 = liftIO $ dyn132 ptr_glGetTexParameterIivEXT v1 v2 v3
@@ -20017,8 +20017,8 @@ ptr_glGetTexParameterIivEXT = unsafePerformIO $ getCommand "glGetTexParameterIiv
 
 glGetTexParameterIivOES
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexParameterIivOES v1 v2 v3 = liftIO $ dyn132 ptr_glGetTexParameterIivOES v1 v2 v3
@@ -20032,8 +20032,8 @@ ptr_glGetTexParameterIivOES = unsafePerformIO $ getCommand "glGetTexParameterIiv
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
 glGetTexParameterIuiv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glGetTexParameterIuiv v1 v2 v3 = liftIO $ dyn408 ptr_glGetTexParameterIuiv v1 v2 v3
@@ -20046,8 +20046,8 @@ ptr_glGetTexParameterIuiv = unsafePerformIO $ getCommand "glGetTexParameterIuiv"
 
 glGetTexParameterIuivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glGetTexParameterIuivEXT v1 v2 v3 = liftIO $ dyn408 ptr_glGetTexParameterIuivEXT v1 v2 v3
@@ -20060,8 +20060,8 @@ ptr_glGetTexParameterIuivEXT = unsafePerformIO $ getCommand "glGetTexParameterIu
 
 glGetTexParameterIuivOES
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glGetTexParameterIuivOES v1 v2 v3 = liftIO $ dyn408 ptr_glGetTexParameterIuivOES v1 v2 v3
@@ -20089,8 +20089,8 @@ ptr_glGetTexParameterPointervAPPLE = unsafePerformIO $ getCommand "glGetTexParam
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
 glGetTexParameterfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetTexParameterfv v1 v2 v3 = liftIO $ dyn131 ptr_glGetTexParameterfv v1 v2 v3
@@ -20104,8 +20104,8 @@ ptr_glGetTexParameterfv = unsafePerformIO $ getCommand "glGetTexParameterfv"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
 glGetTexParameteriv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexParameteriv v1 v2 v3 = liftIO $ dyn132 ptr_glGetTexParameteriv v1 v2 v3
@@ -20189,10 +20189,10 @@ ptr_glGetTextureImage = unsafePerformIO $ getCommand "glGetTextureImage"
 glGetTextureImageEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(target,level,format,type)@ elements of type @a@.
   -> m ()
 glGetTextureImageEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn411 ptr_glGetTextureImageEXT v1 v2 v3 v4 v5 v6
@@ -20222,9 +20222,9 @@ ptr_glGetTextureLevelParameterfv = unsafePerformIO $ getCommand "glGetTextureLev
 glGetTextureLevelParameterfvEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetTextureLevelParameterfvEXT v1 v2 v3 v4 v5 = liftIO $ dyn413 ptr_glGetTextureLevelParameterfvEXT v1 v2 v3 v4 v5
@@ -20254,9 +20254,9 @@ ptr_glGetTextureLevelParameteriv = unsafePerformIO $ getCommand "glGetTextureLev
 glGetTextureLevelParameterivEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTextureLevelParameterivEXT v1 v2 v3 v4 v5 = liftIO $ dyn270 ptr_glGetTextureLevelParameterivEXT v1 v2 v3 v4 v5
@@ -20285,8 +20285,8 @@ ptr_glGetTextureParameterIiv = unsafePerformIO $ getCommand "glGetTextureParamet
 glGetTextureParameterIivEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTextureParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn358 ptr_glGetTextureParameterIivEXT v1 v2 v3 v4
@@ -20315,8 +20315,8 @@ ptr_glGetTextureParameterIuiv = unsafePerformIO $ getCommand "glGetTextureParame
 glGetTextureParameterIuivEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glGetTextureParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn415 ptr_glGetTextureParameterIuivEXT v1 v2 v3 v4
@@ -20345,8 +20345,8 @@ ptr_glGetTextureParameterfv = unsafePerformIO $ getCommand "glGetTextureParamete
 glGetTextureParameterfvEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetTextureParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn416 ptr_glGetTextureParameterfvEXT v1 v2 v3 v4
@@ -20375,8 +20375,8 @@ ptr_glGetTextureParameteriv = unsafePerformIO $ getCommand "glGetTextureParamete
 glGetTextureParameterivEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @GetTextureParameter@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTextureParameterivEXT v1 v2 v3 v4 = liftIO $ dyn358 ptr_glGetTextureParameterivEXT v1 v2 v3 v4
@@ -20853,7 +20853,7 @@ glGetVariantBooleanvEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @value@ of type @GetVariantValueEXT@.
-  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(id)@ elements of type @Boolean@.
+  -> Ptr GLboolean -- ^ @data@ pointing to @COMPSIZE(id)@ elements of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glGetVariantBooleanvEXT v1 v2 v3 = liftIO $ dyn343 ptr_glGetVariantBooleanvEXT v1 v2 v3
 
@@ -21582,7 +21582,7 @@ ptr_glGetnHistogram = unsafePerformIO $ getCommand "glGetnHistogram"
 glGetnHistogramARB
   :: MonadIO m
   => GLenum -- ^ @target@.
-  -> GLboolean -- ^ @reset@ of type @Boolean@.
+  -> GLboolean -- ^ @reset@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLenum -- ^ @format@.
   -> GLenum -- ^ @type@.
   -> GLsizei -- ^ @bufSize@.
@@ -21706,7 +21706,7 @@ ptr_glGetnMinmax = unsafePerformIO $ getCommand "glGetnMinmax"
 glGetnMinmaxARB
   :: MonadIO m
   => GLenum -- ^ @target@.
-  -> GLboolean -- ^ @reset@ of type @Boolean@.
+  -> GLboolean -- ^ @reset@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLenum -- ^ @format@.
   -> GLenum -- ^ @type@.
   -> GLsizei -- ^ @bufSize@.
@@ -22231,8 +22231,8 @@ ptr_glGlobalAlphaFactorusSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactor
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glHint.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glHint.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glHint.xhtml OpenGL 4.x>
 glHint
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @HintTarget@.
-  -> GLenum -- ^ @mode@ of type @HintMode@.
+  => GLenum -- ^ @target@ of type [HintTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#HintTarget).
+  -> GLenum -- ^ @mode@ of type [HintMode](Graphics-Rendering-OpenGL-Raw-Groups.html#HintMode).
   -> m ()
 glHint v1 v2 = liftIO $ dyn51 ptr_glHint v1 v2
 
@@ -22261,7 +22261,7 @@ glHistogram
   => GLenum -- ^ @target@ of type @HistogramTarget@.
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
-  -> GLboolean -- ^ @sink@ of type @Boolean@.
+  -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glHistogram v1 v2 v3 v4 = liftIO $ dyn461 ptr_glHistogram v1 v2 v3 v4
 
@@ -22273,10 +22273,10 @@ ptr_glHistogram = unsafePerformIO $ getCommand "glHistogram"
 
 glHistogramEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @HistogramTargetEXT@.
+  => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
-  -> GLboolean -- ^ @sink@ of type @Boolean@.
+  -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glHistogramEXT v1 v2 v3 v4 = liftIO $ dyn461 ptr_glHistogramEXT v1 v2 v3 v4
 
@@ -22410,7 +22410,7 @@ ptr_glIndexMask = unsafePerformIO $ getCommand "glIndexMask"
 
 glIndexMaterialEXT
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
   -> GLenum -- ^ @mode@ of type @IndexMaterialParameterEXT@.
   -> m ()
 glIndexMaterialEXT v1 v2 = liftIO $ dyn51 ptr_glIndexMaterialEXT v1 v2
@@ -22424,7 +22424,7 @@ ptr_glIndexMaterialEXT = unsafePerformIO $ getCommand "glIndexMaterialEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndexPointer.xml OpenGL 2.x>
 glIndexPointer
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @IndexPointerType@.
+  => GLenum -- ^ @type@ of type [IndexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#IndexPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
   -> m ()
@@ -22438,7 +22438,7 @@ ptr_glIndexPointer = unsafePerformIO $ getCommand "glIndexPointer"
 
 glIndexPointerEXT
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @IndexPointerType@.
+  => GLenum -- ^ @type@ of type [IndexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#IndexPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLsizei -- ^ @count@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride,count)@ elements of type @a@.
@@ -22453,7 +22453,7 @@ ptr_glIndexPointerEXT = unsafePerformIO $ getCommand "glIndexPointerEXT"
 
 glIndexPointerListIBM
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @IndexPointerType@.
+  => GLenum -- ^ @type@ of type [IndexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#IndexPointerType).
   -> GLint -- ^ @stride@.
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @Ptr a@.
   -> GLint -- ^ @ptrstride@.
@@ -22675,7 +22675,7 @@ ptr_glInstrumentsBufferSGIX = unsafePerformIO $ getCommand "glInstrumentsBufferS
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glInterleavedArrays.xml OpenGL 2.x>
 glInterleavedArrays
   :: MonadIO m
-  => GLenum -- ^ @format@ of type @InterleavedArrayFormat@.
+  => GLenum -- ^ @format@ of type [InterleavedArrayFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InterleavedArrayFormat).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(format,stride)@ elements of type @a@.
   -> m ()
@@ -22835,7 +22835,7 @@ ptr_glInvalidateTexSubImage = unsafePerformIO $ getCommand "glInvalidateTexSubIm
 glIsAsyncMarkerSGIX
   :: MonadIO m
   => GLuint -- ^ @marker@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsAsyncMarkerSGIX v1 = liftIO $ dyn272 ptr_glIsAsyncMarkerSGIX v1
 
 {-# NOINLINE ptr_glIsAsyncMarkerSGIX #-}
@@ -22848,7 +22848,7 @@ ptr_glIsAsyncMarkerSGIX = unsafePerformIO $ getCommand "glIsAsyncMarkerSGIX"
 glIsBuffer
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsBuffer v1 = liftIO $ dyn272 ptr_glIsBuffer v1
 
 {-# NOINLINE ptr_glIsBuffer #-}
@@ -22860,7 +22860,7 @@ ptr_glIsBuffer = unsafePerformIO $ getCommand "glIsBuffer"
 glIsBufferARB
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsBufferARB v1 = liftIO $ dyn272 ptr_glIsBufferARB v1
 
 {-# NOINLINE ptr_glIsBufferARB #-}
@@ -22872,7 +22872,7 @@ ptr_glIsBufferARB = unsafePerformIO $ getCommand "glIsBufferARB"
 glIsBufferResidentNV
   :: MonadIO m
   => GLenum -- ^ @target@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsBufferResidentNV v1 = liftIO $ dyn471 ptr_glIsBufferResidentNV v1
 
 {-# NOINLINE ptr_glIsBufferResidentNV #-}
@@ -22896,8 +22896,8 @@ ptr_glIsCommandListNV = unsafePerformIO $ getCommand "glIsCommandListNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsEnabled.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsEnabled.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml OpenGL 4.x>
 glIsEnabled
   :: MonadIO m
-  => GLenum -- ^ @cap@ of type @EnableCap@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  => GLenum -- ^ @cap@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsEnabled v1 = liftIO $ dyn471 ptr_glIsEnabled v1
 
 {-# NOINLINE ptr_glIsEnabled #-}
@@ -22910,7 +22910,7 @@ glIsEnabledIndexedEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsEnabledIndexedEXT v1 v2 = liftIO $ dyn472 ptr_glIsEnabledIndexedEXT v1 v2
 
 {-# NOINLINE ptr_glIsEnabledIndexedEXT #-}
@@ -22924,7 +22924,7 @@ glIsEnabledi
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsEnabledi v1 v2 = liftIO $ dyn472 ptr_glIsEnabledi v1 v2
 
 {-# NOINLINE ptr_glIsEnabledi #-}
@@ -22937,7 +22937,7 @@ glIsEnablediEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsEnablediEXT v1 v2 = liftIO $ dyn472 ptr_glIsEnablediEXT v1 v2
 
 {-# NOINLINE ptr_glIsEnablediEXT #-}
@@ -22950,7 +22950,7 @@ glIsEnablediNV
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsEnablediNV v1 v2 = liftIO $ dyn472 ptr_glIsEnablediNV v1 v2
 
 {-# NOINLINE ptr_glIsEnablediNV #-}
@@ -22963,7 +22963,7 @@ glIsEnablediOES
   :: MonadIO m
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsEnablediOES v1 v2 = liftIO $ dyn472 ptr_glIsEnablediOES v1 v2
 
 {-# NOINLINE ptr_glIsEnablediOES #-}
@@ -22975,7 +22975,7 @@ ptr_glIsEnablediOES = unsafePerformIO $ getCommand "glIsEnablediOES"
 glIsFenceAPPLE
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsFenceAPPLE v1 = liftIO $ dyn272 ptr_glIsFenceAPPLE v1
 
 {-# NOINLINE ptr_glIsFenceAPPLE #-}
@@ -22987,7 +22987,7 @@ ptr_glIsFenceAPPLE = unsafePerformIO $ getCommand "glIsFenceAPPLE"
 glIsFenceNV
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsFenceNV v1 = liftIO $ dyn272 ptr_glIsFenceNV v1
 
 {-# NOINLINE ptr_glIsFenceNV #-}
@@ -23000,7 +23000,7 @@ ptr_glIsFenceNV = unsafePerformIO $ getCommand "glIsFenceNV"
 glIsFramebuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsFramebuffer v1 = liftIO $ dyn272 ptr_glIsFramebuffer v1
 
 {-# NOINLINE ptr_glIsFramebuffer #-}
@@ -23012,7 +23012,7 @@ ptr_glIsFramebuffer = unsafePerformIO $ getCommand "glIsFramebuffer"
 glIsFramebufferEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsFramebufferEXT v1 = liftIO $ dyn272 ptr_glIsFramebufferEXT v1
 
 {-# NOINLINE ptr_glIsFramebufferEXT #-}
@@ -23048,7 +23048,7 @@ ptr_glIsImageHandleResidentARB = unsafePerformIO $ getCommand "glIsImageHandleRe
 glIsImageHandleResidentNV
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsImageHandleResidentNV v1 = liftIO $ dyn473 ptr_glIsImageHandleResidentNV v1
 
 {-# NOINLINE ptr_glIsImageHandleResidentNV #-}
@@ -23061,7 +23061,7 @@ ptr_glIsImageHandleResidentNV = unsafePerformIO $ getCommand "glIsImageHandleRes
 glIsList
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsList v1 = liftIO $ dyn272 ptr_glIsList v1
 
 {-# NOINLINE ptr_glIsList #-}
@@ -23074,7 +23074,7 @@ glIsNameAMD
   :: MonadIO m
   => GLenum -- ^ @identifier@.
   -> GLuint -- ^ @name@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsNameAMD v1 v2 = liftIO $ dyn472 ptr_glIsNameAMD v1 v2
 
 {-# NOINLINE ptr_glIsNameAMD #-}
@@ -23086,7 +23086,7 @@ ptr_glIsNameAMD = unsafePerformIO $ getCommand "glIsNameAMD"
 glIsNamedBufferResidentNV
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsNamedBufferResidentNV v1 = liftIO $ dyn272 ptr_glIsNamedBufferResidentNV v1
 
 {-# NOINLINE ptr_glIsNamedBufferResidentNV #-}
@@ -23099,7 +23099,7 @@ glIsNamedStringARB
   :: MonadIO m
   => GLint -- ^ @namelen@.
   -> Ptr GLchar -- ^ @name@ pointing to @namelen@ elements of type @GLchar@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsNamedStringARB v1 v2 = liftIO $ dyn474 ptr_glIsNamedStringARB v1 v2
 
 {-# NOINLINE ptr_glIsNamedStringARB #-}
@@ -23111,7 +23111,7 @@ ptr_glIsNamedStringARB = unsafePerformIO $ getCommand "glIsNamedStringARB"
 glIsObjectBufferATI
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsObjectBufferATI v1 = liftIO $ dyn272 ptr_glIsObjectBufferATI v1
 
 {-# NOINLINE ptr_glIsObjectBufferATI #-}
@@ -23123,7 +23123,7 @@ ptr_glIsObjectBufferATI = unsafePerformIO $ getCommand "glIsObjectBufferATI"
 glIsOcclusionQueryNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsOcclusionQueryNV v1 = liftIO $ dyn272 ptr_glIsOcclusionQueryNV v1
 
 {-# NOINLINE ptr_glIsOcclusionQueryNV #-}
@@ -23135,7 +23135,7 @@ ptr_glIsOcclusionQueryNV = unsafePerformIO $ getCommand "glIsOcclusionQueryNV"
 glIsPathNV
   :: MonadIO m
   => GLuint -- ^ @path@ of type @Path@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsPathNV v1 = liftIO $ dyn272 ptr_glIsPathNV v1
 
 {-# NOINLINE ptr_glIsPathNV #-}
@@ -23150,7 +23150,7 @@ glIsPointInFillPathNV
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsPointInFillPathNV v1 v2 v3 v4 = liftIO $ dyn475 ptr_glIsPointInFillPathNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glIsPointInFillPathNV #-}
@@ -23164,7 +23164,7 @@ glIsPointInStrokePathNV
   => GLuint -- ^ @path@ of type @Path@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsPointInStrokePathNV v1 v2 v3 = liftIO $ dyn476 ptr_glIsPointInStrokePathNV v1 v2 v3
 
 {-# NOINLINE ptr_glIsPointInStrokePathNV #-}
@@ -23177,7 +23177,7 @@ ptr_glIsPointInStrokePathNV = unsafePerformIO $ getCommand "glIsPointInStrokePat
 glIsProgram
   :: MonadIO m
   => GLuint -- ^ @program@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsProgram v1 = liftIO $ dyn272 ptr_glIsProgram v1
 
 {-# NOINLINE ptr_glIsProgram #-}
@@ -23189,7 +23189,7 @@ ptr_glIsProgram = unsafePerformIO $ getCommand "glIsProgram"
 glIsProgramARB
   :: MonadIO m
   => GLuint -- ^ @program@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsProgramARB v1 = liftIO $ dyn272 ptr_glIsProgramARB v1
 
 {-# NOINLINE ptr_glIsProgramARB #-}
@@ -23201,7 +23201,7 @@ ptr_glIsProgramARB = unsafePerformIO $ getCommand "glIsProgramARB"
 glIsProgramNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsProgramNV v1 = liftIO $ dyn272 ptr_glIsProgramNV v1
 
 {-# NOINLINE ptr_glIsProgramNV #-}
@@ -23214,7 +23214,7 @@ ptr_glIsProgramNV = unsafePerformIO $ getCommand "glIsProgramNV"
 glIsProgramPipeline
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsProgramPipeline v1 = liftIO $ dyn272 ptr_glIsProgramPipeline v1
 
 {-# NOINLINE ptr_glIsProgramPipeline #-}
@@ -23239,7 +23239,7 @@ ptr_glIsProgramPipelineEXT = unsafePerformIO $ getCommand "glIsProgramPipelineEX
 glIsQuery
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsQuery v1 = liftIO $ dyn272 ptr_glIsQuery v1
 
 {-# NOINLINE ptr_glIsQuery #-}
@@ -23251,7 +23251,7 @@ ptr_glIsQuery = unsafePerformIO $ getCommand "glIsQuery"
 glIsQueryARB
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsQueryARB v1 = liftIO $ dyn272 ptr_glIsQueryARB v1
 
 {-# NOINLINE ptr_glIsQueryARB #-}
@@ -23276,7 +23276,7 @@ ptr_glIsQueryEXT = unsafePerformIO $ getCommand "glIsQueryEXT"
 glIsRenderbuffer
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsRenderbuffer v1 = liftIO $ dyn272 ptr_glIsRenderbuffer v1
 
 {-# NOINLINE ptr_glIsRenderbuffer #-}
@@ -23288,7 +23288,7 @@ ptr_glIsRenderbuffer = unsafePerformIO $ getCommand "glIsRenderbuffer"
 glIsRenderbufferEXT
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsRenderbufferEXT v1 = liftIO $ dyn272 ptr_glIsRenderbufferEXT v1
 
 {-# NOINLINE ptr_glIsRenderbufferEXT #-}
@@ -23313,7 +23313,7 @@ ptr_glIsRenderbufferOES = unsafePerformIO $ getCommand "glIsRenderbufferOES"
 glIsSampler
   :: MonadIO m
   => GLuint -- ^ @sampler@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsSampler v1 = liftIO $ dyn272 ptr_glIsSampler v1
 
 {-# NOINLINE ptr_glIsSampler #-}
@@ -23326,7 +23326,7 @@ ptr_glIsSampler = unsafePerformIO $ getCommand "glIsSampler"
 glIsShader
   :: MonadIO m
   => GLuint -- ^ @shader@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsShader v1 = liftIO $ dyn272 ptr_glIsShader v1
 
 {-# NOINLINE ptr_glIsShader #-}
@@ -23351,7 +23351,7 @@ ptr_glIsStateNV = unsafePerformIO $ getCommand "glIsStateNV"
 glIsSync
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsSync v1 = liftIO $ dyn477 ptr_glIsSync v1
 
 {-# NOINLINE ptr_glIsSync #-}
@@ -23376,7 +23376,7 @@ ptr_glIsSyncAPPLE = unsafePerformIO $ getCommand "glIsSyncAPPLE"
 glIsTexture
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsTexture v1 = liftIO $ dyn272 ptr_glIsTexture v1
 
 {-# NOINLINE ptr_glIsTexture #-}
@@ -23388,7 +23388,7 @@ ptr_glIsTexture = unsafePerformIO $ getCommand "glIsTexture"
 glIsTextureEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsTextureEXT v1 = liftIO $ dyn272 ptr_glIsTextureEXT v1
 
 {-# NOINLINE ptr_glIsTextureEXT #-}
@@ -23412,7 +23412,7 @@ ptr_glIsTextureHandleResidentARB = unsafePerformIO $ getCommand "glIsTextureHand
 glIsTextureHandleResidentNV
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsTextureHandleResidentNV v1 = liftIO $ dyn473 ptr_glIsTextureHandleResidentNV v1
 
 {-# NOINLINE ptr_glIsTextureHandleResidentNV #-}
@@ -23425,7 +23425,7 @@ ptr_glIsTextureHandleResidentNV = unsafePerformIO $ getCommand "glIsTextureHandl
 glIsTransformFeedback
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsTransformFeedback v1 = liftIO $ dyn272 ptr_glIsTransformFeedback v1
 
 {-# NOINLINE ptr_glIsTransformFeedback #-}
@@ -23437,7 +23437,7 @@ ptr_glIsTransformFeedback = unsafePerformIO $ getCommand "glIsTransformFeedback"
 glIsTransformFeedbackNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsTransformFeedbackNV v1 = liftIO $ dyn272 ptr_glIsTransformFeedbackNV v1
 
 {-# NOINLINE ptr_glIsTransformFeedbackNV #-}
@@ -23450,7 +23450,7 @@ glIsVariantEnabledEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @cap@ of type @VariantCapEXT@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsVariantEnabledEXT v1 v2 = liftIO $ dyn478 ptr_glIsVariantEnabledEXT v1 v2
 
 {-# NOINLINE ptr_glIsVariantEnabledEXT #-}
@@ -23463,7 +23463,7 @@ ptr_glIsVariantEnabledEXT = unsafePerformIO $ getCommand "glIsVariantEnabledEXT"
 glIsVertexArray
   :: MonadIO m
   => GLuint -- ^ @array@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsVertexArray v1 = liftIO $ dyn272 ptr_glIsVertexArray v1
 
 {-# NOINLINE ptr_glIsVertexArray #-}
@@ -23475,7 +23475,7 @@ ptr_glIsVertexArray = unsafePerformIO $ getCommand "glIsVertexArray"
 glIsVertexArrayAPPLE
   :: MonadIO m
   => GLuint -- ^ @array@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsVertexArrayAPPLE v1 = liftIO $ dyn272 ptr_glIsVertexArrayAPPLE v1
 
 {-# NOINLINE ptr_glIsVertexArrayAPPLE #-}
@@ -23500,7 +23500,7 @@ glIsVertexAttribEnabledAPPLE
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glIsVertexAttribEnabledAPPLE v1 v2 = liftIO $ dyn478 ptr_glIsVertexAttribEnabledAPPLE v1 v2
 
 {-# NOINLINE ptr_glIsVertexAttribEnabledAPPLE #-}
@@ -23526,7 +23526,7 @@ ptr_glLabelObjectEXT = unsafePerformIO $ getCommand "glLabelObjectEXT"
 
 glLightEnviSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @LightEnvParameterSGIX@.
+  => GLenum -- ^ @pname@ of type [LightEnvParameterSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#LightEnvParameterSGIX).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glLightEnviSGIX v1 v2 = liftIO $ dyn55 ptr_glLightEnviSGIX v1 v2
@@ -23540,7 +23540,7 @@ ptr_glLightEnviSGIX = unsafePerformIO $ getCommand "glLightEnviSGIX"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
 glLightModelf
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @LightModelParameter@.
+  => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
   -> GLfloat -- ^ @param@.
   -> m ()
 glLightModelf v1 v2 = liftIO $ dyn0 ptr_glLightModelf v1 v2
@@ -23554,7 +23554,7 @@ ptr_glLightModelf = unsafePerformIO $ getCommand "glLightModelf"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
 glLightModelfv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @LightModelParameter@.
+  => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glLightModelfv v1 v2 = liftIO $ dyn93 ptr_glLightModelfv v1 v2
@@ -23568,7 +23568,7 @@ ptr_glLightModelfv = unsafePerformIO $ getCommand "glLightModelfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
 glLightModeli
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @LightModelParameter@.
+  => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
   -> GLint -- ^ @param@.
   -> m ()
 glLightModeli v1 v2 = liftIO $ dyn55 ptr_glLightModeli v1 v2
@@ -23582,7 +23582,7 @@ ptr_glLightModeli = unsafePerformIO $ getCommand "glLightModeli"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
 glLightModeliv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @LightModelParameter@.
+  => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glLightModeliv v1 v2 = liftIO $ dyn135 ptr_glLightModeliv v1 v2
@@ -23648,8 +23648,8 @@ ptr_glLightModelxvOES = unsafePerformIO $ getCommand "glLightModelxvOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
 glLightf
   :: MonadIO m
-  => GLenum -- ^ @light@ of type @LightName@.
-  -> GLenum -- ^ @pname@ of type @LightParameter@.
+  => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
+  -> GLenum -- ^ @pname@ of type [LightParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glLightf v1 v2 v3 = liftIO $ dyn160 ptr_glLightf v1 v2 v3
@@ -23663,8 +23663,8 @@ ptr_glLightf = unsafePerformIO $ getCommand "glLightf"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
 glLightfv
   :: MonadIO m
-  => GLenum -- ^ @light@ of type @LightName@.
-  -> GLenum -- ^ @pname@ of type @LightParameter@.
+  => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
+  -> GLenum -- ^ @pname@ of type [LightParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glLightfv v1 v2 v3 = liftIO $ dyn131 ptr_glLightfv v1 v2 v3
@@ -23678,8 +23678,8 @@ ptr_glLightfv = unsafePerformIO $ getCommand "glLightfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
 glLighti
   :: MonadIO m
-  => GLenum -- ^ @light@ of type @LightName@.
-  -> GLenum -- ^ @pname@ of type @LightParameter@.
+  => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
+  -> GLenum -- ^ @pname@ of type [LightParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glLighti v1 v2 v3 = liftIO $ dyn62 ptr_glLighti v1 v2 v3
@@ -23693,8 +23693,8 @@ ptr_glLighti = unsafePerformIO $ getCommand "glLighti"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
 glLightiv
   :: MonadIO m
-  => GLenum -- ^ @light@ of type @LightName@.
-  -> GLenum -- ^ @pname@ of type @LightParameter@.
+  => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
+  -> GLenum -- ^ @pname@ of type [LightParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glLightiv v1 v2 v3 = liftIO $ dyn132 ptr_glLightiv v1 v2 v3
@@ -23871,7 +23871,7 @@ ptr_glListDrawCommandsStatesClientNV = unsafePerformIO $ getCommand "glListDrawC
 glListParameterfSGIX
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> GLenum -- ^ @pname@ of type @ListParameterName@.
+  -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#ListParameterName).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glListParameterfSGIX v1 v2 v3 = liftIO $ dyn482 ptr_glListParameterfSGIX v1 v2 v3
@@ -23885,7 +23885,7 @@ ptr_glListParameterfSGIX = unsafePerformIO $ getCommand "glListParameterfSGIX"
 glListParameterfvSGIX
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> GLenum -- ^ @pname@ of type @ListParameterName@.
+  -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#ListParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glListParameterfvSGIX v1 v2 v3 = liftIO $ dyn344 ptr_glListParameterfvSGIX v1 v2 v3
@@ -23899,7 +23899,7 @@ ptr_glListParameterfvSGIX = unsafePerformIO $ getCommand "glListParameterfvSGIX"
 glListParameteriSGIX
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> GLenum -- ^ @pname@ of type @ListParameterName@.
+  -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#ListParameterName).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glListParameteriSGIX v1 v2 v3 = liftIO $ dyn483 ptr_glListParameteriSGIX v1 v2 v3
@@ -23913,7 +23913,7 @@ ptr_glListParameteriSGIX = unsafePerformIO $ getCommand "glListParameteriSGIX"
 glListParameterivSGIX
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> GLenum -- ^ @pname@ of type @ListParameterName@.
+  -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#ListParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glListParameterivSGIX v1 v2 v3 = liftIO $ dyn330 ptr_glListParameterivSGIX v1 v2 v3
@@ -23938,7 +23938,7 @@ ptr_glLoadIdentity = unsafePerformIO $ getCommand "glLoadIdentity"
 
 glLoadIdentityDeformationMapSGIX
   :: MonadIO m
-  => GLbitfield -- ^ @mask@ of type @FfdMaskSGIX@.
+  => GLbitfield -- ^ @mask@ of type [FfdMaskSGIX](Graphics-Rendering-OpenGL-Raw-Groups.html#FfdMaskSGIX).
   -> m ()
 glLoadIdentityDeformationMapSGIX v1 = liftIO $ dyn69 ptr_glLoadIdentityDeformationMapSGIX v1
 
@@ -24115,7 +24115,7 @@ ptr_glLockArraysEXT = unsafePerformIO $ getCommand "glLockArraysEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glLogicOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glLogicOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glLogicOp.xhtml OpenGL 4.x>
 glLogicOp
   :: MonadIO m
-  => GLenum -- ^ @opcode@ of type @LogicOp@.
+  => GLenum -- ^ @opcode@ of type [LogicOp](Graphics-Rendering-OpenGL-Raw-Groups.html#LogicOp).
   -> m ()
 glLogicOp v1 = liftIO $ dyn4 ptr_glLogicOp v1
 
@@ -24276,7 +24276,7 @@ ptr_glMakeTextureHandleResidentNV = unsafePerformIO $ getCommand "glMakeTextureH
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml OpenGL 2.x>
 glMap1d
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MapTarget@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
   -> GLdouble -- ^ @u1@ of type @CoordD@.
   -> GLdouble -- ^ @u2@ of type @CoordD@.
   -> GLint -- ^ @stride@.
@@ -24294,7 +24294,7 @@ ptr_glMap1d = unsafePerformIO $ getCommand "glMap1d"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml OpenGL 2.x>
 glMap1f
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MapTarget@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
   -> GLfloat -- ^ @u1@ of type @CoordF@.
   -> GLfloat -- ^ @u2@ of type @CoordF@.
   -> GLint -- ^ @stride@.
@@ -24329,7 +24329,7 @@ ptr_glMap1xOES = unsafePerformIO $ getCommand "glMap1xOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap2.xml OpenGL 2.x>
 glMap2d
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MapTarget@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
   -> GLdouble -- ^ @u1@ of type @CoordD@.
   -> GLdouble -- ^ @u2@ of type @CoordD@.
   -> GLint -- ^ @ustride@.
@@ -24351,7 +24351,7 @@ ptr_glMap2d = unsafePerformIO $ getCommand "glMap2d"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap2.xml OpenGL 2.x>
 glMap2f
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MapTarget@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
   -> GLfloat -- ^ @u1@ of type @CoordF@.
   -> GLfloat -- ^ @u2@ of type @CoordF@.
   -> GLint -- ^ @ustride@.
@@ -24471,7 +24471,7 @@ glMapControlPointsNV
   -> GLsizei -- ^ @vstride@.
   -> GLint -- ^ @uorder@ of type @CheckedInt32@.
   -> GLint -- ^ @vorder@ of type @CheckedInt32@.
-  -> GLboolean -- ^ @packed@ of type @Boolean@.
+  -> GLboolean -- ^ @packed@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr a -- ^ @points@ pointing to @COMPSIZE(target,uorder,vorder)@ elements of type @a@.
   -> m ()
 glMapControlPointsNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn496 ptr_glMapControlPointsNV v1 v2 v3 v4 v5 v6 v7 v8 v9
@@ -24775,8 +24775,8 @@ ptr_glMapVertexAttrib2fAPPLE = unsafePerformIO $ getCommand "glMapVertexAttrib2f
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
 glMaterialf
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glMaterialf v1 v2 v3 = liftIO $ dyn160 ptr_glMaterialf v1 v2 v3
@@ -24790,8 +24790,8 @@ ptr_glMaterialf = unsafePerformIO $ getCommand "glMaterialf"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
 glMaterialfv
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glMaterialfv v1 v2 v3 = liftIO $ dyn131 ptr_glMaterialfv v1 v2 v3
@@ -24805,8 +24805,8 @@ ptr_glMaterialfv = unsafePerformIO $ getCommand "glMaterialfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
 glMateriali
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glMateriali v1 v2 v3 = liftIO $ dyn62 ptr_glMateriali v1 v2 v3
@@ -24820,8 +24820,8 @@ ptr_glMateriali = unsafePerformIO $ getCommand "glMateriali"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
 glMaterialiv
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @pname@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glMaterialiv v1 v2 v3 = liftIO $ dyn132 ptr_glMaterialiv v1 v2 v3
@@ -24890,7 +24890,7 @@ ptr_glMaterialxvOES = unsafePerformIO $ getCommand "glMaterialxvOES"
 
 glMatrixFrustumEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLdouble -- ^ @left@.
   -> GLdouble -- ^ @right@.
   -> GLdouble -- ^ @bottom@.
@@ -25003,7 +25003,7 @@ ptr_glMatrixLoad3x3fNV = unsafePerformIO $ getCommand "glMatrixLoad3x3fNV"
 
 glMatrixLoadIdentityEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> m ()
 glMatrixLoadIdentityEXT v1 = liftIO $ dyn4 ptr_glMatrixLoadIdentityEXT v1
 
@@ -25028,7 +25028,7 @@ ptr_glMatrixLoadTranspose3x3fNV = unsafePerformIO $ getCommand "glMatrixLoadTran
 
 glMatrixLoadTransposedEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
   -> m ()
 glMatrixLoadTransposedEXT v1 v2 = liftIO $ dyn92 ptr_glMatrixLoadTransposedEXT v1 v2
@@ -25041,7 +25041,7 @@ ptr_glMatrixLoadTransposedEXT = unsafePerformIO $ getCommand "glMatrixLoadTransp
 
 glMatrixLoadTransposefEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
   -> m ()
 glMatrixLoadTransposefEXT v1 v2 = liftIO $ dyn93 ptr_glMatrixLoadTransposefEXT v1 v2
@@ -25054,7 +25054,7 @@ ptr_glMatrixLoadTransposefEXT = unsafePerformIO $ getCommand "glMatrixLoadTransp
 
 glMatrixLoaddEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
   -> m ()
 glMatrixLoaddEXT v1 v2 = liftIO $ dyn92 ptr_glMatrixLoaddEXT v1 v2
@@ -25067,7 +25067,7 @@ ptr_glMatrixLoaddEXT = unsafePerformIO $ getCommand "glMatrixLoaddEXT"
 
 glMatrixLoadfEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
   -> m ()
 glMatrixLoadfEXT v1 v2 = liftIO $ dyn93 ptr_glMatrixLoadfEXT v1 v2
@@ -25081,7 +25081,7 @@ ptr_glMatrixLoadfEXT = unsafePerformIO $ getCommand "glMatrixLoadfEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMatrixMode.xml OpenGL 2.x>
 glMatrixMode
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> m ()
 glMatrixMode v1 = liftIO $ dyn4 ptr_glMatrixMode v1
 
@@ -25132,7 +25132,7 @@ ptr_glMatrixMultTranspose3x3fNV = unsafePerformIO $ getCommand "glMatrixMultTran
 
 glMatrixMultTransposedEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
   -> m ()
 glMatrixMultTransposedEXT v1 v2 = liftIO $ dyn92 ptr_glMatrixMultTransposedEXT v1 v2
@@ -25145,7 +25145,7 @@ ptr_glMatrixMultTransposedEXT = unsafePerformIO $ getCommand "glMatrixMultTransp
 
 glMatrixMultTransposefEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
   -> m ()
 glMatrixMultTransposefEXT v1 v2 = liftIO $ dyn93 ptr_glMatrixMultTransposefEXT v1 v2
@@ -25158,7 +25158,7 @@ ptr_glMatrixMultTransposefEXT = unsafePerformIO $ getCommand "glMatrixMultTransp
 
 glMatrixMultdEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
   -> m ()
 glMatrixMultdEXT v1 v2 = liftIO $ dyn92 ptr_glMatrixMultdEXT v1 v2
@@ -25171,7 +25171,7 @@ ptr_glMatrixMultdEXT = unsafePerformIO $ getCommand "glMatrixMultdEXT"
 
 glMatrixMultfEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
   -> m ()
 glMatrixMultfEXT v1 v2 = liftIO $ dyn93 ptr_glMatrixMultfEXT v1 v2
@@ -25184,7 +25184,7 @@ ptr_glMatrixMultfEXT = unsafePerformIO $ getCommand "glMatrixMultfEXT"
 
 glMatrixOrthoEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLdouble -- ^ @left@.
   -> GLdouble -- ^ @right@.
   -> GLdouble -- ^ @bottom@.
@@ -25202,7 +25202,7 @@ ptr_glMatrixOrthoEXT = unsafePerformIO $ getCommand "glMatrixOrthoEXT"
 
 glMatrixPopEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> m ()
 glMatrixPopEXT v1 = liftIO $ dyn4 ptr_glMatrixPopEXT v1
 
@@ -25214,7 +25214,7 @@ ptr_glMatrixPopEXT = unsafePerformIO $ getCommand "glMatrixPopEXT"
 
 glMatrixPushEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> m ()
 glMatrixPushEXT v1 = liftIO $ dyn4 ptr_glMatrixPushEXT v1
 
@@ -25226,7 +25226,7 @@ ptr_glMatrixPushEXT = unsafePerformIO $ getCommand "glMatrixPushEXT"
 
 glMatrixRotatedEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLdouble -- ^ @angle@.
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
@@ -25242,7 +25242,7 @@ ptr_glMatrixRotatedEXT = unsafePerformIO $ getCommand "glMatrixRotatedEXT"
 
 glMatrixRotatefEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLfloat -- ^ @angle@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
@@ -25258,7 +25258,7 @@ ptr_glMatrixRotatefEXT = unsafePerformIO $ getCommand "glMatrixRotatefEXT"
 
 glMatrixScaledEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
@@ -25273,7 +25273,7 @@ ptr_glMatrixScaledEXT = unsafePerformIO $ getCommand "glMatrixScaledEXT"
 
 glMatrixScalefEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
   -> GLfloat -- ^ @z@.
@@ -25288,7 +25288,7 @@ ptr_glMatrixScalefEXT = unsafePerformIO $ getCommand "glMatrixScalefEXT"
 
 glMatrixTranslatedEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
@@ -25303,7 +25303,7 @@ ptr_glMatrixTranslatedEXT = unsafePerformIO $ getCommand "glMatrixTranslatedEXT"
 
 glMatrixTranslatefEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @MatrixMode@.
+  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
   -> GLfloat -- ^ @z@.
@@ -25408,7 +25408,7 @@ glMinmax
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
-  -> GLboolean -- ^ @sink@ of type @Boolean@.
+  -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glMinmax v1 v2 v3 = liftIO $ dyn519 ptr_glMinmax v1 v2 v3
 
@@ -25420,9 +25420,9 @@ ptr_glMinmax = unsafePerformIO $ getCommand "glMinmax"
 
 glMinmaxEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MinmaxTargetEXT@.
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
-  -> GLboolean -- ^ @sink@ of type @Boolean@.
+  -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glMinmaxEXT v1 v2 v3 = liftIO $ dyn519 ptr_glMinmaxEXT v1 v2 v3
 
@@ -25547,7 +25547,7 @@ ptr_glMultTransposeMatrixxOES = unsafePerformIO $ getCommand "glMultTransposeMat
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawArrays.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawArrays.xhtml OpenGL 4.x>
 glMultiDrawArrays
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr GLint -- ^ @first@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
   -> GLsizei -- ^ @drawcount@.
@@ -25562,7 +25562,7 @@ ptr_glMultiDrawArrays = unsafePerformIO $ getCommand "glMultiDrawArrays"
 
 glMultiDrawArraysEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr GLint -- ^ @first@ pointing to @COMPSIZE(primcount)@ elements of type @GLint@.
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(primcount)@ elements of type @GLsizei@.
   -> GLsizei -- ^ @primcount@.
@@ -25672,7 +25672,7 @@ ptr_glMultiDrawArraysIndirectEXT = unsafePerformIO $ getCommand "glMultiDrawArra
 
 glMultiDrawElementArrayAPPLE
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr GLint -- ^ @first@ pointing to @primcount@ elements of type @GLint@.
   -> Ptr GLsizei -- ^ @count@ pointing to @primcount@ elements of type @GLsizei@.
   -> GLsizei -- ^ @primcount@.
@@ -25688,7 +25688,7 @@ ptr_glMultiDrawElementArrayAPPLE = unsafePerformIO $ getCommand "glMultiDrawElem
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElements.xhtml OpenGL 4.x>
 glMultiDrawElements
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(drawcount)@ elements of type @Ptr a@.
@@ -25756,7 +25756,7 @@ ptr_glMultiDrawElementsBaseVertexOES = unsafePerformIO $ getCommand "glMultiDraw
 
 glMultiDrawElementsEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(primcount)@ elements of type @GLsizei@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(primcount)@ elements of type @Ptr a@.
@@ -25873,7 +25873,7 @@ ptr_glMultiDrawElementsIndirectEXT = unsafePerformIO $ getCommand "glMultiDrawEl
 
 glMultiDrawRangeElementArrayAPPLE
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PrimitiveType@.
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> GLuint -- ^ @start@.
   -> GLuint -- ^ @end@.
   -> Ptr GLint -- ^ @first@ pointing to @primcount@ elements of type @GLint@.
@@ -25890,7 +25890,7 @@ ptr_glMultiDrawRangeElementArrayAPPLE = unsafePerformIO $ getCommand "glMultiDra
 
 glMultiModeDrawArraysIBM
   :: MonadIO m
-  => Ptr GLenum -- ^ @mode@ pointing to @COMPSIZE(primcount)@ elements of type @PrimitiveType@.
+  => Ptr GLenum -- ^ @mode@ pointing to @COMPSIZE(primcount)@ elements of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr GLint -- ^ @first@ pointing to @COMPSIZE(primcount)@ elements of type @GLint@.
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(primcount)@ elements of type @GLsizei@.
   -> GLsizei -- ^ @primcount@.
@@ -25906,7 +25906,7 @@ ptr_glMultiModeDrawArraysIBM = unsafePerformIO $ getCommand "glMultiModeDrawArra
 
 glMultiModeDrawElementsIBM
   :: MonadIO m
-  => Ptr GLenum -- ^ @mode@ pointing to @COMPSIZE(primcount)@ elements of type @PrimitiveType@.
+  => Ptr GLenum -- ^ @mode@ pointing to @COMPSIZE(primcount)@ elements of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(primcount)@ elements of type @GLsizei@.
   -> GLenum -- ^ @type@ of type @DrawElementsType@.
   -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(primcount)@ elements of type @Ptr a@.
@@ -25924,7 +25924,7 @@ ptr_glMultiModeDrawElementsIBM = unsafePerformIO $ getCommand "glMultiModeDrawEl
 glMultiTexBufferEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @internalformat@ of type @TypeEnum@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -27310,7 +27310,7 @@ glMultiTexCoordPointerEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
   -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @TexCoordPointerType@.
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#TexCoordPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -27325,8 +27325,8 @@ ptr_glMultiTexCoordPointerEXT = unsafePerformIO $ getCommand "glMultiTexCoordPoi
 glMultiTexEnvfEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glMultiTexEnvfEXT v1 v2 v3 v4 = liftIO $ dyn557 ptr_glMultiTexEnvfEXT v1 v2 v3 v4
@@ -27340,8 +27340,8 @@ ptr_glMultiTexEnvfEXT = unsafePerformIO $ getCommand "glMultiTexEnvfEXT"
 glMultiTexEnvfvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glMultiTexEnvfvEXT v1 v2 v3 v4 = liftIO $ dyn316 ptr_glMultiTexEnvfvEXT v1 v2 v3 v4
@@ -27355,8 +27355,8 @@ ptr_glMultiTexEnvfvEXT = unsafePerformIO $ getCommand "glMultiTexEnvfvEXT"
 glMultiTexEnviEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glMultiTexEnviEXT v1 v2 v3 v4 = liftIO $ dyn558 ptr_glMultiTexEnviEXT v1 v2 v3 v4
@@ -27370,8 +27370,8 @@ ptr_glMultiTexEnviEXT = unsafePerformIO $ getCommand "glMultiTexEnviEXT"
 glMultiTexEnvivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glMultiTexEnvivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glMultiTexEnvivEXT v1 v2 v3 v4
@@ -27385,8 +27385,8 @@ ptr_glMultiTexEnvivEXT = unsafePerformIO $ getCommand "glMultiTexEnvivEXT"
 glMultiTexGendEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> GLdouble -- ^ @param@.
   -> m ()
 glMultiTexGendEXT v1 v2 v3 v4 = liftIO $ dyn559 ptr_glMultiTexGendEXT v1 v2 v3 v4
@@ -27400,8 +27400,8 @@ ptr_glMultiTexGendEXT = unsafePerformIO $ getCommand "glMultiTexGendEXT"
 glMultiTexGendvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
 glMultiTexGendvEXT v1 v2 v3 v4 = liftIO $ dyn349 ptr_glMultiTexGendvEXT v1 v2 v3 v4
@@ -27415,8 +27415,8 @@ ptr_glMultiTexGendvEXT = unsafePerformIO $ getCommand "glMultiTexGendvEXT"
 glMultiTexGenfEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glMultiTexGenfEXT v1 v2 v3 v4 = liftIO $ dyn557 ptr_glMultiTexGenfEXT v1 v2 v3 v4
@@ -27430,8 +27430,8 @@ ptr_glMultiTexGenfEXT = unsafePerformIO $ getCommand "glMultiTexGenfEXT"
 glMultiTexGenfvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glMultiTexGenfvEXT v1 v2 v3 v4 = liftIO $ dyn316 ptr_glMultiTexGenfvEXT v1 v2 v3 v4
@@ -27445,8 +27445,8 @@ ptr_glMultiTexGenfvEXT = unsafePerformIO $ getCommand "glMultiTexGenfvEXT"
 glMultiTexGeniEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glMultiTexGeniEXT v1 v2 v3 v4 = liftIO $ dyn558 ptr_glMultiTexGeniEXT v1 v2 v3 v4
@@ -27460,8 +27460,8 @@ ptr_glMultiTexGeniEXT = unsafePerformIO $ getCommand "glMultiTexGeniEXT"
 glMultiTexGenivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glMultiTexGenivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glMultiTexGenivEXT v1 v2 v3 v4
@@ -27475,13 +27475,13 @@ ptr_glMultiTexGenivEXT = unsafePerformIO $ getCommand "glMultiTexGenivEXT"
 glMultiTexImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glMultiTexImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn560 ptr_glMultiTexImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
@@ -27495,14 +27495,14 @@ ptr_glMultiTexImage1DEXT = unsafePerformIO $ getCommand "glMultiTexImage1DEXT"
 glMultiTexImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glMultiTexImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn561 ptr_glMultiTexImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -27516,15 +27516,15 @@ ptr_glMultiTexImage2DEXT = unsafePerformIO $ getCommand "glMultiTexImage2DEXT"
 glMultiTexImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glMultiTexImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn562 ptr_glMultiTexImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
@@ -27538,8 +27538,8 @@ ptr_glMultiTexImage3DEXT = unsafePerformIO $ getCommand "glMultiTexImage3DEXT"
 glMultiTexParameterIivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glMultiTexParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glMultiTexParameterIivEXT v1 v2 v3 v4
@@ -27553,8 +27553,8 @@ ptr_glMultiTexParameterIivEXT = unsafePerformIO $ getCommand "glMultiTexParamete
 glMultiTexParameterIuivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glMultiTexParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn353 ptr_glMultiTexParameterIuivEXT v1 v2 v3 v4
@@ -27568,8 +27568,8 @@ ptr_glMultiTexParameterIuivEXT = unsafePerformIO $ getCommand "glMultiTexParamet
 glMultiTexParameterfEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glMultiTexParameterfEXT v1 v2 v3 v4 = liftIO $ dyn557 ptr_glMultiTexParameterfEXT v1 v2 v3 v4
@@ -27583,8 +27583,8 @@ ptr_glMultiTexParameterfEXT = unsafePerformIO $ getCommand "glMultiTexParameterf
 glMultiTexParameterfvEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glMultiTexParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn316 ptr_glMultiTexParameterfvEXT v1 v2 v3 v4
@@ -27598,8 +27598,8 @@ ptr_glMultiTexParameterfvEXT = unsafePerformIO $ getCommand "glMultiTexParameter
 glMultiTexParameteriEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glMultiTexParameteriEXT v1 v2 v3 v4 = liftIO $ dyn558 ptr_glMultiTexParameteriEXT v1 v2 v3 v4
@@ -27613,8 +27613,8 @@ ptr_glMultiTexParameteriEXT = unsafePerformIO $ getCommand "glMultiTexParameteri
 glMultiTexParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glMultiTexParameterivEXT v1 v2 v3 v4 = liftIO $ dyn317 ptr_glMultiTexParameterivEXT v1 v2 v3 v4
@@ -27628,7 +27628,7 @@ ptr_glMultiTexParameterivEXT = unsafePerformIO $ getCommand "glMultiTexParameter
 glMultiTexRenderbufferEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
 glMultiTexRenderbufferEXT v1 v2 v3 = liftIO $ dyn29 ptr_glMultiTexRenderbufferEXT v1 v2 v3
@@ -27642,12 +27642,12 @@ ptr_glMultiTexRenderbufferEXT = unsafePerformIO $ getCommand "glMultiTexRenderbu
 glMultiTexSubImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glMultiTexSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn563 ptr_glMultiTexSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8
@@ -27661,14 +27661,14 @@ ptr_glMultiTexSubImage1DEXT = unsafePerformIO $ getCommand "glMultiTexSubImage1D
 glMultiTexSubImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glMultiTexSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn564 ptr_glMultiTexSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -27682,7 +27682,7 @@ ptr_glMultiTexSubImage2DEXT = unsafePerformIO $ getCommand "glMultiTexSubImage2D
 glMultiTexSubImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -27690,8 +27690,8 @@ glMultiTexSubImage3DEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glMultiTexSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO $ dyn565 ptr_glMultiTexSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12
@@ -27994,7 +27994,7 @@ glNamedFramebufferTexture1DEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@ of type @TextureTarget@.
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> m ()
@@ -28010,7 +28010,7 @@ glNamedFramebufferTexture2DEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@ of type @TextureTarget@.
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> m ()
@@ -28026,7 +28026,7 @@ glNamedFramebufferTexture3DEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@ of type @TextureTarget@.
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @zoffset@ of type @CheckedInt32@.
@@ -28060,7 +28060,7 @@ glNamedFramebufferTextureFaceEXT
   -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @face@ of type @TextureTarget@.
+  -> GLenum -- ^ @face@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> m ()
 glNamedFramebufferTextureFaceEXT v1 v2 v3 v4 v5 = liftIO $ dyn574 ptr_glNamedFramebufferTextureFaceEXT v1 v2 v3 v4 v5
 
@@ -28400,7 +28400,7 @@ ptr_glNamedStringARB = unsafePerformIO $ getCommand "glNamedStringARB"
 glNewList
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
-  -> GLenum -- ^ @mode@ of type @ListMode@.
+  -> GLenum -- ^ @mode@ of type [ListMode](Graphics-Rendering-OpenGL-Raw-Groups.html#ListMode).
   -> m ()
 glNewList v1 v2 = liftIO $ dyn15 ptr_glNewList v1 v2
 
@@ -28702,7 +28702,7 @@ ptr_glNormalP3uiv = unsafePerformIO $ getCommand "glNormalP3uiv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormalPointer.xml OpenGL 2.x>
 glNormalPointer
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @NormalPointerType@.
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#NormalPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
   -> m ()
@@ -28716,7 +28716,7 @@ ptr_glNormalPointer = unsafePerformIO $ getCommand "glNormalPointer"
 
 glNormalPointerEXT
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @NormalPointerType@.
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#NormalPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLsizei -- ^ @count@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride,count)@ elements of type @a@.
@@ -28731,7 +28731,7 @@ ptr_glNormalPointerEXT = unsafePerformIO $ getCommand "glNormalPointerEXT"
 
 glNormalPointerListIBM
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @NormalPointerType@.
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#NormalPointerType).
   -> GLint -- ^ @stride@.
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @Ptr a@.
   -> GLint -- ^ @ptrstride@.
@@ -28746,7 +28746,7 @@ ptr_glNormalPointerListIBM = unsafePerformIO $ getCommand "glNormalPointerListIB
 
 glNormalPointervINTEL
   :: MonadIO m
-  => GLenum -- ^ @type@ of type @NormalPointerType@.
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#NormalPointerType).
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @4@ elements of type @Ptr a@.
   -> m ()
 glNormalPointervINTEL v1 v2 = liftIO $ dyn267 ptr_glNormalPointervINTEL v1 v2
@@ -29239,7 +29239,7 @@ ptr_glPathCoordsNV = unsafePerformIO $ getCommand "glPathCoordsNV"
 
 glPathCoverDepthFuncNV
   :: MonadIO m
-  => GLenum -- ^ @func@ of type @DepthFunction@.
+  => GLenum -- ^ @func@ of type [DepthFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#DepthFunction).
   -> m ()
 glPathCoverDepthFuncNV v1 = liftIO $ dyn4 ptr_glPathCoverDepthFuncNV v1
 
@@ -29443,7 +29443,7 @@ ptr_glPathStencilDepthOffsetNV = unsafePerformIO $ getCommand "glPathStencilDept
 
 glPathStencilFuncNV
   :: MonadIO m
-  => GLenum -- ^ @func@ of type @StencilFunction@.
+  => GLenum -- ^ @func@ of type [StencilFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilFunction).
   -> GLint -- ^ @ref@ of type @ClampedStencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
@@ -29560,7 +29560,7 @@ ptr_glPixelDataRangeNV = unsafePerformIO $ getCommand "glPixelDataRangeNV"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>
 glPixelMapfv
   :: MonadIO m
-  => GLenum -- ^ @map@ of type @PixelMap@.
+  => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
   -> GLsizei -- ^ @mapsize@ of type @CheckedInt32@.
   -> Ptr GLfloat -- ^ @values@ pointing to @mapsize@ elements of type @GLfloat@.
   -> m ()
@@ -29575,7 +29575,7 @@ ptr_glPixelMapfv = unsafePerformIO $ getCommand "glPixelMapfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>
 glPixelMapuiv
   :: MonadIO m
-  => GLenum -- ^ @map@ of type @PixelMap@.
+  => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
   -> GLsizei -- ^ @mapsize@ of type @CheckedInt32@.
   -> Ptr GLuint -- ^ @values@ pointing to @mapsize@ elements of type @GLuint@.
   -> m ()
@@ -29590,7 +29590,7 @@ ptr_glPixelMapuiv = unsafePerformIO $ getCommand "glPixelMapuiv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>
 glPixelMapusv
   :: MonadIO m
-  => GLenum -- ^ @map@ of type @PixelMap@.
+  => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
   -> GLsizei -- ^ @mapsize@ of type @CheckedInt32@.
   -> Ptr GLushort -- ^ @values@ pointing to @mapsize@ elements of type @GLushort@.
   -> m ()
@@ -29619,7 +29619,7 @@ ptr_glPixelMapx = unsafePerformIO $ getCommand "glPixelMapx"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml OpenGL 4.x>
 glPixelStoref
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelStoreParameter@.
+  => GLenum -- ^ @pname@ of type [PixelStoreParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelStoreParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glPixelStoref v1 v2 = liftIO $ dyn0 ptr_glPixelStoref v1 v2
@@ -29633,7 +29633,7 @@ ptr_glPixelStoref = unsafePerformIO $ getCommand "glPixelStoref"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml OpenGL 4.x>
 glPixelStorei
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelStoreParameter@.
+  => GLenum -- ^ @pname@ of type [PixelStoreParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelStoreParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glPixelStorei v1 v2 = liftIO $ dyn55 ptr_glPixelStorei v1 v2
@@ -29659,7 +29659,7 @@ ptr_glPixelStorex = unsafePerformIO $ getCommand "glPixelStorex"
 
 glPixelTexGenParameterfSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTexGenParameterNameSGIS@.
+  => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTexGenParameterNameSGIS).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glPixelTexGenParameterfSGIS v1 v2 = liftIO $ dyn0 ptr_glPixelTexGenParameterfSGIS v1 v2
@@ -29672,7 +29672,7 @@ ptr_glPixelTexGenParameterfSGIS = unsafePerformIO $ getCommand "glPixelTexGenPar
 
 glPixelTexGenParameterfvSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTexGenParameterNameSGIS@.
+  => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glPixelTexGenParameterfvSGIS v1 v2 = liftIO $ dyn93 ptr_glPixelTexGenParameterfvSGIS v1 v2
@@ -29685,7 +29685,7 @@ ptr_glPixelTexGenParameterfvSGIS = unsafePerformIO $ getCommand "glPixelTexGenPa
 
 glPixelTexGenParameteriSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTexGenParameterNameSGIS@.
+  => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTexGenParameterNameSGIS).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glPixelTexGenParameteriSGIS v1 v2 = liftIO $ dyn55 ptr_glPixelTexGenParameteriSGIS v1 v2
@@ -29698,7 +29698,7 @@ ptr_glPixelTexGenParameteriSGIS = unsafePerformIO $ getCommand "glPixelTexGenPar
 
 glPixelTexGenParameterivSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTexGenParameterNameSGIS@.
+  => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glPixelTexGenParameterivSGIS v1 v2 = liftIO $ dyn135 ptr_glPixelTexGenParameterivSGIS v1 v2
@@ -29724,7 +29724,7 @@ ptr_glPixelTexGenSGIX = unsafePerformIO $ getCommand "glPixelTexGenSGIX"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelTransfer.xml OpenGL 2.x>
 glPixelTransferf
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTransferParameter@.
+  => GLenum -- ^ @pname@ of type [PixelTransferParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTransferParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glPixelTransferf v1 v2 = liftIO $ dyn0 ptr_glPixelTransferf v1 v2
@@ -29738,7 +29738,7 @@ ptr_glPixelTransferf = unsafePerformIO $ getCommand "glPixelTransferf"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelTransfer.xml OpenGL 2.x>
 glPixelTransferi
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PixelTransferParameter@.
+  => GLenum -- ^ @pname@ of type [PixelTransferParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTransferParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glPixelTransferi v1 v2 = liftIO $ dyn55 ptr_glPixelTransferi v1 v2
@@ -29855,7 +29855,7 @@ glPointAlongPathNV
   -> Ptr GLfloat -- ^ @y@ pointing to @1@ element of type @GLfloat@.
   -> Ptr GLfloat -- ^ @tangentX@ pointing to @1@ element of type @GLfloat@.
   -> Ptr GLfloat -- ^ @tangentY@ pointing to @1@ element of type @GLfloat@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn604 ptr_glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glPointAlongPathNV #-}
@@ -30154,8 +30154,8 @@ ptr_glPollInstrumentsSGIX = unsafePerformIO $ getCommand "glPollInstrumentsSGIX"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonMode.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonMode.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPolygonMode.xhtml OpenGL 4.x>
 glPolygonMode
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @mode@ of type @PolygonMode@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @mode@ of type [PolygonMode](Graphics-Rendering-OpenGL-Raw-Groups.html#PolygonMode).
   -> m ()
 glPolygonMode v1 v2 = liftIO $ dyn51 ptr_glPolygonMode v1 v2
 
@@ -30167,8 +30167,8 @@ ptr_glPolygonMode = unsafePerformIO $ getCommand "glPolygonMode"
 
 glPolygonModeNV
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @mode@ of type @PolygonMode@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @mode@ of type [PolygonMode](Graphics-Rendering-OpenGL-Raw-Groups.html#PolygonMode).
   -> m ()
 glPolygonModeNV v1 v2 = liftIO $ dyn51 ptr_glPolygonModeNV v1 v2
 
@@ -32755,7 +32755,7 @@ glProgramUniformMatrix2dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @2@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix2dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix2dv v1 v2 v3 v4 v5
@@ -32771,7 +32771,7 @@ glProgramUniformMatrix2dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix2dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix2dvEXT v1 v2 v3 v4 v5
@@ -32788,7 +32788,7 @@ glProgramUniformMatrix2fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @2@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix2fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix2fv v1 v2 v3 v4 v5
@@ -32804,7 +32804,7 @@ glProgramUniformMatrix2fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix2fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix2fvEXT v1 v2 v3 v4 v5
@@ -32820,7 +32820,7 @@ glProgramUniformMatrix2x3dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix2x3dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix2x3dv v1 v2 v3 v4 v5
@@ -32836,7 +32836,7 @@ glProgramUniformMatrix2x3dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix2x3dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix2x3dvEXT v1 v2 v3 v4 v5
@@ -32853,7 +32853,7 @@ glProgramUniformMatrix2x3fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix2x3fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix2x3fv v1 v2 v3 v4 v5
@@ -32869,7 +32869,7 @@ glProgramUniformMatrix2x3fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix2x3fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix2x3fvEXT v1 v2 v3 v4 v5
@@ -32885,7 +32885,7 @@ glProgramUniformMatrix2x4dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix2x4dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix2x4dv v1 v2 v3 v4 v5
@@ -32901,7 +32901,7 @@ glProgramUniformMatrix2x4dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix2x4dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix2x4dvEXT v1 v2 v3 v4 v5
@@ -32918,7 +32918,7 @@ glProgramUniformMatrix2x4fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix2x4fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix2x4fv v1 v2 v3 v4 v5
@@ -32934,7 +32934,7 @@ glProgramUniformMatrix2x4fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix2x4fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix2x4fvEXT v1 v2 v3 v4 v5
@@ -32950,7 +32950,7 @@ glProgramUniformMatrix3dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @3@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix3dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix3dv v1 v2 v3 v4 v5
@@ -32966,7 +32966,7 @@ glProgramUniformMatrix3dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix3dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix3dvEXT v1 v2 v3 v4 v5
@@ -32983,7 +32983,7 @@ glProgramUniformMatrix3fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix3fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix3fv v1 v2 v3 v4 v5
@@ -32999,7 +32999,7 @@ glProgramUniformMatrix3fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*9@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix3fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix3fvEXT v1 v2 v3 v4 v5
@@ -33015,7 +33015,7 @@ glProgramUniformMatrix3x2dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix3x2dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix3x2dv v1 v2 v3 v4 v5
@@ -33031,7 +33031,7 @@ glProgramUniformMatrix3x2dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix3x2dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix3x2dvEXT v1 v2 v3 v4 v5
@@ -33048,7 +33048,7 @@ glProgramUniformMatrix3x2fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix3x2fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix3x2fv v1 v2 v3 v4 v5
@@ -33064,7 +33064,7 @@ glProgramUniformMatrix3x2fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix3x2fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix3x2fvEXT v1 v2 v3 v4 v5
@@ -33080,7 +33080,7 @@ glProgramUniformMatrix3x4dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix3x4dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix3x4dv v1 v2 v3 v4 v5
@@ -33096,7 +33096,7 @@ glProgramUniformMatrix3x4dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix3x4dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix3x4dvEXT v1 v2 v3 v4 v5
@@ -33113,7 +33113,7 @@ glProgramUniformMatrix3x4fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix3x4fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix3x4fv v1 v2 v3 v4 v5
@@ -33129,7 +33129,7 @@ glProgramUniformMatrix3x4fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix3x4fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix3x4fvEXT v1 v2 v3 v4 v5
@@ -33145,7 +33145,7 @@ glProgramUniformMatrix4dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix4dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix4dv v1 v2 v3 v4 v5
@@ -33161,7 +33161,7 @@ glProgramUniformMatrix4dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix4dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix4dvEXT v1 v2 v3 v4 v5
@@ -33178,7 +33178,7 @@ glProgramUniformMatrix4fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix4fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix4fv v1 v2 v3 v4 v5
@@ -33194,7 +33194,7 @@ glProgramUniformMatrix4fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*16@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix4fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix4fvEXT v1 v2 v3 v4 v5
@@ -33210,7 +33210,7 @@ glProgramUniformMatrix4x2dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix4x2dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix4x2dv v1 v2 v3 v4 v5
@@ -33226,7 +33226,7 @@ glProgramUniformMatrix4x2dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix4x2dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix4x2dvEXT v1 v2 v3 v4 v5
@@ -33243,7 +33243,7 @@ glProgramUniformMatrix4x2fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix4x2fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix4x2fv v1 v2 v3 v4 v5
@@ -33259,7 +33259,7 @@ glProgramUniformMatrix4x2fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix4x2fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix4x2fvEXT v1 v2 v3 v4 v5
@@ -33275,7 +33275,7 @@ glProgramUniformMatrix4x3dv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix4x3dv v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix4x3dv v1 v2 v3 v4 v5
@@ -33291,7 +33291,7 @@ glProgramUniformMatrix4x3dvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count@ elements of type @GLdouble@.
   -> m ()
 glProgramUniformMatrix4x3dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn660 ptr_glProgramUniformMatrix4x3dvEXT v1 v2 v3 v4 v5
@@ -33308,7 +33308,7 @@ glProgramUniformMatrix4x3fv
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix4x3fv v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix4x3fv v1 v2 v3 v4 v5
@@ -33324,7 +33324,7 @@ glProgramUniformMatrix4x3fvEXT
   => GLuint -- ^ @program@.
   -> GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
   -> m ()
 glProgramUniformMatrix4x3fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn661 ptr_glProgramUniformMatrix4x3fvEXT v1 v2 v3 v4 v5
@@ -33405,7 +33405,7 @@ ptr_glProvokingVertexEXT = unsafePerformIO $ getCommand "glProvokingVertexEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushAttrib.xml OpenGL 2.x>
 glPushAttrib
   :: MonadIO m
-  => GLbitfield -- ^ @mask@ of type @AttribMask@.
+  => GLbitfield -- ^ @mask@ of type [AttribMask](Graphics-Rendering-OpenGL-Raw-Groups.html#AttribMask).
   -> m ()
 glPushAttrib v1 = liftIO $ dyn69 ptr_glPushAttrib v1
 
@@ -33418,7 +33418,7 @@ ptr_glPushAttrib = unsafePerformIO $ getCommand "glPushAttrib"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushClientAttrib.xml OpenGL 2.x>
 glPushClientAttrib
   :: MonadIO m
-  => GLbitfield -- ^ @mask@ of type @ClientAttribMask@.
+  => GLbitfield -- ^ @mask@ of type [ClientAttribMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClientAttribMask).
   -> m ()
 glPushClientAttrib v1 = liftIO $ dyn69 ptr_glPushClientAttrib v1
 
@@ -33430,7 +33430,7 @@ ptr_glPushClientAttrib = unsafePerformIO $ getCommand "glPushClientAttrib"
 
 glPushClientAttribDefaultEXT
   :: MonadIO m
-  => GLbitfield -- ^ @mask@ of type @ClientAttribMask@.
+  => GLbitfield -- ^ @mask@ of type [ClientAttribMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClientAttribMask).
   -> m ()
 glPushClientAttribDefaultEXT v1 = liftIO $ dyn69 ptr_glPushClientAttribDefaultEXT v1
 
@@ -33554,7 +33554,7 @@ glQueryObjectParameteruiAMD
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @id@.
   -> GLenum -- ^ @pname@.
-  -> GLuint -- ^ @param@ of type @OcclusionQueryEventMaskAMD@.
+  -> GLuint -- ^ @param@ of type [OcclusionQueryEventMaskAMD](Graphics-Rendering-OpenGL-Raw-Groups.html#OcclusionQueryEventMaskAMD).
   -> m ()
 glQueryObjectParameteruiAMD v1 v2 v3 v4 = liftIO $ dyn663 ptr_glQueryObjectParameteruiAMD v1 v2 v3 v4
 
@@ -33994,7 +33994,7 @@ ptr_glRasterSamplesEXT = unsafePerformIO $ getCommand "glRasterSamplesEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glReadBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glReadBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glReadBuffer.xhtml OpenGL 4.x>
 glReadBuffer
   :: MonadIO m
-  => GLenum -- ^ @src@ of type @ReadBufferMode@.
+  => GLenum -- ^ @src@ of type [ReadBufferMode](Graphics-Rendering-OpenGL-Raw-Groups.html#ReadBufferMode).
   -> m ()
 glReadBuffer v1 = liftIO $ dyn4 ptr_glReadBuffer v1
 
@@ -34048,8 +34048,8 @@ glReadPixels
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glReadPixels v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn666 ptr_glReadPixels v1 v2 v3 v4 v5 v6 v7
@@ -34124,8 +34124,8 @@ glReadnPixelsKHR
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> GLsizei -- ^ @bufSize@.
   -> Ptr a -- ^ @data@ pointing to @bufSize@ elements of type @a@.
   -> m ()
@@ -34312,7 +34312,7 @@ ptr_glReleaseShaderCompiler = unsafePerformIO $ getCommand "glReleaseShaderCompi
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRenderMode.xml OpenGL 2.x>
 glRenderMode
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @RenderingMode@.
+  => GLenum -- ^ @mode@ of type [RenderingMode](Graphics-Rendering-OpenGL-Raw-Groups.html#RenderingMode).
   -> m GLint
 glRenderMode v1 = liftIO $ dyn672 ptr_glRenderMode v1
 
@@ -34864,7 +34864,7 @@ ptr_glResetHistogram = unsafePerformIO $ getCommand "glResetHistogram"
 
 glResetHistogramEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @HistogramTargetEXT@.
+  => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
   -> m ()
 glResetHistogramEXT v1 = liftIO $ dyn4 ptr_glResetHistogramEXT v1
 
@@ -34889,7 +34889,7 @@ ptr_glResetMinmax = unsafePerformIO $ getCommand "glResetMinmax"
 
 glResetMinmaxEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MinmaxTargetEXT@.
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
   -> m ()
 glResetMinmaxEXT v1 = liftIO $ dyn4 ptr_glResetMinmaxEXT v1
 
@@ -35021,7 +35021,7 @@ ptr_glRotatexOES = unsafePerformIO $ getCommand "glRotatexOES"
 glSampleCoverage
   :: MonadIO m
   => GLfloat -- ^ @value@.
-  -> GLboolean -- ^ @invert@ of type @Boolean@.
+  -> GLboolean -- ^ @invert@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glSampleCoverage v1 v2 = liftIO $ dyn689 ptr_glSampleCoverage v1 v2
 
@@ -35034,7 +35034,7 @@ ptr_glSampleCoverage = unsafePerformIO $ getCommand "glSampleCoverage"
 glSampleCoverageARB
   :: MonadIO m
   => GLfloat -- ^ @value@.
-  -> GLboolean -- ^ @invert@ of type @Boolean@.
+  -> GLboolean -- ^ @invert@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glSampleCoverageARB v1 v2 = liftIO $ dyn689 ptr_glSampleCoverageARB v1 v2
 
@@ -35087,7 +35087,7 @@ ptr_glSampleMapATI = unsafePerformIO $ getCommand "glSampleMapATI"
 glSampleMaskEXT
   :: MonadIO m
   => GLclampf -- ^ @value@ of type @ClampedFloat32@.
-  -> GLboolean -- ^ @invert@ of type @Boolean@.
+  -> GLboolean -- ^ @invert@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glSampleMaskEXT v1 v2 = liftIO $ dyn691 ptr_glSampleMaskEXT v1 v2
 
@@ -35113,7 +35113,7 @@ ptr_glSampleMaskIndexedNV = unsafePerformIO $ getCommand "glSampleMaskIndexedNV"
 glSampleMaskSGIS
   :: MonadIO m
   => GLclampf -- ^ @value@ of type @ClampedFloat32@.
-  -> GLboolean -- ^ @invert@ of type @Boolean@.
+  -> GLboolean -- ^ @invert@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glSampleMaskSGIS v1 v2 = liftIO $ dyn691 ptr_glSampleMaskSGIS v1 v2
 
@@ -35151,7 +35151,7 @@ ptr_glSamplePatternEXT = unsafePerformIO $ getCommand "glSamplePatternEXT"
 
 glSamplePatternSGIS
   :: MonadIO m
-  => GLenum -- ^ @pattern@ of type @SamplePatternSGIS@.
+  => GLenum -- ^ @pattern@ of type [SamplePatternSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#SamplePatternSGIS).
   -> m ()
 glSamplePatternSGIS v1 = liftIO $ dyn4 ptr_glSamplePatternSGIS v1
 
@@ -35972,7 +35972,7 @@ ptr_glSecondaryColorP3uiv = unsafePerformIO $ getCommand "glSecondaryColorP3uiv"
 glSecondaryColorPointer
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ColorPointerType@.
+  -> GLenum -- ^ @type@ of type [ColorPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -35987,7 +35987,7 @@ ptr_glSecondaryColorPointer = unsafePerformIO $ getCommand "glSecondaryColorPoin
 glSecondaryColorPointerEXT
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ColorPointerType@.
+  -> GLenum -- ^ @type@ of type [ColorPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -36032,7 +36032,7 @@ ptr_glSelectBuffer = unsafePerformIO $ getCommand "glSelectBuffer"
 glSelectPerfMonitorCountersAMD
   :: MonadIO m
   => GLuint -- ^ @monitor@.
-  -> GLboolean -- ^ @enable@ of type @Boolean@.
+  -> GLboolean -- ^ @enable@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLuint -- ^ @group@.
   -> GLint -- ^ @numCounters@.
   -> Ptr GLuint -- ^ @counterList@ pointing to @numCounters@ elements of type @GLuint@.
@@ -36052,8 +36052,8 @@ glSeparableFilter2D
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @row@ pointing to @COMPSIZE(target,format,type,width)@ elements of type @a@.
   -> Ptr b -- ^ @column@ pointing to @COMPSIZE(target,format,type,height)@ elements of type @b@.
   -> m ()
@@ -36067,12 +36067,12 @@ ptr_glSeparableFilter2D = unsafePerformIO $ getCommand "glSeparableFilter2D"
 
 glSeparableFilter2DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @SeparableTargetEXT@.
+  => GLenum -- ^ @target@ of type [SeparableTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#SeparableTargetEXT).
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @row@ pointing to @COMPSIZE(target,format,type,width)@ elements of type @a@.
   -> Ptr b -- ^ @column@ pointing to @COMPSIZE(target,format,type,height)@ elements of type @b@.
   -> m ()
@@ -36167,7 +36167,7 @@ ptr_glSetMultisamplefvAMD = unsafePerformIO $ getCommand "glSetMultisamplefvAMD"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glShadeModel.xml OpenGL 2.x>
 glShadeModel
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @ShadingModel@.
+  => GLenum -- ^ @mode@ of type [ShadingModel](Graphics-Rendering-OpenGL-Raw-Groups.html#ShadingModel).
   -> m ()
 glShadeModel v1 = liftIO $ dyn4 ptr_glShadeModel v1
 
@@ -36287,7 +36287,7 @@ ptr_glShaderStorageBlockBinding = unsafePerformIO $ getCommand "glShaderStorageB
 
 glSharpenTexFuncSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLsizei -- ^ @n@.
   -> Ptr GLfloat -- ^ @points@ pointing to @n*2@ elements of type @GLfloat@.
   -> m ()
@@ -36440,7 +36440,7 @@ ptr_glStencilFillPathNV = unsafePerformIO $ getCommand "glStencilFillPathNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilFunc.xhtml OpenGL 4.x>
 glStencilFunc
   :: MonadIO m
-  => GLenum -- ^ @func@ of type @StencilFunction@.
+  => GLenum -- ^ @func@ of type [StencilFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilFunction).
   -> GLint -- ^ @ref@ of type @StencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
@@ -36456,7 +36456,7 @@ ptr_glStencilFunc = unsafePerformIO $ getCommand "glStencilFunc"
 glStencilFuncSeparate
   :: MonadIO m
   => GLenum -- ^ @face@ of type @StencilFaceDirection@.
-  -> GLenum -- ^ @func@ of type @StencilFunction@.
+  -> GLenum -- ^ @func@ of type [StencilFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilFunction).
   -> GLint -- ^ @ref@ of type @StencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
@@ -36470,8 +36470,8 @@ ptr_glStencilFuncSeparate = unsafePerformIO $ getCommand "glStencilFuncSeparate"
 
 glStencilFuncSeparateATI
   :: MonadIO m
-  => GLenum -- ^ @frontfunc@ of type @StencilFunction@.
-  -> GLenum -- ^ @backfunc@ of type @StencilFunction@.
+  => GLenum -- ^ @frontfunc@ of type [StencilFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilFunction).
+  -> GLenum -- ^ @backfunc@ of type [StencilFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilFunction).
   -> GLint -- ^ @ref@ of type @ClampedStencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
@@ -36513,9 +36513,9 @@ ptr_glStencilMaskSeparate = unsafePerformIO $ getCommand "glStencilMaskSeparate"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOp.xhtml OpenGL 4.x>
 glStencilOp
   :: MonadIO m
-  => GLenum -- ^ @fail@ of type @StencilOp@.
-  -> GLenum -- ^ @zfail@ of type @StencilOp@.
-  -> GLenum -- ^ @zpass@ of type @StencilOp@.
+  => GLenum -- ^ @fail@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
+  -> GLenum -- ^ @zfail@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
+  -> GLenum -- ^ @zpass@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
   -> m ()
 glStencilOp v1 v2 v3 = liftIO $ dyn709 ptr_glStencilOp v1 v2 v3
 
@@ -36529,9 +36529,9 @@ ptr_glStencilOp = unsafePerformIO $ getCommand "glStencilOp"
 glStencilOpSeparate
   :: MonadIO m
   => GLenum -- ^ @face@ of type @StencilFaceDirection@.
-  -> GLenum -- ^ @sfail@ of type @StencilOp@.
-  -> GLenum -- ^ @dpfail@ of type @StencilOp@.
-  -> GLenum -- ^ @dppass@ of type @StencilOp@.
+  -> GLenum -- ^ @sfail@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
+  -> GLenum -- ^ @dpfail@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
+  -> GLenum -- ^ @dppass@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
   -> m ()
 glStencilOpSeparate v1 v2 v3 v4 = liftIO $ dyn53 ptr_glStencilOpSeparate v1 v2 v3 v4
 
@@ -36544,9 +36544,9 @@ ptr_glStencilOpSeparate = unsafePerformIO $ getCommand "glStencilOpSeparate"
 glStencilOpSeparateATI
   :: MonadIO m
   => GLenum -- ^ @face@ of type @StencilFaceDirection@.
-  -> GLenum -- ^ @sfail@ of type @StencilOp@.
-  -> GLenum -- ^ @dpfail@ of type @StencilOp@.
-  -> GLenum -- ^ @dppass@ of type @StencilOp@.
+  -> GLenum -- ^ @sfail@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
+  -> GLenum -- ^ @dpfail@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
+  -> GLenum -- ^ @dppass@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
   -> m ()
 glStencilOpSeparateATI v1 v2 v3 v4 = liftIO $ dyn53 ptr_glStencilOpSeparateATI v1 v2 v3 v4
 
@@ -36933,7 +36933,7 @@ ptr_glTessellationModeAMD = unsafePerformIO $ getCommand "glTessellationModeAMD"
 glTestFenceAPPLE
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glTestFenceAPPLE v1 = liftIO $ dyn272 ptr_glTestFenceAPPLE v1
 
 {-# NOINLINE ptr_glTestFenceAPPLE #-}
@@ -36945,7 +36945,7 @@ ptr_glTestFenceAPPLE = unsafePerformIO $ getCommand "glTestFenceAPPLE"
 glTestFenceNV
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glTestFenceNV v1 = liftIO $ dyn272 ptr_glTestFenceNV v1
 
 {-# NOINLINE ptr_glTestFenceNV #-}
@@ -36958,7 +36958,7 @@ glTestObjectAPPLE
   :: MonadIO m
   => GLenum -- ^ @object@ of type @ObjectTypeAPPLE@.
   -> GLuint -- ^ @name@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glTestObjectAPPLE v1 v2 = liftIO $ dyn472 ptr_glTestObjectAPPLE v1 v2
 
 {-# NOINLINE ptr_glTestObjectAPPLE #-}
@@ -36970,7 +36970,7 @@ ptr_glTestObjectAPPLE = unsafePerformIO $ getCommand "glTestObjectAPPLE"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml OpenGL 4.x>
 glTexBuffer
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @internalformat@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -36984,7 +36984,7 @@ ptr_glTexBuffer = unsafePerformIO $ getCommand "glTexBuffer"
 
 glTexBufferARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @internalformat@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -36998,7 +36998,7 @@ ptr_glTexBufferARB = unsafePerformIO $ getCommand "glTexBufferARB"
 
 glTexBufferEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @internalformat@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -37012,7 +37012,7 @@ ptr_glTexBufferEXT = unsafePerformIO $ getCommand "glTexBufferEXT"
 
 glTexBufferOES
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @internalformat@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -38207,7 +38207,7 @@ ptr_glTexCoordP4uiv = unsafePerformIO $ getCommand "glTexCoordP4uiv"
 glTexCoordPointer
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @TexCoordPointerType@.
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#TexCoordPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -38222,7 +38222,7 @@ ptr_glTexCoordPointer = unsafePerformIO $ getCommand "glTexCoordPointer"
 glTexCoordPointerEXT
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @TexCoordPointerType@.
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#TexCoordPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLsizei -- ^ @count@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride,count)@ elements of type @a@.
@@ -38238,7 +38238,7 @@ ptr_glTexCoordPointerEXT = unsafePerformIO $ getCommand "glTexCoordPointerEXT"
 glTexCoordPointerListIBM
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @TexCoordPointerType@.
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#TexCoordPointerType).
   -> GLint -- ^ @stride@.
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @Ptr a@.
   -> GLint -- ^ @ptrstride@.
@@ -38254,7 +38254,7 @@ ptr_glTexCoordPointerListIBM = unsafePerformIO $ getCommand "glTexCoordPointerLi
 glTexCoordPointervINTEL
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @VertexPointerType@.
+  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#VertexPointerType).
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @4@ elements of type @Ptr a@.
   -> m ()
 glTexCoordPointervINTEL v1 v2 v3 = liftIO $ dyn128 ptr_glTexCoordPointervINTEL v1 v2 v3
@@ -38268,8 +38268,8 @@ ptr_glTexCoordPointervINTEL = unsafePerformIO $ getCommand "glTexCoordPointervIN
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
 glTexEnvf
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glTexEnvf v1 v2 v3 = liftIO $ dyn160 ptr_glTexEnvf v1 v2 v3
@@ -38283,8 +38283,8 @@ ptr_glTexEnvf = unsafePerformIO $ getCommand "glTexEnvf"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
 glTexEnvfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glTexEnvfv v1 v2 v3 = liftIO $ dyn131 ptr_glTexEnvfv v1 v2 v3
@@ -38298,8 +38298,8 @@ ptr_glTexEnvfv = unsafePerformIO $ getCommand "glTexEnvfv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
 glTexEnvi
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glTexEnvi v1 v2 v3 = liftIO $ dyn62 ptr_glTexEnvi v1 v2 v3
@@ -38313,8 +38313,8 @@ ptr_glTexEnvi = unsafePerformIO $ getCommand "glTexEnvi"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
 glTexEnviv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureEnvTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureEnvParameter@.
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glTexEnviv v1 v2 v3 = liftIO $ dyn132 ptr_glTexEnviv v1 v2 v3
@@ -38383,7 +38383,7 @@ ptr_glTexEnvxvOES = unsafePerformIO $ getCommand "glTexEnvxvOES"
 
 glTexFilterFuncSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @filter@ of type @TextureFilterSGIS@.
   -> GLsizei -- ^ @n@.
   -> Ptr GLfloat -- ^ @weights@ pointing to @n@ elements of type @GLfloat@.
@@ -38399,8 +38399,8 @@ ptr_glTexFilterFuncSGIS = unsafePerformIO $ getCommand "glTexFilterFuncSGIS"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
 glTexGend
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> GLdouble -- ^ @param@.
   -> m ()
 glTexGend v1 v2 v3 = liftIO $ dyn724 ptr_glTexGend v1 v2 v3
@@ -38414,8 +38414,8 @@ ptr_glTexGend = unsafePerformIO $ getCommand "glTexGend"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
 glTexGendv
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
 glTexGendv v1 v2 v3 = liftIO $ dyn348 ptr_glTexGendv v1 v2 v3
@@ -38429,8 +38429,8 @@ ptr_glTexGendv = unsafePerformIO $ getCommand "glTexGendv"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
 glTexGenf
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glTexGenf v1 v2 v3 = liftIO $ dyn160 ptr_glTexGenf v1 v2 v3
@@ -38458,8 +38458,8 @@ ptr_glTexGenfOES = unsafePerformIO $ getCommand "glTexGenfOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
 glTexGenfv
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glTexGenfv v1 v2 v3 = liftIO $ dyn131 ptr_glTexGenfv v1 v2 v3
@@ -38487,8 +38487,8 @@ ptr_glTexGenfvOES = unsafePerformIO $ getCommand "glTexGenfvOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
 glTexGeni
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glTexGeni v1 v2 v3 = liftIO $ dyn62 ptr_glTexGeni v1 v2 v3
@@ -38516,8 +38516,8 @@ ptr_glTexGeniOES = unsafePerformIO $ getCommand "glTexGeniOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
 glTexGeniv
   :: MonadIO m
-  => GLenum -- ^ @coord@ of type @TextureCoordName@.
-  -> GLenum -- ^ @pname@ of type @TextureGenParameter@.
+  => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
+  -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureGenParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glTexGeniv v1 v2 v3 = liftIO $ dyn132 ptr_glTexGeniv v1 v2 v3
@@ -38573,13 +38573,13 @@ ptr_glTexGenxvOES = unsafePerformIO $ getCommand "glTexGenxvOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage1D.xhtml OpenGL 4.x>
 glTexImage1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glTexImage1D v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn725 ptr_glTexImage1D v1 v2 v3 v4 v5 v6 v7 v8
@@ -38593,14 +38593,14 @@ ptr_glTexImage1D = unsafePerformIO $ getCommand "glTexImage1D"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage2D.xhtml OpenGL 4.x>
 glTexImage2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glTexImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn726 ptr_glTexImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9
@@ -38619,7 +38619,7 @@ glTexImage2DMultisample
   -> GLenum -- ^ @internalformat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedsamplelocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTexImage2DMultisample v1 v2 v3 v4 v5 v6 = liftIO $ dyn727 ptr_glTexImage2DMultisample v1 v2 v3 v4 v5 v6
 
@@ -38637,7 +38637,7 @@ glTexImage2DMultisampleCoverageNV
   -> GLint -- ^ @internalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTexImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn728 ptr_glTexImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7
 
@@ -38650,15 +38650,15 @@ ptr_glTexImage2DMultisampleCoverageNV = unsafePerformIO $ getCommand "glTexImage
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage3D.xhtml OpenGL 4.x>
 glTexImage3D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glTexImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn729 ptr_glTexImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -38671,15 +38671,15 @@ ptr_glTexImage3D = unsafePerformIO $ getCommand "glTexImage3D"
 
 glTexImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glTexImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn730 ptr_glTexImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -38699,7 +38699,7 @@ glTexImage3DMultisample
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedsamplelocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTexImage3DMultisample v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn731 ptr_glTexImage3DMultisample v1 v2 v3 v4 v5 v6 v7
 
@@ -38718,7 +38718,7 @@ glTexImage3DMultisampleCoverageNV
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTexImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn732 ptr_glTexImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8
 
@@ -38751,7 +38751,7 @@ ptr_glTexImage3DOES = unsafePerformIO $ getCommand "glTexImage3DOES"
 
 glTexImage4DSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
   -> GLsizei -- ^ @width@.
@@ -38759,8 +38759,8 @@ glTexImage4DSGIS
   -> GLsizei -- ^ @depth@.
   -> GLsizei -- ^ @size4d@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth,size4d)@ elements of type @a@.
   -> m ()
 glTexImage4DSGIS v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn733 ptr_glTexImage4DSGIS v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
@@ -38814,8 +38814,8 @@ ptr_glTexPageCommitmentEXT = unsafePerformIO $ getCommand "glTexPageCommitmentEX
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
 glTexParameterIiv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glTexParameterIiv v1 v2 v3 = liftIO $ dyn132 ptr_glTexParameterIiv v1 v2 v3
@@ -38828,8 +38828,8 @@ ptr_glTexParameterIiv = unsafePerformIO $ getCommand "glTexParameterIiv"
 
 glTexParameterIivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glTexParameterIivEXT v1 v2 v3 = liftIO $ dyn132 ptr_glTexParameterIivEXT v1 v2 v3
@@ -38842,8 +38842,8 @@ ptr_glTexParameterIivEXT = unsafePerformIO $ getCommand "glTexParameterIivEXT"
 
 glTexParameterIivOES
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glTexParameterIivOES v1 v2 v3 = liftIO $ dyn132 ptr_glTexParameterIivOES v1 v2 v3
@@ -38857,8 +38857,8 @@ ptr_glTexParameterIivOES = unsafePerformIO $ getCommand "glTexParameterIivOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
 glTexParameterIuiv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glTexParameterIuiv v1 v2 v3 = liftIO $ dyn408 ptr_glTexParameterIuiv v1 v2 v3
@@ -38871,8 +38871,8 @@ ptr_glTexParameterIuiv = unsafePerformIO $ getCommand "glTexParameterIuiv"
 
 glTexParameterIuivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glTexParameterIuivEXT v1 v2 v3 = liftIO $ dyn408 ptr_glTexParameterIuivEXT v1 v2 v3
@@ -38885,8 +38885,8 @@ ptr_glTexParameterIuivEXT = unsafePerformIO $ getCommand "glTexParameterIuivEXT"
 
 glTexParameterIuivOES
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glTexParameterIuivOES v1 v2 v3 = liftIO $ dyn408 ptr_glTexParameterIuivOES v1 v2 v3
@@ -38900,8 +38900,8 @@ ptr_glTexParameterIuivOES = unsafePerformIO $ getCommand "glTexParameterIuivOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
 glTexParameterf
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glTexParameterf v1 v2 v3 = liftIO $ dyn160 ptr_glTexParameterf v1 v2 v3
@@ -38915,8 +38915,8 @@ ptr_glTexParameterf = unsafePerformIO $ getCommand "glTexParameterf"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
 glTexParameterfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glTexParameterfv v1 v2 v3 = liftIO $ dyn131 ptr_glTexParameterfv v1 v2 v3
@@ -38930,8 +38930,8 @@ ptr_glTexParameterfv = unsafePerformIO $ getCommand "glTexParameterfv"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
 glTexParameteri
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glTexParameteri v1 v2 v3 = liftIO $ dyn62 ptr_glTexParameteri v1 v2 v3
@@ -38945,8 +38945,8 @@ ptr_glTexParameteri = unsafePerformIO $ getCommand "glTexParameteri"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
 glTexParameteriv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glTexParameteriv v1 v2 v3 = liftIO $ dyn132 ptr_glTexParameteriv v1 v2 v3
@@ -39015,7 +39015,7 @@ ptr_glTexParameterxvOES = unsafePerformIO $ getCommand "glTexParameterxvOES"
 
 glTexRenderbufferNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
 glTexRenderbufferNV v1 v2 = liftIO $ dyn16 ptr_glTexRenderbufferNV v1 v2
@@ -39098,7 +39098,7 @@ glTexStorage2DMultisample
   -> GLenum -- ^ @internalformat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedsamplelocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTexStorage2DMultisample v1 v2 v3 v4 v5 v6 = liftIO $ dyn727 ptr_glTexStorage2DMultisample v1 v2 v3 v4 v5 v6
 
@@ -39152,7 +39152,7 @@ glTexStorage3DMultisample
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedsamplelocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTexStorage3DMultisample v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn731 ptr_glTexStorage3DMultisample v1 v2 v3 v4 v5 v6 v7
 
@@ -39170,7 +39170,7 @@ glTexStorage3DMultisampleOES
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedsamplelocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTexStorage3DMultisampleOES v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn731 ptr_glTexStorage3DMultisampleOES v1 v2 v3 v4 v5 v6 v7
 
@@ -39201,12 +39201,12 @@ ptr_glTexStorageSparseAMD = unsafePerformIO $ getCommand "glTexStorageSparseAMD"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage1D.xhtml OpenGL 4.x>
 glTexSubImage1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glTexSubImage1D v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn738 ptr_glTexSubImage1D v1 v2 v3 v4 v5 v6 v7
@@ -39219,12 +39219,12 @@ ptr_glTexSubImage1D = unsafePerformIO $ getCommand "glTexSubImage1D"
 
 glTexSubImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glTexSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn738 ptr_glTexSubImage1DEXT v1 v2 v3 v4 v5 v6 v7
@@ -39238,14 +39238,14 @@ ptr_glTexSubImage1DEXT = unsafePerformIO $ getCommand "glTexSubImage1DEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml OpenGL 4.x>
 glTexSubImage2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glTexSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn739 ptr_glTexSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9
@@ -39258,14 +39258,14 @@ ptr_glTexSubImage2D = unsafePerformIO $ getCommand "glTexSubImage2D"
 
 glTexSubImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glTexSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn739 ptr_glTexSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
@@ -39279,7 +39279,7 @@ ptr_glTexSubImage2DEXT = unsafePerformIO $ getCommand "glTexSubImage2DEXT"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml OpenGL 4.x>
 glTexSubImage3D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -39287,8 +39287,8 @@ glTexSubImage3D
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glTexSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn271 ptr_glTexSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
@@ -39301,7 +39301,7 @@ ptr_glTexSubImage3D = unsafePerformIO $ getCommand "glTexSubImage3D"
 
 glTexSubImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -39309,8 +39309,8 @@ glTexSubImage3DEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glTexSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn271 ptr_glTexSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
@@ -39345,7 +39345,7 @@ ptr_glTexSubImage3DOES = unsafePerformIO $ getCommand "glTexSubImage3DOES"
 
 glTexSubImage4DSGIS
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureTarget@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -39355,8 +39355,8 @@ glTexSubImage4DSGIS
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
   -> GLsizei -- ^ @size4d@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth,size4d)@ elements of type @a@.
   -> m ()
 glTexSubImage4DSGIS v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 = liftIO $ dyn740 ptr_glTexSubImage4DSGIS v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13
@@ -39408,7 +39408,7 @@ ptr_glTextureBuffer = unsafePerformIO $ getCommand "glTextureBuffer"
 glTextureBufferEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -39440,7 +39440,7 @@ ptr_glTextureBufferRange = unsafePerformIO $ getCommand "glTextureBufferRange"
 glTextureBufferRangeEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -39456,10 +39456,10 @@ ptr_glTextureBufferRangeEXT = unsafePerformIO $ getCommand "glTextureBufferRange
 
 glTextureColorMaskSGIS
   :: MonadIO m
-  => GLboolean -- ^ @red@ of type @Boolean@.
-  -> GLboolean -- ^ @green@ of type @Boolean@.
-  -> GLboolean -- ^ @blue@ of type @Boolean@.
-  -> GLboolean -- ^ @alpha@ of type @Boolean@.
+  => GLboolean -- ^ @red@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @green@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @blue@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
+  -> GLboolean -- ^ @alpha@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTextureColorMaskSGIS v1 v2 v3 v4 = liftIO $ dyn122 ptr_glTextureColorMaskSGIS v1 v2 v3 v4
 
@@ -39472,13 +39472,13 @@ ptr_glTextureColorMaskSGIS = unsafePerformIO $ getCommand "glTextureColorMaskSGI
 glTextureImage1DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glTextureImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn743 ptr_glTextureImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
@@ -39492,14 +39492,14 @@ ptr_glTextureImage1DEXT = unsafePerformIO $ getCommand "glTextureImage1DEXT"
 glTextureImage2DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glTextureImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn744 ptr_glTextureImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -39519,7 +39519,7 @@ glTextureImage2DMultisampleCoverageNV
   -> GLint -- ^ @internalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn745 ptr_glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8
 
@@ -39537,7 +39537,7 @@ glTextureImage2DMultisampleNV
   -> GLint -- ^ @internalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn746 ptr_glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7
 
@@ -39550,15 +39550,15 @@ ptr_glTextureImage2DMultisampleNV = unsafePerformIO $ getCommand "glTextureImage
 glTextureImage3DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn747 ptr_glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
@@ -39579,7 +39579,7 @@ glTextureImage3DMultisampleCoverageNV
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn748 ptr_glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
@@ -39598,7 +39598,7 @@ glTextureImage3DMultisampleNV
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn749 ptr_glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8
 
@@ -39622,8 +39622,8 @@ ptr_glTextureLightEXT = unsafePerformIO $ getCommand "glTextureLightEXT"
 
 glTextureMaterialEXT
   :: MonadIO m
-  => GLenum -- ^ @face@ of type @MaterialFace@.
-  -> GLenum -- ^ @mode@ of type @MaterialParameter@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
+  -> GLenum -- ^ @mode@ of type [MaterialParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialParameter).
   -> m ()
 glTextureMaterialEXT v1 v2 = liftIO $ dyn51 ptr_glTextureMaterialEXT v1 v2
 
@@ -39683,8 +39683,8 @@ ptr_glTextureParameterIiv = unsafePerformIO $ getCommand "glTextureParameterIiv"
 glTextureParameterIivEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glTextureParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn358 ptr_glTextureParameterIivEXT v1 v2 v3 v4
@@ -39713,8 +39713,8 @@ ptr_glTextureParameterIuiv = unsafePerformIO $ getCommand "glTextureParameterIui
 glTextureParameterIuivEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glTextureParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn415 ptr_glTextureParameterIuivEXT v1 v2 v3 v4
@@ -39743,8 +39743,8 @@ ptr_glTextureParameterf = unsafePerformIO $ getCommand "glTextureParameterf"
 glTextureParameterfEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glTextureParameterfEXT v1 v2 v3 v4 = liftIO $ dyn751 ptr_glTextureParameterfEXT v1 v2 v3 v4
@@ -39773,8 +39773,8 @@ ptr_glTextureParameterfv = unsafePerformIO $ getCommand "glTextureParameterfv"
 glTextureParameterfvEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glTextureParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn416 ptr_glTextureParameterfvEXT v1 v2 v3 v4
@@ -39803,8 +39803,8 @@ ptr_glTextureParameteri = unsafePerformIO $ getCommand "glTextureParameteri"
 glTextureParameteriEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glTextureParameteriEXT v1 v2 v3 v4 = liftIO $ dyn752 ptr_glTextureParameteriEXT v1 v2 v3 v4
@@ -39833,8 +39833,8 @@ ptr_glTextureParameteriv = unsafePerformIO $ getCommand "glTextureParameteriv"
 glTextureParameterivEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
-  -> GLenum -- ^ @pname@ of type @TextureParameterName@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glTextureParameterivEXT v1 v2 v3 v4 = liftIO $ dyn358 ptr_glTextureParameterivEXT v1 v2 v3 v4
@@ -39862,7 +39862,7 @@ ptr_glTextureRangeAPPLE = unsafePerformIO $ getCommand "glTextureRangeAPPLE"
 glTextureRenderbufferEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
 glTextureRenderbufferEXT v1 v2 v3 = liftIO $ dyn707 ptr_glTextureRenderbufferEXT v1 v2 v3
@@ -39960,12 +39960,12 @@ ptr_glTextureStorage2DMultisample = unsafePerformIO $ getCommand "glTextureStora
 glTextureStorage2DMultisampleEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLsizei -- ^ @samples@.
   -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedsamplelocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTextureStorage2DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn757 ptr_glTextureStorage2DMultisampleEXT v1 v2 v3 v4 v5 v6 v7
 
@@ -40039,7 +40039,7 @@ glTextureStorage3DMultisampleEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedsamplelocations@ of type @Boolean@.
+  -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glTextureStorage3DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn761 ptr_glTextureStorage3DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 v8
 
@@ -40090,12 +40090,12 @@ ptr_glTextureSubImage1D = unsafePerformIO $ getCommand "glTextureSubImage1D"
 glTextureSubImage1DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
 glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn764 ptr_glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8
@@ -40130,14 +40130,14 @@ ptr_glTextureSubImage2D = unsafePerformIO $ getCommand "glTextureSubImage2D"
 glTextureSubImage2DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
 glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn766 ptr_glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
@@ -40174,7 +40174,7 @@ ptr_glTextureSubImage3D = unsafePerformIO $ getCommand "glTextureSubImage3D"
 glTextureSubImage3DEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type @TextureTarget@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
   -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
@@ -40182,8 +40182,8 @@ glTextureSubImage3DEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@ of type @PixelFormat@.
-  -> GLenum -- ^ @type@ of type @PixelType@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
 glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO $ dyn767 ptr_glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12
@@ -41813,7 +41813,7 @@ glUniformMatrix2dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*4@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix2dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix2dv v1 v2 v3 v4
@@ -41829,7 +41829,7 @@ glUniformMatrix2fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix2fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix2fv v1 v2 v3 v4
@@ -41844,7 +41844,7 @@ glUniformMatrix2fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix2fvARB v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix2fvARB v1 v2 v3 v4
@@ -41859,7 +41859,7 @@ glUniformMatrix2x3dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*6@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix2x3dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix2x3dv v1 v2 v3 v4
@@ -41875,7 +41875,7 @@ glUniformMatrix2x3fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix2x3fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix2x3fv v1 v2 v3 v4
@@ -41890,7 +41890,7 @@ glUniformMatrix2x3fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix2x3fvNV v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix2x3fvNV v1 v2 v3 v4
@@ -41905,7 +41905,7 @@ glUniformMatrix2x4dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*8@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix2x4dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix2x4dv v1 v2 v3 v4
@@ -41921,7 +41921,7 @@ glUniformMatrix2x4fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix2x4fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix2x4fv v1 v2 v3 v4
@@ -41936,7 +41936,7 @@ glUniformMatrix2x4fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix2x4fvNV v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix2x4fvNV v1 v2 v3 v4
@@ -41951,7 +41951,7 @@ glUniformMatrix3dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*9@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix3dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix3dv v1 v2 v3 v4
@@ -41967,7 +41967,7 @@ glUniformMatrix3fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*9@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix3fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix3fv v1 v2 v3 v4
@@ -41982,7 +41982,7 @@ glUniformMatrix3fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*9@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix3fvARB v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix3fvARB v1 v2 v3 v4
@@ -41997,7 +41997,7 @@ glUniformMatrix3x2dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*6@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix3x2dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix3x2dv v1 v2 v3 v4
@@ -42013,7 +42013,7 @@ glUniformMatrix3x2fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix3x2fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix3x2fv v1 v2 v3 v4
@@ -42028,7 +42028,7 @@ glUniformMatrix3x2fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix3x2fvNV v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix3x2fvNV v1 v2 v3 v4
@@ -42043,7 +42043,7 @@ glUniformMatrix3x4dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*12@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix3x4dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix3x4dv v1 v2 v3 v4
@@ -42059,7 +42059,7 @@ glUniformMatrix3x4fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix3x4fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix3x4fv v1 v2 v3 v4
@@ -42074,7 +42074,7 @@ glUniformMatrix3x4fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix3x4fvNV v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix3x4fvNV v1 v2 v3 v4
@@ -42089,7 +42089,7 @@ glUniformMatrix4dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*16@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix4dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix4dv v1 v2 v3 v4
@@ -42105,7 +42105,7 @@ glUniformMatrix4fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*16@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix4fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix4fv v1 v2 v3 v4
@@ -42120,7 +42120,7 @@ glUniformMatrix4fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*16@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix4fvARB v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix4fvARB v1 v2 v3 v4
@@ -42135,7 +42135,7 @@ glUniformMatrix4x2dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*8@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix4x2dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix4x2dv v1 v2 v3 v4
@@ -42151,7 +42151,7 @@ glUniformMatrix4x2fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix4x2fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix4x2fv v1 v2 v3 v4
@@ -42166,7 +42166,7 @@ glUniformMatrix4x2fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix4x2fvNV v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix4x2fvNV v1 v2 v3 v4
@@ -42181,7 +42181,7 @@ glUniformMatrix4x3dv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLdouble -- ^ @value@ pointing to @count*12@ elements of type @GLdouble@.
   -> m ()
 glUniformMatrix4x3dv v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniformMatrix4x3dv v1 v2 v3 v4
@@ -42197,7 +42197,7 @@ glUniformMatrix4x3fv
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix4x3fv v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix4x3fv v1 v2 v3 v4
@@ -42212,7 +42212,7 @@ glUniformMatrix4x3fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
   -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type @Boolean@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
   -> m ()
 glUniformMatrix4x3fvNV v1 v2 v3 v4 = liftIO $ dyn810 ptr_glUniformMatrix4x3fvNV v1 v2 v3 v4
@@ -42280,7 +42280,7 @@ ptr_glUnlockArraysEXT = unsafePerformIO $ getCommand "glUnlockArraysEXT"
 glUnmapBuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glUnmapBuffer v1 = liftIO $ dyn471 ptr_glUnmapBuffer v1
 
 {-# NOINLINE ptr_glUnmapBuffer #-}
@@ -42292,7 +42292,7 @@ ptr_glUnmapBuffer = unsafePerformIO $ getCommand "glUnmapBuffer"
 glUnmapBufferARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glUnmapBufferARB v1 = liftIO $ dyn471 ptr_glUnmapBufferARB v1
 
 {-# NOINLINE ptr_glUnmapBufferARB #-}
@@ -42329,7 +42329,7 @@ ptr_glUnmapNamedBuffer = unsafePerformIO $ getCommand "glUnmapNamedBuffer"
 glUnmapNamedBufferEXT
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> m GLboolean -- ^ of type @Boolean@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
 glUnmapNamedBufferEXT v1 = liftIO $ dyn272 ptr_glUnmapNamedBufferEXT v1
 
 {-# NOINLINE ptr_glUnmapNamedBufferEXT #-}
@@ -43434,7 +43434,7 @@ glVertexArrayColorOffsetEXT
   => GLuint -- ^ @vaobj@.
   -> GLuint -- ^ @buffer@.
   -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ColorPointerType@.
+  -> GLenum -- ^ @type@ of type [ColorPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -43479,7 +43479,7 @@ glVertexArrayFogCoordOffsetEXT
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
   -> GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @type@ of type @FogCoordinatePointerType@.
+  -> GLenum -- ^ @type@ of type [FogCoordinatePointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#FogCoordinatePointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -43495,7 +43495,7 @@ glVertexArrayIndexOffsetEXT
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
   -> GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @type@ of type @IndexPointerType@.
+  -> GLenum -- ^ @type@ of type [IndexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#IndexPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -43513,7 +43513,7 @@ glVertexArrayMultiTexCoordOffsetEXT
   -> GLuint -- ^ @buffer@.
   -> GLenum -- ^ @texunit@.
   -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @TexCoordPointerType@.
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#TexCoordPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -43529,7 +43529,7 @@ glVertexArrayNormalOffsetEXT
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
   -> GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @type@ of type @NormalPointerType@.
+  -> GLenum -- ^ @type@ of type [NormalPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#NormalPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -43585,7 +43585,7 @@ glVertexArraySecondaryColorOffsetEXT
   => GLuint -- ^ @vaobj@.
   -> GLuint -- ^ @buffer@.
   -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ColorPointerType@.
+  -> GLenum -- ^ @type@ of type [ColorPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -43602,7 +43602,7 @@ glVertexArrayTexCoordOffsetEXT
   => GLuint -- ^ @vaobj@.
   -> GLuint -- ^ @buffer@.
   -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @TexCoordPointerType@.
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#TexCoordPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -43648,7 +43648,7 @@ glVertexArrayVertexAttribFormatEXT
   -> GLuint -- ^ @attribindex@.
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
 glVertexArrayVertexAttribFormatEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn826 ptr_glVertexArrayVertexAttribFormatEXT v1 v2 v3 v4 v5 v6
@@ -43800,7 +43800,7 @@ glVertexArrayVertexOffsetEXT
   => GLuint -- ^ @vaobj@.
   -> GLuint -- ^ @buffer@.
   -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @VertexPointerType@.
+  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#VertexPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
@@ -45300,7 +45300,7 @@ glVertexAttribArrayObjectATI
   => GLuint -- ^ @index@.
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@ of type @VertexAttribPointerType@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLsizei -- ^ @stride@.
   -> GLuint -- ^ @buffer@.
   -> GLuint -- ^ @offset@.
@@ -45399,7 +45399,7 @@ glVertexAttribFormat
   => GLuint -- ^ @attribindex@.
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
 glVertexAttribFormat v1 v2 v3 v4 v5 = liftIO $ dyn852 ptr_glVertexAttribFormat v1 v2 v3 v4 v5
@@ -45415,7 +45415,7 @@ glVertexAttribFormatNV
   => GLuint -- ^ @index@.
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLsizei -- ^ @stride@.
   -> m ()
 glVertexAttribFormatNV v1 v2 v3 v4 v5 = liftIO $ dyn853 ptr_glVertexAttribFormatNV v1 v2 v3 v4 v5
@@ -46597,7 +46597,7 @@ glVertexAttribP1ui
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
 glVertexAttribP1ui v1 v2 v3 v4 = liftIO $ dyn868 ptr_glVertexAttribP1ui v1 v2 v3 v4
@@ -46612,7 +46612,7 @@ glVertexAttribP1uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP1uiv v1 v2 v3 v4 = liftIO $ dyn869 ptr_glVertexAttribP1uiv v1 v2 v3 v4
@@ -46628,7 +46628,7 @@ glVertexAttribP2ui
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
 glVertexAttribP2ui v1 v2 v3 v4 = liftIO $ dyn868 ptr_glVertexAttribP2ui v1 v2 v3 v4
@@ -46643,7 +46643,7 @@ glVertexAttribP2uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP2uiv v1 v2 v3 v4 = liftIO $ dyn869 ptr_glVertexAttribP2uiv v1 v2 v3 v4
@@ -46659,7 +46659,7 @@ glVertexAttribP3ui
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
 glVertexAttribP3ui v1 v2 v3 v4 = liftIO $ dyn868 ptr_glVertexAttribP3ui v1 v2 v3 v4
@@ -46674,7 +46674,7 @@ glVertexAttribP3uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP3uiv v1 v2 v3 v4 = liftIO $ dyn869 ptr_glVertexAttribP3uiv v1 v2 v3 v4
@@ -46690,7 +46690,7 @@ glVertexAttribP4ui
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
 glVertexAttribP4ui v1 v2 v3 v4 = liftIO $ dyn868 ptr_glVertexAttribP4ui v1 v2 v3 v4
@@ -46705,7 +46705,7 @@ glVertexAttribP4uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glVertexAttribP4uiv v1 v2 v3 v4 = liftIO $ dyn869 ptr_glVertexAttribP4uiv v1 v2 v3 v4
@@ -46736,7 +46736,7 @@ glVertexAttribPointer
   => GLuint -- ^ @index@.
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@ of type @VertexAttribPointerType@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -46753,7 +46753,7 @@ glVertexAttribPointerARB
   => GLuint -- ^ @index@.
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@ of type @VertexAttribPointerType@.
-  -> GLboolean -- ^ @normalized@ of type @Boolean@.
+  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -47167,7 +47167,7 @@ ptr_glVertexP4uiv = unsafePerformIO $ getCommand "glVertexP4uiv"
 glVertexPointer
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @VertexPointerType@.
+  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#VertexPointerType).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -47182,7 +47182,7 @@ ptr_glVertexPointer = unsafePerformIO $ getCommand "glVertexPointer"
 glVertexPointerEXT
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @VertexPointerType@.
+  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#VertexPointerType).
   -> GLsizei -- ^ @stride@.
   -> GLsizei -- ^ @count@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride,count)@ elements of type @a@.
@@ -47198,7 +47198,7 @@ ptr_glVertexPointerEXT = unsafePerformIO $ getCommand "glVertexPointerEXT"
 glVertexPointerListIBM
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @VertexPointerType@.
+  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#VertexPointerType).
   -> GLint -- ^ @stride@.
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @Ptr a@.
   -> GLint -- ^ @ptrstride@.
@@ -47214,7 +47214,7 @@ ptr_glVertexPointerListIBM = unsafePerformIO $ getCommand "glVertexPointerListIB
 glVertexPointervINTEL
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @VertexPointerType@.
+  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#VertexPointerType).
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @4@ elements of type @Ptr a@.
   -> m ()
 glVertexPointervINTEL v1 v2 v3 = liftIO $ dyn128 ptr_glVertexPointervINTEL v1 v2 v3

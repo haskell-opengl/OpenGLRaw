@@ -22,6 +22,7 @@ main = do
     Left msg -> SI.hPutStrLn SI.stderr msg
     Right registry -> do
       printTokens api registry
+      printGroups api registry
       let sigMap = signatureMap registry
       printForeign sigMap
       printFunctions api registry sigMap
@@ -86,11 +87,65 @@ printTokens api registry = do
       , e <- es
       , api `matches` enumAPI e ]
 
+printGroups :: API -> Registry -> IO ()
+printGroups api registry = do
+  let comment =
+        ["All enumeration groups from the",
+         "<http://www.opengl.org/registry/ OpenGL registry>."]
+  startModule ["Groups"] Nothing comment $ \moduleName h -> do
+    SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
+    SI.hPutStrLn h $ "  -- $EnumerantGroups"
+    SI.hPutStrLn h $ ") where"
+    SI.hPutStrLn h ""
+    SI.hPutStrLn h $ "-- $EnumerantGroups"
+    SI.hPutStrLn h $ "-- Note that the actual set of valid values depend on the OpenGL version, the"
+    SI.hPutStrLn h $ "-- chosen profile and the supported extensions. Therefore, the groups mentioned"
+    SI.hPutStrLn h $ "-- here should only be considered a rough guideline, for details see the OpenGL"
+    SI.hPutStrLn h $ "-- specification."
+    CM.forM_ (M.assocs (groups registry)) $ \(gn, g) -> do
+      let ugn = unGroupName gn
+          es = getGroupEnums api registry g
+      SI.hPutStrLn h $ "--"
+      SI.hPutStrLn h $ "-- === #" ++ ugn ++ "# " ++ ugn
+      SI.hPutStrLn h $ "-- " ++ groupHeader es
+      SI.hPutStrLn h $ "--"
+      -- TODO: Improve the alias computation below. It takes quadratic time and
+      -- is very naive about what is the canonical name and what is an alias.
+      CM.forM_ es $ \e -> do
+        let same = L.sort [ f | f <- es, enumValue e == enumValue f ]
+        CM.when (e == head same) $ do
+          SI.hPutStrLn h $ "-- * " ++ linkToToken e ++
+            (case tail same of
+                [] -> ""
+                aliases -> " (" ++ al ++ ": " ++ L.intercalate ", " (map linkToToken aliases) ++ ")"
+                  where al | length aliases == 1 = "alias"
+                           | otherwise = "aliases")
+
+linkToToken :: Enum' -> String
+linkToToken e = "'" ++ moduleNameFor ["Tokens"] ++ "." ++ (unEnumName . enumName) e ++ "'"
+
+-- There are several enums which are mentioned in groups, but commented out in
+-- enums (12 GL_*_ICC_SGIX enumerants). These are implicitly filtered out below.
+getGroupEnums :: API -> Registry -> Group -> [Enum']
+getGroupEnums api registry g =
+  [ e | name <- groupEnums g
+      , Just es <- [ M.lookup name (enums registry) ]
+      , e <- es
+      , api `matches` enumAPI e ]
+
+groupHeader :: [Enum'] -> String
+groupHeader es = case sortUnique (map enumType es) of
+  -- There are 2 empty groups: DataType and FfdMaskSGIX.
+  [] -> "There are no values defined for this enumeration group."
+  [t] | isMask t -> "A bitwise combination of several of the following values:"
+      | otherwise -> "One of the following values:"
+  types -> error $ "Contradicting enumerant types " ++ show types
+
 -- Calulate a map from compact signature to short names.
 signatureMap :: Registry -> M.Map String String
 signatureMap registry = fst $ M.foldl' step (M.empty, 0) (commands registry)
   where step (m,n) command = memberAndInsert (n+1) n (sig command) (dyn n) m
-        sig = flip showSignatureFromCommand False
+        sig = flip (showSignatureFromCommand registry) False
         dyn n = "dyn" ++ show n
         memberAndInsert notFound found key value map =
           (newMap, maybe notFound (const found) maybeValue)
@@ -124,7 +179,7 @@ printFunctions api registry sigMap = do
     SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"
     SI.hPutStrLn h ""
     SI.hPutStrLn h $ "import " ++ moduleNameFor ["Foreign"]
-    SI.hPutStrLn h $ "import " ++ moduleNameFor ["GetProcAddress"] ++" ( getProcAddress )"
+    SI.hPutStrLn h $ "import " ++ moduleNameFor ["GetProcAddress"] ++ " ( getProcAddress )"
     SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
     SI.hPutStrLn h ""
     SI.hPutStrLn h "getCommand :: String -> IO (FunPtr a)"
@@ -134,7 +189,7 @@ printFunctions api registry sigMap = do
     SI.hPutStrLn h "throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)"
     SI.hPutStrLn h "throwIfNullFunPtr = throwIf (== nullFunPtr) . const"
     SI.hPutStrLn h ""
-    mapM_ (SI.hPutStrLn h . showCommand api sigMap) (M.elems (commands registry))
+    mapM_ (SI.hPutStrLn h . showCommand api registry sigMap) (M.elems (commands registry))
 
 printExtensionModule :: (ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command])) -> IO ()
 printExtensionModule (extName, mangledExtName, extensionParts) =
@@ -441,8 +496,8 @@ convertEnum e =
   , n ++ " = " ++ unEnumValue (enumValue e) ]
   where n = unEnumName . enumName $ e
 
-showCommand :: API -> M.Map String String -> Command -> String
-showCommand api sigMap c =
+showCommand :: API -> Registry -> M.Map String String -> Command -> String
+showCommand api registry sigMap c =
   showString (take 80 ("-- " ++ name ++ " " ++ repeat '-') ++ "\n\n") .
 
   showString man .
@@ -463,7 +518,7 @@ showCommand api sigMap c =
         ptr_name = "ptr_" ++ name
         str_name = show name
         compactSignature = signature False
-        signature withComment = showSignatureFromCommand c withComment
+        signature withComment = showSignatureFromCommand registry c withComment
         urls = M.findWithDefault [] (api, CommandName name) manPageURLs
         links = L.intercalate " or " (map renderURL urls)  ++ "\n"
         man = case urls of
@@ -479,33 +534,41 @@ makeImportDynamic compactSignature dyn_name =
   "  :: FunPtr (" ++ compactSignature ++ ")\n" ++
   "  ->         " ++ compactSignature ++ "\n"
 
-showSignatureFromCommand :: Command -> Bool -> String
-showSignatureFromCommand c withComment =
+showSignatureFromCommand :: Registry -> Command -> Bool -> String
+showSignatureFromCommand registry c withComment =
   L.intercalate ((if withComment then " " else "") ++ " -> ")
-    ([showSignatureElement withComment False t | t <- paramTypes c] ++
-     [showSignatureElement withComment True (resultType c)])
+    ([showSignatureElement registry withComment False t | t <- paramTypes c] ++
+     [showSignatureElement registry withComment True (resultType c)])
 
-showSignatureElement :: Bool -> Bool -> SignatureElement -> String
-showSignatureElement withComment isResult sigElem = el ++ comment
+showSignatureElement :: Registry -> Bool -> Bool -> SignatureElement -> String
+showSignatureElement registry withComment isResult sigElem = el ++ comment
   where el | isResult  = monad ++ " " ++ showsPrec 11 sigElem ""
            | otherwise = show sigElem
         monad | withComment = "m"
               | otherwise = "IO"
-        comment | withComment = showComment name sigElem
+        comment | withComment = showComment registry name sigElem
                 | otherwise   = ""
         name | isResult  = ""
              | otherwise = signatureElementName sigElem
 
-showComment :: String -> SignatureElement -> String
-showComment name sigElem
+showComment :: Registry -> String -> SignatureElement -> String
+showComment registry name sigElem
   | null name' && null info = "\n"
   | otherwise = " -- ^" ++ name' ++ info ++ ".\n"
 
   where name' | null name = ""
               | otherwise = " " ++ inlineCode name
 
-        info | isInteresting = elms ++ " of type " ++ inlineCode (show (base sigElem))
+        info | isInteresting = elms ++ " of type " ++ hurz
              | otherwise     = ""
+
+        -- Alas, there are tons of group names which are referenced, but never
+        -- defined, so we have to leave them without a link.
+        -- TODO: Do not use Show instance for SignatureElement.
+        hurz = case belongsToGroup sigElem of
+                 Just gn | numPointer sigElem <= 1 &&
+                           gn `M.member` groups registry -> linkToGroup gn
+                 _ -> inlineCode (show (base sigElem))
 
         isInteresting = DM.isJust (arrayLength sigElem) || DM.isJust (belongsToGroup sigElem)
 
@@ -521,6 +584,15 @@ showComment name sigElem
         maybeDeref e | numPointer e > 0 = e{numPointer = numPointer e - 1}
                      | otherwise = e
         maybeSetBaseType e = maybe e (\g -> e{baseType = TypeName (unGroupName g)}) (belongsToGroup e)
+
+-- TODO: This is very fragile, but currently there is no clean way to specify
+-- link texts when referencing anchors in Haddock.
+linkToGroup :: GroupName -> String
+linkToGroup g = "[" ++ n ++ "](" ++ htmlFilenameFor ["Groups"] ++ "#" ++ n ++ ")"
+  where n = unGroupName g
+
+htmlFilenameFor :: [String] -> String
+htmlFilenameFor = (++ ".html") . L.intercalate "-" . moduleNameParts
 
 inlineCode :: String -> String
 inlineCode s = "@" ++ s ++ "@"
@@ -556,3 +628,6 @@ toEnumType eNamespace eGroup eType suffix = TypeName $
     (Just "GL", _, Nothing, Nothing) -> "GLenum"
 
     (_, _, _, _) -> error "can't determine enum type"
+
+isMask :: TypeName -> Bool
+isMask = (== TypeName "GLbitfield")

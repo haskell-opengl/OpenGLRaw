@@ -1,3 +1,7 @@
+2.5.4.0
+-------
+* Added documentation for enumerant groups.
+
 2.5.3.0
 -------
 * Updated OpenGL registry to r31903.
