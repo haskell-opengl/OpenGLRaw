@@ -7319,7 +7319,7 @@ ptr_glColorSubTableEXT = unsafePerformIO $ getCommand "glColorSubTableEXT"
 glColorTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
@@ -7336,7 +7336,7 @@ ptr_glColorTable = unsafePerformIO $ getCommand "glColorTable"
 glColorTableEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
-  -> GLenum -- ^ @internalFormat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalFormat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
@@ -7411,7 +7411,7 @@ ptr_glColorTableParameterivSGI = unsafePerformIO $ getCommand "glColorTableParam
 glColorTableSGI
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
@@ -7722,7 +7722,7 @@ glCompressedTexImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
   -> GLsizei -- ^ @imageSize@.
@@ -7740,7 +7740,7 @@ glCompressedTexImage1DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
   -> GLsizei -- ^ @imageSize@.
@@ -7759,7 +7759,7 @@ glCompressedTexImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
@@ -7778,7 +7778,7 @@ glCompressedTexImage2DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
@@ -7798,7 +7798,7 @@ glCompressedTexImage3D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
@@ -7818,7 +7818,7 @@ glCompressedTexImage3DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
@@ -8202,7 +8202,7 @@ ptr_glConservativeRasterParameterfNV = unsafePerformIO $ getCommand "glConservat
 glConvolutionFilter1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
@@ -8219,7 +8219,7 @@ ptr_glConvolutionFilter1D = unsafePerformIO $ getCommand "glConvolutionFilter1D"
 glConvolutionFilter1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelType).
@@ -8237,7 +8237,7 @@ ptr_glConvolutionFilter1DEXT = unsafePerformIO $ getCommand "glConvolutionFilter
 glConvolutionFilter2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
@@ -8255,7 +8255,7 @@ ptr_glConvolutionFilter2D = unsafePerformIO $ getCommand "glConvolutionFilter2D"
 glConvolutionFilter2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
@@ -8484,7 +8484,7 @@ ptr_glCopyColorSubTableEXT = unsafePerformIO $ getCommand "glCopyColorSubTableEX
 glCopyColorTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8500,7 +8500,7 @@ ptr_glCopyColorTable = unsafePerformIO $ getCommand "glCopyColorTable"
 glCopyColorTableSGI
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8517,7 +8517,7 @@ ptr_glCopyColorTableSGI = unsafePerformIO $ getCommand "glCopyColorTableSGI"
 glCopyConvolutionFilter1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8533,7 +8533,7 @@ ptr_glCopyConvolutionFilter1D = unsafePerformIO $ getCommand "glCopyConvolutionF
 glCopyConvolutionFilter1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8550,7 +8550,7 @@ ptr_glCopyConvolutionFilter1DEXT = unsafePerformIO $ getCommand "glCopyConvoluti
 glCopyConvolutionFilter2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8567,7 +8567,7 @@ ptr_glCopyConvolutionFilter2D = unsafePerformIO $ getCommand "glCopyConvolutionF
 glCopyConvolutionFilter2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8836,7 +8836,7 @@ glCopyTexImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8854,7 +8854,7 @@ glCopyTexImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8873,7 +8873,7 @@ glCopyTexImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -8892,7 +8892,7 @@ glCopyTexImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -22260,7 +22260,7 @@ glHistogram
   :: MonadIO m
   => GLenum -- ^ @target@ of type @HistogramTarget@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glHistogram v1 v2 v3 v4 = liftIO $ dyn461 ptr_glHistogram v1 v2 v3 v4
@@ -22275,7 +22275,7 @@ glHistogramEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glHistogramEXT v1 v2 v3 v4 = liftIO $ dyn461 ptr_glHistogramEXT v1 v2 v3 v4
@@ -25407,7 +25407,7 @@ ptr_glMinSampleShadingOES = unsafePerformIO $ getCommand "glMinSampleShadingOES"
 glMinmax
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glMinmax v1 v2 v3 = liftIO $ dyn519 ptr_glMinmax v1 v2 v3
@@ -25421,7 +25421,7 @@ ptr_glMinmax = unsafePerformIO $ getCommand "glMinmax"
 glMinmaxEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
   -> m ()
 glMinmaxEXT v1 v2 v3 = liftIO $ dyn519 ptr_glMinmaxEXT v1 v2 v3
@@ -28318,7 +28318,7 @@ ptr_glNamedRenderbufferStorage = unsafePerformIO $ getCommand "glNamedRenderbuff
 glNamedRenderbufferStorageEXT
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@ of type @Renderbuffer@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
@@ -28352,7 +28352,7 @@ glNamedRenderbufferStorageMultisampleCoverageEXT
   => GLuint -- ^ @renderbuffer@ of type @Renderbuffer@.
   -> GLsizei -- ^ @coverageSamples@.
   -> GLsizei -- ^ @colorSamples@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
@@ -28368,7 +28368,7 @@ glNamedRenderbufferStorageMultisampleEXT
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@ of type @Renderbuffer@.
   -> GLsizei -- ^ @samples@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
@@ -34407,7 +34407,7 @@ glRenderbufferStorageMultisampleCoverageNV
   => GLenum -- ^ @target@ of type @RenderbufferTarget@.
   -> GLsizei -- ^ @coverageSamples@.
   -> GLsizei -- ^ @colorSamples@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
@@ -36049,7 +36049,7 @@ ptr_glSelectPerfMonitorCountersAMD = unsafePerformIO $ getCommand "glSelectPerfM
 glSeparableFilter2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @SeparableTarget@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
@@ -36068,7 +36068,7 @@ ptr_glSeparableFilter2D = unsafePerformIO $ getCommand "glSeparableFilter2D"
 glSeparableFilter2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [SeparableTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#SeparableTargetEXT).
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelFormat).
@@ -38673,7 +38673,7 @@ glTexImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
@@ -38753,7 +38753,7 @@ glTexImage4DSGIS
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @PixelInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.

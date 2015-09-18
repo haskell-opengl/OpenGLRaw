@@ -567,7 +567,8 @@ showComment registry name sigElem
         -- TODO: Do not use Show instance for SignatureElement.
         hurz = case belongsToGroup sigElem of
                  Just gn | numPointer sigElem <= 1 &&
-                           gn `M.member` groups registry -> linkToGroup gn
+                           fgn `M.member` groups registry -> linkToGroup fgn
+                   where fgn = fixGroupName gn
                  _ -> inlineCode (show (base sigElem))
 
         isInteresting = DM.isJust (arrayLength sigElem) || DM.isJust (belongsToGroup sigElem)
@@ -584,6 +585,12 @@ showComment registry name sigElem
         maybeDeref e | numPointer e > 0 = e{numPointer = numPointer e - 1}
                      | otherwise = e
         maybeSetBaseType e = maybe e (\g -> e{baseType = TypeName (unGroupName g)}) (belongsToGroup e)
+
+fixGroupName :: GroupName -> GroupName
+fixGroupName g
+  | g == GroupName "PixelInternalFormat" = GroupName "InternalFormat"
+  | g == GroupName "SGIXFfdMask" = GroupName "FfdMaskSGIX"
+  | otherwise = g
 
 -- TODO: This is very fragile, but currently there is no clean way to specify
 -- link texts when referencing anchors in Haddock.
