@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.GetProcAddress
@@ -22,13 +23,29 @@ module Graphics.Rendering.OpenGL.Raw.GetProcAddress (
    -- * Checked retrieval
    getProcAddressChecked,
    getProcAddressWithSuffixesChecked,
-   getExtensionChecked
+   getExtensionChecked,
+   -- * Version info and extensions
+   getVersion, version,
+   getExtensions, extensions
 ) where
 
+#if !MIN_VERSION_base(4,8,0)
+import Data.Function( (<$>), (<$) )
+#endif
+import Control.Monad ( forM )
 import Control.Monad.IO.Class ( MonadIO(..) )
-import Foreign.C.String ( withCString, CString )
+import Data.Char ( isDigit )
+import Data.Set ( Set, fromList )
+import Foreign.C.String ( CString, withCString, peekCString )
+import Foreign.C.Types
+import Foreign.Marshal.Alloc ( alloca )
 import Foreign.Marshal.Error ( throwIf )
-import Foreign.Ptr ( FunPtr, nullFunPtr )
+import Foreign.Ptr ( Ptr, castPtr, FunPtr, nullFunPtr )
+import Foreign.Storable ( peek )
+import Graphics.Rendering.OpenGL.Raw.Tokens
+import Graphics.Rendering.OpenGL.Raw.Types
+import System.IO.Unsafe ( unsafePerformIO )
+import Text.ParserCombinators.ReadP
 
 --------------------------------------------------------------------------------
 
@@ -98,3 +115,100 @@ vendorSuffixes = [
    "PGI", "NVX", "GREMEDY", "DMP", "VIV", "SUNX", "S3", "REND", "MESAX", "FJ",
    "ANDROID" ]
 
+--------------------------------------------------------------------------------
+
+-- | Retrieve the set of all available OpenGL extensions.
+getExtensions :: MonadIO m => m (Set String)
+getExtensions = liftIO $ Data.Set.fromList <$> do
+  -- glGetStringi is only present from OpenGL 3.0 and OpenGL ES 3.0 onwards, but
+  -- we can not simply retrieve its entry point and check that against
+  -- nullFunPtr: Apart from WGL, entry points are context-independent, so even
+  -- having a entry point which looks valid doesn't guarantee that it is
+  -- actually supported. Therefore we need to check the OpenGL version number
+  -- directly.
+  v <- getVersion
+  if v >= (3, 0)
+    then do numExtensions <- getInteger gl_NUM_EXTENSIONS
+            forM [ 0 .. fromIntegral numExtensions - 1 ] $
+              getStringi gl_EXTENSIONS
+    else words <$> getString gl_EXTENSIONS
+
+--------------------------------------------------------------------------------
+
+-- | Retrieve the OpenGL version, split into major and minor version numbers.
+getVersion :: MonadIO m => m (Int, Int)
+getVersion = liftIO $ runParser parseVersion (-1, -1) <$> getString gl_VERSION
+
+runParser :: ReadP a -> a -> String -> a
+runParser parser failed str =
+  case readP_to_S parser str of
+    [(v, "")] -> v
+    _ -> failed
+
+-- This does quite a bit more than we need for "normal" OpenGL, but at least it
+-- documents the convoluted format of the version string in detail.
+parseVersion :: ReadP (Int, Int)
+parseVersion = do
+  _prefix <-
+    -- Too lazy to define a type for the API...
+    ("CL" <$ string "OpenGL ES-CL ") <++  -- OpenGL ES 1.x Common-Lite
+    ("CM" <$ string "OpenGL ES-CM ") <++  -- OpenGL ES 1.x Common
+    ("ES" <$ string "OpenGL ES "   ) <++  -- OpenGL ES 2.x or 3.x
+    ("GL" <$ string ""             )      -- OpenGL
+  major <- read <$> munch1 isDigit
+  minor <- char '.' >> read <$> munch1 isDigit
+  _release <- (char '.' >> munch1 (/= ' ')) <++ return ""
+  _vendorStuff <- (char ' ' >> get `manyTill` eof) <++ ("" <$ eof)
+  return (major, minor)
+
+--------------------------------------------------------------------------------
+-- Graphics.Rendering.OpenGL.Raw.Foreign uses generated names, which are not
+-- easily predictable, so we duplicate a few "foreign import"s below.
+
+getString :: GLenum -> IO String
+getString name = do
+  glGetString_ <- dynGLenumIOPtrGLubyte <$> getProcAddress "glGetString"
+  glGetString_ name >>= peekGLstring
+
+foreign import CALLCONV "dynamic" dynGLenumIOPtrGLubyte
+  :: FunPtr (GLenum -> IO (Ptr GLubyte))
+  ->         GLenum -> IO (Ptr GLubyte)
+
+getStringi :: GLenum -> GLuint -> IO String
+getStringi name index = do
+  glGetStringi_ <- dynGLenumGLuintIOPtrGLubyte <$> getProcAddress "glGetStringi"
+  glGetStringi_ name index >>= peekGLstring
+
+foreign import CALLCONV "dynamic" dynGLenumGLuintIOPtrGLubyte
+  :: FunPtr (GLenum -> GLuint -> IO (Ptr GLubyte))
+  ->         GLenum -> GLuint -> IO (Ptr GLubyte)
+
+getInteger :: GLenum -> IO GLint
+getInteger name = do
+  glGetIntegerv_ <- dynGLenumPtrGLintIOVoid <$> getProcAddress "glGetIntegerv"
+  alloca $ \p ->
+    glGetIntegerv_ name p >> peek p
+
+foreign import CALLCONV "dynamic" dynGLenumPtrGLintIOVoid
+  :: FunPtr (GLenum -> Ptr GLint -> IO ())
+  ->         GLenum -> Ptr GLint -> IO ()
+
+-- TODO: We currently ignore that fact that OpenGL strings are UTF8-encoded.
+peekGLstring :: Ptr GLubyte -> IO String
+peekGLstring = peekCString . castPtr
+
+--------------------------------------------------------------------------------
+
+-- | The set of all available OpenGL extensions. Note that in the presence of
+-- multiple contexts with different capabilities, this might be wrong. Use
+-- 'getExtensions' in those cases instead.
+extensions :: Set String
+extensions = unsafePerformIO getExtensions
+{-# NOINLINE extensions #-}
+
+-- | The OpenGL version, split into major and minor version numbers. Note that
+-- in the presence of multiple contexts with different capabilities, this might
+-- be wrong. Use 'getVersion' in those cases instead.
+version :: (Int, Int)
+version = unsafePerformIO getVersion
+{-# NOINLINE version #-}
