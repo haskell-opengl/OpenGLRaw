@@ -30,7 +30,7 @@ module Graphics.Rendering.OpenGL.Raw.GetProcAddress (
 ) where
 
 #if !MIN_VERSION_base(4,8,0)
-import Data.Function( (<$>), (<$) )
+import Data.Functor( (<$>), (<$) )
 #endif
 import Control.Monad ( forM )
 import Control.Monad.IO.Class ( MonadIO(..) )
