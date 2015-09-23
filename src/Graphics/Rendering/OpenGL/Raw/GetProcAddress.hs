@@ -126,9 +126,12 @@ getExtensions = liftIO $ Data.Set.fromList <$> do
   -- having a entry point which looks valid doesn't guarantee that it is
   -- actually supported. Therefore we need to check the OpenGL version number
   -- directly.
-  v <- getVersion
+  getString <- makeGetString
+  v <- getVersionWith getString
   if v >= (3, 0)
-    then do numExtensions <- getInteger gl_NUM_EXTENSIONS
+    then do getInteger <- makeGetInteger
+            getStringi <- makeGetStringi
+            numExtensions <- getInteger gl_NUM_EXTENSIONS
             forM [ 0 .. fromIntegral numExtensions - 1 ] $
               getStringi gl_EXTENSIONS
     else words <$> getString gl_EXTENSIONS
@@ -137,7 +140,11 @@ getExtensions = liftIO $ Data.Set.fromList <$> do
 
 -- | Retrieve the OpenGL version, split into major and minor version numbers.
 getVersion :: MonadIO m => m (Int, Int)
-getVersion = liftIO $ runParser parseVersion (-1, -1) <$> getString gl_VERSION
+getVersion = liftIO $ makeGetString >>= getVersionWith
+
+getVersionWith :: (GLenum -> IO String) -> IO (Int, Int)
+getVersionWith getString =
+  runParser parseVersion (-1, -1) <$> getString gl_VERSION
 
 runParser :: ReadP a -> a -> String -> a
 runParser parser failed str =
@@ -165,29 +172,28 @@ parseVersion = do
 -- Graphics.Rendering.OpenGL.Raw.Foreign uses generated names, which are not
 -- easily predictable, so we duplicate a few "foreign import"s below.
 
-getString :: GLenum -> IO String
-getString name = do
+makeGetString :: IO (GLenum -> IO String)
+makeGetString = do
   glGetString_ <- dynGLenumIOPtrGLubyte <$> getProcAddress "glGetString"
-  glGetString_ name >>= peekGLstring
+  return $ \name -> glGetString_ name >>= peekGLstring
 
 foreign import CALLCONV "dynamic" dynGLenumIOPtrGLubyte
   :: FunPtr (GLenum -> IO (Ptr GLubyte))
   ->         GLenum -> IO (Ptr GLubyte)
 
-getStringi :: GLenum -> GLuint -> IO String
-getStringi name index = do
+makeGetStringi :: IO (GLenum -> GLuint -> IO String)
+makeGetStringi = do
   glGetStringi_ <- dynGLenumGLuintIOPtrGLubyte <$> getProcAddress "glGetStringi"
-  glGetStringi_ name index >>= peekGLstring
+  return $ \name index -> glGetStringi_ name index >>= peekGLstring
 
 foreign import CALLCONV "dynamic" dynGLenumGLuintIOPtrGLubyte
   :: FunPtr (GLenum -> GLuint -> IO (Ptr GLubyte))
   ->         GLenum -> GLuint -> IO (Ptr GLubyte)
 
-getInteger :: GLenum -> IO GLint
-getInteger name = do
+makeGetInteger :: IO (GLenum -> IO GLint)
+makeGetInteger = do
   glGetIntegerv_ <- dynGLenumPtrGLintIOVoid <$> getProcAddress "glGetIntegerv"
-  alloca $ \p ->
-    glGetIntegerv_ name p >> peek p
+  return $ \name -> alloca $ \p -> glGetIntegerv_ name p >> peek p
 
 foreign import CALLCONV "dynamic" dynGLenumPtrGLintIOVoid
   :: FunPtr (GLenum -> Ptr GLint -> IO ())
