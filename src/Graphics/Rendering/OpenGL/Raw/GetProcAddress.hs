@@ -13,6 +13,9 @@
 -- entries, providing a portability layer upon platform-specific mechanisms
 -- like @glXGetProcAddress@, @wglGetProcAddress@ or @NSAddressOfSymbol@.
 --
+-- Note that /finding/ an OpenGL entry point doesn't mean that it's actually
+-- /usable:/ On most platforms entry points are context-independent, so you have
+-- to check the available extensions and\/or OpenGL version, too.
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.GetProcAddress (
@@ -43,7 +46,7 @@ import Foreign.C.String ( CString )
 import Foreign.C.Types
 import Foreign.Marshal.Alloc ( alloca )
 import Foreign.Marshal.Error ( throwIf )
-import Foreign.Ptr ( Ptr, castPtr, FunPtr, nullFunPtr )
+import Foreign.Ptr ( Ptr, nullPtr, castPtr, FunPtr, nullFunPtr )
 import Foreign.Storable ( peek )
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Types
@@ -124,11 +127,10 @@ vendorSuffixes = [
 getExtensions :: MonadIO m => m (Set String)
 getExtensions = liftIO $ Data.Set.fromList <$> do
   -- glGetStringi is only present from OpenGL 3.0 and OpenGL ES 3.0 onwards, but
-  -- we can not simply retrieve its entry point and check that against
-  -- nullFunPtr: Apart from WGL, entry points are context-independent, so even
-  -- having a entry point which looks valid doesn't guarantee that it is
-  -- actually supported. Therefore we need to check the OpenGL version number
-  -- directly.
+  -- we can't simply retrieve its entry point and check that against nullFunPtr:
+  -- Apart from WGL, entry points are context-independent, so even having an
+  -- entry point which looks valid doesn't guarantee that it is actually
+  -- supported. Therefore we need to check the OpenGL version number directly.
   getString <- makeGetString
   v <- getVersionWith getString
   if v >= (3, 0)
@@ -178,7 +180,7 @@ parseVersion = do
 makeGetString :: IO (GLenum -> IO String)
 makeGetString = do
   glGetString_ <- dynGLenumIOPtrGLubyte <$> getProcAddress "glGetString"
-  return $ \name -> glGetString_ name >>= peekUtf8String . castPtr
+  return $ \name -> glGetString_ name >>= peekGLstring
 
 foreign import CALLCONV "dynamic" dynGLenumIOPtrGLubyte
   :: FunPtr (GLenum -> IO (Ptr GLubyte))
@@ -187,7 +189,7 @@ foreign import CALLCONV "dynamic" dynGLenumIOPtrGLubyte
 makeGetStringi :: IO (GLenum -> GLuint -> IO String)
 makeGetStringi = do
   glGetStringi_ <- dynGLenumGLuintIOPtrGLubyte <$> getProcAddress "glGetStringi"
-  return $ \name index -> glGetStringi_ name index >>= peekUtf8String . castPtr
+  return $ \name index -> glGetStringi_ name index >>= peekGLstring
 
 foreign import CALLCONV "dynamic" dynGLenumGLuintIOPtrGLubyte
   :: FunPtr (GLenum -> GLuint -> IO (Ptr GLubyte))
@@ -201,6 +203,17 @@ makeGetInteger = do
 foreign import CALLCONV "dynamic" dynGLenumPtrGLintIOVoid
   :: FunPtr (GLenum -> Ptr GLint -> IO ())
   ->         GLenum -> Ptr GLint -> IO ()
+
+--------------------------------------------------------------------------------
+
+-- Play safe, this is in line with OpenGL: Return something, but don't crash.
+peekGLstring :: Ptr GLubyte -> IO String
+peekGLstring = ptr (return "") (peekUtf8String . castPtr)
+
+-- This should really be in Foreign.Ptr.
+ptr :: b -> (Ptr a -> b) -> Ptr a -> b
+ptr n f p | p == nullPtr = n
+          | otherwise    = f p
 
 --------------------------------------------------------------------------------
 
