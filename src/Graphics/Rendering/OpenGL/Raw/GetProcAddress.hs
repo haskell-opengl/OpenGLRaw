@@ -34,9 +34,12 @@ import Data.Functor( (<$>), (<$) )
 #endif
 import Control.Monad ( forM )
 import Control.Monad.IO.Class ( MonadIO(..) )
+import Data.ByteString.Unsafe ( unsafePackCString, unsafeUseAsCString )
 import Data.Char ( isDigit )
 import Data.Set ( Set, fromList )
-import Foreign.C.String ( CString, withCString, peekCString )
+import Data.Text ( pack, unpack )
+import Data.Text.Encoding ( encodeUtf8, decodeUtf8 )
+import Foreign.C.String ( CString )
 import Foreign.C.Types
 import Foreign.Marshal.Alloc ( alloca )
 import Foreign.Marshal.Error ( throwIf )
@@ -52,7 +55,7 @@ import Text.ParserCombinators.ReadP
 -- | Retrieve an OpenGL function by name. Returns 'nullFunPtr' when no function
 -- with the given name was found.
 getProcAddress :: MonadIO m => String -> m (FunPtr a)
-getProcAddress cmd = liftIO $ withCString cmd hs_OpenGLRaw_getProcAddress
+getProcAddress cmd = liftIO $ withUtf8String cmd hs_OpenGLRaw_getProcAddress
 
 foreign import ccall unsafe "hs_OpenGLRaw_getProcAddress"
    hs_OpenGLRaw_getProcAddress :: CString -> IO (FunPtr a)
@@ -175,7 +178,7 @@ parseVersion = do
 makeGetString :: IO (GLenum -> IO String)
 makeGetString = do
   glGetString_ <- dynGLenumIOPtrGLubyte <$> getProcAddress "glGetString"
-  return $ \name -> glGetString_ name >>= peekGLstring
+  return $ \name -> glGetString_ name >>= peekUtf8String . castPtr
 
 foreign import CALLCONV "dynamic" dynGLenumIOPtrGLubyte
   :: FunPtr (GLenum -> IO (Ptr GLubyte))
@@ -184,7 +187,7 @@ foreign import CALLCONV "dynamic" dynGLenumIOPtrGLubyte
 makeGetStringi :: IO (GLenum -> GLuint -> IO String)
 makeGetStringi = do
   glGetStringi_ <- dynGLenumGLuintIOPtrGLubyte <$> getProcAddress "glGetStringi"
-  return $ \name index -> glGetStringi_ name index >>= peekGLstring
+  return $ \name index -> glGetStringi_ name index >>= peekUtf8String . castPtr
 
 foreign import CALLCONV "dynamic" dynGLenumGLuintIOPtrGLubyte
   :: FunPtr (GLenum -> GLuint -> IO (Ptr GLubyte))
@@ -199,9 +202,13 @@ foreign import CALLCONV "dynamic" dynGLenumPtrGLintIOVoid
   :: FunPtr (GLenum -> Ptr GLint -> IO ())
   ->         GLenum -> Ptr GLint -> IO ()
 
--- TODO: We currently ignore that fact that OpenGL strings are UTF8-encoded.
-peekGLstring :: Ptr GLubyte -> IO String
-peekGLstring = peekCString . castPtr
+--------------------------------------------------------------------------------
+
+withUtf8String :: String -> (CString -> IO a) -> IO a
+withUtf8String = unsafeUseAsCString . encodeUtf8 . pack . (++ "\0")
+
+peekUtf8String :: CString -> IO String
+peekUtf8String p = unpack . decodeUtf8 <$> unsafePackCString p
 
 --------------------------------------------------------------------------------
 
