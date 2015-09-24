@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/stencil_wrap.txt EXT_stencil_wrap> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.StencilWrap (
+  -- * Extension Support
+  glGetEXTStencilWrap,
+  gl_EXT_stencil_wrap,
   -- * Enums
   gl_DECR_WRAP_EXT,
   gl_INCR_WRAP_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

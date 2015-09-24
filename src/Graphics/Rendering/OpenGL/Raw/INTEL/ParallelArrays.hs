@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/INTEL/parallel_arrays.txt INTEL_parallel_arrays> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.INTEL.ParallelArrays (
+  -- * Extension Support
+  glGetINTELParallelArrays,
+  gl_INTEL_parallel_arrays,
   -- * Enums
   gl_COLOR_ARRAY_PARALLEL_POINTERS_INTEL,
   gl_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL,
@@ -26,5 +27,6 @@ module Graphics.Rendering.OpenGL.Raw.INTEL.ParallelArrays (
   glVertexPointervINTEL
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

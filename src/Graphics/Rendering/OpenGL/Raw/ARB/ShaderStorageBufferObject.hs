@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shader_storage_buffer_object.txt ARB_shader_storage_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject (
+  -- * Extension Support
+  glGetARBShaderStorageBufferObject,
+  gl_ARB_shader_storage_buffer_object,
   -- * Enums
   gl_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS,
   gl_MAX_COMBINED_SHADER_OUTPUT_RESOURCES,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShaderStorageBufferObject (
   glShaderStorageBlockBinding
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

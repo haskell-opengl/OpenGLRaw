@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/bindless_texture.txt NV_bindless_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture (
+  -- * Extension Support
+  glGetNVBindlessTexture,
+  gl_NV_bindless_texture,
   -- * Functions
   glGetImageHandleNV,
   glGetTextureHandleNV,
@@ -29,4 +30,5 @@ module Graphics.Rendering.OpenGL.Raw.NV.BindlessTexture (
   glUniformHandleui64vNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

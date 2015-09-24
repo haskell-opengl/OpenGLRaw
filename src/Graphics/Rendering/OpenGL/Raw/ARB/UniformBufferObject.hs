@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/uniform_buffer_object.txt ARB_uniform_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject (
+  -- * Extension Support
+  glGetARBUniformBufferObject,
+  gl_ARB_uniform_buffer_object,
   -- * Enums
   gl_ACTIVE_UNIFORM_BLOCKS,
   gl_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH,
@@ -60,5 +61,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.UniformBufferObject (
   glUniformBlockBinding
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

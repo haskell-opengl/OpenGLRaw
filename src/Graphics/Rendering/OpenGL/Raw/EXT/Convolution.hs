@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/convolution.txt EXT_convolution> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Convolution (
+  -- * Extension Support
+  glGetEXTConvolution,
+  gl_EXT_convolution,
   -- * Enums
   gl_CONVOLUTION_1D_EXT,
   gl_CONVOLUTION_2D_EXT,
@@ -50,5 +51,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Convolution (
   glSeparableFilter2DEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

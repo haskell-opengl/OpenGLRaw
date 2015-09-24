@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/transform_feedback.txt NV_transform_feedback> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback (
+  -- * Extension Support
+  glGetNVTransformFeedback,
+  gl_NV_transform_feedback,
   -- * Enums
   gl_ACTIVE_VARYINGS_NV,
   gl_ACTIVE_VARYING_MAX_LENGTH_NV,
@@ -60,5 +61,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.TransformFeedback (
   glTransformFeedbackVaryingsNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

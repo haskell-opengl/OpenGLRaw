@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/ES2_compatibility.txt ARB_ES2_compatibility> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility (
+  -- * Extension Support
+  glGetARBES2Compatibility,
+  gl_ARB_ES2_compatibility,
   -- * Enums
   gl_FIXED,
   gl_HIGH_FLOAT,
@@ -38,5 +39,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ES2Compatibility (
   glShaderBinary
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

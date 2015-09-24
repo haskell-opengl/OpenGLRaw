@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/transform_feedback_overflow_query.txt ARB_transform_feedback_overflow_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedbackOverflowQuery (
+  -- * Extension Support
+  glGetARBTransformFeedbackOverflowQuery,
+  gl_ARB_transform_feedback_overflow_query,
   -- * Enums
   gl_TRANSFORM_FEEDBACK_OVERFLOW_ARB,
   gl_TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

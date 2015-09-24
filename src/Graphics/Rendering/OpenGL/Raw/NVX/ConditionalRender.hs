@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NVX/nvx_conditional_render.txt NVX_conditional_render> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NVX.ConditionalRender (
+  -- * Extension Support
+  glGetNVXConditionalRender,
+  gl_NVX_conditional_render,
   -- * Functions
   glBeginConditionalRenderNVX,
   glEndConditionalRenderNVX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

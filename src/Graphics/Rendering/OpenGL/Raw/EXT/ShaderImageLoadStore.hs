@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/shader_image_load_store.txt EXT_shader_image_load_store> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.ShaderImageLoadStore (
+  -- * Extension Support
+  glGetEXTShaderImageLoadStore,
+  gl_EXT_shader_image_load_store,
   -- * Enums
   gl_ALL_BARRIER_BITS_EXT,
   gl_ATOMIC_COUNTER_BARRIER_BIT_EXT,
@@ -74,5 +75,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.ShaderImageLoadStore (
   glMemoryBarrierEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

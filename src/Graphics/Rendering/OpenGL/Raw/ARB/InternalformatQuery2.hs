@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/internalformat_query2.txt ARB_internalformat_query2> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery2 (
+  -- * Extension Support
+  glGetARBInternalformatQuery2,
+  gl_ARB_internalformat_query2,
   -- * Enums
   gl_AUTO_GENERATE_MIPMAP,
   gl_CAVEAT_SUPPORT,
@@ -133,5 +134,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery2 (
   glGetInternalformati64v
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

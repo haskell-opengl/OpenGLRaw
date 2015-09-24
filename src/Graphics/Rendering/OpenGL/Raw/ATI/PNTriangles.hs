@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/pn_triangles.txt ATI_pn_triangles> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.PNTriangles (
+  -- * Extension Support
+  glGetATIPNTriangles,
+  gl_ATI_pn_triangles,
   -- * Enums
   gl_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI,
   gl_PN_TRIANGLES_ATI,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.PNTriangles (
   glPNTrianglesiATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

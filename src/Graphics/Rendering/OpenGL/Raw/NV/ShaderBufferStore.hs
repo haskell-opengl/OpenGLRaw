@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/shader_buffer_store.txt NV_shader_buffer_store> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferStore (
+  -- * Extension Support
+  glGetNVShaderBufferStore,
+  gl_NV_shader_buffer_store,
   -- * Enums
   gl_READ_WRITE,
   gl_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV,
   gl_WRITE_ONLY
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

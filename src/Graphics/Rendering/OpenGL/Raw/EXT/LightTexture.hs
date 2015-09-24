@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/light_texture.txt EXT_light_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.LightTexture (
+  -- * Extension Support
+  glGetEXTLightTexture,
+  gl_EXT_light_texture,
   -- * Enums
   gl_ATTENUATION_EXT,
   gl_FRAGMENT_COLOR_EXT,
@@ -30,5 +31,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.LightTexture (
   glTextureMaterialEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

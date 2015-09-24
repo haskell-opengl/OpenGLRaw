@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/OES_byte_coordinates.txt OES_byte_coordinates> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.OES.ByteCoordinates (
+  -- * Extension Support
+  glGetOESByteCoordinates,
+  gl_OES_byte_coordinates,
   -- * Types
   GLbyte,
   -- * Enums
@@ -42,6 +43,7 @@ module Graphics.Rendering.OpenGL.Raw.OES.ByteCoordinates (
   glVertex4bvOES
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

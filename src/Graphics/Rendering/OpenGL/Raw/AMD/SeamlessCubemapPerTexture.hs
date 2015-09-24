@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/seamless_cubemap_per_texture.txt AMD_seamless_cubemap_per_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.SeamlessCubemapPerTexture (
+  -- * Extension Support
+  glGetAMDSeamlessCubemapPerTexture,
+  gl_AMD_seamless_cubemap_per_texture,
   -- * Enums
   gl_TEXTURE_CUBE_MAP_SEAMLESS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

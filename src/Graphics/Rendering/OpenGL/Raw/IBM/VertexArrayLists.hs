@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/IBM/vertex_array_lists.txt IBM_vertex_array_lists> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.IBM.VertexArrayLists (
+  -- * Extension Support
+  glGetIBMVertexArrayLists,
+  gl_IBM_vertex_array_lists,
   -- * Enums
   gl_COLOR_ARRAY_LIST_IBM,
   gl_COLOR_ARRAY_LIST_STRIDE_IBM,
@@ -41,5 +42,6 @@ module Graphics.Rendering.OpenGL.Raw.IBM.VertexArrayLists (
   glVertexPointerListIBM
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

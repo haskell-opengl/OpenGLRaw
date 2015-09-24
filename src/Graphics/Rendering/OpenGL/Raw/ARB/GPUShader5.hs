@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/gpu_shader5.txt ARB_gpu_shader5> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5 (
+  -- * Extension Support
+  glGetARBGPUShader5,
+  gl_ARB_gpu_shader5,
   -- * Enums
   gl_FRAGMENT_INTERPOLATION_OFFSET_BITS,
   gl_GEOMETRY_SHADER_INVOCATIONS,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5 (
   gl_MIN_FRAGMENT_INTERPOLATION_OFFSET
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

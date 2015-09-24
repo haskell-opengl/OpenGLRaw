@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/texture_edge_clamp.txt SGIS_texture_edge_clamp> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.TextureEdgeClamp (
+  -- * Extension Support
+  glGetSGISTextureEdgeClamp,
+  gl_SGIS_texture_edge_clamp,
   -- * Enums
   gl_CLAMP_TO_EDGE_SGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/vertex_array_object.txt ATI_vertex_array_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.VertexArrayObject (
+  -- * Extension Support
+  glGetATIVertexArrayObject,
+  gl_ATI_vertex_array_object,
   -- * Enums
   gl_ARRAY_OBJECT_BUFFER_ATI,
   gl_ARRAY_OBJECT_OFFSET_ATI,
@@ -37,5 +38,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.VertexArrayObject (
   glVariantArrayObjectATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

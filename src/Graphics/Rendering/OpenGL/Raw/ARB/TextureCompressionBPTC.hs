@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_compression_bptc.txt ARB_texture_compression_bptc> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC (
+  -- * Extension Support
+  glGetARBTextureCompressionBPTC,
+  gl_ARB_texture_compression_bptc,
   -- * Enums
   gl_COMPRESSED_RGBA_BPTC_UNORM_ARB,
   gl_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompressionBPTC (
   gl_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

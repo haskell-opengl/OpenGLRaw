@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/secondary_color.txt EXT_secondary_color> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor (
+  -- * Extension Support
+  glGetEXTSecondaryColor,
+  gl_EXT_secondary_color,
   -- * Enums
   gl_COLOR_SUM_EXT,
   gl_CURRENT_SECONDARY_COLOR_EXT,
@@ -41,5 +42,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.SecondaryColor (
   glSecondaryColorPointerEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

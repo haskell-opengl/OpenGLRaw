@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/transform_hint.txt APPLE_transform_hint> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.TransformHint (
+  -- * Extension Support
+  glGetAPPLETransformHint,
+  gl_APPLE_transform_hint,
   -- * Enums
   gl_TRANSFORM_HINT_APPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

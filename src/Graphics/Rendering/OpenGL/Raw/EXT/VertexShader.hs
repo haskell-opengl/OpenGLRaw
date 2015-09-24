@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/vertex_shader.txt EXT_vertex_shader> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader (
+  -- * Extension Support
+  glGetEXTVertexShader,
+  gl_EXT_vertex_shader,
   -- * Enums
   gl_CURRENT_VERTEX_EXT,
   gl_FULL_RANGE_EXT,
@@ -169,5 +170,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexShader (
   glWriteMaskEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

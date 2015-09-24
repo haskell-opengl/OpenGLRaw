@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/occlusion_query.txt ARB_occlusion_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery (
+  -- * Extension Support
+  glGetARBOcclusionQuery,
+  gl_ARB_occlusion_query,
   -- * Enums
   gl_CURRENT_QUERY_ARB,
   gl_QUERY_COUNTER_BITS_ARB,
@@ -30,5 +31,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.OcclusionQuery (
   glIsQueryARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

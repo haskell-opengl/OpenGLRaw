@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/gpu_shader_int64.txt AMD_gpu_shader_int64> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.GPUShaderInt64 (
+  -- * Extension Support
+  glGetAMDGPUShaderInt64,
+  gl_AMD_gpu_shader_int64,
   -- * Enums
   gl_FLOAT16_NV,
   gl_FLOAT16_VEC2_NV,
@@ -79,5 +80,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.GPUShaderInt64 (
   glUniform4ui64vNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,16 +8,18 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/sample_positions.txt AMD_sample_positions> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.SamplePositions (
+  -- * Extension Support
+  glGetAMDSamplePositions,
+  gl_AMD_sample_positions,
   -- * Enums
   gl_SUBSAMPLE_DISTANCE_AMD,
   -- * Functions
   glSetMultisamplefvAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

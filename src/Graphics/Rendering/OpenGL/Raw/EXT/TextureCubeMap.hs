@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_cube_map.txt EXT_texture_cube_map> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureCubeMap (
+  -- * Extension Support
+  glGetEXTTextureCubeMap,
+  gl_EXT_texture_cube_map,
   -- * Enums
   gl_MAX_CUBE_MAP_TEXTURE_SIZE_EXT,
   gl_NORMAL_MAP_EXT,
@@ -28,4 +29,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureCubeMap (
   gl_TEXTURE_CUBE_MAP_POSITIVE_Z_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

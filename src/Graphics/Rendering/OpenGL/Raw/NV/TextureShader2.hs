@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/texture_shader2.txt NV_texture_shader2> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.TextureShader2 (
+  -- * Extension Support
+  glGetNVTextureShader2,
+  gl_NV_texture_shader2,
   -- * Enums
   gl_DOT_PRODUCT_TEXTURE_3D_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/copy_buffer.txt ARB_copy_buffer> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer (
+  -- * Extension Support
+  glGetARBCopyBuffer,
+  gl_ARB_copy_buffer,
   -- * Enums
   gl_COPY_READ_BUFFER,
   gl_COPY_WRITE_BUFFER,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.CopyBuffer (
   glCopyBufferSubData
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

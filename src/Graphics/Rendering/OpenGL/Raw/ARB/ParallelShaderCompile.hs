@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/parallel_shader_compile.txt ARB_parallel_shader_compile> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ParallelShaderCompile (
+  -- * Extension Support
+  glGetARBParallelShaderCompile,
+  gl_ARB_parallel_shader_compile,
   -- * Enums
   gl_COMPLETION_STATUS_ARB,
   gl_MAX_SHADER_COMPILER_THREADS_ARB,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ParallelShaderCompile (
   glMaxShaderCompilerThreadsARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

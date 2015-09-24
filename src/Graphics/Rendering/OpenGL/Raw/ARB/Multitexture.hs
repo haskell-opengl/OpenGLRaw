@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/multitexture.txt ARB_multitexture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.Multitexture (
+  -- * Extension Support
+  glGetARBMultitexture,
+  gl_ARB_multitexture,
   -- * Enums
   gl_ACTIVE_TEXTURE_ARB,
   gl_CLIENT_ACTIVE_TEXTURE_ARB,
@@ -86,5 +87,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.Multitexture (
   glMultiTexCoord4svARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

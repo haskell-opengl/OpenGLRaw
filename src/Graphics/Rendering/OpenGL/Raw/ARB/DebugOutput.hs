@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/debug_output.txt ARB_debug_output> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DebugOutput (
+  -- * Extension Support
+  glGetARBDebugOutput,
+  gl_ARB_debug_output,
   -- * Enums
   gl_DEBUG_CALLBACK_FUNCTION_ARB,
   gl_DEBUG_CALLBACK_USER_PARAM_ARB,
@@ -43,5 +44,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DebugOutput (
   glGetDebugMessageLogARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

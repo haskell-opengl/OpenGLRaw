@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/map_buffer_alignment.txt ARB_map_buffer_alignment> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.MapBufferAlignment (
+  -- * Extension Support
+  glGetARBMapBufferAlignment,
+  gl_ARB_map_buffer_alignment,
   -- * Enums
   gl_MIN_MAP_BUFFER_ALIGNMENT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

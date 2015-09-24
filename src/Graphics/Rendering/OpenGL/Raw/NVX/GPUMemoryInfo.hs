@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NVX/gpu_memory_info.txt NVX_gpu_memory_info> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NVX.GPUMemoryInfo (
+  -- * Extension Support
+  glGetNVXGPUMemoryInfo,
+  gl_NVX_gpu_memory_info,
   -- * Enums
   gl_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX,
   gl_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.NVX.GPUMemoryInfo (
   gl_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

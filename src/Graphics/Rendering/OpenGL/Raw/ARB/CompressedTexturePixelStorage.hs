@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/compressed_texture_pixel_storage.txt ARB_compressed_texture_pixel_storage> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.CompressedTexturePixelStorage (
+  -- * Extension Support
+  glGetARBCompressedTexturePixelStorage,
+  gl_ARB_compressed_texture_pixel_storage,
   -- * Enums
   gl_PACK_COMPRESSED_BLOCK_DEPTH,
   gl_PACK_COMPRESSED_BLOCK_HEIGHT,
@@ -24,4 +25,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.CompressedTexturePixelStorage (
   gl_UNPACK_COMPRESSED_BLOCK_WIDTH
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

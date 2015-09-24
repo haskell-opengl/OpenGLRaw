@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/ES3_compatibility.txt ARB_ES3_compatibility> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility (
+  -- * Extension Support
+  glGetARBES3Compatibility,
+  gl_ARB_ES3_compatibility,
   -- * Enums
   gl_ANY_SAMPLES_PASSED_CONSERVATIVE,
   gl_COMPRESSED_R11_EAC,
@@ -29,4 +30,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ES3Compatibility (
   gl_PRIMITIVE_RESTART_FIXED_INDEX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/sparse_texture.txt AMD_sparse_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.SparseTexture (
+  -- * Extension Support
+  glGetAMDSparseTexture,
+  gl_AMD_sparse_texture,
   -- * Enums
   gl_MAX_SPARSE_3D_TEXTURE_SIZE_AMD,
   gl_MAX_SPARSE_ARRAY_TEXTURE_LAYERS,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.SparseTexture (
   glTextureStorageSparseAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/indirect_parameters.txt ARB_indirect_parameters> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.IndirectParameters (
+  -- * Extension Support
+  glGetARBIndirectParameters,
+  gl_ARB_indirect_parameters,
   -- * Enums
   gl_PARAMETER_BUFFER_ARB,
   gl_PARAMETER_BUFFER_BINDING_ARB,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.IndirectParameters (
   glMultiDrawElementsIndirectCountARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/compute_variable_group_size.txt ARB_compute_variable_group_size> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ComputeVariableGroupSize (
+  -- * Extension Support
+  glGetARBComputeVariableGroupSize,
+  gl_ARB_compute_variable_group_size,
   -- * Enums
   gl_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB,
   gl_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ComputeVariableGroupSize (
   glDispatchComputeGroupSizeARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

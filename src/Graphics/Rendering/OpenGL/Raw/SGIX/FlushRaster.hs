@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/flush_raster.txt SGIX_flush_raster> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.FlushRaster (
+  -- * Extension Support
+  glGetSGIXFlushRaster,
+  gl_SGIX_flush_raster,
   -- * Functions
   glFlushRasterSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

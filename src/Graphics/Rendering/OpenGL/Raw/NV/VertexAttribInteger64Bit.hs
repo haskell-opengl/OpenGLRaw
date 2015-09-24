@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/vertex_attrib_integer_64bit.txt NV_vertex_attrib_integer_64bit> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VertexAttribInteger64Bit (
+  -- * Extension Support
+  glGetNVVertexAttribInteger64Bit,
+  gl_NV_vertex_attrib_integer_64bit,
   -- * Enums
   gl_INT64_NV,
   gl_UNSIGNED_INT64_NV,
@@ -38,5 +39,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.VertexAttribInteger64Bit (
   glVertexAttribLFormatNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

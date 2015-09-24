@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/draw_buffers2.txt EXT_draw_buffers2> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2 (
+  -- * Extension Support
+  glGetEXTDrawBuffers2,
+  gl_EXT_draw_buffers2,
   -- * Functions
   glColorMaskIndexedEXT,
   glDisableIndexedEXT,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DrawBuffers2 (
   glIsEnabledIndexedEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

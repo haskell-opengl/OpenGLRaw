@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_filter_minmax.txt EXT_texture_filter_minmax> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterMinmax (
+  -- * Extension Support
+  glGetEXTTextureFilterMinmax,
+  gl_EXT_texture_filter_minmax,
   -- * Enums
   gl_EFFECTIVE_RASTER_SAMPLES_EXT,
   gl_MAX_RASTER_SAMPLES_EXT,
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterMinmax (
   glRasterSamplesEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

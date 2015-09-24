@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/texture_float.txt ATI_texture_float> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.TextureFloat (
+  -- * Extension Support
+  glGetATITextureFloat,
+  gl_ATI_texture_float,
   -- * Enums
   gl_ALPHA_FLOAT16_ATI,
   gl_ALPHA_FLOAT32_ATI,
@@ -28,4 +29,5 @@ module Graphics.Rendering.OpenGL.Raw.ATI.TextureFloat (
   gl_RGB_FLOAT32_ATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

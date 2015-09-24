@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/point_parameters.txt EXT_point_parameters> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PointParameters (
+  -- * Extension Support
+  glGetEXTPointParameters,
+  gl_EXT_point_parameters,
   -- * Enums
   gl_DISTANCE_ATTENUATION_EXT,
   gl_POINT_FADE_THRESHOLD_SIZE_EXT,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PointParameters (
   glPointParameterfvEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

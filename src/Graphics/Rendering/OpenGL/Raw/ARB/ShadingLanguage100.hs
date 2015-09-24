@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shading_language_100.txt ARB_shading_language_100> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguage100 (
+  -- * Extension Support
+  glGetARBShadingLanguage100,
+  gl_ARB_shading_language_100,
   -- * Enums
   gl_SHADING_LANGUAGE_VERSION_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

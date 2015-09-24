@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/sampler_objects.txt ARB_sampler_objects> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects (
+  -- * Extension Support
+  glGetARBSamplerObjects,
+  gl_ARB_sampler_objects,
   -- * Enums
   gl_SAMPLER_BINDING,
   -- * Functions
@@ -32,5 +33,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SamplerObjects (
   glSamplerParameteriv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

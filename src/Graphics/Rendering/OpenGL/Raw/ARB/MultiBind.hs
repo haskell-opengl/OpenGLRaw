@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/multi_bind.txt ARB_multi_bind> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.MultiBind (
+  -- * Extension Support
+  glGetARBMultiBind,
+  gl_ARB_multi_bind,
   -- * Functions
   glBindBuffersBase,
   glBindBuffersRange,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.MultiBind (
   glBindVertexBuffers
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

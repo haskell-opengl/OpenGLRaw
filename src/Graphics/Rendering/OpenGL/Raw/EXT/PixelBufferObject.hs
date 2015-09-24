@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/pixel_buffer_object.txt EXT_pixel_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject (
+  -- * Extension Support
+  glGetEXTPixelBufferObject,
+  gl_EXT_pixel_buffer_object,
   -- * Enums
   gl_PIXEL_PACK_BUFFER_BINDING_EXT,
   gl_PIXEL_PACK_BUFFER_EXT,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PixelBufferObject (
   gl_PIXEL_UNPACK_BUFFER_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

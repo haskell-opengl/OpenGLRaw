@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/ycrcb.txt SGIX_ycrcb> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.YCrCb (
+  -- * Extension Support
+  glGetSGIXYCrCb,
+  gl_SGIX_ycrcb,
   -- * Enums
   gl_YCRCB_422_SGIX,
   gl_YCRCB_444_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

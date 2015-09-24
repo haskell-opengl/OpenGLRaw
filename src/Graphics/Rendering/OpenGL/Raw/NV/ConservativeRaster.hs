@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/conservative_raster.txt NV_conservative_raster> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster (
+  -- * Extension Support
+  glGetNVConservativeRaster,
+  gl_NV_conservative_raster,
   -- * Enums
   gl_CONSERVATIVE_RASTERIZATION_NV,
   gl_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.ConservativeRaster (
   glSubpixelPrecisionBiasNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

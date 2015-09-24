@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shadow_ambient.txt ARB_shadow_ambient> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShadowAmbient (
+  -- * Extension Support
+  glGetARBShadowAmbient,
+  gl_ARB_shadow_ambient,
   -- * Enums
   gl_TEXTURE_COMPARE_FAIL_VALUE_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

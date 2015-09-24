@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_buffer_object.txt ARB_texture_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject (
+  -- * Extension Support
+  glGetARBTextureBufferObject,
+  gl_ARB_texture_buffer_object,
   -- * Enums
   gl_MAX_TEXTURE_BUFFER_SIZE_ARB,
   gl_TEXTURE_BINDING_BUFFER_ARB,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferObject (
   glTexBufferARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

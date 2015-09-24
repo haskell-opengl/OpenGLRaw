@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/compute_shader.txt ARB_compute_shader> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader (
+  -- * Extension Support
+  glGetARBComputeShader,
+  gl_ARB_compute_shader,
   -- * Enums
   gl_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER,
   gl_COMPUTE_SHADER,
@@ -37,5 +38,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ComputeShader (
   glDispatchComputeIndirect
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

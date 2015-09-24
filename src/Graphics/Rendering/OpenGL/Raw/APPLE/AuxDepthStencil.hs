@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/aux_depth_stencil.txt APPLE_aux_depth_stencil> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.AuxDepthStencil (
+  -- * Extension Support
+  glGetAPPLEAuxDepthStencil,
+  gl_APPLE_aux_depth_stencil,
   -- * Enums
   gl_AUX_DEPTH_STENCIL_APPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

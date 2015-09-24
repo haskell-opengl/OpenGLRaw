@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/KHR/robustness.txt KHR_robustness> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.KHR.Robustness (
+  -- * Extension Support
+  glGetKHRRobustness,
+  gl_KHR_robustness,
   -- * Enums
   gl_CONTEXT_LOST,
   gl_CONTEXT_ROBUST_ACCESS,
@@ -31,5 +32,6 @@ module Graphics.Rendering.OpenGL.Raw.KHR.Robustness (
   glReadnPixels
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

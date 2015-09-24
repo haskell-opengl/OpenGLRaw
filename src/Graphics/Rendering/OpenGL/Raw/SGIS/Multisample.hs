@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/multisample.txt SGIS_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.Multisample (
+  -- * Extension Support
+  glGetSGISMultisample,
+  gl_SGIS_multisample,
   -- * Enums
   gl_1PASS_SGIS,
   gl_2PASS_0_SGIS,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.Multisample (
   glSamplePatternSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

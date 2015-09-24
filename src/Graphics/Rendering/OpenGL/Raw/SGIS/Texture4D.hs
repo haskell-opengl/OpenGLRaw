@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/texture4D.txt SGIS_texture4D> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.Texture4D (
+  -- * Extension Support
+  glGetSGISTexture4D,
+  gl_SGIS_texture4D,
   -- * Enums
   gl_MAX_4D_TEXTURE_SIZE_SGIS,
   gl_PACK_IMAGE_DEPTH_SGIS,
@@ -29,5 +30,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.Texture4D (
   glTexSubImage4DSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

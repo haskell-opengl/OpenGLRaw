@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_storage.txt ARB_texture_storage> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureStorage (
+  -- * Extension Support
+  glGetARBTextureStorage,
+  gl_ARB_texture_storage,
   -- * Enums
   gl_TEXTURE_IMMUTABLE_FORMAT,
   -- * Functions
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureStorage (
   glTexStorage3D
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

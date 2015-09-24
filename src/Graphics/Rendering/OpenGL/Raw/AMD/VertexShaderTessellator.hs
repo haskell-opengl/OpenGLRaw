@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/vertex_shader_tessellator.txt AMD_vertex_shader_tessellator> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.VertexShaderTessellator (
+  -- * Extension Support
+  glGetAMDVertexShaderTessellator,
+  gl_AMD_vertex_shader_tessellator,
   -- * Enums
   gl_CONTINUOUS_AMD,
   gl_DISCRETE_AMD,
@@ -26,5 +27,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.VertexShaderTessellator (
   glTessellationModeAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

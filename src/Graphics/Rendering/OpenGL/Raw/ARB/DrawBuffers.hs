@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/draw_buffers.txt ARB_draw_buffers> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers (
+  -- * Extension Support
+  glGetARBDrawBuffers,
+  gl_ARB_draw_buffers,
   -- * Enums
   gl_DRAW_BUFFER0_ARB,
   gl_DRAW_BUFFER10_ARB,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffers (
   glDrawBuffersARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

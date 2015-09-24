@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/register_combiners.txt NV_register_combiners> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners (
+  -- * Extension Support
+  glGetNVRegisterCombiners,
+  gl_NV_register_combiners,
   -- * Enums
   gl_BIAS_BY_NEGATIVE_ONE_HALF_NV,
   gl_COLOR_SUM_CLAMP_NV,
@@ -86,5 +87,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners (
   glGetFinalCombinerInputParameterivNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

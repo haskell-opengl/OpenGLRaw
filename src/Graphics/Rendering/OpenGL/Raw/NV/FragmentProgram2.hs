@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/fragment_program2.txt NV_fragment_program2> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2 (
+  -- * Extension Support
+  glGetNVFragmentProgram2,
+  gl_NV_fragment_program2,
   -- * Enums
   gl_MAX_PROGRAM_CALL_DEPTH_NV,
   gl_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram2 (
   gl_MAX_PROGRAM_LOOP_DEPTH_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

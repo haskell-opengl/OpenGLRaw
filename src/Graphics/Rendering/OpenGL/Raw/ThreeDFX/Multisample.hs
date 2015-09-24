@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/3DFX/3dfx_multisample.txt 3DFX_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ThreeDFX.Multisample (
+  -- * Extension Support
+  glGetThreeDFXMultisample,
+  gl_3DFX_multisample,
   -- * Enums
   gl_MULTISAMPLE_3DFX,
   gl_MULTISAMPLE_BIT_3DFX,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ThreeDFX.Multisample (
   gl_SAMPLE_BUFFERS_3DFX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/ycbcr_422.txt APPLE_ycbcr_422> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.YCbCr422 (
+  -- * Extension Support
+  glGetAPPLEYCbCr422,
+  gl_APPLE_ycbcr_422,
   -- * Enums
   gl_UNSIGNED_SHORT_8_8_APPLE,
   gl_UNSIGNED_SHORT_8_8_REV_APPLE,
   gl_YCBCR_422_APPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/blend_alpha_minmax.txt SGIX_blend_alpha_minmax> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.BlendAlphaMinmax (
+  -- * Extension Support
+  glGetSGIXBlendAlphaMinmax,
+  gl_SGIX_blend_alpha_minmax,
   -- * Enums
   gl_ALPHA_MAX_SGIX,
   gl_ALPHA_MIN_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt EXT_framebuffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject (
+  -- * Extension Support
+  glGetEXTFramebufferObject,
+  gl_EXT_framebuffer_object,
   -- * Enums
   gl_COLOR_ATTACHMENT0_EXT,
   gl_COLOR_ATTACHMENT10_EXT,
@@ -85,5 +86,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferObject (
   glRenderbufferStorageEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

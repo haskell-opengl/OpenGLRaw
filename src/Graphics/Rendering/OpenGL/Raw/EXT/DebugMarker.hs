@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/EXT_debug_marker.txt EXT_debug_marker> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DebugMarker (
+  -- * Extension Support
+  glGetEXTDebugMarker,
+  gl_EXT_debug_marker,
   -- * Functions
   glInsertEventMarkerEXT,
   glPopGroupMarkerEXT,
   glPushGroupMarkerEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

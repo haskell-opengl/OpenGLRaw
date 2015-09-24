@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/enhanced_layouts.txt ARB_enhanced_layouts> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts (
+  -- * Extension Support
+  glGetARBEnhancedLayouts,
+  gl_ARB_enhanced_layouts,
   -- * Enums
   gl_LOCATION_COMPONENT,
   gl_TRANSFORM_FEEDBACK_BUFFER,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.EnhancedLayouts (
   gl_TRANSFORM_FEEDBACK_BUFFER_STRIDE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/window_pos.txt ARB_window_pos> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.WindowPos (
+  -- * Extension Support
+  glGetARBWindowPos,
+  gl_ARB_window_pos,
   -- * Functions
   glWindowPos2dARB,
   glWindowPos2dvARB,
@@ -32,4 +33,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.WindowPos (
   glWindowPos3svARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

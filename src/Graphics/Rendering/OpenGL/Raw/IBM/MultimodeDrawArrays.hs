@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/IBM/multimode_draw_arrays.txt IBM_multimode_draw_arrays> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.IBM.MultimodeDrawArrays (
+  -- * Extension Support
+  glGetIBMMultimodeDrawArrays,
+  gl_IBM_multimode_draw_arrays,
   -- * Functions
   glMultiModeDrawArraysIBM,
   glMultiModeDrawElementsIBM
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

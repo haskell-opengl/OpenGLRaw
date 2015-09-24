@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/framebuffer_multisample_blit_scaled.txt EXT_framebuffer_multisample_blit_scaled> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisampleBlitScaled (
+  -- * Extension Support
+  glGetEXTFramebufferMultisampleBlitScaled,
+  gl_EXT_framebuffer_multisample_blit_scaled,
   -- * Enums
   gl_SCALED_RESOLVE_FASTEST_EXT,
   gl_SCALED_RESOLVE_NICEST_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

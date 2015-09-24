@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/timer_query.txt EXT_timer_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery (
+  -- * Extension Support
+  glGetEXTTimerQuery,
+  gl_EXT_timer_query,
   -- * Enums
   gl_TIME_ELAPSED_EXT,
   -- * Functions
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TimerQuery (
   glGetQueryObjectui64vEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

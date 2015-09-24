@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/coordinate_frame.txt EXT_coordinate_frame> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame (
+  -- * Extension Support
+  glGetEXTCoordinateFrame,
+  gl_EXT_coordinate_frame,
   -- * Enums
   gl_BINORMAL_ARRAY_EXT,
   gl_BINORMAL_ARRAY_POINTER_EXT,
@@ -53,5 +54,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CoordinateFrame (
   glTangentPointerEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

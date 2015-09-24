@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/cull_vertex.txt EXT_cull_vertex> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.CullVertex (
+  -- * Extension Support
+  glGetEXTCullVertex,
+  gl_EXT_cull_vertex,
   -- * Enums
   gl_CULL_VERTEX_EXT,
   gl_CULL_VERTEX_EYE_POSITION_EXT,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CullVertex (
   glCullParameterfvEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

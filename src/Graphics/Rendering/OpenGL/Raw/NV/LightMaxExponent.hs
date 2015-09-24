@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/light_max_exponent.txt NV_light_max_exponent> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.LightMaxExponent (
+  -- * Extension Support
+  glGetNVLightMaxExponent,
+  gl_NV_light_max_exponent,
   -- * Enums
   gl_MAX_SHININESS_NV,
   gl_MAX_SPOT_EXPONENT_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/fill_rectangle.txt NV_fill_rectangle> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FillRectangle (
+  -- * Extension Support
+  glGetNVFillRectangle,
+  gl_NV_fill_rectangle,
   -- * Enums
   gl_FILL_RECTANGLE_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

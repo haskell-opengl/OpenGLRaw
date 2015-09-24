@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/texture_filter4.txt SGIS_texture_filter4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.TextureFilter4 (
+  -- * Extension Support
+  glGetSGISTextureFilter4,
+  gl_SGIS_texture_filter4,
   -- * Enums
   gl_FILTER4_SGIS,
   gl_TEXTURE_FILTER4_SIZE_SGIS,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.TextureFilter4 (
   glTexFilterFuncSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

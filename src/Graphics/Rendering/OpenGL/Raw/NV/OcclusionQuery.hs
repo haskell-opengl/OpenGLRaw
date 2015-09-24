@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/occlusion_query.txt NV_occlusion_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.OcclusionQuery (
+  -- * Extension Support
+  glGetNVOcclusionQuery,
+  gl_NV_occlusion_query,
   -- * Enums
   gl_CURRENT_OCCLUSION_QUERY_ID_NV,
   gl_PIXEL_COUNTER_BITS_NV,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.OcclusionQuery (
   glIsOcclusionQueryNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

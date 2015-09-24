@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/blend_minmax_factor.txt AMD_blend_minmax_factor> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.BlendMinmaxFactor (
+  -- * Extension Support
+  glGetAMDBlendMinmaxFactor,
+  gl_AMD_blend_minmax_factor,
   -- * Enums
   gl_FACTOR_MAX_AMD,
   gl_FACTOR_MIN_AMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

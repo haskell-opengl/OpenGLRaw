@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_blend.txt ARB_vertex_blend> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend (
+  -- * Extension Support
+  glGetARBVertexBlend,
+  gl_ARB_vertex_blend,
   -- * Enums
   gl_ACTIVE_VERTEX_UNITS_ARB,
   gl_CURRENT_WEIGHT_ARB,
@@ -69,5 +70,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexBlend (
   glWeightusvARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

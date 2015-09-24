@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/matrix_palette.txt ARB_matrix_palette> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.MatrixPalette (
+  -- * Extension Support
+  glGetARBMatrixPalette,
+  gl_ARB_matrix_palette,
   -- * Enums
   gl_CURRENT_MATRIX_INDEX_ARB,
   gl_CURRENT_PALETTE_MATRIX_ARB,
@@ -32,5 +33,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.MatrixPalette (
   glMatrixIndexusvARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

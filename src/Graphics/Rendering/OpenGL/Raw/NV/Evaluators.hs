@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/evaluators.txt NV_evaluators> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.Evaluators (
+  -- * Extension Support
+  glGetNVEvaluators,
+  gl_NV_evaluators,
   -- * Enums
   gl_EVAL_2D_NV,
   gl_EVAL_FRACTIONAL_TESSELLATION_NV,
@@ -50,5 +51,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.Evaluators (
   glMapParameterivNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

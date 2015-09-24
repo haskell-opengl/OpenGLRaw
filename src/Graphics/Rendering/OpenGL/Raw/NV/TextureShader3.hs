@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/texture_shader3.txt NV_texture_shader3> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.TextureShader3 (
+  -- * Extension Support
+  glGetNVTextureShader3,
+  gl_NV_texture_shader3,
   -- * Enums
   gl_DEPENDENT_HILO_TEXTURE_2D_NV,
   gl_DEPENDENT_RGB_TEXTURE_3D_NV,
@@ -33,4 +34,5 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureShader3 (
   gl_SIGNED_HILO8_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

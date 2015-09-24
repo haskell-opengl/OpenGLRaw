@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/gpu_program_parameters.txt EXT_gpu_program_parameters> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters (
+  -- * Extension Support
+  glGetEXTGPUProgramParameters,
+  gl_EXT_gpu_program_parameters,
   -- * Functions
   glProgramEnvParameters4fvEXT,
   glProgramLocalParameters4fvEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

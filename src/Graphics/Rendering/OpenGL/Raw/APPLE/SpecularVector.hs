@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/specular_vector.txt APPLE_specular_vector> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.SpecularVector (
+  -- * Extension Support
+  glGetAPPLESpecularVector,
+  gl_APPLE_specular_vector,
   -- * Enums
   gl_LIGHT_MODEL_SPECULAR_VECTOR_APPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

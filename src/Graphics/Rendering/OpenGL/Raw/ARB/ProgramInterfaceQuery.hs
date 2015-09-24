@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/program_interface_query.txt ARB_program_interface_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ProgramInterfaceQuery (
+  -- * Extension Support
+  glGetARBProgramInterfaceQuery,
+  gl_ARB_program_interface_query,
   -- * Enums
   gl_ACTIVE_RESOURCES,
   gl_ACTIVE_VARIABLES,
@@ -73,5 +74,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ProgramInterfaceQuery (
   glGetProgramResourceiv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

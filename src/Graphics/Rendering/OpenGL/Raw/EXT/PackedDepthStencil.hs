@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/packed_depth_stencil.txt EXT_packed_depth_stencil> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil (
+  -- * Extension Support
+  glGetEXTPackedDepthStencil,
+  gl_EXT_packed_depth_stencil,
   -- * Enums
   gl_DEPTH24_STENCIL8_EXT,
   gl_DEPTH_STENCIL_EXT,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PackedDepthStencil (
   gl_UNSIGNED_INT_24_8_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

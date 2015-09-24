@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_multisample.txt ARB_texture_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample (
+  -- * Extension Support
+  glGetARBTextureMultisample,
+  gl_ARB_texture_multisample,
   -- * Enums
   gl_INT_SAMPLER_2D_MULTISAMPLE,
   gl_INT_SAMPLER_2D_MULTISAMPLE_ARRAY,
@@ -42,5 +43,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureMultisample (
   glTexImage3DMultisample
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

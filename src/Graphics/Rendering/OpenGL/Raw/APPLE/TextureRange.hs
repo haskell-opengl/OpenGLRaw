@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/texture_range.txt APPLE_texture_range> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.TextureRange (
+  -- * Extension Support
+  glGetAPPLETextureRange,
+  gl_APPLE_texture_range,
   -- * Enums
   gl_STORAGE_CACHED_APPLE,
   gl_STORAGE_PRIVATE_APPLE,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.TextureRange (
   glTextureRangeAPPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

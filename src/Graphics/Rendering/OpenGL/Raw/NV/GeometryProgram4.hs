@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/geometry_program4.txt NV_geometry_program4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4 (
+  -- * Extension Support
+  glGetNVGeometryProgram4,
+  gl_NV_geometry_program4,
   -- * Enums
   gl_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT,
   gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT,
@@ -37,5 +38,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.GeometryProgram4 (
   glProgramVertexLimitNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

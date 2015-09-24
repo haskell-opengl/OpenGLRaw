@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/element_array.txt APPLE_element_array> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.ElementArray (
+  -- * Extension Support
+  glGetAPPLEElementArray,
+  gl_APPLE_element_array,
   -- * Enums
   gl_ELEMENT_ARRAY_APPLE,
   gl_ELEMENT_ARRAY_POINTER_APPLE,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.ElementArray (
   glMultiDrawRangeElementArrayAPPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

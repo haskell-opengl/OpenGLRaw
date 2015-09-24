@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/WIN/specular_fog.txt WIN_specular_fog> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.WIN.SpecularFog (
+  -- * Extension Support
+  glGetWINSpecularFog,
+  gl_WIN_specular_fog,
   -- * Enums
   gl_FOG_SPECULAR_TEXTURE_WIN
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

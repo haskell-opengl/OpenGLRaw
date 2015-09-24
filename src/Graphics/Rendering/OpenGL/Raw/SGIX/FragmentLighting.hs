@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/fragment_lighting.txt SGIX_fragment_lighting> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.FragmentLighting (
+  -- * Extension Support
+  glGetSGIXFragmentLighting,
+  gl_SGIX_fragment_lighting,
   -- * Enums
   gl_CURRENT_RASTER_NORMAL_SGIX,
   gl_FRAGMENT_COLOR_MATERIAL_FACE_SGIX,
@@ -55,5 +56,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.FragmentLighting (
   glLightEnviSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

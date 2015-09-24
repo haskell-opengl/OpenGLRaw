@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/transform_feedback4.txt AMD_transform_feedback4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.TransformFeedback4 (
+  -- * Extension Support
+  glGetAMDTransformFeedback4,
+  gl_AMD_transform_feedback4,
   -- * Enums
   gl_STREAM_RASTERIZATION_AMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

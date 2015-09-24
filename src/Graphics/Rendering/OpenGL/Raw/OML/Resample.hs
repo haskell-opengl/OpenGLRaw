@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OML/resample.txt OML_resample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.OML.Resample (
+  -- * Extension Support
+  glGetOMLResample,
+  gl_OML_resample,
   -- * Enums
   gl_PACK_RESAMPLE_OML,
   gl_RESAMPLE_AVERAGE_OML,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.OML.Resample (
   gl_UNPACK_RESAMPLE_OML
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

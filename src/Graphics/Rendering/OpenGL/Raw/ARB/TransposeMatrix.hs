@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/transpose_matrix.txt ARB_transpose_matrix> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix (
+  -- * Extension Support
+  glGetARBTransposeMatrix,
+  gl_ARB_transpose_matrix,
   -- * Enums
   gl_TRANSPOSE_COLOR_MATRIX_ARB,
   gl_TRANSPOSE_MODELVIEW_MATRIX_ARB,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TransposeMatrix (
   glMultTransposeMatrixfARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

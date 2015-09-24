@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/base_instance.txt ARB_base_instance> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.BaseInstance (
+  -- * Extension Support
+  glGetARBBaseInstance,
+  gl_ARB_base_instance,
   -- * Functions
   glDrawArraysInstancedBaseInstance,
   glDrawElementsInstancedBaseInstance,
   glDrawElementsInstancedBaseVertexBaseInstance
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/texture_select.txt SGIS_texture_select> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.TextureSelect (
+  -- * Extension Support
+  glGetSGISTextureSelect,
+  gl_SGIS_texture_select,
   -- * Enums
   gl_DUAL_ALPHA12_SGIS,
   gl_DUAL_ALPHA16_SGIS,
@@ -38,4 +39,5 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.TextureSelect (
   gl_QUAD_TEXTURE_SELECT_SGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

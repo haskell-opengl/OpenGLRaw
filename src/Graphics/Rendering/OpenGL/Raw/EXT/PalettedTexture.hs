@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/paletted_texture.txt EXT_paletted_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PalettedTexture (
+  -- * Extension Support
+  glGetEXTPalettedTexture,
+  gl_EXT_paletted_texture,
   -- * Enums
   gl_COLOR_INDEX12_EXT,
   gl_COLOR_INDEX16_EXT,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PalettedTexture (
   glGetColorTableParameterivEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

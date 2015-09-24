@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/geometry_shader4.txt EXT_geometry_shader4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4 (
+  -- * Extension Support
+  glGetEXTGeometryShader4,
+  gl_EXT_geometry_shader4,
   -- * Enums
   gl_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT,
   gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT,
@@ -38,5 +39,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.GeometryShader4 (
   glProgramParameteriEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

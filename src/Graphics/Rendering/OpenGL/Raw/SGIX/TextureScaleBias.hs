@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/texture_scale_bias.txt SGIX_texture_scale_bias> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.TextureScaleBias (
+  -- * Extension Support
+  glGetSGIXTextureScaleBias,
+  gl_SGIX_texture_scale_bias,
   -- * Enums
   gl_POST_TEXTURE_FILTER_BIAS_RANGE_SGIX,
   gl_POST_TEXTURE_FILTER_BIAS_SGIX,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.TextureScaleBias (
   gl_POST_TEXTURE_FILTER_SCALE_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

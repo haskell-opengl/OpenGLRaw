@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/transform_feedback.txt EXT_transform_feedback> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback (
+  -- * Extension Support
+  glGetEXTTransformFeedback,
+  gl_EXT_transform_feedback,
   -- * Enums
   gl_INTERLEAVED_ATTRIBS_EXT,
   gl_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_EXT,
@@ -39,5 +40,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TransformFeedback (
   glTransformFeedbackVaryingsEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

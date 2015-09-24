@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/sparse_texture.txt ARB_sparse_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SparseTexture (
+  -- * Extension Support
+  glGetARBSparseTexture,
+  gl_ARB_sparse_texture,
   -- * Enums
   gl_MAX_SPARSE_3D_TEXTURE_SIZE_ARB,
   gl_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB,
@@ -29,5 +30,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SparseTexture (
   glTexPageCommitmentARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

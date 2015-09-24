@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/vertex_array_range.txt APPLE_vertex_array_range> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.VertexArrayRange (
+  -- * Extension Support
+  glGetAPPLEVertexArrayRange,
+  gl_APPLE_vertex_array_range,
   -- * Enums
   gl_STORAGE_CACHED_APPLE,
   gl_STORAGE_CLIENT_APPLE,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.VertexArrayRange (
   glVertexArrayRangeAPPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

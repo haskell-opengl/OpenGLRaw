@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/pixel_transform.txt EXT_pixel_transform> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform (
+  -- * Extension Support
+  glGetEXTPixelTransform,
+  gl_EXT_pixel_transform,
   -- * Enums
   gl_AVERAGE_EXT,
   gl_CUBIC_EXT,
@@ -32,5 +33,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PixelTransform (
   glPixelTransformParameterivEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

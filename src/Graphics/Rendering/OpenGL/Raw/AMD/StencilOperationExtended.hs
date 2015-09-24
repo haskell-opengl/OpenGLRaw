@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/stencil_operation_extended.txt AMD_stencil_operation_extended> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.StencilOperationExtended (
+  -- * Extension Support
+  glGetAMDStencilOperationExtended,
+  gl_AMD_stencil_operation_extended,
   -- * Enums
   gl_REPLACE_VALUE_AMD,
   gl_SET_AMD,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.StencilOperationExtended (
   glStencilOpValueAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

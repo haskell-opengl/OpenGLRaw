@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shading_language_include.txt ARB_shading_language_include> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguageInclude (
+  -- * Extension Support
+  glGetARBShadingLanguageInclude,
+  gl_ARB_shading_language_include,
   -- * Enums
   gl_NAMED_STRING_LENGTH_ARB,
   gl_NAMED_STRING_TYPE_ARB,
@@ -26,5 +27,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShadingLanguageInclude (
   glNamedStringARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

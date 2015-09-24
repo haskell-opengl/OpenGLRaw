@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/buffer_storage.txt ARB_buffer_storage> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.BufferStorage (
+  -- * Extension Support
+  glGetARBBufferStorage,
+  gl_ARB_buffer_storage,
   -- * Enums
   gl_BUFFER_IMMUTABLE_STORAGE,
   gl_BUFFER_STORAGE_FLAGS,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.BufferStorage (
   glBufferStorage
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

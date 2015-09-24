@@ -8,16 +8,18 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/half_float_pixel.txt ARB_half_float_pixel> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatPixel (
+  -- * Extension Support
+  glGetARBHalfFloatPixel,
+  gl_ARB_half_float_pixel,
   -- * Types
   GLhalfARB,
   -- * Enums
   gl_HALF_FLOAT_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_stencil8.txt ARB_texture_stencil8> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureStencil8 (
+  -- * Extension Support
+  glGetARBTextureStencil8,
+  gl_ARB_texture_stencil8,
   -- * Enums
   gl_STENCIL_INDEX,
   gl_STENCIL_INDEX8
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

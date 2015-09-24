@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/multi_draw_indirect.txt ARB_multi_draw_indirect> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.MultiDrawIndirect (
+  -- * Extension Support
+  glGetARBMultiDrawIndirect,
+  gl_ARB_multi_draw_indirect,
   -- * Functions
   glMultiDrawArraysIndirect,
   glMultiDrawElementsIndirect
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

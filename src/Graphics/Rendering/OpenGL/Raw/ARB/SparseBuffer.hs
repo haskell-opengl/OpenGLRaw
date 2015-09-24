@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/sparse_buffer.txt ARB_sparse_buffer> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SparseBuffer (
+  -- * Extension Support
+  glGetARBSparseBuffer,
+  gl_ARB_sparse_buffer,
   -- * Enums
   gl_SPARSE_BUFFER_PAGE_SIZE_ARB,
   gl_SPARSE_STORAGE_BIT_ARB,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SparseBuffer (
   glNamedBufferPageCommitmentEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

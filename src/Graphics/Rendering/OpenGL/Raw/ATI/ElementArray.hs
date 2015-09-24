@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/element_array.txt ATI_element_array> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.ElementArray (
+  -- * Extension Support
+  glGetATIElementArray,
+  gl_ATI_element_array,
   -- * Enums
   gl_ELEMENT_ARRAY_ATI,
   gl_ELEMENT_ARRAY_POINTER_ATI,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.ElementArray (
   glElementPointerATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

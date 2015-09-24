@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/framebuffer_multisample.txt EXT_framebuffer_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample (
+  -- * Extension Support
+  glGetEXTFramebufferMultisample,
+  gl_EXT_framebuffer_multisample,
   -- * Enums
   gl_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT,
   gl_MAX_SAMPLES_EXT,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferMultisample (
   glRenderbufferStorageMultisampleEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

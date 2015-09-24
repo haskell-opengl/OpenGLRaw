@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/robustness.txt ARB_robustness> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCore (
+  -- * Extension Support
+  glGetARBRobustness,
+  gl_ARB_robustness,
   -- * Enums
   gl_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB,
   gl_GUILTY_CONTEXT_RESET_ARB,
@@ -33,5 +34,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.RobustnessCore (
   glReadnPixelsARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

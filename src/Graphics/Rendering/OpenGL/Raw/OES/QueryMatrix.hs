@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/OES_query_matrix.txt OES_query_matrix> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.OES.QueryMatrix (
+  -- * Extension Support
+  glGetOESQueryMatrix,
+  gl_OES_query_matrix,
   -- * Functions
   glQueryMatrixxOES
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

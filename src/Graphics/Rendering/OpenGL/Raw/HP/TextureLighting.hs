@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/HP/texture_lighting.txt HP_texture_lighting> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.HP.TextureLighting (
+  -- * Extension Support
+  glGetHPTextureLighting,
+  gl_HP_texture_lighting,
   -- * Enums
   gl_TEXTURE_LIGHTING_MODE_HP,
   gl_TEXTURE_POST_SPECULAR_HP,
   gl_TEXTURE_PRE_SPECULAR_HP
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

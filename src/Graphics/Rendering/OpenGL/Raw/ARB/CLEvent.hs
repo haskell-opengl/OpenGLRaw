@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/cl_event.txt ARB_cl_event> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.CLEvent (
+  -- * Extension Support
+  glGetARBCLEvent,
+  gl_ARB_cl_event,
   -- * Enums
   gl_SYNC_CL_EVENT_ARB,
   gl_SYNC_CL_EVENT_COMPLETE_ARB,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.CLEvent (
   glCreateSyncFromCLeventARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

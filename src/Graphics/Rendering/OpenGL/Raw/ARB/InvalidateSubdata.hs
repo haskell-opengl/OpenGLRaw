@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/invalidate_subdata.txt ARB_invalidate_subdata> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.InvalidateSubdata (
+  -- * Extension Support
+  glGetARBInvalidateSubdata,
+  gl_ARB_invalidate_subdata,
   -- * Functions
   glInvalidateBufferData,
   glInvalidateBufferSubData,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.InvalidateSubdata (
   glInvalidateTexSubImage
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

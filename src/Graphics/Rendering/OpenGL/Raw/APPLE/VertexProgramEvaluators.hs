@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/vertex_program_evaluators.txt APPLE_vertex_program_evaluators> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.VertexProgramEvaluators (
+  -- * Extension Support
+  glGetAPPLEVertexProgramEvaluators,
+  gl_APPLE_vertex_program_evaluators,
   -- * Enums
   gl_VERTEX_ATTRIB_MAP1_APPLE,
   gl_VERTEX_ATTRIB_MAP1_COEFF_APPLE,
@@ -34,5 +35,6 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.VertexProgramEvaluators (
   glMapVertexAttrib2fAPPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

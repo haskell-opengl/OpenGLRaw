@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_attrib_64bit.txt ARB_vertex_attrib_64bit> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit (
+  -- * Extension Support
+  glGetARBVertexAttrib64Bit,
+  gl_ARB_vertex_attrib_64bit,
   -- * Enums
   gl_DOUBLE_MAT2,
   gl_DOUBLE_MAT2x3,
@@ -40,5 +41,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttrib64Bit (
   glVertexAttribLPointer
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

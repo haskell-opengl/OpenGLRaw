@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_view.txt ARB_texture_view> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureView (
+  -- * Extension Support
+  glGetARBTextureView,
+  gl_ARB_texture_view,
   -- * Enums
   gl_TEXTURE_IMMUTABLE_LEVELS,
   gl_TEXTURE_VIEW_MIN_LAYER,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureView (
   glTextureView
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

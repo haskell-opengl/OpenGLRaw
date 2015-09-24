@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_buffer_object.txt EXT_texture_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject (
+  -- * Extension Support
+  glGetEXTTextureBufferObject,
+  gl_EXT_texture_buffer_object,
   -- * Enums
   gl_MAX_TEXTURE_BUFFER_SIZE_EXT,
   gl_TEXTURE_BINDING_BUFFER_EXT,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureBufferObject (
   glTexBufferEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

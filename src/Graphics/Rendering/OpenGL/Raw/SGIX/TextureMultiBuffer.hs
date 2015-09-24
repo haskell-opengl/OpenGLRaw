@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/texture_multi_buffer.txt SGIX_texture_multi_buffer> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.TextureMultiBuffer (
+  -- * Extension Support
+  glGetSGIXTextureMultiBuffer,
+  gl_SGIX_texture_multi_buffer,
   -- * Enums
   gl_TEXTURE_MULTI_BUFFER_HINT_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

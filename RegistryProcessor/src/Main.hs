@@ -29,6 +29,7 @@ main = do
       let extModules = extensionModules api registry
       CM.forM_ extModules printExtensionModule
       printReExports extModules
+      printExtensionSupport extModules
       CM.forM_ (openGLVersions api) $ \v ->
         CM.forM_ (supportedProfiles api v) $ \p ->
           printFeature api v p registry
@@ -63,7 +64,7 @@ profileToReExport = last . latestProfiles
 
 printFeature :: API -> Version -> Maybe ProfileName -> Registry -> IO ()
 printFeature api version mbProfile registry =
-  printExtension [featureName version mbProfile] [] $
+  printExtension [featureName version mbProfile] Nothing $
     fixedReplay api version mbProfile registry
 
 featureName :: Version -> Maybe ProfileName -> String
@@ -139,22 +140,22 @@ groupHeader es = case sortUnique (map enumType es) of
   [] -> "There are no values defined for this enumeration group."
   [t] | isMask t -> "A bitwise combination of several of the following values:"
       | otherwise -> "One of the following values:"
-  types -> error $ "Contradicting enumerant types " ++ show types
+  tys -> error $ "Contradicting enumerant types " ++ show tys
 
 -- Calulate a map from compact signature to short names.
 signatureMap :: Registry -> M.Map String String
-signatureMap registry = fst $ M.foldl' step (M.empty, 0) (commands registry)
+signatureMap registry = fst $ M.foldl' step (M.empty, 0::Integer) (commands registry)
   where step (m,n) command = memberAndInsert (n+1) n (sig command) (dyn n) m
         sig = flip (showSignatureFromCommand registry) False
         dyn n = "dyn" ++ show n
-        memberAndInsert notFound found key value map =
+        memberAndInsert notFound found key value theMap =
           (newMap, maybe notFound (const found) maybeValue)
-          where (maybeValue, newMap) = M.insertLookupWithKey (\_ _ s -> s) key value map
+          where (maybeValue, newMap) = M.insertLookupWithKey (\_ _ s -> s) key value theMap
 
 printForeign :: M.Map String String -> IO ()
 printForeign sigMap = do
   let comment = ["All foreign imports."]
-  startModule ["Foreign"] (Just "{-# LANGUAGE CPP #-}") comment $ \moduleName h -> do
+  startModule ["Foreign"] (Just "{-# LANGUAGE CPP #-}\n{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h "import Foreign.C.Types"
@@ -191,10 +192,13 @@ printFunctions api registry sigMap = do
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . showCommand api registry sigMap) (M.elems (commands registry))
 
-printExtensionModule :: (ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command])) -> IO ()
+type ExtensionParts = ([TypeName], [Enum'], [Command])
+type ExtensionModule = (ExtensionName, ExtensionName, ExtensionParts)
+
+printExtensionModule :: ExtensionModule -> IO ()
 printExtensionModule (extName, mangledExtName, extensionParts) =
   printExtension [extensionNameCategory mangledExtName, extensionNameName mangledExtName]
-                 (commentForExension extName)
+                 (Just extName)
                  extensionParts
 
 extendWithProfile :: ExtensionName -> Maybe ProfileName -> ExtensionName
@@ -204,7 +208,7 @@ extendWithProfile extName =
 mangleExtensionName :: ExtensionName -> ExtensionName
 mangleExtensionName extName = extName {
   extensionNameCategory = fixCategory $ extensionNameCategory extName,
-  extensionNameName = zip (splitWords (extensionNameName extName)) [0 ..] >>= fixExtensionWord }
+  extensionNameName = zip (splitWords (extensionNameName extName)) [0::Integer ..] >>= fixExtensionWord }
   where fixCategory c = case c of
           "3DFX" -> "ThreeDFX"
           _ -> c
@@ -247,7 +251,7 @@ mangleExtensionName extName = extName {
           "ycrcba" -> "YCrCbA"
           _ -> capitalize w
 
-extensionModules :: API -> Registry -> [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))]
+extensionModules :: API -> Registry -> [ExtensionModule]
 extensionModules api registry =
   [ (extName, mangledExtName, executeModifications api mbProfile registry mods)
   | (extName, mods) <- supportedExtensions api registry
@@ -265,9 +269,9 @@ supportedExtensions api registry =
   [ nameAndMods
   | ext <- extensions registry
   , api `supports` extensionSupported ext
-  , nameAndMods@(_,(_:_)) <- [nameAndModifications api ext] ]
-  where nameAndModifications :: API -> Extension -> (ExtensionName, [Modification])
-        nameAndModifications api e =
+  , nameAndMods@(_,(_:_)) <- [nameAndModifications ext] ]
+  where nameAndModifications :: Extension -> (ExtensionName, [Modification])
+        nameAndModifications e =
           (extensionName e,
            [ conditionalModificationModification cm
            | cm <- extensionsRequireRemove e
@@ -275,11 +279,11 @@ supportedExtensions api registry =
            -- ARB_compatibility has an empty "require" element only
            , not . null . modificationInterfaceElements . conditionalModificationModification $ cm ])
 
-commentForExension :: ExtensionName -> [String]
-commentForExension n = [
-  "The <https://www.opengl.org/registry/specs/" ++
+extensionHyperlink :: ExtensionName -> String
+extensionHyperlink n =
+  "<https://www.opengl.org/registry/specs/" ++
   fixRegistryPath (extensionNameCategory n ++ "/" ++ extensionNameName n) ++ ".txt " ++
-  joinWords [extensionNameCategory n, extensionNameName n] ++ "> extension."]
+  joinWords [extensionNameCategory n, extensionNameName n] ++ ">"
   where fixRegistryPath :: String -> String
         fixRegistryPath path = case path of
           "3DFX/multisample" -> "3DFX/3dfx_multisample"
@@ -305,7 +309,7 @@ commentForExension n = [
           "SGIX/texture_add_env" -> "SGIX/texture_env_add"
           _ -> path
 
-printReExports :: [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))] -> IO ()
+printReExports :: [ExtensionModule] -> IO ()
 printReExports extModules = do
   let extMap = M.fromListWith (++) [((extensionNameCategory extName, extensionNameCategory mangledExtName), [mangledExtName])
                                    | (extName, mangledExtName, _) <- extModules ]
@@ -321,6 +325,37 @@ printReExports extModules = do
       CM.forM_ mangledExtNames $ \mangledExtName ->
         SI.hPutStrLn h $ "import " ++ extensionNameFor mangledExtName
 
+printExtensionSupport :: [ExtensionModule] -> IO ()
+printExtensionSupport extModules = do
+  let comment = ["Extension support predicates."]
+  startModule ["ExtensionPredicates"] (Just "{-# LANGUAGE CPP #-}\n{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
+    SI.hPutStrLn h $ "module "++ moduleName ++ " where"
+    SI.hPutStrLn h $ ""
+    SI.hPutStrLn h "#if !MIN_VERSION_base(4,8,0)"
+    SI.hPutStrLn h "import Data.Functor( (<$>) )"
+    SI.hPutStrLn h "#endif"
+    SI.hPutStrLn h $ "import Control.Monad.IO.Class ( MonadIO(..) )"
+    SI.hPutStrLn h $ "import Data.Set ( member )"
+    SI.hPutStrLn h $ "import " ++ moduleNameFor ["GetProcAddress"] ++ " ( getExtensions, extensions )"
+    let names = sortUnique [ extName | (extName, _, _) <- extModules]
+    CM.forM_ names $ \extName -> do
+      let predNameMonad = extensionPredicateNameMonad extName
+          predName = extensionPredicateName extName
+          extString = joinWords [ extensionNameAPI extName
+                                , extensionNameCategory extName
+                                 , extensionNameName extName ]
+      SI.hPutStrLn h $ ""
+      SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
+      SI.hPutStrLn h $ predNameMonad ++ " :: MonadIO m => m Bool"
+      SI.hPutStrLn h $ predNameMonad ++ " = member " ++ show extString ++ " <$> getExtensions"
+      SI.hPutStrLn h $ ""
+      SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
+      SI.hPutStrLn h $ "-- Note that in the presence of multiple contexts with different capabilities,"
+      SI.hPutStrLn h $ "-- this might be wrong. Use '" ++ predNameMonad ++ "' in those cases instead."
+      SI.hPutStrLn h $ predName ++ " :: Bool"
+      SI.hPutStrLn h $ predName ++ " = member " ++ show extString ++ " extensions"
+      SI.hPutStrLn h $ "{-# NOINLINE " ++ predName ++ " #-}"
+
 extensionNameFor :: ExtensionName -> String
 extensionNameFor mangledExtName = moduleNameFor [extensionNameCategory mangledExtName, extensionNameName mangledExtName]
 
@@ -335,10 +370,14 @@ separate :: (a -> String) -> [a] -> String
 separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
 -- Note that we handle features just like extensions.
-printExtension :: [String] -> [String] -> ([TypeName], [Enum'], [Command]) -> IO ()
-printExtension moduleNameSuffix comment (ts, es, cs) =
-  startModule moduleNameSuffix Nothing comment $ \moduleName h -> do
+printExtension :: [String] -> Maybe ExtensionName -> ExtensionParts -> IO ()
+printExtension moduleNameSuffix mbExtName (ts, es, cs) =
+  startModule moduleNameSuffix Nothing [] $ \moduleName h -> do
     SI.hPutStrLn h $ "module "++ moduleName ++ " ("
+    flip (maybe (return ())) mbExtName $ \extName -> do
+      SI.hPutStrLn h "  -- * Extension Support"
+      SI.hPutStrLn h $ separate id [ extensionPredicateNameMonad extName
+                                   , extensionPredicateName extName ] ++ ","
     CM.unless (null ts) $ do
       SI.hPutStrLn h "  -- * Types"
       SI.hPutStr h $ separate unTypeName ts
@@ -353,6 +392,8 @@ printExtension moduleNameSuffix comment (ts, es, cs) =
       SI.hPutStrLn h ""
     SI.hPutStrLn h ") where"
     SI.hPutStrLn h ""
+    CM.when (DM.isJust mbExtName) $
+      SI.hPutStrLn h $ "import " ++ moduleNameFor ["ExtensionPredicates"]
     CM.unless (null ts) $
       SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
     CM.unless (null es) $
@@ -360,7 +401,21 @@ printExtension moduleNameSuffix comment (ts, es, cs) =
     CM.unless (null cs) $
       SI.hPutStrLn h $ "import " ++ moduleNameFor ["Functions"]
 
-printTopLevel :: API -> [(ExtensionName, ExtensionName, ([TypeName], [Enum'], [Command]))] -> IO ()
+extensionPredicateName :: ExtensionName -> String
+extensionPredicateName extName =
+  joinWords [ map C.toLower (extensionNameAPI extName)
+            , extensionNameCategory extName
+            , extensionNameName extName ]
+
+extensionPredicateNameMonad :: ExtensionName -> String
+extensionPredicateNameMonad extName =
+  map C.toLower (extensionNameAPI mangledExtName) ++
+  "Get" ++
+  extensionNameCategory mangledExtName ++
+  extensionNameName mangledExtName
+  where mangledExtName = mangleExtensionName extName
+
+printTopLevel :: API -> [ExtensionModule] -> IO ()
 printTopLevel api extModules = do
   let mangledCategories = sortUnique [ extensionNameCategory mangledExtName
                                      | (_, mangledExtName, _) <- extModules ]
@@ -378,8 +433,8 @@ printTopLevel api extModules = do
     SI.hPutStrLn h $ separate (\m -> "module " ++ m) moduleNames
     SI.hPutStrLn h ") where"
     SI.hPutStrLn h ""
-    CM.forM_ moduleNames $ \moduleName ->
-      SI.hPutStrLn h $ "import " ++ moduleName
+    CM.forM_ moduleNames $ \theModuleName ->
+      SI.hPutStrLn h $ "import " ++ theModuleName
 
 apiName :: API -> String
 apiName api = case unAPI api of
@@ -431,7 +486,7 @@ printModuleHeader h mbPragma moduleName comments = do
 -- Annoyingly enough, the OpenGL registry doesn't contain any enums for
 -- OpenGL 1.0, so let's just use the OpenGL 1.1 ones. Furthermore, features
 -- don't explicitly list the types referenced by commands, so we add them.
-fixedReplay :: API -> Version -> Maybe ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
+fixedReplay :: API -> Version -> Maybe ProfileName -> Registry -> ExtensionParts
 fixedReplay api version mbProfile registry
   | api == API "gl" && version == read "1.0" = (ts', es11, cs)
   | otherwise = (ts', es, cs)
@@ -454,7 +509,7 @@ addFuncsAndMakes =
 
 -- Here is the heart of the feature construction logic: Chronologically replay
 -- the whole version history for the given API/version/profile triple.
-replay :: API -> Version -> Maybe ProfileName -> Registry -> ([TypeName], [Enum'], [Command])
+replay :: API -> Version -> Maybe ProfileName -> Registry -> ExtensionParts
 replay api version mbProfile registry =
   executeModifications api mbProfile registry modifications
   where modifications = history >>= flip lookup' (features registry)
@@ -463,7 +518,7 @@ replay api version mbProfile registry =
                          , a == api
                          , v <= version ]
 
-executeModifications :: API -> Maybe ProfileName -> Registry -> [Modification] -> ([TypeName], [Enum'], [Command])
+executeModifications :: API -> Maybe ProfileName -> Registry -> [Modification] -> ExtensionParts
 executeModifications api mbProfile registry modifications = (ts, es, cs)
   where ts = [ n | TypeElement n <- lst ]
         es = [ e | EnumElement n <- lst

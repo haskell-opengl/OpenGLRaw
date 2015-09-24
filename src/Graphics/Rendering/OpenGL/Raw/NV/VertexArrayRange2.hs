@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/vertex_array_range2.txt NV_vertex_array_range2> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VertexArrayRange2 (
+  -- * Extension Support
+  glGetNVVertexArrayRange2,
+  gl_NV_vertex_array_range2,
   -- * Enums
   gl_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/viewport_array.txt ARB_viewport_array> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray (
+  -- * Extension Support
+  glGetARBViewportArray,
+  gl_ARB_viewport_array,
   -- * Enums
   gl_DEPTH_RANGE,
   gl_FIRST_VERTEX_CONVENTION,
@@ -40,5 +41,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ViewportArray (
   glViewportIndexedfv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

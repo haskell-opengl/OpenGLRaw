@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/S3/s3tc.txt S3_s3tc> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.S3.S3TC (
+  -- * Extension Support
+  glGetS3S3TC,
+  gl_S3_s3tc,
   -- * Enums
   gl_RGB4_S3TC,
   gl_RGBA4_DXT5_S3TC,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.S3.S3TC (
   gl_RGB_S3TC
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

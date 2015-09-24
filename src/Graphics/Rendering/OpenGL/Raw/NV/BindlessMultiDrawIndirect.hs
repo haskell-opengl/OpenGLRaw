@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/bindless_multi_draw_indirect.txt NV_bindless_multi_draw_indirect> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.BindlessMultiDrawIndirect (
+  -- * Extension Support
+  glGetNVBindlessMultiDrawIndirect,
+  gl_NV_bindless_multi_draw_indirect,
   -- * Functions
   glMultiDrawArraysIndirectBindlessNV,
   glMultiDrawElementsIndirectBindlessNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

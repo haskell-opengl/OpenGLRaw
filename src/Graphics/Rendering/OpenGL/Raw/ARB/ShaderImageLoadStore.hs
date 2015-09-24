@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shader_image_load_store.txt ARB_shader_image_load_store> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShaderImageLoadStore (
+  -- * Extension Support
+  glGetARBShaderImageLoadStore,
+  gl_ARB_shader_image_load_store,
   -- * Enums
   gl_ALL_BARRIER_BITS,
   gl_ATOMIC_COUNTER_BARRIER_BIT,
@@ -83,5 +84,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShaderImageLoadStore (
   glMemoryBarrier
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

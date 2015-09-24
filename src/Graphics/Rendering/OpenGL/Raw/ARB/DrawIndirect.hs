@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/draw_indirect.txt ARB_draw_indirect> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect (
+  -- * Extension Support
+  glGetARBDrawIndirect,
+  gl_ARB_draw_indirect,
   -- * Enums
   gl_DRAW_INDIRECT_BUFFER,
   gl_DRAW_INDIRECT_BUFFER_BINDING,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DrawIndirect (
   glDrawElementsIndirect
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

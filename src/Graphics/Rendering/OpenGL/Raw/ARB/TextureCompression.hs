@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_compression.txt ARB_texture_compression> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression (
+  -- * Extension Support
+  glGetARBTextureCompression,
+  gl_ARB_texture_compression,
   -- * Enums
   gl_COMPRESSED_ALPHA_ARB,
   gl_COMPRESSED_INTENSITY_ARB,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureCompression (
   glGetCompressedTexImageARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

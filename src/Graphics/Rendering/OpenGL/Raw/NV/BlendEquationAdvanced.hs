@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/blend_equation_advanced.txt NV_blend_equation_advanced> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced (
+  -- * Extension Support
+  glGetNVBlendEquationAdvanced,
+  gl_NV_blend_equation_advanced,
   -- * Enums
   gl_BLEND_OVERLAP_NV,
   gl_BLEND_PREMULTIPLIED_SRC_NV,
@@ -70,5 +71,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.BlendEquationAdvanced (
   glBlendParameteriNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

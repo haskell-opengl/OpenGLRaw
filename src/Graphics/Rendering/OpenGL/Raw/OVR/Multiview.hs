@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OVR/multiview.txt OVR_multiview> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.OVR.Multiview (
+  -- * Extension Support
+  glGetOVRMultiview,
+  gl_OVR_multiview,
   -- * Enums
   gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR,
   gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.OVR.Multiview (
   glFramebufferTextureMultiviewOVR
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

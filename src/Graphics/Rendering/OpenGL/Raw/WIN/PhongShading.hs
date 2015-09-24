@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/WIN/phong_shading.txt WIN_phong_shading> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.WIN.PhongShading (
+  -- * Extension Support
+  glGetWINPhongShading,
+  gl_WIN_phong_shading,
   -- * Enums
   gl_PHONG_HINT_WIN,
   gl_PHONG_WIN
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

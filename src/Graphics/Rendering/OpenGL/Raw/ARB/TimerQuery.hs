@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/timer_query.txt ARB_timer_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery (
+  -- * Extension Support
+  glGetARBTimerQuery,
+  gl_ARB_timer_query,
   -- * Enums
   gl_TIMESTAMP,
   gl_TIME_ELAPSED,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TimerQuery (
   glQueryCounter
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

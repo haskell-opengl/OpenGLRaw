@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/point_parameters.txt SGIS_point_parameters> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.PointParameters (
+  -- * Extension Support
+  glGetSGISPointParameters,
+  gl_SGIS_point_parameters,
   -- * Enums
   gl_DISTANCE_ATTENUATION_SGIS,
   gl_POINT_FADE_THRESHOLD_SIZE_SGIS,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.PointParameters (
   glPointParameterfvSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

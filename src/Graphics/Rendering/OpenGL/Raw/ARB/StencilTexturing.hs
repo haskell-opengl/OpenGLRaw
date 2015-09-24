@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/stencil_texturing.txt ARB_stencil_texturing> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.StencilTexturing (
+  -- * Extension Support
+  glGetARBStencilTexturing,
+  gl_ARB_stencil_texturing,
   -- * Enums
   gl_DEPTH_STENCIL_TEXTURE_MODE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

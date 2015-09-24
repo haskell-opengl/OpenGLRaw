@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/pixel_data_range.txt NV_pixel_data_range> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.PixelDataRange (
+  -- * Extension Support
+  glGetNVPixelDataRange,
+  gl_NV_pixel_data_range,
   -- * Enums
   gl_READ_PIXEL_DATA_RANGE_LENGTH_NV,
   gl_READ_PIXEL_DATA_RANGE_NV,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.PixelDataRange (
   glPixelDataRangeNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

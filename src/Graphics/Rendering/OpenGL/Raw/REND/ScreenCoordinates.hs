@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/REND/screen_coordinates.txt REND_screen_coordinates> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.REND.ScreenCoordinates (
+  -- * Extension Support
+  glGetRENDScreenCoordinates,
+  gl_REND_screen_coordinates,
   -- * Enums
   gl_INVERTED_SCREEN_W_REND,
   gl_SCREEN_COORDINATES_REND
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

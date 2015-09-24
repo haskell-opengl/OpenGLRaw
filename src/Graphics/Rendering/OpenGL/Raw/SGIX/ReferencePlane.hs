@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/reference_plane.txt SGIX_reference_plane> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.ReferencePlane (
+  -- * Extension Support
+  glGetSGIXReferencePlane,
+  gl_SGIX_reference_plane,
   -- * Enums
   gl_REFERENCE_PLANE_EQUATION_SGIX,
   gl_REFERENCE_PLANE_SGIX,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.ReferencePlane (
   glReferencePlaneSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

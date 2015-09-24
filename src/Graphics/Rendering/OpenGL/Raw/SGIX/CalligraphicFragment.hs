@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/calligraphic_fragment.txt SGIX_calligraphic_fragment> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.CalligraphicFragment (
+  -- * Extension Support
+  glGetSGIXCalligraphicFragment,
+  gl_SGIX_calligraphic_fragment,
   -- * Enums
   gl_CALLIGRAPHIC_FRAGMENT_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/performance_monitor.txt AMD_performance_monitor> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.PerformanceMonitor (
+  -- * Extension Support
+  glGetAMDPerformanceMonitor,
+  gl_AMD_performance_monitor,
   -- * Enums
   gl_COUNTER_RANGE_AMD,
   gl_COUNTER_TYPE_AMD,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.PerformanceMonitor (
   glSelectPerfMonitorCountersAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

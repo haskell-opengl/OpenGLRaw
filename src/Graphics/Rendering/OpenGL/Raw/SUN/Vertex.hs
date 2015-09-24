@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SUN/vertex.txt SUN_vertex> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SUN.Vertex (
+  -- * Extension Support
+  glGetSUNVertex,
+  gl_SUN_vertex,
   -- * Functions
   glColor3fVertex3fSUN,
   glColor3fVertex3fvSUN,
@@ -56,4 +57,5 @@ module Graphics.Rendering.OpenGL.Raw.SUN.Vertex (
   glTexCoord4fVertex4fvSUN
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

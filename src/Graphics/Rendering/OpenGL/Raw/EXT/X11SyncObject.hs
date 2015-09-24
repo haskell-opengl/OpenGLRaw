@@ -8,16 +8,18 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/x11_sync_object.txt EXT_x11_sync_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.X11SyncObject (
+  -- * Extension Support
+  glGetEXTX11SyncObject,
+  gl_EXT_x11_sync_object,
   -- * Enums
   gl_SYNC_X11_FENCE_EXT,
   -- * Functions
   glImportSyncEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/copy_texture.txt EXT_copy_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture (
+  -- * Extension Support
+  glGetEXTCopyTexture,
+  gl_EXT_copy_texture,
   -- * Functions
   glCopyTexImage1DEXT,
   glCopyTexImage2DEXT,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CopyTexture (
   glCopyTexSubImage3DEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

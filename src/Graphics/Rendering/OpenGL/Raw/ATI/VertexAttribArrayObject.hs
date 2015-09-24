@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/vertex_attrib_array_object.txt ATI_vertex_attrib_array_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.VertexAttribArrayObject (
+  -- * Extension Support
+  glGetATIVertexAttribArrayObject,
+  gl_ATI_vertex_attrib_array_object,
   -- * Functions
   glGetVertexAttribArrayObjectfvATI,
   glGetVertexAttribArrayObjectivATI,
   glVertexAttribArrayObjectATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

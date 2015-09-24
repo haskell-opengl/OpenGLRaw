@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/seamless_cubemap_per_texture.txt ARB_seamless_cubemap_per_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SeamlessCubemapPerTexture (
+  -- * Extension Support
+  glGetARBSeamlessCubemapPerTexture,
+  gl_ARB_seamless_cubemap_per_texture,
   -- * Enums
   gl_TEXTURE_CUBE_MAP_SEAMLESS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

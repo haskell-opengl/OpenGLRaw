@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/OES_single_precision.txt OES_single_precision> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.OES.SinglePrecision (
+  -- * Extension Support
+  glGetOESSinglePrecision,
+  gl_OES_single_precision,
   -- * Functions
   glClearDepthfOES,
   glClipPlanefOES,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.OES.SinglePrecision (
   glOrthofOES
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

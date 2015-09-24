@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/fog_func.txt SGIS_fog_function> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.FogFunction (
+  -- * Extension Support
+  glGetSGISFogFunction,
+  gl_SGIS_fog_function,
   -- * Enums
   gl_FOG_FUNC_POINTS_SGIS,
   gl_FOG_FUNC_SGIS,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.FogFunction (
   glGetFogFuncSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

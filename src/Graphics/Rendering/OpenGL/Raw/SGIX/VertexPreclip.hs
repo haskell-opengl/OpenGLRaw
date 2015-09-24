@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/vertex_preclip.txt SGIX_vertex_preclip> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.VertexPreclip (
+  -- * Extension Support
+  glGetSGIXVertexPreclip,
+  gl_SGIX_vertex_preclip,
   -- * Enums
   gl_VERTEX_PRECLIP_HINT_SGIX,
   gl_VERTEX_PRECLIP_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

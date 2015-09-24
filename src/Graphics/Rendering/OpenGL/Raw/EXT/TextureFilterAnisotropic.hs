@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_filter_anisotropic.txt EXT_texture_filter_anisotropic> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureFilterAnisotropic (
+  -- * Extension Support
+  glGetEXTTextureFilterAnisotropic,
+  gl_EXT_texture_filter_anisotropic,
   -- * Enums
   gl_MAX_TEXTURE_MAX_ANISOTROPY_EXT,
   gl_TEXTURE_MAX_ANISOTROPY_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

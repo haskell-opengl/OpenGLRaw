@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/KHR/debug.txt KHR_debug> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.KHR.DebugCore (
+  -- * Extension Support
+  glGetKHRDebug,
+  gl_KHR_debug,
   -- * Enums
   gl_BUFFER,
   gl_CONTEXT_FLAG_DEBUG_BIT,
@@ -68,5 +69,6 @@ module Graphics.Rendering.OpenGL.Raw.KHR.DebugCore (
   glPushDebugGroup
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

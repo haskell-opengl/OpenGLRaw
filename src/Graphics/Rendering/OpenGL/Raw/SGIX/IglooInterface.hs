@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/igloo_interface.txt SGIX_igloo_interface> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.IglooInterface (
+  -- * Extension Support
+  glGetSGIXIglooInterface,
+  gl_SGIX_igloo_interface,
   -- * Functions
   glIglooInterfaceSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

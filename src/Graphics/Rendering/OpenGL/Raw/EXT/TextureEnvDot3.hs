@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_env_dot3.txt EXT_texture_env_dot3> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvDot3 (
+  -- * Extension Support
+  glGetEXTTextureEnvDot3,
+  gl_EXT_texture_env_dot3,
   -- * Enums
   gl_DOT3_RGBA_EXT,
   gl_DOT3_RGB_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

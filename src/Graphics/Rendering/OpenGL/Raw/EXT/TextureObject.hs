@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_object.txt EXT_texture_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureObject (
+  -- * Extension Support
+  glGetEXTTextureObject,
+  gl_EXT_texture_object,
   -- * Enums
   gl_TEXTURE_1D_BINDING_EXT,
   gl_TEXTURE_2D_BINDING_EXT,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureObject (
   glPrioritizeTexturesEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

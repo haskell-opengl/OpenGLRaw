@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/texture_border_clamp.txt SGIS_texture_border_clamp> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.TextureBorderClamp (
+  -- * Extension Support
+  glGetSGISTextureBorderClamp,
+  gl_SGIS_texture_border_clamp,
   -- * Enums
   gl_CLAMP_TO_BORDER_SGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture.txt EXT_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Texture (
+  -- * Extension Support
+  glGetEXTTexture,
+  gl_EXT_texture,
   -- * Enums
   gl_ALPHA12_EXT,
   gl_ALPHA16_EXT,
@@ -59,4 +60,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Texture (
   gl_TEXTURE_TOO_LARGE_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

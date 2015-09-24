@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_env_combine.txt EXT_texture_env_combine> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine (
+  -- * Extension Support
+  glGetEXTTextureEnvCombine,
+  gl_EXT_texture_env_combine,
   -- * Enums
   gl_ADD_SIGNED_EXT,
   gl_COMBINE_ALPHA_EXT,
@@ -37,4 +38,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureEnvCombine (
   gl_SOURCE2_RGB_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

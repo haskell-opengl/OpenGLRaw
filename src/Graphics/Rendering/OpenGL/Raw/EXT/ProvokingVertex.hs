@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/provoking_vertex.txt EXT_provoking_vertex> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex (
+  -- * Extension Support
+  glGetEXTProvokingVertex,
+  gl_EXT_provoking_vertex,
   -- * Enums
   gl_FIRST_VERTEX_CONVENTION_EXT,
   gl_LAST_VERTEX_CONVENTION_EXT,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.ProvokingVertex (
   glProvokingVertexEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

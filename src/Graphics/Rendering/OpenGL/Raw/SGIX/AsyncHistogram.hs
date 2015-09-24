@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/async_histogram.txt SGIX_async_histogram> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.AsyncHistogram (
+  -- * Extension Support
+  glGetSGIXAsyncHistogram,
+  gl_SGIX_async_histogram,
   -- * Enums
   gl_ASYNC_HISTOGRAM_SGIX,
   gl_MAX_ASYNC_HISTOGRAM_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

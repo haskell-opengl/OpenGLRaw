@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/command_list.txt NV_command_list> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.CommandList (
+  -- * Extension Support
+  glGetNVCommandList,
+  gl_NV_command_list,
   -- * Enums
   gl_ALPHA_REF_COMMAND_NV,
   gl_ATTRIBUTE_ADDRESS_COMMAND_NV,
@@ -53,5 +54,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.CommandList (
   glStateCaptureNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

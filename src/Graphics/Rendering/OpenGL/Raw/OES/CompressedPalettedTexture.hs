@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/OES_compressed_paletted_texture.txt OES_compressed_paletted_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.OES.CompressedPalettedTexture (
+  -- * Extension Support
+  glGetOESCompressedPalettedTexture,
+  gl_OES_compressed_paletted_texture,
   -- * Enums
   gl_PALETTE4_R5_G6_B5_OES,
   gl_PALETTE4_RGB5_A1_OES,
@@ -26,4 +27,5 @@ module Graphics.Rendering.OpenGL.Raw.OES.CompressedPalettedTexture (
   gl_PALETTE8_RGBA8_OES
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/color_buffer_float.txt ARB_color_buffer_float> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat (
+  -- * Extension Support
+  glGetARBColorBufferFloat,
+  gl_ARB_color_buffer_float,
   -- * Enums
   gl_CLAMP_FRAGMENT_COLOR_ARB,
   gl_CLAMP_READ_COLOR_ARB,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ColorBufferFloat (
   glClampColorARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

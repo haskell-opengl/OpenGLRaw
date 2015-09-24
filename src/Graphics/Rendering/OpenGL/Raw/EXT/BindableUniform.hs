@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/bindable_uniform.txt EXT_bindable_uniform> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform (
+  -- * Extension Support
+  glGetEXTBindableUniform,
+  gl_EXT_bindable_uniform,
   -- * Enums
   gl_MAX_BINDABLE_UNIFORM_SIZE_EXT,
   gl_MAX_FRAGMENT_BINDABLE_UNIFORMS_EXT,
@@ -26,5 +27,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.BindableUniform (
   glUniformBufferEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

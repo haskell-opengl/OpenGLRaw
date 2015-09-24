@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/framebuffer_mixed_samples.txt NV_framebuffer_mixed_samples> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMixedSamples (
+  -- * Extension Support
+  glGetNVFramebufferMixedSamples,
+  gl_NV_framebuffer_mixed_samples,
   -- * Enums
   gl_COLOR_SAMPLES_NV,
   gl_COVERAGE_MODULATION_NV,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMixedSamples (
   glRasterSamplesEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

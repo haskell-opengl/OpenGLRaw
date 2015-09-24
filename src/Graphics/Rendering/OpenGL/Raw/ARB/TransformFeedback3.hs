@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/transform_feedback3.txt ARB_transform_feedback3> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3 (
+  -- * Extension Support
+  glGetARBTransformFeedback3,
+  gl_ARB_transform_feedback3,
   -- * Enums
   gl_MAX_TRANSFORM_FEEDBACK_BUFFERS,
   gl_MAX_VERTEX_STREAMS,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3 (
   glGetQueryIndexediv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

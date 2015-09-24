@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/path_rendering.txt NV_path_rendering> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.PathRenderingCore (
+  -- * Extension Support
+  glGetNVPathRendering,
+  gl_NV_path_rendering,
   -- * Enums
   gl_ACCUM_ADJACENT_PAIRS_NV,
   gl_ADJACENT_PAIRS_NV,
@@ -227,5 +228,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.PathRenderingCore (
   glWeightPathsNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

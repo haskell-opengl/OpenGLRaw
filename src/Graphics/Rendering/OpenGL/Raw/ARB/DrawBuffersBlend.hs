@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/draw_buffers_blend.txt ARB_draw_buffers_blend> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend (
+  -- * Extension Support
+  glGetARBDrawBuffersBlend,
+  gl_ARB_draw_buffers_blend,
   -- * Functions
   glBlendEquationSeparateiARB,
   glBlendEquationiARB,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DrawBuffersBlend (
   glBlendFunciARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

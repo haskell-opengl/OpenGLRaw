@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/gpu_program4.txt NV_gpu_program4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4 (
+  -- * Extension Support
+  glGetNVGPUProgram4,
+  gl_NV_gpu_program4,
   -- * Enums
   gl_MAX_PROGRAM_ATTRIB_COMPONENTS_NV,
   gl_MAX_PROGRAM_GENERIC_ATTRIBS_NV,
@@ -41,5 +42,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.GPUProgram4 (
   glProgramLocalParametersI4uivNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

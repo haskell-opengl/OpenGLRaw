@@ -8,16 +8,18 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/polygon_offset_clamp.txt EXT_polygon_offset_clamp> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PolygonOffsetClamp (
+  -- * Extension Support
+  glGetEXTPolygonOffsetClamp,
+  gl_EXT_polygon_offset_clamp,
   -- * Enums
   gl_POLYGON_OFFSET_CLAMP_EXT,
   -- * Functions
   glPolygonOffsetClampEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

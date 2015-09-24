@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/sample_locations.txt ARB_sample_locations> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SampleLocations (
+  -- * Extension Support
+  glGetARBSampleLocations,
+  gl_ARB_sample_locations,
   -- * Enums
   gl_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_ARB,
   gl_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_ARB,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SampleLocations (
   glNamedFramebufferSampleLocationsfvARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

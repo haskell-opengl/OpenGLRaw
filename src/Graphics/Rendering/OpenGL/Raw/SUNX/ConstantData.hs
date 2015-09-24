@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SUNX/constant_data.txt SUNX_constant_data> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SUNX.ConstantData (
+  -- * Extension Support
+  glGetSUNXConstantData,
+  gl_SUNX_constant_data,
   -- * Enums
   gl_TEXTURE_CONSTANT_DATA_SUNX,
   gl_UNPACK_CONSTANT_DATA_SUNX,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.SUNX.ConstantData (
   glFinishTextureSUNX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

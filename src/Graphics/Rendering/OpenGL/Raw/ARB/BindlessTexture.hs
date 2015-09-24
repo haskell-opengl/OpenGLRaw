@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/bindless_texture.txt ARB_bindless_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.BindlessTexture (
+  -- * Extension Support
+  glGetARBBindlessTexture,
+  gl_ARB_bindless_texture,
   -- * Enums
   gl_UNSIGNED_INT64_ARB,
   -- * Functions
@@ -34,5 +35,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.BindlessTexture (
   glVertexAttribL1ui64vARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

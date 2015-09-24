@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/texture_env_combine3.txt ATI_texture_env_combine3> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.TextureEnvCombine3 (
+  -- * Extension Support
+  glGetATITextureEnvCombine3,
+  gl_ATI_texture_env_combine3,
   -- * Enums
   gl_MODULATE_ADD_ATI,
   gl_MODULATE_SIGNED_ADD_ATI,
   gl_MODULATE_SUBTRACT_ATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

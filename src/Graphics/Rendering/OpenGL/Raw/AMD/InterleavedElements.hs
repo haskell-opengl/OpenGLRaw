@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/interleaved_elements.txt AMD_interleaved_elements> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.InterleavedElements (
+  -- * Extension Support
+  glGetAMDInterleavedElements,
+  gl_AMD_interleaved_elements,
   -- * Enums
   gl_ALPHA,
   gl_BLUE,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.InterleavedElements (
   glVertexAttribParameteriAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

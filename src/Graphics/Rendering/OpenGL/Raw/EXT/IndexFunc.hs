@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/index_func.txt EXT_index_func> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.IndexFunc (
+  -- * Extension Support
+  glGetEXTIndexFunc,
+  gl_EXT_index_func,
   -- * Enums
   gl_INDEX_TEST_EXT,
   gl_INDEX_TEST_FUNC_EXT,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.IndexFunc (
   glIndexFuncEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

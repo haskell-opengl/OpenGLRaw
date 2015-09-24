@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/client_storage.txt APPLE_client_storage> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.ClientStorage (
+  -- * Extension Support
+  glGetAPPLEClientStorage,
+  gl_APPLE_client_storage,
   -- * Enums
   gl_UNPACK_CLIENT_STORAGE_APPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/imaging.txt ARB_imaging> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ImagingCore (
+  -- * Extension Support
+  glGetARBImaging,
+  gl_ARB_imaging,
   -- * Enums
   gl_BLEND_COLOR,
   gl_BLEND_EQUATION,
@@ -30,5 +31,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ImagingCore (
   glBlendEquation
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/KHR/blend_equation_advanced.txt KHR_blend_equation_advanced> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvanced (
+  -- * Extension Support
+  glGetKHRBlendEquationAdvanced,
+  gl_KHR_blend_equation_advanced,
   -- * Enums
   gl_COLORBURN_KHR,
   gl_COLORDODGE_KHR,
@@ -33,5 +34,6 @@ module Graphics.Rendering.OpenGL.Raw.KHR.BlendEquationAdvanced (
   glBlendBarrierKHR
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

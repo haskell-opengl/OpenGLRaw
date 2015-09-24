@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/float_pixels.txt APPLE_float_pixels> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.FloatPixels (
+  -- * Extension Support
+  glGetAPPLEFloatPixels,
+  gl_APPLE_float_pixels,
   -- * Enums
   gl_ALPHA_FLOAT16_APPLE,
   gl_ALPHA_FLOAT32_APPLE,
@@ -30,4 +31,5 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.FloatPixels (
   gl_RGB_FLOAT32_APPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

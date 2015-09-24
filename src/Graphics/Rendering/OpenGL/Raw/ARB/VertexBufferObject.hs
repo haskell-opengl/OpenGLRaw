@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_buffer_object.txt ARB_vertex_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexBufferObject (
+  -- * Extension Support
+  glGetARBVertexBufferObject,
+  gl_ARB_vertex_buffer_object,
   -- * Enums
   gl_ARRAY_BUFFER_ARB,
   gl_ARRAY_BUFFER_BINDING_ARB,
@@ -59,5 +60,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexBufferObject (
   glUnmapBufferARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SUN/triangle_list.txt SUN_triangle_list> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SUN.TriangleList (
+  -- * Extension Support
+  glGetSUNTriangleList,
+  gl_SUN_triangle_list,
   -- * Enums
   gl_R1UI_C3F_V3F_SUN,
   gl_R1UI_C4F_N3F_V3F_SUN,
@@ -41,5 +42,6 @@ module Graphics.Rendering.OpenGL.Raw.SUN.TriangleList (
   glReplacementCodeusvSUN
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

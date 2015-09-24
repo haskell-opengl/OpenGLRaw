@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_snorm.txt EXT_texture_snorm> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureSNorm (
+  -- * Extension Support
+  glGetEXTTextureSNorm,
+  gl_EXT_texture_snorm,
   -- * Enums
   gl_ALPHA16_SNORM,
   gl_ALPHA8_SNORM,
@@ -41,4 +42,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureSNorm (
   gl_SIGNED_NORMALIZED
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

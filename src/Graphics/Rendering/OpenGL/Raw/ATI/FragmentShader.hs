@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/fragment_shader.txt ATI_fragment_shader> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.FragmentShader (
+  -- * Extension Support
+  glGetATIFragmentShader,
+  gl_ATI_fragment_shader,
   -- * Enums
   gl_2X_BIT_ATI,
   gl_4X_BIT_ATI,
@@ -135,5 +136,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.FragmentShader (
   glSetFragmentShaderConstantATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

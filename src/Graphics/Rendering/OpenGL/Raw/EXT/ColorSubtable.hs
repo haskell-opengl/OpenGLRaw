@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/color_subtable.txt EXT_color_subtable> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.ColorSubtable (
+  -- * Extension Support
+  glGetEXTColorSubtable,
+  gl_EXT_color_subtable,
   -- * Functions
   glColorSubTableEXT,
   glCopyColorSubTableEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

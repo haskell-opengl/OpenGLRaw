@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/texture_multisample.txt NV_texture_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.TextureMultisample (
+  -- * Extension Support
+  glGetNVTextureMultisample,
+  gl_NV_texture_multisample,
   -- * Enums
   gl_TEXTURE_COLOR_SAMPLES_NV,
   gl_TEXTURE_COVERAGE_SAMPLES_NV,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureMultisample (
   glTextureImage3DMultisampleNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

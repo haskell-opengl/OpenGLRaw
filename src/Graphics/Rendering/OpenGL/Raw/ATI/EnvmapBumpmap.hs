@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/envmap_bumpmap.txt ATI_envmap_bumpmap> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.EnvmapBumpmap (
+  -- * Extension Support
+  glGetATIEnvmapBumpmap,
+  gl_ATI_envmap_bumpmap,
   -- * Enums
   gl_BUMP_ENVMAP_ATI,
   gl_BUMP_NUM_TEX_UNITS_ATI,
@@ -29,5 +30,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.EnvmapBumpmap (
   glTexBumpParameterivATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/fence.txt APPLE_fence> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.Fence (
+  -- * Extension Support
+  glGetAPPLEFence,
+  gl_APPLE_fence,
   -- * Enums
   gl_DRAW_PIXELS_APPLE,
   gl_FENCE_APPLE,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.Fence (
   glTestObjectAPPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

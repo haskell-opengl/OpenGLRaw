@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_shader.txt ARB_vertex_shader> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexShader (
+  -- * Extension Support
+  glGetARBVertexShader,
+  gl_ARB_vertex_shader,
   -- * Enums
   gl_CURRENT_VERTEX_ATTRIB_ARB,
   gl_FLOAT,
@@ -89,5 +90,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexShader (
   glVertexAttribPointerARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

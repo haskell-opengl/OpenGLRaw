@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_swizzle.txt EXT_texture_swizzle> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle (
+  -- * Extension Support
+  glGetEXTTextureSwizzle,
+  gl_EXT_texture_swizzle,
   -- * Enums
   gl_TEXTURE_SWIZZLE_A_EXT,
   gl_TEXTURE_SWIZZLE_B_EXT,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureSwizzle (
   gl_TEXTURE_SWIZZLE_R_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/OES/OES_fixed_point.txt OES_fixed_point> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.OES.FixedPoint (
+  -- * Extension Support
+  glGetOESFixedPoint,
+  gl_OES_fixed_point,
   -- * Enums
   gl_FIXED_OES,
   -- * Functions
@@ -121,5 +122,6 @@ module Graphics.Rendering.OpenGL.Raw.OES.FixedPoint (
   glVertex4xvOES
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

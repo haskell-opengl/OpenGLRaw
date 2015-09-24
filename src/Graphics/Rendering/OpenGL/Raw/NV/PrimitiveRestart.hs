@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/primitive_restart.txt NV_primitive_restart> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart (
+  -- * Extension Support
+  glGetNVPrimitiveRestart,
+  gl_NV_primitive_restart,
   -- * Enums
   gl_PRIMITIVE_RESTART_INDEX_NV,
   gl_PRIMITIVE_RESTART_NV,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.PrimitiveRestart (
   glPrimitiveRestartNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/point_line_texgen.txt SGIS_point_line_texgen> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.PointLineTexgen (
+  -- * Extension Support
+  glGetSGISPointLineTexgen,
+  gl_SGIS_point_line_texgen,
   -- * Enums
   gl_EYE_DISTANCE_TO_LINE_SGIS,
   gl_EYE_DISTANCE_TO_POINT_SGIS,
@@ -24,4 +25,5 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.PointLineTexgen (
   gl_OBJECT_POINT_SGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

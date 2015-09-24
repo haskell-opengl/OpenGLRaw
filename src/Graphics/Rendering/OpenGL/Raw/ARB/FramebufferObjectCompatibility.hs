@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/framebuffer_object.txt ARB_framebuffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObjectCompatibility (
+  -- * Extension Support
+  glGetARBFramebufferObject,
+  gl_ARB_framebuffer_object,
   -- * Enums
   gl_COLOR_ATTACHMENT0,
   gl_COLOR_ATTACHMENT1,
@@ -110,5 +111,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferObjectCompatibility (
   glRenderbufferStorageMultisample
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

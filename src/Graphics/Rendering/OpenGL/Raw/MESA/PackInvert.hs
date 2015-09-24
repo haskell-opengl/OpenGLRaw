@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/MESA/pack_invert.txt MESA_pack_invert> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.MESA.PackInvert (
+  -- * Extension Support
+  glGetMESAPackInvert,
+  gl_MESA_pack_invert,
   -- * Enums
   gl_PACK_INVERT_MESA
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/shadow.txt SGIX_shadow> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.Shadow (
+  -- * Extension Support
+  glGetSGIXShadow,
+  gl_SGIX_shadow,
   -- * Enums
   gl_TEXTURE_COMPARE_OPERATOR_SGIX,
   gl_TEXTURE_COMPARE_SGIX,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.Shadow (
   gl_TEXTURE_LEQUAL_R_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

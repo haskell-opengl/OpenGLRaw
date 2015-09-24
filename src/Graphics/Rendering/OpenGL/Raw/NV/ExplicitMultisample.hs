@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/explicit_multisample.txt NV_explicit_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ExplicitMultisample (
+  -- * Extension Support
+  glGetNVExplicitMultisample,
+  gl_NV_explicit_multisample,
   -- * Enums
   gl_INT_SAMPLER_RENDERBUFFER_NV,
   gl_MAX_SAMPLE_MASK_WORDS_NV,
@@ -30,5 +31,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.ExplicitMultisample (
   glTexRenderbufferNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

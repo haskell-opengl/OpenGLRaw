@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/depth_clamp.txt NV_depth_clamp> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.DepthClamp (
+  -- * Extension Support
+  glGetNVDepthClamp,
+  gl_NV_depth_clamp,
   -- * Enums
   gl_DEPTH_CLAMP_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

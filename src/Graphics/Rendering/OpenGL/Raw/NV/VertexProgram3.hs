@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/vertex_program3.txt NV_vertex_program3> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3 (
+  -- * Extension Support
+  glGetNVVertexProgram3,
+  gl_NV_vertex_program3,
   -- * Enums
   gl_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

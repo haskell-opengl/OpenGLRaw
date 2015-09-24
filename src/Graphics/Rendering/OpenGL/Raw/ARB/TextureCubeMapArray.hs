@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_cube_map_array.txt ARB_texture_cube_map_array> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray (
+  -- * Extension Support
+  glGetARBTextureCubeMapArray,
+  gl_ARB_texture_cube_map_array,
   -- * Enums
   gl_INT_SAMPLER_CUBE_MAP_ARRAY_ARB,
   gl_PROXY_TEXTURE_CUBE_MAP_ARRAY_ARB,
@@ -23,4 +24,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureCubeMapArray (
   gl_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

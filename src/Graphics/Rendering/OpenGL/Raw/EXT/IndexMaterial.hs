@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/index_material.txt EXT_index_material> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.IndexMaterial (
+  -- * Extension Support
+  glGetEXTIndexMaterial,
+  gl_EXT_index_material,
   -- * Enums
   gl_INDEX_MATERIAL_EXT,
   gl_INDEX_MATERIAL_FACE_EXT,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.IndexMaterial (
   glIndexMaterialEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

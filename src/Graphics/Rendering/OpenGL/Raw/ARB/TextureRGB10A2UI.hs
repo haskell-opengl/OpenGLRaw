@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_rgb10_a2ui.txt ARB_texture_rgb10_a2ui> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureRGB10A2UI (
+  -- * Extension Support
+  glGetARBTextureRGB10A2UI,
+  gl_ARB_texture_rgb10_a2ui,
   -- * Enums
   gl_RGB10_A2UI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

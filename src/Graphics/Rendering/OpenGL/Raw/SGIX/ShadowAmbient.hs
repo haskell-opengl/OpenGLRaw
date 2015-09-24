@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/shadow_ambient.txt SGIX_shadow_ambient> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.ShadowAmbient (
+  -- * Extension Support
+  glGetSGIXShadowAmbient,
+  gl_SGIX_shadow_ambient,
   -- * Enums
   gl_SHADOW_AMBIENT_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

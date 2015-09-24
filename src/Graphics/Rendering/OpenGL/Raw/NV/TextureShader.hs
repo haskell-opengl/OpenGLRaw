@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/texture_shader.txt NV_texture_shader> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.TextureShader (
+  -- * Extension Support
+  glGetNVTextureShader,
+  gl_NV_texture_shader,
   -- * Enums
   gl_CONST_EYE_NV,
   gl_CULL_FRAGMENT_NV,
@@ -89,4 +90,5 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureShader (
   gl_VIBRANCE_SCALE_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

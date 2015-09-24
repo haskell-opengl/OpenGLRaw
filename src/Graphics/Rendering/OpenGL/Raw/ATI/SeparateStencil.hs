@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/separate_stencil.txt ATI_separate_stencil> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.SeparateStencil (
+  -- * Extension Support
+  glGetATISeparateStencil,
+  gl_ATI_separate_stencil,
   -- * Enums
   gl_STENCIL_BACK_FAIL_ATI,
   gl_STENCIL_BACK_FUNC_ATI,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.SeparateStencil (
   glStencilOpSeparateATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

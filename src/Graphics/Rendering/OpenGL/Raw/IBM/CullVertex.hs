@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/IBM/cull_vertex.txt IBM_cull_vertex> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.IBM.CullVertex (
+  -- * Extension Support
+  glGetIBMCullVertex,
+  gl_IBM_cull_vertex,
   -- * Enums
   gl_CULL_VERTEX_IBM
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/present_video.txt NV_present_video> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.PresentVideo (
+  -- * Extension Support
+  glGetNVPresentVideo,
+  gl_NV_present_video,
   -- * Enums
   gl_CURRENT_TIME_NV,
   gl_FIELDS_NV,
@@ -29,5 +30,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.PresentVideo (
   glPresentFrameKeyedNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

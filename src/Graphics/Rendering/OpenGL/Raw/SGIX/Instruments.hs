@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/instruments.txt SGIX_instruments> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.Instruments (
+  -- * Extension Support
+  glGetSGIXInstruments,
+  gl_SGIX_instruments,
   -- * Enums
   gl_INSTRUMENT_BUFFER_POINTER_SGIX,
   gl_INSTRUMENT_MEASUREMENTS_SGIX,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.Instruments (
   glStopInstrumentsSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

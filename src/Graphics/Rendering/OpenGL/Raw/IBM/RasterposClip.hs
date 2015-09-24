@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/IBM/rasterpos_clip.txt IBM_rasterpos_clip> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.IBM.RasterposClip (
+  -- * Extension Support
+  glGetIBMRasterposClip,
+  gl_IBM_rasterpos_clip,
   -- * Enums
   gl_RASTER_POSITION_UNCLIPPED_IBM
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

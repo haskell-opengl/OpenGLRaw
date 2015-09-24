@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/clip_volume_hint.txt EXT_clip_volume_hint> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.ClipVolumeHint (
+  -- * Extension Support
+  glGetEXTClipVolumeHint,
+  gl_EXT_clip_volume_hint,
   -- * Enums
   gl_CLIP_VOLUME_CLIPPING_HINT_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

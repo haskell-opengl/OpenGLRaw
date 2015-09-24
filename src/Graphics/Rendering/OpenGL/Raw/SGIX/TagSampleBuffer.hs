@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/tag_sample_buffer.txt SGIX_tag_sample_buffer> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.TagSampleBuffer (
+  -- * Extension Support
+  glGetSGIXTagSampleBuffer,
+  gl_SGIX_tag_sample_buffer,
   -- * Functions
   glTagSampleBufferSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

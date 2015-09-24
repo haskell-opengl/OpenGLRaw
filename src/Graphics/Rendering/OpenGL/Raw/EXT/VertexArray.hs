@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/vertex_array.txt EXT_vertex_array> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray (
+  -- * Extension Support
+  glGetEXTVertexArray,
+  gl_EXT_vertex_array,
   -- * Enums
   gl_COLOR_ARRAY_COUNT_EXT,
   gl_COLOR_ARRAY_EXT,
@@ -58,5 +59,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexArray (
   glVertexPointerEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

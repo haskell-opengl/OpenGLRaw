@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/blend_minmax.txt EXT_blend_minmax> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax (
+  -- * Extension Support
+  glGetEXTBlendMinmax,
+  gl_EXT_blend_minmax,
   -- * Enums
   gl_BLEND_EQUATION_EXT,
   gl_FUNC_ADD_EXT,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.BlendMinmax (
   glBlendEquationEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

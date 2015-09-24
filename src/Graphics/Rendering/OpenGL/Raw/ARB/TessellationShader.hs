@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/tessellation_shader.txt ARB_tessellation_shader> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader (
+  -- * Extension Support
+  glGetARBTessellationShader,
+  gl_ARB_tessellation_shader,
   -- * Enums
   gl_CCW,
   gl_CW,
@@ -56,5 +57,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader (
   glPatchParameteri
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

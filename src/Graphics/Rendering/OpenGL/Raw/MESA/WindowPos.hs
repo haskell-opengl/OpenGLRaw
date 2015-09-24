@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/MESA/window_pos.txt MESA_window_pos> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.MESA.WindowPos (
+  -- * Extension Support
+  glGetMESAWindowPos,
+  gl_MESA_window_pos,
   -- * Functions
   glWindowPos2dMESA,
   glWindowPos2dvMESA,
@@ -40,4 +41,5 @@ module Graphics.Rendering.OpenGL.Raw.MESA.WindowPos (
   glWindowPos4svMESA
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

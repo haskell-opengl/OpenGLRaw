@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/subtexture.txt EXT_subtexture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Subtexture (
+  -- * Extension Support
+  glGetEXTSubtexture,
+  gl_EXT_subtexture,
   -- * Functions
   glTexSubImage1DEXT,
   glTexSubImage2DEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/framebuffer_sRGB.txt ARB_framebuffer_sRGB> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferSRGB (
+  -- * Extension Support
+  glGetARBFramebufferSRGB,
+  gl_ARB_framebuffer_sRGB,
   -- * Enums
   gl_FRAMEBUFFER_SRGB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

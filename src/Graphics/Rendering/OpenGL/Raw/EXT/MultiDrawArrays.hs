@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/multi_draw_arrays.txt EXT_multi_draw_arrays> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.MultiDrawArrays (
+  -- * Extension Support
+  glGetEXTMultiDrawArrays,
+  gl_EXT_multi_draw_arrays,
   -- * Functions
   glMultiDrawArraysEXT,
   glMultiDrawElementsEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

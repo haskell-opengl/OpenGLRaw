@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/depth_buffer_float.txt ARB_depth_buffer_float> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DepthBufferFloat (
+  -- * Extension Support
+  glGetARBDepthBufferFloat,
+  gl_ARB_depth_buffer_float,
   -- * Enums
   gl_DEPTH32F_STENCIL8,
   gl_DEPTH_COMPONENT32F,
   gl_FLOAT_32_UNSIGNED_INT_24_8_REV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

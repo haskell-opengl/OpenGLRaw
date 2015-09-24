@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/IBM/texture_mirrored_repeat.txt IBM_texture_mirrored_repeat> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.IBM.TextureMirroredRepeat (
+  -- * Extension Support
+  glGetIBMTextureMirroredRepeat,
+  gl_IBM_texture_mirrored_repeat,
   -- * Enums
   gl_MIRRORED_REPEAT_IBM
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

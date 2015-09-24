@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_mirrored_repeat.txt ARB_texture_mirrored_repeat> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirroredRepeat (
+  -- * Extension Support
+  glGetARBTextureMirroredRepeat,
+  gl_ARB_texture_mirrored_repeat,
   -- * Enums
   gl_MIRRORED_REPEAT_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

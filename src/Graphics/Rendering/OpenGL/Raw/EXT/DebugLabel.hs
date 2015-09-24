@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/EXT_debug_label.txt EXT_debug_label> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DebugLabel (
+  -- * Extension Support
+  glGetEXTDebugLabel,
+  gl_EXT_debug_label,
   -- * Enums
   gl_BUFFER_OBJECT_EXT,
   gl_PROGRAM_OBJECT_EXT,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DebugLabel (
   glLabelObjectEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

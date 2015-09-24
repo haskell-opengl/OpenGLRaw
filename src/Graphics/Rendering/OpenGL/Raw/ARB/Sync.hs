@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/sync.txt ARB_sync> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.Sync (
+  -- * Extension Support
+  glGetARBSync,
+  gl_ARB_sync,
   -- * Enums
   gl_ALREADY_SIGNALED,
   gl_CONDITION_SATISFIED,
@@ -39,5 +40,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.Sync (
   glWaitSync
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

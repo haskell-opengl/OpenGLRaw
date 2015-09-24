@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/point_sprite.txt ARB_point_sprite> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.PointSprite (
+  -- * Extension Support
+  glGetARBPointSprite,
+  gl_ARB_point_sprite,
   -- * Enums
   gl_COORD_REPLACE_ARB,
   gl_POINT_SPRITE_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

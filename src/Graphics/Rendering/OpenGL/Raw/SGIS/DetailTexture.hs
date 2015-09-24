@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/detail_texture.txt SGIS_detail_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.DetailTexture (
+  -- * Extension Support
+  glGetSGISDetailTexture,
+  gl_SGIS_detail_texture,
   -- * Enums
   gl_DETAIL_TEXTURE_2D_BINDING_SGIS,
   gl_DETAIL_TEXTURE_2D_SGIS,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.DetailTexture (
   glGetDetailTexFuncSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

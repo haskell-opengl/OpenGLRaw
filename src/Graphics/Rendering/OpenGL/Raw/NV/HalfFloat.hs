@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/half_float.txt NV_half_float> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.HalfFloat (
+  -- * Extension Support
+  glGetNVHalfFloat,
+  gl_NV_half_float,
   -- * Enums
   gl_HALF_FLOAT_NV,
   -- * Functions
@@ -64,5 +65,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.HalfFloat (
   glVertexWeighthvNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

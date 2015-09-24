@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_array_object.txt ARB_vertex_array_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayObject (
+  -- * Extension Support
+  glGetARBVertexArrayObject,
+  gl_ARB_vertex_array_object,
   -- * Enums
   gl_VERTEX_ARRAY_BINDING,
   -- * Functions
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayObject (
   glIsVertexArray
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

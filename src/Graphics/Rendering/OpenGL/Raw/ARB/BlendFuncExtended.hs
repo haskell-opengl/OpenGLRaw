@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/blend_func_extended.txt ARB_blend_func_extended> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended (
+  -- * Extension Support
+  glGetARBBlendFuncExtended,
+  gl_ARB_blend_func_extended,
   -- * Enums
   gl_MAX_DUAL_SOURCE_DRAW_BUFFERS,
   gl_ONE_MINUS_SRC1_ALPHA,
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.BlendFuncExtended (
   glGetFragDataIndex
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

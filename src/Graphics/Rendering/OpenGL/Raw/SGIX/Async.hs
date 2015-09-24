@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/async.txt SGIX_async> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.Async (
+  -- * Extension Support
+  glGetSGIXAsync,
+  gl_SGIX_async,
   -- * Enums
   gl_ASYNC_MARKER_SGIX,
   -- * Functions
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.Async (
   glPollAsyncSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

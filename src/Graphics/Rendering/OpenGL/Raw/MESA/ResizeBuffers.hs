@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/MESA/resize_buffers.txt MESA_resize_buffers> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.MESA.ResizeBuffers (
+  -- * Extension Support
+  glGetMESAResizeBuffers,
+  gl_MESA_resize_buffers,
   -- * Functions
   glResizeBuffersMESA
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

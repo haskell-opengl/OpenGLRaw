@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/direct_state_access.txt ARB_direct_state_access> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DirectStateAccess (
+  -- * Extension Support
+  glGetARBDirectStateAccess,
+  gl_ARB_direct_state_access,
   -- * Enums
   gl_QUERY_TARGET,
   gl_TEXTURE_BINDING_1D,
@@ -127,5 +128,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DirectStateAccess (
   glVertexArrayVertexBuffers
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

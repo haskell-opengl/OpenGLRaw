@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_storage_multisample.txt ARB_texture_storage_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureStorageMultisample (
+  -- * Extension Support
+  glGetARBTextureStorageMultisample,
+  gl_ARB_texture_storage_multisample,
   -- * Functions
   glTexStorage2DMultisample,
   glTexStorage3DMultisample
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

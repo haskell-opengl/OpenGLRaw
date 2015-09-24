@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_sRGB.txt EXT_texture_sRGB> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB (
+  -- * Extension Support
+  glGetEXTTextureSRGB,
+  gl_EXT_texture_sRGB,
   -- * Enums
   gl_COMPRESSED_SLUMINANCE_ALPHA_EXT,
   gl_COMPRESSED_SLUMINANCE_EXT,
@@ -32,4 +33,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureSRGB (
   gl_SRGB_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

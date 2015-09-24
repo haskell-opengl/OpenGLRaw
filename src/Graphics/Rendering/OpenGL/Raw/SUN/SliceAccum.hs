@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SUN/slice_accum.txt SUN_slice_accum> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SUN.SliceAccum (
+  -- * Extension Support
+  glGetSUNSliceAccum,
+  gl_SUN_slice_accum,
   -- * Enums
   gl_SLICE_ACCUM_SUN
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

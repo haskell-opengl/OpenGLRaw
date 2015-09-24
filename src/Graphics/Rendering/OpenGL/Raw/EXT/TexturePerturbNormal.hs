@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_perturb_normal.txt EXT_texture_perturb_normal> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal (
+  -- * Extension Support
+  glGetEXTTexturePerturbNormal,
+  gl_EXT_texture_perturb_normal,
   -- * Enums
   gl_PERTURB_EXT,
   gl_TEXTURE_NORMAL_EXT,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TexturePerturbNormal (
   glTextureNormalEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

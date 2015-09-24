@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/copy_image.txt ARB_copy_image> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.CopyImage (
+  -- * Extension Support
+  glGetARBCopyImage,
+  gl_ARB_copy_image,
   -- * Functions
   glCopyImageSubData
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

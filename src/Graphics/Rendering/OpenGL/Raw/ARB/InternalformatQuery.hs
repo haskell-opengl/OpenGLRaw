@@ -8,16 +8,18 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/internalformat_query.txt ARB_internalformat_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.InternalformatQuery (
+  -- * Extension Support
+  glGetARBInternalformatQuery,
+  gl_ARB_internalformat_query,
   -- * Enums
   gl_NUM_SAMPLE_COUNTS,
   -- * Functions
   glGetInternalformativ
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

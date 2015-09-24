@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/object_purgeable.txt APPLE_object_purgeable> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.ObjectPurgeable (
+  -- * Extension Support
+  glGetAPPLEObjectPurgeable,
+  gl_APPLE_object_purgeable,
   -- * Enums
   gl_BUFFER_OBJECT_APPLE,
   gl_PURGEABLE_APPLE,
@@ -26,5 +27,6 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.ObjectPurgeable (
   glObjectUnpurgeableAPPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

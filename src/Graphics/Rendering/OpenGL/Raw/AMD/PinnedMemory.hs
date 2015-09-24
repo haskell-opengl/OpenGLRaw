@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/pinned_memory.txt AMD_pinned_memory> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.PinnedMemory (
+  -- * Extension Support
+  glGetAMDPinnedMemory,
+  gl_AMD_pinned_memory,
   -- * Enums
   gl_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/vertex_weighting.txt EXT_vertex_weighting> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting (
+  -- * Extension Support
+  glGetEXTVertexWeighting,
+  gl_EXT_vertex_weighting,
   -- * Enums
   gl_CURRENT_VERTEX_WEIGHT_EXT,
   gl_MODELVIEW0_EXT,
@@ -33,5 +34,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.VertexWeighting (
   glVertexWeightfvEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

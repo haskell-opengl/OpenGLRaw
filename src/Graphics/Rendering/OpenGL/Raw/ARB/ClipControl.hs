@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/clip_control.txt ARB_clip_control> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ClipControl (
+  -- * Extension Support
+  glGetARBClipControl,
+  gl_ARB_clip_control,
   -- * Enums
   gl_CLIP_DEPTH_MODE,
   gl_CLIP_ORIGIN,
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ClipControl (
   glClipControl
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

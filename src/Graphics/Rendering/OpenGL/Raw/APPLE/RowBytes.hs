@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/row_bytes.txt APPLE_row_bytes> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.RowBytes (
+  -- * Extension Support
+  glGetAPPLERowBytes,
+  gl_APPLE_row_bytes,
   -- * Enums
   gl_PACK_ROW_BYTES_APPLE,
   gl_UNPACK_ROW_BYTES_APPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_filter_minmax.txt ARB_texture_filter_minmax> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureFilterMinmax (
+  -- * Extension Support
+  glGetARBTextureFilterMinmax,
+  gl_ARB_texture_filter_minmax,
   -- * Enums
   gl_TEXTURE_REDUCTION_MODE_ARB,
   gl_WEIGHTED_AVERAGE_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

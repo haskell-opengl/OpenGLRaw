@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/parameter_buffer_object.txt NV_parameter_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ParameterBufferObject (
+  -- * Extension Support
+  glGetNVParameterBufferObject,
+  gl_NV_parameter_buffer_object,
   -- * Enums
   gl_FRAGMENT_PROGRAM_PARAMETER_BUFFER_NV,
   gl_GEOMETRY_PROGRAM_PARAMETER_BUFFER_NV,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.ParameterBufferObject (
   glProgramBufferParametersfvNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

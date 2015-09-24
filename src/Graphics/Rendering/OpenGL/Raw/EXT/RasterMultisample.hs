@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/raster_multisample.txt EXT_raster_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.RasterMultisample (
+  -- * Extension Support
+  glGetEXTRasterMultisample,
+  gl_EXT_raster_multisample,
   -- * Enums
   gl_EFFECTIVE_RASTER_SAMPLES_EXT,
   gl_MAX_RASTER_SAMPLES_EXT,
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.RasterMultisample (
   glRasterSamplesEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

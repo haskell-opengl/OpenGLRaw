@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/cmyka.txt EXT_cmyka> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.CMYKA (
+  -- * Extension Support
+  glGetEXTCMYKA,
+  gl_EXT_cmyka,
   -- * Enums
   gl_CMYKA_EXT,
   gl_CMYK_EXT,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.CMYKA (
   gl_UNPACK_CMYK_HINT_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

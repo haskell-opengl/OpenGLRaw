@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_gather.txt ARB_texture_gather> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureGather (
+  -- * Extension Support
+  glGetARBTextureGather,
+  gl_ARB_texture_gather,
   -- * Enums
   gl_MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB,
   gl_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB,
   gl_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

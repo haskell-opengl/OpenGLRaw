@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/vertex_streams.txt ATI_vertex_streams> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.VertexStreams (
+  -- * Extension Support
+  glGetATIVertexStreams,
+  gl_ATI_vertex_streams,
   -- * Enums
   gl_MAX_VERTEX_STREAMS_ATI,
   gl_VERTEX_SOURCE_ATI,
@@ -72,5 +73,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.VertexStreams (
   glVertexStream4svATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/rescale_normal.txt EXT_rescale_normal> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.RescaleNormal (
+  -- * Extension Support
+  glGetEXTRescaleNormal,
+  gl_EXT_rescale_normal,
   -- * Enums
   gl_RESCALE_NORMAL_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

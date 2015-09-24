@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/framebuffer_sRGB.txt EXT_framebuffer_sRGB> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.FramebufferSRGB (
+  -- * Extension Support
+  glGetEXTFramebufferSRGB,
+  gl_EXT_framebuffer_sRGB,
   -- * Enums
   gl_FRAMEBUFFER_SRGB_CAPABLE_EXT,
   gl_FRAMEBUFFER_SRGB_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

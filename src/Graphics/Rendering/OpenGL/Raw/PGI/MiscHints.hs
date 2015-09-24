@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/PGI/misc_hints.txt PGI_misc_hints> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.PGI.MiscHints (
+  -- * Extension Support
+  glGetPGIMiscHints,
+  gl_PGI_misc_hints,
   -- * Enums
   gl_ALLOW_DRAW_FRG_HINT_PGI,
   gl_ALLOW_DRAW_MEM_HINT_PGI,
@@ -38,5 +39,6 @@ module Graphics.Rendering.OpenGL.Raw.PGI.MiscHints (
   glHintPGI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

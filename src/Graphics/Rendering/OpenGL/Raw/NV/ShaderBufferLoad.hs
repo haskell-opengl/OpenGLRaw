@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/shader_buffer_load.txt NV_shader_buffer_load> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferLoad (
+  -- * Extension Support
+  glGetNVShaderBufferLoad,
+  gl_NV_shader_buffer_load,
   -- * Enums
   gl_BUFFER_GPU_ADDRESS_NV,
   gl_GPU_ADDRESS_NV,
@@ -34,5 +35,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.ShaderBufferLoad (
   glUniformui64vNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

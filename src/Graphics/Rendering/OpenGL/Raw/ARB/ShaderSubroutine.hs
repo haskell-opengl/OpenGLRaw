@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shader_subroutine.txt ARB_shader_subroutine> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine (
+  -- * Extension Support
+  glGetARBShaderSubroutine,
+  gl_ARB_shader_subroutine,
   -- * Enums
   gl_ACTIVE_SUBROUTINES,
   gl_ACTIVE_SUBROUTINE_MAX_LENGTH,
@@ -36,5 +37,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShaderSubroutine (
   glUniformSubroutinesuiv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

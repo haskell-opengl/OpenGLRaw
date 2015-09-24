@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_array_bgra.txt ARB_vertex_array_bgra> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexArrayBGRA (
+  -- * Extension Support
+  glGetARBVertexArrayBGRA,
+  gl_ARB_vertex_array_bgra,
   -- * Enums
   gl_BGRA
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

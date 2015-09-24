@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shader_objects.txt ARB_shader_objects> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects (
+  -- * Extension Support
+  glGetARBShaderObjects,
+  gl_ARB_shader_objects,
   -- * Enums
   gl_BOOL_ARB,
   gl_BOOL_VEC2_ARB,
@@ -90,5 +91,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShaderObjects (
   glValidateProgramARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

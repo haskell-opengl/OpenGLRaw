@@ -8,16 +8,18 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/half_float_vertex.txt ARB_half_float_vertex> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.HalfFloatVertex (
+  -- * Extension Support
+  glGetARBHalfFloatVertex,
+  gl_ARB_half_float_vertex,
   -- * Types
   GLhalf,
   -- * Enums
   gl_HALF_FLOAT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Types
 import Graphics.Rendering.OpenGL.Raw.Tokens

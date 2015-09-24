@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/transform_feedback2.txt ARB_transform_feedback2> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback2 (
+  -- * Extension Support
+  glGetARBTransformFeedback2,
+  gl_ARB_transform_feedback2,
   -- * Enums
   gl_TRANSFORM_FEEDBACK,
   gl_TRANSFORM_FEEDBACK_BINDING,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback2 (
   glResumeTransformFeedback
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

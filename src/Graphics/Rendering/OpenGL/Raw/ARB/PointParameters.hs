@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/point_parameters.txt ARB_point_parameters> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.PointParameters (
+  -- * Extension Support
+  glGetARBPointParameters,
+  gl_ARB_point_parameters,
   -- * Enums
   gl_POINT_DISTANCE_ATTENUATION_ARB,
   gl_POINT_FADE_THRESHOLD_SIZE_ARB,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.PointParameters (
   glPointParameterfvARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

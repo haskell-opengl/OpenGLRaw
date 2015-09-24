@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/sharpen_texture.txt SGIS_sharpen_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.SharpenTexture (
+  -- * Extension Support
+  glGetSGISSharpenTexture,
+  gl_SGIS_sharpen_texture,
   -- * Enums
   gl_LINEAR_SHARPEN_ALPHA_SGIS,
   gl_LINEAR_SHARPEN_COLOR_SGIS,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.SharpenTexture (
   glSharpenTexFuncSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/3DFX/tbuffer.txt 3DFX_tbuffer> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ThreeDFX.Tbuffer (
+  -- * Extension Support
+  glGetThreeDFXTbuffer,
+  gl_3DFX_tbuffer,
   -- * Functions
   glTbufferMask3DFX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

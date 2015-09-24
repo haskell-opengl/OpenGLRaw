@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_env_combine.txt ARB_texture_env_combine> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine (
+  -- * Extension Support
+  glGetARBTextureEnvCombine,
+  gl_ARB_texture_env_combine,
   -- * Enums
   gl_ADD_SIGNED_ARB,
   gl_COMBINE_ALPHA_ARB,
@@ -38,4 +39,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureEnvCombine (
   gl_SUBTRACT_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

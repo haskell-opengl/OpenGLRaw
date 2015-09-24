@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_type_2_10_10_10_rev.txt ARB_vertex_type_2_10_10_10_rev> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010RevCompatibility (
+  -- * Extension Support
+  glGetARBVertexType2101010Rev,
+  gl_ARB_vertex_type_2_10_10_10_rev,
   -- * Enums
   gl_INT_2_10_10_10_REV,
   gl_UNSIGNED_INT_2_10_10_10_REV,
@@ -57,5 +58,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexType2101010RevCompatibility (
   glVertexP4uiv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

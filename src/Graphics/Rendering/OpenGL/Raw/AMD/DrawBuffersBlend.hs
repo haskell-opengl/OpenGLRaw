@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/draw_buffers_blend.txt AMD_draw_buffers_blend> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.DrawBuffersBlend (
+  -- * Extension Support
+  glGetAMDDrawBuffersBlend,
+  gl_AMD_draw_buffers_blend,
   -- * Functions
   glBlendEquationIndexedAMD,
   glBlendEquationSeparateIndexedAMD,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.AMD.DrawBuffersBlend (
   glBlendFuncSeparateIndexedAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

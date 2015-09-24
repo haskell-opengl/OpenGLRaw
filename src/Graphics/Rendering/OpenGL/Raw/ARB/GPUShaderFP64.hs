@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/gpu_shader_fp64.txt ARB_gpu_shader_fp64> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderFP64 (
+  -- * Extension Support
+  glGetARBGPUShaderFP64,
+  gl_ARB_gpu_shader_fp64,
   -- * Enums
   gl_DOUBLE,
   gl_DOUBLE_MAT2,
@@ -48,5 +49,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderFP64 (
   glUniformMatrix4x3dv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

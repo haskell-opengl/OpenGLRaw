@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/pixel_tiles.txt SGIX_pixel_tiles> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.PixelTiles (
+  -- * Extension Support
+  glGetSGIXPixelTiles,
+  gl_SGIX_pixel_tiles,
   -- * Enums
   gl_PIXEL_TILE_BEST_ALIGNMENT_SGIX,
   gl_PIXEL_TILE_CACHE_INCREMENT_SGIX,
@@ -24,4 +25,5 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.PixelTiles (
   gl_PIXEL_TILE_WIDTH_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

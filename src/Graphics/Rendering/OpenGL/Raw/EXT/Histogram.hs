@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/histogram.txt EXT_histogram> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Histogram (
+  -- * Extension Support
+  glGetEXTHistogram,
+  gl_EXT_histogram,
   -- * Enums
   gl_HISTOGRAM_ALPHA_SIZE_EXT,
   gl_HISTOGRAM_BLUE_SIZE_EXT,
@@ -41,5 +42,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Histogram (
   glResetMinmaxEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

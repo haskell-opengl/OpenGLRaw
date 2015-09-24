@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/internalformat_sample_query.txt NV_internalformat_sample_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.InternalformatSampleQuery (
+  -- * Extension Support
+  glGetNVInternalformatSampleQuery,
+  gl_NV_internalformat_sample_query,
   -- * Enums
   gl_CONFORMANT_NV,
   gl_MULTISAMPLES_NV,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.InternalformatSampleQuery (
   glGetInternalformatSampleivNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

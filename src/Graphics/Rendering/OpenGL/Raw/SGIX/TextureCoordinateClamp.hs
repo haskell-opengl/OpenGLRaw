@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/texture_coordinate_clamp.txt SGIX_texture_coordinate_clamp> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.TextureCoordinateClamp (
+  -- * Extension Support
+  glGetSGIXTextureCoordinateClamp,
+  gl_SGIX_texture_coordinate_clamp,
   -- * Enums
   gl_TEXTURE_MAX_CLAMP_R_SGIX,
   gl_TEXTURE_MAX_CLAMP_S_SGIX,
   gl_TEXTURE_MAX_CLAMP_T_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

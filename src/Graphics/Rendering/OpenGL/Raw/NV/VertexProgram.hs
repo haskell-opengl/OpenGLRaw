@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/vertex_program.txt NV_vertex_program> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram (
+  -- * Extension Support
+  glGetNVVertexProgram,
+  gl_NV_vertex_program,
   -- * Enums
   gl_ATTRIB_ARRAY_POINTER_NV,
   gl_ATTRIB_ARRAY_SIZE_NV,
@@ -164,5 +165,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.VertexProgram (
   glVertexAttribs4ubvNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

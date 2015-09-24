@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/draw_buffers.txt ATI_draw_buffers> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.DrawBuffers (
+  -- * Extension Support
+  glGetATIDrawBuffers,
+  gl_ATI_draw_buffers,
   -- * Enums
   gl_DRAW_BUFFER0_ATI,
   gl_DRAW_BUFFER10_ATI,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.ATI.DrawBuffers (
   glDrawBuffersATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

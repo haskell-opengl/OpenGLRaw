@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/depth_clamp.txt ARB_depth_clamp> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DepthClamp (
+  -- * Extension Support
+  glGetARBDepthClamp,
+  gl_ARB_depth_clamp,
   -- * Enums
   gl_DEPTH_CLAMP
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

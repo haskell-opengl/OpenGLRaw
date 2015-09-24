@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_shared_exponent.txt EXT_texture_shared_exponent> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureSharedExponent (
+  -- * Extension Support
+  glGetEXTTextureSharedExponent,
+  gl_EXT_texture_shared_exponent,
   -- * Enums
   gl_RGB9_E5_EXT,
   gl_TEXTURE_SHARED_SIZE_EXT,
   gl_UNSIGNED_INT_5_9_9_9_REV_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/separate_shader_objects.txt EXT_separate_shader_objects> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.SeparateShaderObjects (
+  -- * Extension Support
+  glGetEXTSeparateShaderObjects,
+  gl_EXT_separate_shader_objects,
   -- * Enums
   gl_ACTIVE_PROGRAM_EXT,
   -- * Functions
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.SeparateShaderObjects (
   glUseShaderProgramEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

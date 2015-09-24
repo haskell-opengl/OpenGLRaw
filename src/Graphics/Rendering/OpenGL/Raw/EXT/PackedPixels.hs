@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/packed_pixels.txt EXT_packed_pixels> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels (
+  -- * Extension Support
+  glGetEXTPackedPixels,
+  gl_EXT_packed_pixels,
   -- * Enums
   gl_UNSIGNED_BYTE_3_3_2_EXT,
   gl_UNSIGNED_INT_10_10_10_2_EXT,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.EXT.PackedPixels (
   gl_UNSIGNED_SHORT_5_5_5_1_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/bgra.txt EXT_bgra> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BGRA (
+  -- * Extension Support
+  glGetEXTBGRA,
+  gl_EXT_bgra,
   -- * Enums
   gl_BGRA_EXT,
   gl_BGR_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

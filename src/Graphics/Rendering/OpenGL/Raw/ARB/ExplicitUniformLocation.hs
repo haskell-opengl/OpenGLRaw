@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/explicit_uniform_location.txt ARB_explicit_uniform_location> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ExplicitUniformLocation (
+  -- * Extension Support
+  glGetARBExplicitUniformLocation,
+  gl_ARB_explicit_uniform_location,
   -- * Enums
   gl_MAX_UNIFORM_LOCATIONS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

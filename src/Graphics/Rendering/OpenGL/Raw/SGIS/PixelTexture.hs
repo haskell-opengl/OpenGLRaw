@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/pixel_texture.txt SGIS_pixel_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.PixelTexture (
+  -- * Extension Support
+  glGetSGISPixelTexture,
+  gl_SGIS_pixel_texture,
   -- * Enums
   gl_PIXEL_FRAGMENT_ALPHA_SOURCE_SGIS,
   gl_PIXEL_FRAGMENT_RGB_SOURCE_SGIS,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIS.PixelTexture (
   glPixelTexGenParameterivSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

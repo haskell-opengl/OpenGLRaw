@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/IBM/static_data.txt IBM_static_data> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.IBM.StaticData (
+  -- * Extension Support
+  glGetIBMStaticData,
+  gl_IBM_static_data,
   -- * Enums
   gl_ALL_STATIC_DATA_IBM,
   gl_STATIC_VERTEX_ARRAY_IBM,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.IBM.StaticData (
   glFlushStaticDataIBM
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

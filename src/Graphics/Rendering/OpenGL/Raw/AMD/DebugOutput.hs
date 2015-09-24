@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/debug_output.txt AMD_debug_output> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.DebugOutput (
+  -- * Extension Support
+  glGetAMDDebugOutput,
+  gl_AMD_debug_output,
   -- * Enums
   gl_DEBUG_CATEGORY_API_ERROR_AMD,
   gl_DEBUG_CATEGORY_APPLICATION_AMD,
@@ -35,5 +36,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.DebugOutput (
   glGetDebugMessageLogAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

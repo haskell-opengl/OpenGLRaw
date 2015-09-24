@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_program.txt ARB_vertex_program> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram (
+  -- * Extension Support
+  glGetARBVertexProgram,
+  gl_ARB_vertex_program,
   -- * Enums
   gl_COLOR_SUM_ARB,
   gl_CURRENT_MATRIX_ARB,
@@ -158,5 +159,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexProgram (
   glVertexAttribPointerARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

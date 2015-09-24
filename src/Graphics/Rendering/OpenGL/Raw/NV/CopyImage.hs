@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/copy_image.txt NV_copy_image> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.CopyImage (
+  -- * Extension Support
+  glGetNVCopyImage,
+  gl_NV_copy_image,
   -- * Functions
   glCopyImageSubDataNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

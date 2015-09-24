@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/APPLE/vertex_array_object.txt APPLE_vertex_array_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.APPLE.VertexArrayObject (
+  -- * Extension Support
+  glGetAPPLEVertexArrayObject,
+  gl_APPLE_vertex_array_object,
   -- * Enums
   gl_VERTEX_ARRAY_BINDING_APPLE,
   -- * Functions
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.APPLE.VertexArrayObject (
   glIsVertexArrayAPPLE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

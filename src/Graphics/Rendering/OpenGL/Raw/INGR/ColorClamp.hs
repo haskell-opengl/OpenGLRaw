@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/INGR/color_clamp.txt INGR_color_clamp> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.INGR.ColorClamp (
+  -- * Extension Support
+  glGetINGRColorClamp,
+  gl_INGR_color_clamp,
   -- * Enums
   gl_ALPHA_MAX_CLAMP_INGR,
   gl_ALPHA_MIN_CLAMP_INGR,
@@ -24,4 +25,5 @@ module Graphics.Rendering.OpenGL.Raw.INGR.ColorClamp (
   gl_RED_MIN_CLAMP_INGR
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

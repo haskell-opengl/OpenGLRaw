@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/query_buffer_object.txt ARB_query_buffer_object> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject (
+  -- * Extension Support
+  glGetARBQueryBufferObject,
+  gl_ARB_query_buffer_object,
   -- * Enums
   gl_QUERY_BUFFER,
   gl_QUERY_BUFFER_BARRIER_BIT,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.QueryBufferObject (
   gl_QUERY_RESULT_NO_WAIT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

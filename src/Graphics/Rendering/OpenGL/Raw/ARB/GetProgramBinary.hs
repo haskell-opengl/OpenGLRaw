@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/get_program_binary.txt ARB_get_program_binary> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary (
+  -- * Extension Support
+  glGetARBGetProgramBinary,
+  gl_ARB_get_program_binary,
   -- * Enums
   gl_NUM_PROGRAM_BINARY_FORMATS,
   gl_PROGRAM_BINARY_FORMATS,
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GetProgramBinary (
   glProgramParameteri
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

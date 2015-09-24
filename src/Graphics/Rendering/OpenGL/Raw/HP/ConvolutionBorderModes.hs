@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/HP/convolution_border_modes.txt HP_convolution_border_modes> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.HP.ConvolutionBorderModes (
+  -- * Extension Support
+  glGetHPConvolutionBorderModes,
+  gl_HP_convolution_border_modes,
   -- * Enums
   gl_CONSTANT_BORDER_HP,
   gl_CONVOLUTION_BORDER_COLOR_HP,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.HP.ConvolutionBorderModes (
   gl_REPLICATE_BORDER_HP
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

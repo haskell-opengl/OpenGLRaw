@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/separate_shader_objects.txt ARB_separate_shader_objects> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects (
+  -- * Extension Support
+  glGetARBSeparateShaderObjects,
+  gl_ARB_separate_shader_objects,
   -- * Enums
   gl_ACTIVE_PROGRAM,
   gl_ALL_SHADER_BITS,
@@ -86,5 +87,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SeparateShaderObjects (
   glValidateProgramPipeline
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

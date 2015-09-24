@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/path_rendering_shared_edge.txt NV_path_rendering_shared_edge> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.PathRenderingSharedEdge (
+  -- * Extension Support
+  glGetNVPathRenderingSharedEdge,
+  gl_NV_path_rendering_shared_edge,
   -- * Enums
   gl_SHARED_EDGE_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

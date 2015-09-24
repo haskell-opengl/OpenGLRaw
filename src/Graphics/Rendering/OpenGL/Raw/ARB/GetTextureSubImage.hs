@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/get_texture_sub_image.txt ARB_get_texture_sub_image> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GetTextureSubImage (
+  -- * Extension Support
+  glGetARBGetTextureSubImage,
+  gl_ARB_get_texture_sub_image,
   -- * Functions
   glGetCompressedTextureSubImage,
   glGetTextureSubImage
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

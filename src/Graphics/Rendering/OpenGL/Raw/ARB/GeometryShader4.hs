@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/geometry_shader4.txt ARB_geometry_shader4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4 (
+  -- * Extension Support
+  glGetARBGeometryShader4,
+  gl_ARB_geometry_shader4,
   -- * Enums
   gl_FRAMEBUFFER_ATTACHMENT_LAYERED_ARB,
   gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER,
@@ -41,5 +42,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GeometryShader4 (
   glProgramParameteriARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

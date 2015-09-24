@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/wgl_multisample.txt EXT_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
+  -- * Extension Support
+  glGetEXTMultisample,
+  gl_EXT_multisample,
   -- * Enums
   gl_1PASS_EXT,
   gl_2PASS_0_EXT,
@@ -36,5 +37,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Multisample (
   glSamplePatternEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

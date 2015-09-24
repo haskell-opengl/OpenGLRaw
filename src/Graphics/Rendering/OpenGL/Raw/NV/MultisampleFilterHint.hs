@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/multisample_filter_hint.txt NV_multisample_filter_hint> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.MultisampleFilterHint (
+  -- * Extension Support
+  glGetNVMultisampleFilterHint,
+  gl_NV_multisample_filter_hint,
   -- * Enums
   gl_MULTISAMPLE_FILTER_HINT_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

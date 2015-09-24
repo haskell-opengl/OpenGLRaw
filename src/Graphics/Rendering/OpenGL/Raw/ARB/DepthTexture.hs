@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/depth_texture.txt ARB_depth_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DepthTexture (
+  -- * Extension Support
+  glGetARBDepthTexture,
+  gl_ARB_depth_texture,
   -- * Enums
   gl_DEPTH_COMPONENT16_ARB,
   gl_DEPTH_COMPONENT24_ARB,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DepthTexture (
   gl_TEXTURE_DEPTH_SIZE_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

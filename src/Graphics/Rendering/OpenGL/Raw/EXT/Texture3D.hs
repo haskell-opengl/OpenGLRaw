@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture3D.txt EXT_texture3D> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.Texture3D (
+  -- * Extension Support
+  glGetEXTTexture3D,
+  gl_EXT_texture3D,
   -- * Enums
   gl_MAX_3D_TEXTURE_SIZE_EXT,
   gl_PACK_IMAGE_HEIGHT_EXT,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.Texture3D (
   glTexSubImage3DEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

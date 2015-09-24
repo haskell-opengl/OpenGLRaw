@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/shader_atomic_counters.txt ARB_shader_atomic_counters> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters (
+  -- * Extension Support
+  glGetARBShaderAtomicCounters,
+  gl_ARB_shader_atomic_counters,
   -- * Enums
   gl_ACTIVE_ATOMIC_COUNTER_BUFFERS,
   gl_ATOMIC_COUNTER_BUFFER,
@@ -47,5 +48,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ShaderAtomicCounters (
   glGetActiveAtomicCounterBufferiv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

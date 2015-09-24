@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/gpu_shader5.txt NV_gpu_shader5> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.GPUShader5 (
+  -- * Extension Support
+  glGetNVGPUShader5,
+  gl_NV_gpu_shader5,
   -- * Enums
   gl_FLOAT16_NV,
   gl_FLOAT16_VEC2_NV,
@@ -79,5 +80,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.GPUShader5 (
   glUniform4ui64vNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

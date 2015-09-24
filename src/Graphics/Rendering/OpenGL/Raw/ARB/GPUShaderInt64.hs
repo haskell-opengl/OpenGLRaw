@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/gpu_shader_int64.txt ARB_gpu_shader_int64> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderInt64 (
+  -- * Extension Support
+  glGetARBGPUShaderInt64,
+  gl_ARB_gpu_shader_int64,
   -- * Enums
   gl_INT64_ARB,
   gl_INT64_VEC2_ARB,
@@ -61,5 +62,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.GPUShaderInt64 (
   glUniform4ui64vARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/provoking_vertex.txt ARB_provoking_vertex> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex (
+  -- * Extension Support
+  glGetARBProvokingVertex,
+  gl_ARB_provoking_vertex,
   -- * Enums
   gl_FIRST_VERTEX_CONVENTION,
   gl_LAST_VERTEX_CONVENTION,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ProvokingVertex (
   glProvokingVertex
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

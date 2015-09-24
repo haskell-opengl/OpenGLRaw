@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_mirror_clamp_to_edge.txt ARB_texture_mirror_clamp_to_edge> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureMirrorClampToEdge (
+  -- * Extension Support
+  glGetARBTextureMirrorClampToEdge,
+  gl_ARB_texture_mirror_clamp_to_edge,
   -- * Enums
   gl_MIRROR_CLAMP_TO_EDGE
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/fog_coord.txt EXT_fog_coord> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.FogCoord (
+  -- * Extension Support
+  glGetEXTFogCoord,
+  gl_EXT_fog_coord,
   -- * Enums
   gl_CURRENT_FOG_COORDINATE_EXT,
   gl_FOG_COORDINATE_ARRAY_EXT,
@@ -30,5 +31,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.FogCoord (
   glFogCoordfvEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

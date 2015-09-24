@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/framebuffer_multisample_coverage.txt NV_framebuffer_multisample_coverage> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage (
+  -- * Extension Support
+  glGetNVFramebufferMultisampleCoverage,
+  gl_NV_framebuffer_multisample_coverage,
   -- * Enums
   gl_MAX_MULTISAMPLE_COVERAGE_MODES_NV,
   gl_MULTISAMPLE_COVERAGE_MODES_NV,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.FramebufferMultisampleCoverage (
   glRenderbufferStorageMultisampleCoverageNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

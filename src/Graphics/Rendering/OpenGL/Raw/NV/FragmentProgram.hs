@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/fragment_program.txt NV_fragment_program> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram (
+  -- * Extension Support
+  glGetNVFragmentProgram,
+  gl_NV_fragment_program,
   -- * Enums
   gl_FRAGMENT_PROGRAM_BINDING_NV,
   gl_FRAGMENT_PROGRAM_NV,
@@ -29,5 +30,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.FragmentProgram (
   glProgramNamedParameter4fvNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

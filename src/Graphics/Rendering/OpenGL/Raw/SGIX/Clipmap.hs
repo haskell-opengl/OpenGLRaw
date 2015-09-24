@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/clipmap.txt SGIX_clipmap> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.Clipmap (
+  -- * Extension Support
+  glGetSGIXClipmap,
+  gl_SGIX_clipmap,
   -- * Enums
   gl_LINEAR_CLIPMAP_LINEAR_SGIX,
   gl_LINEAR_CLIPMAP_NEAREST_SGIX,
@@ -28,4 +29,5 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.Clipmap (
   gl_TEXTURE_CLIPMAP_VIRTUAL_DEPTH_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

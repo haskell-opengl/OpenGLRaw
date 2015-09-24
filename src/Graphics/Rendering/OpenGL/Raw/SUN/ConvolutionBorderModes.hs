@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SUN/convolution_border_modes.txt SUN_convolution_border_modes> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SUN.ConvolutionBorderModes (
+  -- * Extension Support
+  glGetSUNConvolutionBorderModes,
+  gl_SUN_convolution_border_modes,
   -- * Enums
   gl_WRAP_BORDER_SUN
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

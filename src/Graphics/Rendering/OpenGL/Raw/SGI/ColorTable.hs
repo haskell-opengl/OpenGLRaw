@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGI/color_table.txt SGI_color_table> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGI.ColorTable (
+  -- * Extension Support
+  glGetSGIColorTable,
+  gl_SGI_color_table,
   -- * Enums
   gl_COLOR_TABLE_ALPHA_SIZE_SGI,
   gl_COLOR_TABLE_BIAS_SGI,
@@ -40,5 +41,6 @@ module Graphics.Rendering.OpenGL.Raw.SGI.ColorTable (
   glGetColorTableSGI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_float.txt ARB_texture_float> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat (
+  -- * Extension Support
+  glGetARBTextureFloat,
+  gl_ARB_texture_float,
   -- * Enums
   gl_ALPHA16F_ARB,
   gl_ALPHA32F_ARB,
@@ -36,4 +37,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureFloat (
   gl_UNSIGNED_NORMALIZED_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

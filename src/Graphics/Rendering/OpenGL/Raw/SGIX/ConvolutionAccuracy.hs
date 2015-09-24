@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/convolution_accuracy.txt SGIX_convolution_accuracy> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.ConvolutionAccuracy (
+  -- * Extension Support
+  glGetSGIXConvolutionAccuracy,
+  gl_SGIX_convolution_accuracy,
   -- * Enums
   gl_CONVOLUTION_HINT_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

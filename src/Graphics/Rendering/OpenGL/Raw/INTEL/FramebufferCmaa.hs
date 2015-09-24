@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/INTEL/framebuffer_CMAA.txt INTEL_framebuffer_CMAA> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.INTEL.FramebufferCmaa (
+  -- * Extension Support
+  glGetINTELFramebufferCmaa,
+  gl_INTEL_framebuffer_CMAA,
   -- * Functions
   glApplyFramebufferAttachmentCMAAINTEL
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

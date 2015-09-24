@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_swizzle.txt ARB_texture_swizzle> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle (
+  -- * Extension Support
+  glGetARBTextureSwizzle,
+  gl_ARB_texture_swizzle,
   -- * Enums
   gl_TEXTURE_SWIZZLE_A,
   gl_TEXTURE_SWIZZLE_B,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureSwizzle (
   gl_TEXTURE_SWIZZLE_RGBA
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

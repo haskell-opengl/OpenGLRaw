@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/texture_env_combine4.txt NV_texture_env_combine4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.TextureEnvCombine4 (
+  -- * Extension Support
+  glGetNVTextureEnvCombine4,
+  gl_NV_texture_env_combine4,
   -- * Enums
   gl_COMBINE4_NV,
   gl_OPERAND3_ALPHA_NV,
@@ -21,4 +22,5 @@ module Graphics.Rendering.OpenGL.Raw.NV.TextureEnvCombine4 (
   gl_SOURCE3_RGB_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

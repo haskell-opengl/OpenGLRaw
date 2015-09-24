@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/register_combiners2.txt NV_register_combiners2> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2 (
+  -- * Extension Support
+  glGetNVRegisterCombiners2,
+  gl_NV_register_combiners2,
   -- * Enums
   gl_PER_STAGE_CONSTANTS_NV,
   -- * Functions
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.RegisterCombiners2 (
   glGetCombinerStageParameterfvNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

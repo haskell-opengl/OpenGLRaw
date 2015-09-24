@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/vertex_buffer_unified_memory.txt NV_vertex_buffer_unified_memory> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VertexBufferUnifiedMemory (
+  -- * Extension Support
+  glGetNVVertexBufferUnifiedMemory,
+  gl_NV_vertex_buffer_unified_memory,
   -- * Enums
   gl_COLOR_ARRAY_ADDRESS_NV,
   gl_COLOR_ARRAY_LENGTH_NV,
@@ -54,5 +55,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.VertexBufferUnifiedMemory (
   glVertexFormatNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

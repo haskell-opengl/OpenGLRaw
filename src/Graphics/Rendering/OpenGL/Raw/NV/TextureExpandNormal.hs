@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/texture_expand_normal.txt NV_texture_expand_normal> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.TextureExpandNormal (
+  -- * Extension Support
+  glGetNVTextureExpandNormal,
+  gl_NV_texture_expand_normal,
   -- * Enums
   gl_TEXTURE_UNSIGNED_REMAP_MODE_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

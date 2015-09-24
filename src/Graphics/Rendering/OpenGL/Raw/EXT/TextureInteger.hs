@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_integer.txt EXT_texture_integer> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger (
+  -- * Extension Support
+  glGetEXTTextureInteger,
+  gl_EXT_texture_integer,
   -- * Enums
   gl_ALPHA16I_EXT,
   gl_ALPHA16UI_EXT,
@@ -70,5 +71,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureInteger (
   glTexParameterIuivEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

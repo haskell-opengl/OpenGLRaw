@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/PGI/vertex_hints.txt PGI_vertex_hints> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.PGI.VertexHints (
+  -- * Extension Support
+  glGetPGIVertexHints,
+  gl_PGI_vertex_hints,
   -- * Enums
   gl_COLOR3_BIT_PGI,
   gl_COLOR4_BIT_PGI,
@@ -38,4 +39,5 @@ module Graphics.Rendering.OpenGL.Raw.PGI.VertexHints (
   gl_VERTEX_DATA_HINT_PGI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

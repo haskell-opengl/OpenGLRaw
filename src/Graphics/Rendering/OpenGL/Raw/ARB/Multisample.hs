@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/multisample.txt ARB_multisample> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.Multisample (
+  -- * Extension Support
+  glGetARBMultisample,
+  gl_ARB_multisample,
   -- * Enums
   gl_MULTISAMPLE_ARB,
   gl_MULTISAMPLE_BIT_ARB,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.Multisample (
   glSampleCoverageARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

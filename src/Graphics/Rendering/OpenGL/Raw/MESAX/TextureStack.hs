@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/MESAX/texture_stack.txt MESAX_texture_stack> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.MESAX.TextureStack (
+  -- * Extension Support
+  glGetMESAXTextureStack,
+  gl_MESAX_texture_stack,
   -- * Enums
   gl_PROXY_TEXTURE_1D_STACK_MESAX,
   gl_PROXY_TEXTURE_2D_STACK_MESAX,
@@ -22,4 +23,5 @@ module Graphics.Rendering.OpenGL.Raw.MESAX.TextureStack (
   gl_TEXTURE_2D_STACK_MESAX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

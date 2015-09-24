@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/point_sprite.txt NV_point_sprite> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.PointSprite (
+  -- * Extension Support
+  glGetNVPointSprite,
+  gl_NV_point_sprite,
   -- * Enums
   gl_COORD_REPLACE_NV,
   gl_POINT_SPRITE_NV,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.PointSprite (
   glPointParameterivNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

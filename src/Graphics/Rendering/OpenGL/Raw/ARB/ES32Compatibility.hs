@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/ES3_2_compatibility.txt ARB_ES3_2_compatibility> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ES32Compatibility (
+  -- * Extension Support
+  glGetARBES32Compatibility,
+  gl_ARB_ES3_2_compatibility,
   -- * Enums
   gl_MULTISAMPLE_LINE_WIDTH_GRANULARITY_ARB,
   gl_MULTISAMPLE_LINE_WIDTH_RANGE_ARB,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ES32Compatibility (
   glPrimitiveBoundingBoxARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

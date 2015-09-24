@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/sprite.txt SGIX_sprite> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.Sprite (
+  -- * Extension Support
+  glGetSGIXSprite,
+  gl_SGIX_sprite,
   -- * Enums
   gl_SPRITE_AXIAL_SGIX,
   gl_SPRITE_AXIS_SGIX,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.Sprite (
   glSpriteParameterivSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/INTEL/map_texture.txt INTEL_map_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.INTEL.MapTexture (
+  -- * Extension Support
+  glGetINTELMapTexture,
+  gl_INTEL_map_texture,
   -- * Enums
   gl_LAYOUT_DEFAULT_INTEL,
   gl_LAYOUT_LINEAR_CPU_CACHED_INTEL,
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.INTEL.MapTexture (
   glUnmapTexture2DINTEL
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

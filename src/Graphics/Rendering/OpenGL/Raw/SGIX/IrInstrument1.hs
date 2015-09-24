@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/ir_instrument1.txt SGIX_ir_instrument1> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.IrInstrument1 (
+  -- * Extension Support
+  glGetSGIXIrInstrument1,
+  gl_SGIX_ir_instrument1,
   -- * Enums
   gl_IR_INSTRUMENT1_SGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

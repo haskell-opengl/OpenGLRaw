@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/draw_instanced.txt EXT_draw_instanced> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DrawInstanced (
+  -- * Extension Support
+  glGetEXTDrawInstanced,
+  gl_EXT_draw_instanced,
   -- * Functions
   glDrawArraysInstancedEXT,
   glDrawElementsInstancedEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/sample_shading.txt ARB_sample_shading> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading (
+  -- * Extension Support
+  glGetARBSampleShading,
+  gl_ARB_sample_shading,
   -- * Enums
   gl_MIN_SAMPLE_SHADING_VALUE_ARB,
   gl_SAMPLE_SHADING_ARB,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.SampleShading (
   glMinSampleShadingARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

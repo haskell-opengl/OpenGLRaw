@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/depth_bounds_test.txt EXT_depth_bounds_test> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest (
+  -- * Extension Support
+  glGetEXTDepthBoundsTest,
+  gl_EXT_depth_bounds_test,
   -- * Enums
   gl_DEPTH_BOUNDS_EXT,
   gl_DEPTH_BOUNDS_TEST_EXT,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DepthBoundsTest (
   glDepthBoundsEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

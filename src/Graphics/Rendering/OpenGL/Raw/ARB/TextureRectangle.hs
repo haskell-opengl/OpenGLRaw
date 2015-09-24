@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_rectangle.txt ARB_texture_rectangle> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle (
+  -- * Extension Support
+  glGetARBTextureRectangle,
+  gl_ARB_texture_rectangle,
   -- * Enums
   gl_MAX_RECTANGLE_TEXTURE_SIZE_ARB,
   gl_PROXY_TEXTURE_RECTANGLE_ARB,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureRectangle (
   gl_TEXTURE_RECTANGLE_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

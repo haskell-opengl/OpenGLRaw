@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/conditional_render.txt NV_conditional_render> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender (
+  -- * Extension Support
+  glGetNVConditionalRender,
+  gl_NV_conditional_render,
   -- * Enums
   gl_QUERY_BY_REGION_NO_WAIT_NV,
   gl_QUERY_BY_REGION_WAIT_NV,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.ConditionalRender (
   glEndConditionalRenderNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

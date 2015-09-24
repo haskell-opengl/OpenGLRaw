@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/MESA/ycbcr_texture.txt MESA_ycbcr_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.MESA.YCbCrTexture (
+  -- * Extension Support
+  glGetMESAYCbCrTexture,
+  gl_MESA_ycbcr_texture,
   -- * Enums
   gl_UNSIGNED_SHORT_8_8_MESA,
   gl_UNSIGNED_SHORT_8_8_REV_MESA,
   gl_YCBCR_MESA
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

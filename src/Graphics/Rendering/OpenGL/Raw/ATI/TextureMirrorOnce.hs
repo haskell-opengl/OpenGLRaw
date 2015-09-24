@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/texture_mirror_once.txt ATI_texture_mirror_once> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.TextureMirrorOnce (
+  -- * Extension Support
+  glGetATITextureMirrorOnce,
+  gl_ATI_texture_mirror_once,
   -- * Enums
   gl_MIRROR_CLAMP_ATI,
   gl_MIRROR_CLAMP_TO_EDGE_ATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

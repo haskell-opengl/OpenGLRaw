@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/blend_color.txt EXT_blend_color> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BlendColor (
+  -- * Extension Support
+  glGetEXTBlendColor,
+  gl_EXT_blend_color,
   -- * Enums
   gl_BLEND_COLOR_EXT,
   gl_CONSTANT_ALPHA_EXT,
@@ -23,5 +24,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.BlendColor (
   glBlendColorEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

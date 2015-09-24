@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/draw_elements_base_vertex.txt ARB_draw_elements_base_vertex> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex (
+  -- * Extension Support
+  glGetARBDrawElementsBaseVertex,
+  gl_ARB_draw_elements_base_vertex,
   -- * Functions
   glDrawElementsBaseVertex,
   glDrawElementsInstancedBaseVertex,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.DrawElementsBaseVertex (
   glMultiDrawElementsBaseVertex
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

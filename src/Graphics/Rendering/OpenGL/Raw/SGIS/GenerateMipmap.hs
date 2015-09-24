@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/generate_mipmap.txt SGIS_generate_mipmap> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.GenerateMipmap (
+  -- * Extension Support
+  glGetSGISGenerateMipmap,
+  gl_SGIS_generate_mipmap,
   -- * Enums
   gl_GENERATE_MIPMAP_HINT_SGIS,
   gl_GENERATE_MIPMAP_SGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

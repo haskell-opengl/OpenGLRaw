@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/compute_program5.txt NV_compute_program5> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ComputeProgram5 (
+  -- * Extension Support
+  glGetNVComputeProgram5,
+  gl_NV_compute_program5,
   -- * Enums
   gl_COMPUTE_PROGRAM_NV,
   gl_COMPUTE_PROGRAM_PARAMETER_BUFFER_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/3DFX/texture_compression_FXT1.txt 3DFX_texture_compression_FXT1> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ThreeDFX.TextureCompressionFXT1 (
+  -- * Extension Support
+  glGetThreeDFXTextureCompressionFXT1,
+  gl_3DFX_texture_compression_FXT1,
   -- * Enums
   gl_COMPRESSED_RGBA_FXT1_3DFX,
   gl_COMPRESSED_RGB_FXT1_3DFX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

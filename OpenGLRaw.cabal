@@ -596,6 +596,7 @@ library
     Graphics.Rendering.OpenGL.Raw.WIN.PhongShading
     Graphics.Rendering.OpenGL.Raw.WIN.SpecularFog
   other-modules:
+    Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
     Graphics.Rendering.OpenGL.Raw.Foreign
   c-sources:
     cbits/HsOpenGLRaw.c

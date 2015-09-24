@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/INTEL/performance_query.txt INTEL_performance_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.INTEL.PerformanceQuery (
+  -- * Extension Support
+  glGetINTELPerformanceQuery,
+  gl_INTEL_performance_query,
   -- * Enums
   gl_PERFQUERY_COUNTER_DATA_BOOL32_INTEL,
   gl_PERFQUERY_COUNTER_DATA_DOUBLE_INTEL,
@@ -47,5 +48,6 @@ module Graphics.Rendering.OpenGL.Raw.INTEL.PerformanceQuery (
   glGetPerfQueryInfoINTEL
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

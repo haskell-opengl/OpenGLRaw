@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/vertex_attrib_binding.txt ARB_vertex_attrib_binding> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttribBinding (
+  -- * Extension Support
+  glGetARBVertexAttribBinding,
+  gl_ARB_vertex_attrib_binding,
   -- * Enums
   gl_MAX_VERTEX_ATTRIB_BINDINGS,
   gl_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET,
@@ -30,5 +31,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.VertexAttribBinding (
   glVertexBindingDivisor
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/HP/image_transform.txt HP_image_transform> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.HP.ImageTransform (
+  -- * Extension Support
+  glGetHPImageTransform,
+  gl_HP_image_transform,
   -- * Enums
   gl_AVERAGE_HP,
   gl_CUBIC_HP,
@@ -38,5 +39,6 @@ module Graphics.Rendering.OpenGL.Raw.HP.ImageTransform (
   glImageTransformParameterivHP
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

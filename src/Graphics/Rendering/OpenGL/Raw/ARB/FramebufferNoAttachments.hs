@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/framebuffer_no_attachments.txt ARB_framebuffer_no_attachments> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments (
+  -- * Extension Support
+  glGetARBFramebufferNoAttachments,
+  gl_ARB_framebuffer_no_attachments,
   -- * Enums
   gl_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
   gl_FRAMEBUFFER_DEFAULT_HEIGHT,
@@ -28,5 +29,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.FramebufferNoAttachments (
   glGetFramebufferParameteriv
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

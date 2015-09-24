@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/polynomial_ffd.txt SGIX_polynomial_ffd> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.PolynomialFFD (
+  -- * Extension Support
+  glGetSGIXPolynomialFFD,
+  gl_SGIX_polynomial_ffd,
   -- * Enums
   gl_DEFORMATIONS_MASK_SGIX,
   gl_GEOMETRY_DEFORMATION_BIT_SGIX,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.PolynomialFFD (
   glLoadIdentityDeformationMapSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

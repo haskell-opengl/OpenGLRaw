@@ -8,16 +8,18 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIS/texture_color_mask.txt SGIS_texture_color_mask> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIS.TextureColorMask (
+  -- * Extension Support
+  glGetSGISTextureColorMask,
+  gl_SGIS_texture_color_mask,
   -- * Enums
   gl_TEXTURE_COLOR_WRITEMASK_SGIS,
   -- * Functions
   glTextureColorMaskSGIS
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

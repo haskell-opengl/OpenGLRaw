@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/draw_range_elements.txt EXT_draw_range_elements> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements (
+  -- * Extension Support
+  glGetEXTDrawRangeElements,
+  gl_EXT_draw_range_elements,
   -- * Enums
   gl_MAX_ELEMENTS_INDICES_EXT,
   gl_MAX_ELEMENTS_VERTICES_EXT,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DrawRangeElements (
   glDrawRangeElementsEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

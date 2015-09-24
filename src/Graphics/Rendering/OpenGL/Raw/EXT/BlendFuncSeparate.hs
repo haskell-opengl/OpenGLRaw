@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/blend_func_separate.txt EXT_blend_func_separate> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate (
+  -- * Extension Support
+  glGetEXTBlendFuncSeparate,
+  gl_EXT_blend_func_separate,
   -- * Enums
   gl_BLEND_DST_ALPHA_EXT,
   gl_BLEND_DST_RGB_EXT,
@@ -22,5 +23,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.BlendFuncSeparate (
   glBlendFuncSeparateEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

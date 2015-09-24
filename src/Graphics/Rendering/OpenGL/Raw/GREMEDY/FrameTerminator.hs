@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/GREMEDY/frame_terminator.txt GREMEDY_frame_terminator> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.GREMEDY.FrameTerminator (
+  -- * Extension Support
+  glGetGREMEDYFrameTerminator,
+  gl_GREMEDY_frame_terminator,
   -- * Functions
   glFrameTerminatorGREMEDY
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

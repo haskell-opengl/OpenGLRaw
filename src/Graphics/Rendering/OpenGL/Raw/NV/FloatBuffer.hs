@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/float_buffer.txt NV_float_buffer> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FloatBuffer (
+  -- * Extension Support
+  glGetNVFloatBuffer,
+  gl_NV_float_buffer,
   -- * Enums
   gl_FLOAT_CLEAR_COLOR_VALUE_NV,
   gl_FLOAT_R16_NV,
@@ -31,4 +32,5 @@ module Graphics.Rendering.OpenGL.Raw.NV.FloatBuffer (
   gl_TEXTURE_FLOAT_COMPONENTS_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

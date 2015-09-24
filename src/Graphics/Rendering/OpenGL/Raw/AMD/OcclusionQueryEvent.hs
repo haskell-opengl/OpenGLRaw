@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/occlusion_query_event.txt AMD_occlusion_query_event> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.OcclusionQueryEvent (
+  -- * Extension Support
+  glGetAMDOcclusionQueryEvent,
+  gl_AMD_occlusion_query_event,
   -- * Enums
   gl_OCCLUSION_QUERY_EVENT_MASK_AMD,
   gl_QUERY_ALL_EVENT_BITS_AMD,
@@ -24,5 +25,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.OcclusionQueryEvent (
   glQueryObjectParameteruiAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/AMD/name_gen_delete.txt AMD_name_gen_delete> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.AMD.NameGenDelete (
+  -- * Extension Support
+  glGetAMDNameGenDelete,
+  gl_AMD_name_gen_delete,
   -- * Enums
   gl_DATA_BUFFER_AMD,
   gl_PERFORMANCE_MONITOR_AMD,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.AMD.NameGenDelete (
   glIsNameAMD
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

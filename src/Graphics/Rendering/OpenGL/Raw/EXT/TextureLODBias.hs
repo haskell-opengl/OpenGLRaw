@@ -8,15 +8,17 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_lod_bias.txt EXT_texture_lod_bias> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureLODBias (
+  -- * Extension Support
+  glGetEXTTextureLODBias,
+  gl_EXT_texture_lod_bias,
   -- * Enums
   gl_MAX_TEXTURE_LOD_BIAS_EXT,
   gl_TEXTURE_FILTER_CONTROL_EXT,
   gl_TEXTURE_LOD_BIAS_EXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

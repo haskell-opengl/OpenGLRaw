@@ -8,13 +8,15 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ATI/text_fragment_shader.txt ATI_text_fragment_shader> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ATI.TextFragmentShader (
+  -- * Extension Support
+  glGetATITextFragmentShader,
+  gl_ATI_text_fragment_shader,
   -- * Enums
   gl_TEXT_FRAGMENT_SHADER_ATI
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

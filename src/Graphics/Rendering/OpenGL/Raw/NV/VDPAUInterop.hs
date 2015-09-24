@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/vdpau_interop.txt NV_vdpau_interop> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VDPAUInterop (
+  -- * Extension Support
+  glGetNVVDPAUInterop,
+  gl_NV_vdpau_interop,
   -- * Enums
   gl_SURFACE_MAPPED_NV,
   gl_SURFACE_REGISTERED_NV,
@@ -31,5 +32,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.VDPAUInterop (
   glVDPAUUnregisterSurfaceNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

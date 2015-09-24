@@ -8,14 +8,16 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/draw_instanced.txt ARB_draw_instanced> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.DrawInstanced (
+  -- * Extension Support
+  glGetARBDrawInstanced,
+  gl_ARB_draw_instanced,
   -- * Functions
   glDrawArraysInstancedARB,
   glDrawElementsInstancedARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Functions

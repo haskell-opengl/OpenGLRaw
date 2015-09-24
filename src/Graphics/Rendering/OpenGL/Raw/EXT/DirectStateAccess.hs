@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/direct_state_access.txt EXT_direct_state_access> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess (
+  -- * Extension Support
+  glGetEXTDirectStateAccess,
+  gl_EXT_direct_state_access,
   -- * Enums
   gl_PROGRAM_MATRIX_EXT,
   gl_PROGRAM_MATRIX_STACK_DEPTH_EXT,
@@ -275,5 +276,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.DirectStateAccess (
   glVertexArrayVertexOffsetEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

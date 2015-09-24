@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_rg.txt ARB_texture_rg> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureRG (
+  -- * Extension Support
+  glGetARBTextureRG,
+  gl_ARB_texture_rg,
   -- * Enums
   gl_R16,
   gl_R16F,
@@ -38,4 +39,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureRG (
   gl_RG_INTEGER
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/texture_buffer_range.txt ARB_texture_buffer_range> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferRange (
+  -- * Extension Support
+  glGetARBTextureBufferRange,
+  gl_ARB_texture_buffer_range,
   -- * Enums
   gl_TEXTURE_BUFFER_OFFSET,
   gl_TEXTURE_BUFFER_OFFSET_ALIGNMENT,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TextureBufferRange (
   glTexBufferRange
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

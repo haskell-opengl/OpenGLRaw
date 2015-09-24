@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/SGIX/framezoom.txt SGIX_framezoom> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.SGIX.Framezoom (
+  -- * Extension Support
+  glGetSGIXFramezoom,
+  gl_SGIX_framezoom,
   -- * Enums
   gl_FRAMEZOOM_FACTOR_SGIX,
   gl_FRAMEZOOM_SGIX,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.SGIX.Framezoom (
   glFrameZoomSGIX
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_hdr.txt KHR_texture_compression_astc_hdr> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.KHR.TextureCompressionASTCHDR (
+  -- * Extension Support
+  glGetKHRTextureCompressionASTCHDR,
+  gl_KHR_texture_compression_astc_hdr,
   -- * Enums
   gl_COMPRESSED_RGBA_ASTC_10x10_KHR,
   gl_COMPRESSED_RGBA_ASTC_10x5_KHR,
@@ -44,4 +45,5 @@ module Graphics.Rendering.OpenGL.Raw.KHR.TextureCompressionASTCHDR (
   gl_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/video_capture.txt NV_video_capture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.VideoCapture (
+  -- * Extension Support
+  glGetNVVideoCapture,
+  gl_NV_video_capture,
   -- * Enums
   gl_FAILURE_NV,
   gl_FIELD_LOWER_NV,
@@ -58,5 +59,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.VideoCapture (
   glVideoCaptureStreamParameterivNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

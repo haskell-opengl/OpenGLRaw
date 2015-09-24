@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/texture_array.txt EXT_texture_array> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray (
+  -- * Extension Support
+  glGetEXTTextureArray,
+  gl_EXT_texture_array,
   -- * Enums
   gl_COMPARE_REF_DEPTH_TO_TEXTURE_EXT,
   gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT,
@@ -27,5 +28,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.TextureArray (
   glFramebufferTextureLayerEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

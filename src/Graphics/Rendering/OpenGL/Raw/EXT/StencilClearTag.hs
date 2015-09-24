@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/stencil_clear_tag.txt EXT_stencil_clear_tag> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag (
+  -- * Extension Support
+  glGetEXTStencilClearTag,
+  gl_EXT_stencil_clear_tag,
   -- * Enums
   gl_STENCIL_CLEAR_TAG_VALUE_EXT,
   gl_STENCIL_TAG_BITS_EXT,
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.StencilClearTag (
   glStencilClearTagEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

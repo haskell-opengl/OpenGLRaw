@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/fog_distance.txt NV_fog_distance> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.FogDistance (
+  -- * Extension Support
+  glGetNVFogDistance,
+  gl_NV_fog_distance,
   -- * Enums
   gl_EYE_PLANE,
   gl_EYE_PLANE_ABSOLUTE_NV,
@@ -20,4 +21,5 @@ module Graphics.Rendering.OpenGL.Raw.NV.FogDistance (
   gl_FOG_DISTANCE_MODE_NV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens

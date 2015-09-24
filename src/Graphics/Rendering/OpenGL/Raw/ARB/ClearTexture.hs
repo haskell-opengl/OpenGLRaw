@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/clear_texture.txt ARB_clear_texture> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.ClearTexture (
+  -- * Extension Support
+  glGetARBClearTexture,
+  gl_ARB_clear_texture,
   -- * Enums
   gl_CLEAR_TEXTURE,
   -- * Functions
@@ -20,5 +21,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.ClearTexture (
   glClearTexSubImage
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

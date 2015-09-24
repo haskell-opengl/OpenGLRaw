@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/map_buffer_range.txt ARB_map_buffer_range> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.MapBufferRange (
+  -- * Extension Support
+  glGetARBMapBufferRange,
+  gl_ARB_map_buffer_range,
   -- * Enums
   gl_MAP_FLUSH_EXPLICIT_BIT,
   gl_MAP_INVALIDATE_BUFFER_BIT,
@@ -25,5 +26,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.MapBufferRange (
   glMapBufferRange
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

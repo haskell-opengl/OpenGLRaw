@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/EXT/gpu_shader4.txt EXT_gpu_shader4> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4 (
+  -- * Extension Support
+  glGetEXTGPUShader4,
+  gl_EXT_gpu_shader4,
   -- * Enums
   gl_INT_SAMPLER_1D_ARRAY_EXT,
   gl_INT_SAMPLER_1D_EXT,
@@ -56,5 +57,6 @@ module Graphics.Rendering.OpenGL.Raw.EXT.GPUShader4 (
   glUniform4uivEXT
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

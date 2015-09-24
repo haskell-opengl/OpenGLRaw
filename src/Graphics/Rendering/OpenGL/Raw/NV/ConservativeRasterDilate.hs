@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/NV/conservative_raster_dilate.txt NV_conservative_raster_dilate> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.NV.ConservativeRasterDilate (
+  -- * Extension Support
+  glGetNVConservativeRasterDilate,
+  gl_NV_conservative_raster_dilate,
   -- * Enums
   gl_CONSERVATIVE_RASTER_DILATE_GRANULARITY_NV,
   gl_CONSERVATIVE_RASTER_DILATE_NV,
@@ -21,5 +22,6 @@ module Graphics.Rendering.OpenGL.Raw.NV.ConservativeRasterDilate (
   glConservativeRasterParameterfNV
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

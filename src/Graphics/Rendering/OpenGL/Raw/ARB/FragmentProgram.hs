@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/fragment_program.txt ARB_fragment_program> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram (
+  -- * Extension Support
+  glGetARBFragmentProgram,
+  gl_ARB_fragment_program,
   -- * Enums
   gl_CURRENT_MATRIX_ARB,
   gl_CURRENT_MATRIX_STACK_DEPTH_ARB,
@@ -114,5 +115,6 @@ module Graphics.Rendering.OpenGL.Raw.ARB.FragmentProgram (
   glProgramStringARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
 import Graphics.Rendering.OpenGL.Raw.Functions

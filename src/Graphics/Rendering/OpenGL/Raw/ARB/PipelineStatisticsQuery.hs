@@ -8,11 +8,12 @@
 -- Stability   :  stable
 -- Portability :  portable
 --
--- The <https://www.opengl.org/registry/specs/ARB/pipeline_statistics_query.txt ARB_pipeline_statistics_query> extension.
---
 --------------------------------------------------------------------------------
 
 module Graphics.Rendering.OpenGL.Raw.ARB.PipelineStatisticsQuery (
+  -- * Extension Support
+  glGetARBPipelineStatisticsQuery,
+  gl_ARB_pipeline_statistics_query,
   -- * Enums
   gl_CLIPPING_INPUT_PRIMITIVES_ARB,
   gl_CLIPPING_OUTPUT_PRIMITIVES_ARB,
@@ -27,4 +28,5 @@ module Graphics.Rendering.OpenGL.Raw.ARB.PipelineStatisticsQuery (
   gl_VERTICES_SUBMITTED_ARB
 ) where
 
+import Graphics.Rendering.OpenGL.Raw.ExtensionPredicates
 import Graphics.Rendering.OpenGL.Raw.Tokens
