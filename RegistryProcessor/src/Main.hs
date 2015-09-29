@@ -344,7 +344,7 @@ printExtensionSupport extModules = do
       SI.hPutStrLn h $ ""
       SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
       SI.hPutStrLn h $ predNameMonad ++ " :: MonadIO m => m Bool"
-      SI.hPutStrLn h $ predNameMonad ++ " = member " ++ show extString ++ " `fmap` getExtensions"
+      SI.hPutStrLn h $ predNameMonad ++ " = getExtensions >>= (return . member " ++ show extString ++ ")"
       SI.hPutStrLn h $ ""
       SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
       SI.hPutStrLn h $ "-- Note that in the presence of multiple contexts with different capabilities,"

@@ -21,7 +21,7 @@ import Graphics.Rendering.OpenGL.Raw.GetProcAddress ( getExtensions, extensions 
 
 -- | Is the <https://www.opengl.org/registry/specs/3DFX/3dfx_multisample.txt 3DFX_multisample> extension supported?
 glGetThreeDFXMultisample :: MonadIO m => m Bool
-glGetThreeDFXMultisample = member "GL_3DFX_multisample" `fmap` getExtensions
+glGetThreeDFXMultisample = getExtensions >>= (return . member "GL_3DFX_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/3DFX/3dfx_multisample.txt 3DFX_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -32,7 +32,7 @@ gl_3DFX_multisample = member "GL_3DFX_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/3DFX/tbuffer.txt 3DFX_tbuffer> extension supported?
 glGetThreeDFXTbuffer :: MonadIO m => m Bool
-glGetThreeDFXTbuffer = member "GL_3DFX_tbuffer" `fmap` getExtensions
+glGetThreeDFXTbuffer = getExtensions >>= (return . member "GL_3DFX_tbuffer")
 
 -- | Is the <https://www.opengl.org/registry/specs/3DFX/tbuffer.txt 3DFX_tbuffer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -43,7 +43,7 @@ gl_3DFX_tbuffer = member "GL_3DFX_tbuffer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/3DFX/texture_compression_FXT1.txt 3DFX_texture_compression_FXT1> extension supported?
 glGetThreeDFXTextureCompressionFXT1 :: MonadIO m => m Bool
-glGetThreeDFXTextureCompressionFXT1 = member "GL_3DFX_texture_compression_FXT1" `fmap` getExtensions
+glGetThreeDFXTextureCompressionFXT1 = getExtensions >>= (return . member "GL_3DFX_texture_compression_FXT1")
 
 -- | Is the <https://www.opengl.org/registry/specs/3DFX/texture_compression_FXT1.txt 3DFX_texture_compression_FXT1> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -54,7 +54,7 @@ gl_3DFX_texture_compression_FXT1 = member "GL_3DFX_texture_compression_FXT1" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/blend_minmax_factor.txt AMD_blend_minmax_factor> extension supported?
 glGetAMDBlendMinmaxFactor :: MonadIO m => m Bool
-glGetAMDBlendMinmaxFactor = member "GL_AMD_blend_minmax_factor" `fmap` getExtensions
+glGetAMDBlendMinmaxFactor = getExtensions >>= (return . member "GL_AMD_blend_minmax_factor")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/blend_minmax_factor.txt AMD_blend_minmax_factor> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -65,7 +65,7 @@ gl_AMD_blend_minmax_factor = member "GL_AMD_blend_minmax_factor" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/debug_output.txt AMD_debug_output> extension supported?
 glGetAMDDebugOutput :: MonadIO m => m Bool
-glGetAMDDebugOutput = member "GL_AMD_debug_output" `fmap` getExtensions
+glGetAMDDebugOutput = getExtensions >>= (return . member "GL_AMD_debug_output")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/debug_output.txt AMD_debug_output> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -76,7 +76,7 @@ gl_AMD_debug_output = member "GL_AMD_debug_output" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/depth_clamp_separate.txt AMD_depth_clamp_separate> extension supported?
 glGetAMDDepthClampSeparate :: MonadIO m => m Bool
-glGetAMDDepthClampSeparate = member "GL_AMD_depth_clamp_separate" `fmap` getExtensions
+glGetAMDDepthClampSeparate = getExtensions >>= (return . member "GL_AMD_depth_clamp_separate")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/depth_clamp_separate.txt AMD_depth_clamp_separate> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -87,7 +87,7 @@ gl_AMD_depth_clamp_separate = member "GL_AMD_depth_clamp_separate" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/draw_buffers_blend.txt AMD_draw_buffers_blend> extension supported?
 glGetAMDDrawBuffersBlend :: MonadIO m => m Bool
-glGetAMDDrawBuffersBlend = member "GL_AMD_draw_buffers_blend" `fmap` getExtensions
+glGetAMDDrawBuffersBlend = getExtensions >>= (return . member "GL_AMD_draw_buffers_blend")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/draw_buffers_blend.txt AMD_draw_buffers_blend> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -98,7 +98,7 @@ gl_AMD_draw_buffers_blend = member "GL_AMD_draw_buffers_blend" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/gpu_shader_int64.txt AMD_gpu_shader_int64> extension supported?
 glGetAMDGPUShaderInt64 :: MonadIO m => m Bool
-glGetAMDGPUShaderInt64 = member "GL_AMD_gpu_shader_int64" `fmap` getExtensions
+glGetAMDGPUShaderInt64 = getExtensions >>= (return . member "GL_AMD_gpu_shader_int64")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/gpu_shader_int64.txt AMD_gpu_shader_int64> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -109,7 +109,7 @@ gl_AMD_gpu_shader_int64 = member "GL_AMD_gpu_shader_int64" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/interleaved_elements.txt AMD_interleaved_elements> extension supported?
 glGetAMDInterleavedElements :: MonadIO m => m Bool
-glGetAMDInterleavedElements = member "GL_AMD_interleaved_elements" `fmap` getExtensions
+glGetAMDInterleavedElements = getExtensions >>= (return . member "GL_AMD_interleaved_elements")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/interleaved_elements.txt AMD_interleaved_elements> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -120,7 +120,7 @@ gl_AMD_interleaved_elements = member "GL_AMD_interleaved_elements" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/multi_draw_indirect.txt AMD_multi_draw_indirect> extension supported?
 glGetAMDMultiDrawIndirect :: MonadIO m => m Bool
-glGetAMDMultiDrawIndirect = member "GL_AMD_multi_draw_indirect" `fmap` getExtensions
+glGetAMDMultiDrawIndirect = getExtensions >>= (return . member "GL_AMD_multi_draw_indirect")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/multi_draw_indirect.txt AMD_multi_draw_indirect> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -131,7 +131,7 @@ gl_AMD_multi_draw_indirect = member "GL_AMD_multi_draw_indirect" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/name_gen_delete.txt AMD_name_gen_delete> extension supported?
 glGetAMDNameGenDelete :: MonadIO m => m Bool
-glGetAMDNameGenDelete = member "GL_AMD_name_gen_delete" `fmap` getExtensions
+glGetAMDNameGenDelete = getExtensions >>= (return . member "GL_AMD_name_gen_delete")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/name_gen_delete.txt AMD_name_gen_delete> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -142,7 +142,7 @@ gl_AMD_name_gen_delete = member "GL_AMD_name_gen_delete" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/occlusion_query_event.txt AMD_occlusion_query_event> extension supported?
 glGetAMDOcclusionQueryEvent :: MonadIO m => m Bool
-glGetAMDOcclusionQueryEvent = member "GL_AMD_occlusion_query_event" `fmap` getExtensions
+glGetAMDOcclusionQueryEvent = getExtensions >>= (return . member "GL_AMD_occlusion_query_event")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/occlusion_query_event.txt AMD_occlusion_query_event> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -153,7 +153,7 @@ gl_AMD_occlusion_query_event = member "GL_AMD_occlusion_query_event" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/performance_monitor.txt AMD_performance_monitor> extension supported?
 glGetAMDPerformanceMonitor :: MonadIO m => m Bool
-glGetAMDPerformanceMonitor = member "GL_AMD_performance_monitor" `fmap` getExtensions
+glGetAMDPerformanceMonitor = getExtensions >>= (return . member "GL_AMD_performance_monitor")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/performance_monitor.txt AMD_performance_monitor> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -164,7 +164,7 @@ gl_AMD_performance_monitor = member "GL_AMD_performance_monitor" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/pinned_memory.txt AMD_pinned_memory> extension supported?
 glGetAMDPinnedMemory :: MonadIO m => m Bool
-glGetAMDPinnedMemory = member "GL_AMD_pinned_memory" `fmap` getExtensions
+glGetAMDPinnedMemory = getExtensions >>= (return . member "GL_AMD_pinned_memory")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/pinned_memory.txt AMD_pinned_memory> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -175,7 +175,7 @@ gl_AMD_pinned_memory = member "GL_AMD_pinned_memory" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/query_buffer_object.txt AMD_query_buffer_object> extension supported?
 glGetAMDQueryBufferObject :: MonadIO m => m Bool
-glGetAMDQueryBufferObject = member "GL_AMD_query_buffer_object" `fmap` getExtensions
+glGetAMDQueryBufferObject = getExtensions >>= (return . member "GL_AMD_query_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/query_buffer_object.txt AMD_query_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -186,7 +186,7 @@ gl_AMD_query_buffer_object = member "GL_AMD_query_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/sample_positions.txt AMD_sample_positions> extension supported?
 glGetAMDSamplePositions :: MonadIO m => m Bool
-glGetAMDSamplePositions = member "GL_AMD_sample_positions" `fmap` getExtensions
+glGetAMDSamplePositions = getExtensions >>= (return . member "GL_AMD_sample_positions")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/sample_positions.txt AMD_sample_positions> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -197,7 +197,7 @@ gl_AMD_sample_positions = member "GL_AMD_sample_positions" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/seamless_cubemap_per_texture.txt AMD_seamless_cubemap_per_texture> extension supported?
 glGetAMDSeamlessCubemapPerTexture :: MonadIO m => m Bool
-glGetAMDSeamlessCubemapPerTexture = member "GL_AMD_seamless_cubemap_per_texture" `fmap` getExtensions
+glGetAMDSeamlessCubemapPerTexture = getExtensions >>= (return . member "GL_AMD_seamless_cubemap_per_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/seamless_cubemap_per_texture.txt AMD_seamless_cubemap_per_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -208,7 +208,7 @@ gl_AMD_seamless_cubemap_per_texture = member "GL_AMD_seamless_cubemap_per_textur
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/sparse_texture.txt AMD_sparse_texture> extension supported?
 glGetAMDSparseTexture :: MonadIO m => m Bool
-glGetAMDSparseTexture = member "GL_AMD_sparse_texture" `fmap` getExtensions
+glGetAMDSparseTexture = getExtensions >>= (return . member "GL_AMD_sparse_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/sparse_texture.txt AMD_sparse_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -219,7 +219,7 @@ gl_AMD_sparse_texture = member "GL_AMD_sparse_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/stencil_operation_extended.txt AMD_stencil_operation_extended> extension supported?
 glGetAMDStencilOperationExtended :: MonadIO m => m Bool
-glGetAMDStencilOperationExtended = member "GL_AMD_stencil_operation_extended" `fmap` getExtensions
+glGetAMDStencilOperationExtended = getExtensions >>= (return . member "GL_AMD_stencil_operation_extended")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/stencil_operation_extended.txt AMD_stencil_operation_extended> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -230,7 +230,7 @@ gl_AMD_stencil_operation_extended = member "GL_AMD_stencil_operation_extended" e
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/transform_feedback4.txt AMD_transform_feedback4> extension supported?
 glGetAMDTransformFeedback4 :: MonadIO m => m Bool
-glGetAMDTransformFeedback4 = member "GL_AMD_transform_feedback4" `fmap` getExtensions
+glGetAMDTransformFeedback4 = getExtensions >>= (return . member "GL_AMD_transform_feedback4")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/transform_feedback4.txt AMD_transform_feedback4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -241,7 +241,7 @@ gl_AMD_transform_feedback4 = member "GL_AMD_transform_feedback4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/vertex_shader_tessellator.txt AMD_vertex_shader_tessellator> extension supported?
 glGetAMDVertexShaderTessellator :: MonadIO m => m Bool
-glGetAMDVertexShaderTessellator = member "GL_AMD_vertex_shader_tessellator" `fmap` getExtensions
+glGetAMDVertexShaderTessellator = getExtensions >>= (return . member "GL_AMD_vertex_shader_tessellator")
 
 -- | Is the <https://www.opengl.org/registry/specs/AMD/vertex_shader_tessellator.txt AMD_vertex_shader_tessellator> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -252,7 +252,7 @@ gl_AMD_vertex_shader_tessellator = member "GL_AMD_vertex_shader_tessellator" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/aux_depth_stencil.txt APPLE_aux_depth_stencil> extension supported?
 glGetAPPLEAuxDepthStencil :: MonadIO m => m Bool
-glGetAPPLEAuxDepthStencil = member "GL_APPLE_aux_depth_stencil" `fmap` getExtensions
+glGetAPPLEAuxDepthStencil = getExtensions >>= (return . member "GL_APPLE_aux_depth_stencil")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/aux_depth_stencil.txt APPLE_aux_depth_stencil> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -263,7 +263,7 @@ gl_APPLE_aux_depth_stencil = member "GL_APPLE_aux_depth_stencil" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/client_storage.txt APPLE_client_storage> extension supported?
 glGetAPPLEClientStorage :: MonadIO m => m Bool
-glGetAPPLEClientStorage = member "GL_APPLE_client_storage" `fmap` getExtensions
+glGetAPPLEClientStorage = getExtensions >>= (return . member "GL_APPLE_client_storage")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/client_storage.txt APPLE_client_storage> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -274,7 +274,7 @@ gl_APPLE_client_storage = member "GL_APPLE_client_storage" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/element_array.txt APPLE_element_array> extension supported?
 glGetAPPLEElementArray :: MonadIO m => m Bool
-glGetAPPLEElementArray = member "GL_APPLE_element_array" `fmap` getExtensions
+glGetAPPLEElementArray = getExtensions >>= (return . member "GL_APPLE_element_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/element_array.txt APPLE_element_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -285,7 +285,7 @@ gl_APPLE_element_array = member "GL_APPLE_element_array" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/fence.txt APPLE_fence> extension supported?
 glGetAPPLEFence :: MonadIO m => m Bool
-glGetAPPLEFence = member "GL_APPLE_fence" `fmap` getExtensions
+glGetAPPLEFence = getExtensions >>= (return . member "GL_APPLE_fence")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/fence.txt APPLE_fence> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -296,7 +296,7 @@ gl_APPLE_fence = member "GL_APPLE_fence" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/float_pixels.txt APPLE_float_pixels> extension supported?
 glGetAPPLEFloatPixels :: MonadIO m => m Bool
-glGetAPPLEFloatPixels = member "GL_APPLE_float_pixels" `fmap` getExtensions
+glGetAPPLEFloatPixels = getExtensions >>= (return . member "GL_APPLE_float_pixels")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/float_pixels.txt APPLE_float_pixels> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -307,7 +307,7 @@ gl_APPLE_float_pixels = member "GL_APPLE_float_pixels" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/flush_buffer_range.txt APPLE_flush_buffer_range> extension supported?
 glGetAPPLEFlushBufferRange :: MonadIO m => m Bool
-glGetAPPLEFlushBufferRange = member "GL_APPLE_flush_buffer_range" `fmap` getExtensions
+glGetAPPLEFlushBufferRange = getExtensions >>= (return . member "GL_APPLE_flush_buffer_range")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/flush_buffer_range.txt APPLE_flush_buffer_range> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -318,7 +318,7 @@ gl_APPLE_flush_buffer_range = member "GL_APPLE_flush_buffer_range" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/object_purgeable.txt APPLE_object_purgeable> extension supported?
 glGetAPPLEObjectPurgeable :: MonadIO m => m Bool
-glGetAPPLEObjectPurgeable = member "GL_APPLE_object_purgeable" `fmap` getExtensions
+glGetAPPLEObjectPurgeable = getExtensions >>= (return . member "GL_APPLE_object_purgeable")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/object_purgeable.txt APPLE_object_purgeable> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -329,7 +329,7 @@ gl_APPLE_object_purgeable = member "GL_APPLE_object_purgeable" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/rgb_422.txt APPLE_rgb_422> extension supported?
 glGetAPPLERGB422 :: MonadIO m => m Bool
-glGetAPPLERGB422 = member "GL_APPLE_rgb_422" `fmap` getExtensions
+glGetAPPLERGB422 = getExtensions >>= (return . member "GL_APPLE_rgb_422")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/rgb_422.txt APPLE_rgb_422> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -340,7 +340,7 @@ gl_APPLE_rgb_422 = member "GL_APPLE_rgb_422" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/row_bytes.txt APPLE_row_bytes> extension supported?
 glGetAPPLERowBytes :: MonadIO m => m Bool
-glGetAPPLERowBytes = member "GL_APPLE_row_bytes" `fmap` getExtensions
+glGetAPPLERowBytes = getExtensions >>= (return . member "GL_APPLE_row_bytes")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/row_bytes.txt APPLE_row_bytes> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -351,7 +351,7 @@ gl_APPLE_row_bytes = member "GL_APPLE_row_bytes" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/specular_vector.txt APPLE_specular_vector> extension supported?
 glGetAPPLESpecularVector :: MonadIO m => m Bool
-glGetAPPLESpecularVector = member "GL_APPLE_specular_vector" `fmap` getExtensions
+glGetAPPLESpecularVector = getExtensions >>= (return . member "GL_APPLE_specular_vector")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/specular_vector.txt APPLE_specular_vector> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -362,7 +362,7 @@ gl_APPLE_specular_vector = member "GL_APPLE_specular_vector" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/texture_range.txt APPLE_texture_range> extension supported?
 glGetAPPLETextureRange :: MonadIO m => m Bool
-glGetAPPLETextureRange = member "GL_APPLE_texture_range" `fmap` getExtensions
+glGetAPPLETextureRange = getExtensions >>= (return . member "GL_APPLE_texture_range")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/texture_range.txt APPLE_texture_range> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -373,7 +373,7 @@ gl_APPLE_texture_range = member "GL_APPLE_texture_range" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/transform_hint.txt APPLE_transform_hint> extension supported?
 glGetAPPLETransformHint :: MonadIO m => m Bool
-glGetAPPLETransformHint = member "GL_APPLE_transform_hint" `fmap` getExtensions
+glGetAPPLETransformHint = getExtensions >>= (return . member "GL_APPLE_transform_hint")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/transform_hint.txt APPLE_transform_hint> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -384,7 +384,7 @@ gl_APPLE_transform_hint = member "GL_APPLE_transform_hint" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/vertex_array_object.txt APPLE_vertex_array_object> extension supported?
 glGetAPPLEVertexArrayObject :: MonadIO m => m Bool
-glGetAPPLEVertexArrayObject = member "GL_APPLE_vertex_array_object" `fmap` getExtensions
+glGetAPPLEVertexArrayObject = getExtensions >>= (return . member "GL_APPLE_vertex_array_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/vertex_array_object.txt APPLE_vertex_array_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -395,7 +395,7 @@ gl_APPLE_vertex_array_object = member "GL_APPLE_vertex_array_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/vertex_array_range.txt APPLE_vertex_array_range> extension supported?
 glGetAPPLEVertexArrayRange :: MonadIO m => m Bool
-glGetAPPLEVertexArrayRange = member "GL_APPLE_vertex_array_range" `fmap` getExtensions
+glGetAPPLEVertexArrayRange = getExtensions >>= (return . member "GL_APPLE_vertex_array_range")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/vertex_array_range.txt APPLE_vertex_array_range> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -406,7 +406,7 @@ gl_APPLE_vertex_array_range = member "GL_APPLE_vertex_array_range" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/vertex_program_evaluators.txt APPLE_vertex_program_evaluators> extension supported?
 glGetAPPLEVertexProgramEvaluators :: MonadIO m => m Bool
-glGetAPPLEVertexProgramEvaluators = member "GL_APPLE_vertex_program_evaluators" `fmap` getExtensions
+glGetAPPLEVertexProgramEvaluators = getExtensions >>= (return . member "GL_APPLE_vertex_program_evaluators")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/vertex_program_evaluators.txt APPLE_vertex_program_evaluators> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -417,7 +417,7 @@ gl_APPLE_vertex_program_evaluators = member "GL_APPLE_vertex_program_evaluators"
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/ycbcr_422.txt APPLE_ycbcr_422> extension supported?
 glGetAPPLEYCbCr422 :: MonadIO m => m Bool
-glGetAPPLEYCbCr422 = member "GL_APPLE_ycbcr_422" `fmap` getExtensions
+glGetAPPLEYCbCr422 = getExtensions >>= (return . member "GL_APPLE_ycbcr_422")
 
 -- | Is the <https://www.opengl.org/registry/specs/APPLE/ycbcr_422.txt APPLE_ycbcr_422> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -428,7 +428,7 @@ gl_APPLE_ycbcr_422 = member "GL_APPLE_ycbcr_422" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES2_compatibility.txt ARB_ES2_compatibility> extension supported?
 glGetARBES2Compatibility :: MonadIO m => m Bool
-glGetARBES2Compatibility = member "GL_ARB_ES2_compatibility" `fmap` getExtensions
+glGetARBES2Compatibility = getExtensions >>= (return . member "GL_ARB_ES2_compatibility")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES2_compatibility.txt ARB_ES2_compatibility> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -439,7 +439,7 @@ gl_ARB_ES2_compatibility = member "GL_ARB_ES2_compatibility" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES3_1_compatibility.txt ARB_ES3_1_compatibility> extension supported?
 glGetARBES31Compatibility :: MonadIO m => m Bool
-glGetARBES31Compatibility = member "GL_ARB_ES3_1_compatibility" `fmap` getExtensions
+glGetARBES31Compatibility = getExtensions >>= (return . member "GL_ARB_ES3_1_compatibility")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES3_1_compatibility.txt ARB_ES3_1_compatibility> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -450,7 +450,7 @@ gl_ARB_ES3_1_compatibility = member "GL_ARB_ES3_1_compatibility" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES3_2_compatibility.txt ARB_ES3_2_compatibility> extension supported?
 glGetARBES32Compatibility :: MonadIO m => m Bool
-glGetARBES32Compatibility = member "GL_ARB_ES3_2_compatibility" `fmap` getExtensions
+glGetARBES32Compatibility = getExtensions >>= (return . member "GL_ARB_ES3_2_compatibility")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES3_2_compatibility.txt ARB_ES3_2_compatibility> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -461,7 +461,7 @@ gl_ARB_ES3_2_compatibility = member "GL_ARB_ES3_2_compatibility" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES3_compatibility.txt ARB_ES3_compatibility> extension supported?
 glGetARBES3Compatibility :: MonadIO m => m Bool
-glGetARBES3Compatibility = member "GL_ARB_ES3_compatibility" `fmap` getExtensions
+glGetARBES3Compatibility = getExtensions >>= (return . member "GL_ARB_ES3_compatibility")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/ES3_compatibility.txt ARB_ES3_compatibility> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -472,7 +472,7 @@ gl_ARB_ES3_compatibility = member "GL_ARB_ES3_compatibility" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/base_instance.txt ARB_base_instance> extension supported?
 glGetARBBaseInstance :: MonadIO m => m Bool
-glGetARBBaseInstance = member "GL_ARB_base_instance" `fmap` getExtensions
+glGetARBBaseInstance = getExtensions >>= (return . member "GL_ARB_base_instance")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/base_instance.txt ARB_base_instance> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -483,7 +483,7 @@ gl_ARB_base_instance = member "GL_ARB_base_instance" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/bindless_texture.txt ARB_bindless_texture> extension supported?
 glGetARBBindlessTexture :: MonadIO m => m Bool
-glGetARBBindlessTexture = member "GL_ARB_bindless_texture" `fmap` getExtensions
+glGetARBBindlessTexture = getExtensions >>= (return . member "GL_ARB_bindless_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/bindless_texture.txt ARB_bindless_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -494,7 +494,7 @@ gl_ARB_bindless_texture = member "GL_ARB_bindless_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/blend_func_extended.txt ARB_blend_func_extended> extension supported?
 glGetARBBlendFuncExtended :: MonadIO m => m Bool
-glGetARBBlendFuncExtended = member "GL_ARB_blend_func_extended" `fmap` getExtensions
+glGetARBBlendFuncExtended = getExtensions >>= (return . member "GL_ARB_blend_func_extended")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/blend_func_extended.txt ARB_blend_func_extended> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -505,7 +505,7 @@ gl_ARB_blend_func_extended = member "GL_ARB_blend_func_extended" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/buffer_storage.txt ARB_buffer_storage> extension supported?
 glGetARBBufferStorage :: MonadIO m => m Bool
-glGetARBBufferStorage = member "GL_ARB_buffer_storage" `fmap` getExtensions
+glGetARBBufferStorage = getExtensions >>= (return . member "GL_ARB_buffer_storage")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/buffer_storage.txt ARB_buffer_storage> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -516,7 +516,7 @@ gl_ARB_buffer_storage = member "GL_ARB_buffer_storage" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/cl_event.txt ARB_cl_event> extension supported?
 glGetARBCLEvent :: MonadIO m => m Bool
-glGetARBCLEvent = member "GL_ARB_cl_event" `fmap` getExtensions
+glGetARBCLEvent = getExtensions >>= (return . member "GL_ARB_cl_event")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/cl_event.txt ARB_cl_event> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -527,7 +527,7 @@ gl_ARB_cl_event = member "GL_ARB_cl_event" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/clear_buffer_object.txt ARB_clear_buffer_object> extension supported?
 glGetARBClearBufferObject :: MonadIO m => m Bool
-glGetARBClearBufferObject = member "GL_ARB_clear_buffer_object" `fmap` getExtensions
+glGetARBClearBufferObject = getExtensions >>= (return . member "GL_ARB_clear_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/clear_buffer_object.txt ARB_clear_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -538,7 +538,7 @@ gl_ARB_clear_buffer_object = member "GL_ARB_clear_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/clear_texture.txt ARB_clear_texture> extension supported?
 glGetARBClearTexture :: MonadIO m => m Bool
-glGetARBClearTexture = member "GL_ARB_clear_texture" `fmap` getExtensions
+glGetARBClearTexture = getExtensions >>= (return . member "GL_ARB_clear_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/clear_texture.txt ARB_clear_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -549,7 +549,7 @@ gl_ARB_clear_texture = member "GL_ARB_clear_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/clip_control.txt ARB_clip_control> extension supported?
 glGetARBClipControl :: MonadIO m => m Bool
-glGetARBClipControl = member "GL_ARB_clip_control" `fmap` getExtensions
+glGetARBClipControl = getExtensions >>= (return . member "GL_ARB_clip_control")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/clip_control.txt ARB_clip_control> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -560,7 +560,7 @@ gl_ARB_clip_control = member "GL_ARB_clip_control" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/color_buffer_float.txt ARB_color_buffer_float> extension supported?
 glGetARBColorBufferFloat :: MonadIO m => m Bool
-glGetARBColorBufferFloat = member "GL_ARB_color_buffer_float" `fmap` getExtensions
+glGetARBColorBufferFloat = getExtensions >>= (return . member "GL_ARB_color_buffer_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/color_buffer_float.txt ARB_color_buffer_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -571,7 +571,7 @@ gl_ARB_color_buffer_float = member "GL_ARB_color_buffer_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/compressed_texture_pixel_storage.txt ARB_compressed_texture_pixel_storage> extension supported?
 glGetARBCompressedTexturePixelStorage :: MonadIO m => m Bool
-glGetARBCompressedTexturePixelStorage = member "GL_ARB_compressed_texture_pixel_storage" `fmap` getExtensions
+glGetARBCompressedTexturePixelStorage = getExtensions >>= (return . member "GL_ARB_compressed_texture_pixel_storage")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/compressed_texture_pixel_storage.txt ARB_compressed_texture_pixel_storage> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -582,7 +582,7 @@ gl_ARB_compressed_texture_pixel_storage = member "GL_ARB_compressed_texture_pixe
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/compute_shader.txt ARB_compute_shader> extension supported?
 glGetARBComputeShader :: MonadIO m => m Bool
-glGetARBComputeShader = member "GL_ARB_compute_shader" `fmap` getExtensions
+glGetARBComputeShader = getExtensions >>= (return . member "GL_ARB_compute_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/compute_shader.txt ARB_compute_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -593,7 +593,7 @@ gl_ARB_compute_shader = member "GL_ARB_compute_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/compute_variable_group_size.txt ARB_compute_variable_group_size> extension supported?
 glGetARBComputeVariableGroupSize :: MonadIO m => m Bool
-glGetARBComputeVariableGroupSize = member "GL_ARB_compute_variable_group_size" `fmap` getExtensions
+glGetARBComputeVariableGroupSize = getExtensions >>= (return . member "GL_ARB_compute_variable_group_size")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/compute_variable_group_size.txt ARB_compute_variable_group_size> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -604,7 +604,7 @@ gl_ARB_compute_variable_group_size = member "GL_ARB_compute_variable_group_size"
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/conditional_render_inverted.txt ARB_conditional_render_inverted> extension supported?
 glGetARBConditionalRenderInverted :: MonadIO m => m Bool
-glGetARBConditionalRenderInverted = member "GL_ARB_conditional_render_inverted" `fmap` getExtensions
+glGetARBConditionalRenderInverted = getExtensions >>= (return . member "GL_ARB_conditional_render_inverted")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/conditional_render_inverted.txt ARB_conditional_render_inverted> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -615,7 +615,7 @@ gl_ARB_conditional_render_inverted = member "GL_ARB_conditional_render_inverted"
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/copy_buffer.txt ARB_copy_buffer> extension supported?
 glGetARBCopyBuffer :: MonadIO m => m Bool
-glGetARBCopyBuffer = member "GL_ARB_copy_buffer" `fmap` getExtensions
+glGetARBCopyBuffer = getExtensions >>= (return . member "GL_ARB_copy_buffer")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/copy_buffer.txt ARB_copy_buffer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -626,7 +626,7 @@ gl_ARB_copy_buffer = member "GL_ARB_copy_buffer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/copy_image.txt ARB_copy_image> extension supported?
 glGetARBCopyImage :: MonadIO m => m Bool
-glGetARBCopyImage = member "GL_ARB_copy_image" `fmap` getExtensions
+glGetARBCopyImage = getExtensions >>= (return . member "GL_ARB_copy_image")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/copy_image.txt ARB_copy_image> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -637,7 +637,7 @@ gl_ARB_copy_image = member "GL_ARB_copy_image" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/cull_distance.txt ARB_cull_distance> extension supported?
 glGetARBCullDistance :: MonadIO m => m Bool
-glGetARBCullDistance = member "GL_ARB_cull_distance" `fmap` getExtensions
+glGetARBCullDistance = getExtensions >>= (return . member "GL_ARB_cull_distance")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/cull_distance.txt ARB_cull_distance> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -648,7 +648,7 @@ gl_ARB_cull_distance = member "GL_ARB_cull_distance" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/debug_output.txt ARB_debug_output> extension supported?
 glGetARBDebugOutput :: MonadIO m => m Bool
-glGetARBDebugOutput = member "GL_ARB_debug_output" `fmap` getExtensions
+glGetARBDebugOutput = getExtensions >>= (return . member "GL_ARB_debug_output")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/debug_output.txt ARB_debug_output> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -659,7 +659,7 @@ gl_ARB_debug_output = member "GL_ARB_debug_output" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/depth_buffer_float.txt ARB_depth_buffer_float> extension supported?
 glGetARBDepthBufferFloat :: MonadIO m => m Bool
-glGetARBDepthBufferFloat = member "GL_ARB_depth_buffer_float" `fmap` getExtensions
+glGetARBDepthBufferFloat = getExtensions >>= (return . member "GL_ARB_depth_buffer_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/depth_buffer_float.txt ARB_depth_buffer_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -670,7 +670,7 @@ gl_ARB_depth_buffer_float = member "GL_ARB_depth_buffer_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/depth_clamp.txt ARB_depth_clamp> extension supported?
 glGetARBDepthClamp :: MonadIO m => m Bool
-glGetARBDepthClamp = member "GL_ARB_depth_clamp" `fmap` getExtensions
+glGetARBDepthClamp = getExtensions >>= (return . member "GL_ARB_depth_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/depth_clamp.txt ARB_depth_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -681,7 +681,7 @@ gl_ARB_depth_clamp = member "GL_ARB_depth_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/depth_texture.txt ARB_depth_texture> extension supported?
 glGetARBDepthTexture :: MonadIO m => m Bool
-glGetARBDepthTexture = member "GL_ARB_depth_texture" `fmap` getExtensions
+glGetARBDepthTexture = getExtensions >>= (return . member "GL_ARB_depth_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/depth_texture.txt ARB_depth_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -692,7 +692,7 @@ gl_ARB_depth_texture = member "GL_ARB_depth_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/direct_state_access.txt ARB_direct_state_access> extension supported?
 glGetARBDirectStateAccess :: MonadIO m => m Bool
-glGetARBDirectStateAccess = member "GL_ARB_direct_state_access" `fmap` getExtensions
+glGetARBDirectStateAccess = getExtensions >>= (return . member "GL_ARB_direct_state_access")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/direct_state_access.txt ARB_direct_state_access> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -703,7 +703,7 @@ gl_ARB_direct_state_access = member "GL_ARB_direct_state_access" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_buffers.txt ARB_draw_buffers> extension supported?
 glGetARBDrawBuffers :: MonadIO m => m Bool
-glGetARBDrawBuffers = member "GL_ARB_draw_buffers" `fmap` getExtensions
+glGetARBDrawBuffers = getExtensions >>= (return . member "GL_ARB_draw_buffers")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_buffers.txt ARB_draw_buffers> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -714,7 +714,7 @@ gl_ARB_draw_buffers = member "GL_ARB_draw_buffers" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_buffers_blend.txt ARB_draw_buffers_blend> extension supported?
 glGetARBDrawBuffersBlend :: MonadIO m => m Bool
-glGetARBDrawBuffersBlend = member "GL_ARB_draw_buffers_blend" `fmap` getExtensions
+glGetARBDrawBuffersBlend = getExtensions >>= (return . member "GL_ARB_draw_buffers_blend")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_buffers_blend.txt ARB_draw_buffers_blend> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -725,7 +725,7 @@ gl_ARB_draw_buffers_blend = member "GL_ARB_draw_buffers_blend" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_elements_base_vertex.txt ARB_draw_elements_base_vertex> extension supported?
 glGetARBDrawElementsBaseVertex :: MonadIO m => m Bool
-glGetARBDrawElementsBaseVertex = member "GL_ARB_draw_elements_base_vertex" `fmap` getExtensions
+glGetARBDrawElementsBaseVertex = getExtensions >>= (return . member "GL_ARB_draw_elements_base_vertex")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_elements_base_vertex.txt ARB_draw_elements_base_vertex> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -736,7 +736,7 @@ gl_ARB_draw_elements_base_vertex = member "GL_ARB_draw_elements_base_vertex" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_indirect.txt ARB_draw_indirect> extension supported?
 glGetARBDrawIndirect :: MonadIO m => m Bool
-glGetARBDrawIndirect = member "GL_ARB_draw_indirect" `fmap` getExtensions
+glGetARBDrawIndirect = getExtensions >>= (return . member "GL_ARB_draw_indirect")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_indirect.txt ARB_draw_indirect> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -747,7 +747,7 @@ gl_ARB_draw_indirect = member "GL_ARB_draw_indirect" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_instanced.txt ARB_draw_instanced> extension supported?
 glGetARBDrawInstanced :: MonadIO m => m Bool
-glGetARBDrawInstanced = member "GL_ARB_draw_instanced" `fmap` getExtensions
+glGetARBDrawInstanced = getExtensions >>= (return . member "GL_ARB_draw_instanced")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/draw_instanced.txt ARB_draw_instanced> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -758,7 +758,7 @@ gl_ARB_draw_instanced = member "GL_ARB_draw_instanced" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/enhanced_layouts.txt ARB_enhanced_layouts> extension supported?
 glGetARBEnhancedLayouts :: MonadIO m => m Bool
-glGetARBEnhancedLayouts = member "GL_ARB_enhanced_layouts" `fmap` getExtensions
+glGetARBEnhancedLayouts = getExtensions >>= (return . member "GL_ARB_enhanced_layouts")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/enhanced_layouts.txt ARB_enhanced_layouts> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -769,7 +769,7 @@ gl_ARB_enhanced_layouts = member "GL_ARB_enhanced_layouts" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/explicit_uniform_location.txt ARB_explicit_uniform_location> extension supported?
 glGetARBExplicitUniformLocation :: MonadIO m => m Bool
-glGetARBExplicitUniformLocation = member "GL_ARB_explicit_uniform_location" `fmap` getExtensions
+glGetARBExplicitUniformLocation = getExtensions >>= (return . member "GL_ARB_explicit_uniform_location")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/explicit_uniform_location.txt ARB_explicit_uniform_location> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -780,7 +780,7 @@ gl_ARB_explicit_uniform_location = member "GL_ARB_explicit_uniform_location" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/fragment_program.txt ARB_fragment_program> extension supported?
 glGetARBFragmentProgram :: MonadIO m => m Bool
-glGetARBFragmentProgram = member "GL_ARB_fragment_program" `fmap` getExtensions
+glGetARBFragmentProgram = getExtensions >>= (return . member "GL_ARB_fragment_program")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/fragment_program.txt ARB_fragment_program> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -791,7 +791,7 @@ gl_ARB_fragment_program = member "GL_ARB_fragment_program" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/fragment_shader.txt ARB_fragment_shader> extension supported?
 glGetARBFragmentShader :: MonadIO m => m Bool
-glGetARBFragmentShader = member "GL_ARB_fragment_shader" `fmap` getExtensions
+glGetARBFragmentShader = getExtensions >>= (return . member "GL_ARB_fragment_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/fragment_shader.txt ARB_fragment_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -802,7 +802,7 @@ gl_ARB_fragment_shader = member "GL_ARB_fragment_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/framebuffer_no_attachments.txt ARB_framebuffer_no_attachments> extension supported?
 glGetARBFramebufferNoAttachments :: MonadIO m => m Bool
-glGetARBFramebufferNoAttachments = member "GL_ARB_framebuffer_no_attachments" `fmap` getExtensions
+glGetARBFramebufferNoAttachments = getExtensions >>= (return . member "GL_ARB_framebuffer_no_attachments")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/framebuffer_no_attachments.txt ARB_framebuffer_no_attachments> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -813,7 +813,7 @@ gl_ARB_framebuffer_no_attachments = member "GL_ARB_framebuffer_no_attachments" e
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/framebuffer_object.txt ARB_framebuffer_object> extension supported?
 glGetARBFramebufferObject :: MonadIO m => m Bool
-glGetARBFramebufferObject = member "GL_ARB_framebuffer_object" `fmap` getExtensions
+glGetARBFramebufferObject = getExtensions >>= (return . member "GL_ARB_framebuffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/framebuffer_object.txt ARB_framebuffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -824,7 +824,7 @@ gl_ARB_framebuffer_object = member "GL_ARB_framebuffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/framebuffer_sRGB.txt ARB_framebuffer_sRGB> extension supported?
 glGetARBFramebufferSRGB :: MonadIO m => m Bool
-glGetARBFramebufferSRGB = member "GL_ARB_framebuffer_sRGB" `fmap` getExtensions
+glGetARBFramebufferSRGB = getExtensions >>= (return . member "GL_ARB_framebuffer_sRGB")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/framebuffer_sRGB.txt ARB_framebuffer_sRGB> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -835,7 +835,7 @@ gl_ARB_framebuffer_sRGB = member "GL_ARB_framebuffer_sRGB" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/geometry_shader4.txt ARB_geometry_shader4> extension supported?
 glGetARBGeometryShader4 :: MonadIO m => m Bool
-glGetARBGeometryShader4 = member "GL_ARB_geometry_shader4" `fmap` getExtensions
+glGetARBGeometryShader4 = getExtensions >>= (return . member "GL_ARB_geometry_shader4")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/geometry_shader4.txt ARB_geometry_shader4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -846,7 +846,7 @@ gl_ARB_geometry_shader4 = member "GL_ARB_geometry_shader4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/get_program_binary.txt ARB_get_program_binary> extension supported?
 glGetARBGetProgramBinary :: MonadIO m => m Bool
-glGetARBGetProgramBinary = member "GL_ARB_get_program_binary" `fmap` getExtensions
+glGetARBGetProgramBinary = getExtensions >>= (return . member "GL_ARB_get_program_binary")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/get_program_binary.txt ARB_get_program_binary> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -857,7 +857,7 @@ gl_ARB_get_program_binary = member "GL_ARB_get_program_binary" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/get_texture_sub_image.txt ARB_get_texture_sub_image> extension supported?
 glGetARBGetTextureSubImage :: MonadIO m => m Bool
-glGetARBGetTextureSubImage = member "GL_ARB_get_texture_sub_image" `fmap` getExtensions
+glGetARBGetTextureSubImage = getExtensions >>= (return . member "GL_ARB_get_texture_sub_image")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/get_texture_sub_image.txt ARB_get_texture_sub_image> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -868,7 +868,7 @@ gl_ARB_get_texture_sub_image = member "GL_ARB_get_texture_sub_image" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/gpu_shader5.txt ARB_gpu_shader5> extension supported?
 glGetARBGPUShader5 :: MonadIO m => m Bool
-glGetARBGPUShader5 = member "GL_ARB_gpu_shader5" `fmap` getExtensions
+glGetARBGPUShader5 = getExtensions >>= (return . member "GL_ARB_gpu_shader5")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/gpu_shader5.txt ARB_gpu_shader5> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -879,7 +879,7 @@ gl_ARB_gpu_shader5 = member "GL_ARB_gpu_shader5" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/gpu_shader_fp64.txt ARB_gpu_shader_fp64> extension supported?
 glGetARBGPUShaderFP64 :: MonadIO m => m Bool
-glGetARBGPUShaderFP64 = member "GL_ARB_gpu_shader_fp64" `fmap` getExtensions
+glGetARBGPUShaderFP64 = getExtensions >>= (return . member "GL_ARB_gpu_shader_fp64")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/gpu_shader_fp64.txt ARB_gpu_shader_fp64> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -890,7 +890,7 @@ gl_ARB_gpu_shader_fp64 = member "GL_ARB_gpu_shader_fp64" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/gpu_shader_int64.txt ARB_gpu_shader_int64> extension supported?
 glGetARBGPUShaderInt64 :: MonadIO m => m Bool
-glGetARBGPUShaderInt64 = member "GL_ARB_gpu_shader_int64" `fmap` getExtensions
+glGetARBGPUShaderInt64 = getExtensions >>= (return . member "GL_ARB_gpu_shader_int64")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/gpu_shader_int64.txt ARB_gpu_shader_int64> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -901,7 +901,7 @@ gl_ARB_gpu_shader_int64 = member "GL_ARB_gpu_shader_int64" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/half_float_pixel.txt ARB_half_float_pixel> extension supported?
 glGetARBHalfFloatPixel :: MonadIO m => m Bool
-glGetARBHalfFloatPixel = member "GL_ARB_half_float_pixel" `fmap` getExtensions
+glGetARBHalfFloatPixel = getExtensions >>= (return . member "GL_ARB_half_float_pixel")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/half_float_pixel.txt ARB_half_float_pixel> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -912,7 +912,7 @@ gl_ARB_half_float_pixel = member "GL_ARB_half_float_pixel" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/half_float_vertex.txt ARB_half_float_vertex> extension supported?
 glGetARBHalfFloatVertex :: MonadIO m => m Bool
-glGetARBHalfFloatVertex = member "GL_ARB_half_float_vertex" `fmap` getExtensions
+glGetARBHalfFloatVertex = getExtensions >>= (return . member "GL_ARB_half_float_vertex")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/half_float_vertex.txt ARB_half_float_vertex> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -923,7 +923,7 @@ gl_ARB_half_float_vertex = member "GL_ARB_half_float_vertex" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/imaging.txt ARB_imaging> extension supported?
 glGetARBImaging :: MonadIO m => m Bool
-glGetARBImaging = member "GL_ARB_imaging" `fmap` getExtensions
+glGetARBImaging = getExtensions >>= (return . member "GL_ARB_imaging")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/imaging.txt ARB_imaging> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -934,7 +934,7 @@ gl_ARB_imaging = member "GL_ARB_imaging" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/indirect_parameters.txt ARB_indirect_parameters> extension supported?
 glGetARBIndirectParameters :: MonadIO m => m Bool
-glGetARBIndirectParameters = member "GL_ARB_indirect_parameters" `fmap` getExtensions
+glGetARBIndirectParameters = getExtensions >>= (return . member "GL_ARB_indirect_parameters")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/indirect_parameters.txt ARB_indirect_parameters> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -945,7 +945,7 @@ gl_ARB_indirect_parameters = member "GL_ARB_indirect_parameters" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/instanced_arrays.txt ARB_instanced_arrays> extension supported?
 glGetARBInstancedArrays :: MonadIO m => m Bool
-glGetARBInstancedArrays = member "GL_ARB_instanced_arrays" `fmap` getExtensions
+glGetARBInstancedArrays = getExtensions >>= (return . member "GL_ARB_instanced_arrays")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/instanced_arrays.txt ARB_instanced_arrays> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -956,7 +956,7 @@ gl_ARB_instanced_arrays = member "GL_ARB_instanced_arrays" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/internalformat_query.txt ARB_internalformat_query> extension supported?
 glGetARBInternalformatQuery :: MonadIO m => m Bool
-glGetARBInternalformatQuery = member "GL_ARB_internalformat_query" `fmap` getExtensions
+glGetARBInternalformatQuery = getExtensions >>= (return . member "GL_ARB_internalformat_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/internalformat_query.txt ARB_internalformat_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -967,7 +967,7 @@ gl_ARB_internalformat_query = member "GL_ARB_internalformat_query" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/internalformat_query2.txt ARB_internalformat_query2> extension supported?
 glGetARBInternalformatQuery2 :: MonadIO m => m Bool
-glGetARBInternalformatQuery2 = member "GL_ARB_internalformat_query2" `fmap` getExtensions
+glGetARBInternalformatQuery2 = getExtensions >>= (return . member "GL_ARB_internalformat_query2")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/internalformat_query2.txt ARB_internalformat_query2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -978,7 +978,7 @@ gl_ARB_internalformat_query2 = member "GL_ARB_internalformat_query2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/invalidate_subdata.txt ARB_invalidate_subdata> extension supported?
 glGetARBInvalidateSubdata :: MonadIO m => m Bool
-glGetARBInvalidateSubdata = member "GL_ARB_invalidate_subdata" `fmap` getExtensions
+glGetARBInvalidateSubdata = getExtensions >>= (return . member "GL_ARB_invalidate_subdata")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/invalidate_subdata.txt ARB_invalidate_subdata> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -989,7 +989,7 @@ gl_ARB_invalidate_subdata = member "GL_ARB_invalidate_subdata" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/map_buffer_alignment.txt ARB_map_buffer_alignment> extension supported?
 glGetARBMapBufferAlignment :: MonadIO m => m Bool
-glGetARBMapBufferAlignment = member "GL_ARB_map_buffer_alignment" `fmap` getExtensions
+glGetARBMapBufferAlignment = getExtensions >>= (return . member "GL_ARB_map_buffer_alignment")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/map_buffer_alignment.txt ARB_map_buffer_alignment> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1000,7 +1000,7 @@ gl_ARB_map_buffer_alignment = member "GL_ARB_map_buffer_alignment" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/map_buffer_range.txt ARB_map_buffer_range> extension supported?
 glGetARBMapBufferRange :: MonadIO m => m Bool
-glGetARBMapBufferRange = member "GL_ARB_map_buffer_range" `fmap` getExtensions
+glGetARBMapBufferRange = getExtensions >>= (return . member "GL_ARB_map_buffer_range")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/map_buffer_range.txt ARB_map_buffer_range> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1011,7 +1011,7 @@ gl_ARB_map_buffer_range = member "GL_ARB_map_buffer_range" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/matrix_palette.txt ARB_matrix_palette> extension supported?
 glGetARBMatrixPalette :: MonadIO m => m Bool
-glGetARBMatrixPalette = member "GL_ARB_matrix_palette" `fmap` getExtensions
+glGetARBMatrixPalette = getExtensions >>= (return . member "GL_ARB_matrix_palette")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/matrix_palette.txt ARB_matrix_palette> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1022,7 +1022,7 @@ gl_ARB_matrix_palette = member "GL_ARB_matrix_palette" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multi_bind.txt ARB_multi_bind> extension supported?
 glGetARBMultiBind :: MonadIO m => m Bool
-glGetARBMultiBind = member "GL_ARB_multi_bind" `fmap` getExtensions
+glGetARBMultiBind = getExtensions >>= (return . member "GL_ARB_multi_bind")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multi_bind.txt ARB_multi_bind> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1033,7 +1033,7 @@ gl_ARB_multi_bind = member "GL_ARB_multi_bind" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multi_draw_indirect.txt ARB_multi_draw_indirect> extension supported?
 glGetARBMultiDrawIndirect :: MonadIO m => m Bool
-glGetARBMultiDrawIndirect = member "GL_ARB_multi_draw_indirect" `fmap` getExtensions
+glGetARBMultiDrawIndirect = getExtensions >>= (return . member "GL_ARB_multi_draw_indirect")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multi_draw_indirect.txt ARB_multi_draw_indirect> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1044,7 +1044,7 @@ gl_ARB_multi_draw_indirect = member "GL_ARB_multi_draw_indirect" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multisample.txt ARB_multisample> extension supported?
 glGetARBMultisample :: MonadIO m => m Bool
-glGetARBMultisample = member "GL_ARB_multisample" `fmap` getExtensions
+glGetARBMultisample = getExtensions >>= (return . member "GL_ARB_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multisample.txt ARB_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1055,7 +1055,7 @@ gl_ARB_multisample = member "GL_ARB_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multitexture.txt ARB_multitexture> extension supported?
 glGetARBMultitexture :: MonadIO m => m Bool
-glGetARBMultitexture = member "GL_ARB_multitexture" `fmap` getExtensions
+glGetARBMultitexture = getExtensions >>= (return . member "GL_ARB_multitexture")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/multitexture.txt ARB_multitexture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1066,7 +1066,7 @@ gl_ARB_multitexture = member "GL_ARB_multitexture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/occlusion_query.txt ARB_occlusion_query> extension supported?
 glGetARBOcclusionQuery :: MonadIO m => m Bool
-glGetARBOcclusionQuery = member "GL_ARB_occlusion_query" `fmap` getExtensions
+glGetARBOcclusionQuery = getExtensions >>= (return . member "GL_ARB_occlusion_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/occlusion_query.txt ARB_occlusion_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1077,7 +1077,7 @@ gl_ARB_occlusion_query = member "GL_ARB_occlusion_query" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/occlusion_query2.txt ARB_occlusion_query2> extension supported?
 glGetARBOcclusionQuery2 :: MonadIO m => m Bool
-glGetARBOcclusionQuery2 = member "GL_ARB_occlusion_query2" `fmap` getExtensions
+glGetARBOcclusionQuery2 = getExtensions >>= (return . member "GL_ARB_occlusion_query2")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/occlusion_query2.txt ARB_occlusion_query2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1088,7 +1088,7 @@ gl_ARB_occlusion_query2 = member "GL_ARB_occlusion_query2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/parallel_shader_compile.txt ARB_parallel_shader_compile> extension supported?
 glGetARBParallelShaderCompile :: MonadIO m => m Bool
-glGetARBParallelShaderCompile = member "GL_ARB_parallel_shader_compile" `fmap` getExtensions
+glGetARBParallelShaderCompile = getExtensions >>= (return . member "GL_ARB_parallel_shader_compile")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/parallel_shader_compile.txt ARB_parallel_shader_compile> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1099,7 +1099,7 @@ gl_ARB_parallel_shader_compile = member "GL_ARB_parallel_shader_compile" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/pipeline_statistics_query.txt ARB_pipeline_statistics_query> extension supported?
 glGetARBPipelineStatisticsQuery :: MonadIO m => m Bool
-glGetARBPipelineStatisticsQuery = member "GL_ARB_pipeline_statistics_query" `fmap` getExtensions
+glGetARBPipelineStatisticsQuery = getExtensions >>= (return . member "GL_ARB_pipeline_statistics_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/pipeline_statistics_query.txt ARB_pipeline_statistics_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1110,7 +1110,7 @@ gl_ARB_pipeline_statistics_query = member "GL_ARB_pipeline_statistics_query" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/pixel_buffer_object.txt ARB_pixel_buffer_object> extension supported?
 glGetARBPixelBufferObject :: MonadIO m => m Bool
-glGetARBPixelBufferObject = member "GL_ARB_pixel_buffer_object" `fmap` getExtensions
+glGetARBPixelBufferObject = getExtensions >>= (return . member "GL_ARB_pixel_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/pixel_buffer_object.txt ARB_pixel_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1121,7 +1121,7 @@ gl_ARB_pixel_buffer_object = member "GL_ARB_pixel_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/point_parameters.txt ARB_point_parameters> extension supported?
 glGetARBPointParameters :: MonadIO m => m Bool
-glGetARBPointParameters = member "GL_ARB_point_parameters" `fmap` getExtensions
+glGetARBPointParameters = getExtensions >>= (return . member "GL_ARB_point_parameters")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/point_parameters.txt ARB_point_parameters> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1132,7 +1132,7 @@ gl_ARB_point_parameters = member "GL_ARB_point_parameters" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/point_sprite.txt ARB_point_sprite> extension supported?
 glGetARBPointSprite :: MonadIO m => m Bool
-glGetARBPointSprite = member "GL_ARB_point_sprite" `fmap` getExtensions
+glGetARBPointSprite = getExtensions >>= (return . member "GL_ARB_point_sprite")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/point_sprite.txt ARB_point_sprite> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1143,7 +1143,7 @@ gl_ARB_point_sprite = member "GL_ARB_point_sprite" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/program_interface_query.txt ARB_program_interface_query> extension supported?
 glGetARBProgramInterfaceQuery :: MonadIO m => m Bool
-glGetARBProgramInterfaceQuery = member "GL_ARB_program_interface_query" `fmap` getExtensions
+glGetARBProgramInterfaceQuery = getExtensions >>= (return . member "GL_ARB_program_interface_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/program_interface_query.txt ARB_program_interface_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1154,7 +1154,7 @@ gl_ARB_program_interface_query = member "GL_ARB_program_interface_query" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/provoking_vertex.txt ARB_provoking_vertex> extension supported?
 glGetARBProvokingVertex :: MonadIO m => m Bool
-glGetARBProvokingVertex = member "GL_ARB_provoking_vertex" `fmap` getExtensions
+glGetARBProvokingVertex = getExtensions >>= (return . member "GL_ARB_provoking_vertex")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/provoking_vertex.txt ARB_provoking_vertex> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1165,7 +1165,7 @@ gl_ARB_provoking_vertex = member "GL_ARB_provoking_vertex" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/query_buffer_object.txt ARB_query_buffer_object> extension supported?
 glGetARBQueryBufferObject :: MonadIO m => m Bool
-glGetARBQueryBufferObject = member "GL_ARB_query_buffer_object" `fmap` getExtensions
+glGetARBQueryBufferObject = getExtensions >>= (return . member "GL_ARB_query_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/query_buffer_object.txt ARB_query_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1176,7 +1176,7 @@ gl_ARB_query_buffer_object = member "GL_ARB_query_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/robustness.txt ARB_robustness> extension supported?
 glGetARBRobustness :: MonadIO m => m Bool
-glGetARBRobustness = member "GL_ARB_robustness" `fmap` getExtensions
+glGetARBRobustness = getExtensions >>= (return . member "GL_ARB_robustness")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/robustness.txt ARB_robustness> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1187,7 +1187,7 @@ gl_ARB_robustness = member "GL_ARB_robustness" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sample_locations.txt ARB_sample_locations> extension supported?
 glGetARBSampleLocations :: MonadIO m => m Bool
-glGetARBSampleLocations = member "GL_ARB_sample_locations" `fmap` getExtensions
+glGetARBSampleLocations = getExtensions >>= (return . member "GL_ARB_sample_locations")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sample_locations.txt ARB_sample_locations> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1198,7 +1198,7 @@ gl_ARB_sample_locations = member "GL_ARB_sample_locations" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sample_shading.txt ARB_sample_shading> extension supported?
 glGetARBSampleShading :: MonadIO m => m Bool
-glGetARBSampleShading = member "GL_ARB_sample_shading" `fmap` getExtensions
+glGetARBSampleShading = getExtensions >>= (return . member "GL_ARB_sample_shading")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sample_shading.txt ARB_sample_shading> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1209,7 +1209,7 @@ gl_ARB_sample_shading = member "GL_ARB_sample_shading" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sampler_objects.txt ARB_sampler_objects> extension supported?
 glGetARBSamplerObjects :: MonadIO m => m Bool
-glGetARBSamplerObjects = member "GL_ARB_sampler_objects" `fmap` getExtensions
+glGetARBSamplerObjects = getExtensions >>= (return . member "GL_ARB_sampler_objects")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sampler_objects.txt ARB_sampler_objects> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1220,7 +1220,7 @@ gl_ARB_sampler_objects = member "GL_ARB_sampler_objects" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/seamless_cube_map.txt ARB_seamless_cube_map> extension supported?
 glGetARBSeamlessCubeMap :: MonadIO m => m Bool
-glGetARBSeamlessCubeMap = member "GL_ARB_seamless_cube_map" `fmap` getExtensions
+glGetARBSeamlessCubeMap = getExtensions >>= (return . member "GL_ARB_seamless_cube_map")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/seamless_cube_map.txt ARB_seamless_cube_map> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1231,7 +1231,7 @@ gl_ARB_seamless_cube_map = member "GL_ARB_seamless_cube_map" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/seamless_cubemap_per_texture.txt ARB_seamless_cubemap_per_texture> extension supported?
 glGetARBSeamlessCubemapPerTexture :: MonadIO m => m Bool
-glGetARBSeamlessCubemapPerTexture = member "GL_ARB_seamless_cubemap_per_texture" `fmap` getExtensions
+glGetARBSeamlessCubemapPerTexture = getExtensions >>= (return . member "GL_ARB_seamless_cubemap_per_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/seamless_cubemap_per_texture.txt ARB_seamless_cubemap_per_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1242,7 +1242,7 @@ gl_ARB_seamless_cubemap_per_texture = member "GL_ARB_seamless_cubemap_per_textur
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/separate_shader_objects.txt ARB_separate_shader_objects> extension supported?
 glGetARBSeparateShaderObjects :: MonadIO m => m Bool
-glGetARBSeparateShaderObjects = member "GL_ARB_separate_shader_objects" `fmap` getExtensions
+glGetARBSeparateShaderObjects = getExtensions >>= (return . member "GL_ARB_separate_shader_objects")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/separate_shader_objects.txt ARB_separate_shader_objects> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1253,7 +1253,7 @@ gl_ARB_separate_shader_objects = member "GL_ARB_separate_shader_objects" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_atomic_counters.txt ARB_shader_atomic_counters> extension supported?
 glGetARBShaderAtomicCounters :: MonadIO m => m Bool
-glGetARBShaderAtomicCounters = member "GL_ARB_shader_atomic_counters" `fmap` getExtensions
+glGetARBShaderAtomicCounters = getExtensions >>= (return . member "GL_ARB_shader_atomic_counters")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_atomic_counters.txt ARB_shader_atomic_counters> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1264,7 +1264,7 @@ gl_ARB_shader_atomic_counters = member "GL_ARB_shader_atomic_counters" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_image_load_store.txt ARB_shader_image_load_store> extension supported?
 glGetARBShaderImageLoadStore :: MonadIO m => m Bool
-glGetARBShaderImageLoadStore = member "GL_ARB_shader_image_load_store" `fmap` getExtensions
+glGetARBShaderImageLoadStore = getExtensions >>= (return . member "GL_ARB_shader_image_load_store")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_image_load_store.txt ARB_shader_image_load_store> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1275,7 +1275,7 @@ gl_ARB_shader_image_load_store = member "GL_ARB_shader_image_load_store" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_objects.txt ARB_shader_objects> extension supported?
 glGetARBShaderObjects :: MonadIO m => m Bool
-glGetARBShaderObjects = member "GL_ARB_shader_objects" `fmap` getExtensions
+glGetARBShaderObjects = getExtensions >>= (return . member "GL_ARB_shader_objects")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_objects.txt ARB_shader_objects> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1286,7 +1286,7 @@ gl_ARB_shader_objects = member "GL_ARB_shader_objects" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_storage_buffer_object.txt ARB_shader_storage_buffer_object> extension supported?
 glGetARBShaderStorageBufferObject :: MonadIO m => m Bool
-glGetARBShaderStorageBufferObject = member "GL_ARB_shader_storage_buffer_object" `fmap` getExtensions
+glGetARBShaderStorageBufferObject = getExtensions >>= (return . member "GL_ARB_shader_storage_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_storage_buffer_object.txt ARB_shader_storage_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1297,7 +1297,7 @@ gl_ARB_shader_storage_buffer_object = member "GL_ARB_shader_storage_buffer_objec
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_subroutine.txt ARB_shader_subroutine> extension supported?
 glGetARBShaderSubroutine :: MonadIO m => m Bool
-glGetARBShaderSubroutine = member "GL_ARB_shader_subroutine" `fmap` getExtensions
+glGetARBShaderSubroutine = getExtensions >>= (return . member "GL_ARB_shader_subroutine")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shader_subroutine.txt ARB_shader_subroutine> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1308,7 +1308,7 @@ gl_ARB_shader_subroutine = member "GL_ARB_shader_subroutine" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shading_language_100.txt ARB_shading_language_100> extension supported?
 glGetARBShadingLanguage100 :: MonadIO m => m Bool
-glGetARBShadingLanguage100 = member "GL_ARB_shading_language_100" `fmap` getExtensions
+glGetARBShadingLanguage100 = getExtensions >>= (return . member "GL_ARB_shading_language_100")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shading_language_100.txt ARB_shading_language_100> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1319,7 +1319,7 @@ gl_ARB_shading_language_100 = member "GL_ARB_shading_language_100" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shading_language_include.txt ARB_shading_language_include> extension supported?
 glGetARBShadingLanguageInclude :: MonadIO m => m Bool
-glGetARBShadingLanguageInclude = member "GL_ARB_shading_language_include" `fmap` getExtensions
+glGetARBShadingLanguageInclude = getExtensions >>= (return . member "GL_ARB_shading_language_include")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shading_language_include.txt ARB_shading_language_include> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1330,7 +1330,7 @@ gl_ARB_shading_language_include = member "GL_ARB_shading_language_include" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shadow.txt ARB_shadow> extension supported?
 glGetARBShadow :: MonadIO m => m Bool
-glGetARBShadow = member "GL_ARB_shadow" `fmap` getExtensions
+glGetARBShadow = getExtensions >>= (return . member "GL_ARB_shadow")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shadow.txt ARB_shadow> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1341,7 +1341,7 @@ gl_ARB_shadow = member "GL_ARB_shadow" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shadow_ambient.txt ARB_shadow_ambient> extension supported?
 glGetARBShadowAmbient :: MonadIO m => m Bool
-glGetARBShadowAmbient = member "GL_ARB_shadow_ambient" `fmap` getExtensions
+glGetARBShadowAmbient = getExtensions >>= (return . member "GL_ARB_shadow_ambient")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/shadow_ambient.txt ARB_shadow_ambient> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1352,7 +1352,7 @@ gl_ARB_shadow_ambient = member "GL_ARB_shadow_ambient" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sparse_buffer.txt ARB_sparse_buffer> extension supported?
 glGetARBSparseBuffer :: MonadIO m => m Bool
-glGetARBSparseBuffer = member "GL_ARB_sparse_buffer" `fmap` getExtensions
+glGetARBSparseBuffer = getExtensions >>= (return . member "GL_ARB_sparse_buffer")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sparse_buffer.txt ARB_sparse_buffer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1363,7 +1363,7 @@ gl_ARB_sparse_buffer = member "GL_ARB_sparse_buffer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sparse_texture.txt ARB_sparse_texture> extension supported?
 glGetARBSparseTexture :: MonadIO m => m Bool
-glGetARBSparseTexture = member "GL_ARB_sparse_texture" `fmap` getExtensions
+glGetARBSparseTexture = getExtensions >>= (return . member "GL_ARB_sparse_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sparse_texture.txt ARB_sparse_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1374,7 +1374,7 @@ gl_ARB_sparse_texture = member "GL_ARB_sparse_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/stencil_texturing.txt ARB_stencil_texturing> extension supported?
 glGetARBStencilTexturing :: MonadIO m => m Bool
-glGetARBStencilTexturing = member "GL_ARB_stencil_texturing" `fmap` getExtensions
+glGetARBStencilTexturing = getExtensions >>= (return . member "GL_ARB_stencil_texturing")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/stencil_texturing.txt ARB_stencil_texturing> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1385,7 +1385,7 @@ gl_ARB_stencil_texturing = member "GL_ARB_stencil_texturing" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sync.txt ARB_sync> extension supported?
 glGetARBSync :: MonadIO m => m Bool
-glGetARBSync = member "GL_ARB_sync" `fmap` getExtensions
+glGetARBSync = getExtensions >>= (return . member "GL_ARB_sync")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/sync.txt ARB_sync> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1396,7 +1396,7 @@ gl_ARB_sync = member "GL_ARB_sync" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/tessellation_shader.txt ARB_tessellation_shader> extension supported?
 glGetARBTessellationShader :: MonadIO m => m Bool
-glGetARBTessellationShader = member "GL_ARB_tessellation_shader" `fmap` getExtensions
+glGetARBTessellationShader = getExtensions >>= (return . member "GL_ARB_tessellation_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/tessellation_shader.txt ARB_tessellation_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1407,7 +1407,7 @@ gl_ARB_tessellation_shader = member "GL_ARB_tessellation_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_barrier.txt ARB_texture_barrier> extension supported?
 glGetARBTextureBarrier :: MonadIO m => m Bool
-glGetARBTextureBarrier = member "GL_ARB_texture_barrier" `fmap` getExtensions
+glGetARBTextureBarrier = getExtensions >>= (return . member "GL_ARB_texture_barrier")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_barrier.txt ARB_texture_barrier> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1418,7 +1418,7 @@ gl_ARB_texture_barrier = member "GL_ARB_texture_barrier" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_border_clamp.txt ARB_texture_border_clamp> extension supported?
 glGetARBTextureBorderClamp :: MonadIO m => m Bool
-glGetARBTextureBorderClamp = member "GL_ARB_texture_border_clamp" `fmap` getExtensions
+glGetARBTextureBorderClamp = getExtensions >>= (return . member "GL_ARB_texture_border_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_border_clamp.txt ARB_texture_border_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1429,7 +1429,7 @@ gl_ARB_texture_border_clamp = member "GL_ARB_texture_border_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_buffer_object.txt ARB_texture_buffer_object> extension supported?
 glGetARBTextureBufferObject :: MonadIO m => m Bool
-glGetARBTextureBufferObject = member "GL_ARB_texture_buffer_object" `fmap` getExtensions
+glGetARBTextureBufferObject = getExtensions >>= (return . member "GL_ARB_texture_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_buffer_object.txt ARB_texture_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1440,7 +1440,7 @@ gl_ARB_texture_buffer_object = member "GL_ARB_texture_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_buffer_object_rgb32.txt ARB_texture_buffer_object_rgb32> extension supported?
 glGetARBTextureBufferObjectRGB32 :: MonadIO m => m Bool
-glGetARBTextureBufferObjectRGB32 = member "GL_ARB_texture_buffer_object_rgb32" `fmap` getExtensions
+glGetARBTextureBufferObjectRGB32 = getExtensions >>= (return . member "GL_ARB_texture_buffer_object_rgb32")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_buffer_object_rgb32.txt ARB_texture_buffer_object_rgb32> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1451,7 +1451,7 @@ gl_ARB_texture_buffer_object_rgb32 = member "GL_ARB_texture_buffer_object_rgb32"
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_buffer_range.txt ARB_texture_buffer_range> extension supported?
 glGetARBTextureBufferRange :: MonadIO m => m Bool
-glGetARBTextureBufferRange = member "GL_ARB_texture_buffer_range" `fmap` getExtensions
+glGetARBTextureBufferRange = getExtensions >>= (return . member "GL_ARB_texture_buffer_range")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_buffer_range.txt ARB_texture_buffer_range> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1462,7 +1462,7 @@ gl_ARB_texture_buffer_range = member "GL_ARB_texture_buffer_range" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_compression.txt ARB_texture_compression> extension supported?
 glGetARBTextureCompression :: MonadIO m => m Bool
-glGetARBTextureCompression = member "GL_ARB_texture_compression" `fmap` getExtensions
+glGetARBTextureCompression = getExtensions >>= (return . member "GL_ARB_texture_compression")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_compression.txt ARB_texture_compression> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1473,7 +1473,7 @@ gl_ARB_texture_compression = member "GL_ARB_texture_compression" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_compression_bptc.txt ARB_texture_compression_bptc> extension supported?
 glGetARBTextureCompressionBPTC :: MonadIO m => m Bool
-glGetARBTextureCompressionBPTC = member "GL_ARB_texture_compression_bptc" `fmap` getExtensions
+glGetARBTextureCompressionBPTC = getExtensions >>= (return . member "GL_ARB_texture_compression_bptc")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_compression_bptc.txt ARB_texture_compression_bptc> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1484,7 +1484,7 @@ gl_ARB_texture_compression_bptc = member "GL_ARB_texture_compression_bptc" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_compression_rgtc.txt ARB_texture_compression_rgtc> extension supported?
 glGetARBTextureCompressionRGTC :: MonadIO m => m Bool
-glGetARBTextureCompressionRGTC = member "GL_ARB_texture_compression_rgtc" `fmap` getExtensions
+glGetARBTextureCompressionRGTC = getExtensions >>= (return . member "GL_ARB_texture_compression_rgtc")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_compression_rgtc.txt ARB_texture_compression_rgtc> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1495,7 +1495,7 @@ gl_ARB_texture_compression_rgtc = member "GL_ARB_texture_compression_rgtc" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_cube_map.txt ARB_texture_cube_map> extension supported?
 glGetARBTextureCubeMap :: MonadIO m => m Bool
-glGetARBTextureCubeMap = member "GL_ARB_texture_cube_map" `fmap` getExtensions
+glGetARBTextureCubeMap = getExtensions >>= (return . member "GL_ARB_texture_cube_map")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_cube_map.txt ARB_texture_cube_map> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1506,7 +1506,7 @@ gl_ARB_texture_cube_map = member "GL_ARB_texture_cube_map" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_cube_map_array.txt ARB_texture_cube_map_array> extension supported?
 glGetARBTextureCubeMapArray :: MonadIO m => m Bool
-glGetARBTextureCubeMapArray = member "GL_ARB_texture_cube_map_array" `fmap` getExtensions
+glGetARBTextureCubeMapArray = getExtensions >>= (return . member "GL_ARB_texture_cube_map_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_cube_map_array.txt ARB_texture_cube_map_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1517,7 +1517,7 @@ gl_ARB_texture_cube_map_array = member "GL_ARB_texture_cube_map_array" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_env_combine.txt ARB_texture_env_combine> extension supported?
 glGetARBTextureEnvCombine :: MonadIO m => m Bool
-glGetARBTextureEnvCombine = member "GL_ARB_texture_env_combine" `fmap` getExtensions
+glGetARBTextureEnvCombine = getExtensions >>= (return . member "GL_ARB_texture_env_combine")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_env_combine.txt ARB_texture_env_combine> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1528,7 +1528,7 @@ gl_ARB_texture_env_combine = member "GL_ARB_texture_env_combine" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_env_dot3.txt ARB_texture_env_dot3> extension supported?
 glGetARBTextureEnvDot3 :: MonadIO m => m Bool
-glGetARBTextureEnvDot3 = member "GL_ARB_texture_env_dot3" `fmap` getExtensions
+glGetARBTextureEnvDot3 = getExtensions >>= (return . member "GL_ARB_texture_env_dot3")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_env_dot3.txt ARB_texture_env_dot3> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1539,7 +1539,7 @@ gl_ARB_texture_env_dot3 = member "GL_ARB_texture_env_dot3" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_filter_minmax.txt ARB_texture_filter_minmax> extension supported?
 glGetARBTextureFilterMinmax :: MonadIO m => m Bool
-glGetARBTextureFilterMinmax = member "GL_ARB_texture_filter_minmax" `fmap` getExtensions
+glGetARBTextureFilterMinmax = getExtensions >>= (return . member "GL_ARB_texture_filter_minmax")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_filter_minmax.txt ARB_texture_filter_minmax> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1550,7 +1550,7 @@ gl_ARB_texture_filter_minmax = member "GL_ARB_texture_filter_minmax" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_float.txt ARB_texture_float> extension supported?
 glGetARBTextureFloat :: MonadIO m => m Bool
-glGetARBTextureFloat = member "GL_ARB_texture_float" `fmap` getExtensions
+glGetARBTextureFloat = getExtensions >>= (return . member "GL_ARB_texture_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_float.txt ARB_texture_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1561,7 +1561,7 @@ gl_ARB_texture_float = member "GL_ARB_texture_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_gather.txt ARB_texture_gather> extension supported?
 glGetARBTextureGather :: MonadIO m => m Bool
-glGetARBTextureGather = member "GL_ARB_texture_gather" `fmap` getExtensions
+glGetARBTextureGather = getExtensions >>= (return . member "GL_ARB_texture_gather")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_gather.txt ARB_texture_gather> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1572,7 +1572,7 @@ gl_ARB_texture_gather = member "GL_ARB_texture_gather" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_mirror_clamp_to_edge.txt ARB_texture_mirror_clamp_to_edge> extension supported?
 glGetARBTextureMirrorClampToEdge :: MonadIO m => m Bool
-glGetARBTextureMirrorClampToEdge = member "GL_ARB_texture_mirror_clamp_to_edge" `fmap` getExtensions
+glGetARBTextureMirrorClampToEdge = getExtensions >>= (return . member "GL_ARB_texture_mirror_clamp_to_edge")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_mirror_clamp_to_edge.txt ARB_texture_mirror_clamp_to_edge> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1583,7 +1583,7 @@ gl_ARB_texture_mirror_clamp_to_edge = member "GL_ARB_texture_mirror_clamp_to_edg
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_mirrored_repeat.txt ARB_texture_mirrored_repeat> extension supported?
 glGetARBTextureMirroredRepeat :: MonadIO m => m Bool
-glGetARBTextureMirroredRepeat = member "GL_ARB_texture_mirrored_repeat" `fmap` getExtensions
+glGetARBTextureMirroredRepeat = getExtensions >>= (return . member "GL_ARB_texture_mirrored_repeat")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_mirrored_repeat.txt ARB_texture_mirrored_repeat> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1594,7 +1594,7 @@ gl_ARB_texture_mirrored_repeat = member "GL_ARB_texture_mirrored_repeat" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_multisample.txt ARB_texture_multisample> extension supported?
 glGetARBTextureMultisample :: MonadIO m => m Bool
-glGetARBTextureMultisample = member "GL_ARB_texture_multisample" `fmap` getExtensions
+glGetARBTextureMultisample = getExtensions >>= (return . member "GL_ARB_texture_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_multisample.txt ARB_texture_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1605,7 +1605,7 @@ gl_ARB_texture_multisample = member "GL_ARB_texture_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_rectangle.txt ARB_texture_rectangle> extension supported?
 glGetARBTextureRectangle :: MonadIO m => m Bool
-glGetARBTextureRectangle = member "GL_ARB_texture_rectangle" `fmap` getExtensions
+glGetARBTextureRectangle = getExtensions >>= (return . member "GL_ARB_texture_rectangle")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_rectangle.txt ARB_texture_rectangle> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1616,7 +1616,7 @@ gl_ARB_texture_rectangle = member "GL_ARB_texture_rectangle" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_rg.txt ARB_texture_rg> extension supported?
 glGetARBTextureRG :: MonadIO m => m Bool
-glGetARBTextureRG = member "GL_ARB_texture_rg" `fmap` getExtensions
+glGetARBTextureRG = getExtensions >>= (return . member "GL_ARB_texture_rg")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_rg.txt ARB_texture_rg> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1627,7 +1627,7 @@ gl_ARB_texture_rg = member "GL_ARB_texture_rg" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_rgb10_a2ui.txt ARB_texture_rgb10_a2ui> extension supported?
 glGetARBTextureRGB10A2UI :: MonadIO m => m Bool
-glGetARBTextureRGB10A2UI = member "GL_ARB_texture_rgb10_a2ui" `fmap` getExtensions
+glGetARBTextureRGB10A2UI = getExtensions >>= (return . member "GL_ARB_texture_rgb10_a2ui")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_rgb10_a2ui.txt ARB_texture_rgb10_a2ui> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1638,7 +1638,7 @@ gl_ARB_texture_rgb10_a2ui = member "GL_ARB_texture_rgb10_a2ui" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_stencil8.txt ARB_texture_stencil8> extension supported?
 glGetARBTextureStencil8 :: MonadIO m => m Bool
-glGetARBTextureStencil8 = member "GL_ARB_texture_stencil8" `fmap` getExtensions
+glGetARBTextureStencil8 = getExtensions >>= (return . member "GL_ARB_texture_stencil8")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_stencil8.txt ARB_texture_stencil8> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1649,7 +1649,7 @@ gl_ARB_texture_stencil8 = member "GL_ARB_texture_stencil8" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_storage.txt ARB_texture_storage> extension supported?
 glGetARBTextureStorage :: MonadIO m => m Bool
-glGetARBTextureStorage = member "GL_ARB_texture_storage" `fmap` getExtensions
+glGetARBTextureStorage = getExtensions >>= (return . member "GL_ARB_texture_storage")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_storage.txt ARB_texture_storage> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1660,7 +1660,7 @@ gl_ARB_texture_storage = member "GL_ARB_texture_storage" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_storage_multisample.txt ARB_texture_storage_multisample> extension supported?
 glGetARBTextureStorageMultisample :: MonadIO m => m Bool
-glGetARBTextureStorageMultisample = member "GL_ARB_texture_storage_multisample" `fmap` getExtensions
+glGetARBTextureStorageMultisample = getExtensions >>= (return . member "GL_ARB_texture_storage_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_storage_multisample.txt ARB_texture_storage_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1671,7 +1671,7 @@ gl_ARB_texture_storage_multisample = member "GL_ARB_texture_storage_multisample"
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_swizzle.txt ARB_texture_swizzle> extension supported?
 glGetARBTextureSwizzle :: MonadIO m => m Bool
-glGetARBTextureSwizzle = member "GL_ARB_texture_swizzle" `fmap` getExtensions
+glGetARBTextureSwizzle = getExtensions >>= (return . member "GL_ARB_texture_swizzle")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_swizzle.txt ARB_texture_swizzle> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1682,7 +1682,7 @@ gl_ARB_texture_swizzle = member "GL_ARB_texture_swizzle" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_view.txt ARB_texture_view> extension supported?
 glGetARBTextureView :: MonadIO m => m Bool
-glGetARBTextureView = member "GL_ARB_texture_view" `fmap` getExtensions
+glGetARBTextureView = getExtensions >>= (return . member "GL_ARB_texture_view")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_view.txt ARB_texture_view> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1693,7 +1693,7 @@ gl_ARB_texture_view = member "GL_ARB_texture_view" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/timer_query.txt ARB_timer_query> extension supported?
 glGetARBTimerQuery :: MonadIO m => m Bool
-glGetARBTimerQuery = member "GL_ARB_timer_query" `fmap` getExtensions
+glGetARBTimerQuery = getExtensions >>= (return . member "GL_ARB_timer_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/timer_query.txt ARB_timer_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1704,7 +1704,7 @@ gl_ARB_timer_query = member "GL_ARB_timer_query" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback2.txt ARB_transform_feedback2> extension supported?
 glGetARBTransformFeedback2 :: MonadIO m => m Bool
-glGetARBTransformFeedback2 = member "GL_ARB_transform_feedback2" `fmap` getExtensions
+glGetARBTransformFeedback2 = getExtensions >>= (return . member "GL_ARB_transform_feedback2")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback2.txt ARB_transform_feedback2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1715,7 +1715,7 @@ gl_ARB_transform_feedback2 = member "GL_ARB_transform_feedback2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback3.txt ARB_transform_feedback3> extension supported?
 glGetARBTransformFeedback3 :: MonadIO m => m Bool
-glGetARBTransformFeedback3 = member "GL_ARB_transform_feedback3" `fmap` getExtensions
+glGetARBTransformFeedback3 = getExtensions >>= (return . member "GL_ARB_transform_feedback3")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback3.txt ARB_transform_feedback3> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1726,7 +1726,7 @@ gl_ARB_transform_feedback3 = member "GL_ARB_transform_feedback3" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback_instanced.txt ARB_transform_feedback_instanced> extension supported?
 glGetARBTransformFeedbackInstanced :: MonadIO m => m Bool
-glGetARBTransformFeedbackInstanced = member "GL_ARB_transform_feedback_instanced" `fmap` getExtensions
+glGetARBTransformFeedbackInstanced = getExtensions >>= (return . member "GL_ARB_transform_feedback_instanced")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback_instanced.txt ARB_transform_feedback_instanced> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1737,7 +1737,7 @@ gl_ARB_transform_feedback_instanced = member "GL_ARB_transform_feedback_instance
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback_overflow_query.txt ARB_transform_feedback_overflow_query> extension supported?
 glGetARBTransformFeedbackOverflowQuery :: MonadIO m => m Bool
-glGetARBTransformFeedbackOverflowQuery = member "GL_ARB_transform_feedback_overflow_query" `fmap` getExtensions
+glGetARBTransformFeedbackOverflowQuery = getExtensions >>= (return . member "GL_ARB_transform_feedback_overflow_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transform_feedback_overflow_query.txt ARB_transform_feedback_overflow_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1748,7 +1748,7 @@ gl_ARB_transform_feedback_overflow_query = member "GL_ARB_transform_feedback_ove
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transpose_matrix.txt ARB_transpose_matrix> extension supported?
 glGetARBTransposeMatrix :: MonadIO m => m Bool
-glGetARBTransposeMatrix = member "GL_ARB_transpose_matrix" `fmap` getExtensions
+glGetARBTransposeMatrix = getExtensions >>= (return . member "GL_ARB_transpose_matrix")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/transpose_matrix.txt ARB_transpose_matrix> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1759,7 +1759,7 @@ gl_ARB_transpose_matrix = member "GL_ARB_transpose_matrix" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/uniform_buffer_object.txt ARB_uniform_buffer_object> extension supported?
 glGetARBUniformBufferObject :: MonadIO m => m Bool
-glGetARBUniformBufferObject = member "GL_ARB_uniform_buffer_object" `fmap` getExtensions
+glGetARBUniformBufferObject = getExtensions >>= (return . member "GL_ARB_uniform_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/uniform_buffer_object.txt ARB_uniform_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1770,7 +1770,7 @@ gl_ARB_uniform_buffer_object = member "GL_ARB_uniform_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_array_bgra.txt ARB_vertex_array_bgra> extension supported?
 glGetARBVertexArrayBGRA :: MonadIO m => m Bool
-glGetARBVertexArrayBGRA = member "GL_ARB_vertex_array_bgra" `fmap` getExtensions
+glGetARBVertexArrayBGRA = getExtensions >>= (return . member "GL_ARB_vertex_array_bgra")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_array_bgra.txt ARB_vertex_array_bgra> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1781,7 +1781,7 @@ gl_ARB_vertex_array_bgra = member "GL_ARB_vertex_array_bgra" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_array_object.txt ARB_vertex_array_object> extension supported?
 glGetARBVertexArrayObject :: MonadIO m => m Bool
-glGetARBVertexArrayObject = member "GL_ARB_vertex_array_object" `fmap` getExtensions
+glGetARBVertexArrayObject = getExtensions >>= (return . member "GL_ARB_vertex_array_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_array_object.txt ARB_vertex_array_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1792,7 +1792,7 @@ gl_ARB_vertex_array_object = member "GL_ARB_vertex_array_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_attrib_64bit.txt ARB_vertex_attrib_64bit> extension supported?
 glGetARBVertexAttrib64Bit :: MonadIO m => m Bool
-glGetARBVertexAttrib64Bit = member "GL_ARB_vertex_attrib_64bit" `fmap` getExtensions
+glGetARBVertexAttrib64Bit = getExtensions >>= (return . member "GL_ARB_vertex_attrib_64bit")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_attrib_64bit.txt ARB_vertex_attrib_64bit> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1803,7 +1803,7 @@ gl_ARB_vertex_attrib_64bit = member "GL_ARB_vertex_attrib_64bit" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_attrib_binding.txt ARB_vertex_attrib_binding> extension supported?
 glGetARBVertexAttribBinding :: MonadIO m => m Bool
-glGetARBVertexAttribBinding = member "GL_ARB_vertex_attrib_binding" `fmap` getExtensions
+glGetARBVertexAttribBinding = getExtensions >>= (return . member "GL_ARB_vertex_attrib_binding")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_attrib_binding.txt ARB_vertex_attrib_binding> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1814,7 +1814,7 @@ gl_ARB_vertex_attrib_binding = member "GL_ARB_vertex_attrib_binding" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_blend.txt ARB_vertex_blend> extension supported?
 glGetARBVertexBlend :: MonadIO m => m Bool
-glGetARBVertexBlend = member "GL_ARB_vertex_blend" `fmap` getExtensions
+glGetARBVertexBlend = getExtensions >>= (return . member "GL_ARB_vertex_blend")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_blend.txt ARB_vertex_blend> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1825,7 +1825,7 @@ gl_ARB_vertex_blend = member "GL_ARB_vertex_blend" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_buffer_object.txt ARB_vertex_buffer_object> extension supported?
 glGetARBVertexBufferObject :: MonadIO m => m Bool
-glGetARBVertexBufferObject = member "GL_ARB_vertex_buffer_object" `fmap` getExtensions
+glGetARBVertexBufferObject = getExtensions >>= (return . member "GL_ARB_vertex_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_buffer_object.txt ARB_vertex_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1836,7 +1836,7 @@ gl_ARB_vertex_buffer_object = member "GL_ARB_vertex_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_program.txt ARB_vertex_program> extension supported?
 glGetARBVertexProgram :: MonadIO m => m Bool
-glGetARBVertexProgram = member "GL_ARB_vertex_program" `fmap` getExtensions
+glGetARBVertexProgram = getExtensions >>= (return . member "GL_ARB_vertex_program")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_program.txt ARB_vertex_program> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1847,7 +1847,7 @@ gl_ARB_vertex_program = member "GL_ARB_vertex_program" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_shader.txt ARB_vertex_shader> extension supported?
 glGetARBVertexShader :: MonadIO m => m Bool
-glGetARBVertexShader = member "GL_ARB_vertex_shader" `fmap` getExtensions
+glGetARBVertexShader = getExtensions >>= (return . member "GL_ARB_vertex_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_shader.txt ARB_vertex_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1858,7 +1858,7 @@ gl_ARB_vertex_shader = member "GL_ARB_vertex_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_type_10f_11f_11f_rev.txt ARB_vertex_type_10f_11f_11f_rev> extension supported?
 glGetARBVertexType10f11f11fRev :: MonadIO m => m Bool
-glGetARBVertexType10f11f11fRev = member "GL_ARB_vertex_type_10f_11f_11f_rev" `fmap` getExtensions
+glGetARBVertexType10f11f11fRev = getExtensions >>= (return . member "GL_ARB_vertex_type_10f_11f_11f_rev")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_type_10f_11f_11f_rev.txt ARB_vertex_type_10f_11f_11f_rev> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1869,7 +1869,7 @@ gl_ARB_vertex_type_10f_11f_11f_rev = member "GL_ARB_vertex_type_10f_11f_11f_rev"
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_type_2_10_10_10_rev.txt ARB_vertex_type_2_10_10_10_rev> extension supported?
 glGetARBVertexType2101010Rev :: MonadIO m => m Bool
-glGetARBVertexType2101010Rev = member "GL_ARB_vertex_type_2_10_10_10_rev" `fmap` getExtensions
+glGetARBVertexType2101010Rev = getExtensions >>= (return . member "GL_ARB_vertex_type_2_10_10_10_rev")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/vertex_type_2_10_10_10_rev.txt ARB_vertex_type_2_10_10_10_rev> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1880,7 +1880,7 @@ gl_ARB_vertex_type_2_10_10_10_rev = member "GL_ARB_vertex_type_2_10_10_10_rev" e
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/viewport_array.txt ARB_viewport_array> extension supported?
 glGetARBViewportArray :: MonadIO m => m Bool
-glGetARBViewportArray = member "GL_ARB_viewport_array" `fmap` getExtensions
+glGetARBViewportArray = getExtensions >>= (return . member "GL_ARB_viewport_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/viewport_array.txt ARB_viewport_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1891,7 +1891,7 @@ gl_ARB_viewport_array = member "GL_ARB_viewport_array" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/window_pos.txt ARB_window_pos> extension supported?
 glGetARBWindowPos :: MonadIO m => m Bool
-glGetARBWindowPos = member "GL_ARB_window_pos" `fmap` getExtensions
+glGetARBWindowPos = getExtensions >>= (return . member "GL_ARB_window_pos")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/window_pos.txt ARB_window_pos> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1902,7 +1902,7 @@ gl_ARB_window_pos = member "GL_ARB_window_pos" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/draw_buffers.txt ATI_draw_buffers> extension supported?
 glGetATIDrawBuffers :: MonadIO m => m Bool
-glGetATIDrawBuffers = member "GL_ATI_draw_buffers" `fmap` getExtensions
+glGetATIDrawBuffers = getExtensions >>= (return . member "GL_ATI_draw_buffers")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/draw_buffers.txt ATI_draw_buffers> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1913,7 +1913,7 @@ gl_ATI_draw_buffers = member "GL_ATI_draw_buffers" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/element_array.txt ATI_element_array> extension supported?
 glGetATIElementArray :: MonadIO m => m Bool
-glGetATIElementArray = member "GL_ATI_element_array" `fmap` getExtensions
+glGetATIElementArray = getExtensions >>= (return . member "GL_ATI_element_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/element_array.txt ATI_element_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1924,7 +1924,7 @@ gl_ATI_element_array = member "GL_ATI_element_array" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/envmap_bumpmap.txt ATI_envmap_bumpmap> extension supported?
 glGetATIEnvmapBumpmap :: MonadIO m => m Bool
-glGetATIEnvmapBumpmap = member "GL_ATI_envmap_bumpmap" `fmap` getExtensions
+glGetATIEnvmapBumpmap = getExtensions >>= (return . member "GL_ATI_envmap_bumpmap")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/envmap_bumpmap.txt ATI_envmap_bumpmap> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1935,7 +1935,7 @@ gl_ATI_envmap_bumpmap = member "GL_ATI_envmap_bumpmap" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/fragment_shader.txt ATI_fragment_shader> extension supported?
 glGetATIFragmentShader :: MonadIO m => m Bool
-glGetATIFragmentShader = member "GL_ATI_fragment_shader" `fmap` getExtensions
+glGetATIFragmentShader = getExtensions >>= (return . member "GL_ATI_fragment_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/fragment_shader.txt ATI_fragment_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1946,7 +1946,7 @@ gl_ATI_fragment_shader = member "GL_ATI_fragment_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/map_object_buffer.txt ATI_map_object_buffer> extension supported?
 glGetATIMapObjectBuffer :: MonadIO m => m Bool
-glGetATIMapObjectBuffer = member "GL_ATI_map_object_buffer" `fmap` getExtensions
+glGetATIMapObjectBuffer = getExtensions >>= (return . member "GL_ATI_map_object_buffer")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/map_object_buffer.txt ATI_map_object_buffer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1957,7 +1957,7 @@ gl_ATI_map_object_buffer = member "GL_ATI_map_object_buffer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/meminfo.txt ATI_meminfo> extension supported?
 glGetATIMeminfo :: MonadIO m => m Bool
-glGetATIMeminfo = member "GL_ATI_meminfo" `fmap` getExtensions
+glGetATIMeminfo = getExtensions >>= (return . member "GL_ATI_meminfo")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/meminfo.txt ATI_meminfo> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1968,7 +1968,7 @@ gl_ATI_meminfo = member "GL_ATI_meminfo" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/pixel_format_float.txt ATI_pixel_format_float> extension supported?
 glGetATIPixelFormatFloat :: MonadIO m => m Bool
-glGetATIPixelFormatFloat = member "GL_ATI_pixel_format_float" `fmap` getExtensions
+glGetATIPixelFormatFloat = getExtensions >>= (return . member "GL_ATI_pixel_format_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/pixel_format_float.txt ATI_pixel_format_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1979,7 +1979,7 @@ gl_ATI_pixel_format_float = member "GL_ATI_pixel_format_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/pn_triangles.txt ATI_pn_triangles> extension supported?
 glGetATIPNTriangles :: MonadIO m => m Bool
-glGetATIPNTriangles = member "GL_ATI_pn_triangles" `fmap` getExtensions
+glGetATIPNTriangles = getExtensions >>= (return . member "GL_ATI_pn_triangles")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/pn_triangles.txt ATI_pn_triangles> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -1990,7 +1990,7 @@ gl_ATI_pn_triangles = member "GL_ATI_pn_triangles" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/separate_stencil.txt ATI_separate_stencil> extension supported?
 glGetATISeparateStencil :: MonadIO m => m Bool
-glGetATISeparateStencil = member "GL_ATI_separate_stencil" `fmap` getExtensions
+glGetATISeparateStencil = getExtensions >>= (return . member "GL_ATI_separate_stencil")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/separate_stencil.txt ATI_separate_stencil> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2001,7 +2001,7 @@ gl_ATI_separate_stencil = member "GL_ATI_separate_stencil" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/text_fragment_shader.txt ATI_text_fragment_shader> extension supported?
 glGetATITextFragmentShader :: MonadIO m => m Bool
-glGetATITextFragmentShader = member "GL_ATI_text_fragment_shader" `fmap` getExtensions
+glGetATITextFragmentShader = getExtensions >>= (return . member "GL_ATI_text_fragment_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/text_fragment_shader.txt ATI_text_fragment_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2012,7 +2012,7 @@ gl_ATI_text_fragment_shader = member "GL_ATI_text_fragment_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/texture_env_combine3.txt ATI_texture_env_combine3> extension supported?
 glGetATITextureEnvCombine3 :: MonadIO m => m Bool
-glGetATITextureEnvCombine3 = member "GL_ATI_texture_env_combine3" `fmap` getExtensions
+glGetATITextureEnvCombine3 = getExtensions >>= (return . member "GL_ATI_texture_env_combine3")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/texture_env_combine3.txt ATI_texture_env_combine3> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2023,7 +2023,7 @@ gl_ATI_texture_env_combine3 = member "GL_ATI_texture_env_combine3" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/texture_float.txt ATI_texture_float> extension supported?
 glGetATITextureFloat :: MonadIO m => m Bool
-glGetATITextureFloat = member "GL_ATI_texture_float" `fmap` getExtensions
+glGetATITextureFloat = getExtensions >>= (return . member "GL_ATI_texture_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/texture_float.txt ATI_texture_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2034,7 +2034,7 @@ gl_ATI_texture_float = member "GL_ATI_texture_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/texture_mirror_once.txt ATI_texture_mirror_once> extension supported?
 glGetATITextureMirrorOnce :: MonadIO m => m Bool
-glGetATITextureMirrorOnce = member "GL_ATI_texture_mirror_once" `fmap` getExtensions
+glGetATITextureMirrorOnce = getExtensions >>= (return . member "GL_ATI_texture_mirror_once")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/texture_mirror_once.txt ATI_texture_mirror_once> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2045,7 +2045,7 @@ gl_ATI_texture_mirror_once = member "GL_ATI_texture_mirror_once" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/vertex_array_object.txt ATI_vertex_array_object> extension supported?
 glGetATIVertexArrayObject :: MonadIO m => m Bool
-glGetATIVertexArrayObject = member "GL_ATI_vertex_array_object" `fmap` getExtensions
+glGetATIVertexArrayObject = getExtensions >>= (return . member "GL_ATI_vertex_array_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/vertex_array_object.txt ATI_vertex_array_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2056,7 +2056,7 @@ gl_ATI_vertex_array_object = member "GL_ATI_vertex_array_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/vertex_attrib_array_object.txt ATI_vertex_attrib_array_object> extension supported?
 glGetATIVertexAttribArrayObject :: MonadIO m => m Bool
-glGetATIVertexAttribArrayObject = member "GL_ATI_vertex_attrib_array_object" `fmap` getExtensions
+glGetATIVertexAttribArrayObject = getExtensions >>= (return . member "GL_ATI_vertex_attrib_array_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/vertex_attrib_array_object.txt ATI_vertex_attrib_array_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2067,7 +2067,7 @@ gl_ATI_vertex_attrib_array_object = member "GL_ATI_vertex_attrib_array_object" e
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/vertex_streams.txt ATI_vertex_streams> extension supported?
 glGetATIVertexStreams :: MonadIO m => m Bool
-glGetATIVertexStreams = member "GL_ATI_vertex_streams" `fmap` getExtensions
+glGetATIVertexStreams = getExtensions >>= (return . member "GL_ATI_vertex_streams")
 
 -- | Is the <https://www.opengl.org/registry/specs/ATI/vertex_streams.txt ATI_vertex_streams> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2078,7 +2078,7 @@ gl_ATI_vertex_streams = member "GL_ATI_vertex_streams" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/422_pixels.txt EXT_422_pixels> extension supported?
 glGetEXTFourTwoTwoPixels :: MonadIO m => m Bool
-glGetEXTFourTwoTwoPixels = member "GL_EXT_422_pixels" `fmap` getExtensions
+glGetEXTFourTwoTwoPixels = getExtensions >>= (return . member "GL_EXT_422_pixels")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/422_pixels.txt EXT_422_pixels> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2089,7 +2089,7 @@ gl_EXT_422_pixels = member "GL_EXT_422_pixels" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/abgr.txt EXT_abgr> extension supported?
 glGetEXTABGR :: MonadIO m => m Bool
-glGetEXTABGR = member "GL_EXT_abgr" `fmap` getExtensions
+glGetEXTABGR = getExtensions >>= (return . member "GL_EXT_abgr")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/abgr.txt EXT_abgr> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2100,7 +2100,7 @@ gl_EXT_abgr = member "GL_EXT_abgr" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/bgra.txt EXT_bgra> extension supported?
 glGetEXTBGRA :: MonadIO m => m Bool
-glGetEXTBGRA = member "GL_EXT_bgra" `fmap` getExtensions
+glGetEXTBGRA = getExtensions >>= (return . member "GL_EXT_bgra")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/bgra.txt EXT_bgra> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2111,7 +2111,7 @@ gl_EXT_bgra = member "GL_EXT_bgra" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/bindable_uniform.txt EXT_bindable_uniform> extension supported?
 glGetEXTBindableUniform :: MonadIO m => m Bool
-glGetEXTBindableUniform = member "GL_EXT_bindable_uniform" `fmap` getExtensions
+glGetEXTBindableUniform = getExtensions >>= (return . member "GL_EXT_bindable_uniform")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/bindable_uniform.txt EXT_bindable_uniform> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2122,7 +2122,7 @@ gl_EXT_bindable_uniform = member "GL_EXT_bindable_uniform" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_color.txt EXT_blend_color> extension supported?
 glGetEXTBlendColor :: MonadIO m => m Bool
-glGetEXTBlendColor = member "GL_EXT_blend_color" `fmap` getExtensions
+glGetEXTBlendColor = getExtensions >>= (return . member "GL_EXT_blend_color")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_color.txt EXT_blend_color> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2133,7 +2133,7 @@ gl_EXT_blend_color = member "GL_EXT_blend_color" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_equation_separate.txt EXT_blend_equation_separate> extension supported?
 glGetEXTBlendEquationSeparate :: MonadIO m => m Bool
-glGetEXTBlendEquationSeparate = member "GL_EXT_blend_equation_separate" `fmap` getExtensions
+glGetEXTBlendEquationSeparate = getExtensions >>= (return . member "GL_EXT_blend_equation_separate")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_equation_separate.txt EXT_blend_equation_separate> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2144,7 +2144,7 @@ gl_EXT_blend_equation_separate = member "GL_EXT_blend_equation_separate" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_func_separate.txt EXT_blend_func_separate> extension supported?
 glGetEXTBlendFuncSeparate :: MonadIO m => m Bool
-glGetEXTBlendFuncSeparate = member "GL_EXT_blend_func_separate" `fmap` getExtensions
+glGetEXTBlendFuncSeparate = getExtensions >>= (return . member "GL_EXT_blend_func_separate")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_func_separate.txt EXT_blend_func_separate> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2155,7 +2155,7 @@ gl_EXT_blend_func_separate = member "GL_EXT_blend_func_separate" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_minmax.txt EXT_blend_minmax> extension supported?
 glGetEXTBlendMinmax :: MonadIO m => m Bool
-glGetEXTBlendMinmax = member "GL_EXT_blend_minmax" `fmap` getExtensions
+glGetEXTBlendMinmax = getExtensions >>= (return . member "GL_EXT_blend_minmax")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_minmax.txt EXT_blend_minmax> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2166,7 +2166,7 @@ gl_EXT_blend_minmax = member "GL_EXT_blend_minmax" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_subtract.txt EXT_blend_subtract> extension supported?
 glGetEXTBlendSubtract :: MonadIO m => m Bool
-glGetEXTBlendSubtract = member "GL_EXT_blend_subtract" `fmap` getExtensions
+glGetEXTBlendSubtract = getExtensions >>= (return . member "GL_EXT_blend_subtract")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_subtract.txt EXT_blend_subtract> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2177,7 +2177,7 @@ gl_EXT_blend_subtract = member "GL_EXT_blend_subtract" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/clip_volume_hint.txt EXT_clip_volume_hint> extension supported?
 glGetEXTClipVolumeHint :: MonadIO m => m Bool
-glGetEXTClipVolumeHint = member "GL_EXT_clip_volume_hint" `fmap` getExtensions
+glGetEXTClipVolumeHint = getExtensions >>= (return . member "GL_EXT_clip_volume_hint")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/clip_volume_hint.txt EXT_clip_volume_hint> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2188,7 +2188,7 @@ gl_EXT_clip_volume_hint = member "GL_EXT_clip_volume_hint" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/cmyka.txt EXT_cmyka> extension supported?
 glGetEXTCMYKA :: MonadIO m => m Bool
-glGetEXTCMYKA = member "GL_EXT_cmyka" `fmap` getExtensions
+glGetEXTCMYKA = getExtensions >>= (return . member "GL_EXT_cmyka")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/cmyka.txt EXT_cmyka> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2199,7 +2199,7 @@ gl_EXT_cmyka = member "GL_EXT_cmyka" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/color_subtable.txt EXT_color_subtable> extension supported?
 glGetEXTColorSubtable :: MonadIO m => m Bool
-glGetEXTColorSubtable = member "GL_EXT_color_subtable" `fmap` getExtensions
+glGetEXTColorSubtable = getExtensions >>= (return . member "GL_EXT_color_subtable")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/color_subtable.txt EXT_color_subtable> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2210,7 +2210,7 @@ gl_EXT_color_subtable = member "GL_EXT_color_subtable" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/compiled_vertex_array.txt EXT_compiled_vertex_array> extension supported?
 glGetEXTCompiledVertexArray :: MonadIO m => m Bool
-glGetEXTCompiledVertexArray = member "GL_EXT_compiled_vertex_array" `fmap` getExtensions
+glGetEXTCompiledVertexArray = getExtensions >>= (return . member "GL_EXT_compiled_vertex_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/compiled_vertex_array.txt EXT_compiled_vertex_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2221,7 +2221,7 @@ gl_EXT_compiled_vertex_array = member "GL_EXT_compiled_vertex_array" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/convolution.txt EXT_convolution> extension supported?
 glGetEXTConvolution :: MonadIO m => m Bool
-glGetEXTConvolution = member "GL_EXT_convolution" `fmap` getExtensions
+glGetEXTConvolution = getExtensions >>= (return . member "GL_EXT_convolution")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/convolution.txt EXT_convolution> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2232,7 +2232,7 @@ gl_EXT_convolution = member "GL_EXT_convolution" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/coordinate_frame.txt EXT_coordinate_frame> extension supported?
 glGetEXTCoordinateFrame :: MonadIO m => m Bool
-glGetEXTCoordinateFrame = member "GL_EXT_coordinate_frame" `fmap` getExtensions
+glGetEXTCoordinateFrame = getExtensions >>= (return . member "GL_EXT_coordinate_frame")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/coordinate_frame.txt EXT_coordinate_frame> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2243,7 +2243,7 @@ gl_EXT_coordinate_frame = member "GL_EXT_coordinate_frame" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/copy_texture.txt EXT_copy_texture> extension supported?
 glGetEXTCopyTexture :: MonadIO m => m Bool
-glGetEXTCopyTexture = member "GL_EXT_copy_texture" `fmap` getExtensions
+glGetEXTCopyTexture = getExtensions >>= (return . member "GL_EXT_copy_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/copy_texture.txt EXT_copy_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2254,7 +2254,7 @@ gl_EXT_copy_texture = member "GL_EXT_copy_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/cull_vertex.txt EXT_cull_vertex> extension supported?
 glGetEXTCullVertex :: MonadIO m => m Bool
-glGetEXTCullVertex = member "GL_EXT_cull_vertex" `fmap` getExtensions
+glGetEXTCullVertex = getExtensions >>= (return . member "GL_EXT_cull_vertex")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/cull_vertex.txt EXT_cull_vertex> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2265,7 +2265,7 @@ gl_EXT_cull_vertex = member "GL_EXT_cull_vertex" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/EXT_debug_label.txt EXT_debug_label> extension supported?
 glGetEXTDebugLabel :: MonadIO m => m Bool
-glGetEXTDebugLabel = member "GL_EXT_debug_label" `fmap` getExtensions
+glGetEXTDebugLabel = getExtensions >>= (return . member "GL_EXT_debug_label")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/EXT_debug_label.txt EXT_debug_label> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2276,7 +2276,7 @@ gl_EXT_debug_label = member "GL_EXT_debug_label" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/EXT_debug_marker.txt EXT_debug_marker> extension supported?
 glGetEXTDebugMarker :: MonadIO m => m Bool
-glGetEXTDebugMarker = member "GL_EXT_debug_marker" `fmap` getExtensions
+glGetEXTDebugMarker = getExtensions >>= (return . member "GL_EXT_debug_marker")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/EXT_debug_marker.txt EXT_debug_marker> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2287,7 +2287,7 @@ gl_EXT_debug_marker = member "GL_EXT_debug_marker" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/depth_bounds_test.txt EXT_depth_bounds_test> extension supported?
 glGetEXTDepthBoundsTest :: MonadIO m => m Bool
-glGetEXTDepthBoundsTest = member "GL_EXT_depth_bounds_test" `fmap` getExtensions
+glGetEXTDepthBoundsTest = getExtensions >>= (return . member "GL_EXT_depth_bounds_test")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/depth_bounds_test.txt EXT_depth_bounds_test> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2298,7 +2298,7 @@ gl_EXT_depth_bounds_test = member "GL_EXT_depth_bounds_test" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/direct_state_access.txt EXT_direct_state_access> extension supported?
 glGetEXTDirectStateAccess :: MonadIO m => m Bool
-glGetEXTDirectStateAccess = member "GL_EXT_direct_state_access" `fmap` getExtensions
+glGetEXTDirectStateAccess = getExtensions >>= (return . member "GL_EXT_direct_state_access")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/direct_state_access.txt EXT_direct_state_access> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2309,7 +2309,7 @@ gl_EXT_direct_state_access = member "GL_EXT_direct_state_access" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/draw_buffers2.txt EXT_draw_buffers2> extension supported?
 glGetEXTDrawBuffers2 :: MonadIO m => m Bool
-glGetEXTDrawBuffers2 = member "GL_EXT_draw_buffers2" `fmap` getExtensions
+glGetEXTDrawBuffers2 = getExtensions >>= (return . member "GL_EXT_draw_buffers2")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/draw_buffers2.txt EXT_draw_buffers2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2320,7 +2320,7 @@ gl_EXT_draw_buffers2 = member "GL_EXT_draw_buffers2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/draw_instanced.txt EXT_draw_instanced> extension supported?
 glGetEXTDrawInstanced :: MonadIO m => m Bool
-glGetEXTDrawInstanced = member "GL_EXT_draw_instanced" `fmap` getExtensions
+glGetEXTDrawInstanced = getExtensions >>= (return . member "GL_EXT_draw_instanced")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/draw_instanced.txt EXT_draw_instanced> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2331,7 +2331,7 @@ gl_EXT_draw_instanced = member "GL_EXT_draw_instanced" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/draw_range_elements.txt EXT_draw_range_elements> extension supported?
 glGetEXTDrawRangeElements :: MonadIO m => m Bool
-glGetEXTDrawRangeElements = member "GL_EXT_draw_range_elements" `fmap` getExtensions
+glGetEXTDrawRangeElements = getExtensions >>= (return . member "GL_EXT_draw_range_elements")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/draw_range_elements.txt EXT_draw_range_elements> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2342,7 +2342,7 @@ gl_EXT_draw_range_elements = member "GL_EXT_draw_range_elements" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/fog_coord.txt EXT_fog_coord> extension supported?
 glGetEXTFogCoord :: MonadIO m => m Bool
-glGetEXTFogCoord = member "GL_EXT_fog_coord" `fmap` getExtensions
+glGetEXTFogCoord = getExtensions >>= (return . member "GL_EXT_fog_coord")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/fog_coord.txt EXT_fog_coord> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2353,7 +2353,7 @@ gl_EXT_fog_coord = member "GL_EXT_fog_coord" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_blit.txt EXT_framebuffer_blit> extension supported?
 glGetEXTFramebufferBlit :: MonadIO m => m Bool
-glGetEXTFramebufferBlit = member "GL_EXT_framebuffer_blit" `fmap` getExtensions
+glGetEXTFramebufferBlit = getExtensions >>= (return . member "GL_EXT_framebuffer_blit")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_blit.txt EXT_framebuffer_blit> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2364,7 +2364,7 @@ gl_EXT_framebuffer_blit = member "GL_EXT_framebuffer_blit" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_multisample.txt EXT_framebuffer_multisample> extension supported?
 glGetEXTFramebufferMultisample :: MonadIO m => m Bool
-glGetEXTFramebufferMultisample = member "GL_EXT_framebuffer_multisample" `fmap` getExtensions
+glGetEXTFramebufferMultisample = getExtensions >>= (return . member "GL_EXT_framebuffer_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_multisample.txt EXT_framebuffer_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2375,7 +2375,7 @@ gl_EXT_framebuffer_multisample = member "GL_EXT_framebuffer_multisample" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_multisample_blit_scaled.txt EXT_framebuffer_multisample_blit_scaled> extension supported?
 glGetEXTFramebufferMultisampleBlitScaled :: MonadIO m => m Bool
-glGetEXTFramebufferMultisampleBlitScaled = member "GL_EXT_framebuffer_multisample_blit_scaled" `fmap` getExtensions
+glGetEXTFramebufferMultisampleBlitScaled = getExtensions >>= (return . member "GL_EXT_framebuffer_multisample_blit_scaled")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_multisample_blit_scaled.txt EXT_framebuffer_multisample_blit_scaled> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2386,7 +2386,7 @@ gl_EXT_framebuffer_multisample_blit_scaled = member "GL_EXT_framebuffer_multisam
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt EXT_framebuffer_object> extension supported?
 glGetEXTFramebufferObject :: MonadIO m => m Bool
-glGetEXTFramebufferObject = member "GL_EXT_framebuffer_object" `fmap` getExtensions
+glGetEXTFramebufferObject = getExtensions >>= (return . member "GL_EXT_framebuffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_object.txt EXT_framebuffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2397,7 +2397,7 @@ gl_EXT_framebuffer_object = member "GL_EXT_framebuffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_sRGB.txt EXT_framebuffer_sRGB> extension supported?
 glGetEXTFramebufferSRGB :: MonadIO m => m Bool
-glGetEXTFramebufferSRGB = member "GL_EXT_framebuffer_sRGB" `fmap` getExtensions
+glGetEXTFramebufferSRGB = getExtensions >>= (return . member "GL_EXT_framebuffer_sRGB")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/framebuffer_sRGB.txt EXT_framebuffer_sRGB> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2408,7 +2408,7 @@ gl_EXT_framebuffer_sRGB = member "GL_EXT_framebuffer_sRGB" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/geometry_shader4.txt EXT_geometry_shader4> extension supported?
 glGetEXTGeometryShader4 :: MonadIO m => m Bool
-glGetEXTGeometryShader4 = member "GL_EXT_geometry_shader4" `fmap` getExtensions
+glGetEXTGeometryShader4 = getExtensions >>= (return . member "GL_EXT_geometry_shader4")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/geometry_shader4.txt EXT_geometry_shader4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2419,7 +2419,7 @@ gl_EXT_geometry_shader4 = member "GL_EXT_geometry_shader4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/gpu_program_parameters.txt EXT_gpu_program_parameters> extension supported?
 glGetEXTGPUProgramParameters :: MonadIO m => m Bool
-glGetEXTGPUProgramParameters = member "GL_EXT_gpu_program_parameters" `fmap` getExtensions
+glGetEXTGPUProgramParameters = getExtensions >>= (return . member "GL_EXT_gpu_program_parameters")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/gpu_program_parameters.txt EXT_gpu_program_parameters> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2430,7 +2430,7 @@ gl_EXT_gpu_program_parameters = member "GL_EXT_gpu_program_parameters" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/gpu_shader4.txt EXT_gpu_shader4> extension supported?
 glGetEXTGPUShader4 :: MonadIO m => m Bool
-glGetEXTGPUShader4 = member "GL_EXT_gpu_shader4" `fmap` getExtensions
+glGetEXTGPUShader4 = getExtensions >>= (return . member "GL_EXT_gpu_shader4")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/gpu_shader4.txt EXT_gpu_shader4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2441,7 +2441,7 @@ gl_EXT_gpu_shader4 = member "GL_EXT_gpu_shader4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/histogram.txt EXT_histogram> extension supported?
 glGetEXTHistogram :: MonadIO m => m Bool
-glGetEXTHistogram = member "GL_EXT_histogram" `fmap` getExtensions
+glGetEXTHistogram = getExtensions >>= (return . member "GL_EXT_histogram")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/histogram.txt EXT_histogram> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2452,7 +2452,7 @@ gl_EXT_histogram = member "GL_EXT_histogram" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/index_array_formats.txt EXT_index_array_formats> extension supported?
 glGetEXTIndexArrayFormats :: MonadIO m => m Bool
-glGetEXTIndexArrayFormats = member "GL_EXT_index_array_formats" `fmap` getExtensions
+glGetEXTIndexArrayFormats = getExtensions >>= (return . member "GL_EXT_index_array_formats")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/index_array_formats.txt EXT_index_array_formats> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2463,7 +2463,7 @@ gl_EXT_index_array_formats = member "GL_EXT_index_array_formats" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/index_func.txt EXT_index_func> extension supported?
 glGetEXTIndexFunc :: MonadIO m => m Bool
-glGetEXTIndexFunc = member "GL_EXT_index_func" `fmap` getExtensions
+glGetEXTIndexFunc = getExtensions >>= (return . member "GL_EXT_index_func")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/index_func.txt EXT_index_func> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2474,7 +2474,7 @@ gl_EXT_index_func = member "GL_EXT_index_func" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/index_material.txt EXT_index_material> extension supported?
 glGetEXTIndexMaterial :: MonadIO m => m Bool
-glGetEXTIndexMaterial = member "GL_EXT_index_material" `fmap` getExtensions
+glGetEXTIndexMaterial = getExtensions >>= (return . member "GL_EXT_index_material")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/index_material.txt EXT_index_material> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2485,7 +2485,7 @@ gl_EXT_index_material = member "GL_EXT_index_material" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/light_texture.txt EXT_light_texture> extension supported?
 glGetEXTLightTexture :: MonadIO m => m Bool
-glGetEXTLightTexture = member "GL_EXT_light_texture" `fmap` getExtensions
+glGetEXTLightTexture = getExtensions >>= (return . member "GL_EXT_light_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/light_texture.txt EXT_light_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2496,7 +2496,7 @@ gl_EXT_light_texture = member "GL_EXT_light_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/multi_draw_arrays.txt EXT_multi_draw_arrays> extension supported?
 glGetEXTMultiDrawArrays :: MonadIO m => m Bool
-glGetEXTMultiDrawArrays = member "GL_EXT_multi_draw_arrays" `fmap` getExtensions
+glGetEXTMultiDrawArrays = getExtensions >>= (return . member "GL_EXT_multi_draw_arrays")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/multi_draw_arrays.txt EXT_multi_draw_arrays> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2507,7 +2507,7 @@ gl_EXT_multi_draw_arrays = member "GL_EXT_multi_draw_arrays" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/wgl_multisample.txt EXT_multisample> extension supported?
 glGetEXTMultisample :: MonadIO m => m Bool
-glGetEXTMultisample = member "GL_EXT_multisample" `fmap` getExtensions
+glGetEXTMultisample = getExtensions >>= (return . member "GL_EXT_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/wgl_multisample.txt EXT_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2518,7 +2518,7 @@ gl_EXT_multisample = member "GL_EXT_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/packed_depth_stencil.txt EXT_packed_depth_stencil> extension supported?
 glGetEXTPackedDepthStencil :: MonadIO m => m Bool
-glGetEXTPackedDepthStencil = member "GL_EXT_packed_depth_stencil" `fmap` getExtensions
+glGetEXTPackedDepthStencil = getExtensions >>= (return . member "GL_EXT_packed_depth_stencil")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/packed_depth_stencil.txt EXT_packed_depth_stencil> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2529,7 +2529,7 @@ gl_EXT_packed_depth_stencil = member "GL_EXT_packed_depth_stencil" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/packed_float.txt EXT_packed_float> extension supported?
 glGetEXTPackedFloat :: MonadIO m => m Bool
-glGetEXTPackedFloat = member "GL_EXT_packed_float" `fmap` getExtensions
+glGetEXTPackedFloat = getExtensions >>= (return . member "GL_EXT_packed_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/packed_float.txt EXT_packed_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2540,7 +2540,7 @@ gl_EXT_packed_float = member "GL_EXT_packed_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/packed_pixels.txt EXT_packed_pixels> extension supported?
 glGetEXTPackedPixels :: MonadIO m => m Bool
-glGetEXTPackedPixels = member "GL_EXT_packed_pixels" `fmap` getExtensions
+glGetEXTPackedPixels = getExtensions >>= (return . member "GL_EXT_packed_pixels")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/packed_pixels.txt EXT_packed_pixels> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2551,7 +2551,7 @@ gl_EXT_packed_pixels = member "GL_EXT_packed_pixels" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/paletted_texture.txt EXT_paletted_texture> extension supported?
 glGetEXTPalettedTexture :: MonadIO m => m Bool
-glGetEXTPalettedTexture = member "GL_EXT_paletted_texture" `fmap` getExtensions
+glGetEXTPalettedTexture = getExtensions >>= (return . member "GL_EXT_paletted_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/paletted_texture.txt EXT_paletted_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2562,7 +2562,7 @@ gl_EXT_paletted_texture = member "GL_EXT_paletted_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/pixel_buffer_object.txt EXT_pixel_buffer_object> extension supported?
 glGetEXTPixelBufferObject :: MonadIO m => m Bool
-glGetEXTPixelBufferObject = member "GL_EXT_pixel_buffer_object" `fmap` getExtensions
+glGetEXTPixelBufferObject = getExtensions >>= (return . member "GL_EXT_pixel_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/pixel_buffer_object.txt EXT_pixel_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2573,7 +2573,7 @@ gl_EXT_pixel_buffer_object = member "GL_EXT_pixel_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/pixel_transform.txt EXT_pixel_transform> extension supported?
 glGetEXTPixelTransform :: MonadIO m => m Bool
-glGetEXTPixelTransform = member "GL_EXT_pixel_transform" `fmap` getExtensions
+glGetEXTPixelTransform = getExtensions >>= (return . member "GL_EXT_pixel_transform")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/pixel_transform.txt EXT_pixel_transform> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2584,7 +2584,7 @@ gl_EXT_pixel_transform = member "GL_EXT_pixel_transform" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/point_parameters.txt EXT_point_parameters> extension supported?
 glGetEXTPointParameters :: MonadIO m => m Bool
-glGetEXTPointParameters = member "GL_EXT_point_parameters" `fmap` getExtensions
+glGetEXTPointParameters = getExtensions >>= (return . member "GL_EXT_point_parameters")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/point_parameters.txt EXT_point_parameters> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2595,7 +2595,7 @@ gl_EXT_point_parameters = member "GL_EXT_point_parameters" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/polygon_offset.txt EXT_polygon_offset> extension supported?
 glGetEXTPolygonOffset :: MonadIO m => m Bool
-glGetEXTPolygonOffset = member "GL_EXT_polygon_offset" `fmap` getExtensions
+glGetEXTPolygonOffset = getExtensions >>= (return . member "GL_EXT_polygon_offset")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/polygon_offset.txt EXT_polygon_offset> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2606,7 +2606,7 @@ gl_EXT_polygon_offset = member "GL_EXT_polygon_offset" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/polygon_offset_clamp.txt EXT_polygon_offset_clamp> extension supported?
 glGetEXTPolygonOffsetClamp :: MonadIO m => m Bool
-glGetEXTPolygonOffsetClamp = member "GL_EXT_polygon_offset_clamp" `fmap` getExtensions
+glGetEXTPolygonOffsetClamp = getExtensions >>= (return . member "GL_EXT_polygon_offset_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/polygon_offset_clamp.txt EXT_polygon_offset_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2617,7 +2617,7 @@ gl_EXT_polygon_offset_clamp = member "GL_EXT_polygon_offset_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/provoking_vertex.txt EXT_provoking_vertex> extension supported?
 glGetEXTProvokingVertex :: MonadIO m => m Bool
-glGetEXTProvokingVertex = member "GL_EXT_provoking_vertex" `fmap` getExtensions
+glGetEXTProvokingVertex = getExtensions >>= (return . member "GL_EXT_provoking_vertex")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/provoking_vertex.txt EXT_provoking_vertex> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2628,7 +2628,7 @@ gl_EXT_provoking_vertex = member "GL_EXT_provoking_vertex" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/raster_multisample.txt EXT_raster_multisample> extension supported?
 glGetEXTRasterMultisample :: MonadIO m => m Bool
-glGetEXTRasterMultisample = member "GL_EXT_raster_multisample" `fmap` getExtensions
+glGetEXTRasterMultisample = getExtensions >>= (return . member "GL_EXT_raster_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/raster_multisample.txt EXT_raster_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2639,7 +2639,7 @@ gl_EXT_raster_multisample = member "GL_EXT_raster_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/rescale_normal.txt EXT_rescale_normal> extension supported?
 glGetEXTRescaleNormal :: MonadIO m => m Bool
-glGetEXTRescaleNormal = member "GL_EXT_rescale_normal" `fmap` getExtensions
+glGetEXTRescaleNormal = getExtensions >>= (return . member "GL_EXT_rescale_normal")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/rescale_normal.txt EXT_rescale_normal> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2650,7 +2650,7 @@ gl_EXT_rescale_normal = member "GL_EXT_rescale_normal" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/secondary_color.txt EXT_secondary_color> extension supported?
 glGetEXTSecondaryColor :: MonadIO m => m Bool
-glGetEXTSecondaryColor = member "GL_EXT_secondary_color" `fmap` getExtensions
+glGetEXTSecondaryColor = getExtensions >>= (return . member "GL_EXT_secondary_color")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/secondary_color.txt EXT_secondary_color> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2661,7 +2661,7 @@ gl_EXT_secondary_color = member "GL_EXT_secondary_color" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/separate_shader_objects.txt EXT_separate_shader_objects> extension supported?
 glGetEXTSeparateShaderObjects :: MonadIO m => m Bool
-glGetEXTSeparateShaderObjects = member "GL_EXT_separate_shader_objects" `fmap` getExtensions
+glGetEXTSeparateShaderObjects = getExtensions >>= (return . member "GL_EXT_separate_shader_objects")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/separate_shader_objects.txt EXT_separate_shader_objects> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2672,7 +2672,7 @@ gl_EXT_separate_shader_objects = member "GL_EXT_separate_shader_objects" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/separate_specular_color.txt EXT_separate_specular_color> extension supported?
 glGetEXTSeparateSpecularColor :: MonadIO m => m Bool
-glGetEXTSeparateSpecularColor = member "GL_EXT_separate_specular_color" `fmap` getExtensions
+glGetEXTSeparateSpecularColor = getExtensions >>= (return . member "GL_EXT_separate_specular_color")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/separate_specular_color.txt EXT_separate_specular_color> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2683,7 +2683,7 @@ gl_EXT_separate_specular_color = member "GL_EXT_separate_specular_color" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/shader_image_load_store.txt EXT_shader_image_load_store> extension supported?
 glGetEXTShaderImageLoadStore :: MonadIO m => m Bool
-glGetEXTShaderImageLoadStore = member "GL_EXT_shader_image_load_store" `fmap` getExtensions
+glGetEXTShaderImageLoadStore = getExtensions >>= (return . member "GL_EXT_shader_image_load_store")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/shader_image_load_store.txt EXT_shader_image_load_store> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2694,7 +2694,7 @@ gl_EXT_shader_image_load_store = member "GL_EXT_shader_image_load_store" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/shared_texture_palette.txt EXT_shared_texture_palette> extension supported?
 glGetEXTSharedTexturePalette :: MonadIO m => m Bool
-glGetEXTSharedTexturePalette = member "GL_EXT_shared_texture_palette" `fmap` getExtensions
+glGetEXTSharedTexturePalette = getExtensions >>= (return . member "GL_EXT_shared_texture_palette")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/shared_texture_palette.txt EXT_shared_texture_palette> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2705,7 +2705,7 @@ gl_EXT_shared_texture_palette = member "GL_EXT_shared_texture_palette" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/stencil_clear_tag.txt EXT_stencil_clear_tag> extension supported?
 glGetEXTStencilClearTag :: MonadIO m => m Bool
-glGetEXTStencilClearTag = member "GL_EXT_stencil_clear_tag" `fmap` getExtensions
+glGetEXTStencilClearTag = getExtensions >>= (return . member "GL_EXT_stencil_clear_tag")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/stencil_clear_tag.txt EXT_stencil_clear_tag> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2716,7 +2716,7 @@ gl_EXT_stencil_clear_tag = member "GL_EXT_stencil_clear_tag" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/stencil_two_side.txt EXT_stencil_two_side> extension supported?
 glGetEXTStencilTwoSide :: MonadIO m => m Bool
-glGetEXTStencilTwoSide = member "GL_EXT_stencil_two_side" `fmap` getExtensions
+glGetEXTStencilTwoSide = getExtensions >>= (return . member "GL_EXT_stencil_two_side")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/stencil_two_side.txt EXT_stencil_two_side> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2727,7 +2727,7 @@ gl_EXT_stencil_two_side = member "GL_EXT_stencil_two_side" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/stencil_wrap.txt EXT_stencil_wrap> extension supported?
 glGetEXTStencilWrap :: MonadIO m => m Bool
-glGetEXTStencilWrap = member "GL_EXT_stencil_wrap" `fmap` getExtensions
+glGetEXTStencilWrap = getExtensions >>= (return . member "GL_EXT_stencil_wrap")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/stencil_wrap.txt EXT_stencil_wrap> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2738,7 +2738,7 @@ gl_EXT_stencil_wrap = member "GL_EXT_stencil_wrap" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/subtexture.txt EXT_subtexture> extension supported?
 glGetEXTSubtexture :: MonadIO m => m Bool
-glGetEXTSubtexture = member "GL_EXT_subtexture" `fmap` getExtensions
+glGetEXTSubtexture = getExtensions >>= (return . member "GL_EXT_subtexture")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/subtexture.txt EXT_subtexture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2749,7 +2749,7 @@ gl_EXT_subtexture = member "GL_EXT_subtexture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture.txt EXT_texture> extension supported?
 glGetEXTTexture :: MonadIO m => m Bool
-glGetEXTTexture = member "GL_EXT_texture" `fmap` getExtensions
+glGetEXTTexture = getExtensions >>= (return . member "GL_EXT_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture.txt EXT_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2760,7 +2760,7 @@ gl_EXT_texture = member "GL_EXT_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture3D.txt EXT_texture3D> extension supported?
 glGetEXTTexture3D :: MonadIO m => m Bool
-glGetEXTTexture3D = member "GL_EXT_texture3D" `fmap` getExtensions
+glGetEXTTexture3D = getExtensions >>= (return . member "GL_EXT_texture3D")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture3D.txt EXT_texture3D> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2771,7 +2771,7 @@ gl_EXT_texture3D = member "GL_EXT_texture3D" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_array.txt EXT_texture_array> extension supported?
 glGetEXTTextureArray :: MonadIO m => m Bool
-glGetEXTTextureArray = member "GL_EXT_texture_array" `fmap` getExtensions
+glGetEXTTextureArray = getExtensions >>= (return . member "GL_EXT_texture_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_array.txt EXT_texture_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2782,7 +2782,7 @@ gl_EXT_texture_array = member "GL_EXT_texture_array" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_buffer_object.txt EXT_texture_buffer_object> extension supported?
 glGetEXTTextureBufferObject :: MonadIO m => m Bool
-glGetEXTTextureBufferObject = member "GL_EXT_texture_buffer_object" `fmap` getExtensions
+glGetEXTTextureBufferObject = getExtensions >>= (return . member "GL_EXT_texture_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_buffer_object.txt EXT_texture_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2793,7 +2793,7 @@ gl_EXT_texture_buffer_object = member "GL_EXT_texture_buffer_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_compression_latc.txt EXT_texture_compression_latc> extension supported?
 glGetEXTTextureCompressionLATC :: MonadIO m => m Bool
-glGetEXTTextureCompressionLATC = member "GL_EXT_texture_compression_latc" `fmap` getExtensions
+glGetEXTTextureCompressionLATC = getExtensions >>= (return . member "GL_EXT_texture_compression_latc")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_compression_latc.txt EXT_texture_compression_latc> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2804,7 +2804,7 @@ gl_EXT_texture_compression_latc = member "GL_EXT_texture_compression_latc" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_compression_rgtc.txt EXT_texture_compression_rgtc> extension supported?
 glGetEXTTextureCompressionRGTC :: MonadIO m => m Bool
-glGetEXTTextureCompressionRGTC = member "GL_EXT_texture_compression_rgtc" `fmap` getExtensions
+glGetEXTTextureCompressionRGTC = getExtensions >>= (return . member "GL_EXT_texture_compression_rgtc")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_compression_rgtc.txt EXT_texture_compression_rgtc> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2815,7 +2815,7 @@ gl_EXT_texture_compression_rgtc = member "GL_EXT_texture_compression_rgtc" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_compression_s3tc.txt EXT_texture_compression_s3tc> extension supported?
 glGetEXTTextureCompressionS3TC :: MonadIO m => m Bool
-glGetEXTTextureCompressionS3TC = member "GL_EXT_texture_compression_s3tc" `fmap` getExtensions
+glGetEXTTextureCompressionS3TC = getExtensions >>= (return . member "GL_EXT_texture_compression_s3tc")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_compression_s3tc.txt EXT_texture_compression_s3tc> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2826,7 +2826,7 @@ gl_EXT_texture_compression_s3tc = member "GL_EXT_texture_compression_s3tc" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_cube_map.txt EXT_texture_cube_map> extension supported?
 glGetEXTTextureCubeMap :: MonadIO m => m Bool
-glGetEXTTextureCubeMap = member "GL_EXT_texture_cube_map" `fmap` getExtensions
+glGetEXTTextureCubeMap = getExtensions >>= (return . member "GL_EXT_texture_cube_map")
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_cube_map.txt EXT_texture_cube_map> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2837,7 +2837,7 @@ gl_EXT_texture_cube_map = member "GL_EXT_texture_cube_map" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_env_combine.txt EXT_texture_env_combine> extension supported?
 glGetEXTTextureEnvCombine :: MonadIO m => m Bool
-glGetEXTTextureEnvCombine = member "GL_EXT_texture_env_combine" `fmap` getExtensions
+glGetEXTTextureEnvCombine = getExtensions >>= (return . member "GL_EXT_texture_env_combine")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_env_combine.txt EXT_texture_env_combine> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2848,7 +2848,7 @@ gl_EXT_texture_env_combine = member "GL_EXT_texture_env_combine" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_env_dot3.txt EXT_texture_env_dot3> extension supported?
 glGetEXTTextureEnvDot3 :: MonadIO m => m Bool
-glGetEXTTextureEnvDot3 = member "GL_EXT_texture_env_dot3" `fmap` getExtensions
+glGetEXTTextureEnvDot3 = getExtensions >>= (return . member "GL_EXT_texture_env_dot3")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_env_dot3.txt EXT_texture_env_dot3> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2859,7 +2859,7 @@ gl_EXT_texture_env_dot3 = member "GL_EXT_texture_env_dot3" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_filter_anisotropic.txt EXT_texture_filter_anisotropic> extension supported?
 glGetEXTTextureFilterAnisotropic :: MonadIO m => m Bool
-glGetEXTTextureFilterAnisotropic = member "GL_EXT_texture_filter_anisotropic" `fmap` getExtensions
+glGetEXTTextureFilterAnisotropic = getExtensions >>= (return . member "GL_EXT_texture_filter_anisotropic")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_filter_anisotropic.txt EXT_texture_filter_anisotropic> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2870,7 +2870,7 @@ gl_EXT_texture_filter_anisotropic = member "GL_EXT_texture_filter_anisotropic" e
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_filter_minmax.txt EXT_texture_filter_minmax> extension supported?
 glGetEXTTextureFilterMinmax :: MonadIO m => m Bool
-glGetEXTTextureFilterMinmax = member "GL_EXT_texture_filter_minmax" `fmap` getExtensions
+glGetEXTTextureFilterMinmax = getExtensions >>= (return . member "GL_EXT_texture_filter_minmax")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_filter_minmax.txt EXT_texture_filter_minmax> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2881,7 +2881,7 @@ gl_EXT_texture_filter_minmax = member "GL_EXT_texture_filter_minmax" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_integer.txt EXT_texture_integer> extension supported?
 glGetEXTTextureInteger :: MonadIO m => m Bool
-glGetEXTTextureInteger = member "GL_EXT_texture_integer" `fmap` getExtensions
+glGetEXTTextureInteger = getExtensions >>= (return . member "GL_EXT_texture_integer")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_integer.txt EXT_texture_integer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2892,7 +2892,7 @@ gl_EXT_texture_integer = member "GL_EXT_texture_integer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_lod_bias.txt EXT_texture_lod_bias> extension supported?
 glGetEXTTextureLODBias :: MonadIO m => m Bool
-glGetEXTTextureLODBias = member "GL_EXT_texture_lod_bias" `fmap` getExtensions
+glGetEXTTextureLODBias = getExtensions >>= (return . member "GL_EXT_texture_lod_bias")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_lod_bias.txt EXT_texture_lod_bias> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2903,7 +2903,7 @@ gl_EXT_texture_lod_bias = member "GL_EXT_texture_lod_bias" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_mirror_clamp.txt EXT_texture_mirror_clamp> extension supported?
 glGetEXTTextureMirrorClamp :: MonadIO m => m Bool
-glGetEXTTextureMirrorClamp = member "GL_EXT_texture_mirror_clamp" `fmap` getExtensions
+glGetEXTTextureMirrorClamp = getExtensions >>= (return . member "GL_EXT_texture_mirror_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_mirror_clamp.txt EXT_texture_mirror_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2914,7 +2914,7 @@ gl_EXT_texture_mirror_clamp = member "GL_EXT_texture_mirror_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_object.txt EXT_texture_object> extension supported?
 glGetEXTTextureObject :: MonadIO m => m Bool
-glGetEXTTextureObject = member "GL_EXT_texture_object" `fmap` getExtensions
+glGetEXTTextureObject = getExtensions >>= (return . member "GL_EXT_texture_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_object.txt EXT_texture_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2925,7 +2925,7 @@ gl_EXT_texture_object = member "GL_EXT_texture_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_perturb_normal.txt EXT_texture_perturb_normal> extension supported?
 glGetEXTTexturePerturbNormal :: MonadIO m => m Bool
-glGetEXTTexturePerturbNormal = member "GL_EXT_texture_perturb_normal" `fmap` getExtensions
+glGetEXTTexturePerturbNormal = getExtensions >>= (return . member "GL_EXT_texture_perturb_normal")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_perturb_normal.txt EXT_texture_perturb_normal> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2936,7 +2936,7 @@ gl_EXT_texture_perturb_normal = member "GL_EXT_texture_perturb_normal" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_sRGB.txt EXT_texture_sRGB> extension supported?
 glGetEXTTextureSRGB :: MonadIO m => m Bool
-glGetEXTTextureSRGB = member "GL_EXT_texture_sRGB" `fmap` getExtensions
+glGetEXTTextureSRGB = getExtensions >>= (return . member "GL_EXT_texture_sRGB")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_sRGB.txt EXT_texture_sRGB> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2947,7 +2947,7 @@ gl_EXT_texture_sRGB = member "GL_EXT_texture_sRGB" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_sRGB_decode.txt EXT_texture_sRGB_decode> extension supported?
 glGetEXTTextureSRGBDecode :: MonadIO m => m Bool
-glGetEXTTextureSRGBDecode = member "GL_EXT_texture_sRGB_decode" `fmap` getExtensions
+glGetEXTTextureSRGBDecode = getExtensions >>= (return . member "GL_EXT_texture_sRGB_decode")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_sRGB_decode.txt EXT_texture_sRGB_decode> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2958,7 +2958,7 @@ gl_EXT_texture_sRGB_decode = member "GL_EXT_texture_sRGB_decode" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_shared_exponent.txt EXT_texture_shared_exponent> extension supported?
 glGetEXTTextureSharedExponent :: MonadIO m => m Bool
-glGetEXTTextureSharedExponent = member "GL_EXT_texture_shared_exponent" `fmap` getExtensions
+glGetEXTTextureSharedExponent = getExtensions >>= (return . member "GL_EXT_texture_shared_exponent")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_shared_exponent.txt EXT_texture_shared_exponent> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2969,7 +2969,7 @@ gl_EXT_texture_shared_exponent = member "GL_EXT_texture_shared_exponent" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_snorm.txt EXT_texture_snorm> extension supported?
 glGetEXTTextureSNorm :: MonadIO m => m Bool
-glGetEXTTextureSNorm = member "GL_EXT_texture_snorm" `fmap` getExtensions
+glGetEXTTextureSNorm = getExtensions >>= (return . member "GL_EXT_texture_snorm")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_snorm.txt EXT_texture_snorm> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2980,7 +2980,7 @@ gl_EXT_texture_snorm = member "GL_EXT_texture_snorm" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_swizzle.txt EXT_texture_swizzle> extension supported?
 glGetEXTTextureSwizzle :: MonadIO m => m Bool
-glGetEXTTextureSwizzle = member "GL_EXT_texture_swizzle" `fmap` getExtensions
+glGetEXTTextureSwizzle = getExtensions >>= (return . member "GL_EXT_texture_swizzle")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_swizzle.txt EXT_texture_swizzle> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -2991,7 +2991,7 @@ gl_EXT_texture_swizzle = member "GL_EXT_texture_swizzle" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/timer_query.txt EXT_timer_query> extension supported?
 glGetEXTTimerQuery :: MonadIO m => m Bool
-glGetEXTTimerQuery = member "GL_EXT_timer_query" `fmap` getExtensions
+glGetEXTTimerQuery = getExtensions >>= (return . member "GL_EXT_timer_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/timer_query.txt EXT_timer_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3002,7 +3002,7 @@ gl_EXT_timer_query = member "GL_EXT_timer_query" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/transform_feedback.txt EXT_transform_feedback> extension supported?
 glGetEXTTransformFeedback :: MonadIO m => m Bool
-glGetEXTTransformFeedback = member "GL_EXT_transform_feedback" `fmap` getExtensions
+glGetEXTTransformFeedback = getExtensions >>= (return . member "GL_EXT_transform_feedback")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/transform_feedback.txt EXT_transform_feedback> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3013,7 +3013,7 @@ gl_EXT_transform_feedback = member "GL_EXT_transform_feedback" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_array.txt EXT_vertex_array> extension supported?
 glGetEXTVertexArray :: MonadIO m => m Bool
-glGetEXTVertexArray = member "GL_EXT_vertex_array" `fmap` getExtensions
+glGetEXTVertexArray = getExtensions >>= (return . member "GL_EXT_vertex_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_array.txt EXT_vertex_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3024,7 +3024,7 @@ gl_EXT_vertex_array = member "GL_EXT_vertex_array" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_array_bgra.txt EXT_vertex_array_bgra> extension supported?
 glGetEXTVertexArrayBGRA :: MonadIO m => m Bool
-glGetEXTVertexArrayBGRA = member "GL_EXT_vertex_array_bgra" `fmap` getExtensions
+glGetEXTVertexArrayBGRA = getExtensions >>= (return . member "GL_EXT_vertex_array_bgra")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_array_bgra.txt EXT_vertex_array_bgra> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3035,7 +3035,7 @@ gl_EXT_vertex_array_bgra = member "GL_EXT_vertex_array_bgra" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_attrib_64bit.txt EXT_vertex_attrib_64bit> extension supported?
 glGetEXTVertexAttrib64Bit :: MonadIO m => m Bool
-glGetEXTVertexAttrib64Bit = member "GL_EXT_vertex_attrib_64bit" `fmap` getExtensions
+glGetEXTVertexAttrib64Bit = getExtensions >>= (return . member "GL_EXT_vertex_attrib_64bit")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_attrib_64bit.txt EXT_vertex_attrib_64bit> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3046,7 +3046,7 @@ gl_EXT_vertex_attrib_64bit = member "GL_EXT_vertex_attrib_64bit" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_shader.txt EXT_vertex_shader> extension supported?
 glGetEXTVertexShader :: MonadIO m => m Bool
-glGetEXTVertexShader = member "GL_EXT_vertex_shader" `fmap` getExtensions
+glGetEXTVertexShader = getExtensions >>= (return . member "GL_EXT_vertex_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_shader.txt EXT_vertex_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3057,7 +3057,7 @@ gl_EXT_vertex_shader = member "GL_EXT_vertex_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_weighting.txt EXT_vertex_weighting> extension supported?
 glGetEXTVertexWeighting :: MonadIO m => m Bool
-glGetEXTVertexWeighting = member "GL_EXT_vertex_weighting" `fmap` getExtensions
+glGetEXTVertexWeighting = getExtensions >>= (return . member "GL_EXT_vertex_weighting")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/vertex_weighting.txt EXT_vertex_weighting> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3068,7 +3068,7 @@ gl_EXT_vertex_weighting = member "GL_EXT_vertex_weighting" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/x11_sync_object.txt EXT_x11_sync_object> extension supported?
 glGetEXTX11SyncObject :: MonadIO m => m Bool
-glGetEXTX11SyncObject = member "GL_EXT_x11_sync_object" `fmap` getExtensions
+glGetEXTX11SyncObject = getExtensions >>= (return . member "GL_EXT_x11_sync_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/x11_sync_object.txt EXT_x11_sync_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3079,7 +3079,7 @@ gl_EXT_x11_sync_object = member "GL_EXT_x11_sync_object" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/GREMEDY/frame_terminator.txt GREMEDY_frame_terminator> extension supported?
 glGetGREMEDYFrameTerminator :: MonadIO m => m Bool
-glGetGREMEDYFrameTerminator = member "GL_GREMEDY_frame_terminator" `fmap` getExtensions
+glGetGREMEDYFrameTerminator = getExtensions >>= (return . member "GL_GREMEDY_frame_terminator")
 
 -- | Is the <https://www.opengl.org/registry/specs/GREMEDY/frame_terminator.txt GREMEDY_frame_terminator> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3090,7 +3090,7 @@ gl_GREMEDY_frame_terminator = member "GL_GREMEDY_frame_terminator" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/GREMEDY/string_marker.txt GREMEDY_string_marker> extension supported?
 glGetGREMEDYStringMarker :: MonadIO m => m Bool
-glGetGREMEDYStringMarker = member "GL_GREMEDY_string_marker" `fmap` getExtensions
+glGetGREMEDYStringMarker = getExtensions >>= (return . member "GL_GREMEDY_string_marker")
 
 -- | Is the <https://www.opengl.org/registry/specs/GREMEDY/string_marker.txt GREMEDY_string_marker> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3101,7 +3101,7 @@ gl_GREMEDY_string_marker = member "GL_GREMEDY_string_marker" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/convolution_border_modes.txt HP_convolution_border_modes> extension supported?
 glGetHPConvolutionBorderModes :: MonadIO m => m Bool
-glGetHPConvolutionBorderModes = member "GL_HP_convolution_border_modes" `fmap` getExtensions
+glGetHPConvolutionBorderModes = getExtensions >>= (return . member "GL_HP_convolution_border_modes")
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/convolution_border_modes.txt HP_convolution_border_modes> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3112,7 +3112,7 @@ gl_HP_convolution_border_modes = member "GL_HP_convolution_border_modes" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/image_transform.txt HP_image_transform> extension supported?
 glGetHPImageTransform :: MonadIO m => m Bool
-glGetHPImageTransform = member "GL_HP_image_transform" `fmap` getExtensions
+glGetHPImageTransform = getExtensions >>= (return . member "GL_HP_image_transform")
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/image_transform.txt HP_image_transform> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3123,7 +3123,7 @@ gl_HP_image_transform = member "GL_HP_image_transform" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/occlusion_test.txt HP_occlusion_test> extension supported?
 glGetHPOcclusionTest :: MonadIO m => m Bool
-glGetHPOcclusionTest = member "GL_HP_occlusion_test" `fmap` getExtensions
+glGetHPOcclusionTest = getExtensions >>= (return . member "GL_HP_occlusion_test")
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/occlusion_test.txt HP_occlusion_test> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3134,7 +3134,7 @@ gl_HP_occlusion_test = member "GL_HP_occlusion_test" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/texture_lighting.txt HP_texture_lighting> extension supported?
 glGetHPTextureLighting :: MonadIO m => m Bool
-glGetHPTextureLighting = member "GL_HP_texture_lighting" `fmap` getExtensions
+glGetHPTextureLighting = getExtensions >>= (return . member "GL_HP_texture_lighting")
 
 -- | Is the <https://www.opengl.org/registry/specs/HP/texture_lighting.txt HP_texture_lighting> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3145,7 +3145,7 @@ gl_HP_texture_lighting = member "GL_HP_texture_lighting" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/cull_vertex.txt IBM_cull_vertex> extension supported?
 glGetIBMCullVertex :: MonadIO m => m Bool
-glGetIBMCullVertex = member "GL_IBM_cull_vertex" `fmap` getExtensions
+glGetIBMCullVertex = getExtensions >>= (return . member "GL_IBM_cull_vertex")
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/cull_vertex.txt IBM_cull_vertex> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3156,7 +3156,7 @@ gl_IBM_cull_vertex = member "GL_IBM_cull_vertex" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/multimode_draw_arrays.txt IBM_multimode_draw_arrays> extension supported?
 glGetIBMMultimodeDrawArrays :: MonadIO m => m Bool
-glGetIBMMultimodeDrawArrays = member "GL_IBM_multimode_draw_arrays" `fmap` getExtensions
+glGetIBMMultimodeDrawArrays = getExtensions >>= (return . member "GL_IBM_multimode_draw_arrays")
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/multimode_draw_arrays.txt IBM_multimode_draw_arrays> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3167,7 +3167,7 @@ gl_IBM_multimode_draw_arrays = member "GL_IBM_multimode_draw_arrays" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/rasterpos_clip.txt IBM_rasterpos_clip> extension supported?
 glGetIBMRasterposClip :: MonadIO m => m Bool
-glGetIBMRasterposClip = member "GL_IBM_rasterpos_clip" `fmap` getExtensions
+glGetIBMRasterposClip = getExtensions >>= (return . member "GL_IBM_rasterpos_clip")
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/rasterpos_clip.txt IBM_rasterpos_clip> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3178,7 +3178,7 @@ gl_IBM_rasterpos_clip = member "GL_IBM_rasterpos_clip" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/static_data.txt IBM_static_data> extension supported?
 glGetIBMStaticData :: MonadIO m => m Bool
-glGetIBMStaticData = member "GL_IBM_static_data" `fmap` getExtensions
+glGetIBMStaticData = getExtensions >>= (return . member "GL_IBM_static_data")
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/static_data.txt IBM_static_data> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3189,7 +3189,7 @@ gl_IBM_static_data = member "GL_IBM_static_data" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/texture_mirrored_repeat.txt IBM_texture_mirrored_repeat> extension supported?
 glGetIBMTextureMirroredRepeat :: MonadIO m => m Bool
-glGetIBMTextureMirroredRepeat = member "GL_IBM_texture_mirrored_repeat" `fmap` getExtensions
+glGetIBMTextureMirroredRepeat = getExtensions >>= (return . member "GL_IBM_texture_mirrored_repeat")
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/texture_mirrored_repeat.txt IBM_texture_mirrored_repeat> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3200,7 +3200,7 @@ gl_IBM_texture_mirrored_repeat = member "GL_IBM_texture_mirrored_repeat" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/vertex_array_lists.txt IBM_vertex_array_lists> extension supported?
 glGetIBMVertexArrayLists :: MonadIO m => m Bool
-glGetIBMVertexArrayLists = member "GL_IBM_vertex_array_lists" `fmap` getExtensions
+glGetIBMVertexArrayLists = getExtensions >>= (return . member "GL_IBM_vertex_array_lists")
 
 -- | Is the <https://www.opengl.org/registry/specs/IBM/vertex_array_lists.txt IBM_vertex_array_lists> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3211,7 +3211,7 @@ gl_IBM_vertex_array_lists = member "GL_IBM_vertex_array_lists" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_func_separate.txt INGR_blend_func_separate> extension supported?
 glGetINGRBlendFuncSeparate :: MonadIO m => m Bool
-glGetINGRBlendFuncSeparate = member "GL_INGR_blend_func_separate" `fmap` getExtensions
+glGetINGRBlendFuncSeparate = getExtensions >>= (return . member "GL_INGR_blend_func_separate")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/blend_func_separate.txt INGR_blend_func_separate> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3222,7 +3222,7 @@ gl_INGR_blend_func_separate = member "GL_INGR_blend_func_separate" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/INGR/color_clamp.txt INGR_color_clamp> extension supported?
 glGetINGRColorClamp :: MonadIO m => m Bool
-glGetINGRColorClamp = member "GL_INGR_color_clamp" `fmap` getExtensions
+glGetINGRColorClamp = getExtensions >>= (return . member "GL_INGR_color_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/INGR/color_clamp.txt INGR_color_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3233,7 +3233,7 @@ gl_INGR_color_clamp = member "GL_INGR_color_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/INGR/interlace_read.txt INGR_interlace_read> extension supported?
 glGetINGRInterlaceRead :: MonadIO m => m Bool
-glGetINGRInterlaceRead = member "GL_INGR_interlace_read" `fmap` getExtensions
+glGetINGRInterlaceRead = getExtensions >>= (return . member "GL_INGR_interlace_read")
 
 -- | Is the <https://www.opengl.org/registry/specs/INGR/interlace_read.txt INGR_interlace_read> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3244,7 +3244,7 @@ gl_INGR_interlace_read = member "GL_INGR_interlace_read" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/framebuffer_CMAA.txt INTEL_framebuffer_CMAA> extension supported?
 glGetINTELFramebufferCmaa :: MonadIO m => m Bool
-glGetINTELFramebufferCmaa = member "GL_INTEL_framebuffer_CMAA" `fmap` getExtensions
+glGetINTELFramebufferCmaa = getExtensions >>= (return . member "GL_INTEL_framebuffer_CMAA")
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/framebuffer_CMAA.txt INTEL_framebuffer_CMAA> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3255,7 +3255,7 @@ gl_INTEL_framebuffer_CMAA = member "GL_INTEL_framebuffer_CMAA" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/map_texture.txt INTEL_map_texture> extension supported?
 glGetINTELMapTexture :: MonadIO m => m Bool
-glGetINTELMapTexture = member "GL_INTEL_map_texture" `fmap` getExtensions
+glGetINTELMapTexture = getExtensions >>= (return . member "GL_INTEL_map_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/map_texture.txt INTEL_map_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3266,7 +3266,7 @@ gl_INTEL_map_texture = member "GL_INTEL_map_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/parallel_arrays.txt INTEL_parallel_arrays> extension supported?
 glGetINTELParallelArrays :: MonadIO m => m Bool
-glGetINTELParallelArrays = member "GL_INTEL_parallel_arrays" `fmap` getExtensions
+glGetINTELParallelArrays = getExtensions >>= (return . member "GL_INTEL_parallel_arrays")
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/parallel_arrays.txt INTEL_parallel_arrays> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3277,7 +3277,7 @@ gl_INTEL_parallel_arrays = member "GL_INTEL_parallel_arrays" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/performance_query.txt INTEL_performance_query> extension supported?
 glGetINTELPerformanceQuery :: MonadIO m => m Bool
-glGetINTELPerformanceQuery = member "GL_INTEL_performance_query" `fmap` getExtensions
+glGetINTELPerformanceQuery = getExtensions >>= (return . member "GL_INTEL_performance_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/performance_query.txt INTEL_performance_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3288,7 +3288,7 @@ gl_INTEL_performance_query = member "GL_INTEL_performance_query" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/blend_equation_advanced.txt KHR_blend_equation_advanced> extension supported?
 glGetKHRBlendEquationAdvanced :: MonadIO m => m Bool
-glGetKHRBlendEquationAdvanced = member "GL_KHR_blend_equation_advanced" `fmap` getExtensions
+glGetKHRBlendEquationAdvanced = getExtensions >>= (return . member "GL_KHR_blend_equation_advanced")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/blend_equation_advanced.txt KHR_blend_equation_advanced> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3299,7 +3299,7 @@ gl_KHR_blend_equation_advanced = member "GL_KHR_blend_equation_advanced" extensi
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/blend_equation_advanced.txt KHR_blend_equation_advanced_coherent> extension supported?
 glGetKHRBlendEquationAdvancedCoherent :: MonadIO m => m Bool
-glGetKHRBlendEquationAdvancedCoherent = member "GL_KHR_blend_equation_advanced_coherent" `fmap` getExtensions
+glGetKHRBlendEquationAdvancedCoherent = getExtensions >>= (return . member "GL_KHR_blend_equation_advanced_coherent")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/blend_equation_advanced.txt KHR_blend_equation_advanced_coherent> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3310,7 +3310,7 @@ gl_KHR_blend_equation_advanced_coherent = member "GL_KHR_blend_equation_advanced
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/context_flush_control.txt KHR_context_flush_control> extension supported?
 glGetKHRContextFlushControl :: MonadIO m => m Bool
-glGetKHRContextFlushControl = member "GL_KHR_context_flush_control" `fmap` getExtensions
+glGetKHRContextFlushControl = getExtensions >>= (return . member "GL_KHR_context_flush_control")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/context_flush_control.txt KHR_context_flush_control> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3321,7 +3321,7 @@ gl_KHR_context_flush_control = member "GL_KHR_context_flush_control" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/debug.txt KHR_debug> extension supported?
 glGetKHRDebug :: MonadIO m => m Bool
-glGetKHRDebug = member "GL_KHR_debug" `fmap` getExtensions
+glGetKHRDebug = getExtensions >>= (return . member "GL_KHR_debug")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/debug.txt KHR_debug> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3332,7 +3332,7 @@ gl_KHR_debug = member "GL_KHR_debug" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/no_error.txt KHR_no_error> extension supported?
 glGetKHRNoError :: MonadIO m => m Bool
-glGetKHRNoError = member "GL_KHR_no_error" `fmap` getExtensions
+glGetKHRNoError = getExtensions >>= (return . member "GL_KHR_no_error")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/no_error.txt KHR_no_error> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3343,7 +3343,7 @@ gl_KHR_no_error = member "GL_KHR_no_error" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/robustness.txt KHR_robustness> extension supported?
 glGetKHRRobustness :: MonadIO m => m Bool
-glGetKHRRobustness = member "GL_KHR_robustness" `fmap` getExtensions
+glGetKHRRobustness = getExtensions >>= (return . member "GL_KHR_robustness")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/robustness.txt KHR_robustness> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3354,7 +3354,7 @@ gl_KHR_robustness = member "GL_KHR_robustness" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_hdr.txt KHR_texture_compression_astc_hdr> extension supported?
 glGetKHRTextureCompressionASTCHDR :: MonadIO m => m Bool
-glGetKHRTextureCompressionASTCHDR = member "GL_KHR_texture_compression_astc_hdr" `fmap` getExtensions
+glGetKHRTextureCompressionASTCHDR = getExtensions >>= (return . member "GL_KHR_texture_compression_astc_hdr")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_hdr.txt KHR_texture_compression_astc_hdr> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3365,7 +3365,7 @@ gl_KHR_texture_compression_astc_hdr = member "GL_KHR_texture_compression_astc_hd
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_hdr.txt KHR_texture_compression_astc_ldr> extension supported?
 glGetKHRTextureCompressionASTCLDR :: MonadIO m => m Bool
-glGetKHRTextureCompressionASTCLDR = member "GL_KHR_texture_compression_astc_ldr" `fmap` getExtensions
+glGetKHRTextureCompressionASTCLDR = getExtensions >>= (return . member "GL_KHR_texture_compression_astc_ldr")
 
 -- | Is the <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_hdr.txt KHR_texture_compression_astc_ldr> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3376,7 +3376,7 @@ gl_KHR_texture_compression_astc_ldr = member "GL_KHR_texture_compression_astc_ld
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/pack_invert.txt MESA_pack_invert> extension supported?
 glGetMESAPackInvert :: MonadIO m => m Bool
-glGetMESAPackInvert = member "GL_MESA_pack_invert" `fmap` getExtensions
+glGetMESAPackInvert = getExtensions >>= (return . member "GL_MESA_pack_invert")
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/pack_invert.txt MESA_pack_invert> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3387,7 +3387,7 @@ gl_MESA_pack_invert = member "GL_MESA_pack_invert" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/resize_buffers.txt MESA_resize_buffers> extension supported?
 glGetMESAResizeBuffers :: MonadIO m => m Bool
-glGetMESAResizeBuffers = member "GL_MESA_resize_buffers" `fmap` getExtensions
+glGetMESAResizeBuffers = getExtensions >>= (return . member "GL_MESA_resize_buffers")
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/resize_buffers.txt MESA_resize_buffers> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3398,7 +3398,7 @@ gl_MESA_resize_buffers = member "GL_MESA_resize_buffers" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/window_pos.txt MESA_window_pos> extension supported?
 glGetMESAWindowPos :: MonadIO m => m Bool
-glGetMESAWindowPos = member "GL_MESA_window_pos" `fmap` getExtensions
+glGetMESAWindowPos = getExtensions >>= (return . member "GL_MESA_window_pos")
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/window_pos.txt MESA_window_pos> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3409,7 +3409,7 @@ gl_MESA_window_pos = member "GL_MESA_window_pos" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/ycbcr_texture.txt MESA_ycbcr_texture> extension supported?
 glGetMESAYCbCrTexture :: MonadIO m => m Bool
-glGetMESAYCbCrTexture = member "GL_MESA_ycbcr_texture" `fmap` getExtensions
+glGetMESAYCbCrTexture = getExtensions >>= (return . member "GL_MESA_ycbcr_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/ycbcr_texture.txt MESA_ycbcr_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3420,7 +3420,7 @@ gl_MESA_ycbcr_texture = member "GL_MESA_ycbcr_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/MESAX/texture_stack.txt MESAX_texture_stack> extension supported?
 glGetMESAXTextureStack :: MonadIO m => m Bool
-glGetMESAXTextureStack = member "GL_MESAX_texture_stack" `fmap` getExtensions
+glGetMESAXTextureStack = getExtensions >>= (return . member "GL_MESAX_texture_stack")
 
 -- | Is the <https://www.opengl.org/registry/specs/MESAX/texture_stack.txt MESAX_texture_stack> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3431,7 +3431,7 @@ gl_MESAX_texture_stack = member "GL_MESAX_texture_stack" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/bindless_multi_draw_indirect.txt NV_bindless_multi_draw_indirect> extension supported?
 glGetNVBindlessMultiDrawIndirect :: MonadIO m => m Bool
-glGetNVBindlessMultiDrawIndirect = member "GL_NV_bindless_multi_draw_indirect" `fmap` getExtensions
+glGetNVBindlessMultiDrawIndirect = getExtensions >>= (return . member "GL_NV_bindless_multi_draw_indirect")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/bindless_multi_draw_indirect.txt NV_bindless_multi_draw_indirect> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3442,7 +3442,7 @@ gl_NV_bindless_multi_draw_indirect = member "GL_NV_bindless_multi_draw_indirect"
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/bindless_multi_draw_indirect_count.txt NV_bindless_multi_draw_indirect_count> extension supported?
 glGetNVBindlessMultiDrawIndirectCount :: MonadIO m => m Bool
-glGetNVBindlessMultiDrawIndirectCount = member "GL_NV_bindless_multi_draw_indirect_count" `fmap` getExtensions
+glGetNVBindlessMultiDrawIndirectCount = getExtensions >>= (return . member "GL_NV_bindless_multi_draw_indirect_count")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/bindless_multi_draw_indirect_count.txt NV_bindless_multi_draw_indirect_count> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3453,7 +3453,7 @@ gl_NV_bindless_multi_draw_indirect_count = member "GL_NV_bindless_multi_draw_ind
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/bindless_texture.txt NV_bindless_texture> extension supported?
 glGetNVBindlessTexture :: MonadIO m => m Bool
-glGetNVBindlessTexture = member "GL_NV_bindless_texture" `fmap` getExtensions
+glGetNVBindlessTexture = getExtensions >>= (return . member "GL_NV_bindless_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/bindless_texture.txt NV_bindless_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3464,7 +3464,7 @@ gl_NV_bindless_texture = member "GL_NV_bindless_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/blend_equation_advanced.txt NV_blend_equation_advanced> extension supported?
 glGetNVBlendEquationAdvanced :: MonadIO m => m Bool
-glGetNVBlendEquationAdvanced = member "GL_NV_blend_equation_advanced" `fmap` getExtensions
+glGetNVBlendEquationAdvanced = getExtensions >>= (return . member "GL_NV_blend_equation_advanced")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/blend_equation_advanced.txt NV_blend_equation_advanced> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3475,7 +3475,7 @@ gl_NV_blend_equation_advanced = member "GL_NV_blend_equation_advanced" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/blend_equation_advanced.txt NV_blend_equation_advanced_coherent> extension supported?
 glGetNVBlendEquationAdvancedCoherent :: MonadIO m => m Bool
-glGetNVBlendEquationAdvancedCoherent = member "GL_NV_blend_equation_advanced_coherent" `fmap` getExtensions
+glGetNVBlendEquationAdvancedCoherent = getExtensions >>= (return . member "GL_NV_blend_equation_advanced_coherent")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/blend_equation_advanced.txt NV_blend_equation_advanced_coherent> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3486,7 +3486,7 @@ gl_NV_blend_equation_advanced_coherent = member "GL_NV_blend_equation_advanced_c
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/command_list.txt NV_command_list> extension supported?
 glGetNVCommandList :: MonadIO m => m Bool
-glGetNVCommandList = member "GL_NV_command_list" `fmap` getExtensions
+glGetNVCommandList = getExtensions >>= (return . member "GL_NV_command_list")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/command_list.txt NV_command_list> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3497,7 +3497,7 @@ gl_NV_command_list = member "GL_NV_command_list" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/compute_program5.txt NV_compute_program5> extension supported?
 glGetNVComputeProgram5 :: MonadIO m => m Bool
-glGetNVComputeProgram5 = member "GL_NV_compute_program5" `fmap` getExtensions
+glGetNVComputeProgram5 = getExtensions >>= (return . member "GL_NV_compute_program5")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/compute_program5.txt NV_compute_program5> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3508,7 +3508,7 @@ gl_NV_compute_program5 = member "GL_NV_compute_program5" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/conditional_render.txt NV_conditional_render> extension supported?
 glGetNVConditionalRender :: MonadIO m => m Bool
-glGetNVConditionalRender = member "GL_NV_conditional_render" `fmap` getExtensions
+glGetNVConditionalRender = getExtensions >>= (return . member "GL_NV_conditional_render")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/conditional_render.txt NV_conditional_render> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3519,7 +3519,7 @@ gl_NV_conditional_render = member "GL_NV_conditional_render" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster.txt NV_conservative_raster> extension supported?
 glGetNVConservativeRaster :: MonadIO m => m Bool
-glGetNVConservativeRaster = member "GL_NV_conservative_raster" `fmap` getExtensions
+glGetNVConservativeRaster = getExtensions >>= (return . member "GL_NV_conservative_raster")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster.txt NV_conservative_raster> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3530,7 +3530,7 @@ gl_NV_conservative_raster = member "GL_NV_conservative_raster" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster_dilate.txt NV_conservative_raster_dilate> extension supported?
 glGetNVConservativeRasterDilate :: MonadIO m => m Bool
-glGetNVConservativeRasterDilate = member "GL_NV_conservative_raster_dilate" `fmap` getExtensions
+glGetNVConservativeRasterDilate = getExtensions >>= (return . member "GL_NV_conservative_raster_dilate")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster_dilate.txt NV_conservative_raster_dilate> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3541,7 +3541,7 @@ gl_NV_conservative_raster_dilate = member "GL_NV_conservative_raster_dilate" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/copy_depth_to_color.txt NV_copy_depth_to_color> extension supported?
 glGetNVCopyDepthToColor :: MonadIO m => m Bool
-glGetNVCopyDepthToColor = member "GL_NV_copy_depth_to_color" `fmap` getExtensions
+glGetNVCopyDepthToColor = getExtensions >>= (return . member "GL_NV_copy_depth_to_color")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/copy_depth_to_color.txt NV_copy_depth_to_color> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3552,7 +3552,7 @@ gl_NV_copy_depth_to_color = member "GL_NV_copy_depth_to_color" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/copy_image.txt NV_copy_image> extension supported?
 glGetNVCopyImage :: MonadIO m => m Bool
-glGetNVCopyImage = member "GL_NV_copy_image" `fmap` getExtensions
+glGetNVCopyImage = getExtensions >>= (return . member "GL_NV_copy_image")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/copy_image.txt NV_copy_image> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3563,7 +3563,7 @@ gl_NV_copy_image = member "GL_NV_copy_image" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/deep_texture3D.txt NV_deep_texture3D> extension supported?
 glGetNVDeepTexture3D :: MonadIO m => m Bool
-glGetNVDeepTexture3D = member "GL_NV_deep_texture3D" `fmap` getExtensions
+glGetNVDeepTexture3D = getExtensions >>= (return . member "GL_NV_deep_texture3D")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/deep_texture3D.txt NV_deep_texture3D> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3574,7 +3574,7 @@ gl_NV_deep_texture3D = member "GL_NV_deep_texture3D" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/depth_buffer_float.txt NV_depth_buffer_float> extension supported?
 glGetNVDepthBufferFloat :: MonadIO m => m Bool
-glGetNVDepthBufferFloat = member "GL_NV_depth_buffer_float" `fmap` getExtensions
+glGetNVDepthBufferFloat = getExtensions >>= (return . member "GL_NV_depth_buffer_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/depth_buffer_float.txt NV_depth_buffer_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3585,7 +3585,7 @@ gl_NV_depth_buffer_float = member "GL_NV_depth_buffer_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/depth_clamp.txt NV_depth_clamp> extension supported?
 glGetNVDepthClamp :: MonadIO m => m Bool
-glGetNVDepthClamp = member "GL_NV_depth_clamp" `fmap` getExtensions
+glGetNVDepthClamp = getExtensions >>= (return . member "GL_NV_depth_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/depth_clamp.txt NV_depth_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3596,7 +3596,7 @@ gl_NV_depth_clamp = member "GL_NV_depth_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/draw_texture.txt NV_draw_texture> extension supported?
 glGetNVDrawTexture :: MonadIO m => m Bool
-glGetNVDrawTexture = member "GL_NV_draw_texture" `fmap` getExtensions
+glGetNVDrawTexture = getExtensions >>= (return . member "GL_NV_draw_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/draw_texture.txt NV_draw_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3607,7 +3607,7 @@ gl_NV_draw_texture = member "GL_NV_draw_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/evaluators.txt NV_evaluators> extension supported?
 glGetNVEvaluators :: MonadIO m => m Bool
-glGetNVEvaluators = member "GL_NV_evaluators" `fmap` getExtensions
+glGetNVEvaluators = getExtensions >>= (return . member "GL_NV_evaluators")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/evaluators.txt NV_evaluators> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3618,7 +3618,7 @@ gl_NV_evaluators = member "GL_NV_evaluators" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/explicit_multisample.txt NV_explicit_multisample> extension supported?
 glGetNVExplicitMultisample :: MonadIO m => m Bool
-glGetNVExplicitMultisample = member "GL_NV_explicit_multisample" `fmap` getExtensions
+glGetNVExplicitMultisample = getExtensions >>= (return . member "GL_NV_explicit_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/explicit_multisample.txt NV_explicit_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3629,7 +3629,7 @@ gl_NV_explicit_multisample = member "GL_NV_explicit_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fence.txt NV_fence> extension supported?
 glGetNVFence :: MonadIO m => m Bool
-glGetNVFence = member "GL_NV_fence" `fmap` getExtensions
+glGetNVFence = getExtensions >>= (return . member "GL_NV_fence")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fence.txt NV_fence> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3640,7 +3640,7 @@ gl_NV_fence = member "GL_NV_fence" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fill_rectangle.txt NV_fill_rectangle> extension supported?
 glGetNVFillRectangle :: MonadIO m => m Bool
-glGetNVFillRectangle = member "GL_NV_fill_rectangle" `fmap` getExtensions
+glGetNVFillRectangle = getExtensions >>= (return . member "GL_NV_fill_rectangle")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fill_rectangle.txt NV_fill_rectangle> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3651,7 +3651,7 @@ gl_NV_fill_rectangle = member "GL_NV_fill_rectangle" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/float_buffer.txt NV_float_buffer> extension supported?
 glGetNVFloatBuffer :: MonadIO m => m Bool
-glGetNVFloatBuffer = member "GL_NV_float_buffer" `fmap` getExtensions
+glGetNVFloatBuffer = getExtensions >>= (return . member "GL_NV_float_buffer")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/float_buffer.txt NV_float_buffer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3662,7 +3662,7 @@ gl_NV_float_buffer = member "GL_NV_float_buffer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fog_distance.txt NV_fog_distance> extension supported?
 glGetNVFogDistance :: MonadIO m => m Bool
-glGetNVFogDistance = member "GL_NV_fog_distance" `fmap` getExtensions
+glGetNVFogDistance = getExtensions >>= (return . member "GL_NV_fog_distance")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fog_distance.txt NV_fog_distance> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3673,7 +3673,7 @@ gl_NV_fog_distance = member "GL_NV_fog_distance" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fragment_coverage_to_color.txt NV_fragment_coverage_to_color> extension supported?
 glGetNVFragmentCoverageToColor :: MonadIO m => m Bool
-glGetNVFragmentCoverageToColor = member "GL_NV_fragment_coverage_to_color" `fmap` getExtensions
+glGetNVFragmentCoverageToColor = getExtensions >>= (return . member "GL_NV_fragment_coverage_to_color")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fragment_coverage_to_color.txt NV_fragment_coverage_to_color> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3684,7 +3684,7 @@ gl_NV_fragment_coverage_to_color = member "GL_NV_fragment_coverage_to_color" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fragment_program.txt NV_fragment_program> extension supported?
 glGetNVFragmentProgram :: MonadIO m => m Bool
-glGetNVFragmentProgram = member "GL_NV_fragment_program" `fmap` getExtensions
+glGetNVFragmentProgram = getExtensions >>= (return . member "GL_NV_fragment_program")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fragment_program.txt NV_fragment_program> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3695,7 +3695,7 @@ gl_NV_fragment_program = member "GL_NV_fragment_program" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fragment_program2.txt NV_fragment_program2> extension supported?
 glGetNVFragmentProgram2 :: MonadIO m => m Bool
-glGetNVFragmentProgram2 = member "GL_NV_fragment_program2" `fmap` getExtensions
+glGetNVFragmentProgram2 = getExtensions >>= (return . member "GL_NV_fragment_program2")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/fragment_program2.txt NV_fragment_program2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3706,7 +3706,7 @@ gl_NV_fragment_program2 = member "GL_NV_fragment_program2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/framebuffer_mixed_samples.txt NV_framebuffer_mixed_samples> extension supported?
 glGetNVFramebufferMixedSamples :: MonadIO m => m Bool
-glGetNVFramebufferMixedSamples = member "GL_NV_framebuffer_mixed_samples" `fmap` getExtensions
+glGetNVFramebufferMixedSamples = getExtensions >>= (return . member "GL_NV_framebuffer_mixed_samples")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/framebuffer_mixed_samples.txt NV_framebuffer_mixed_samples> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3717,7 +3717,7 @@ gl_NV_framebuffer_mixed_samples = member "GL_NV_framebuffer_mixed_samples" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/framebuffer_multisample_coverage.txt NV_framebuffer_multisample_coverage> extension supported?
 glGetNVFramebufferMultisampleCoverage :: MonadIO m => m Bool
-glGetNVFramebufferMultisampleCoverage = member "GL_NV_framebuffer_multisample_coverage" `fmap` getExtensions
+glGetNVFramebufferMultisampleCoverage = getExtensions >>= (return . member "GL_NV_framebuffer_multisample_coverage")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/framebuffer_multisample_coverage.txt NV_framebuffer_multisample_coverage> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3728,7 +3728,7 @@ gl_NV_framebuffer_multisample_coverage = member "GL_NV_framebuffer_multisample_c
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/geometry_program4.txt NV_geometry_program4> extension supported?
 glGetNVGeometryProgram4 :: MonadIO m => m Bool
-glGetNVGeometryProgram4 = member "GL_NV_geometry_program4" `fmap` getExtensions
+glGetNVGeometryProgram4 = getExtensions >>= (return . member "GL_NV_geometry_program4")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/geometry_program4.txt NV_geometry_program4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3739,7 +3739,7 @@ gl_NV_geometry_program4 = member "GL_NV_geometry_program4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/gpu_program4.txt NV_gpu_program4> extension supported?
 glGetNVGPUProgram4 :: MonadIO m => m Bool
-glGetNVGPUProgram4 = member "GL_NV_gpu_program4" `fmap` getExtensions
+glGetNVGPUProgram4 = getExtensions >>= (return . member "GL_NV_gpu_program4")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/gpu_program4.txt NV_gpu_program4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3750,7 +3750,7 @@ gl_NV_gpu_program4 = member "GL_NV_gpu_program4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/gpu_program5.txt NV_gpu_program5> extension supported?
 glGetNVGPUProgram5 :: MonadIO m => m Bool
-glGetNVGPUProgram5 = member "GL_NV_gpu_program5" `fmap` getExtensions
+glGetNVGPUProgram5 = getExtensions >>= (return . member "GL_NV_gpu_program5")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/gpu_program5.txt NV_gpu_program5> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3761,7 +3761,7 @@ gl_NV_gpu_program5 = member "GL_NV_gpu_program5" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/gpu_shader5.txt NV_gpu_shader5> extension supported?
 glGetNVGPUShader5 :: MonadIO m => m Bool
-glGetNVGPUShader5 = member "GL_NV_gpu_shader5" `fmap` getExtensions
+glGetNVGPUShader5 = getExtensions >>= (return . member "GL_NV_gpu_shader5")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/gpu_shader5.txt NV_gpu_shader5> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3772,7 +3772,7 @@ gl_NV_gpu_shader5 = member "GL_NV_gpu_shader5" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/half_float.txt NV_half_float> extension supported?
 glGetNVHalfFloat :: MonadIO m => m Bool
-glGetNVHalfFloat = member "GL_NV_half_float" `fmap` getExtensions
+glGetNVHalfFloat = getExtensions >>= (return . member "GL_NV_half_float")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/half_float.txt NV_half_float> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3783,7 +3783,7 @@ gl_NV_half_float = member "GL_NV_half_float" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/internalformat_sample_query.txt NV_internalformat_sample_query> extension supported?
 glGetNVInternalformatSampleQuery :: MonadIO m => m Bool
-glGetNVInternalformatSampleQuery = member "GL_NV_internalformat_sample_query" `fmap` getExtensions
+glGetNVInternalformatSampleQuery = getExtensions >>= (return . member "GL_NV_internalformat_sample_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/internalformat_sample_query.txt NV_internalformat_sample_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3794,7 +3794,7 @@ gl_NV_internalformat_sample_query = member "GL_NV_internalformat_sample_query" e
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/light_max_exponent.txt NV_light_max_exponent> extension supported?
 glGetNVLightMaxExponent :: MonadIO m => m Bool
-glGetNVLightMaxExponent = member "GL_NV_light_max_exponent" `fmap` getExtensions
+glGetNVLightMaxExponent = getExtensions >>= (return . member "GL_NV_light_max_exponent")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/light_max_exponent.txt NV_light_max_exponent> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3805,7 +3805,7 @@ gl_NV_light_max_exponent = member "GL_NV_light_max_exponent" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/multisample_coverage.txt NV_multisample_coverage> extension supported?
 glGetNVMultisampleCoverage :: MonadIO m => m Bool
-glGetNVMultisampleCoverage = member "GL_NV_multisample_coverage" `fmap` getExtensions
+glGetNVMultisampleCoverage = getExtensions >>= (return . member "GL_NV_multisample_coverage")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/multisample_coverage.txt NV_multisample_coverage> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3816,7 +3816,7 @@ gl_NV_multisample_coverage = member "GL_NV_multisample_coverage" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/multisample_filter_hint.txt NV_multisample_filter_hint> extension supported?
 glGetNVMultisampleFilterHint :: MonadIO m => m Bool
-glGetNVMultisampleFilterHint = member "GL_NV_multisample_filter_hint" `fmap` getExtensions
+glGetNVMultisampleFilterHint = getExtensions >>= (return . member "GL_NV_multisample_filter_hint")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/multisample_filter_hint.txt NV_multisample_filter_hint> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3827,7 +3827,7 @@ gl_NV_multisample_filter_hint = member "GL_NV_multisample_filter_hint" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/occlusion_query.txt NV_occlusion_query> extension supported?
 glGetNVOcclusionQuery :: MonadIO m => m Bool
-glGetNVOcclusionQuery = member "GL_NV_occlusion_query" `fmap` getExtensions
+glGetNVOcclusionQuery = getExtensions >>= (return . member "GL_NV_occlusion_query")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/occlusion_query.txt NV_occlusion_query> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3838,7 +3838,7 @@ gl_NV_occlusion_query = member "GL_NV_occlusion_query" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/packed_depth_stencil.txt NV_packed_depth_stencil> extension supported?
 glGetNVPackedDepthStencil :: MonadIO m => m Bool
-glGetNVPackedDepthStencil = member "GL_NV_packed_depth_stencil" `fmap` getExtensions
+glGetNVPackedDepthStencil = getExtensions >>= (return . member "GL_NV_packed_depth_stencil")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/packed_depth_stencil.txt NV_packed_depth_stencil> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3849,7 +3849,7 @@ gl_NV_packed_depth_stencil = member "GL_NV_packed_depth_stencil" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/parameter_buffer_object.txt NV_parameter_buffer_object> extension supported?
 glGetNVParameterBufferObject :: MonadIO m => m Bool
-glGetNVParameterBufferObject = member "GL_NV_parameter_buffer_object" `fmap` getExtensions
+glGetNVParameterBufferObject = getExtensions >>= (return . member "GL_NV_parameter_buffer_object")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/parameter_buffer_object.txt NV_parameter_buffer_object> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3860,7 +3860,7 @@ gl_NV_parameter_buffer_object = member "GL_NV_parameter_buffer_object" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/path_rendering.txt NV_path_rendering> extension supported?
 glGetNVPathRendering :: MonadIO m => m Bool
-glGetNVPathRendering = member "GL_NV_path_rendering" `fmap` getExtensions
+glGetNVPathRendering = getExtensions >>= (return . member "GL_NV_path_rendering")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/path_rendering.txt NV_path_rendering> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3871,7 +3871,7 @@ gl_NV_path_rendering = member "GL_NV_path_rendering" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/path_rendering_shared_edge.txt NV_path_rendering_shared_edge> extension supported?
 glGetNVPathRenderingSharedEdge :: MonadIO m => m Bool
-glGetNVPathRenderingSharedEdge = member "GL_NV_path_rendering_shared_edge" `fmap` getExtensions
+glGetNVPathRenderingSharedEdge = getExtensions >>= (return . member "GL_NV_path_rendering_shared_edge")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/path_rendering_shared_edge.txt NV_path_rendering_shared_edge> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3882,7 +3882,7 @@ gl_NV_path_rendering_shared_edge = member "GL_NV_path_rendering_shared_edge" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/pixel_data_range.txt NV_pixel_data_range> extension supported?
 glGetNVPixelDataRange :: MonadIO m => m Bool
-glGetNVPixelDataRange = member "GL_NV_pixel_data_range" `fmap` getExtensions
+glGetNVPixelDataRange = getExtensions >>= (return . member "GL_NV_pixel_data_range")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/pixel_data_range.txt NV_pixel_data_range> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3893,7 +3893,7 @@ gl_NV_pixel_data_range = member "GL_NV_pixel_data_range" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/point_sprite.txt NV_point_sprite> extension supported?
 glGetNVPointSprite :: MonadIO m => m Bool
-glGetNVPointSprite = member "GL_NV_point_sprite" `fmap` getExtensions
+glGetNVPointSprite = getExtensions >>= (return . member "GL_NV_point_sprite")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/point_sprite.txt NV_point_sprite> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3904,7 +3904,7 @@ gl_NV_point_sprite = member "GL_NV_point_sprite" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/present_video.txt NV_present_video> extension supported?
 glGetNVPresentVideo :: MonadIO m => m Bool
-glGetNVPresentVideo = member "GL_NV_present_video" `fmap` getExtensions
+glGetNVPresentVideo = getExtensions >>= (return . member "GL_NV_present_video")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/present_video.txt NV_present_video> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3915,7 +3915,7 @@ gl_NV_present_video = member "GL_NV_present_video" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/primitive_restart.txt NV_primitive_restart> extension supported?
 glGetNVPrimitiveRestart :: MonadIO m => m Bool
-glGetNVPrimitiveRestart = member "GL_NV_primitive_restart" `fmap` getExtensions
+glGetNVPrimitiveRestart = getExtensions >>= (return . member "GL_NV_primitive_restart")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/primitive_restart.txt NV_primitive_restart> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3926,7 +3926,7 @@ gl_NV_primitive_restart = member "GL_NV_primitive_restart" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/register_combiners.txt NV_register_combiners> extension supported?
 glGetNVRegisterCombiners :: MonadIO m => m Bool
-glGetNVRegisterCombiners = member "GL_NV_register_combiners" `fmap` getExtensions
+glGetNVRegisterCombiners = getExtensions >>= (return . member "GL_NV_register_combiners")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/register_combiners.txt NV_register_combiners> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3937,7 +3937,7 @@ gl_NV_register_combiners = member "GL_NV_register_combiners" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/register_combiners2.txt NV_register_combiners2> extension supported?
 glGetNVRegisterCombiners2 :: MonadIO m => m Bool
-glGetNVRegisterCombiners2 = member "GL_NV_register_combiners2" `fmap` getExtensions
+glGetNVRegisterCombiners2 = getExtensions >>= (return . member "GL_NV_register_combiners2")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/register_combiners2.txt NV_register_combiners2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3948,7 +3948,7 @@ gl_NV_register_combiners2 = member "GL_NV_register_combiners2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/sample_locations.txt NV_sample_locations> extension supported?
 glGetNVSampleLocations :: MonadIO m => m Bool
-glGetNVSampleLocations = member "GL_NV_sample_locations" `fmap` getExtensions
+glGetNVSampleLocations = getExtensions >>= (return . member "GL_NV_sample_locations")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/sample_locations.txt NV_sample_locations> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3959,7 +3959,7 @@ gl_NV_sample_locations = member "GL_NV_sample_locations" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_buffer_load.txt NV_shader_buffer_load> extension supported?
 glGetNVShaderBufferLoad :: MonadIO m => m Bool
-glGetNVShaderBufferLoad = member "GL_NV_shader_buffer_load" `fmap` getExtensions
+glGetNVShaderBufferLoad = getExtensions >>= (return . member "GL_NV_shader_buffer_load")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_buffer_load.txt NV_shader_buffer_load> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3970,7 +3970,7 @@ gl_NV_shader_buffer_load = member "GL_NV_shader_buffer_load" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_buffer_store.txt NV_shader_buffer_store> extension supported?
 glGetNVShaderBufferStore :: MonadIO m => m Bool
-glGetNVShaderBufferStore = member "GL_NV_shader_buffer_store" `fmap` getExtensions
+glGetNVShaderBufferStore = getExtensions >>= (return . member "GL_NV_shader_buffer_store")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_buffer_store.txt NV_shader_buffer_store> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3981,7 +3981,7 @@ gl_NV_shader_buffer_store = member "GL_NV_shader_buffer_store" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_thread_group.txt NV_shader_thread_group> extension supported?
 glGetNVShaderThreadGroup :: MonadIO m => m Bool
-glGetNVShaderThreadGroup = member "GL_NV_shader_thread_group" `fmap` getExtensions
+glGetNVShaderThreadGroup = getExtensions >>= (return . member "GL_NV_shader_thread_group")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_thread_group.txt NV_shader_thread_group> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -3992,7 +3992,7 @@ gl_NV_shader_thread_group = member "GL_NV_shader_thread_group" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/tessellation_program5.txt NV_tessellation_program5> extension supported?
 glGetNVTessellationProgram5 :: MonadIO m => m Bool
-glGetNVTessellationProgram5 = member "GL_NV_tessellation_program5" `fmap` getExtensions
+glGetNVTessellationProgram5 = getExtensions >>= (return . member "GL_NV_tessellation_program5")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/tessellation_program5.txt NV_tessellation_program5> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4003,7 +4003,7 @@ gl_NV_tessellation_program5 = member "GL_NV_tessellation_program5" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texgen_emboss.txt NV_texgen_emboss> extension supported?
 glGetNVTexgenEmboss :: MonadIO m => m Bool
-glGetNVTexgenEmboss = member "GL_NV_texgen_emboss" `fmap` getExtensions
+glGetNVTexgenEmboss = getExtensions >>= (return . member "GL_NV_texgen_emboss")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texgen_emboss.txt NV_texgen_emboss> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4014,7 +4014,7 @@ gl_NV_texgen_emboss = member "GL_NV_texgen_emboss" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texgen_reflection.txt NV_texgen_reflection> extension supported?
 glGetNVTexgenReflection :: MonadIO m => m Bool
-glGetNVTexgenReflection = member "GL_NV_texgen_reflection" `fmap` getExtensions
+glGetNVTexgenReflection = getExtensions >>= (return . member "GL_NV_texgen_reflection")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texgen_reflection.txt NV_texgen_reflection> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4025,7 +4025,7 @@ gl_NV_texgen_reflection = member "GL_NV_texgen_reflection" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_barrier.txt NV_texture_barrier> extension supported?
 glGetNVTextureBarrier :: MonadIO m => m Bool
-glGetNVTextureBarrier = member "GL_NV_texture_barrier" `fmap` getExtensions
+glGetNVTextureBarrier = getExtensions >>= (return . member "GL_NV_texture_barrier")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_barrier.txt NV_texture_barrier> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4036,7 +4036,7 @@ gl_NV_texture_barrier = member "GL_NV_texture_barrier" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_env_combine4.txt NV_texture_env_combine4> extension supported?
 glGetNVTextureEnvCombine4 :: MonadIO m => m Bool
-glGetNVTextureEnvCombine4 = member "GL_NV_texture_env_combine4" `fmap` getExtensions
+glGetNVTextureEnvCombine4 = getExtensions >>= (return . member "GL_NV_texture_env_combine4")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_env_combine4.txt NV_texture_env_combine4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4047,7 +4047,7 @@ gl_NV_texture_env_combine4 = member "GL_NV_texture_env_combine4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_expand_normal.txt NV_texture_expand_normal> extension supported?
 glGetNVTextureExpandNormal :: MonadIO m => m Bool
-glGetNVTextureExpandNormal = member "GL_NV_texture_expand_normal" `fmap` getExtensions
+glGetNVTextureExpandNormal = getExtensions >>= (return . member "GL_NV_texture_expand_normal")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_expand_normal.txt NV_texture_expand_normal> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4058,7 +4058,7 @@ gl_NV_texture_expand_normal = member "GL_NV_texture_expand_normal" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_multisample.txt NV_texture_multisample> extension supported?
 glGetNVTextureMultisample :: MonadIO m => m Bool
-glGetNVTextureMultisample = member "GL_NV_texture_multisample" `fmap` getExtensions
+glGetNVTextureMultisample = getExtensions >>= (return . member "GL_NV_texture_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_multisample.txt NV_texture_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4069,7 +4069,7 @@ gl_NV_texture_multisample = member "GL_NV_texture_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_rectangle.txt NV_texture_rectangle> extension supported?
 glGetNVTextureRectangle :: MonadIO m => m Bool
-glGetNVTextureRectangle = member "GL_NV_texture_rectangle" `fmap` getExtensions
+glGetNVTextureRectangle = getExtensions >>= (return . member "GL_NV_texture_rectangle")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_rectangle.txt NV_texture_rectangle> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4080,7 +4080,7 @@ gl_NV_texture_rectangle = member "GL_NV_texture_rectangle" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_shader.txt NV_texture_shader> extension supported?
 glGetNVTextureShader :: MonadIO m => m Bool
-glGetNVTextureShader = member "GL_NV_texture_shader" `fmap` getExtensions
+glGetNVTextureShader = getExtensions >>= (return . member "GL_NV_texture_shader")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_shader.txt NV_texture_shader> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4091,7 +4091,7 @@ gl_NV_texture_shader = member "GL_NV_texture_shader" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_shader2.txt NV_texture_shader2> extension supported?
 glGetNVTextureShader2 :: MonadIO m => m Bool
-glGetNVTextureShader2 = member "GL_NV_texture_shader2" `fmap` getExtensions
+glGetNVTextureShader2 = getExtensions >>= (return . member "GL_NV_texture_shader2")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_shader2.txt NV_texture_shader2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4102,7 +4102,7 @@ gl_NV_texture_shader2 = member "GL_NV_texture_shader2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_shader3.txt NV_texture_shader3> extension supported?
 glGetNVTextureShader3 :: MonadIO m => m Bool
-glGetNVTextureShader3 = member "GL_NV_texture_shader3" `fmap` getExtensions
+glGetNVTextureShader3 = getExtensions >>= (return . member "GL_NV_texture_shader3")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/texture_shader3.txt NV_texture_shader3> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4113,7 +4113,7 @@ gl_NV_texture_shader3 = member "GL_NV_texture_shader3" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/transform_feedback.txt NV_transform_feedback> extension supported?
 glGetNVTransformFeedback :: MonadIO m => m Bool
-glGetNVTransformFeedback = member "GL_NV_transform_feedback" `fmap` getExtensions
+glGetNVTransformFeedback = getExtensions >>= (return . member "GL_NV_transform_feedback")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/transform_feedback.txt NV_transform_feedback> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4124,7 +4124,7 @@ gl_NV_transform_feedback = member "GL_NV_transform_feedback" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/transform_feedback2.txt NV_transform_feedback2> extension supported?
 glGetNVTransformFeedback2 :: MonadIO m => m Bool
-glGetNVTransformFeedback2 = member "GL_NV_transform_feedback2" `fmap` getExtensions
+glGetNVTransformFeedback2 = getExtensions >>= (return . member "GL_NV_transform_feedback2")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/transform_feedback2.txt NV_transform_feedback2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4135,7 +4135,7 @@ gl_NV_transform_feedback2 = member "GL_NV_transform_feedback2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/uniform_buffer_unified_memory.txt NV_uniform_buffer_unified_memory> extension supported?
 glGetNVUniformBufferUnifiedMemory :: MonadIO m => m Bool
-glGetNVUniformBufferUnifiedMemory = member "GL_NV_uniform_buffer_unified_memory" `fmap` getExtensions
+glGetNVUniformBufferUnifiedMemory = getExtensions >>= (return . member "GL_NV_uniform_buffer_unified_memory")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/uniform_buffer_unified_memory.txt NV_uniform_buffer_unified_memory> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4146,7 +4146,7 @@ gl_NV_uniform_buffer_unified_memory = member "GL_NV_uniform_buffer_unified_memor
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vdpau_interop.txt NV_vdpau_interop> extension supported?
 glGetNVVDPAUInterop :: MonadIO m => m Bool
-glGetNVVDPAUInterop = member "GL_NV_vdpau_interop" `fmap` getExtensions
+glGetNVVDPAUInterop = getExtensions >>= (return . member "GL_NV_vdpau_interop")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vdpau_interop.txt NV_vdpau_interop> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4157,7 +4157,7 @@ gl_NV_vdpau_interop = member "GL_NV_vdpau_interop" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_array_range.txt NV_vertex_array_range> extension supported?
 glGetNVVertexArrayRange :: MonadIO m => m Bool
-glGetNVVertexArrayRange = member "GL_NV_vertex_array_range" `fmap` getExtensions
+glGetNVVertexArrayRange = getExtensions >>= (return . member "GL_NV_vertex_array_range")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_array_range.txt NV_vertex_array_range> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4168,7 +4168,7 @@ gl_NV_vertex_array_range = member "GL_NV_vertex_array_range" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_array_range2.txt NV_vertex_array_range2> extension supported?
 glGetNVVertexArrayRange2 :: MonadIO m => m Bool
-glGetNVVertexArrayRange2 = member "GL_NV_vertex_array_range2" `fmap` getExtensions
+glGetNVVertexArrayRange2 = getExtensions >>= (return . member "GL_NV_vertex_array_range2")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_array_range2.txt NV_vertex_array_range2> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4179,7 +4179,7 @@ gl_NV_vertex_array_range2 = member "GL_NV_vertex_array_range2" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_attrib_integer_64bit.txt NV_vertex_attrib_integer_64bit> extension supported?
 glGetNVVertexAttribInteger64Bit :: MonadIO m => m Bool
-glGetNVVertexAttribInteger64Bit = member "GL_NV_vertex_attrib_integer_64bit" `fmap` getExtensions
+glGetNVVertexAttribInteger64Bit = getExtensions >>= (return . member "GL_NV_vertex_attrib_integer_64bit")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_attrib_integer_64bit.txt NV_vertex_attrib_integer_64bit> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4190,7 +4190,7 @@ gl_NV_vertex_attrib_integer_64bit = member "GL_NV_vertex_attrib_integer_64bit" e
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_buffer_unified_memory.txt NV_vertex_buffer_unified_memory> extension supported?
 glGetNVVertexBufferUnifiedMemory :: MonadIO m => m Bool
-glGetNVVertexBufferUnifiedMemory = member "GL_NV_vertex_buffer_unified_memory" `fmap` getExtensions
+glGetNVVertexBufferUnifiedMemory = getExtensions >>= (return . member "GL_NV_vertex_buffer_unified_memory")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_buffer_unified_memory.txt NV_vertex_buffer_unified_memory> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4201,7 +4201,7 @@ gl_NV_vertex_buffer_unified_memory = member "GL_NV_vertex_buffer_unified_memory"
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program.txt NV_vertex_program> extension supported?
 glGetNVVertexProgram :: MonadIO m => m Bool
-glGetNVVertexProgram = member "GL_NV_vertex_program" `fmap` getExtensions
+glGetNVVertexProgram = getExtensions >>= (return . member "GL_NV_vertex_program")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program.txt NV_vertex_program> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4212,7 +4212,7 @@ gl_NV_vertex_program = member "GL_NV_vertex_program" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program2_option.txt NV_vertex_program2_option> extension supported?
 glGetNVVertexProgram2Option :: MonadIO m => m Bool
-glGetNVVertexProgram2Option = member "GL_NV_vertex_program2_option" `fmap` getExtensions
+glGetNVVertexProgram2Option = getExtensions >>= (return . member "GL_NV_vertex_program2_option")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program2_option.txt NV_vertex_program2_option> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4223,7 +4223,7 @@ gl_NV_vertex_program2_option = member "GL_NV_vertex_program2_option" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program3.txt NV_vertex_program3> extension supported?
 glGetNVVertexProgram3 :: MonadIO m => m Bool
-glGetNVVertexProgram3 = member "GL_NV_vertex_program3" `fmap` getExtensions
+glGetNVVertexProgram3 = getExtensions >>= (return . member "GL_NV_vertex_program3")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program3.txt NV_vertex_program3> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4234,7 +4234,7 @@ gl_NV_vertex_program3 = member "GL_NV_vertex_program3" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program4.txt NV_vertex_program4> extension supported?
 glGetNVVertexProgram4 :: MonadIO m => m Bool
-glGetNVVertexProgram4 = member "GL_NV_vertex_program4" `fmap` getExtensions
+glGetNVVertexProgram4 = getExtensions >>= (return . member "GL_NV_vertex_program4")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_program4.txt NV_vertex_program4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4245,7 +4245,7 @@ gl_NV_vertex_program4 = member "GL_NV_vertex_program4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/video_capture.txt NV_video_capture> extension supported?
 glGetNVVideoCapture :: MonadIO m => m Bool
-glGetNVVideoCapture = member "GL_NV_video_capture" `fmap` getExtensions
+glGetNVVideoCapture = getExtensions >>= (return . member "GL_NV_video_capture")
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/video_capture.txt NV_video_capture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4256,7 +4256,7 @@ gl_NV_video_capture = member "GL_NV_video_capture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NVX/nvx_conditional_render.txt NVX_conditional_render> extension supported?
 glGetNVXConditionalRender :: MonadIO m => m Bool
-glGetNVXConditionalRender = member "GL_NVX_conditional_render" `fmap` getExtensions
+glGetNVXConditionalRender = getExtensions >>= (return . member "GL_NVX_conditional_render")
 
 -- | Is the <https://www.opengl.org/registry/specs/NVX/nvx_conditional_render.txt NVX_conditional_render> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4267,7 +4267,7 @@ gl_NVX_conditional_render = member "GL_NVX_conditional_render" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/NVX/gpu_memory_info.txt NVX_gpu_memory_info> extension supported?
 glGetNVXGPUMemoryInfo :: MonadIO m => m Bool
-glGetNVXGPUMemoryInfo = member "GL_NVX_gpu_memory_info" `fmap` getExtensions
+glGetNVXGPUMemoryInfo = getExtensions >>= (return . member "GL_NVX_gpu_memory_info")
 
 -- | Is the <https://www.opengl.org/registry/specs/NVX/gpu_memory_info.txt NVX_gpu_memory_info> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4278,7 +4278,7 @@ gl_NVX_gpu_memory_info = member "GL_NVX_gpu_memory_info" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_byte_coordinates.txt OES_byte_coordinates> extension supported?
 glGetOESByteCoordinates :: MonadIO m => m Bool
-glGetOESByteCoordinates = member "GL_OES_byte_coordinates" `fmap` getExtensions
+glGetOESByteCoordinates = getExtensions >>= (return . member "GL_OES_byte_coordinates")
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_byte_coordinates.txt OES_byte_coordinates> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4289,7 +4289,7 @@ gl_OES_byte_coordinates = member "GL_OES_byte_coordinates" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_compressed_paletted_texture.txt OES_compressed_paletted_texture> extension supported?
 glGetOESCompressedPalettedTexture :: MonadIO m => m Bool
-glGetOESCompressedPalettedTexture = member "GL_OES_compressed_paletted_texture" `fmap` getExtensions
+glGetOESCompressedPalettedTexture = getExtensions >>= (return . member "GL_OES_compressed_paletted_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_compressed_paletted_texture.txt OES_compressed_paletted_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4300,7 +4300,7 @@ gl_OES_compressed_paletted_texture = member "GL_OES_compressed_paletted_texture"
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_fixed_point.txt OES_fixed_point> extension supported?
 glGetOESFixedPoint :: MonadIO m => m Bool
-glGetOESFixedPoint = member "GL_OES_fixed_point" `fmap` getExtensions
+glGetOESFixedPoint = getExtensions >>= (return . member "GL_OES_fixed_point")
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_fixed_point.txt OES_fixed_point> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4311,7 +4311,7 @@ gl_OES_fixed_point = member "GL_OES_fixed_point" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_query_matrix.txt OES_query_matrix> extension supported?
 glGetOESQueryMatrix :: MonadIO m => m Bool
-glGetOESQueryMatrix = member "GL_OES_query_matrix" `fmap` getExtensions
+glGetOESQueryMatrix = getExtensions >>= (return . member "GL_OES_query_matrix")
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_query_matrix.txt OES_query_matrix> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4322,7 +4322,7 @@ gl_OES_query_matrix = member "GL_OES_query_matrix" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_read_format.txt OES_read_format> extension supported?
 glGetOESReadFormat :: MonadIO m => m Bool
-glGetOESReadFormat = member "GL_OES_read_format" `fmap` getExtensions
+glGetOESReadFormat = getExtensions >>= (return . member "GL_OES_read_format")
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_read_format.txt OES_read_format> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4333,7 +4333,7 @@ gl_OES_read_format = member "GL_OES_read_format" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_single_precision.txt OES_single_precision> extension supported?
 glGetOESSinglePrecision :: MonadIO m => m Bool
-glGetOESSinglePrecision = member "GL_OES_single_precision" `fmap` getExtensions
+glGetOESSinglePrecision = getExtensions >>= (return . member "GL_OES_single_precision")
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_single_precision.txt OES_single_precision> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4344,7 +4344,7 @@ gl_OES_single_precision = member "GL_OES_single_precision" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OML/interlace.txt OML_interlace> extension supported?
 glGetOMLInterlace :: MonadIO m => m Bool
-glGetOMLInterlace = member "GL_OML_interlace" `fmap` getExtensions
+glGetOMLInterlace = getExtensions >>= (return . member "GL_OML_interlace")
 
 -- | Is the <https://www.opengl.org/registry/specs/OML/interlace.txt OML_interlace> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4355,7 +4355,7 @@ gl_OML_interlace = member "GL_OML_interlace" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OML/resample.txt OML_resample> extension supported?
 glGetOMLResample :: MonadIO m => m Bool
-glGetOMLResample = member "GL_OML_resample" `fmap` getExtensions
+glGetOMLResample = getExtensions >>= (return . member "GL_OML_resample")
 
 -- | Is the <https://www.opengl.org/registry/specs/OML/resample.txt OML_resample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4366,7 +4366,7 @@ gl_OML_resample = member "GL_OML_resample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OML/subsample.txt OML_subsample> extension supported?
 glGetOMLSubsample :: MonadIO m => m Bool
-glGetOMLSubsample = member "GL_OML_subsample" `fmap` getExtensions
+glGetOMLSubsample = getExtensions >>= (return . member "GL_OML_subsample")
 
 -- | Is the <https://www.opengl.org/registry/specs/OML/subsample.txt OML_subsample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4377,7 +4377,7 @@ gl_OML_subsample = member "GL_OML_subsample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/OVR/multiview.txt OVR_multiview> extension supported?
 glGetOVRMultiview :: MonadIO m => m Bool
-glGetOVRMultiview = member "GL_OVR_multiview" `fmap` getExtensions
+glGetOVRMultiview = getExtensions >>= (return . member "GL_OVR_multiview")
 
 -- | Is the <https://www.opengl.org/registry/specs/OVR/multiview.txt OVR_multiview> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4388,7 +4388,7 @@ gl_OVR_multiview = member "GL_OVR_multiview" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/PGI/misc_hints.txt PGI_misc_hints> extension supported?
 glGetPGIMiscHints :: MonadIO m => m Bool
-glGetPGIMiscHints = member "GL_PGI_misc_hints" `fmap` getExtensions
+glGetPGIMiscHints = getExtensions >>= (return . member "GL_PGI_misc_hints")
 
 -- | Is the <https://www.opengl.org/registry/specs/PGI/misc_hints.txt PGI_misc_hints> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4399,7 +4399,7 @@ gl_PGI_misc_hints = member "GL_PGI_misc_hints" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/PGI/vertex_hints.txt PGI_vertex_hints> extension supported?
 glGetPGIVertexHints :: MonadIO m => m Bool
-glGetPGIVertexHints = member "GL_PGI_vertex_hints" `fmap` getExtensions
+glGetPGIVertexHints = getExtensions >>= (return . member "GL_PGI_vertex_hints")
 
 -- | Is the <https://www.opengl.org/registry/specs/PGI/vertex_hints.txt PGI_vertex_hints> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4410,7 +4410,7 @@ gl_PGI_vertex_hints = member "GL_PGI_vertex_hints" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/REND/screen_coordinates.txt REND_screen_coordinates> extension supported?
 glGetRENDScreenCoordinates :: MonadIO m => m Bool
-glGetRENDScreenCoordinates = member "GL_REND_screen_coordinates" `fmap` getExtensions
+glGetRENDScreenCoordinates = getExtensions >>= (return . member "GL_REND_screen_coordinates")
 
 -- | Is the <https://www.opengl.org/registry/specs/REND/screen_coordinates.txt REND_screen_coordinates> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4421,7 +4421,7 @@ gl_REND_screen_coordinates = member "GL_REND_screen_coordinates" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/S3/s3tc.txt S3_s3tc> extension supported?
 glGetS3S3TC :: MonadIO m => m Bool
-glGetS3S3TC = member "GL_S3_s3tc" `fmap` getExtensions
+glGetS3S3TC = getExtensions >>= (return . member "GL_S3_s3tc")
 
 -- | Is the <https://www.opengl.org/registry/specs/S3/s3tc.txt S3_s3tc> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4432,7 +4432,7 @@ gl_S3_s3tc = member "GL_S3_s3tc" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGI/color_matrix.txt SGI_color_matrix> extension supported?
 glGetSGIColorMatrix :: MonadIO m => m Bool
-glGetSGIColorMatrix = member "GL_SGI_color_matrix" `fmap` getExtensions
+glGetSGIColorMatrix = getExtensions >>= (return . member "GL_SGI_color_matrix")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGI/color_matrix.txt SGI_color_matrix> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4443,7 +4443,7 @@ gl_SGI_color_matrix = member "GL_SGI_color_matrix" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGI/color_table.txt SGI_color_table> extension supported?
 glGetSGIColorTable :: MonadIO m => m Bool
-glGetSGIColorTable = member "GL_SGI_color_table" `fmap` getExtensions
+glGetSGIColorTable = getExtensions >>= (return . member "GL_SGI_color_table")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGI/color_table.txt SGI_color_table> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4454,7 +4454,7 @@ gl_SGI_color_table = member "GL_SGI_color_table" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGI/texture_color_table.txt SGI_texture_color_table> extension supported?
 glGetSGITextureColorTable :: MonadIO m => m Bool
-glGetSGITextureColorTable = member "GL_SGI_texture_color_table" `fmap` getExtensions
+glGetSGITextureColorTable = getExtensions >>= (return . member "GL_SGI_texture_color_table")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGI/texture_color_table.txt SGI_texture_color_table> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4465,7 +4465,7 @@ gl_SGI_texture_color_table = member "GL_SGI_texture_color_table" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/detail_texture.txt SGIS_detail_texture> extension supported?
 glGetSGISDetailTexture :: MonadIO m => m Bool
-glGetSGISDetailTexture = member "GL_SGIS_detail_texture" `fmap` getExtensions
+glGetSGISDetailTexture = getExtensions >>= (return . member "GL_SGIS_detail_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/detail_texture.txt SGIS_detail_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4476,7 +4476,7 @@ gl_SGIS_detail_texture = member "GL_SGIS_detail_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/fog_func.txt SGIS_fog_function> extension supported?
 glGetSGISFogFunction :: MonadIO m => m Bool
-glGetSGISFogFunction = member "GL_SGIS_fog_function" `fmap` getExtensions
+glGetSGISFogFunction = getExtensions >>= (return . member "GL_SGIS_fog_function")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/fog_func.txt SGIS_fog_function> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4487,7 +4487,7 @@ gl_SGIS_fog_function = member "GL_SGIS_fog_function" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/generate_mipmap.txt SGIS_generate_mipmap> extension supported?
 glGetSGISGenerateMipmap :: MonadIO m => m Bool
-glGetSGISGenerateMipmap = member "GL_SGIS_generate_mipmap" `fmap` getExtensions
+glGetSGISGenerateMipmap = getExtensions >>= (return . member "GL_SGIS_generate_mipmap")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/generate_mipmap.txt SGIS_generate_mipmap> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4498,7 +4498,7 @@ gl_SGIS_generate_mipmap = member "GL_SGIS_generate_mipmap" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/multisample.txt SGIS_multisample> extension supported?
 glGetSGISMultisample :: MonadIO m => m Bool
-glGetSGISMultisample = member "GL_SGIS_multisample" `fmap` getExtensions
+glGetSGISMultisample = getExtensions >>= (return . member "GL_SGIS_multisample")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/multisample.txt SGIS_multisample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4509,7 +4509,7 @@ gl_SGIS_multisample = member "GL_SGIS_multisample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/pixel_texture.txt SGIS_pixel_texture> extension supported?
 glGetSGISPixelTexture :: MonadIO m => m Bool
-glGetSGISPixelTexture = member "GL_SGIS_pixel_texture" `fmap` getExtensions
+glGetSGISPixelTexture = getExtensions >>= (return . member "GL_SGIS_pixel_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/pixel_texture.txt SGIS_pixel_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4520,7 +4520,7 @@ gl_SGIS_pixel_texture = member "GL_SGIS_pixel_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/point_line_texgen.txt SGIS_point_line_texgen> extension supported?
 glGetSGISPointLineTexgen :: MonadIO m => m Bool
-glGetSGISPointLineTexgen = member "GL_SGIS_point_line_texgen" `fmap` getExtensions
+glGetSGISPointLineTexgen = getExtensions >>= (return . member "GL_SGIS_point_line_texgen")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/point_line_texgen.txt SGIS_point_line_texgen> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4531,7 +4531,7 @@ gl_SGIS_point_line_texgen = member "GL_SGIS_point_line_texgen" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/point_parameters.txt SGIS_point_parameters> extension supported?
 glGetSGISPointParameters :: MonadIO m => m Bool
-glGetSGISPointParameters = member "GL_SGIS_point_parameters" `fmap` getExtensions
+glGetSGISPointParameters = getExtensions >>= (return . member "GL_SGIS_point_parameters")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/point_parameters.txt SGIS_point_parameters> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4542,7 +4542,7 @@ gl_SGIS_point_parameters = member "GL_SGIS_point_parameters" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/sharpen_texture.txt SGIS_sharpen_texture> extension supported?
 glGetSGISSharpenTexture :: MonadIO m => m Bool
-glGetSGISSharpenTexture = member "GL_SGIS_sharpen_texture" `fmap` getExtensions
+glGetSGISSharpenTexture = getExtensions >>= (return . member "GL_SGIS_sharpen_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/sharpen_texture.txt SGIS_sharpen_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4553,7 +4553,7 @@ gl_SGIS_sharpen_texture = member "GL_SGIS_sharpen_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture4D.txt SGIS_texture4D> extension supported?
 glGetSGISTexture4D :: MonadIO m => m Bool
-glGetSGISTexture4D = member "GL_SGIS_texture4D" `fmap` getExtensions
+glGetSGISTexture4D = getExtensions >>= (return . member "GL_SGIS_texture4D")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture4D.txt SGIS_texture4D> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4564,7 +4564,7 @@ gl_SGIS_texture4D = member "GL_SGIS_texture4D" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_border_clamp.txt SGIS_texture_border_clamp> extension supported?
 glGetSGISTextureBorderClamp :: MonadIO m => m Bool
-glGetSGISTextureBorderClamp = member "GL_SGIS_texture_border_clamp" `fmap` getExtensions
+glGetSGISTextureBorderClamp = getExtensions >>= (return . member "GL_SGIS_texture_border_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_border_clamp.txt SGIS_texture_border_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4575,7 +4575,7 @@ gl_SGIS_texture_border_clamp = member "GL_SGIS_texture_border_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_color_mask.txt SGIS_texture_color_mask> extension supported?
 glGetSGISTextureColorMask :: MonadIO m => m Bool
-glGetSGISTextureColorMask = member "GL_SGIS_texture_color_mask" `fmap` getExtensions
+glGetSGISTextureColorMask = getExtensions >>= (return . member "GL_SGIS_texture_color_mask")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_color_mask.txt SGIS_texture_color_mask> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4586,7 +4586,7 @@ gl_SGIS_texture_color_mask = member "GL_SGIS_texture_color_mask" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_edge_clamp.txt SGIS_texture_edge_clamp> extension supported?
 glGetSGISTextureEdgeClamp :: MonadIO m => m Bool
-glGetSGISTextureEdgeClamp = member "GL_SGIS_texture_edge_clamp" `fmap` getExtensions
+glGetSGISTextureEdgeClamp = getExtensions >>= (return . member "GL_SGIS_texture_edge_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_edge_clamp.txt SGIS_texture_edge_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4597,7 +4597,7 @@ gl_SGIS_texture_edge_clamp = member "GL_SGIS_texture_edge_clamp" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_filter4.txt SGIS_texture_filter4> extension supported?
 glGetSGISTextureFilter4 :: MonadIO m => m Bool
-glGetSGISTextureFilter4 = member "GL_SGIS_texture_filter4" `fmap` getExtensions
+glGetSGISTextureFilter4 = getExtensions >>= (return . member "GL_SGIS_texture_filter4")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_filter4.txt SGIS_texture_filter4> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4608,7 +4608,7 @@ gl_SGIS_texture_filter4 = member "GL_SGIS_texture_filter4" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_lod.txt SGIS_texture_lod> extension supported?
 glGetSGISTextureLOD :: MonadIO m => m Bool
-glGetSGISTextureLOD = member "GL_SGIS_texture_lod" `fmap` getExtensions
+glGetSGISTextureLOD = getExtensions >>= (return . member "GL_SGIS_texture_lod")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_lod.txt SGIS_texture_lod> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4619,7 +4619,7 @@ gl_SGIS_texture_lod = member "GL_SGIS_texture_lod" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_select.txt SGIS_texture_select> extension supported?
 glGetSGISTextureSelect :: MonadIO m => m Bool
-glGetSGISTextureSelect = member "GL_SGIS_texture_select" `fmap` getExtensions
+glGetSGISTextureSelect = getExtensions >>= (return . member "GL_SGIS_texture_select")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIS/texture_select.txt SGIS_texture_select> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4630,7 +4630,7 @@ gl_SGIS_texture_select = member "GL_SGIS_texture_select" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/async.txt SGIX_async> extension supported?
 glGetSGIXAsync :: MonadIO m => m Bool
-glGetSGIXAsync = member "GL_SGIX_async" `fmap` getExtensions
+glGetSGIXAsync = getExtensions >>= (return . member "GL_SGIX_async")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/async.txt SGIX_async> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4641,7 +4641,7 @@ gl_SGIX_async = member "GL_SGIX_async" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/async_histogram.txt SGIX_async_histogram> extension supported?
 glGetSGIXAsyncHistogram :: MonadIO m => m Bool
-glGetSGIXAsyncHistogram = member "GL_SGIX_async_histogram" `fmap` getExtensions
+glGetSGIXAsyncHistogram = getExtensions >>= (return . member "GL_SGIX_async_histogram")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/async_histogram.txt SGIX_async_histogram> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4652,7 +4652,7 @@ gl_SGIX_async_histogram = member "GL_SGIX_async_histogram" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/async_pixel.txt SGIX_async_pixel> extension supported?
 glGetSGIXAsyncPixel :: MonadIO m => m Bool
-glGetSGIXAsyncPixel = member "GL_SGIX_async_pixel" `fmap` getExtensions
+glGetSGIXAsyncPixel = getExtensions >>= (return . member "GL_SGIX_async_pixel")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/async_pixel.txt SGIX_async_pixel> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4663,7 +4663,7 @@ gl_SGIX_async_pixel = member "GL_SGIX_async_pixel" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/blend_alpha_minmax.txt SGIX_blend_alpha_minmax> extension supported?
 glGetSGIXBlendAlphaMinmax :: MonadIO m => m Bool
-glGetSGIXBlendAlphaMinmax = member "GL_SGIX_blend_alpha_minmax" `fmap` getExtensions
+glGetSGIXBlendAlphaMinmax = getExtensions >>= (return . member "GL_SGIX_blend_alpha_minmax")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/blend_alpha_minmax.txt SGIX_blend_alpha_minmax> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4674,7 +4674,7 @@ gl_SGIX_blend_alpha_minmax = member "GL_SGIX_blend_alpha_minmax" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/calligraphic_fragment.txt SGIX_calligraphic_fragment> extension supported?
 glGetSGIXCalligraphicFragment :: MonadIO m => m Bool
-glGetSGIXCalligraphicFragment = member "GL_SGIX_calligraphic_fragment" `fmap` getExtensions
+glGetSGIXCalligraphicFragment = getExtensions >>= (return . member "GL_SGIX_calligraphic_fragment")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/calligraphic_fragment.txt SGIX_calligraphic_fragment> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4685,7 +4685,7 @@ gl_SGIX_calligraphic_fragment = member "GL_SGIX_calligraphic_fragment" extension
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/clipmap.txt SGIX_clipmap> extension supported?
 glGetSGIXClipmap :: MonadIO m => m Bool
-glGetSGIXClipmap = member "GL_SGIX_clipmap" `fmap` getExtensions
+glGetSGIXClipmap = getExtensions >>= (return . member "GL_SGIX_clipmap")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/clipmap.txt SGIX_clipmap> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4696,7 +4696,7 @@ gl_SGIX_clipmap = member "GL_SGIX_clipmap" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/convolution_accuracy.txt SGIX_convolution_accuracy> extension supported?
 glGetSGIXConvolutionAccuracy :: MonadIO m => m Bool
-glGetSGIXConvolutionAccuracy = member "GL_SGIX_convolution_accuracy" `fmap` getExtensions
+glGetSGIXConvolutionAccuracy = getExtensions >>= (return . member "GL_SGIX_convolution_accuracy")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/convolution_accuracy.txt SGIX_convolution_accuracy> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4707,7 +4707,7 @@ gl_SGIX_convolution_accuracy = member "GL_SGIX_convolution_accuracy" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/depth_texture.txt SGIX_depth_texture> extension supported?
 glGetSGIXDepthTexture :: MonadIO m => m Bool
-glGetSGIXDepthTexture = member "GL_SGIX_depth_texture" `fmap` getExtensions
+glGetSGIXDepthTexture = getExtensions >>= (return . member "GL_SGIX_depth_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/depth_texture.txt SGIX_depth_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4718,7 +4718,7 @@ gl_SGIX_depth_texture = member "GL_SGIX_depth_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/flush_raster.txt SGIX_flush_raster> extension supported?
 glGetSGIXFlushRaster :: MonadIO m => m Bool
-glGetSGIXFlushRaster = member "GL_SGIX_flush_raster" `fmap` getExtensions
+glGetSGIXFlushRaster = getExtensions >>= (return . member "GL_SGIX_flush_raster")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/flush_raster.txt SGIX_flush_raster> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4729,7 +4729,7 @@ gl_SGIX_flush_raster = member "GL_SGIX_flush_raster" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/fog_offset.txt SGIX_fog_offset> extension supported?
 glGetSGIXFogOffset :: MonadIO m => m Bool
-glGetSGIXFogOffset = member "GL_SGIX_fog_offset" `fmap` getExtensions
+glGetSGIXFogOffset = getExtensions >>= (return . member "GL_SGIX_fog_offset")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/fog_offset.txt SGIX_fog_offset> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4740,7 +4740,7 @@ gl_SGIX_fog_offset = member "GL_SGIX_fog_offset" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/fragment_lighting.txt SGIX_fragment_lighting> extension supported?
 glGetSGIXFragmentLighting :: MonadIO m => m Bool
-glGetSGIXFragmentLighting = member "GL_SGIX_fragment_lighting" `fmap` getExtensions
+glGetSGIXFragmentLighting = getExtensions >>= (return . member "GL_SGIX_fragment_lighting")
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/fragment_lighting.txt SGIX_fragment_lighting> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4751,7 +4751,7 @@ gl_SGIX_fragment_lighting = member "GL_SGIX_fragment_lighting" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/framezoom.txt SGIX_framezoom> extension supported?
 glGetSGIXFramezoom :: MonadIO m => m Bool
-glGetSGIXFramezoom = member "GL_SGIX_framezoom" `fmap` getExtensions
+glGetSGIXFramezoom = getExtensions >>= (return . member "GL_SGIX_framezoom")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/framezoom.txt SGIX_framezoom> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4762,7 +4762,7 @@ gl_SGIX_framezoom = member "GL_SGIX_framezoom" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/igloo_interface.txt SGIX_igloo_interface> extension supported?
 glGetSGIXIglooInterface :: MonadIO m => m Bool
-glGetSGIXIglooInterface = member "GL_SGIX_igloo_interface" `fmap` getExtensions
+glGetSGIXIglooInterface = getExtensions >>= (return . member "GL_SGIX_igloo_interface")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/igloo_interface.txt SGIX_igloo_interface> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4773,7 +4773,7 @@ gl_SGIX_igloo_interface = member "GL_SGIX_igloo_interface" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/instruments.txt SGIX_instruments> extension supported?
 glGetSGIXInstruments :: MonadIO m => m Bool
-glGetSGIXInstruments = member "GL_SGIX_instruments" `fmap` getExtensions
+glGetSGIXInstruments = getExtensions >>= (return . member "GL_SGIX_instruments")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/instruments.txt SGIX_instruments> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4784,7 +4784,7 @@ gl_SGIX_instruments = member "GL_SGIX_instruments" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/interlace.txt SGIX_interlace> extension supported?
 glGetSGIXInterlace :: MonadIO m => m Bool
-glGetSGIXInterlace = member "GL_SGIX_interlace" `fmap` getExtensions
+glGetSGIXInterlace = getExtensions >>= (return . member "GL_SGIX_interlace")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/interlace.txt SGIX_interlace> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4795,7 +4795,7 @@ gl_SGIX_interlace = member "GL_SGIX_interlace" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/ir_instrument1.txt SGIX_ir_instrument1> extension supported?
 glGetSGIXIrInstrument1 :: MonadIO m => m Bool
-glGetSGIXIrInstrument1 = member "GL_SGIX_ir_instrument1" `fmap` getExtensions
+glGetSGIXIrInstrument1 = getExtensions >>= (return . member "GL_SGIX_ir_instrument1")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/ir_instrument1.txt SGIX_ir_instrument1> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4806,7 +4806,7 @@ gl_SGIX_ir_instrument1 = member "GL_SGIX_ir_instrument1" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/list_priority.txt SGIX_list_priority> extension supported?
 glGetSGIXListPriority :: MonadIO m => m Bool
-glGetSGIXListPriority = member "GL_SGIX_list_priority" `fmap` getExtensions
+glGetSGIXListPriority = getExtensions >>= (return . member "GL_SGIX_list_priority")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/list_priority.txt SGIX_list_priority> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4817,7 +4817,7 @@ gl_SGIX_list_priority = member "GL_SGIX_list_priority" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/sgix_pixel_texture.txt SGIX_pixel_texture> extension supported?
 glGetSGIXPixelTexture :: MonadIO m => m Bool
-glGetSGIXPixelTexture = member "GL_SGIX_pixel_texture" `fmap` getExtensions
+glGetSGIXPixelTexture = getExtensions >>= (return . member "GL_SGIX_pixel_texture")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/sgix_pixel_texture.txt SGIX_pixel_texture> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4828,7 +4828,7 @@ gl_SGIX_pixel_texture = member "GL_SGIX_pixel_texture" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/pixel_tiles.txt SGIX_pixel_tiles> extension supported?
 glGetSGIXPixelTiles :: MonadIO m => m Bool
-glGetSGIXPixelTiles = member "GL_SGIX_pixel_tiles" `fmap` getExtensions
+glGetSGIXPixelTiles = getExtensions >>= (return . member "GL_SGIX_pixel_tiles")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/pixel_tiles.txt SGIX_pixel_tiles> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4839,7 +4839,7 @@ gl_SGIX_pixel_tiles = member "GL_SGIX_pixel_tiles" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/polynomial_ffd.txt SGIX_polynomial_ffd> extension supported?
 glGetSGIXPolynomialFFD :: MonadIO m => m Bool
-glGetSGIXPolynomialFFD = member "GL_SGIX_polynomial_ffd" `fmap` getExtensions
+glGetSGIXPolynomialFFD = getExtensions >>= (return . member "GL_SGIX_polynomial_ffd")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/polynomial_ffd.txt SGIX_polynomial_ffd> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4850,7 +4850,7 @@ gl_SGIX_polynomial_ffd = member "GL_SGIX_polynomial_ffd" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/reference_plane.txt SGIX_reference_plane> extension supported?
 glGetSGIXReferencePlane :: MonadIO m => m Bool
-glGetSGIXReferencePlane = member "GL_SGIX_reference_plane" `fmap` getExtensions
+glGetSGIXReferencePlane = getExtensions >>= (return . member "GL_SGIX_reference_plane")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/reference_plane.txt SGIX_reference_plane> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4861,7 +4861,7 @@ gl_SGIX_reference_plane = member "GL_SGIX_reference_plane" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/resample.txt SGIX_resample> extension supported?
 glGetSGIXResample :: MonadIO m => m Bool
-glGetSGIXResample = member "GL_SGIX_resample" `fmap` getExtensions
+glGetSGIXResample = getExtensions >>= (return . member "GL_SGIX_resample")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/resample.txt SGIX_resample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4872,7 +4872,7 @@ gl_SGIX_resample = member "GL_SGIX_resample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/scalebias_hint.txt SGIX_scalebias_hint> extension supported?
 glGetSGIXScalebiasHint :: MonadIO m => m Bool
-glGetSGIXScalebiasHint = member "GL_SGIX_scalebias_hint" `fmap` getExtensions
+glGetSGIXScalebiasHint = getExtensions >>= (return . member "GL_SGIX_scalebias_hint")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/scalebias_hint.txt SGIX_scalebias_hint> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4883,7 +4883,7 @@ gl_SGIX_scalebias_hint = member "GL_SGIX_scalebias_hint" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/shadow.txt SGIX_shadow> extension supported?
 glGetSGIXShadow :: MonadIO m => m Bool
-glGetSGIXShadow = member "GL_SGIX_shadow" `fmap` getExtensions
+glGetSGIXShadow = getExtensions >>= (return . member "GL_SGIX_shadow")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/shadow.txt SGIX_shadow> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4894,7 +4894,7 @@ gl_SGIX_shadow = member "GL_SGIX_shadow" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/shadow_ambient.txt SGIX_shadow_ambient> extension supported?
 glGetSGIXShadowAmbient :: MonadIO m => m Bool
-glGetSGIXShadowAmbient = member "GL_SGIX_shadow_ambient" `fmap` getExtensions
+glGetSGIXShadowAmbient = getExtensions >>= (return . member "GL_SGIX_shadow_ambient")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/shadow_ambient.txt SGIX_shadow_ambient> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4905,7 +4905,7 @@ gl_SGIX_shadow_ambient = member "GL_SGIX_shadow_ambient" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/sprite.txt SGIX_sprite> extension supported?
 glGetSGIXSprite :: MonadIO m => m Bool
-glGetSGIXSprite = member "GL_SGIX_sprite" `fmap` getExtensions
+glGetSGIXSprite = getExtensions >>= (return . member "GL_SGIX_sprite")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/sprite.txt SGIX_sprite> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4916,7 +4916,7 @@ gl_SGIX_sprite = member "GL_SGIX_sprite" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/subsample.txt SGIX_subsample> extension supported?
 glGetSGIXSubsample :: MonadIO m => m Bool
-glGetSGIXSubsample = member "GL_SGIX_subsample" `fmap` getExtensions
+glGetSGIXSubsample = getExtensions >>= (return . member "GL_SGIX_subsample")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/subsample.txt SGIX_subsample> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4927,7 +4927,7 @@ gl_SGIX_subsample = member "GL_SGIX_subsample" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/tag_sample_buffer.txt SGIX_tag_sample_buffer> extension supported?
 glGetSGIXTagSampleBuffer :: MonadIO m => m Bool
-glGetSGIXTagSampleBuffer = member "GL_SGIX_tag_sample_buffer" `fmap` getExtensions
+glGetSGIXTagSampleBuffer = getExtensions >>= (return . member "GL_SGIX_tag_sample_buffer")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/tag_sample_buffer.txt SGIX_tag_sample_buffer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4938,7 +4938,7 @@ gl_SGIX_tag_sample_buffer = member "GL_SGIX_tag_sample_buffer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_env_add.txt SGIX_texture_add_env> extension supported?
 glGetSGIXTextureAddEnv :: MonadIO m => m Bool
-glGetSGIXTextureAddEnv = member "GL_SGIX_texture_add_env" `fmap` getExtensions
+glGetSGIXTextureAddEnv = getExtensions >>= (return . member "GL_SGIX_texture_add_env")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_env_add.txt SGIX_texture_add_env> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4949,7 +4949,7 @@ gl_SGIX_texture_add_env = member "GL_SGIX_texture_add_env" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_coordinate_clamp.txt SGIX_texture_coordinate_clamp> extension supported?
 glGetSGIXTextureCoordinateClamp :: MonadIO m => m Bool
-glGetSGIXTextureCoordinateClamp = member "GL_SGIX_texture_coordinate_clamp" `fmap` getExtensions
+glGetSGIXTextureCoordinateClamp = getExtensions >>= (return . member "GL_SGIX_texture_coordinate_clamp")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_coordinate_clamp.txt SGIX_texture_coordinate_clamp> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4960,7 +4960,7 @@ gl_SGIX_texture_coordinate_clamp = member "GL_SGIX_texture_coordinate_clamp" ext
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_lod_bias.txt SGIX_texture_lod_bias> extension supported?
 glGetSGIXTextureLODBias :: MonadIO m => m Bool
-glGetSGIXTextureLODBias = member "GL_SGIX_texture_lod_bias" `fmap` getExtensions
+glGetSGIXTextureLODBias = getExtensions >>= (return . member "GL_SGIX_texture_lod_bias")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_lod_bias.txt SGIX_texture_lod_bias> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4971,7 +4971,7 @@ gl_SGIX_texture_lod_bias = member "GL_SGIX_texture_lod_bias" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_multi_buffer.txt SGIX_texture_multi_buffer> extension supported?
 glGetSGIXTextureMultiBuffer :: MonadIO m => m Bool
-glGetSGIXTextureMultiBuffer = member "GL_SGIX_texture_multi_buffer" `fmap` getExtensions
+glGetSGIXTextureMultiBuffer = getExtensions >>= (return . member "GL_SGIX_texture_multi_buffer")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_multi_buffer.txt SGIX_texture_multi_buffer> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4982,7 +4982,7 @@ gl_SGIX_texture_multi_buffer = member "GL_SGIX_texture_multi_buffer" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_scale_bias.txt SGIX_texture_scale_bias> extension supported?
 glGetSGIXTextureScaleBias :: MonadIO m => m Bool
-glGetSGIXTextureScaleBias = member "GL_SGIX_texture_scale_bias" `fmap` getExtensions
+glGetSGIXTextureScaleBias = getExtensions >>= (return . member "GL_SGIX_texture_scale_bias")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/texture_scale_bias.txt SGIX_texture_scale_bias> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -4993,7 +4993,7 @@ gl_SGIX_texture_scale_bias = member "GL_SGIX_texture_scale_bias" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/vertex_preclip.txt SGIX_vertex_preclip> extension supported?
 glGetSGIXVertexPreclip :: MonadIO m => m Bool
-glGetSGIXVertexPreclip = member "GL_SGIX_vertex_preclip" `fmap` getExtensions
+glGetSGIXVertexPreclip = getExtensions >>= (return . member "GL_SGIX_vertex_preclip")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/vertex_preclip.txt SGIX_vertex_preclip> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5004,7 +5004,7 @@ gl_SGIX_vertex_preclip = member "GL_SGIX_vertex_preclip" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/ycrcb.txt SGIX_ycrcb> extension supported?
 glGetSGIXYCrCb :: MonadIO m => m Bool
-glGetSGIXYCrCb = member "GL_SGIX_ycrcb" `fmap` getExtensions
+glGetSGIXYCrCb = getExtensions >>= (return . member "GL_SGIX_ycrcb")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/ycrcb.txt SGIX_ycrcb> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5015,7 +5015,7 @@ gl_SGIX_ycrcb = member "GL_SGIX_ycrcb" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/ycrcba.txt SGIX_ycrcba> extension supported?
 glGetSGIXYCrCbA :: MonadIO m => m Bool
-glGetSGIXYCrCbA = member "GL_SGIX_ycrcba" `fmap` getExtensions
+glGetSGIXYCrCbA = getExtensions >>= (return . member "GL_SGIX_ycrcba")
 
 -- | Is the <https://www.opengl.org/registry/specs/SGIX/ycrcba.txt SGIX_ycrcba> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5026,7 +5026,7 @@ gl_SGIX_ycrcba = member "GL_SGIX_ycrcba" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/convolution_border_modes.txt SUN_convolution_border_modes> extension supported?
 glGetSUNConvolutionBorderModes :: MonadIO m => m Bool
-glGetSUNConvolutionBorderModes = member "GL_SUN_convolution_border_modes" `fmap` getExtensions
+glGetSUNConvolutionBorderModes = getExtensions >>= (return . member "GL_SUN_convolution_border_modes")
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/convolution_border_modes.txt SUN_convolution_border_modes> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5037,7 +5037,7 @@ gl_SUN_convolution_border_modes = member "GL_SUN_convolution_border_modes" exten
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/global_alpha.txt SUN_global_alpha> extension supported?
 glGetSUNGlobalAlpha :: MonadIO m => m Bool
-glGetSUNGlobalAlpha = member "GL_SUN_global_alpha" `fmap` getExtensions
+glGetSUNGlobalAlpha = getExtensions >>= (return . member "GL_SUN_global_alpha")
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/global_alpha.txt SUN_global_alpha> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5048,7 +5048,7 @@ gl_SUN_global_alpha = member "GL_SUN_global_alpha" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/mesh_array.txt SUN_mesh_array> extension supported?
 glGetSUNMeshArray :: MonadIO m => m Bool
-glGetSUNMeshArray = member "GL_SUN_mesh_array" `fmap` getExtensions
+glGetSUNMeshArray = getExtensions >>= (return . member "GL_SUN_mesh_array")
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/mesh_array.txt SUN_mesh_array> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5059,7 +5059,7 @@ gl_SUN_mesh_array = member "GL_SUN_mesh_array" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/slice_accum.txt SUN_slice_accum> extension supported?
 glGetSUNSliceAccum :: MonadIO m => m Bool
-glGetSUNSliceAccum = member "GL_SUN_slice_accum" `fmap` getExtensions
+glGetSUNSliceAccum = getExtensions >>= (return . member "GL_SUN_slice_accum")
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/slice_accum.txt SUN_slice_accum> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5070,7 +5070,7 @@ gl_SUN_slice_accum = member "GL_SUN_slice_accum" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/triangle_list.txt SUN_triangle_list> extension supported?
 glGetSUNTriangleList :: MonadIO m => m Bool
-glGetSUNTriangleList = member "GL_SUN_triangle_list" `fmap` getExtensions
+glGetSUNTriangleList = getExtensions >>= (return . member "GL_SUN_triangle_list")
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/triangle_list.txt SUN_triangle_list> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5081,7 +5081,7 @@ gl_SUN_triangle_list = member "GL_SUN_triangle_list" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/vertex.txt SUN_vertex> extension supported?
 glGetSUNVertex :: MonadIO m => m Bool
-glGetSUNVertex = member "GL_SUN_vertex" `fmap` getExtensions
+glGetSUNVertex = getExtensions >>= (return . member "GL_SUN_vertex")
 
 -- | Is the <https://www.opengl.org/registry/specs/SUN/vertex.txt SUN_vertex> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5092,7 +5092,7 @@ gl_SUN_vertex = member "GL_SUN_vertex" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/SUNX/constant_data.txt SUNX_constant_data> extension supported?
 glGetSUNXConstantData :: MonadIO m => m Bool
-glGetSUNXConstantData = member "GL_SUNX_constant_data" `fmap` getExtensions
+glGetSUNXConstantData = getExtensions >>= (return . member "GL_SUNX_constant_data")
 
 -- | Is the <https://www.opengl.org/registry/specs/SUNX/constant_data.txt SUNX_constant_data> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5103,7 +5103,7 @@ gl_SUNX_constant_data = member "GL_SUNX_constant_data" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/WIN/phong_shading.txt WIN_phong_shading> extension supported?
 glGetWINPhongShading :: MonadIO m => m Bool
-glGetWINPhongShading = member "GL_WIN_phong_shading" `fmap` getExtensions
+glGetWINPhongShading = getExtensions >>= (return . member "GL_WIN_phong_shading")
 
 -- | Is the <https://www.opengl.org/registry/specs/WIN/phong_shading.txt WIN_phong_shading> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
@@ -5114,7 +5114,7 @@ gl_WIN_phong_shading = member "GL_WIN_phong_shading" extensions
 
 -- | Is the <https://www.opengl.org/registry/specs/WIN/specular_fog.txt WIN_specular_fog> extension supported?
 glGetWINSpecularFog :: MonadIO m => m Bool
-glGetWINSpecularFog = member "GL_WIN_specular_fog" `fmap` getExtensions
+glGetWINSpecularFog = getExtensions >>= (return . member "GL_WIN_specular_fog")
 
 -- | Is the <https://www.opengl.org/registry/specs/WIN/specular_fog.txt WIN_specular_fog> extension supported?
 -- Note that in the presence of multiple contexts with different capabilities,
