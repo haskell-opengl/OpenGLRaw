@@ -328,12 +328,9 @@ printReExports extModules = do
 printExtensionSupport :: [ExtensionModule] -> IO ()
 printExtensionSupport extModules = do
   let comment = ["Extension support predicates."]
-  startModule ["ExtensionPredicates"] (Just "{-# LANGUAGE CPP #-}\n{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
+  startModule ["ExtensionPredicates"] (Just "{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module "++ moduleName ++ " where"
     SI.hPutStrLn h $ ""
-    SI.hPutStrLn h "#if !MIN_VERSION_base(4,8,0)"
-    SI.hPutStrLn h "import Data.Functor( (<$>) )"
-    SI.hPutStrLn h "#endif"
     SI.hPutStrLn h $ "import Control.Monad.IO.Class ( MonadIO(..) )"
     SI.hPutStrLn h $ "import Data.Set ( member )"
     SI.hPutStrLn h $ "import " ++ moduleNameFor ["GetProcAddress"] ++ " ( getExtensions, extensions )"
@@ -347,7 +344,7 @@ printExtensionSupport extModules = do
       SI.hPutStrLn h $ ""
       SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
       SI.hPutStrLn h $ predNameMonad ++ " :: MonadIO m => m Bool"
-      SI.hPutStrLn h $ predNameMonad ++ " = member " ++ show extString ++ " <$> getExtensions"
+      SI.hPutStrLn h $ predNameMonad ++ " = member " ++ show extString ++ " `fmap` getExtensions"
       SI.hPutStrLn h $ ""
       SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
       SI.hPutStrLn h $ "-- Note that in the presence of multiple contexts with different capabilities,"
