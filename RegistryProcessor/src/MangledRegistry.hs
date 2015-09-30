@@ -149,7 +149,9 @@ joinWords = L.intercalate [splitChar]
 data Command = Command {
   resultType :: SignatureElement,
   paramTypes :: [SignatureElement],
-  referencedTypes :: S.Set R.TypeName
+  referencedTypes :: S.Set R.TypeName,
+  vecEquiv :: Maybe CommandName,
+  alias :: Maybe CommandName
   } deriving (Eq, Ord, Show)
 
 toCommand :: R.Command -> Command
@@ -163,7 +165,9 @@ toCommand c = Command {
     filter (not . ("struct " `L.isPrefixOf`) . R.unTypeName) $
     DM.catMaybes $
     map (R.protoPtype . R.paramProto) $
-    (pr : ps) }
+    (pr : ps),
+  vecEquiv = (CommandName . R.unName) `fmap` R.commandVecEquiv c,
+  alias = (CommandName . R.unName) `fmap` R.commandAlias c }
   where pr = R.Param { R.paramLen = Nothing, R.paramProto = R.commandProto c }
         ps = R.commandParams c
         varSupply = map (R.TypeName . showIntUsingDigits ['a' .. 'z']) [0 ..]

@@ -1,3 +1,10 @@
+2.5.5.0
+-------
+* Added retrieval of version info and extensions.
+* Added extension predicates.
+* Added documentation for vector equivalents and aliases.
+* Consistently use UTF-8 as the encoding.
+
 2.5.4.0
 -------
 * Added documentation for enumerant groups.

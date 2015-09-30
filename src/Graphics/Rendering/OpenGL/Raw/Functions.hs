@@ -3164,7 +3164,7 @@ throwIfNullFunPtr = throwIf (== nullFunPtr) . const
 
 -- glAccum ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAccum.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAccum.xml OpenGL 2.x>.
 glAccum
   :: MonadIO m
   => GLenum -- ^ @op@ of type [AccumOp](Graphics-Rendering-OpenGL-Raw-Groups.html#AccumOp).
@@ -3203,7 +3203,7 @@ ptr_glActiveProgramEXT = unsafePerformIO $ getCommand "glActiveProgramEXT"
 
 -- glActiveShaderProgram -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glActiveShaderProgram.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glActiveShaderProgram.xhtml OpenGL 4.x>.
 glActiveShaderProgram
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
@@ -3242,7 +3242,7 @@ ptr_glActiveStencilFaceEXT = unsafePerformIO $ getCommand "glActiveStencilFaceEX
 
 -- glActiveTexture -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glActiveTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glActiveTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glActiveTexture.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glActiveTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glActiveTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glActiveTexture.xhtml OpenGL 4.x>.
 glActiveTexture
   :: MonadIO m
   => GLenum -- ^ @texture@ of type @TextureUnit@.
@@ -3255,6 +3255,7 @@ ptr_glActiveTexture = unsafePerformIO $ getCommand "glActiveTexture"
 
 -- glActiveTextureARB ----------------------------------------------------------
 
+-- | This command is an alias for 'glActiveTexture'.
 glActiveTextureARB
   :: MonadIO m
   => GLenum -- ^ @texture@ of type @TextureUnit@.
@@ -3340,7 +3341,7 @@ ptr_glAlphaFragmentOp3ATI = unsafePerformIO $ getCommand "glAlphaFragmentOp3ATI"
 
 -- glAlphaFunc -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAlphaFunc.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAlphaFunc.xml OpenGL 2.x>.
 glAlphaFunc
   :: MonadIO m
   => GLenum -- ^ @func@ of type [AlphaFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#AlphaFunction).
@@ -3430,7 +3431,7 @@ ptr_glAreProgramsResidentNV = unsafePerformIO $ getCommand "glAreProgramsResiden
 
 -- glAreTexturesResident -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAreTexturesResident.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glAreTexturesResident.xml OpenGL 2.x>.
 glAreTexturesResident
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -3459,7 +3460,7 @@ ptr_glAreTexturesResidentEXT = unsafePerformIO $ getCommand "glAreTexturesReside
 
 -- glArrayElement --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glArrayElement.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glArrayElement.xml OpenGL 2.x>.
 glArrayElement
   :: MonadIO m
   => GLint -- ^ @i@.
@@ -3472,6 +3473,7 @@ ptr_glArrayElement = unsafePerformIO $ getCommand "glArrayElement"
 
 -- glArrayElementEXT -----------------------------------------------------------
 
+-- | This command is an alias for 'glArrayElement'.
 glArrayElementEXT
   :: MonadIO m
   => GLint -- ^ @i@.
@@ -3513,6 +3515,7 @@ ptr_glAsyncMarkerSGIX = unsafePerformIO $ getCommand "glAsyncMarkerSGIX"
 
 -- glAttachObjectARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glAttachShader'.
 glAttachObjectARB
   :: MonadIO m
   => GLhandleARB -- ^ @containerObj@ of type @handleARB@.
@@ -3526,7 +3529,7 @@ ptr_glAttachObjectARB = unsafePerformIO $ getCommand "glAttachObjectARB"
 
 -- glAttachShader --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glAttachShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glAttachShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glAttachShader.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glAttachShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glAttachShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glAttachShader.xhtml OpenGL 4.x>.
 glAttachShader
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -3540,7 +3543,7 @@ ptr_glAttachShader = unsafePerformIO $ getCommand "glAttachShader"
 
 -- glBegin ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glBegin.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glBegin.xml OpenGL 2.x>.
 glBegin
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -3553,7 +3556,7 @@ ptr_glBegin = unsafePerformIO $ getCommand "glBegin"
 
 -- glBeginConditionalRender ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginConditionalRender.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginConditionalRender.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml OpenGL 4.x>.
 glBeginConditionalRender
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -3567,6 +3570,7 @@ ptr_glBeginConditionalRender = unsafePerformIO $ getCommand "glBeginConditionalR
 
 -- glBeginConditionalRenderNV --------------------------------------------------
 
+-- | This command is an alias for 'glBeginConditionalRender'.
 glBeginConditionalRenderNV
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -3639,7 +3643,7 @@ ptr_glBeginPerfQueryINTEL = unsafePerformIO $ getCommand "glBeginPerfQueryINTEL"
 
 -- glBeginQuery ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBeginQuery.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginQuery.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBeginQuery.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginQuery.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml OpenGL 4.x>.
 glBeginQuery
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3653,6 +3657,7 @@ ptr_glBeginQuery = unsafePerformIO $ getCommand "glBeginQuery"
 
 -- glBeginQueryARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glBeginQuery'.
 glBeginQueryARB
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3679,7 +3684,7 @@ ptr_glBeginQueryEXT = unsafePerformIO $ getCommand "glBeginQueryEXT"
 
 -- glBeginQueryIndexed ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBeginQueryIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBeginQueryIndexed.xhtml OpenGL 4.x>.
 glBeginQueryIndexed
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3694,7 +3699,7 @@ ptr_glBeginQueryIndexed = unsafePerformIO $ getCommand "glBeginQueryIndexed"
 
 -- glBeginTransformFeedback ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginTransformFeedback.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginTransformFeedback.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml OpenGL 4.x>.
 glBeginTransformFeedback
   :: MonadIO m
   => GLenum -- ^ @primitiveMode@.
@@ -3707,6 +3712,7 @@ ptr_glBeginTransformFeedback = unsafePerformIO $ getCommand "glBeginTransformFee
 
 -- glBeginTransformFeedbackEXT -------------------------------------------------
 
+-- | This command is an alias for 'glBeginTransformFeedback'.
 glBeginTransformFeedbackEXT
   :: MonadIO m
   => GLenum -- ^ @primitiveMode@.
@@ -3719,6 +3725,7 @@ ptr_glBeginTransformFeedbackEXT = unsafePerformIO $ getCommand "glBeginTransform
 
 -- glBeginTransformFeedbackNV --------------------------------------------------
 
+-- | This command is an alias for 'glBeginTransformFeedback'.
 glBeginTransformFeedbackNV
   :: MonadIO m
   => GLenum -- ^ @primitiveMode@.
@@ -3754,7 +3761,7 @@ ptr_glBeginVideoCaptureNV = unsafePerformIO $ getCommand "glBeginVideoCaptureNV"
 
 -- glBindAttribLocation --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBindAttribLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBindAttribLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindAttribLocation.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBindAttribLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBindAttribLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindAttribLocation.xhtml OpenGL 4.x>.
 glBindAttribLocation
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -3769,6 +3776,7 @@ ptr_glBindAttribLocation = unsafePerformIO $ getCommand "glBindAttribLocation"
 
 -- glBindAttribLocationARB -----------------------------------------------------
 
+-- | This command is an alias for 'glBindAttribLocation'.
 glBindAttribLocationARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -3783,7 +3791,7 @@ ptr_glBindAttribLocationARB = unsafePerformIO $ getCommand "glBindAttribLocation
 
 -- glBindBuffer ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBindBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBindBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBuffer.xhtml OpenGL 4.x>.
 glBindBuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -3797,6 +3805,7 @@ ptr_glBindBuffer = unsafePerformIO $ getCommand "glBindBuffer"
 
 -- glBindBufferARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glBindBuffer'.
 glBindBufferARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -3810,7 +3819,7 @@ ptr_glBindBufferARB = unsafePerformIO $ getCommand "glBindBufferARB"
 
 -- glBindBufferBase ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferBase.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBufferBase.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferBase.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBufferBase.xhtml OpenGL 4.x>.
 glBindBufferBase
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3825,6 +3834,7 @@ ptr_glBindBufferBase = unsafePerformIO $ getCommand "glBindBufferBase"
 
 -- glBindBufferBaseEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glBindBufferBase'.
 glBindBufferBaseEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3839,6 +3849,7 @@ ptr_glBindBufferBaseEXT = unsafePerformIO $ getCommand "glBindBufferBaseEXT"
 
 -- glBindBufferBaseNV ----------------------------------------------------------
 
+-- | This command is an alias for 'glBindBufferBase'.
 glBindBufferBaseNV
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3868,6 +3879,7 @@ ptr_glBindBufferOffsetEXT = unsafePerformIO $ getCommand "glBindBufferOffsetEXT"
 
 -- glBindBufferOffsetNV --------------------------------------------------------
 
+-- | This command is an alias for 'glBindBufferOffsetEXT'.
 glBindBufferOffsetNV
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3883,7 +3895,7 @@ ptr_glBindBufferOffsetNV = unsafePerformIO $ getCommand "glBindBufferOffsetNV"
 
 -- glBindBufferRange -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBufferRange.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBufferRange.xhtml OpenGL 4.x>.
 glBindBufferRange
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3900,6 +3912,7 @@ ptr_glBindBufferRange = unsafePerformIO $ getCommand "glBindBufferRange"
 
 -- glBindBufferRangeEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glBindBufferRange'.
 glBindBufferRangeEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3916,6 +3929,7 @@ ptr_glBindBufferRangeEXT = unsafePerformIO $ getCommand "glBindBufferRangeEXT"
 
 -- glBindBufferRangeNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glBindBufferRange'.
 glBindBufferRangeNV
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3932,7 +3946,7 @@ ptr_glBindBufferRangeNV = unsafePerformIO $ getCommand "glBindBufferRangeNV"
 
 -- glBindBuffersBase -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindBuffersBase.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindBuffersBase.xhtml OpenGL 4.x>.
 glBindBuffersBase
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3948,7 +3962,7 @@ ptr_glBindBuffersBase = unsafePerformIO $ getCommand "glBindBuffersBase"
 
 -- glBindBuffersRange ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindBuffersRange.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindBuffersRange.xhtml OpenGL 4.x>.
 glBindBuffersRange
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -3966,7 +3980,7 @@ ptr_glBindBuffersRange = unsafePerformIO $ getCommand "glBindBuffersRange"
 
 -- glBindFragDataLocation ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFragDataLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocation.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFragDataLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocation.xhtml OpenGL 4.x>.
 glBindFragDataLocation
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -3981,6 +3995,7 @@ ptr_glBindFragDataLocation = unsafePerformIO $ getCommand "glBindFragDataLocatio
 
 -- glBindFragDataLocationEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glBindFragDataLocation'.
 glBindFragDataLocationEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -3995,7 +4010,7 @@ ptr_glBindFragDataLocationEXT = unsafePerformIO $ getCommand "glBindFragDataLoca
 
 -- glBindFragDataLocationIndexed -----------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFragDataLocationIndexed.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocationIndexed.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFragDataLocationIndexed.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindFragDataLocationIndexed.xhtml OpenGL 4.x>.
 glBindFragDataLocationIndexed
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -4011,6 +4026,7 @@ ptr_glBindFragDataLocationIndexed = unsafePerformIO $ getCommand "glBindFragData
 
 -- glBindFragDataLocationIndexedEXT --------------------------------------------
 
+-- | This command is an alias for 'glBindFragDataLocationIndexed'.
 glBindFragDataLocationIndexedEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -4038,7 +4054,7 @@ ptr_glBindFragmentShaderATI = unsafePerformIO $ getCommand "glBindFragmentShader
 
 -- glBindFramebuffer -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFramebuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindFramebuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFramebuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindFramebuffer.xhtml OpenGL 4.x>.
 glBindFramebuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -4078,7 +4094,7 @@ ptr_glBindFramebufferOES = unsafePerformIO $ getCommand "glBindFramebufferOES"
 
 -- glBindImageTexture ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindImageTexture.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindImageTexture.xhtml OpenGL 4.x>.
 glBindImageTexture
   :: MonadIO m
   => GLuint -- ^ @unit@.
@@ -4115,7 +4131,7 @@ ptr_glBindImageTextureEXT = unsafePerformIO $ getCommand "glBindImageTextureEXT"
 
 -- glBindImageTextures ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindImageTextures.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindImageTextures.xhtml OpenGL 4.x>.
 glBindImageTextures
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -4195,6 +4211,7 @@ ptr_glBindProgramARB = unsafePerformIO $ getCommand "glBindProgramARB"
 
 -- glBindProgramNV -------------------------------------------------------------
 
+-- | This command is an alias for 'glBindProgramARB'.
 glBindProgramNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
@@ -4208,7 +4225,7 @@ ptr_glBindProgramNV = unsafePerformIO $ getCommand "glBindProgramNV"
 
 -- glBindProgramPipeline -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindProgramPipeline.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindProgramPipeline.xhtml OpenGL 4.x>.
 glBindProgramPipeline
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
@@ -4233,7 +4250,7 @@ ptr_glBindProgramPipelineEXT = unsafePerformIO $ getCommand "glBindProgramPipeli
 
 -- glBindRenderbuffer ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindRenderbuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindRenderbuffer.xhtml OpenGL 4.x>.
 glBindRenderbuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @RenderbufferTarget@.
@@ -4273,7 +4290,7 @@ ptr_glBindRenderbufferOES = unsafePerformIO $ getCommand "glBindRenderbufferOES"
 
 -- glBindSampler ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindSampler.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindSampler.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindSampler.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindSampler.xhtml OpenGL 4.x>.
 glBindSampler
   :: MonadIO m
   => GLuint -- ^ @unit@.
@@ -4287,7 +4304,7 @@ ptr_glBindSampler = unsafePerformIO $ getCommand "glBindSampler"
 
 -- glBindSamplers --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindSamplers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindSamplers.xhtml OpenGL 4.x>.
 glBindSamplers
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -4316,7 +4333,7 @@ ptr_glBindTexGenParameterEXT = unsafePerformIO $ getCommand "glBindTexGenParamet
 
 -- glBindTexture ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBindTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBindTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindTexture.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBindTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBindTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindTexture.xhtml OpenGL 4.x>.
 glBindTexture
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -4330,6 +4347,7 @@ ptr_glBindTexture = unsafePerformIO $ getCommand "glBindTexture"
 
 -- glBindTextureEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glBindTexture'.
 glBindTextureEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -4343,7 +4361,7 @@ ptr_glBindTextureEXT = unsafePerformIO $ getCommand "glBindTextureEXT"
 
 -- glBindTextureUnit -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindTextureUnit.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindTextureUnit.xhtml OpenGL 4.x>.
 glBindTextureUnit
   :: MonadIO m
   => GLuint -- ^ @unit@.
@@ -4370,7 +4388,7 @@ ptr_glBindTextureUnitParameterEXT = unsafePerformIO $ getCommand "glBindTextureU
 
 -- glBindTextures --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindTextures.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindTextures.xhtml OpenGL 4.x>.
 glBindTextures
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -4385,7 +4403,7 @@ ptr_glBindTextures = unsafePerformIO $ getCommand "glBindTextures"
 
 -- glBindTransformFeedback -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindTransformFeedback.xhtml OpenGL 4.x>.
 glBindTransformFeedback
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -4412,7 +4430,7 @@ ptr_glBindTransformFeedbackNV = unsafePerformIO $ getCommand "glBindTransformFee
 
 -- glBindVertexArray -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindVertexArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindVertexArray.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindVertexArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindVertexArray.xhtml OpenGL 4.x>.
 glBindVertexArray
   :: MonadIO m
   => GLuint -- ^ @array@.
@@ -4437,6 +4455,7 @@ ptr_glBindVertexArrayAPPLE = unsafePerformIO $ getCommand "glBindVertexArrayAPPL
 
 -- glBindVertexArrayOES --------------------------------------------------------
 
+-- | This command is an alias for 'glBindVertexArray'.
 glBindVertexArrayOES
   :: MonadIO m
   => GLuint -- ^ @array@.
@@ -4449,7 +4468,7 @@ ptr_glBindVertexArrayOES = unsafePerformIO $ getCommand "glBindVertexArrayOES"
 
 -- glBindVertexBuffer ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffer.xhtml OpenGL 4.x>.
 glBindVertexBuffer
   :: MonadIO m
   => GLuint -- ^ @bindingindex@.
@@ -4465,7 +4484,7 @@ ptr_glBindVertexBuffer = unsafePerformIO $ getCommand "glBindVertexBuffer"
 
 -- glBindVertexBuffers ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffers.xhtml OpenGL 4.x>.
 glBindVertexBuffers
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -4525,6 +4544,7 @@ ptr_glBindVideoCaptureStreamTextureNV = unsafePerformIO $ getCommand "glBindVide
 
 -- glBinormal3bEXT -------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glBinormal3bvEXT'.
 glBinormal3bEXT
   :: MonadIO m
   => GLbyte -- ^ @bx@.
@@ -4551,6 +4571,7 @@ ptr_glBinormal3bvEXT = unsafePerformIO $ getCommand "glBinormal3bvEXT"
 
 -- glBinormal3dEXT -------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glBinormal3dvEXT'.
 glBinormal3dEXT
   :: MonadIO m
   => GLdouble -- ^ @bx@ of type @CoordD@.
@@ -4577,6 +4598,7 @@ ptr_glBinormal3dvEXT = unsafePerformIO $ getCommand "glBinormal3dvEXT"
 
 -- glBinormal3fEXT -------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glBinormal3fvEXT'.
 glBinormal3fEXT
   :: MonadIO m
   => GLfloat -- ^ @bx@ of type @CoordF@.
@@ -4603,6 +4625,7 @@ ptr_glBinormal3fvEXT = unsafePerformIO $ getCommand "glBinormal3fvEXT"
 
 -- glBinormal3iEXT -------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glBinormal3ivEXT'.
 glBinormal3iEXT
   :: MonadIO m
   => GLint -- ^ @bx@.
@@ -4629,6 +4652,7 @@ ptr_glBinormal3ivEXT = unsafePerformIO $ getCommand "glBinormal3ivEXT"
 
 -- glBinormal3sEXT -------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glBinormal3svEXT'.
 glBinormal3sEXT
   :: MonadIO m
   => GLshort -- ^ @bx@.
@@ -4669,7 +4693,7 @@ ptr_glBinormalPointerEXT = unsafePerformIO $ getCommand "glBinormalPointerEXT"
 
 -- glBitmap --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glBitmap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glBitmap.xml OpenGL 2.x>.
 glBitmap
   :: MonadIO m
   => GLsizei -- ^ @width@.
@@ -4717,6 +4741,7 @@ ptr_glBlendBarrier = unsafePerformIO $ getCommand "glBlendBarrier"
 
 -- glBlendBarrierKHR -----------------------------------------------------------
 
+-- | This command is an alias for 'glBlendBarrier'.
 glBlendBarrierKHR
   :: MonadIO m
   => m ()
@@ -4728,6 +4753,7 @@ ptr_glBlendBarrierKHR = unsafePerformIO $ getCommand "glBlendBarrierKHR"
 
 -- glBlendBarrierNV ------------------------------------------------------------
 
+-- | This command is an alias for 'glBlendBarrier'.
 glBlendBarrierNV
   :: MonadIO m
   => m ()
@@ -4739,7 +4765,7 @@ ptr_glBlendBarrierNV = unsafePerformIO $ getCommand "glBlendBarrierNV"
 
 -- glBlendColor ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendColor.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendColor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendColor.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendColor.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendColor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendColor.xhtml OpenGL 4.x>.
 glBlendColor
   :: MonadIO m
   => GLfloat -- ^ @red@ of type @ColorF@.
@@ -4755,6 +4781,7 @@ ptr_glBlendColor = unsafePerformIO $ getCommand "glBlendColor"
 
 -- glBlendColorEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glBlendColor'.
 glBlendColorEXT
   :: MonadIO m
   => GLfloat -- ^ @red@ of type @ColorF@.
@@ -4785,7 +4812,7 @@ ptr_glBlendColorxOES = unsafePerformIO $ getCommand "glBlendColorxOES"
 
 -- glBlendEquation -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendEquation.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendEquation.xhtml OpenGL 4.x>.
 glBlendEquation
   :: MonadIO m
   => GLenum -- ^ @mode@ of type @BlendEquationMode@.
@@ -4798,6 +4825,7 @@ ptr_glBlendEquation = unsafePerformIO $ getCommand "glBlendEquation"
 
 -- glBlendEquationEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquation'.
 glBlendEquationEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
@@ -4810,6 +4838,7 @@ ptr_glBlendEquationEXT = unsafePerformIO $ getCommand "glBlendEquationEXT"
 
 -- glBlendEquationIndexedAMD ---------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationi'.
 glBlendEquationIndexedAMD
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4835,7 +4864,7 @@ ptr_glBlendEquationOES = unsafePerformIO $ getCommand "glBlendEquationOES"
 
 -- glBlendEquationSeparate -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquationSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquationSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendEquationSeparate.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquationSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquationSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendEquationSeparate.xhtml OpenGL 4.x>.
 glBlendEquationSeparate
   :: MonadIO m
   => GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
@@ -4849,6 +4878,7 @@ ptr_glBlendEquationSeparate = unsafePerformIO $ getCommand "glBlendEquationSepar
 
 -- glBlendEquationSeparateEXT --------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationSeparate'.
 glBlendEquationSeparateEXT
   :: MonadIO m
   => GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendEquationModeEXT).
@@ -4862,6 +4892,7 @@ ptr_glBlendEquationSeparateEXT = unsafePerformIO $ getCommand "glBlendEquationSe
 
 -- glBlendEquationSeparateIndexedAMD -------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationSeparatei'.
 glBlendEquationSeparateIndexedAMD
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4889,7 +4920,7 @@ ptr_glBlendEquationSeparateOES = unsafePerformIO $ getCommand "glBlendEquationSe
 
 -- glBlendEquationSeparatei ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendEquationSeparate.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendEquationSeparate.xhtml OpenGL 4.x>.
 glBlendEquationSeparatei
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4904,6 +4935,7 @@ ptr_glBlendEquationSeparatei = unsafePerformIO $ getCommand "glBlendEquationSepa
 
 -- glBlendEquationSeparateiARB -------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationSeparatei'.
 glBlendEquationSeparateiARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4918,6 +4950,7 @@ ptr_glBlendEquationSeparateiARB = unsafePerformIO $ getCommand "glBlendEquationS
 
 -- glBlendEquationSeparateiEXT -------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationSeparatei'.
 glBlendEquationSeparateiEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4932,6 +4965,7 @@ ptr_glBlendEquationSeparateiEXT = unsafePerformIO $ getCommand "glBlendEquationS
 
 -- glBlendEquationSeparateiOES -------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationSeparatei'.
 glBlendEquationSeparateiOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4946,7 +4980,7 @@ ptr_glBlendEquationSeparateiOES = unsafePerformIO $ getCommand "glBlendEquationS
 
 -- glBlendEquationi ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendEquation.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendEquation.xhtml OpenGL 4.x>.
 glBlendEquationi
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4960,6 +4994,7 @@ ptr_glBlendEquationi = unsafePerformIO $ getCommand "glBlendEquationi"
 
 -- glBlendEquationiARB ---------------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationi'.
 glBlendEquationiARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4973,6 +5008,7 @@ ptr_glBlendEquationiARB = unsafePerformIO $ getCommand "glBlendEquationiARB"
 
 -- glBlendEquationiEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationi'.
 glBlendEquationiEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4986,6 +5022,7 @@ ptr_glBlendEquationiEXT = unsafePerformIO $ getCommand "glBlendEquationiEXT"
 
 -- glBlendEquationiOES ---------------------------------------------------------
 
+-- | This command is an alias for 'glBlendEquationi'.
 glBlendEquationiOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -4999,7 +5036,7 @@ ptr_glBlendEquationiOES = unsafePerformIO $ getCommand "glBlendEquationiOES"
 
 -- glBlendFunc -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml OpenGL 4.x>.
 glBlendFunc
   :: MonadIO m
   => GLenum -- ^ @sfactor@ of type [BlendingFactorSrc](Graphics-Rendering-OpenGL-Raw-Groups.html#BlendingFactorSrc).
@@ -5013,6 +5050,7 @@ ptr_glBlendFunc = unsafePerformIO $ getCommand "glBlendFunc"
 
 -- glBlendFuncIndexedAMD -------------------------------------------------------
 
+-- | This command is an alias for 'glBlendFunci'.
 glBlendFuncIndexedAMD
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5027,7 +5065,7 @@ ptr_glBlendFuncIndexedAMD = unsafePerformIO $ getCommand "glBlendFuncIndexedAMD"
 
 -- glBlendFuncSeparate ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFuncSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFuncSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendFuncSeparate.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFuncSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFuncSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendFuncSeparate.xhtml OpenGL 4.x>.
 glBlendFuncSeparate
   :: MonadIO m
   => GLenum -- ^ @sfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
@@ -5043,6 +5081,7 @@ ptr_glBlendFuncSeparate = unsafePerformIO $ getCommand "glBlendFuncSeparate"
 
 -- glBlendFuncSeparateEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glBlendFuncSeparate'.
 glBlendFuncSeparateEXT
   :: MonadIO m
   => GLenum -- ^ @sfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
@@ -5058,6 +5097,7 @@ ptr_glBlendFuncSeparateEXT = unsafePerformIO $ getCommand "glBlendFuncSeparateEX
 
 -- glBlendFuncSeparateINGR -----------------------------------------------------
 
+-- | This command is an alias for 'glBlendFuncSeparate'.
 glBlendFuncSeparateINGR
   :: MonadIO m
   => GLenum -- ^ @sfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
@@ -5073,6 +5113,7 @@ ptr_glBlendFuncSeparateINGR = unsafePerformIO $ getCommand "glBlendFuncSeparateI
 
 -- glBlendFuncSeparateIndexedAMD -----------------------------------------------
 
+-- | This command is an alias for 'glBlendFuncSeparatei'.
 glBlendFuncSeparateIndexedAMD
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5104,7 +5145,7 @@ ptr_glBlendFuncSeparateOES = unsafePerformIO $ getCommand "glBlendFuncSeparateOE
 
 -- glBlendFuncSeparatei --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendFuncSeparate.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendFuncSeparate.xhtml OpenGL 4.x>.
 glBlendFuncSeparatei
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5121,6 +5162,7 @@ ptr_glBlendFuncSeparatei = unsafePerformIO $ getCommand "glBlendFuncSeparatei"
 
 -- glBlendFuncSeparateiARB -----------------------------------------------------
 
+-- | This command is an alias for 'glBlendFuncSeparatei'.
 glBlendFuncSeparateiARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5137,6 +5179,7 @@ ptr_glBlendFuncSeparateiARB = unsafePerformIO $ getCommand "glBlendFuncSeparatei
 
 -- glBlendFuncSeparateiEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glBlendFuncSeparatei'.
 glBlendFuncSeparateiEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5153,6 +5196,7 @@ ptr_glBlendFuncSeparateiEXT = unsafePerformIO $ getCommand "glBlendFuncSeparatei
 
 -- glBlendFuncSeparateiOES -----------------------------------------------------
 
+-- | This command is an alias for 'glBlendFuncSeparatei'.
 glBlendFuncSeparateiOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5169,7 +5213,7 @@ ptr_glBlendFuncSeparateiOES = unsafePerformIO $ getCommand "glBlendFuncSeparatei
 
 -- glBlendFunci ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml OpenGL 4.x>.
 glBlendFunci
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5184,6 +5228,7 @@ ptr_glBlendFunci = unsafePerformIO $ getCommand "glBlendFunci"
 
 -- glBlendFunciARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glBlendFunci'.
 glBlendFunciARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5198,6 +5243,7 @@ ptr_glBlendFunciARB = unsafePerformIO $ getCommand "glBlendFunciARB"
 
 -- glBlendFunciEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glBlendFunci'.
 glBlendFunciEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5212,6 +5258,7 @@ ptr_glBlendFunciEXT = unsafePerformIO $ getCommand "glBlendFunciEXT"
 
 -- glBlendFunciOES -------------------------------------------------------------
 
+-- | This command is an alias for 'glBlendFunci'.
 glBlendFunciOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
@@ -5239,7 +5286,7 @@ ptr_glBlendParameteriNV = unsafePerformIO $ getCommand "glBlendParameteriNV"
 
 -- glBlitFramebuffer -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBlitFramebuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlitFramebuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBlitFramebuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlitFramebuffer.xhtml OpenGL 4.x>.
 glBlitFramebuffer
   :: MonadIO m
   => GLint -- ^ @srcX0@.
@@ -5282,6 +5329,7 @@ ptr_glBlitFramebufferANGLE = unsafePerformIO $ getCommand "glBlitFramebufferANGL
 
 -- glBlitFramebufferEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glBlitFramebuffer'.
 glBlitFramebufferEXT
   :: MonadIO m
   => GLint -- ^ @srcX0@.
@@ -5303,6 +5351,7 @@ ptr_glBlitFramebufferEXT = unsafePerformIO $ getCommand "glBlitFramebufferEXT"
 
 -- glBlitFramebufferNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glBlitFramebuffer'.
 glBlitFramebufferNV
   :: MonadIO m
   => GLint -- ^ @srcX0@.
@@ -5324,7 +5373,7 @@ ptr_glBlitFramebufferNV = unsafePerformIO $ getCommand "glBlitFramebufferNV"
 
 -- glBlitNamedFramebuffer ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlitFramebuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBlitFramebuffer.xhtml OpenGL 4.x>.
 glBlitNamedFramebuffer
   :: MonadIO m
   => GLuint -- ^ @readFramebuffer@.
@@ -5363,7 +5412,7 @@ ptr_glBufferAddressRangeNV = unsafePerformIO $ getCommand "glBufferAddressRangeN
 
 -- glBufferData ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBufferData.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBufferData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBufferData.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBufferData.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBufferData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBufferData.xhtml OpenGL 4.x>.
 glBufferData
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -5379,6 +5428,7 @@ ptr_glBufferData = unsafePerformIO $ getCommand "glBufferData"
 
 -- glBufferDataARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glBufferData'.
 glBufferDataARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -5423,7 +5473,7 @@ ptr_glBufferParameteriAPPLE = unsafePerformIO $ getCommand "glBufferParameteriAP
 
 -- glBufferStorage -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferStorage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferStorage.xhtml OpenGL 4.x>.
 glBufferStorage
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -5439,6 +5489,7 @@ ptr_glBufferStorage = unsafePerformIO $ getCommand "glBufferStorage"
 
 -- glBufferStorageEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glBufferStorage'.
 glBufferStorageEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -5454,7 +5505,7 @@ ptr_glBufferStorageEXT = unsafePerformIO $ getCommand "glBufferStorageEXT"
 
 -- glBufferSubData -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBufferSubData.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBufferSubData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBufferSubData.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBufferSubData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml OpenGL 4.x>.
 glBufferSubData
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -5470,6 +5521,7 @@ ptr_glBufferSubData = unsafePerformIO $ getCommand "glBufferSubData"
 
 -- glBufferSubDataARB ----------------------------------------------------------
 
+-- | This command is an alias for 'glBufferSubData'.
 glBufferSubDataARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -5497,7 +5549,7 @@ ptr_glCallCommandListNV = unsafePerformIO $ getCommand "glCallCommandListNV"
 
 -- glCallList ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCallList.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCallList.xml OpenGL 2.x>.
 glCallList
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
@@ -5510,7 +5562,7 @@ ptr_glCallList = unsafePerformIO $ getCommand "glCallList"
 
 -- glCallLists -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCallLists.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCallLists.xml OpenGL 2.x>.
 glCallLists
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -5525,7 +5577,7 @@ ptr_glCallLists = unsafePerformIO $ getCommand "glCallLists"
 
 -- glCheckFramebufferStatus ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glCheckFramebufferStatus.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCheckFramebufferStatus.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glCheckFramebufferStatus.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCheckFramebufferStatus.xhtml OpenGL 4.x>.
 glCheckFramebufferStatus
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -5538,6 +5590,7 @@ ptr_glCheckFramebufferStatus = unsafePerformIO $ getCommand "glCheckFramebufferS
 
 -- glCheckFramebufferStatusEXT -------------------------------------------------
 
+-- | This command is an alias for 'glCheckFramebufferStatus'.
 glCheckFramebufferStatusEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -5562,7 +5615,7 @@ ptr_glCheckFramebufferStatusOES = unsafePerformIO $ getCommand "glCheckFramebuff
 
 -- glCheckNamedFramebufferStatus -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCheckFramebufferStatus.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCheckFramebufferStatus.xhtml OpenGL 4.x>.
 glCheckNamedFramebufferStatus
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -5589,7 +5642,7 @@ ptr_glCheckNamedFramebufferStatusEXT = unsafePerformIO $ getCommand "glCheckName
 
 -- glClampColor ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClampColor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClampColor.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClampColor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClampColor.xhtml OpenGL 4.x>.
 glClampColor
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ClampColorTargetARB@.
@@ -5603,6 +5656,7 @@ ptr_glClampColor = unsafePerformIO $ getCommand "glClampColor"
 
 -- glClampColorARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glClampColor'.
 glClampColorARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ClampColorTargetARB@.
@@ -5616,7 +5670,7 @@ ptr_glClampColorARB = unsafePerformIO $ getCommand "glClampColorARB"
 
 -- glClear ---------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClear.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClear.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClear.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClear.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClear.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClear.xhtml OpenGL 4.x>.
 glClear
   :: MonadIO m
   => GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClearBufferMask).
@@ -5629,7 +5683,7 @@ ptr_glClear = unsafePerformIO $ getCommand "glClear"
 
 -- glClearAccum ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearAccum.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearAccum.xml OpenGL 2.x>.
 glClearAccum
   :: MonadIO m
   => GLfloat -- ^ @red@.
@@ -5660,7 +5714,7 @@ ptr_glClearAccumxOES = unsafePerformIO $ getCommand "glClearAccumxOES"
 
 -- glClearBufferData -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferData.xhtml OpenGL 4.x>.
 glClearBufferData
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -5677,7 +5731,7 @@ ptr_glClearBufferData = unsafePerformIO $ getCommand "glClearBufferData"
 
 -- glClearBufferSubData --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferSubData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferSubData.xhtml OpenGL 4.x>.
 glClearBufferSubData
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -5696,7 +5750,7 @@ ptr_glClearBufferSubData = unsafePerformIO $ getCommand "glClearBufferSubData"
 
 -- glClearBufferfi -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferfi
   :: MonadIO m
   => GLenum -- ^ @buffer@.
@@ -5712,7 +5766,7 @@ ptr_glClearBufferfi = unsafePerformIO $ getCommand "glClearBufferfi"
 
 -- glClearBufferfv -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferfv
   :: MonadIO m
   => GLenum -- ^ @buffer@.
@@ -5727,7 +5781,7 @@ ptr_glClearBufferfv = unsafePerformIO $ getCommand "glClearBufferfv"
 
 -- glClearBufferiv -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferiv
   :: MonadIO m
   => GLenum -- ^ @buffer@.
@@ -5742,7 +5796,7 @@ ptr_glClearBufferiv = unsafePerformIO $ getCommand "glClearBufferiv"
 
 -- glClearBufferuiv ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferuiv
   :: MonadIO m
   => GLenum -- ^ @buffer@.
@@ -5757,7 +5811,7 @@ ptr_glClearBufferuiv = unsafePerformIO $ getCommand "glClearBufferuiv"
 
 -- glClearColor ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearColor.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClearColor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearColor.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearColor.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClearColor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearColor.xhtml OpenGL 4.x>.
 glClearColor
   :: MonadIO m
   => GLfloat -- ^ @red@ of type @ColorF@.
@@ -5833,7 +5887,7 @@ ptr_glClearColorxOES = unsafePerformIO $ getCommand "glClearColorxOES"
 
 -- glClearDepth ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearDepth.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClearDepth.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearDepth.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearDepth.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClearDepth.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearDepth.xhtml OpenGL 4.x>.
 glClearDepth
   :: MonadIO m
   => GLdouble -- ^ @depth@.
@@ -5858,7 +5912,7 @@ ptr_glClearDepthdNV = unsafePerformIO $ getCommand "glClearDepthdNV"
 
 -- glClearDepthf ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearDepth.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearDepth.xhtml OpenGL 4.x>.
 glClearDepthf
   :: MonadIO m
   => GLfloat -- ^ @d@.
@@ -5871,6 +5925,7 @@ ptr_glClearDepthf = unsafePerformIO $ getCommand "glClearDepthf"
 
 -- glClearDepthfOES ------------------------------------------------------------
 
+-- | This command is an alias for 'glClearDepthf'.
 glClearDepthfOES
   :: MonadIO m
   => GLclampf -- ^ @depth@ of type @ClampedFloat32@.
@@ -5907,7 +5962,7 @@ ptr_glClearDepthxOES = unsafePerformIO $ getCommand "glClearDepthxOES"
 
 -- glClearIndex ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearIndex.xml OpenGL 2.x>.
 glClearIndex
   :: MonadIO m
   => GLfloat -- ^ @c@ of type @MaskedColorIndexValueF@.
@@ -5920,7 +5975,7 @@ ptr_glClearIndex = unsafePerformIO $ getCommand "glClearIndex"
 
 -- glClearNamedBufferData ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferData.xhtml OpenGL 4.x>.
 glClearNamedBufferData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -5953,7 +6008,7 @@ ptr_glClearNamedBufferDataEXT = unsafePerformIO $ getCommand "glClearNamedBuffer
 
 -- glClearNamedBufferSubData ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferSubData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferSubData.xhtml OpenGL 4.x>.
 glClearNamedBufferSubData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -5990,7 +6045,7 @@ ptr_glClearNamedBufferSubDataEXT = unsafePerformIO $ getCommand "glClearNamedBuf
 
 -- glClearNamedFramebufferfi ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearNamedFramebufferfi
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -6006,7 +6061,7 @@ ptr_glClearNamedFramebufferfi = unsafePerformIO $ getCommand "glClearNamedFrameb
 
 -- glClearNamedFramebufferfv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearNamedFramebufferfv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -6022,7 +6077,7 @@ ptr_glClearNamedFramebufferfv = unsafePerformIO $ getCommand "glClearNamedFrameb
 
 -- glClearNamedFramebufferiv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearNamedFramebufferiv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -6038,7 +6093,7 @@ ptr_glClearNamedFramebufferiv = unsafePerformIO $ getCommand "glClearNamedFrameb
 
 -- glClearNamedFramebufferuiv --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearNamedFramebufferuiv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -6054,7 +6109,7 @@ ptr_glClearNamedFramebufferuiv = unsafePerformIO $ getCommand "glClearNamedFrame
 
 -- glClearStencil --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearStencil.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClearStencil.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearStencil.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glClearStencil.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glClearStencil.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearStencil.xhtml OpenGL 4.x>.
 glClearStencil
   :: MonadIO m
   => GLint -- ^ @s@ of type @StencilValue@.
@@ -6067,7 +6122,7 @@ ptr_glClearStencil = unsafePerformIO $ getCommand "glClearStencil"
 
 -- glClearTexImage -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearTexImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearTexImage.xhtml OpenGL 4.x>.
 glClearTexImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -6084,7 +6139,7 @@ ptr_glClearTexImage = unsafePerformIO $ getCommand "glClearTexImage"
 
 -- glClearTexSubImage ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearTexSubImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearTexSubImage.xhtml OpenGL 4.x>.
 glClearTexSubImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -6107,7 +6162,7 @@ ptr_glClearTexSubImage = unsafePerformIO $ getCommand "glClearTexSubImage"
 
 -- glClientActiveTexture -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClientActiveTexture.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClientActiveTexture.xml OpenGL 2.x>.
 glClientActiveTexture
   :: MonadIO m
   => GLenum -- ^ @texture@ of type @TextureUnit@.
@@ -6120,6 +6175,7 @@ ptr_glClientActiveTexture = unsafePerformIO $ getCommand "glClientActiveTexture"
 
 -- glClientActiveTextureARB ----------------------------------------------------
 
+-- | This command is an alias for 'glClientActiveTexture'.
 glClientActiveTextureARB
   :: MonadIO m
   => GLenum -- ^ @texture@ of type @TextureUnit@.
@@ -6156,7 +6212,7 @@ ptr_glClientAttribDefaultEXT = unsafePerformIO $ getCommand "glClientAttribDefau
 
 -- glClientWaitSync ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClientWaitSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClientWaitSync.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClientWaitSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClientWaitSync.xhtml OpenGL 4.x>.
 glClientWaitSync
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
@@ -6171,6 +6227,7 @@ ptr_glClientWaitSync = unsafePerformIO $ getCommand "glClientWaitSync"
 
 -- glClientWaitSyncAPPLE -------------------------------------------------------
 
+-- | This command is an alias for 'glClientWaitSync'.
 glClientWaitSyncAPPLE
   :: MonadIO m
   => GLsync -- ^ @sync@.
@@ -6185,7 +6242,7 @@ ptr_glClientWaitSyncAPPLE = unsafePerformIO $ getCommand "glClientWaitSyncAPPLE"
 
 -- glClipControl ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClipControl.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClipControl.xhtml OpenGL 4.x>.
 glClipControl
   :: MonadIO m
   => GLenum -- ^ @origin@.
@@ -6199,7 +6256,7 @@ ptr_glClipControl = unsafePerformIO $ getCommand "glClipControl"
 
 -- glClipPlane -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClipPlane.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClipPlane.xml OpenGL 2.x>.
 glClipPlane
   :: MonadIO m
   => GLenum -- ^ @plane@ of type [ClipPlaneName](Graphics-Rendering-OpenGL-Raw-Groups.html#ClipPlaneName).
@@ -6291,7 +6348,7 @@ ptr_glClipPlanexOES = unsafePerformIO $ getCommand "glClipPlanexOES"
 
 -- glColor3b -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3bv'.
 glColor3b
   :: MonadIO m
   => GLbyte -- ^ @red@ of type @ColorB@.
@@ -6306,7 +6363,7 @@ ptr_glColor3b = unsafePerformIO $ getCommand "glColor3b"
 
 -- glColor3bv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3bv
   :: MonadIO m
   => Ptr GLbyte -- ^ @v@ pointing to @3@ elements of type @ColorB@.
@@ -6319,7 +6376,7 @@ ptr_glColor3bv = unsafePerformIO $ getCommand "glColor3bv"
 
 -- glColor3d -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3dv'.
 glColor3d
   :: MonadIO m
   => GLdouble -- ^ @red@ of type @ColorD@.
@@ -6334,7 +6391,7 @@ ptr_glColor3d = unsafePerformIO $ getCommand "glColor3d"
 
 -- glColor3dv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @ColorD@.
@@ -6347,7 +6404,7 @@ ptr_glColor3dv = unsafePerformIO $ getCommand "glColor3dv"
 
 -- glColor3f -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3fv'.
 glColor3f
   :: MonadIO m
   => GLfloat -- ^ @red@ of type @ColorF@.
@@ -6392,7 +6449,7 @@ ptr_glColor3fVertex3fvSUN = unsafePerformIO $ getCommand "glColor3fVertex3fvSUN"
 
 -- glColor3fv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @ColorF@.
@@ -6405,6 +6462,7 @@ ptr_glColor3fv = unsafePerformIO $ getCommand "glColor3fv"
 
 -- glColor3hNV -----------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glColor3hvNV'.
 glColor3hNV
   :: MonadIO m
   => GLhalfNV -- ^ @red@ of type @Half16NV@.
@@ -6431,7 +6489,7 @@ ptr_glColor3hvNV = unsafePerformIO $ getCommand "glColor3hvNV"
 
 -- glColor3i -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3iv'.
 glColor3i
   :: MonadIO m
   => GLint -- ^ @red@ of type @ColorI@.
@@ -6446,7 +6504,7 @@ ptr_glColor3i = unsafePerformIO $ getCommand "glColor3i"
 
 -- glColor3iv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @ColorI@.
@@ -6459,7 +6517,7 @@ ptr_glColor3iv = unsafePerformIO $ getCommand "glColor3iv"
 
 -- glColor3s -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3sv'.
 glColor3s
   :: MonadIO m
   => GLshort -- ^ @red@ of type @ColorS@.
@@ -6474,7 +6532,7 @@ ptr_glColor3s = unsafePerformIO $ getCommand "glColor3s"
 
 -- glColor3sv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @ColorS@.
@@ -6487,7 +6545,7 @@ ptr_glColor3sv = unsafePerformIO $ getCommand "glColor3sv"
 
 -- glColor3ub ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3ubv'.
 glColor3ub
   :: MonadIO m
   => GLubyte -- ^ @red@ of type @ColorUB@.
@@ -6502,7 +6560,7 @@ ptr_glColor3ub = unsafePerformIO $ getCommand "glColor3ub"
 
 -- glColor3ubv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3ubv
   :: MonadIO m
   => Ptr GLubyte -- ^ @v@ pointing to @3@ elements of type @ColorUB@.
@@ -6515,7 +6573,7 @@ ptr_glColor3ubv = unsafePerformIO $ getCommand "glColor3ubv"
 
 -- glColor3ui ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3uiv'.
 glColor3ui
   :: MonadIO m
   => GLuint -- ^ @red@ of type @ColorUI@.
@@ -6530,7 +6588,7 @@ ptr_glColor3ui = unsafePerformIO $ getCommand "glColor3ui"
 
 -- glColor3uiv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3uiv
   :: MonadIO m
   => Ptr GLuint -- ^ @v@ pointing to @3@ elements of type @ColorUI@.
@@ -6543,7 +6601,7 @@ ptr_glColor3uiv = unsafePerformIO $ getCommand "glColor3uiv"
 
 -- glColor3us ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor3usv'.
 glColor3us
   :: MonadIO m
   => GLushort -- ^ @red@ of type @ColorUS@.
@@ -6558,7 +6616,7 @@ ptr_glColor3us = unsafePerformIO $ getCommand "glColor3us"
 
 -- glColor3usv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor3usv
   :: MonadIO m
   => Ptr GLushort -- ^ @v@ pointing to @3@ elements of type @ColorUS@.
@@ -6597,7 +6655,7 @@ ptr_glColor3xvOES = unsafePerformIO $ getCommand "glColor3xvOES"
 
 -- glColor4b -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4bv'.
 glColor4b
   :: MonadIO m
   => GLbyte -- ^ @red@ of type @ColorB@.
@@ -6613,7 +6671,7 @@ ptr_glColor4b = unsafePerformIO $ getCommand "glColor4b"
 
 -- glColor4bv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4bv
   :: MonadIO m
   => Ptr GLbyte -- ^ @v@ pointing to @4@ elements of type @ColorB@.
@@ -6626,7 +6684,7 @@ ptr_glColor4bv = unsafePerformIO $ getCommand "glColor4bv"
 
 -- glColor4d -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4dv'.
 glColor4d
   :: MonadIO m
   => GLdouble -- ^ @red@ of type @ColorD@.
@@ -6642,7 +6700,7 @@ ptr_glColor4d = unsafePerformIO $ getCommand "glColor4d"
 
 -- glColor4dv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @ColorD@.
@@ -6655,7 +6713,7 @@ ptr_glColor4dv = unsafePerformIO $ getCommand "glColor4dv"
 
 -- glColor4f -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4fv'.
 glColor4f
   :: MonadIO m
   => GLfloat -- ^ @red@ of type @ColorF@.
@@ -6706,7 +6764,7 @@ ptr_glColor4fNormal3fVertex3fvSUN = unsafePerformIO $ getCommand "glColor4fNorma
 
 -- glColor4fv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @ColorF@.
@@ -6719,6 +6777,7 @@ ptr_glColor4fv = unsafePerformIO $ getCommand "glColor4fv"
 
 -- glColor4hNV -----------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glColor4hvNV'.
 glColor4hNV
   :: MonadIO m
   => GLhalfNV -- ^ @red@ of type @Half16NV@.
@@ -6746,7 +6805,7 @@ ptr_glColor4hvNV = unsafePerformIO $ getCommand "glColor4hvNV"
 
 -- glColor4i -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4iv'.
 glColor4i
   :: MonadIO m
   => GLint -- ^ @red@ of type @ColorI@.
@@ -6762,7 +6821,7 @@ ptr_glColor4i = unsafePerformIO $ getCommand "glColor4i"
 
 -- glColor4iv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @4@ elements of type @ColorI@.
@@ -6775,7 +6834,7 @@ ptr_glColor4iv = unsafePerformIO $ getCommand "glColor4iv"
 
 -- glColor4s -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4sv'.
 glColor4s
   :: MonadIO m
   => GLshort -- ^ @red@ of type @ColorS@.
@@ -6791,7 +6850,7 @@ ptr_glColor4s = unsafePerformIO $ getCommand "glColor4s"
 
 -- glColor4sv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @ColorS@.
@@ -6804,7 +6863,7 @@ ptr_glColor4sv = unsafePerformIO $ getCommand "glColor4sv"
 
 -- glColor4ub ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4ubv'.
 glColor4ub
   :: MonadIO m
   => GLubyte -- ^ @red@ of type @ColorUB@.
@@ -6881,7 +6940,7 @@ ptr_glColor4ubVertex3fvSUN = unsafePerformIO $ getCommand "glColor4ubVertex3fvSU
 
 -- glColor4ubv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4ubv
   :: MonadIO m
   => Ptr GLubyte -- ^ @v@ pointing to @4@ elements of type @ColorUB@.
@@ -6894,7 +6953,7 @@ ptr_glColor4ubv = unsafePerformIO $ getCommand "glColor4ubv"
 
 -- glColor4ui ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4uiv'.
 glColor4ui
   :: MonadIO m
   => GLuint -- ^ @red@ of type @ColorUI@.
@@ -6910,7 +6969,7 @@ ptr_glColor4ui = unsafePerformIO $ getCommand "glColor4ui"
 
 -- glColor4uiv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4uiv
   :: MonadIO m
   => Ptr GLuint -- ^ @v@ pointing to @4@ elements of type @ColorUI@.
@@ -6923,7 +6982,7 @@ ptr_glColor4uiv = unsafePerformIO $ getCommand "glColor4uiv"
 
 -- glColor4us ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glColor4usv'.
 glColor4us
   :: MonadIO m
   => GLushort -- ^ @red@ of type @ColorUS@.
@@ -6939,7 +6998,7 @@ ptr_glColor4us = unsafePerformIO $ getCommand "glColor4us"
 
 -- glColor4usv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml OpenGL 2.x>.
 glColor4usv
   :: MonadIO m
   => Ptr GLushort -- ^ @v@ pointing to @4@ elements of type @ColorUS@.
@@ -7071,7 +7130,7 @@ ptr_glColorFragmentOp3ATI = unsafePerformIO $ getCommand "glColorFragmentOp3ATI"
 
 -- glColorMask -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glColorMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glColorMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml OpenGL 4.x>.
 glColorMask
   :: MonadIO m
   => GLboolean -- ^ @red@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
@@ -7087,6 +7146,7 @@ ptr_glColorMask = unsafePerformIO $ getCommand "glColorMask"
 
 -- glColorMaskIndexedEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glColorMaski'.
 glColorMaskIndexedEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -7103,7 +7163,7 @@ ptr_glColorMaskIndexedEXT = unsafePerformIO $ getCommand "glColorMaskIndexedEXT"
 
 -- glColorMaski ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glColorMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glColorMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glColorMask.xhtml OpenGL 4.x>.
 glColorMaski
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -7120,6 +7180,7 @@ ptr_glColorMaski = unsafePerformIO $ getCommand "glColorMaski"
 
 -- glColorMaskiEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glColorMaski'.
 glColorMaskiEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -7136,6 +7197,7 @@ ptr_glColorMaskiEXT = unsafePerformIO $ getCommand "glColorMaskiEXT"
 
 -- glColorMaskiOES -------------------------------------------------------------
 
+-- | This command is an alias for 'glColorMaski'.
 glColorMaskiOES
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -7152,7 +7214,7 @@ ptr_glColorMaskiOES = unsafePerformIO $ getCommand "glColorMaskiOES"
 
 -- glColorMaterial -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorMaterial.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorMaterial.xml OpenGL 2.x>.
 glColorMaterial
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -7218,7 +7280,7 @@ ptr_glColorP4uiv = unsafePerformIO $ getCommand "glColorP4uiv"
 
 -- glColorPointer --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorPointer.xml OpenGL 2.x>.
 glColorPointer
   :: MonadIO m
   => GLint -- ^ @size@.
@@ -7280,7 +7342,7 @@ ptr_glColorPointervINTEL = unsafePerformIO $ getCommand "glColorPointervINTEL"
 
 -- glColorSubTable -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorSubTable.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorSubTable.xml OpenGL 2.x>.
 glColorSubTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -7298,6 +7360,7 @@ ptr_glColorSubTable = unsafePerformIO $ getCommand "glColorSubTable"
 
 -- glColorSubTableEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glColorSubTable'.
 glColorSubTableEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -7315,7 +7378,7 @@ ptr_glColorSubTableEXT = unsafePerformIO $ getCommand "glColorSubTableEXT"
 
 -- glColorTable ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTable.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTable.xml OpenGL 2.x>.
 glColorTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -7333,6 +7396,7 @@ ptr_glColorTable = unsafePerformIO $ getCommand "glColorTable"
 
 -- glColorTableEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glColorTable'.
 glColorTableEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -7350,7 +7414,7 @@ ptr_glColorTableEXT = unsafePerformIO $ getCommand "glColorTableEXT"
 
 -- glColorTableParameterfv -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTableParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTableParameter.xml OpenGL 2.x>.
 glColorTableParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -7365,6 +7429,7 @@ ptr_glColorTableParameterfv = unsafePerformIO $ getCommand "glColorTableParamete
 
 -- glColorTableParameterfvSGI --------------------------------------------------
 
+-- | This command is an alias for 'glColorTableParameterfv'.
 glColorTableParameterfvSGI
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
@@ -7379,7 +7444,7 @@ ptr_glColorTableParameterfvSGI = unsafePerformIO $ getCommand "glColorTableParam
 
 -- glColorTableParameteriv -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTableParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTableParameter.xml OpenGL 2.x>.
 glColorTableParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -7394,6 +7459,7 @@ ptr_glColorTableParameteriv = unsafePerformIO $ getCommand "glColorTableParamete
 
 -- glColorTableParameterivSGI --------------------------------------------------
 
+-- | This command is an alias for 'glColorTableParameteriv'.
 glColorTableParameterivSGI
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
@@ -7408,6 +7474,7 @@ ptr_glColorTableParameterivSGI = unsafePerformIO $ getCommand "glColorTableParam
 
 -- glColorTableSGI -------------------------------------------------------------
 
+-- | This command is an alias for 'glColorTable'.
 glColorTableSGI
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
@@ -7554,7 +7621,7 @@ ptr_glCompileCommandListNV = unsafePerformIO $ getCommand "glCompileCommandListN
 
 -- glCompileShader -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompileShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompileShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompileShader.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompileShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompileShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompileShader.xhtml OpenGL 4.x>.
 glCompileShader
   :: MonadIO m
   => GLuint -- ^ @shader@.
@@ -7567,6 +7634,7 @@ ptr_glCompileShader = unsafePerformIO $ getCommand "glCompileShader"
 
 -- glCompileShaderARB ----------------------------------------------------------
 
+-- | This command is an alias for 'glCompileShader'.
 glCompileShaderARB
   :: MonadIO m
   => GLhandleARB -- ^ @shaderObj@ of type @handleARB@.
@@ -7717,7 +7785,7 @@ ptr_glCompressedMultiTexSubImage3DEXT = unsafePerformIO $ getCommand "glCompress
 
 -- glCompressedTexImage1D ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage1D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage1D.xhtml OpenGL 4.x>.
 glCompressedTexImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7736,6 +7804,7 @@ ptr_glCompressedTexImage1D = unsafePerformIO $ getCommand "glCompressedTexImage1
 
 -- glCompressedTexImage1DARB ---------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexImage1D'.
 glCompressedTexImage1DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7754,7 +7823,7 @@ ptr_glCompressedTexImage1DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 
 -- glCompressedTexImage2D ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage2D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage2D.xhtml OpenGL 4.x>.
 glCompressedTexImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7774,6 +7843,7 @@ ptr_glCompressedTexImage2D = unsafePerformIO $ getCommand "glCompressedTexImage2
 
 -- glCompressedTexImage2DARB ---------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexImage2D'.
 glCompressedTexImage2DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7793,7 +7863,7 @@ ptr_glCompressedTexImage2DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 
 -- glCompressedTexImage3D ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage3D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexImage3D.xhtml OpenGL 4.x>.
 glCompressedTexImage3D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7814,6 +7884,7 @@ ptr_glCompressedTexImage3D = unsafePerformIO $ getCommand "glCompressedTexImage3
 
 -- glCompressedTexImage3DARB ---------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexImage3D'.
 glCompressedTexImage3DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7834,6 +7905,7 @@ ptr_glCompressedTexImage3DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 
 -- glCompressedTexImage3DOES ---------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexImage3D'.
 glCompressedTexImage3DOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -7854,7 +7926,7 @@ ptr_glCompressedTexImage3DOES = unsafePerformIO $ getCommand "glCompressedTexIma
 
 -- glCompressedTexSubImage1D ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage1D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage1D.xhtml OpenGL 4.x>.
 glCompressedTexSubImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7873,6 +7945,7 @@ ptr_glCompressedTexSubImage1D = unsafePerformIO $ getCommand "glCompressedTexSub
 
 -- glCompressedTexSubImage1DARB ------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexSubImage1D'.
 glCompressedTexSubImage1DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7891,7 +7964,7 @@ ptr_glCompressedTexSubImage1DARB = unsafePerformIO $ getCommand "glCompressedTex
 
 -- glCompressedTexSubImage2D ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage2D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage2D.xhtml OpenGL 4.x>.
 glCompressedTexSubImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7912,6 +7985,7 @@ ptr_glCompressedTexSubImage2D = unsafePerformIO $ getCommand "glCompressedTexSub
 
 -- glCompressedTexSubImage2DARB ------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexSubImage2D'.
 glCompressedTexSubImage2DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7932,7 +8006,7 @@ ptr_glCompressedTexSubImage2DARB = unsafePerformIO $ getCommand "glCompressedTex
 
 -- glCompressedTexSubImage3D ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage3D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCompressedTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCompressedTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage3D.xhtml OpenGL 4.x>.
 glCompressedTexSubImage3D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7955,6 +8029,7 @@ ptr_glCompressedTexSubImage3D = unsafePerformIO $ getCommand "glCompressedTexSub
 
 -- glCompressedTexSubImage3DARB ------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexSubImage3D'.
 glCompressedTexSubImage3DARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -7977,6 +8052,7 @@ ptr_glCompressedTexSubImage3DARB = unsafePerformIO $ getCommand "glCompressedTex
 
 -- glCompressedTexSubImage3DOES ------------------------------------------------
 
+-- | This command is an alias for 'glCompressedTexSubImage3D'.
 glCompressedTexSubImage3DOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -8059,7 +8135,7 @@ ptr_glCompressedTextureImage3DEXT = unsafePerformIO $ getCommand "glCompressedTe
 
 -- glCompressedTextureSubImage1D -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage1D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage1D.xhtml OpenGL 4.x>.
 glCompressedTextureSubImage1D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -8097,7 +8173,7 @@ ptr_glCompressedTextureSubImage1DEXT = unsafePerformIO $ getCommand "glCompresse
 
 -- glCompressedTextureSubImage2D -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage2D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage2D.xhtml OpenGL 4.x>.
 glCompressedTextureSubImage2D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -8139,7 +8215,7 @@ ptr_glCompressedTextureSubImage2DEXT = unsafePerformIO $ getCommand "glCompresse
 
 -- glCompressedTextureSubImage3D -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage3D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCompressedTexSubImage3D.xhtml OpenGL 4.x>.
 glCompressedTextureSubImage3D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -8198,7 +8274,7 @@ ptr_glConservativeRasterParameterfNV = unsafePerformIO $ getCommand "glConservat
 
 -- glConvolutionFilter1D -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionFilter1D.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionFilter1D.xml OpenGL 2.x>.
 glConvolutionFilter1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8216,6 +8292,7 @@ ptr_glConvolutionFilter1D = unsafePerformIO $ getCommand "glConvolutionFilter1D"
 
 -- glConvolutionFilter1DEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glConvolutionFilter1D'.
 glConvolutionFilter1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8233,7 +8310,7 @@ ptr_glConvolutionFilter1DEXT = unsafePerformIO $ getCommand "glConvolutionFilter
 
 -- glConvolutionFilter2D -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionFilter2D.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionFilter2D.xml OpenGL 2.x>.
 glConvolutionFilter2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8252,6 +8329,7 @@ ptr_glConvolutionFilter2D = unsafePerformIO $ getCommand "glConvolutionFilter2D"
 
 -- glConvolutionFilter2DEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glConvolutionFilter2D'.
 glConvolutionFilter2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8270,7 +8348,7 @@ ptr_glConvolutionFilter2DEXT = unsafePerformIO $ getCommand "glConvolutionFilter
 
 -- glConvolutionParameterf -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameterf
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8285,6 +8363,7 @@ ptr_glConvolutionParameterf = unsafePerformIO $ getCommand "glConvolutionParamet
 
 -- glConvolutionParameterfEXT --------------------------------------------------
 
+-- | This command is an alias for 'glConvolutionParameterf'.
 glConvolutionParameterfEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8299,7 +8378,7 @@ ptr_glConvolutionParameterfEXT = unsafePerformIO $ getCommand "glConvolutionPara
 
 -- glConvolutionParameterfv ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8314,6 +8393,7 @@ ptr_glConvolutionParameterfv = unsafePerformIO $ getCommand "glConvolutionParame
 
 -- glConvolutionParameterfvEXT -------------------------------------------------
 
+-- | This command is an alias for 'glConvolutionParameterfv'.
 glConvolutionParameterfvEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8328,7 +8408,7 @@ ptr_glConvolutionParameterfvEXT = unsafePerformIO $ getCommand "glConvolutionPar
 
 -- glConvolutionParameteri -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameteri
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8343,6 +8423,7 @@ ptr_glConvolutionParameteri = unsafePerformIO $ getCommand "glConvolutionParamet
 
 -- glConvolutionParameteriEXT --------------------------------------------------
 
+-- | This command is an alias for 'glConvolutionParameteri'.
 glConvolutionParameteriEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8357,7 +8438,7 @@ ptr_glConvolutionParameteriEXT = unsafePerformIO $ getCommand "glConvolutionPara
 
 -- glConvolutionParameteriv ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8372,6 +8453,7 @@ ptr_glConvolutionParameteriv = unsafePerformIO $ getCommand "glConvolutionParame
 
 -- glConvolutionParameterivEXT -------------------------------------------------
 
+-- | This command is an alias for 'glConvolutionParameteriv'.
 glConvolutionParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8414,7 +8496,7 @@ ptr_glConvolutionParameterxvOES = unsafePerformIO $ getCommand "glConvolutionPar
 
 -- glCopyBufferSubData ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyBufferSubData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyBufferSubData.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyBufferSubData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyBufferSubData.xhtml OpenGL 4.x>.
 glCopyBufferSubData
   :: MonadIO m
   => GLenum -- ^ @readTarget@.
@@ -8431,6 +8513,7 @@ ptr_glCopyBufferSubData = unsafePerformIO $ getCommand "glCopyBufferSubData"
 
 -- glCopyBufferSubDataNV -------------------------------------------------------
 
+-- | This command is an alias for 'glCopyBufferSubData'.
 glCopyBufferSubDataNV
   :: MonadIO m
   => GLenum -- ^ @readTarget@.
@@ -8447,7 +8530,7 @@ ptr_glCopyBufferSubDataNV = unsafePerformIO $ getCommand "glCopyBufferSubDataNV"
 
 -- glCopyColorSubTable ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyColorSubTable.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyColorSubTable.xml OpenGL 2.x>.
 glCopyColorSubTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -8464,6 +8547,7 @@ ptr_glCopyColorSubTable = unsafePerformIO $ getCommand "glCopyColorSubTable"
 
 -- glCopyColorSubTableEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glCopyColorSubTable'.
 glCopyColorSubTableEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -8480,7 +8564,7 @@ ptr_glCopyColorSubTableEXT = unsafePerformIO $ getCommand "glCopyColorSubTableEX
 
 -- glCopyColorTable ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyColorTable.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyColorTable.xml OpenGL 2.x>.
 glCopyColorTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -8497,6 +8581,7 @@ ptr_glCopyColorTable = unsafePerformIO $ getCommand "glCopyColorTable"
 
 -- glCopyColorTableSGI ---------------------------------------------------------
 
+-- | This command is an alias for 'glCopyColorTable'.
 glCopyColorTableSGI
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ColorTableTargetSGI](Graphics-Rendering-OpenGL-Raw-Groups.html#ColorTableTargetSGI).
@@ -8513,7 +8598,7 @@ ptr_glCopyColorTableSGI = unsafePerformIO $ getCommand "glCopyColorTableSGI"
 
 -- glCopyConvolutionFilter1D ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyConvolutionFilter1D.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyConvolutionFilter1D.xml OpenGL 2.x>.
 glCopyConvolutionFilter1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8530,6 +8615,7 @@ ptr_glCopyConvolutionFilter1D = unsafePerformIO $ getCommand "glCopyConvolutionF
 
 -- glCopyConvolutionFilter1DEXT ------------------------------------------------
 
+-- | This command is an alias for 'glCopyConvolutionFilter1D'.
 glCopyConvolutionFilter1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8546,7 +8632,7 @@ ptr_glCopyConvolutionFilter1DEXT = unsafePerformIO $ getCommand "glCopyConvoluti
 
 -- glCopyConvolutionFilter2D ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyConvolutionFilter2D.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyConvolutionFilter2D.xml OpenGL 2.x>.
 glCopyConvolutionFilter2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -8564,6 +8650,7 @@ ptr_glCopyConvolutionFilter2D = unsafePerformIO $ getCommand "glCopyConvolutionF
 
 -- glCopyConvolutionFilter2DEXT ------------------------------------------------
 
+-- | This command is an alias for 'glCopyConvolutionFilter2D'.
 glCopyConvolutionFilter2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#ConvolutionTargetEXT).
@@ -8581,7 +8668,7 @@ ptr_glCopyConvolutionFilter2DEXT = unsafePerformIO $ getCommand "glCopyConvoluti
 
 -- glCopyImageSubData ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyImageSubData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyImageSubData.xhtml OpenGL 4.x>.
 glCopyImageSubData
   :: MonadIO m
   => GLuint -- ^ @srcName@.
@@ -8608,6 +8695,7 @@ ptr_glCopyImageSubData = unsafePerformIO $ getCommand "glCopyImageSubData"
 
 -- glCopyImageSubDataEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glCopyImageSubData'.
 glCopyImageSubDataEXT
   :: MonadIO m
   => GLuint -- ^ @srcName@.
@@ -8660,6 +8748,7 @@ ptr_glCopyImageSubDataNV = unsafePerformIO $ getCommand "glCopyImageSubDataNV"
 
 -- glCopyImageSubDataOES -------------------------------------------------------
 
+-- | This command is an alias for 'glCopyImageSubData'.
 glCopyImageSubDataOES
   :: MonadIO m
   => GLuint -- ^ @srcName@.
@@ -8784,7 +8873,7 @@ ptr_glCopyMultiTexSubImage3DEXT = unsafePerformIO $ getCommand "glCopyMultiTexSu
 
 -- glCopyNamedBufferSubData ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyBufferSubData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyBufferSubData.xhtml OpenGL 4.x>.
 glCopyNamedBufferSubData
   :: MonadIO m
   => GLuint -- ^ @readBuffer@.
@@ -8814,7 +8903,7 @@ ptr_glCopyPathNV = unsafePerformIO $ getCommand "glCopyPathNV"
 
 -- glCopyPixels ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyPixels.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyPixels.xml OpenGL 2.x>.
 glCopyPixels
   :: MonadIO m
   => GLint -- ^ @x@ of type @WinCoord@.
@@ -8831,7 +8920,7 @@ ptr_glCopyPixels = unsafePerformIO $ getCommand "glCopyPixels"
 
 -- glCopyTexImage1D ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage1D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage1D.xhtml OpenGL 4.x>.
 glCopyTexImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8850,6 +8939,7 @@ ptr_glCopyTexImage1D = unsafePerformIO $ getCommand "glCopyTexImage1D"
 
 -- glCopyTexImage1DEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glCopyTexImage1D'.
 glCopyTexImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8868,7 +8958,7 @@ ptr_glCopyTexImage1DEXT = unsafePerformIO $ getCommand "glCopyTexImage1DEXT"
 
 -- glCopyTexImage2D ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage2D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexImage2D.xhtml OpenGL 4.x>.
 glCopyTexImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8888,6 +8978,7 @@ ptr_glCopyTexImage2D = unsafePerformIO $ getCommand "glCopyTexImage2D"
 
 -- glCopyTexImage2DEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glCopyTexImage2D'.
 glCopyTexImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8907,7 +8998,7 @@ ptr_glCopyTexImage2DEXT = unsafePerformIO $ getCommand "glCopyTexImage2DEXT"
 
 -- glCopyTexSubImage1D ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage1D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage1D.xhtml OpenGL 4.x>.
 glCopyTexSubImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8925,6 +9016,7 @@ ptr_glCopyTexSubImage1D = unsafePerformIO $ getCommand "glCopyTexSubImage1D"
 
 -- glCopyTexSubImage1DEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glCopyTexSubImage1D'.
 glCopyTexSubImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8942,7 +9034,7 @@ ptr_glCopyTexSubImage1DEXT = unsafePerformIO $ getCommand "glCopyTexSubImage1DEX
 
 -- glCopyTexSubImage2D ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage2D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage2D.xhtml OpenGL 4.x>.
 glCopyTexSubImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8962,6 +9054,7 @@ ptr_glCopyTexSubImage2D = unsafePerformIO $ getCommand "glCopyTexSubImage2D"
 
 -- glCopyTexSubImage2DEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glCopyTexSubImage2D'.
 glCopyTexSubImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -8981,7 +9074,7 @@ ptr_glCopyTexSubImage2DEXT = unsafePerformIO $ getCommand "glCopyTexSubImage2DEX
 
 -- glCopyTexSubImage3D ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml OpenGL 4.x>.
 glCopyTexSubImage3D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -9002,6 +9095,7 @@ ptr_glCopyTexSubImage3D = unsafePerformIO $ getCommand "glCopyTexSubImage3D"
 
 -- glCopyTexSubImage3DEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glCopyTexSubImage3D'.
 glCopyTexSubImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -9022,6 +9116,7 @@ ptr_glCopyTexSubImage3DEXT = unsafePerformIO $ getCommand "glCopyTexSubImage3DEX
 
 -- glCopyTexSubImage3DOES ------------------------------------------------------
 
+-- | This command is an alias for 'glCopyTexSubImage3D'.
 glCopyTexSubImage3DOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -9096,7 +9191,7 @@ ptr_glCopyTextureLevelsAPPLE = unsafePerformIO $ getCommand "glCopyTextureLevels
 
 -- glCopyTextureSubImage1D -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage1D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage1D.xhtml OpenGL 4.x>.
 glCopyTextureSubImage1D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -9132,7 +9227,7 @@ ptr_glCopyTextureSubImage1DEXT = unsafePerformIO $ getCommand "glCopyTextureSubI
 
 -- glCopyTextureSubImage2D -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage2D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage2D.xhtml OpenGL 4.x>.
 glCopyTextureSubImage2D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -9172,7 +9267,7 @@ ptr_glCopyTextureSubImage2DEXT = unsafePerformIO $ getCommand "glCopyTextureSubI
 
 -- glCopyTextureSubImage3D -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml OpenGL 4.x>.
 glCopyTextureSubImage3D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -9325,7 +9420,7 @@ ptr_glCoverageOperationNV = unsafePerformIO $ getCommand "glCoverageOperationNV"
 
 -- glCreateBuffers -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateBuffers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateBuffers.xhtml OpenGL 4.x>.
 glCreateBuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9352,7 +9447,7 @@ ptr_glCreateCommandListsNV = unsafePerformIO $ getCommand "glCreateCommandListsN
 
 -- glCreateFramebuffers --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateFramebuffers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateFramebuffers.xhtml OpenGL 4.x>.
 glCreateFramebuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9379,7 +9474,7 @@ ptr_glCreatePerfQueryINTEL = unsafePerformIO $ getCommand "glCreatePerfQueryINTE
 
 -- glCreateProgram -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCreateProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCreateProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCreateProgram.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCreateProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCreateProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCreateProgram.xhtml OpenGL 4.x>.
 glCreateProgram
   :: MonadIO m
   => m GLuint
@@ -9391,6 +9486,7 @@ ptr_glCreateProgram = unsafePerformIO $ getCommand "glCreateProgram"
 
 -- glCreateProgramObjectARB ----------------------------------------------------
 
+-- | This command is an alias for 'glCreateProgram'.
 glCreateProgramObjectARB
   :: MonadIO m
   => m GLhandleARB -- ^ of type @handleARB@.
@@ -9402,7 +9498,7 @@ ptr_glCreateProgramObjectARB = unsafePerformIO $ getCommand "glCreateProgramObje
 
 -- glCreateProgramPipelines ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateProgramPipelines.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateProgramPipelines.xhtml OpenGL 4.x>.
 glCreateProgramPipelines
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9416,7 +9512,7 @@ ptr_glCreateProgramPipelines = unsafePerformIO $ getCommand "glCreateProgramPipe
 
 -- glCreateQueries -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateQueries.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateQueries.xhtml OpenGL 4.x>.
 glCreateQueries
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -9431,7 +9527,7 @@ ptr_glCreateQueries = unsafePerformIO $ getCommand "glCreateQueries"
 
 -- glCreateRenderbuffers -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateRenderbuffers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateRenderbuffers.xhtml OpenGL 4.x>.
 glCreateRenderbuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9445,7 +9541,7 @@ ptr_glCreateRenderbuffers = unsafePerformIO $ getCommand "glCreateRenderbuffers"
 
 -- glCreateSamplers ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateSamplers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateSamplers.xhtml OpenGL 4.x>.
 glCreateSamplers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9459,7 +9555,7 @@ ptr_glCreateSamplers = unsafePerformIO $ getCommand "glCreateSamplers"
 
 -- glCreateShader --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCreateShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCreateShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCreateShader.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCreateShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCreateShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCreateShader.xhtml OpenGL 4.x>.
 glCreateShader
   :: MonadIO m
   => GLenum -- ^ @type@.
@@ -9472,6 +9568,7 @@ ptr_glCreateShader = unsafePerformIO $ getCommand "glCreateShader"
 
 -- glCreateShaderObjectARB -----------------------------------------------------
 
+-- | This command is an alias for 'glCreateShader'.
 glCreateShaderObjectARB
   :: MonadIO m
   => GLenum -- ^ @shaderType@.
@@ -9497,7 +9594,7 @@ ptr_glCreateShaderProgramEXT = unsafePerformIO $ getCommand "glCreateShaderProgr
 
 -- glCreateShaderProgramv ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateShaderProgram.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateShaderProgram.xhtml OpenGL 4.x>.
 glCreateShaderProgramv
   :: MonadIO m
   => GLenum -- ^ @type@.
@@ -9553,7 +9650,7 @@ ptr_glCreateSyncFromCLeventARB = unsafePerformIO $ getCommand "glCreateSyncFromC
 
 -- glCreateTextures ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateTextures.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateTextures.xhtml OpenGL 4.x>.
 glCreateTextures
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -9568,7 +9665,7 @@ ptr_glCreateTextures = unsafePerformIO $ getCommand "glCreateTextures"
 
 -- glCreateTransformFeedbacks --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateTransformFeedbacks.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateTransformFeedbacks.xhtml OpenGL 4.x>.
 glCreateTransformFeedbacks
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9582,7 +9679,7 @@ ptr_glCreateTransformFeedbacks = unsafePerformIO $ getCommand "glCreateTransform
 
 -- glCreateVertexArrays --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateVertexArrays.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateVertexArrays.xhtml OpenGL 4.x>.
 glCreateVertexArrays
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9596,7 +9693,7 @@ ptr_glCreateVertexArrays = unsafePerformIO $ getCommand "glCreateVertexArrays"
 
 -- glCullFace ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCullFace.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCullFace.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCullFace.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCullFace.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCullFace.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCullFace.xhtml OpenGL 4.x>.
 glCullFace
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [CullFaceMode](Graphics-Rendering-OpenGL-Raw-Groups.html#CullFaceMode).
@@ -9659,7 +9756,7 @@ ptr_glCurrentPaletteMatrixOES = unsafePerformIO $ getCommand "glCurrentPaletteMa
 
 -- glDebugMessageCallback ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageCallback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageCallback.xhtml OpenGL 4.x>.
 glDebugMessageCallback
   :: MonadIO m
   => GLDEBUGPROC -- ^ @callback@.
@@ -9686,6 +9783,7 @@ ptr_glDebugMessageCallbackAMD = unsafePerformIO $ getCommand "glDebugMessageCall
 
 -- glDebugMessageCallbackARB ---------------------------------------------------
 
+-- | This command is an alias for 'glDebugMessageCallback'.
 glDebugMessageCallbackARB
   :: MonadIO m
   => GLDEBUGPROCARB -- ^ @callback@.
@@ -9699,6 +9797,7 @@ ptr_glDebugMessageCallbackARB = unsafePerformIO $ getCommand "glDebugMessageCall
 
 -- glDebugMessageCallbackKHR ---------------------------------------------------
 
+-- | This command is an alias for 'glDebugMessageCallback'.
 glDebugMessageCallbackKHR
   :: MonadIO m
   => GLDEBUGPROCKHR -- ^ @callback@.
@@ -9712,7 +9811,7 @@ ptr_glDebugMessageCallbackKHR = unsafePerformIO $ getCommand "glDebugMessageCall
 
 -- glDebugMessageControl -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageControl.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageControl.xhtml OpenGL 4.x>.
 glDebugMessageControl
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -9730,6 +9829,7 @@ ptr_glDebugMessageControl = unsafePerformIO $ getCommand "glDebugMessageControl"
 
 -- glDebugMessageControlARB ----------------------------------------------------
 
+-- | This command is an alias for 'glDebugMessageControl'.
 glDebugMessageControlARB
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -9747,6 +9847,7 @@ ptr_glDebugMessageControlARB = unsafePerformIO $ getCommand "glDebugMessageContr
 
 -- glDebugMessageControlKHR ----------------------------------------------------
 
+-- | This command is an alias for 'glDebugMessageControl'.
 glDebugMessageControlKHR
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -9780,7 +9881,7 @@ ptr_glDebugMessageEnableAMD = unsafePerformIO $ getCommand "glDebugMessageEnable
 
 -- glDebugMessageInsert --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageInsert.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageInsert.xhtml OpenGL 4.x>.
 glDebugMessageInsert
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -9814,6 +9915,7 @@ ptr_glDebugMessageInsertAMD = unsafePerformIO $ getCommand "glDebugMessageInsert
 
 -- glDebugMessageInsertARB -----------------------------------------------------
 
+-- | This command is an alias for 'glDebugMessageInsert'.
 glDebugMessageInsertARB
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -9831,6 +9933,7 @@ ptr_glDebugMessageInsertARB = unsafePerformIO $ getCommand "glDebugMessageInsert
 
 -- glDebugMessageInsertKHR -----------------------------------------------------
 
+-- | This command is an alias for 'glDebugMessageInsert'.
 glDebugMessageInsertKHR
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -9923,7 +10026,7 @@ ptr_glDeleteAsyncMarkersSGIX = unsafePerformIO $ getCommand "glDeleteAsyncMarker
 
 -- glDeleteBuffers -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteBuffers.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteBuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteBuffers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteBuffers.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteBuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteBuffers.xhtml OpenGL 4.x>.
 glDeleteBuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -9937,6 +10040,7 @@ ptr_glDeleteBuffers = unsafePerformIO $ getCommand "glDeleteBuffers"
 
 -- glDeleteBuffersARB ----------------------------------------------------------
 
+-- | This command is an alias for 'glDeleteBuffers'.
 glDeleteBuffersARB
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10001,7 +10105,7 @@ ptr_glDeleteFragmentShaderATI = unsafePerformIO $ getCommand "glDeleteFragmentSh
 
 -- glDeleteFramebuffers --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteFramebuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteFramebuffers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteFramebuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteFramebuffers.xhtml OpenGL 4.x>.
 glDeleteFramebuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10015,6 +10119,7 @@ ptr_glDeleteFramebuffers = unsafePerformIO $ getCommand "glDeleteFramebuffers"
 
 -- glDeleteFramebuffersEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glDeleteFramebuffers'.
 glDeleteFramebuffersEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10041,7 +10146,7 @@ ptr_glDeleteFramebuffersOES = unsafePerformIO $ getCommand "glDeleteFramebuffers
 
 -- glDeleteLists ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteLists.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteLists.xml OpenGL 2.x>.
 glDeleteLists
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
@@ -10145,7 +10250,7 @@ ptr_glDeletePerfQueryINTEL = unsafePerformIO $ getCommand "glDeletePerfQueryINTE
 
 -- glDeleteProgram -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteProgram.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteProgram.xhtml OpenGL 4.x>.
 glDeleteProgram
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -10158,7 +10263,7 @@ ptr_glDeleteProgram = unsafePerformIO $ getCommand "glDeleteProgram"
 
 -- glDeleteProgramPipelines ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDeleteProgramPipelines.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDeleteProgramPipelines.xhtml OpenGL 4.x>.
 glDeleteProgramPipelines
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10198,6 +10303,7 @@ ptr_glDeleteProgramsARB = unsafePerformIO $ getCommand "glDeleteProgramsARB"
 
 -- glDeleteProgramsNV ----------------------------------------------------------
 
+-- | This command is an alias for 'glDeleteProgramsARB'.
 glDeleteProgramsNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10211,7 +10317,7 @@ ptr_glDeleteProgramsNV = unsafePerformIO $ getCommand "glDeleteProgramsNV"
 
 -- glDeleteQueries -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteQueries.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteQueries.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteQueries.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteQueries.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteQueries.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteQueries.xhtml OpenGL 4.x>.
 glDeleteQueries
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10225,6 +10331,7 @@ ptr_glDeleteQueries = unsafePerformIO $ getCommand "glDeleteQueries"
 
 -- glDeleteQueriesARB ----------------------------------------------------------
 
+-- | This command is an alias for 'glDeleteQueries'.
 glDeleteQueriesARB
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10251,7 +10358,7 @@ ptr_glDeleteQueriesEXT = unsafePerformIO $ getCommand "glDeleteQueriesEXT"
 
 -- glDeleteRenderbuffers -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteRenderbuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteRenderbuffers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteRenderbuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteRenderbuffers.xhtml OpenGL 4.x>.
 glDeleteRenderbuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10265,6 +10372,7 @@ ptr_glDeleteRenderbuffers = unsafePerformIO $ getCommand "glDeleteRenderbuffers"
 
 -- glDeleteRenderbuffersEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glDeleteRenderbuffers'.
 glDeleteRenderbuffersEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10291,7 +10399,7 @@ ptr_glDeleteRenderbuffersOES = unsafePerformIO $ getCommand "glDeleteRenderbuffe
 
 -- glDeleteSamplers ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteSamplers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteSamplers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteSamplers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteSamplers.xhtml OpenGL 4.x>.
 glDeleteSamplers
   :: MonadIO m
   => GLsizei -- ^ @count@.
@@ -10305,7 +10413,7 @@ ptr_glDeleteSamplers = unsafePerformIO $ getCommand "glDeleteSamplers"
 
 -- glDeleteShader --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteShader.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteShader.xhtml OpenGL 4.x>.
 glDeleteShader
   :: MonadIO m
   => GLuint -- ^ @shader@.
@@ -10331,7 +10439,7 @@ ptr_glDeleteStatesNV = unsafePerformIO $ getCommand "glDeleteStatesNV"
 
 -- glDeleteSync ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteSync.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteSync.xhtml OpenGL 4.x>.
 glDeleteSync
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
@@ -10344,6 +10452,7 @@ ptr_glDeleteSync = unsafePerformIO $ getCommand "glDeleteSync"
 
 -- glDeleteSyncAPPLE -----------------------------------------------------------
 
+-- | This command is an alias for 'glDeleteSync'.
 glDeleteSyncAPPLE
   :: MonadIO m
   => GLsync -- ^ @sync@.
@@ -10356,7 +10465,7 @@ ptr_glDeleteSyncAPPLE = unsafePerformIO $ getCommand "glDeleteSyncAPPLE"
 
 -- glDeleteTextures ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteTextures.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteTextures.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteTextures.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteTextures.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteTextures.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteTextures.xhtml OpenGL 4.x>.
 glDeleteTextures
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10383,7 +10492,7 @@ ptr_glDeleteTexturesEXT = unsafePerformIO $ getCommand "glDeleteTexturesEXT"
 
 -- glDeleteTransformFeedbacks --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDeleteTransformFeedbacks.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDeleteTransformFeedbacks.xhtml OpenGL 4.x>.
 glDeleteTransformFeedbacks
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10397,6 +10506,7 @@ ptr_glDeleteTransformFeedbacks = unsafePerformIO $ getCommand "glDeleteTransform
 
 -- glDeleteTransformFeedbacksNV ------------------------------------------------
 
+-- | This command is an alias for 'glDeleteTransformFeedbacks'.
 glDeleteTransformFeedbacksNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10410,7 +10520,7 @@ ptr_glDeleteTransformFeedbacksNV = unsafePerformIO $ getCommand "glDeleteTransfo
 
 -- glDeleteVertexArrays --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteVertexArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteVertexArrays.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteVertexArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteVertexArrays.xhtml OpenGL 4.x>.
 glDeleteVertexArrays
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10424,6 +10534,7 @@ ptr_glDeleteVertexArrays = unsafePerformIO $ getCommand "glDeleteVertexArrays"
 
 -- glDeleteVertexArraysAPPLE ---------------------------------------------------
 
+-- | This command is an alias for 'glDeleteVertexArrays'.
 glDeleteVertexArraysAPPLE
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10437,6 +10548,7 @@ ptr_glDeleteVertexArraysAPPLE = unsafePerformIO $ getCommand "glDeleteVertexArra
 
 -- glDeleteVertexArraysOES -----------------------------------------------------
 
+-- | This command is an alias for 'glDeleteVertexArrays'.
 glDeleteVertexArraysOES
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -10488,7 +10600,7 @@ ptr_glDepthBoundsdNV = unsafePerformIO $ getCommand "glDepthBoundsdNV"
 
 -- glDepthFunc -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthFunc.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthFunc.xhtml OpenGL 4.x>.
 glDepthFunc
   :: MonadIO m
   => GLenum -- ^ @func@ of type [DepthFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#DepthFunction).
@@ -10501,7 +10613,7 @@ ptr_glDepthFunc = unsafePerformIO $ getCommand "glDepthFunc"
 
 -- glDepthMask -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthMask.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthMask.xhtml OpenGL 4.x>.
 glDepthMask
   :: MonadIO m
   => GLboolean -- ^ @flag@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
@@ -10514,7 +10626,7 @@ ptr_glDepthMask = unsafePerformIO $ getCommand "glDepthMask"
 
 -- glDepthRange ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthRange.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthRange.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml OpenGL 4.x>.
 glDepthRange
   :: MonadIO m
   => GLdouble -- ^ @near@.
@@ -10542,7 +10654,7 @@ ptr_glDepthRangeArrayfvNV = unsafePerformIO $ getCommand "glDepthRangeArrayfvNV"
 
 -- glDepthRangeArrayv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDepthRangeArray.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDepthRangeArray.xhtml OpenGL 4.x>.
 glDepthRangeArrayv
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -10557,7 +10669,7 @@ ptr_glDepthRangeArrayv = unsafePerformIO $ getCommand "glDepthRangeArrayv"
 
 -- glDepthRangeIndexed ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDepthRangeIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDepthRangeIndexed.xhtml OpenGL 4.x>.
 glDepthRangeIndexed
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -10599,7 +10711,7 @@ ptr_glDepthRangedNV = unsafePerformIO $ getCommand "glDepthRangedNV"
 
 -- glDepthRangef ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml OpenGL 4.x>.
 glDepthRangef
   :: MonadIO m
   => GLfloat -- ^ @n@.
@@ -10613,6 +10725,7 @@ ptr_glDepthRangef = unsafePerformIO $ getCommand "glDepthRangef"
 
 -- glDepthRangefOES ------------------------------------------------------------
 
+-- | This command is an alias for 'glDepthRangef'.
 glDepthRangefOES
   :: MonadIO m
   => GLclampf -- ^ @n@ of type @ClampedFloat32@.
@@ -10652,6 +10765,7 @@ ptr_glDepthRangexOES = unsafePerformIO $ getCommand "glDepthRangexOES"
 
 -- glDetachObjectARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glDetachShader'.
 glDetachObjectARB
   :: MonadIO m
   => GLhandleARB -- ^ @containerObj@ of type @handleARB@.
@@ -10665,7 +10779,7 @@ ptr_glDetachObjectARB = unsafePerformIO $ getCommand "glDetachObjectARB"
 
 -- glDetachShader --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDetachShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDetachShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDetachShader.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDetachShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDetachShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDetachShader.xhtml OpenGL 4.x>.
 glDetachShader
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -10693,7 +10807,7 @@ ptr_glDetailTexFuncSGIS = unsafePerformIO $ getCommand "glDetailTexFuncSGIS"
 
 -- glDisable -------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>.
 glDisable
   :: MonadIO m
   => GLenum -- ^ @cap@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
@@ -10706,7 +10820,7 @@ ptr_glDisable = unsafePerformIO $ getCommand "glDisable"
 
 -- glDisableClientState --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>.
 glDisableClientState
   :: MonadIO m
   => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
@@ -10757,6 +10871,7 @@ ptr_glDisableDriverControlQCOM = unsafePerformIO $ getCommand "glDisableDriverCo
 
 -- glDisableIndexedEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glDisablei'.
 glDisableIndexedEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -10782,7 +10897,7 @@ ptr_glDisableVariantClientStateEXT = unsafePerformIO $ getCommand "glDisableVari
 
 -- glDisableVertexArrayAttrib --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>.
 glDisableVertexArrayAttrib
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -10835,7 +10950,7 @@ ptr_glDisableVertexAttribAPPLE = unsafePerformIO $ getCommand "glDisableVertexAt
 
 -- glDisableVertexAttribArray --------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableVertexAttribArray.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnableVertexAttribArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableVertexAttribArray.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnableVertexAttribArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>.
 glDisableVertexAttribArray
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -10848,6 +10963,7 @@ ptr_glDisableVertexAttribArray = unsafePerformIO $ getCommand "glDisableVertexAt
 
 -- glDisableVertexAttribArrayARB -----------------------------------------------
 
+-- | This command is an alias for 'glDisableVertexAttribArray'.
 glDisableVertexAttribArrayARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -10860,7 +10976,7 @@ ptr_glDisableVertexAttribArrayARB = unsafePerformIO $ getCommand "glDisableVerte
 
 -- glDisablei ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>.
 glDisablei
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -10874,6 +10990,7 @@ ptr_glDisablei = unsafePerformIO $ getCommand "glDisablei"
 
 -- glDisableiEXT ---------------------------------------------------------------
 
+-- | This command is an alias for 'glDisablei'.
 glDisableiEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -10887,6 +11004,7 @@ ptr_glDisableiEXT = unsafePerformIO $ getCommand "glDisableiEXT"
 
 -- glDisableiNV ----------------------------------------------------------------
 
+-- | This command is an alias for 'glDisablei'.
 glDisableiNV
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -10900,6 +11018,7 @@ ptr_glDisableiNV = unsafePerformIO $ getCommand "glDisableiNV"
 
 -- glDisableiOES ---------------------------------------------------------------
 
+-- | This command is an alias for 'glDisablei'.
 glDisableiOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -10927,7 +11046,7 @@ ptr_glDiscardFramebufferEXT = unsafePerformIO $ getCommand "glDiscardFramebuffer
 
 -- glDispatchCompute -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDispatchCompute.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDispatchCompute.xhtml OpenGL 4.x>.
 glDispatchCompute
   :: MonadIO m
   => GLuint -- ^ @num_groups_x@.
@@ -10959,7 +11078,7 @@ ptr_glDispatchComputeGroupSizeARB = unsafePerformIO $ getCommand "glDispatchComp
 
 -- glDispatchComputeIndirect ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDispatchComputeIndirect.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDispatchComputeIndirect.xhtml OpenGL 4.x>.
 glDispatchComputeIndirect
   :: MonadIO m
   => GLintptr -- ^ @indirect@ of type @BufferOffset@.
@@ -10972,7 +11091,7 @@ ptr_glDispatchComputeIndirect = unsafePerformIO $ getCommand "glDispatchComputeI
 
 -- glDrawArrays ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawArrays.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawArrays.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawArrays.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawArrays.xhtml OpenGL 4.x>.
 glDrawArrays
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -10987,6 +11106,7 @@ ptr_glDrawArrays = unsafePerformIO $ getCommand "glDrawArrays"
 
 -- glDrawArraysEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glDrawArrays'.
 glDrawArraysEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11001,7 +11121,7 @@ ptr_glDrawArraysEXT = unsafePerformIO $ getCommand "glDrawArraysEXT"
 
 -- glDrawArraysIndirect --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysIndirect.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysIndirect.xhtml OpenGL 4.x>.
 glDrawArraysIndirect
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11015,7 +11135,7 @@ ptr_glDrawArraysIndirect = unsafePerformIO $ getCommand "glDrawArraysIndirect"
 
 -- glDrawArraysInstanced -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArraysInstanced.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstanced.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawArraysInstanced.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstanced.xhtml OpenGL 4.x>.
 glDrawArraysInstanced
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11031,6 +11151,7 @@ ptr_glDrawArraysInstanced = unsafePerformIO $ getCommand "glDrawArraysInstanced"
 
 -- glDrawArraysInstancedANGLE --------------------------------------------------
 
+-- | This command is an alias for 'glDrawArraysInstanced'.
 glDrawArraysInstancedANGLE
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11046,6 +11167,7 @@ ptr_glDrawArraysInstancedANGLE = unsafePerformIO $ getCommand "glDrawArraysInsta
 
 -- glDrawArraysInstancedARB ----------------------------------------------------
 
+-- | This command is an alias for 'glDrawArraysInstanced'.
 glDrawArraysInstancedARB
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11061,7 +11183,7 @@ ptr_glDrawArraysInstancedARB = unsafePerformIO $ getCommand "glDrawArraysInstanc
 
 -- glDrawArraysInstancedBaseInstance -------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstancedBaseInstance.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawArraysInstancedBaseInstance.xhtml OpenGL 4.x>.
 glDrawArraysInstancedBaseInstance
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11078,6 +11200,7 @@ ptr_glDrawArraysInstancedBaseInstance = unsafePerformIO $ getCommand "glDrawArra
 
 -- glDrawArraysInstancedBaseInstanceEXT ----------------------------------------
 
+-- | This command is an alias for 'glDrawArraysInstancedBaseInstance'.
 glDrawArraysInstancedBaseInstanceEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11094,6 +11217,7 @@ ptr_glDrawArraysInstancedBaseInstanceEXT = unsafePerformIO $ getCommand "glDrawA
 
 -- glDrawArraysInstancedEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glDrawArraysInstanced'.
 glDrawArraysInstancedEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11109,6 +11233,7 @@ ptr_glDrawArraysInstancedEXT = unsafePerformIO $ getCommand "glDrawArraysInstanc
 
 -- glDrawArraysInstancedNV -----------------------------------------------------
 
+-- | This command is an alias for 'glDrawArraysInstanced'.
 glDrawArraysInstancedNV
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11124,7 +11249,7 @@ ptr_glDrawArraysInstancedNV = unsafePerformIO $ getCommand "glDrawArraysInstance
 
 -- glDrawBuffer ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffer.xhtml OpenGL 4.x>.
 glDrawBuffer
   :: MonadIO m
   => GLenum -- ^ @buf@ of type [DrawBufferMode](Graphics-Rendering-OpenGL-Raw-Groups.html#DrawBufferMode).
@@ -11137,7 +11262,7 @@ ptr_glDrawBuffer = unsafePerformIO $ getCommand "glDrawBuffer"
 
 -- glDrawBuffers ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffers.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawBuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffers.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawBuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffers.xhtml OpenGL 4.x>.
 glDrawBuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -11151,6 +11276,7 @@ ptr_glDrawBuffers = unsafePerformIO $ getCommand "glDrawBuffers"
 
 -- glDrawBuffersARB ------------------------------------------------------------
 
+-- | This command is an alias for 'glDrawBuffers'.
 glDrawBuffersARB
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -11164,6 +11290,7 @@ ptr_glDrawBuffersARB = unsafePerformIO $ getCommand "glDrawBuffersARB"
 
 -- glDrawBuffersATI ------------------------------------------------------------
 
+-- | This command is an alias for 'glDrawBuffers'.
 glDrawBuffersATI
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -11177,6 +11304,7 @@ ptr_glDrawBuffersATI = unsafePerformIO $ getCommand "glDrawBuffersATI"
 
 -- glDrawBuffersEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glDrawBuffers'.
 glDrawBuffersEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -11308,7 +11436,7 @@ ptr_glDrawElementArrayATI = unsafePerformIO $ getCommand "glDrawElementArrayATI"
 
 -- glDrawElements --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElements.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElements.xhtml OpenGL 4.x>.
 glDrawElements
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11324,7 +11452,7 @@ ptr_glDrawElements = unsafePerformIO $ getCommand "glDrawElements"
 
 -- glDrawElementsBaseVertex ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsBaseVertex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsBaseVertex.xhtml OpenGL 4.x>.
 glDrawElementsBaseVertex
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11341,6 +11469,7 @@ ptr_glDrawElementsBaseVertex = unsafePerformIO $ getCommand "glDrawElementsBaseV
 
 -- glDrawElementsBaseVertexEXT -------------------------------------------------
 
+-- | This command is an alias for 'glDrawElementsBaseVertex'.
 glDrawElementsBaseVertexEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11357,6 +11486,7 @@ ptr_glDrawElementsBaseVertexEXT = unsafePerformIO $ getCommand "glDrawElementsBa
 
 -- glDrawElementsBaseVertexOES -------------------------------------------------
 
+-- | This command is an alias for 'glDrawElementsBaseVertex'.
 glDrawElementsBaseVertexOES
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11373,7 +11503,7 @@ ptr_glDrawElementsBaseVertexOES = unsafePerformIO $ getCommand "glDrawElementsBa
 
 -- glDrawElementsIndirect ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsIndirect.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsIndirect.xhtml OpenGL 4.x>.
 glDrawElementsIndirect
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11388,7 +11518,7 @@ ptr_glDrawElementsIndirect = unsafePerformIO $ getCommand "glDrawElementsIndirec
 
 -- glDrawElementsInstanced -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstanced.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstanced.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstanced.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstanced.xhtml OpenGL 4.x>.
 glDrawElementsInstanced
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11405,6 +11535,7 @@ ptr_glDrawElementsInstanced = unsafePerformIO $ getCommand "glDrawElementsInstan
 
 -- glDrawElementsInstancedANGLE ------------------------------------------------
 
+-- | This command is an alias for 'glDrawElementsInstanced'.
 glDrawElementsInstancedANGLE
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11421,6 +11552,7 @@ ptr_glDrawElementsInstancedANGLE = unsafePerformIO $ getCommand "glDrawElementsI
 
 -- glDrawElementsInstancedARB --------------------------------------------------
 
+-- | This command is an alias for 'glDrawElementsInstanced'.
 glDrawElementsInstancedARB
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11437,7 +11569,7 @@ ptr_glDrawElementsInstancedARB = unsafePerformIO $ getCommand "glDrawElementsIns
 
 -- glDrawElementsInstancedBaseInstance -----------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseInstance.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseInstance.xhtml OpenGL 4.x>.
 glDrawElementsInstancedBaseInstance
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11455,6 +11587,7 @@ ptr_glDrawElementsInstancedBaseInstance = unsafePerformIO $ getCommand "glDrawEl
 
 -- glDrawElementsInstancedBaseInstanceEXT --------------------------------------
 
+-- | This command is an alias for 'glDrawElementsInstancedBaseInstance'.
 glDrawElementsInstancedBaseInstanceEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11472,7 +11605,7 @@ ptr_glDrawElementsInstancedBaseInstanceEXT = unsafePerformIO $ getCommand "glDra
 
 -- glDrawElementsInstancedBaseVertex -------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstancedBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawElementsInstancedBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertex.xhtml OpenGL 4.x>.
 glDrawElementsInstancedBaseVertex
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11490,7 +11623,7 @@ ptr_glDrawElementsInstancedBaseVertex = unsafePerformIO $ getCommand "glDrawElem
 
 -- glDrawElementsInstancedBaseVertexBaseInstance -------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertexBaseInstance.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawElementsInstancedBaseVertexBaseInstance.xhtml OpenGL 4.x>.
 glDrawElementsInstancedBaseVertexBaseInstance
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11509,6 +11642,7 @@ ptr_glDrawElementsInstancedBaseVertexBaseInstance = unsafePerformIO $ getCommand
 
 -- glDrawElementsInstancedBaseVertexBaseInstanceEXT ----------------------------
 
+-- | This command is an alias for 'glDrawElementsInstancedBaseVertexBaseInstance'.
 glDrawElementsInstancedBaseVertexBaseInstanceEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11527,6 +11661,7 @@ ptr_glDrawElementsInstancedBaseVertexBaseInstanceEXT = unsafePerformIO $ getComm
 
 -- glDrawElementsInstancedBaseVertexEXT ----------------------------------------
 
+-- | This command is an alias for 'glDrawElementsInstancedBaseVertex'.
 glDrawElementsInstancedBaseVertexEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11544,6 +11679,7 @@ ptr_glDrawElementsInstancedBaseVertexEXT = unsafePerformIO $ getCommand "glDrawE
 
 -- glDrawElementsInstancedBaseVertexOES ----------------------------------------
 
+-- | This command is an alias for 'glDrawElementsInstancedBaseVertex'.
 glDrawElementsInstancedBaseVertexOES
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11561,6 +11697,7 @@ ptr_glDrawElementsInstancedBaseVertexOES = unsafePerformIO $ getCommand "glDrawE
 
 -- glDrawElementsInstancedEXT --------------------------------------------------
 
+-- | This command is an alias for 'glDrawElementsInstanced'.
 glDrawElementsInstancedEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11577,6 +11714,7 @@ ptr_glDrawElementsInstancedEXT = unsafePerformIO $ getCommand "glDrawElementsIns
 
 -- glDrawElementsInstancedNV ---------------------------------------------------
 
+-- | This command is an alias for 'glDrawElementsInstanced'.
 glDrawElementsInstancedNV
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11608,7 +11746,7 @@ ptr_glDrawMeshArraysSUN = unsafePerformIO $ getCommand "glDrawMeshArraysSUN"
 
 -- glDrawPixels ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawPixels.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawPixels.xml OpenGL 2.x>.
 glDrawPixels
   :: MonadIO m
   => GLsizei -- ^ @width@.
@@ -11656,7 +11794,7 @@ ptr_glDrawRangeElementArrayATI = unsafePerformIO $ getCommand "glDrawRangeElemen
 
 -- glDrawRangeElements ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawRangeElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElements.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDrawRangeElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElements.xhtml OpenGL 4.x>.
 glDrawRangeElements
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11674,7 +11812,7 @@ ptr_glDrawRangeElements = unsafePerformIO $ getCommand "glDrawRangeElements"
 
 -- glDrawRangeElementsBaseVertex -----------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElementsBaseVertex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDrawRangeElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDrawRangeElementsBaseVertex.xhtml OpenGL 4.x>.
 glDrawRangeElementsBaseVertex
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11693,6 +11831,7 @@ ptr_glDrawRangeElementsBaseVertex = unsafePerformIO $ getCommand "glDrawRangeEle
 
 -- glDrawRangeElementsBaseVertexEXT --------------------------------------------
 
+-- | This command is an alias for 'glDrawRangeElementsBaseVertex'.
 glDrawRangeElementsBaseVertexEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11711,6 +11850,7 @@ ptr_glDrawRangeElementsBaseVertexEXT = unsafePerformIO $ getCommand "glDrawRange
 
 -- glDrawRangeElementsBaseVertexOES --------------------------------------------
 
+-- | This command is an alias for 'glDrawRangeElementsBaseVertex'.
 glDrawRangeElementsBaseVertexOES
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11729,6 +11869,7 @@ ptr_glDrawRangeElementsBaseVertexOES = unsafePerformIO $ getCommand "glDrawRange
 
 -- glDrawRangeElementsEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glDrawRangeElements'.
 glDrawRangeElementsEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11880,7 +12021,7 @@ ptr_glDrawTexxvOES = unsafePerformIO $ getCommand "glDrawTexxvOES"
 
 -- glDrawTransformFeedback -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedback.xhtml OpenGL 4.x>.
 glDrawTransformFeedback
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11894,7 +12035,7 @@ ptr_glDrawTransformFeedback = unsafePerformIO $ getCommand "glDrawTransformFeedb
 
 -- glDrawTransformFeedbackInstanced --------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackInstanced.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackInstanced.xhtml OpenGL 4.x>.
 glDrawTransformFeedbackInstanced
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11909,6 +12050,7 @@ ptr_glDrawTransformFeedbackInstanced = unsafePerformIO $ getCommand "glDrawTrans
 
 -- glDrawTransformFeedbackNV ---------------------------------------------------
 
+-- | This command is an alias for 'glDrawTransformFeedback'.
 glDrawTransformFeedbackNV
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11922,7 +12064,7 @@ ptr_glDrawTransformFeedbackNV = unsafePerformIO $ getCommand "glDrawTransformFee
 
 -- glDrawTransformFeedbackStream -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackStream.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackStream.xhtml OpenGL 4.x>.
 glDrawTransformFeedbackStream
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11937,7 +12079,7 @@ ptr_glDrawTransformFeedbackStream = unsafePerformIO $ getCommand "glDrawTransfor
 
 -- glDrawTransformFeedbackStreamInstanced --------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackStreamInstanced.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackStreamInstanced.xhtml OpenGL 4.x>.
 glDrawTransformFeedbackStreamInstanced
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -11979,7 +12121,7 @@ ptr_glEGLImageTargetTexture2DOES = unsafePerformIO $ getCommand "glEGLImageTarge
 
 -- glEdgeFlag ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml OpenGL 2.x>. The vector equivalent of this command is 'glEdgeFlagv'.
 glEdgeFlag
   :: MonadIO m
   => GLboolean -- ^ @flag@ of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
@@ -12004,7 +12146,7 @@ ptr_glEdgeFlagFormatNV = unsafePerformIO $ getCommand "glEdgeFlagFormatNV"
 
 -- glEdgeFlagPointer -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlagPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlagPointer.xml OpenGL 2.x>.
 glEdgeFlagPointer
   :: MonadIO m
   => GLsizei -- ^ @stride@.
@@ -12046,7 +12188,7 @@ ptr_glEdgeFlagPointerListIBM = unsafePerformIO $ getCommand "glEdgeFlagPointerLi
 
 -- glEdgeFlagv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml OpenGL 2.x>.
 glEdgeFlagv
   :: MonadIO m
   => Ptr GLboolean -- ^ @flag@ pointing to @1@ element of type [Boolean](Graphics-Rendering-OpenGL-Raw-Groups.html#Boolean).
@@ -12085,7 +12227,7 @@ ptr_glElementPointerATI = unsafePerformIO $ getCommand "glElementPointerATI"
 
 -- glEnable --------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>.
 glEnable
   :: MonadIO m
   => GLenum -- ^ @cap@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
@@ -12098,7 +12240,7 @@ ptr_glEnable = unsafePerformIO $ getCommand "glEnable"
 
 -- glEnableClientState ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>.
 glEnableClientState
   :: MonadIO m
   => GLenum -- ^ @array@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
@@ -12149,6 +12291,7 @@ ptr_glEnableDriverControlQCOM = unsafePerformIO $ getCommand "glEnableDriverCont
 
 -- glEnableIndexedEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glEnablei'.
 glEnableIndexedEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12174,7 +12317,7 @@ ptr_glEnableVariantClientStateEXT = unsafePerformIO $ getCommand "glEnableVarian
 
 -- glEnableVertexArrayAttrib ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>.
 glEnableVertexArrayAttrib
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -12227,7 +12370,7 @@ ptr_glEnableVertexAttribAPPLE = unsafePerformIO $ getCommand "glEnableVertexAttr
 
 -- glEnableVertexAttribArray ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableVertexAttribArray.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnableVertexAttribArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableVertexAttribArray.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnableVertexAttribArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnableVertexAttribArray.xhtml OpenGL 4.x>.
 glEnableVertexAttribArray
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -12240,6 +12383,7 @@ ptr_glEnableVertexAttribArray = unsafePerformIO $ getCommand "glEnableVertexAttr
 
 -- glEnableVertexAttribArrayARB ------------------------------------------------
 
+-- | This command is an alias for 'glEnableVertexAttribArray'.
 glEnableVertexAttribArrayARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -12252,7 +12396,7 @@ ptr_glEnableVertexAttribArrayARB = unsafePerformIO $ getCommand "glEnableVertexA
 
 -- glEnablei -------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>.
 glEnablei
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12266,6 +12410,7 @@ ptr_glEnablei = unsafePerformIO $ getCommand "glEnablei"
 
 -- glEnableiEXT ----------------------------------------------------------------
 
+-- | This command is an alias for 'glEnablei'.
 glEnableiEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12279,6 +12424,7 @@ ptr_glEnableiEXT = unsafePerformIO $ getCommand "glEnableiEXT"
 
 -- glEnableiNV -----------------------------------------------------------------
 
+-- | This command is an alias for 'glEnablei'.
 glEnableiNV
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12292,6 +12438,7 @@ ptr_glEnableiNV = unsafePerformIO $ getCommand "glEnableiNV"
 
 -- glEnableiOES ----------------------------------------------------------------
 
+-- | This command is an alias for 'glEnablei'.
 glEnableiOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12305,7 +12452,7 @@ ptr_glEnableiOES = unsafePerformIO $ getCommand "glEnableiOES"
 
 -- glEnd -----------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glBegin.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glBegin.xml OpenGL 2.x>.
 glEnd
   :: MonadIO m
   => m ()
@@ -12317,7 +12464,7 @@ ptr_glEnd = unsafePerformIO $ getCommand "glEnd"
 
 -- glEndConditionalRender ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginConditionalRender.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginConditionalRender.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginConditionalRender.xhtml OpenGL 4.x>.
 glEndConditionalRender
   :: MonadIO m
   => m ()
@@ -12329,6 +12476,7 @@ ptr_glEndConditionalRender = unsafePerformIO $ getCommand "glEndConditionalRende
 
 -- glEndConditionalRenderNV ----------------------------------------------------
 
+-- | This command is an alias for 'glEndConditionalRender'.
 glEndConditionalRenderNV
   :: MonadIO m
   => m ()
@@ -12340,6 +12488,7 @@ ptr_glEndConditionalRenderNV = unsafePerformIO $ getCommand "glEndConditionalRen
 
 -- glEndConditionalRenderNVX ---------------------------------------------------
 
+-- | This command is an alias for 'glEndConditionalRender'.
 glEndConditionalRenderNVX
   :: MonadIO m
   => m ()
@@ -12362,7 +12511,7 @@ ptr_glEndFragmentShaderATI = unsafePerformIO $ getCommand "glEndFragmentShaderAT
 
 -- glEndList -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNewList.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNewList.xml OpenGL 2.x>.
 glEndList
   :: MonadIO m
   => m ()
@@ -12409,7 +12558,7 @@ ptr_glEndPerfQueryINTEL = unsafePerformIO $ getCommand "glEndPerfQueryINTEL"
 
 -- glEndQuery ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBeginQuery.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginQuery.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBeginQuery.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginQuery.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml OpenGL 4.x>.
 glEndQuery
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12422,6 +12571,7 @@ ptr_glEndQuery = unsafePerformIO $ getCommand "glEndQuery"
 
 -- glEndQueryARB ---------------------------------------------------------------
 
+-- | This command is an alias for 'glEndQuery'.
 glEndQueryARB
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12446,7 +12596,7 @@ ptr_glEndQueryEXT = unsafePerformIO $ getCommand "glEndQueryEXT"
 
 -- glEndQueryIndexed -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBeginQueryIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBeginQueryIndexed.xhtml OpenGL 4.x>.
 glEndQueryIndexed
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -12472,7 +12622,7 @@ ptr_glEndTilingQCOM = unsafePerformIO $ getCommand "glEndTilingQCOM"
 
 -- glEndTransformFeedback ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginTransformFeedback.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginTransformFeedback.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml OpenGL 4.x>.
 glEndTransformFeedback
   :: MonadIO m
   => m ()
@@ -12484,6 +12634,7 @@ ptr_glEndTransformFeedback = unsafePerformIO $ getCommand "glEndTransformFeedbac
 
 -- glEndTransformFeedbackEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glEndTransformFeedback'.
 glEndTransformFeedbackEXT
   :: MonadIO m
   => m ()
@@ -12495,6 +12646,7 @@ ptr_glEndTransformFeedbackEXT = unsafePerformIO $ getCommand "glEndTransformFeed
 
 -- glEndTransformFeedbackNV ----------------------------------------------------
 
+-- | This command is an alias for 'glEndTransformFeedback'.
 glEndTransformFeedbackNV
   :: MonadIO m
   => m ()
@@ -12529,7 +12681,7 @@ ptr_glEndVideoCaptureNV = unsafePerformIO $ getCommand "glEndVideoCaptureNV"
 
 -- glEvalCoord1d ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glEvalCoord1dv'.
 glEvalCoord1d
   :: MonadIO m
   => GLdouble -- ^ @u@ of type @CoordD@.
@@ -12542,7 +12694,7 @@ ptr_glEvalCoord1d = unsafePerformIO $ getCommand "glEvalCoord1d"
 
 -- glEvalCoord1dv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>.
 glEvalCoord1dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @u@ pointing to @1@ element of type @CoordD@.
@@ -12555,7 +12707,7 @@ ptr_glEvalCoord1dv = unsafePerformIO $ getCommand "glEvalCoord1dv"
 
 -- glEvalCoord1f ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glEvalCoord1fv'.
 glEvalCoord1f
   :: MonadIO m
   => GLfloat -- ^ @u@ of type @CoordF@.
@@ -12568,7 +12720,7 @@ ptr_glEvalCoord1f = unsafePerformIO $ getCommand "glEvalCoord1f"
 
 -- glEvalCoord1fv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>.
 glEvalCoord1fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @u@ pointing to @1@ element of type @CoordF@.
@@ -12605,7 +12757,7 @@ ptr_glEvalCoord1xvOES = unsafePerformIO $ getCommand "glEvalCoord1xvOES"
 
 -- glEvalCoord2d ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glEvalCoord2dv'.
 glEvalCoord2d
   :: MonadIO m
   => GLdouble -- ^ @u@ of type @CoordD@.
@@ -12619,7 +12771,7 @@ ptr_glEvalCoord2d = unsafePerformIO $ getCommand "glEvalCoord2d"
 
 -- glEvalCoord2dv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>.
 glEvalCoord2dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @u@ pointing to @2@ elements of type @CoordD@.
@@ -12632,7 +12784,7 @@ ptr_glEvalCoord2dv = unsafePerformIO $ getCommand "glEvalCoord2dv"
 
 -- glEvalCoord2f ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glEvalCoord2fv'.
 glEvalCoord2f
   :: MonadIO m
   => GLfloat -- ^ @u@ of type @CoordF@.
@@ -12646,7 +12798,7 @@ ptr_glEvalCoord2f = unsafePerformIO $ getCommand "glEvalCoord2f"
 
 -- glEvalCoord2fv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml OpenGL 2.x>.
 glEvalCoord2fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @u@ pointing to @2@ elements of type @CoordF@.
@@ -12697,7 +12849,7 @@ ptr_glEvalMapsNV = unsafePerformIO $ getCommand "glEvalMapsNV"
 
 -- glEvalMesh1 -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalMesh.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalMesh.xml OpenGL 2.x>.
 glEvalMesh1
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [MeshMode1](Graphics-Rendering-OpenGL-Raw-Groups.html#MeshMode1).
@@ -12712,7 +12864,7 @@ ptr_glEvalMesh1 = unsafePerformIO $ getCommand "glEvalMesh1"
 
 -- glEvalMesh2 -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalMesh.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalMesh.xml OpenGL 2.x>.
 glEvalMesh2
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [MeshMode2](Graphics-Rendering-OpenGL-Raw-Groups.html#MeshMode2).
@@ -12729,7 +12881,7 @@ ptr_glEvalMesh2 = unsafePerformIO $ getCommand "glEvalMesh2"
 
 -- glEvalPoint1 ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalPoint.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalPoint.xml OpenGL 2.x>.
 glEvalPoint1
   :: MonadIO m
   => GLint -- ^ @i@.
@@ -12742,7 +12894,7 @@ ptr_glEvalPoint1 = unsafePerformIO $ getCommand "glEvalPoint1"
 
 -- glEvalPoint2 ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalPoint.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEvalPoint.xml OpenGL 2.x>.
 glEvalPoint2
   :: MonadIO m
   => GLint -- ^ @i@ of type @CheckedInt32@.
@@ -12971,7 +13123,7 @@ ptr_glExtractComponentEXT = unsafePerformIO $ getCommand "glExtractComponentEXT"
 
 -- glFeedbackBuffer ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFeedbackBuffer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFeedbackBuffer.xml OpenGL 2.x>.
 glFeedbackBuffer
   :: MonadIO m
   => GLsizei -- ^ @size@.
@@ -13000,7 +13152,7 @@ ptr_glFeedbackBufferxOES = unsafePerformIO $ getCommand "glFeedbackBufferxOES"
 
 -- glFenceSync -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFenceSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFenceSync.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFenceSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFenceSync.xhtml OpenGL 4.x>.
 glFenceSync
   :: MonadIO m
   => GLenum -- ^ @condition@.
@@ -13014,6 +13166,7 @@ ptr_glFenceSync = unsafePerformIO $ getCommand "glFenceSync"
 
 -- glFenceSyncAPPLE ------------------------------------------------------------
 
+-- | This command is an alias for 'glFenceSync'.
 glFenceSyncAPPLE
   :: MonadIO m
   => GLenum -- ^ @condition@.
@@ -13042,7 +13195,7 @@ ptr_glFinalCombinerInputNV = unsafePerformIO $ getCommand "glFinalCombinerInputN
 
 -- glFinish --------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glFinish.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glFinish.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFinish.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glFinish.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glFinish.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFinish.xhtml OpenGL 4.x>.
 glFinish
   :: MonadIO m
   => m ()
@@ -13114,7 +13267,7 @@ ptr_glFinishTextureSUNX = unsafePerformIO $ getCommand "glFinishTextureSUNX"
 
 -- glFlush ---------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glFlush.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glFlush.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFlush.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glFlush.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glFlush.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFlush.xhtml OpenGL 4.x>.
 glFlush
   :: MonadIO m
   => m ()
@@ -13126,7 +13279,7 @@ ptr_glFlush = unsafePerformIO $ getCommand "glFlush"
 
 -- glFlushMappedBufferRange ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFlushMappedBufferRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFlushMappedBufferRange.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFlushMappedBufferRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFlushMappedBufferRange.xhtml OpenGL 4.x>.
 glFlushMappedBufferRange
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -13141,6 +13294,7 @@ ptr_glFlushMappedBufferRange = unsafePerformIO $ getCommand "glFlushMappedBuffer
 
 -- glFlushMappedBufferRangeAPPLE -----------------------------------------------
 
+-- | This command is an alias for 'glFlushMappedBufferRange'.
 glFlushMappedBufferRangeAPPLE
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -13155,6 +13309,7 @@ ptr_glFlushMappedBufferRangeAPPLE = unsafePerformIO $ getCommand "glFlushMappedB
 
 -- glFlushMappedBufferRangeEXT -------------------------------------------------
 
+-- | This command is an alias for 'glFlushMappedBufferRange'.
 glFlushMappedBufferRangeEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -13169,7 +13324,7 @@ ptr_glFlushMappedBufferRangeEXT = unsafePerformIO $ getCommand "glFlushMappedBuf
 
 -- glFlushMappedNamedBufferRange -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFlushMappedBufferRange.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFlushMappedBufferRange.xhtml OpenGL 4.x>.
 glFlushMappedNamedBufferRange
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -13270,7 +13425,7 @@ ptr_glFogCoordFormatNV = unsafePerformIO $ getCommand "glFogCoordFormatNV"
 
 -- glFogCoordPointer -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoordPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoordPointer.xml OpenGL 2.x>.
 glFogCoordPointer
   :: MonadIO m
   => GLenum -- ^ @type@ of type [FogPointerTypeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#FogPointerTypeEXT).
@@ -13285,6 +13440,7 @@ ptr_glFogCoordPointer = unsafePerformIO $ getCommand "glFogCoordPointer"
 
 -- glFogCoordPointerEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glFogCoordPointer'.
 glFogCoordPointerEXT
   :: MonadIO m
   => GLenum -- ^ @type@ of type [FogPointerTypeEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#FogPointerTypeEXT).
@@ -13314,7 +13470,7 @@ ptr_glFogCoordPointerListIBM = unsafePerformIO $ getCommand "glFogCoordPointerLi
 
 -- glFogCoordd -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glFogCoorddv'.
 glFogCoordd
   :: MonadIO m
   => GLdouble -- ^ @coord@ of type @CoordD@.
@@ -13327,6 +13483,7 @@ ptr_glFogCoordd = unsafePerformIO $ getCommand "glFogCoordd"
 
 -- glFogCoorddEXT --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glFogCoorddvEXT'. This command is an alias for 'glFogCoordd'.
 glFogCoorddEXT
   :: MonadIO m
   => GLdouble -- ^ @coord@ of type @CoordD@.
@@ -13339,7 +13496,7 @@ ptr_glFogCoorddEXT = unsafePerformIO $ getCommand "glFogCoorddEXT"
 
 -- glFogCoorddv ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>.
 glFogCoorddv
   :: MonadIO m
   => Ptr GLdouble -- ^ @coord@ pointing to @1@ element of type @CoordD@.
@@ -13352,6 +13509,7 @@ ptr_glFogCoorddv = unsafePerformIO $ getCommand "glFogCoorddv"
 
 -- glFogCoorddvEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glFogCoorddv'.
 glFogCoorddvEXT
   :: MonadIO m
   => Ptr GLdouble -- ^ @coord@ pointing to @1@ element of type @CoordD@.
@@ -13364,7 +13522,7 @@ ptr_glFogCoorddvEXT = unsafePerformIO $ getCommand "glFogCoorddvEXT"
 
 -- glFogCoordf -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glFogCoordfv'.
 glFogCoordf
   :: MonadIO m
   => GLfloat -- ^ @coord@ of type @CoordF@.
@@ -13377,6 +13535,7 @@ ptr_glFogCoordf = unsafePerformIO $ getCommand "glFogCoordf"
 
 -- glFogCoordfEXT --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glFogCoordfvEXT'. This command is an alias for 'glFogCoordf'.
 glFogCoordfEXT
   :: MonadIO m
   => GLfloat -- ^ @coord@ of type @CoordF@.
@@ -13389,7 +13548,7 @@ ptr_glFogCoordfEXT = unsafePerformIO $ getCommand "glFogCoordfEXT"
 
 -- glFogCoordfv ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>.
 glFogCoordfv
   :: MonadIO m
   => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
@@ -13402,6 +13561,7 @@ ptr_glFogCoordfv = unsafePerformIO $ getCommand "glFogCoordfv"
 
 -- glFogCoordfvEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glFogCoordfv'.
 glFogCoordfvEXT
   :: MonadIO m
   => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
@@ -13414,6 +13574,7 @@ ptr_glFogCoordfvEXT = unsafePerformIO $ getCommand "glFogCoordfvEXT"
 
 -- glFogCoordhNV ---------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glFogCoordhvNV'.
 glFogCoordhNV
   :: MonadIO m
   => GLhalfNV -- ^ @fog@ of type @Half16NV@.
@@ -13451,7 +13612,7 @@ ptr_glFogFuncSGIS = unsafePerformIO $ getCommand "glFogFuncSGIS"
 
 -- glFogf ----------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>.
 glFogf
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
@@ -13465,7 +13626,7 @@ ptr_glFogf = unsafePerformIO $ getCommand "glFogf"
 
 -- glFogfv ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>.
 glFogfv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
@@ -13479,7 +13640,7 @@ ptr_glFogfv = unsafePerformIO $ getCommand "glFogfv"
 
 -- glFogi ----------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>.
 glFogi
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
@@ -13493,7 +13654,7 @@ ptr_glFogi = unsafePerformIO $ getCommand "glFogi"
 
 -- glFogiv ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml OpenGL 2.x>.
 glFogiv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [FogParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#FogParameter).
@@ -13798,7 +13959,7 @@ ptr_glFramebufferDrawBuffersEXT = unsafePerformIO $ getCommand "glFramebufferDra
 
 -- glFramebufferParameteri -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferParameteri.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferParameteri.xhtml OpenGL 4.x>.
 glFramebufferParameteri
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -13826,7 +13987,7 @@ ptr_glFramebufferReadBufferEXT = unsafePerformIO $ getCommand "glFramebufferRead
 
 -- glFramebufferRenderbuffer ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferRenderbuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferRenderbuffer.xhtml OpenGL 4.x>.
 glFramebufferRenderbuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -13842,6 +14003,7 @@ ptr_glFramebufferRenderbuffer = unsafePerformIO $ getCommand "glFramebufferRende
 
 -- glFramebufferRenderbufferEXT ------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferRenderbuffer'.
 glFramebufferRenderbufferEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -13902,7 +14064,7 @@ ptr_glFramebufferSampleLocationsfvNV = unsafePerformIO $ getCommand "glFramebuff
 
 -- glFramebufferTexture --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -13918,7 +14080,7 @@ ptr_glFramebufferTexture = unsafePerformIO $ getCommand "glFramebufferTexture"
 
 -- glFramebufferTexture1D ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -13935,6 +14097,7 @@ ptr_glFramebufferTexture1D = unsafePerformIO $ getCommand "glFramebufferTexture1
 
 -- glFramebufferTexture1DEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTexture1D'.
 glFramebufferTexture1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -13951,7 +14114,7 @@ ptr_glFramebufferTexture1DEXT = unsafePerformIO $ getCommand "glFramebufferTextu
 
 -- glFramebufferTexture2D ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -13968,6 +14131,7 @@ ptr_glFramebufferTexture2D = unsafePerformIO $ getCommand "glFramebufferTexture2
 
 -- glFramebufferTexture2DEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTexture2D'.
 glFramebufferTexture2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14034,7 +14198,7 @@ ptr_glFramebufferTexture2DOES = unsafePerformIO $ getCommand "glFramebufferTextu
 
 -- glFramebufferTexture3D ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture3D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14052,6 +14216,7 @@ ptr_glFramebufferTexture3D = unsafePerformIO $ getCommand "glFramebufferTexture3
 
 -- glFramebufferTexture3DEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTexture3D'.
 glFramebufferTexture3DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14069,6 +14234,7 @@ ptr_glFramebufferTexture3DEXT = unsafePerformIO $ getCommand "glFramebufferTextu
 
 -- glFramebufferTexture3DOES ---------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTexture3D'.
 glFramebufferTexture3DOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -14086,6 +14252,7 @@ ptr_glFramebufferTexture3DOES = unsafePerformIO $ getCommand "glFramebufferTextu
 
 -- glFramebufferTextureARB -----------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTexture'.
 glFramebufferTextureARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14101,6 +14268,7 @@ ptr_glFramebufferTextureARB = unsafePerformIO $ getCommand "glFramebufferTexture
 
 -- glFramebufferTextureEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTexture'.
 glFramebufferTextureEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14132,6 +14300,7 @@ ptr_glFramebufferTextureFaceARB = unsafePerformIO $ getCommand "glFramebufferTex
 
 -- glFramebufferTextureFaceEXT -------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTextureFaceARB'.
 glFramebufferTextureFaceEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14148,7 +14317,7 @@ ptr_glFramebufferTextureFaceEXT = unsafePerformIO $ getCommand "glFramebufferTex
 
 -- glFramebufferTextureLayer ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTextureLayer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTextureLayer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTextureLayer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTextureLayer.xhtml OpenGL 4.x>.
 glFramebufferTextureLayer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14165,6 +14334,7 @@ ptr_glFramebufferTextureLayer = unsafePerformIO $ getCommand "glFramebufferTextu
 
 -- glFramebufferTextureLayerARB ------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTextureLayer'.
 glFramebufferTextureLayerARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14181,6 +14351,7 @@ ptr_glFramebufferTextureLayerARB = unsafePerformIO $ getCommand "glFramebufferTe
 
 -- glFramebufferTextureLayerEXT ------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTextureLayer'.
 glFramebufferTextureLayerEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14214,6 +14385,7 @@ ptr_glFramebufferTextureMultiviewOVR = unsafePerformIO $ getCommand "glFramebuff
 
 -- glFramebufferTextureOES -----------------------------------------------------
 
+-- | This command is an alias for 'glFramebufferTexture'.
 glFramebufferTextureOES
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -14241,7 +14413,7 @@ ptr_glFreeObjectBufferATI = unsafePerformIO $ getCommand "glFreeObjectBufferATI"
 
 -- glFrontFace -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glFrontFace.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glFrontFace.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFrontFace.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glFrontFace.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glFrontFace.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFrontFace.xhtml OpenGL 4.x>.
 glFrontFace
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [FrontFaceDirection](Graphics-Rendering-OpenGL-Raw-Groups.html#FrontFaceDirection).
@@ -14254,7 +14426,7 @@ ptr_glFrontFace = unsafePerformIO $ getCommand "glFrontFace"
 
 -- glFrustum -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFrustum.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFrustum.xml OpenGL 2.x>.
 glFrustum
   :: MonadIO m
   => GLdouble -- ^ @left@.
@@ -14352,7 +14524,7 @@ ptr_glGenAsyncMarkersSGIX = unsafePerformIO $ getCommand "glGenAsyncMarkersSGIX"
 
 -- glGenBuffers ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenBuffers.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGenBuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenBuffers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenBuffers.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGenBuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenBuffers.xhtml OpenGL 4.x>.
 glGenBuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14366,6 +14538,7 @@ ptr_glGenBuffers = unsafePerformIO $ getCommand "glGenBuffers"
 
 -- glGenBuffersARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glGenBuffers'.
 glGenBuffersARB
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14417,7 +14590,7 @@ ptr_glGenFragmentShadersATI = unsafePerformIO $ getCommand "glGenFragmentShaders
 
 -- glGenFramebuffers -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenFramebuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenFramebuffers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenFramebuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenFramebuffers.xhtml OpenGL 4.x>.
 glGenFramebuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14431,6 +14604,7 @@ ptr_glGenFramebuffers = unsafePerformIO $ getCommand "glGenFramebuffers"
 
 -- glGenFramebuffersEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glGenFramebuffers'.
 glGenFramebuffersEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14457,7 +14631,7 @@ ptr_glGenFramebuffersOES = unsafePerformIO $ getCommand "glGenFramebuffersOES"
 
 -- glGenLists ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenLists.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenLists.xml OpenGL 2.x>.
 glGenLists
   :: MonadIO m
   => GLsizei -- ^ @range@.
@@ -14522,7 +14696,7 @@ ptr_glGenPerfMonitorsAMD = unsafePerformIO $ getCommand "glGenPerfMonitorsAMD"
 
 -- glGenProgramPipelines -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGenProgramPipelines.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGenProgramPipelines.xhtml OpenGL 4.x>.
 glGenProgramPipelines
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14562,6 +14736,7 @@ ptr_glGenProgramsARB = unsafePerformIO $ getCommand "glGenProgramsARB"
 
 -- glGenProgramsNV -------------------------------------------------------------
 
+-- | This command is an alias for 'glGenProgramsARB'.
 glGenProgramsNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14575,7 +14750,7 @@ ptr_glGenProgramsNV = unsafePerformIO $ getCommand "glGenProgramsNV"
 
 -- glGenQueries ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenQueries.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGenQueries.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenQueries.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenQueries.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGenQueries.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenQueries.xhtml OpenGL 4.x>.
 glGenQueries
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14589,6 +14764,7 @@ ptr_glGenQueries = unsafePerformIO $ getCommand "glGenQueries"
 
 -- glGenQueriesARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glGenQueries'.
 glGenQueriesARB
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14615,7 +14791,7 @@ ptr_glGenQueriesEXT = unsafePerformIO $ getCommand "glGenQueriesEXT"
 
 -- glGenRenderbuffers ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenRenderbuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenRenderbuffers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenRenderbuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenRenderbuffers.xhtml OpenGL 4.x>.
 glGenRenderbuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14629,6 +14805,7 @@ ptr_glGenRenderbuffers = unsafePerformIO $ getCommand "glGenRenderbuffers"
 
 -- glGenRenderbuffersEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glGenRenderbuffers'.
 glGenRenderbuffersEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14655,7 +14832,7 @@ ptr_glGenRenderbuffersOES = unsafePerformIO $ getCommand "glGenRenderbuffersOES"
 
 -- glGenSamplers ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenSamplers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenSamplers.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenSamplers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenSamplers.xhtml OpenGL 4.x>.
 glGenSamplers
   :: MonadIO m
   => GLsizei -- ^ @count@.
@@ -14684,7 +14861,7 @@ ptr_glGenSymbolsEXT = unsafePerformIO $ getCommand "glGenSymbolsEXT"
 
 -- glGenTextures ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenTextures.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGenTextures.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenTextures.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGenTextures.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGenTextures.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenTextures.xhtml OpenGL 4.x>.
 glGenTextures
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14711,7 +14888,7 @@ ptr_glGenTexturesEXT = unsafePerformIO $ getCommand "glGenTexturesEXT"
 
 -- glGenTransformFeedbacks -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGenTransformFeedbacks.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGenTransformFeedbacks.xhtml OpenGL 4.x>.
 glGenTransformFeedbacks
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14725,6 +14902,7 @@ ptr_glGenTransformFeedbacks = unsafePerformIO $ getCommand "glGenTransformFeedba
 
 -- glGenTransformFeedbacksNV ---------------------------------------------------
 
+-- | This command is an alias for 'glGenTransformFeedbacks'.
 glGenTransformFeedbacksNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14738,7 +14916,7 @@ ptr_glGenTransformFeedbacksNV = unsafePerformIO $ getCommand "glGenTransformFeed
 
 -- glGenVertexArrays -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenVertexArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenVertexArrays.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenVertexArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenVertexArrays.xhtml OpenGL 4.x>.
 glGenVertexArrays
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14752,6 +14930,7 @@ ptr_glGenVertexArrays = unsafePerformIO $ getCommand "glGenVertexArrays"
 
 -- glGenVertexArraysAPPLE ------------------------------------------------------
 
+-- | This command is an alias for 'glGenVertexArrays'.
 glGenVertexArraysAPPLE
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14765,6 +14944,7 @@ ptr_glGenVertexArraysAPPLE = unsafePerformIO $ getCommand "glGenVertexArraysAPPL
 
 -- glGenVertexArraysOES --------------------------------------------------------
 
+-- | This command is an alias for 'glGenVertexArrays'.
 glGenVertexArraysOES
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -14790,7 +14970,7 @@ ptr_glGenVertexShadersEXT = unsafePerformIO $ getCommand "glGenVertexShadersEXT"
 
 -- glGenerateMipmap ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenerateMipmap.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenerateMipmap.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml OpenGL 4.x>.
 glGenerateMipmap
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -14803,6 +14983,7 @@ ptr_glGenerateMipmap = unsafePerformIO $ getCommand "glGenerateMipmap"
 
 -- glGenerateMipmapEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glGenerateMipmap'.
 glGenerateMipmapEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -14840,7 +15021,7 @@ ptr_glGenerateMultiTexMipmapEXT = unsafePerformIO $ getCommand "glGenerateMultiT
 
 -- glGenerateTextureMipmap -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml OpenGL 4.x>.
 glGenerateTextureMipmap
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -14866,7 +15047,7 @@ ptr_glGenerateTextureMipmapEXT = unsafePerformIO $ getCommand "glGenerateTexture
 
 -- glGetActiveAtomicCounterBufferiv --------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveAtomicCounterBufferiv.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveAtomicCounterBufferiv.xhtml OpenGL 4.x>.
 glGetActiveAtomicCounterBufferiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -14882,7 +15063,7 @@ ptr_glGetActiveAtomicCounterBufferiv = unsafePerformIO $ getCommand "glGetActive
 
 -- glGetActiveAttrib -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetActiveAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetActiveAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveAttrib.xhtml OpenGL 4.x>.
 glGetActiveAttrib
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -14901,6 +15082,7 @@ ptr_glGetActiveAttrib = unsafePerformIO $ getCommand "glGetActiveAttrib"
 
 -- glGetActiveAttribARB --------------------------------------------------------
 
+-- | This command is an alias for 'glGetActiveAttrib'.
 glGetActiveAttribARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -14919,7 +15101,7 @@ ptr_glGetActiveAttribARB = unsafePerformIO $ getCommand "glGetActiveAttribARB"
 
 -- glGetActiveSubroutineName ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveSubroutineName.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveSubroutineName.xhtml OpenGL 4.x>.
 glGetActiveSubroutineName
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -14937,7 +15119,7 @@ ptr_glGetActiveSubroutineName = unsafePerformIO $ getCommand "glGetActiveSubrout
 
 -- glGetActiveSubroutineUniformName --------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveSubroutineUniformName.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveSubroutineUniformName.xhtml OpenGL 4.x>.
 glGetActiveSubroutineUniformName
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -14955,7 +15137,7 @@ ptr_glGetActiveSubroutineUniformName = unsafePerformIO $ getCommand "glGetActive
 
 -- glGetActiveSubroutineUniformiv ----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveSubroutineUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetActiveSubroutineUniform.xhtml OpenGL 4.x>.
 glGetActiveSubroutineUniformiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -14972,7 +15154,7 @@ ptr_glGetActiveSubroutineUniformiv = unsafePerformIO $ getCommand "glGetActiveSu
 
 -- glGetActiveUniform ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetActiveUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetActiveUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniform.xhtml OpenGL 4.x>.
 glGetActiveUniform
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -14991,6 +15173,7 @@ ptr_glGetActiveUniform = unsafePerformIO $ getCommand "glGetActiveUniform"
 
 -- glGetActiveUniformARB -------------------------------------------------------
 
+-- | This command is an alias for 'glGetActiveUniform'.
 glGetActiveUniformARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -15009,7 +15192,7 @@ ptr_glGetActiveUniformARB = unsafePerformIO $ getCommand "glGetActiveUniformARB"
 
 -- glGetActiveUniformBlockName -------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformBlockName.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlockName.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformBlockName.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlockName.xhtml OpenGL 4.x>.
 glGetActiveUniformBlockName
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -15026,7 +15209,7 @@ ptr_glGetActiveUniformBlockName = unsafePerformIO $ getCommand "glGetActiveUnifo
 
 -- glGetActiveUniformBlockiv ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformBlock.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlock.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformBlock.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformBlock.xhtml OpenGL 4.x>.
 glGetActiveUniformBlockiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -15042,7 +15225,7 @@ ptr_glGetActiveUniformBlockiv = unsafePerformIO $ getCommand "glGetActiveUniform
 
 -- glGetActiveUniformName ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformName.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformName.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformName.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformName.xhtml OpenGL 4.x>.
 glGetActiveUniformName
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -15059,7 +15242,7 @@ ptr_glGetActiveUniformName = unsafePerformIO $ getCommand "glGetActiveUniformNam
 
 -- glGetActiveUniformsiv -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformsiv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformsiv.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetActiveUniformsiv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetActiveUniformsiv.xhtml OpenGL 4.x>.
 glGetActiveUniformsiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -15137,7 +15320,7 @@ ptr_glGetAttachedObjectsARB = unsafePerformIO $ getCommand "glGetAttachedObjects
 
 -- glGetAttachedShaders --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetAttachedShaders.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetAttachedShaders.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetAttachedShaders.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetAttachedShaders.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetAttachedShaders.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetAttachedShaders.xhtml OpenGL 4.x>.
 glGetAttachedShaders
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -15153,7 +15336,7 @@ ptr_glGetAttachedShaders = unsafePerformIO $ getCommand "glGetAttachedShaders"
 
 -- glGetAttribLocation ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetAttribLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetAttribLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetAttribLocation.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetAttribLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetAttribLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetAttribLocation.xhtml OpenGL 4.x>.
 glGetAttribLocation
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -15167,6 +15350,7 @@ ptr_glGetAttribLocation = unsafePerformIO $ getCommand "glGetAttribLocation"
 
 -- glGetAttribLocationARB ------------------------------------------------------
 
+-- | This command is an alias for 'glGetAttribLocation'.
 glGetAttribLocationARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -15180,6 +15364,7 @@ ptr_glGetAttribLocationARB = unsafePerformIO $ getCommand "glGetAttribLocationAR
 
 -- glGetBooleanIndexedvEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glGetBooleani_v'.
 glGetBooleanIndexedvEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -15194,7 +15379,7 @@ ptr_glGetBooleanIndexedvEXT = unsafePerformIO $ getCommand "glGetBooleanIndexedv
 
 -- glGetBooleani_v -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetBooleani_v
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -15209,7 +15394,7 @@ ptr_glGetBooleani_v = unsafePerformIO $ getCommand "glGetBooleani_v"
 
 -- glGetBooleanv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetBooleanv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
@@ -15223,7 +15408,7 @@ ptr_glGetBooleanv = unsafePerformIO $ getCommand "glGetBooleanv"
 
 -- glGetBufferParameteri64v ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>.
 glGetBufferParameteri64v
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -15238,7 +15423,7 @@ ptr_glGetBufferParameteri64v = unsafePerformIO $ getCommand "glGetBufferParamete
 
 -- glGetBufferParameteriv ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferParameteriv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferParameteriv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>.
 glGetBufferParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -15253,6 +15438,7 @@ ptr_glGetBufferParameteriv = unsafePerformIO $ getCommand "glGetBufferParameteri
 
 -- glGetBufferParameterivARB ---------------------------------------------------
 
+-- | This command is an alias for 'glGetBufferParameteriv'.
 glGetBufferParameterivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -15281,7 +15467,7 @@ ptr_glGetBufferParameterui64vNV = unsafePerformIO $ getCommand "glGetBufferParam
 
 -- glGetBufferPointerv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferPointerv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferPointerv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferPointerv.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferPointerv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferPointerv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferPointerv.xhtml OpenGL 4.x>.
 glGetBufferPointerv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -15296,6 +15482,7 @@ ptr_glGetBufferPointerv = unsafePerformIO $ getCommand "glGetBufferPointerv"
 
 -- glGetBufferPointervARB ------------------------------------------------------
 
+-- | This command is an alias for 'glGetBufferPointerv'.
 glGetBufferPointervARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -15310,6 +15497,7 @@ ptr_glGetBufferPointervARB = unsafePerformIO $ getCommand "glGetBufferPointervAR
 
 -- glGetBufferPointervOES ------------------------------------------------------
 
+-- | This command is an alias for 'glGetBufferPointerv'.
 glGetBufferPointervOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -15324,7 +15512,7 @@ ptr_glGetBufferPointervOES = unsafePerformIO $ getCommand "glGetBufferPointervOE
 
 -- glGetBufferSubData ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferSubData.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferSubData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferSubData.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetBufferSubData.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetBufferSubData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetBufferSubData.xhtml OpenGL 4.x>.
 glGetBufferSubData
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -15340,6 +15528,7 @@ ptr_glGetBufferSubData = unsafePerformIO $ getCommand "glGetBufferSubData"
 
 -- glGetBufferSubDataARB -------------------------------------------------------
 
+-- | This command is an alias for 'glGetBufferSubData'.
 glGetBufferSubDataARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -15355,7 +15544,7 @@ ptr_glGetBufferSubDataARB = unsafePerformIO $ getCommand "glGetBufferSubDataARB"
 
 -- glGetClipPlane --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetClipPlane.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetClipPlane.xml OpenGL 2.x>.
 glGetClipPlane
   :: MonadIO m
   => GLenum -- ^ @plane@ of type [ClipPlaneName](Graphics-Rendering-OpenGL-Raw-Groups.html#ClipPlaneName).
@@ -15421,7 +15610,7 @@ ptr_glGetClipPlanexOES = unsafePerformIO $ getCommand "glGetClipPlanexOES"
 
 -- glGetColorTable -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetColorTable.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetColorTable.xml OpenGL 2.x>.
 glGetColorTable
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -15437,6 +15626,7 @@ ptr_glGetColorTable = unsafePerformIO $ getCommand "glGetColorTable"
 
 -- glGetColorTableEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glGetColorTable'.
 glGetColorTableEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -15452,7 +15642,7 @@ ptr_glGetColorTableEXT = unsafePerformIO $ getCommand "glGetColorTableEXT"
 
 -- glGetColorTableParameterfv --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetColorTableParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetColorTableParameter.xml OpenGL 2.x>.
 glGetColorTableParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -15467,6 +15657,7 @@ ptr_glGetColorTableParameterfv = unsafePerformIO $ getCommand "glGetColorTablePa
 
 -- glGetColorTableParameterfvEXT -----------------------------------------------
 
+-- | This command is an alias for 'glGetColorTableParameterfv'.
 glGetColorTableParameterfvEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -15495,7 +15686,7 @@ ptr_glGetColorTableParameterfvSGI = unsafePerformIO $ getCommand "glGetColorTabl
 
 -- glGetColorTableParameteriv --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetColorTableParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetColorTableParameter.xml OpenGL 2.x>.
 glGetColorTableParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -15510,6 +15701,7 @@ ptr_glGetColorTableParameteriv = unsafePerformIO $ getCommand "glGetColorTablePa
 
 -- glGetColorTableParameterivEXT -----------------------------------------------
 
+-- | This command is an alias for 'glGetColorTableParameteriv'.
 glGetColorTableParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ColorTableTarget@.
@@ -15657,7 +15849,7 @@ ptr_glGetCompressedMultiTexImageEXT = unsafePerformIO $ getCommand "glGetCompres
 
 -- glGetCompressedTexImage -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetCompressedTexImage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetCompressedTexImage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetCompressedTexImage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetCompressedTexImage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml OpenGL 4.x>.
 glGetCompressedTexImage
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -15672,6 +15864,7 @@ ptr_glGetCompressedTexImage = unsafePerformIO $ getCommand "glGetCompressedTexIm
 
 -- glGetCompressedTexImageARB --------------------------------------------------
 
+-- | This command is an alias for 'glGetCompressedTexImage'.
 glGetCompressedTexImageARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -15686,7 +15879,7 @@ ptr_glGetCompressedTexImageARB = unsafePerformIO $ getCommand "glGetCompressedTe
 
 -- glGetCompressedTextureImage -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml OpenGL 4.x>.
 glGetCompressedTextureImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -15717,7 +15910,7 @@ ptr_glGetCompressedTextureImageEXT = unsafePerformIO $ getCommand "glGetCompress
 
 -- glGetCompressedTextureSubImage ----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTextureSubImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTextureSubImage.xhtml OpenGL 4.x>.
 glGetCompressedTextureSubImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -15739,7 +15932,7 @@ ptr_glGetCompressedTextureSubImage = unsafePerformIO $ getCommand "glGetCompress
 
 -- glGetConvolutionFilter ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetConvolutionFilter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetConvolutionFilter.xml OpenGL 2.x>.
 glGetConvolutionFilter
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -15770,7 +15963,7 @@ ptr_glGetConvolutionFilterEXT = unsafePerformIO $ getCommand "glGetConvolutionFi
 
 -- glGetConvolutionParameterfv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetConvolutionParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetConvolutionParameter.xml OpenGL 2.x>.
 glGetConvolutionParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -15799,7 +15992,7 @@ ptr_glGetConvolutionParameterfvEXT = unsafePerformIO $ getCommand "glGetConvolut
 
 -- glGetConvolutionParameteriv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetConvolutionParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetConvolutionParameter.xml OpenGL 2.x>.
 glGetConvolutionParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ConvolutionTarget@.
@@ -15855,7 +16048,7 @@ ptr_glGetCoverageModulationTableNV = unsafePerformIO $ getCommand "glGetCoverage
 
 -- glGetDebugMessageLog --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetDebugMessageLog.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetDebugMessageLog.xhtml OpenGL 4.x>.
 glGetDebugMessageLog
   :: MonadIO m
   => GLuint -- ^ @count@.
@@ -15893,6 +16086,7 @@ ptr_glGetDebugMessageLogAMD = unsafePerformIO $ getCommand "glGetDebugMessageLog
 
 -- glGetDebugMessageLogARB -----------------------------------------------------
 
+-- | This command is an alias for 'glGetDebugMessageLog'.
 glGetDebugMessageLogARB
   :: MonadIO m
   => GLuint -- ^ @count@.
@@ -15912,6 +16106,7 @@ ptr_glGetDebugMessageLogARB = unsafePerformIO $ getCommand "glGetDebugMessageLog
 
 -- glGetDebugMessageLogKHR -----------------------------------------------------
 
+-- | This command is an alias for 'glGetDebugMessageLog'.
 glGetDebugMessageLogKHR
   :: MonadIO m
   => GLuint -- ^ @count@.
@@ -15944,6 +16139,7 @@ ptr_glGetDetailTexFuncSGIS = unsafePerformIO $ getCommand "glGetDetailTexFuncSGI
 
 -- glGetDoubleIndexedvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glGetDoublei_v'.
 glGetDoubleIndexedvEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TypeEnum@.
@@ -15958,7 +16154,7 @@ ptr_glGetDoubleIndexedvEXT = unsafePerformIO $ getCommand "glGetDoubleIndexedvEX
 
 -- glGetDoublei_v --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetDoublei_v
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -15973,6 +16169,7 @@ ptr_glGetDoublei_v = unsafePerformIO $ getCommand "glGetDoublei_v"
 
 -- glGetDoublei_vEXT -----------------------------------------------------------
 
+-- | This command is an alias for 'glGetDoublei_v'.
 glGetDoublei_vEXT
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @TypeEnum@.
@@ -15987,7 +16184,7 @@ ptr_glGetDoublei_vEXT = unsafePerformIO $ getCommand "glGetDoublei_vEXT"
 
 -- glGetDoublev ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetDoublev
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
@@ -16030,7 +16227,7 @@ ptr_glGetDriverControlsQCOM = unsafePerformIO $ getCommand "glGetDriverControlsQ
 
 -- glGetError ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetError.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetError.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetError.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetError.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetError.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetError.xhtml OpenGL 4.x>.
 glGetError
   :: MonadIO m
   => m GLenum -- ^ of type [ErrorCode](Graphics-Rendering-OpenGL-Raw-Groups.html#ErrorCode).
@@ -16122,6 +16319,7 @@ ptr_glGetFixedvOES = unsafePerformIO $ getCommand "glGetFixedvOES"
 
 -- glGetFloatIndexedvEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glGetFloati_v'.
 glGetFloatIndexedvEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TypeEnum@.
@@ -16136,7 +16334,7 @@ ptr_glGetFloatIndexedvEXT = unsafePerformIO $ getCommand "glGetFloatIndexedvEXT"
 
 -- glGetFloati_v ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetFloati_v
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TypeEnum@.
@@ -16151,6 +16349,7 @@ ptr_glGetFloati_v = unsafePerformIO $ getCommand "glGetFloati_v"
 
 -- glGetFloati_vEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glGetFloati_v'.
 glGetFloati_vEXT
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @TypeEnum@.
@@ -16165,6 +16364,7 @@ ptr_glGetFloati_vEXT = unsafePerformIO $ getCommand "glGetFloati_vEXT"
 
 -- glGetFloati_vNV -------------------------------------------------------------
 
+-- | This command is an alias for 'glGetFloati_v'.
 glGetFloati_vNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TypeEnum@.
@@ -16179,7 +16379,7 @@ ptr_glGetFloati_vNV = unsafePerformIO $ getCommand "glGetFloati_vNV"
 
 -- glGetFloatv -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetFloatv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
@@ -16205,7 +16405,7 @@ ptr_glGetFogFuncSGIS = unsafePerformIO $ getCommand "glGetFogFuncSGIS"
 
 -- glGetFragDataIndex ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataIndex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataIndex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataIndex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataIndex.xhtml OpenGL 4.x>.
 glGetFragDataIndex
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -16219,6 +16419,7 @@ ptr_glGetFragDataIndex = unsafePerformIO $ getCommand "glGetFragDataIndex"
 
 -- glGetFragDataIndexEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glGetFragDataIndex'.
 glGetFragDataIndexEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -16232,7 +16433,7 @@ ptr_glGetFragDataIndexEXT = unsafePerformIO $ getCommand "glGetFragDataIndexEXT"
 
 -- glGetFragDataLocation -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataLocation.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataLocation.xhtml OpenGL 4.x>.
 glGetFragDataLocation
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -16246,6 +16447,7 @@ ptr_glGetFragDataLocation = unsafePerformIO $ getCommand "glGetFragDataLocation"
 
 -- glGetFragDataLocationEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glGetFragDataLocation'.
 glGetFragDataLocationEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -16315,7 +16517,7 @@ ptr_glGetFragmentMaterialivSGIX = unsafePerformIO $ getCommand "glGetFragmentMat
 
 -- glGetFramebufferAttachmentParameteriv ---------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFramebufferAttachmentParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferAttachmentParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFramebufferAttachmentParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferAttachmentParameter.xhtml OpenGL 4.x>.
 glGetFramebufferAttachmentParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -16331,6 +16533,7 @@ ptr_glGetFramebufferAttachmentParameteriv = unsafePerformIO $ getCommand "glGetF
 
 -- glGetFramebufferAttachmentParameterivEXT ------------------------------------
 
+-- | This command is an alias for 'glGetFramebufferAttachmentParameteriv'.
 glGetFramebufferAttachmentParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @FramebufferTarget@.
@@ -16361,7 +16564,7 @@ ptr_glGetFramebufferAttachmentParameterivOES = unsafePerformIO $ getCommand "glG
 
 -- glGetFramebufferParameteriv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferParameter.xhtml OpenGL 4.x>.
 glGetFramebufferParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -16390,7 +16593,7 @@ ptr_glGetFramebufferParameterivEXT = unsafePerformIO $ getCommand "glGetFramebuf
 
 -- glGetGraphicsResetStatus ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetGraphicsResetStatus.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetGraphicsResetStatus.xhtml OpenGL 4.x>.
 glGetGraphicsResetStatus
   :: MonadIO m
   => m GLenum
@@ -16424,6 +16627,7 @@ ptr_glGetGraphicsResetStatusEXT = unsafePerformIO $ getCommand "glGetGraphicsRes
 
 -- glGetGraphicsResetStatusKHR -------------------------------------------------
 
+-- | This command is an alias for 'glGetGraphicsResetStatus'.
 glGetGraphicsResetStatusKHR
   :: MonadIO m
   => m GLenum
@@ -16447,7 +16651,7 @@ ptr_glGetHandleARB = unsafePerformIO $ getCommand "glGetHandleARB"
 
 -- glGetHistogram --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetHistogram.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetHistogram.xml OpenGL 2.x>.
 glGetHistogram
   :: MonadIO m
   => GLenum -- ^ @target@ of type @HistogramTarget@.
@@ -16480,7 +16684,7 @@ ptr_glGetHistogramEXT = unsafePerformIO $ getCommand "glGetHistogramEXT"
 
 -- glGetHistogramParameterfv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetHistogramParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetHistogramParameter.xml OpenGL 2.x>.
 glGetHistogramParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @HistogramTarget@.
@@ -16509,7 +16713,7 @@ ptr_glGetHistogramParameterfvEXT = unsafePerformIO $ getCommand "glGetHistogramP
 
 -- glGetHistogramParameteriv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetHistogramParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetHistogramParameter.xml OpenGL 2.x>.
 glGetHistogramParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @HistogramTarget@.
@@ -16638,7 +16842,7 @@ ptr_glGetInstrumentsSGIX = unsafePerformIO $ getCommand "glGetInstrumentsSGIX"
 
 -- glGetInteger64i_v -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetInteger64i_v
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -16653,7 +16857,7 @@ ptr_glGetInteger64i_v = unsafePerformIO $ getCommand "glGetInteger64i_v"
 
 -- glGetInteger64v -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetInteger64v
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -16667,6 +16871,7 @@ ptr_glGetInteger64v = unsafePerformIO $ getCommand "glGetInteger64v"
 
 -- glGetInteger64vAPPLE --------------------------------------------------------
 
+-- | This command is an alias for 'glGetInteger64v'.
 glGetInteger64vAPPLE
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -16680,6 +16885,7 @@ ptr_glGetInteger64vAPPLE = unsafePerformIO $ getCommand "glGetInteger64vAPPLE"
 
 -- glGetIntegerIndexedvEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glGetIntegeri_v'.
 glGetIntegerIndexedvEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -16694,7 +16900,7 @@ ptr_glGetIntegerIndexedvEXT = unsafePerformIO $ getCommand "glGetIntegerIndexedv
 
 -- glGetIntegeri_v -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetIntegeri_v
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -16750,7 +16956,7 @@ ptr_glGetIntegerui64vNV = unsafePerformIO $ getCommand "glGetIntegerui64vNV"
 
 -- glGetIntegerv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetIntegerv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [GetPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPName).
@@ -16781,7 +16987,7 @@ ptr_glGetInternalformatSampleivNV = unsafePerformIO $ getCommand "glGetInternalf
 
 -- glGetInternalformati64v -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetInternalformat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetInternalformat.xhtml OpenGL 4.x>.
 glGetInternalformati64v
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -16798,7 +17004,7 @@ ptr_glGetInternalformati64v = unsafePerformIO $ getCommand "glGetInternalformati
 
 -- glGetInternalformativ -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetInternalformat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetInternalformat.xhtml OpenGL 4.x>.
 glGetInternalformativ
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -16857,7 +17063,7 @@ ptr_glGetInvariantIntegervEXT = unsafePerformIO $ getCommand "glGetInvariantInte
 
 -- glGetLightfv ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetLight.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetLight.xml OpenGL 2.x>.
 glGetLightfv
   :: MonadIO m
   => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
@@ -16872,7 +17078,7 @@ ptr_glGetLightfv = unsafePerformIO $ getCommand "glGetLightfv"
 
 -- glGetLightiv ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetLight.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetLight.xml OpenGL 2.x>.
 glGetLightiv
   :: MonadIO m
   => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
@@ -17075,7 +17281,7 @@ ptr_glGetMapParameterivNV = unsafePerformIO $ getCommand "glGetMapParameterivNV"
 
 -- glGetMapdv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>.
 glGetMapdv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
@@ -17090,7 +17296,7 @@ ptr_glGetMapdv = unsafePerformIO $ getCommand "glGetMapdv"
 
 -- glGetMapfv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>.
 glGetMapfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
@@ -17105,7 +17311,7 @@ ptr_glGetMapfv = unsafePerformIO $ getCommand "glGetMapfv"
 
 -- glGetMapiv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml OpenGL 2.x>.
 glGetMapiv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
@@ -17134,7 +17340,7 @@ ptr_glGetMapxvOES = unsafePerformIO $ getCommand "glGetMapxvOES"
 
 -- glGetMaterialfv -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMaterial.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMaterial.xml OpenGL 2.x>.
 glGetMaterialfv
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -17149,7 +17355,7 @@ ptr_glGetMaterialfv = unsafePerformIO $ getCommand "glGetMaterialfv"
 
 -- glGetMaterialiv -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMaterial.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMaterial.xml OpenGL 2.x>.
 glGetMaterialiv
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -17206,7 +17412,7 @@ ptr_glGetMaterialxvOES = unsafePerformIO $ getCommand "glGetMaterialxvOES"
 
 -- glGetMinmax -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmax.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmax.xml OpenGL 2.x>.
 glGetMinmax
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
@@ -17239,7 +17445,7 @@ ptr_glGetMinmaxEXT = unsafePerformIO $ getCommand "glGetMinmaxEXT"
 
 -- glGetMinmaxParameterfv ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmaxParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmaxParameter.xml OpenGL 2.x>.
 glGetMinmaxParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
@@ -17268,7 +17474,7 @@ ptr_glGetMinmaxParameterfvEXT = unsafePerformIO $ getCommand "glGetMinmaxParamet
 
 -- glGetMinmaxParameteriv ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmaxParameter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmaxParameter.xml OpenGL 2.x>.
 glGetMinmaxParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
@@ -17481,7 +17687,7 @@ ptr_glGetMultiTexParameterivEXT = unsafePerformIO $ getCommand "glGetMultiTexPar
 
 -- glGetMultisamplefv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetMultisample.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetMultisample.xhtml OpenGL 4.x>.
 glGetMultisamplefv
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -17496,6 +17702,7 @@ ptr_glGetMultisamplefv = unsafePerformIO $ getCommand "glGetMultisamplefv"
 
 -- glGetMultisamplefvNV --------------------------------------------------------
 
+-- | This command is an alias for 'glGetMultisamplefv'.
 glGetMultisamplefvNV
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @GetMultisamplePNameNV@.
@@ -17510,7 +17717,7 @@ ptr_glGetMultisamplefvNV = unsafePerformIO $ getCommand "glGetMultisamplefvNV"
 
 -- glGetNamedBufferParameteri64v -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>.
 glGetNamedBufferParameteri64v
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -17525,7 +17732,7 @@ ptr_glGetNamedBufferParameteri64v = unsafePerformIO $ getCommand "glGetNamedBuff
 
 -- glGetNamedBufferParameteriv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferParameter.xhtml OpenGL 4.x>.
 glGetNamedBufferParameteriv
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -17568,7 +17775,7 @@ ptr_glGetNamedBufferParameterui64vNV = unsafePerformIO $ getCommand "glGetNamedB
 
 -- glGetNamedBufferPointerv ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferPointerv.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferPointerv.xhtml OpenGL 4.x>.
 glGetNamedBufferPointerv
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -17597,7 +17804,7 @@ ptr_glGetNamedBufferPointervEXT = unsafePerformIO $ getCommand "glGetNamedBuffer
 
 -- glGetNamedBufferSubData -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferSubData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetBufferSubData.xhtml OpenGL 4.x>.
 glGetNamedBufferSubData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -17628,7 +17835,7 @@ ptr_glGetNamedBufferSubDataEXT = unsafePerformIO $ getCommand "glGetNamedBufferS
 
 -- glGetNamedFramebufferAttachmentParameteriv ----------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferAttachmentParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferAttachmentParameter.xhtml OpenGL 4.x>.
 glGetNamedFramebufferAttachmentParameteriv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -17659,7 +17866,7 @@ ptr_glGetNamedFramebufferAttachmentParameterivEXT = unsafePerformIO $ getCommand
 
 -- glGetNamedFramebufferParameteriv --------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferParameter.xhtml OpenGL 4.x>.
 glGetNamedFramebufferParameteriv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -17778,7 +17985,7 @@ ptr_glGetNamedProgramivEXT = unsafePerformIO $ getCommand "glGetNamedProgramivEX
 
 -- glGetNamedRenderbufferParameteriv -------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetRenderbufferParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetRenderbufferParameter.xhtml OpenGL 4.x>.
 glGetNamedRenderbufferParameteriv
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
@@ -17879,7 +18086,7 @@ ptr_glGetObjectBufferivATI = unsafePerformIO $ getCommand "glGetObjectBufferivAT
 
 -- glGetObjectLabel ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetObjectLabel.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetObjectLabel.xhtml OpenGL 4.x>.
 glGetObjectLabel
   :: MonadIO m
   => GLenum -- ^ @identifier@.
@@ -17912,6 +18119,7 @@ ptr_glGetObjectLabelEXT = unsafePerformIO $ getCommand "glGetObjectLabelEXT"
 
 -- glGetObjectLabelKHR ---------------------------------------------------------
 
+-- | This command is an alias for 'glGetObjectLabel'.
 glGetObjectLabelKHR
   :: MonadIO m
   => GLenum -- ^ @identifier@.
@@ -17971,7 +18179,7 @@ ptr_glGetObjectParameterivARB = unsafePerformIO $ getCommand "glGetObjectParamet
 
 -- glGetObjectPtrLabel ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetObjectPtrLabel.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetObjectPtrLabel.xhtml OpenGL 4.x>.
 glGetObjectPtrLabel
   :: MonadIO m
   => Ptr a -- ^ @ptr@.
@@ -17987,6 +18195,7 @@ ptr_glGetObjectPtrLabel = unsafePerformIO $ getCommand "glGetObjectPtrLabel"
 
 -- glGetObjectPtrLabelKHR ------------------------------------------------------
 
+-- | This command is an alias for 'glGetObjectPtrLabel'.
 glGetObjectPtrLabelKHR
   :: MonadIO m
   => Ptr a -- ^ @ptr@.
@@ -18382,7 +18591,7 @@ ptr_glGetPerfQueryInfoINTEL = unsafePerformIO $ getCommand "glGetPerfQueryInfoIN
 
 -- glGetPixelMapfv -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>.
 glGetPixelMapfv
   :: MonadIO m
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
@@ -18396,7 +18605,7 @@ ptr_glGetPixelMapfv = unsafePerformIO $ getCommand "glGetPixelMapfv"
 
 -- glGetPixelMapuiv ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>.
 glGetPixelMapuiv
   :: MonadIO m
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
@@ -18410,7 +18619,7 @@ ptr_glGetPixelMapuiv = unsafePerformIO $ getCommand "glGetPixelMapuiv"
 
 -- glGetPixelMapusv ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml OpenGL 2.x>.
 glGetPixelMapusv
   :: MonadIO m
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
@@ -18520,7 +18729,7 @@ ptr_glGetPointeri_vEXT = unsafePerformIO $ getCommand "glGetPointeri_vEXT"
 
 -- glGetPointerv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPointerv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetPointerv.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPointerv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetPointerv.xhtml OpenGL 4.x>.
 glGetPointerv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [GetPointervPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPointervPName).
@@ -18534,6 +18743,7 @@ ptr_glGetPointerv = unsafePerformIO $ getCommand "glGetPointerv"
 
 -- glGetPointervEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glGetPointerv'.
 glGetPointervEXT
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [GetPointervPName](Graphics-Rendering-OpenGL-Raw-Groups.html#GetPointervPName).
@@ -18547,6 +18757,7 @@ ptr_glGetPointervEXT = unsafePerformIO $ getCommand "glGetPointervEXT"
 
 -- glGetPointervKHR ------------------------------------------------------------
 
+-- | This command is an alias for 'glGetPointerv'.
 glGetPointervKHR
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -18560,7 +18771,7 @@ ptr_glGetPointervKHR = unsafePerformIO $ getCommand "glGetPointervKHR"
 
 -- glGetPolygonStipple ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPolygonStipple.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetPolygonStipple.xml OpenGL 2.x>.
 glGetPolygonStipple
   :: MonadIO m
   => Ptr GLubyte -- ^ @mask@ pointing to @COMPSIZE()@ elements of type @GLubyte@.
@@ -18573,7 +18784,7 @@ ptr_glGetPolygonStipple = unsafePerformIO $ getCommand "glGetPolygonStipple"
 
 -- glGetProgramBinary ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramBinary.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramBinary.xhtml OpenGL 4.x>.
 glGetProgramBinary
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18590,6 +18801,7 @@ ptr_glGetProgramBinary = unsafePerformIO $ getCommand "glGetProgramBinary"
 
 -- glGetProgramBinaryOES -------------------------------------------------------
 
+-- | This command is an alias for 'glGetProgramBinary'.
 glGetProgramBinaryOES
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18662,7 +18874,7 @@ ptr_glGetProgramEnvParameterfvARB = unsafePerformIO $ getCommand "glGetProgramEn
 
 -- glGetProgramInfoLog ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgramInfoLog.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetProgramInfoLog.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetProgramInfoLog.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgramInfoLog.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetProgramInfoLog.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetProgramInfoLog.xhtml OpenGL 4.x>.
 glGetProgramInfoLog
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18678,7 +18890,7 @@ ptr_glGetProgramInfoLog = unsafePerformIO $ getCommand "glGetProgramInfoLog"
 
 -- glGetProgramInterfaceiv -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramInterface.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramInterface.xhtml OpenGL 4.x>.
 glGetProgramInterfaceiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18810,7 +19022,7 @@ ptr_glGetProgramParameterfvNV = unsafePerformIO $ getCommand "glGetProgramParame
 
 -- glGetProgramPipelineInfoLog -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramPipelineInfoLog.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramPipelineInfoLog.xhtml OpenGL 4.x>.
 glGetProgramPipelineInfoLog
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
@@ -18841,7 +19053,7 @@ ptr_glGetProgramPipelineInfoLogEXT = unsafePerformIO $ getCommand "glGetProgramP
 
 -- glGetProgramPipelineiv ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramPipeline.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramPipeline.xhtml OpenGL 4.x>.
 glGetProgramPipelineiv
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
@@ -18870,7 +19082,7 @@ ptr_glGetProgramPipelineivEXT = unsafePerformIO $ getCommand "glGetProgramPipeli
 
 -- glGetProgramResourceIndex ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceIndex.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceIndex.xhtml OpenGL 4.x>.
 glGetProgramResourceIndex
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18885,7 +19097,7 @@ ptr_glGetProgramResourceIndex = unsafePerformIO $ getCommand "glGetProgramResour
 
 -- glGetProgramResourceLocation ------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceLocation.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceLocation.xhtml OpenGL 4.x>.
 glGetProgramResourceLocation
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18900,7 +19112,7 @@ ptr_glGetProgramResourceLocation = unsafePerformIO $ getCommand "glGetProgramRes
 
 -- glGetProgramResourceLocationIndex -------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceLocationIndex.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceLocationIndex.xhtml OpenGL 4.x>.
 glGetProgramResourceLocationIndex
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18929,7 +19141,7 @@ ptr_glGetProgramResourceLocationIndexEXT = unsafePerformIO $ getCommand "glGetPr
 
 -- glGetProgramResourceName ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceName.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResourceName.xhtml OpenGL 4.x>.
 glGetProgramResourceName
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18966,7 +19178,7 @@ ptr_glGetProgramResourcefvNV = unsafePerformIO $ getCommand "glGetProgramResourc
 
 -- glGetProgramResourceiv ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResource.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramResource.xhtml OpenGL 4.x>.
 glGetProgramResourceiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -18986,7 +19198,7 @@ ptr_glGetProgramResourceiv = unsafePerformIO $ getCommand "glGetProgramResourcei
 
 -- glGetProgramStageiv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramStage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetProgramStage.xhtml OpenGL 4.x>.
 glGetProgramStageiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -19044,7 +19256,7 @@ ptr_glGetProgramSubroutineParameteruivNV = unsafePerformIO $ getCommand "glGetPr
 
 -- glGetProgramiv --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetProgram.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetProgram.xhtml OpenGL 4.x>.
 glGetProgramiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -19147,7 +19359,7 @@ ptr_glGetQueryBufferObjectuiv = unsafePerformIO $ getCommand "glGetQueryBufferOb
 
 -- glGetQueryIndexediv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetQueryIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetQueryIndexed.xhtml OpenGL 4.x>.
 glGetQueryIndexediv
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -19163,7 +19375,7 @@ ptr_glGetQueryIndexediv = unsafePerformIO $ getCommand "glGetQueryIndexediv"
 
 -- glGetQueryObjecti64v --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
 glGetQueryObjecti64v
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19178,6 +19390,7 @@ ptr_glGetQueryObjecti64v = unsafePerformIO $ getCommand "glGetQueryObjecti64v"
 
 -- glGetQueryObjecti64vEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glGetQueryObjecti64v'.
 glGetQueryObjecti64vEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19192,7 +19405,7 @@ ptr_glGetQueryObjecti64vEXT = unsafePerformIO $ getCommand "glGetQueryObjecti64v
 
 -- glGetQueryObjectiv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
 glGetQueryObjectiv
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19207,6 +19420,7 @@ ptr_glGetQueryObjectiv = unsafePerformIO $ getCommand "glGetQueryObjectiv"
 
 -- glGetQueryObjectivARB -------------------------------------------------------
 
+-- | This command is an alias for 'glGetQueryObjectiv'.
 glGetQueryObjectivARB
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19221,6 +19435,7 @@ ptr_glGetQueryObjectivARB = unsafePerformIO $ getCommand "glGetQueryObjectivARB"
 
 -- glGetQueryObjectivEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glGetQueryObjectiv'.
 glGetQueryObjectivEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19235,7 +19450,7 @@ ptr_glGetQueryObjectivEXT = unsafePerformIO $ getCommand "glGetQueryObjectivEXT"
 
 -- glGetQueryObjectui64v -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
 glGetQueryObjectui64v
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19250,6 +19465,7 @@ ptr_glGetQueryObjectui64v = unsafePerformIO $ getCommand "glGetQueryObjectui64v"
 
 -- glGetQueryObjectui64vEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glGetQueryObjectui64v'.
 glGetQueryObjectui64vEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19264,7 +19480,7 @@ ptr_glGetQueryObjectui64vEXT = unsafePerformIO $ getCommand "glGetQueryObjectui6
 
 -- glGetQueryObjectuiv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
 glGetQueryObjectuiv
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19279,6 +19495,7 @@ ptr_glGetQueryObjectuiv = unsafePerformIO $ getCommand "glGetQueryObjectuiv"
 
 -- glGetQueryObjectuivARB ------------------------------------------------------
 
+-- | This command is an alias for 'glGetQueryObjectuiv'.
 glGetQueryObjectuivARB
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -19307,7 +19524,7 @@ ptr_glGetQueryObjectuivEXT = unsafePerformIO $ getCommand "glGetQueryObjectuivEX
 
 -- glGetQueryiv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryiv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryiv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryiv.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryiv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryiv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryiv.xhtml OpenGL 4.x>.
 glGetQueryiv
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -19322,6 +19539,7 @@ ptr_glGetQueryiv = unsafePerformIO $ getCommand "glGetQueryiv"
 
 -- glGetQueryivARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glGetQueryiv'.
 glGetQueryivARB
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -19350,7 +19568,7 @@ ptr_glGetQueryivEXT = unsafePerformIO $ getCommand "glGetQueryivEXT"
 
 -- glGetRenderbufferParameteriv ------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetRenderbufferParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetRenderbufferParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetRenderbufferParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetRenderbufferParameter.xhtml OpenGL 4.x>.
 glGetRenderbufferParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @RenderbufferTarget@.
@@ -19365,6 +19583,7 @@ ptr_glGetRenderbufferParameteriv = unsafePerformIO $ getCommand "glGetRenderbuff
 
 -- glGetRenderbufferParameterivEXT ---------------------------------------------
 
+-- | This command is an alias for 'glGetRenderbufferParameteriv'.
 glGetRenderbufferParameterivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @RenderbufferTarget@.
@@ -19393,7 +19612,7 @@ ptr_glGetRenderbufferParameterivOES = unsafePerformIO $ getCommand "glGetRenderb
 
 -- glGetSamplerParameterIiv ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>.
 glGetSamplerParameterIiv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19408,6 +19627,7 @@ ptr_glGetSamplerParameterIiv = unsafePerformIO $ getCommand "glGetSamplerParamet
 
 -- glGetSamplerParameterIivEXT -------------------------------------------------
 
+-- | This command is an alias for 'glGetSamplerParameterIiv'.
 glGetSamplerParameterIivEXT
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19422,6 +19642,7 @@ ptr_glGetSamplerParameterIivEXT = unsafePerformIO $ getCommand "glGetSamplerPara
 
 -- glGetSamplerParameterIivOES -------------------------------------------------
 
+-- | This command is an alias for 'glGetSamplerParameterIiv'.
 glGetSamplerParameterIivOES
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19436,7 +19657,7 @@ ptr_glGetSamplerParameterIivOES = unsafePerformIO $ getCommand "glGetSamplerPara
 
 -- glGetSamplerParameterIuiv ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>.
 glGetSamplerParameterIuiv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19451,6 +19672,7 @@ ptr_glGetSamplerParameterIuiv = unsafePerformIO $ getCommand "glGetSamplerParame
 
 -- glGetSamplerParameterIuivEXT ------------------------------------------------
 
+-- | This command is an alias for 'glGetSamplerParameterIuiv'.
 glGetSamplerParameterIuivEXT
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19465,6 +19687,7 @@ ptr_glGetSamplerParameterIuivEXT = unsafePerformIO $ getCommand "glGetSamplerPar
 
 -- glGetSamplerParameterIuivOES ------------------------------------------------
 
+-- | This command is an alias for 'glGetSamplerParameterIuiv'.
 glGetSamplerParameterIuivOES
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19479,7 +19702,7 @@ ptr_glGetSamplerParameterIuivOES = unsafePerformIO $ getCommand "glGetSamplerPar
 
 -- glGetSamplerParameterfv -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>.
 glGetSamplerParameterfv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19494,7 +19717,7 @@ ptr_glGetSamplerParameterfv = unsafePerformIO $ getCommand "glGetSamplerParamete
 
 -- glGetSamplerParameteriv -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSamplerParameter.xhtml OpenGL 4.x>.
 glGetSamplerParameteriv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -19509,7 +19732,7 @@ ptr_glGetSamplerParameteriv = unsafePerformIO $ getCommand "glGetSamplerParamete
 
 -- glGetSeparableFilter --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetSeparableFilter.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetSeparableFilter.xml OpenGL 2.x>.
 glGetSeparableFilter
   :: MonadIO m
   => GLenum -- ^ @target@ of type @SeparableTarget@.
@@ -19544,7 +19767,7 @@ ptr_glGetSeparableFilterEXT = unsafePerformIO $ getCommand "glGetSeparableFilter
 
 -- glGetShaderInfoLog ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderInfoLog.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderInfoLog.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetShaderInfoLog.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderInfoLog.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderInfoLog.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetShaderInfoLog.xhtml OpenGL 4.x>.
 glGetShaderInfoLog
   :: MonadIO m
   => GLuint -- ^ @shader@.
@@ -19560,7 +19783,7 @@ ptr_glGetShaderInfoLog = unsafePerformIO $ getCommand "glGetShaderInfoLog"
 
 -- glGetShaderPrecisionFormat --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetShaderPrecisionFormat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetShaderPrecisionFormat.xhtml OpenGL 4.x>.
 glGetShaderPrecisionFormat
   :: MonadIO m
   => GLenum -- ^ @shadertype@.
@@ -19576,7 +19799,7 @@ ptr_glGetShaderPrecisionFormat = unsafePerformIO $ getCommand "glGetShaderPrecis
 
 -- glGetShaderSource -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderSource.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderSource.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetShaderSource.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderSource.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderSource.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetShaderSource.xhtml OpenGL 4.x>.
 glGetShaderSource
   :: MonadIO m
   => GLuint -- ^ @shader@.
@@ -19592,6 +19815,7 @@ ptr_glGetShaderSource = unsafePerformIO $ getCommand "glGetShaderSource"
 
 -- glGetShaderSourceARB --------------------------------------------------------
 
+-- | This command is an alias for 'glGetShaderSource'.
 glGetShaderSourceARB
   :: MonadIO m
   => GLhandleARB -- ^ @obj@ of type @handleARB@.
@@ -19607,7 +19831,7 @@ ptr_glGetShaderSourceARB = unsafePerformIO $ getCommand "glGetShaderSourceARB"
 
 -- glGetShaderiv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetShader.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetShader.xhtml OpenGL 4.x>.
 glGetShaderiv
   :: MonadIO m
   => GLuint -- ^ @shader@.
@@ -19647,7 +19871,7 @@ ptr_glGetStageIndexNV = unsafePerformIO $ getCommand "glGetStageIndexNV"
 
 -- glGetString -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetString.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetString.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetString.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetString.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml OpenGL 4.x>.
 glGetString
   :: MonadIO m
   => GLenum -- ^ @name@ of type [StringName](Graphics-Rendering-OpenGL-Raw-Groups.html#StringName).
@@ -19660,7 +19884,7 @@ ptr_glGetString = unsafePerformIO $ getCommand "glGetString"
 
 -- glGetStringi ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetString.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetString.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetString.xhtml OpenGL 4.x>.
 glGetStringi
   :: MonadIO m
   => GLenum -- ^ @name@.
@@ -19674,7 +19898,7 @@ ptr_glGetStringi = unsafePerformIO $ getCommand "glGetStringi"
 
 -- glGetSubroutineIndex --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetSubroutineIndex.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetSubroutineIndex.xhtml OpenGL 4.x>.
 glGetSubroutineIndex
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -19689,7 +19913,7 @@ ptr_glGetSubroutineIndex = unsafePerformIO $ getCommand "glGetSubroutineIndex"
 
 -- glGetSubroutineUniformLocation ----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetSubroutineUniformLocation.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetSubroutineUniformLocation.xhtml OpenGL 4.x>.
 glGetSubroutineUniformLocation
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -19704,7 +19928,7 @@ ptr_glGetSubroutineUniformLocation = unsafePerformIO $ getCommand "glGetSubrouti
 
 -- glGetSynciv -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSync.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetSync.xhtml OpenGL 4.x>.
 glGetSynciv
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
@@ -19721,6 +19945,7 @@ ptr_glGetSynciv = unsafePerformIO $ getCommand "glGetSynciv"
 
 -- glGetSyncivAPPLE ------------------------------------------------------------
 
+-- | This command is an alias for 'glGetSynciv'.
 glGetSyncivAPPLE
   :: MonadIO m
   => GLsync -- ^ @sync@.
@@ -19763,7 +19988,7 @@ ptr_glGetTexBumpParameterivATI = unsafePerformIO $ getCommand "glGetTexBumpParam
 
 -- glGetTexEnvfv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexEnv.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexEnv.xml OpenGL 2.x>.
 glGetTexEnvfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
@@ -19778,7 +20003,7 @@ ptr_glGetTexEnvfv = unsafePerformIO $ getCommand "glGetTexEnvfv"
 
 -- glGetTexEnviv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexEnv.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexEnv.xml OpenGL 2.x>.
 glGetTexEnviv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
@@ -19835,7 +20060,7 @@ ptr_glGetTexFilterFuncSGIS = unsafePerformIO $ getCommand "glGetTexFilterFuncSGI
 
 -- glGetTexGendv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>.
 glGetTexGendv
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -19850,7 +20075,7 @@ ptr_glGetTexGendv = unsafePerformIO $ getCommand "glGetTexGendv"
 
 -- glGetTexGenfv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>.
 glGetTexGenfv
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -19879,7 +20104,7 @@ ptr_glGetTexGenfvOES = unsafePerformIO $ getCommand "glGetTexGenfvOES"
 
 -- glGetTexGeniv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml OpenGL 2.x>.
 glGetTexGeniv
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -19922,7 +20147,7 @@ ptr_glGetTexGenxvOES = unsafePerformIO $ getCommand "glGetTexGenxvOES"
 
 -- glGetTexImage ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexImage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexImage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexImage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexImage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml OpenGL 4.x>.
 glGetTexImage
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -19939,7 +20164,7 @@ ptr_glGetTexImage = unsafePerformIO $ getCommand "glGetTexImage"
 
 -- glGetTexLevelParameterfv ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>.
 glGetTexLevelParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -19955,7 +20180,7 @@ ptr_glGetTexLevelParameterfv = unsafePerformIO $ getCommand "glGetTexLevelParame
 
 -- glGetTexLevelParameteriv ----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexLevelParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>.
 glGetTexLevelParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -19986,7 +20211,7 @@ ptr_glGetTexLevelParameterxvOES = unsafePerformIO $ getCommand "glGetTexLevelPar
 
 -- glGetTexParameterIiv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTexParameterIiv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20001,6 +20226,7 @@ ptr_glGetTexParameterIiv = unsafePerformIO $ getCommand "glGetTexParameterIiv"
 
 -- glGetTexParameterIivEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glGetTexParameterIiv'.
 glGetTexParameterIivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20015,6 +20241,7 @@ ptr_glGetTexParameterIivEXT = unsafePerformIO $ getCommand "glGetTexParameterIiv
 
 -- glGetTexParameterIivOES -----------------------------------------------------
 
+-- | This command is an alias for 'glGetTexParameterIiv'.
 glGetTexParameterIivOES
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20029,7 +20256,7 @@ ptr_glGetTexParameterIivOES = unsafePerformIO $ getCommand "glGetTexParameterIiv
 
 -- glGetTexParameterIuiv -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTexParameterIuiv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20044,6 +20271,7 @@ ptr_glGetTexParameterIuiv = unsafePerformIO $ getCommand "glGetTexParameterIuiv"
 
 -- glGetTexParameterIuivEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glGetTexParameterIuiv'.
 glGetTexParameterIuivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20058,6 +20286,7 @@ ptr_glGetTexParameterIuivEXT = unsafePerformIO $ getCommand "glGetTexParameterIu
 
 -- glGetTexParameterIuivOES ----------------------------------------------------
 
+-- | This command is an alias for 'glGetTexParameterIuiv'.
 glGetTexParameterIuivOES
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20086,7 +20315,7 @@ ptr_glGetTexParameterPointervAPPLE = unsafePerformIO $ getCommand "glGetTexParam
 
 -- glGetTexParameterfv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTexParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20101,7 +20330,7 @@ ptr_glGetTexParameterfv = unsafePerformIO $ getCommand "glGetTexParameterfv"
 
 -- glGetTexParameteriv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTexParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -20168,7 +20397,7 @@ ptr_glGetTextureHandleNV = unsafePerformIO $ getCommand "glGetTextureHandleNV"
 
 -- glGetTextureImage -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml OpenGL 4.x>.
 glGetTextureImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20203,7 +20432,7 @@ ptr_glGetTextureImageEXT = unsafePerformIO $ getCommand "glGetTextureImageEXT"
 
 -- glGetTextureLevelParameterfv ------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>.
 glGetTextureLevelParameterfv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20235,7 +20464,7 @@ ptr_glGetTextureLevelParameterfvEXT = unsafePerformIO $ getCommand "glGetTexture
 
 -- glGetTextureLevelParameteriv ------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexLevelParameter.xhtml OpenGL 4.x>.
 glGetTextureLevelParameteriv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20267,7 +20496,7 @@ ptr_glGetTextureLevelParameterivEXT = unsafePerformIO $ getCommand "glGetTexture
 
 -- glGetTextureParameterIiv ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTextureParameterIiv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20297,7 +20526,7 @@ ptr_glGetTextureParameterIivEXT = unsafePerformIO $ getCommand "glGetTexturePara
 
 -- glGetTextureParameterIuiv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTextureParameterIuiv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20327,7 +20556,7 @@ ptr_glGetTextureParameterIuivEXT = unsafePerformIO $ getCommand "glGetTexturePar
 
 -- glGetTextureParameterfv -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTextureParameterfv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20357,7 +20586,7 @@ ptr_glGetTextureParameterfvEXT = unsafePerformIO $ getCommand "glGetTextureParam
 
 -- glGetTextureParameteriv -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexParameter.xhtml OpenGL 4.x>.
 glGetTextureParameteriv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20413,7 +20642,7 @@ ptr_glGetTextureSamplerHandleNV = unsafePerformIO $ getCommand "glGetTextureSamp
 
 -- glGetTextureSubImage --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTextureSubImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTextureSubImage.xhtml OpenGL 4.x>.
 glGetTextureSubImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -20452,7 +20681,7 @@ ptr_glGetTrackMatrixivNV = unsafePerformIO $ getCommand "glGetTrackMatrixivNV"
 
 -- glGetTransformFeedbackVarying -----------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTransformFeedbackVarying.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedbackVarying.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetTransformFeedbackVarying.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedbackVarying.xhtml OpenGL 4.x>.
 glGetTransformFeedbackVarying
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20471,6 +20700,7 @@ ptr_glGetTransformFeedbackVarying = unsafePerformIO $ getCommand "glGetTransform
 
 -- glGetTransformFeedbackVaryingEXT --------------------------------------------
 
+-- | This command is an alias for 'glGetTransformFeedbackVarying'.
 glGetTransformFeedbackVaryingEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20503,7 +20733,7 @@ ptr_glGetTransformFeedbackVaryingNV = unsafePerformIO $ getCommand "glGetTransfo
 
 -- glGetTransformFeedbacki64_v -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedback.xhtml OpenGL 4.x>.
 glGetTransformFeedbacki64_v
   :: MonadIO m
   => GLuint -- ^ @xfb@.
@@ -20519,7 +20749,7 @@ ptr_glGetTransformFeedbacki64_v = unsafePerformIO $ getCommand "glGetTransformFe
 
 -- glGetTransformFeedbacki_v ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedback.xhtml OpenGL 4.x>.
 glGetTransformFeedbacki_v
   :: MonadIO m
   => GLuint -- ^ @xfb@.
@@ -20535,7 +20765,7 @@ ptr_glGetTransformFeedbacki_v = unsafePerformIO $ getCommand "glGetTransformFeed
 
 -- glGetTransformFeedbackiv ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTransformFeedback.xhtml OpenGL 4.x>.
 glGetTransformFeedbackiv
   :: MonadIO m
   => GLuint -- ^ @xfb@.
@@ -20565,7 +20795,7 @@ ptr_glGetTranslatedShaderSourceANGLE = unsafePerformIO $ getCommand "glGetTransl
 
 -- glGetUniformBlockIndex ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformBlockIndex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformBlockIndex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformBlockIndex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformBlockIndex.xhtml OpenGL 4.x>.
 glGetUniformBlockIndex
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20592,7 +20822,7 @@ ptr_glGetUniformBufferSizeEXT = unsafePerformIO $ getCommand "glGetUniformBuffer
 
 -- glGetUniformIndices ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformIndices.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformIndices.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformIndices.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformIndices.xhtml OpenGL 4.x>.
 glGetUniformIndices
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20608,7 +20838,7 @@ ptr_glGetUniformIndices = unsafePerformIO $ getCommand "glGetUniformIndices"
 
 -- glGetUniformLocation --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniformLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformLocation.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniformLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformLocation.xhtml OpenGL 4.x>.
 glGetUniformLocation
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20622,6 +20852,7 @@ ptr_glGetUniformLocation = unsafePerformIO $ getCommand "glGetUniformLocation"
 
 -- glGetUniformLocationARB -----------------------------------------------------
 
+-- | This command is an alias for 'glGetUniformLocation'.
 glGetUniformLocationARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -20648,7 +20879,7 @@ ptr_glGetUniformOffsetEXT = unsafePerformIO $ getCommand "glGetUniformOffsetEXT"
 
 -- glGetUniformSubroutineuiv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniformSubroutine.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniformSubroutine.xhtml OpenGL 4.x>.
 glGetUniformSubroutineuiv
   :: MonadIO m
   => GLenum -- ^ @shadertype@.
@@ -20663,7 +20894,7 @@ ptr_glGetUniformSubroutineuiv = unsafePerformIO $ getCommand "glGetUniformSubrou
 
 -- glGetUniformdv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetUniformdv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20678,7 +20909,7 @@ ptr_glGetUniformdv = unsafePerformIO $ getCommand "glGetUniformdv"
 
 -- glGetUniformfv --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetUniformfv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20693,6 +20924,7 @@ ptr_glGetUniformfv = unsafePerformIO $ getCommand "glGetUniformfv"
 
 -- glGetUniformfvARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glGetUniformfv'.
 glGetUniformfvARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -20735,7 +20967,7 @@ ptr_glGetUniformi64vNV = unsafePerformIO $ getCommand "glGetUniformi64vNV"
 
 -- glGetUniformiv --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetUniformiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20750,6 +20982,7 @@ ptr_glGetUniformiv = unsafePerformIO $ getCommand "glGetUniformiv"
 
 -- glGetUniformivARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glGetUniformiv'.
 glGetUniformivARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -20792,7 +21025,7 @@ ptr_glGetUniformui64vNV = unsafePerformIO $ getCommand "glGetUniformui64vNV"
 
 -- glGetUniformuiv -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetUniformuiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20807,6 +21040,7 @@ ptr_glGetUniformuiv = unsafePerformIO $ getCommand "glGetUniformuiv"
 
 -- glGetUniformuivEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glGetUniformuiv'.
 glGetUniformuivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -20918,7 +21152,7 @@ ptr_glGetVaryingLocationNV = unsafePerformIO $ getCommand "glGetVaryingLocationN
 
 -- glGetVertexArrayIndexed64iv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexArrayIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexArrayIndexed.xhtml OpenGL 4.x>.
 glGetVertexArrayIndexed64iv
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -20934,7 +21168,7 @@ ptr_glGetVertexArrayIndexed64iv = unsafePerformIO $ getCommand "glGetVertexArray
 
 -- glGetVertexArrayIndexediv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexArrayIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexArrayIndexed.xhtml OpenGL 4.x>.
 glGetVertexArrayIndexediv
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -21008,7 +21242,7 @@ ptr_glGetVertexArrayPointervEXT = unsafePerformIO $ getCommand "glGetVertexArray
 
 -- glGetVertexArrayiv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexArrayiv.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexArrayiv.xhtml OpenGL 4.x>.
 glGetVertexArrayiv
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -21051,7 +21285,7 @@ ptr_glGetVertexAttribArrayObjectivATI = unsafePerformIO $ getCommand "glGetVerte
 
 -- glGetVertexAttribIiv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>.
 glGetVertexAttribIiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21066,6 +21300,7 @@ ptr_glGetVertexAttribIiv = unsafePerformIO $ getCommand "glGetVertexAttribIiv"
 
 -- glGetVertexAttribIivEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribIiv'.
 glGetVertexAttribIivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21080,7 +21315,7 @@ ptr_glGetVertexAttribIivEXT = unsafePerformIO $ getCommand "glGetVertexAttribIiv
 
 -- glGetVertexAttribIuiv -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>.
 glGetVertexAttribIuiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21095,6 +21330,7 @@ ptr_glGetVertexAttribIuiv = unsafePerformIO $ getCommand "glGetVertexAttribIuiv"
 
 -- glGetVertexAttribIuivEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribIuiv'.
 glGetVertexAttribIuivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21109,7 +21345,7 @@ ptr_glGetVertexAttribIuivEXT = unsafePerformIO $ getCommand "glGetVertexAttribIu
 
 -- glGetVertexAttribLdv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>.
 glGetVertexAttribLdv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21124,6 +21360,7 @@ ptr_glGetVertexAttribLdv = unsafePerformIO $ getCommand "glGetVertexAttribLdv"
 
 -- glGetVertexAttribLdvEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribLdv'.
 glGetVertexAttribLdvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21180,7 +21417,7 @@ ptr_glGetVertexAttribLui64vNV = unsafePerformIO $ getCommand "glGetVertexAttribL
 
 -- glGetVertexAttribPointerv ---------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttribPointerv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttribPointerv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttribPointerv.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttribPointerv.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttribPointerv.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttribPointerv.xhtml OpenGL 4.x>.
 glGetVertexAttribPointerv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21195,6 +21432,7 @@ ptr_glGetVertexAttribPointerv = unsafePerformIO $ getCommand "glGetVertexAttribP
 
 -- glGetVertexAttribPointervARB ------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribPointerv'.
 glGetVertexAttribPointervARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21209,6 +21447,7 @@ ptr_glGetVertexAttribPointervARB = unsafePerformIO $ getCommand "glGetVertexAttr
 
 -- glGetVertexAttribPointervNV -------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribPointerv'.
 glGetVertexAttribPointervNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21223,7 +21462,7 @@ ptr_glGetVertexAttribPointervNV = unsafePerformIO $ getCommand "glGetVertexAttri
 
 -- glGetVertexAttribdv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>.
 glGetVertexAttribdv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21238,6 +21477,7 @@ ptr_glGetVertexAttribdv = unsafePerformIO $ getCommand "glGetVertexAttribdv"
 
 -- glGetVertexAttribdvARB ------------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribdv'.
 glGetVertexAttribdvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21252,6 +21492,7 @@ ptr_glGetVertexAttribdvARB = unsafePerformIO $ getCommand "glGetVertexAttribdvAR
 
 -- glGetVertexAttribdvNV -------------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribdv'.
 glGetVertexAttribdvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21266,7 +21507,7 @@ ptr_glGetVertexAttribdvNV = unsafePerformIO $ getCommand "glGetVertexAttribdvNV"
 
 -- glGetVertexAttribfv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>.
 glGetVertexAttribfv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21281,6 +21522,7 @@ ptr_glGetVertexAttribfv = unsafePerformIO $ getCommand "glGetVertexAttribfv"
 
 -- glGetVertexAttribfvARB ------------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribfv'.
 glGetVertexAttribfvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21295,6 +21537,7 @@ ptr_glGetVertexAttribfvARB = unsafePerformIO $ getCommand "glGetVertexAttribfvAR
 
 -- glGetVertexAttribfvNV -------------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribfv'.
 glGetVertexAttribfvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21309,7 +21552,7 @@ ptr_glGetVertexAttribfvNV = unsafePerformIO $ getCommand "glGetVertexAttribfvNV"
 
 -- glGetVertexAttribiv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetVertexAttrib.xhtml OpenGL 4.x>.
 glGetVertexAttribiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21324,6 +21567,7 @@ ptr_glGetVertexAttribiv = unsafePerformIO $ getCommand "glGetVertexAttribiv"
 
 -- glGetVertexAttribivARB ------------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribiv'.
 glGetVertexAttribivARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21338,6 +21582,7 @@ ptr_glGetVertexAttribivARB = unsafePerformIO $ getCommand "glGetVertexAttribivAR
 
 -- glGetVertexAttribivNV -------------------------------------------------------
 
+-- | This command is an alias for 'glGetVertexAttribiv'.
 glGetVertexAttribivNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -21499,7 +21744,7 @@ ptr_glGetnColorTableARB = unsafePerformIO $ getCommand "glGetnColorTableARB"
 
 -- glGetnCompressedTexImage ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetCompressedTexImage.xhtml OpenGL 4.x>.
 glGetnCompressedTexImage
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -21868,7 +22113,7 @@ ptr_glGetnSeparableFilterARB = unsafePerformIO $ getCommand "glGetnSeparableFilt
 
 -- glGetnTexImage --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetTexImage.xhtml OpenGL 4.x>.
 glGetnTexImage
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -21903,7 +22148,7 @@ ptr_glGetnTexImageARB = unsafePerformIO $ getCommand "glGetnTexImageARB"
 
 -- glGetnUniformdv -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetnUniformdv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -21934,7 +22179,7 @@ ptr_glGetnUniformdvARB = unsafePerformIO $ getCommand "glGetnUniformdvARB"
 
 -- glGetnUniformfv -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetnUniformfv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -21980,6 +22225,7 @@ ptr_glGetnUniformfvEXT = unsafePerformIO $ getCommand "glGetnUniformfvEXT"
 
 -- glGetnUniformfvKHR ----------------------------------------------------------
 
+-- | This command is an alias for 'glGetnUniformfv'.
 glGetnUniformfvKHR
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -22010,7 +22256,7 @@ ptr_glGetnUniformi64vARB = unsafePerformIO $ getCommand "glGetnUniformi64vARB"
 
 -- glGetnUniformiv -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetnUniformiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -22056,6 +22302,7 @@ ptr_glGetnUniformivEXT = unsafePerformIO $ getCommand "glGetnUniformivEXT"
 
 -- glGetnUniformivKHR ----------------------------------------------------------
 
+-- | This command is an alias for 'glGetnUniformiv'.
 glGetnUniformivKHR
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -22086,7 +22333,7 @@ ptr_glGetnUniformui64vARB = unsafePerformIO $ getCommand "glGetnUniformui64vARB"
 
 -- glGetnUniformuiv ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
 glGetnUniformuiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -22117,6 +22364,7 @@ ptr_glGetnUniformuivARB = unsafePerformIO $ getCommand "glGetnUniformuivARB"
 
 -- glGetnUniformuivKHR ---------------------------------------------------------
 
+-- | This command is an alias for 'glGetnUniformuiv'.
 glGetnUniformuivKHR
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -22228,7 +22476,7 @@ ptr_glGlobalAlphaFactorusSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactor
 
 -- glHint ----------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glHint.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glHint.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glHint.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glHint.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glHint.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glHint.xhtml OpenGL 4.x>.
 glHint
   :: MonadIO m
   => GLenum -- ^ @target@ of type [HintTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#HintTarget).
@@ -22255,7 +22503,7 @@ ptr_glHintPGI = unsafePerformIO $ getCommand "glHintPGI"
 
 -- glHistogram -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glHistogram.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glHistogram.xml OpenGL 2.x>.
 glHistogram
   :: MonadIO m
   => GLenum -- ^ @target@ of type @HistogramTarget@.
@@ -22271,6 +22519,7 @@ ptr_glHistogram = unsafePerformIO $ getCommand "glHistogram"
 
 -- glHistogramEXT --------------------------------------------------------------
 
+-- | This command is an alias for 'glHistogram'.
 glHistogramEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
@@ -22395,7 +22644,7 @@ ptr_glIndexFuncEXT = unsafePerformIO $ getCommand "glIndexFuncEXT"
 
 -- glIndexMask -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndexMask.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndexMask.xml OpenGL 2.x>.
 glIndexMask
   :: MonadIO m
   => GLuint -- ^ @mask@ of type @MaskedColorIndexValueI@.
@@ -22421,7 +22670,7 @@ ptr_glIndexMaterialEXT = unsafePerformIO $ getCommand "glIndexMaterialEXT"
 
 -- glIndexPointer --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndexPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndexPointer.xml OpenGL 2.x>.
 glIndexPointer
   :: MonadIO m
   => GLenum -- ^ @type@ of type [IndexPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#IndexPointerType).
@@ -22466,7 +22715,7 @@ ptr_glIndexPointerListIBM = unsafePerformIO $ getCommand "glIndexPointerListIBM"
 
 -- glIndexd --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>. The vector equivalent of this command is 'glIndexdv'.
 glIndexd
   :: MonadIO m
   => GLdouble -- ^ @c@ of type @ColorIndexValueD@.
@@ -22479,7 +22728,7 @@ ptr_glIndexd = unsafePerformIO $ getCommand "glIndexd"
 
 -- glIndexdv -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>.
 glIndexdv
   :: MonadIO m
   => Ptr GLdouble -- ^ @c@ pointing to @1@ element of type @ColorIndexValueD@.
@@ -22492,7 +22741,7 @@ ptr_glIndexdv = unsafePerformIO $ getCommand "glIndexdv"
 
 -- glIndexf --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>. The vector equivalent of this command is 'glIndexfv'.
 glIndexf
   :: MonadIO m
   => GLfloat -- ^ @c@ of type @ColorIndexValueF@.
@@ -22505,7 +22754,7 @@ ptr_glIndexf = unsafePerformIO $ getCommand "glIndexf"
 
 -- glIndexfv -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>.
 glIndexfv
   :: MonadIO m
   => Ptr GLfloat -- ^ @c@ pointing to @1@ element of type @ColorIndexValueF@.
@@ -22518,7 +22767,7 @@ ptr_glIndexfv = unsafePerformIO $ getCommand "glIndexfv"
 
 -- glIndexi --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>. The vector equivalent of this command is 'glIndexiv'.
 glIndexi
   :: MonadIO m
   => GLint -- ^ @c@ of type @ColorIndexValueI@.
@@ -22531,7 +22780,7 @@ ptr_glIndexi = unsafePerformIO $ getCommand "glIndexi"
 
 -- glIndexiv -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>.
 glIndexiv
   :: MonadIO m
   => Ptr GLint -- ^ @c@ pointing to @1@ element of type @ColorIndexValueI@.
@@ -22544,7 +22793,7 @@ ptr_glIndexiv = unsafePerformIO $ getCommand "glIndexiv"
 
 -- glIndexs --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>. The vector equivalent of this command is 'glIndexsv'.
 glIndexs
   :: MonadIO m
   => GLshort -- ^ @c@ of type @ColorIndexValueS@.
@@ -22557,7 +22806,7 @@ ptr_glIndexs = unsafePerformIO $ getCommand "glIndexs"
 
 -- glIndexsv -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>.
 glIndexsv
   :: MonadIO m
   => Ptr GLshort -- ^ @c@ pointing to @1@ element of type @ColorIndexValueS@.
@@ -22570,7 +22819,7 @@ ptr_glIndexsv = unsafePerformIO $ getCommand "glIndexsv"
 
 -- glIndexub -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>. The vector equivalent of this command is 'glIndexubv'.
 glIndexub
   :: MonadIO m
   => GLubyte -- ^ @c@ of type @ColorIndexValueUB@.
@@ -22583,7 +22832,7 @@ ptr_glIndexub = unsafePerformIO $ getCommand "glIndexub"
 
 -- glIndexubv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml OpenGL 2.x>.
 glIndexubv
   :: MonadIO m
   => Ptr GLubyte -- ^ @c@ pointing to @1@ element of type @ColorIndexValueUB@.
@@ -22620,7 +22869,7 @@ ptr_glIndexxvOES = unsafePerformIO $ getCommand "glIndexxvOES"
 
 -- glInitNames -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glInitNames.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glInitNames.xml OpenGL 2.x>.
 glInitNames
   :: MonadIO m
   => m ()
@@ -22672,7 +22921,7 @@ ptr_glInstrumentsBufferSGIX = unsafePerformIO $ getCommand "glInstrumentsBufferS
 
 -- glInterleavedArrays ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glInterleavedArrays.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glInterleavedArrays.xml OpenGL 2.x>.
 glInterleavedArrays
   :: MonadIO m
   => GLenum -- ^ @format@ of type [InterleavedArrayFormat](Graphics-Rendering-OpenGL-Raw-Groups.html#InterleavedArrayFormat).
@@ -22702,7 +22951,7 @@ ptr_glInterpolatePathsNV = unsafePerformIO $ getCommand "glInterpolatePathsNV"
 
 -- glInvalidateBufferData ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateBufferData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateBufferData.xhtml OpenGL 4.x>.
 glInvalidateBufferData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -22715,7 +22964,7 @@ ptr_glInvalidateBufferData = unsafePerformIO $ getCommand "glInvalidateBufferDat
 
 -- glInvalidateBufferSubData ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateBufferSubData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateBufferSubData.xhtml OpenGL 4.x>.
 glInvalidateBufferSubData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -22730,7 +22979,7 @@ ptr_glInvalidateBufferSubData = unsafePerformIO $ getCommand "glInvalidateBuffer
 
 -- glInvalidateFramebuffer -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateFramebuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateFramebuffer.xhtml OpenGL 4.x>.
 glInvalidateFramebuffer
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -22745,7 +22994,7 @@ ptr_glInvalidateFramebuffer = unsafePerformIO $ getCommand "glInvalidateFramebuf
 
 -- glInvalidateNamedFramebufferData --------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateFramebuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateFramebuffer.xhtml OpenGL 4.x>.
 glInvalidateNamedFramebufferData
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -22760,7 +23009,7 @@ ptr_glInvalidateNamedFramebufferData = unsafePerformIO $ getCommand "glInvalidat
 
 -- glInvalidateNamedFramebufferSubData -----------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateSubFramebuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateSubFramebuffer.xhtml OpenGL 4.x>.
 glInvalidateNamedFramebufferSubData
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -22779,7 +23028,7 @@ ptr_glInvalidateNamedFramebufferSubData = unsafePerformIO $ getCommand "glInvali
 
 -- glInvalidateSubFramebuffer --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateSubFramebuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateSubFramebuffer.xhtml OpenGL 4.x>.
 glInvalidateSubFramebuffer
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -22798,7 +23047,7 @@ ptr_glInvalidateSubFramebuffer = unsafePerformIO $ getCommand "glInvalidateSubFr
 
 -- glInvalidateTexImage --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateTexImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateTexImage.xhtml OpenGL 4.x>.
 glInvalidateTexImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -22812,7 +23061,7 @@ ptr_glInvalidateTexImage = unsafePerformIO $ getCommand "glInvalidateTexImage"
 
 -- glInvalidateTexSubImage -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateTexSubImage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glInvalidateTexSubImage.xhtml OpenGL 4.x>.
 glInvalidateTexSubImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -22844,7 +23093,7 @@ ptr_glIsAsyncMarkerSGIX = unsafePerformIO $ getCommand "glIsAsyncMarkerSGIX"
 
 -- glIsBuffer ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsBuffer.xhtml OpenGL 4.x>.
 glIsBuffer
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -22857,6 +23106,7 @@ ptr_glIsBuffer = unsafePerformIO $ getCommand "glIsBuffer"
 
 -- glIsBufferARB ---------------------------------------------------------------
 
+-- | This command is an alias for 'glIsBuffer'.
 glIsBufferARB
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -22893,7 +23143,7 @@ ptr_glIsCommandListNV = unsafePerformIO $ getCommand "glIsCommandListNV"
 
 -- glIsEnabled -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsEnabled.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsEnabled.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsEnabled.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsEnabled.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml OpenGL 4.x>.
 glIsEnabled
   :: MonadIO m
   => GLenum -- ^ @cap@ of type [EnableCap](Graphics-Rendering-OpenGL-Raw-Groups.html#EnableCap).
@@ -22906,6 +23156,7 @@ ptr_glIsEnabled = unsafePerformIO $ getCommand "glIsEnabled"
 
 -- glIsEnabledIndexedEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glIsEnabledi'.
 glIsEnabledIndexedEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -22919,7 +23170,7 @@ ptr_glIsEnabledIndexedEXT = unsafePerformIO $ getCommand "glIsEnabledIndexedEXT"
 
 -- glIsEnabledi ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsEnabled.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsEnabled.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsEnabled.xhtml OpenGL 4.x>.
 glIsEnabledi
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -22933,6 +23184,7 @@ ptr_glIsEnabledi = unsafePerformIO $ getCommand "glIsEnabledi"
 
 -- glIsEnablediEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glIsEnabledi'.
 glIsEnablediEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -22946,6 +23198,7 @@ ptr_glIsEnablediEXT = unsafePerformIO $ getCommand "glIsEnablediEXT"
 
 -- glIsEnablediNV --------------------------------------------------------------
 
+-- | This command is an alias for 'glIsEnabledi'.
 glIsEnablediNV
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -22959,6 +23212,7 @@ ptr_glIsEnablediNV = unsafePerformIO $ getCommand "glIsEnablediNV"
 
 -- glIsEnablediOES -------------------------------------------------------------
 
+-- | This command is an alias for 'glIsEnabledi'.
 glIsEnablediOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -22996,7 +23250,7 @@ ptr_glIsFenceNV = unsafePerformIO $ getCommand "glIsFenceNV"
 
 -- glIsFramebuffer -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsFramebuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsFramebuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsFramebuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsFramebuffer.xhtml OpenGL 4.x>.
 glIsFramebuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -23009,6 +23263,7 @@ ptr_glIsFramebuffer = unsafePerformIO $ getCommand "glIsFramebuffer"
 
 -- glIsFramebufferEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glIsFramebuffer'.
 glIsFramebufferEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -23057,7 +23312,7 @@ ptr_glIsImageHandleResidentNV = unsafePerformIO $ getCommand "glIsImageHandleRes
 
 -- glIsList --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsList.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsList.xml OpenGL 2.x>.
 glIsList
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
@@ -23173,7 +23428,7 @@ ptr_glIsPointInStrokePathNV = unsafePerformIO $ getCommand "glIsPointInStrokePat
 
 -- glIsProgram -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsProgram.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsProgram.xhtml OpenGL 4.x>.
 glIsProgram
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -23198,6 +23453,7 @@ ptr_glIsProgramARB = unsafePerformIO $ getCommand "glIsProgramARB"
 
 -- glIsProgramNV ---------------------------------------------------------------
 
+-- | This command is an alias for 'glIsProgramARB'.
 glIsProgramNV
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -23210,7 +23466,7 @@ ptr_glIsProgramNV = unsafePerformIO $ getCommand "glIsProgramNV"
 
 -- glIsProgramPipeline ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glIsProgramPipeline.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glIsProgramPipeline.xhtml OpenGL 4.x>.
 glIsProgramPipeline
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
@@ -23235,7 +23491,7 @@ ptr_glIsProgramPipelineEXT = unsafePerformIO $ getCommand "glIsProgramPipelineEX
 
 -- glIsQuery -------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsQuery.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsQuery.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsQuery.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsQuery.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsQuery.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsQuery.xhtml OpenGL 4.x>.
 glIsQuery
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -23248,6 +23504,7 @@ ptr_glIsQuery = unsafePerformIO $ getCommand "glIsQuery"
 
 -- glIsQueryARB ----------------------------------------------------------------
 
+-- | This command is an alias for 'glIsQuery'.
 glIsQueryARB
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -23272,7 +23529,7 @@ ptr_glIsQueryEXT = unsafePerformIO $ getCommand "glIsQueryEXT"
 
 -- glIsRenderbuffer ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsRenderbuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsRenderbuffer.xhtml OpenGL 4.x>.
 glIsRenderbuffer
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
@@ -23285,6 +23542,7 @@ ptr_glIsRenderbuffer = unsafePerformIO $ getCommand "glIsRenderbuffer"
 
 -- glIsRenderbufferEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glIsRenderbuffer'.
 glIsRenderbufferEXT
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
@@ -23309,7 +23567,7 @@ ptr_glIsRenderbufferOES = unsafePerformIO $ getCommand "glIsRenderbufferOES"
 
 -- glIsSampler -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsSampler.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsSampler.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsSampler.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsSampler.xhtml OpenGL 4.x>.
 glIsSampler
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -23322,7 +23580,7 @@ ptr_glIsSampler = unsafePerformIO $ getCommand "glIsSampler"
 
 -- glIsShader ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsShader.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsShader.xhtml OpenGL 4.x>.
 glIsShader
   :: MonadIO m
   => GLuint -- ^ @shader@.
@@ -23347,7 +23605,7 @@ ptr_glIsStateNV = unsafePerformIO $ getCommand "glIsStateNV"
 
 -- glIsSync --------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsSync.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsSync.xhtml OpenGL 4.x>.
 glIsSync
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
@@ -23360,6 +23618,7 @@ ptr_glIsSync = unsafePerformIO $ getCommand "glIsSync"
 
 -- glIsSyncAPPLE ---------------------------------------------------------------
 
+-- | This command is an alias for 'glIsSync'.
 glIsSyncAPPLE
   :: MonadIO m
   => GLsync -- ^ @sync@.
@@ -23372,7 +23631,7 @@ ptr_glIsSyncAPPLE = unsafePerformIO $ getCommand "glIsSyncAPPLE"
 
 -- glIsTexture -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsTexture.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsTexture.xhtml OpenGL 4.x>.
 glIsTexture
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
@@ -23421,7 +23680,7 @@ ptr_glIsTextureHandleResidentNV = unsafePerformIO $ getCommand "glIsTextureHandl
 
 -- glIsTransformFeedback -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glIsTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glIsTransformFeedback.xhtml OpenGL 4.x>.
 glIsTransformFeedback
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -23434,6 +23693,7 @@ ptr_glIsTransformFeedback = unsafePerformIO $ getCommand "glIsTransformFeedback"
 
 -- glIsTransformFeedbackNV -----------------------------------------------------
 
+-- | This command is an alias for 'glIsTransformFeedback'.
 glIsTransformFeedbackNV
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -23459,7 +23719,7 @@ ptr_glIsVariantEnabledEXT = unsafePerformIO $ getCommand "glIsVariantEnabledEXT"
 
 -- glIsVertexArray -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsVertexArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsVertexArray.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsVertexArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsVertexArray.xhtml OpenGL 4.x>.
 glIsVertexArray
   :: MonadIO m
   => GLuint -- ^ @array@.
@@ -23472,6 +23732,7 @@ ptr_glIsVertexArray = unsafePerformIO $ getCommand "glIsVertexArray"
 
 -- glIsVertexArrayAPPLE --------------------------------------------------------
 
+-- | This command is an alias for 'glIsVertexArray'.
 glIsVertexArrayAPPLE
   :: MonadIO m
   => GLuint -- ^ @array@.
@@ -23484,6 +23745,7 @@ ptr_glIsVertexArrayAPPLE = unsafePerformIO $ getCommand "glIsVertexArrayAPPLE"
 
 -- glIsVertexArrayOES ----------------------------------------------------------
 
+-- | This command is an alias for 'glIsVertexArray'.
 glIsVertexArrayOES
   :: MonadIO m
   => GLuint -- ^ @array@.
@@ -23537,7 +23799,7 @@ ptr_glLightEnviSGIX = unsafePerformIO $ getCommand "glLightEnviSGIX"
 
 -- glLightModelf ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>.
 glLightModelf
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
@@ -23551,7 +23813,7 @@ ptr_glLightModelf = unsafePerformIO $ getCommand "glLightModelf"
 
 -- glLightModelfv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>.
 glLightModelfv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
@@ -23565,7 +23827,7 @@ ptr_glLightModelfv = unsafePerformIO $ getCommand "glLightModelfv"
 
 -- glLightModeli ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>.
 glLightModeli
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
@@ -23579,7 +23841,7 @@ ptr_glLightModeli = unsafePerformIO $ getCommand "glLightModeli"
 
 -- glLightModeliv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml OpenGL 2.x>.
 glLightModeliv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [LightModelParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#LightModelParameter).
@@ -23645,7 +23907,7 @@ ptr_glLightModelxvOES = unsafePerformIO $ getCommand "glLightModelxvOES"
 
 -- glLightf --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>.
 glLightf
   :: MonadIO m
   => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
@@ -23660,7 +23922,7 @@ ptr_glLightf = unsafePerformIO $ getCommand "glLightf"
 
 -- glLightfv -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>.
 glLightfv
   :: MonadIO m
   => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
@@ -23675,7 +23937,7 @@ ptr_glLightfv = unsafePerformIO $ getCommand "glLightfv"
 
 -- glLighti --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>.
 glLighti
   :: MonadIO m
   => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
@@ -23690,7 +23952,7 @@ ptr_glLighti = unsafePerformIO $ getCommand "glLighti"
 
 -- glLightiv -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml OpenGL 2.x>.
 glLightiv
   :: MonadIO m
   => GLenum -- ^ @light@ of type [LightName](Graphics-Rendering-OpenGL-Raw-Groups.html#LightName).
@@ -23761,7 +24023,7 @@ ptr_glLightxvOES = unsafePerformIO $ getCommand "glLightxvOES"
 
 -- glLineStipple ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLineStipple.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLineStipple.xml OpenGL 2.x>.
 glLineStipple
   :: MonadIO m
   => GLint -- ^ @factor@ of type @CheckedInt32@.
@@ -23775,7 +24037,7 @@ ptr_glLineStipple = unsafePerformIO $ getCommand "glLineStipple"
 
 -- glLineWidth -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glLineWidth.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glLineWidth.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glLineWidth.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glLineWidth.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glLineWidth.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glLineWidth.xhtml OpenGL 4.x>.
 glLineWidth
   :: MonadIO m
   => GLfloat -- ^ @width@ of type @CheckedFloat32@.
@@ -23812,7 +24074,7 @@ ptr_glLineWidthxOES = unsafePerformIO $ getCommand "glLineWidthxOES"
 
 -- glLinkProgram ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glLinkProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glLinkProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glLinkProgram.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glLinkProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glLinkProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glLinkProgram.xhtml OpenGL 4.x>.
 glLinkProgram
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -23825,6 +24087,7 @@ ptr_glLinkProgram = unsafePerformIO $ getCommand "glLinkProgram"
 
 -- glLinkProgramARB ------------------------------------------------------------
 
+-- | This command is an alias for 'glLinkProgram'.
 glLinkProgramARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -23837,7 +24100,7 @@ ptr_glLinkProgramARB = unsafePerformIO $ getCommand "glLinkProgramARB"
 
 -- glListBase ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glListBase.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glListBase.xml OpenGL 2.x>.
 glListBase
   :: MonadIO m
   => GLuint -- ^ @base@ of type @List@.
@@ -23924,7 +24187,7 @@ ptr_glListParameterivSGIX = unsafePerformIO $ getCommand "glListParameterivSGIX"
 
 -- glLoadIdentity --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadIdentity.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadIdentity.xml OpenGL 2.x>.
 glLoadIdentity
   :: MonadIO m
   => m ()
@@ -23948,7 +24211,7 @@ ptr_glLoadIdentityDeformationMapSGIX = unsafePerformIO $ getCommand "glLoadIdent
 
 -- glLoadMatrixd ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadMatrix.xml OpenGL 2.x>.
 glLoadMatrixd
   :: MonadIO m
   => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
@@ -23961,7 +24224,7 @@ ptr_glLoadMatrixd = unsafePerformIO $ getCommand "glLoadMatrixd"
 
 -- glLoadMatrixf ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadMatrix.xml OpenGL 2.x>.
 glLoadMatrixf
   :: MonadIO m
   => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
@@ -23998,7 +24261,7 @@ ptr_glLoadMatrixxOES = unsafePerformIO $ getCommand "glLoadMatrixxOES"
 
 -- glLoadName ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadName.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadName.xml OpenGL 2.x>.
 glLoadName
   :: MonadIO m
   => GLuint -- ^ @name@ of type @SelectName@.
@@ -24037,7 +24300,7 @@ ptr_glLoadProgramNV = unsafePerformIO $ getCommand "glLoadProgramNV"
 
 -- glLoadTransposeMatrixd ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadTransposeMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadTransposeMatrix.xml OpenGL 2.x>.
 glLoadTransposeMatrixd
   :: MonadIO m
   => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
@@ -24050,6 +24313,7 @@ ptr_glLoadTransposeMatrixd = unsafePerformIO $ getCommand "glLoadTransposeMatrix
 
 -- glLoadTransposeMatrixdARB ---------------------------------------------------
 
+-- | This command is an alias for 'glLoadTransposeMatrixd'.
 glLoadTransposeMatrixdARB
   :: MonadIO m
   => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
@@ -24062,7 +24326,7 @@ ptr_glLoadTransposeMatrixdARB = unsafePerformIO $ getCommand "glLoadTransposeMat
 
 -- glLoadTransposeMatrixf ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadTransposeMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glLoadTransposeMatrix.xml OpenGL 2.x>.
 glLoadTransposeMatrixf
   :: MonadIO m
   => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
@@ -24075,6 +24339,7 @@ ptr_glLoadTransposeMatrixf = unsafePerformIO $ getCommand "glLoadTransposeMatrix
 
 -- glLoadTransposeMatrixfARB ---------------------------------------------------
 
+-- | This command is an alias for 'glLoadTransposeMatrixf'.
 glLoadTransposeMatrixfARB
   :: MonadIO m
   => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
@@ -24112,7 +24377,7 @@ ptr_glLockArraysEXT = unsafePerformIO $ getCommand "glLockArraysEXT"
 
 -- glLogicOp -------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glLogicOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glLogicOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glLogicOp.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glLogicOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glLogicOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glLogicOp.xhtml OpenGL 4.x>.
 glLogicOp
   :: MonadIO m
   => GLenum -- ^ @opcode@ of type [LogicOp](Graphics-Rendering-OpenGL-Raw-Groups.html#LogicOp).
@@ -24273,7 +24538,7 @@ ptr_glMakeTextureHandleResidentNV = unsafePerformIO $ getCommand "glMakeTextureH
 
 -- glMap1d ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml OpenGL 2.x>.
 glMap1d
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
@@ -24291,7 +24556,7 @@ ptr_glMap1d = unsafePerformIO $ getCommand "glMap1d"
 
 -- glMap1f ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml OpenGL 2.x>.
 glMap1f
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
@@ -24326,7 +24591,7 @@ ptr_glMap1xOES = unsafePerformIO $ getCommand "glMap1xOES"
 
 -- glMap2d ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap2.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap2.xml OpenGL 2.x>.
 glMap2d
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
@@ -24348,7 +24613,7 @@ ptr_glMap2d = unsafePerformIO $ getCommand "glMap2d"
 
 -- glMap2f ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap2.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap2.xml OpenGL 2.x>.
 glMap2f
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MapTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#MapTarget).
@@ -24391,7 +24656,7 @@ ptr_glMap2xOES = unsafePerformIO $ getCommand "glMap2xOES"
 
 -- glMapBuffer -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMapBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMapBuffer.xhtml OpenGL 4.x>.
 glMapBuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -24405,6 +24670,7 @@ ptr_glMapBuffer = unsafePerformIO $ getCommand "glMapBuffer"
 
 -- glMapBufferARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glMapBuffer'.
 glMapBufferARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -24418,6 +24684,7 @@ ptr_glMapBufferARB = unsafePerformIO $ getCommand "glMapBufferARB"
 
 -- glMapBufferOES --------------------------------------------------------------
 
+-- | This command is an alias for 'glMapBuffer'.
 glMapBufferOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -24431,7 +24698,7 @@ ptr_glMapBufferOES = unsafePerformIO $ getCommand "glMapBufferOES"
 
 -- glMapBufferRange ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBufferRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMapBufferRange.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBufferRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMapBufferRange.xhtml OpenGL 4.x>.
 glMapBufferRange
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -24447,6 +24714,7 @@ ptr_glMapBufferRange = unsafePerformIO $ getCommand "glMapBufferRange"
 
 -- glMapBufferRangeEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glMapBufferRange'.
 glMapBufferRangeEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -24482,7 +24750,7 @@ ptr_glMapControlPointsNV = unsafePerformIO $ getCommand "glMapControlPointsNV"
 
 -- glMapGrid1d -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>.
 glMapGrid1d
   :: MonadIO m
   => GLint -- ^ @un@.
@@ -24497,7 +24765,7 @@ ptr_glMapGrid1d = unsafePerformIO $ getCommand "glMapGrid1d"
 
 -- glMapGrid1f -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>.
 glMapGrid1f
   :: MonadIO m
   => GLint -- ^ @un@.
@@ -24526,7 +24794,7 @@ ptr_glMapGrid1xOES = unsafePerformIO $ getCommand "glMapGrid1xOES"
 
 -- glMapGrid2d -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>.
 glMapGrid2d
   :: MonadIO m
   => GLint -- ^ @un@.
@@ -24544,7 +24812,7 @@ ptr_glMapGrid2d = unsafePerformIO $ getCommand "glMapGrid2d"
 
 -- glMapGrid2f -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml OpenGL 2.x>.
 glMapGrid2f
   :: MonadIO m
   => GLint -- ^ @un@.
@@ -24578,7 +24846,7 @@ ptr_glMapGrid2xOES = unsafePerformIO $ getCommand "glMapGrid2xOES"
 
 -- glMapNamedBuffer ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMapBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMapBuffer.xhtml OpenGL 4.x>.
 glMapNamedBuffer
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -24605,7 +24873,7 @@ ptr_glMapNamedBufferEXT = unsafePerformIO $ getCommand "glMapNamedBufferEXT"
 
 -- glMapNamedBufferRange -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMapBufferRange.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMapBufferRange.xhtml OpenGL 4.x>.
 glMapNamedBufferRange
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -24772,7 +25040,7 @@ ptr_glMapVertexAttrib2fAPPLE = unsafePerformIO $ getCommand "glMapVertexAttrib2f
 
 -- glMaterialf -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
 glMaterialf
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -24787,7 +25055,7 @@ ptr_glMaterialf = unsafePerformIO $ getCommand "glMaterialf"
 
 -- glMaterialfv ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
 glMaterialfv
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -24802,7 +25070,7 @@ ptr_glMaterialfv = unsafePerformIO $ getCommand "glMaterialfv"
 
 -- glMateriali -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
 glMateriali
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -24817,7 +25085,7 @@ ptr_glMateriali = unsafePerformIO $ getCommand "glMateriali"
 
 -- glMaterialiv ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
 glMaterialiv
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -25078,7 +25346,7 @@ ptr_glMatrixLoadfEXT = unsafePerformIO $ getCommand "glMatrixLoadfEXT"
 
 -- glMatrixMode ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMatrixMode.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMatrixMode.xml OpenGL 2.x>.
 glMatrixMode
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-Rendering-OpenGL-Raw-Groups.html#MatrixMode).
@@ -25328,7 +25596,7 @@ ptr_glMaxShaderCompilerThreadsARB = unsafePerformIO $ getCommand "glMaxShaderCom
 
 -- glMemoryBarrier -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMemoryBarrier.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMemoryBarrier.xhtml OpenGL 4.x>.
 glMemoryBarrier
   :: MonadIO m
   => GLbitfield -- ^ @barriers@.
@@ -25341,7 +25609,7 @@ ptr_glMemoryBarrier = unsafePerformIO $ getCommand "glMemoryBarrier"
 
 -- glMemoryBarrierByRegion -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMemoryBarrier.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMemoryBarrier.xhtml OpenGL 4.x>.
 glMemoryBarrierByRegion
   :: MonadIO m
   => GLbitfield -- ^ @barriers@.
@@ -25354,6 +25622,7 @@ ptr_glMemoryBarrierByRegion = unsafePerformIO $ getCommand "glMemoryBarrierByReg
 
 -- glMemoryBarrierEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glMemoryBarrier'.
 glMemoryBarrierEXT
   :: MonadIO m
   => GLbitfield -- ^ @barriers@.
@@ -25366,7 +25635,7 @@ ptr_glMemoryBarrierEXT = unsafePerformIO $ getCommand "glMemoryBarrierEXT"
 
 -- glMinSampleShading ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMinSampleShading.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMinSampleShading.xhtml OpenGL 4.x>.
 glMinSampleShading
   :: MonadIO m
   => GLfloat -- ^ @value@ of type @ColorF@.
@@ -25379,6 +25648,7 @@ ptr_glMinSampleShading = unsafePerformIO $ getCommand "glMinSampleShading"
 
 -- glMinSampleShadingARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMinSampleShading'.
 glMinSampleShadingARB
   :: MonadIO m
   => GLfloat -- ^ @value@ of type @ColorF@.
@@ -25391,6 +25661,7 @@ ptr_glMinSampleShadingARB = unsafePerformIO $ getCommand "glMinSampleShadingARB"
 
 -- glMinSampleShadingOES -------------------------------------------------------
 
+-- | This command is an alias for 'glMinSampleShading'.
 glMinSampleShadingOES
   :: MonadIO m
   => GLfloat -- ^ @value@ of type @ColorF@.
@@ -25403,7 +25674,7 @@ ptr_glMinSampleShadingOES = unsafePerformIO $ getCommand "glMinSampleShadingOES"
 
 -- glMinmax --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMinmax.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMinmax.xml OpenGL 2.x>.
 glMinmax
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
@@ -25418,6 +25689,7 @@ ptr_glMinmax = unsafePerformIO $ getCommand "glMinmax"
 
 -- glMinmaxEXT -----------------------------------------------------------------
 
+-- | This command is an alias for 'glMinmax'.
 glMinmaxEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
@@ -25432,7 +25704,7 @@ ptr_glMinmaxEXT = unsafePerformIO $ getCommand "glMinmaxEXT"
 
 -- glMultMatrixd ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultMatrix.xml OpenGL 2.x>.
 glMultMatrixd
   :: MonadIO m
   => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
@@ -25445,7 +25717,7 @@ ptr_glMultMatrixd = unsafePerformIO $ getCommand "glMultMatrixd"
 
 -- glMultMatrixf ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultMatrix.xml OpenGL 2.x>.
 glMultMatrixf
   :: MonadIO m
   => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
@@ -25482,7 +25754,7 @@ ptr_glMultMatrixxOES = unsafePerformIO $ getCommand "glMultMatrixxOES"
 
 -- glMultTransposeMatrixd ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultTransposeMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultTransposeMatrix.xml OpenGL 2.x>.
 glMultTransposeMatrixd
   :: MonadIO m
   => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
@@ -25495,6 +25767,7 @@ ptr_glMultTransposeMatrixd = unsafePerformIO $ getCommand "glMultTransposeMatrix
 
 -- glMultTransposeMatrixdARB ---------------------------------------------------
 
+-- | This command is an alias for 'glMultTransposeMatrixd'.
 glMultTransposeMatrixdARB
   :: MonadIO m
   => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
@@ -25507,7 +25780,7 @@ ptr_glMultTransposeMatrixdARB = unsafePerformIO $ getCommand "glMultTransposeMat
 
 -- glMultTransposeMatrixf ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultTransposeMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultTransposeMatrix.xml OpenGL 2.x>.
 glMultTransposeMatrixf
   :: MonadIO m
   => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
@@ -25520,6 +25793,7 @@ ptr_glMultTransposeMatrixf = unsafePerformIO $ getCommand "glMultTransposeMatrix
 
 -- glMultTransposeMatrixfARB ---------------------------------------------------
 
+-- | This command is an alias for 'glMultTransposeMatrixf'.
 glMultTransposeMatrixfARB
   :: MonadIO m
   => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
@@ -25544,7 +25818,7 @@ ptr_glMultTransposeMatrixxOES = unsafePerformIO $ getCommand "glMultTransposeMat
 
 -- glMultiDrawArrays -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawArrays.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawArrays.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawArrays.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawArrays.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawArrays.xhtml OpenGL 4.x>.
 glMultiDrawArrays
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -25560,6 +25834,7 @@ ptr_glMultiDrawArrays = unsafePerformIO $ getCommand "glMultiDrawArrays"
 
 -- glMultiDrawArraysEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawArrays'.
 glMultiDrawArraysEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -25575,7 +25850,7 @@ ptr_glMultiDrawArraysEXT = unsafePerformIO $ getCommand "glMultiDrawArraysEXT"
 
 -- glMultiDrawArraysIndirect ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawArraysIndirect.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawArraysIndirect.xhtml OpenGL 4.x>.
 glMultiDrawArraysIndirect
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25591,6 +25866,7 @@ ptr_glMultiDrawArraysIndirect = unsafePerformIO $ getCommand "glMultiDrawArraysI
 
 -- glMultiDrawArraysIndirectAMD ------------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawArraysIndirect'.
 glMultiDrawArraysIndirectAMD
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25655,6 +25931,7 @@ ptr_glMultiDrawArraysIndirectCountARB = unsafePerformIO $ getCommand "glMultiDra
 
 -- glMultiDrawArraysIndirectEXT ------------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawArraysIndirect'.
 glMultiDrawArraysIndirectEXT
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25685,7 +25962,7 @@ ptr_glMultiDrawElementArrayAPPLE = unsafePerformIO $ getCommand "glMultiDrawElem
 
 -- glMultiDrawElements ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElements.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElements.xhtml OpenGL 4.x>.
 glMultiDrawElements
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -25702,7 +25979,7 @@ ptr_glMultiDrawElements = unsafePerformIO $ getCommand "glMultiDrawElements"
 
 -- glMultiDrawElementsBaseVertex -----------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElementsBaseVertex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElementsBaseVertex.xhtml OpenGL 4.x>.
 glMultiDrawElementsBaseVertex
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25720,6 +25997,7 @@ ptr_glMultiDrawElementsBaseVertex = unsafePerformIO $ getCommand "glMultiDrawEle
 
 -- glMultiDrawElementsBaseVertexEXT --------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawElementsBaseVertex'.
 glMultiDrawElementsBaseVertexEXT
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25737,6 +26015,7 @@ ptr_glMultiDrawElementsBaseVertexEXT = unsafePerformIO $ getCommand "glMultiDraw
 
 -- glMultiDrawElementsBaseVertexOES --------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawElementsBaseVertex'.
 glMultiDrawElementsBaseVertexOES
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25754,6 +26033,7 @@ ptr_glMultiDrawElementsBaseVertexOES = unsafePerformIO $ getCommand "glMultiDraw
 
 -- glMultiDrawElementsEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawElements'.
 glMultiDrawElementsEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-Rendering-OpenGL-Raw-Groups.html#PrimitiveType).
@@ -25770,7 +26050,7 @@ ptr_glMultiDrawElementsEXT = unsafePerformIO $ getCommand "glMultiDrawElementsEX
 
 -- glMultiDrawElementsIndirect -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElementsIndirect.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElementsIndirect.xhtml OpenGL 4.x>.
 glMultiDrawElementsIndirect
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25787,6 +26067,7 @@ ptr_glMultiDrawElementsIndirect = unsafePerformIO $ getCommand "glMultiDrawEleme
 
 -- glMultiDrawElementsIndirectAMD ----------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawElementsIndirect'.
 glMultiDrawElementsIndirectAMD
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25855,6 +26136,7 @@ ptr_glMultiDrawElementsIndirectCountARB = unsafePerformIO $ getCommand "glMultiD
 
 -- glMultiDrawElementsIndirectEXT ----------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawElementsIndirect'.
 glMultiDrawElementsIndirectEXT
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -25962,7 +26244,7 @@ ptr_glMultiTexCoord1bvOES = unsafePerformIO $ getCommand "glMultiTexCoord1bvOES"
 
 -- glMultiTexCoord1d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord1dv'.
 glMultiTexCoord1d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25976,6 +26258,7 @@ ptr_glMultiTexCoord1d = unsafePerformIO $ getCommand "glMultiTexCoord1d"
 
 -- glMultiTexCoord1dARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord1dv'. This command is an alias for 'glMultiTexCoord1d'.
 glMultiTexCoord1dARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -25989,7 +26272,7 @@ ptr_glMultiTexCoord1dARB = unsafePerformIO $ getCommand "glMultiTexCoord1dARB"
 
 -- glMultiTexCoord1dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord1dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26003,6 +26286,7 @@ ptr_glMultiTexCoord1dv = unsafePerformIO $ getCommand "glMultiTexCoord1dv"
 
 -- glMultiTexCoord1dvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord1dv'.
 glMultiTexCoord1dvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26016,7 +26300,7 @@ ptr_glMultiTexCoord1dvARB = unsafePerformIO $ getCommand "glMultiTexCoord1dvARB"
 
 -- glMultiTexCoord1f -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord1fv'.
 glMultiTexCoord1f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26030,6 +26314,7 @@ ptr_glMultiTexCoord1f = unsafePerformIO $ getCommand "glMultiTexCoord1f"
 
 -- glMultiTexCoord1fARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord1fv'. This command is an alias for 'glMultiTexCoord1f'.
 glMultiTexCoord1fARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26043,7 +26328,7 @@ ptr_glMultiTexCoord1fARB = unsafePerformIO $ getCommand "glMultiTexCoord1fARB"
 
 -- glMultiTexCoord1fv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord1fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26057,6 +26342,7 @@ ptr_glMultiTexCoord1fv = unsafePerformIO $ getCommand "glMultiTexCoord1fv"
 
 -- glMultiTexCoord1fvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord1fv'.
 glMultiTexCoord1fvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26070,6 +26356,7 @@ ptr_glMultiTexCoord1fvARB = unsafePerformIO $ getCommand "glMultiTexCoord1fvARB"
 
 -- glMultiTexCoord1hNV ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord1hvNV'.
 glMultiTexCoord1hNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26096,7 +26383,7 @@ ptr_glMultiTexCoord1hvNV = unsafePerformIO $ getCommand "glMultiTexCoord1hvNV"
 
 -- glMultiTexCoord1i -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord1iv'.
 glMultiTexCoord1i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26110,6 +26397,7 @@ ptr_glMultiTexCoord1i = unsafePerformIO $ getCommand "glMultiTexCoord1i"
 
 -- glMultiTexCoord1iARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord1iv'. This command is an alias for 'glMultiTexCoord1i'.
 glMultiTexCoord1iARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26123,7 +26411,7 @@ ptr_glMultiTexCoord1iARB = unsafePerformIO $ getCommand "glMultiTexCoord1iARB"
 
 -- glMultiTexCoord1iv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord1iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26137,6 +26425,7 @@ ptr_glMultiTexCoord1iv = unsafePerformIO $ getCommand "glMultiTexCoord1iv"
 
 -- glMultiTexCoord1ivARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord1iv'.
 glMultiTexCoord1ivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26150,7 +26439,7 @@ ptr_glMultiTexCoord1ivARB = unsafePerformIO $ getCommand "glMultiTexCoord1ivARB"
 
 -- glMultiTexCoord1s -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord1sv'.
 glMultiTexCoord1s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26164,6 +26453,7 @@ ptr_glMultiTexCoord1s = unsafePerformIO $ getCommand "glMultiTexCoord1s"
 
 -- glMultiTexCoord1sARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord1sv'. This command is an alias for 'glMultiTexCoord1s'.
 glMultiTexCoord1sARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26177,7 +26467,7 @@ ptr_glMultiTexCoord1sARB = unsafePerformIO $ getCommand "glMultiTexCoord1sARB"
 
 -- glMultiTexCoord1sv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord1sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26191,6 +26481,7 @@ ptr_glMultiTexCoord1sv = unsafePerformIO $ getCommand "glMultiTexCoord1sv"
 
 -- glMultiTexCoord1svARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord1sv'.
 glMultiTexCoord1svARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26257,7 +26548,7 @@ ptr_glMultiTexCoord2bvOES = unsafePerformIO $ getCommand "glMultiTexCoord2bvOES"
 
 -- glMultiTexCoord2d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord2dv'.
 glMultiTexCoord2d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26272,6 +26563,7 @@ ptr_glMultiTexCoord2d = unsafePerformIO $ getCommand "glMultiTexCoord2d"
 
 -- glMultiTexCoord2dARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord2dv'. This command is an alias for 'glMultiTexCoord2d'.
 glMultiTexCoord2dARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26286,7 +26578,7 @@ ptr_glMultiTexCoord2dARB = unsafePerformIO $ getCommand "glMultiTexCoord2dARB"
 
 -- glMultiTexCoord2dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord2dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26300,6 +26592,7 @@ ptr_glMultiTexCoord2dv = unsafePerformIO $ getCommand "glMultiTexCoord2dv"
 
 -- glMultiTexCoord2dvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord2dv'.
 glMultiTexCoord2dvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26313,7 +26606,7 @@ ptr_glMultiTexCoord2dvARB = unsafePerformIO $ getCommand "glMultiTexCoord2dvARB"
 
 -- glMultiTexCoord2f -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord2fv'.
 glMultiTexCoord2f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26328,6 +26621,7 @@ ptr_glMultiTexCoord2f = unsafePerformIO $ getCommand "glMultiTexCoord2f"
 
 -- glMultiTexCoord2fARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord2fv'. This command is an alias for 'glMultiTexCoord2f'.
 glMultiTexCoord2fARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26342,7 +26636,7 @@ ptr_glMultiTexCoord2fARB = unsafePerformIO $ getCommand "glMultiTexCoord2fARB"
 
 -- glMultiTexCoord2fv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord2fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26356,6 +26650,7 @@ ptr_glMultiTexCoord2fv = unsafePerformIO $ getCommand "glMultiTexCoord2fv"
 
 -- glMultiTexCoord2fvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord2fv'.
 glMultiTexCoord2fvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26369,6 +26664,7 @@ ptr_glMultiTexCoord2fvARB = unsafePerformIO $ getCommand "glMultiTexCoord2fvARB"
 
 -- glMultiTexCoord2hNV ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord2hvNV'.
 glMultiTexCoord2hNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26396,7 +26692,7 @@ ptr_glMultiTexCoord2hvNV = unsafePerformIO $ getCommand "glMultiTexCoord2hvNV"
 
 -- glMultiTexCoord2i -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord2iv'.
 glMultiTexCoord2i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26411,6 +26707,7 @@ ptr_glMultiTexCoord2i = unsafePerformIO $ getCommand "glMultiTexCoord2i"
 
 -- glMultiTexCoord2iARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord2iv'. This command is an alias for 'glMultiTexCoord2i'.
 glMultiTexCoord2iARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26425,7 +26722,7 @@ ptr_glMultiTexCoord2iARB = unsafePerformIO $ getCommand "glMultiTexCoord2iARB"
 
 -- glMultiTexCoord2iv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord2iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26439,6 +26736,7 @@ ptr_glMultiTexCoord2iv = unsafePerformIO $ getCommand "glMultiTexCoord2iv"
 
 -- glMultiTexCoord2ivARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord2iv'.
 glMultiTexCoord2ivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26452,7 +26750,7 @@ ptr_glMultiTexCoord2ivARB = unsafePerformIO $ getCommand "glMultiTexCoord2ivARB"
 
 -- glMultiTexCoord2s -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord2sv'.
 glMultiTexCoord2s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26467,6 +26765,7 @@ ptr_glMultiTexCoord2s = unsafePerformIO $ getCommand "glMultiTexCoord2s"
 
 -- glMultiTexCoord2sARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord2sv'. This command is an alias for 'glMultiTexCoord2s'.
 glMultiTexCoord2sARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26481,7 +26780,7 @@ ptr_glMultiTexCoord2sARB = unsafePerformIO $ getCommand "glMultiTexCoord2sARB"
 
 -- glMultiTexCoord2sv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord2sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26495,6 +26794,7 @@ ptr_glMultiTexCoord2sv = unsafePerformIO $ getCommand "glMultiTexCoord2sv"
 
 -- glMultiTexCoord2svARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord2sv'.
 glMultiTexCoord2svARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26563,7 +26863,7 @@ ptr_glMultiTexCoord3bvOES = unsafePerformIO $ getCommand "glMultiTexCoord3bvOES"
 
 -- glMultiTexCoord3d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord3dv'.
 glMultiTexCoord3d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26579,6 +26879,7 @@ ptr_glMultiTexCoord3d = unsafePerformIO $ getCommand "glMultiTexCoord3d"
 
 -- glMultiTexCoord3dARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord3dv'. This command is an alias for 'glMultiTexCoord3d'.
 glMultiTexCoord3dARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26594,7 +26895,7 @@ ptr_glMultiTexCoord3dARB = unsafePerformIO $ getCommand "glMultiTexCoord3dARB"
 
 -- glMultiTexCoord3dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord3dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26608,6 +26909,7 @@ ptr_glMultiTexCoord3dv = unsafePerformIO $ getCommand "glMultiTexCoord3dv"
 
 -- glMultiTexCoord3dvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord3dv'.
 glMultiTexCoord3dvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26621,7 +26923,7 @@ ptr_glMultiTexCoord3dvARB = unsafePerformIO $ getCommand "glMultiTexCoord3dvARB"
 
 -- glMultiTexCoord3f -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord3fv'.
 glMultiTexCoord3f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26637,6 +26939,7 @@ ptr_glMultiTexCoord3f = unsafePerformIO $ getCommand "glMultiTexCoord3f"
 
 -- glMultiTexCoord3fARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord3fv'. This command is an alias for 'glMultiTexCoord3f'.
 glMultiTexCoord3fARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26652,7 +26955,7 @@ ptr_glMultiTexCoord3fARB = unsafePerformIO $ getCommand "glMultiTexCoord3fARB"
 
 -- glMultiTexCoord3fv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord3fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26666,6 +26969,7 @@ ptr_glMultiTexCoord3fv = unsafePerformIO $ getCommand "glMultiTexCoord3fv"
 
 -- glMultiTexCoord3fvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord3fv'.
 glMultiTexCoord3fvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26679,6 +26983,7 @@ ptr_glMultiTexCoord3fvARB = unsafePerformIO $ getCommand "glMultiTexCoord3fvARB"
 
 -- glMultiTexCoord3hNV ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord3hvNV'.
 glMultiTexCoord3hNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26707,7 +27012,7 @@ ptr_glMultiTexCoord3hvNV = unsafePerformIO $ getCommand "glMultiTexCoord3hvNV"
 
 -- glMultiTexCoord3i -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord3iv'.
 glMultiTexCoord3i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26723,6 +27028,7 @@ ptr_glMultiTexCoord3i = unsafePerformIO $ getCommand "glMultiTexCoord3i"
 
 -- glMultiTexCoord3iARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord3iv'. This command is an alias for 'glMultiTexCoord3i'.
 glMultiTexCoord3iARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26738,7 +27044,7 @@ ptr_glMultiTexCoord3iARB = unsafePerformIO $ getCommand "glMultiTexCoord3iARB"
 
 -- glMultiTexCoord3iv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord3iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26752,6 +27058,7 @@ ptr_glMultiTexCoord3iv = unsafePerformIO $ getCommand "glMultiTexCoord3iv"
 
 -- glMultiTexCoord3ivARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord3iv'.
 glMultiTexCoord3ivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26765,7 +27072,7 @@ ptr_glMultiTexCoord3ivARB = unsafePerformIO $ getCommand "glMultiTexCoord3ivARB"
 
 -- glMultiTexCoord3s -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord3sv'.
 glMultiTexCoord3s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26781,6 +27088,7 @@ ptr_glMultiTexCoord3s = unsafePerformIO $ getCommand "glMultiTexCoord3s"
 
 -- glMultiTexCoord3sARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord3sv'. This command is an alias for 'glMultiTexCoord3s'.
 glMultiTexCoord3sARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26796,7 +27104,7 @@ ptr_glMultiTexCoord3sARB = unsafePerformIO $ getCommand "glMultiTexCoord3sARB"
 
 -- glMultiTexCoord3sv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord3sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26810,6 +27118,7 @@ ptr_glMultiTexCoord3sv = unsafePerformIO $ getCommand "glMultiTexCoord3sv"
 
 -- glMultiTexCoord3svARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord3sv'.
 glMultiTexCoord3svARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26880,7 +27189,7 @@ ptr_glMultiTexCoord4bvOES = unsafePerformIO $ getCommand "glMultiTexCoord4bvOES"
 
 -- glMultiTexCoord4d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord4dv'.
 glMultiTexCoord4d
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26897,6 +27206,7 @@ ptr_glMultiTexCoord4d = unsafePerformIO $ getCommand "glMultiTexCoord4d"
 
 -- glMultiTexCoord4dARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord4dv'. This command is an alias for 'glMultiTexCoord4d'.
 glMultiTexCoord4dARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26913,7 +27223,7 @@ ptr_glMultiTexCoord4dARB = unsafePerformIO $ getCommand "glMultiTexCoord4dARB"
 
 -- glMultiTexCoord4dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord4dv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26927,6 +27237,7 @@ ptr_glMultiTexCoord4dv = unsafePerformIO $ getCommand "glMultiTexCoord4dv"
 
 -- glMultiTexCoord4dvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord4dv'.
 glMultiTexCoord4dvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26940,7 +27251,7 @@ ptr_glMultiTexCoord4dvARB = unsafePerformIO $ getCommand "glMultiTexCoord4dvARB"
 
 -- glMultiTexCoord4f -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord4fv'.
 glMultiTexCoord4f
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26957,6 +27268,7 @@ ptr_glMultiTexCoord4f = unsafePerformIO $ getCommand "glMultiTexCoord4f"
 
 -- glMultiTexCoord4fARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord4fv'. This command is an alias for 'glMultiTexCoord4f'.
 glMultiTexCoord4fARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26973,7 +27285,7 @@ ptr_glMultiTexCoord4fARB = unsafePerformIO $ getCommand "glMultiTexCoord4fARB"
 
 -- glMultiTexCoord4fv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord4fv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -26987,6 +27299,7 @@ ptr_glMultiTexCoord4fv = unsafePerformIO $ getCommand "glMultiTexCoord4fv"
 
 -- glMultiTexCoord4fvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord4fv'.
 glMultiTexCoord4fvARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27000,6 +27313,7 @@ ptr_glMultiTexCoord4fvARB = unsafePerformIO $ getCommand "glMultiTexCoord4fvARB"
 
 -- glMultiTexCoord4hNV ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord4hvNV'.
 glMultiTexCoord4hNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27029,7 +27343,7 @@ ptr_glMultiTexCoord4hvNV = unsafePerformIO $ getCommand "glMultiTexCoord4hvNV"
 
 -- glMultiTexCoord4i -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord4iv'.
 glMultiTexCoord4i
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27046,6 +27360,7 @@ ptr_glMultiTexCoord4i = unsafePerformIO $ getCommand "glMultiTexCoord4i"
 
 -- glMultiTexCoord4iARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord4iv'. This command is an alias for 'glMultiTexCoord4i'.
 glMultiTexCoord4iARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27062,7 +27377,7 @@ ptr_glMultiTexCoord4iARB = unsafePerformIO $ getCommand "glMultiTexCoord4iARB"
 
 -- glMultiTexCoord4iv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord4iv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27076,6 +27391,7 @@ ptr_glMultiTexCoord4iv = unsafePerformIO $ getCommand "glMultiTexCoord4iv"
 
 -- glMultiTexCoord4ivARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord4iv'.
 glMultiTexCoord4ivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27089,7 +27405,7 @@ ptr_glMultiTexCoord4ivARB = unsafePerformIO $ getCommand "glMultiTexCoord4ivARB"
 
 -- glMultiTexCoord4s -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord4sv'.
 glMultiTexCoord4s
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27106,6 +27422,7 @@ ptr_glMultiTexCoord4s = unsafePerformIO $ getCommand "glMultiTexCoord4s"
 
 -- glMultiTexCoord4sARB --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexCoord4sv'. This command is an alias for 'glMultiTexCoord4s'.
 glMultiTexCoord4sARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27122,7 +27439,7 @@ ptr_glMultiTexCoord4sARB = unsafePerformIO $ getCommand "glMultiTexCoord4sARB"
 
 -- glMultiTexCoord4sv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
 glMultiTexCoord4sv
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27136,6 +27453,7 @@ ptr_glMultiTexCoord4sv = unsafePerformIO $ getCommand "glMultiTexCoord4sv"
 
 -- glMultiTexCoord4svARB -------------------------------------------------------
 
+-- | This command is an alias for 'glMultiTexCoord4sv'.
 glMultiTexCoord4svARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @TextureUnit@.
@@ -27322,6 +27640,7 @@ ptr_glMultiTexCoordPointerEXT = unsafePerformIO $ getCommand "glMultiTexCoordPoi
 
 -- glMultiTexEnvfEXT -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexEnvfvEXT'.
 glMultiTexEnvfEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
@@ -27352,6 +27671,7 @@ ptr_glMultiTexEnvfvEXT = unsafePerformIO $ getCommand "glMultiTexEnvfvEXT"
 
 -- glMultiTexEnviEXT -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexEnvivEXT'.
 glMultiTexEnviEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
@@ -27382,6 +27702,7 @@ ptr_glMultiTexEnvivEXT = unsafePerformIO $ getCommand "glMultiTexEnvivEXT"
 
 -- glMultiTexGendEXT -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexGendvEXT'.
 glMultiTexGendEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
@@ -27412,6 +27733,7 @@ ptr_glMultiTexGendvEXT = unsafePerformIO $ getCommand "glMultiTexGendvEXT"
 
 -- glMultiTexGenfEXT -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexGenfvEXT'.
 glMultiTexGenfEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
@@ -27442,6 +27764,7 @@ ptr_glMultiTexGenfvEXT = unsafePerformIO $ getCommand "glMultiTexGenfvEXT"
 
 -- glMultiTexGeniEXT -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexGenivEXT'.
 glMultiTexGeniEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
@@ -27565,6 +27888,7 @@ ptr_glMultiTexParameterIuivEXT = unsafePerformIO $ getCommand "glMultiTexParamet
 
 -- glMultiTexParameterfEXT -----------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexParameterfvEXT'.
 glMultiTexParameterfEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
@@ -27595,6 +27919,7 @@ ptr_glMultiTexParameterfvEXT = unsafePerformIO $ getCommand "glMultiTexParameter
 
 -- glMultiTexParameteriEXT -----------------------------------------------------
 
+-- | The vector equivalent of this command is 'glMultiTexParameterivEXT'.
 glMultiTexParameteriEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type @TextureUnit@.
@@ -27702,7 +28027,7 @@ ptr_glMultiTexSubImage3DEXT = unsafePerformIO $ getCommand "glMultiTexSubImage3D
 
 -- glNamedBufferData -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferData.xhtml OpenGL 4.x>.
 glNamedBufferData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -27763,7 +28088,7 @@ ptr_glNamedBufferPageCommitmentEXT = unsafePerformIO $ getCommand "glNamedBuffer
 
 -- glNamedBufferStorage --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferStorage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferStorage.xhtml OpenGL 4.x>.
 glNamedBufferStorage
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -27779,6 +28104,7 @@ ptr_glNamedBufferStorage = unsafePerformIO $ getCommand "glNamedBufferStorage"
 
 -- glNamedBufferStorageEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glNamedBufferStorage'.
 glNamedBufferStorageEXT
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -27794,7 +28120,7 @@ ptr_glNamedBufferStorageEXT = unsafePerformIO $ getCommand "glNamedBufferStorage
 
 -- glNamedBufferSubData --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml OpenGL 4.x>.
 glNamedBufferSubData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -27810,6 +28136,7 @@ ptr_glNamedBufferSubData = unsafePerformIO $ getCommand "glNamedBufferSubData"
 
 -- glNamedBufferSubDataEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glNamedBufferSubData'.
 glNamedBufferSubDataEXT
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -27841,7 +28168,7 @@ ptr_glNamedCopyBufferSubDataEXT = unsafePerformIO $ getCommand "glNamedCopyBuffe
 
 -- glNamedFramebufferDrawBuffer ------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffer.xhtml OpenGL 4.x>.
 glNamedFramebufferDrawBuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -27855,7 +28182,7 @@ ptr_glNamedFramebufferDrawBuffer = unsafePerformIO $ getCommand "glNamedFramebuf
 
 -- glNamedFramebufferDrawBuffers -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawBuffers.xhtml OpenGL 4.x>.
 glNamedFramebufferDrawBuffers
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -27870,7 +28197,7 @@ ptr_glNamedFramebufferDrawBuffers = unsafePerformIO $ getCommand "glNamedFramebu
 
 -- glNamedFramebufferParameteri ------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferParameteri.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferParameteri.xhtml OpenGL 4.x>.
 glNamedFramebufferParameteri
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -27899,7 +28226,7 @@ ptr_glNamedFramebufferParameteriEXT = unsafePerformIO $ getCommand "glNamedFrame
 
 -- glNamedFramebufferReadBuffer ------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glReadBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glReadBuffer.xhtml OpenGL 4.x>.
 glNamedFramebufferReadBuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -27913,7 +28240,7 @@ ptr_glNamedFramebufferReadBuffer = unsafePerformIO $ getCommand "glNamedFramebuf
 
 -- glNamedFramebufferRenderbuffer ----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferRenderbuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferRenderbuffer.xhtml OpenGL 4.x>.
 glNamedFramebufferRenderbuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -27974,7 +28301,7 @@ ptr_glNamedFramebufferSampleLocationsfvNV = unsafePerformIO $ getCommand "glName
 
 -- glNamedFramebufferTexture ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glNamedFramebufferTexture
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -28070,7 +28397,7 @@ ptr_glNamedFramebufferTextureFaceEXT = unsafePerformIO $ getCommand "glNamedFram
 
 -- glNamedFramebufferTextureLayer ----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTextureLayer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTextureLayer.xhtml OpenGL 4.x>.
 glNamedFramebufferTextureLayer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
@@ -28103,6 +28430,7 @@ ptr_glNamedFramebufferTextureLayerEXT = unsafePerformIO $ getCommand "glNamedFra
 
 -- glNamedProgramLocalParameter4dEXT -------------------------------------------
 
+-- | The vector equivalent of this command is 'glNamedProgramLocalParameter4dvEXT'.
 glNamedProgramLocalParameter4dEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -28136,6 +28464,7 @@ ptr_glNamedProgramLocalParameter4dvEXT = unsafePerformIO $ getCommand "glNamedPr
 
 -- glNamedProgramLocalParameter4fEXT -------------------------------------------
 
+-- | The vector equivalent of this command is 'glNamedProgramLocalParameter4fvEXT'.
 glNamedProgramLocalParameter4fEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -28169,6 +28498,7 @@ ptr_glNamedProgramLocalParameter4fvEXT = unsafePerformIO $ getCommand "glNamedPr
 
 -- glNamedProgramLocalParameterI4iEXT ------------------------------------------
 
+-- | The vector equivalent of this command is 'glNamedProgramLocalParameterI4ivEXT'.
 glNamedProgramLocalParameterI4iEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -28202,6 +28532,7 @@ ptr_glNamedProgramLocalParameterI4ivEXT = unsafePerformIO $ getCommand "glNamedP
 
 -- glNamedProgramLocalParameterI4uiEXT -----------------------------------------
 
+-- | The vector equivalent of this command is 'glNamedProgramLocalParameterI4uivEXT'.
 glNamedProgramLocalParameterI4uiEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -28299,7 +28630,7 @@ ptr_glNamedProgramStringEXT = unsafePerformIO $ getCommand "glNamedProgramString
 
 -- glNamedRenderbufferStorage --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorage.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorage.xhtml OpenGL 4.x>.
 glNamedRenderbufferStorage
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
@@ -28330,7 +28661,7 @@ ptr_glNamedRenderbufferStorageEXT = unsafePerformIO $ getCommand "glNamedRenderb
 
 -- glNamedRenderbufferStorageMultisample ---------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorageMultisample.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorageMultisample.xhtml OpenGL 4.x>.
 glNamedRenderbufferStorageMultisample
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
@@ -28396,7 +28727,7 @@ ptr_glNamedStringARB = unsafePerformIO $ getCommand "glNamedStringARB"
 
 -- glNewList -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNewList.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNewList.xml OpenGL 2.x>.
 glNewList
   :: MonadIO m
   => GLuint -- ^ @list@ of type @List@.
@@ -28424,7 +28755,7 @@ ptr_glNewObjectBufferATI = unsafePerformIO $ getCommand "glNewObjectBufferATI"
 
 -- glNormal3b ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3bv'.
 glNormal3b
   :: MonadIO m
   => GLbyte -- ^ @nx@.
@@ -28439,7 +28770,7 @@ ptr_glNormal3b = unsafePerformIO $ getCommand "glNormal3b"
 
 -- glNormal3bv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
 glNormal3bv
   :: MonadIO m
   => Ptr GLbyte -- ^ @v@ pointing to @3@ elements of type @GLbyte@.
@@ -28452,7 +28783,7 @@ ptr_glNormal3bv = unsafePerformIO $ getCommand "glNormal3bv"
 
 -- glNormal3d ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3dv'.
 glNormal3d
   :: MonadIO m
   => GLdouble -- ^ @nx@ of type @CoordD@.
@@ -28467,7 +28798,7 @@ ptr_glNormal3d = unsafePerformIO $ getCommand "glNormal3d"
 
 -- glNormal3dv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
 glNormal3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -28480,7 +28811,7 @@ ptr_glNormal3dv = unsafePerformIO $ getCommand "glNormal3dv"
 
 -- glNormal3f ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3fv'.
 glNormal3f
   :: MonadIO m
   => GLfloat -- ^ @nx@ of type @CoordF@.
@@ -28525,7 +28856,7 @@ ptr_glNormal3fVertex3fvSUN = unsafePerformIO $ getCommand "glNormal3fVertex3fvSU
 
 -- glNormal3fv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
 glNormal3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -28538,6 +28869,7 @@ ptr_glNormal3fv = unsafePerformIO $ getCommand "glNormal3fv"
 
 -- glNormal3hNV ----------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glNormal3hvNV'.
 glNormal3hNV
   :: MonadIO m
   => GLhalfNV -- ^ @nx@ of type @Half16NV@.
@@ -28564,7 +28896,7 @@ ptr_glNormal3hvNV = unsafePerformIO $ getCommand "glNormal3hvNV"
 
 -- glNormal3i ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3iv'.
 glNormal3i
   :: MonadIO m
   => GLint -- ^ @nx@.
@@ -28579,7 +28911,7 @@ ptr_glNormal3i = unsafePerformIO $ getCommand "glNormal3i"
 
 -- glNormal3iv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
 glNormal3iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @GLint@.
@@ -28592,7 +28924,7 @@ ptr_glNormal3iv = unsafePerformIO $ getCommand "glNormal3iv"
 
 -- glNormal3s ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3sv'.
 glNormal3s
   :: MonadIO m
   => GLshort -- ^ @nx@.
@@ -28607,7 +28939,7 @@ ptr_glNormal3s = unsafePerformIO $ getCommand "glNormal3s"
 
 -- glNormal3sv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
 glNormal3sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @GLshort@.
@@ -28699,7 +29031,7 @@ ptr_glNormalP3uiv = unsafePerformIO $ getCommand "glNormalP3uiv"
 
 -- glNormalPointer -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormalPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormalPointer.xml OpenGL 2.x>.
 glNormalPointer
   :: MonadIO m
   => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-Rendering-OpenGL-Raw-Groups.html#NormalPointerType).
@@ -28897,7 +29229,7 @@ ptr_glNormalStream3svATI = unsafePerformIO $ getCommand "glNormalStream3svATI"
 
 -- glObjectLabel ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glObjectLabel.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glObjectLabel.xhtml OpenGL 4.x>.
 glObjectLabel
   :: MonadIO m
   => GLenum -- ^ @identifier@.
@@ -28913,6 +29245,7 @@ ptr_glObjectLabel = unsafePerformIO $ getCommand "glObjectLabel"
 
 -- glObjectLabelKHR ------------------------------------------------------------
 
+-- | This command is an alias for 'glObjectLabel'.
 glObjectLabelKHR
   :: MonadIO m
   => GLenum -- ^ @identifier@.
@@ -28928,7 +29261,7 @@ ptr_glObjectLabelKHR = unsafePerformIO $ getCommand "glObjectLabelKHR"
 
 -- glObjectPtrLabel ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glObjectPtrLabel.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glObjectPtrLabel.xhtml OpenGL 4.x>.
 glObjectPtrLabel
   :: MonadIO m
   => Ptr a -- ^ @ptr@.
@@ -28943,6 +29276,7 @@ ptr_glObjectPtrLabel = unsafePerformIO $ getCommand "glObjectPtrLabel"
 
 -- glObjectPtrLabelKHR ---------------------------------------------------------
 
+-- | This command is an alias for 'glObjectPtrLabel'.
 glObjectPtrLabelKHR
   :: MonadIO m
   => Ptr a -- ^ @ptr@.
@@ -28985,7 +29319,7 @@ ptr_glObjectUnpurgeableAPPLE = unsafePerformIO $ getCommand "glObjectUnpurgeable
 
 -- glOrtho ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml OpenGL 2.x>.
 glOrtho
   :: MonadIO m
   => GLdouble -- ^ @left@.
@@ -29111,7 +29445,7 @@ ptr_glPassTexCoordATI = unsafePerformIO $ getCommand "glPassTexCoordATI"
 
 -- glPassThrough ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPassThrough.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPassThrough.xml OpenGL 2.x>.
 glPassThrough
   :: MonadIO m
   => GLfloat -- ^ @token@ of type @FeedbackElement@.
@@ -29136,7 +29470,7 @@ ptr_glPassThroughxOES = unsafePerformIO $ getCommand "glPassThroughxOES"
 
 -- glPatchParameterfv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPatchParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPatchParameter.xhtml OpenGL 4.x>.
 glPatchParameterfv
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -29150,7 +29484,7 @@ ptr_glPatchParameterfv = unsafePerformIO $ getCommand "glPatchParameterfv"
 
 -- glPatchParameteri -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPatchParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPatchParameter.xhtml OpenGL 4.x>.
 glPatchParameteri
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -29164,6 +29498,7 @@ ptr_glPatchParameteri = unsafePerformIO $ getCommand "glPatchParameteri"
 
 -- glPatchParameteriEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glPatchParameteri'.
 glPatchParameteriEXT
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -29177,6 +29512,7 @@ ptr_glPatchParameteriEXT = unsafePerformIO $ getCommand "glPatchParameteriEXT"
 
 -- glPatchParameteriOES --------------------------------------------------------
 
+-- | This command is an alias for 'glPatchParameteri'.
 glPatchParameteriOES
   :: MonadIO m
   => GLenum -- ^ @pname@.
@@ -29520,7 +29856,7 @@ ptr_glPathTexGenNV = unsafePerformIO $ getCommand "glPathTexGenNV"
 
 -- glPauseTransformFeedback ----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPauseTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPauseTransformFeedback.xhtml OpenGL 4.x>.
 glPauseTransformFeedback
   :: MonadIO m
   => m ()
@@ -29532,6 +29868,7 @@ ptr_glPauseTransformFeedback = unsafePerformIO $ getCommand "glPauseTransformFee
 
 -- glPauseTransformFeedbackNV --------------------------------------------------
 
+-- | This command is an alias for 'glPauseTransformFeedback'.
 glPauseTransformFeedbackNV
   :: MonadIO m
   => m ()
@@ -29557,7 +29894,7 @@ ptr_glPixelDataRangeNV = unsafePerformIO $ getCommand "glPixelDataRangeNV"
 
 -- glPixelMapfv ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>.
 glPixelMapfv
   :: MonadIO m
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
@@ -29572,7 +29909,7 @@ ptr_glPixelMapfv = unsafePerformIO $ getCommand "glPixelMapfv"
 
 -- glPixelMapuiv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>.
 glPixelMapuiv
   :: MonadIO m
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
@@ -29587,7 +29924,7 @@ ptr_glPixelMapuiv = unsafePerformIO $ getCommand "glPixelMapuiv"
 
 -- glPixelMapusv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml OpenGL 2.x>.
 glPixelMapusv
   :: MonadIO m
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelMap).
@@ -29616,7 +29953,7 @@ ptr_glPixelMapx = unsafePerformIO $ getCommand "glPixelMapx"
 
 -- glPixelStoref ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml OpenGL 4.x>.
 glPixelStoref
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [PixelStoreParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelStoreParameter).
@@ -29630,7 +29967,7 @@ ptr_glPixelStoref = unsafePerformIO $ getCommand "glPixelStoref"
 
 -- glPixelStorei ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPixelStore.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPixelStore.xhtml OpenGL 4.x>.
 glPixelStorei
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [PixelStoreParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelStoreParameter).
@@ -29721,7 +30058,7 @@ ptr_glPixelTexGenSGIX = unsafePerformIO $ getCommand "glPixelTexGenSGIX"
 
 -- glPixelTransferf ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelTransfer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelTransfer.xml OpenGL 2.x>.
 glPixelTransferf
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [PixelTransferParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTransferParameter).
@@ -29735,7 +30072,7 @@ ptr_glPixelTransferf = unsafePerformIO $ getCommand "glPixelTransferf"
 
 -- glPixelTransferi ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelTransfer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelTransfer.xml OpenGL 2.x>.
 glPixelTransferi
   :: MonadIO m
   => GLenum -- ^ @pname@ of type [PixelTransferParameter](Graphics-Rendering-OpenGL-Raw-Groups.html#PixelTransferParameter).
@@ -29818,7 +30155,7 @@ ptr_glPixelTransformParameterivEXT = unsafePerformIO $ getCommand "glPixelTransf
 
 -- glPixelZoom -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelZoom.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPixelZoom.xml OpenGL 2.x>.
 glPixelZoom
   :: MonadIO m
   => GLfloat -- ^ @xfactor@.
@@ -29864,7 +30201,7 @@ ptr_glPointAlongPathNV = unsafePerformIO $ getCommand "glPointAlongPathNV"
 
 -- glPointParameterf -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameterf
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29878,6 +30215,7 @@ ptr_glPointParameterf = unsafePerformIO $ getCommand "glPointParameterf"
 
 -- glPointParameterfARB --------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameterf'.
 glPointParameterfARB
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29891,6 +30229,7 @@ ptr_glPointParameterfARB = unsafePerformIO $ getCommand "glPointParameterfARB"
 
 -- glPointParameterfEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameterf'.
 glPointParameterfEXT
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29904,6 +30243,7 @@ ptr_glPointParameterfEXT = unsafePerformIO $ getCommand "glPointParameterfEXT"
 
 -- glPointParameterfSGIS -------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameterf'.
 glPointParameterfSGIS
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29917,7 +30257,7 @@ ptr_glPointParameterfSGIS = unsafePerformIO $ getCommand "glPointParameterfSGIS"
 
 -- glPointParameterfv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameterfv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29931,6 +30271,7 @@ ptr_glPointParameterfv = unsafePerformIO $ getCommand "glPointParameterfv"
 
 -- glPointParameterfvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameterfv'.
 glPointParameterfvARB
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29944,6 +30285,7 @@ ptr_glPointParameterfvARB = unsafePerformIO $ getCommand "glPointParameterfvARB"
 
 -- glPointParameterfvEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameterfv'.
 glPointParameterfvEXT
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29957,6 +30299,7 @@ ptr_glPointParameterfvEXT = unsafePerformIO $ getCommand "glPointParameterfvEXT"
 
 -- glPointParameterfvSGIS ------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameterfv'.
 glPointParameterfvSGIS
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29970,7 +30313,7 @@ ptr_glPointParameterfvSGIS = unsafePerformIO $ getCommand "glPointParameterfvSGI
 
 -- glPointParameteri -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameteri
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29984,6 +30327,7 @@ ptr_glPointParameteri = unsafePerformIO $ getCommand "glPointParameteri"
 
 -- glPointParameteriNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameteri'.
 glPointParameteriNV
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -29997,7 +30341,7 @@ ptr_glPointParameteriNV = unsafePerformIO $ getCommand "glPointParameteriNV"
 
 -- glPointParameteriv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameteriv
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -30011,6 +30355,7 @@ ptr_glPointParameteriv = unsafePerformIO $ getCommand "glPointParameteriv"
 
 -- glPointParameterivNV --------------------------------------------------------
 
+-- | This command is an alias for 'glPointParameteriv'.
 glPointParameterivNV
   :: MonadIO m
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
@@ -30076,7 +30421,7 @@ ptr_glPointParameterxvOES = unsafePerformIO $ getCommand "glPointParameterxvOES"
 
 -- glPointSize -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointSize.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointSize.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointSize.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointSize.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointSize.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointSize.xhtml OpenGL 4.x>.
 glPointSize
   :: MonadIO m
   => GLfloat -- ^ @size@ of type @CheckedFloat32@.
@@ -30151,7 +30496,7 @@ ptr_glPollInstrumentsSGIX = unsafePerformIO $ getCommand "glPollInstrumentsSGIX"
 
 -- glPolygonMode ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonMode.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonMode.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPolygonMode.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonMode.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonMode.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPolygonMode.xhtml OpenGL 4.x>.
 glPolygonMode
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -30165,6 +30510,7 @@ ptr_glPolygonMode = unsafePerformIO $ getCommand "glPolygonMode"
 
 -- glPolygonModeNV -------------------------------------------------------------
 
+-- | This command is an alias for 'glPolygonMode'.
 glPolygonModeNV
   :: MonadIO m
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-Rendering-OpenGL-Raw-Groups.html#MaterialFace).
@@ -30178,7 +30524,7 @@ ptr_glPolygonModeNV = unsafePerformIO $ getCommand "glPolygonModeNV"
 
 -- glPolygonOffset -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonOffset.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonOffset.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPolygonOffset.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonOffset.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonOffset.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPolygonOffset.xhtml OpenGL 4.x>.
 glPolygonOffset
   :: MonadIO m
   => GLfloat -- ^ @factor@.
@@ -30245,7 +30591,7 @@ ptr_glPolygonOffsetxOES = unsafePerformIO $ getCommand "glPolygonOffsetxOES"
 
 -- glPolygonStipple ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonStipple.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonStipple.xml OpenGL 2.x>.
 glPolygonStipple
   :: MonadIO m
   => Ptr GLubyte -- ^ @mask@ pointing to @COMPSIZE()@ elements of type @GLubyte@.
@@ -30258,7 +30604,7 @@ ptr_glPolygonStipple = unsafePerformIO $ getCommand "glPolygonStipple"
 
 -- glPopAttrib -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushAttrib.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushAttrib.xml OpenGL 2.x>.
 glPopAttrib
   :: MonadIO m
   => m ()
@@ -30270,7 +30616,7 @@ ptr_glPopAttrib = unsafePerformIO $ getCommand "glPopAttrib"
 
 -- glPopClientAttrib -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushClientAttrib.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushClientAttrib.xml OpenGL 2.x>.
 glPopClientAttrib
   :: MonadIO m
   => m ()
@@ -30282,7 +30628,7 @@ ptr_glPopClientAttrib = unsafePerformIO $ getCommand "glPopClientAttrib"
 
 -- glPopDebugGroup -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPopDebugGroup.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPopDebugGroup.xhtml OpenGL 4.x>.
 glPopDebugGroup
   :: MonadIO m
   => m ()
@@ -30294,6 +30640,7 @@ ptr_glPopDebugGroup = unsafePerformIO $ getCommand "glPopDebugGroup"
 
 -- glPopDebugGroupKHR ----------------------------------------------------------
 
+-- | This command is an alias for 'glPopDebugGroup'.
 glPopDebugGroupKHR
   :: MonadIO m
   => m ()
@@ -30316,7 +30663,7 @@ ptr_glPopGroupMarkerEXT = unsafePerformIO $ getCommand "glPopGroupMarkerEXT"
 
 -- glPopMatrix -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml OpenGL 2.x>.
 glPopMatrix
   :: MonadIO m
   => m ()
@@ -30328,7 +30675,7 @@ ptr_glPopMatrix = unsafePerformIO $ getCommand "glPopMatrix"
 
 -- glPopName -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushName.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushName.xml OpenGL 2.x>.
 glPopName
   :: MonadIO m
   => m ()
@@ -30405,6 +30752,7 @@ ptr_glPrimitiveBoundingBox = unsafePerformIO $ getCommand "glPrimitiveBoundingBo
 
 -- glPrimitiveBoundingBoxARB ---------------------------------------------------
 
+-- | This command is an alias for 'glPrimitiveBoundingBox'.
 glPrimitiveBoundingBoxARB
   :: MonadIO m
   => GLfloat -- ^ @minX@.
@@ -30424,6 +30772,7 @@ ptr_glPrimitiveBoundingBoxARB = unsafePerformIO $ getCommand "glPrimitiveBoundin
 
 -- glPrimitiveBoundingBoxEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glPrimitiveBoundingBox'.
 glPrimitiveBoundingBoxEXT
   :: MonadIO m
   => GLfloat -- ^ @minX@.
@@ -30443,6 +30792,7 @@ ptr_glPrimitiveBoundingBoxEXT = unsafePerformIO $ getCommand "glPrimitiveBoundin
 
 -- glPrimitiveBoundingBoxOES ---------------------------------------------------
 
+-- | This command is an alias for 'glPrimitiveBoundingBox'.
 glPrimitiveBoundingBoxOES
   :: MonadIO m
   => GLfloat -- ^ @minX@.
@@ -30462,7 +30812,7 @@ ptr_glPrimitiveBoundingBoxOES = unsafePerformIO $ getCommand "glPrimitiveBoundin
 
 -- glPrimitiveRestartIndex -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glPrimitiveRestartIndex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPrimitiveRestartIndex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glPrimitiveRestartIndex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPrimitiveRestartIndex.xhtml OpenGL 4.x>.
 glPrimitiveRestartIndex
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -30498,7 +30848,7 @@ ptr_glPrimitiveRestartNV = unsafePerformIO $ getCommand "glPrimitiveRestartNV"
 
 -- glPrioritizeTextures --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPrioritizeTextures.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPrioritizeTextures.xml OpenGL 2.x>.
 glPrioritizeTextures
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -30513,6 +30863,7 @@ ptr_glPrioritizeTextures = unsafePerformIO $ getCommand "glPrioritizeTextures"
 
 -- glPrioritizeTexturesEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glPrioritizeTextures'.
 glPrioritizeTexturesEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
@@ -30541,7 +30892,7 @@ ptr_glPrioritizeTexturesxOES = unsafePerformIO $ getCommand "glPrioritizeTexture
 
 -- glProgramBinary -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramBinary.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramBinary.xhtml OpenGL 4.x>.
 glProgramBinary
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -30557,6 +30908,7 @@ ptr_glProgramBinary = unsafePerformIO $ getCommand "glProgramBinary"
 
 -- glProgramBinaryOES ----------------------------------------------------------
 
+-- | This command is an alias for 'glProgramBinary'.
 glProgramBinaryOES
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -30620,6 +30972,7 @@ ptr_glProgramBufferParametersfvNV = unsafePerformIO $ getCommand "glProgramBuffe
 
 -- glProgramEnvParameter4dARB --------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramEnvParameter4dvARB'.
 glProgramEnvParameter4dARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTargetARB@.
@@ -30651,6 +31004,7 @@ ptr_glProgramEnvParameter4dvARB = unsafePerformIO $ getCommand "glProgramEnvPara
 
 -- glProgramEnvParameter4fARB --------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramEnvParameter4fvARB'.
 glProgramEnvParameter4fARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTargetARB@.
@@ -30682,6 +31036,7 @@ ptr_glProgramEnvParameter4fvARB = unsafePerformIO $ getCommand "glProgramEnvPara
 
 -- glProgramEnvParameterI4iNV --------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramEnvParameterI4ivNV'.
 glProgramEnvParameterI4iNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTarget@.
@@ -30713,6 +31068,7 @@ ptr_glProgramEnvParameterI4ivNV = unsafePerformIO $ getCommand "glProgramEnvPara
 
 -- glProgramEnvParameterI4uiNV -------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramEnvParameterI4uivNV'.
 glProgramEnvParameterI4uiNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTarget@.
@@ -30789,6 +31145,7 @@ ptr_glProgramEnvParametersI4uivNV = unsafePerformIO $ getCommand "glProgramEnvPa
 
 -- glProgramLocalParameter4dARB ------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramLocalParameter4dvARB'.
 glProgramLocalParameter4dARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTargetARB@.
@@ -30820,6 +31177,7 @@ ptr_glProgramLocalParameter4dvARB = unsafePerformIO $ getCommand "glProgramLocal
 
 -- glProgramLocalParameter4fARB ------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramLocalParameter4fvARB'.
 glProgramLocalParameter4fARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTargetARB@.
@@ -30851,6 +31209,7 @@ ptr_glProgramLocalParameter4fvARB = unsafePerformIO $ getCommand "glProgramLocal
 
 -- glProgramLocalParameterI4iNV ------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramLocalParameterI4ivNV'.
 glProgramLocalParameterI4iNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTarget@.
@@ -30882,6 +31241,7 @@ ptr_glProgramLocalParameterI4ivNV = unsafePerformIO $ getCommand "glProgramLocal
 
 -- glProgramLocalParameterI4uiNV -----------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramLocalParameterI4uivNV'.
 glProgramLocalParameterI4uiNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @ProgramTarget@.
@@ -30958,6 +31318,7 @@ ptr_glProgramLocalParametersI4uivNV = unsafePerformIO $ getCommand "glProgramLoc
 
 -- glProgramNamedParameter4dNV -------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramNamedParameter4dvNV'.
 glProgramNamedParameter4dNV
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -30991,6 +31352,7 @@ ptr_glProgramNamedParameter4dvNV = unsafePerformIO $ getCommand "glProgramNamedP
 
 -- glProgramNamedParameter4fNV -------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramNamedParameter4fvNV'.
 glProgramNamedParameter4fNV
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -31024,6 +31386,7 @@ ptr_glProgramNamedParameter4fvNV = unsafePerformIO $ getCommand "glProgramNamedP
 
 -- glProgramParameter4dNV ------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramParameter4dvNV'.
 glProgramParameter4dNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
@@ -31055,6 +31418,7 @@ ptr_glProgramParameter4dvNV = unsafePerformIO $ getCommand "glProgramParameter4d
 
 -- glProgramParameter4fNV ------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glProgramParameter4fvNV'.
 glProgramParameter4fNV
   :: MonadIO m
   => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
@@ -31086,7 +31450,7 @@ ptr_glProgramParameter4fvNV = unsafePerformIO $ getCommand "glProgramParameter4f
 
 -- glProgramParameteri ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramParameter.xhtml OpenGL 4.x>.
 glProgramParameteri
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31101,6 +31465,7 @@ ptr_glProgramParameteri = unsafePerformIO $ getCommand "glProgramParameteri"
 
 -- glProgramParameteriARB ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramParameteri'.
 glProgramParameteriARB
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31115,6 +31480,7 @@ ptr_glProgramParameteriARB = unsafePerformIO $ getCommand "glProgramParameteriAR
 
 -- glProgramParameteriEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramParameteri'.
 glProgramParameteriEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31262,7 +31628,7 @@ ptr_glProgramUniform1dvEXT = unsafePerformIO $ getCommand "glProgramUniform1dvEX
 
 -- glProgramUniform1f ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform1f
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31277,6 +31643,7 @@ ptr_glProgramUniform1f = unsafePerformIO $ getCommand "glProgramUniform1f"
 
 -- glProgramUniform1fEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform1f'.
 glProgramUniform1fEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31291,7 +31658,7 @@ ptr_glProgramUniform1fEXT = unsafePerformIO $ getCommand "glProgramUniform1fEXT"
 
 -- glProgramUniform1fv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform1fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31307,6 +31674,7 @@ ptr_glProgramUniform1fv = unsafePerformIO $ getCommand "glProgramUniform1fv"
 
 -- glProgramUniform1fvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform1fv'.
 glProgramUniform1fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31322,7 +31690,7 @@ ptr_glProgramUniform1fvEXT = unsafePerformIO $ getCommand "glProgramUniform1fvEX
 
 -- glProgramUniform1i ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform1i
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31395,6 +31763,7 @@ ptr_glProgramUniform1i64vNV = unsafePerformIO $ getCommand "glProgramUniform1i64
 
 -- glProgramUniform1iEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform1i'.
 glProgramUniform1iEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31409,7 +31778,7 @@ ptr_glProgramUniform1iEXT = unsafePerformIO $ getCommand "glProgramUniform1iEXT"
 
 -- glProgramUniform1iv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform1iv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31425,6 +31794,7 @@ ptr_glProgramUniform1iv = unsafePerformIO $ getCommand "glProgramUniform1iv"
 
 -- glProgramUniform1ivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform1iv'.
 glProgramUniform1ivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31440,7 +31810,7 @@ ptr_glProgramUniform1ivEXT = unsafePerformIO $ getCommand "glProgramUniform1ivEX
 
 -- glProgramUniform1ui ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform1ui
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31513,6 +31883,7 @@ ptr_glProgramUniform1ui64vNV = unsafePerformIO $ getCommand "glProgramUniform1ui
 
 -- glProgramUniform1uiEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform1ui'.
 glProgramUniform1uiEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31527,7 +31898,7 @@ ptr_glProgramUniform1uiEXT = unsafePerformIO $ getCommand "glProgramUniform1uiEX
 
 -- glProgramUniform1uiv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform1uiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31543,6 +31914,7 @@ ptr_glProgramUniform1uiv = unsafePerformIO $ getCommand "glProgramUniform1uiv"
 
 -- glProgramUniform1uivEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform1uiv'.
 glProgramUniform1uivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31618,7 +31990,7 @@ ptr_glProgramUniform2dvEXT = unsafePerformIO $ getCommand "glProgramUniform2dvEX
 
 -- glProgramUniform2f ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform2f
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31634,6 +32006,7 @@ ptr_glProgramUniform2f = unsafePerformIO $ getCommand "glProgramUniform2f"
 
 -- glProgramUniform2fEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform2f'.
 glProgramUniform2fEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31649,7 +32022,7 @@ ptr_glProgramUniform2fEXT = unsafePerformIO $ getCommand "glProgramUniform2fEXT"
 
 -- glProgramUniform2fv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform2fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31665,6 +32038,7 @@ ptr_glProgramUniform2fv = unsafePerformIO $ getCommand "glProgramUniform2fv"
 
 -- glProgramUniform2fvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform2fv'.
 glProgramUniform2fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31680,7 +32054,7 @@ ptr_glProgramUniform2fvEXT = unsafePerformIO $ getCommand "glProgramUniform2fvEX
 
 -- glProgramUniform2i ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform2i
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31756,6 +32130,7 @@ ptr_glProgramUniform2i64vNV = unsafePerformIO $ getCommand "glProgramUniform2i64
 
 -- glProgramUniform2iEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform2i'.
 glProgramUniform2iEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31771,7 +32146,7 @@ ptr_glProgramUniform2iEXT = unsafePerformIO $ getCommand "glProgramUniform2iEXT"
 
 -- glProgramUniform2iv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform2iv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31787,6 +32162,7 @@ ptr_glProgramUniform2iv = unsafePerformIO $ getCommand "glProgramUniform2iv"
 
 -- glProgramUniform2ivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform2iv'.
 glProgramUniform2ivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31802,7 +32178,7 @@ ptr_glProgramUniform2ivEXT = unsafePerformIO $ getCommand "glProgramUniform2ivEX
 
 -- glProgramUniform2ui ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform2ui
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31878,6 +32254,7 @@ ptr_glProgramUniform2ui64vNV = unsafePerformIO $ getCommand "glProgramUniform2ui
 
 -- glProgramUniform2uiEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform2ui'.
 glProgramUniform2uiEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31893,7 +32270,7 @@ ptr_glProgramUniform2uiEXT = unsafePerformIO $ getCommand "glProgramUniform2uiEX
 
 -- glProgramUniform2uiv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform2uiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31909,6 +32286,7 @@ ptr_glProgramUniform2uiv = unsafePerformIO $ getCommand "glProgramUniform2uiv"
 
 -- glProgramUniform2uivEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform2uiv'.
 glProgramUniform2uivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -31986,7 +32364,7 @@ ptr_glProgramUniform3dvEXT = unsafePerformIO $ getCommand "glProgramUniform3dvEX
 
 -- glProgramUniform3f ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform3f
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32003,6 +32381,7 @@ ptr_glProgramUniform3f = unsafePerformIO $ getCommand "glProgramUniform3f"
 
 -- glProgramUniform3fEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform3f'.
 glProgramUniform3fEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32019,7 +32398,7 @@ ptr_glProgramUniform3fEXT = unsafePerformIO $ getCommand "glProgramUniform3fEXT"
 
 -- glProgramUniform3fv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform3fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32035,6 +32414,7 @@ ptr_glProgramUniform3fv = unsafePerformIO $ getCommand "glProgramUniform3fv"
 
 -- glProgramUniform3fvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform3fv'.
 glProgramUniform3fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32050,7 +32430,7 @@ ptr_glProgramUniform3fvEXT = unsafePerformIO $ getCommand "glProgramUniform3fvEX
 
 -- glProgramUniform3i ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform3i
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32129,6 +32509,7 @@ ptr_glProgramUniform3i64vNV = unsafePerformIO $ getCommand "glProgramUniform3i64
 
 -- glProgramUniform3iEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform3i'.
 glProgramUniform3iEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32145,7 +32526,7 @@ ptr_glProgramUniform3iEXT = unsafePerformIO $ getCommand "glProgramUniform3iEXT"
 
 -- glProgramUniform3iv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform3iv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32161,6 +32542,7 @@ ptr_glProgramUniform3iv = unsafePerformIO $ getCommand "glProgramUniform3iv"
 
 -- glProgramUniform3ivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform3iv'.
 glProgramUniform3ivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32176,7 +32558,7 @@ ptr_glProgramUniform3ivEXT = unsafePerformIO $ getCommand "glProgramUniform3ivEX
 
 -- glProgramUniform3ui ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform3ui
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32255,6 +32637,7 @@ ptr_glProgramUniform3ui64vNV = unsafePerformIO $ getCommand "glProgramUniform3ui
 
 -- glProgramUniform3uiEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform3ui'.
 glProgramUniform3uiEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32271,7 +32654,7 @@ ptr_glProgramUniform3uiEXT = unsafePerformIO $ getCommand "glProgramUniform3uiEX
 
 -- glProgramUniform3uiv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform3uiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32287,6 +32670,7 @@ ptr_glProgramUniform3uiv = unsafePerformIO $ getCommand "glProgramUniform3uiv"
 
 -- glProgramUniform3uivEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform3uiv'.
 glProgramUniform3uivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32366,7 +32750,7 @@ ptr_glProgramUniform4dvEXT = unsafePerformIO $ getCommand "glProgramUniform4dvEX
 
 -- glProgramUniform4f ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform4f
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32384,6 +32768,7 @@ ptr_glProgramUniform4f = unsafePerformIO $ getCommand "glProgramUniform4f"
 
 -- glProgramUniform4fEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform4f'.
 glProgramUniform4fEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32401,7 +32786,7 @@ ptr_glProgramUniform4fEXT = unsafePerformIO $ getCommand "glProgramUniform4fEXT"
 
 -- glProgramUniform4fv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform4fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32417,6 +32802,7 @@ ptr_glProgramUniform4fv = unsafePerformIO $ getCommand "glProgramUniform4fv"
 
 -- glProgramUniform4fvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform4fv'.
 glProgramUniform4fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32432,7 +32818,7 @@ ptr_glProgramUniform4fvEXT = unsafePerformIO $ getCommand "glProgramUniform4fvEX
 
 -- glProgramUniform4i ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform4i
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32514,6 +32900,7 @@ ptr_glProgramUniform4i64vNV = unsafePerformIO $ getCommand "glProgramUniform4i64
 
 -- glProgramUniform4iEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform4i'.
 glProgramUniform4iEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32531,7 +32918,7 @@ ptr_glProgramUniform4iEXT = unsafePerformIO $ getCommand "glProgramUniform4iEXT"
 
 -- glProgramUniform4iv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform4iv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32547,6 +32934,7 @@ ptr_glProgramUniform4iv = unsafePerformIO $ getCommand "glProgramUniform4iv"
 
 -- glProgramUniform4ivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform4iv'.
 glProgramUniform4ivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32562,7 +32950,7 @@ ptr_glProgramUniform4ivEXT = unsafePerformIO $ getCommand "glProgramUniform4ivEX
 
 -- glProgramUniform4ui ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform4ui
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32644,6 +33032,7 @@ ptr_glProgramUniform4ui64vNV = unsafePerformIO $ getCommand "glProgramUniform4ui
 
 -- glProgramUniform4uiEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform4ui'.
 glProgramUniform4uiEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32661,7 +33050,7 @@ ptr_glProgramUniform4uiEXT = unsafePerformIO $ getCommand "glProgramUniform4uiEX
 
 -- glProgramUniform4uiv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniform4uiv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32677,6 +33066,7 @@ ptr_glProgramUniform4uiv = unsafePerformIO $ getCommand "glProgramUniform4uiv"
 
 -- glProgramUniform4uivEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniform4uiv'.
 glProgramUniform4uivEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32782,7 +33172,7 @@ ptr_glProgramUniformMatrix2dvEXT = unsafePerformIO $ getCommand "glProgramUnifor
 
 -- glProgramUniformMatrix2fv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix2fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32799,6 +33189,7 @@ ptr_glProgramUniformMatrix2fv = unsafePerformIO $ getCommand "glProgramUniformMa
 
 -- glProgramUniformMatrix2fvEXT ------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix2fv'.
 glProgramUniformMatrix2fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32847,7 +33238,7 @@ ptr_glProgramUniformMatrix2x3dvEXT = unsafePerformIO $ getCommand "glProgramUnif
 
 -- glProgramUniformMatrix2x3fv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix2x3fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32864,6 +33255,7 @@ ptr_glProgramUniformMatrix2x3fv = unsafePerformIO $ getCommand "glProgramUniform
 
 -- glProgramUniformMatrix2x3fvEXT ----------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix2x3fv'.
 glProgramUniformMatrix2x3fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32912,7 +33304,7 @@ ptr_glProgramUniformMatrix2x4dvEXT = unsafePerformIO $ getCommand "glProgramUnif
 
 -- glProgramUniformMatrix2x4fv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix2x4fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32929,6 +33321,7 @@ ptr_glProgramUniformMatrix2x4fv = unsafePerformIO $ getCommand "glProgramUniform
 
 -- glProgramUniformMatrix2x4fvEXT ----------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix2x4fv'.
 glProgramUniformMatrix2x4fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32977,7 +33370,7 @@ ptr_glProgramUniformMatrix3dvEXT = unsafePerformIO $ getCommand "glProgramUnifor
 
 -- glProgramUniformMatrix3fv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix3fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -32994,6 +33387,7 @@ ptr_glProgramUniformMatrix3fv = unsafePerformIO $ getCommand "glProgramUniformMa
 
 -- glProgramUniformMatrix3fvEXT ------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix3fv'.
 glProgramUniformMatrix3fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33042,7 +33436,7 @@ ptr_glProgramUniformMatrix3x2dvEXT = unsafePerformIO $ getCommand "glProgramUnif
 
 -- glProgramUniformMatrix3x2fv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix3x2fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33059,6 +33453,7 @@ ptr_glProgramUniformMatrix3x2fv = unsafePerformIO $ getCommand "glProgramUniform
 
 -- glProgramUniformMatrix3x2fvEXT ----------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix3x2fv'.
 glProgramUniformMatrix3x2fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33107,7 +33502,7 @@ ptr_glProgramUniformMatrix3x4dvEXT = unsafePerformIO $ getCommand "glProgramUnif
 
 -- glProgramUniformMatrix3x4fv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix3x4fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33124,6 +33519,7 @@ ptr_glProgramUniformMatrix3x4fv = unsafePerformIO $ getCommand "glProgramUniform
 
 -- glProgramUniformMatrix3x4fvEXT ----------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix3x4fv'.
 glProgramUniformMatrix3x4fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33172,7 +33568,7 @@ ptr_glProgramUniformMatrix4dvEXT = unsafePerformIO $ getCommand "glProgramUnifor
 
 -- glProgramUniformMatrix4fv ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix4fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33189,6 +33585,7 @@ ptr_glProgramUniformMatrix4fv = unsafePerformIO $ getCommand "glProgramUniformMa
 
 -- glProgramUniformMatrix4fvEXT ------------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix4fv'.
 glProgramUniformMatrix4fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33237,7 +33634,7 @@ ptr_glProgramUniformMatrix4x2dvEXT = unsafePerformIO $ getCommand "glProgramUnif
 
 -- glProgramUniformMatrix4x2fv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix4x2fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33254,6 +33651,7 @@ ptr_glProgramUniformMatrix4x2fv = unsafePerformIO $ getCommand "glProgramUniform
 
 -- glProgramUniformMatrix4x2fvEXT ----------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix4x2fv'.
 glProgramUniformMatrix4x2fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33302,7 +33700,7 @@ ptr_glProgramUniformMatrix4x3dvEXT = unsafePerformIO $ getCommand "glProgramUnif
 
 -- glProgramUniformMatrix4x3fv -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
 glProgramUniformMatrix4x3fv
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33319,6 +33717,7 @@ ptr_glProgramUniformMatrix4x3fv = unsafePerformIO $ getCommand "glProgramUniform
 
 -- glProgramUniformMatrix4x3fvEXT ----------------------------------------------
 
+-- | This command is an alias for 'glProgramUniformMatrix4x3fv'.
 glProgramUniformMatrix4x3fvEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -33377,7 +33776,7 @@ ptr_glProgramVertexLimitNV = unsafePerformIO $ getCommand "glProgramVertexLimitN
 
 -- glProvokingVertex -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glProvokingVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glProvokingVertex.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glProvokingVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glProvokingVertex.xhtml OpenGL 4.x>.
 glProvokingVertex
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -33390,6 +33789,7 @@ ptr_glProvokingVertex = unsafePerformIO $ getCommand "glProvokingVertex"
 
 -- glProvokingVertexEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glProvokingVertex'.
 glProvokingVertexEXT
   :: MonadIO m
   => GLenum -- ^ @mode@.
@@ -33402,7 +33802,7 @@ ptr_glProvokingVertexEXT = unsafePerformIO $ getCommand "glProvokingVertexEXT"
 
 -- glPushAttrib ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushAttrib.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushAttrib.xml OpenGL 2.x>.
 glPushAttrib
   :: MonadIO m
   => GLbitfield -- ^ @mask@ of type [AttribMask](Graphics-Rendering-OpenGL-Raw-Groups.html#AttribMask).
@@ -33415,7 +33815,7 @@ ptr_glPushAttrib = unsafePerformIO $ getCommand "glPushAttrib"
 
 -- glPushClientAttrib ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushClientAttrib.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushClientAttrib.xml OpenGL 2.x>.
 glPushClientAttrib
   :: MonadIO m
   => GLbitfield -- ^ @mask@ of type [ClientAttribMask](Graphics-Rendering-OpenGL-Raw-Groups.html#ClientAttribMask).
@@ -33440,7 +33840,7 @@ ptr_glPushClientAttribDefaultEXT = unsafePerformIO $ getCommand "glPushClientAtt
 
 -- glPushDebugGroup ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPushDebugGroup.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPushDebugGroup.xhtml OpenGL 4.x>.
 glPushDebugGroup
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -33456,6 +33856,7 @@ ptr_glPushDebugGroup = unsafePerformIO $ getCommand "glPushDebugGroup"
 
 -- glPushDebugGroupKHR ---------------------------------------------------------
 
+-- | This command is an alias for 'glPushDebugGroup'.
 glPushDebugGroupKHR
   :: MonadIO m
   => GLenum -- ^ @source@.
@@ -33484,7 +33885,7 @@ ptr_glPushGroupMarkerEXT = unsafePerformIO $ getCommand "glPushGroupMarkerEXT"
 
 -- glPushMatrix ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml OpenGL 2.x>.
 glPushMatrix
   :: MonadIO m
   => m ()
@@ -33496,7 +33897,7 @@ ptr_glPushMatrix = unsafePerformIO $ getCommand "glPushMatrix"
 
 -- glPushName ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushName.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushName.xml OpenGL 2.x>.
 glPushName
   :: MonadIO m
   => GLuint -- ^ @name@ of type @SelectName@.
@@ -33509,7 +33910,7 @@ ptr_glPushName = unsafePerformIO $ getCommand "glPushName"
 
 -- glQueryCounter --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glQueryCounter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glQueryCounter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glQueryCounter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glQueryCounter.xhtml OpenGL 4.x>.
 glQueryCounter
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -33523,6 +33924,7 @@ ptr_glQueryCounter = unsafePerformIO $ getCommand "glQueryCounter"
 
 -- glQueryCounterEXT -----------------------------------------------------------
 
+-- | This command is an alias for 'glQueryCounter'.
 glQueryCounterEXT
   :: MonadIO m
   => GLuint -- ^ @id@.
@@ -33564,7 +33966,7 @@ ptr_glQueryObjectParameteruiAMD = unsafePerformIO $ getCommand "glQueryObjectPar
 
 -- glRasterPos2d ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos2dv'.
 glRasterPos2d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -33578,7 +33980,7 @@ ptr_glRasterPos2d = unsafePerformIO $ getCommand "glRasterPos2d"
 
 -- glRasterPos2dv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos2dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
@@ -33591,7 +33993,7 @@ ptr_glRasterPos2dv = unsafePerformIO $ getCommand "glRasterPos2dv"
 
 -- glRasterPos2f ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos2fv'.
 glRasterPos2f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -33605,7 +34007,7 @@ ptr_glRasterPos2f = unsafePerformIO $ getCommand "glRasterPos2f"
 
 -- glRasterPos2fv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos2fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
@@ -33618,7 +34020,7 @@ ptr_glRasterPos2fv = unsafePerformIO $ getCommand "glRasterPos2fv"
 
 -- glRasterPos2i ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos2iv'.
 glRasterPos2i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -33632,7 +34034,7 @@ ptr_glRasterPos2i = unsafePerformIO $ getCommand "glRasterPos2i"
 
 -- glRasterPos2iv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos2iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
@@ -33645,7 +34047,7 @@ ptr_glRasterPos2iv = unsafePerformIO $ getCommand "glRasterPos2iv"
 
 -- glRasterPos2s ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos2sv'.
 glRasterPos2s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -33659,7 +34061,7 @@ ptr_glRasterPos2s = unsafePerformIO $ getCommand "glRasterPos2s"
 
 -- glRasterPos2sv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos2sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
@@ -33697,7 +34099,7 @@ ptr_glRasterPos2xvOES = unsafePerformIO $ getCommand "glRasterPos2xvOES"
 
 -- glRasterPos3d ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos3dv'.
 glRasterPos3d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -33712,7 +34114,7 @@ ptr_glRasterPos3d = unsafePerformIO $ getCommand "glRasterPos3d"
 
 -- glRasterPos3dv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -33725,7 +34127,7 @@ ptr_glRasterPos3dv = unsafePerformIO $ getCommand "glRasterPos3dv"
 
 -- glRasterPos3f ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos3fv'.
 glRasterPos3f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -33740,7 +34142,7 @@ ptr_glRasterPos3f = unsafePerformIO $ getCommand "glRasterPos3f"
 
 -- glRasterPos3fv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -33753,7 +34155,7 @@ ptr_glRasterPos3fv = unsafePerformIO $ getCommand "glRasterPos3fv"
 
 -- glRasterPos3i ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos3iv'.
 glRasterPos3i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -33768,7 +34170,7 @@ ptr_glRasterPos3i = unsafePerformIO $ getCommand "glRasterPos3i"
 
 -- glRasterPos3iv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos3iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
@@ -33781,7 +34183,7 @@ ptr_glRasterPos3iv = unsafePerformIO $ getCommand "glRasterPos3iv"
 
 -- glRasterPos3s ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos3sv'.
 glRasterPos3s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -33796,7 +34198,7 @@ ptr_glRasterPos3s = unsafePerformIO $ getCommand "glRasterPos3s"
 
 -- glRasterPos3sv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos3sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
@@ -33835,7 +34237,7 @@ ptr_glRasterPos3xvOES = unsafePerformIO $ getCommand "glRasterPos3xvOES"
 
 -- glRasterPos4d ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos4dv'.
 glRasterPos4d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -33851,7 +34253,7 @@ ptr_glRasterPos4d = unsafePerformIO $ getCommand "glRasterPos4d"
 
 -- glRasterPos4dv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos4dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @CoordD@.
@@ -33864,7 +34266,7 @@ ptr_glRasterPos4dv = unsafePerformIO $ getCommand "glRasterPos4dv"
 
 -- glRasterPos4f ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos4fv'.
 glRasterPos4f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -33880,7 +34282,7 @@ ptr_glRasterPos4f = unsafePerformIO $ getCommand "glRasterPos4f"
 
 -- glRasterPos4fv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos4fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @CoordF@.
@@ -33893,7 +34295,7 @@ ptr_glRasterPos4fv = unsafePerformIO $ getCommand "glRasterPos4fv"
 
 -- glRasterPos4i ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos4iv'.
 glRasterPos4i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -33909,7 +34311,7 @@ ptr_glRasterPos4i = unsafePerformIO $ getCommand "glRasterPos4i"
 
 -- glRasterPos4iv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos4iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @4@ elements of type @CoordI@.
@@ -33922,7 +34324,7 @@ ptr_glRasterPos4iv = unsafePerformIO $ getCommand "glRasterPos4iv"
 
 -- glRasterPos4s ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos4sv'.
 glRasterPos4s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -33938,7 +34340,7 @@ ptr_glRasterPos4s = unsafePerformIO $ getCommand "glRasterPos4s"
 
 -- glRasterPos4sv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
 glRasterPos4sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
@@ -33991,7 +34393,7 @@ ptr_glRasterSamplesEXT = unsafePerformIO $ getCommand "glRasterSamplesEXT"
 
 -- glReadBuffer ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glReadBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glReadBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glReadBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glReadBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glReadBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glReadBuffer.xhtml OpenGL 4.x>.
 glReadBuffer
   :: MonadIO m
   => GLenum -- ^ @src@ of type [ReadBufferMode](Graphics-Rendering-OpenGL-Raw-Groups.html#ReadBufferMode).
@@ -34041,7 +34443,7 @@ ptr_glReadInstrumentsSGIX = unsafePerformIO $ getCommand "glReadInstrumentsSGIX"
 
 -- glReadPixels ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glReadPixels.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glReadPixels.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glReadPixels.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glReadPixels.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glReadPixels.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glReadPixels.xhtml OpenGL 4.x>.
 glReadPixels
   :: MonadIO m
   => GLint -- ^ @x@ of type @WinCoord@.
@@ -34060,7 +34462,7 @@ ptr_glReadPixels = unsafePerformIO $ getCommand "glReadPixels"
 
 -- glReadnPixels ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glReadPixels.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glReadPixels.xhtml OpenGL 4.x>.
 glReadnPixels
   :: MonadIO m
   => GLint -- ^ @x@.
@@ -34080,6 +34482,7 @@ ptr_glReadnPixels = unsafePerformIO $ getCommand "glReadnPixels"
 
 -- glReadnPixelsARB ------------------------------------------------------------
 
+-- | This command is an alias for 'glReadnPixels'.
 glReadnPixelsARB
   :: MonadIO m
   => GLint -- ^ @x@.
@@ -34099,6 +34502,7 @@ ptr_glReadnPixelsARB = unsafePerformIO $ getCommand "glReadnPixelsARB"
 
 -- glReadnPixelsEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glReadnPixels'.
 glReadnPixelsEXT
   :: MonadIO m
   => GLint -- ^ @x@.
@@ -34118,6 +34522,7 @@ ptr_glReadnPixelsEXT = unsafePerformIO $ getCommand "glReadnPixelsEXT"
 
 -- glReadnPixelsKHR ------------------------------------------------------------
 
+-- | This command is an alias for 'glReadnPixels'.
 glReadnPixelsKHR
   :: MonadIO m
   => GLint -- ^ @x@ of type @WinCoord@.
@@ -34137,7 +34542,7 @@ ptr_glReadnPixelsKHR = unsafePerformIO $ getCommand "glReadnPixelsKHR"
 
 -- glRectd ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>. The vector equivalent of this command is 'glRectdv'.
 glRectd
   :: MonadIO m
   => GLdouble -- ^ @x1@ of type @CoordD@.
@@ -34153,7 +34558,7 @@ ptr_glRectd = unsafePerformIO $ getCommand "glRectd"
 
 -- glRectdv --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>.
 glRectdv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v1@ pointing to @2@ elements of type @CoordD@.
@@ -34167,7 +34572,7 @@ ptr_glRectdv = unsafePerformIO $ getCommand "glRectdv"
 
 -- glRectf ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>. The vector equivalent of this command is 'glRectfv'.
 glRectf
   :: MonadIO m
   => GLfloat -- ^ @x1@ of type @CoordF@.
@@ -34183,7 +34588,7 @@ ptr_glRectf = unsafePerformIO $ getCommand "glRectf"
 
 -- glRectfv --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>.
 glRectfv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v1@ pointing to @2@ elements of type @CoordF@.
@@ -34197,7 +34602,7 @@ ptr_glRectfv = unsafePerformIO $ getCommand "glRectfv"
 
 -- glRecti ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>. The vector equivalent of this command is 'glRectiv'.
 glRecti
   :: MonadIO m
   => GLint -- ^ @x1@ of type @CoordI@.
@@ -34213,7 +34618,7 @@ ptr_glRecti = unsafePerformIO $ getCommand "glRecti"
 
 -- glRectiv --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>.
 glRectiv
   :: MonadIO m
   => Ptr GLint -- ^ @v1@ pointing to @2@ elements of type @CoordI@.
@@ -34227,7 +34632,7 @@ ptr_glRectiv = unsafePerformIO $ getCommand "glRectiv"
 
 -- glRects ---------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>. The vector equivalent of this command is 'glRectsv'.
 glRects
   :: MonadIO m
   => GLshort -- ^ @x1@ of type @CoordS@.
@@ -34243,7 +34648,7 @@ ptr_glRects = unsafePerformIO $ getCommand "glRects"
 
 -- glRectsv --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml OpenGL 2.x>.
 glRectsv
   :: MonadIO m
   => Ptr GLshort -- ^ @v1@ pointing to @2@ elements of type @CoordS@.
@@ -34297,7 +34702,7 @@ ptr_glReferencePlaneSGIX = unsafePerformIO $ getCommand "glReferencePlaneSGIX"
 
 -- glReleaseShaderCompiler -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glReleaseShaderCompiler.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glReleaseShaderCompiler.xhtml OpenGL 4.x>.
 glReleaseShaderCompiler
   :: MonadIO m
   => m ()
@@ -34309,7 +34714,7 @@ ptr_glReleaseShaderCompiler = unsafePerformIO $ getCommand "glReleaseShaderCompi
 
 -- glRenderMode ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRenderMode.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRenderMode.xml OpenGL 2.x>.
 glRenderMode
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [RenderingMode](Graphics-Rendering-OpenGL-Raw-Groups.html#RenderingMode).
@@ -34322,7 +34727,7 @@ ptr_glRenderMode = unsafePerformIO $ getCommand "glRenderMode"
 
 -- glRenderbufferStorage -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glRenderbufferStorage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorage.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glRenderbufferStorage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorage.xhtml OpenGL 4.x>.
 glRenderbufferStorage
   :: MonadIO m
   => GLenum -- ^ @target@ of type @RenderbufferTarget@.
@@ -34338,6 +34743,7 @@ ptr_glRenderbufferStorage = unsafePerformIO $ getCommand "glRenderbufferStorage"
 
 -- glRenderbufferStorageEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glRenderbufferStorage'.
 glRenderbufferStorageEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type @RenderbufferTarget@.
@@ -34353,7 +34759,7 @@ ptr_glRenderbufferStorageEXT = unsafePerformIO $ getCommand "glRenderbufferStora
 
 -- glRenderbufferStorageMultisample --------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glRenderbufferStorageMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorageMultisample.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glRenderbufferStorageMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glRenderbufferStorageMultisample.xhtml OpenGL 4.x>.
 glRenderbufferStorageMultisample
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -34419,6 +34825,7 @@ ptr_glRenderbufferStorageMultisampleCoverageNV = unsafePerformIO $ getCommand "g
 
 -- glRenderbufferStorageMultisampleEXT -----------------------------------------
 
+-- | This command is an alias for 'glRenderbufferStorageMultisample'.
 glRenderbufferStorageMultisampleEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -34451,6 +34858,7 @@ ptr_glRenderbufferStorageMultisampleIMG = unsafePerformIO $ getCommand "glRender
 
 -- glRenderbufferStorageMultisampleNV ------------------------------------------
 
+-- | This command is an alias for 'glRenderbufferStorageMultisample'.
 glRenderbufferStorageMultisampleNV
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -34849,7 +35257,7 @@ ptr_glRequestResidentProgramsNV = unsafePerformIO $ getCommand "glRequestResiden
 
 -- glResetHistogram ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glResetHistogram.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glResetHistogram.xml OpenGL 2.x>.
 glResetHistogram
   :: MonadIO m
   => GLenum -- ^ @target@ of type @HistogramTarget@.
@@ -34862,6 +35270,7 @@ ptr_glResetHistogram = unsafePerformIO $ getCommand "glResetHistogram"
 
 -- glResetHistogramEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glResetHistogram'.
 glResetHistogramEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [HistogramTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#HistogramTargetEXT).
@@ -34874,7 +35283,7 @@ ptr_glResetHistogramEXT = unsafePerformIO $ getCommand "glResetHistogramEXT"
 
 -- glResetMinmax ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glResetMinmax.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glResetMinmax.xml OpenGL 2.x>.
 glResetMinmax
   :: MonadIO m
   => GLenum -- ^ @target@ of type @MinmaxTarget@.
@@ -34887,6 +35296,7 @@ ptr_glResetMinmax = unsafePerformIO $ getCommand "glResetMinmax"
 
 -- glResetMinmaxEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glResetMinmax'.
 glResetMinmaxEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#MinmaxTargetEXT).
@@ -34932,7 +35342,7 @@ ptr_glResolveMultisampleFramebufferAPPLE = unsafePerformIO $ getCommand "glResol
 
 -- glResumeTransformFeedback ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glResumeTransformFeedback.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glResumeTransformFeedback.xhtml OpenGL 4.x>.
 glResumeTransformFeedback
   :: MonadIO m
   => m ()
@@ -34944,6 +35354,7 @@ ptr_glResumeTransformFeedback = unsafePerformIO $ getCommand "glResumeTransformF
 
 -- glResumeTransformFeedbackNV -------------------------------------------------
 
+-- | This command is an alias for 'glResumeTransformFeedback'.
 glResumeTransformFeedbackNV
   :: MonadIO m
   => m ()
@@ -34955,7 +35366,7 @@ ptr_glResumeTransformFeedbackNV = unsafePerformIO $ getCommand "glResumeTransfor
 
 -- glRotated -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRotate.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRotate.xml OpenGL 2.x>.
 glRotated
   :: MonadIO m
   => GLdouble -- ^ @angle@.
@@ -34971,7 +35382,7 @@ ptr_glRotated = unsafePerformIO $ getCommand "glRotated"
 
 -- glRotatef -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRotate.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRotate.xml OpenGL 2.x>.
 glRotatef
   :: MonadIO m
   => GLfloat -- ^ @angle@.
@@ -35017,7 +35428,7 @@ ptr_glRotatexOES = unsafePerformIO $ getCommand "glRotatexOES"
 
 -- glSampleCoverage ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glSampleCoverage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glSampleCoverage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSampleCoverage.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glSampleCoverage.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glSampleCoverage.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSampleCoverage.xhtml OpenGL 4.x>.
 glSampleCoverage
   :: MonadIO m
   => GLfloat -- ^ @value@.
@@ -35031,6 +35442,7 @@ ptr_glSampleCoverage = unsafePerformIO $ getCommand "glSampleCoverage"
 
 -- glSampleCoverageARB ---------------------------------------------------------
 
+-- | This command is an alias for 'glSampleCoverage'.
 glSampleCoverageARB
   :: MonadIO m
   => GLfloat -- ^ @value@.
@@ -35110,6 +35522,7 @@ ptr_glSampleMaskIndexedNV = unsafePerformIO $ getCommand "glSampleMaskIndexedNV"
 
 -- glSampleMaskSGIS ------------------------------------------------------------
 
+-- | This command is an alias for 'glSampleMaskEXT'.
 glSampleMaskSGIS
   :: MonadIO m
   => GLclampf -- ^ @value@ of type @ClampedFloat32@.
@@ -35123,7 +35536,7 @@ ptr_glSampleMaskSGIS = unsafePerformIO $ getCommand "glSampleMaskSGIS"
 
 -- glSampleMaski ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSampleMaski.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSampleMaski.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSampleMaski.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSampleMaski.xhtml OpenGL 4.x>.
 glSampleMaski
   :: MonadIO m
   => GLuint -- ^ @maskNumber@.
@@ -35149,6 +35562,7 @@ ptr_glSamplePatternEXT = unsafePerformIO $ getCommand "glSamplePatternEXT"
 
 -- glSamplePatternSGIS ---------------------------------------------------------
 
+-- | This command is an alias for 'glSamplePatternEXT'.
 glSamplePatternSGIS
   :: MonadIO m
   => GLenum -- ^ @pattern@ of type [SamplePatternSGIS](Graphics-Rendering-OpenGL-Raw-Groups.html#SamplePatternSGIS).
@@ -35161,7 +35575,7 @@ ptr_glSamplePatternSGIS = unsafePerformIO $ getCommand "glSamplePatternSGIS"
 
 -- glSamplerParameterIiv -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
 glSamplerParameterIiv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35176,6 +35590,7 @@ ptr_glSamplerParameterIiv = unsafePerformIO $ getCommand "glSamplerParameterIiv"
 
 -- glSamplerParameterIivEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glSamplerParameterIiv'.
 glSamplerParameterIivEXT
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35190,6 +35605,7 @@ ptr_glSamplerParameterIivEXT = unsafePerformIO $ getCommand "glSamplerParameterI
 
 -- glSamplerParameterIivOES ----------------------------------------------------
 
+-- | This command is an alias for 'glSamplerParameterIiv'.
 glSamplerParameterIivOES
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35204,7 +35620,7 @@ ptr_glSamplerParameterIivOES = unsafePerformIO $ getCommand "glSamplerParameterI
 
 -- glSamplerParameterIuiv ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
 glSamplerParameterIuiv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35219,6 +35635,7 @@ ptr_glSamplerParameterIuiv = unsafePerformIO $ getCommand "glSamplerParameterIui
 
 -- glSamplerParameterIuivEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glSamplerParameterIuiv'.
 glSamplerParameterIuivEXT
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35233,6 +35650,7 @@ ptr_glSamplerParameterIuivEXT = unsafePerformIO $ getCommand "glSamplerParameter
 
 -- glSamplerParameterIuivOES ---------------------------------------------------
 
+-- | This command is an alias for 'glSamplerParameterIuiv'.
 glSamplerParameterIuivOES
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35247,7 +35665,7 @@ ptr_glSamplerParameterIuivOES = unsafePerformIO $ getCommand "glSamplerParameter
 
 -- glSamplerParameterf ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
 glSamplerParameterf
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35262,7 +35680,7 @@ ptr_glSamplerParameterf = unsafePerformIO $ getCommand "glSamplerParameterf"
 
 -- glSamplerParameterfv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
 glSamplerParameterfv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35277,7 +35695,7 @@ ptr_glSamplerParameterfv = unsafePerformIO $ getCommand "glSamplerParameterfv"
 
 -- glSamplerParameteri ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
 glSamplerParameteri
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35292,7 +35710,7 @@ ptr_glSamplerParameteri = unsafePerformIO $ getCommand "glSamplerParameteri"
 
 -- glSamplerParameteriv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
 glSamplerParameteriv
   :: MonadIO m
   => GLuint -- ^ @sampler@.
@@ -35307,7 +35725,7 @@ ptr_glSamplerParameteriv = unsafePerformIO $ getCommand "glSamplerParameteriv"
 
 -- glScaled --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glScale.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glScale.xml OpenGL 2.x>.
 glScaled
   :: MonadIO m
   => GLdouble -- ^ @x@.
@@ -35322,7 +35740,7 @@ ptr_glScaled = unsafePerformIO $ getCommand "glScaled"
 
 -- glScalef --------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glScale.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glScale.xml OpenGL 2.x>.
 glScalef
   :: MonadIO m
   => GLfloat -- ^ @x@.
@@ -35365,7 +35783,7 @@ ptr_glScalexOES = unsafePerformIO $ getCommand "glScalexOES"
 
 -- glScissor -------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glScissor.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glScissor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glScissor.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glScissor.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glScissor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glScissor.xhtml OpenGL 4.x>.
 glScissor
   :: MonadIO m
   => GLint -- ^ @x@ of type @WinCoord@.
@@ -35381,7 +35799,7 @@ ptr_glScissor = unsafePerformIO $ getCommand "glScissor"
 
 -- glScissorArrayv -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorArray.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorArray.xhtml OpenGL 4.x>.
 glScissorArrayv
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -35396,6 +35814,7 @@ ptr_glScissorArrayv = unsafePerformIO $ getCommand "glScissorArrayv"
 
 -- glScissorArrayvNV -----------------------------------------------------------
 
+-- | This command is an alias for 'glScissorArrayv'.
 glScissorArrayvNV
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -35410,7 +35829,7 @@ ptr_glScissorArrayvNV = unsafePerformIO $ getCommand "glScissorArrayvNV"
 
 -- glScissorIndexed ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorIndexed.xhtml OpenGL 4.x>.
 glScissorIndexed
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -35427,6 +35846,7 @@ ptr_glScissorIndexed = unsafePerformIO $ getCommand "glScissorIndexed"
 
 -- glScissorIndexedNV ----------------------------------------------------------
 
+-- | This command is an alias for 'glScissorIndexed'.
 glScissorIndexedNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -35443,7 +35863,7 @@ ptr_glScissorIndexedNV = unsafePerformIO $ getCommand "glScissorIndexedNV"
 
 -- glScissorIndexedv -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorIndexed.xhtml OpenGL 4.x>.
 glScissorIndexedv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -35457,6 +35877,7 @@ ptr_glScissorIndexedv = unsafePerformIO $ getCommand "glScissorIndexedv"
 
 -- glScissorIndexedvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glScissorIndexedv'.
 glScissorIndexedvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -35470,7 +35891,7 @@ ptr_glScissorIndexedvNV = unsafePerformIO $ getCommand "glScissorIndexedvNV"
 
 -- glSecondaryColor3b ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3bv'.
 glSecondaryColor3b
   :: MonadIO m
   => GLbyte -- ^ @red@ of type @ColorB@.
@@ -35485,6 +35906,7 @@ ptr_glSecondaryColor3b = unsafePerformIO $ getCommand "glSecondaryColor3b"
 
 -- glSecondaryColor3bEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3bvEXT'. This command is an alias for 'glSecondaryColor3b'.
 glSecondaryColor3bEXT
   :: MonadIO m
   => GLbyte -- ^ @red@ of type @ColorB@.
@@ -35499,7 +35921,7 @@ ptr_glSecondaryColor3bEXT = unsafePerformIO $ getCommand "glSecondaryColor3bEXT"
 
 -- glSecondaryColor3bv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3bv
   :: MonadIO m
   => Ptr GLbyte -- ^ @v@ pointing to @3@ elements of type @ColorB@.
@@ -35512,6 +35934,7 @@ ptr_glSecondaryColor3bv = unsafePerformIO $ getCommand "glSecondaryColor3bv"
 
 -- glSecondaryColor3bvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3bv'.
 glSecondaryColor3bvEXT
   :: MonadIO m
   => Ptr GLbyte -- ^ @v@ pointing to @3@ elements of type @ColorB@.
@@ -35524,7 +35947,7 @@ ptr_glSecondaryColor3bvEXT = unsafePerformIO $ getCommand "glSecondaryColor3bvEX
 
 -- glSecondaryColor3d ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3dv'.
 glSecondaryColor3d
   :: MonadIO m
   => GLdouble -- ^ @red@ of type @ColorD@.
@@ -35539,6 +35962,7 @@ ptr_glSecondaryColor3d = unsafePerformIO $ getCommand "glSecondaryColor3d"
 
 -- glSecondaryColor3dEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3dvEXT'. This command is an alias for 'glSecondaryColor3d'.
 glSecondaryColor3dEXT
   :: MonadIO m
   => GLdouble -- ^ @red@ of type @ColorD@.
@@ -35553,7 +35977,7 @@ ptr_glSecondaryColor3dEXT = unsafePerformIO $ getCommand "glSecondaryColor3dEXT"
 
 -- glSecondaryColor3dv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @ColorD@.
@@ -35566,6 +35990,7 @@ ptr_glSecondaryColor3dv = unsafePerformIO $ getCommand "glSecondaryColor3dv"
 
 -- glSecondaryColor3dvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3dv'.
 glSecondaryColor3dvEXT
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @ColorD@.
@@ -35578,7 +36003,7 @@ ptr_glSecondaryColor3dvEXT = unsafePerformIO $ getCommand "glSecondaryColor3dvEX
 
 -- glSecondaryColor3f ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3fv'.
 glSecondaryColor3f
   :: MonadIO m
   => GLfloat -- ^ @red@ of type @ColorF@.
@@ -35593,6 +36018,7 @@ ptr_glSecondaryColor3f = unsafePerformIO $ getCommand "glSecondaryColor3f"
 
 -- glSecondaryColor3fEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3fvEXT'. This command is an alias for 'glSecondaryColor3f'.
 glSecondaryColor3fEXT
   :: MonadIO m
   => GLfloat -- ^ @red@ of type @ColorF@.
@@ -35607,7 +36033,7 @@ ptr_glSecondaryColor3fEXT = unsafePerformIO $ getCommand "glSecondaryColor3fEXT"
 
 -- glSecondaryColor3fv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @ColorF@.
@@ -35620,6 +36046,7 @@ ptr_glSecondaryColor3fv = unsafePerformIO $ getCommand "glSecondaryColor3fv"
 
 -- glSecondaryColor3fvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3fv'.
 glSecondaryColor3fvEXT
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @ColorF@.
@@ -35632,6 +36059,7 @@ ptr_glSecondaryColor3fvEXT = unsafePerformIO $ getCommand "glSecondaryColor3fvEX
 
 -- glSecondaryColor3hNV --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3hvNV'.
 glSecondaryColor3hNV
   :: MonadIO m
   => GLhalfNV -- ^ @red@ of type @Half16NV@.
@@ -35658,7 +36086,7 @@ ptr_glSecondaryColor3hvNV = unsafePerformIO $ getCommand "glSecondaryColor3hvNV"
 
 -- glSecondaryColor3i ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3iv'.
 glSecondaryColor3i
   :: MonadIO m
   => GLint -- ^ @red@ of type @ColorI@.
@@ -35673,6 +36101,7 @@ ptr_glSecondaryColor3i = unsafePerformIO $ getCommand "glSecondaryColor3i"
 
 -- glSecondaryColor3iEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3ivEXT'. This command is an alias for 'glSecondaryColor3i'.
 glSecondaryColor3iEXT
   :: MonadIO m
   => GLint -- ^ @red@ of type @ColorI@.
@@ -35687,7 +36116,7 @@ ptr_glSecondaryColor3iEXT = unsafePerformIO $ getCommand "glSecondaryColor3iEXT"
 
 -- glSecondaryColor3iv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @ColorI@.
@@ -35700,6 +36129,7 @@ ptr_glSecondaryColor3iv = unsafePerformIO $ getCommand "glSecondaryColor3iv"
 
 -- glSecondaryColor3ivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3iv'.
 glSecondaryColor3ivEXT
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @ColorI@.
@@ -35712,7 +36142,7 @@ ptr_glSecondaryColor3ivEXT = unsafePerformIO $ getCommand "glSecondaryColor3ivEX
 
 -- glSecondaryColor3s ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3sv'.
 glSecondaryColor3s
   :: MonadIO m
   => GLshort -- ^ @red@ of type @ColorS@.
@@ -35727,6 +36157,7 @@ ptr_glSecondaryColor3s = unsafePerformIO $ getCommand "glSecondaryColor3s"
 
 -- glSecondaryColor3sEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3svEXT'. This command is an alias for 'glSecondaryColor3s'.
 glSecondaryColor3sEXT
   :: MonadIO m
   => GLshort -- ^ @red@ of type @ColorS@.
@@ -35741,7 +36172,7 @@ ptr_glSecondaryColor3sEXT = unsafePerformIO $ getCommand "glSecondaryColor3sEXT"
 
 -- glSecondaryColor3sv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @ColorS@.
@@ -35754,6 +36185,7 @@ ptr_glSecondaryColor3sv = unsafePerformIO $ getCommand "glSecondaryColor3sv"
 
 -- glSecondaryColor3svEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3sv'.
 glSecondaryColor3svEXT
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @ColorS@.
@@ -35766,7 +36198,7 @@ ptr_glSecondaryColor3svEXT = unsafePerformIO $ getCommand "glSecondaryColor3svEX
 
 -- glSecondaryColor3ub ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3ubv'.
 glSecondaryColor3ub
   :: MonadIO m
   => GLubyte -- ^ @red@ of type @ColorUB@.
@@ -35781,6 +36213,7 @@ ptr_glSecondaryColor3ub = unsafePerformIO $ getCommand "glSecondaryColor3ub"
 
 -- glSecondaryColor3ubEXT ------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3ubvEXT'. This command is an alias for 'glSecondaryColor3ub'.
 glSecondaryColor3ubEXT
   :: MonadIO m
   => GLubyte -- ^ @red@ of type @ColorUB@.
@@ -35795,7 +36228,7 @@ ptr_glSecondaryColor3ubEXT = unsafePerformIO $ getCommand "glSecondaryColor3ubEX
 
 -- glSecondaryColor3ubv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3ubv
   :: MonadIO m
   => Ptr GLubyte -- ^ @v@ pointing to @3@ elements of type @ColorUB@.
@@ -35808,6 +36241,7 @@ ptr_glSecondaryColor3ubv = unsafePerformIO $ getCommand "glSecondaryColor3ubv"
 
 -- glSecondaryColor3ubvEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3ubv'.
 glSecondaryColor3ubvEXT
   :: MonadIO m
   => Ptr GLubyte -- ^ @v@ pointing to @3@ elements of type @ColorUB@.
@@ -35820,7 +36254,7 @@ ptr_glSecondaryColor3ubvEXT = unsafePerformIO $ getCommand "glSecondaryColor3ubv
 
 -- glSecondaryColor3ui ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3uiv'.
 glSecondaryColor3ui
   :: MonadIO m
   => GLuint -- ^ @red@ of type @ColorUI@.
@@ -35835,6 +36269,7 @@ ptr_glSecondaryColor3ui = unsafePerformIO $ getCommand "glSecondaryColor3ui"
 
 -- glSecondaryColor3uiEXT ------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3uivEXT'. This command is an alias for 'glSecondaryColor3ui'.
 glSecondaryColor3uiEXT
   :: MonadIO m
   => GLuint -- ^ @red@ of type @ColorUI@.
@@ -35849,7 +36284,7 @@ ptr_glSecondaryColor3uiEXT = unsafePerformIO $ getCommand "glSecondaryColor3uiEX
 
 -- glSecondaryColor3uiv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3uiv
   :: MonadIO m
   => Ptr GLuint -- ^ @v@ pointing to @3@ elements of type @ColorUI@.
@@ -35862,6 +36297,7 @@ ptr_glSecondaryColor3uiv = unsafePerformIO $ getCommand "glSecondaryColor3uiv"
 
 -- glSecondaryColor3uivEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3uiv'.
 glSecondaryColor3uivEXT
   :: MonadIO m
   => Ptr GLuint -- ^ @v@ pointing to @3@ elements of type @ColorUI@.
@@ -35874,7 +36310,7 @@ ptr_glSecondaryColor3uivEXT = unsafePerformIO $ getCommand "glSecondaryColor3uiv
 
 -- glSecondaryColor3us ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3usv'.
 glSecondaryColor3us
   :: MonadIO m
   => GLushort -- ^ @red@ of type @ColorUS@.
@@ -35889,6 +36325,7 @@ ptr_glSecondaryColor3us = unsafePerformIO $ getCommand "glSecondaryColor3us"
 
 -- glSecondaryColor3usEXT ------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glSecondaryColor3usvEXT'. This command is an alias for 'glSecondaryColor3us'.
 glSecondaryColor3usEXT
   :: MonadIO m
   => GLushort -- ^ @red@ of type @ColorUS@.
@@ -35903,7 +36340,7 @@ ptr_glSecondaryColor3usEXT = unsafePerformIO $ getCommand "glSecondaryColor3usEX
 
 -- glSecondaryColor3usv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>.
 glSecondaryColor3usv
   :: MonadIO m
   => Ptr GLushort -- ^ @v@ pointing to @3@ elements of type @ColorUS@.
@@ -35916,6 +36353,7 @@ ptr_glSecondaryColor3usv = unsafePerformIO $ getCommand "glSecondaryColor3usv"
 
 -- glSecondaryColor3usvEXT -----------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColor3usv'.
 glSecondaryColor3usvEXT
   :: MonadIO m
   => Ptr GLushort -- ^ @v@ pointing to @3@ elements of type @ColorUS@.
@@ -35968,7 +36406,7 @@ ptr_glSecondaryColorP3uiv = unsafePerformIO $ getCommand "glSecondaryColorP3uiv"
 
 -- glSecondaryColorPointer -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColorPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColorPointer.xml OpenGL 2.x>.
 glSecondaryColorPointer
   :: MonadIO m
   => GLint -- ^ @size@.
@@ -35984,6 +36422,7 @@ ptr_glSecondaryColorPointer = unsafePerformIO $ getCommand "glSecondaryColorPoin
 
 -- glSecondaryColorPointerEXT --------------------------------------------------
 
+-- | This command is an alias for 'glSecondaryColorPointer'.
 glSecondaryColorPointerEXT
   :: MonadIO m
   => GLint -- ^ @size@.
@@ -36015,7 +36454,7 @@ ptr_glSecondaryColorPointerListIBM = unsafePerformIO $ getCommand "glSecondaryCo
 
 -- glSelectBuffer --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSelectBuffer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSelectBuffer.xml OpenGL 2.x>.
 glSelectBuffer
   :: MonadIO m
   => GLsizei -- ^ @size@.
@@ -36045,7 +36484,7 @@ ptr_glSelectPerfMonitorCountersAMD = unsafePerformIO $ getCommand "glSelectPerfM
 
 -- glSeparableFilter2D ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSeparableFilter2D.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSeparableFilter2D.xml OpenGL 2.x>.
 glSeparableFilter2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type @SeparableTarget@.
@@ -36065,6 +36504,7 @@ ptr_glSeparableFilter2D = unsafePerformIO $ getCommand "glSeparableFilter2D"
 
 -- glSeparableFilter2DEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glSeparableFilter2D'.
 glSeparableFilter2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [SeparableTargetEXT](Graphics-Rendering-OpenGL-Raw-Groups.html#SeparableTargetEXT).
@@ -36164,7 +36604,7 @@ ptr_glSetMultisamplefvAMD = unsafePerformIO $ getCommand "glSetMultisamplefvAMD"
 
 -- glShadeModel ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glShadeModel.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glShadeModel.xml OpenGL 2.x>.
 glShadeModel
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [ShadingModel](Graphics-Rendering-OpenGL-Raw-Groups.html#ShadingModel).
@@ -36177,7 +36617,7 @@ ptr_glShadeModel = unsafePerformIO $ getCommand "glShadeModel"
 
 -- glShaderBinary --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glShaderBinary.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glShaderBinary.xhtml OpenGL 4.x>.
 glShaderBinary
   :: MonadIO m
   => GLsizei -- ^ @count@.
@@ -36239,7 +36679,7 @@ ptr_glShaderOp3EXT = unsafePerformIO $ getCommand "glShaderOp3EXT"
 
 -- glShaderSource --------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glShaderSource.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glShaderSource.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glShaderSource.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glShaderSource.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glShaderSource.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glShaderSource.xhtml OpenGL 4.x>.
 glShaderSource
   :: MonadIO m
   => GLuint -- ^ @shader@.
@@ -36255,6 +36695,7 @@ ptr_glShaderSource = unsafePerformIO $ getCommand "glShaderSource"
 
 -- glShaderSourceARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glShaderSource'.
 glShaderSourceARB
   :: MonadIO m
   => GLhandleARB -- ^ @shaderObj@ of type @handleARB@.
@@ -36270,7 +36711,7 @@ ptr_glShaderSourceARB = unsafePerformIO $ getCommand "glShaderSourceARB"
 
 -- glShaderStorageBlockBinding -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glShaderStorageBlockBinding.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glShaderStorageBlockBinding.xhtml OpenGL 4.x>.
 glShaderStorageBlockBinding
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -36437,7 +36878,7 @@ ptr_glStencilFillPathNV = unsafePerformIO $ getCommand "glStencilFillPathNV"
 
 -- glStencilFunc ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilFunc.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilFunc.xhtml OpenGL 4.x>.
 glStencilFunc
   :: MonadIO m
   => GLenum -- ^ @func@ of type [StencilFunction](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilFunction).
@@ -36452,7 +36893,7 @@ ptr_glStencilFunc = unsafePerformIO $ getCommand "glStencilFunc"
 
 -- glStencilFuncSeparate -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilFuncSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilFuncSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilFuncSeparate.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilFuncSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilFuncSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilFuncSeparate.xhtml OpenGL 4.x>.
 glStencilFuncSeparate
   :: MonadIO m
   => GLenum -- ^ @face@ of type @StencilFaceDirection@.
@@ -36483,7 +36924,7 @@ ptr_glStencilFuncSeparateATI = unsafePerformIO $ getCommand "glStencilFuncSepara
 
 -- glStencilMask ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilMask.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilMask.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilMask.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilMask.xhtml OpenGL 4.x>.
 glStencilMask
   :: MonadIO m
   => GLuint -- ^ @mask@ of type @MaskedStencilValue@.
@@ -36496,7 +36937,7 @@ ptr_glStencilMask = unsafePerformIO $ getCommand "glStencilMask"
 
 -- glStencilMaskSeparate -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilMaskSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilMaskSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilMaskSeparate.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilMaskSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilMaskSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilMaskSeparate.xhtml OpenGL 4.x>.
 glStencilMaskSeparate
   :: MonadIO m
   => GLenum -- ^ @face@ of type @StencilFaceDirection@.
@@ -36510,7 +36951,7 @@ ptr_glStencilMaskSeparate = unsafePerformIO $ getCommand "glStencilMaskSeparate"
 
 -- glStencilOp -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOp.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOp.xhtml OpenGL 4.x>.
 glStencilOp
   :: MonadIO m
   => GLenum -- ^ @fail@ of type [StencilOp](Graphics-Rendering-OpenGL-Raw-Groups.html#StencilOp).
@@ -36525,7 +36966,7 @@ ptr_glStencilOp = unsafePerformIO $ getCommand "glStencilOp"
 
 -- glStencilOpSeparate ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOpSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOpSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOpSeparate.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOpSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOpSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOpSeparate.xhtml OpenGL 4.x>.
 glStencilOpSeparate
   :: MonadIO m
   => GLenum -- ^ @face@ of type @StencilFaceDirection@.
@@ -36541,6 +36982,7 @@ ptr_glStencilOpSeparate = unsafePerformIO $ getCommand "glStencilOpSeparate"
 
 -- glStencilOpSeparateATI ------------------------------------------------------
 
+-- | This command is an alias for 'glStencilOpSeparate'.
 glStencilOpSeparateATI
   :: MonadIO m
   => GLenum -- ^ @face@ of type @StencilFaceDirection@.
@@ -36750,6 +37192,7 @@ ptr_glTagSampleBufferSGIX = unsafePerformIO $ getCommand "glTagSampleBufferSGIX"
 
 -- glTangent3bEXT --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTangent3bvEXT'.
 glTangent3bEXT
   :: MonadIO m
   => GLbyte -- ^ @tx@.
@@ -36776,6 +37219,7 @@ ptr_glTangent3bvEXT = unsafePerformIO $ getCommand "glTangent3bvEXT"
 
 -- glTangent3dEXT --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTangent3dvEXT'.
 glTangent3dEXT
   :: MonadIO m
   => GLdouble -- ^ @tx@ of type @CoordD@.
@@ -36802,6 +37246,7 @@ ptr_glTangent3dvEXT = unsafePerformIO $ getCommand "glTangent3dvEXT"
 
 -- glTangent3fEXT --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTangent3fvEXT'.
 glTangent3fEXT
   :: MonadIO m
   => GLfloat -- ^ @tx@ of type @CoordF@.
@@ -36828,6 +37273,7 @@ ptr_glTangent3fvEXT = unsafePerformIO $ getCommand "glTangent3fvEXT"
 
 -- glTangent3iEXT --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTangent3ivEXT'.
 glTangent3iEXT
   :: MonadIO m
   => GLint -- ^ @tx@.
@@ -36854,6 +37300,7 @@ ptr_glTangent3ivEXT = unsafePerformIO $ getCommand "glTangent3ivEXT"
 
 -- glTangent3sEXT --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTangent3svEXT'.
 glTangent3sEXT
   :: MonadIO m
   => GLshort -- ^ @tx@.
@@ -36967,7 +37414,7 @@ ptr_glTestObjectAPPLE = unsafePerformIO $ getCommand "glTestObjectAPPLE"
 
 -- glTexBuffer -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml OpenGL 4.x>.
 glTexBuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -36982,6 +37429,7 @@ ptr_glTexBuffer = unsafePerformIO $ getCommand "glTexBuffer"
 
 -- glTexBufferARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glTexBuffer'.
 glTexBufferARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -36996,6 +37444,7 @@ ptr_glTexBufferARB = unsafePerformIO $ getCommand "glTexBufferARB"
 
 -- glTexBufferEXT --------------------------------------------------------------
 
+-- | This command is an alias for 'glTexBuffer'.
 glTexBufferEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -37010,6 +37459,7 @@ ptr_glTexBufferEXT = unsafePerformIO $ getCommand "glTexBufferEXT"
 
 -- glTexBufferOES --------------------------------------------------------------
 
+-- | This command is an alias for 'glTexBuffer'.
 glTexBufferOES
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -37024,7 +37474,7 @@ ptr_glTexBufferOES = unsafePerformIO $ getCommand "glTexBufferOES"
 
 -- glTexBufferRange ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexBufferRange.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexBufferRange.xhtml OpenGL 4.x>.
 glTexBufferRange
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -37041,6 +37491,7 @@ ptr_glTexBufferRange = unsafePerformIO $ getCommand "glTexBufferRange"
 
 -- glTexBufferRangeEXT ---------------------------------------------------------
 
+-- | This command is an alias for 'glTexBufferRange'.
 glTexBufferRangeEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -37057,6 +37508,7 @@ ptr_glTexBufferRangeEXT = unsafePerformIO $ getCommand "glTexBufferRangeEXT"
 
 -- glTexBufferRangeOES ---------------------------------------------------------
 
+-- | This command is an alias for 'glTexBufferRange'.
 glTexBufferRangeOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -37123,7 +37575,7 @@ ptr_glTexCoord1bvOES = unsafePerformIO $ getCommand "glTexCoord1bvOES"
 
 -- glTexCoord1d ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord1dv'.
 glTexCoord1d
   :: MonadIO m
   => GLdouble -- ^ @s@ of type @CoordD@.
@@ -37136,7 +37588,7 @@ ptr_glTexCoord1d = unsafePerformIO $ getCommand "glTexCoord1d"
 
 -- glTexCoord1dv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord1dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @CoordD@.
@@ -37149,7 +37601,7 @@ ptr_glTexCoord1dv = unsafePerformIO $ getCommand "glTexCoord1dv"
 
 -- glTexCoord1f ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord1fv'.
 glTexCoord1f
   :: MonadIO m
   => GLfloat -- ^ @s@ of type @CoordF@.
@@ -37162,7 +37614,7 @@ ptr_glTexCoord1f = unsafePerformIO $ getCommand "glTexCoord1f"
 
 -- glTexCoord1fv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord1fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @CoordF@.
@@ -37175,6 +37627,7 @@ ptr_glTexCoord1fv = unsafePerformIO $ getCommand "glTexCoord1fv"
 
 -- glTexCoord1hNV --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTexCoord1hvNV'.
 glTexCoord1hNV
   :: MonadIO m
   => GLhalfNV -- ^ @s@ of type @Half16NV@.
@@ -37199,7 +37652,7 @@ ptr_glTexCoord1hvNV = unsafePerformIO $ getCommand "glTexCoord1hvNV"
 
 -- glTexCoord1i ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord1iv'.
 glTexCoord1i
   :: MonadIO m
   => GLint -- ^ @s@ of type @CoordI@.
@@ -37212,7 +37665,7 @@ ptr_glTexCoord1i = unsafePerformIO $ getCommand "glTexCoord1i"
 
 -- glTexCoord1iv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord1iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @1@ element of type @CoordI@.
@@ -37225,7 +37678,7 @@ ptr_glTexCoord1iv = unsafePerformIO $ getCommand "glTexCoord1iv"
 
 -- glTexCoord1s ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord1sv'.
 glTexCoord1s
   :: MonadIO m
   => GLshort -- ^ @s@ of type @CoordS@.
@@ -37238,7 +37691,7 @@ ptr_glTexCoord1s = unsafePerformIO $ getCommand "glTexCoord1s"
 
 -- glTexCoord1sv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord1sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @1@ element of type @CoordS@.
@@ -37300,7 +37753,7 @@ ptr_glTexCoord2bvOES = unsafePerformIO $ getCommand "glTexCoord2bvOES"
 
 -- glTexCoord2d ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord2dv'.
 glTexCoord2d
   :: MonadIO m
   => GLdouble -- ^ @s@ of type @CoordD@.
@@ -37314,7 +37767,7 @@ ptr_glTexCoord2d = unsafePerformIO $ getCommand "glTexCoord2d"
 
 -- glTexCoord2dv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord2dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
@@ -37327,7 +37780,7 @@ ptr_glTexCoord2dv = unsafePerformIO $ getCommand "glTexCoord2dv"
 
 -- glTexCoord2f ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord2fv'.
 glTexCoord2f
   :: MonadIO m
   => GLfloat -- ^ @s@ of type @CoordF@.
@@ -37508,7 +37961,7 @@ ptr_glTexCoord2fVertex3fvSUN = unsafePerformIO $ getCommand "glTexCoord2fVertex3
 
 -- glTexCoord2fv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord2fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
@@ -37521,6 +37974,7 @@ ptr_glTexCoord2fv = unsafePerformIO $ getCommand "glTexCoord2fv"
 
 -- glTexCoord2hNV --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTexCoord2hvNV'.
 glTexCoord2hNV
   :: MonadIO m
   => GLhalfNV -- ^ @s@ of type @Half16NV@.
@@ -37546,7 +38000,7 @@ ptr_glTexCoord2hvNV = unsafePerformIO $ getCommand "glTexCoord2hvNV"
 
 -- glTexCoord2i ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord2iv'.
 glTexCoord2i
   :: MonadIO m
   => GLint -- ^ @s@ of type @CoordI@.
@@ -37560,7 +38014,7 @@ ptr_glTexCoord2i = unsafePerformIO $ getCommand "glTexCoord2i"
 
 -- glTexCoord2iv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord2iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
@@ -37573,7 +38027,7 @@ ptr_glTexCoord2iv = unsafePerformIO $ getCommand "glTexCoord2iv"
 
 -- glTexCoord2s ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord2sv'.
 glTexCoord2s
   :: MonadIO m
   => GLshort -- ^ @s@ of type @CoordS@.
@@ -37587,7 +38041,7 @@ ptr_glTexCoord2s = unsafePerformIO $ getCommand "glTexCoord2s"
 
 -- glTexCoord2sv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord2sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
@@ -37651,7 +38105,7 @@ ptr_glTexCoord3bvOES = unsafePerformIO $ getCommand "glTexCoord3bvOES"
 
 -- glTexCoord3d ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord3dv'.
 glTexCoord3d
   :: MonadIO m
   => GLdouble -- ^ @s@ of type @CoordD@.
@@ -37666,7 +38120,7 @@ ptr_glTexCoord3d = unsafePerformIO $ getCommand "glTexCoord3d"
 
 -- glTexCoord3dv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -37679,7 +38133,7 @@ ptr_glTexCoord3dv = unsafePerformIO $ getCommand "glTexCoord3dv"
 
 -- glTexCoord3f ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord3fv'.
 glTexCoord3f
   :: MonadIO m
   => GLfloat -- ^ @s@ of type @CoordF@.
@@ -37694,7 +38148,7 @@ ptr_glTexCoord3f = unsafePerformIO $ getCommand "glTexCoord3f"
 
 -- glTexCoord3fv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -37707,6 +38161,7 @@ ptr_glTexCoord3fv = unsafePerformIO $ getCommand "glTexCoord3fv"
 
 -- glTexCoord3hNV --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTexCoord3hvNV'.
 glTexCoord3hNV
   :: MonadIO m
   => GLhalfNV -- ^ @s@ of type @Half16NV@.
@@ -37733,7 +38188,7 @@ ptr_glTexCoord3hvNV = unsafePerformIO $ getCommand "glTexCoord3hvNV"
 
 -- glTexCoord3i ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord3iv'.
 glTexCoord3i
   :: MonadIO m
   => GLint -- ^ @s@ of type @CoordI@.
@@ -37748,7 +38203,7 @@ ptr_glTexCoord3i = unsafePerformIO $ getCommand "glTexCoord3i"
 
 -- glTexCoord3iv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord3iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
@@ -37761,7 +38216,7 @@ ptr_glTexCoord3iv = unsafePerformIO $ getCommand "glTexCoord3iv"
 
 -- glTexCoord3s ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord3sv'.
 glTexCoord3s
   :: MonadIO m
   => GLshort -- ^ @s@ of type @CoordS@.
@@ -37776,7 +38231,7 @@ ptr_glTexCoord3s = unsafePerformIO $ getCommand "glTexCoord3s"
 
 -- glTexCoord3sv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord3sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
@@ -37842,7 +38297,7 @@ ptr_glTexCoord4bvOES = unsafePerformIO $ getCommand "glTexCoord4bvOES"
 
 -- glTexCoord4d ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4dv'.
 glTexCoord4d
   :: MonadIO m
   => GLdouble -- ^ @s@ of type @CoordD@.
@@ -37858,7 +38313,7 @@ ptr_glTexCoord4d = unsafePerformIO $ getCommand "glTexCoord4d"
 
 -- glTexCoord4dv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord4dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @CoordD@.
@@ -37871,7 +38326,7 @@ ptr_glTexCoord4dv = unsafePerformIO $ getCommand "glTexCoord4dv"
 
 -- glTexCoord4f ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4fv'.
 glTexCoord4f
   :: MonadIO m
   => GLfloat -- ^ @s@ of type @CoordF@.
@@ -37960,7 +38415,7 @@ ptr_glTexCoord4fVertex4fvSUN = unsafePerformIO $ getCommand "glTexCoord4fVertex4
 
 -- glTexCoord4fv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord4fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @CoordF@.
@@ -37973,6 +38428,7 @@ ptr_glTexCoord4fv = unsafePerformIO $ getCommand "glTexCoord4fv"
 
 -- glTexCoord4hNV --------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTexCoord4hvNV'.
 glTexCoord4hNV
   :: MonadIO m
   => GLhalfNV -- ^ @s@ of type @Half16NV@.
@@ -38000,7 +38456,7 @@ ptr_glTexCoord4hvNV = unsafePerformIO $ getCommand "glTexCoord4hvNV"
 
 -- glTexCoord4i ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4iv'.
 glTexCoord4i
   :: MonadIO m
   => GLint -- ^ @s@ of type @CoordI@.
@@ -38016,7 +38472,7 @@ ptr_glTexCoord4i = unsafePerformIO $ getCommand "glTexCoord4i"
 
 -- glTexCoord4iv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord4iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @4@ elements of type @CoordI@.
@@ -38029,7 +38485,7 @@ ptr_glTexCoord4iv = unsafePerformIO $ getCommand "glTexCoord4iv"
 
 -- glTexCoord4s ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4sv'.
 glTexCoord4s
   :: MonadIO m
   => GLshort -- ^ @s@ of type @CoordS@.
@@ -38045,7 +38501,7 @@ ptr_glTexCoord4s = unsafePerformIO $ getCommand "glTexCoord4s"
 
 -- glTexCoord4sv ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
 glTexCoord4sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
@@ -38203,7 +38659,7 @@ ptr_glTexCoordP4uiv = unsafePerformIO $ getCommand "glTexCoordP4uiv"
 
 -- glTexCoordPointer -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoordPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoordPointer.xml OpenGL 2.x>.
 glTexCoordPointer
   :: MonadIO m
   => GLint -- ^ @size@.
@@ -38265,7 +38721,7 @@ ptr_glTexCoordPointervINTEL = unsafePerformIO $ getCommand "glTexCoordPointervIN
 
 -- glTexEnvf -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>.
 glTexEnvf
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
@@ -38280,7 +38736,7 @@ ptr_glTexEnvf = unsafePerformIO $ getCommand "glTexEnvf"
 
 -- glTexEnvfv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>.
 glTexEnvfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
@@ -38295,7 +38751,7 @@ ptr_glTexEnvfv = unsafePerformIO $ getCommand "glTexEnvfv"
 
 -- glTexEnvi -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>.
 glTexEnvi
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
@@ -38310,7 +38766,7 @@ ptr_glTexEnvi = unsafePerformIO $ getCommand "glTexEnvi"
 
 -- glTexEnviv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml OpenGL 2.x>.
 glTexEnviv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureEnvTarget).
@@ -38396,7 +38852,7 @@ ptr_glTexFilterFuncSGIS = unsafePerformIO $ getCommand "glTexFilterFuncSGIS"
 
 -- glTexGend -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>.
 glTexGend
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -38411,7 +38867,7 @@ ptr_glTexGend = unsafePerformIO $ getCommand "glTexGend"
 
 -- glTexGendv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>.
 glTexGendv
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -38426,7 +38882,7 @@ ptr_glTexGendv = unsafePerformIO $ getCommand "glTexGendv"
 
 -- glTexGenf -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>.
 glTexGenf
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -38455,7 +38911,7 @@ ptr_glTexGenfOES = unsafePerformIO $ getCommand "glTexGenfOES"
 
 -- glTexGenfv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>.
 glTexGenfv
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -38484,7 +38940,7 @@ ptr_glTexGenfvOES = unsafePerformIO $ getCommand "glTexGenfvOES"
 
 -- glTexGeni -------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>.
 glTexGeni
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -38513,7 +38969,7 @@ ptr_glTexGeniOES = unsafePerformIO $ getCommand "glTexGeniOES"
 
 -- glTexGeniv ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml OpenGL 2.x>.
 glTexGeniv
   :: MonadIO m
   => GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureCoordName).
@@ -38570,7 +39026,7 @@ ptr_glTexGenxvOES = unsafePerformIO $ getCommand "glTexGenxvOES"
 
 -- glTexImage1D ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage1D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage1D.xhtml OpenGL 4.x>.
 glTexImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38590,7 +39046,7 @@ ptr_glTexImage1D = unsafePerformIO $ getCommand "glTexImage1D"
 
 -- glTexImage2D ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage2D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage2D.xhtml OpenGL 4.x>.
 glTexImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38611,7 +39067,7 @@ ptr_glTexImage2D = unsafePerformIO $ getCommand "glTexImage2D"
 
 -- glTexImage2DMultisample -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2DMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage2DMultisample.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2DMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage2DMultisample.xhtml OpenGL 4.x>.
 glTexImage2DMultisample
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -38647,7 +39103,7 @@ ptr_glTexImage2DMultisampleCoverageNV = unsafePerformIO $ getCommand "glTexImage
 
 -- glTexImage3D ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage3D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage3D.xhtml OpenGL 4.x>.
 glTexImage3D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38669,6 +39125,7 @@ ptr_glTexImage3D = unsafePerformIO $ getCommand "glTexImage3D"
 
 -- glTexImage3DEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glTexImage3D'.
 glTexImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38690,7 +39147,7 @@ ptr_glTexImage3DEXT = unsafePerformIO $ getCommand "glTexImage3DEXT"
 
 -- glTexImage3DMultisample -----------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage3DMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage3DMultisample.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexImage3DMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexImage3DMultisample.xhtml OpenGL 4.x>.
 glTexImage3DMultisample
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -38728,6 +39185,7 @@ ptr_glTexImage3DMultisampleCoverageNV = unsafePerformIO $ getCommand "glTexImage
 
 -- glTexImage3DOES -------------------------------------------------------------
 
+-- | This command is an alias for 'glTexImage3D'.
 glTexImage3DOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -38791,6 +39249,7 @@ ptr_glTexPageCommitmentARB = unsafePerformIO $ getCommand "glTexPageCommitmentAR
 
 -- glTexPageCommitmentEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glTexPageCommitmentARB'.
 glTexPageCommitmentEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -38811,7 +39270,7 @@ ptr_glTexPageCommitmentEXT = unsafePerformIO $ getCommand "glTexPageCommitmentEX
 
 -- glTexParameterIiv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTexParameterIiv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38826,6 +39285,7 @@ ptr_glTexParameterIiv = unsafePerformIO $ getCommand "glTexParameterIiv"
 
 -- glTexParameterIivEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glTexParameterIiv'.
 glTexParameterIivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38840,6 +39300,7 @@ ptr_glTexParameterIivEXT = unsafePerformIO $ getCommand "glTexParameterIivEXT"
 
 -- glTexParameterIivOES --------------------------------------------------------
 
+-- | This command is an alias for 'glTexParameterIiv'.
 glTexParameterIivOES
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38854,7 +39315,7 @@ ptr_glTexParameterIivOES = unsafePerformIO $ getCommand "glTexParameterIivOES"
 
 -- glTexParameterIuiv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTexParameterIuiv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38869,6 +39330,7 @@ ptr_glTexParameterIuiv = unsafePerformIO $ getCommand "glTexParameterIuiv"
 
 -- glTexParameterIuivEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glTexParameterIuiv'.
 glTexParameterIuivEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38883,6 +39345,7 @@ ptr_glTexParameterIuivEXT = unsafePerformIO $ getCommand "glTexParameterIuivEXT"
 
 -- glTexParameterIuivOES -------------------------------------------------------
 
+-- | This command is an alias for 'glTexParameterIuiv'.
 glTexParameterIuivOES
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38897,7 +39360,7 @@ ptr_glTexParameterIuivOES = unsafePerformIO $ getCommand "glTexParameterIuivOES"
 
 -- glTexParameterf -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTexParameterf
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38912,7 +39375,7 @@ ptr_glTexParameterf = unsafePerformIO $ getCommand "glTexParameterf"
 
 -- glTexParameterfv ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTexParameterfv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38927,7 +39390,7 @@ ptr_glTexParameterfv = unsafePerformIO $ getCommand "glTexParameterfv"
 
 -- glTexParameteri -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTexParameteri
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -38942,7 +39405,7 @@ ptr_glTexParameteri = unsafePerformIO $ getCommand "glTexParameteri"
 
 -- glTexParameteriv ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTexParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -39026,7 +39489,7 @@ ptr_glTexRenderbufferNV = unsafePerformIO $ getCommand "glTexRenderbufferNV"
 
 -- glTexStorage1D --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage1D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage1D.xhtml OpenGL 4.x>.
 glTexStorage1D
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39042,6 +39505,7 @@ ptr_glTexStorage1D = unsafePerformIO $ getCommand "glTexStorage1D"
 
 -- glTexStorage1DEXT -----------------------------------------------------------
 
+-- | This command is an alias for 'glTexStorage1D'.
 glTexStorage1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39057,7 +39521,7 @@ ptr_glTexStorage1DEXT = unsafePerformIO $ getCommand "glTexStorage1DEXT"
 
 -- glTexStorage2D --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2D.xhtml OpenGL 4.x>.
 glTexStorage2D
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39074,6 +39538,7 @@ ptr_glTexStorage2D = unsafePerformIO $ getCommand "glTexStorage2D"
 
 -- glTexStorage2DEXT -----------------------------------------------------------
 
+-- | This command is an alias for 'glTexStorage2D'.
 glTexStorage2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39090,7 +39555,7 @@ ptr_glTexStorage2DEXT = unsafePerformIO $ getCommand "glTexStorage2DEXT"
 
 -- glTexStorage2DMultisample ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2DMultisample.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2DMultisample.xhtml OpenGL 4.x>.
 glTexStorage2DMultisample
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39108,7 +39573,7 @@ ptr_glTexStorage2DMultisample = unsafePerformIO $ getCommand "glTexStorage2DMult
 
 -- glTexStorage3D --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3D.xhtml OpenGL 4.x>.
 glTexStorage3D
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39126,6 +39591,7 @@ ptr_glTexStorage3D = unsafePerformIO $ getCommand "glTexStorage3D"
 
 -- glTexStorage3DEXT -----------------------------------------------------------
 
+-- | This command is an alias for 'glTexStorage3D'.
 glTexStorage3DEXT
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39143,7 +39609,7 @@ ptr_glTexStorage3DEXT = unsafePerformIO $ getCommand "glTexStorage3DEXT"
 
 -- glTexStorage3DMultisample ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3DMultisample.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3DMultisample.xhtml OpenGL 4.x>.
 glTexStorage3DMultisample
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39162,6 +39628,7 @@ ptr_glTexStorage3DMultisample = unsafePerformIO $ getCommand "glTexStorage3DMult
 
 -- glTexStorage3DMultisampleOES ------------------------------------------------
 
+-- | This command is an alias for 'glTexStorage3DMultisample'.
 glTexStorage3DMultisampleOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39198,7 +39665,7 @@ ptr_glTexStorageSparseAMD = unsafePerformIO $ getCommand "glTexStorageSparseAMD"
 
 -- glTexSubImage1D -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage1D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage1D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage1D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage1D.xhtml OpenGL 4.x>.
 glTexSubImage1D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -39217,6 +39684,7 @@ ptr_glTexSubImage1D = unsafePerformIO $ getCommand "glTexSubImage1D"
 
 -- glTexSubImage1DEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glTexSubImage1D'.
 glTexSubImage1DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -39235,7 +39703,7 @@ ptr_glTexSubImage1DEXT = unsafePerformIO $ getCommand "glTexSubImage1DEXT"
 
 -- glTexSubImage2D -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage2D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage2D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml OpenGL 4.x>.
 glTexSubImage2D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -39256,6 +39724,7 @@ ptr_glTexSubImage2D = unsafePerformIO $ getCommand "glTexSubImage2D"
 
 -- glTexSubImage2DEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glTexSubImage2D'.
 glTexSubImage2DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -39276,7 +39745,7 @@ ptr_glTexSubImage2DEXT = unsafePerformIO $ getCommand "glTexSubImage2DEXT"
 
 -- glTexSubImage3D -------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexSubImage3D.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glTexSubImage3D.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml OpenGL 4.x>.
 glTexSubImage3D
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -39299,6 +39768,7 @@ ptr_glTexSubImage3D = unsafePerformIO $ getCommand "glTexSubImage3D"
 
 -- glTexSubImage3DEXT ----------------------------------------------------------
 
+-- | This command is an alias for 'glTexSubImage3D'.
 glTexSubImage3DEXT
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-Rendering-OpenGL-Raw-Groups.html#TextureTarget).
@@ -39321,6 +39791,7 @@ ptr_glTexSubImage3DEXT = unsafePerformIO $ getCommand "glTexSubImage3DEXT"
 
 -- glTexSubImage3DOES ----------------------------------------------------------
 
+-- | This command is an alias for 'glTexSubImage3D'.
 glTexSubImage3DOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -39367,7 +39838,7 @@ ptr_glTexSubImage4DSGIS = unsafePerformIO $ getCommand "glTexSubImage4DSGIS"
 
 -- glTextureBarrier ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTextureBarrier.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTextureBarrier.xhtml OpenGL 4.x>.
 glTextureBarrier
   :: MonadIO m
   => m ()
@@ -39390,7 +39861,7 @@ ptr_glTextureBarrierNV = unsafePerformIO $ getCommand "glTextureBarrierNV"
 
 -- glTextureBuffer -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml OpenGL 4.x>.
 glTextureBuffer
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39420,7 +39891,7 @@ ptr_glTextureBufferEXT = unsafePerformIO $ getCommand "glTextureBufferEXT"
 
 -- glTextureBufferRange --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexBufferRange.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexBufferRange.xhtml OpenGL 4.x>.
 glTextureBufferRange
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39665,7 +40136,7 @@ ptr_glTexturePageCommitmentEXT = unsafePerformIO $ getCommand "glTexturePageComm
 
 -- glTextureParameterIiv -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTextureParameterIiv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39695,7 +40166,7 @@ ptr_glTextureParameterIivEXT = unsafePerformIO $ getCommand "glTextureParameterI
 
 -- glTextureParameterIuiv ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTextureParameterIuiv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39725,7 +40196,7 @@ ptr_glTextureParameterIuivEXT = unsafePerformIO $ getCommand "glTextureParameter
 
 -- glTextureParameterf ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTextureParameterf
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39740,6 +40211,7 @@ ptr_glTextureParameterf = unsafePerformIO $ getCommand "glTextureParameterf"
 
 -- glTextureParameterfEXT ------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTextureParameterfvEXT'.
 glTextureParameterfEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
@@ -39755,7 +40227,7 @@ ptr_glTextureParameterfEXT = unsafePerformIO $ getCommand "glTextureParameterfEX
 
 -- glTextureParameterfv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTextureParameterfv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39785,7 +40257,7 @@ ptr_glTextureParameterfvEXT = unsafePerformIO $ getCommand "glTextureParameterfv
 
 -- glTextureParameteri ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTextureParameteri
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39800,6 +40272,7 @@ ptr_glTextureParameteri = unsafePerformIO $ getCommand "glTextureParameteri"
 
 -- glTextureParameteriEXT ------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glTextureParameterivEXT'.
 glTextureParameteriEXT
   :: MonadIO m
   => GLuint -- ^ @texture@ of type @Texture@.
@@ -39815,7 +40288,7 @@ ptr_glTextureParameteriEXT = unsafePerformIO $ getCommand "glTextureParameteriEX
 
 -- glTextureParameteriv --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
 glTextureParameteriv
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39873,7 +40346,7 @@ ptr_glTextureRenderbufferEXT = unsafePerformIO $ getCommand "glTextureRenderbuff
 
 -- glTextureStorage1D ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage1D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage1D.xhtml OpenGL 4.x>.
 glTextureStorage1D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39905,7 +40378,7 @@ ptr_glTextureStorage1DEXT = unsafePerformIO $ getCommand "glTextureStorage1DEXT"
 
 -- glTextureStorage2D ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2D.xhtml OpenGL 4.x>.
 glTextureStorage2D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39939,7 +40412,7 @@ ptr_glTextureStorage2DEXT = unsafePerformIO $ getCommand "glTextureStorage2DEXT"
 
 -- glTextureStorage2DMultisample -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2DMultisample.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2DMultisample.xhtml OpenGL 4.x>.
 glTextureStorage2DMultisample
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -39975,7 +40448,7 @@ ptr_glTextureStorage2DMultisampleEXT = unsafePerformIO $ getCommand "glTextureSt
 
 -- glTextureStorage3D ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3D.xhtml OpenGL 4.x>.
 glTextureStorage3D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40011,7 +40484,7 @@ ptr_glTextureStorage3DEXT = unsafePerformIO $ getCommand "glTextureStorage3DEXT"
 
 -- glTextureStorage3DMultisample -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3DMultisample.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage3DMultisample.xhtml OpenGL 4.x>.
 glTextureStorage3DMultisample
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40068,7 +40541,7 @@ ptr_glTextureStorageSparseAMD = unsafePerformIO $ getCommand "glTextureStorageSp
 
 -- glTextureSubImage1D ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage1D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage1D.xhtml OpenGL 4.x>.
 glTextureSubImage1D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40106,7 +40579,7 @@ ptr_glTextureSubImage1DEXT = unsafePerformIO $ getCommand "glTextureSubImage1DEX
 
 -- glTextureSubImage2D ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml OpenGL 4.x>.
 glTextureSubImage2D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40148,7 +40621,7 @@ ptr_glTextureSubImage2DEXT = unsafePerformIO $ getCommand "glTextureSubImage2DEX
 
 -- glTextureSubImage3D ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml OpenGL 4.x>.
 glTextureSubImage3D
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40194,7 +40667,7 @@ ptr_glTextureSubImage3DEXT = unsafePerformIO $ getCommand "glTextureSubImage3DEX
 
 -- glTextureView ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTextureView.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTextureView.xhtml OpenGL 4.x>.
 glTextureView
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40214,6 +40687,7 @@ ptr_glTextureView = unsafePerformIO $ getCommand "glTextureView"
 
 -- glTextureViewEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glTextureView'.
 glTextureViewEXT
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40233,6 +40707,7 @@ ptr_glTextureViewEXT = unsafePerformIO $ getCommand "glTextureViewEXT"
 
 -- glTextureViewOES ------------------------------------------------------------
 
+-- | This command is an alias for 'glTextureView'.
 glTextureViewOES
   :: MonadIO m
   => GLuint -- ^ @texture@.
@@ -40281,7 +40756,7 @@ ptr_glTransformFeedbackAttribsNV = unsafePerformIO $ getCommand "glTransformFeed
 
 -- glTransformFeedbackBufferBase -----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackBufferBase.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackBufferBase.xhtml OpenGL 4.x>.
 glTransformFeedbackBufferBase
   :: MonadIO m
   => GLuint -- ^ @xfb@.
@@ -40296,7 +40771,7 @@ ptr_glTransformFeedbackBufferBase = unsafePerformIO $ getCommand "glTransformFee
 
 -- glTransformFeedbackBufferRange ----------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackBufferRange.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackBufferRange.xhtml OpenGL 4.x>.
 glTransformFeedbackBufferRange
   :: MonadIO m
   => GLuint -- ^ @xfb@.
@@ -40329,7 +40804,7 @@ ptr_glTransformFeedbackStreamAttribsNV = unsafePerformIO $ getCommand "glTransfo
 
 -- glTransformFeedbackVaryings -------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTransformFeedbackVaryings.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackVaryings.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTransformFeedbackVaryings.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackVaryings.xhtml OpenGL 4.x>.
 glTransformFeedbackVaryings
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -40345,6 +40820,7 @@ ptr_glTransformFeedbackVaryings = unsafePerformIO $ getCommand "glTransformFeedb
 
 -- glTransformFeedbackVaryingsEXT ----------------------------------------------
 
+-- | This command is an alias for 'glTransformFeedbackVaryings'.
 glTransformFeedbackVaryingsEXT
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -40390,7 +40866,7 @@ ptr_glTransformPathNV = unsafePerformIO $ getCommand "glTransformPathNV"
 
 -- glTranslated ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml OpenGL 2.x>.
 glTranslated
   :: MonadIO m
   => GLdouble -- ^ @x@.
@@ -40405,7 +40881,7 @@ ptr_glTranslated = unsafePerformIO $ getCommand "glTranslated"
 
 -- glTranslatef ----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml OpenGL 2.x>.
 glTranslatef
   :: MonadIO m
   => GLfloat -- ^ @x@.
@@ -40475,7 +40951,7 @@ ptr_glUniform1dv = unsafePerformIO $ getCommand "glUniform1dv"
 
 -- glUniform1f -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform1f
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40489,6 +40965,7 @@ ptr_glUniform1f = unsafePerformIO $ getCommand "glUniform1f"
 
 -- glUniform1fARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform1f'.
 glUniform1fARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40502,7 +40979,7 @@ ptr_glUniform1fARB = unsafePerformIO $ getCommand "glUniform1fARB"
 
 -- glUniform1fv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform1fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40517,6 +40994,7 @@ ptr_glUniform1fv = unsafePerformIO $ getCommand "glUniform1fv"
 
 -- glUniform1fvARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform1fv'.
 glUniform1fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40531,7 +41009,7 @@ ptr_glUniform1fvARB = unsafePerformIO $ getCommand "glUniform1fvARB"
 
 -- glUniform1i -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform1i
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40599,6 +41077,7 @@ ptr_glUniform1i64vNV = unsafePerformIO $ getCommand "glUniform1i64vNV"
 
 -- glUniform1iARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform1i'.
 glUniform1iARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40612,7 +41091,7 @@ ptr_glUniform1iARB = unsafePerformIO $ getCommand "glUniform1iARB"
 
 -- glUniform1iv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform1iv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40627,6 +41106,7 @@ ptr_glUniform1iv = unsafePerformIO $ getCommand "glUniform1iv"
 
 -- glUniform1ivARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform1iv'.
 glUniform1ivARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40641,7 +41121,7 @@ ptr_glUniform1ivARB = unsafePerformIO $ getCommand "glUniform1ivARB"
 
 -- glUniform1ui ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform1ui
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40709,6 +41189,7 @@ ptr_glUniform1ui64vNV = unsafePerformIO $ getCommand "glUniform1ui64vNV"
 
 -- glUniform1uiEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform1ui'.
 glUniform1uiEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40722,7 +41203,7 @@ ptr_glUniform1uiEXT = unsafePerformIO $ getCommand "glUniform1uiEXT"
 
 -- glUniform1uiv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform1uiv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40737,6 +41218,7 @@ ptr_glUniform1uiv = unsafePerformIO $ getCommand "glUniform1uiv"
 
 -- glUniform1uivEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform1uiv'.
 glUniform1uivEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40779,7 +41261,7 @@ ptr_glUniform2dv = unsafePerformIO $ getCommand "glUniform2dv"
 
 -- glUniform2f -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform2f
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40794,6 +41276,7 @@ ptr_glUniform2f = unsafePerformIO $ getCommand "glUniform2f"
 
 -- glUniform2fARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform2f'.
 glUniform2fARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40808,7 +41291,7 @@ ptr_glUniform2fARB = unsafePerformIO $ getCommand "glUniform2fARB"
 
 -- glUniform2fv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform2fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40823,6 +41306,7 @@ ptr_glUniform2fv = unsafePerformIO $ getCommand "glUniform2fv"
 
 -- glUniform2fvARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform2fv'.
 glUniform2fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40837,7 +41321,7 @@ ptr_glUniform2fvARB = unsafePerformIO $ getCommand "glUniform2fvARB"
 
 -- glUniform2i -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform2i
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40908,6 +41392,7 @@ ptr_glUniform2i64vNV = unsafePerformIO $ getCommand "glUniform2i64vNV"
 
 -- glUniform2iARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform2i'.
 glUniform2iARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40922,7 +41407,7 @@ ptr_glUniform2iARB = unsafePerformIO $ getCommand "glUniform2iARB"
 
 -- glUniform2iv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform2iv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40937,6 +41422,7 @@ ptr_glUniform2iv = unsafePerformIO $ getCommand "glUniform2iv"
 
 -- glUniform2ivARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform2iv'.
 glUniform2ivARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -40951,7 +41437,7 @@ ptr_glUniform2ivARB = unsafePerformIO $ getCommand "glUniform2ivARB"
 
 -- glUniform2ui ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform2ui
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41022,6 +41508,7 @@ ptr_glUniform2ui64vNV = unsafePerformIO $ getCommand "glUniform2ui64vNV"
 
 -- glUniform2uiEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform2ui'.
 glUniform2uiEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41036,7 +41523,7 @@ ptr_glUniform2uiEXT = unsafePerformIO $ getCommand "glUniform2uiEXT"
 
 -- glUniform2uiv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform2uiv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41051,6 +41538,7 @@ ptr_glUniform2uiv = unsafePerformIO $ getCommand "glUniform2uiv"
 
 -- glUniform2uivEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform2uiv'.
 glUniform2uivEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41094,7 +41582,7 @@ ptr_glUniform3dv = unsafePerformIO $ getCommand "glUniform3dv"
 
 -- glUniform3f -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform3f
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41110,6 +41598,7 @@ ptr_glUniform3f = unsafePerformIO $ getCommand "glUniform3f"
 
 -- glUniform3fARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform3f'.
 glUniform3fARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41125,7 +41614,7 @@ ptr_glUniform3fARB = unsafePerformIO $ getCommand "glUniform3fARB"
 
 -- glUniform3fv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform3fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41140,6 +41629,7 @@ ptr_glUniform3fv = unsafePerformIO $ getCommand "glUniform3fv"
 
 -- glUniform3fvARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform3fv'.
 glUniform3fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41154,7 +41644,7 @@ ptr_glUniform3fvARB = unsafePerformIO $ getCommand "glUniform3fvARB"
 
 -- glUniform3i -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform3i
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41228,6 +41718,7 @@ ptr_glUniform3i64vNV = unsafePerformIO $ getCommand "glUniform3i64vNV"
 
 -- glUniform3iARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform3i'.
 glUniform3iARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41243,7 +41734,7 @@ ptr_glUniform3iARB = unsafePerformIO $ getCommand "glUniform3iARB"
 
 -- glUniform3iv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform3iv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41258,6 +41749,7 @@ ptr_glUniform3iv = unsafePerformIO $ getCommand "glUniform3iv"
 
 -- glUniform3ivARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform3iv'.
 glUniform3ivARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41272,7 +41764,7 @@ ptr_glUniform3ivARB = unsafePerformIO $ getCommand "glUniform3ivARB"
 
 -- glUniform3ui ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform3ui
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41346,6 +41838,7 @@ ptr_glUniform3ui64vNV = unsafePerformIO $ getCommand "glUniform3ui64vNV"
 
 -- glUniform3uiEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform3ui'.
 glUniform3uiEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41361,7 +41854,7 @@ ptr_glUniform3uiEXT = unsafePerformIO $ getCommand "glUniform3uiEXT"
 
 -- glUniform3uiv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform3uiv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41376,6 +41869,7 @@ ptr_glUniform3uiv = unsafePerformIO $ getCommand "glUniform3uiv"
 
 -- glUniform3uivEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform3uiv'.
 glUniform3uivEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41420,7 +41914,7 @@ ptr_glUniform4dv = unsafePerformIO $ getCommand "glUniform4dv"
 
 -- glUniform4f -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform4f
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41437,6 +41931,7 @@ ptr_glUniform4f = unsafePerformIO $ getCommand "glUniform4f"
 
 -- glUniform4fARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform4f'.
 glUniform4fARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41453,7 +41948,7 @@ ptr_glUniform4fARB = unsafePerformIO $ getCommand "glUniform4fARB"
 
 -- glUniform4fv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform4fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41468,6 +41963,7 @@ ptr_glUniform4fv = unsafePerformIO $ getCommand "glUniform4fv"
 
 -- glUniform4fvARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform4fv'.
 glUniform4fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41482,7 +41978,7 @@ ptr_glUniform4fvARB = unsafePerformIO $ getCommand "glUniform4fvARB"
 
 -- glUniform4i -----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform4i
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41559,6 +42055,7 @@ ptr_glUniform4i64vNV = unsafePerformIO $ getCommand "glUniform4i64vNV"
 
 -- glUniform4iARB --------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform4i'.
 glUniform4iARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41575,7 +42072,7 @@ ptr_glUniform4iARB = unsafePerformIO $ getCommand "glUniform4iARB"
 
 -- glUniform4iv ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform4iv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41590,6 +42087,7 @@ ptr_glUniform4iv = unsafePerformIO $ getCommand "glUniform4iv"
 
 -- glUniform4ivARB -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform4iv'.
 glUniform4ivARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41604,7 +42102,7 @@ ptr_glUniform4ivARB = unsafePerformIO $ getCommand "glUniform4ivARB"
 
 -- glUniform4ui ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform4ui
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41681,6 +42179,7 @@ ptr_glUniform4ui64vNV = unsafePerformIO $ getCommand "glUniform4ui64vNV"
 
 -- glUniform4uiEXT -------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform4ui'.
 glUniform4uiEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41697,7 +42196,7 @@ ptr_glUniform4uiEXT = unsafePerformIO $ getCommand "glUniform4uiEXT"
 
 -- glUniform4uiv ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniform4uiv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41712,6 +42211,7 @@ ptr_glUniform4uiv = unsafePerformIO $ getCommand "glUniform4uiv"
 
 -- glUniform4uivEXT ------------------------------------------------------------
 
+-- | This command is an alias for 'glUniform4uiv'.
 glUniform4uivEXT
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41726,7 +42226,7 @@ ptr_glUniform4uivEXT = unsafePerformIO $ getCommand "glUniform4uivEXT"
 
 -- glUniformBlockBinding -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniformBlockBinding.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniformBlockBinding.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniformBlockBinding.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniformBlockBinding.xhtml OpenGL 4.x>.
 glUniformBlockBinding
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -41824,7 +42324,7 @@ ptr_glUniformMatrix2dv = unsafePerformIO $ getCommand "glUniformMatrix2dv"
 
 -- glUniformMatrix2fv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix2fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41840,6 +42340,7 @@ ptr_glUniformMatrix2fv = unsafePerformIO $ getCommand "glUniformMatrix2fv"
 
 -- glUniformMatrix2fvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix2fv'.
 glUniformMatrix2fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41870,7 +42371,7 @@ ptr_glUniformMatrix2x3dv = unsafePerformIO $ getCommand "glUniformMatrix2x3dv"
 
 -- glUniformMatrix2x3fv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix2x3fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41886,6 +42387,7 @@ ptr_glUniformMatrix2x3fv = unsafePerformIO $ getCommand "glUniformMatrix2x3fv"
 
 -- glUniformMatrix2x3fvNV ------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix2x3fv'.
 glUniformMatrix2x3fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41916,7 +42418,7 @@ ptr_glUniformMatrix2x4dv = unsafePerformIO $ getCommand "glUniformMatrix2x4dv"
 
 -- glUniformMatrix2x4fv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix2x4fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41932,6 +42434,7 @@ ptr_glUniformMatrix2x4fv = unsafePerformIO $ getCommand "glUniformMatrix2x4fv"
 
 -- glUniformMatrix2x4fvNV ------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix2x4fv'.
 glUniformMatrix2x4fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41962,7 +42465,7 @@ ptr_glUniformMatrix3dv = unsafePerformIO $ getCommand "glUniformMatrix3dv"
 
 -- glUniformMatrix3fv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix3fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -41978,6 +42481,7 @@ ptr_glUniformMatrix3fv = unsafePerformIO $ getCommand "glUniformMatrix3fv"
 
 -- glUniformMatrix3fvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix3fv'.
 glUniformMatrix3fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42008,7 +42512,7 @@ ptr_glUniformMatrix3x2dv = unsafePerformIO $ getCommand "glUniformMatrix3x2dv"
 
 -- glUniformMatrix3x2fv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix3x2fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42024,6 +42528,7 @@ ptr_glUniformMatrix3x2fv = unsafePerformIO $ getCommand "glUniformMatrix3x2fv"
 
 -- glUniformMatrix3x2fvNV ------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix3x2fv'.
 glUniformMatrix3x2fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42054,7 +42559,7 @@ ptr_glUniformMatrix3x4dv = unsafePerformIO $ getCommand "glUniformMatrix3x4dv"
 
 -- glUniformMatrix3x4fv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix3x4fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42070,6 +42575,7 @@ ptr_glUniformMatrix3x4fv = unsafePerformIO $ getCommand "glUniformMatrix3x4fv"
 
 -- glUniformMatrix3x4fvNV ------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix3x4fv'.
 glUniformMatrix3x4fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42100,7 +42606,7 @@ ptr_glUniformMatrix4dv = unsafePerformIO $ getCommand "glUniformMatrix4dv"
 
 -- glUniformMatrix4fv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix4fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42116,6 +42622,7 @@ ptr_glUniformMatrix4fv = unsafePerformIO $ getCommand "glUniformMatrix4fv"
 
 -- glUniformMatrix4fvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix4fv'.
 glUniformMatrix4fvARB
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42146,7 +42653,7 @@ ptr_glUniformMatrix4x2dv = unsafePerformIO $ getCommand "glUniformMatrix4x2dv"
 
 -- glUniformMatrix4x2fv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix4x2fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42162,6 +42669,7 @@ ptr_glUniformMatrix4x2fv = unsafePerformIO $ getCommand "glUniformMatrix4x2fv"
 
 -- glUniformMatrix4x2fvNV ------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix4x2fv'.
 glUniformMatrix4x2fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42192,7 +42700,7 @@ ptr_glUniformMatrix4x3dv = unsafePerformIO $ getCommand "glUniformMatrix4x3dv"
 
 -- glUniformMatrix4x3fv --------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
 glUniformMatrix4x3fv
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42208,6 +42716,7 @@ ptr_glUniformMatrix4x3fv = unsafePerformIO $ getCommand "glUniformMatrix4x3fv"
 
 -- glUniformMatrix4x3fvNV ------------------------------------------------------
 
+-- | This command is an alias for 'glUniformMatrix4x3fv'.
 glUniformMatrix4x3fvNV
   :: MonadIO m
   => GLint -- ^ @location@.
@@ -42223,7 +42732,7 @@ ptr_glUniformMatrix4x3fvNV = unsafePerformIO $ getCommand "glUniformMatrix4x3fvN
 
 -- glUniformSubroutinesuiv -----------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUniformSubroutines.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUniformSubroutines.xhtml OpenGL 4.x>.
 glUniformSubroutinesuiv
   :: MonadIO m
   => GLenum -- ^ @shadertype@.
@@ -42276,7 +42785,7 @@ ptr_glUnlockArraysEXT = unsafePerformIO $ getCommand "glUnlockArraysEXT"
 
 -- glUnmapBuffer ---------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml OpenGL 4.x>.
 glUnmapBuffer
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -42289,6 +42798,7 @@ ptr_glUnmapBuffer = unsafePerformIO $ getCommand "glUnmapBuffer"
 
 -- glUnmapBufferARB ------------------------------------------------------------
 
+-- | This command is an alias for 'glUnmapBuffer'.
 glUnmapBufferARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
@@ -42301,6 +42811,7 @@ ptr_glUnmapBufferARB = unsafePerformIO $ getCommand "glUnmapBufferARB"
 
 -- glUnmapBufferOES ------------------------------------------------------------
 
+-- | This command is an alias for 'glUnmapBuffer'.
 glUnmapBufferOES
   :: MonadIO m
   => GLenum -- ^ @target@.
@@ -42313,7 +42824,7 @@ ptr_glUnmapBufferOES = unsafePerformIO $ getCommand "glUnmapBufferOES"
 
 -- glUnmapNamedBuffer ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml OpenGL 4.x>.
 glUnmapNamedBuffer
   :: MonadIO m
   => GLuint -- ^ @buffer@.
@@ -42379,7 +42890,7 @@ ptr_glUpdateObjectBufferATI = unsafePerformIO $ getCommand "glUpdateObjectBuffer
 
 -- glUseProgram ----------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUseProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUseProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUseProgram.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUseProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUseProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUseProgram.xhtml OpenGL 4.x>.
 glUseProgram
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -42392,6 +42903,7 @@ ptr_glUseProgram = unsafePerformIO $ getCommand "glUseProgram"
 
 -- glUseProgramObjectARB -------------------------------------------------------
 
+-- | This command is an alias for 'glUseProgram'.
 glUseProgramObjectARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -42404,7 +42916,7 @@ ptr_glUseProgramObjectARB = unsafePerformIO $ getCommand "glUseProgramObjectARB"
 
 -- glUseProgramStages ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUseProgramStages.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUseProgramStages.xhtml OpenGL 4.x>.
 glUseProgramStages
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
@@ -42579,7 +43091,7 @@ ptr_glVDPAUUnregisterSurfaceNV = unsafePerformIO $ getCommand "glVDPAUUnregister
 
 -- glValidateProgram -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glValidateProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glValidateProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glValidateProgram.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glValidateProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glValidateProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glValidateProgram.xhtml OpenGL 4.x>.
 glValidateProgram
   :: MonadIO m
   => GLuint -- ^ @program@.
@@ -42592,6 +43104,7 @@ ptr_glValidateProgram = unsafePerformIO $ getCommand "glValidateProgram"
 
 -- glValidateProgramARB --------------------------------------------------------
 
+-- | This command is an alias for 'glValidateProgram'.
 glValidateProgramARB
   :: MonadIO m
   => GLhandleARB -- ^ @programObj@ of type @handleARB@.
@@ -42604,7 +43117,7 @@ ptr_glValidateProgramARB = unsafePerformIO $ getCommand "glValidateProgramARB"
 
 -- glValidateProgramPipeline ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glValidateProgramPipeline.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glValidateProgramPipeline.xhtml OpenGL 4.x>.
 glValidateProgramPipeline
   :: MonadIO m
   => GLuint -- ^ @pipeline@.
@@ -42789,7 +43302,7 @@ ptr_glVertex2bvOES = unsafePerformIO $ getCommand "glVertex2bvOES"
 
 -- glVertex2d ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex2dv'.
 glVertex2d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -42803,7 +43316,7 @@ ptr_glVertex2d = unsafePerformIO $ getCommand "glVertex2d"
 
 -- glVertex2dv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex2dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
@@ -42816,7 +43329,7 @@ ptr_glVertex2dv = unsafePerformIO $ getCommand "glVertex2dv"
 
 -- glVertex2f ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex2fv'.
 glVertex2f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -42830,7 +43343,7 @@ ptr_glVertex2f = unsafePerformIO $ getCommand "glVertex2f"
 
 -- glVertex2fv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex2fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
@@ -42843,6 +43356,7 @@ ptr_glVertex2fv = unsafePerformIO $ getCommand "glVertex2fv"
 
 -- glVertex2hNV ----------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertex2hvNV'.
 glVertex2hNV
   :: MonadIO m
   => GLhalfNV -- ^ @x@ of type @Half16NV@.
@@ -42868,7 +43382,7 @@ ptr_glVertex2hvNV = unsafePerformIO $ getCommand "glVertex2hvNV"
 
 -- glVertex2i ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex2iv'.
 glVertex2i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -42882,7 +43396,7 @@ ptr_glVertex2i = unsafePerformIO $ getCommand "glVertex2i"
 
 -- glVertex2iv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex2iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
@@ -42895,7 +43409,7 @@ ptr_glVertex2iv = unsafePerformIO $ getCommand "glVertex2iv"
 
 -- glVertex2s ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex2sv'.
 glVertex2s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -42909,7 +43423,7 @@ ptr_glVertex2s = unsafePerformIO $ getCommand "glVertex2s"
 
 -- glVertex2sv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex2sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
@@ -42972,7 +43486,7 @@ ptr_glVertex3bvOES = unsafePerformIO $ getCommand "glVertex3bvOES"
 
 -- glVertex3d ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex3dv'.
 glVertex3d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -42987,7 +43501,7 @@ ptr_glVertex3d = unsafePerformIO $ getCommand "glVertex3d"
 
 -- glVertex3dv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -43000,7 +43514,7 @@ ptr_glVertex3dv = unsafePerformIO $ getCommand "glVertex3dv"
 
 -- glVertex3f ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex3fv'.
 glVertex3f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -43015,7 +43529,7 @@ ptr_glVertex3f = unsafePerformIO $ getCommand "glVertex3f"
 
 -- glVertex3fv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -43028,6 +43542,7 @@ ptr_glVertex3fv = unsafePerformIO $ getCommand "glVertex3fv"
 
 -- glVertex3hNV ----------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertex3hvNV'.
 glVertex3hNV
   :: MonadIO m
   => GLhalfNV -- ^ @x@ of type @Half16NV@.
@@ -43054,7 +43569,7 @@ ptr_glVertex3hvNV = unsafePerformIO $ getCommand "glVertex3hvNV"
 
 -- glVertex3i ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex3iv'.
 glVertex3i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -43069,7 +43584,7 @@ ptr_glVertex3i = unsafePerformIO $ getCommand "glVertex3i"
 
 -- glVertex3iv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex3iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
@@ -43082,7 +43597,7 @@ ptr_glVertex3iv = unsafePerformIO $ getCommand "glVertex3iv"
 
 -- glVertex3s ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex3sv'.
 glVertex3s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -43097,7 +43612,7 @@ ptr_glVertex3s = unsafePerformIO $ getCommand "glVertex3s"
 
 -- glVertex3sv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex3sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
@@ -43162,7 +43677,7 @@ ptr_glVertex4bvOES = unsafePerformIO $ getCommand "glVertex4bvOES"
 
 -- glVertex4d ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex4dv'.
 glVertex4d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -43178,7 +43693,7 @@ ptr_glVertex4d = unsafePerformIO $ getCommand "glVertex4d"
 
 -- glVertex4dv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex4dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @CoordD@.
@@ -43191,7 +43706,7 @@ ptr_glVertex4dv = unsafePerformIO $ getCommand "glVertex4dv"
 
 -- glVertex4f ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex4fv'.
 glVertex4f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -43207,7 +43722,7 @@ ptr_glVertex4f = unsafePerformIO $ getCommand "glVertex4f"
 
 -- glVertex4fv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex4fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @CoordF@.
@@ -43220,6 +43735,7 @@ ptr_glVertex4fv = unsafePerformIO $ getCommand "glVertex4fv"
 
 -- glVertex4hNV ----------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertex4hvNV'.
 glVertex4hNV
   :: MonadIO m
   => GLhalfNV -- ^ @x@ of type @Half16NV@.
@@ -43247,7 +43763,7 @@ ptr_glVertex4hvNV = unsafePerformIO $ getCommand "glVertex4hvNV"
 
 -- glVertex4i ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex4iv'.
 glVertex4i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -43263,7 +43779,7 @@ ptr_glVertex4i = unsafePerformIO $ getCommand "glVertex4i"
 
 -- glVertex4iv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex4iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @4@ elements of type @CoordI@.
@@ -43276,7 +43792,7 @@ ptr_glVertex4iv = unsafePerformIO $ getCommand "glVertex4iv"
 
 -- glVertex4s ------------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>. The vector equivalent of this command is 'glVertex4sv'.
 glVertex4s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -43292,7 +43808,7 @@ ptr_glVertex4s = unsafePerformIO $ getCommand "glVertex4s"
 
 -- glVertex4sv -----------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml OpenGL 2.x>.
 glVertex4sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
@@ -43331,7 +43847,7 @@ ptr_glVertex4xvOES = unsafePerformIO $ getCommand "glVertex4xvOES"
 
 -- glVertexArrayAttribBinding --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribBinding.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribBinding.xhtml OpenGL 4.x>.
 glVertexArrayAttribBinding
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43346,7 +43862,7 @@ ptr_glVertexArrayAttribBinding = unsafePerformIO $ getCommand "glVertexArrayAttr
 
 -- glVertexArrayAttribFormat ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>.
 glVertexArrayAttribFormat
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43364,7 +43880,7 @@ ptr_glVertexArrayAttribFormat = unsafePerformIO $ getCommand "glVertexArrayAttri
 
 -- glVertexArrayAttribIFormat --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>.
 glVertexArrayAttribIFormat
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43381,7 +43897,7 @@ ptr_glVertexArrayAttribIFormat = unsafePerformIO $ getCommand "glVertexArrayAttr
 
 -- glVertexArrayAttribLFormat --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>.
 glVertexArrayAttribLFormat
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43414,7 +43930,7 @@ ptr_glVertexArrayBindVertexBufferEXT = unsafePerformIO $ getCommand "glVertexArr
 
 -- glVertexArrayBindingDivisor -------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexBindingDivisor.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexBindingDivisor.xhtml OpenGL 4.x>.
 glVertexArrayBindingDivisor
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43461,7 +43977,7 @@ ptr_glVertexArrayEdgeFlagOffsetEXT = unsafePerformIO $ getCommand "glVertexArray
 
 -- glVertexArrayElementBuffer --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexArrayElementBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexArrayElementBuffer.xhtml OpenGL 4.x>.
 glVertexArrayElementBuffer
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43760,7 +44276,7 @@ ptr_glVertexArrayVertexBindingDivisorEXT = unsafePerformIO $ getCommand "glVerte
 
 -- glVertexArrayVertexBuffer ---------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffer.xhtml OpenGL 4.x>.
 glVertexArrayVertexBuffer
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43777,7 +44293,7 @@ ptr_glVertexArrayVertexBuffer = unsafePerformIO $ getCommand "glVertexArrayVerte
 
 -- glVertexArrayVertexBuffers --------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffers.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindVertexBuffers.xhtml OpenGL 4.x>.
 glVertexArrayVertexBuffers
   :: MonadIO m
   => GLuint -- ^ @vaobj@.
@@ -43812,7 +44328,7 @@ ptr_glVertexArrayVertexOffsetEXT = unsafePerformIO $ getCommand "glVertexArrayVe
 
 -- glVertexAttrib1d ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib1dv'.
 glVertexAttrib1d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43826,6 +44342,7 @@ ptr_glVertexAttrib1d = unsafePerformIO $ getCommand "glVertexAttrib1d"
 
 -- glVertexAttrib1dARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib1dvARB'. This command is an alias for 'glVertexAttrib1d'.
 glVertexAttrib1dARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43839,6 +44356,7 @@ ptr_glVertexAttrib1dARB = unsafePerformIO $ getCommand "glVertexAttrib1dARB"
 
 -- glVertexAttrib1dNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib1dvNV'. This command is an alias for 'glVertexAttrib1d'.
 glVertexAttrib1dNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43852,7 +44370,7 @@ ptr_glVertexAttrib1dNV = unsafePerformIO $ getCommand "glVertexAttrib1dNV"
 
 -- glVertexAttrib1dv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib1dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43866,6 +44384,7 @@ ptr_glVertexAttrib1dv = unsafePerformIO $ getCommand "glVertexAttrib1dv"
 
 -- glVertexAttrib1dvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib1dv'.
 glVertexAttrib1dvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43879,6 +44398,7 @@ ptr_glVertexAttrib1dvARB = unsafePerformIO $ getCommand "glVertexAttrib1dvARB"
 
 -- glVertexAttrib1dvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib1dv'.
 glVertexAttrib1dvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43892,7 +44412,7 @@ ptr_glVertexAttrib1dvNV = unsafePerformIO $ getCommand "glVertexAttrib1dvNV"
 
 -- glVertexAttrib1f ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib1fv'.
 glVertexAttrib1f
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43906,6 +44426,7 @@ ptr_glVertexAttrib1f = unsafePerformIO $ getCommand "glVertexAttrib1f"
 
 -- glVertexAttrib1fARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib1fvARB'. This command is an alias for 'glVertexAttrib1f'.
 glVertexAttrib1fARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43919,6 +44440,7 @@ ptr_glVertexAttrib1fARB = unsafePerformIO $ getCommand "glVertexAttrib1fARB"
 
 -- glVertexAttrib1fNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib1fvNV'. This command is an alias for 'glVertexAttrib1f'.
 glVertexAttrib1fNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43932,7 +44454,7 @@ ptr_glVertexAttrib1fNV = unsafePerformIO $ getCommand "glVertexAttrib1fNV"
 
 -- glVertexAttrib1fv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib1fv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43946,6 +44468,7 @@ ptr_glVertexAttrib1fv = unsafePerformIO $ getCommand "glVertexAttrib1fv"
 
 -- glVertexAttrib1fvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib1fv'.
 glVertexAttrib1fvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43959,6 +44482,7 @@ ptr_glVertexAttrib1fvARB = unsafePerformIO $ getCommand "glVertexAttrib1fvARB"
 
 -- glVertexAttrib1fvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib1fv'.
 glVertexAttrib1fvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43972,6 +44496,7 @@ ptr_glVertexAttrib1fvNV = unsafePerformIO $ getCommand "glVertexAttrib1fvNV"
 
 -- glVertexAttrib1hNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib1hvNV'.
 glVertexAttrib1hNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -43998,7 +44523,7 @@ ptr_glVertexAttrib1hvNV = unsafePerformIO $ getCommand "glVertexAttrib1hvNV"
 
 -- glVertexAttrib1s ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib1sv'.
 glVertexAttrib1s
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44012,6 +44537,7 @@ ptr_glVertexAttrib1s = unsafePerformIO $ getCommand "glVertexAttrib1s"
 
 -- glVertexAttrib1sARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib1svARB'. This command is an alias for 'glVertexAttrib1s'.
 glVertexAttrib1sARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44025,6 +44551,7 @@ ptr_glVertexAttrib1sARB = unsafePerformIO $ getCommand "glVertexAttrib1sARB"
 
 -- glVertexAttrib1sNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib1svNV'. This command is an alias for 'glVertexAttrib1s'.
 glVertexAttrib1sNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44038,7 +44565,7 @@ ptr_glVertexAttrib1sNV = unsafePerformIO $ getCommand "glVertexAttrib1sNV"
 
 -- glVertexAttrib1sv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib1sv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44052,6 +44579,7 @@ ptr_glVertexAttrib1sv = unsafePerformIO $ getCommand "glVertexAttrib1sv"
 
 -- glVertexAttrib1svARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib1sv'.
 glVertexAttrib1svARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44065,6 +44593,7 @@ ptr_glVertexAttrib1svARB = unsafePerformIO $ getCommand "glVertexAttrib1svARB"
 
 -- glVertexAttrib1svNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib1sv'.
 glVertexAttrib1svNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44078,7 +44607,7 @@ ptr_glVertexAttrib1svNV = unsafePerformIO $ getCommand "glVertexAttrib1svNV"
 
 -- glVertexAttrib2d ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib2dv'.
 glVertexAttrib2d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44093,6 +44622,7 @@ ptr_glVertexAttrib2d = unsafePerformIO $ getCommand "glVertexAttrib2d"
 
 -- glVertexAttrib2dARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib2dvARB'. This command is an alias for 'glVertexAttrib2d'.
 glVertexAttrib2dARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44107,6 +44637,7 @@ ptr_glVertexAttrib2dARB = unsafePerformIO $ getCommand "glVertexAttrib2dARB"
 
 -- glVertexAttrib2dNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib2dvNV'. This command is an alias for 'glVertexAttrib2d'.
 glVertexAttrib2dNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44121,7 +44652,7 @@ ptr_glVertexAttrib2dNV = unsafePerformIO $ getCommand "glVertexAttrib2dNV"
 
 -- glVertexAttrib2dv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib2dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44135,6 +44666,7 @@ ptr_glVertexAttrib2dv = unsafePerformIO $ getCommand "glVertexAttrib2dv"
 
 -- glVertexAttrib2dvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib2dv'.
 glVertexAttrib2dvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44148,6 +44680,7 @@ ptr_glVertexAttrib2dvARB = unsafePerformIO $ getCommand "glVertexAttrib2dvARB"
 
 -- glVertexAttrib2dvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib2dv'.
 glVertexAttrib2dvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44161,7 +44694,7 @@ ptr_glVertexAttrib2dvNV = unsafePerformIO $ getCommand "glVertexAttrib2dvNV"
 
 -- glVertexAttrib2f ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib2fv'.
 glVertexAttrib2f
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44176,6 +44709,7 @@ ptr_glVertexAttrib2f = unsafePerformIO $ getCommand "glVertexAttrib2f"
 
 -- glVertexAttrib2fARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib2fvARB'. This command is an alias for 'glVertexAttrib2f'.
 glVertexAttrib2fARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44190,6 +44724,7 @@ ptr_glVertexAttrib2fARB = unsafePerformIO $ getCommand "glVertexAttrib2fARB"
 
 -- glVertexAttrib2fNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib2fvNV'. This command is an alias for 'glVertexAttrib2f'.
 glVertexAttrib2fNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44204,7 +44739,7 @@ ptr_glVertexAttrib2fNV = unsafePerformIO $ getCommand "glVertexAttrib2fNV"
 
 -- glVertexAttrib2fv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib2fv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44218,6 +44753,7 @@ ptr_glVertexAttrib2fv = unsafePerformIO $ getCommand "glVertexAttrib2fv"
 
 -- glVertexAttrib2fvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib2fv'.
 glVertexAttrib2fvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44231,6 +44767,7 @@ ptr_glVertexAttrib2fvARB = unsafePerformIO $ getCommand "glVertexAttrib2fvARB"
 
 -- glVertexAttrib2fvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib2fv'.
 glVertexAttrib2fvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44244,6 +44781,7 @@ ptr_glVertexAttrib2fvNV = unsafePerformIO $ getCommand "glVertexAttrib2fvNV"
 
 -- glVertexAttrib2hNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib2hvNV'.
 glVertexAttrib2hNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44271,7 +44809,7 @@ ptr_glVertexAttrib2hvNV = unsafePerformIO $ getCommand "glVertexAttrib2hvNV"
 
 -- glVertexAttrib2s ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib2sv'.
 glVertexAttrib2s
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44286,6 +44824,7 @@ ptr_glVertexAttrib2s = unsafePerformIO $ getCommand "glVertexAttrib2s"
 
 -- glVertexAttrib2sARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib2svARB'. This command is an alias for 'glVertexAttrib2s'.
 glVertexAttrib2sARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44300,6 +44839,7 @@ ptr_glVertexAttrib2sARB = unsafePerformIO $ getCommand "glVertexAttrib2sARB"
 
 -- glVertexAttrib2sNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib2svNV'. This command is an alias for 'glVertexAttrib2s'.
 glVertexAttrib2sNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44314,7 +44854,7 @@ ptr_glVertexAttrib2sNV = unsafePerformIO $ getCommand "glVertexAttrib2sNV"
 
 -- glVertexAttrib2sv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib2sv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44328,6 +44868,7 @@ ptr_glVertexAttrib2sv = unsafePerformIO $ getCommand "glVertexAttrib2sv"
 
 -- glVertexAttrib2svARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib2sv'.
 glVertexAttrib2svARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44341,6 +44882,7 @@ ptr_glVertexAttrib2svARB = unsafePerformIO $ getCommand "glVertexAttrib2svARB"
 
 -- glVertexAttrib2svNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib2sv'.
 glVertexAttrib2svNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44354,7 +44896,7 @@ ptr_glVertexAttrib2svNV = unsafePerformIO $ getCommand "glVertexAttrib2svNV"
 
 -- glVertexAttrib3d ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib3dv'.
 glVertexAttrib3d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44370,6 +44912,7 @@ ptr_glVertexAttrib3d = unsafePerformIO $ getCommand "glVertexAttrib3d"
 
 -- glVertexAttrib3dARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib3dvARB'. This command is an alias for 'glVertexAttrib3d'.
 glVertexAttrib3dARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44385,6 +44928,7 @@ ptr_glVertexAttrib3dARB = unsafePerformIO $ getCommand "glVertexAttrib3dARB"
 
 -- glVertexAttrib3dNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib3dvNV'. This command is an alias for 'glVertexAttrib3d'.
 glVertexAttrib3dNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44400,7 +44944,7 @@ ptr_glVertexAttrib3dNV = unsafePerformIO $ getCommand "glVertexAttrib3dNV"
 
 -- glVertexAttrib3dv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib3dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44414,6 +44958,7 @@ ptr_glVertexAttrib3dv = unsafePerformIO $ getCommand "glVertexAttrib3dv"
 
 -- glVertexAttrib3dvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib3dv'.
 glVertexAttrib3dvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44427,6 +44972,7 @@ ptr_glVertexAttrib3dvARB = unsafePerformIO $ getCommand "glVertexAttrib3dvARB"
 
 -- glVertexAttrib3dvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib3dv'.
 glVertexAttrib3dvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44440,7 +44986,7 @@ ptr_glVertexAttrib3dvNV = unsafePerformIO $ getCommand "glVertexAttrib3dvNV"
 
 -- glVertexAttrib3f ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib3fv'.
 glVertexAttrib3f
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44456,6 +45002,7 @@ ptr_glVertexAttrib3f = unsafePerformIO $ getCommand "glVertexAttrib3f"
 
 -- glVertexAttrib3fARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib3fvARB'. This command is an alias for 'glVertexAttrib3f'.
 glVertexAttrib3fARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44471,6 +45018,7 @@ ptr_glVertexAttrib3fARB = unsafePerformIO $ getCommand "glVertexAttrib3fARB"
 
 -- glVertexAttrib3fNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib3fvNV'. This command is an alias for 'glVertexAttrib3f'.
 glVertexAttrib3fNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44486,7 +45034,7 @@ ptr_glVertexAttrib3fNV = unsafePerformIO $ getCommand "glVertexAttrib3fNV"
 
 -- glVertexAttrib3fv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib3fv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44500,6 +45048,7 @@ ptr_glVertexAttrib3fv = unsafePerformIO $ getCommand "glVertexAttrib3fv"
 
 -- glVertexAttrib3fvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib3fv'.
 glVertexAttrib3fvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44513,6 +45062,7 @@ ptr_glVertexAttrib3fvARB = unsafePerformIO $ getCommand "glVertexAttrib3fvARB"
 
 -- glVertexAttrib3fvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib3fv'.
 glVertexAttrib3fvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44526,6 +45076,7 @@ ptr_glVertexAttrib3fvNV = unsafePerformIO $ getCommand "glVertexAttrib3fvNV"
 
 -- glVertexAttrib3hNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib3hvNV'.
 glVertexAttrib3hNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44554,7 +45105,7 @@ ptr_glVertexAttrib3hvNV = unsafePerformIO $ getCommand "glVertexAttrib3hvNV"
 
 -- glVertexAttrib3s ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib3sv'.
 glVertexAttrib3s
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44570,6 +45121,7 @@ ptr_glVertexAttrib3s = unsafePerformIO $ getCommand "glVertexAttrib3s"
 
 -- glVertexAttrib3sARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib3svARB'. This command is an alias for 'glVertexAttrib3s'.
 glVertexAttrib3sARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44585,6 +45137,7 @@ ptr_glVertexAttrib3sARB = unsafePerformIO $ getCommand "glVertexAttrib3sARB"
 
 -- glVertexAttrib3sNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib3svNV'. This command is an alias for 'glVertexAttrib3s'.
 glVertexAttrib3sNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44600,7 +45153,7 @@ ptr_glVertexAttrib3sNV = unsafePerformIO $ getCommand "glVertexAttrib3sNV"
 
 -- glVertexAttrib3sv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib3sv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44614,6 +45167,7 @@ ptr_glVertexAttrib3sv = unsafePerformIO $ getCommand "glVertexAttrib3sv"
 
 -- glVertexAttrib3svARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib3sv'.
 glVertexAttrib3svARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44627,6 +45181,7 @@ ptr_glVertexAttrib3svARB = unsafePerformIO $ getCommand "glVertexAttrib3svARB"
 
 -- glVertexAttrib3svNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib3sv'.
 glVertexAttrib3svNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44640,7 +45195,7 @@ ptr_glVertexAttrib3svNV = unsafePerformIO $ getCommand "glVertexAttrib3svNV"
 
 -- glVertexAttrib4Nbv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4Nbv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44654,6 +45209,7 @@ ptr_glVertexAttrib4Nbv = unsafePerformIO $ getCommand "glVertexAttrib4Nbv"
 
 -- glVertexAttrib4NbvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Nbv'.
 glVertexAttrib4NbvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44667,7 +45223,7 @@ ptr_glVertexAttrib4NbvARB = unsafePerformIO $ getCommand "glVertexAttrib4NbvARB"
 
 -- glVertexAttrib4Niv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4Niv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44681,6 +45237,7 @@ ptr_glVertexAttrib4Niv = unsafePerformIO $ getCommand "glVertexAttrib4Niv"
 
 -- glVertexAttrib4NivARB -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Niv'.
 glVertexAttrib4NivARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44694,7 +45251,7 @@ ptr_glVertexAttrib4NivARB = unsafePerformIO $ getCommand "glVertexAttrib4NivARB"
 
 -- glVertexAttrib4Nsv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4Nsv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44708,6 +45265,7 @@ ptr_glVertexAttrib4Nsv = unsafePerformIO $ getCommand "glVertexAttrib4Nsv"
 
 -- glVertexAttrib4NsvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Nsv'.
 glVertexAttrib4NsvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44721,7 +45279,7 @@ ptr_glVertexAttrib4NsvARB = unsafePerformIO $ getCommand "glVertexAttrib4NsvARB"
 
 -- glVertexAttrib4Nub ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4Nub
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44738,6 +45296,7 @@ ptr_glVertexAttrib4Nub = unsafePerformIO $ getCommand "glVertexAttrib4Nub"
 
 -- glVertexAttrib4NubARB -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Nub'.
 glVertexAttrib4NubARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44754,7 +45313,7 @@ ptr_glVertexAttrib4NubARB = unsafePerformIO $ getCommand "glVertexAttrib4NubARB"
 
 -- glVertexAttrib4Nubv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4Nubv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44768,6 +45327,7 @@ ptr_glVertexAttrib4Nubv = unsafePerformIO $ getCommand "glVertexAttrib4Nubv"
 
 -- glVertexAttrib4NubvARB ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Nubv'.
 glVertexAttrib4NubvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44781,7 +45341,7 @@ ptr_glVertexAttrib4NubvARB = unsafePerformIO $ getCommand "glVertexAttrib4NubvAR
 
 -- glVertexAttrib4Nuiv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4Nuiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44795,6 +45355,7 @@ ptr_glVertexAttrib4Nuiv = unsafePerformIO $ getCommand "glVertexAttrib4Nuiv"
 
 -- glVertexAttrib4NuivARB ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Nuiv'.
 glVertexAttrib4NuivARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44808,7 +45369,7 @@ ptr_glVertexAttrib4NuivARB = unsafePerformIO $ getCommand "glVertexAttrib4NuivAR
 
 -- glVertexAttrib4Nusv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4Nusv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44822,6 +45383,7 @@ ptr_glVertexAttrib4Nusv = unsafePerformIO $ getCommand "glVertexAttrib4Nusv"
 
 -- glVertexAttrib4NusvARB ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Nusv'.
 glVertexAttrib4NusvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44835,7 +45397,7 @@ ptr_glVertexAttrib4NusvARB = unsafePerformIO $ getCommand "glVertexAttrib4NusvAR
 
 -- glVertexAttrib4bv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4bv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44849,6 +45411,7 @@ ptr_glVertexAttrib4bv = unsafePerformIO $ getCommand "glVertexAttrib4bv"
 
 -- glVertexAttrib4bvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4bv'.
 glVertexAttrib4bvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44862,7 +45425,7 @@ ptr_glVertexAttrib4bvARB = unsafePerformIO $ getCommand "glVertexAttrib4bvARB"
 
 -- glVertexAttrib4d ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib4dv'.
 glVertexAttrib4d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44879,6 +45442,7 @@ ptr_glVertexAttrib4d = unsafePerformIO $ getCommand "glVertexAttrib4d"
 
 -- glVertexAttrib4dARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4dvARB'. This command is an alias for 'glVertexAttrib4d'.
 glVertexAttrib4dARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44895,6 +45459,7 @@ ptr_glVertexAttrib4dARB = unsafePerformIO $ getCommand "glVertexAttrib4dARB"
 
 -- glVertexAttrib4dNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4dvNV'. This command is an alias for 'glVertexAttrib4d'.
 glVertexAttrib4dNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44911,7 +45476,7 @@ ptr_glVertexAttrib4dNV = unsafePerformIO $ getCommand "glVertexAttrib4dNV"
 
 -- glVertexAttrib4dv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44925,6 +45490,7 @@ ptr_glVertexAttrib4dv = unsafePerformIO $ getCommand "glVertexAttrib4dv"
 
 -- glVertexAttrib4dvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4dv'.
 glVertexAttrib4dvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44938,6 +45504,7 @@ ptr_glVertexAttrib4dvARB = unsafePerformIO $ getCommand "glVertexAttrib4dvARB"
 
 -- glVertexAttrib4dvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4dv'.
 glVertexAttrib4dvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44951,7 +45518,7 @@ ptr_glVertexAttrib4dvNV = unsafePerformIO $ getCommand "glVertexAttrib4dvNV"
 
 -- glVertexAttrib4f ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib4fv'.
 glVertexAttrib4f
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44968,6 +45535,7 @@ ptr_glVertexAttrib4f = unsafePerformIO $ getCommand "glVertexAttrib4f"
 
 -- glVertexAttrib4fARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4fvARB'. This command is an alias for 'glVertexAttrib4f'.
 glVertexAttrib4fARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -44984,6 +45552,7 @@ ptr_glVertexAttrib4fARB = unsafePerformIO $ getCommand "glVertexAttrib4fARB"
 
 -- glVertexAttrib4fNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4fvNV'. This command is an alias for 'glVertexAttrib4f'.
 glVertexAttrib4fNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45000,7 +45569,7 @@ ptr_glVertexAttrib4fNV = unsafePerformIO $ getCommand "glVertexAttrib4fNV"
 
 -- glVertexAttrib4fv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4fv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45014,6 +45583,7 @@ ptr_glVertexAttrib4fv = unsafePerformIO $ getCommand "glVertexAttrib4fv"
 
 -- glVertexAttrib4fvARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4fv'.
 glVertexAttrib4fvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45027,6 +45597,7 @@ ptr_glVertexAttrib4fvARB = unsafePerformIO $ getCommand "glVertexAttrib4fvARB"
 
 -- glVertexAttrib4fvNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4fv'.
 glVertexAttrib4fvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45040,6 +45611,7 @@ ptr_glVertexAttrib4fvNV = unsafePerformIO $ getCommand "glVertexAttrib4fvNV"
 
 -- glVertexAttrib4hNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4hvNV'.
 glVertexAttrib4hNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45069,7 +45641,7 @@ ptr_glVertexAttrib4hvNV = unsafePerformIO $ getCommand "glVertexAttrib4hvNV"
 
 -- glVertexAttrib4iv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4iv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45083,6 +45655,7 @@ ptr_glVertexAttrib4iv = unsafePerformIO $ getCommand "glVertexAttrib4iv"
 
 -- glVertexAttrib4ivARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4iv'.
 glVertexAttrib4ivARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45096,7 +45669,7 @@ ptr_glVertexAttrib4ivARB = unsafePerformIO $ getCommand "glVertexAttrib4ivARB"
 
 -- glVertexAttrib4s ------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib4sv'.
 glVertexAttrib4s
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45113,6 +45686,7 @@ ptr_glVertexAttrib4s = unsafePerformIO $ getCommand "glVertexAttrib4s"
 
 -- glVertexAttrib4sARB ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4svARB'. This command is an alias for 'glVertexAttrib4s'.
 glVertexAttrib4sARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45129,6 +45703,7 @@ ptr_glVertexAttrib4sARB = unsafePerformIO $ getCommand "glVertexAttrib4sARB"
 
 -- glVertexAttrib4sNV ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4svNV'. This command is an alias for 'glVertexAttrib4s'.
 glVertexAttrib4sNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45145,7 +45720,7 @@ ptr_glVertexAttrib4sNV = unsafePerformIO $ getCommand "glVertexAttrib4sNV"
 
 -- glVertexAttrib4sv -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4sv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45159,6 +45734,7 @@ ptr_glVertexAttrib4sv = unsafePerformIO $ getCommand "glVertexAttrib4sv"
 
 -- glVertexAttrib4svARB --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4sv'.
 glVertexAttrib4svARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45172,6 +45748,7 @@ ptr_glVertexAttrib4svARB = unsafePerformIO $ getCommand "glVertexAttrib4svARB"
 
 -- glVertexAttrib4svNV ---------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4sv'.
 glVertexAttrib4svNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45185,6 +45762,7 @@ ptr_glVertexAttrib4svNV = unsafePerformIO $ getCommand "glVertexAttrib4svNV"
 
 -- glVertexAttrib4ubNV ---------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttrib4ubvNV'. This command is an alias for 'glVertexAttrib4Nub'.
 glVertexAttrib4ubNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45201,7 +45779,7 @@ ptr_glVertexAttrib4ubNV = unsafePerformIO $ getCommand "glVertexAttrib4ubNV"
 
 -- glVertexAttrib4ubv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4ubv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45215,6 +45793,7 @@ ptr_glVertexAttrib4ubv = unsafePerformIO $ getCommand "glVertexAttrib4ubv"
 
 -- glVertexAttrib4ubvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4ubv'.
 glVertexAttrib4ubvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45228,6 +45807,7 @@ ptr_glVertexAttrib4ubvARB = unsafePerformIO $ getCommand "glVertexAttrib4ubvARB"
 
 -- glVertexAttrib4ubvNV --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4Nubv'.
 glVertexAttrib4ubvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45241,7 +45821,7 @@ ptr_glVertexAttrib4ubvNV = unsafePerformIO $ getCommand "glVertexAttrib4ubvNV"
 
 -- glVertexAttrib4uiv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45255,6 +45835,7 @@ ptr_glVertexAttrib4uiv = unsafePerformIO $ getCommand "glVertexAttrib4uiv"
 
 -- glVertexAttrib4uivARB -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4uiv'.
 glVertexAttrib4uivARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45268,7 +45849,7 @@ ptr_glVertexAttrib4uivARB = unsafePerformIO $ getCommand "glVertexAttrib4uivARB"
 
 -- glVertexAttrib4usv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttrib4usv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45282,6 +45863,7 @@ ptr_glVertexAttrib4usv = unsafePerformIO $ getCommand "glVertexAttrib4usv"
 
 -- glVertexAttrib4usvARB -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttrib4usv'.
 glVertexAttrib4usvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45313,7 +45895,7 @@ ptr_glVertexAttribArrayObjectATI = unsafePerformIO $ getCommand "glVertexAttribA
 
 -- glVertexAttribBinding -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribBinding.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribBinding.xhtml OpenGL 4.x>.
 glVertexAttribBinding
   :: MonadIO m
   => GLuint -- ^ @attribindex@.
@@ -45327,7 +45909,7 @@ ptr_glVertexAttribBinding = unsafePerformIO $ getCommand "glVertexAttribBinding"
 
 -- glVertexAttribDivisor -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribDivisor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribDivisor.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribDivisor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribDivisor.xhtml OpenGL 4.x>.
 glVertexAttribDivisor
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45341,6 +45923,7 @@ ptr_glVertexAttribDivisor = unsafePerformIO $ getCommand "glVertexAttribDivisor"
 
 -- glVertexAttribDivisorANGLE --------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribDivisor'.
 glVertexAttribDivisorANGLE
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45354,6 +45937,7 @@ ptr_glVertexAttribDivisorANGLE = unsafePerformIO $ getCommand "glVertexAttribDiv
 
 -- glVertexAttribDivisorARB ----------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribDivisor'.
 glVertexAttribDivisorARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45367,6 +45951,7 @@ ptr_glVertexAttribDivisorARB = unsafePerformIO $ getCommand "glVertexAttribDivis
 
 -- glVertexAttribDivisorEXT ----------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribDivisor'.
 glVertexAttribDivisorEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45380,6 +45965,7 @@ ptr_glVertexAttribDivisorEXT = unsafePerformIO $ getCommand "glVertexAttribDivis
 
 -- glVertexAttribDivisorNV -----------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribDivisor'.
 glVertexAttribDivisorNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45393,7 +45979,7 @@ ptr_glVertexAttribDivisorNV = unsafePerformIO $ getCommand "glVertexAttribDiviso
 
 -- glVertexAttribFormat --------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>.
 glVertexAttribFormat
   :: MonadIO m
   => GLuint -- ^ @attribindex@.
@@ -45426,7 +46012,7 @@ ptr_glVertexAttribFormatNV = unsafePerformIO $ getCommand "glVertexAttribFormatN
 
 -- glVertexAttribI1i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI1iv'.
 glVertexAttribI1i
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45440,6 +46026,7 @@ ptr_glVertexAttribI1i = unsafePerformIO $ getCommand "glVertexAttribI1i"
 
 -- glVertexAttribI1iEXT --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI1ivEXT'. This command is an alias for 'glVertexAttribI1i'.
 glVertexAttribI1iEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45453,7 +46040,7 @@ ptr_glVertexAttribI1iEXT = unsafePerformIO $ getCommand "glVertexAttribI1iEXT"
 
 -- glVertexAttribI1iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI1iv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45467,6 +46054,7 @@ ptr_glVertexAttribI1iv = unsafePerformIO $ getCommand "glVertexAttribI1iv"
 
 -- glVertexAttribI1ivEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI1iv'.
 glVertexAttribI1ivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45480,7 +46068,7 @@ ptr_glVertexAttribI1ivEXT = unsafePerformIO $ getCommand "glVertexAttribI1ivEXT"
 
 -- glVertexAttribI1ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI1uiv'.
 glVertexAttribI1ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45494,6 +46082,7 @@ ptr_glVertexAttribI1ui = unsafePerformIO $ getCommand "glVertexAttribI1ui"
 
 -- glVertexAttribI1uiEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI1uivEXT'. This command is an alias for 'glVertexAttribI1ui'.
 glVertexAttribI1uiEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45507,7 +46096,7 @@ ptr_glVertexAttribI1uiEXT = unsafePerformIO $ getCommand "glVertexAttribI1uiEXT"
 
 -- glVertexAttribI1uiv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI1uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45521,6 +46110,7 @@ ptr_glVertexAttribI1uiv = unsafePerformIO $ getCommand "glVertexAttribI1uiv"
 
 -- glVertexAttribI1uivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI1uiv'.
 glVertexAttribI1uivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45534,7 +46124,7 @@ ptr_glVertexAttribI1uivEXT = unsafePerformIO $ getCommand "glVertexAttribI1uivEX
 
 -- glVertexAttribI2i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI2iv'.
 glVertexAttribI2i
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45549,6 +46139,7 @@ ptr_glVertexAttribI2i = unsafePerformIO $ getCommand "glVertexAttribI2i"
 
 -- glVertexAttribI2iEXT --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI2ivEXT'. This command is an alias for 'glVertexAttribI2i'.
 glVertexAttribI2iEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45563,7 +46154,7 @@ ptr_glVertexAttribI2iEXT = unsafePerformIO $ getCommand "glVertexAttribI2iEXT"
 
 -- glVertexAttribI2iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI2iv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45577,6 +46168,7 @@ ptr_glVertexAttribI2iv = unsafePerformIO $ getCommand "glVertexAttribI2iv"
 
 -- glVertexAttribI2ivEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI2iv'.
 glVertexAttribI2ivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45590,7 +46182,7 @@ ptr_glVertexAttribI2ivEXT = unsafePerformIO $ getCommand "glVertexAttribI2ivEXT"
 
 -- glVertexAttribI2ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI2uiv'.
 glVertexAttribI2ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45605,6 +46197,7 @@ ptr_glVertexAttribI2ui = unsafePerformIO $ getCommand "glVertexAttribI2ui"
 
 -- glVertexAttribI2uiEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI2uivEXT'. This command is an alias for 'glVertexAttribI2ui'.
 glVertexAttribI2uiEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45619,7 +46212,7 @@ ptr_glVertexAttribI2uiEXT = unsafePerformIO $ getCommand "glVertexAttribI2uiEXT"
 
 -- glVertexAttribI2uiv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI2uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45633,6 +46226,7 @@ ptr_glVertexAttribI2uiv = unsafePerformIO $ getCommand "glVertexAttribI2uiv"
 
 -- glVertexAttribI2uivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI2uiv'.
 glVertexAttribI2uivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45646,7 +46240,7 @@ ptr_glVertexAttribI2uivEXT = unsafePerformIO $ getCommand "glVertexAttribI2uivEX
 
 -- glVertexAttribI3i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI3iv'.
 glVertexAttribI3i
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45662,6 +46256,7 @@ ptr_glVertexAttribI3i = unsafePerformIO $ getCommand "glVertexAttribI3i"
 
 -- glVertexAttribI3iEXT --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI3ivEXT'. This command is an alias for 'glVertexAttribI3i'.
 glVertexAttribI3iEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45677,7 +46272,7 @@ ptr_glVertexAttribI3iEXT = unsafePerformIO $ getCommand "glVertexAttribI3iEXT"
 
 -- glVertexAttribI3iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI3iv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45691,6 +46286,7 @@ ptr_glVertexAttribI3iv = unsafePerformIO $ getCommand "glVertexAttribI3iv"
 
 -- glVertexAttribI3ivEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI3iv'.
 glVertexAttribI3ivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45704,7 +46300,7 @@ ptr_glVertexAttribI3ivEXT = unsafePerformIO $ getCommand "glVertexAttribI3ivEXT"
 
 -- glVertexAttribI3ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI3uiv'.
 glVertexAttribI3ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45720,6 +46316,7 @@ ptr_glVertexAttribI3ui = unsafePerformIO $ getCommand "glVertexAttribI3ui"
 
 -- glVertexAttribI3uiEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI3uivEXT'. This command is an alias for 'glVertexAttribI3ui'.
 glVertexAttribI3uiEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45735,7 +46332,7 @@ ptr_glVertexAttribI3uiEXT = unsafePerformIO $ getCommand "glVertexAttribI3uiEXT"
 
 -- glVertexAttribI3uiv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI3uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45749,6 +46346,7 @@ ptr_glVertexAttribI3uiv = unsafePerformIO $ getCommand "glVertexAttribI3uiv"
 
 -- glVertexAttribI3uivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI3uiv'.
 glVertexAttribI3uivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45762,7 +46360,7 @@ ptr_glVertexAttribI3uivEXT = unsafePerformIO $ getCommand "glVertexAttribI3uivEX
 
 -- glVertexAttribI4bv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI4bv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45776,6 +46374,7 @@ ptr_glVertexAttribI4bv = unsafePerformIO $ getCommand "glVertexAttribI4bv"
 
 -- glVertexAttribI4bvEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI4bv'.
 glVertexAttribI4bvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45789,7 +46388,7 @@ ptr_glVertexAttribI4bvEXT = unsafePerformIO $ getCommand "glVertexAttribI4bvEXT"
 
 -- glVertexAttribI4i -----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI4iv'.
 glVertexAttribI4i
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45806,6 +46405,7 @@ ptr_glVertexAttribI4i = unsafePerformIO $ getCommand "glVertexAttribI4i"
 
 -- glVertexAttribI4iEXT --------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI4ivEXT'. This command is an alias for 'glVertexAttribI4i'.
 glVertexAttribI4iEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45822,7 +46422,7 @@ ptr_glVertexAttribI4iEXT = unsafePerformIO $ getCommand "glVertexAttribI4iEXT"
 
 -- glVertexAttribI4iv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI4iv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45836,6 +46436,7 @@ ptr_glVertexAttribI4iv = unsafePerformIO $ getCommand "glVertexAttribI4iv"
 
 -- glVertexAttribI4ivEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI4iv'.
 glVertexAttribI4ivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45849,7 +46450,7 @@ ptr_glVertexAttribI4ivEXT = unsafePerformIO $ getCommand "glVertexAttribI4ivEXT"
 
 -- glVertexAttribI4sv ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI4sv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45863,6 +46464,7 @@ ptr_glVertexAttribI4sv = unsafePerformIO $ getCommand "glVertexAttribI4sv"
 
 -- glVertexAttribI4svEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI4sv'.
 glVertexAttribI4svEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45876,7 +46478,7 @@ ptr_glVertexAttribI4svEXT = unsafePerformIO $ getCommand "glVertexAttribI4svEXT"
 
 -- glVertexAttribI4ubv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI4ubv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45890,6 +46492,7 @@ ptr_glVertexAttribI4ubv = unsafePerformIO $ getCommand "glVertexAttribI4ubv"
 
 -- glVertexAttribI4ubvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI4ubv'.
 glVertexAttribI4ubvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45903,7 +46506,7 @@ ptr_glVertexAttribI4ubvEXT = unsafePerformIO $ getCommand "glVertexAttribI4ubvEX
 
 -- glVertexAttribI4ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI4uiv'.
 glVertexAttribI4ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45920,6 +46523,7 @@ ptr_glVertexAttribI4ui = unsafePerformIO $ getCommand "glVertexAttribI4ui"
 
 -- glVertexAttribI4uiEXT -------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexAttribI4uivEXT'. This command is an alias for 'glVertexAttribI4ui'.
 glVertexAttribI4uiEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45936,7 +46540,7 @@ ptr_glVertexAttribI4uiEXT = unsafePerformIO $ getCommand "glVertexAttribI4uiEXT"
 
 -- glVertexAttribI4uiv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI4uiv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45950,6 +46554,7 @@ ptr_glVertexAttribI4uiv = unsafePerformIO $ getCommand "glVertexAttribI4uiv"
 
 -- glVertexAttribI4uivEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI4uiv'.
 glVertexAttribI4uivEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45963,7 +46568,7 @@ ptr_glVertexAttribI4uivEXT = unsafePerformIO $ getCommand "glVertexAttribI4uivEX
 
 -- glVertexAttribI4usv ---------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribI4usv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45977,6 +46582,7 @@ ptr_glVertexAttribI4usv = unsafePerformIO $ getCommand "glVertexAttribI4usv"
 
 -- glVertexAttribI4usvEXT ------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribI4usv'.
 glVertexAttribI4usvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -45990,7 +46596,7 @@ ptr_glVertexAttribI4usvEXT = unsafePerformIO $ getCommand "glVertexAttribI4usvEX
 
 -- glVertexAttribIFormat -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>.
 glVertexAttribIFormat
   :: MonadIO m
   => GLuint -- ^ @attribindex@.
@@ -46021,7 +46627,7 @@ ptr_glVertexAttribIFormatNV = unsafePerformIO $ getCommand "glVertexAttribIForma
 
 -- glVertexAttribIPointer ------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml OpenGL 4.x>.
 glVertexAttribIPointer
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46038,6 +46644,7 @@ ptr_glVertexAttribIPointer = unsafePerformIO $ getCommand "glVertexAttribIPointe
 
 -- glVertexAttribIPointerEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribIPointer'.
 glVertexAttribIPointerEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46054,7 +46661,7 @@ ptr_glVertexAttribIPointerEXT = unsafePerformIO $ getCommand "glVertexAttribIPoi
 
 -- glVertexAttribL1d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL1d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46068,6 +46675,7 @@ ptr_glVertexAttribL1d = unsafePerformIO $ getCommand "glVertexAttribL1d"
 
 -- glVertexAttribL1dEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL1d'.
 glVertexAttribL1dEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46081,7 +46689,7 @@ ptr_glVertexAttribL1dEXT = unsafePerformIO $ getCommand "glVertexAttribL1dEXT"
 
 -- glVertexAttribL1dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL1dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46095,6 +46703,7 @@ ptr_glVertexAttribL1dv = unsafePerformIO $ getCommand "glVertexAttribL1dv"
 
 -- glVertexAttribL1dvEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL1dv'.
 glVertexAttribL1dvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46186,7 +46795,7 @@ ptr_glVertexAttribL1ui64vNV = unsafePerformIO $ getCommand "glVertexAttribL1ui64
 
 -- glVertexAttribL2d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL2d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46201,6 +46810,7 @@ ptr_glVertexAttribL2d = unsafePerformIO $ getCommand "glVertexAttribL2d"
 
 -- glVertexAttribL2dEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL2d'.
 glVertexAttribL2dEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46215,7 +46825,7 @@ ptr_glVertexAttribL2dEXT = unsafePerformIO $ getCommand "glVertexAttribL2dEXT"
 
 -- glVertexAttribL2dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL2dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46229,6 +46839,7 @@ ptr_glVertexAttribL2dv = unsafePerformIO $ getCommand "glVertexAttribL2dv"
 
 -- glVertexAttribL2dvEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL2dv'.
 glVertexAttribL2dvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46296,7 +46907,7 @@ ptr_glVertexAttribL2ui64vNV = unsafePerformIO $ getCommand "glVertexAttribL2ui64
 
 -- glVertexAttribL3d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL3d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46312,6 +46923,7 @@ ptr_glVertexAttribL3d = unsafePerformIO $ getCommand "glVertexAttribL3d"
 
 -- glVertexAttribL3dEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL3d'.
 glVertexAttribL3dEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46327,7 +46939,7 @@ ptr_glVertexAttribL3dEXT = unsafePerformIO $ getCommand "glVertexAttribL3dEXT"
 
 -- glVertexAttribL3dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL3dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46341,6 +46953,7 @@ ptr_glVertexAttribL3dv = unsafePerformIO $ getCommand "glVertexAttribL3dv"
 
 -- glVertexAttribL3dvEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL3dv'.
 glVertexAttribL3dvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46410,7 +47023,7 @@ ptr_glVertexAttribL3ui64vNV = unsafePerformIO $ getCommand "glVertexAttribL3ui64
 
 -- glVertexAttribL4d -----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL4d
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46427,6 +47040,7 @@ ptr_glVertexAttribL4d = unsafePerformIO $ getCommand "glVertexAttribL4d"
 
 -- glVertexAttribL4dEXT --------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL4d'.
 glVertexAttribL4dEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46443,7 +47057,7 @@ ptr_glVertexAttribL4dEXT = unsafePerformIO $ getCommand "glVertexAttribL4dEXT"
 
 -- glVertexAttribL4dv ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribL4dv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46457,6 +47071,7 @@ ptr_glVertexAttribL4dv = unsafePerformIO $ getCommand "glVertexAttribL4dv"
 
 -- glVertexAttribL4dvEXT -------------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribL4dv'.
 glVertexAttribL4dvEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46528,7 +47143,7 @@ ptr_glVertexAttribL4ui64vNV = unsafePerformIO $ getCommand "glVertexAttribL4ui64
 
 -- glVertexAttribLFormat -------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>.
 glVertexAttribLFormat
   :: MonadIO m
   => GLuint -- ^ @attribindex@.
@@ -46559,7 +47174,7 @@ ptr_glVertexAttribLFormatNV = unsafePerformIO $ getCommand "glVertexAttribLForma
 
 -- glVertexAttribLPointer ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml OpenGL 4.x>.
 glVertexAttribLPointer
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46576,6 +47191,7 @@ ptr_glVertexAttribLPointer = unsafePerformIO $ getCommand "glVertexAttribLPointe
 
 -- glVertexAttribLPointerEXT ---------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribLPointer'.
 glVertexAttribLPointerEXT
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46592,7 +47208,7 @@ ptr_glVertexAttribLPointerEXT = unsafePerformIO $ getCommand "glVertexAttribLPoi
 
 -- glVertexAttribP1ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribP1ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46623,7 +47239,7 @@ ptr_glVertexAttribP1uiv = unsafePerformIO $ getCommand "glVertexAttribP1uiv"
 
 -- glVertexAttribP2ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribP2ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46654,7 +47270,7 @@ ptr_glVertexAttribP2uiv = unsafePerformIO $ getCommand "glVertexAttribP2uiv"
 
 -- glVertexAttribP3ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribP3ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46685,7 +47301,7 @@ ptr_glVertexAttribP3uiv = unsafePerformIO $ getCommand "glVertexAttribP3uiv"
 
 -- glVertexAttribP4ui ----------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
 glVertexAttribP4ui
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46730,7 +47346,7 @@ ptr_glVertexAttribParameteriAMD = unsafePerformIO $ getCommand "glVertexAttribPa
 
 -- glVertexAttribPointer -------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttribPointer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttribPointer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml OpenGL 4.x>.
 glVertexAttribPointer
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -46748,6 +47364,7 @@ ptr_glVertexAttribPointer = unsafePerformIO $ getCommand "glVertexAttribPointer"
 
 -- glVertexAttribPointerARB ----------------------------------------------------
 
+-- | This command is an alias for 'glVertexAttribPointer'.
 glVertexAttribPointerARB
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -47019,7 +47636,7 @@ ptr_glVertexAttribs4ubvNV = unsafePerformIO $ getCommand "glVertexAttribs4ubvNV"
 
 -- glVertexBindingDivisor ------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexBindingDivisor.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexBindingDivisor.xhtml OpenGL 4.x>.
 glVertexBindingDivisor
   :: MonadIO m
   => GLuint -- ^ @bindingindex@.
@@ -47163,7 +47780,7 @@ ptr_glVertexP4uiv = unsafePerformIO $ getCommand "glVertexP4uiv"
 
 -- glVertexPointer -------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexPointer.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexPointer.xml OpenGL 2.x>.
 glVertexPointer
   :: MonadIO m
   => GLint -- ^ @size@.
@@ -47680,6 +48297,7 @@ ptr_glVertexWeightPointerEXT = unsafePerformIO $ getCommand "glVertexWeightPoint
 
 -- glVertexWeightfEXT ----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexWeightfvEXT'.
 glVertexWeightfEXT
   :: MonadIO m
   => GLfloat -- ^ @weight@.
@@ -47704,6 +48322,7 @@ ptr_glVertexWeightfvEXT = unsafePerformIO $ getCommand "glVertexWeightfvEXT"
 
 -- glVertexWeighthNV -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glVertexWeighthvNV'.
 glVertexWeighthNV
   :: MonadIO m
   => GLhalfNV -- ^ @weight@ of type @Half16NV@.
@@ -47787,7 +48406,7 @@ ptr_glVideoCaptureStreamParameterivNV = unsafePerformIO $ getCommand "glVideoCap
 
 -- glViewport ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glViewport.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glViewport.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glViewport.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glViewport.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glViewport.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glViewport.xhtml OpenGL 4.x>.
 glViewport
   :: MonadIO m
   => GLint -- ^ @x@ of type @WinCoord@.
@@ -47803,7 +48422,7 @@ ptr_glViewport = unsafePerformIO $ getCommand "glViewport"
 
 -- glViewportArrayv ------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportArray.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportArray.xhtml OpenGL 4.x>.
 glViewportArrayv
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -47818,6 +48437,7 @@ ptr_glViewportArrayv = unsafePerformIO $ getCommand "glViewportArrayv"
 
 -- glViewportArrayvNV ----------------------------------------------------------
 
+-- | This command is an alias for 'glViewportArrayv'.
 glViewportArrayvNV
   :: MonadIO m
   => GLuint -- ^ @first@.
@@ -47832,7 +48452,7 @@ ptr_glViewportArrayvNV = unsafePerformIO $ getCommand "glViewportArrayvNV"
 
 -- glViewportIndexedf ----------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportIndexed.xhtml OpenGL 4.x>.
 glViewportIndexedf
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -47849,6 +48469,7 @@ ptr_glViewportIndexedf = unsafePerformIO $ getCommand "glViewportIndexedf"
 
 -- glViewportIndexedfNV --------------------------------------------------------
 
+-- | This command is an alias for 'glViewportIndexedf'.
 glViewportIndexedfNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -47865,7 +48486,7 @@ ptr_glViewportIndexedfNV = unsafePerformIO $ getCommand "glViewportIndexedfNV"
 
 -- glViewportIndexedfv ---------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportIndexed.xhtml OpenGL 4.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportIndexed.xhtml OpenGL 4.x>.
 glViewportIndexedfv
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -47879,6 +48500,7 @@ ptr_glViewportIndexedfv = unsafePerformIO $ getCommand "glViewportIndexedfv"
 
 -- glViewportIndexedfvNV -------------------------------------------------------
 
+-- | This command is an alias for 'glViewportIndexedfv'.
 glViewportIndexedfvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
@@ -47892,7 +48514,7 @@ ptr_glViewportIndexedfvNV = unsafePerformIO $ getCommand "glViewportIndexedfvNV"
 
 -- glWaitSync ------------------------------------------------------------------
 
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glWaitSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glWaitSync.xhtml OpenGL 4.x>
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glWaitSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glWaitSync.xhtml OpenGL 4.x>.
 glWaitSync
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
@@ -47907,6 +48529,7 @@ ptr_glWaitSync = unsafePerformIO $ getCommand "glWaitSync"
 
 -- glWaitSyncAPPLE -------------------------------------------------------------
 
+-- | This command is an alias for 'glWaitSync'.
 glWaitSyncAPPLE
   :: MonadIO m
   => GLsync -- ^ @sync@.
@@ -48070,7 +48693,7 @@ ptr_glWeightusvARB = unsafePerformIO $ getCommand "glWeightusvARB"
 
 -- glWindowPos2d ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos2dv'.
 glWindowPos2d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -48084,6 +48707,7 @@ ptr_glWindowPos2d = unsafePerformIO $ getCommand "glWindowPos2d"
 
 -- glWindowPos2dARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2dvARB'. This command is an alias for 'glWindowPos2d'.
 glWindowPos2dARB
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -48097,6 +48721,7 @@ ptr_glWindowPos2dARB = unsafePerformIO $ getCommand "glWindowPos2dARB"
 
 -- glWindowPos2dMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2dvMESA'. This command is an alias for 'glWindowPos2d'.
 glWindowPos2dMESA
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -48110,7 +48735,7 @@ ptr_glWindowPos2dMESA = unsafePerformIO $ getCommand "glWindowPos2dMESA"
 
 -- glWindowPos2dv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos2dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
@@ -48123,6 +48748,7 @@ ptr_glWindowPos2dv = unsafePerformIO $ getCommand "glWindowPos2dv"
 
 -- glWindowPos2dvARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2dv'.
 glWindowPos2dvARB
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
@@ -48135,6 +48761,7 @@ ptr_glWindowPos2dvARB = unsafePerformIO $ getCommand "glWindowPos2dvARB"
 
 -- glWindowPos2dvMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2dv'.
 glWindowPos2dvMESA
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
@@ -48147,7 +48774,7 @@ ptr_glWindowPos2dvMESA = unsafePerformIO $ getCommand "glWindowPos2dvMESA"
 
 -- glWindowPos2f ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos2fv'.
 glWindowPos2f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -48161,6 +48788,7 @@ ptr_glWindowPos2f = unsafePerformIO $ getCommand "glWindowPos2f"
 
 -- glWindowPos2fARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2fvARB'. This command is an alias for 'glWindowPos2f'.
 glWindowPos2fARB
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -48174,6 +48802,7 @@ ptr_glWindowPos2fARB = unsafePerformIO $ getCommand "glWindowPos2fARB"
 
 -- glWindowPos2fMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2fvMESA'. This command is an alias for 'glWindowPos2f'.
 glWindowPos2fMESA
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -48187,7 +48816,7 @@ ptr_glWindowPos2fMESA = unsafePerformIO $ getCommand "glWindowPos2fMESA"
 
 -- glWindowPos2fv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos2fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
@@ -48200,6 +48829,7 @@ ptr_glWindowPos2fv = unsafePerformIO $ getCommand "glWindowPos2fv"
 
 -- glWindowPos2fvARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2fv'.
 glWindowPos2fvARB
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
@@ -48212,6 +48842,7 @@ ptr_glWindowPos2fvARB = unsafePerformIO $ getCommand "glWindowPos2fvARB"
 
 -- glWindowPos2fvMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2fv'.
 glWindowPos2fvMESA
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
@@ -48224,7 +48855,7 @@ ptr_glWindowPos2fvMESA = unsafePerformIO $ getCommand "glWindowPos2fvMESA"
 
 -- glWindowPos2i ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos2iv'.
 glWindowPos2i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -48238,6 +48869,7 @@ ptr_glWindowPos2i = unsafePerformIO $ getCommand "glWindowPos2i"
 
 -- glWindowPos2iARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2ivARB'. This command is an alias for 'glWindowPos2i'.
 glWindowPos2iARB
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -48251,6 +48883,7 @@ ptr_glWindowPos2iARB = unsafePerformIO $ getCommand "glWindowPos2iARB"
 
 -- glWindowPos2iMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2ivMESA'. This command is an alias for 'glWindowPos2i'.
 glWindowPos2iMESA
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -48264,7 +48897,7 @@ ptr_glWindowPos2iMESA = unsafePerformIO $ getCommand "glWindowPos2iMESA"
 
 -- glWindowPos2iv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos2iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
@@ -48277,6 +48910,7 @@ ptr_glWindowPos2iv = unsafePerformIO $ getCommand "glWindowPos2iv"
 
 -- glWindowPos2ivARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2iv'.
 glWindowPos2ivARB
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
@@ -48289,6 +48923,7 @@ ptr_glWindowPos2ivARB = unsafePerformIO $ getCommand "glWindowPos2ivARB"
 
 -- glWindowPos2ivMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2iv'.
 glWindowPos2ivMESA
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
@@ -48301,7 +48936,7 @@ ptr_glWindowPos2ivMESA = unsafePerformIO $ getCommand "glWindowPos2ivMESA"
 
 -- glWindowPos2s ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos2sv'.
 glWindowPos2s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -48315,6 +48950,7 @@ ptr_glWindowPos2s = unsafePerformIO $ getCommand "glWindowPos2s"
 
 -- glWindowPos2sARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2svARB'. This command is an alias for 'glWindowPos2s'.
 glWindowPos2sARB
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -48328,6 +48964,7 @@ ptr_glWindowPos2sARB = unsafePerformIO $ getCommand "glWindowPos2sARB"
 
 -- glWindowPos2sMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos2svMESA'. This command is an alias for 'glWindowPos2s'.
 glWindowPos2sMESA
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -48341,7 +48978,7 @@ ptr_glWindowPos2sMESA = unsafePerformIO $ getCommand "glWindowPos2sMESA"
 
 -- glWindowPos2sv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos2sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
@@ -48354,6 +48991,7 @@ ptr_glWindowPos2sv = unsafePerformIO $ getCommand "glWindowPos2sv"
 
 -- glWindowPos2svARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2sv'.
 glWindowPos2svARB
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
@@ -48366,6 +49004,7 @@ ptr_glWindowPos2svARB = unsafePerformIO $ getCommand "glWindowPos2svARB"
 
 -- glWindowPos2svMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos2sv'.
 glWindowPos2svMESA
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
@@ -48378,7 +49017,7 @@ ptr_glWindowPos2svMESA = unsafePerformIO $ getCommand "glWindowPos2svMESA"
 
 -- glWindowPos3d ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3dv'.
 glWindowPos3d
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -48393,6 +49032,7 @@ ptr_glWindowPos3d = unsafePerformIO $ getCommand "glWindowPos3d"
 
 -- glWindowPos3dARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3dvARB'. This command is an alias for 'glWindowPos3d'.
 glWindowPos3dARB
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -48407,6 +49047,7 @@ ptr_glWindowPos3dARB = unsafePerformIO $ getCommand "glWindowPos3dARB"
 
 -- glWindowPos3dMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3dvMESA'. This command is an alias for 'glWindowPos3d'.
 glWindowPos3dMESA
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -48421,7 +49062,7 @@ ptr_glWindowPos3dMESA = unsafePerformIO $ getCommand "glWindowPos3dMESA"
 
 -- glWindowPos3dv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -48434,6 +49075,7 @@ ptr_glWindowPos3dv = unsafePerformIO $ getCommand "glWindowPos3dv"
 
 -- glWindowPos3dvARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3dv'.
 glWindowPos3dvARB
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -48446,6 +49088,7 @@ ptr_glWindowPos3dvARB = unsafePerformIO $ getCommand "glWindowPos3dvARB"
 
 -- glWindowPos3dvMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3dv'.
 glWindowPos3dvMESA
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
@@ -48458,7 +49101,7 @@ ptr_glWindowPos3dvMESA = unsafePerformIO $ getCommand "glWindowPos3dvMESA"
 
 -- glWindowPos3f ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3fv'.
 glWindowPos3f
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -48473,6 +49116,7 @@ ptr_glWindowPos3f = unsafePerformIO $ getCommand "glWindowPos3f"
 
 -- glWindowPos3fARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3fvARB'. This command is an alias for 'glWindowPos3f'.
 glWindowPos3fARB
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -48487,6 +49131,7 @@ ptr_glWindowPos3fARB = unsafePerformIO $ getCommand "glWindowPos3fARB"
 
 -- glWindowPos3fMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3fvMESA'. This command is an alias for 'glWindowPos3f'.
 glWindowPos3fMESA
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -48501,7 +49146,7 @@ ptr_glWindowPos3fMESA = unsafePerformIO $ getCommand "glWindowPos3fMESA"
 
 -- glWindowPos3fv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -48514,6 +49159,7 @@ ptr_glWindowPos3fv = unsafePerformIO $ getCommand "glWindowPos3fv"
 
 -- glWindowPos3fvARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3fv'.
 glWindowPos3fvARB
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -48526,6 +49172,7 @@ ptr_glWindowPos3fvARB = unsafePerformIO $ getCommand "glWindowPos3fvARB"
 
 -- glWindowPos3fvMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3fv'.
 glWindowPos3fvMESA
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
@@ -48538,7 +49185,7 @@ ptr_glWindowPos3fvMESA = unsafePerformIO $ getCommand "glWindowPos3fvMESA"
 
 -- glWindowPos3i ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3iv'.
 glWindowPos3i
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -48553,6 +49200,7 @@ ptr_glWindowPos3i = unsafePerformIO $ getCommand "glWindowPos3i"
 
 -- glWindowPos3iARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3ivARB'. This command is an alias for 'glWindowPos3i'.
 glWindowPos3iARB
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -48567,6 +49215,7 @@ ptr_glWindowPos3iARB = unsafePerformIO $ getCommand "glWindowPos3iARB"
 
 -- glWindowPos3iMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3ivMESA'. This command is an alias for 'glWindowPos3i'.
 glWindowPos3iMESA
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -48581,7 +49230,7 @@ ptr_glWindowPos3iMESA = unsafePerformIO $ getCommand "glWindowPos3iMESA"
 
 -- glWindowPos3iv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos3iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
@@ -48594,6 +49243,7 @@ ptr_glWindowPos3iv = unsafePerformIO $ getCommand "glWindowPos3iv"
 
 -- glWindowPos3ivARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3iv'.
 glWindowPos3ivARB
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
@@ -48606,6 +49256,7 @@ ptr_glWindowPos3ivARB = unsafePerformIO $ getCommand "glWindowPos3ivARB"
 
 -- glWindowPos3ivMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3iv'.
 glWindowPos3ivMESA
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
@@ -48618,7 +49269,7 @@ ptr_glWindowPos3ivMESA = unsafePerformIO $ getCommand "glWindowPos3ivMESA"
 
 -- glWindowPos3s ---------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3sv'.
 glWindowPos3s
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -48633,6 +49284,7 @@ ptr_glWindowPos3s = unsafePerformIO $ getCommand "glWindowPos3s"
 
 -- glWindowPos3sARB ------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3svARB'. This command is an alias for 'glWindowPos3s'.
 glWindowPos3sARB
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -48647,6 +49299,7 @@ ptr_glWindowPos3sARB = unsafePerformIO $ getCommand "glWindowPos3sARB"
 
 -- glWindowPos3sMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos3svMESA'. This command is an alias for 'glWindowPos3s'.
 glWindowPos3sMESA
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.
@@ -48661,7 +49314,7 @@ ptr_glWindowPos3sMESA = unsafePerformIO $ getCommand "glWindowPos3sMESA"
 
 -- glWindowPos3sv --------------------------------------------------------------
 
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
 glWindowPos3sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
@@ -48674,6 +49327,7 @@ ptr_glWindowPos3sv = unsafePerformIO $ getCommand "glWindowPos3sv"
 
 -- glWindowPos3svARB -----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3sv'.
 glWindowPos3svARB
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
@@ -48686,6 +49340,7 @@ ptr_glWindowPos3svARB = unsafePerformIO $ getCommand "glWindowPos3svARB"
 
 -- glWindowPos3svMESA ----------------------------------------------------------
 
+-- | This command is an alias for 'glWindowPos3sv'.
 glWindowPos3svMESA
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
@@ -48698,6 +49353,7 @@ ptr_glWindowPos3svMESA = unsafePerformIO $ getCommand "glWindowPos3svMESA"
 
 -- glWindowPos4dMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos4dvMESA'.
 glWindowPos4dMESA
   :: MonadIO m
   => GLdouble -- ^ @x@ of type @CoordD@.
@@ -48725,6 +49381,7 @@ ptr_glWindowPos4dvMESA = unsafePerformIO $ getCommand "glWindowPos4dvMESA"
 
 -- glWindowPos4fMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos4fvMESA'.
 glWindowPos4fMESA
   :: MonadIO m
   => GLfloat -- ^ @x@ of type @CoordF@.
@@ -48752,6 +49409,7 @@ ptr_glWindowPos4fvMESA = unsafePerformIO $ getCommand "glWindowPos4fvMESA"
 
 -- glWindowPos4iMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos4ivMESA'.
 glWindowPos4iMESA
   :: MonadIO m
   => GLint -- ^ @x@ of type @CoordI@.
@@ -48779,6 +49437,7 @@ ptr_glWindowPos4ivMESA = unsafePerformIO $ getCommand "glWindowPos4ivMESA"
 
 -- glWindowPos4sMESA -----------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glWindowPos4svMESA'.
 glWindowPos4sMESA
   :: MonadIO m
   => GLshort -- ^ @x@ of type @CoordS@.

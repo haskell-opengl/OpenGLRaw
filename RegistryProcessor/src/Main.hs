@@ -552,7 +552,7 @@ showCommand :: API -> Registry -> M.Map String String -> Command -> String
 showCommand api registry sigMap c =
   showString (take 80 ("-- " ++ name ++ " " ++ repeat '-') ++ "\n\n") .
 
-  showString man .
+  showString comment .
 
   showString (name ++ "\n") .
   showString ("  :: MonadIO m\n") .
@@ -572,11 +572,16 @@ showCommand api registry sigMap c =
         compactSignature = signature False
         signature withComment = showSignatureFromCommand registry c withComment
         urls = M.findWithDefault [] (api, CommandName name) manPageURLs
-        links = L.intercalate " or " (map renderURL urls)  ++ "\n"
+        links = L.intercalate " or " (map renderURL urls)
+        comment = case concat (man ++ ve ++ al) of
+                    ""  -> ""
+                    cs -> "-- |" ++ cs ++ "\n"
         man = case urls of
-                []  -> ""
-                [_] ->  "-- | Manual page for "  ++ links
-                _   ->  "-- | Manual pages for " ++ links
+                []  -> []
+                [_] -> [" Manual page for "  ++ links ++ "."]
+                _   -> [" Manual pages for " ++ links ++ "."]
+        ve = [ " The vector equivalent of this command is '" ++ unCommandName v ++ "'." | Just v <- [vecEquiv c] ]
+        al = [ " This command is an alias for '" ++ unCommandName a ++ "'." | Just a <- [alias c] ]
         renderURL (u, l) = "<" ++ u ++ " " ++ l ++ ">"
         args = [1 .. length (paramTypes c)] >>= \i -> " v" ++ show i
 
