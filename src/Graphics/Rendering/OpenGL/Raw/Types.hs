@@ -63,6 +63,7 @@ import Data.Int
 import Data.Word
 import Foreign.C.Types
 import Foreign.Ptr
+import Numeric.Half
 
 --------------------------------------------------------------------------------
 
@@ -121,7 +122,7 @@ type GLsync = Ptr ()
 type GLbitfield = CUInt
 
 -- | 16bit half-precision floating-point value encoded in an unsigned scalar.
-type GLhalf = CUShort
+type GLhalf = Half
 
 -- | 32bit floating-point value.
 type GLfloat = CFloat
@@ -167,9 +168,9 @@ type GLintptrARB = CPtrdiff
 
 type GLsizeiptrARB = CPtrdiff
 
-type GLhalfARB = CUShort
+type GLhalfARB = Half
 
-type GLhalfNV = CUShort
+type GLhalfNV = Half
 
 type GLDEBUGPROCAMD = FunPtr GLDEBUGPROCAMDFunc
 

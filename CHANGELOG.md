@@ -1,3 +1,7 @@
+2.6.0.0
+-------
+* Use the `Half` type from the `half` package.
+
 2.5.5.0
 -------
 * Added retrieval of version info and extensions.

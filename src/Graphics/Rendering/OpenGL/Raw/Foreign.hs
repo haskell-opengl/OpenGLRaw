@@ -19,6 +19,7 @@ module Graphics.Rendering.OpenGL.Raw.Foreign where
 import Foreign.C.Types
 import Foreign.Ptr
 import Graphics.Rendering.OpenGL.Raw.Types
+import Numeric.Half
 
 foreign import CALLCONV "dynamic" dyn201
   :: FunPtr (GLDEBUGPROC -> Ptr a -> IO ())

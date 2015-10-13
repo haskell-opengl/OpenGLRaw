@@ -161,6 +161,7 @@ printForeign sigMap = do
     SI.hPutStrLn h "import Foreign.C.Types"
     SI.hPutStrLn h "import Foreign.Ptr"
     SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
+    SI.hPutStrLn h "import Numeric.Half"
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . uncurry makeImportDynamic) (M.assocs sigMap)
 
