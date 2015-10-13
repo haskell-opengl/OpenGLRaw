@@ -1,6 +1,7 @@
 2.6.0.0
 -------
 * Use the `Half` type from the `half` package.
+* Updated OpenGL registry to r32110.
 
 2.5.5.0
 -------
