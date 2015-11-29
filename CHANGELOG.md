@@ -1,3 +1,10 @@
+2.6.1.0
+-------
+* Updated OpenGL registry to r32258. Note that the major version was
+  intentionally not bumped, because the signature change of
+  `glClearNamedFramebufferfi` was a bug fix, see the corresponding
+  [issue](https://www.khronos.org/bugzilla/show_bug.cgi?id=1394) on Khronos.
+
 2.6.0.0
 -------
 * Use the `Half` type from the `half` package.

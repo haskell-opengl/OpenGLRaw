@@ -6051,13 +6051,14 @@ glClearNamedFramebufferfi
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
   -> GLenum -- ^ @buffer@.
+  -> GLint -- ^ @drawbuffer@.
   -> GLfloat -- ^ @depth@.
   -> GLint -- ^ @stencil@.
   -> m ()
-glClearNamedFramebufferfi v1 v2 v3 v4 = liftIO $ dyn85 ptr_glClearNamedFramebufferfi v1 v2 v3 v4
+glClearNamedFramebufferfi v1 v2 v3 v4 v5 = liftIO $ dyn85 ptr_glClearNamedFramebufferfi v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glClearNamedFramebufferfi #-}
-ptr_glClearNamedFramebufferfi :: FunPtr (GLuint -> GLenum -> GLfloat -> GLint -> IO ())
+ptr_glClearNamedFramebufferfi :: FunPtr (GLuint -> GLenum -> GLint -> GLfloat -> GLint -> IO ())
 ptr_glClearNamedFramebufferfi = unsafePerformIO $ getCommand "glClearNamedFramebufferfi"
 
 -- glClearNamedFramebufferfv ---------------------------------------------------

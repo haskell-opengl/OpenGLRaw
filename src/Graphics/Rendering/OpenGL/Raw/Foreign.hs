@@ -2037,10 +2037,6 @@ foreign import CALLCONV "dynamic" dyn364
   :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr a -> IO ())
   ->         GLuint -> GLenum -> GLenum -> Ptr a -> IO ()
 
-foreign import CALLCONV "dynamic" dyn85
-  :: FunPtr (GLuint -> GLenum -> GLfloat -> GLint -> IO ())
-  ->         GLuint -> GLenum -> GLfloat -> GLint -> IO ()
-
 foreign import CALLCONV "dynamic" dyn483
   :: FunPtr (GLuint -> GLenum -> GLfloat -> IO ())
   ->         GLuint -> GLenum -> GLfloat -> IO ()
@@ -2076,6 +2072,10 @@ foreign import CALLCONV "dynamic" dyn414
 foreign import CALLCONV "dynamic" dyn270
   :: FunPtr (GLuint -> GLenum -> GLint -> GLenum -> Ptr GLint -> IO ())
   ->         GLuint -> GLenum -> GLint -> GLenum -> Ptr GLint -> IO ()
+
+foreign import CALLCONV "dynamic" dyn85
+  :: FunPtr (GLuint -> GLenum -> GLint -> GLfloat -> GLint -> IO ())
+  ->         GLuint -> GLenum -> GLint -> GLfloat -> GLint -> IO ()
 
 foreign import CALLCONV "dynamic" dyn188
   :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> IO ())
