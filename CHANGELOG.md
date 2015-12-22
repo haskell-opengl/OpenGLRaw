@@ -1,3 +1,7 @@
+2.6.1.1
+-------
+* Relaxed upper version bound for `transformers`.
+
 2.6.1.0
 -------
 * Updated OpenGL registry to r32258. Note that the major version was
