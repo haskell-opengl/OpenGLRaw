@@ -1,6 +1,8 @@
 3.0.0.0
 -------
-
+* Make the `OpenGLRaw` package even more similar to the `gl` package:
+  * Use pattern synonyms for OpenGL enums.
+  * Changed module name prefix from `Graphics.Rendering.OpenGL.Raw` to `Graphics.GL`.
 
 2.6.1.1
 -------
