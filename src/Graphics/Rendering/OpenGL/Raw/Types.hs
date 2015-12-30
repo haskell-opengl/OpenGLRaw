@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.Types
--- Copyright   :  (c) Sven Panne 2009-2015
+-- Copyright   :  (c) Sven Panne 2009-2016
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>

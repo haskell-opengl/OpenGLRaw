@@ -1,3 +1,7 @@
+3.0.0.0
+-------
+
+
 2.6.1.1
 -------
 * Relaxed upper version bound for `transformers`.

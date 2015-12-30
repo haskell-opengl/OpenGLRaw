@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.Rendering.OpenGL.Raw.NV.TexgenReflection
--- Copyright   :  (c) Sven Panne 2015
+-- Copyright   :  (c) Sven Panne 2016
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>

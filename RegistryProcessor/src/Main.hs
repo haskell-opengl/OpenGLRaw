@@ -468,7 +468,7 @@ printModuleHeader h mbPragma moduleName comments = do
   SI.hPutStrLn h "--------------------------------------------------------------------------------"
   SI.hPutStrLn h "-- |"
   SI.hPutStrLn h $ "-- Module      :  " ++ moduleName
-  SI.hPutStrLn h "-- Copyright   :  (c) Sven Panne 2015"
+  SI.hPutStrLn h "-- Copyright   :  (c) Sven Panne 2016"
   SI.hPutStrLn h "-- License     :  BSD3"
   SI.hPutStrLn h "--"
   SI.hPutStrLn h "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
