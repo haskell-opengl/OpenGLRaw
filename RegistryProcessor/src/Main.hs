@@ -42,7 +42,7 @@ openGLVersions api = map read $ case unAPI api of
             "3.0", "3.1", "3.2", "3.3",
             "4.0", "4.1", "4.2", "4.3", "4.4", "4.5" ]
   "gles1" -> [ "1.0" ]
-  "gles2" -> [ "2.0", "3.0", "3.1" ]
+  "gles2" -> [ "2.0", "3.0", "3.1", "3.2" ]
   a -> error $ "unknown API " ++ a
 
 latestVersion :: API -> Version
