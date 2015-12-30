@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.KHR.BlendEquationAdvancedCoherent
@@ -15,7 +16,7 @@ module Graphics.GL.KHR.BlendEquationAdvancedCoherent (
   glGetKHRBlendEquationAdvancedCoherent,
   gl_KHR_blend_equation_advanced_coherent,
   -- * Enums
-  gl_BLEND_ADVANCED_COHERENT_KHR
+  pattern GL_BLEND_ADVANCED_COHERENT_KHR
 ) where
 
 import Graphics.GL.ExtensionPredicates

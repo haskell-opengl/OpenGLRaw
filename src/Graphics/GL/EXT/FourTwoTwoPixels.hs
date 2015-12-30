@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.FourTwoTwoPixels
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.FourTwoTwoPixels (
   glGetEXTFourTwoTwoPixels,
   gl_EXT_422_pixels,
   -- * Enums
-  gl_422_AVERAGE_EXT,
-  gl_422_EXT,
-  gl_422_REV_AVERAGE_EXT,
-  gl_422_REV_EXT
+  pattern GL_422_AVERAGE_EXT,
+  pattern GL_422_EXT,
+  pattern GL_422_REV_AVERAGE_EXT,
+  pattern GL_422_REV_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

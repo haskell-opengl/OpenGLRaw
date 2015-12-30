@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureRGB10A2UI
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.TextureRGB10A2UI (
   glGetARBTextureRGB10A2UI,
   gl_ARB_texture_rgb10_a2ui,
   -- * Enums
-  gl_RGB10_A2UI
+  pattern GL_RGB10_A2UI
 ) where
 
 import Graphics.GL.ExtensionPredicates

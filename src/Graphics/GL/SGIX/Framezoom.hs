@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Framezoom
@@ -15,9 +16,9 @@ module Graphics.GL.SGIX.Framezoom (
   glGetSGIXFramezoom,
   gl_SGIX_framezoom,
   -- * Enums
-  gl_FRAMEZOOM_FACTOR_SGIX,
-  gl_FRAMEZOOM_SGIX,
-  gl_MAX_FRAMEZOOM_FACTOR_SGIX,
+  pattern GL_FRAMEZOOM_FACTOR_SGIX,
+  pattern GL_FRAMEZOOM_SGIX,
+  pattern GL_MAX_FRAMEZOOM_FACTOR_SGIX,
   -- * Functions
   glFrameZoomSGIX
 ) where

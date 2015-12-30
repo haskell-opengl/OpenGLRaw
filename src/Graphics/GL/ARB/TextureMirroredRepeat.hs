@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureMirroredRepeat
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.TextureMirroredRepeat (
   glGetARBTextureMirroredRepeat,
   gl_ARB_texture_mirrored_repeat,
   -- * Enums
-  gl_MIRRORED_REPEAT_ARB
+  pattern GL_MIRRORED_REPEAT_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

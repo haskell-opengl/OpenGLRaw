@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.SharedTexturePalette
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.SharedTexturePalette (
   glGetEXTSharedTexturePalette,
   gl_EXT_shared_texture_palette,
   -- * Enums
-  gl_SHARED_TEXTURE_PALETTE_EXT
+  pattern GL_SHARED_TEXTURE_PALETTE_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

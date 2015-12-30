@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TexgenEmboss
@@ -15,9 +16,9 @@ module Graphics.GL.NV.TexgenEmboss (
   glGetNVTexgenEmboss,
   gl_NV_texgen_emboss,
   -- * Enums
-  gl_EMBOSS_CONSTANT_NV,
-  gl_EMBOSS_LIGHT_NV,
-  gl_EMBOSS_MAP_NV
+  pattern GL_EMBOSS_CONSTANT_NV,
+  pattern GL_EMBOSS_LIGHT_NV,
+  pattern GL_EMBOSS_MAP_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.FramebufferMultisample
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.FramebufferMultisample (
   glGetEXTFramebufferMultisample,
   gl_EXT_framebuffer_multisample,
   -- * Enums
-  gl_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT,
-  gl_MAX_SAMPLES_EXT,
-  gl_RENDERBUFFER_SAMPLES_EXT,
+  pattern GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT,
+  pattern GL_MAX_SAMPLES_EXT,
+  pattern GL_RENDERBUFFER_SAMPLES_EXT,
   -- * Functions
   glRenderbufferStorageMultisampleEXT
 ) where

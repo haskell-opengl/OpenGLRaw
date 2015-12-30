@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGI.ColorMatrix
@@ -15,17 +16,17 @@ module Graphics.GL.SGI.ColorMatrix (
   glGetSGIColorMatrix,
   gl_SGI_color_matrix,
   -- * Enums
-  gl_COLOR_MATRIX_SGI,
-  gl_COLOR_MATRIX_STACK_DEPTH_SGI,
-  gl_MAX_COLOR_MATRIX_STACK_DEPTH_SGI,
-  gl_POST_COLOR_MATRIX_ALPHA_BIAS_SGI,
-  gl_POST_COLOR_MATRIX_ALPHA_SCALE_SGI,
-  gl_POST_COLOR_MATRIX_BLUE_BIAS_SGI,
-  gl_POST_COLOR_MATRIX_BLUE_SCALE_SGI,
-  gl_POST_COLOR_MATRIX_GREEN_BIAS_SGI,
-  gl_POST_COLOR_MATRIX_GREEN_SCALE_SGI,
-  gl_POST_COLOR_MATRIX_RED_BIAS_SGI,
-  gl_POST_COLOR_MATRIX_RED_SCALE_SGI
+  pattern GL_COLOR_MATRIX_SGI,
+  pattern GL_COLOR_MATRIX_STACK_DEPTH_SGI,
+  pattern GL_MAX_COLOR_MATRIX_STACK_DEPTH_SGI,
+  pattern GL_POST_COLOR_MATRIX_ALPHA_BIAS_SGI,
+  pattern GL_POST_COLOR_MATRIX_ALPHA_SCALE_SGI,
+  pattern GL_POST_COLOR_MATRIX_BLUE_BIAS_SGI,
+  pattern GL_POST_COLOR_MATRIX_BLUE_SCALE_SGI,
+  pattern GL_POST_COLOR_MATRIX_GREEN_BIAS_SGI,
+  pattern GL_POST_COLOR_MATRIX_GREEN_SCALE_SGI,
+  pattern GL_POST_COLOR_MATRIX_RED_BIAS_SGI,
+  pattern GL_POST_COLOR_MATRIX_RED_SCALE_SGI
 ) where
 
 import Graphics.GL.ExtensionPredicates

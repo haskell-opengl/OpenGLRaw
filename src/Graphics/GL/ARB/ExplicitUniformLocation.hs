@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ExplicitUniformLocation
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.ExplicitUniformLocation (
   glGetARBExplicitUniformLocation,
   gl_ARB_explicit_uniform_location,
   -- * Enums
-  gl_MAX_UNIFORM_LOCATIONS
+  pattern GL_MAX_UNIFORM_LOCATIONS
 ) where
 
 import Graphics.GL.ExtensionPredicates

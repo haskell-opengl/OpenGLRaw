@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.PolygonOffsetClamp
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.PolygonOffsetClamp (
   glGetEXTPolygonOffsetClamp,
   gl_EXT_polygon_offset_clamp,
   -- * Enums
-  gl_POLYGON_OFFSET_CLAMP_EXT,
+  pattern GL_POLYGON_OFFSET_CLAMP_EXT,
   -- * Functions
   glPolygonOffsetClampEXT
 ) where

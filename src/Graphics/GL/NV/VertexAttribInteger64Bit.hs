@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.VertexAttribInteger64Bit
@@ -15,8 +16,8 @@ module Graphics.GL.NV.VertexAttribInteger64Bit (
   glGetNVVertexAttribInteger64Bit,
   gl_NV_vertex_attrib_integer_64bit,
   -- * Enums
-  gl_INT64_NV,
-  gl_UNSIGNED_INT64_NV,
+  pattern GL_INT64_NV,
+  pattern GL_UNSIGNED_INT64_NV,
   -- * Functions
   glGetVertexAttribLi64vNV,
   glGetVertexAttribLui64vNV,

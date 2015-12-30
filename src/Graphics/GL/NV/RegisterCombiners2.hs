@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.RegisterCombiners2
@@ -15,7 +16,7 @@ module Graphics.GL.NV.RegisterCombiners2 (
   glGetNVRegisterCombiners2,
   gl_NV_register_combiners2,
   -- * Enums
-  gl_PER_STAGE_CONSTANTS_NV,
+  pattern GL_PER_STAGE_CONSTANTS_NV,
   -- * Functions
   glCombinerStageParameterfvNV,
   glGetCombinerStageParameterfvNV

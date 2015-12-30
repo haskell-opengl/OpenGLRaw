@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.DeepTexture3D
@@ -15,8 +16,8 @@ module Graphics.GL.NV.DeepTexture3D (
   glGetNVDeepTexture3D,
   gl_NV_deep_texture3D,
   -- * Enums
-  gl_MAX_DEEP_3D_TEXTURE_DEPTH_NV,
-  gl_MAX_DEEP_3D_TEXTURE_WIDTH_HEIGHT_NV
+  pattern GL_MAX_DEEP_3D_TEXTURE_DEPTH_NV,
+  pattern GL_MAX_DEEP_3D_TEXTURE_WIDTH_HEIGHT_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.GPUProgram4
@@ -15,14 +16,14 @@ module Graphics.GL.NV.GPUProgram4 (
   glGetNVGPUProgram4,
   gl_NV_gpu_program4,
   -- * Enums
-  gl_MAX_PROGRAM_ATTRIB_COMPONENTS_NV,
-  gl_MAX_PROGRAM_GENERIC_ATTRIBS_NV,
-  gl_MAX_PROGRAM_GENERIC_RESULTS_NV,
-  gl_MAX_PROGRAM_RESULT_COMPONENTS_NV,
-  gl_MAX_PROGRAM_TEXEL_OFFSET_NV,
-  gl_MIN_PROGRAM_TEXEL_OFFSET_NV,
-  gl_PROGRAM_ATTRIB_COMPONENTS_NV,
-  gl_PROGRAM_RESULT_COMPONENTS_NV,
+  pattern GL_MAX_PROGRAM_ATTRIB_COMPONENTS_NV,
+  pattern GL_MAX_PROGRAM_GENERIC_ATTRIBS_NV,
+  pattern GL_MAX_PROGRAM_GENERIC_RESULTS_NV,
+  pattern GL_MAX_PROGRAM_RESULT_COMPONENTS_NV,
+  pattern GL_MAX_PROGRAM_TEXEL_OFFSET_NV,
+  pattern GL_MIN_PROGRAM_TEXEL_OFFSET_NV,
+  pattern GL_PROGRAM_ATTRIB_COMPONENTS_NV,
+  pattern GL_PROGRAM_RESULT_COMPONENTS_NV,
   -- * Functions
   glGetProgramEnvParameterIivNV,
   glGetProgramEnvParameterIuivNV,

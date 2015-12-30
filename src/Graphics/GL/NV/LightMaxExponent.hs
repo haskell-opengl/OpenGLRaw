@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.LightMaxExponent
@@ -15,8 +16,8 @@ module Graphics.GL.NV.LightMaxExponent (
   glGetNVLightMaxExponent,
   gl_NV_light_max_exponent,
   -- * Enums
-  gl_MAX_SHININESS_NV,
-  gl_MAX_SPOT_EXPONENT_NV
+  pattern GL_MAX_SHININESS_NV,
+  pattern GL_MAX_SPOT_EXPONENT_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

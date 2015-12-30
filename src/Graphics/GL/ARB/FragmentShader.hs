@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.FragmentShader
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.FragmentShader (
   glGetARBFragmentShader,
   gl_ARB_fragment_shader,
   -- * Enums
-  gl_FRAGMENT_SHADER_ARB,
-  gl_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB,
-  gl_MAX_FRAGMENT_UNIFORM_COMPONENTS_ARB
+  pattern GL_FRAGMENT_SHADER_ARB,
+  pattern GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB,
+  pattern GL_MAX_FRAGMENT_UNIFORM_COMPONENTS_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

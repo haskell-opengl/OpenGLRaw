@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.VertexProgram4
@@ -15,7 +16,7 @@ module Graphics.GL.NV.VertexProgram4 (
   glGetNVVertexProgram4,
   gl_NV_vertex_program4,
   -- * Enums
-  gl_VERTEX_ATTRIB_ARRAY_INTEGER_NV,
+  pattern GL_VERTEX_ATTRIB_ARRAY_INTEGER_NV,
   -- * Functions
   glGetVertexAttribIivEXT,
   glGetVertexAttribIuivEXT,

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.DepthClamp
@@ -15,7 +16,7 @@ module Graphics.GL.NV.DepthClamp (
   glGetNVDepthClamp,
   gl_NV_depth_clamp,
   -- * Enums
-  gl_DEPTH_CLAMP_NV
+  pattern GL_DEPTH_CLAMP_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

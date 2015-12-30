@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.VertexProgramEvaluators
@@ -15,16 +16,16 @@ module Graphics.GL.APPLE.VertexProgramEvaluators (
   glGetAPPLEVertexProgramEvaluators,
   gl_APPLE_vertex_program_evaluators,
   -- * Enums
-  gl_VERTEX_ATTRIB_MAP1_APPLE,
-  gl_VERTEX_ATTRIB_MAP1_COEFF_APPLE,
-  gl_VERTEX_ATTRIB_MAP1_DOMAIN_APPLE,
-  gl_VERTEX_ATTRIB_MAP1_ORDER_APPLE,
-  gl_VERTEX_ATTRIB_MAP1_SIZE_APPLE,
-  gl_VERTEX_ATTRIB_MAP2_APPLE,
-  gl_VERTEX_ATTRIB_MAP2_COEFF_APPLE,
-  gl_VERTEX_ATTRIB_MAP2_DOMAIN_APPLE,
-  gl_VERTEX_ATTRIB_MAP2_ORDER_APPLE,
-  gl_VERTEX_ATTRIB_MAP2_SIZE_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP1_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP1_COEFF_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP1_DOMAIN_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP1_ORDER_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP1_SIZE_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP2_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP2_COEFF_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP2_DOMAIN_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP2_ORDER_APPLE,
+  pattern GL_VERTEX_ATTRIB_MAP2_SIZE_APPLE,
   -- * Functions
   glDisableVertexAttribAPPLE,
   glEnableVertexAttribAPPLE,

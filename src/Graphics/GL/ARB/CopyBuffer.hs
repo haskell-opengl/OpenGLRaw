@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.CopyBuffer
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.CopyBuffer (
   glGetARBCopyBuffer,
   gl_ARB_copy_buffer,
   -- * Enums
-  gl_COPY_READ_BUFFER,
-  gl_COPY_WRITE_BUFFER,
+  pattern GL_COPY_READ_BUFFER,
+  pattern GL_COPY_WRITE_BUFFER,
   -- * Functions
   glCopyBufferSubData
 ) where

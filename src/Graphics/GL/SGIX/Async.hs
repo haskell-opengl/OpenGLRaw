@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Async
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.Async (
   glGetSGIXAsync,
   gl_SGIX_async,
   -- * Enums
-  gl_ASYNC_MARKER_SGIX,
+  pattern GL_ASYNC_MARKER_SGIX,
   -- * Functions
   glAsyncMarkerSGIX,
   glDeleteAsyncMarkersSGIX,

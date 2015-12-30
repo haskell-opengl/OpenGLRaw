@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.TextureLOD
@@ -15,10 +16,10 @@ module Graphics.GL.SGIS.TextureLOD (
   glGetSGISTextureLOD,
   gl_SGIS_texture_lod,
   -- * Enums
-  gl_TEXTURE_BASE_LEVEL_SGIS,
-  gl_TEXTURE_MAX_LEVEL_SGIS,
-  gl_TEXTURE_MAX_LOD_SGIS,
-  gl_TEXTURE_MIN_LOD_SGIS
+  pattern GL_TEXTURE_BASE_LEVEL_SGIS,
+  pattern GL_TEXTURE_MAX_LEVEL_SGIS,
+  pattern GL_TEXTURE_MAX_LOD_SGIS,
+  pattern GL_TEXTURE_MIN_LOD_SGIS
 ) where
 
 import Graphics.GL.ExtensionPredicates

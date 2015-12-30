@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.WIN.SpecularFog
@@ -15,7 +16,7 @@ module Graphics.GL.WIN.SpecularFog (
   glGetWINSpecularFog,
   gl_WIN_specular_fog,
   -- * Enums
-  gl_FOG_SPECULAR_TEXTURE_WIN
+  pattern GL_FOG_SPECULAR_TEXTURE_WIN
 ) where
 
 import Graphics.GL.ExtensionPredicates

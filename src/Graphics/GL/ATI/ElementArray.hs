@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.ElementArray
@@ -15,9 +16,9 @@ module Graphics.GL.ATI.ElementArray (
   glGetATIElementArray,
   gl_ATI_element_array,
   -- * Enums
-  gl_ELEMENT_ARRAY_ATI,
-  gl_ELEMENT_ARRAY_POINTER_ATI,
-  gl_ELEMENT_ARRAY_TYPE_ATI,
+  pattern GL_ELEMENT_ARRAY_ATI,
+  pattern GL_ELEMENT_ARRAY_POINTER_ATI,
+  pattern GL_ELEMENT_ARRAY_TYPE_ATI,
   -- * Functions
   glDrawElementArrayATI,
   glDrawRangeElementArrayATI,

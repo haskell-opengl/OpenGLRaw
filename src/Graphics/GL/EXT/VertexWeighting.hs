@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.VertexWeighting
@@ -15,19 +16,19 @@ module Graphics.GL.EXT.VertexWeighting (
   glGetEXTVertexWeighting,
   gl_EXT_vertex_weighting,
   -- * Enums
-  gl_CURRENT_VERTEX_WEIGHT_EXT,
-  gl_MODELVIEW0_EXT,
-  gl_MODELVIEW0_MATRIX_EXT,
-  gl_MODELVIEW0_STACK_DEPTH_EXT,
-  gl_MODELVIEW1_EXT,
-  gl_MODELVIEW1_MATRIX_EXT,
-  gl_MODELVIEW1_STACK_DEPTH_EXT,
-  gl_VERTEX_WEIGHTING_EXT,
-  gl_VERTEX_WEIGHT_ARRAY_EXT,
-  gl_VERTEX_WEIGHT_ARRAY_POINTER_EXT,
-  gl_VERTEX_WEIGHT_ARRAY_SIZE_EXT,
-  gl_VERTEX_WEIGHT_ARRAY_STRIDE_EXT,
-  gl_VERTEX_WEIGHT_ARRAY_TYPE_EXT,
+  pattern GL_CURRENT_VERTEX_WEIGHT_EXT,
+  pattern GL_MODELVIEW0_EXT,
+  pattern GL_MODELVIEW0_MATRIX_EXT,
+  pattern GL_MODELVIEW0_STACK_DEPTH_EXT,
+  pattern GL_MODELVIEW1_EXT,
+  pattern GL_MODELVIEW1_MATRIX_EXT,
+  pattern GL_MODELVIEW1_STACK_DEPTH_EXT,
+  pattern GL_VERTEX_WEIGHTING_EXT,
+  pattern GL_VERTEX_WEIGHT_ARRAY_EXT,
+  pattern GL_VERTEX_WEIGHT_ARRAY_POINTER_EXT,
+  pattern GL_VERTEX_WEIGHT_ARRAY_SIZE_EXT,
+  pattern GL_VERTEX_WEIGHT_ARRAY_STRIDE_EXT,
+  pattern GL_VERTEX_WEIGHT_ARRAY_TYPE_EXT,
   -- * Functions
   glVertexWeightPointerEXT,
   glVertexWeightfEXT,

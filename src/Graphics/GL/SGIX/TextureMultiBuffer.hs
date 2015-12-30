@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.TextureMultiBuffer
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.TextureMultiBuffer (
   glGetSGIXTextureMultiBuffer,
   gl_SGIX_texture_multi_buffer,
   -- * Enums
-  gl_TEXTURE_MULTI_BUFFER_HINT_SGIX
+  pattern GL_TEXTURE_MULTI_BUFFER_HINT_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

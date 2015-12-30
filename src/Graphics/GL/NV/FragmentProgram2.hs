@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.FragmentProgram2
@@ -15,11 +16,11 @@ module Graphics.GL.NV.FragmentProgram2 (
   glGetNVFragmentProgram2,
   gl_NV_fragment_program2,
   -- * Enums
-  gl_MAX_PROGRAM_CALL_DEPTH_NV,
-  gl_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV,
-  gl_MAX_PROGRAM_IF_DEPTH_NV,
-  gl_MAX_PROGRAM_LOOP_COUNT_NV,
-  gl_MAX_PROGRAM_LOOP_DEPTH_NV
+  pattern GL_MAX_PROGRAM_CALL_DEPTH_NV,
+  pattern GL_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV,
+  pattern GL_MAX_PROGRAM_IF_DEPTH_NV,
+  pattern GL_MAX_PROGRAM_LOOP_COUNT_NV,
+  pattern GL_MAX_PROGRAM_LOOP_DEPTH_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

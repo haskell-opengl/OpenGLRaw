@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.TransformHint
@@ -15,7 +16,7 @@ module Graphics.GL.APPLE.TransformHint (
   glGetAPPLETransformHint,
   gl_APPLE_transform_hint,
   -- * Enums
-  gl_TRANSFORM_HINT_APPLE
+  pattern GL_TRANSFORM_HINT_APPLE
 ) where
 
 import Graphics.GL.ExtensionPredicates

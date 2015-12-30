@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.PointLineTexgen
@@ -15,14 +16,14 @@ module Graphics.GL.SGIS.PointLineTexgen (
   glGetSGISPointLineTexgen,
   gl_SGIS_point_line_texgen,
   -- * Enums
-  gl_EYE_DISTANCE_TO_LINE_SGIS,
-  gl_EYE_DISTANCE_TO_POINT_SGIS,
-  gl_EYE_LINE_SGIS,
-  gl_EYE_POINT_SGIS,
-  gl_OBJECT_DISTANCE_TO_LINE_SGIS,
-  gl_OBJECT_DISTANCE_TO_POINT_SGIS,
-  gl_OBJECT_LINE_SGIS,
-  gl_OBJECT_POINT_SGIS
+  pattern GL_EYE_DISTANCE_TO_LINE_SGIS,
+  pattern GL_EYE_DISTANCE_TO_POINT_SGIS,
+  pattern GL_EYE_LINE_SGIS,
+  pattern GL_EYE_POINT_SGIS,
+  pattern GL_OBJECT_DISTANCE_TO_LINE_SGIS,
+  pattern GL_OBJECT_DISTANCE_TO_POINT_SGIS,
+  pattern GL_OBJECT_LINE_SGIS,
+  pattern GL_OBJECT_POINT_SGIS
 ) where
 
 import Graphics.GL.ExtensionPredicates

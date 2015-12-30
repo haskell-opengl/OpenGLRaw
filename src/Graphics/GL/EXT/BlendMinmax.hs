@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.BlendMinmax
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.BlendMinmax (
   glGetEXTBlendMinmax,
   gl_EXT_blend_minmax,
   -- * Enums
-  gl_BLEND_EQUATION_EXT,
-  gl_FUNC_ADD_EXT,
-  gl_MAX_EXT,
-  gl_MIN_EXT,
+  pattern GL_BLEND_EQUATION_EXT,
+  pattern GL_FUNC_ADD_EXT,
+  pattern GL_MAX_EXT,
+  pattern GL_MIN_EXT,
   -- * Functions
   glBlendEquationEXT
 ) where

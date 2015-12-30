@@ -77,7 +77,7 @@ printTokens api registry = do
   let comment =
         ["All enumeration tokens from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule ["Tokens"] Nothing comment $ \moduleName h -> do
+  startModule ["Tokens"] (Just "{-# LANGUAGE PatternSynonyms #-}") comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
@@ -369,8 +369,9 @@ separate f = L.intercalate ",\n" . map ("  " ++) . map f
 
 -- Note that we handle features just like extensions.
 printExtension :: [String] -> Maybe ExtensionName -> ExtensionParts -> IO ()
-printExtension moduleNameSuffix mbExtName (ts, es, cs) =
-  startModule moduleNameSuffix Nothing [] $ \moduleName h -> do
+printExtension moduleNameSuffix mbExtName (ts, es, cs) = do
+  let pragma = if null es then Nothing else Just "{-# LANGUAGE PatternSynonyms #-}"
+  startModule moduleNameSuffix pragma [] $ \moduleName h -> do
     SI.hPutStrLn h $ "module "++ moduleName ++ " ("
     flip (maybe (return ())) mbExtName $ \extName -> do
       SI.hPutStrLn h "  -- * Extension Support"
@@ -382,7 +383,7 @@ printExtension moduleNameSuffix mbExtName (ts, es, cs) =
       SI.hPutStrLn h $ if null es && null cs then "" else ","
     CM.unless (null es) $ do
       SI.hPutStrLn h "  -- * Enums"
-      SI.hPutStr h $ separate (unEnumName . enumName) es
+      SI.hPutStr h $ separate (("pattern " ++) . unEnumName . enumName) es
       SI.hPutStrLn h $ if null cs then "" else ","
     CM.unless (null cs) $ do
       SI.hPutStrLn h "  -- * Functions"
@@ -545,8 +546,8 @@ s `matches` Just t = s == t
 
 convertEnum :: Enum' -> [String]
 convertEnum e =
-  [ n ++ " :: " ++ unTypeName (enumType e)
-  , n ++ " = " ++ unEnumValue (enumValue e) ]
+  [ "pattern " ++ n ++ " :: " ++ unTypeName (enumType e)
+  , "pattern " ++ n ++ " = " ++ unEnumValue (enumValue e) ]
   where n = unEnumName . enumName $ e
 
 showCommand :: API -> Registry -> M.Map String String -> Command -> String

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ThreeDFX.TextureCompressionFXT1
@@ -15,8 +16,8 @@ module Graphics.GL.ThreeDFX.TextureCompressionFXT1 (
   glGetThreeDFXTextureCompressionFXT1,
   gl_3DFX_texture_compression_FXT1,
   -- * Enums
-  gl_COMPRESSED_RGBA_FXT1_3DFX,
-  gl_COMPRESSED_RGB_FXT1_3DFX
+  pattern GL_COMPRESSED_RGBA_FXT1_3DFX,
+  pattern GL_COMPRESSED_RGB_FXT1_3DFX
 ) where
 
 import Graphics.GL.ExtensionPredicates

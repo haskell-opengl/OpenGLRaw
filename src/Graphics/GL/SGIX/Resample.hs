@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Resample
@@ -15,11 +16,11 @@ module Graphics.GL.SGIX.Resample (
   glGetSGIXResample,
   gl_SGIX_resample,
   -- * Enums
-  gl_PACK_RESAMPLE_SGIX,
-  gl_RESAMPLE_DECIMATE_SGIX,
-  gl_RESAMPLE_REPLICATE_SGIX,
-  gl_RESAMPLE_ZERO_FILL_SGIX,
-  gl_UNPACK_RESAMPLE_SGIX
+  pattern GL_PACK_RESAMPLE_SGIX,
+  pattern GL_RESAMPLE_DECIMATE_SGIX,
+  pattern GL_RESAMPLE_REPLICATE_SGIX,
+  pattern GL_RESAMPLE_ZERO_FILL_SGIX,
+  pattern GL_UNPACK_RESAMPLE_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

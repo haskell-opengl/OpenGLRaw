@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.PNTriangles
@@ -15,15 +16,15 @@ module Graphics.GL.ATI.PNTriangles (
   glGetATIPNTriangles,
   gl_ATI_pn_triangles,
   -- * Enums
-  gl_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI,
-  gl_PN_TRIANGLES_ATI,
-  gl_PN_TRIANGLES_NORMAL_MODE_ATI,
-  gl_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI,
-  gl_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI,
-  gl_PN_TRIANGLES_POINT_MODE_ATI,
-  gl_PN_TRIANGLES_POINT_MODE_CUBIC_ATI,
-  gl_PN_TRIANGLES_POINT_MODE_LINEAR_ATI,
-  gl_PN_TRIANGLES_TESSELATION_LEVEL_ATI,
+  pattern GL_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI,
+  pattern GL_PN_TRIANGLES_ATI,
+  pattern GL_PN_TRIANGLES_NORMAL_MODE_ATI,
+  pattern GL_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI,
+  pattern GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI,
+  pattern GL_PN_TRIANGLES_POINT_MODE_ATI,
+  pattern GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI,
+  pattern GL_PN_TRIANGLES_POINT_MODE_LINEAR_ATI,
+  pattern GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI,
   -- * Functions
   glPNTrianglesfATI,
   glPNTrianglesiATI

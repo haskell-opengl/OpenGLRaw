@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.VertexArrayObject
@@ -15,14 +16,14 @@ module Graphics.GL.ATI.VertexArrayObject (
   glGetATIVertexArrayObject,
   gl_ATI_vertex_array_object,
   -- * Enums
-  gl_ARRAY_OBJECT_BUFFER_ATI,
-  gl_ARRAY_OBJECT_OFFSET_ATI,
-  gl_DISCARD_ATI,
-  gl_DYNAMIC_ATI,
-  gl_OBJECT_BUFFER_SIZE_ATI,
-  gl_OBJECT_BUFFER_USAGE_ATI,
-  gl_PRESERVE_ATI,
-  gl_STATIC_ATI,
+  pattern GL_ARRAY_OBJECT_BUFFER_ATI,
+  pattern GL_ARRAY_OBJECT_OFFSET_ATI,
+  pattern GL_DISCARD_ATI,
+  pattern GL_DYNAMIC_ATI,
+  pattern GL_OBJECT_BUFFER_SIZE_ATI,
+  pattern GL_OBJECT_BUFFER_USAGE_ATI,
+  pattern GL_PRESERVE_ATI,
+  pattern GL_STATIC_ATI,
   -- * Functions
   glArrayObjectATI,
   glFreeObjectBufferATI,

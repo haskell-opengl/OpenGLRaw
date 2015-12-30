@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.IBM.CullVertex
@@ -15,7 +16,7 @@ module Graphics.GL.IBM.CullVertex (
   glGetIBMCullVertex,
   gl_IBM_cull_vertex,
   -- * Enums
-  gl_CULL_VERTEX_IBM
+  pattern GL_CULL_VERTEX_IBM
 ) where
 
 import Graphics.GL.ExtensionPredicates

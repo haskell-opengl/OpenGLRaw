@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.FramebufferBlit
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.FramebufferBlit (
   glGetEXTFramebufferBlit,
   gl_EXT_framebuffer_blit,
   -- * Enums
-  gl_DRAW_FRAMEBUFFER_BINDING_EXT,
-  gl_DRAW_FRAMEBUFFER_EXT,
-  gl_READ_FRAMEBUFFER_BINDING_EXT,
-  gl_READ_FRAMEBUFFER_EXT,
+  pattern GL_DRAW_FRAMEBUFFER_BINDING_EXT,
+  pattern GL_DRAW_FRAMEBUFFER_EXT,
+  pattern GL_READ_FRAMEBUFFER_BINDING_EXT,
+  pattern GL_READ_FRAMEBUFFER_EXT,
   -- * Functions
   glBlitFramebufferEXT
 ) where

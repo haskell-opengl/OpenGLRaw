@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SUN.SliceAccum
@@ -15,7 +16,7 @@ module Graphics.GL.SUN.SliceAccum (
   glGetSUNSliceAccum,
   gl_SUN_slice_accum,
   -- * Enums
-  gl_SLICE_ACCUM_SUN
+  pattern GL_SLICE_ACCUM_SUN
 ) where
 
 import Graphics.GL.ExtensionPredicates

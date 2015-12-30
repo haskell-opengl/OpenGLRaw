@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.VertexProgram2Option
@@ -15,8 +16,8 @@ module Graphics.GL.NV.VertexProgram2Option (
   glGetNVVertexProgram2Option,
   gl_NV_vertex_program2_option,
   -- * Enums
-  gl_MAX_PROGRAM_CALL_DEPTH_NV,
-  gl_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV
+  pattern GL_MAX_PROGRAM_CALL_DEPTH_NV,
+  pattern GL_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

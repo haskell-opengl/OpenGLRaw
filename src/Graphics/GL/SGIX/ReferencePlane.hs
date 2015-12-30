@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.ReferencePlane
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.ReferencePlane (
   glGetSGIXReferencePlane,
   gl_SGIX_reference_plane,
   -- * Enums
-  gl_REFERENCE_PLANE_EQUATION_SGIX,
-  gl_REFERENCE_PLANE_SGIX,
+  pattern GL_REFERENCE_PLANE_EQUATION_SGIX,
+  pattern GL_REFERENCE_PLANE_SGIX,
   -- * Functions
   glReferencePlaneSGIX
 ) where

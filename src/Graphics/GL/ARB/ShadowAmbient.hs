@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ShadowAmbient
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.ShadowAmbient (
   glGetARBShadowAmbient,
   gl_ARB_shadow_ambient,
   -- * Enums
-  gl_TEXTURE_COMPARE_FAIL_VALUE_ARB
+  pattern GL_TEXTURE_COMPARE_FAIL_VALUE_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

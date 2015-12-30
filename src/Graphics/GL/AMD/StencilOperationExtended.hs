@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.StencilOperationExtended
@@ -15,10 +16,10 @@ module Graphics.GL.AMD.StencilOperationExtended (
   glGetAMDStencilOperationExtended,
   gl_AMD_stencil_operation_extended,
   -- * Enums
-  gl_REPLACE_VALUE_AMD,
-  gl_SET_AMD,
-  gl_STENCIL_BACK_OP_VALUE_AMD,
-  gl_STENCIL_OP_VALUE_AMD,
+  pattern GL_REPLACE_VALUE_AMD,
+  pattern GL_SET_AMD,
+  pattern GL_STENCIL_BACK_OP_VALUE_AMD,
+  pattern GL_STENCIL_OP_VALUE_AMD,
   -- * Functions
   glStencilOpValueAMD
 ) where

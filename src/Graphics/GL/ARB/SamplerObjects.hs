@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.SamplerObjects
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.SamplerObjects (
   glGetARBSamplerObjects,
   gl_ARB_sampler_objects,
   -- * Enums
-  gl_SAMPLER_BINDING,
+  pattern GL_SAMPLER_BINDING,
   -- * Functions
   glBindSampler,
   glDeleteSamplers,

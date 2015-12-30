@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.PixelTransform
@@ -15,15 +16,15 @@ module Graphics.GL.EXT.PixelTransform (
   glGetEXTPixelTransform,
   gl_EXT_pixel_transform,
   -- * Enums
-  gl_AVERAGE_EXT,
-  gl_CUBIC_EXT,
-  gl_MAX_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT,
-  gl_PIXEL_CUBIC_WEIGHT_EXT,
-  gl_PIXEL_MAG_FILTER_EXT,
-  gl_PIXEL_MIN_FILTER_EXT,
-  gl_PIXEL_TRANSFORM_2D_EXT,
-  gl_PIXEL_TRANSFORM_2D_MATRIX_EXT,
-  gl_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT,
+  pattern GL_AVERAGE_EXT,
+  pattern GL_CUBIC_EXT,
+  pattern GL_MAX_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT,
+  pattern GL_PIXEL_CUBIC_WEIGHT_EXT,
+  pattern GL_PIXEL_MAG_FILTER_EXT,
+  pattern GL_PIXEL_MIN_FILTER_EXT,
+  pattern GL_PIXEL_TRANSFORM_2D_EXT,
+  pattern GL_PIXEL_TRANSFORM_2D_MATRIX_EXT,
+  pattern GL_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT,
   -- * Functions
   glGetPixelTransformParameterfvEXT,
   glGetPixelTransformParameterivEXT,

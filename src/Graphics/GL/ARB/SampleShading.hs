@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.SampleShading
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.SampleShading (
   glGetARBSampleShading,
   gl_ARB_sample_shading,
   -- * Enums
-  gl_MIN_SAMPLE_SHADING_VALUE_ARB,
-  gl_SAMPLE_SHADING_ARB,
+  pattern GL_MIN_SAMPLE_SHADING_VALUE_ARB,
+  pattern GL_SAMPLE_SHADING_ARB,
   -- * Functions
   glMinSampleShadingARB
 ) where

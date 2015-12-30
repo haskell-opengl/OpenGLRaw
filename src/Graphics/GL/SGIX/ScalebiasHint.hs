@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.ScalebiasHint
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.ScalebiasHint (
   glGetSGIXScalebiasHint,
   gl_SGIX_scalebias_hint,
   -- * Enums
-  gl_SCALEBIAS_HINT_SGIX
+  pattern GL_SCALEBIAS_HINT_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

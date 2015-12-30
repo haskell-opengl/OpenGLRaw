@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureSharedExponent
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.TextureSharedExponent (
   glGetEXTTextureSharedExponent,
   gl_EXT_texture_shared_exponent,
   -- * Enums
-  gl_RGB9_E5_EXT,
-  gl_TEXTURE_SHARED_SIZE_EXT,
-  gl_UNSIGNED_INT_5_9_9_9_REV_EXT
+  pattern GL_RGB9_E5_EXT,
+  pattern GL_TEXTURE_SHARED_SIZE_EXT,
+  pattern GL_UNSIGNED_INT_5_9_9_9_REV_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

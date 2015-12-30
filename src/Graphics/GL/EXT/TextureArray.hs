@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureArray
@@ -15,15 +16,15 @@ module Graphics.GL.EXT.TextureArray (
   glGetEXTTextureArray,
   gl_EXT_texture_array,
   -- * Enums
-  gl_COMPARE_REF_DEPTH_TO_TEXTURE_EXT,
-  gl_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT,
-  gl_MAX_ARRAY_TEXTURE_LAYERS_EXT,
-  gl_PROXY_TEXTURE_1D_ARRAY_EXT,
-  gl_PROXY_TEXTURE_2D_ARRAY_EXT,
-  gl_TEXTURE_1D_ARRAY_EXT,
-  gl_TEXTURE_2D_ARRAY_EXT,
-  gl_TEXTURE_BINDING_1D_ARRAY_EXT,
-  gl_TEXTURE_BINDING_2D_ARRAY_EXT,
+  pattern GL_COMPARE_REF_DEPTH_TO_TEXTURE_EXT,
+  pattern GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT,
+  pattern GL_MAX_ARRAY_TEXTURE_LAYERS_EXT,
+  pattern GL_PROXY_TEXTURE_1D_ARRAY_EXT,
+  pattern GL_PROXY_TEXTURE_2D_ARRAY_EXT,
+  pattern GL_TEXTURE_1D_ARRAY_EXT,
+  pattern GL_TEXTURE_2D_ARRAY_EXT,
+  pattern GL_TEXTURE_BINDING_1D_ARRAY_EXT,
+  pattern GL_TEXTURE_BINDING_2D_ARRAY_EXT,
   -- * Functions
   glFramebufferTextureLayerEXT
 ) where

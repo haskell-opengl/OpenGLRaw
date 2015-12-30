@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.BlendColor
@@ -15,11 +16,11 @@ module Graphics.GL.EXT.BlendColor (
   glGetEXTBlendColor,
   gl_EXT_blend_color,
   -- * Enums
-  gl_BLEND_COLOR_EXT,
-  gl_CONSTANT_ALPHA_EXT,
-  gl_CONSTANT_COLOR_EXT,
-  gl_ONE_MINUS_CONSTANT_ALPHA_EXT,
-  gl_ONE_MINUS_CONSTANT_COLOR_EXT,
+  pattern GL_BLEND_COLOR_EXT,
+  pattern GL_CONSTANT_ALPHA_EXT,
+  pattern GL_CONSTANT_COLOR_EXT,
+  pattern GL_ONE_MINUS_CONSTANT_ALPHA_EXT,
+  pattern GL_ONE_MINUS_CONSTANT_COLOR_EXT,
   -- * Functions
   glBlendColorEXT
 ) where

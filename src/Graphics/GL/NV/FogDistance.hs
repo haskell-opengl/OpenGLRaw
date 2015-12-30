@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.FogDistance
@@ -15,10 +16,10 @@ module Graphics.GL.NV.FogDistance (
   glGetNVFogDistance,
   gl_NV_fog_distance,
   -- * Enums
-  gl_EYE_PLANE,
-  gl_EYE_PLANE_ABSOLUTE_NV,
-  gl_EYE_RADIAL_NV,
-  gl_FOG_DISTANCE_MODE_NV
+  pattern GL_EYE_PLANE,
+  pattern GL_EYE_PLANE_ABSOLUTE_NV,
+  pattern GL_EYE_RADIAL_NV,
+  pattern GL_FOG_DISTANCE_MODE_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

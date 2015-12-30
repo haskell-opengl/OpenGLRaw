@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.PointSprite
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.PointSprite (
   glGetARBPointSprite,
   gl_ARB_point_sprite,
   -- * Enums
-  gl_COORD_REPLACE_ARB,
-  gl_POINT_SPRITE_ARB
+  pattern GL_COORD_REPLACE_ARB,
+  pattern GL_POINT_SPRITE_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

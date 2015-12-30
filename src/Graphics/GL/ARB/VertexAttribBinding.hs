@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.VertexAttribBinding
@@ -15,13 +16,13 @@ module Graphics.GL.ARB.VertexAttribBinding (
   glGetARBVertexAttribBinding,
   gl_ARB_vertex_attrib_binding,
   -- * Enums
-  gl_MAX_VERTEX_ATTRIB_BINDINGS,
-  gl_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET,
-  gl_VERTEX_ATTRIB_BINDING,
-  gl_VERTEX_ATTRIB_RELATIVE_OFFSET,
-  gl_VERTEX_BINDING_DIVISOR,
-  gl_VERTEX_BINDING_OFFSET,
-  gl_VERTEX_BINDING_STRIDE,
+  pattern GL_MAX_VERTEX_ATTRIB_BINDINGS,
+  pattern GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET,
+  pattern GL_VERTEX_ATTRIB_BINDING,
+  pattern GL_VERTEX_ATTRIB_RELATIVE_OFFSET,
+  pattern GL_VERTEX_BINDING_DIVISOR,
+  pattern GL_VERTEX_BINDING_OFFSET,
+  pattern GL_VERTEX_BINDING_STRIDE,
   -- * Functions
   glBindVertexBuffer,
   glVertexAttribBinding,

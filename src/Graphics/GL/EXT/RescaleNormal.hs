@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.RescaleNormal
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.RescaleNormal (
   glGetEXTRescaleNormal,
   gl_EXT_rescale_normal,
   -- * Enums
-  gl_RESCALE_NORMAL_EXT
+  pattern GL_RESCALE_NORMAL_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

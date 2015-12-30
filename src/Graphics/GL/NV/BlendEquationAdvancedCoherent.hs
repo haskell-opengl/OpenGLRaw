@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.BlendEquationAdvancedCoherent
@@ -15,7 +16,7 @@ module Graphics.GL.NV.BlendEquationAdvancedCoherent (
   glGetNVBlendEquationAdvancedCoherent,
   gl_NV_blend_equation_advanced_coherent,
   -- * Enums
-  gl_BLEND_ADVANCED_COHERENT_NV
+  pattern GL_BLEND_ADVANCED_COHERENT_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.Texture4D
@@ -15,16 +16,16 @@ module Graphics.GL.SGIS.Texture4D (
   glGetSGISTexture4D,
   gl_SGIS_texture4D,
   -- * Enums
-  gl_MAX_4D_TEXTURE_SIZE_SGIS,
-  gl_PACK_IMAGE_DEPTH_SGIS,
-  gl_PACK_SKIP_VOLUMES_SGIS,
-  gl_PROXY_TEXTURE_4D_SGIS,
-  gl_TEXTURE_4DSIZE_SGIS,
-  gl_TEXTURE_4D_BINDING_SGIS,
-  gl_TEXTURE_4D_SGIS,
-  gl_TEXTURE_WRAP_Q_SGIS,
-  gl_UNPACK_IMAGE_DEPTH_SGIS,
-  gl_UNPACK_SKIP_VOLUMES_SGIS,
+  pattern GL_MAX_4D_TEXTURE_SIZE_SGIS,
+  pattern GL_PACK_IMAGE_DEPTH_SGIS,
+  pattern GL_PACK_SKIP_VOLUMES_SGIS,
+  pattern GL_PROXY_TEXTURE_4D_SGIS,
+  pattern GL_TEXTURE_4DSIZE_SGIS,
+  pattern GL_TEXTURE_4D_BINDING_SGIS,
+  pattern GL_TEXTURE_4D_SGIS,
+  pattern GL_TEXTURE_WRAP_Q_SGIS,
+  pattern GL_UNPACK_IMAGE_DEPTH_SGIS,
+  pattern GL_UNPACK_SKIP_VOLUMES_SGIS,
   -- * Functions
   glTexImage4DSGIS,
   glTexSubImage4DSGIS

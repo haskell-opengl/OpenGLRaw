@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.InternalformatQuery
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.InternalformatQuery (
   glGetARBInternalformatQuery,
   gl_ARB_internalformat_query,
   -- * Enums
-  gl_NUM_SAMPLE_COUNTS,
+  pattern GL_NUM_SAMPLE_COUNTS,
   -- * Functions
   glGetInternalformativ
 ) where

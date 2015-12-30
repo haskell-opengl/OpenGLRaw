@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.PixelBufferObject
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.PixelBufferObject (
   glGetARBPixelBufferObject,
   gl_ARB_pixel_buffer_object,
   -- * Enums
-  gl_PIXEL_PACK_BUFFER_ARB,
-  gl_PIXEL_PACK_BUFFER_BINDING_ARB,
-  gl_PIXEL_UNPACK_BUFFER_ARB,
-  gl_PIXEL_UNPACK_BUFFER_BINDING_ARB
+  pattern GL_PIXEL_PACK_BUFFER_ARB,
+  pattern GL_PIXEL_PACK_BUFFER_BINDING_ARB,
+  pattern GL_PIXEL_UNPACK_BUFFER_ARB,
+  pattern GL_PIXEL_UNPACK_BUFFER_BINDING_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

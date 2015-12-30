@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TexgenReflection
@@ -15,8 +16,8 @@ module Graphics.GL.NV.TexgenReflection (
   glGetNVTexgenReflection,
   gl_NV_texgen_reflection,
   -- * Enums
-  gl_NORMAL_MAP_NV,
-  gl_REFLECTION_MAP_NV
+  pattern GL_NORMAL_MAP_NV,
+  pattern GL_REFLECTION_MAP_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

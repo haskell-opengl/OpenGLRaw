@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.IndexMaterial
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.IndexMaterial (
   glGetEXTIndexMaterial,
   gl_EXT_index_material,
   -- * Enums
-  gl_INDEX_MATERIAL_EXT,
-  gl_INDEX_MATERIAL_FACE_EXT,
-  gl_INDEX_MATERIAL_PARAMETER_EXT,
+  pattern GL_INDEX_MATERIAL_EXT,
+  pattern GL_INDEX_MATERIAL_FACE_EXT,
+  pattern GL_INDEX_MATERIAL_PARAMETER_EXT,
   -- * Functions
   glIndexMaterialEXT
 ) where

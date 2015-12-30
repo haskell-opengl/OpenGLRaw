@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.REND.ScreenCoordinates
@@ -15,8 +16,8 @@ module Graphics.GL.REND.ScreenCoordinates (
   glGetRENDScreenCoordinates,
   gl_REND_screen_coordinates,
   -- * Enums
-  gl_INVERTED_SCREEN_W_REND,
-  gl_SCREEN_COORDINATES_REND
+  pattern GL_INVERTED_SCREEN_W_REND,
+  pattern GL_SCREEN_COORDINATES_REND
 ) where
 
 import Graphics.GL.ExtensionPredicates

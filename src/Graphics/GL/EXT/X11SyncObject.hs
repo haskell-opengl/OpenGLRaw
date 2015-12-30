@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.X11SyncObject
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.X11SyncObject (
   glGetEXTX11SyncObject,
   gl_EXT_x11_sync_object,
   -- * Enums
-  gl_SYNC_X11_FENCE_EXT,
+  pattern GL_SYNC_X11_FENCE_EXT,
   -- * Functions
   glImportSyncEXT
 ) where

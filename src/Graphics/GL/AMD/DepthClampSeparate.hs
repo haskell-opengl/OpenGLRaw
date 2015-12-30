@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.DepthClampSeparate
@@ -15,8 +16,8 @@ module Graphics.GL.AMD.DepthClampSeparate (
   glGetAMDDepthClampSeparate,
   gl_AMD_depth_clamp_separate,
   -- * Enums
-  gl_DEPTH_CLAMP_FAR_AMD,
-  gl_DEPTH_CLAMP_NEAR_AMD
+  pattern GL_DEPTH_CLAMP_FAR_AMD,
+  pattern GL_DEPTH_CLAMP_NEAR_AMD
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ES2Compatibility
@@ -15,22 +16,22 @@ module Graphics.GL.ARB.ES2Compatibility (
   glGetARBES2Compatibility,
   gl_ARB_ES2_compatibility,
   -- * Enums
-  gl_FIXED,
-  gl_HIGH_FLOAT,
-  gl_HIGH_INT,
-  gl_IMPLEMENTATION_COLOR_READ_FORMAT,
-  gl_IMPLEMENTATION_COLOR_READ_TYPE,
-  gl_LOW_FLOAT,
-  gl_LOW_INT,
-  gl_MAX_FRAGMENT_UNIFORM_VECTORS,
-  gl_MAX_VARYING_VECTORS,
-  gl_MAX_VERTEX_UNIFORM_VECTORS,
-  gl_MEDIUM_FLOAT,
-  gl_MEDIUM_INT,
-  gl_NUM_SHADER_BINARY_FORMATS,
-  gl_RGB565,
-  gl_SHADER_BINARY_FORMATS,
-  gl_SHADER_COMPILER,
+  pattern GL_FIXED,
+  pattern GL_HIGH_FLOAT,
+  pattern GL_HIGH_INT,
+  pattern GL_IMPLEMENTATION_COLOR_READ_FORMAT,
+  pattern GL_IMPLEMENTATION_COLOR_READ_TYPE,
+  pattern GL_LOW_FLOAT,
+  pattern GL_LOW_INT,
+  pattern GL_MAX_FRAGMENT_UNIFORM_VECTORS,
+  pattern GL_MAX_VARYING_VECTORS,
+  pattern GL_MAX_VERTEX_UNIFORM_VECTORS,
+  pattern GL_MEDIUM_FLOAT,
+  pattern GL_MEDIUM_INT,
+  pattern GL_NUM_SHADER_BINARY_FORMATS,
+  pattern GL_RGB565,
+  pattern GL_SHADER_BINARY_FORMATS,
+  pattern GL_SHADER_COMPILER,
   -- * Functions
   glClearDepthf,
   glDepthRangef,

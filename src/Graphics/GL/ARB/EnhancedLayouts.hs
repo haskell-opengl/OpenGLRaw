@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.EnhancedLayouts
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.EnhancedLayouts (
   glGetARBEnhancedLayouts,
   gl_ARB_enhanced_layouts,
   -- * Enums
-  gl_LOCATION_COMPONENT,
-  gl_TRANSFORM_FEEDBACK_BUFFER,
-  gl_TRANSFORM_FEEDBACK_BUFFER_INDEX,
-  gl_TRANSFORM_FEEDBACK_BUFFER_STRIDE
+  pattern GL_LOCATION_COMPONENT,
+  pattern GL_TRANSFORM_FEEDBACK_BUFFER,
+  pattern GL_TRANSFORM_FEEDBACK_BUFFER_INDEX,
+  pattern GL_TRANSFORM_FEEDBACK_BUFFER_STRIDE
 ) where
 
 import Graphics.GL.ExtensionPredicates

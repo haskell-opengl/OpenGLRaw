@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.PointParameters
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.PointParameters (
   glGetARBPointParameters,
   gl_ARB_point_parameters,
   -- * Enums
-  gl_POINT_DISTANCE_ATTENUATION_ARB,
-  gl_POINT_FADE_THRESHOLD_SIZE_ARB,
-  gl_POINT_SIZE_MAX_ARB,
-  gl_POINT_SIZE_MIN_ARB,
+  pattern GL_POINT_DISTANCE_ATTENUATION_ARB,
+  pattern GL_POINT_FADE_THRESHOLD_SIZE_ARB,
+  pattern GL_POINT_SIZE_MAX_ARB,
+  pattern GL_POINT_SIZE_MIN_ARB,
   -- * Functions
   glPointParameterfARB,
   glPointParameterfvARB

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.DrawIndirect
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.DrawIndirect (
   glGetARBDrawIndirect,
   gl_ARB_draw_indirect,
   -- * Enums
-  gl_DRAW_INDIRECT_BUFFER,
-  gl_DRAW_INDIRECT_BUFFER_BINDING,
+  pattern GL_DRAW_INDIRECT_BUFFER,
+  pattern GL_DRAW_INDIRECT_BUFFER_BINDING,
   -- * Functions
   glDrawArraysIndirect,
   glDrawElementsIndirect

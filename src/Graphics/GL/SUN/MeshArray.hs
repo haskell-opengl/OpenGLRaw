@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SUN.MeshArray
@@ -15,8 +16,8 @@ module Graphics.GL.SUN.MeshArray (
   glGetSUNMeshArray,
   gl_SUN_mesh_array,
   -- * Enums
-  gl_QUAD_MESH_SUN,
-  gl_TRIANGLE_MESH_SUN,
+  pattern GL_QUAD_MESH_SUN,
+  pattern GL_TRIANGLE_MESH_SUN,
   -- * Functions
   glDrawMeshArraysSUN
 ) where

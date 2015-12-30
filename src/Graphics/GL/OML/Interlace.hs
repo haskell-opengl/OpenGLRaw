@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.OML.Interlace
@@ -15,8 +16,8 @@ module Graphics.GL.OML.Interlace (
   glGetOMLInterlace,
   gl_OML_interlace,
   -- * Enums
-  gl_INTERLACE_OML,
-  gl_INTERLACE_READ_OML
+  pattern GL_INTERLACE_OML,
+  pattern GL_INTERLACE_READ_OML
 ) where
 
 import Graphics.GL.ExtensionPredicates

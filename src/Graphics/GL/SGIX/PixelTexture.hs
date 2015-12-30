@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.PixelTexture
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.PixelTexture (
   glGetSGIXPixelTexture,
   gl_SGIX_pixel_texture,
   -- * Enums
-  gl_PIXEL_TEX_GEN_MODE_SGIX,
-  gl_PIXEL_TEX_GEN_SGIX,
+  pattern GL_PIXEL_TEX_GEN_MODE_SGIX,
+  pattern GL_PIXEL_TEX_GEN_SGIX,
   -- * Functions
   glPixelTexGenSGIX
 ) where

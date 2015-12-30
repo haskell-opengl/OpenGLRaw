@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.PointParameters
@@ -15,10 +16,10 @@ module Graphics.GL.SGIS.PointParameters (
   glGetSGISPointParameters,
   gl_SGIS_point_parameters,
   -- * Enums
-  gl_DISTANCE_ATTENUATION_SGIS,
-  gl_POINT_FADE_THRESHOLD_SIZE_SGIS,
-  gl_POINT_SIZE_MAX_SGIS,
-  gl_POINT_SIZE_MIN_SGIS,
+  pattern GL_DISTANCE_ATTENUATION_SGIS,
+  pattern GL_POINT_FADE_THRESHOLD_SIZE_SGIS,
+  pattern GL_POINT_SIZE_MAX_SGIS,
+  pattern GL_POINT_SIZE_MIN_SGIS,
   -- * Functions
   glPointParameterfSGIS,
   glPointParameterfvSGIS

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.InstancedArrays
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.InstancedArrays (
   glGetARBInstancedArrays,
   gl_ARB_instanced_arrays,
   -- * Enums
-  gl_VERTEX_ATTRIB_ARRAY_DIVISOR_ARB,
+  pattern GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ARB,
   -- * Functions
   glVertexAttribDivisorARB
 ) where

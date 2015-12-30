@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ComputeVariableGroupSize
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.ComputeVariableGroupSize (
   glGetARBComputeVariableGroupSize,
   gl_ARB_compute_variable_group_size,
   -- * Enums
-  gl_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB,
-  gl_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB,
-  gl_MAX_COMPUTE_VARIABLE_GROUP_INVOCATIONS_ARB,
-  gl_MAX_COMPUTE_VARIABLE_GROUP_SIZE_ARB,
+  pattern GL_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB,
+  pattern GL_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB,
+  pattern GL_MAX_COMPUTE_VARIABLE_GROUP_INVOCATIONS_ARB,
+  pattern GL_MAX_COMPUTE_VARIABLE_GROUP_SIZE_ARB,
   -- * Functions
   glDispatchComputeGroupSizeARB
 ) where

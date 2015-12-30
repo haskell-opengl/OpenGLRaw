@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.PackedDepthStencil
@@ -15,8 +16,8 @@ module Graphics.GL.NV.PackedDepthStencil (
   glGetNVPackedDepthStencil,
   gl_NV_packed_depth_stencil,
   -- * Enums
-  gl_DEPTH_STENCIL_NV,
-  gl_UNSIGNED_INT_24_8_NV
+  pattern GL_DEPTH_STENCIL_NV,
+  pattern GL_UNSIGNED_INT_24_8_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

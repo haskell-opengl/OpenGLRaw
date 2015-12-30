@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.SeparateSpecularColor
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.SeparateSpecularColor (
   glGetEXTSeparateSpecularColor,
   gl_EXT_separate_specular_color,
   -- * Enums
-  gl_LIGHT_MODEL_COLOR_CONTROL_EXT,
-  gl_SEPARATE_SPECULAR_COLOR_EXT,
-  gl_SINGLE_COLOR_EXT
+  pattern GL_LIGHT_MODEL_COLOR_CONTROL_EXT,
+  pattern GL_SEPARATE_SPECULAR_COLOR_EXT,
+  pattern GL_SINGLE_COLOR_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

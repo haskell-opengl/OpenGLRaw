@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.HalfFloatPixel
@@ -17,7 +18,7 @@ module Graphics.GL.ARB.HalfFloatPixel (
   -- * Types
   GLhalfARB,
   -- * Enums
-  gl_HALF_FLOAT_ARB
+  pattern GL_HALF_FLOAT_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

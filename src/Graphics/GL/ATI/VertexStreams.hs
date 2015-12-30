@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.VertexStreams
@@ -15,16 +16,16 @@ module Graphics.GL.ATI.VertexStreams (
   glGetATIVertexStreams,
   gl_ATI_vertex_streams,
   -- * Enums
-  gl_MAX_VERTEX_STREAMS_ATI,
-  gl_VERTEX_SOURCE_ATI,
-  gl_VERTEX_STREAM0_ATI,
-  gl_VERTEX_STREAM1_ATI,
-  gl_VERTEX_STREAM2_ATI,
-  gl_VERTEX_STREAM3_ATI,
-  gl_VERTEX_STREAM4_ATI,
-  gl_VERTEX_STREAM5_ATI,
-  gl_VERTEX_STREAM6_ATI,
-  gl_VERTEX_STREAM7_ATI,
+  pattern GL_MAX_VERTEX_STREAMS_ATI,
+  pattern GL_VERTEX_SOURCE_ATI,
+  pattern GL_VERTEX_STREAM0_ATI,
+  pattern GL_VERTEX_STREAM1_ATI,
+  pattern GL_VERTEX_STREAM2_ATI,
+  pattern GL_VERTEX_STREAM3_ATI,
+  pattern GL_VERTEX_STREAM4_ATI,
+  pattern GL_VERTEX_STREAM5_ATI,
+  pattern GL_VERTEX_STREAM6_ATI,
+  pattern GL_VERTEX_STREAM7_ATI,
   -- * Functions
   glClientActiveVertexStreamATI,
   glNormalStream3bATI,

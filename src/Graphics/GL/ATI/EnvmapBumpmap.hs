@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.EnvmapBumpmap
@@ -15,14 +16,14 @@ module Graphics.GL.ATI.EnvmapBumpmap (
   glGetATIEnvmapBumpmap,
   gl_ATI_envmap_bumpmap,
   -- * Enums
-  gl_BUMP_ENVMAP_ATI,
-  gl_BUMP_NUM_TEX_UNITS_ATI,
-  gl_BUMP_ROT_MATRIX_ATI,
-  gl_BUMP_ROT_MATRIX_SIZE_ATI,
-  gl_BUMP_TARGET_ATI,
-  gl_BUMP_TEX_UNITS_ATI,
-  gl_DU8DV8_ATI,
-  gl_DUDV_ATI,
+  pattern GL_BUMP_ENVMAP_ATI,
+  pattern GL_BUMP_NUM_TEX_UNITS_ATI,
+  pattern GL_BUMP_ROT_MATRIX_ATI,
+  pattern GL_BUMP_ROT_MATRIX_SIZE_ATI,
+  pattern GL_BUMP_TARGET_ATI,
+  pattern GL_BUMP_TEX_UNITS_ATI,
+  pattern GL_DU8DV8_ATI,
+  pattern GL_DUDV_ATI,
   -- * Functions
   glGetTexBumpParameterfvATI,
   glGetTexBumpParameterivATI,

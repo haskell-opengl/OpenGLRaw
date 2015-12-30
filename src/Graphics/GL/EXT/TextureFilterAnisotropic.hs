@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureFilterAnisotropic
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.TextureFilterAnisotropic (
   glGetEXTTextureFilterAnisotropic,
   gl_EXT_texture_filter_anisotropic,
   -- * Enums
-  gl_MAX_TEXTURE_MAX_ANISOTROPY_EXT,
-  gl_TEXTURE_MAX_ANISOTROPY_EXT
+  pattern GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT,
+  pattern GL_TEXTURE_MAX_ANISOTROPY_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

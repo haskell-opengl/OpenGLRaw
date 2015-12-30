@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.SeamlessCubemapPerTexture
@@ -15,7 +16,7 @@ module Graphics.GL.AMD.SeamlessCubemapPerTexture (
   glGetAMDSeamlessCubemapPerTexture,
   gl_AMD_seamless_cubemap_per_texture,
   -- * Enums
-  gl_TEXTURE_CUBE_MAP_SEAMLESS
+  pattern GL_TEXTURE_CUBE_MAP_SEAMLESS
 ) where
 
 import Graphics.GL.ExtensionPredicates

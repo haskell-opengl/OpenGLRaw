@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.SamplePositions
@@ -15,7 +16,7 @@ module Graphics.GL.AMD.SamplePositions (
   glGetAMDSamplePositions,
   gl_AMD_sample_positions,
   -- * Enums
-  gl_SUBSAMPLE_DISTANCE_AMD,
+  pattern GL_SUBSAMPLE_DISTANCE_AMD,
   -- * Functions
   glSetMultisamplefvAMD
 ) where

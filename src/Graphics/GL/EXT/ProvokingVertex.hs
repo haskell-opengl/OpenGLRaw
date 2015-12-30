@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.ProvokingVertex
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.ProvokingVertex (
   glGetEXTProvokingVertex,
   gl_EXT_provoking_vertex,
   -- * Enums
-  gl_FIRST_VERTEX_CONVENTION_EXT,
-  gl_LAST_VERTEX_CONVENTION_EXT,
-  gl_PROVOKING_VERTEX_EXT,
-  gl_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT,
+  pattern GL_FIRST_VERTEX_CONVENTION_EXT,
+  pattern GL_LAST_VERTEX_CONVENTION_EXT,
+  pattern GL_PROVOKING_VERTEX_EXT,
+  pattern GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT,
   -- * Functions
   glProvokingVertexEXT
 ) where

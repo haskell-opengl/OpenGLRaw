@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TimerQuery
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.TimerQuery (
   glGetEXTTimerQuery,
   gl_EXT_timer_query,
   -- * Enums
-  gl_TIME_ELAPSED_EXT,
+  pattern GL_TIME_ELAPSED_EXT,
   -- * Functions
   glGetQueryObjecti64vEXT,
   glGetQueryObjectui64vEXT

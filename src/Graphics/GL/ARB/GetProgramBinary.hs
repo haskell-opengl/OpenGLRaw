@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.GetProgramBinary
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.GetProgramBinary (
   glGetARBGetProgramBinary,
   gl_ARB_get_program_binary,
   -- * Enums
-  gl_NUM_PROGRAM_BINARY_FORMATS,
-  gl_PROGRAM_BINARY_FORMATS,
-  gl_PROGRAM_BINARY_LENGTH,
-  gl_PROGRAM_BINARY_RETRIEVABLE_HINT,
+  pattern GL_NUM_PROGRAM_BINARY_FORMATS,
+  pattern GL_PROGRAM_BINARY_FORMATS,
+  pattern GL_PROGRAM_BINARY_LENGTH,
+  pattern GL_PROGRAM_BINARY_RETRIEVABLE_HINT,
   -- * Functions
   glGetProgramBinary,
   glProgramBinary,

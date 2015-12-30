@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TexturePerturbNormal
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.TexturePerturbNormal (
   glGetEXTTexturePerturbNormal,
   gl_EXT_texture_perturb_normal,
   -- * Enums
-  gl_PERTURB_EXT,
-  gl_TEXTURE_NORMAL_EXT,
+  pattern GL_PERTURB_EXT,
+  pattern GL_TEXTURE_NORMAL_EXT,
   -- * Functions
   glTextureNormalEXT
 ) where

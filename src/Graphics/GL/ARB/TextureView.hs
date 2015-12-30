@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureView
@@ -15,11 +16,11 @@ module Graphics.GL.ARB.TextureView (
   glGetARBTextureView,
   gl_ARB_texture_view,
   -- * Enums
-  gl_TEXTURE_IMMUTABLE_LEVELS,
-  gl_TEXTURE_VIEW_MIN_LAYER,
-  gl_TEXTURE_VIEW_MIN_LEVEL,
-  gl_TEXTURE_VIEW_NUM_LAYERS,
-  gl_TEXTURE_VIEW_NUM_LEVELS,
+  pattern GL_TEXTURE_IMMUTABLE_LEVELS,
+  pattern GL_TEXTURE_VIEW_MIN_LAYER,
+  pattern GL_TEXTURE_VIEW_MIN_LEVEL,
+  pattern GL_TEXTURE_VIEW_NUM_LAYERS,
+  pattern GL_TEXTURE_VIEW_NUM_LEVELS,
   -- * Functions
   glTextureView
 ) where

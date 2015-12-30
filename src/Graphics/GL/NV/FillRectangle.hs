@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.FillRectangle
@@ -15,7 +16,7 @@ module Graphics.GL.NV.FillRectangle (
   glGetNVFillRectangle,
   gl_NV_fill_rectangle,
   -- * Enums
-  gl_FILL_RECTANGLE_NV
+  pattern GL_FILL_RECTANGLE_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

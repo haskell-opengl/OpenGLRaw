@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ShadingLanguageInclude
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.ShadingLanguageInclude (
   glGetARBShadingLanguageInclude,
   gl_ARB_shading_language_include,
   -- * Enums
-  gl_NAMED_STRING_LENGTH_ARB,
-  gl_NAMED_STRING_TYPE_ARB,
-  gl_SHADER_INCLUDE_ARB,
+  pattern GL_NAMED_STRING_LENGTH_ARB,
+  pattern GL_NAMED_STRING_TYPE_ARB,
+  pattern GL_SHADER_INCLUDE_ARB,
   -- * Functions
   glCompileShaderIncludeARB,
   glDeleteNamedStringARB,

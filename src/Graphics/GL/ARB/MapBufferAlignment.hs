@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.MapBufferAlignment
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.MapBufferAlignment (
   glGetARBMapBufferAlignment,
   gl_ARB_map_buffer_alignment,
   -- * Enums
-  gl_MIN_MAP_BUFFER_ALIGNMENT
+  pattern GL_MIN_MAP_BUFFER_ALIGNMENT
 ) where
 
 import Graphics.GL.ExtensionPredicates

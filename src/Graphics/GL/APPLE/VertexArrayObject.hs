@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.VertexArrayObject
@@ -15,7 +16,7 @@ module Graphics.GL.APPLE.VertexArrayObject (
   glGetAPPLEVertexArrayObject,
   gl_APPLE_vertex_array_object,
   -- * Enums
-  gl_VERTEX_ARRAY_BINDING_APPLE,
+  pattern GL_VERTEX_ARRAY_BINDING_APPLE,
   -- * Functions
   glBindVertexArrayAPPLE,
   glDeleteVertexArraysAPPLE,

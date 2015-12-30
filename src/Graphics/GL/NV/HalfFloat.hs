@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.HalfFloat
@@ -15,7 +16,7 @@ module Graphics.GL.NV.HalfFloat (
   glGetNVHalfFloat,
   gl_NV_half_float,
   -- * Enums
-  gl_HALF_FLOAT_NV,
+  pattern GL_HALF_FLOAT_NV,
   -- * Functions
   glColor3hNV,
   glColor3hvNV,

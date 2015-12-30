@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.BlendMinmaxFactor
@@ -15,8 +16,8 @@ module Graphics.GL.AMD.BlendMinmaxFactor (
   glGetAMDBlendMinmaxFactor,
   gl_AMD_blend_minmax_factor,
   -- * Enums
-  gl_FACTOR_MAX_AMD,
-  gl_FACTOR_MIN_AMD
+  pattern GL_FACTOR_MAX_AMD,
+  pattern GL_FACTOR_MIN_AMD
 ) where
 
 import Graphics.GL.ExtensionPredicates

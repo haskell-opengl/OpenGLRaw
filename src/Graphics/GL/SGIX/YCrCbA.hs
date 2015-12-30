@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.YCrCbA
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.YCrCbA (
   glGetSGIXYCrCbA,
   gl_SGIX_ycrcba,
   -- * Enums
-  gl_YCRCBA_SGIX,
-  gl_YCRCB_SGIX
+  pattern GL_YCRCBA_SGIX,
+  pattern GL_YCRCB_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

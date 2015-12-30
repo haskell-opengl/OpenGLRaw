@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ImagingCore
@@ -15,17 +16,17 @@ module Graphics.GL.ARB.ImagingCore (
   glGetARBImaging,
   gl_ARB_imaging,
   -- * Enums
-  gl_BLEND_COLOR,
-  gl_BLEND_EQUATION,
-  gl_CONSTANT_ALPHA,
-  gl_CONSTANT_COLOR,
-  gl_FUNC_ADD,
-  gl_FUNC_REVERSE_SUBTRACT,
-  gl_FUNC_SUBTRACT,
-  gl_MAX,
-  gl_MIN,
-  gl_ONE_MINUS_CONSTANT_ALPHA,
-  gl_ONE_MINUS_CONSTANT_COLOR,
+  pattern GL_BLEND_COLOR,
+  pattern GL_BLEND_EQUATION,
+  pattern GL_CONSTANT_ALPHA,
+  pattern GL_CONSTANT_COLOR,
+  pattern GL_FUNC_ADD,
+  pattern GL_FUNC_REVERSE_SUBTRACT,
+  pattern GL_FUNC_SUBTRACT,
+  pattern GL_MAX,
+  pattern GL_MIN,
+  pattern GL_ONE_MINUS_CONSTANT_ALPHA,
+  pattern GL_ONE_MINUS_CONSTANT_COLOR,
   -- * Functions
   glBlendColor,
   glBlendEquation

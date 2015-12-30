@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.BlendFuncSeparate
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.BlendFuncSeparate (
   glGetEXTBlendFuncSeparate,
   gl_EXT_blend_func_separate,
   -- * Enums
-  gl_BLEND_DST_ALPHA_EXT,
-  gl_BLEND_DST_RGB_EXT,
-  gl_BLEND_SRC_ALPHA_EXT,
-  gl_BLEND_SRC_RGB_EXT,
+  pattern GL_BLEND_DST_ALPHA_EXT,
+  pattern GL_BLEND_DST_RGB_EXT,
+  pattern GL_BLEND_SRC_ALPHA_EXT,
+  pattern GL_BLEND_SRC_RGB_EXT,
   -- * Functions
   glBlendFuncSeparateEXT
 ) where

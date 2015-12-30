@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.DepthTexture
@@ -15,9 +16,9 @@ module Graphics.GL.SGIX.DepthTexture (
   glGetSGIXDepthTexture,
   gl_SGIX_depth_texture,
   -- * Enums
-  gl_DEPTH_COMPONENT16_SGIX,
-  gl_DEPTH_COMPONENT24_SGIX,
-  gl_DEPTH_COMPONENT32_SGIX
+  pattern GL_DEPTH_COMPONENT16_SGIX,
+  pattern GL_DEPTH_COMPONENT24_SGIX,
+  pattern GL_DEPTH_COMPONENT32_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

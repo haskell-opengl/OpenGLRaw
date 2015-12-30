@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.SampleLocations
@@ -15,14 +16,14 @@ module Graphics.GL.NV.SampleLocations (
   glGetNVSampleLocations,
   gl_NV_sample_locations,
   -- * Enums
-  gl_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_NV,
-  gl_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_NV,
-  gl_PROGRAMMABLE_SAMPLE_LOCATION_NV,
-  gl_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_NV,
-  gl_SAMPLE_LOCATION_NV,
-  gl_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_NV,
-  gl_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_NV,
-  gl_SAMPLE_LOCATION_SUBPIXEL_BITS_NV,
+  pattern GL_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_NV,
+  pattern GL_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_NV,
+  pattern GL_PROGRAMMABLE_SAMPLE_LOCATION_NV,
+  pattern GL_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_NV,
+  pattern GL_SAMPLE_LOCATION_NV,
+  pattern GL_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_NV,
+  pattern GL_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_NV,
+  pattern GL_SAMPLE_LOCATION_SUBPIXEL_BITS_NV,
   -- * Functions
   glFramebufferSampleLocationsfvNV,
   glNamedFramebufferSampleLocationsfvNV,

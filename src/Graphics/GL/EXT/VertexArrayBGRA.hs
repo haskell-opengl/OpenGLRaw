@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.VertexArrayBGRA
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.VertexArrayBGRA (
   glGetEXTVertexArrayBGRA,
   gl_EXT_vertex_array_bgra,
   -- * Enums
-  gl_BGRA
+  pattern GL_BGRA
 ) where
 
 import Graphics.GL.ExtensionPredicates

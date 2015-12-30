@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.VertexPreclip
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.VertexPreclip (
   glGetSGIXVertexPreclip,
   gl_SGIX_vertex_preclip,
   -- * Enums
-  gl_VERTEX_PRECLIP_HINT_SGIX,
-  gl_VERTEX_PRECLIP_SGIX
+  pattern GL_VERTEX_PRECLIP_HINT_SGIX,
+  pattern GL_VERTEX_PRECLIP_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

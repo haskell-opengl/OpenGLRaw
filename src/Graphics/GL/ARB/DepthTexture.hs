@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.DepthTexture
@@ -15,11 +16,11 @@ module Graphics.GL.ARB.DepthTexture (
   glGetARBDepthTexture,
   gl_ARB_depth_texture,
   -- * Enums
-  gl_DEPTH_COMPONENT16_ARB,
-  gl_DEPTH_COMPONENT24_ARB,
-  gl_DEPTH_COMPONENT32_ARB,
-  gl_DEPTH_TEXTURE_MODE_ARB,
-  gl_TEXTURE_DEPTH_SIZE_ARB
+  pattern GL_DEPTH_COMPONENT16_ARB,
+  pattern GL_DEPTH_COMPONENT24_ARB,
+  pattern GL_DEPTH_COMPONENT32_ARB,
+  pattern GL_DEPTH_TEXTURE_MODE_ARB,
+  pattern GL_TEXTURE_DEPTH_SIZE_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

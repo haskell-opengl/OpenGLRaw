@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Subsample
@@ -15,11 +16,11 @@ module Graphics.GL.SGIX.Subsample (
   glGetSGIXSubsample,
   gl_SGIX_subsample,
   -- * Enums
-  gl_PACK_SUBSAMPLE_RATE_SGIX,
-  gl_PIXEL_SUBSAMPLE_2424_SGIX,
-  gl_PIXEL_SUBSAMPLE_4242_SGIX,
-  gl_PIXEL_SUBSAMPLE_4444_SGIX,
-  gl_UNPACK_SUBSAMPLE_RATE_SGIX
+  pattern GL_PACK_SUBSAMPLE_RATE_SGIX,
+  pattern GL_PIXEL_SUBSAMPLE_2424_SGIX,
+  pattern GL_PIXEL_SUBSAMPLE_4242_SGIX,
+  pattern GL_PIXEL_SUBSAMPLE_4444_SGIX,
+  pattern GL_UNPACK_SUBSAMPLE_RATE_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

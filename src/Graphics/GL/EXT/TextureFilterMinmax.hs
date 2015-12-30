@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureFilterMinmax
@@ -15,12 +16,12 @@ module Graphics.GL.EXT.TextureFilterMinmax (
   glGetEXTTextureFilterMinmax,
   gl_EXT_texture_filter_minmax,
   -- * Enums
-  gl_EFFECTIVE_RASTER_SAMPLES_EXT,
-  gl_MAX_RASTER_SAMPLES_EXT,
-  gl_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT,
-  gl_RASTER_FIXED_SAMPLE_LOCATIONS_EXT,
-  gl_RASTER_MULTISAMPLE_EXT,
-  gl_RASTER_SAMPLES_EXT,
+  pattern GL_EFFECTIVE_RASTER_SAMPLES_EXT,
+  pattern GL_MAX_RASTER_SAMPLES_EXT,
+  pattern GL_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT,
+  pattern GL_RASTER_FIXED_SAMPLE_LOCATIONS_EXT,
+  pattern GL_RASTER_MULTISAMPLE_EXT,
+  pattern GL_RASTER_SAMPLES_EXT,
   -- * Functions
   glRasterSamplesEXT
 ) where

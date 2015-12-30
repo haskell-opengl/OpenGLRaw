@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureStencil8
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.TextureStencil8 (
   glGetARBTextureStencil8,
   gl_ARB_texture_stencil8,
   -- * Enums
-  gl_STENCIL_INDEX,
-  gl_STENCIL_INDEX8
+  pattern GL_STENCIL_INDEX,
+  pattern GL_STENCIL_INDEX8
 ) where
 
 import Graphics.GL.ExtensionPredicates

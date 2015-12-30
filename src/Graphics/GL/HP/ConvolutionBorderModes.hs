@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.HP.ConvolutionBorderModes
@@ -15,10 +16,10 @@ module Graphics.GL.HP.ConvolutionBorderModes (
   glGetHPConvolutionBorderModes,
   gl_HP_convolution_border_modes,
   -- * Enums
-  gl_CONSTANT_BORDER_HP,
-  gl_CONVOLUTION_BORDER_COLOR_HP,
-  gl_IGNORE_BORDER_HP,
-  gl_REPLICATE_BORDER_HP
+  pattern GL_CONSTANT_BORDER_HP,
+  pattern GL_CONVOLUTION_BORDER_COLOR_HP,
+  pattern GL_IGNORE_BORDER_HP,
+  pattern GL_REPLICATE_BORDER_HP
 ) where
 
 import Graphics.GL.ExtensionPredicates

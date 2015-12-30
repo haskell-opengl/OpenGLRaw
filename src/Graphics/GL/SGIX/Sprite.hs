@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Sprite
@@ -15,13 +16,13 @@ module Graphics.GL.SGIX.Sprite (
   glGetSGIXSprite,
   gl_SGIX_sprite,
   -- * Enums
-  gl_SPRITE_AXIAL_SGIX,
-  gl_SPRITE_AXIS_SGIX,
-  gl_SPRITE_EYE_ALIGNED_SGIX,
-  gl_SPRITE_MODE_SGIX,
-  gl_SPRITE_OBJECT_ALIGNED_SGIX,
-  gl_SPRITE_SGIX,
-  gl_SPRITE_TRANSLATION_SGIX,
+  pattern GL_SPRITE_AXIAL_SGIX,
+  pattern GL_SPRITE_AXIS_SGIX,
+  pattern GL_SPRITE_EYE_ALIGNED_SGIX,
+  pattern GL_SPRITE_MODE_SGIX,
+  pattern GL_SPRITE_OBJECT_ALIGNED_SGIX,
+  pattern GL_SPRITE_SGIX,
+  pattern GL_SPRITE_TRANSLATION_SGIX,
   -- * Functions
   glSpriteParameterfSGIX,
   glSpriteParameterfvSGIX,

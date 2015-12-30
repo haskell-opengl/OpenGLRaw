@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.VertexType2101010RevCore
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.VertexType2101010RevCore (
   glGetARBVertexType2101010Rev,
   gl_ARB_vertex_type_2_10_10_10_rev,
   -- * Enums
-  gl_INT_2_10_10_10_REV,
-  gl_UNSIGNED_INT_2_10_10_10_REV,
+  pattern GL_INT_2_10_10_10_REV,
+  pattern GL_UNSIGNED_INT_2_10_10_10_REV,
   -- * Functions
   glVertexAttribP1ui,
   glVertexAttribP1uiv,

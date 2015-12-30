@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.TextFragmentShader
@@ -15,7 +16,7 @@ module Graphics.GL.ATI.TextFragmentShader (
   glGetATITextFragmentShader,
   gl_ATI_text_fragment_shader,
   -- * Enums
-  gl_TEXT_FRAGMENT_SHADER_ATI
+  pattern GL_TEXT_FRAGMENT_SHADER_ATI
 ) where
 
 import Graphics.GL.ExtensionPredicates

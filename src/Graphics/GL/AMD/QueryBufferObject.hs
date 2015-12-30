@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.QueryBufferObject
@@ -15,9 +16,9 @@ module Graphics.GL.AMD.QueryBufferObject (
   glGetAMDQueryBufferObject,
   gl_AMD_query_buffer_object,
   -- * Enums
-  gl_QUERY_BUFFER_AMD,
-  gl_QUERY_BUFFER_BINDING_AMD,
-  gl_QUERY_RESULT_NO_WAIT_AMD
+  pattern GL_QUERY_BUFFER_AMD,
+  pattern GL_QUERY_BUFFER_BINDING_AMD,
+  pattern GL_QUERY_RESULT_NO_WAIT_AMD
 ) where
 
 import Graphics.GL.ExtensionPredicates

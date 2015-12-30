@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.BindableUniform
@@ -15,12 +16,12 @@ module Graphics.GL.EXT.BindableUniform (
   glGetEXTBindableUniform,
   gl_EXT_bindable_uniform,
   -- * Enums
-  gl_MAX_BINDABLE_UNIFORM_SIZE_EXT,
-  gl_MAX_FRAGMENT_BINDABLE_UNIFORMS_EXT,
-  gl_MAX_GEOMETRY_BINDABLE_UNIFORMS_EXT,
-  gl_MAX_VERTEX_BINDABLE_UNIFORMS_EXT,
-  gl_UNIFORM_BUFFER_BINDING_EXT,
-  gl_UNIFORM_BUFFER_EXT,
+  pattern GL_MAX_BINDABLE_UNIFORM_SIZE_EXT,
+  pattern GL_MAX_FRAGMENT_BINDABLE_UNIFORMS_EXT,
+  pattern GL_MAX_GEOMETRY_BINDABLE_UNIFORMS_EXT,
+  pattern GL_MAX_VERTEX_BINDABLE_UNIFORMS_EXT,
+  pattern GL_UNIFORM_BUFFER_BINDING_EXT,
+  pattern GL_UNIFORM_BUFFER_EXT,
   -- * Functions
   glGetUniformBufferSizeEXT,
   glGetUniformOffsetEXT,

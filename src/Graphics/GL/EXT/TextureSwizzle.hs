@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureSwizzle
@@ -15,11 +16,11 @@ module Graphics.GL.EXT.TextureSwizzle (
   glGetEXTTextureSwizzle,
   gl_EXT_texture_swizzle,
   -- * Enums
-  gl_TEXTURE_SWIZZLE_A_EXT,
-  gl_TEXTURE_SWIZZLE_B_EXT,
-  gl_TEXTURE_SWIZZLE_G_EXT,
-  gl_TEXTURE_SWIZZLE_RGBA_EXT,
-  gl_TEXTURE_SWIZZLE_R_EXT
+  pattern GL_TEXTURE_SWIZZLE_A_EXT,
+  pattern GL_TEXTURE_SWIZZLE_B_EXT,
+  pattern GL_TEXTURE_SWIZZLE_G_EXT,
+  pattern GL_TEXTURE_SWIZZLE_RGBA_EXT,
+  pattern GL_TEXTURE_SWIZZLE_R_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

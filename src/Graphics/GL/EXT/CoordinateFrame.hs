@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.CoordinateFrame
@@ -15,20 +16,20 @@ module Graphics.GL.EXT.CoordinateFrame (
   glGetEXTCoordinateFrame,
   gl_EXT_coordinate_frame,
   -- * Enums
-  gl_BINORMAL_ARRAY_EXT,
-  gl_BINORMAL_ARRAY_POINTER_EXT,
-  gl_BINORMAL_ARRAY_STRIDE_EXT,
-  gl_BINORMAL_ARRAY_TYPE_EXT,
-  gl_CURRENT_BINORMAL_EXT,
-  gl_CURRENT_TANGENT_EXT,
-  gl_MAP1_BINORMAL_EXT,
-  gl_MAP1_TANGENT_EXT,
-  gl_MAP2_BINORMAL_EXT,
-  gl_MAP2_TANGENT_EXT,
-  gl_TANGENT_ARRAY_EXT,
-  gl_TANGENT_ARRAY_POINTER_EXT,
-  gl_TANGENT_ARRAY_STRIDE_EXT,
-  gl_TANGENT_ARRAY_TYPE_EXT,
+  pattern GL_BINORMAL_ARRAY_EXT,
+  pattern GL_BINORMAL_ARRAY_POINTER_EXT,
+  pattern GL_BINORMAL_ARRAY_STRIDE_EXT,
+  pattern GL_BINORMAL_ARRAY_TYPE_EXT,
+  pattern GL_CURRENT_BINORMAL_EXT,
+  pattern GL_CURRENT_TANGENT_EXT,
+  pattern GL_MAP1_BINORMAL_EXT,
+  pattern GL_MAP1_TANGENT_EXT,
+  pattern GL_MAP2_BINORMAL_EXT,
+  pattern GL_MAP2_TANGENT_EXT,
+  pattern GL_TANGENT_ARRAY_EXT,
+  pattern GL_TANGENT_ARRAY_POINTER_EXT,
+  pattern GL_TANGENT_ARRAY_STRIDE_EXT,
+  pattern GL_TANGENT_ARRAY_TYPE_EXT,
   -- * Functions
   glBinormal3bEXT,
   glBinormal3bvEXT,

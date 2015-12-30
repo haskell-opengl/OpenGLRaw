@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TextureMultisample
@@ -15,8 +16,8 @@ module Graphics.GL.NV.TextureMultisample (
   glGetNVTextureMultisample,
   gl_NV_texture_multisample,
   -- * Enums
-  gl_TEXTURE_COLOR_SAMPLES_NV,
-  gl_TEXTURE_COVERAGE_SAMPLES_NV,
+  pattern GL_TEXTURE_COLOR_SAMPLES_NV,
+  pattern GL_TEXTURE_COVERAGE_SAMPLES_NV,
   -- * Functions
   glTexImage2DMultisampleCoverageNV,
   glTexImage3DMultisampleCoverageNV,

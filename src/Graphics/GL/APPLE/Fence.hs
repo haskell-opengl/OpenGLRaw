@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.Fence
@@ -15,8 +16,8 @@ module Graphics.GL.APPLE.Fence (
   glGetAPPLEFence,
   gl_APPLE_fence,
   -- * Enums
-  gl_DRAW_PIXELS_APPLE,
-  gl_FENCE_APPLE,
+  pattern GL_DRAW_PIXELS_APPLE,
+  pattern GL_FENCE_APPLE,
   -- * Functions
   glDeleteFencesAPPLE,
   glFinishFenceAPPLE,

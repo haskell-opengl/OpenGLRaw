@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ParallelShaderCompile
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.ParallelShaderCompile (
   glGetARBParallelShaderCompile,
   gl_ARB_parallel_shader_compile,
   -- * Enums
-  gl_COMPLETION_STATUS_ARB,
-  gl_MAX_SHADER_COMPILER_THREADS_ARB,
+  pattern GL_COMPLETION_STATUS_ARB,
+  pattern GL_MAX_SHADER_COMPILER_THREADS_ARB,
   -- * Functions
   glMaxShaderCompilerThreadsARB
 ) where

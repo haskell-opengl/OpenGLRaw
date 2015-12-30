@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.CopyDepthToColor
@@ -15,8 +16,8 @@ module Graphics.GL.NV.CopyDepthToColor (
   glGetNVCopyDepthToColor,
   gl_NV_copy_depth_to_color,
   -- * Enums
-  gl_DEPTH_STENCIL_TO_BGRA_NV,
-  gl_DEPTH_STENCIL_TO_RGBA_NV
+  pattern GL_DEPTH_STENCIL_TO_BGRA_NV,
+  pattern GL_DEPTH_STENCIL_TO_RGBA_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

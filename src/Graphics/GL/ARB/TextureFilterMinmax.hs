@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureFilterMinmax
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.TextureFilterMinmax (
   glGetARBTextureFilterMinmax,
   gl_ARB_texture_filter_minmax,
   -- * Enums
-  gl_TEXTURE_REDUCTION_MODE_ARB,
-  gl_WEIGHTED_AVERAGE_ARB
+  pattern GL_TEXTURE_REDUCTION_MODE_ARB,
+  pattern GL_WEIGHTED_AVERAGE_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

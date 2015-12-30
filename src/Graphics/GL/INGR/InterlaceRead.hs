@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.INGR.InterlaceRead
@@ -15,7 +16,7 @@ module Graphics.GL.INGR.InterlaceRead (
   glGetINGRInterlaceRead,
   gl_INGR_interlace_read,
   -- * Enums
-  gl_INTERLACE_READ_INGR
+  pattern GL_INTERLACE_READ_INGR
 ) where
 
 import Graphics.GL.ExtensionPredicates

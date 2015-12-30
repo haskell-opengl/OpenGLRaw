@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureSRGBDecode
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.TextureSRGBDecode (
   glGetEXTTextureSRGBDecode,
   gl_EXT_texture_sRGB_decode,
   -- * Enums
-  gl_DECODE_EXT,
-  gl_SKIP_DECODE_EXT,
-  gl_TEXTURE_SRGB_DECODE_EXT
+  pattern GL_DECODE_EXT,
+  pattern GL_SKIP_DECODE_EXT,
+  pattern GL_TEXTURE_SRGB_DECODE_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

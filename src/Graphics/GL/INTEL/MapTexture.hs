@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.INTEL.MapTexture
@@ -15,10 +16,10 @@ module Graphics.GL.INTEL.MapTexture (
   glGetINTELMapTexture,
   gl_INTEL_map_texture,
   -- * Enums
-  gl_LAYOUT_DEFAULT_INTEL,
-  gl_LAYOUT_LINEAR_CPU_CACHED_INTEL,
-  gl_LAYOUT_LINEAR_INTEL,
-  gl_TEXTURE_MEMORY_LAYOUT_INTEL,
+  pattern GL_LAYOUT_DEFAULT_INTEL,
+  pattern GL_LAYOUT_LINEAR_CPU_CACHED_INTEL,
+  pattern GL_LAYOUT_LINEAR_INTEL,
+  pattern GL_TEXTURE_MEMORY_LAYOUT_INTEL,
   -- * Functions
   glMapTexture2DINTEL,
   glSyncTextureINTEL,

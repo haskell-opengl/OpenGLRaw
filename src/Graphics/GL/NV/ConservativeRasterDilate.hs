@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ConservativeRasterDilate
@@ -15,9 +16,9 @@ module Graphics.GL.NV.ConservativeRasterDilate (
   glGetNVConservativeRasterDilate,
   gl_NV_conservative_raster_dilate,
   -- * Enums
-  gl_CONSERVATIVE_RASTER_DILATE_GRANULARITY_NV,
-  gl_CONSERVATIVE_RASTER_DILATE_NV,
-  gl_CONSERVATIVE_RASTER_DILATE_RANGE_NV,
+  pattern GL_CONSERVATIVE_RASTER_DILATE_GRANULARITY_NV,
+  pattern GL_CONSERVATIVE_RASTER_DILATE_NV,
+  pattern GL_CONSERVATIVE_RASTER_DILATE_RANGE_NV,
   -- * Functions
   glConservativeRasterParameterfNV
 ) where

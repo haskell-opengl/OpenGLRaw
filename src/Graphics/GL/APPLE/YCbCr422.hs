@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.YCbCr422
@@ -15,9 +16,9 @@ module Graphics.GL.APPLE.YCbCr422 (
   glGetAPPLEYCbCr422,
   gl_APPLE_ycbcr_422,
   -- * Enums
-  gl_UNSIGNED_SHORT_8_8_APPLE,
-  gl_UNSIGNED_SHORT_8_8_REV_APPLE,
-  gl_YCBCR_422_APPLE
+  pattern GL_UNSIGNED_SHORT_8_8_APPLE,
+  pattern GL_UNSIGNED_SHORT_8_8_REV_APPLE,
+  pattern GL_YCBCR_422_APPLE
 ) where
 
 import Graphics.GL.ExtensionPredicates

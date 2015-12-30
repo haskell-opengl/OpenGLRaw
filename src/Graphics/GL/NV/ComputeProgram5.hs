@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ComputeProgram5
@@ -15,8 +16,8 @@ module Graphics.GL.NV.ComputeProgram5 (
   glGetNVComputeProgram5,
   gl_NV_compute_program5,
   -- * Enums
-  gl_COMPUTE_PROGRAM_NV,
-  gl_COMPUTE_PROGRAM_PARAMETER_BUFFER_NV
+  pattern GL_COMPUTE_PROGRAM_NV,
+  pattern GL_COMPUTE_PROGRAM_PARAMETER_BUFFER_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.ConvolutionAccuracy
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.ConvolutionAccuracy (
   glGetSGIXConvolutionAccuracy,
   gl_SGIX_convolution_accuracy,
   -- * Enums
-  gl_CONVOLUTION_HINT_SGIX
+  pattern GL_CONVOLUTION_HINT_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

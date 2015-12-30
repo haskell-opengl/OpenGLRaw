@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.IBM.TextureMirroredRepeat
@@ -15,7 +16,7 @@ module Graphics.GL.IBM.TextureMirroredRepeat (
   glGetIBMTextureMirroredRepeat,
   gl_IBM_texture_mirrored_repeat,
   -- * Enums
-  gl_MIRRORED_REPEAT_IBM
+  pattern GL_MIRRORED_REPEAT_IBM
 ) where
 
 import Graphics.GL.ExtensionPredicates

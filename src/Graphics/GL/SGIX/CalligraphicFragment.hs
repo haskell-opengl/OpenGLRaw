@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.CalligraphicFragment
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.CalligraphicFragment (
   glGetSGIXCalligraphicFragment,
   gl_SGIX_calligraphic_fragment,
   -- * Enums
-  gl_CALLIGRAPHIC_FRAGMENT_SGIX
+  pattern GL_CALLIGRAPHIC_FRAGMENT_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

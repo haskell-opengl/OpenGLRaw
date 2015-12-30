@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGI.TextureColorTable
@@ -15,8 +16,8 @@ module Graphics.GL.SGI.TextureColorTable (
   glGetSGITextureColorTable,
   gl_SGI_texture_color_table,
   -- * Enums
-  gl_PROXY_TEXTURE_COLOR_TABLE_SGI,
-  gl_TEXTURE_COLOR_TABLE_SGI
+  pattern GL_PROXY_TEXTURE_COLOR_TABLE_SGI,
+  pattern GL_TEXTURE_COLOR_TABLE_SGI
 ) where
 
 import Graphics.GL.ExtensionPredicates

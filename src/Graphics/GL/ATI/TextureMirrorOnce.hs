@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.TextureMirrorOnce
@@ -15,8 +16,8 @@ module Graphics.GL.ATI.TextureMirrorOnce (
   glGetATITextureMirrorOnce,
   gl_ATI_texture_mirror_once,
   -- * Enums
-  gl_MIRROR_CLAMP_ATI,
-  gl_MIRROR_CLAMP_TO_EDGE_ATI
+  pattern GL_MIRROR_CLAMP_ATI,
+  pattern GL_MIRROR_CLAMP_TO_EDGE_ATI
 ) where
 
 import Graphics.GL.ExtensionPredicates

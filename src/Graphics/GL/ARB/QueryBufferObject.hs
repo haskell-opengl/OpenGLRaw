@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.QueryBufferObject
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.QueryBufferObject (
   glGetARBQueryBufferObject,
   gl_ARB_query_buffer_object,
   -- * Enums
-  gl_QUERY_BUFFER,
-  gl_QUERY_BUFFER_BARRIER_BIT,
-  gl_QUERY_BUFFER_BINDING,
-  gl_QUERY_RESULT_NO_WAIT
+  pattern GL_QUERY_BUFFER,
+  pattern GL_QUERY_BUFFER_BARRIER_BIT,
+  pattern GL_QUERY_BUFFER_BINDING,
+  pattern GL_QUERY_RESULT_NO_WAIT
 ) where
 
 import Graphics.GL.ExtensionPredicates

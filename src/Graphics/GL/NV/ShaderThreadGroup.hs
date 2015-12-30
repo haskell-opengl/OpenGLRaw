@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ShaderThreadGroup
@@ -15,9 +16,9 @@ module Graphics.GL.NV.ShaderThreadGroup (
   glGetNVShaderThreadGroup,
   gl_NV_shader_thread_group,
   -- * Enums
-  gl_SM_COUNT_NV,
-  gl_WARPS_PER_SM_NV,
-  gl_WARP_SIZE_NV
+  pattern GL_SM_COUNT_NV,
+  pattern GL_WARPS_PER_SM_NV,
+  pattern GL_WARP_SIZE_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

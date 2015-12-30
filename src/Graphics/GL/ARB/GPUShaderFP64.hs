@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.GPUShaderFP64
@@ -15,19 +16,19 @@ module Graphics.GL.ARB.GPUShaderFP64 (
   glGetARBGPUShaderFP64,
   gl_ARB_gpu_shader_fp64,
   -- * Enums
-  gl_DOUBLE,
-  gl_DOUBLE_MAT2,
-  gl_DOUBLE_MAT2x3,
-  gl_DOUBLE_MAT2x4,
-  gl_DOUBLE_MAT3,
-  gl_DOUBLE_MAT3x2,
-  gl_DOUBLE_MAT3x4,
-  gl_DOUBLE_MAT4,
-  gl_DOUBLE_MAT4x2,
-  gl_DOUBLE_MAT4x3,
-  gl_DOUBLE_VEC2,
-  gl_DOUBLE_VEC3,
-  gl_DOUBLE_VEC4,
+  pattern GL_DOUBLE,
+  pattern GL_DOUBLE_MAT2,
+  pattern GL_DOUBLE_MAT2x3,
+  pattern GL_DOUBLE_MAT2x4,
+  pattern GL_DOUBLE_MAT3,
+  pattern GL_DOUBLE_MAT3x2,
+  pattern GL_DOUBLE_MAT3x4,
+  pattern GL_DOUBLE_MAT4,
+  pattern GL_DOUBLE_MAT4x2,
+  pattern GL_DOUBLE_MAT4x3,
+  pattern GL_DOUBLE_VEC2,
+  pattern GL_DOUBLE_VEC3,
+  pattern GL_DOUBLE_VEC4,
   -- * Functions
   glGetUniformdv,
   glUniform1d,

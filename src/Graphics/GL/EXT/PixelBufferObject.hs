@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.PixelBufferObject
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.PixelBufferObject (
   glGetEXTPixelBufferObject,
   gl_EXT_pixel_buffer_object,
   -- * Enums
-  gl_PIXEL_PACK_BUFFER_BINDING_EXT,
-  gl_PIXEL_PACK_BUFFER_EXT,
-  gl_PIXEL_UNPACK_BUFFER_BINDING_EXT,
-  gl_PIXEL_UNPACK_BUFFER_EXT
+  pattern GL_PIXEL_PACK_BUFFER_BINDING_EXT,
+  pattern GL_PIXEL_PACK_BUFFER_EXT,
+  pattern GL_PIXEL_UNPACK_BUFFER_BINDING_EXT,
+  pattern GL_PIXEL_UNPACK_BUFFER_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.HP.TextureLighting
@@ -15,9 +16,9 @@ module Graphics.GL.HP.TextureLighting (
   glGetHPTextureLighting,
   gl_HP_texture_lighting,
   -- * Enums
-  gl_TEXTURE_LIGHTING_MODE_HP,
-  gl_TEXTURE_POST_SPECULAR_HP,
-  gl_TEXTURE_PRE_SPECULAR_HP
+  pattern GL_TEXTURE_LIGHTING_MODE_HP,
+  pattern GL_TEXTURE_POST_SPECULAR_HP,
+  pattern GL_TEXTURE_PRE_SPECULAR_HP
 ) where
 
 import Graphics.GL.ExtensionPredicates

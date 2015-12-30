@@ -136,10 +136,10 @@ getExtensions = liftIO $ Data.Set.fromList <$> do
   if v >= (3, 0)
     then do getInteger <- makeGetInteger
             getStringi <- makeGetStringi
-            numExtensions <- getInteger gl_NUM_EXTENSIONS
+            numExtensions <- getInteger GL_NUM_EXTENSIONS
             forM [ 0 .. fromIntegral numExtensions - 1 ] $
-              getStringi gl_EXTENSIONS
-    else words <$> getString gl_EXTENSIONS
+              getStringi GL_EXTENSIONS
+    else words <$> getString GL_EXTENSIONS
 
 --------------------------------------------------------------------------------
 
@@ -149,7 +149,7 @@ getVersion = liftIO $ makeGetString >>= getVersionWith
 
 getVersionWith :: (GLenum -> IO String) -> IO (Int, Int)
 getVersionWith getString =
-  runParser parseVersion (-1, -1) <$> getString gl_VERSION
+  runParser parseVersion (-1, -1) <$> getString GL_VERSION
 
 runParser :: ReadP a -> a -> String -> a
 runParser parser failed str =

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureCompressionS3TC
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.TextureCompressionS3TC (
   glGetEXTTextureCompressionS3TC,
   gl_EXT_texture_compression_s3tc,
   -- * Enums
-  gl_COMPRESSED_RGBA_S3TC_DXT1_EXT,
-  gl_COMPRESSED_RGBA_S3TC_DXT3_EXT,
-  gl_COMPRESSED_RGBA_S3TC_DXT5_EXT,
-  gl_COMPRESSED_RGB_S3TC_DXT1_EXT
+  pattern GL_COMPRESSED_RGBA_S3TC_DXT1_EXT,
+  pattern GL_COMPRESSED_RGBA_S3TC_DXT3_EXT,
+  pattern GL_COMPRESSED_RGBA_S3TC_DXT5_EXT,
+  pattern GL_COMPRESSED_RGB_S3TC_DXT1_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureCompressionBPTC
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.TextureCompressionBPTC (
   glGetARBTextureCompressionBPTC,
   gl_ARB_texture_compression_bptc,
   -- * Enums
-  gl_COMPRESSED_RGBA_BPTC_UNORM_ARB,
-  gl_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB,
-  gl_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB,
-  gl_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB
+  pattern GL_COMPRESSED_RGBA_BPTC_UNORM_ARB,
+  pattern GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB,
+  pattern GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB,
+  pattern GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

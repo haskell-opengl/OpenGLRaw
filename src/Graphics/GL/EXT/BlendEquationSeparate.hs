@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.BlendEquationSeparate
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.BlendEquationSeparate (
   glGetEXTBlendEquationSeparate,
   gl_EXT_blend_equation_separate,
   -- * Enums
-  gl_BLEND_EQUATION_ALPHA_EXT,
-  gl_BLEND_EQUATION_RGB_EXT,
+  pattern GL_BLEND_EQUATION_ALPHA_EXT,
+  pattern GL_BLEND_EQUATION_RGB_EXT,
   -- * Functions
   glBlendEquationSeparateEXT
 ) where

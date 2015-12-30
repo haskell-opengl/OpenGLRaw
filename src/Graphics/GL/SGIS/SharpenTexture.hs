@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.SharpenTexture
@@ -15,10 +16,10 @@ module Graphics.GL.SGIS.SharpenTexture (
   glGetSGISSharpenTexture,
   gl_SGIS_sharpen_texture,
   -- * Enums
-  gl_LINEAR_SHARPEN_ALPHA_SGIS,
-  gl_LINEAR_SHARPEN_COLOR_SGIS,
-  gl_LINEAR_SHARPEN_SGIS,
-  gl_SHARPEN_TEXTURE_FUNC_POINTS_SGIS,
+  pattern GL_LINEAR_SHARPEN_ALPHA_SGIS,
+  pattern GL_LINEAR_SHARPEN_COLOR_SGIS,
+  pattern GL_LINEAR_SHARPEN_SGIS,
+  pattern GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS,
   -- * Functions
   glGetSharpenTexFuncSGIS,
   glSharpenTexFuncSGIS

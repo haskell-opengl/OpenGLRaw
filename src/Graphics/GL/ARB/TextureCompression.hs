@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureCompression
@@ -15,17 +16,17 @@ module Graphics.GL.ARB.TextureCompression (
   glGetARBTextureCompression,
   gl_ARB_texture_compression,
   -- * Enums
-  gl_COMPRESSED_ALPHA_ARB,
-  gl_COMPRESSED_INTENSITY_ARB,
-  gl_COMPRESSED_LUMINANCE_ALPHA_ARB,
-  gl_COMPRESSED_LUMINANCE_ARB,
-  gl_COMPRESSED_RGBA_ARB,
-  gl_COMPRESSED_RGB_ARB,
-  gl_COMPRESSED_TEXTURE_FORMATS_ARB,
-  gl_NUM_COMPRESSED_TEXTURE_FORMATS_ARB,
-  gl_TEXTURE_COMPRESSED_ARB,
-  gl_TEXTURE_COMPRESSED_IMAGE_SIZE_ARB,
-  gl_TEXTURE_COMPRESSION_HINT_ARB,
+  pattern GL_COMPRESSED_ALPHA_ARB,
+  pattern GL_COMPRESSED_INTENSITY_ARB,
+  pattern GL_COMPRESSED_LUMINANCE_ALPHA_ARB,
+  pattern GL_COMPRESSED_LUMINANCE_ARB,
+  pattern GL_COMPRESSED_RGBA_ARB,
+  pattern GL_COMPRESSED_RGB_ARB,
+  pattern GL_COMPRESSED_TEXTURE_FORMATS_ARB,
+  pattern GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB,
+  pattern GL_TEXTURE_COMPRESSED_ARB,
+  pattern GL_TEXTURE_COMPRESSED_IMAGE_SIZE_ARB,
+  pattern GL_TEXTURE_COMPRESSION_HINT_ARB,
   -- * Functions
   glCompressedTexImage1DARB,
   glCompressedTexImage2DARB,

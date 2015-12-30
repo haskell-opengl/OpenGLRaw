@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.TextureCoordinateClamp
@@ -15,9 +16,9 @@ module Graphics.GL.SGIX.TextureCoordinateClamp (
   glGetSGIXTextureCoordinateClamp,
   gl_SGIX_texture_coordinate_clamp,
   -- * Enums
-  gl_TEXTURE_MAX_CLAMP_R_SGIX,
-  gl_TEXTURE_MAX_CLAMP_S_SGIX,
-  gl_TEXTURE_MAX_CLAMP_T_SGIX
+  pattern GL_TEXTURE_MAX_CLAMP_R_SGIX,
+  pattern GL_TEXTURE_MAX_CLAMP_S_SGIX,
+  pattern GL_TEXTURE_MAX_CLAMP_T_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

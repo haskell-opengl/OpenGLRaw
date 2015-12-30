@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureBufferObjectRGB32
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.TextureBufferObjectRGB32 (
   glGetARBTextureBufferObjectRGB32,
   gl_ARB_texture_buffer_object_rgb32,
   -- * Enums
-  gl_RGB32F,
-  gl_RGB32I,
-  gl_RGB32UI
+  pattern GL_RGB32F,
+  pattern GL_RGB32I,
+  pattern GL_RGB32UI
 ) where
 
 import Graphics.GL.ExtensionPredicates

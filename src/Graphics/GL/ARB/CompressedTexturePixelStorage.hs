@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.CompressedTexturePixelStorage
@@ -15,14 +16,14 @@ module Graphics.GL.ARB.CompressedTexturePixelStorage (
   glGetARBCompressedTexturePixelStorage,
   gl_ARB_compressed_texture_pixel_storage,
   -- * Enums
-  gl_PACK_COMPRESSED_BLOCK_DEPTH,
-  gl_PACK_COMPRESSED_BLOCK_HEIGHT,
-  gl_PACK_COMPRESSED_BLOCK_SIZE,
-  gl_PACK_COMPRESSED_BLOCK_WIDTH,
-  gl_UNPACK_COMPRESSED_BLOCK_DEPTH,
-  gl_UNPACK_COMPRESSED_BLOCK_HEIGHT,
-  gl_UNPACK_COMPRESSED_BLOCK_SIZE,
-  gl_UNPACK_COMPRESSED_BLOCK_WIDTH
+  pattern GL_PACK_COMPRESSED_BLOCK_DEPTH,
+  pattern GL_PACK_COMPRESSED_BLOCK_HEIGHT,
+  pattern GL_PACK_COMPRESSED_BLOCK_SIZE,
+  pattern GL_PACK_COMPRESSED_BLOCK_WIDTH,
+  pattern GL_UNPACK_COMPRESSED_BLOCK_DEPTH,
+  pattern GL_UNPACK_COMPRESSED_BLOCK_HEIGHT,
+  pattern GL_UNPACK_COMPRESSED_BLOCK_SIZE,
+  pattern GL_UNPACK_COMPRESSED_BLOCK_WIDTH
 ) where
 
 import Graphics.GL.ExtensionPredicates

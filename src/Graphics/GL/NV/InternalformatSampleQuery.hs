@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.InternalformatSampleQuery
@@ -15,13 +16,13 @@ module Graphics.GL.NV.InternalformatSampleQuery (
   glGetNVInternalformatSampleQuery,
   gl_NV_internalformat_sample_query,
   -- * Enums
-  gl_CONFORMANT_NV,
-  gl_MULTISAMPLES_NV,
-  gl_RENDERBUFFER,
-  gl_SUPERSAMPLE_SCALE_X_NV,
-  gl_SUPERSAMPLE_SCALE_Y_NV,
-  gl_TEXTURE_2D_MULTISAMPLE,
-  gl_TEXTURE_2D_MULTISAMPLE_ARRAY,
+  pattern GL_CONFORMANT_NV,
+  pattern GL_MULTISAMPLES_NV,
+  pattern GL_RENDERBUFFER,
+  pattern GL_SUPERSAMPLE_SCALE_X_NV,
+  pattern GL_SUPERSAMPLE_SCALE_Y_NV,
+  pattern GL_TEXTURE_2D_MULTISAMPLE,
+  pattern GL_TEXTURE_2D_MULTISAMPLE_ARRAY,
   -- * Functions
   glGetInternalformatSampleivNV
 ) where

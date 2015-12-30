@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.ShadowAmbient
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.ShadowAmbient (
   glGetSGIXShadowAmbient,
   gl_SGIX_shadow_ambient,
   -- * Enums
-  gl_SHADOW_AMBIENT_SGIX
+  pattern GL_SHADOW_AMBIENT_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.TextureEnvCombine3
@@ -15,9 +16,9 @@ module Graphics.GL.ATI.TextureEnvCombine3 (
   glGetATITextureEnvCombine3,
   gl_ATI_texture_env_combine3,
   -- * Enums
-  gl_MODULATE_ADD_ATI,
-  gl_MODULATE_SIGNED_ADD_ATI,
-  gl_MODULATE_SUBTRACT_ATI
+  pattern GL_MODULATE_ADD_ATI,
+  pattern GL_MODULATE_SIGNED_ADD_ATI,
+  pattern GL_MODULATE_SUBTRACT_ATI
 ) where
 
 import Graphics.GL.ExtensionPredicates

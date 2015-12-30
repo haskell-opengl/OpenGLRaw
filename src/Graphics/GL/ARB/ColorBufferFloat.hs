@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ColorBufferFloat
@@ -15,11 +16,11 @@ module Graphics.GL.ARB.ColorBufferFloat (
   glGetARBColorBufferFloat,
   gl_ARB_color_buffer_float,
   -- * Enums
-  gl_CLAMP_FRAGMENT_COLOR_ARB,
-  gl_CLAMP_READ_COLOR_ARB,
-  gl_CLAMP_VERTEX_COLOR_ARB,
-  gl_FIXED_ONLY_ARB,
-  gl_RGBA_FLOAT_MODE_ARB,
+  pattern GL_CLAMP_FRAGMENT_COLOR_ARB,
+  pattern GL_CLAMP_READ_COLOR_ARB,
+  pattern GL_CLAMP_VERTEX_COLOR_ARB,
+  pattern GL_FIXED_ONLY_ARB,
+  pattern GL_RGBA_FLOAT_MODE_ARB,
   -- * Functions
   glClampColorARB
 ) where

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.KHR.NoError
@@ -15,7 +16,7 @@ module Graphics.GL.KHR.NoError (
   glGetKHRNoError,
   gl_KHR_no_error,
   -- * Enums
-  gl_CONTEXT_FLAG_NO_ERROR_BIT_KHR
+  pattern GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR
 ) where
 
 import Graphics.GL.ExtensionPredicates

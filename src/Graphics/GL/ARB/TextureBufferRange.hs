@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureBufferRange
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.TextureBufferRange (
   glGetARBTextureBufferRange,
   gl_ARB_texture_buffer_range,
   -- * Enums
-  gl_TEXTURE_BUFFER_OFFSET,
-  gl_TEXTURE_BUFFER_OFFSET_ALIGNMENT,
-  gl_TEXTURE_BUFFER_SIZE,
+  pattern GL_TEXTURE_BUFFER_OFFSET,
+  pattern GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT,
+  pattern GL_TEXTURE_BUFFER_SIZE,
   -- * Functions
   glTexBufferRange
 ) where

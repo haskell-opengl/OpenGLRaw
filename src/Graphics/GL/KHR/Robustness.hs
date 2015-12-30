@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.KHR.Robustness
@@ -15,15 +16,15 @@ module Graphics.GL.KHR.Robustness (
   glGetKHRRobustness,
   gl_KHR_robustness,
   -- * Enums
-  gl_CONTEXT_LOST,
-  gl_CONTEXT_ROBUST_ACCESS,
-  gl_GUILTY_CONTEXT_RESET,
-  gl_INNOCENT_CONTEXT_RESET,
-  gl_LOSE_CONTEXT_ON_RESET,
-  gl_NO_ERROR,
-  gl_NO_RESET_NOTIFICATION,
-  gl_RESET_NOTIFICATION_STRATEGY,
-  gl_UNKNOWN_CONTEXT_RESET,
+  pattern GL_CONTEXT_LOST,
+  pattern GL_CONTEXT_ROBUST_ACCESS,
+  pattern GL_GUILTY_CONTEXT_RESET,
+  pattern GL_INNOCENT_CONTEXT_RESET,
+  pattern GL_LOSE_CONTEXT_ON_RESET,
+  pattern GL_NO_ERROR,
+  pattern GL_NO_RESET_NOTIFICATION,
+  pattern GL_RESET_NOTIFICATION_STRATEGY,
+  pattern GL_UNKNOWN_CONTEXT_RESET,
   -- * Functions
   glGetGraphicsResetStatus,
   glGetnUniformfv,

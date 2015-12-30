@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.HP.OcclusionTest
@@ -15,8 +16,8 @@ module Graphics.GL.HP.OcclusionTest (
   glGetHPOcclusionTest,
   gl_HP_occlusion_test,
   -- * Enums
-  gl_OCCLUSION_TEST_HP,
-  gl_OCCLUSION_TEST_RESULT_HP
+  pattern GL_OCCLUSION_TEST_HP,
+  pattern GL_OCCLUSION_TEST_RESULT_HP
 ) where
 
 import Graphics.GL.ExtensionPredicates

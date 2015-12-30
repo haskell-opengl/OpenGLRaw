@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.VertexProgram3
@@ -15,7 +16,7 @@ module Graphics.GL.NV.VertexProgram3 (
   glGetNVVertexProgram3,
   gl_NV_vertex_program3,
   -- * Enums
-  gl_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB
+  pattern GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

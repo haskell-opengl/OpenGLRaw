@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.SecondaryColor
@@ -15,13 +16,13 @@ module Graphics.GL.EXT.SecondaryColor (
   glGetEXTSecondaryColor,
   gl_EXT_secondary_color,
   -- * Enums
-  gl_COLOR_SUM_EXT,
-  gl_CURRENT_SECONDARY_COLOR_EXT,
-  gl_SECONDARY_COLOR_ARRAY_EXT,
-  gl_SECONDARY_COLOR_ARRAY_POINTER_EXT,
-  gl_SECONDARY_COLOR_ARRAY_SIZE_EXT,
-  gl_SECONDARY_COLOR_ARRAY_STRIDE_EXT,
-  gl_SECONDARY_COLOR_ARRAY_TYPE_EXT,
+  pattern GL_COLOR_SUM_EXT,
+  pattern GL_CURRENT_SECONDARY_COLOR_EXT,
+  pattern GL_SECONDARY_COLOR_ARRAY_EXT,
+  pattern GL_SECONDARY_COLOR_ARRAY_POINTER_EXT,
+  pattern GL_SECONDARY_COLOR_ARRAY_SIZE_EXT,
+  pattern GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT,
+  pattern GL_SECONDARY_COLOR_ARRAY_TYPE_EXT,
   -- * Functions
   glSecondaryColor3bEXT,
   glSecondaryColor3bvEXT,

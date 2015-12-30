@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.Sync
@@ -15,21 +16,21 @@ module Graphics.GL.ARB.Sync (
   glGetARBSync,
   gl_ARB_sync,
   -- * Enums
-  gl_ALREADY_SIGNALED,
-  gl_CONDITION_SATISFIED,
-  gl_MAX_SERVER_WAIT_TIMEOUT,
-  gl_OBJECT_TYPE,
-  gl_SIGNALED,
-  gl_SYNC_CONDITION,
-  gl_SYNC_FENCE,
-  gl_SYNC_FLAGS,
-  gl_SYNC_FLUSH_COMMANDS_BIT,
-  gl_SYNC_GPU_COMMANDS_COMPLETE,
-  gl_SYNC_STATUS,
-  gl_TIMEOUT_EXPIRED,
-  gl_TIMEOUT_IGNORED,
-  gl_UNSIGNALED,
-  gl_WAIT_FAILED,
+  pattern GL_ALREADY_SIGNALED,
+  pattern GL_CONDITION_SATISFIED,
+  pattern GL_MAX_SERVER_WAIT_TIMEOUT,
+  pattern GL_OBJECT_TYPE,
+  pattern GL_SIGNALED,
+  pattern GL_SYNC_CONDITION,
+  pattern GL_SYNC_FENCE,
+  pattern GL_SYNC_FLAGS,
+  pattern GL_SYNC_FLUSH_COMMANDS_BIT,
+  pattern GL_SYNC_GPU_COMMANDS_COMPLETE,
+  pattern GL_SYNC_STATUS,
+  pattern GL_TIMEOUT_EXPIRED,
+  pattern GL_TIMEOUT_IGNORED,
+  pattern GL_UNSIGNALED,
+  pattern GL_WAIT_FAILED,
   -- * Functions
   glClientWaitSync,
   glDeleteSync,

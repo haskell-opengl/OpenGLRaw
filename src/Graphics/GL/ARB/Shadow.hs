@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.Shadow
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.Shadow (
   glGetARBShadow,
   gl_ARB_shadow,
   -- * Enums
-  gl_COMPARE_R_TO_TEXTURE_ARB,
-  gl_TEXTURE_COMPARE_FUNC_ARB,
-  gl_TEXTURE_COMPARE_MODE_ARB
+  pattern GL_COMPARE_R_TO_TEXTURE_ARB,
+  pattern GL_TEXTURE_COMPARE_FUNC_ARB,
+  pattern GL_TEXTURE_COMPARE_MODE_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

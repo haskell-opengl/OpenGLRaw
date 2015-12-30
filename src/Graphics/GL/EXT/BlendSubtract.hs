@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.BlendSubtract
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.BlendSubtract (
   glGetEXTBlendSubtract,
   gl_EXT_blend_subtract,
   -- * Enums
-  gl_FUNC_REVERSE_SUBTRACT_EXT,
-  gl_FUNC_SUBTRACT_EXT
+  pattern GL_FUNC_REVERSE_SUBTRACT_EXT,
+  pattern GL_FUNC_SUBTRACT_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

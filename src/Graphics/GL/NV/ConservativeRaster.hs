@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ConservativeRaster
@@ -15,10 +16,10 @@ module Graphics.GL.NV.ConservativeRaster (
   glGetNVConservativeRaster,
   gl_NV_conservative_raster,
   -- * Enums
-  gl_CONSERVATIVE_RASTERIZATION_NV,
-  gl_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV,
-  gl_SUBPIXEL_PRECISION_BIAS_X_BITS_NV,
-  gl_SUBPIXEL_PRECISION_BIAS_Y_BITS_NV,
+  pattern GL_CONSERVATIVE_RASTERIZATION_NV,
+  pattern GL_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV,
+  pattern GL_SUBPIXEL_PRECISION_BIAS_X_BITS_NV,
+  pattern GL_SUBPIXEL_PRECISION_BIAS_Y_BITS_NV,
   -- * Functions
   glSubpixelPrecisionBiasNV
 ) where

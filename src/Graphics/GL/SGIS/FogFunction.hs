@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.FogFunction
@@ -15,9 +16,9 @@ module Graphics.GL.SGIS.FogFunction (
   glGetSGISFogFunction,
   gl_SGIS_fog_function,
   -- * Enums
-  gl_FOG_FUNC_POINTS_SGIS,
-  gl_FOG_FUNC_SGIS,
-  gl_MAX_FOG_FUNC_POINTS_SGIS,
+  pattern GL_FOG_FUNC_POINTS_SGIS,
+  pattern GL_FOG_FUNC_SGIS,
+  pattern GL_MAX_FOG_FUNC_POINTS_SGIS,
   -- * Functions
   glFogFuncSGIS,
   glGetFogFuncSGIS

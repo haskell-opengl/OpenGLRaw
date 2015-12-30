@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.HalfFloatVertex
@@ -17,7 +18,7 @@ module Graphics.GL.ARB.HalfFloatVertex (
   -- * Types
   GLhalf,
   -- * Enums
-  gl_HALF_FLOAT
+  pattern GL_HALF_FLOAT
 ) where
 
 import Graphics.GL.ExtensionPredicates

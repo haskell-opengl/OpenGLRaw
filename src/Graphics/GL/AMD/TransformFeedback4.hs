@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.TransformFeedback4
@@ -15,7 +16,7 @@ module Graphics.GL.AMD.TransformFeedback4 (
   glGetAMDTransformFeedback4,
   gl_AMD_transform_feedback4,
   -- * Enums
-  gl_STREAM_RASTERIZATION_AMD
+  pattern GL_STREAM_RASTERIZATION_AMD
 ) where
 
 import Graphics.GL.ExtensionPredicates

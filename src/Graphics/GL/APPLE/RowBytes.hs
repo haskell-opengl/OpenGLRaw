@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.RowBytes
@@ -15,8 +16,8 @@ module Graphics.GL.APPLE.RowBytes (
   glGetAPPLERowBytes,
   gl_APPLE_row_bytes,
   -- * Enums
-  gl_PACK_ROW_BYTES_APPLE,
-  gl_UNPACK_ROW_BYTES_APPLE
+  pattern GL_PACK_ROW_BYTES_APPLE,
+  pattern GL_UNPACK_ROW_BYTES_APPLE
 ) where
 
 import Graphics.GL.ExtensionPredicates

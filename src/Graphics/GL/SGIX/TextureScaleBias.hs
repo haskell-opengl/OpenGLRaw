@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.TextureScaleBias
@@ -15,10 +16,10 @@ module Graphics.GL.SGIX.TextureScaleBias (
   glGetSGIXTextureScaleBias,
   gl_SGIX_texture_scale_bias,
   -- * Enums
-  gl_POST_TEXTURE_FILTER_BIAS_RANGE_SGIX,
-  gl_POST_TEXTURE_FILTER_BIAS_SGIX,
-  gl_POST_TEXTURE_FILTER_SCALE_RANGE_SGIX,
-  gl_POST_TEXTURE_FILTER_SCALE_SGIX
+  pattern GL_POST_TEXTURE_FILTER_BIAS_RANGE_SGIX,
+  pattern GL_POST_TEXTURE_FILTER_BIAS_SGIX,
+  pattern GL_POST_TEXTURE_FILTER_SCALE_RANGE_SGIX,
+  pattern GL_POST_TEXTURE_FILTER_SCALE_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

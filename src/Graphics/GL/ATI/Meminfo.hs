@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.Meminfo
@@ -15,9 +16,9 @@ module Graphics.GL.ATI.Meminfo (
   glGetATIMeminfo,
   gl_ATI_meminfo,
   -- * Enums
-  gl_RENDERBUFFER_FREE_MEMORY_ATI,
-  gl_TEXTURE_FREE_MEMORY_ATI,
-  gl_VBO_FREE_MEMORY_ATI
+  pattern GL_RENDERBUFFER_FREE_MEMORY_ATI,
+  pattern GL_TEXTURE_FREE_MEMORY_ATI,
+  pattern GL_VBO_FREE_MEMORY_ATI
 ) where
 
 import Graphics.GL.ExtensionPredicates

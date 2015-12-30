@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.PackedFloat
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.PackedFloat (
   glGetEXTPackedFloat,
   gl_EXT_packed_float,
   -- * Enums
-  gl_R11F_G11F_B10F_EXT,
-  gl_RGBA_SIGNED_COMPONENTS_EXT,
-  gl_UNSIGNED_INT_10F_11F_11F_REV_EXT
+  pattern GL_R11F_G11F_B10F_EXT,
+  pattern GL_RGBA_SIGNED_COMPONENTS_EXT,
+  pattern GL_UNSIGNED_INT_10F_11F_11F_REV_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

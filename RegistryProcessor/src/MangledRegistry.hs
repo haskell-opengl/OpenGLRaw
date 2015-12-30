@@ -108,7 +108,7 @@ data Group = Group {
 
 toGroup :: R.Group -> Group
 toGroup g = Group {
-  groupEnums = map (mangleEnumName . R.unName) (R.groupEnums g) }
+  groupEnums = map (EnumName . R.unName) (R.groupEnums g) }
 
 -- NOTE: Due to an oversight in the OpenGL ES spec, an enum can have different
 -- values for different APIs (happens only for GL_ACTIVE_PROGRAM_EXT).
@@ -124,12 +124,7 @@ toEnum' toTypeName e = Enum {
   enumValue = EnumValue (R.enumValue e),
   enumAPI = API `fmap` R.enumAPI e,
   enumType = toTypeName (R.enumType e),
-  enumName = mangleEnumName (R.enumName e) }
-
-mangleEnumName :: String -> EnumName
-mangleEnumName =
-  EnumName . joinWords . headToLower . splitWords
-  where headToLower xs = map C.toLower (head xs) : tail xs
+  enumName = EnumName (R.enumName e) }
 
 splitChar :: Char
 splitChar = '_'
@@ -267,7 +262,7 @@ toInterfaceElement :: R.InterfaceElement -> InterfaceElement
 toInterfaceElement i =
   (case R.interfaceElementKind i of
      R.InterfaceElementType -> TypeElement . R.TypeName
-     R.InterfaceElementEnum -> EnumElement . mangleEnumName
+     R.InterfaceElementEnum -> EnumElement . EnumName
      R.InterfaceElementCommand -> CommandElement . CommandName)
   (R.unName (R.interfaceElementName i))
 

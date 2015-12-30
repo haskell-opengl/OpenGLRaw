@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.OES.ByteCoordinates
@@ -17,7 +18,7 @@ module Graphics.GL.OES.ByteCoordinates (
   -- * Types
   GLbyte,
   -- * Enums
-  gl_BYTE,
+  pattern GL_BYTE,
   -- * Functions
   glMultiTexCoord1bOES,
   glMultiTexCoord1bvOES,

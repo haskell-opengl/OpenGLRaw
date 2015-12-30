@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TransformFeedback2
@@ -15,10 +16,10 @@ module Graphics.GL.NV.TransformFeedback2 (
   glGetNVTransformFeedback2,
   gl_NV_transform_feedback2,
   -- * Enums
-  gl_TRANSFORM_FEEDBACK_BINDING_NV,
-  gl_TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV,
-  gl_TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV,
-  gl_TRANSFORM_FEEDBACK_NV,
+  pattern GL_TRANSFORM_FEEDBACK_BINDING_NV,
+  pattern GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV,
+  pattern GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV,
+  pattern GL_TRANSFORM_FEEDBACK_NV,
   -- * Functions
   glBindTransformFeedbackNV,
   glDeleteTransformFeedbacksNV,

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureBufferObject
@@ -15,11 +16,11 @@ module Graphics.GL.ARB.TextureBufferObject (
   glGetARBTextureBufferObject,
   gl_ARB_texture_buffer_object,
   -- * Enums
-  gl_MAX_TEXTURE_BUFFER_SIZE_ARB,
-  gl_TEXTURE_BINDING_BUFFER_ARB,
-  gl_TEXTURE_BUFFER_ARB,
-  gl_TEXTURE_BUFFER_DATA_STORE_BINDING_ARB,
-  gl_TEXTURE_BUFFER_FORMAT_ARB,
+  pattern GL_MAX_TEXTURE_BUFFER_SIZE_ARB,
+  pattern GL_TEXTURE_BINDING_BUFFER_ARB,
+  pattern GL_TEXTURE_BUFFER_ARB,
+  pattern GL_TEXTURE_BUFFER_DATA_STORE_BINDING_ARB,
+  pattern GL_TEXTURE_BUFFER_FORMAT_ARB,
   -- * Functions
   glTexBufferARB
 ) where

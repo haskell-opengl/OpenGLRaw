@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.OES.ReadFormat
@@ -15,8 +16,8 @@ module Graphics.GL.OES.ReadFormat (
   glGetOESReadFormat,
   gl_OES_read_format,
   -- * Enums
-  gl_IMPLEMENTATION_COLOR_READ_FORMAT_OES,
-  gl_IMPLEMENTATION_COLOR_READ_TYPE_OES
+  pattern GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES,
+  pattern GL_IMPLEMENTATION_COLOR_READ_TYPE_OES
 ) where
 
 import Graphics.GL.ExtensionPredicates

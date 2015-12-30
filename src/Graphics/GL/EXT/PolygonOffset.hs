@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.PolygonOffset
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.PolygonOffset (
   glGetEXTPolygonOffset,
   gl_EXT_polygon_offset,
   -- * Enums
-  gl_POLYGON_OFFSET_BIAS_EXT,
-  gl_POLYGON_OFFSET_EXT,
-  gl_POLYGON_OFFSET_FACTOR_EXT,
+  pattern GL_POLYGON_OFFSET_BIAS_EXT,
+  pattern GL_POLYGON_OFFSET_EXT,
+  pattern GL_POLYGON_OFFSET_FACTOR_EXT,
   -- * Functions
   glPolygonOffsetEXT
 ) where

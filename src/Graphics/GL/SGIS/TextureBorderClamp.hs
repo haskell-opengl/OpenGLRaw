@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.TextureBorderClamp
@@ -15,7 +16,7 @@ module Graphics.GL.SGIS.TextureBorderClamp (
   glGetSGISTextureBorderClamp,
   gl_SGIS_texture_border_clamp,
   -- * Enums
-  gl_CLAMP_TO_BORDER_SGIS
+  pattern GL_CLAMP_TO_BORDER_SGIS
 ) where
 
 import Graphics.GL.ExtensionPredicates

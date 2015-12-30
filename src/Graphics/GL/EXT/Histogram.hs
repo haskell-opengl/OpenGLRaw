@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.Histogram
@@ -15,20 +16,20 @@ module Graphics.GL.EXT.Histogram (
   glGetEXTHistogram,
   gl_EXT_histogram,
   -- * Enums
-  gl_HISTOGRAM_ALPHA_SIZE_EXT,
-  gl_HISTOGRAM_BLUE_SIZE_EXT,
-  gl_HISTOGRAM_EXT,
-  gl_HISTOGRAM_FORMAT_EXT,
-  gl_HISTOGRAM_GREEN_SIZE_EXT,
-  gl_HISTOGRAM_LUMINANCE_SIZE_EXT,
-  gl_HISTOGRAM_RED_SIZE_EXT,
-  gl_HISTOGRAM_SINK_EXT,
-  gl_HISTOGRAM_WIDTH_EXT,
-  gl_MINMAX_EXT,
-  gl_MINMAX_FORMAT_EXT,
-  gl_MINMAX_SINK_EXT,
-  gl_PROXY_HISTOGRAM_EXT,
-  gl_TABLE_TOO_LARGE_EXT,
+  pattern GL_HISTOGRAM_ALPHA_SIZE_EXT,
+  pattern GL_HISTOGRAM_BLUE_SIZE_EXT,
+  pattern GL_HISTOGRAM_EXT,
+  pattern GL_HISTOGRAM_FORMAT_EXT,
+  pattern GL_HISTOGRAM_GREEN_SIZE_EXT,
+  pattern GL_HISTOGRAM_LUMINANCE_SIZE_EXT,
+  pattern GL_HISTOGRAM_RED_SIZE_EXT,
+  pattern GL_HISTOGRAM_SINK_EXT,
+  pattern GL_HISTOGRAM_WIDTH_EXT,
+  pattern GL_MINMAX_EXT,
+  pattern GL_MINMAX_FORMAT_EXT,
+  pattern GL_MINMAX_SINK_EXT,
+  pattern GL_PROXY_HISTOGRAM_EXT,
+  pattern GL_TABLE_TOO_LARGE_EXT,
   -- * Functions
   glGetHistogramEXT,
   glGetHistogramParameterfvEXT,

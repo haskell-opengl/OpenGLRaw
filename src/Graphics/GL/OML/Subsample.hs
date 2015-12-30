@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.OML.Subsample
@@ -15,8 +16,8 @@ module Graphics.GL.OML.Subsample (
   glGetOMLSubsample,
   gl_OML_subsample,
   -- * Enums
-  gl_FORMAT_SUBSAMPLE_244_244_OML,
-  gl_FORMAT_SUBSAMPLE_24_24_OML
+  pattern GL_FORMAT_SUBSAMPLE_244_244_OML,
+  pattern GL_FORMAT_SUBSAMPLE_24_24_OML
 ) where
 
 import Graphics.GL.ExtensionPredicates

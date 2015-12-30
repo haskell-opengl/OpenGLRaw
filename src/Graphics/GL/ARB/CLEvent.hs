@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.CLEvent
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.CLEvent (
   glGetARBCLEvent,
   gl_ARB_cl_event,
   -- * Enums
-  gl_SYNC_CL_EVENT_ARB,
-  gl_SYNC_CL_EVENT_COMPLETE_ARB,
+  pattern GL_SYNC_CL_EVENT_ARB,
+  pattern GL_SYNC_CL_EVENT_COMPLETE_ARB,
   -- * Functions
   glCreateSyncFromCLeventARB
 ) where

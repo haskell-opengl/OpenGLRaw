@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.PixelTiles
@@ -15,14 +16,14 @@ module Graphics.GL.SGIX.PixelTiles (
   glGetSGIXPixelTiles,
   gl_SGIX_pixel_tiles,
   -- * Enums
-  gl_PIXEL_TILE_BEST_ALIGNMENT_SGIX,
-  gl_PIXEL_TILE_CACHE_INCREMENT_SGIX,
-  gl_PIXEL_TILE_CACHE_SIZE_SGIX,
-  gl_PIXEL_TILE_GRID_DEPTH_SGIX,
-  gl_PIXEL_TILE_GRID_HEIGHT_SGIX,
-  gl_PIXEL_TILE_GRID_WIDTH_SGIX,
-  gl_PIXEL_TILE_HEIGHT_SGIX,
-  gl_PIXEL_TILE_WIDTH_SGIX
+  pattern GL_PIXEL_TILE_BEST_ALIGNMENT_SGIX,
+  pattern GL_PIXEL_TILE_CACHE_INCREMENT_SGIX,
+  pattern GL_PIXEL_TILE_CACHE_SIZE_SGIX,
+  pattern GL_PIXEL_TILE_GRID_DEPTH_SGIX,
+  pattern GL_PIXEL_TILE_GRID_HEIGHT_SGIX,
+  pattern GL_PIXEL_TILE_GRID_WIDTH_SGIX,
+  pattern GL_PIXEL_TILE_HEIGHT_SGIX,
+  pattern GL_PIXEL_TILE_WIDTH_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

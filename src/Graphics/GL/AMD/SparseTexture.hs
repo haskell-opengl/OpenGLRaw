@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.SparseTexture
@@ -15,15 +16,15 @@ module Graphics.GL.AMD.SparseTexture (
   glGetAMDSparseTexture,
   gl_AMD_sparse_texture,
   -- * Enums
-  gl_MAX_SPARSE_3D_TEXTURE_SIZE_AMD,
-  gl_MAX_SPARSE_ARRAY_TEXTURE_LAYERS,
-  gl_MAX_SPARSE_TEXTURE_SIZE_AMD,
-  gl_MIN_LOD_WARNING_AMD,
-  gl_MIN_SPARSE_LEVEL_AMD,
-  gl_TEXTURE_STORAGE_SPARSE_BIT_AMD,
-  gl_VIRTUAL_PAGE_SIZE_X_AMD,
-  gl_VIRTUAL_PAGE_SIZE_Y_AMD,
-  gl_VIRTUAL_PAGE_SIZE_Z_AMD,
+  pattern GL_MAX_SPARSE_3D_TEXTURE_SIZE_AMD,
+  pattern GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS,
+  pattern GL_MAX_SPARSE_TEXTURE_SIZE_AMD,
+  pattern GL_MIN_LOD_WARNING_AMD,
+  pattern GL_MIN_SPARSE_LEVEL_AMD,
+  pattern GL_TEXTURE_STORAGE_SPARSE_BIT_AMD,
+  pattern GL_VIRTUAL_PAGE_SIZE_X_AMD,
+  pattern GL_VIRTUAL_PAGE_SIZE_Y_AMD,
+  pattern GL_VIRTUAL_PAGE_SIZE_Z_AMD,
   -- * Functions
   glTexStorageSparseAMD,
   glTextureStorageSparseAMD

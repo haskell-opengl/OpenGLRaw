@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.OML.Resample
@@ -15,12 +16,12 @@ module Graphics.GL.OML.Resample (
   glGetOMLResample,
   gl_OML_resample,
   -- * Enums
-  gl_PACK_RESAMPLE_OML,
-  gl_RESAMPLE_AVERAGE_OML,
-  gl_RESAMPLE_DECIMATE_OML,
-  gl_RESAMPLE_REPLICATE_OML,
-  gl_RESAMPLE_ZERO_FILL_OML,
-  gl_UNPACK_RESAMPLE_OML
+  pattern GL_PACK_RESAMPLE_OML,
+  pattern GL_RESAMPLE_AVERAGE_OML,
+  pattern GL_RESAMPLE_DECIMATE_OML,
+  pattern GL_RESAMPLE_REPLICATE_OML,
+  pattern GL_RESAMPLE_ZERO_FILL_OML,
+  pattern GL_UNPACK_RESAMPLE_OML
 ) where
 
 import Graphics.GL.ExtensionPredicates

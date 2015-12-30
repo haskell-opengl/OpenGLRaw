@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.BlendFuncExtended
@@ -15,11 +16,11 @@ module Graphics.GL.ARB.BlendFuncExtended (
   glGetARBBlendFuncExtended,
   gl_ARB_blend_func_extended,
   -- * Enums
-  gl_MAX_DUAL_SOURCE_DRAW_BUFFERS,
-  gl_ONE_MINUS_SRC1_ALPHA,
-  gl_ONE_MINUS_SRC1_COLOR,
-  gl_SRC1_ALPHA,
-  gl_SRC1_COLOR,
+  pattern GL_MAX_DUAL_SOURCE_DRAW_BUFFERS,
+  pattern GL_ONE_MINUS_SRC1_ALPHA,
+  pattern GL_ONE_MINUS_SRC1_COLOR,
+  pattern GL_SRC1_ALPHA,
+  pattern GL_SRC1_COLOR,
   -- * Functions
   glBindFragDataLocationIndexed,
   glGetFragDataIndex

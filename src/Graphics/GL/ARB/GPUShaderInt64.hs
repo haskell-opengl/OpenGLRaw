@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.GPUShaderInt64
@@ -15,14 +16,14 @@ module Graphics.GL.ARB.GPUShaderInt64 (
   glGetARBGPUShaderInt64,
   gl_ARB_gpu_shader_int64,
   -- * Enums
-  gl_INT64_ARB,
-  gl_INT64_VEC2_ARB,
-  gl_INT64_VEC3_ARB,
-  gl_INT64_VEC4_ARB,
-  gl_UNSIGNED_INT64_ARB,
-  gl_UNSIGNED_INT64_VEC2_ARB,
-  gl_UNSIGNED_INT64_VEC3_ARB,
-  gl_UNSIGNED_INT64_VEC4_ARB,
+  pattern GL_INT64_ARB,
+  pattern GL_INT64_VEC2_ARB,
+  pattern GL_INT64_VEC3_ARB,
+  pattern GL_INT64_VEC4_ARB,
+  pattern GL_UNSIGNED_INT64_ARB,
+  pattern GL_UNSIGNED_INT64_VEC2_ARB,
+  pattern GL_UNSIGNED_INT64_VEC3_ARB,
+  pattern GL_UNSIGNED_INT64_VEC4_ARB,
   -- * Functions
   glGetUniformi64vARB,
   glGetUniformui64vARB,

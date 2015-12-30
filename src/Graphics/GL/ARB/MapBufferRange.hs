@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.MapBufferRange
@@ -15,12 +16,12 @@ module Graphics.GL.ARB.MapBufferRange (
   glGetARBMapBufferRange,
   gl_ARB_map_buffer_range,
   -- * Enums
-  gl_MAP_FLUSH_EXPLICIT_BIT,
-  gl_MAP_INVALIDATE_BUFFER_BIT,
-  gl_MAP_INVALIDATE_RANGE_BIT,
-  gl_MAP_READ_BIT,
-  gl_MAP_UNSYNCHRONIZED_BIT,
-  gl_MAP_WRITE_BIT,
+  pattern GL_MAP_FLUSH_EXPLICIT_BIT,
+  pattern GL_MAP_INVALIDATE_BUFFER_BIT,
+  pattern GL_MAP_INVALIDATE_RANGE_BIT,
+  pattern GL_MAP_READ_BIT,
+  pattern GL_MAP_UNSYNCHRONIZED_BIT,
+  pattern GL_MAP_WRITE_BIT,
   -- * Functions
   glFlushMappedBufferRange,
   glMapBufferRange

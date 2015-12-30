@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.FogOffset
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.FogOffset (
   glGetSGIXFogOffset,
   gl_SGIX_fog_offset,
   -- * Enums
-  gl_FOG_OFFSET_SGIX,
-  gl_FOG_OFFSET_VALUE_SGIX
+  pattern GL_FOG_OFFSET_SGIX,
+  pattern GL_FOG_OFFSET_VALUE_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

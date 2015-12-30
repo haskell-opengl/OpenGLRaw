@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.VertexArrayRange2
@@ -15,7 +16,7 @@ module Graphics.GL.NV.VertexArrayRange2 (
   glGetNVVertexArrayRange2,
   gl_NV_vertex_array_range2,
   -- * Enums
-  gl_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV
+  pattern GL_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

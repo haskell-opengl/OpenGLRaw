@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ViewportArray
@@ -15,19 +16,19 @@ module Graphics.GL.ARB.ViewportArray (
   glGetARBViewportArray,
   gl_ARB_viewport_array,
   -- * Enums
-  gl_DEPTH_RANGE,
-  gl_FIRST_VERTEX_CONVENTION,
-  gl_LAST_VERTEX_CONVENTION,
-  gl_LAYER_PROVOKING_VERTEX,
-  gl_MAX_VIEWPORTS,
-  gl_PROVOKING_VERTEX,
-  gl_SCISSOR_BOX,
-  gl_SCISSOR_TEST,
-  gl_UNDEFINED_VERTEX,
-  gl_VIEWPORT,
-  gl_VIEWPORT_BOUNDS_RANGE,
-  gl_VIEWPORT_INDEX_PROVOKING_VERTEX,
-  gl_VIEWPORT_SUBPIXEL_BITS,
+  pattern GL_DEPTH_RANGE,
+  pattern GL_FIRST_VERTEX_CONVENTION,
+  pattern GL_LAST_VERTEX_CONVENTION,
+  pattern GL_LAYER_PROVOKING_VERTEX,
+  pattern GL_MAX_VIEWPORTS,
+  pattern GL_PROVOKING_VERTEX,
+  pattern GL_SCISSOR_BOX,
+  pattern GL_SCISSOR_TEST,
+  pattern GL_UNDEFINED_VERTEX,
+  pattern GL_VIEWPORT,
+  pattern GL_VIEWPORT_BOUNDS_RANGE,
+  pattern GL_VIEWPORT_INDEX_PROVOKING_VERTEX,
+  pattern GL_VIEWPORT_SUBPIXEL_BITS,
   -- * Functions
   glDepthRangeArrayv,
   glDepthRangeIndexed,

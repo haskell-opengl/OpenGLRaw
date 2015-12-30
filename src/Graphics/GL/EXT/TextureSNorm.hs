@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureSNorm
@@ -15,31 +16,31 @@ module Graphics.GL.EXT.TextureSNorm (
   glGetEXTTextureSNorm,
   gl_EXT_texture_snorm,
   -- * Enums
-  gl_ALPHA16_SNORM,
-  gl_ALPHA8_SNORM,
-  gl_ALPHA_SNORM,
-  gl_INTENSITY16_SNORM,
-  gl_INTENSITY8_SNORM,
-  gl_INTENSITY_SNORM,
-  gl_LUMINANCE16_ALPHA16_SNORM,
-  gl_LUMINANCE16_SNORM,
-  gl_LUMINANCE8_ALPHA8_SNORM,
-  gl_LUMINANCE8_SNORM,
-  gl_LUMINANCE_ALPHA_SNORM,
-  gl_LUMINANCE_SNORM,
-  gl_R16_SNORM,
-  gl_R8_SNORM,
-  gl_RED_SNORM,
-  gl_RG16_SNORM,
-  gl_RG8_SNORM,
-  gl_RGB16_SNORM,
-  gl_RGB8_SNORM,
-  gl_RGBA16_SNORM,
-  gl_RGBA8_SNORM,
-  gl_RGBA_SNORM,
-  gl_RGB_SNORM,
-  gl_RG_SNORM,
-  gl_SIGNED_NORMALIZED
+  pattern GL_ALPHA16_SNORM,
+  pattern GL_ALPHA8_SNORM,
+  pattern GL_ALPHA_SNORM,
+  pattern GL_INTENSITY16_SNORM,
+  pattern GL_INTENSITY8_SNORM,
+  pattern GL_INTENSITY_SNORM,
+  pattern GL_LUMINANCE16_ALPHA16_SNORM,
+  pattern GL_LUMINANCE16_SNORM,
+  pattern GL_LUMINANCE8_ALPHA8_SNORM,
+  pattern GL_LUMINANCE8_SNORM,
+  pattern GL_LUMINANCE_ALPHA_SNORM,
+  pattern GL_LUMINANCE_SNORM,
+  pattern GL_R16_SNORM,
+  pattern GL_R8_SNORM,
+  pattern GL_RED_SNORM,
+  pattern GL_RG16_SNORM,
+  pattern GL_RG8_SNORM,
+  pattern GL_RGB16_SNORM,
+  pattern GL_RGB8_SNORM,
+  pattern GL_RGBA16_SNORM,
+  pattern GL_RGBA8_SNORM,
+  pattern GL_RGBA_SNORM,
+  pattern GL_RGB_SNORM,
+  pattern GL_RG_SNORM,
+  pattern GL_SIGNED_NORMALIZED
 ) where
 
 import Graphics.GL.ExtensionPredicates

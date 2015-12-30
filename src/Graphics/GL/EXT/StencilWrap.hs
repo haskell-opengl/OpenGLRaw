@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.StencilWrap
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.StencilWrap (
   glGetEXTStencilWrap,
   gl_EXT_stencil_wrap,
   -- * Enums
-  gl_DECR_WRAP_EXT,
-  gl_INCR_WRAP_EXT
+  pattern GL_DECR_WRAP_EXT,
+  pattern GL_INCR_WRAP_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

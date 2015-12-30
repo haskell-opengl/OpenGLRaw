@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.DepthBufferFloat
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.DepthBufferFloat (
   glGetARBDepthBufferFloat,
   gl_ARB_depth_buffer_float,
   -- * Enums
-  gl_DEPTH32F_STENCIL8,
-  gl_DEPTH_COMPONENT32F,
-  gl_FLOAT_32_UNSIGNED_INT_24_8_REV
+  pattern GL_DEPTH32F_STENCIL8,
+  pattern GL_DEPTH_COMPONENT32F,
+  pattern GL_FLOAT_32_UNSIGNED_INT_24_8_REV
 ) where
 
 import Graphics.GL.ExtensionPredicates

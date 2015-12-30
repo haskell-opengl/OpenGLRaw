@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.DrawRangeElements
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.DrawRangeElements (
   glGetEXTDrawRangeElements,
   gl_EXT_draw_range_elements,
   -- * Enums
-  gl_MAX_ELEMENTS_INDICES_EXT,
-  gl_MAX_ELEMENTS_VERTICES_EXT,
+  pattern GL_MAX_ELEMENTS_INDICES_EXT,
+  pattern GL_MAX_ELEMENTS_VERTICES_EXT,
   -- * Functions
   glDrawRangeElementsEXT
 ) where

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.OcclusionQuery2
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.OcclusionQuery2 (
   glGetARBOcclusionQuery2,
   gl_ARB_occlusion_query2,
   -- * Enums
-  gl_ANY_SAMPLES_PASSED
+  pattern GL_ANY_SAMPLES_PASSED
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.PrimitiveRestart
@@ -15,8 +16,8 @@ module Graphics.GL.NV.PrimitiveRestart (
   glGetNVPrimitiveRestart,
   gl_NV_primitive_restart,
   -- * Enums
-  gl_PRIMITIVE_RESTART_INDEX_NV,
-  gl_PRIMITIVE_RESTART_NV,
+  pattern GL_PRIMITIVE_RESTART_INDEX_NV,
+  pattern GL_PRIMITIVE_RESTART_NV,
   -- * Functions
   glPrimitiveRestartIndexNV,
   glPrimitiveRestartNV

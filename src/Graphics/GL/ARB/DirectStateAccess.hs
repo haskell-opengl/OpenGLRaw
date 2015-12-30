@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.DirectStateAccess
@@ -15,19 +16,19 @@ module Graphics.GL.ARB.DirectStateAccess (
   glGetARBDirectStateAccess,
   gl_ARB_direct_state_access,
   -- * Enums
-  gl_QUERY_TARGET,
-  gl_TEXTURE_BINDING_1D,
-  gl_TEXTURE_BINDING_1D_ARRAY,
-  gl_TEXTURE_BINDING_2D,
-  gl_TEXTURE_BINDING_2D_ARRAY,
-  gl_TEXTURE_BINDING_2D_MULTISAMPLE,
-  gl_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY,
-  gl_TEXTURE_BINDING_3D,
-  gl_TEXTURE_BINDING_BUFFER,
-  gl_TEXTURE_BINDING_CUBE_MAP,
-  gl_TEXTURE_BINDING_CUBE_MAP_ARRAY,
-  gl_TEXTURE_BINDING_RECTANGLE,
-  gl_TEXTURE_TARGET,
+  pattern GL_QUERY_TARGET,
+  pattern GL_TEXTURE_BINDING_1D,
+  pattern GL_TEXTURE_BINDING_1D_ARRAY,
+  pattern GL_TEXTURE_BINDING_2D,
+  pattern GL_TEXTURE_BINDING_2D_ARRAY,
+  pattern GL_TEXTURE_BINDING_2D_MULTISAMPLE,
+  pattern GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY,
+  pattern GL_TEXTURE_BINDING_3D,
+  pattern GL_TEXTURE_BINDING_BUFFER,
+  pattern GL_TEXTURE_BINDING_CUBE_MAP,
+  pattern GL_TEXTURE_BINDING_CUBE_MAP_ARRAY,
+  pattern GL_TEXTURE_BINDING_RECTANGLE,
+  pattern GL_TEXTURE_TARGET,
   -- * Functions
   glBindTextureUnit,
   glBlitNamedFramebuffer,

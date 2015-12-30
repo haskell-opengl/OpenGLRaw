@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SUNX.ConstantData
@@ -15,8 +16,8 @@ module Graphics.GL.SUNX.ConstantData (
   glGetSUNXConstantData,
   gl_SUNX_constant_data,
   -- * Enums
-  gl_TEXTURE_CONSTANT_DATA_SUNX,
-  gl_UNPACK_CONSTANT_DATA_SUNX,
+  pattern GL_TEXTURE_CONSTANT_DATA_SUNX,
+  pattern GL_UNPACK_CONSTANT_DATA_SUNX,
   -- * Functions
   glFinishTextureSUNX
 ) where

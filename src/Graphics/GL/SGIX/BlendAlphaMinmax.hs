@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.BlendAlphaMinmax
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.BlendAlphaMinmax (
   glGetSGIXBlendAlphaMinmax,
   gl_SGIX_blend_alpha_minmax,
   -- * Enums
-  gl_ALPHA_MAX_SGIX,
-  gl_ALPHA_MIN_SGIX
+  pattern GL_ALPHA_MAX_SGIX,
+  pattern GL_ALPHA_MIN_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

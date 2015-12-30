@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.MultisampleFilterHint
@@ -15,7 +16,7 @@ module Graphics.GL.NV.MultisampleFilterHint (
   glGetNVMultisampleFilterHint,
   gl_NV_multisample_filter_hint,
   -- * Enums
-  gl_MULTISAMPLE_FILTER_HINT_NV
+  pattern GL_MULTISAMPLE_FILTER_HINT_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TimerQuery
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.TimerQuery (
   glGetARBTimerQuery,
   gl_ARB_timer_query,
   -- * Enums
-  gl_TIMESTAMP,
-  gl_TIME_ELAPSED,
+  pattern GL_TIMESTAMP,
+  pattern GL_TIME_ELAPSED,
   -- * Functions
   glGetQueryObjecti64v,
   glGetQueryObjectui64v,

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ThreeDFX.Multisample
@@ -15,10 +16,10 @@ module Graphics.GL.ThreeDFX.Multisample (
   glGetThreeDFXMultisample,
   gl_3DFX_multisample,
   -- * Enums
-  gl_MULTISAMPLE_3DFX,
-  gl_MULTISAMPLE_BIT_3DFX,
-  gl_SAMPLES_3DFX,
-  gl_SAMPLE_BUFFERS_3DFX
+  pattern GL_MULTISAMPLE_3DFX,
+  pattern GL_MULTISAMPLE_BIT_3DFX,
+  pattern GL_SAMPLES_3DFX,
+  pattern GL_SAMPLE_BUFFERS_3DFX
 ) where
 
 import Graphics.GL.ExtensionPredicates

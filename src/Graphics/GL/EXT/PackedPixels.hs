@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.PackedPixels
@@ -15,11 +16,11 @@ module Graphics.GL.EXT.PackedPixels (
   glGetEXTPackedPixels,
   gl_EXT_packed_pixels,
   -- * Enums
-  gl_UNSIGNED_BYTE_3_3_2_EXT,
-  gl_UNSIGNED_INT_10_10_10_2_EXT,
-  gl_UNSIGNED_INT_8_8_8_8_EXT,
-  gl_UNSIGNED_SHORT_4_4_4_4_EXT,
-  gl_UNSIGNED_SHORT_5_5_5_1_EXT
+  pattern GL_UNSIGNED_BYTE_3_3_2_EXT,
+  pattern GL_UNSIGNED_INT_10_10_10_2_EXT,
+  pattern GL_UNSIGNED_INT_8_8_8_8_EXT,
+  pattern GL_UNSIGNED_SHORT_4_4_4_4_EXT,
+  pattern GL_UNSIGNED_SHORT_5_5_5_1_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.SpecularVector
@@ -15,7 +16,7 @@ module Graphics.GL.APPLE.SpecularVector (
   glGetAPPLESpecularVector,
   gl_APPLE_specular_vector,
   -- * Enums
-  gl_LIGHT_MODEL_SPECULAR_VECTOR_APPLE
+  pattern GL_LIGHT_MODEL_SPECULAR_VECTOR_APPLE
 ) where
 
 import Graphics.GL.ExtensionPredicates

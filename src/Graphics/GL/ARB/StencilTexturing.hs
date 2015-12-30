@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.StencilTexturing
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.StencilTexturing (
   glGetARBStencilTexturing,
   gl_ARB_stencil_texturing,
   -- * Enums
-  gl_DEPTH_STENCIL_TEXTURE_MODE
+  pattern GL_DEPTH_STENCIL_TEXTURE_MODE
 ) where
 
 import Graphics.GL.ExtensionPredicates

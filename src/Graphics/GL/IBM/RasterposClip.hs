@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.IBM.RasterposClip
@@ -15,7 +16,7 @@ module Graphics.GL.IBM.RasterposClip (
   glGetIBMRasterposClip,
   gl_IBM_rasterpos_clip,
   -- * Enums
-  gl_RASTER_POSITION_UNCLIPPED_IBM
+  pattern GL_RASTER_POSITION_UNCLIPPED_IBM
 ) where
 
 import Graphics.GL.ExtensionPredicates

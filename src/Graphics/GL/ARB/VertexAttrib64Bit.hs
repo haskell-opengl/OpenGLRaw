@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.VertexAttrib64Bit
@@ -15,19 +16,19 @@ module Graphics.GL.ARB.VertexAttrib64Bit (
   glGetARBVertexAttrib64Bit,
   gl_ARB_vertex_attrib_64bit,
   -- * Enums
-  gl_DOUBLE_MAT2,
-  gl_DOUBLE_MAT2x3,
-  gl_DOUBLE_MAT2x4,
-  gl_DOUBLE_MAT3,
-  gl_DOUBLE_MAT3x2,
-  gl_DOUBLE_MAT3x4,
-  gl_DOUBLE_MAT4,
-  gl_DOUBLE_MAT4x2,
-  gl_DOUBLE_MAT4x3,
-  gl_DOUBLE_VEC2,
-  gl_DOUBLE_VEC3,
-  gl_DOUBLE_VEC4,
-  gl_RGB32I,
+  pattern GL_DOUBLE_MAT2,
+  pattern GL_DOUBLE_MAT2x3,
+  pattern GL_DOUBLE_MAT2x4,
+  pattern GL_DOUBLE_MAT3,
+  pattern GL_DOUBLE_MAT3x2,
+  pattern GL_DOUBLE_MAT3x4,
+  pattern GL_DOUBLE_MAT4,
+  pattern GL_DOUBLE_MAT4x2,
+  pattern GL_DOUBLE_MAT4x3,
+  pattern GL_DOUBLE_VEC2,
+  pattern GL_DOUBLE_VEC3,
+  pattern GL_DOUBLE_VEC4,
+  pattern GL_RGB32I,
   -- * Functions
   glGetVertexAttribLdv,
   glVertexAttribL1d,

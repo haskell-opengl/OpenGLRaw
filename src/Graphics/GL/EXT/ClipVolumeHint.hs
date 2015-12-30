@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.ClipVolumeHint
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.ClipVolumeHint (
   glGetEXTClipVolumeHint,
   gl_EXT_clip_volume_hint,
   -- * Enums
-  gl_CLIP_VOLUME_CLIPPING_HINT_EXT
+  pattern GL_CLIP_VOLUME_CLIPPING_HINT_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

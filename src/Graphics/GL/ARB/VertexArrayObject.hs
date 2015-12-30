@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.VertexArrayObject
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.VertexArrayObject (
   glGetARBVertexArrayObject,
   gl_ARB_vertex_array_object,
   -- * Enums
-  gl_VERTEX_ARRAY_BINDING,
+  pattern GL_VERTEX_ARRAY_BINDING,
   -- * Functions
   glBindVertexArray,
   glDeleteVertexArrays,

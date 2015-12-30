@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.ObjectPurgeable
@@ -15,12 +16,12 @@ module Graphics.GL.APPLE.ObjectPurgeable (
   glGetAPPLEObjectPurgeable,
   gl_APPLE_object_purgeable,
   -- * Enums
-  gl_BUFFER_OBJECT_APPLE,
-  gl_PURGEABLE_APPLE,
-  gl_RELEASED_APPLE,
-  gl_RETAINED_APPLE,
-  gl_UNDEFINED_APPLE,
-  gl_VOLATILE_APPLE,
+  pattern GL_BUFFER_OBJECT_APPLE,
+  pattern GL_PURGEABLE_APPLE,
+  pattern GL_RELEASED_APPLE,
+  pattern GL_RETAINED_APPLE,
+  pattern GL_UNDEFINED_APPLE,
+  pattern GL_VOLATILE_APPLE,
   -- * Functions
   glGetObjectParameterivAPPLE,
   glObjectPurgeableAPPLE,

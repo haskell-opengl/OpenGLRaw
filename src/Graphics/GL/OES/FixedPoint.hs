@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.OES.FixedPoint
@@ -15,7 +16,7 @@ module Graphics.GL.OES.FixedPoint (
   glGetOESFixedPoint,
   gl_OES_fixed_point,
   -- * Enums
-  gl_FIXED_OES,
+  pattern GL_FIXED_OES,
   -- * Functions
   glAccumxOES,
   glAlphaFuncxOES,

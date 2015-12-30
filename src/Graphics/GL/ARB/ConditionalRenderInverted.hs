@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ConditionalRenderInverted
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.ConditionalRenderInverted (
   glGetARBConditionalRenderInverted,
   gl_ARB_conditional_render_inverted,
   -- * Enums
-  gl_QUERY_BY_REGION_NO_WAIT_INVERTED,
-  gl_QUERY_BY_REGION_WAIT_INVERTED,
-  gl_QUERY_NO_WAIT_INVERTED,
-  gl_QUERY_WAIT_INVERTED
+  pattern GL_QUERY_BY_REGION_NO_WAIT_INVERTED,
+  pattern GL_QUERY_BY_REGION_WAIT_INVERTED,
+  pattern GL_QUERY_NO_WAIT_INVERTED,
+  pattern GL_QUERY_WAIT_INVERTED
 ) where
 
 import Graphics.GL.ExtensionPredicates

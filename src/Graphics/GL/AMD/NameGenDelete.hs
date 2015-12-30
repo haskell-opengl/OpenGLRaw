@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.NameGenDelete
@@ -15,11 +16,11 @@ module Graphics.GL.AMD.NameGenDelete (
   glGetAMDNameGenDelete,
   gl_AMD_name_gen_delete,
   -- * Enums
-  gl_DATA_BUFFER_AMD,
-  gl_PERFORMANCE_MONITOR_AMD,
-  gl_QUERY_OBJECT_AMD,
-  gl_SAMPLER_OBJECT_AMD,
-  gl_VERTEX_ARRAY_OBJECT_AMD,
+  pattern GL_DATA_BUFFER_AMD,
+  pattern GL_PERFORMANCE_MONITOR_AMD,
+  pattern GL_QUERY_OBJECT_AMD,
+  pattern GL_SAMPLER_OBJECT_AMD,
+  pattern GL_VERTEX_ARRAY_OBJECT_AMD,
   -- * Functions
   glDeleteNamesAMD,
   glGenNamesAMD,

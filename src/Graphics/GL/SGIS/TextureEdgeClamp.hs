@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.TextureEdgeClamp
@@ -15,7 +16,7 @@ module Graphics.GL.SGIS.TextureEdgeClamp (
   glGetSGISTextureEdgeClamp,
   gl_SGIS_texture_edge_clamp,
   -- * Enums
-  gl_CLAMP_TO_EDGE_SGIS
+  pattern GL_CLAMP_TO_EDGE_SGIS
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.DepthBufferFloat
@@ -15,10 +16,10 @@ module Graphics.GL.NV.DepthBufferFloat (
   glGetNVDepthBufferFloat,
   gl_NV_depth_buffer_float,
   -- * Enums
-  gl_DEPTH32F_STENCIL8_NV,
-  gl_DEPTH_BUFFER_FLOAT_MODE_NV,
-  gl_DEPTH_COMPONENT32F_NV,
-  gl_FLOAT_32_UNSIGNED_INT_24_8_REV_NV,
+  pattern GL_DEPTH32F_STENCIL8_NV,
+  pattern GL_DEPTH_BUFFER_FLOAT_MODE_NV,
+  pattern GL_DEPTH_COMPONENT32F_NV,
+  pattern GL_FLOAT_32_UNSIGNED_INT_24_8_REV_NV,
   -- * Functions
   glClearDepthdNV,
   glDepthBoundsdNV,

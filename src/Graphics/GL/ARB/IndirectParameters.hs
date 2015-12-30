@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.IndirectParameters
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.IndirectParameters (
   glGetARBIndirectParameters,
   gl_ARB_indirect_parameters,
   -- * Enums
-  gl_PARAMETER_BUFFER_ARB,
-  gl_PARAMETER_BUFFER_BINDING_ARB,
+  pattern GL_PARAMETER_BUFFER_ARB,
+  pattern GL_PARAMETER_BUFFER_BINDING_ARB,
   -- * Functions
   glMultiDrawArraysIndirectCountARB,
   glMultiDrawElementsIndirectCountARB

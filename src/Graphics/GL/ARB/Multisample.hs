@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.Multisample
@@ -15,15 +16,15 @@ module Graphics.GL.ARB.Multisample (
   glGetARBMultisample,
   gl_ARB_multisample,
   -- * Enums
-  gl_MULTISAMPLE_ARB,
-  gl_MULTISAMPLE_BIT_ARB,
-  gl_SAMPLES_ARB,
-  gl_SAMPLE_ALPHA_TO_COVERAGE_ARB,
-  gl_SAMPLE_ALPHA_TO_ONE_ARB,
-  gl_SAMPLE_BUFFERS_ARB,
-  gl_SAMPLE_COVERAGE_ARB,
-  gl_SAMPLE_COVERAGE_INVERT_ARB,
-  gl_SAMPLE_COVERAGE_VALUE_ARB,
+  pattern GL_MULTISAMPLE_ARB,
+  pattern GL_MULTISAMPLE_BIT_ARB,
+  pattern GL_SAMPLES_ARB,
+  pattern GL_SAMPLE_ALPHA_TO_COVERAGE_ARB,
+  pattern GL_SAMPLE_ALPHA_TO_ONE_ARB,
+  pattern GL_SAMPLE_BUFFERS_ARB,
+  pattern GL_SAMPLE_COVERAGE_ARB,
+  pattern GL_SAMPLE_COVERAGE_INVERT_ARB,
+  pattern GL_SAMPLE_COVERAGE_VALUE_ARB,
   -- * Functions
   glSampleCoverageARB
 ) where

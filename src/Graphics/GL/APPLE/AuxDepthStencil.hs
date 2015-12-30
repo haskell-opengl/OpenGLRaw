@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.AuxDepthStencil
@@ -15,7 +16,7 @@ module Graphics.GL.APPLE.AuxDepthStencil (
   glGetAPPLEAuxDepthStencil,
   gl_APPLE_aux_depth_stencil,
   -- * Enums
-  gl_AUX_DEPTH_STENCIL_APPLE
+  pattern GL_AUX_DEPTH_STENCIL_APPLE
 ) where
 
 import Graphics.GL.ExtensionPredicates

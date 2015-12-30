@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.ClientStorage
@@ -15,7 +16,7 @@ module Graphics.GL.APPLE.ClientStorage (
   glGetAPPLEClientStorage,
   gl_APPLE_client_storage,
   -- * Enums
-  gl_UNPACK_CLIENT_STORAGE_APPLE
+  pattern GL_UNPACK_CLIENT_STORAGE_APPLE
 ) where
 
 import Graphics.GL.ExtensionPredicates

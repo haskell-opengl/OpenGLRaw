@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.TextureFloat
@@ -15,18 +16,18 @@ module Graphics.GL.ATI.TextureFloat (
   glGetATITextureFloat,
   gl_ATI_texture_float,
   -- * Enums
-  gl_ALPHA_FLOAT16_ATI,
-  gl_ALPHA_FLOAT32_ATI,
-  gl_INTENSITY_FLOAT16_ATI,
-  gl_INTENSITY_FLOAT32_ATI,
-  gl_LUMINANCE_ALPHA_FLOAT16_ATI,
-  gl_LUMINANCE_ALPHA_FLOAT32_ATI,
-  gl_LUMINANCE_FLOAT16_ATI,
-  gl_LUMINANCE_FLOAT32_ATI,
-  gl_RGBA_FLOAT16_ATI,
-  gl_RGBA_FLOAT32_ATI,
-  gl_RGB_FLOAT16_ATI,
-  gl_RGB_FLOAT32_ATI
+  pattern GL_ALPHA_FLOAT16_ATI,
+  pattern GL_ALPHA_FLOAT32_ATI,
+  pattern GL_INTENSITY_FLOAT16_ATI,
+  pattern GL_INTENSITY_FLOAT32_ATI,
+  pattern GL_LUMINANCE_ALPHA_FLOAT16_ATI,
+  pattern GL_LUMINANCE_ALPHA_FLOAT32_ATI,
+  pattern GL_LUMINANCE_FLOAT16_ATI,
+  pattern GL_LUMINANCE_FLOAT32_ATI,
+  pattern GL_RGBA_FLOAT16_ATI,
+  pattern GL_RGBA_FLOAT32_ATI,
+  pattern GL_RGB_FLOAT16_ATI,
+  pattern GL_RGB_FLOAT32_ATI
 ) where
 
 import Graphics.GL.ExtensionPredicates

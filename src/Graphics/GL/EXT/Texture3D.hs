@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.Texture3D
@@ -15,15 +16,15 @@ module Graphics.GL.EXT.Texture3D (
   glGetEXTTexture3D,
   gl_EXT_texture3D,
   -- * Enums
-  gl_MAX_3D_TEXTURE_SIZE_EXT,
-  gl_PACK_IMAGE_HEIGHT_EXT,
-  gl_PACK_SKIP_IMAGES_EXT,
-  gl_PROXY_TEXTURE_3D_EXT,
-  gl_TEXTURE_3D_EXT,
-  gl_TEXTURE_DEPTH_EXT,
-  gl_TEXTURE_WRAP_R_EXT,
-  gl_UNPACK_IMAGE_HEIGHT_EXT,
-  gl_UNPACK_SKIP_IMAGES_EXT,
+  pattern GL_MAX_3D_TEXTURE_SIZE_EXT,
+  pattern GL_PACK_IMAGE_HEIGHT_EXT,
+  pattern GL_PACK_SKIP_IMAGES_EXT,
+  pattern GL_PROXY_TEXTURE_3D_EXT,
+  pattern GL_TEXTURE_3D_EXT,
+  pattern GL_TEXTURE_DEPTH_EXT,
+  pattern GL_TEXTURE_WRAP_R_EXT,
+  pattern GL_UNPACK_IMAGE_HEIGHT_EXT,
+  pattern GL_UNPACK_SKIP_IMAGES_EXT,
   -- * Functions
   glTexImage3DEXT,
   glTexSubImage3DEXT

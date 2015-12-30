@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.PresentVideo
@@ -15,12 +16,12 @@ module Graphics.GL.NV.PresentVideo (
   glGetNVPresentVideo,
   gl_NV_present_video,
   -- * Enums
-  gl_CURRENT_TIME_NV,
-  gl_FIELDS_NV,
-  gl_FRAME_NV,
-  gl_NUM_FILL_STREAMS_NV,
-  gl_PRESENT_DURATION_NV,
-  gl_PRESENT_TIME_NV,
+  pattern GL_CURRENT_TIME_NV,
+  pattern GL_FIELDS_NV,
+  pattern GL_FRAME_NV,
+  pattern GL_NUM_FILL_STREAMS_NV,
+  pattern GL_PRESENT_DURATION_NV,
+  pattern GL_PRESENT_TIME_NV,
   -- * Functions
   glGetVideoi64vNV,
   glGetVideoivNV,

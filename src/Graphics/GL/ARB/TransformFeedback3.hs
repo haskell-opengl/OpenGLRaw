@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TransformFeedback3
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.TransformFeedback3 (
   glGetARBTransformFeedback3,
   gl_ARB_transform_feedback3,
   -- * Enums
-  gl_MAX_TRANSFORM_FEEDBACK_BUFFERS,
-  gl_MAX_VERTEX_STREAMS,
+  pattern GL_MAX_TRANSFORM_FEEDBACK_BUFFERS,
+  pattern GL_MAX_VERTEX_STREAMS,
   -- * Functions
   glBeginQueryIndexed,
   glDrawTransformFeedbackStream,

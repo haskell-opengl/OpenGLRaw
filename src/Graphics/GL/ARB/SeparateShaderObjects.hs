@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.SeparateShaderObjects
@@ -15,15 +16,15 @@ module Graphics.GL.ARB.SeparateShaderObjects (
   glGetARBSeparateShaderObjects,
   gl_ARB_separate_shader_objects,
   -- * Enums
-  gl_ACTIVE_PROGRAM,
-  gl_ALL_SHADER_BITS,
-  gl_FRAGMENT_SHADER_BIT,
-  gl_GEOMETRY_SHADER_BIT,
-  gl_PROGRAM_PIPELINE_BINDING,
-  gl_PROGRAM_SEPARABLE,
-  gl_TESS_CONTROL_SHADER_BIT,
-  gl_TESS_EVALUATION_SHADER_BIT,
-  gl_VERTEX_SHADER_BIT,
+  pattern GL_ACTIVE_PROGRAM,
+  pattern GL_ALL_SHADER_BITS,
+  pattern GL_FRAGMENT_SHADER_BIT,
+  pattern GL_GEOMETRY_SHADER_BIT,
+  pattern GL_PROGRAM_PIPELINE_BINDING,
+  pattern GL_PROGRAM_SEPARABLE,
+  pattern GL_TESS_CONTROL_SHADER_BIT,
+  pattern GL_TESS_EVALUATION_SHADER_BIT,
+  pattern GL_VERTEX_SHADER_BIT,
   -- * Functions
   glActiveShaderProgram,
   glBindProgramPipeline,

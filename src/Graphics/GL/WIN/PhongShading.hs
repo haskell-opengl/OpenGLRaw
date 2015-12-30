@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.WIN.PhongShading
@@ -15,8 +16,8 @@ module Graphics.GL.WIN.PhongShading (
   glGetWINPhongShading,
   gl_WIN_phong_shading,
   -- * Enums
-  gl_PHONG_HINT_WIN,
-  gl_PHONG_WIN
+  pattern GL_PHONG_HINT_WIN,
+  pattern GL_PHONG_WIN
 ) where
 
 import Graphics.GL.ExtensionPredicates

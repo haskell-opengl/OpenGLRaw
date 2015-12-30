@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.StencilClearTag
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.StencilClearTag (
   glGetEXTStencilClearTag,
   gl_EXT_stencil_clear_tag,
   -- * Enums
-  gl_STENCIL_CLEAR_TAG_VALUE_EXT,
-  gl_STENCIL_TAG_BITS_EXT,
+  pattern GL_STENCIL_CLEAR_TAG_VALUE_EXT,
+  pattern GL_STENCIL_TAG_BITS_EXT,
   -- * Functions
   glStencilClearTagEXT
 ) where

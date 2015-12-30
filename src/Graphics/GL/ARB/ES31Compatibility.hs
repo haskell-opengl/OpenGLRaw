@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ES31Compatibility
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.ES31Compatibility (
   glGetARBES31Compatibility,
   gl_ARB_ES3_1_compatibility,
   -- * Enums
-  gl_BACK,
+  pattern GL_BACK,
   -- * Functions
   glMemoryBarrierByRegion
 ) where

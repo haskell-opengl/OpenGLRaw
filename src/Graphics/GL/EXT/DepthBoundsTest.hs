@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.DepthBoundsTest
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.DepthBoundsTest (
   glGetEXTDepthBoundsTest,
   gl_EXT_depth_bounds_test,
   -- * Enums
-  gl_DEPTH_BOUNDS_EXT,
-  gl_DEPTH_BOUNDS_TEST_EXT,
+  pattern GL_DEPTH_BOUNDS_EXT,
+  pattern GL_DEPTH_BOUNDS_TEST_EXT,
   -- * Functions
   glDepthBoundsEXT
 ) where

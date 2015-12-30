@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.LightTexture
@@ -15,16 +16,16 @@ module Graphics.GL.EXT.LightTexture (
   glGetEXTLightTexture,
   gl_EXT_light_texture,
   -- * Enums
-  gl_ATTENUATION_EXT,
-  gl_FRAGMENT_COLOR_EXT,
-  gl_FRAGMENT_DEPTH_EXT,
-  gl_FRAGMENT_MATERIAL_EXT,
-  gl_FRAGMENT_NORMAL_EXT,
-  gl_SHADOW_ATTENUATION_EXT,
-  gl_TEXTURE_APPLICATION_MODE_EXT,
-  gl_TEXTURE_LIGHT_EXT,
-  gl_TEXTURE_MATERIAL_FACE_EXT,
-  gl_TEXTURE_MATERIAL_PARAMETER_EXT,
+  pattern GL_ATTENUATION_EXT,
+  pattern GL_FRAGMENT_COLOR_EXT,
+  pattern GL_FRAGMENT_DEPTH_EXT,
+  pattern GL_FRAGMENT_MATERIAL_EXT,
+  pattern GL_FRAGMENT_NORMAL_EXT,
+  pattern GL_SHADOW_ATTENUATION_EXT,
+  pattern GL_TEXTURE_APPLICATION_MODE_EXT,
+  pattern GL_TEXTURE_LIGHT_EXT,
+  pattern GL_TEXTURE_MATERIAL_FACE_EXT,
+  pattern GL_TEXTURE_MATERIAL_PARAMETER_EXT,
   -- * Functions
   glApplyTextureEXT,
   glTextureLightEXT,

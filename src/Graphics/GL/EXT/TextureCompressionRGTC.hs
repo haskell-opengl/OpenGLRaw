@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureCompressionRGTC
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.TextureCompressionRGTC (
   glGetEXTTextureCompressionRGTC,
   gl_EXT_texture_compression_rgtc,
   -- * Enums
-  gl_COMPRESSED_RED_GREEN_RGTC2_EXT,
-  gl_COMPRESSED_RED_RGTC1_EXT,
-  gl_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT,
-  gl_COMPRESSED_SIGNED_RED_RGTC1_EXT
+  pattern GL_COMPRESSED_RED_GREEN_RGTC2_EXT,
+  pattern GL_COMPRESSED_RED_RGTC1_EXT,
+  pattern GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT,
+  pattern GL_COMPRESSED_SIGNED_RED_RGTC1_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

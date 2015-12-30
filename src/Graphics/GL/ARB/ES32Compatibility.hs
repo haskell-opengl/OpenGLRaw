@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ES32Compatibility
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.ES32Compatibility (
   glGetARBES32Compatibility,
   gl_ARB_ES3_2_compatibility,
   -- * Enums
-  gl_MULTISAMPLE_LINE_WIDTH_GRANULARITY_ARB,
-  gl_MULTISAMPLE_LINE_WIDTH_RANGE_ARB,
-  gl_PRIMITIVE_BOUNDING_BOX_ARB,
+  pattern GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY_ARB,
+  pattern GL_MULTISAMPLE_LINE_WIDTH_RANGE_ARB,
+  pattern GL_PRIMITIVE_BOUNDING_BOX_ARB,
   -- * Functions
   glPrimitiveBoundingBoxARB
 ) where

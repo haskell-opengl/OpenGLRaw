@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.FramebufferNoAttachments
@@ -15,15 +16,15 @@ module Graphics.GL.ARB.FramebufferNoAttachments (
   glGetARBFramebufferNoAttachments,
   gl_ARB_framebuffer_no_attachments,
   -- * Enums
-  gl_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
-  gl_FRAMEBUFFER_DEFAULT_HEIGHT,
-  gl_FRAMEBUFFER_DEFAULT_LAYERS,
-  gl_FRAMEBUFFER_DEFAULT_SAMPLES,
-  gl_FRAMEBUFFER_DEFAULT_WIDTH,
-  gl_MAX_FRAMEBUFFER_HEIGHT,
-  gl_MAX_FRAMEBUFFER_LAYERS,
-  gl_MAX_FRAMEBUFFER_SAMPLES,
-  gl_MAX_FRAMEBUFFER_WIDTH,
+  pattern GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
+  pattern GL_FRAMEBUFFER_DEFAULT_HEIGHT,
+  pattern GL_FRAMEBUFFER_DEFAULT_LAYERS,
+  pattern GL_FRAMEBUFFER_DEFAULT_SAMPLES,
+  pattern GL_FRAMEBUFFER_DEFAULT_WIDTH,
+  pattern GL_MAX_FRAMEBUFFER_HEIGHT,
+  pattern GL_MAX_FRAMEBUFFER_LAYERS,
+  pattern GL_MAX_FRAMEBUFFER_SAMPLES,
+  pattern GL_MAX_FRAMEBUFFER_WIDTH,
   -- * Functions
   glFramebufferParameteri,
   glGetFramebufferParameteriv

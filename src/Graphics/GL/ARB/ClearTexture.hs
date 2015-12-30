@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ClearTexture
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.ClearTexture (
   glGetARBClearTexture,
   gl_ARB_clear_texture,
   -- * Enums
-  gl_CLEAR_TEXTURE,
+  pattern GL_CLEAR_TEXTURE,
   -- * Functions
   glClearTexImage,
   glClearTexSubImage

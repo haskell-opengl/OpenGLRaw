@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ShadingLanguage100
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.ShadingLanguage100 (
   glGetARBShadingLanguage100,
   gl_ARB_shading_language_100,
   -- * Enums
-  gl_SHADING_LANGUAGE_VERSION_ARB
+  pattern GL_SHADING_LANGUAGE_VERSION_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

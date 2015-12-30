@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Interlace
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.Interlace (
   glGetSGIXInterlace,
   gl_SGIX_interlace,
   -- * Enums
-  gl_INTERLACE_SGIX
+  pattern GL_INTERLACE_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

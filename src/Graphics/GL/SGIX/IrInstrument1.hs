@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.IrInstrument1
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.IrInstrument1 (
   glGetSGIXIrInstrument1,
   gl_SGIX_ir_instrument1,
   -- * Enums
-  gl_IR_INSTRUMENT1_SGIX
+  pattern GL_IR_INSTRUMENT1_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

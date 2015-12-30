@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TransposeMatrix
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.TransposeMatrix (
   glGetARBTransposeMatrix,
   gl_ARB_transpose_matrix,
   -- * Enums
-  gl_TRANSPOSE_COLOR_MATRIX_ARB,
-  gl_TRANSPOSE_MODELVIEW_MATRIX_ARB,
-  gl_TRANSPOSE_PROJECTION_MATRIX_ARB,
-  gl_TRANSPOSE_TEXTURE_MATRIX_ARB,
+  pattern GL_TRANSPOSE_COLOR_MATRIX_ARB,
+  pattern GL_TRANSPOSE_MODELVIEW_MATRIX_ARB,
+  pattern GL_TRANSPOSE_PROJECTION_MATRIX_ARB,
+  pattern GL_TRANSPOSE_TEXTURE_MATRIX_ARB,
   -- * Functions
   glLoadTransposeMatrixdARB,
   glLoadTransposeMatrixfARB,

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ShaderBufferStore
@@ -15,9 +16,9 @@ module Graphics.GL.NV.ShaderBufferStore (
   glGetNVShaderBufferStore,
   gl_NV_shader_buffer_store,
   -- * Enums
-  gl_READ_WRITE,
-  gl_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV,
-  gl_WRITE_ONLY
+  pattern GL_READ_WRITE,
+  pattern GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV,
+  pattern GL_WRITE_ONLY
 ) where
 
 import Graphics.GL.ExtensionPredicates

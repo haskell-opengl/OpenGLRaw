@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.StencilTwoSide
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.StencilTwoSide (
   glGetEXTStencilTwoSide,
   gl_EXT_stencil_two_side,
   -- * Enums
-  gl_ACTIVE_STENCIL_FACE_EXT,
-  gl_STENCIL_TEST_TWO_SIDE_EXT,
+  pattern GL_ACTIVE_STENCIL_FACE_EXT,
+  pattern GL_STENCIL_TEST_TWO_SIDE_EXT,
   -- * Functions
   glActiveStencilFaceEXT
 ) where

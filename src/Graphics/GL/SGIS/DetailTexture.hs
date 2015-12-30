@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.DetailTexture
@@ -15,14 +16,14 @@ module Graphics.GL.SGIS.DetailTexture (
   glGetSGISDetailTexture,
   gl_SGIS_detail_texture,
   -- * Enums
-  gl_DETAIL_TEXTURE_2D_BINDING_SGIS,
-  gl_DETAIL_TEXTURE_2D_SGIS,
-  gl_DETAIL_TEXTURE_FUNC_POINTS_SGIS,
-  gl_DETAIL_TEXTURE_LEVEL_SGIS,
-  gl_DETAIL_TEXTURE_MODE_SGIS,
-  gl_LINEAR_DETAIL_ALPHA_SGIS,
-  gl_LINEAR_DETAIL_COLOR_SGIS,
-  gl_LINEAR_DETAIL_SGIS,
+  pattern GL_DETAIL_TEXTURE_2D_BINDING_SGIS,
+  pattern GL_DETAIL_TEXTURE_2D_SGIS,
+  pattern GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS,
+  pattern GL_DETAIL_TEXTURE_LEVEL_SGIS,
+  pattern GL_DETAIL_TEXTURE_MODE_SGIS,
+  pattern GL_LINEAR_DETAIL_ALPHA_SGIS,
+  pattern GL_LINEAR_DETAIL_COLOR_SGIS,
+  pattern GL_LINEAR_DETAIL_SGIS,
   -- * Functions
   glDetailTexFuncSGIS,
   glGetDetailTexFuncSGIS

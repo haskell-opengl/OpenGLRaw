@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.IBM.StaticData
@@ -15,8 +16,8 @@ module Graphics.GL.IBM.StaticData (
   glGetIBMStaticData,
   gl_IBM_static_data,
   -- * Enums
-  gl_ALL_STATIC_DATA_IBM,
-  gl_STATIC_VERTEX_ARRAY_IBM,
+  pattern GL_ALL_STATIC_DATA_IBM,
+  pattern GL_STATIC_VERTEX_ARRAY_IBM,
   -- * Functions
   glFlushStaticDataIBM
 ) where

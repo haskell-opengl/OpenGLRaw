@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TextureShader2
@@ -15,7 +16,7 @@ module Graphics.GL.NV.TextureShader2 (
   glGetNVTextureShader2,
   gl_NV_texture_shader2,
   -- * Enums
-  gl_DOT_PRODUCT_TEXTURE_3D_NV
+  pattern GL_DOT_PRODUCT_TEXTURE_3D_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

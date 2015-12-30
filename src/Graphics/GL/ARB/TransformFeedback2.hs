@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TransformFeedback2
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.TransformFeedback2 (
   glGetARBTransformFeedback2,
   gl_ARB_transform_feedback2,
   -- * Enums
-  gl_TRANSFORM_FEEDBACK,
-  gl_TRANSFORM_FEEDBACK_BINDING,
-  gl_TRANSFORM_FEEDBACK_BUFFER_ACTIVE,
-  gl_TRANSFORM_FEEDBACK_BUFFER_PAUSED,
+  pattern GL_TRANSFORM_FEEDBACK,
+  pattern GL_TRANSFORM_FEEDBACK_BINDING,
+  pattern GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE,
+  pattern GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED,
   -- * Functions
   glBindTransformFeedback,
   glDeleteTransformFeedbacks,

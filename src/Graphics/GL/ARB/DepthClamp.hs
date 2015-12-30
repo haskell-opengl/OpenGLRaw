@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.DepthClamp
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.DepthClamp (
   glGetARBDepthClamp,
   gl_ARB_depth_clamp,
   -- * Enums
-  gl_DEPTH_CLAMP
+  pattern GL_DEPTH_CLAMP
 ) where
 
 import Graphics.GL.ExtensionPredicates

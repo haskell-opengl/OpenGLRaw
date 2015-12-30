@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.VertexAttrib64Bit
@@ -15,19 +16,19 @@ module Graphics.GL.EXT.VertexAttrib64Bit (
   glGetEXTVertexAttrib64Bit,
   gl_EXT_vertex_attrib_64bit,
   -- * Enums
-  gl_DOUBLE,
-  gl_DOUBLE_MAT2_EXT,
-  gl_DOUBLE_MAT2x3_EXT,
-  gl_DOUBLE_MAT2x4_EXT,
-  gl_DOUBLE_MAT3_EXT,
-  gl_DOUBLE_MAT3x2_EXT,
-  gl_DOUBLE_MAT3x4_EXT,
-  gl_DOUBLE_MAT4_EXT,
-  gl_DOUBLE_MAT4x2_EXT,
-  gl_DOUBLE_MAT4x3_EXT,
-  gl_DOUBLE_VEC2_EXT,
-  gl_DOUBLE_VEC3_EXT,
-  gl_DOUBLE_VEC4_EXT,
+  pattern GL_DOUBLE,
+  pattern GL_DOUBLE_MAT2_EXT,
+  pattern GL_DOUBLE_MAT2x3_EXT,
+  pattern GL_DOUBLE_MAT2x4_EXT,
+  pattern GL_DOUBLE_MAT3_EXT,
+  pattern GL_DOUBLE_MAT3x2_EXT,
+  pattern GL_DOUBLE_MAT3x4_EXT,
+  pattern GL_DOUBLE_MAT4_EXT,
+  pattern GL_DOUBLE_MAT4x2_EXT,
+  pattern GL_DOUBLE_MAT4x3_EXT,
+  pattern GL_DOUBLE_VEC2_EXT,
+  pattern GL_DOUBLE_VEC3_EXT,
+  pattern GL_DOUBLE_VEC4_EXT,
   -- * Functions
   glGetVertexAttribLdvEXT,
   glVertexAttribL1dEXT,

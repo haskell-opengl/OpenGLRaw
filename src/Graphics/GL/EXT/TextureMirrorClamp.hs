@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureMirrorClamp
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.TextureMirrorClamp (
   glGetEXTTextureMirrorClamp,
   gl_EXT_texture_mirror_clamp,
   -- * Enums
-  gl_MIRROR_CLAMP_EXT,
-  gl_MIRROR_CLAMP_TO_BORDER_EXT,
-  gl_MIRROR_CLAMP_TO_EDGE_EXT
+  pattern GL_MIRROR_CLAMP_EXT,
+  pattern GL_MIRROR_CLAMP_TO_BORDER_EXT,
+  pattern GL_MIRROR_CLAMP_TO_EDGE_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

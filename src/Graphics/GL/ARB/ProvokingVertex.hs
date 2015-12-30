@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ProvokingVertex
@@ -15,10 +16,10 @@ module Graphics.GL.ARB.ProvokingVertex (
   glGetARBProvokingVertex,
   gl_ARB_provoking_vertex,
   -- * Enums
-  gl_FIRST_VERTEX_CONVENTION,
-  gl_LAST_VERTEX_CONVENTION,
-  gl_PROVOKING_VERTEX,
-  gl_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION,
+  pattern GL_FIRST_VERTEX_CONVENTION,
+  pattern GL_LAST_VERTEX_CONVENTION,
+  pattern GL_PROVOKING_VERTEX,
+  pattern GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION,
   -- * Functions
   glProvokingVertex
 ) where

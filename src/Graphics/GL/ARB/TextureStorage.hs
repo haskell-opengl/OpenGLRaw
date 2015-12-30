@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureStorage
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.TextureStorage (
   glGetARBTextureStorage,
   gl_ARB_texture_storage,
   -- * Enums
-  gl_TEXTURE_IMMUTABLE_FORMAT,
+  pattern GL_TEXTURE_IMMUTABLE_FORMAT,
   -- * Functions
   glTexStorage1D,
   glTexStorage2D,

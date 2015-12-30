@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.AsyncHistogram
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.AsyncHistogram (
   glGetSGIXAsyncHistogram,
   gl_SGIX_async_histogram,
   -- * Enums
-  gl_ASYNC_HISTOGRAM_SGIX,
-  gl_MAX_ASYNC_HISTOGRAM_SGIX
+  pattern GL_ASYNC_HISTOGRAM_SGIX,
+  pattern GL_MAX_ASYNC_HISTOGRAM_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

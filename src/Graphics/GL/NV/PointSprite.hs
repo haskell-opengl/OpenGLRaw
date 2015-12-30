@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.PointSprite
@@ -15,9 +16,9 @@ module Graphics.GL.NV.PointSprite (
   glGetNVPointSprite,
   gl_NV_point_sprite,
   -- * Enums
-  gl_COORD_REPLACE_NV,
-  gl_POINT_SPRITE_NV,
-  gl_POINT_SPRITE_R_MODE_NV,
+  pattern GL_COORD_REPLACE_NV,
+  pattern GL_POINT_SPRITE_NV,
+  pattern GL_POINT_SPRITE_R_MODE_NV,
   -- * Functions
   glPointParameteriNV,
   glPointParameterivNV

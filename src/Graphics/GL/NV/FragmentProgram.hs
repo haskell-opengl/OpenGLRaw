@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.FragmentProgram
@@ -15,12 +16,12 @@ module Graphics.GL.NV.FragmentProgram (
   glGetNVFragmentProgram,
   gl_NV_fragment_program,
   -- * Enums
-  gl_FRAGMENT_PROGRAM_BINDING_NV,
-  gl_FRAGMENT_PROGRAM_NV,
-  gl_MAX_FRAGMENT_PROGRAM_LOCAL_PARAMETERS_NV,
-  gl_MAX_TEXTURE_COORDS_NV,
-  gl_MAX_TEXTURE_IMAGE_UNITS_NV,
-  gl_PROGRAM_ERROR_STRING_NV,
+  pattern GL_FRAGMENT_PROGRAM_BINDING_NV,
+  pattern GL_FRAGMENT_PROGRAM_NV,
+  pattern GL_MAX_FRAGMENT_PROGRAM_LOCAL_PARAMETERS_NV,
+  pattern GL_MAX_TEXTURE_COORDS_NV,
+  pattern GL_MAX_TEXTURE_IMAGE_UNITS_NV,
+  pattern GL_PROGRAM_ERROR_STRING_NV,
   -- * Functions
   glGetProgramNamedParameterdvNV,
   glGetProgramNamedParameterfvNV,

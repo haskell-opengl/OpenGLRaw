@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.InterleavedElements
@@ -15,15 +16,15 @@ module Graphics.GL.AMD.InterleavedElements (
   glGetAMDInterleavedElements,
   gl_AMD_interleaved_elements,
   -- * Enums
-  gl_ALPHA,
-  gl_BLUE,
-  gl_GREEN,
-  gl_RED,
-  gl_RG16UI,
-  gl_RG8UI,
-  gl_RGBA8UI,
-  gl_VERTEX_ELEMENT_SWIZZLE_AMD,
-  gl_VERTEX_ID_SWIZZLE_AMD,
+  pattern GL_ALPHA,
+  pattern GL_BLUE,
+  pattern GL_GREEN,
+  pattern GL_RED,
+  pattern GL_RG16UI,
+  pattern GL_RG8UI,
+  pattern GL_RGBA8UI,
+  pattern GL_VERTEX_ELEMENT_SWIZZLE_AMD,
+  pattern GL_VERTEX_ID_SWIZZLE_AMD,
   -- * Functions
   glVertexAttribParameteriAMD
 ) where

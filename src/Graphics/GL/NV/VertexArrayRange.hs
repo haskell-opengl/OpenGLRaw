@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.VertexArrayRange
@@ -15,11 +16,11 @@ module Graphics.GL.NV.VertexArrayRange (
   glGetNVVertexArrayRange,
   gl_NV_vertex_array_range,
   -- * Enums
-  gl_MAX_VERTEX_ARRAY_RANGE_ELEMENT_NV,
-  gl_VERTEX_ARRAY_RANGE_LENGTH_NV,
-  gl_VERTEX_ARRAY_RANGE_NV,
-  gl_VERTEX_ARRAY_RANGE_POINTER_NV,
-  gl_VERTEX_ARRAY_RANGE_VALID_NV,
+  pattern GL_MAX_VERTEX_ARRAY_RANGE_ELEMENT_NV,
+  pattern GL_VERTEX_ARRAY_RANGE_LENGTH_NV,
+  pattern GL_VERTEX_ARRAY_RANGE_NV,
+  pattern GL_VERTEX_ARRAY_RANGE_POINTER_NV,
+  pattern GL_VERTEX_ARRAY_RANGE_VALID_NV,
   -- * Functions
   glFlushVertexArrayRangeNV,
   glVertexArrayRangeNV

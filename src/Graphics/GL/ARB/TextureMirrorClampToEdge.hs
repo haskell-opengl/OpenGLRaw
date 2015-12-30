@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureMirrorClampToEdge
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.TextureMirrorClampToEdge (
   glGetARBTextureMirrorClampToEdge,
   gl_ARB_texture_mirror_clamp_to_edge,
   -- * Enums
-  gl_MIRROR_CLAMP_TO_EDGE
+  pattern GL_MIRROR_CLAMP_TO_EDGE
 ) where
 
 import Graphics.GL.ExtensionPredicates

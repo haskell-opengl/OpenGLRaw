@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureGather
@@ -15,9 +16,9 @@ module Graphics.GL.ARB.TextureGather (
   glGetARBTextureGather,
   gl_ARB_texture_gather,
   -- * Enums
-  gl_MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB,
-  gl_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB,
-  gl_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB
+  pattern GL_MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB,
+  pattern GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB,
+  pattern GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

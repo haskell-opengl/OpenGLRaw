@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SUN.GlobalAlpha
@@ -15,8 +16,8 @@ module Graphics.GL.SUN.GlobalAlpha (
   glGetSUNGlobalAlpha,
   gl_SUN_global_alpha,
   -- * Enums
-  gl_GLOBAL_ALPHA_FACTOR_SUN,
-  gl_GLOBAL_ALPHA_SUN,
+  pattern GL_GLOBAL_ALPHA_FACTOR_SUN,
+  pattern GL_GLOBAL_ALPHA_SUN,
   -- * Functions
   glGlobalAlphaFactorbSUN,
   glGlobalAlphaFactordSUN,

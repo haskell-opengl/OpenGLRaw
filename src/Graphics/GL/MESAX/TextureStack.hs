@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.MESAX.TextureStack
@@ -15,12 +16,12 @@ module Graphics.GL.MESAX.TextureStack (
   glGetMESAXTextureStack,
   gl_MESAX_texture_stack,
   -- * Enums
-  gl_PROXY_TEXTURE_1D_STACK_MESAX,
-  gl_PROXY_TEXTURE_2D_STACK_MESAX,
-  gl_TEXTURE_1D_STACK_BINDING_MESAX,
-  gl_TEXTURE_1D_STACK_MESAX,
-  gl_TEXTURE_2D_STACK_BINDING_MESAX,
-  gl_TEXTURE_2D_STACK_MESAX
+  pattern GL_PROXY_TEXTURE_1D_STACK_MESAX,
+  pattern GL_PROXY_TEXTURE_2D_STACK_MESAX,
+  pattern GL_TEXTURE_1D_STACK_BINDING_MESAX,
+  pattern GL_TEXTURE_1D_STACK_MESAX,
+  pattern GL_TEXTURE_2D_STACK_BINDING_MESAX,
+  pattern GL_TEXTURE_2D_STACK_MESAX
 ) where
 
 import Graphics.GL.ExtensionPredicates

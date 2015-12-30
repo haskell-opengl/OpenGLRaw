@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.OcclusionQuery
@@ -15,10 +16,10 @@ module Graphics.GL.NV.OcclusionQuery (
   glGetNVOcclusionQuery,
   gl_NV_occlusion_query,
   -- * Enums
-  gl_CURRENT_OCCLUSION_QUERY_ID_NV,
-  gl_PIXEL_COUNTER_BITS_NV,
-  gl_PIXEL_COUNT_AVAILABLE_NV,
-  gl_PIXEL_COUNT_NV,
+  pattern GL_CURRENT_OCCLUSION_QUERY_ID_NV,
+  pattern GL_PIXEL_COUNTER_BITS_NV,
+  pattern GL_PIXEL_COUNT_AVAILABLE_NV,
+  pattern GL_PIXEL_COUNT_NV,
   -- * Functions
   glBeginOcclusionQueryNV,
   glDeleteOcclusionQueriesNV,

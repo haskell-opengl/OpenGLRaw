@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.FloatBuffer
@@ -15,21 +16,21 @@ module Graphics.GL.NV.FloatBuffer (
   glGetNVFloatBuffer,
   gl_NV_float_buffer,
   -- * Enums
-  gl_FLOAT_CLEAR_COLOR_VALUE_NV,
-  gl_FLOAT_R16_NV,
-  gl_FLOAT_R32_NV,
-  gl_FLOAT_RG16_NV,
-  gl_FLOAT_RG32_NV,
-  gl_FLOAT_RGB16_NV,
-  gl_FLOAT_RGB32_NV,
-  gl_FLOAT_RGBA16_NV,
-  gl_FLOAT_RGBA32_NV,
-  gl_FLOAT_RGBA_MODE_NV,
-  gl_FLOAT_RGBA_NV,
-  gl_FLOAT_RGB_NV,
-  gl_FLOAT_RG_NV,
-  gl_FLOAT_R_NV,
-  gl_TEXTURE_FLOAT_COMPONENTS_NV
+  pattern GL_FLOAT_CLEAR_COLOR_VALUE_NV,
+  pattern GL_FLOAT_R16_NV,
+  pattern GL_FLOAT_R32_NV,
+  pattern GL_FLOAT_RG16_NV,
+  pattern GL_FLOAT_RG32_NV,
+  pattern GL_FLOAT_RGB16_NV,
+  pattern GL_FLOAT_RGB32_NV,
+  pattern GL_FLOAT_RGBA16_NV,
+  pattern GL_FLOAT_RGBA32_NV,
+  pattern GL_FLOAT_RGBA_MODE_NV,
+  pattern GL_FLOAT_RGBA_NV,
+  pattern GL_FLOAT_RGB_NV,
+  pattern GL_FLOAT_RG_NV,
+  pattern GL_FLOAT_R_NV,
+  pattern GL_TEXTURE_FLOAT_COMPONENTS_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

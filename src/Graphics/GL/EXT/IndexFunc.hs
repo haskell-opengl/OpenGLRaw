@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.IndexFunc
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.IndexFunc (
   glGetEXTIndexFunc,
   gl_EXT_index_func,
   -- * Enums
-  gl_INDEX_TEST_EXT,
-  gl_INDEX_TEST_FUNC_EXT,
-  gl_INDEX_TEST_REF_EXT,
+  pattern GL_INDEX_TEST_EXT,
+  pattern GL_INDEX_TEST_FUNC_EXT,
+  pattern GL_INDEX_TEST_REF_EXT,
   -- * Functions
   glIndexFuncEXT
 ) where

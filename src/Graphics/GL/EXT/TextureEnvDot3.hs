@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureEnvDot3
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.TextureEnvDot3 (
   glGetEXTTextureEnvDot3,
   gl_EXT_texture_env_dot3,
   -- * Enums
-  gl_DOT3_RGBA_EXT,
-  gl_DOT3_RGB_EXT
+  pattern GL_DOT3_RGBA_EXT,
+  pattern GL_DOT3_RGB_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

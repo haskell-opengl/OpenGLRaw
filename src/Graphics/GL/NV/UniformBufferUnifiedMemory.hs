@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.UniformBufferUnifiedMemory
@@ -15,9 +16,9 @@ module Graphics.GL.NV.UniformBufferUnifiedMemory (
   glGetNVUniformBufferUnifiedMemory,
   gl_NV_uniform_buffer_unified_memory,
   -- * Enums
-  gl_UNIFORM_BUFFER_ADDRESS_NV,
-  gl_UNIFORM_BUFFER_LENGTH_NV,
-  gl_UNIFORM_BUFFER_UNIFIED_NV
+  pattern GL_UNIFORM_BUFFER_ADDRESS_NV,
+  pattern GL_UNIFORM_BUFFER_LENGTH_NV,
+  pattern GL_UNIFORM_BUFFER_UNIFIED_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

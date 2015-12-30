@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.ElementArray
@@ -15,9 +16,9 @@ module Graphics.GL.APPLE.ElementArray (
   glGetAPPLEElementArray,
   gl_APPLE_element_array,
   -- * Enums
-  gl_ELEMENT_ARRAY_APPLE,
-  gl_ELEMENT_ARRAY_POINTER_APPLE,
-  gl_ELEMENT_ARRAY_TYPE_APPLE,
+  pattern GL_ELEMENT_ARRAY_APPLE,
+  pattern GL_ELEMENT_ARRAY_POINTER_APPLE,
+  pattern GL_ELEMENT_ARRAY_TYPE_APPLE,
   -- * Functions
   glDrawElementArrayAPPLE,
   glDrawRangeElementArrayAPPLE,

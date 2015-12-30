@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.MESA.YCbCrTexture
@@ -15,9 +16,9 @@ module Graphics.GL.MESA.YCbCrTexture (
   glGetMESAYCbCrTexture,
   gl_MESA_ycbcr_texture,
   -- * Enums
-  gl_UNSIGNED_SHORT_8_8_MESA,
-  gl_UNSIGNED_SHORT_8_8_REV_MESA,
-  gl_YCBCR_MESA
+  pattern GL_UNSIGNED_SHORT_8_8_MESA,
+  pattern GL_UNSIGNED_SHORT_8_8_REV_MESA,
+  pattern GL_YCBCR_MESA
 ) where
 
 import Graphics.GL.ExtensionPredicates

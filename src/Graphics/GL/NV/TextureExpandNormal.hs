@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TextureExpandNormal
@@ -15,7 +16,7 @@ module Graphics.GL.NV.TextureExpandNormal (
   glGetNVTextureExpandNormal,
   gl_NV_texture_expand_normal,
   -- * Enums
-  gl_TEXTURE_UNSIGNED_REMAP_MODE_NV
+  pattern GL_TEXTURE_UNSIGNED_REMAP_MODE_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

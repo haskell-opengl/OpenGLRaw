@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureEnvDot3
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.TextureEnvDot3 (
   glGetARBTextureEnvDot3,
   gl_ARB_texture_env_dot3,
   -- * Enums
-  gl_DOT3_RGBA_ARB,
-  gl_DOT3_RGB_ARB
+  pattern GL_DOT3_RGBA_ARB,
+  pattern GL_DOT3_RGB_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

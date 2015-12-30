@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Instruments
@@ -15,8 +16,8 @@ module Graphics.GL.SGIX.Instruments (
   glGetSGIXInstruments,
   gl_SGIX_instruments,
   -- * Enums
-  gl_INSTRUMENT_BUFFER_POINTER_SGIX,
-  gl_INSTRUMENT_MEASUREMENTS_SGIX,
+  pattern GL_INSTRUMENT_BUFFER_POINTER_SGIX,
+  pattern GL_INSTRUMENT_MEASUREMENTS_SGIX,
   -- * Functions
   glGetInstrumentsSGIX,
   glInstrumentsBufferSGIX,

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.S3.S3TC
@@ -15,12 +16,12 @@ module Graphics.GL.S3.S3TC (
   glGetS3S3TC,
   gl_S3_s3tc,
   -- * Enums
-  gl_RGB4_S3TC,
-  gl_RGBA4_DXT5_S3TC,
-  gl_RGBA4_S3TC,
-  gl_RGBA_DXT5_S3TC,
-  gl_RGBA_S3TC,
-  gl_RGB_S3TC
+  pattern GL_RGB4_S3TC,
+  pattern GL_RGBA4_DXT5_S3TC,
+  pattern GL_RGBA4_S3TC,
+  pattern GL_RGBA_DXT5_S3TC,
+  pattern GL_RGBA_S3TC,
+  pattern GL_RGB_S3TC
 ) where
 
 import Graphics.GL.ExtensionPredicates

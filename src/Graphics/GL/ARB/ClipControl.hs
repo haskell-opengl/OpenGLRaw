@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.ClipControl
@@ -15,12 +16,12 @@ module Graphics.GL.ARB.ClipControl (
   glGetARBClipControl,
   gl_ARB_clip_control,
   -- * Enums
-  gl_CLIP_DEPTH_MODE,
-  gl_CLIP_ORIGIN,
-  gl_LOWER_LEFT,
-  gl_NEGATIVE_ONE_TO_ONE,
-  gl_UPPER_LEFT,
-  gl_ZERO_TO_ONE,
+  pattern GL_CLIP_DEPTH_MODE,
+  pattern GL_CLIP_ORIGIN,
+  pattern GL_LOWER_LEFT,
+  pattern GL_NEGATIVE_ONE_TO_ONE,
+  pattern GL_UPPER_LEFT,
+  pattern GL_ZERO_TO_ONE,
   -- * Functions
   glClipControl
 ) where

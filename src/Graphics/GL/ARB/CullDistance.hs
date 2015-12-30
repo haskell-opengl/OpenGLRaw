@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.CullDistance
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.CullDistance (
   glGetARBCullDistance,
   gl_ARB_cull_distance,
   -- * Enums
-  gl_MAX_COMBINED_CLIP_AND_CULL_DISTANCES,
-  gl_MAX_CULL_DISTANCES
+  pattern GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES,
+  pattern GL_MAX_CULL_DISTANCES
 ) where
 
 import Graphics.GL.ExtensionPredicates

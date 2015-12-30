@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SUN.ConvolutionBorderModes
@@ -15,7 +16,7 @@ module Graphics.GL.SUN.ConvolutionBorderModes (
   glGetSUNConvolutionBorderModes,
   gl_SUN_convolution_border_modes,
   -- * Enums
-  gl_WRAP_BORDER_SUN
+  pattern GL_WRAP_BORDER_SUN
 ) where
 
 import Graphics.GL.ExtensionPredicates

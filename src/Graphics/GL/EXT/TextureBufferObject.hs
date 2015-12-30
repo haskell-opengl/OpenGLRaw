@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureBufferObject
@@ -15,11 +16,11 @@ module Graphics.GL.EXT.TextureBufferObject (
   glGetEXTTextureBufferObject,
   gl_EXT_texture_buffer_object,
   -- * Enums
-  gl_MAX_TEXTURE_BUFFER_SIZE_EXT,
-  gl_TEXTURE_BINDING_BUFFER_EXT,
-  gl_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT,
-  gl_TEXTURE_BUFFER_EXT,
-  gl_TEXTURE_BUFFER_FORMAT_EXT,
+  pattern GL_MAX_TEXTURE_BUFFER_SIZE_EXT,
+  pattern GL_TEXTURE_BINDING_BUFFER_EXT,
+  pattern GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT,
+  pattern GL_TEXTURE_BUFFER_EXT,
+  pattern GL_TEXTURE_BUFFER_FORMAT_EXT,
   -- * Functions
   glTexBufferEXT
 ) where

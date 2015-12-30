@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.PolynomialFFD
@@ -15,12 +16,12 @@ module Graphics.GL.SGIX.PolynomialFFD (
   glGetSGIXPolynomialFFD,
   gl_SGIX_polynomial_ffd,
   -- * Enums
-  gl_DEFORMATIONS_MASK_SGIX,
-  gl_GEOMETRY_DEFORMATION_BIT_SGIX,
-  gl_GEOMETRY_DEFORMATION_SGIX,
-  gl_MAX_DEFORMATION_ORDER_SGIX,
-  gl_TEXTURE_DEFORMATION_BIT_SGIX,
-  gl_TEXTURE_DEFORMATION_SGIX,
+  pattern GL_DEFORMATIONS_MASK_SGIX,
+  pattern GL_GEOMETRY_DEFORMATION_BIT_SGIX,
+  pattern GL_GEOMETRY_DEFORMATION_SGIX,
+  pattern GL_MAX_DEFORMATION_ORDER_SGIX,
+  pattern GL_TEXTURE_DEFORMATION_BIT_SGIX,
+  pattern GL_TEXTURE_DEFORMATION_SGIX,
   -- * Functions
   glDeformSGIX,
   glDeformationMap3dSGIX,

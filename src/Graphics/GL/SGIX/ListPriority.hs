@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.ListPriority
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.ListPriority (
   glGetSGIXListPriority,
   gl_SGIX_list_priority,
   -- * Enums
-  gl_LIST_PRIORITY_SGIX,
+  pattern GL_LIST_PRIORITY_SGIX,
   -- * Functions
   glGetListParameterfvSGIX,
   glGetListParameterivSGIX,

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.FramebufferMultisampleBlitScaled
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.FramebufferMultisampleBlitScaled (
   glGetEXTFramebufferMultisampleBlitScaled,
   gl_EXT_framebuffer_multisample_blit_scaled,
   -- * Enums
-  gl_SCALED_RESOLVE_FASTEST_EXT,
-  gl_SCALED_RESOLVE_NICEST_EXT
+  pattern GL_SCALED_RESOLVE_FASTEST_EXT,
+  pattern GL_SCALED_RESOLVE_NICEST_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

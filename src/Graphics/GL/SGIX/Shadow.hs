@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.Shadow
@@ -15,10 +16,10 @@ module Graphics.GL.SGIX.Shadow (
   glGetSGIXShadow,
   gl_SGIX_shadow,
   -- * Enums
-  gl_TEXTURE_COMPARE_OPERATOR_SGIX,
-  gl_TEXTURE_COMPARE_SGIX,
-  gl_TEXTURE_GEQUAL_R_SGIX,
-  gl_TEXTURE_LEQUAL_R_SGIX
+  pattern GL_TEXTURE_COMPARE_OPERATOR_SGIX,
+  pattern GL_TEXTURE_COMPARE_SGIX,
+  pattern GL_TEXTURE_GEQUAL_R_SGIX,
+  pattern GL_TEXTURE_LEQUAL_R_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

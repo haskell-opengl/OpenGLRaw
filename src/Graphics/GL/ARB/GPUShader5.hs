@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.GPUShader5
@@ -15,12 +16,12 @@ module Graphics.GL.ARB.GPUShader5 (
   glGetARBGPUShader5,
   gl_ARB_gpu_shader5,
   -- * Enums
-  gl_FRAGMENT_INTERPOLATION_OFFSET_BITS,
-  gl_GEOMETRY_SHADER_INVOCATIONS,
-  gl_MAX_FRAGMENT_INTERPOLATION_OFFSET,
-  gl_MAX_GEOMETRY_SHADER_INVOCATIONS,
-  gl_MAX_VERTEX_STREAMS,
-  gl_MIN_FRAGMENT_INTERPOLATION_OFFSET
+  pattern GL_FRAGMENT_INTERPOLATION_OFFSET_BITS,
+  pattern GL_GEOMETRY_SHADER_INVOCATIONS,
+  pattern GL_MAX_FRAGMENT_INTERPOLATION_OFFSET,
+  pattern GL_MAX_GEOMETRY_SHADER_INVOCATIONS,
+  pattern GL_MAX_VERTEX_STREAMS,
+  pattern GL_MIN_FRAGMENT_INTERPOLATION_OFFSET
 ) where
 
 import Graphics.GL.ExtensionPredicates

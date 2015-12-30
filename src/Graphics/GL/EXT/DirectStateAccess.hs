@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.DirectStateAccess
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.DirectStateAccess (
   glGetEXTDirectStateAccess,
   gl_EXT_direct_state_access,
   -- * Enums
-  gl_PROGRAM_MATRIX_EXT,
-  gl_PROGRAM_MATRIX_STACK_DEPTH_EXT,
-  gl_TRANSPOSE_PROGRAM_MATRIX_EXT,
+  pattern GL_PROGRAM_MATRIX_EXT,
+  pattern GL_PROGRAM_MATRIX_STACK_DEPTH_EXT,
+  pattern GL_TRANSPOSE_PROGRAM_MATRIX_EXT,
   -- * Functions
   glBindMultiTextureEXT,
   glCheckNamedFramebufferStatusEXT,

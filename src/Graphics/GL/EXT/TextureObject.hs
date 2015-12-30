@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureObject
@@ -15,11 +16,11 @@ module Graphics.GL.EXT.TextureObject (
   glGetEXTTextureObject,
   gl_EXT_texture_object,
   -- * Enums
-  gl_TEXTURE_1D_BINDING_EXT,
-  gl_TEXTURE_2D_BINDING_EXT,
-  gl_TEXTURE_3D_BINDING_EXT,
-  gl_TEXTURE_PRIORITY_EXT,
-  gl_TEXTURE_RESIDENT_EXT,
+  pattern GL_TEXTURE_1D_BINDING_EXT,
+  pattern GL_TEXTURE_2D_BINDING_EXT,
+  pattern GL_TEXTURE_3D_BINDING_EXT,
+  pattern GL_TEXTURE_PRIORITY_EXT,
+  pattern GL_TEXTURE_RESIDENT_EXT,
   -- * Functions
   glAreTexturesResidentEXT,
   glBindTextureEXT,

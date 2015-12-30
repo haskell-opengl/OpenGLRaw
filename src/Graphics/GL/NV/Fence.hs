@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.Fence
@@ -15,9 +16,9 @@ module Graphics.GL.NV.Fence (
   glGetNVFence,
   gl_NV_fence,
   -- * Enums
-  gl_ALL_COMPLETED_NV,
-  gl_FENCE_CONDITION_NV,
-  gl_FENCE_STATUS_NV,
+  pattern GL_ALL_COMPLETED_NV,
+  pattern GL_FENCE_CONDITION_NV,
+  pattern GL_FENCE_STATUS_NV,
   -- * Functions
   glDeleteFencesNV,
   glFinishFenceNV,

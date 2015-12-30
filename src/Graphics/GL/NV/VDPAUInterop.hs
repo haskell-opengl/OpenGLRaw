@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.VDPAUInterop
@@ -15,10 +16,10 @@ module Graphics.GL.NV.VDPAUInterop (
   glGetNVVDPAUInterop,
   gl_NV_vdpau_interop,
   -- * Enums
-  gl_SURFACE_MAPPED_NV,
-  gl_SURFACE_REGISTERED_NV,
-  gl_SURFACE_STATE_NV,
-  gl_WRITE_DISCARD_NV,
+  pattern GL_SURFACE_MAPPED_NV,
+  pattern GL_SURFACE_REGISTERED_NV,
+  pattern GL_SURFACE_STATE_NV,
+  pattern GL_WRITE_DISCARD_NV,
   -- * Functions
   glVDPAUFiniNV,
   glVDPAUGetSurfaceivNV,

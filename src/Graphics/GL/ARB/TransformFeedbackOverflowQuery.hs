@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TransformFeedbackOverflowQuery
@@ -15,8 +16,8 @@ module Graphics.GL.ARB.TransformFeedbackOverflowQuery (
   glGetARBTransformFeedbackOverflowQuery,
   gl_ARB_transform_feedback_overflow_query,
   -- * Enums
-  gl_TRANSFORM_FEEDBACK_OVERFLOW_ARB,
-  gl_TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB
+  pattern GL_TRANSFORM_FEEDBACK_OVERFLOW_ARB,
+  pattern GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

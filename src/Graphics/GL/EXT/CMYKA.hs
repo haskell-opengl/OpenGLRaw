@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.CMYKA
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.CMYKA (
   glGetEXTCMYKA,
   gl_EXT_cmyka,
   -- * Enums
-  gl_CMYKA_EXT,
-  gl_CMYK_EXT,
-  gl_PACK_CMYK_HINT_EXT,
-  gl_UNPACK_CMYK_HINT_EXT
+  pattern GL_CMYKA_EXT,
+  pattern GL_CMYK_EXT,
+  pattern GL_PACK_CMYK_HINT_EXT,
+  pattern GL_UNPACK_CMYK_HINT_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

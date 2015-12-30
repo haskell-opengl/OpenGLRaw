@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.PathRenderingSharedEdge
@@ -15,7 +16,7 @@ module Graphics.GL.NV.PathRenderingSharedEdge (
   glGetNVPathRenderingSharedEdge,
   gl_NV_path_rendering_shared_edge,
   -- * Enums
-  gl_SHARED_EDGE_NV
+  pattern GL_SHARED_EDGE_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

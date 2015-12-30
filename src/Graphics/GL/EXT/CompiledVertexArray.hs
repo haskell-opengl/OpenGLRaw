@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.CompiledVertexArray
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.CompiledVertexArray (
   glGetEXTCompiledVertexArray,
   gl_EXT_compiled_vertex_array,
   -- * Enums
-  gl_ARRAY_ELEMENT_LOCK_COUNT_EXT,
-  gl_ARRAY_ELEMENT_LOCK_FIRST_EXT,
+  pattern GL_ARRAY_ELEMENT_LOCK_COUNT_EXT,
+  pattern GL_ARRAY_ELEMENT_LOCK_FIRST_EXT,
   -- * Functions
   glLockArraysEXT,
   glUnlockArraysEXT

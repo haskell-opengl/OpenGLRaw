@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.FlushBufferRange
@@ -15,8 +16,8 @@ module Graphics.GL.APPLE.FlushBufferRange (
   glGetAPPLEFlushBufferRange,
   gl_APPLE_flush_buffer_range,
   -- * Enums
-  gl_BUFFER_FLUSHING_UNMAP_APPLE,
-  gl_BUFFER_SERIALIZED_MODIFY_APPLE,
+  pattern GL_BUFFER_FLUSHING_UNMAP_APPLE,
+  pattern GL_BUFFER_SERIALIZED_MODIFY_APPLE,
   -- * Functions
   glBufferParameteriAPPLE,
   glFlushMappedBufferRangeAPPLE

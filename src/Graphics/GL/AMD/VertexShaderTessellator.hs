@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.VertexShaderTessellator
@@ -15,13 +16,13 @@ module Graphics.GL.AMD.VertexShaderTessellator (
   glGetAMDVertexShaderTessellator,
   gl_AMD_vertex_shader_tessellator,
   -- * Enums
-  gl_CONTINUOUS_AMD,
-  gl_DISCRETE_AMD,
-  gl_INT_SAMPLER_BUFFER_AMD,
-  gl_SAMPLER_BUFFER_AMD,
-  gl_TESSELLATION_FACTOR_AMD,
-  gl_TESSELLATION_MODE_AMD,
-  gl_UNSIGNED_INT_SAMPLER_BUFFER_AMD,
+  pattern GL_CONTINUOUS_AMD,
+  pattern GL_DISCRETE_AMD,
+  pattern GL_INT_SAMPLER_BUFFER_AMD,
+  pattern GL_SAMPLER_BUFFER_AMD,
+  pattern GL_TESSELLATION_FACTOR_AMD,
+  pattern GL_TESSELLATION_MODE_AMD,
+  pattern GL_UNSIGNED_INT_SAMPLER_BUFFER_AMD,
   -- * Functions
   glTessellationFactorAMD,
   glTessellationModeAMD

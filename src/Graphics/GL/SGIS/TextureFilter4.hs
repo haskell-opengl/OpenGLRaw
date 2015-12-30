@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.TextureFilter4
@@ -15,8 +16,8 @@ module Graphics.GL.SGIS.TextureFilter4 (
   glGetSGISTextureFilter4,
   gl_SGIS_texture_filter4,
   -- * Enums
-  gl_FILTER4_SGIS,
-  gl_TEXTURE_FILTER4_SIZE_SGIS,
+  pattern GL_FILTER4_SGIS,
+  pattern GL_TEXTURE_FILTER4_SIZE_SGIS,
   -- * Functions
   glGetTexFilterFuncSGIS,
   glTexFilterFuncSGIS

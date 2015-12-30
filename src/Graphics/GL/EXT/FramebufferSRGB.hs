@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.FramebufferSRGB
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.FramebufferSRGB (
   glGetEXTFramebufferSRGB,
   gl_EXT_framebuffer_sRGB,
   -- * Enums
-  gl_FRAMEBUFFER_SRGB_CAPABLE_EXT,
-  gl_FRAMEBUFFER_SRGB_EXT
+  pattern GL_FRAMEBUFFER_SRGB_CAPABLE_EXT,
+  pattern GL_FRAMEBUFFER_SRGB_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

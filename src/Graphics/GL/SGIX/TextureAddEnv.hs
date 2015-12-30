@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIX.TextureAddEnv
@@ -15,7 +16,7 @@ module Graphics.GL.SGIX.TextureAddEnv (
   glGetSGIXTextureAddEnv,
   gl_SGIX_texture_add_env,
   -- * Enums
-  gl_TEXTURE_ENV_BIAS_SGIX
+  pattern GL_TEXTURE_ENV_BIAS_SGIX
 ) where
 
 import Graphics.GL.ExtensionPredicates

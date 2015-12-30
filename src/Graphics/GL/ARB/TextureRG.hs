@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureRG
@@ -15,28 +16,28 @@ module Graphics.GL.ARB.TextureRG (
   glGetARBTextureRG,
   gl_ARB_texture_rg,
   -- * Enums
-  gl_R16,
-  gl_R16F,
-  gl_R16I,
-  gl_R16UI,
-  gl_R32F,
-  gl_R32I,
-  gl_R32UI,
-  gl_R8,
-  gl_R8I,
-  gl_R8UI,
-  gl_RG,
-  gl_RG16,
-  gl_RG16F,
-  gl_RG16I,
-  gl_RG16UI,
-  gl_RG32F,
-  gl_RG32I,
-  gl_RG32UI,
-  gl_RG8,
-  gl_RG8I,
-  gl_RG8UI,
-  gl_RG_INTEGER
+  pattern GL_R16,
+  pattern GL_R16F,
+  pattern GL_R16I,
+  pattern GL_R16UI,
+  pattern GL_R32F,
+  pattern GL_R32I,
+  pattern GL_R32UI,
+  pattern GL_R8,
+  pattern GL_R8I,
+  pattern GL_R8UI,
+  pattern GL_RG,
+  pattern GL_RG16,
+  pattern GL_RG16F,
+  pattern GL_RG16I,
+  pattern GL_RG16UI,
+  pattern GL_RG32F,
+  pattern GL_RG32I,
+  pattern GL_RG32UI,
+  pattern GL_RG8,
+  pattern GL_RG8I,
+  pattern GL_RG8UI,
+  pattern GL_RG_INTEGER
 ) where
 
 import Graphics.GL.ExtensionPredicates

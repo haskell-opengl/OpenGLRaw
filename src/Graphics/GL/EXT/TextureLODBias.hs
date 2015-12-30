@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureLODBias
@@ -15,9 +16,9 @@ module Graphics.GL.EXT.TextureLODBias (
   glGetEXTTextureLODBias,
   gl_EXT_texture_lod_bias,
   -- * Enums
-  gl_MAX_TEXTURE_LOD_BIAS_EXT,
-  gl_TEXTURE_FILTER_CONTROL_EXT,
-  gl_TEXTURE_LOD_BIAS_EXT
+  pattern GL_MAX_TEXTURE_LOD_BIAS_EXT,
+  pattern GL_TEXTURE_FILTER_CONTROL_EXT,
+  pattern GL_TEXTURE_LOD_BIAS_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

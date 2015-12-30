@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.BGRA
@@ -15,8 +16,8 @@ module Graphics.GL.EXT.BGRA (
   glGetEXTBGRA,
   gl_EXT_bgra,
   -- * Enums
-  gl_BGRA_EXT,
-  gl_BGR_EXT
+  pattern GL_BGRA_EXT,
+  pattern GL_BGR_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TextureEnvCombine4
@@ -15,11 +16,11 @@ module Graphics.GL.NV.TextureEnvCombine4 (
   glGetNVTextureEnvCombine4,
   gl_NV_texture_env_combine4,
   -- * Enums
-  gl_COMBINE4_NV,
-  gl_OPERAND3_ALPHA_NV,
-  gl_OPERAND3_RGB_NV,
-  gl_SOURCE3_ALPHA_NV,
-  gl_SOURCE3_RGB_NV
+  pattern GL_COMBINE4_NV,
+  pattern GL_OPERAND3_ALPHA_NV,
+  pattern GL_OPERAND3_RGB_NV,
+  pattern GL_SOURCE3_ALPHA_NV,
+  pattern GL_SOURCE3_RGB_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

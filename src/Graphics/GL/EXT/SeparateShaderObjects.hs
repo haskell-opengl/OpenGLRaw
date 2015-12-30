@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.SeparateShaderObjects
@@ -15,7 +16,7 @@ module Graphics.GL.EXT.SeparateShaderObjects (
   glGetEXTSeparateShaderObjects,
   gl_EXT_separate_shader_objects,
   -- * Enums
-  gl_ACTIVE_PROGRAM_EXT,
+  pattern GL_ACTIVE_PROGRAM_EXT,
   -- * Functions
   glActiveProgramEXT,
   glCreateShaderProgramEXT,

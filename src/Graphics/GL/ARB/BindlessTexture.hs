@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.BindlessTexture
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.BindlessTexture (
   glGetARBBindlessTexture,
   gl_ARB_bindless_texture,
   -- * Enums
-  gl_UNSIGNED_INT64_ARB,
+  pattern GL_UNSIGNED_INT64_ARB,
   -- * Functions
   glGetImageHandleARB,
   glGetTextureHandleARB,

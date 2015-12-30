@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.MultisampleCoverage
@@ -15,8 +16,8 @@ module Graphics.GL.NV.MultisampleCoverage (
   glGetNVMultisampleCoverage,
   gl_NV_multisample_coverage,
   -- * Enums
-  gl_COLOR_SAMPLES_NV,
-  gl_SAMPLES_ARB
+  pattern GL_COLOR_SAMPLES_NV,
+  pattern GL_SAMPLES_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.FramebufferMixedSamples
@@ -15,20 +16,20 @@ module Graphics.GL.NV.FramebufferMixedSamples (
   glGetNVFramebufferMixedSamples,
   gl_NV_framebuffer_mixed_samples,
   -- * Enums
-  gl_COLOR_SAMPLES_NV,
-  gl_COVERAGE_MODULATION_NV,
-  gl_COVERAGE_MODULATION_TABLE_NV,
-  gl_COVERAGE_MODULATION_TABLE_SIZE_NV,
-  gl_DEPTH_SAMPLES_NV,
-  gl_EFFECTIVE_RASTER_SAMPLES_EXT,
-  gl_MAX_RASTER_SAMPLES_EXT,
-  gl_MIXED_DEPTH_SAMPLES_SUPPORTED_NV,
-  gl_MIXED_STENCIL_SAMPLES_SUPPORTED_NV,
-  gl_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT,
-  gl_RASTER_FIXED_SAMPLE_LOCATIONS_EXT,
-  gl_RASTER_MULTISAMPLE_EXT,
-  gl_RASTER_SAMPLES_EXT,
-  gl_STENCIL_SAMPLES_NV,
+  pattern GL_COLOR_SAMPLES_NV,
+  pattern GL_COVERAGE_MODULATION_NV,
+  pattern GL_COVERAGE_MODULATION_TABLE_NV,
+  pattern GL_COVERAGE_MODULATION_TABLE_SIZE_NV,
+  pattern GL_DEPTH_SAMPLES_NV,
+  pattern GL_EFFECTIVE_RASTER_SAMPLES_EXT,
+  pattern GL_MAX_RASTER_SAMPLES_EXT,
+  pattern GL_MIXED_DEPTH_SAMPLES_SUPPORTED_NV,
+  pattern GL_MIXED_STENCIL_SAMPLES_SUPPORTED_NV,
+  pattern GL_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT,
+  pattern GL_RASTER_FIXED_SAMPLE_LOCATIONS_EXT,
+  pattern GL_RASTER_MULTISAMPLE_EXT,
+  pattern GL_RASTER_SAMPLES_EXT,
+  pattern GL_STENCIL_SAMPLES_NV,
   -- * Functions
   glCoverageModulationNV,
   glCoverageModulationTableNV,

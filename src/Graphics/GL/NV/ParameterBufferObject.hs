@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ParameterBufferObject
@@ -15,11 +16,11 @@ module Graphics.GL.NV.ParameterBufferObject (
   glGetNVParameterBufferObject,
   gl_NV_parameter_buffer_object,
   -- * Enums
-  gl_FRAGMENT_PROGRAM_PARAMETER_BUFFER_NV,
-  gl_GEOMETRY_PROGRAM_PARAMETER_BUFFER_NV,
-  gl_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS_NV,
-  gl_MAX_PROGRAM_PARAMETER_BUFFER_SIZE_NV,
-  gl_VERTEX_PROGRAM_PARAMETER_BUFFER_NV,
+  pattern GL_FRAGMENT_PROGRAM_PARAMETER_BUFFER_NV,
+  pattern GL_GEOMETRY_PROGRAM_PARAMETER_BUFFER_NV,
+  pattern GL_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS_NV,
+  pattern GL_MAX_PROGRAM_PARAMETER_BUFFER_SIZE_NV,
+  pattern GL_VERTEX_PROGRAM_PARAMETER_BUFFER_NV,
   -- * Functions
   glProgramBufferParametersIivNV,
   glProgramBufferParametersIuivNV,

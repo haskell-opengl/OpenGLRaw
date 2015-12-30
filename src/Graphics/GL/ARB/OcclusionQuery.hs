@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.OcclusionQuery
@@ -15,11 +16,11 @@ module Graphics.GL.ARB.OcclusionQuery (
   glGetARBOcclusionQuery,
   gl_ARB_occlusion_query,
   -- * Enums
-  gl_CURRENT_QUERY_ARB,
-  gl_QUERY_COUNTER_BITS_ARB,
-  gl_QUERY_RESULT_ARB,
-  gl_QUERY_RESULT_AVAILABLE_ARB,
-  gl_SAMPLES_PASSED_ARB,
+  pattern GL_CURRENT_QUERY_ARB,
+  pattern GL_QUERY_COUNTER_BITS_ARB,
+  pattern GL_QUERY_RESULT_ARB,
+  pattern GL_QUERY_RESULT_AVAILABLE_ARB,
+  pattern GL_SAMPLES_PASSED_ARB,
   -- * Functions
   glBeginQueryARB,
   glDeleteQueriesARB,

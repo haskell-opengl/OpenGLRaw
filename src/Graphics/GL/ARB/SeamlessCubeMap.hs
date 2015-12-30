@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.SeamlessCubeMap
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.SeamlessCubeMap (
   glGetARBSeamlessCubeMap,
   gl_ARB_seamless_cube_map,
   -- * Enums
-  gl_TEXTURE_CUBE_MAP_SEAMLESS
+  pattern GL_TEXTURE_CUBE_MAP_SEAMLESS
 ) where
 
 import Graphics.GL.ExtensionPredicates

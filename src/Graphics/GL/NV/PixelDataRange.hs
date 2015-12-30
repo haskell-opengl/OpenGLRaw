@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.PixelDataRange
@@ -15,12 +16,12 @@ module Graphics.GL.NV.PixelDataRange (
   glGetNVPixelDataRange,
   gl_NV_pixel_data_range,
   -- * Enums
-  gl_READ_PIXEL_DATA_RANGE_LENGTH_NV,
-  gl_READ_PIXEL_DATA_RANGE_NV,
-  gl_READ_PIXEL_DATA_RANGE_POINTER_NV,
-  gl_WRITE_PIXEL_DATA_RANGE_LENGTH_NV,
-  gl_WRITE_PIXEL_DATA_RANGE_NV,
-  gl_WRITE_PIXEL_DATA_RANGE_POINTER_NV,
+  pattern GL_READ_PIXEL_DATA_RANGE_LENGTH_NV,
+  pattern GL_READ_PIXEL_DATA_RANGE_NV,
+  pattern GL_READ_PIXEL_DATA_RANGE_POINTER_NV,
+  pattern GL_WRITE_PIXEL_DATA_RANGE_LENGTH_NV,
+  pattern GL_WRITE_PIXEL_DATA_RANGE_NV,
+  pattern GL_WRITE_PIXEL_DATA_RANGE_POINTER_NV,
   -- * Functions
   glFlushPixelDataRangeNV,
   glPixelDataRangeNV

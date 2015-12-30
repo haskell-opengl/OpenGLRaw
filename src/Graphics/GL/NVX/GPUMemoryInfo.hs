@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NVX.GPUMemoryInfo
@@ -15,11 +16,11 @@ module Graphics.GL.NVX.GPUMemoryInfo (
   glGetNVXGPUMemoryInfo,
   gl_NVX_gpu_memory_info,
   -- * Enums
-  gl_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX,
-  gl_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX,
-  gl_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX,
-  gl_GPU_MEMORY_INFO_EVICTION_COUNT_NVX,
-  gl_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX
+  pattern GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX,
+  pattern GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX,
+  pattern GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX,
+  pattern GL_GPU_MEMORY_INFO_EVICTION_COUNT_NVX,
+  pattern GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX
 ) where
 
 import Graphics.GL.ExtensionPredicates

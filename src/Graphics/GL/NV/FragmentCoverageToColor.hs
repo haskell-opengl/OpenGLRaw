@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.FragmentCoverageToColor
@@ -15,8 +16,8 @@ module Graphics.GL.NV.FragmentCoverageToColor (
   glGetNVFragmentCoverageToColor,
   gl_NV_fragment_coverage_to_color,
   -- * Enums
-  gl_FRAGMENT_COVERAGE_COLOR_NV,
-  gl_FRAGMENT_COVERAGE_TO_COLOR_NV,
+  pattern GL_FRAGMENT_COVERAGE_COLOR_NV,
+  pattern GL_FRAGMENT_COVERAGE_TO_COLOR_NV,
   -- * Functions
   glFragmentCoverageColorNV
 ) where

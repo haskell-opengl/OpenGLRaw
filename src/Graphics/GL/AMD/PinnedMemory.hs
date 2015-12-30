@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.AMD.PinnedMemory
@@ -15,7 +16,7 @@ module Graphics.GL.AMD.PinnedMemory (
   glGetAMDPinnedMemory,
   gl_AMD_pinned_memory,
   -- * Enums
-  gl_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD
+  pattern GL_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD
 ) where
 
 import Graphics.GL.ExtensionPredicates

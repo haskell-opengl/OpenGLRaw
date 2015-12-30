@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.GenerateMipmap
@@ -15,8 +16,8 @@ module Graphics.GL.SGIS.GenerateMipmap (
   glGetSGISGenerateMipmap,
   gl_SGIS_generate_mipmap,
   -- * Enums
-  gl_GENERATE_MIPMAP_HINT_SGIS,
-  gl_GENERATE_MIPMAP_SGIS
+  pattern GL_GENERATE_MIPMAP_HINT_SGIS,
+  pattern GL_GENERATE_MIPMAP_SGIS
 ) where
 
 import Graphics.GL.ExtensionPredicates

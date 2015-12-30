@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.TextureBorderClamp
@@ -15,7 +16,7 @@ module Graphics.GL.ARB.TextureBorderClamp (
   glGetARBTextureBorderClamp,
   gl_ARB_texture_border_clamp,
   -- * Enums
-  gl_CLAMP_TO_BORDER_ARB
+  pattern GL_CLAMP_TO_BORDER_ARB
 ) where
 
 import Graphics.GL.ExtensionPredicates

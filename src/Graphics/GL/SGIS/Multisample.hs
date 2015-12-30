@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.Multisample
@@ -15,22 +16,22 @@ module Graphics.GL.SGIS.Multisample (
   glGetSGISMultisample,
   gl_SGIS_multisample,
   -- * Enums
-  gl_1PASS_SGIS,
-  gl_2PASS_0_SGIS,
-  gl_2PASS_1_SGIS,
-  gl_4PASS_0_SGIS,
-  gl_4PASS_1_SGIS,
-  gl_4PASS_2_SGIS,
-  gl_4PASS_3_SGIS,
-  gl_MULTISAMPLE_SGIS,
-  gl_SAMPLES_SGIS,
-  gl_SAMPLE_ALPHA_TO_MASK_SGIS,
-  gl_SAMPLE_ALPHA_TO_ONE_SGIS,
-  gl_SAMPLE_BUFFERS_SGIS,
-  gl_SAMPLE_MASK_INVERT_SGIS,
-  gl_SAMPLE_MASK_SGIS,
-  gl_SAMPLE_MASK_VALUE_SGIS,
-  gl_SAMPLE_PATTERN_SGIS,
+  pattern GL_1PASS_SGIS,
+  pattern GL_2PASS_0_SGIS,
+  pattern GL_2PASS_1_SGIS,
+  pattern GL_4PASS_0_SGIS,
+  pattern GL_4PASS_1_SGIS,
+  pattern GL_4PASS_2_SGIS,
+  pattern GL_4PASS_3_SGIS,
+  pattern GL_MULTISAMPLE_SGIS,
+  pattern GL_SAMPLES_SGIS,
+  pattern GL_SAMPLE_ALPHA_TO_MASK_SGIS,
+  pattern GL_SAMPLE_ALPHA_TO_ONE_SGIS,
+  pattern GL_SAMPLE_BUFFERS_SGIS,
+  pattern GL_SAMPLE_MASK_INVERT_SGIS,
+  pattern GL_SAMPLE_MASK_SGIS,
+  pattern GL_SAMPLE_MASK_VALUE_SGIS,
+  pattern GL_SAMPLE_PATTERN_SGIS,
   -- * Functions
   glSampleMaskSGIS,
   glSamplePatternSGIS

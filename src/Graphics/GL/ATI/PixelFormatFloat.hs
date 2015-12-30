@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.PixelFormatFloat
@@ -15,8 +16,8 @@ module Graphics.GL.ATI.PixelFormatFloat (
   glGetATIPixelFormatFloat,
   gl_ATI_pixel_format_float,
   -- * Enums
-  gl_COLOR_CLEAR_UNCLAMPED_VALUE_ATI,
-  gl_RGBA_FLOAT_MODE_ATI
+  pattern GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI,
+  pattern GL_RGBA_FLOAT_MODE_ATI
 ) where
 
 import Graphics.GL.ExtensionPredicates

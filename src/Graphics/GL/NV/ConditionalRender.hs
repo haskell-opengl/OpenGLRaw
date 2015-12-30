@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ConditionalRender
@@ -15,10 +16,10 @@ module Graphics.GL.NV.ConditionalRender (
   glGetNVConditionalRender,
   gl_NV_conditional_render,
   -- * Enums
-  gl_QUERY_BY_REGION_NO_WAIT_NV,
-  gl_QUERY_BY_REGION_WAIT_NV,
-  gl_QUERY_NO_WAIT_NV,
-  gl_QUERY_WAIT_NV,
+  pattern GL_QUERY_BY_REGION_NO_WAIT_NV,
+  pattern GL_QUERY_BY_REGION_WAIT_NV,
+  pattern GL_QUERY_NO_WAIT_NV,
+  pattern GL_QUERY_WAIT_NV,
   -- * Functions
   glBeginConditionalRenderNV,
   glEndConditionalRenderNV

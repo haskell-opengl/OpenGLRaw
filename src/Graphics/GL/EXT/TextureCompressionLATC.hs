@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.EXT.TextureCompressionLATC
@@ -15,10 +16,10 @@ module Graphics.GL.EXT.TextureCompressionLATC (
   glGetEXTTextureCompressionLATC,
   gl_EXT_texture_compression_latc,
   -- * Enums
-  gl_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT,
-  gl_COMPRESSED_LUMINANCE_LATC1_EXT,
-  gl_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT,
-  gl_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT
+  pattern GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT,
+  pattern GL_COMPRESSED_LUMINANCE_LATC1_EXT,
+  pattern GL_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT,
+  pattern GL_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

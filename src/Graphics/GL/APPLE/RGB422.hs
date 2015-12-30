@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.APPLE.RGB422
@@ -15,10 +16,10 @@ module Graphics.GL.APPLE.RGB422 (
   glGetAPPLERGB422,
   gl_APPLE_rgb_422,
   -- * Enums
-  gl_RGB_422_APPLE,
-  gl_RGB_RAW_422_APPLE,
-  gl_UNSIGNED_SHORT_8_8_APPLE,
-  gl_UNSIGNED_SHORT_8_8_REV_APPLE
+  pattern GL_RGB_422_APPLE,
+  pattern GL_RGB_RAW_422_APPLE,
+  pattern GL_UNSIGNED_SHORT_8_8_APPLE,
+  pattern GL_UNSIGNED_SHORT_8_8_REV_APPLE
 ) where
 
 import Graphics.GL.ExtensionPredicates

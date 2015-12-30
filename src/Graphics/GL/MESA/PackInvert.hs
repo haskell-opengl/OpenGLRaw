@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.MESA.PackInvert
@@ -15,7 +16,7 @@ module Graphics.GL.MESA.PackInvert (
   glGetMESAPackInvert,
   gl_MESA_pack_invert,
   -- * Enums
-  gl_PACK_INVERT_MESA
+  pattern GL_PACK_INVERT_MESA
 ) where
 
 import Graphics.GL.ExtensionPredicates

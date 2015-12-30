@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.INTEL.ParallelArrays
@@ -15,11 +16,11 @@ module Graphics.GL.INTEL.ParallelArrays (
   glGetINTELParallelArrays,
   gl_INTEL_parallel_arrays,
   -- * Enums
-  gl_COLOR_ARRAY_PARALLEL_POINTERS_INTEL,
-  gl_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL,
-  gl_PARALLEL_ARRAYS_INTEL,
-  gl_TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL,
-  gl_VERTEX_ARRAY_PARALLEL_POINTERS_INTEL,
+  pattern GL_COLOR_ARRAY_PARALLEL_POINTERS_INTEL,
+  pattern GL_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL,
+  pattern GL_PARALLEL_ARRAYS_INTEL,
+  pattern GL_TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL,
+  pattern GL_VERTEX_ARRAY_PARALLEL_POINTERS_INTEL,
   -- * Functions
   glColorPointervINTEL,
   glNormalPointervINTEL,

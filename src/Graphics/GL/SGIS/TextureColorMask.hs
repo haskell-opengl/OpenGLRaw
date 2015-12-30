@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.SGIS.TextureColorMask
@@ -15,7 +16,7 @@ module Graphics.GL.SGIS.TextureColorMask (
   glGetSGISTextureColorMask,
   gl_SGIS_texture_color_mask,
   -- * Enums
-  gl_TEXTURE_COLOR_WRITEMASK_SGIS,
+  pattern GL_TEXTURE_COLOR_WRITEMASK_SGIS,
   -- * Functions
   glTextureColorMaskSGIS
 ) where

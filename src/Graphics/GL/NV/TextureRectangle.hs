@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.TextureRectangle
@@ -15,10 +16,10 @@ module Graphics.GL.NV.TextureRectangle (
   glGetNVTextureRectangle,
   gl_NV_texture_rectangle,
   -- * Enums
-  gl_MAX_RECTANGLE_TEXTURE_SIZE_NV,
-  gl_PROXY_TEXTURE_RECTANGLE_NV,
-  gl_TEXTURE_BINDING_RECTANGLE_NV,
-  gl_TEXTURE_RECTANGLE_NV
+  pattern GL_MAX_RECTANGLE_TEXTURE_SIZE_NV,
+  pattern GL_PROXY_TEXTURE_RECTANGLE_NV,
+  pattern GL_TEXTURE_BINDING_RECTANGLE_NV,
+  pattern GL_TEXTURE_RECTANGLE_NV
 ) where
 
 import Graphics.GL.ExtensionPredicates

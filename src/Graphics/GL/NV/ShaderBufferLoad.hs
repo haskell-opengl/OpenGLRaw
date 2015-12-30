@@ -1,3 +1,4 @@
+{-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.NV.ShaderBufferLoad
@@ -15,9 +16,9 @@ module Graphics.GL.NV.ShaderBufferLoad (
   glGetNVShaderBufferLoad,
   gl_NV_shader_buffer_load,
   -- * Enums
-  gl_BUFFER_GPU_ADDRESS_NV,
-  gl_GPU_ADDRESS_NV,
-  gl_MAX_SHADER_BUFFER_ADDRESS_NV,
+  pattern GL_BUFFER_GPU_ADDRESS_NV,
+  pattern GL_GPU_ADDRESS_NV,
+  pattern GL_MAX_SHADER_BUFFER_ADDRESS_NV,
   -- * Functions
   glGetBufferParameterui64vNV,
   glGetIntegerui64vNV,
