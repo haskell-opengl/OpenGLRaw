@@ -77,7 +77,7 @@ printTokens api registry = do
   let comment =
         ["All enumeration tokens from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule ["Tokens"] (Just "{-# LANGUAGE PatternSynonyms #-}") comment $ \moduleName h -> do
+  startModule ["Tokens"] (Just "{-# LANGUAGE PatternSynonyms, ScopedTypeVariables #-}") comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
@@ -546,8 +546,7 @@ s `matches` Just t = s == t
 
 convertEnum :: Enum' -> [String]
 convertEnum e =
-  [ "pattern " ++ n ++ " :: " ++ unTypeName (enumType e)
-  , "pattern " ++ n ++ " = " ++ unEnumValue (enumValue e) ]
+  [ "pattern " ++ n ++ " = " ++ unEnumValue (enumValue e) ++ " :: " ++ unTypeName (enumType e) ]
   where n = unEnumName . enumName $ e
 
 showCommand :: API -> Registry -> M.Map String String -> Command -> String

@@ -613,6 +613,7 @@ library
   other-extensions:
     CPP
     PatternSynonyms
+    ScopedTypeVariables
   if os(windows) && flag(UseNativeWindowsLibraries)
     if arch(i386)
       cpp-options: "-DCALLCONV=stdcall"
