@@ -1,0 +1,89 @@
+--------------------------------------------------------------------------------
+-- |
+-- Module      :  Graphics.GL.ARB.ShaderImageLoadStore
+-- Copyright   :  (c) Sven Panne 2016
+-- License     :  BSD3
+--
+-- Maintainer  :  Sven Panne <svenpanne@gmail.com>
+-- Stability   :  stable
+-- Portability :  portable
+--
+--------------------------------------------------------------------------------
+
+module Graphics.GL.ARB.ShaderImageLoadStore (
+  -- * Extension Support
+  glGetARBShaderImageLoadStore,
+  gl_ARB_shader_image_load_store,
+  -- * Enums
+  gl_ALL_BARRIER_BITS,
+  gl_ATOMIC_COUNTER_BARRIER_BIT,
+  gl_BUFFER_UPDATE_BARRIER_BIT,
+  gl_COMMAND_BARRIER_BIT,
+  gl_ELEMENT_ARRAY_BARRIER_BIT,
+  gl_FRAMEBUFFER_BARRIER_BIT,
+  gl_IMAGE_1D,
+  gl_IMAGE_1D_ARRAY,
+  gl_IMAGE_2D,
+  gl_IMAGE_2D_ARRAY,
+  gl_IMAGE_2D_MULTISAMPLE,
+  gl_IMAGE_2D_MULTISAMPLE_ARRAY,
+  gl_IMAGE_2D_RECT,
+  gl_IMAGE_3D,
+  gl_IMAGE_BINDING_ACCESS,
+  gl_IMAGE_BINDING_FORMAT,
+  gl_IMAGE_BINDING_LAYER,
+  gl_IMAGE_BINDING_LAYERED,
+  gl_IMAGE_BINDING_LEVEL,
+  gl_IMAGE_BINDING_NAME,
+  gl_IMAGE_BUFFER,
+  gl_IMAGE_CUBE,
+  gl_IMAGE_CUBE_MAP_ARRAY,
+  gl_IMAGE_FORMAT_COMPATIBILITY_BY_CLASS,
+  gl_IMAGE_FORMAT_COMPATIBILITY_BY_SIZE,
+  gl_IMAGE_FORMAT_COMPATIBILITY_TYPE,
+  gl_INT_IMAGE_1D,
+  gl_INT_IMAGE_1D_ARRAY,
+  gl_INT_IMAGE_2D,
+  gl_INT_IMAGE_2D_ARRAY,
+  gl_INT_IMAGE_2D_MULTISAMPLE,
+  gl_INT_IMAGE_2D_MULTISAMPLE_ARRAY,
+  gl_INT_IMAGE_2D_RECT,
+  gl_INT_IMAGE_3D,
+  gl_INT_IMAGE_BUFFER,
+  gl_INT_IMAGE_CUBE,
+  gl_INT_IMAGE_CUBE_MAP_ARRAY,
+  gl_MAX_COMBINED_IMAGE_UNIFORMS,
+  gl_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS,
+  gl_MAX_FRAGMENT_IMAGE_UNIFORMS,
+  gl_MAX_GEOMETRY_IMAGE_UNIFORMS,
+  gl_MAX_IMAGE_SAMPLES,
+  gl_MAX_IMAGE_UNITS,
+  gl_MAX_TESS_CONTROL_IMAGE_UNIFORMS,
+  gl_MAX_TESS_EVALUATION_IMAGE_UNIFORMS,
+  gl_MAX_VERTEX_IMAGE_UNIFORMS,
+  gl_PIXEL_BUFFER_BARRIER_BIT,
+  gl_SHADER_IMAGE_ACCESS_BARRIER_BIT,
+  gl_TEXTURE_FETCH_BARRIER_BIT,
+  gl_TEXTURE_UPDATE_BARRIER_BIT,
+  gl_TRANSFORM_FEEDBACK_BARRIER_BIT,
+  gl_UNIFORM_BARRIER_BIT,
+  gl_UNSIGNED_INT_IMAGE_1D,
+  gl_UNSIGNED_INT_IMAGE_1D_ARRAY,
+  gl_UNSIGNED_INT_IMAGE_2D,
+  gl_UNSIGNED_INT_IMAGE_2D_ARRAY,
+  gl_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE,
+  gl_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY,
+  gl_UNSIGNED_INT_IMAGE_2D_RECT,
+  gl_UNSIGNED_INT_IMAGE_3D,
+  gl_UNSIGNED_INT_IMAGE_BUFFER,
+  gl_UNSIGNED_INT_IMAGE_CUBE,
+  gl_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY,
+  gl_VERTEX_ATTRIB_ARRAY_BARRIER_BIT,
+  -- * Functions
+  glBindImageTexture,
+  glMemoryBarrier
+) where
+
+import Graphics.GL.ExtensionPredicates
+import Graphics.GL.Tokens
+import Graphics.GL.Functions

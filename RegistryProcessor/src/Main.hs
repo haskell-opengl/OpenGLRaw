@@ -460,7 +460,7 @@ modulePathFor :: [String] -> FilePath
 modulePathFor moduleNameSuffix = F.joinPath (moduleNameParts moduleNameSuffix) `F.addExtension` "hs"
 
 moduleNameParts :: [String] -> [String]
-moduleNameParts = (["Graphics", "Rendering", "OpenGL", "Raw"] ++)
+moduleNameParts = (["Graphics", "GL"] ++)
 
 printModuleHeader :: SI.Handle -> Maybe String -> String -> [String] -> IO ()
 printModuleHeader h mbPragma moduleName comments = do
