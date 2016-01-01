@@ -27,7 +27,6 @@ module MangledRegistry (
   splitWords, joinWords
 ) where
 
-import qualified Data.Char as C
 import qualified Data.List as L
 import qualified Data.Map as M
 import qualified Data.Maybe as DM
