@@ -63,37 +63,37 @@ import Data.Int
 import Data.Word
 import Foreign.C.Types
 import Foreign.Ptr
+import Numeric.Fixed
 import Numeric.Half
 
 --------------------------------------------------------------------------------
 
 -- | 8bit boolean.
-type GLboolean = CUChar
+type GLboolean = Word8
 
 -- | 8bit signed two\'s complement binary integer.
-type GLbyte = CSChar
+type GLbyte = Int8
 
 -- | 8bit unsigned binary integer.
-type GLubyte = CUChar
+type GLubyte = Word8
 
 -- | 8bit characters making up strings.
 type GLchar = CChar
 
 -- | 16bit signed two\'s complement binary integer.
-type GLshort = CShort
+type GLshort = Int16
 
 -- | 16bit unsigned binary integer.
-type GLushort = CUShort
+type GLushort = Word16
 
 -- | 32bit signed two\'s complement binary integer.
-type GLint = CInt
+type GLint = Int32
 
 -- | 32bit unsigned binary integer.
-type GLuint = CUInt
+type GLuint = Word32
 
 -- | 32bit signed two\'s complement 16.16 scaled integer.
-type GLfixed = CInt
--- NOTE: OpenGL ES uses khronos_int32_t for this.
+type GLfixed = Fixed
 
 -- | 64bit signed two\'s complement binary integer.
 type GLint64 = Int64
@@ -102,10 +102,10 @@ type GLint64 = Int64
 type GLuint64 = Word64
 
 -- | 32bit non-negative binary integer size.
-type GLsizei = CInt
+type GLsizei = Int32
 
 -- | 32bit enumerated binary integer value.
-type GLenum = CUInt
+type GLenum = Word32
 
 -- | Pointer-sized signed two\'s complement binary integer.
 type GLintptr = CPtrdiff
@@ -119,22 +119,22 @@ type GLsizeiptr = CPtrdiff
 type GLsync = Ptr ()
 
 -- | 32bit bit field.
-type GLbitfield = CUInt
+type GLbitfield = Word32
 
 -- | 16bit half-precision floating-point value encoded in an unsigned scalar.
 type GLhalf = Half
 
 -- | 32bit floating-point value.
-type GLfloat = CFloat
+type GLfloat = Float
 
 -- | 32bit floating-point value clamped to [0, 1].
-type GLclampf = CFloat
+type GLclampf = Float
 
 -- | 64bit floating-point value.
-type GLdouble = CDouble
+type GLdouble = Double
 
 -- | 64bit floating-point value clamped to [0, 1].
-type GLclampd = CDouble
+type GLclampd = Double
 
 -- | A pointer to a debug callback.
 type GLDEBUGPROC = FunPtr GLDEBUGPROCFunc
@@ -203,13 +203,12 @@ type GLDEBUGPROCKHRFunc = GLDEBUGPROCFunc
 makeGLDEBUGPROCKHR :: GLDEBUGPROCKHRFunc -> IO (FunPtr GLDEBUGPROCKHRFunc)
 makeGLDEBUGPROCKHR = makeGLDEBUGPROC
 
-type GLclampx = CInt
--- NOTE: OpenGL ES uses khronos_int32_t for this.
+type GLclampx = Fixed
 
 #if HANDLE_IS_POINTER
 type GLhandleARB = Ptr ()
 #else
-type GLhandleARB = CUInt
+type GLhandleARB = Word32
 #endif
 
 type GLvdpauSurfaceNV = GLintptr

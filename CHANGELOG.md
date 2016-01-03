@@ -3,6 +3,16 @@
 * Make the `OpenGLRaw` package even more similar to the `gl` package:
   * Use pattern synonyms for OpenGL enums.
   * Changed module name prefix from `Graphics.Rendering.OpenGL.Raw` to `Graphics.GL`.
+  * Use slightly different type synonyms for GL type (introducing `Fixed` on the way):
+    * `CDouble` => `Double` (for `GLclampd`, `GLdouble`)
+    * `CFloat`  => `Float`  (for `GLclampf`, `GLfloat`)
+    * `CInt`    => `Fixed`  (for `GLclampx`, `GLfixed`)
+    * `CInt`    => `Int32`  (for `GLint`, `GLsizei`)
+    * `CSChar`  => `Int8`   (for `GLbyte`)
+    * `CShort`  => `Int16`  (for `GLshort`)
+    * `CUChar`  => `Word8`  (for `GLboolean`, `GLubyte`)
+    * `CUInt`   => `Word32` (for `GLbitfield`, `GLenum`, `GLhandleARB`, `GLuint`)
+    * `CUShort` => `Word16` (for `GLushort`)
 
 2.6.1.1
 -------

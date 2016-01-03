@@ -19,6 +19,7 @@ module Graphics.GL.Foreign where
 import Foreign.C.Types
 import Foreign.Ptr
 import Graphics.GL.Types
+import Numeric.Fixed
 import Numeric.Half
 
 foreign import CALLCONV "dynamic" dyn201

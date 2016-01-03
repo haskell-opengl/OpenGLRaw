@@ -43,7 +43,6 @@ import Data.Set ( Set, fromList )
 import Data.Text ( pack, unpack )
 import Data.Text.Encoding ( encodeUtf8, decodeUtf8 )
 import Foreign.C.String ( CString )
-import Foreign.C.Types
 import Foreign.Marshal.Alloc ( alloca )
 import Foreign.Marshal.Error ( throwIf )
 import Foreign.Ptr ( Ptr, nullPtr, castPtr, FunPtr, nullFunPtr )
