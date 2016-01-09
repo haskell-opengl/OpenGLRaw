@@ -2880,7 +2880,7 @@ pattern GL_FACTOR_MIN_AMD = 0x901C :: GLenum
 
 pattern GL_FAILURE_NV = 0x9030 :: GLenum
 
-pattern GL_FALSE = 0 :: GLenum
+pattern GL_FALSE = 0 :: GLboolean
 
 pattern GL_FASTEST = 0x1101 :: GLenum
 
@@ -10252,7 +10252,7 @@ pattern GL_TRIANGLE_STRIP_ADJACENCY_OES = 0x000D :: GLenum
 
 pattern GL_TRIANGULAR_NV = 0x90A5 :: GLenum
 
-pattern GL_TRUE = 1 :: GLenum
+pattern GL_TRUE = 1 :: GLboolean
 
 pattern GL_TYPE = 0x92FA :: GLenum
 

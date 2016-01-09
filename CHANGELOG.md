@@ -1,3 +1,9 @@
+3.1.0.0
+-------
+* Changed the type of `GL_FALSE` and `GL_TRUE` to `GLboolean`, leading to fewer
+  `fromIntegral` calls in user code.
+* Updated OpenGL registry to r32348.
+
 3.0.0.0
 -------
 * Make the `OpenGLRaw` package even more similar to the `gl` package:

@@ -665,35 +665,37 @@ inlineCode s = "@" ++ s ++ "@"
 
 -- TODO: Use Either instead of error below?
 toEnumType :: ToEnumType
-toEnumType eNamespace eGroup eType suffix = TypeName $
-  case (eNamespace, eGroup, eType, unTypeSuffix `fmap` suffix) of
+toEnumType eNamespace eGroup eType suffix eName = TypeName $
+  case (eNamespace, eGroup, eType, unTypeSuffix `fmap` suffix, eName) of
     -- glx.xml
-    (Just "GLXStrings", _, _, _) -> "String"
-    (Just ('G':'L':'X':_), _, _, _) -> "CInt"
+    (Just "GLXStrings", _, _, _, _) -> "String"
+    (Just ('G':'L':'X':_), _, _, _, _) -> "CInt"
 
     -- egl.xml
     -- TODO: EGLenum for EGL_OPENGL_API, EGL_OPENGL_ES_API, EGL_OPENVG_API, EGL_OPENVG_IMAGE?
-    (Just ('E':'G':'L':_), _, Nothing, Just "ull") -> "EGLTime"
-    (Just ('E':'G':'L':_), _, _, _) -> "EGLint"
+    (Just ('E':'G':'L':_), _, Nothing, Just "ull", _) -> "EGLTime"
+    (Just ('E':'G':'L':_), _, _, _, _) -> "EGLint"
 
     -- wgl.xml
-    (Just "WGLLayerPlaneMask", _, _, _) -> "UINT"
-    (Just "WGLColorBufferMask", _, _, _) -> "UINT"
-    (Just "WGLContextFlagsMask", _, _, _) -> "INT"
-    (Just "WGLContextProfileMask", _, _, _) -> "INT"
-    (Just "WGLImageBufferMaskI3D" , _, _, _) -> "UINT"
-    (Just "WGLDXInteropMaskNV", _, _, _) -> "GLenum"
-    (Just ('W':'G':'L':_), _, _, _) -> "CInt"
+    (Just "WGLLayerPlaneMask", _, _, _, _) -> "UINT"
+    (Just "WGLColorBufferMask", _, _, _, _) -> "UINT"
+    (Just "WGLContextFlagsMask", _, _, _, _) -> "INT"
+    (Just "WGLContextProfileMask", _, _, _, _) -> "INT"
+    (Just "WGLImageBufferMaskI3D" , _, _, _, _) -> "UINT"
+    (Just "WGLDXInteropMaskNV", _, _, _, _) -> "GLenum"
+    (Just ('W':'G':'L':_), _, _, _, _) -> "CInt"
 
     -- gl.xml
-    (Just "OcclusionQueryEventMaskAMD", _, _, _) -> "GLuint"
-    (Just "GL", Just "PathRenderingTokenNV", _, _) -> "GLubyte"
-    (Just "GL", _, Just "bitmask", _) -> "GLbitfield"
-    (Just "GL", _, Nothing, Just "u") -> "GLuint"
-    (Just "GL", _, Nothing, Just "ull") -> "GLuint64"
-    (Just "GL", _, Nothing, Nothing) -> "GLenum"
+    (Just "OcclusionQueryEventMaskAMD", _, _, _, _) -> "GLuint"
+    (Just "GL", Just "SpecialNumbers", _, _, "GL_FALSE") -> "GLboolean"
+    (Just "GL", Just "SpecialNumbers", _, _, "GL_TRUE") -> "GLboolean"
+    (Just "GL", Just "PathRenderingTokenNV", _, _, _) -> "GLubyte"
+    (Just "GL", _, Just "bitmask", _, _) -> "GLbitfield"
+    (Just "GL", _, Nothing, Just "u", _) -> "GLuint"
+    (Just "GL", _, Nothing, Just "ull", _) -> "GLuint64"
+    (Just "GL", _, Nothing, Nothing, _) -> "GLenum"
 
-    (_, _, _, _) -> error "can't determine enum type"
+    (_, _, _, _, _) -> error "can't determine enum type"
 
 isMask :: TypeName -> Bool
 isMask = (== TypeName "GLbitfield")

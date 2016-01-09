@@ -36,7 +36,7 @@ import qualified Numeric as N
 import qualified DeclarationParser as D
 import qualified Registry as R
 
-type ToEnumType = Maybe String -> Maybe String -> Maybe String -> Maybe R.TypeSuffix -> R.TypeName
+type ToEnumType = Maybe String -> Maybe String -> Maybe String -> Maybe R.TypeSuffix -> String -> R.TypeName
 
 parseRegistry :: ToEnumType -> String -> Either String Registry
 parseRegistry toEnumType str = toRegistry toEnumType `fmap` R.parseRegistry str
@@ -118,11 +118,11 @@ data Enum' = Enum {
   enumName :: EnumName
   } deriving (Eq, Ord, Show)
 
-toEnum' :: (Maybe R.TypeSuffix -> R.TypeName) -> R.Enum' -> Enum'
+toEnum' :: (Maybe R.TypeSuffix -> String -> R.TypeName) -> R.Enum' -> Enum'
 toEnum' toTypeName e = Enum {
   enumValue = EnumValue (R.enumValue e),
   enumAPI = API `fmap` R.enumAPI e,
-  enumType = toTypeName (R.enumType e),
+  enumType = toTypeName (R.enumType e) (R.enumName e),
   enumName = EnumName (R.enumName e) }
 
 splitChar :: Char
