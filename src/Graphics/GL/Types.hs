@@ -56,7 +56,14 @@ module Graphics.GL.Types (
   GLclampx,
   GLhandleARB,
   GLvdpauSurfaceNV,
-  GLeglImageOES
+  GLeglImageOES,
+
+  -- * Deprecated functions for @gl@ compatibility.
+  mkGLDEBUGPROC,
+  mkGLDEBUGPROCAMD,
+  mkGLDEBUGPROCARB,
+  mkGLDEBUGPROCKHR
+
 ) where
 
 import Data.Int
@@ -214,3 +221,19 @@ type GLhandleARB = Word32
 type GLvdpauSurfaceNV = GLintptr
 
 type GLeglImageOES = Ptr ()
+
+{-# DEPRECATED mkGLDEBUGPROC "Use 'makeGLDEBUGPROC' instead." #-}
+mkGLDEBUGPROC :: GLDEBUGPROCFunc -> IO (FunPtr GLDEBUGPROCFunc)
+mkGLDEBUGPROC = makeGLDEBUGPROC
+
+{-# DEPRECATED mkGLDEBUGPROCAMD "Use 'makeGLDEBUGPROCAMD' instead." #-}
+mkGLDEBUGPROCAMD :: GLDEBUGPROCAMDFunc -> IO (FunPtr GLDEBUGPROCAMDFunc)
+mkGLDEBUGPROCAMD = makeGLDEBUGPROCAMD
+
+{-# DEPRECATED mkGLDEBUGPROCARB "Use 'makekGLDEBUGPROCARB' instead." #-}
+mkGLDEBUGPROCARB :: GLDEBUGPROCARBFunc -> IO (FunPtr GLDEBUGPROCARBFunc)
+mkGLDEBUGPROCARB = makeGLDEBUGPROCARB
+
+{-# DEPRECATED mkGLDEBUGPROCKHR "Use 'makeGLDEBUGPROCKHR' instead." #-}
+mkGLDEBUGPROCKHR :: GLDEBUGPROCKHRFunc -> IO (FunPtr GLDEBUGPROCKHRFunc)
+mkGLDEBUGPROCKHR = makeGLDEBUGPROCKHR
