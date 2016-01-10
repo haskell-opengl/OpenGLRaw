@@ -2,6 +2,8 @@
 -------
 * Changed the type of `GL_FALSE` and `GL_TRUE` to `GLboolean`, leading to fewer
   `fromIntegral` calls in user code.
+* Added deprecated functions `mkGLDEBUGPROC`, `mkGLDEBUGPROCAMD`,
+  `mkGLDEBUGPROCARB`, `mkGLDEBUGPROCKHR` for `gl` compatibility.
 * Updated OpenGL registry to r32348.
 
 3.0.0.0
