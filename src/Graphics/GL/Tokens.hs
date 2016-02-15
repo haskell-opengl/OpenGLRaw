@@ -1,5 +1,7 @@
-{-# LANGUAGE PatternSynonyms, ScopedTypeVariables #-}
-{-# OPTIONS_GHC -Wno-missing-signatures #-}
+{-# LANGUAGE CPP, PatternSynonyms, ScopedTypeVariables #-}
+#if __GLASGOW_HASKELL__ >= 800
+{-# OPTIONS_GHC -Wno-missing-pat-syn-sigs #-}
+#endif
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.Tokens
