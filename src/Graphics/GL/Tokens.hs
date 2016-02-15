@@ -1,4 +1,5 @@
 {-# LANGUAGE PatternSynonyms, ScopedTypeVariables #-}
+{-# OPTIONS_GHC -fno-warn-missing-signatures #-}
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.Tokens
