@@ -77,7 +77,7 @@ script:
  - cabal build   # this builds all libraries and executables (including tests/benchmarks)
  - cabal test
  - if [ $CABALVER \> 1.18 ]; then cabal check; fi # Cabal 1.18 complains about PatternSynonyms
- - cabal haddock # tests that documentation can be generated
+ - cabal haddock --haddock-options=--no-print-missing-docs # tests that documentation can be generated
  - cabal sdist   # tests that a source-distribution can be generated
 
 # Check that the resulting source distribution can be built & installed.
