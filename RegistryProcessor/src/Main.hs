@@ -77,7 +77,7 @@ printTokens api registry = do
   let comment =
         ["All enumeration tokens from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule ["Tokens"] (Just "{-# LANGUAGE PatternSynonyms, ScopedTypeVariables #-}\n{-# OPTIONS_GHC -Wno-missing-pat-syn-sigs #-}") comment $ \moduleName h -> do
+  startModule ["Tokens"] (Just "{-# LANGUAGE PatternSynonyms, ScopedTypeVariables #-}\n{-# OPTIONS_GHC -Wno-missing-pattern-synonym-signatures #-}") comment $ \moduleName h -> do
     SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
     SI.hPutStrLn h ""
     SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]

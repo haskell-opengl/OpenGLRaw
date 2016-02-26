@@ -1,6 +1,6 @@
 {-# LANGUAGE CPP, PatternSynonyms, ScopedTypeVariables #-}
 #if __GLASGOW_HASKELL__ >= 800
-{-# OPTIONS_GHC -Wno-missing-pat-syn-sigs #-}
+{-# OPTIONS_GHC -Wno-missing-pattern-synonym-signatures #-}
 #endif
 --------------------------------------------------------------------------------
 -- |
