@@ -1,3 +1,7 @@
+3.1.0.1
+-------
+* Updated OpenGL registry to r32363.
+
 3.1.0.0
 -------
 * Changed the type of `GL_FALSE` and `GL_TRUE` to `GLboolean`, leading to fewer
