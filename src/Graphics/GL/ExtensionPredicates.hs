@@ -4254,6 +4254,17 @@ gl_NV_video_capture :: Bool
 gl_NV_video_capture = member "GL_NV_video_capture" extensions
 {-# NOINLINE gl_NV_video_capture #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/viewport_swizzle.txt NV_viewport_swizzle> extension supported?
+glGetNVViewportSwizzle :: MonadIO m => m Bool
+glGetNVViewportSwizzle = getExtensions >>= (return . member "GL_NV_viewport_swizzle")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/viewport_swizzle.txt NV_viewport_swizzle> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVViewportSwizzle' in those cases instead.
+gl_NV_viewport_swizzle :: Bool
+gl_NV_viewport_swizzle = member "GL_NV_viewport_swizzle" extensions
+{-# NOINLINE gl_NV_viewport_swizzle #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NVX/nvx_conditional_render.txt NVX_conditional_render> extension supported?
 glGetNVXConditionalRender :: MonadIO m => m Bool
 glGetNVXConditionalRender = getExtensions >>= (return . member "GL_NVX_conditional_render")

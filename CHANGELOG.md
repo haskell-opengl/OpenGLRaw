@@ -1,3 +1,7 @@
+3.2.0.0
+-------
+* Updated OpenGL registry to r32749.
+
 3.1.0.1
 -------
 * Updated warning flag magic for GHC 8.0.

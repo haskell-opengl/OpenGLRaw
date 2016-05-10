@@ -201,6 +201,7 @@ module Graphics.GL.Groups (
 -- * 'Graphics.GL.Tokens.GL_CONTEXT_FLAG_DEBUG_BIT' (alias: 'Graphics.GL.Tokens.GL_CONTEXT_FLAG_DEBUG_BIT_KHR')
 -- * 'Graphics.GL.Tokens.GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT'
 -- * 'Graphics.GL.Tokens.GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB'
+-- * 'Graphics.GL.Tokens.GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT'
 --
 -- === #ContextProfileMask# ContextProfileMask
 -- A bitwise combination of several of the following values:

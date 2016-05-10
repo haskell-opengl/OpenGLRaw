@@ -3080,6 +3080,7 @@ module Graphics.GL.Functions (
   glViewportIndexedfNV,
   glViewportIndexedfv,
   glViewportIndexedfvNV,
+  glViewportSwizzleNV,
   glWaitSync,
   glWaitSyncAPPLE,
   glWeightPathsNV,
@@ -48611,6 +48612,22 @@ glViewportIndexedfvNV v1 v2 = liftIO $ dyn377 ptr_glViewportIndexedfvNV v1 v2
 {-# NOINLINE ptr_glViewportIndexedfvNV #-}
 ptr_glViewportIndexedfvNV :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
 ptr_glViewportIndexedfvNV = unsafePerformIO $ getCommand "glViewportIndexedfvNV"
+
+-- glViewportSwizzleNV ---------------------------------------------------------
+
+glViewportSwizzleNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLenum -- ^ @swizzlex@.
+  -> GLenum -- ^ @swizzley@.
+  -> GLenum -- ^ @swizzlez@.
+  -> GLenum -- ^ @swizzlew@.
+  -> m ()
+glViewportSwizzleNV v1 v2 v3 v4 v5 = liftIO $ dyn54 ptr_glViewportSwizzleNV v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glViewportSwizzleNV #-}
+ptr_glViewportSwizzleNV :: FunPtr (GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
+ptr_glViewportSwizzleNV = unsafePerformIO $ getCommand "glViewportSwizzleNV"
 
 -- glWaitSync ------------------------------------------------------------------
 

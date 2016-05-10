@@ -88,7 +88,8 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.VertexProgram2Option,
   module Graphics.GL.NV.VertexProgram3,
   module Graphics.GL.NV.VertexProgram4,
-  module Graphics.GL.NV.VideoCapture
+  module Graphics.GL.NV.VideoCapture,
+  module Graphics.GL.NV.ViewportSwizzle
 ) where
 
 import Graphics.GL.NV.BindlessMultiDrawIndirect
@@ -167,3 +168,4 @@ import Graphics.GL.NV.VertexProgram2Option
 import Graphics.GL.NV.VertexProgram3
 import Graphics.GL.NV.VertexProgram4
 import Graphics.GL.NV.VideoCapture
+import Graphics.GL.NV.ViewportSwizzle
