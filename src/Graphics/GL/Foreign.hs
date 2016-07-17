@@ -17,10 +17,18 @@
 module Graphics.GL.Foreign where
 
 import Foreign.C.Types
+import Foreign.Marshal.Error ( throwIf )
 import Foreign.Ptr
+import Graphics.GL.GetProcAddress ( getProcAddress )
 import Graphics.GL.Types
 import Numeric.Fixed
 import Numeric.Half
+
+getCommand :: String -> IO (FunPtr a)
+getCommand cmd =
+  throwIfNullFunPtr ("unknown OpenGL command " ++ cmd) $ getProcAddress cmd
+  where throwIfNullFunPtr :: String -> IO (FunPtr a) -> IO (FunPtr a)
+        throwIfNullFunPtr = throwIf (== nullFunPtr) . const
 
 foreign import CALLCONV "dynamic" dyn202
   :: FunPtr (GLDEBUGPROC -> Ptr a -> IO ())

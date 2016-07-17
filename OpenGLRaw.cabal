@@ -609,6 +609,38 @@ library
   other-modules:
     Graphics.GL.ExtensionPredicates
     Graphics.GL.Foreign
+    Graphics.GL.Functions.F01
+    Graphics.GL.Functions.F02
+    Graphics.GL.Functions.F03
+    Graphics.GL.Functions.F04
+    Graphics.GL.Functions.F05
+    Graphics.GL.Functions.F06
+    Graphics.GL.Functions.F07
+    Graphics.GL.Functions.F08
+    Graphics.GL.Functions.F09
+    Graphics.GL.Functions.F10
+    Graphics.GL.Functions.F11
+    Graphics.GL.Functions.F12
+    Graphics.GL.Functions.F13
+    Graphics.GL.Functions.F14
+    Graphics.GL.Functions.F15
+    Graphics.GL.Functions.F16
+    Graphics.GL.Functions.F17
+    Graphics.GL.Functions.F18
+    Graphics.GL.Functions.F19
+    Graphics.GL.Functions.F20
+    Graphics.GL.Functions.F21
+    Graphics.GL.Functions.F22
+    Graphics.GL.Functions.F23
+    Graphics.GL.Functions.F24
+    Graphics.GL.Functions.F25
+    Graphics.GL.Functions.F26
+    Graphics.GL.Functions.F27
+    Graphics.GL.Functions.F28
+    Graphics.GL.Functions.F29
+    Graphics.GL.Functions.F30
+    Graphics.GL.Functions.F31
+    Graphics.GL.Functions.F32
   c-sources:
     cbits/HsOpenGLRaw.c
   hs-source-dirs: src

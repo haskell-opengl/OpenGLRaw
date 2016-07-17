@@ -1,6 +1,7 @@
 3.2.1.0
 -------
 * Updated OpenGL registry to r33061.
+* Split the `Graphics.GL.Functions` implementation into more manageable chunks.
 
 3.2.0.0
 -------
