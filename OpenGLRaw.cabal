@@ -372,6 +372,7 @@ library
     Graphics.GL.EXT.VertexAttrib64Bit
     Graphics.GL.EXT.VertexShader
     Graphics.GL.EXT.VertexWeighting
+    Graphics.GL.EXT.WindowRectangles
     Graphics.GL.EXT.X11SyncObject
     Graphics.GL.Functions
     Graphics.GL.GREMEDY
@@ -396,6 +397,7 @@ library
     Graphics.GL.INGR.ColorClamp
     Graphics.GL.INGR.InterlaceRead
     Graphics.GL.INTEL
+    Graphics.GL.INTEL.ConservativeRasterization
     Graphics.GL.INTEL.FramebufferCmaa
     Graphics.GL.INTEL.MapTexture
     Graphics.GL.INTEL.ParallelArrays
@@ -423,11 +425,13 @@ library
     Graphics.GL.NV.BindlessTexture
     Graphics.GL.NV.BlendEquationAdvanced
     Graphics.GL.NV.BlendEquationAdvancedCoherent
+    Graphics.GL.NV.ClipSpaceWScaling
     Graphics.GL.NV.CommandList
     Graphics.GL.NV.ComputeProgram5
     Graphics.GL.NV.ConditionalRender
     Graphics.GL.NV.ConservativeRaster
     Graphics.GL.NV.ConservativeRasterDilate
+    Graphics.GL.NV.ConservativeRasterPreSnapTriangles
     Graphics.GL.NV.CopyDepthToColor
     Graphics.GL.NV.CopyImage
     Graphics.GL.NV.DeepTexture3D
@@ -466,6 +470,7 @@ library
     Graphics.GL.NV.PrimitiveRestart
     Graphics.GL.NV.RegisterCombiners
     Graphics.GL.NV.RegisterCombiners2
+    Graphics.GL.NV.RobustnessVideoMemoryPurge
     Graphics.GL.NV.SampleLocations
     Graphics.GL.NV.ShaderBufferLoad
     Graphics.GL.NV.ShaderBufferStore
