@@ -103,6 +103,7 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.VertexAttrib64Bit,
   module Graphics.GL.EXT.VertexShader,
   module Graphics.GL.EXT.VertexWeighting,
+  module Graphics.GL.EXT.WindowRectangles,
   module Graphics.GL.EXT.X11SyncObject
 ) where
 
@@ -196,4 +197,5 @@ import Graphics.GL.EXT.VertexArrayBGRA
 import Graphics.GL.EXT.VertexAttrib64Bit
 import Graphics.GL.EXT.VertexShader
 import Graphics.GL.EXT.VertexWeighting
+import Graphics.GL.EXT.WindowRectangles
 import Graphics.GL.EXT.X11SyncObject

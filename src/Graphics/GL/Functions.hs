@@ -352,6 +352,7 @@ module Graphics.GL.Functions (
   glCompressedTextureSubImage3D,
   glCompressedTextureSubImage3DEXT,
   glConservativeRasterParameterfNV,
+  glConservativeRasterParameteriNV,
   glConvolutionFilter1D,
   glConvolutionFilter1DEXT,
   glConvolutionFilter2D,
@@ -3080,6 +3081,7 @@ module Graphics.GL.Functions (
   glViewportIndexedfNV,
   glViewportIndexedfv,
   glViewportIndexedfvNV,
+  glViewportPositionWScaleNV,
   glViewportSwizzleNV,
   glWaitSync,
   glWaitSyncAPPLE,
@@ -3150,6 +3152,7 @@ module Graphics.GL.Functions (
   glWindowPos4ivMESA,
   glWindowPos4sMESA,
   glWindowPos4svMESA,
+  glWindowRectanglesEXT,
   glWriteMaskEXT
 ) where
 
@@ -8293,6 +8296,19 @@ glConservativeRasterParameterfNV v1 v2 = liftIO $ dyn0 ptr_glConservativeRasterP
 {-# NOINLINE ptr_glConservativeRasterParameterfNV #-}
 ptr_glConservativeRasterParameterfNV :: FunPtr (GLenum -> GLfloat -> IO ())
 ptr_glConservativeRasterParameterfNV = unsafePerformIO $ getCommand "glConservativeRasterParameterfNV"
+
+-- glConservativeRasterParameteriNV --------------------------------------------
+
+glConservativeRasterParameteriNV
+  :: MonadIO m
+  => GLenum -- ^ @pname@.
+  -> GLint -- ^ @param@.
+  -> m ()
+glConservativeRasterParameteriNV v1 v2 = liftIO $ dyn55 ptr_glConservativeRasterParameteriNV v1 v2
+
+{-# NOINLINE ptr_glConservativeRasterParameteriNV #-}
+ptr_glConservativeRasterParameteriNV :: FunPtr (GLenum -> GLint -> IO ())
+ptr_glConservativeRasterParameteriNV = unsafePerformIO $ getCommand "glConservativeRasterParameteriNV"
 
 -- glConvolutionFilter1D -------------------------------------------------------
 
@@ -48613,6 +48629,20 @@ glViewportIndexedfvNV v1 v2 = liftIO $ dyn377 ptr_glViewportIndexedfvNV v1 v2
 ptr_glViewportIndexedfvNV :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
 ptr_glViewportIndexedfvNV = unsafePerformIO $ getCommand "glViewportIndexedfvNV"
 
+-- glViewportPositionWScaleNV --------------------------------------------------
+
+glViewportPositionWScaleNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLfloat -- ^ @xcoeff@.
+  -> GLfloat -- ^ @ycoeff@.
+  -> m ()
+glViewportPositionWScaleNV v1 v2 v3 = liftIO $ dyn221 ptr_glViewportPositionWScaleNV v1 v2 v3
+
+{-# NOINLINE ptr_glViewportPositionWScaleNV #-}
+ptr_glViewportPositionWScaleNV :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
+ptr_glViewportPositionWScaleNV = unsafePerformIO $ getCommand "glViewportPositionWScaleNV"
+
 -- glViewportSwizzleNV ---------------------------------------------------------
 
 glViewportSwizzleNV
@@ -49579,6 +49609,20 @@ glWindowPos4svMESA v1 = liftIO $ dyn45 ptr_glWindowPos4svMESA v1
 {-# NOINLINE ptr_glWindowPos4svMESA #-}
 ptr_glWindowPos4svMESA :: FunPtr (Ptr GLshort -> IO ())
 ptr_glWindowPos4svMESA = unsafePerformIO $ getCommand "glWindowPos4svMESA"
+
+-- glWindowRectanglesEXT -------------------------------------------------------
+
+glWindowRectanglesEXT
+  :: MonadIO m
+  => GLenum -- ^ @mode@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @box@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
+  -> m ()
+glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn887 ptr_glWindowRectanglesEXT v1 v2 v3
+
+{-# NOINLINE ptr_glWindowRectanglesEXT #-}
+ptr_glWindowRectanglesEXT :: FunPtr (GLenum -> GLsizei -> Ptr GLint -> IO ())
+ptr_glWindowRectanglesEXT = unsafePerformIO $ getCommand "glWindowRectanglesEXT"
 
 -- glWriteMaskEXT --------------------------------------------------------------
 

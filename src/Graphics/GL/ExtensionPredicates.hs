@@ -3066,6 +3066,17 @@ gl_EXT_vertex_weighting :: Bool
 gl_EXT_vertex_weighting = member "GL_EXT_vertex_weighting" extensions
 {-# NOINLINE gl_EXT_vertex_weighting #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/EXT/window_rectangles.txt EXT_window_rectangles> extension supported?
+glGetEXTWindowRectangles :: MonadIO m => m Bool
+glGetEXTWindowRectangles = getExtensions >>= (return . member "GL_EXT_window_rectangles")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/window_rectangles.txt EXT_window_rectangles> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTWindowRectangles' in those cases instead.
+gl_EXT_window_rectangles :: Bool
+gl_EXT_window_rectangles = member "GL_EXT_window_rectangles" extensions
+{-# NOINLINE gl_EXT_window_rectangles #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/EXT/x11_sync_object.txt EXT_x11_sync_object> extension supported?
 glGetEXTX11SyncObject :: MonadIO m => m Bool
 glGetEXTX11SyncObject = getExtensions >>= (return . member "GL_EXT_x11_sync_object")
@@ -3241,6 +3252,17 @@ glGetINGRInterlaceRead = getExtensions >>= (return . member "GL_INGR_interlace_r
 gl_INGR_interlace_read :: Bool
 gl_INGR_interlace_read = member "GL_INGR_interlace_read" extensions
 {-# NOINLINE gl_INGR_interlace_read #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/INTEL/conservative_rasterization.txt INTEL_conservative_rasterization> extension supported?
+glGetINTELConservativeRasterization :: MonadIO m => m Bool
+glGetINTELConservativeRasterization = getExtensions >>= (return . member "GL_INTEL_conservative_rasterization")
+
+-- | Is the <https://www.opengl.org/registry/specs/INTEL/conservative_rasterization.txt INTEL_conservative_rasterization> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetINTELConservativeRasterization' in those cases instead.
+gl_INTEL_conservative_rasterization :: Bool
+gl_INTEL_conservative_rasterization = member "GL_INTEL_conservative_rasterization" extensions
+{-# NOINLINE gl_INTEL_conservative_rasterization #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/framebuffer_CMAA.txt INTEL_framebuffer_CMAA> extension supported?
 glGetINTELFramebufferCmaa :: MonadIO m => m Bool
@@ -3484,6 +3506,17 @@ gl_NV_blend_equation_advanced_coherent :: Bool
 gl_NV_blend_equation_advanced_coherent = member "GL_NV_blend_equation_advanced_coherent" extensions
 {-# NOINLINE gl_NV_blend_equation_advanced_coherent #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/clip_space_w_scaling.txt NV_clip_space_w_scaling> extension supported?
+glGetNVClipSpaceWScaling :: MonadIO m => m Bool
+glGetNVClipSpaceWScaling = getExtensions >>= (return . member "GL_NV_clip_space_w_scaling")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/clip_space_w_scaling.txt NV_clip_space_w_scaling> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVClipSpaceWScaling' in those cases instead.
+gl_NV_clip_space_w_scaling :: Bool
+gl_NV_clip_space_w_scaling = member "GL_NV_clip_space_w_scaling" extensions
+{-# NOINLINE gl_NV_clip_space_w_scaling #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NV/command_list.txt NV_command_list> extension supported?
 glGetNVCommandList :: MonadIO m => m Bool
 glGetNVCommandList = getExtensions >>= (return . member "GL_NV_command_list")
@@ -3538,6 +3571,17 @@ glGetNVConservativeRasterDilate = getExtensions >>= (return . member "GL_NV_cons
 gl_NV_conservative_raster_dilate :: Bool
 gl_NV_conservative_raster_dilate = member "GL_NV_conservative_raster_dilate" extensions
 {-# NOINLINE gl_NV_conservative_raster_dilate #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster_pre_snap_triangles.txt NV_conservative_raster_pre_snap_triangles> extension supported?
+glGetNVConservativeRasterPreSnapTriangles :: MonadIO m => m Bool
+glGetNVConservativeRasterPreSnapTriangles = getExtensions >>= (return . member "GL_NV_conservative_raster_pre_snap_triangles")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster_pre_snap_triangles.txt NV_conservative_raster_pre_snap_triangles> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVConservativeRasterPreSnapTriangles' in those cases instead.
+gl_NV_conservative_raster_pre_snap_triangles :: Bool
+gl_NV_conservative_raster_pre_snap_triangles = member "GL_NV_conservative_raster_pre_snap_triangles" extensions
+{-# NOINLINE gl_NV_conservative_raster_pre_snap_triangles #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/copy_depth_to_color.txt NV_copy_depth_to_color> extension supported?
 glGetNVCopyDepthToColor :: MonadIO m => m Bool
@@ -3945,6 +3989,17 @@ glGetNVRegisterCombiners2 = getExtensions >>= (return . member "GL_NV_register_c
 gl_NV_register_combiners2 :: Bool
 gl_NV_register_combiners2 = member "GL_NV_register_combiners2" extensions
 {-# NOINLINE gl_NV_register_combiners2 #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/robustness_video_memory_purge.txt NV_robustness_video_memory_purge> extension supported?
+glGetNVRobustnessVideoMemoryPurge :: MonadIO m => m Bool
+glGetNVRobustnessVideoMemoryPurge = getExtensions >>= (return . member "GL_NV_robustness_video_memory_purge")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/robustness_video_memory_purge.txt NV_robustness_video_memory_purge> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVRobustnessVideoMemoryPurge' in those cases instead.
+gl_NV_robustness_video_memory_purge :: Bool
+gl_NV_robustness_video_memory_purge = member "GL_NV_robustness_video_memory_purge" extensions
+{-# NOINLINE gl_NV_robustness_video_memory_purge #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/sample_locations.txt NV_sample_locations> extension supported?
 glGetNVSampleLocations :: MonadIO m => m Bool

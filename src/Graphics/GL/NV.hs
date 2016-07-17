@@ -18,11 +18,13 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.BindlessTexture,
   module Graphics.GL.NV.BlendEquationAdvanced,
   module Graphics.GL.NV.BlendEquationAdvancedCoherent,
+  module Graphics.GL.NV.ClipSpaceWScaling,
   module Graphics.GL.NV.CommandList,
   module Graphics.GL.NV.ComputeProgram5,
   module Graphics.GL.NV.ConditionalRender,
   module Graphics.GL.NV.ConservativeRaster,
   module Graphics.GL.NV.ConservativeRasterDilate,
+  module Graphics.GL.NV.ConservativeRasterPreSnapTriangles,
   module Graphics.GL.NV.CopyDepthToColor,
   module Graphics.GL.NV.CopyImage,
   module Graphics.GL.NV.DeepTexture3D,
@@ -61,6 +63,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.PrimitiveRestart,
   module Graphics.GL.NV.RegisterCombiners,
   module Graphics.GL.NV.RegisterCombiners2,
+  module Graphics.GL.NV.RobustnessVideoMemoryPurge,
   module Graphics.GL.NV.SampleLocations,
   module Graphics.GL.NV.ShaderBufferLoad,
   module Graphics.GL.NV.ShaderBufferStore,
@@ -97,11 +100,13 @@ import Graphics.GL.NV.BindlessMultiDrawIndirectCount
 import Graphics.GL.NV.BindlessTexture
 import Graphics.GL.NV.BlendEquationAdvanced
 import Graphics.GL.NV.BlendEquationAdvancedCoherent
+import Graphics.GL.NV.ClipSpaceWScaling
 import Graphics.GL.NV.CommandList
 import Graphics.GL.NV.ComputeProgram5
 import Graphics.GL.NV.ConditionalRender
 import Graphics.GL.NV.ConservativeRaster
 import Graphics.GL.NV.ConservativeRasterDilate
+import Graphics.GL.NV.ConservativeRasterPreSnapTriangles
 import Graphics.GL.NV.CopyDepthToColor
 import Graphics.GL.NV.CopyImage
 import Graphics.GL.NV.DeepTexture3D
@@ -140,6 +145,7 @@ import Graphics.GL.NV.PresentVideo
 import Graphics.GL.NV.PrimitiveRestart
 import Graphics.GL.NV.RegisterCombiners
 import Graphics.GL.NV.RegisterCombiners2
+import Graphics.GL.NV.RobustnessVideoMemoryPurge
 import Graphics.GL.NV.SampleLocations
 import Graphics.GL.NV.ShaderBufferLoad
 import Graphics.GL.NV.ShaderBufferStore
