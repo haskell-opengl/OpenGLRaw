@@ -1,5 +1,10 @@
 *.swp
 *~
 **/.cabal-sandbox
+**/.stack-work/
 **/dist
+**/highlight.js
+**/stack.yaml
+**/style.css
 cabal.sandbox.config
+/RegistryProcessor/Graphics/
