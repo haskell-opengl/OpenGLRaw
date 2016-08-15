@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F18 (
+  glNamedBufferSubData,
+  glNamedBufferSubDataEXT,
+  glNamedCopyBufferSubDataEXT,
   glNamedFramebufferDrawBuffer,
   glNamedFramebufferDrawBuffers,
   glNamedFramebufferParameteri,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F18 (
   glPathCoordsNV,
   glPathCoverDepthFuncNV,
   glPathDashArrayNV,
-  glPathFogGenNV,
-  glPathGlyphIndexArrayNV,
-  glPathGlyphIndexRangeNV,
-  glPathGlyphRangeNV
+  glPathFogGenNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,54 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glNamedBufferSubData --------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml OpenGL 4.x>.
+glNamedBufferSubData
+  :: MonadIO m
+  => GLuint -- ^ @buffer@.
+  -> GLintptr -- ^ @offset@.
+  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
+  -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
+  -> m ()
+glNamedBufferSubData v1 v2 v3 v4 = liftIO $ dyn362 ptr_glNamedBufferSubData v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNamedBufferSubData #-}
+ptr_glNamedBufferSubData :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
+ptr_glNamedBufferSubData = unsafePerformIO $ getCommand "glNamedBufferSubData"
+
+-- glNamedBufferSubDataEXT -----------------------------------------------------
+
+-- | This command is an alias for 'glNamedBufferSubData'.
+glNamedBufferSubDataEXT
+  :: MonadIO m
+  => GLuint -- ^ @buffer@.
+  -> GLintptr -- ^ @offset@.
+  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
+  -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
+  -> m ()
+glNamedBufferSubDataEXT v1 v2 v3 v4 = liftIO $ dyn362 ptr_glNamedBufferSubDataEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNamedBufferSubDataEXT #-}
+ptr_glNamedBufferSubDataEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
+ptr_glNamedBufferSubDataEXT = unsafePerformIO $ getCommand "glNamedBufferSubDataEXT"
+
+-- glNamedCopyBufferSubDataEXT -------------------------------------------------
+
+glNamedCopyBufferSubDataEXT
+  :: MonadIO m
+  => GLuint -- ^ @readBuffer@.
+  -> GLuint -- ^ @writeBuffer@.
+  -> GLintptr -- ^ @readOffset@.
+  -> GLintptr -- ^ @writeOffset@.
+  -> GLsizeiptr -- ^ @size@.
+  -> m ()
+glNamedCopyBufferSubDataEXT v1 v2 v3 v4 v5 = liftIO $ dyn174 ptr_glNamedCopyBufferSubDataEXT v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glNamedCopyBufferSubDataEXT #-}
+ptr_glNamedCopyBufferSubDataEXT :: FunPtr (GLuint -> GLuint -> GLintptr -> GLintptr -> GLsizeiptr -> IO ())
+ptr_glNamedCopyBufferSubDataEXT = unsafePerformIO $ getCommand "glNamedCopyBufferSubDataEXT"
 
 -- glNamedFramebufferDrawBuffer ------------------------------------------------
 
@@ -1565,60 +1613,4 @@ glPathFogGenNV v1 = liftIO $ dyn4 ptr_glPathFogGenNV v1
 {-# NOINLINE ptr_glPathFogGenNV #-}
 ptr_glPathFogGenNV :: FunPtr (GLenum -> IO ())
 ptr_glPathFogGenNV = unsafePerformIO $ getCommand "glPathFogGenNV"
-
--- glPathGlyphIndexArrayNV -----------------------------------------------------
-
-glPathGlyphIndexArrayNV
-  :: MonadIO m
-  => GLuint -- ^ @firstPathName@.
-  -> GLenum -- ^ @fontTarget@.
-  -> Ptr a -- ^ @fontName@.
-  -> GLbitfield -- ^ @fontStyle@.
-  -> GLuint -- ^ @firstGlyphIndex@.
-  -> GLsizei -- ^ @numGlyphs@.
-  -> GLuint -- ^ @pathParameterTemplate@.
-  -> GLfloat -- ^ @emScale@.
-  -> m GLenum
-glPathGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn599 ptr_glPathGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glPathGlyphIndexArrayNV #-}
-ptr_glPathGlyphIndexArrayNV :: FunPtr (GLuint -> GLenum -> Ptr a -> GLbitfield -> GLuint -> GLsizei -> GLuint -> GLfloat -> IO GLenum)
-ptr_glPathGlyphIndexArrayNV = unsafePerformIO $ getCommand "glPathGlyphIndexArrayNV"
-
--- glPathGlyphIndexRangeNV -----------------------------------------------------
-
-glPathGlyphIndexRangeNV
-  :: MonadIO m
-  => GLenum -- ^ @fontTarget@.
-  -> Ptr a -- ^ @fontName@.
-  -> GLbitfield -- ^ @fontStyle@.
-  -> GLuint -- ^ @pathParameterTemplate@.
-  -> GLfloat -- ^ @emScale@.
-  -> Ptr GLuint -- ^ @baseAndCount@.
-  -> m GLenum
-glPathGlyphIndexRangeNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn600 ptr_glPathGlyphIndexRangeNV v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glPathGlyphIndexRangeNV #-}
-ptr_glPathGlyphIndexRangeNV :: FunPtr (GLenum -> Ptr a -> GLbitfield -> GLuint -> GLfloat -> Ptr GLuint -> IO GLenum)
-ptr_glPathGlyphIndexRangeNV = unsafePerformIO $ getCommand "glPathGlyphIndexRangeNV"
-
--- glPathGlyphRangeNV ----------------------------------------------------------
-
-glPathGlyphRangeNV
-  :: MonadIO m
-  => GLuint -- ^ @firstPathName@ of type @Path@.
-  -> GLenum -- ^ @fontTarget@ of type @PathFontTarget@.
-  -> Ptr a -- ^ @fontName@ pointing to @COMPSIZE(fontTarget,fontName)@ elements of type @a@.
-  -> GLbitfield -- ^ @fontStyle@ of type @PathFontStyle@.
-  -> GLuint -- ^ @firstGlyph@.
-  -> GLsizei -- ^ @numGlyphs@.
-  -> GLenum -- ^ @handleMissingGlyphs@ of type @PathHandleMissingGlyphs@.
-  -> GLuint -- ^ @pathParameterTemplate@ of type @Path@.
-  -> GLfloat -- ^ @emScale@.
-  -> m ()
-glPathGlyphRangeNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn601 ptr_glPathGlyphRangeNV v1 v2 v3 v4 v5 v6 v7 v8 v9
-
-{-# NOINLINE ptr_glPathGlyphRangeNV #-}
-ptr_glPathGlyphRangeNV :: FunPtr (GLuint -> GLenum -> Ptr a -> GLbitfield -> GLuint -> GLsizei -> GLenum -> GLuint -> GLfloat -> IO ())
-ptr_glPathGlyphRangeNV = unsafePerformIO $ getCommand "glPathGlyphRangeNV"
 

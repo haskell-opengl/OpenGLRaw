@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F11 (
+  glGetNamedProgramLocalParameterIivEXT,
+  glGetNamedProgramLocalParameterIuivEXT,
+  glGetNamedProgramLocalParameterdvEXT,
   glGetNamedProgramLocalParameterfvEXT,
   glGetNamedProgramStringEXT,
   glGetNamedProgramivEXT,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F11 (
   glGetQueryBufferObjectui64v,
   glGetQueryBufferObjectuiv,
   glGetQueryIndexediv,
-  glGetQueryObjecti64v,
-  glGetQueryObjecti64vEXT,
-  glGetQueryObjectiv,
-  glGetQueryObjectivARB
+  glGetQueryObjecti64v
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,51 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetNamedProgramLocalParameterIivEXT ---------------------------------------
+
+glGetNamedProgramLocalParameterIivEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLenum -- ^ @target@ of type @ProgramTarget@.
+  -> GLuint -- ^ @index@.
+  -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
+  -> m ()
+glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn364 ptr_glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetNamedProgramLocalParameterIivEXT #-}
+ptr_glGetNamedProgramLocalParameterIivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLint -> IO ())
+ptr_glGetNamedProgramLocalParameterIivEXT = unsafePerformIO $ getCommand "glGetNamedProgramLocalParameterIivEXT"
+
+-- glGetNamedProgramLocalParameterIuivEXT --------------------------------------
+
+glGetNamedProgramLocalParameterIuivEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLenum -- ^ @target@ of type @ProgramTarget@.
+  -> GLuint -- ^ @index@.
+  -> Ptr GLuint -- ^ @params@ pointing to @4@ elements of type @GLuint@.
+  -> m ()
+glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn365 ptr_glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetNamedProgramLocalParameterIuivEXT #-}
+ptr_glGetNamedProgramLocalParameterIuivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLuint -> IO ())
+ptr_glGetNamedProgramLocalParameterIuivEXT = unsafePerformIO $ getCommand "glGetNamedProgramLocalParameterIuivEXT"
+
+-- glGetNamedProgramLocalParameterdvEXT ----------------------------------------
+
+glGetNamedProgramLocalParameterdvEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLenum -- ^ @target@ of type @ProgramTarget@.
+  -> GLuint -- ^ @index@.
+  -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
+  -> m ()
+glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4 = liftIO $ dyn366 ptr_glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetNamedProgramLocalParameterdvEXT #-}
+ptr_glGetNamedProgramLocalParameterdvEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLdouble -> IO ())
+ptr_glGetNamedProgramLocalParameterdvEXT = unsafePerformIO $ getCommand "glGetNamedProgramLocalParameterdvEXT"
 
 -- glGetNamedProgramLocalParameterfvEXT ----------------------------------------
 
@@ -1572,49 +1617,4 @@ glGetQueryObjecti64v v1 v2 v3 = liftIO $ dyn359 ptr_glGetQueryObjecti64v v1 v2 v
 {-# NOINLINE ptr_glGetQueryObjecti64v #-}
 ptr_glGetQueryObjecti64v :: FunPtr (GLuint -> GLenum -> Ptr GLint64 -> IO ())
 ptr_glGetQueryObjecti64v = unsafePerformIO $ getCommand "glGetQueryObjecti64v"
-
--- glGetQueryObjecti64vEXT -----------------------------------------------------
-
--- | This command is an alias for 'glGetQueryObjecti64v'.
-glGetQueryObjecti64vEXT
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLint64 -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint64@.
-  -> m ()
-glGetQueryObjecti64vEXT v1 v2 v3 = liftIO $ dyn359 ptr_glGetQueryObjecti64vEXT v1 v2 v3
-
-{-# NOINLINE ptr_glGetQueryObjecti64vEXT #-}
-ptr_glGetQueryObjecti64vEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint64 -> IO ())
-ptr_glGetQueryObjecti64vEXT = unsafePerformIO $ getCommand "glGetQueryObjecti64vEXT"
-
--- glGetQueryObjectiv ----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
-glGetQueryObjectiv
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
-  -> m ()
-glGetQueryObjectiv v1 v2 v3 = liftIO $ dyn334 ptr_glGetQueryObjectiv v1 v2 v3
-
-{-# NOINLINE ptr_glGetQueryObjectiv #-}
-ptr_glGetQueryObjectiv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
-ptr_glGetQueryObjectiv = unsafePerformIO $ getCommand "glGetQueryObjectiv"
-
--- glGetQueryObjectivARB -------------------------------------------------------
-
--- | This command is an alias for 'glGetQueryObjectiv'.
-glGetQueryObjectivARB
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
-  -> m ()
-glGetQueryObjectivARB v1 v2 v3 = liftIO $ dyn334 ptr_glGetQueryObjectivARB v1 v2 v3
-
-{-# NOINLINE ptr_glGetQueryObjectivARB #-}
-ptr_glGetQueryObjectivARB :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
-ptr_glGetQueryObjectivARB = unsafePerformIO $ getCommand "glGetQueryObjectivARB"
 

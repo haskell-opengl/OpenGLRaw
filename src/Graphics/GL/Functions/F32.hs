@@ -15,6 +15,15 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F32 (
+  glWindowPos2fv,
+  glWindowPos2fvARB,
+  glWindowPos2fvMESA,
+  glWindowPos2i,
+  glWindowPos2iARB,
+  glWindowPos2iMESA,
+  glWindowPos2iv,
+  glWindowPos2ivARB,
+  glWindowPos2ivMESA,
   glWindowPos2s,
   glWindowPos2sARB,
   glWindowPos2sMESA,
@@ -62,6 +71,126 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glWindowPos2fv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
+glWindowPos2fv
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
+  -> m ()
+glWindowPos2fv v1 = liftIO $ dyn41 ptr_glWindowPos2fv v1
+
+{-# NOINLINE ptr_glWindowPos2fv #-}
+ptr_glWindowPos2fv :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glWindowPos2fv = unsafePerformIO $ getCommand "glWindowPos2fv"
+
+-- glWindowPos2fvARB -----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos2fv'.
+glWindowPos2fvARB
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
+  -> m ()
+glWindowPos2fvARB v1 = liftIO $ dyn41 ptr_glWindowPos2fvARB v1
+
+{-# NOINLINE ptr_glWindowPos2fvARB #-}
+ptr_glWindowPos2fvARB :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glWindowPos2fvARB = unsafePerformIO $ getCommand "glWindowPos2fvARB"
+
+-- glWindowPos2fvMESA ----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos2fv'.
+glWindowPos2fvMESA
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
+  -> m ()
+glWindowPos2fvMESA v1 = liftIO $ dyn41 ptr_glWindowPos2fvMESA v1
+
+{-# NOINLINE ptr_glWindowPos2fvMESA #-}
+ptr_glWindowPos2fvMESA :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glWindowPos2fvMESA = unsafePerformIO $ getCommand "glWindowPos2fvMESA"
+
+-- glWindowPos2i ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos2iv'.
+glWindowPos2i
+  :: MonadIO m
+  => GLint -- ^ @x@ of type @CoordI@.
+  -> GLint -- ^ @y@ of type @CoordI@.
+  -> m ()
+glWindowPos2i v1 v2 = liftIO $ dyn266 ptr_glWindowPos2i v1 v2
+
+{-# NOINLINE ptr_glWindowPos2i #-}
+ptr_glWindowPos2i :: FunPtr (GLint -> GLint -> IO ())
+ptr_glWindowPos2i = unsafePerformIO $ getCommand "glWindowPos2i"
+
+-- glWindowPos2iARB ------------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos2ivARB'. This command is an alias for 'glWindowPos2i'.
+glWindowPos2iARB
+  :: MonadIO m
+  => GLint -- ^ @x@ of type @CoordI@.
+  -> GLint -- ^ @y@ of type @CoordI@.
+  -> m ()
+glWindowPos2iARB v1 v2 = liftIO $ dyn266 ptr_glWindowPos2iARB v1 v2
+
+{-# NOINLINE ptr_glWindowPos2iARB #-}
+ptr_glWindowPos2iARB :: FunPtr (GLint -> GLint -> IO ())
+ptr_glWindowPos2iARB = unsafePerformIO $ getCommand "glWindowPos2iARB"
+
+-- glWindowPos2iMESA -----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos2ivMESA'. This command is an alias for 'glWindowPos2i'.
+glWindowPos2iMESA
+  :: MonadIO m
+  => GLint -- ^ @x@ of type @CoordI@.
+  -> GLint -- ^ @y@ of type @CoordI@.
+  -> m ()
+glWindowPos2iMESA v1 v2 = liftIO $ dyn266 ptr_glWindowPos2iMESA v1 v2
+
+{-# NOINLINE ptr_glWindowPos2iMESA #-}
+ptr_glWindowPos2iMESA :: FunPtr (GLint -> GLint -> IO ())
+ptr_glWindowPos2iMESA = unsafePerformIO $ getCommand "glWindowPos2iMESA"
+
+-- glWindowPos2iv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
+glWindowPos2iv
+  :: MonadIO m
+  => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
+  -> m ()
+glWindowPos2iv v1 = liftIO $ dyn43 ptr_glWindowPos2iv v1
+
+{-# NOINLINE ptr_glWindowPos2iv #-}
+ptr_glWindowPos2iv :: FunPtr (Ptr GLint -> IO ())
+ptr_glWindowPos2iv = unsafePerformIO $ getCommand "glWindowPos2iv"
+
+-- glWindowPos2ivARB -----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos2iv'.
+glWindowPos2ivARB
+  :: MonadIO m
+  => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
+  -> m ()
+glWindowPos2ivARB v1 = liftIO $ dyn43 ptr_glWindowPos2ivARB v1
+
+{-# NOINLINE ptr_glWindowPos2ivARB #-}
+ptr_glWindowPos2ivARB :: FunPtr (Ptr GLint -> IO ())
+ptr_glWindowPos2ivARB = unsafePerformIO $ getCommand "glWindowPos2ivARB"
+
+-- glWindowPos2ivMESA ----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos2iv'.
+glWindowPos2ivMESA
+  :: MonadIO m
+  => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
+  -> m ()
+glWindowPos2ivMESA v1 = liftIO $ dyn43 ptr_glWindowPos2ivMESA v1
+
+{-# NOINLINE ptr_glWindowPos2ivMESA #-}
+ptr_glWindowPos2ivMESA :: FunPtr (Ptr GLint -> IO ())
+ptr_glWindowPos2ivMESA = unsafePerformIO $ getCommand "glWindowPos2ivMESA"
 
 -- glWindowPos2s ---------------------------------------------------------------
 

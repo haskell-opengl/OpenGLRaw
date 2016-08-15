@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F24 (
+  glStencilThenCoverFillPathInstancedNV,
+  glStencilThenCoverFillPathNV,
+  glStencilThenCoverStrokePathInstancedNV,
+  glStencilThenCoverStrokePathNV,
+  glStopInstrumentsSGIX,
+  glStringMarkerGREMEDY,
   glSubpixelPrecisionBiasNV,
   glSwizzleEXT,
   glSyncTextureINTEL,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F24 (
   glTexCoord4fVertex4fvSUN,
   glTexCoord4fv,
   glTexCoord4hNV,
-  glTexCoord4hvNV,
-  glTexCoord4i,
-  glTexCoord4iv,
-  glTexCoord4s,
-  glTexCoord4sv,
-  glTexCoord4xOES,
-  glTexCoord4xvOES
+  glTexCoord4hvNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,101 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glStencilThenCoverFillPathInstancedNV ---------------------------------------
+
+glStencilThenCoverFillPathInstancedNV
+  :: MonadIO m
+  => GLsizei -- ^ @numPaths@.
+  -> GLenum -- ^ @pathNameType@.
+  -> Ptr a -- ^ @paths@.
+  -> GLuint -- ^ @pathBase@.
+  -> GLenum -- ^ @fillMode@.
+  -> GLuint -- ^ @mask@.
+  -> GLenum -- ^ @coverMode@.
+  -> GLenum -- ^ @transformType@.
+  -> Ptr GLfloat -- ^ @transformValues@.
+  -> m ()
+glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn716 ptr_glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+
+{-# NOINLINE ptr_glStencilThenCoverFillPathInstancedNV #-}
+ptr_glStencilThenCoverFillPathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLenum -> GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glStencilThenCoverFillPathInstancedNV = unsafePerformIO $ getCommand "glStencilThenCoverFillPathInstancedNV"
+
+-- glStencilThenCoverFillPathNV ------------------------------------------------
+
+glStencilThenCoverFillPathNV
+  :: MonadIO m
+  => GLuint -- ^ @path@.
+  -> GLenum -- ^ @fillMode@.
+  -> GLuint -- ^ @mask@.
+  -> GLenum -- ^ @coverMode@.
+  -> m ()
+glStencilThenCoverFillPathNV v1 v2 v3 v4 = liftIO $ dyn717 ptr_glStencilThenCoverFillPathNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glStencilThenCoverFillPathNV #-}
+ptr_glStencilThenCoverFillPathNV :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> IO ())
+ptr_glStencilThenCoverFillPathNV = unsafePerformIO $ getCommand "glStencilThenCoverFillPathNV"
+
+-- glStencilThenCoverStrokePathInstancedNV -------------------------------------
+
+glStencilThenCoverStrokePathInstancedNV
+  :: MonadIO m
+  => GLsizei -- ^ @numPaths@.
+  -> GLenum -- ^ @pathNameType@.
+  -> Ptr a -- ^ @paths@.
+  -> GLuint -- ^ @pathBase@.
+  -> GLint -- ^ @reference@.
+  -> GLuint -- ^ @mask@.
+  -> GLenum -- ^ @coverMode@.
+  -> GLenum -- ^ @transformType@.
+  -> Ptr GLfloat -- ^ @transformValues@.
+  -> m ()
+glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn718 ptr_glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+
+{-# NOINLINE ptr_glStencilThenCoverStrokePathInstancedNV #-}
+ptr_glStencilThenCoverStrokePathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLint -> GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glStencilThenCoverStrokePathInstancedNV = unsafePerformIO $ getCommand "glStencilThenCoverStrokePathInstancedNV"
+
+-- glStencilThenCoverStrokePathNV ----------------------------------------------
+
+glStencilThenCoverStrokePathNV
+  :: MonadIO m
+  => GLuint -- ^ @path@.
+  -> GLint -- ^ @reference@.
+  -> GLuint -- ^ @mask@.
+  -> GLenum -- ^ @coverMode@.
+  -> m ()
+glStencilThenCoverStrokePathNV v1 v2 v3 v4 = liftIO $ dyn719 ptr_glStencilThenCoverStrokePathNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glStencilThenCoverStrokePathNV #-}
+ptr_glStencilThenCoverStrokePathNV :: FunPtr (GLuint -> GLint -> GLuint -> GLenum -> IO ())
+ptr_glStencilThenCoverStrokePathNV = unsafePerformIO $ getCommand "glStencilThenCoverStrokePathNV"
+
+-- glStopInstrumentsSGIX -------------------------------------------------------
+
+glStopInstrumentsSGIX
+  :: MonadIO m
+  => GLint -- ^ @marker@.
+  -> m ()
+glStopInstrumentsSGIX v1 = liftIO $ dyn12 ptr_glStopInstrumentsSGIX v1
+
+{-# NOINLINE ptr_glStopInstrumentsSGIX #-}
+ptr_glStopInstrumentsSGIX :: FunPtr (GLint -> IO ())
+ptr_glStopInstrumentsSGIX = unsafePerformIO $ getCommand "glStopInstrumentsSGIX"
+
+-- glStringMarkerGREMEDY -------------------------------------------------------
+
+glStringMarkerGREMEDY
+  :: MonadIO m
+  => GLsizei -- ^ @len@.
+  -> Ptr a -- ^ @string@ pointing to @len@ elements of type @a@.
+  -> m ()
+glStringMarkerGREMEDY v1 v2 = liftIO $ dyn260 ptr_glStringMarkerGREMEDY v1 v2
+
+{-# NOINLINE ptr_glStringMarkerGREMEDY #-}
+ptr_glStringMarkerGREMEDY :: FunPtr (GLsizei -> Ptr a -> IO ())
+ptr_glStringMarkerGREMEDY = unsafePerformIO $ getCommand "glStringMarkerGREMEDY"
 
 -- glSubpixelPrecisionBiasNV ---------------------------------------------------
 
@@ -1439,89 +1534,4 @@ glTexCoord4hvNV v1 = liftIO $ dyn99 ptr_glTexCoord4hvNV v1
 {-# NOINLINE ptr_glTexCoord4hvNV #-}
 ptr_glTexCoord4hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
 ptr_glTexCoord4hvNV = unsafePerformIO $ getCommand "glTexCoord4hvNV"
-
--- glTexCoord4i ----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4iv'.
-glTexCoord4i
-  :: MonadIO m
-  => GLint -- ^ @s@ of type @CoordI@.
-  -> GLint -- ^ @t@ of type @CoordI@.
-  -> GLint -- ^ @r@ of type @CoordI@.
-  -> GLint -- ^ @q@ of type @CoordI@.
-  -> m ()
-glTexCoord4i v1 v2 v3 v4 = liftIO $ dyn76 ptr_glTexCoord4i v1 v2 v3 v4
-
-{-# NOINLINE ptr_glTexCoord4i #-}
-ptr_glTexCoord4i :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
-ptr_glTexCoord4i = unsafePerformIO $ getCommand "glTexCoord4i"
-
--- glTexCoord4iv ---------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
-glTexCoord4iv
-  :: MonadIO m
-  => Ptr GLint -- ^ @v@ pointing to @4@ elements of type @CoordI@.
-  -> m ()
-glTexCoord4iv v1 = liftIO $ dyn43 ptr_glTexCoord4iv v1
-
-{-# NOINLINE ptr_glTexCoord4iv #-}
-ptr_glTexCoord4iv :: FunPtr (Ptr GLint -> IO ())
-ptr_glTexCoord4iv = unsafePerformIO $ getCommand "glTexCoord4iv"
-
--- glTexCoord4s ----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4sv'.
-glTexCoord4s
-  :: MonadIO m
-  => GLshort -- ^ @s@ of type @CoordS@.
-  -> GLshort -- ^ @t@ of type @CoordS@.
-  -> GLshort -- ^ @r@ of type @CoordS@.
-  -> GLshort -- ^ @q@ of type @CoordS@.
-  -> m ()
-glTexCoord4s v1 v2 v3 v4 = liftIO $ dyn113 ptr_glTexCoord4s v1 v2 v3 v4
-
-{-# NOINLINE ptr_glTexCoord4s #-}
-ptr_glTexCoord4s :: FunPtr (GLshort -> GLshort -> GLshort -> GLshort -> IO ())
-ptr_glTexCoord4s = unsafePerformIO $ getCommand "glTexCoord4s"
-
--- glTexCoord4sv ---------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
-glTexCoord4sv
-  :: MonadIO m
-  => Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
-  -> m ()
-glTexCoord4sv v1 = liftIO $ dyn45 ptr_glTexCoord4sv v1
-
-{-# NOINLINE ptr_glTexCoord4sv #-}
-ptr_glTexCoord4sv :: FunPtr (Ptr GLshort -> IO ())
-ptr_glTexCoord4sv = unsafePerformIO $ getCommand "glTexCoord4sv"
-
--- glTexCoord4xOES -------------------------------------------------------------
-
-glTexCoord4xOES
-  :: MonadIO m
-  => GLfixed -- ^ @s@.
-  -> GLfixed -- ^ @t@.
-  -> GLfixed -- ^ @r@.
-  -> GLfixed -- ^ @q@.
-  -> m ()
-glTexCoord4xOES v1 v2 v3 v4 = liftIO $ dyn50 ptr_glTexCoord4xOES v1 v2 v3 v4
-
-{-# NOINLINE ptr_glTexCoord4xOES #-}
-ptr_glTexCoord4xOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
-ptr_glTexCoord4xOES = unsafePerformIO $ getCommand "glTexCoord4xOES"
-
--- glTexCoord4xvOES ------------------------------------------------------------
-
-glTexCoord4xvOES
-  :: MonadIO m
-  => Ptr GLfixed -- ^ @coords@ pointing to @4@ elements of type @GLfixed@.
-  -> m ()
-glTexCoord4xvOES v1 = liftIO $ dyn107 ptr_glTexCoord4xvOES v1
-
-{-# NOINLINE ptr_glTexCoord4xvOES #-}
-ptr_glTexCoord4xvOES :: FunPtr (Ptr GLfixed -> IO ())
-ptr_glTexCoord4xvOES = unsafePerformIO $ getCommand "glTexCoord4xvOES"
 

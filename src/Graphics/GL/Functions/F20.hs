@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F20 (
+  glProgramEnvParameterI4uiNV,
+  glProgramEnvParameterI4uivNV,
+  glProgramEnvParameters4fvEXT,
   glProgramEnvParametersI4ivNV,
   glProgramEnvParametersI4uivNV,
   glProgramLocalParameter4dARB,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F20 (
   glProgramUniform3ui,
   glProgramUniform3ui64ARB,
   glProgramUniform3ui64NV,
-  glProgramUniform3ui64vARB,
-  glProgramUniform3ui64vNV,
-  glProgramUniform3uiEXT,
-  glProgramUniform3uiv
+  glProgramUniform3ui64vARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,53 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glProgramEnvParameterI4uiNV -------------------------------------------------
+
+-- | The vector equivalent of this command is 'glProgramEnvParameterI4uivNV'.
+glProgramEnvParameterI4uiNV
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @ProgramTarget@.
+  -> GLuint -- ^ @index@.
+  -> GLuint -- ^ @x@.
+  -> GLuint -- ^ @y@.
+  -> GLuint -- ^ @z@.
+  -> GLuint -- ^ @w@.
+  -> m ()
+glProgramEnvParameterI4uiNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn6 ptr_glProgramEnvParameterI4uiNV v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glProgramEnvParameterI4uiNV #-}
+ptr_glProgramEnvParameterI4uiNV :: FunPtr (GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
+ptr_glProgramEnvParameterI4uiNV = unsafePerformIO $ getCommand "glProgramEnvParameterI4uiNV"
+
+-- glProgramEnvParameterI4uivNV ------------------------------------------------
+
+glProgramEnvParameterI4uivNV
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @ProgramTarget@.
+  -> GLuint -- ^ @index@.
+  -> Ptr GLuint -- ^ @params@ pointing to @4@ elements of type @GLuint@.
+  -> m ()
+glProgramEnvParameterI4uivNV v1 v2 v3 = liftIO $ dyn214 ptr_glProgramEnvParameterI4uivNV v1 v2 v3
+
+{-# NOINLINE ptr_glProgramEnvParameterI4uivNV #-}
+ptr_glProgramEnvParameterI4uivNV :: FunPtr (GLenum -> GLuint -> Ptr GLuint -> IO ())
+ptr_glProgramEnvParameterI4uivNV = unsafePerformIO $ getCommand "glProgramEnvParameterI4uivNV"
+
+-- glProgramEnvParameters4fvEXT ------------------------------------------------
+
+glProgramEnvParameters4fvEXT
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  -> GLuint -- ^ @index@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @count*4@ elements of type @GLfloat@.
+  -> m ()
+glProgramEnvParameters4fvEXT v1 v2 v3 v4 = liftIO $ dyn284 ptr_glProgramEnvParameters4fvEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramEnvParameters4fvEXT #-}
+ptr_glProgramEnvParameters4fvEXT :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glProgramEnvParameters4fvEXT = unsafePerformIO $ getCommand "glProgramEnvParameters4fvEXT"
 
 -- glProgramEnvParametersI4ivNV ------------------------------------------------
 
@@ -1629,52 +1676,4 @@ glProgramUniform3ui64vARB v1 v2 v3 v4 = liftIO $ dyn460 ptr_glProgramUniform3ui6
 {-# NOINLINE ptr_glProgramUniform3ui64vARB #-}
 ptr_glProgramUniform3ui64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
 ptr_glProgramUniform3ui64vARB = unsafePerformIO $ getCommand "glProgramUniform3ui64vARB"
-
--- glProgramUniform3ui64vNV ----------------------------------------------------
-
-glProgramUniform3ui64vNV
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*3@ elements of type @GLuint64EXT@.
-  -> m ()
-glProgramUniform3ui64vNV v1 v2 v3 v4 = liftIO $ dyn640 ptr_glProgramUniform3ui64vNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glProgramUniform3ui64vNV #-}
-ptr_glProgramUniform3ui64vNV :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
-ptr_glProgramUniform3ui64vNV = unsafePerformIO $ getCommand "glProgramUniform3ui64vNV"
-
--- glProgramUniform3uiEXT ------------------------------------------------------
-
--- | This command is an alias for 'glProgramUniform3ui'.
-glProgramUniform3uiEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLuint -- ^ @v0@.
-  -> GLuint -- ^ @v1@.
-  -> GLuint -- ^ @v2@.
-  -> m ()
-glProgramUniform3uiEXT v1 v2 v3 v4 v5 = liftIO $ dyn654 ptr_glProgramUniform3uiEXT v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniform3uiEXT #-}
-ptr_glProgramUniform3uiEXT :: FunPtr (GLuint -> GLint -> GLuint -> GLuint -> GLuint -> IO ())
-ptr_glProgramUniform3uiEXT = unsafePerformIO $ getCommand "glProgramUniform3uiEXT"
-
--- glProgramUniform3uiv --------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
-glProgramUniform3uiv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @3@ elements of type @GLuint@.
-  -> m ()
-glProgramUniform3uiv v1 v2 v3 v4 = liftIO $ dyn461 ptr_glProgramUniform3uiv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glProgramUniform3uiv #-}
-ptr_glProgramUniform3uiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glProgramUniform3uiv = unsafePerformIO $ getCommand "glProgramUniform3uiv"
 

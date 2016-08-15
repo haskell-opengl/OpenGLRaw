@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F22 (
+  glRasterPos3iv,
+  glRasterPos3s,
+  glRasterPos3sv,
   glRasterPos3xOES,
   glRasterPos3xvOES,
   glRasterPos4d,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F22 (
   glSamplerParameterIiv,
   glSamplerParameterIivEXT,
   glSamplerParameterIivOES,
-  glSamplerParameterIuiv,
-  glSamplerParameterIuivEXT,
-  glSamplerParameterIuivOES,
-  glSamplerParameterf
+  glSamplerParameterIuiv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,47 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glRasterPos3iv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
+glRasterPos3iv
+  :: MonadIO m
+  => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
+  -> m ()
+glRasterPos3iv v1 = liftIO $ dyn43 ptr_glRasterPos3iv v1
+
+{-# NOINLINE ptr_glRasterPos3iv #-}
+ptr_glRasterPos3iv :: FunPtr (Ptr GLint -> IO ())
+ptr_glRasterPos3iv = unsafePerformIO $ getCommand "glRasterPos3iv"
+
+-- glRasterPos3s ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos3sv'.
+glRasterPos3s
+  :: MonadIO m
+  => GLshort -- ^ @x@ of type @CoordS@.
+  -> GLshort -- ^ @y@ of type @CoordS@.
+  -> GLshort -- ^ @z@ of type @CoordS@.
+  -> m ()
+glRasterPos3s v1 v2 v3 = liftIO $ dyn44 ptr_glRasterPos3s v1 v2 v3
+
+{-# NOINLINE ptr_glRasterPos3s #-}
+ptr_glRasterPos3s :: FunPtr (GLshort -> GLshort -> GLshort -> IO ())
+ptr_glRasterPos3s = unsafePerformIO $ getCommand "glRasterPos3s"
+
+-- glRasterPos3sv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
+glRasterPos3sv
+  :: MonadIO m
+  => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
+  -> m ()
+glRasterPos3sv v1 = liftIO $ dyn45 ptr_glRasterPos3sv v1
+
+{-# NOINLINE ptr_glRasterPos3sv #-}
+ptr_glRasterPos3sv :: FunPtr (Ptr GLshort -> IO ())
+ptr_glRasterPos3sv = unsafePerformIO $ getCommand "glRasterPos3sv"
 
 -- glRasterPos3xOES ------------------------------------------------------------
 
@@ -1546,49 +1587,4 @@ glSamplerParameterIuiv v1 v2 v3 = liftIO $ dyn375 ptr_glSamplerParameterIuiv v1 
 {-# NOINLINE ptr_glSamplerParameterIuiv #-}
 ptr_glSamplerParameterIuiv :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
 ptr_glSamplerParameterIuiv = unsafePerformIO $ getCommand "glSamplerParameterIuiv"
-
--- glSamplerParameterIuivEXT ---------------------------------------------------
-
--- | This command is an alias for 'glSamplerParameterIuiv'.
-glSamplerParameterIuivEXT
-  :: MonadIO m
-  => GLuint -- ^ @sampler@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLuint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
-  -> m ()
-glSamplerParameterIuivEXT v1 v2 v3 = liftIO $ dyn375 ptr_glSamplerParameterIuivEXT v1 v2 v3
-
-{-# NOINLINE ptr_glSamplerParameterIuivEXT #-}
-ptr_glSamplerParameterIuivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
-ptr_glSamplerParameterIuivEXT = unsafePerformIO $ getCommand "glSamplerParameterIuivEXT"
-
--- glSamplerParameterIuivOES ---------------------------------------------------
-
--- | This command is an alias for 'glSamplerParameterIuiv'.
-glSamplerParameterIuivOES
-  :: MonadIO m
-  => GLuint -- ^ @sampler@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLuint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
-  -> m ()
-glSamplerParameterIuivOES v1 v2 v3 = liftIO $ dyn375 ptr_glSamplerParameterIuivOES v1 v2 v3
-
-{-# NOINLINE ptr_glSamplerParameterIuivOES #-}
-ptr_glSamplerParameterIuivOES :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
-ptr_glSamplerParameterIuivOES = unsafePerformIO $ getCommand "glSamplerParameterIuivOES"
-
--- glSamplerParameterf ---------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
-glSamplerParameterf
-  :: MonadIO m
-  => GLuint -- ^ @sampler@.
-  -> GLenum -- ^ @pname@.
-  -> GLfloat -- ^ @param@.
-  -> m ()
-glSamplerParameterf v1 v2 v3 = liftIO $ dyn487 ptr_glSamplerParameterf v1 v2 v3
-
-{-# NOINLINE ptr_glSamplerParameterf #-}
-ptr_glSamplerParameterf :: FunPtr (GLuint -> GLenum -> GLfloat -> IO ())
-ptr_glSamplerParameterf = unsafePerformIO $ getCommand "glSamplerParameterf"
 

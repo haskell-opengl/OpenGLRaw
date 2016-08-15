@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F17 (
+  glMultiTexCoord2dvARB,
+  glMultiTexCoord2f,
+  glMultiTexCoord2fARB,
   glMultiTexCoord2fv,
   glMultiTexCoord2fvARB,
   glMultiTexCoord2hNV,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F17 (
   glNamedBufferPageCommitmentARB,
   glNamedBufferPageCommitmentEXT,
   glNamedBufferStorage,
-  glNamedBufferStorageEXT,
-  glNamedBufferSubData,
-  glNamedBufferSubDataEXT,
-  glNamedCopyBufferSubDataEXT
+  glNamedBufferStorageEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,50 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glMultiTexCoord2dvARB -------------------------------------------------------
+
+-- | This command is an alias for 'glMultiTexCoord2dv'.
+glMultiTexCoord2dvARB
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @TextureUnit@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
+  -> m ()
+glMultiTexCoord2dvARB v1 v2 = liftIO $ dyn93 ptr_glMultiTexCoord2dvARB v1 v2
+
+{-# NOINLINE ptr_glMultiTexCoord2dvARB #-}
+ptr_glMultiTexCoord2dvARB :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
+ptr_glMultiTexCoord2dvARB = unsafePerformIO $ getCommand "glMultiTexCoord2dvARB"
+
+-- glMultiTexCoord2f -----------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord2fv'.
+glMultiTexCoord2f
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @TextureUnit@.
+  -> GLfloat -- ^ @s@ of type @CoordF@.
+  -> GLfloat -- ^ @t@ of type @CoordF@.
+  -> m ()
+glMultiTexCoord2f v1 v2 v3 = liftIO $ dyn548 ptr_glMultiTexCoord2f v1 v2 v3
+
+{-# NOINLINE ptr_glMultiTexCoord2f #-}
+ptr_glMultiTexCoord2f :: FunPtr (GLenum -> GLfloat -> GLfloat -> IO ())
+ptr_glMultiTexCoord2f = unsafePerformIO $ getCommand "glMultiTexCoord2f"
+
+-- glMultiTexCoord2fARB --------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glMultiTexCoord2fv'. This command is an alias for 'glMultiTexCoord2f'.
+glMultiTexCoord2fARB
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @TextureUnit@.
+  -> GLfloat -- ^ @s@ of type @CoordF@.
+  -> GLfloat -- ^ @t@ of type @CoordF@.
+  -> m ()
+glMultiTexCoord2fARB v1 v2 v3 = liftIO $ dyn548 ptr_glMultiTexCoord2fARB v1 v2 v3
+
+{-# NOINLINE ptr_glMultiTexCoord2fARB #-}
+ptr_glMultiTexCoord2fARB :: FunPtr (GLenum -> GLfloat -> GLfloat -> IO ())
+ptr_glMultiTexCoord2fARB = unsafePerformIO $ getCommand "glMultiTexCoord2fARB"
 
 -- glMultiTexCoord2fv ----------------------------------------------------------
 
@@ -1606,52 +1650,4 @@ glNamedBufferStorageEXT v1 v2 v3 v4 = liftIO $ dyn573 ptr_glNamedBufferStorageEX
 {-# NOINLINE ptr_glNamedBufferStorageEXT #-}
 ptr_glNamedBufferStorageEXT :: FunPtr (GLuint -> GLsizeiptr -> Ptr a -> GLbitfield -> IO ())
 ptr_glNamedBufferStorageEXT = unsafePerformIO $ getCommand "glNamedBufferStorageEXT"
-
--- glNamedBufferSubData --------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferSubData.xhtml OpenGL 4.x>.
-glNamedBufferSubData
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> GLintptr -- ^ @offset@.
-  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
-  -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
-  -> m ()
-glNamedBufferSubData v1 v2 v3 v4 = liftIO $ dyn362 ptr_glNamedBufferSubData v1 v2 v3 v4
-
-{-# NOINLINE ptr_glNamedBufferSubData #-}
-ptr_glNamedBufferSubData :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
-ptr_glNamedBufferSubData = unsafePerformIO $ getCommand "glNamedBufferSubData"
-
--- glNamedBufferSubDataEXT -----------------------------------------------------
-
--- | This command is an alias for 'glNamedBufferSubData'.
-glNamedBufferSubDataEXT
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> GLintptr -- ^ @offset@.
-  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
-  -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
-  -> m ()
-glNamedBufferSubDataEXT v1 v2 v3 v4 = liftIO $ dyn362 ptr_glNamedBufferSubDataEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glNamedBufferSubDataEXT #-}
-ptr_glNamedBufferSubDataEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
-ptr_glNamedBufferSubDataEXT = unsafePerformIO $ getCommand "glNamedBufferSubDataEXT"
-
--- glNamedCopyBufferSubDataEXT -------------------------------------------------
-
-glNamedCopyBufferSubDataEXT
-  :: MonadIO m
-  => GLuint -- ^ @readBuffer@.
-  -> GLuint -- ^ @writeBuffer@.
-  -> GLintptr -- ^ @readOffset@.
-  -> GLintptr -- ^ @writeOffset@.
-  -> GLsizeiptr -- ^ @size@.
-  -> m ()
-glNamedCopyBufferSubDataEXT v1 v2 v3 v4 v5 = liftIO $ dyn174 ptr_glNamedCopyBufferSubDataEXT v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glNamedCopyBufferSubDataEXT #-}
-ptr_glNamedCopyBufferSubDataEXT :: FunPtr (GLuint -> GLuint -> GLintptr -> GLintptr -> GLsizeiptr -> IO ())
-ptr_glNamedCopyBufferSubDataEXT = unsafePerformIO $ getCommand "glNamedCopyBufferSubDataEXT"
 

@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F12 (
+  glGetQueryObjecti64vEXT,
+  glGetQueryObjectiv,
+  glGetQueryObjectivARB,
   glGetQueryObjectivEXT,
   glGetQueryObjectui64v,
   glGetQueryObjectui64vEXT,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F12 (
   glGetUniformLocation,
   glGetUniformLocationARB,
   glGetUniformOffsetEXT,
-  glGetUniformSubroutineuiv,
-  glGetUniformdv,
-  glGetUniformfv,
-  glGetUniformfvARB
+  glGetUniformSubroutineuiv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,51 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetQueryObjecti64vEXT -----------------------------------------------------
+
+-- | This command is an alias for 'glGetQueryObjecti64v'.
+glGetQueryObjecti64vEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint64 -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint64@.
+  -> m ()
+glGetQueryObjecti64vEXT v1 v2 v3 = liftIO $ dyn359 ptr_glGetQueryObjecti64vEXT v1 v2 v3
+
+{-# NOINLINE ptr_glGetQueryObjecti64vEXT #-}
+ptr_glGetQueryObjecti64vEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint64 -> IO ())
+ptr_glGetQueryObjecti64vEXT = unsafePerformIO $ getCommand "glGetQueryObjecti64vEXT"
+
+-- glGetQueryObjectiv ----------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetQueryObject.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
+glGetQueryObjectiv
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glGetQueryObjectiv v1 v2 v3 = liftIO $ dyn334 ptr_glGetQueryObjectiv v1 v2 v3
+
+{-# NOINLINE ptr_glGetQueryObjectiv #-}
+ptr_glGetQueryObjectiv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetQueryObjectiv = unsafePerformIO $ getCommand "glGetQueryObjectiv"
+
+-- glGetQueryObjectivARB -------------------------------------------------------
+
+-- | This command is an alias for 'glGetQueryObjectiv'.
+glGetQueryObjectivARB
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glGetQueryObjectivARB v1 v2 v3 = liftIO $ dyn334 ptr_glGetQueryObjectivARB v1 v2 v3
+
+{-# NOINLINE ptr_glGetQueryObjectivARB #-}
+ptr_glGetQueryObjectivARB :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetQueryObjectivARB = unsafePerformIO $ getCommand "glGetQueryObjectivARB"
 
 -- glGetQueryObjectivEXT -------------------------------------------------------
 
@@ -1581,49 +1626,4 @@ glGetUniformSubroutineuiv v1 v2 v3 = liftIO $ dyn75 ptr_glGetUniformSubroutineui
 {-# NOINLINE ptr_glGetUniformSubroutineuiv #-}
 ptr_glGetUniformSubroutineuiv :: FunPtr (GLenum -> GLint -> Ptr GLuint -> IO ())
 ptr_glGetUniformSubroutineuiv = unsafePerformIO $ getCommand "glGetUniformSubroutineuiv"
-
--- glGetUniformdv --------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
-glGetUniformdv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(program,location)@ elements of type @GLdouble@.
-  -> m ()
-glGetUniformdv v1 v2 v3 = liftIO $ dyn430 ptr_glGetUniformdv v1 v2 v3
-
-{-# NOINLINE ptr_glGetUniformdv #-}
-ptr_glGetUniformdv :: FunPtr (GLuint -> GLint -> Ptr GLdouble -> IO ())
-ptr_glGetUniformdv = unsafePerformIO $ getCommand "glGetUniformdv"
-
--- glGetUniformfv --------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
-glGetUniformfv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(program,location)@ elements of type @GLfloat@.
-  -> m ()
-glGetUniformfv v1 v2 v3 = liftIO $ dyn431 ptr_glGetUniformfv v1 v2 v3
-
-{-# NOINLINE ptr_glGetUniformfv #-}
-ptr_glGetUniformfv :: FunPtr (GLuint -> GLint -> Ptr GLfloat -> IO ())
-ptr_glGetUniformfv = unsafePerformIO $ getCommand "glGetUniformfv"
-
--- glGetUniformfvARB -----------------------------------------------------------
-
--- | This command is an alias for 'glGetUniformfv'.
-glGetUniformfvARB
-  :: MonadIO m
-  => GLhandleARB -- ^ @programObj@ of type @handleARB@.
-  -> GLint -- ^ @location@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(programObj,location)@ elements of type @GLfloat@.
-  -> m ()
-glGetUniformfvARB v1 v2 v3 = liftIO $ dyn432 ptr_glGetUniformfvARB v1 v2 v3
-
-{-# NOINLINE ptr_glGetUniformfvARB #-}
-ptr_glGetUniformfvARB :: FunPtr (GLhandleARB -> GLint -> Ptr GLfloat -> IO ())
-ptr_glGetUniformfvARB = unsafePerformIO $ getCommand "glGetUniformfvARB"
 

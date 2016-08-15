@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F08 (
+  glFogCoordhNV,
+  glFogCoordhvNV,
   glFogFuncSGIS,
   glFogf,
   glFogfv,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F08 (
   glGenTransformFeedbacksNV,
   glGenVertexArrays,
   glGenVertexArraysAPPLE,
-  glGenVertexArraysOES,
-  glGenVertexShadersEXT,
-  glGenerateMipmap
+  glGenVertexArraysOES
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,31 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glFogCoordhNV ---------------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glFogCoordhvNV'.
+glFogCoordhNV
+  :: MonadIO m
+  => GLhalfNV -- ^ @fog@ of type @Half16NV@.
+  -> m ()
+glFogCoordhNV v1 = liftIO $ dyn281 ptr_glFogCoordhNV v1
+
+{-# NOINLINE ptr_glFogCoordhNV #-}
+ptr_glFogCoordhNV :: FunPtr (GLhalfNV -> IO ())
+ptr_glFogCoordhNV = unsafePerformIO $ getCommand "glFogCoordhNV"
+
+-- glFogCoordhvNV --------------------------------------------------------------
+
+glFogCoordhvNV
+  :: MonadIO m
+  => Ptr GLhalfNV -- ^ @fog@ pointing to @1@ element of type @Half16NV@.
+  -> m ()
+glFogCoordhvNV v1 = liftIO $ dyn99 ptr_glFogCoordhvNV v1
+
+{-# NOINLINE ptr_glFogCoordhvNV #-}
+ptr_glFogCoordhvNV :: FunPtr (Ptr GLhalfNV -> IO ())
+ptr_glFogCoordhvNV = unsafePerformIO $ getCommand "glFogCoordhvNV"
 
 -- glFogFuncSGIS ---------------------------------------------------------------
 
@@ -1548,29 +1573,4 @@ glGenVertexArraysOES v1 v2 = liftIO $ dyn193 ptr_glGenVertexArraysOES v1 v2
 {-# NOINLINE ptr_glGenVertexArraysOES #-}
 ptr_glGenVertexArraysOES :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
 ptr_glGenVertexArraysOES = unsafePerformIO $ getCommand "glGenVertexArraysOES"
-
--- glGenVertexShadersEXT -------------------------------------------------------
-
-glGenVertexShadersEXT
-  :: MonadIO m
-  => GLuint -- ^ @range@.
-  -> m GLuint
-glGenVertexShadersEXT v1 = liftIO $ dyn298 ptr_glGenVertexShadersEXT v1
-
-{-# NOINLINE ptr_glGenVertexShadersEXT #-}
-ptr_glGenVertexShadersEXT :: FunPtr (GLuint -> IO GLuint)
-ptr_glGenVertexShadersEXT = unsafePerformIO $ getCommand "glGenVertexShadersEXT"
-
--- glGenerateMipmap ------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenerateMipmap.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml OpenGL 4.x>.
-glGenerateMipmap
-  :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> m ()
-glGenerateMipmap v1 = liftIO $ dyn4 ptr_glGenerateMipmap v1
-
-{-# NOINLINE ptr_glGenerateMipmap #-}
-ptr_glGenerateMipmap :: FunPtr (GLenum -> IO ())
-ptr_glGenerateMipmap = unsafePerformIO $ getCommand "glGenerateMipmap"
 

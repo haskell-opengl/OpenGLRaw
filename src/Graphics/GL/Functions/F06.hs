@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F06 (
+  glDepthRangexOES,
+  glDetachObjectARB,
   glDetachShader,
   glDetailTexFuncSGIS,
   glDisable,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F06 (
   glElementPointerAPPLE,
   glElementPointerATI,
   glEnable,
-  glEnableClientState,
-  glEnableClientStateIndexedEXT,
-  glEnableClientStateiEXT
+  glEnableClientState
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,33 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glDepthRangexOES ------------------------------------------------------------
+
+glDepthRangexOES
+  :: MonadIO m
+  => GLfixed -- ^ @n@ of type @ClampedFixed@.
+  -> GLfixed -- ^ @f@ of type @ClampedFixed@.
+  -> m ()
+glDepthRangexOES v1 v2 = liftIO $ dyn224 ptr_glDepthRangexOES v1 v2
+
+{-# NOINLINE ptr_glDepthRangexOES #-}
+ptr_glDepthRangexOES :: FunPtr (GLfixed -> GLfixed -> IO ())
+ptr_glDepthRangexOES = unsafePerformIO $ getCommand "glDepthRangexOES"
+
+-- glDetachObjectARB -----------------------------------------------------------
+
+-- | This command is an alias for 'glDetachShader'.
+glDetachObjectARB
+  :: MonadIO m
+  => GLhandleARB -- ^ @containerObj@ of type @handleARB@.
+  -> GLhandleARB -- ^ @attachedObj@ of type @handleARB@.
+  -> m ()
+glDetachObjectARB v1 v2 = liftIO $ dyn14 ptr_glDetachObjectARB v1 v2
+
+{-# NOINLINE ptr_glDetachObjectARB #-}
+ptr_glDetachObjectARB :: FunPtr (GLhandleARB -> GLhandleARB -> IO ())
+ptr_glDetachObjectARB = unsafePerformIO $ getCommand "glDetachObjectARB"
 
 -- glDetachShader --------------------------------------------------------------
 
@@ -1596,30 +1623,4 @@ glEnableClientState v1 = liftIO $ dyn4 ptr_glEnableClientState v1
 {-# NOINLINE ptr_glEnableClientState #-}
 ptr_glEnableClientState :: FunPtr (GLenum -> IO ())
 ptr_glEnableClientState = unsafePerformIO $ getCommand "glEnableClientState"
-
--- glEnableClientStateIndexedEXT -----------------------------------------------
-
-glEnableClientStateIndexedEXT
-  :: MonadIO m
-  => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
-  -> GLuint -- ^ @index@.
-  -> m ()
-glEnableClientStateIndexedEXT v1 v2 = liftIO $ dyn16 ptr_glEnableClientStateIndexedEXT v1 v2
-
-{-# NOINLINE ptr_glEnableClientStateIndexedEXT #-}
-ptr_glEnableClientStateIndexedEXT :: FunPtr (GLenum -> GLuint -> IO ())
-ptr_glEnableClientStateIndexedEXT = unsafePerformIO $ getCommand "glEnableClientStateIndexedEXT"
-
--- glEnableClientStateiEXT -----------------------------------------------------
-
-glEnableClientStateiEXT
-  :: MonadIO m
-  => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
-  -> GLuint -- ^ @index@.
-  -> m ()
-glEnableClientStateiEXT v1 v2 = liftIO $ dyn16 ptr_glEnableClientStateiEXT v1 v2
-
-{-# NOINLINE ptr_glEnableClientStateiEXT #-}
-ptr_glEnableClientStateiEXT :: FunPtr (GLenum -> GLuint -> IO ())
-ptr_glEnableClientStateiEXT = unsafePerformIO $ getCommand "glEnableClientStateiEXT"
 

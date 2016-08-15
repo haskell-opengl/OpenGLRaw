@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F26 (
+  glTextureMaterialEXT,
+  glTextureNormalEXT,
+  glTexturePageCommitmentEXT,
+  glTextureParameterIiv,
+  glTextureParameterIivEXT,
+  glTextureParameterIuiv,
   glTextureParameterIuivEXT,
   glTextureParameterf,
   glTextureParameterfEXT,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F26 (
   glUniform3f,
   glUniform3fARB,
   glUniform3fv,
-  glUniform3fvARB,
-  glUniform3i,
-  glUniform3i64ARB,
-  glUniform3i64NV,
-  glUniform3i64vARB,
-  glUniform3i64vNV,
-  glUniform3iARB
+  glUniform3fvARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,96 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTextureMaterialEXT --------------------------------------------------------
+
+glTextureMaterialEXT
+  :: MonadIO m
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
+  -> GLenum -- ^ @mode@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
+  -> m ()
+glTextureMaterialEXT v1 v2 = liftIO $ dyn51 ptr_glTextureMaterialEXT v1 v2
+
+{-# NOINLINE ptr_glTextureMaterialEXT #-}
+ptr_glTextureMaterialEXT :: FunPtr (GLenum -> GLenum -> IO ())
+ptr_glTextureMaterialEXT = unsafePerformIO $ getCommand "glTextureMaterialEXT"
+
+-- glTextureNormalEXT ----------------------------------------------------------
+
+glTextureNormalEXT
+  :: MonadIO m
+  => GLenum -- ^ @mode@ of type @TextureNormalModeEXT@.
+  -> m ()
+glTextureNormalEXT v1 = liftIO $ dyn4 ptr_glTextureNormalEXT v1
+
+{-# NOINLINE ptr_glTextureNormalEXT #-}
+ptr_glTextureNormalEXT :: FunPtr (GLenum -> IO ())
+ptr_glTextureNormalEXT = unsafePerformIO $ getCommand "glTextureNormalEXT"
+
+-- glTexturePageCommitmentEXT --------------------------------------------------
+
+glTexturePageCommitmentEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLint -- ^ @level@.
+  -> GLint -- ^ @xoffset@.
+  -> GLint -- ^ @yoffset@.
+  -> GLint -- ^ @zoffset@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> GLsizei -- ^ @depth@.
+  -> GLboolean -- ^ @commit@.
+  -> m ()
+glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn755 ptr_glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
+
+{-# NOINLINE ptr_glTexturePageCommitmentEXT #-}
+ptr_glTexturePageCommitmentEXT :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
+ptr_glTexturePageCommitmentEXT = unsafePerformIO $ getCommand "glTexturePageCommitmentEXT"
+
+-- glTextureParameterIiv -------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
+glTextureParameterIiv
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @params@.
+  -> m ()
+glTextureParameterIiv v1 v2 v3 = liftIO $ dyn334 ptr_glTextureParameterIiv v1 v2 v3
+
+{-# NOINLINE ptr_glTextureParameterIiv #-}
+ptr_glTextureParameterIiv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glTextureParameterIiv = unsafePerformIO $ getCommand "glTextureParameterIiv"
+
+-- glTextureParameterIivEXT ----------------------------------------------------
+
+glTextureParameterIivEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
+  -> m ()
+glTextureParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn363 ptr_glTextureParameterIivEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTextureParameterIivEXT #-}
+ptr_glTextureParameterIivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
+ptr_glTextureParameterIivEXT = unsafePerformIO $ getCommand "glTextureParameterIivEXT"
+
+-- glTextureParameterIuiv ------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
+glTextureParameterIuiv
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLuint -- ^ @params@.
+  -> m ()
+glTextureParameterIuiv v1 v2 v3 = liftIO $ dyn375 ptr_glTextureParameterIuiv v1 v2 v3
+
+{-# NOINLINE ptr_glTextureParameterIuiv #-}
+ptr_glTextureParameterIuiv :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
+ptr_glTextureParameterIuiv = unsafePerformIO $ getCommand "glTextureParameterIuiv"
 
 -- glTextureParameterIuivEXT ---------------------------------------------------
 
@@ -1585,94 +1675,4 @@ glUniform3fvARB v1 v2 v3 = liftIO $ dyn783 ptr_glUniform3fvARB v1 v2 v3
 {-# NOINLINE ptr_glUniform3fvARB #-}
 ptr_glUniform3fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
 ptr_glUniform3fvARB = unsafePerformIO $ getCommand "glUniform3fvARB"
-
--- glUniform3i -----------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniform3i
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLint -- ^ @v0@.
-  -> GLint -- ^ @v1@.
-  -> GLint -- ^ @v2@.
-  -> m ()
-glUniform3i v1 v2 v3 v4 = liftIO $ dyn76 ptr_glUniform3i v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniform3i #-}
-ptr_glUniform3i :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
-ptr_glUniform3i = unsafePerformIO $ getCommand "glUniform3i"
-
--- glUniform3i64ARB ------------------------------------------------------------
-
-glUniform3i64ARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLint64 -- ^ @x@.
-  -> GLint64 -- ^ @y@.
-  -> GLint64 -- ^ @z@.
-  -> m ()
-glUniform3i64ARB v1 v2 v3 v4 = liftIO $ dyn802 ptr_glUniform3i64ARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniform3i64ARB #-}
-ptr_glUniform3i64ARB :: FunPtr (GLint -> GLint64 -> GLint64 -> GLint64 -> IO ())
-ptr_glUniform3i64ARB = unsafePerformIO $ getCommand "glUniform3i64ARB"
-
--- glUniform3i64NV -------------------------------------------------------------
-
-glUniform3i64NV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLint64EXT -- ^ @x@.
-  -> GLint64EXT -- ^ @y@.
-  -> GLint64EXT -- ^ @z@.
-  -> m ()
-glUniform3i64NV v1 v2 v3 v4 = liftIO $ dyn803 ptr_glUniform3i64NV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniform3i64NV #-}
-ptr_glUniform3i64NV :: FunPtr (GLint -> GLint64EXT -> GLint64EXT -> GLint64EXT -> IO ())
-ptr_glUniform3i64NV = unsafePerformIO $ getCommand "glUniform3i64NV"
-
--- glUniform3i64vARB -----------------------------------------------------------
-
-glUniform3i64vARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLint64 -- ^ @value@ pointing to @count*3@ elements of type @GLint64@.
-  -> m ()
-glUniform3i64vARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform3i64vARB v1 v2 v3
-
-{-# NOINLINE ptr_glUniform3i64vARB #-}
-ptr_glUniform3i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
-ptr_glUniform3i64vARB = unsafePerformIO $ getCommand "glUniform3i64vARB"
-
--- glUniform3i64vNV ------------------------------------------------------------
-
-glUniform3i64vNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLint64EXT -- ^ @value@ pointing to @count*3@ elements of type @GLint64EXT@.
-  -> m ()
-glUniform3i64vNV v1 v2 v3 = liftIO $ dyn787 ptr_glUniform3i64vNV v1 v2 v3
-
-{-# NOINLINE ptr_glUniform3i64vNV #-}
-ptr_glUniform3i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
-ptr_glUniform3i64vNV = unsafePerformIO $ getCommand "glUniform3i64vNV"
-
--- glUniform3iARB --------------------------------------------------------------
-
--- | This command is an alias for 'glUniform3i'.
-glUniform3iARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLint -- ^ @v0@.
-  -> GLint -- ^ @v1@.
-  -> GLint -- ^ @v2@.
-  -> m ()
-glUniform3iARB v1 v2 v3 v4 = liftIO $ dyn76 ptr_glUniform3iARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniform3iARB #-}
-ptr_glUniform3iARB :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
-ptr_glUniform3iARB = unsafePerformIO $ getCommand "glUniform3iARB"
 

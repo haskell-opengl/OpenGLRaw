@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F21 (
+  glProgramUniform3ui64vNV,
+  glProgramUniform3uiEXT,
+  glProgramUniform3uiv,
   glProgramUniform3uivEXT,
   glProgramUniform4d,
   glProgramUniform4dEXT,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F21 (
   glRasterPos3dv,
   glRasterPos3f,
   glRasterPos3fv,
-  glRasterPos3i,
-  glRasterPos3iv,
-  glRasterPos3s,
-  glRasterPos3sv
+  glRasterPos3i
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,54 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glProgramUniform3ui64vNV ----------------------------------------------------
+
+glProgramUniform3ui64vNV
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*3@ elements of type @GLuint64EXT@.
+  -> m ()
+glProgramUniform3ui64vNV v1 v2 v3 v4 = liftIO $ dyn640 ptr_glProgramUniform3ui64vNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramUniform3ui64vNV #-}
+ptr_glProgramUniform3ui64vNV :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
+ptr_glProgramUniform3ui64vNV = unsafePerformIO $ getCommand "glProgramUniform3ui64vNV"
+
+-- glProgramUniform3uiEXT ------------------------------------------------------
+
+-- | This command is an alias for 'glProgramUniform3ui'.
+glProgramUniform3uiEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLuint -- ^ @v0@.
+  -> GLuint -- ^ @v1@.
+  -> GLuint -- ^ @v2@.
+  -> m ()
+glProgramUniform3uiEXT v1 v2 v3 v4 v5 = liftIO $ dyn654 ptr_glProgramUniform3uiEXT v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glProgramUniform3uiEXT #-}
+ptr_glProgramUniform3uiEXT :: FunPtr (GLuint -> GLint -> GLuint -> GLuint -> GLuint -> IO ())
+ptr_glProgramUniform3uiEXT = unsafePerformIO $ getCommand "glProgramUniform3uiEXT"
+
+-- glProgramUniform3uiv --------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
+glProgramUniform3uiv
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint -- ^ @value@ pointing to @3@ elements of type @GLuint@.
+  -> m ()
+glProgramUniform3uiv v1 v2 v3 v4 = liftIO $ dyn461 ptr_glProgramUniform3uiv v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramUniform3uiv #-}
+ptr_glProgramUniform3uiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glProgramUniform3uiv = unsafePerformIO $ getCommand "glProgramUniform3uiv"
 
 -- glProgramUniform3uivEXT -----------------------------------------------------
 
@@ -1622,45 +1670,4 @@ glRasterPos3i v1 v2 v3 = liftIO $ dyn42 ptr_glRasterPos3i v1 v2 v3
 {-# NOINLINE ptr_glRasterPos3i #-}
 ptr_glRasterPos3i :: FunPtr (GLint -> GLint -> GLint -> IO ())
 ptr_glRasterPos3i = unsafePerformIO $ getCommand "glRasterPos3i"
-
--- glRasterPos3iv --------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
-glRasterPos3iv
-  :: MonadIO m
-  => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
-  -> m ()
-glRasterPos3iv v1 = liftIO $ dyn43 ptr_glRasterPos3iv v1
-
-{-# NOINLINE ptr_glRasterPos3iv #-}
-ptr_glRasterPos3iv :: FunPtr (Ptr GLint -> IO ())
-ptr_glRasterPos3iv = unsafePerformIO $ getCommand "glRasterPos3iv"
-
--- glRasterPos3s ---------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glRasterPos3sv'.
-glRasterPos3s
-  :: MonadIO m
-  => GLshort -- ^ @x@ of type @CoordS@.
-  -> GLshort -- ^ @y@ of type @CoordS@.
-  -> GLshort -- ^ @z@ of type @CoordS@.
-  -> m ()
-glRasterPos3s v1 v2 v3 = liftIO $ dyn44 ptr_glRasterPos3s v1 v2 v3
-
-{-# NOINLINE ptr_glRasterPos3s #-}
-ptr_glRasterPos3s :: FunPtr (GLshort -> GLshort -> GLshort -> IO ())
-ptr_glRasterPos3s = unsafePerformIO $ getCommand "glRasterPos3s"
-
--- glRasterPos3sv --------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml OpenGL 2.x>.
-glRasterPos3sv
-  :: MonadIO m
-  => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
-  -> m ()
-glRasterPos3sv v1 = liftIO $ dyn45 ptr_glRasterPos3sv v1
-
-{-# NOINLINE ptr_glRasterPos3sv #-}
-ptr_glRasterPos3sv :: FunPtr (Ptr GLshort -> IO ())
-ptr_glRasterPos3sv = unsafePerformIO $ getCommand "glRasterPos3sv"
 

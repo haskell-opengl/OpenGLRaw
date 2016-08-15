@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F23 (
+  glSamplerParameterIuivEXT,
+  glSamplerParameterIuivOES,
+  glSamplerParameterf,
   glSamplerParameterfv,
   glSamplerParameteri,
   glSamplerParameteriv,
@@ -25,10 +28,13 @@ module Graphics.GL.Functions.F23 (
   glScissor,
   glScissorArrayv,
   glScissorArrayvNV,
+  glScissorArrayvOES,
   glScissorIndexed,
   glScissorIndexedNV,
+  glScissorIndexedOES,
   glScissorIndexedv,
   glScissorIndexedvNV,
+  glScissorIndexedvOES,
   glSecondaryColor3b,
   glSecondaryColor3bEXT,
   glSecondaryColor3bv,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F23 (
   glStencilOpSeparateATI,
   glStencilOpValueAMD,
   glStencilStrokePathInstancedNV,
-  glStencilStrokePathNV,
-  glStencilThenCoverFillPathInstancedNV,
-  glStencilThenCoverFillPathNV,
-  glStencilThenCoverStrokePathInstancedNV,
-  glStencilThenCoverStrokePathNV,
-  glStopInstrumentsSGIX,
-  glStringMarkerGREMEDY
+  glStencilStrokePathNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,51 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glSamplerParameterIuivEXT ---------------------------------------------------
+
+-- | This command is an alias for 'glSamplerParameterIuiv'.
+glSamplerParameterIuivEXT
+  :: MonadIO m
+  => GLuint -- ^ @sampler@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLuint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
+  -> m ()
+glSamplerParameterIuivEXT v1 v2 v3 = liftIO $ dyn375 ptr_glSamplerParameterIuivEXT v1 v2 v3
+
+{-# NOINLINE ptr_glSamplerParameterIuivEXT #-}
+ptr_glSamplerParameterIuivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
+ptr_glSamplerParameterIuivEXT = unsafePerformIO $ getCommand "glSamplerParameterIuivEXT"
+
+-- glSamplerParameterIuivOES ---------------------------------------------------
+
+-- | This command is an alias for 'glSamplerParameterIuiv'.
+glSamplerParameterIuivOES
+  :: MonadIO m
+  => GLuint -- ^ @sampler@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLuint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
+  -> m ()
+glSamplerParameterIuivOES v1 v2 v3 = liftIO $ dyn375 ptr_glSamplerParameterIuivOES v1 v2 v3
+
+{-# NOINLINE ptr_glSamplerParameterIuivOES #-}
+ptr_glSamplerParameterIuivOES :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
+ptr_glSamplerParameterIuivOES = unsafePerformIO $ getCommand "glSamplerParameterIuivOES"
+
+-- glSamplerParameterf ---------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
+glSamplerParameterf
+  :: MonadIO m
+  => GLuint -- ^ @sampler@.
+  -> GLenum -- ^ @pname@.
+  -> GLfloat -- ^ @param@.
+  -> m ()
+glSamplerParameterf v1 v2 v3 = liftIO $ dyn487 ptr_glSamplerParameterf v1 v2 v3
+
+{-# NOINLINE ptr_glSamplerParameterf #-}
+ptr_glSamplerParameterf :: FunPtr (GLuint -> GLenum -> GLfloat -> IO ())
+ptr_glSamplerParameterf = unsafePerformIO $ getCommand "glSamplerParameterf"
 
 -- glSamplerParameterfv --------------------------------------------------------
 
@@ -272,6 +317,21 @@ glScissorArrayvNV v1 v2 v3 = liftIO $ dyn699 ptr_glScissorArrayvNV v1 v2 v3
 ptr_glScissorArrayvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLint -> IO ())
 ptr_glScissorArrayvNV = unsafePerformIO $ getCommand "glScissorArrayvNV"
 
+-- glScissorArrayvOES ----------------------------------------------------------
+
+-- | This command is an alias for 'glScissorArrayv'.
+glScissorArrayvOES
+  :: MonadIO m
+  => GLuint -- ^ @first@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @v@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
+  -> m ()
+glScissorArrayvOES v1 v2 v3 = liftIO $ dyn699 ptr_glScissorArrayvOES v1 v2 v3
+
+{-# NOINLINE ptr_glScissorArrayvOES #-}
+ptr_glScissorArrayvOES :: FunPtr (GLuint -> GLsizei -> Ptr GLint -> IO ())
+ptr_glScissorArrayvOES = unsafePerformIO $ getCommand "glScissorArrayvOES"
+
 -- glScissorIndexed ------------------------------------------------------------
 
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorIndexed.xhtml OpenGL 4.x>.
@@ -306,6 +366,23 @@ glScissorIndexedNV v1 v2 v3 v4 v5 = liftIO $ dyn700 ptr_glScissorIndexedNV v1 v2
 ptr_glScissorIndexedNV :: FunPtr (GLuint -> GLint -> GLint -> GLsizei -> GLsizei -> IO ())
 ptr_glScissorIndexedNV = unsafePerformIO $ getCommand "glScissorIndexedNV"
 
+-- glScissorIndexedOES ---------------------------------------------------------
+
+-- | This command is an alias for 'glScissorIndexed'.
+glScissorIndexedOES
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLint -- ^ @left@.
+  -> GLint -- ^ @bottom@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> m ()
+glScissorIndexedOES v1 v2 v3 v4 v5 = liftIO $ dyn700 ptr_glScissorIndexedOES v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glScissorIndexedOES #-}
+ptr_glScissorIndexedOES :: FunPtr (GLuint -> GLint -> GLint -> GLsizei -> GLsizei -> IO ())
+ptr_glScissorIndexedOES = unsafePerformIO $ getCommand "glScissorIndexedOES"
+
 -- glScissorIndexedv -----------------------------------------------------------
 
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glScissorIndexed.xhtml OpenGL 4.x>.
@@ -333,6 +410,20 @@ glScissorIndexedvNV v1 v2 = liftIO $ dyn701 ptr_glScissorIndexedvNV v1 v2
 {-# NOINLINE ptr_glScissorIndexedvNV #-}
 ptr_glScissorIndexedvNV :: FunPtr (GLuint -> Ptr GLint -> IO ())
 ptr_glScissorIndexedvNV = unsafePerformIO $ getCommand "glScissorIndexedvNV"
+
+-- glScissorIndexedvOES --------------------------------------------------------
+
+-- | This command is an alias for 'glScissorIndexedv'.
+glScissorIndexedvOES
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLint -- ^ @v@ pointing to @4@ elements of type @GLint@.
+  -> m ()
+glScissorIndexedvOES v1 v2 = liftIO $ dyn701 ptr_glScissorIndexedvOES v1 v2
+
+{-# NOINLINE ptr_glScissorIndexedvOES #-}
+ptr_glScissorIndexedvOES :: FunPtr (GLuint -> Ptr GLint -> IO ())
+ptr_glScissorIndexedvOES = unsafePerformIO $ getCommand "glScissorIndexedvOES"
 
 -- glSecondaryColor3b ----------------------------------------------------------
 
@@ -1486,99 +1577,4 @@ glStencilStrokePathNV v1 v2 v3 = liftIO $ dyn637 ptr_glStencilStrokePathNV v1 v2
 {-# NOINLINE ptr_glStencilStrokePathNV #-}
 ptr_glStencilStrokePathNV :: FunPtr (GLuint -> GLint -> GLuint -> IO ())
 ptr_glStencilStrokePathNV = unsafePerformIO $ getCommand "glStencilStrokePathNV"
-
--- glStencilThenCoverFillPathInstancedNV ---------------------------------------
-
-glStencilThenCoverFillPathInstancedNV
-  :: MonadIO m
-  => GLsizei -- ^ @numPaths@.
-  -> GLenum -- ^ @pathNameType@.
-  -> Ptr a -- ^ @paths@.
-  -> GLuint -- ^ @pathBase@.
-  -> GLenum -- ^ @fillMode@.
-  -> GLuint -- ^ @mask@.
-  -> GLenum -- ^ @coverMode@.
-  -> GLenum -- ^ @transformType@.
-  -> Ptr GLfloat -- ^ @transformValues@.
-  -> m ()
-glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn716 ptr_glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
-
-{-# NOINLINE ptr_glStencilThenCoverFillPathInstancedNV #-}
-ptr_glStencilThenCoverFillPathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLenum -> GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
-ptr_glStencilThenCoverFillPathInstancedNV = unsafePerformIO $ getCommand "glStencilThenCoverFillPathInstancedNV"
-
--- glStencilThenCoverFillPathNV ------------------------------------------------
-
-glStencilThenCoverFillPathNV
-  :: MonadIO m
-  => GLuint -- ^ @path@.
-  -> GLenum -- ^ @fillMode@.
-  -> GLuint -- ^ @mask@.
-  -> GLenum -- ^ @coverMode@.
-  -> m ()
-glStencilThenCoverFillPathNV v1 v2 v3 v4 = liftIO $ dyn717 ptr_glStencilThenCoverFillPathNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glStencilThenCoverFillPathNV #-}
-ptr_glStencilThenCoverFillPathNV :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> IO ())
-ptr_glStencilThenCoverFillPathNV = unsafePerformIO $ getCommand "glStencilThenCoverFillPathNV"
-
--- glStencilThenCoverStrokePathInstancedNV -------------------------------------
-
-glStencilThenCoverStrokePathInstancedNV
-  :: MonadIO m
-  => GLsizei -- ^ @numPaths@.
-  -> GLenum -- ^ @pathNameType@.
-  -> Ptr a -- ^ @paths@.
-  -> GLuint -- ^ @pathBase@.
-  -> GLint -- ^ @reference@.
-  -> GLuint -- ^ @mask@.
-  -> GLenum -- ^ @coverMode@.
-  -> GLenum -- ^ @transformType@.
-  -> Ptr GLfloat -- ^ @transformValues@.
-  -> m ()
-glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn718 ptr_glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
-
-{-# NOINLINE ptr_glStencilThenCoverStrokePathInstancedNV #-}
-ptr_glStencilThenCoverStrokePathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLint -> GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
-ptr_glStencilThenCoverStrokePathInstancedNV = unsafePerformIO $ getCommand "glStencilThenCoverStrokePathInstancedNV"
-
--- glStencilThenCoverStrokePathNV ----------------------------------------------
-
-glStencilThenCoverStrokePathNV
-  :: MonadIO m
-  => GLuint -- ^ @path@.
-  -> GLint -- ^ @reference@.
-  -> GLuint -- ^ @mask@.
-  -> GLenum -- ^ @coverMode@.
-  -> m ()
-glStencilThenCoverStrokePathNV v1 v2 v3 v4 = liftIO $ dyn719 ptr_glStencilThenCoverStrokePathNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glStencilThenCoverStrokePathNV #-}
-ptr_glStencilThenCoverStrokePathNV :: FunPtr (GLuint -> GLint -> GLuint -> GLenum -> IO ())
-ptr_glStencilThenCoverStrokePathNV = unsafePerformIO $ getCommand "glStencilThenCoverStrokePathNV"
-
--- glStopInstrumentsSGIX -------------------------------------------------------
-
-glStopInstrumentsSGIX
-  :: MonadIO m
-  => GLint -- ^ @marker@.
-  -> m ()
-glStopInstrumentsSGIX v1 = liftIO $ dyn12 ptr_glStopInstrumentsSGIX v1
-
-{-# NOINLINE ptr_glStopInstrumentsSGIX #-}
-ptr_glStopInstrumentsSGIX :: FunPtr (GLint -> IO ())
-ptr_glStopInstrumentsSGIX = unsafePerformIO $ getCommand "glStopInstrumentsSGIX"
-
--- glStringMarkerGREMEDY -------------------------------------------------------
-
-glStringMarkerGREMEDY
-  :: MonadIO m
-  => GLsizei -- ^ @len@.
-  -> Ptr a -- ^ @string@ pointing to @len@ elements of type @a@.
-  -> m ()
-glStringMarkerGREMEDY v1 v2 = liftIO $ dyn260 ptr_glStringMarkerGREMEDY v1 v2
-
-{-# NOINLINE ptr_glStringMarkerGREMEDY #-}
-ptr_glStringMarkerGREMEDY :: FunPtr (GLsizei -> Ptr a -> IO ())
-ptr_glStringMarkerGREMEDY = unsafePerformIO $ getCommand "glStringMarkerGREMEDY"
 

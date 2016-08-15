@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F27 (
+  glUniform3i,
+  glUniform3i64ARB,
+  glUniform3i64NV,
+  glUniform3i64vARB,
+  glUniform3i64vNV,
+  glUniform3iARB,
   glUniform3iv,
   glUniform3ivARB,
   glUniform3ui,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F27 (
   glVDPAUUnmapSurfacesNV,
   glVDPAUUnregisterSurfaceNV,
   glValidateProgram,
-  glValidateProgramARB,
-  glValidateProgramPipeline,
-  glValidateProgramPipelineEXT,
-  glVariantArrayObjectATI,
-  glVariantPointerEXT,
-  glVariantbvEXT,
-  glVariantdvEXT
+  glValidateProgramARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,96 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glUniform3i -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform3i
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint -- ^ @v0@.
+  -> GLint -- ^ @v1@.
+  -> GLint -- ^ @v2@.
+  -> m ()
+glUniform3i v1 v2 v3 v4 = liftIO $ dyn76 ptr_glUniform3i v1 v2 v3 v4
+
+{-# NOINLINE ptr_glUniform3i #-}
+ptr_glUniform3i :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
+ptr_glUniform3i = unsafePerformIO $ getCommand "glUniform3i"
+
+-- glUniform3i64ARB ------------------------------------------------------------
+
+glUniform3i64ARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint64 -- ^ @x@.
+  -> GLint64 -- ^ @y@.
+  -> GLint64 -- ^ @z@.
+  -> m ()
+glUniform3i64ARB v1 v2 v3 v4 = liftIO $ dyn802 ptr_glUniform3i64ARB v1 v2 v3 v4
+
+{-# NOINLINE ptr_glUniform3i64ARB #-}
+ptr_glUniform3i64ARB :: FunPtr (GLint -> GLint64 -> GLint64 -> GLint64 -> IO ())
+ptr_glUniform3i64ARB = unsafePerformIO $ getCommand "glUniform3i64ARB"
+
+-- glUniform3i64NV -------------------------------------------------------------
+
+glUniform3i64NV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint64EXT -- ^ @x@.
+  -> GLint64EXT -- ^ @y@.
+  -> GLint64EXT -- ^ @z@.
+  -> m ()
+glUniform3i64NV v1 v2 v3 v4 = liftIO $ dyn803 ptr_glUniform3i64NV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glUniform3i64NV #-}
+ptr_glUniform3i64NV :: FunPtr (GLint -> GLint64EXT -> GLint64EXT -> GLint64EXT -> IO ())
+ptr_glUniform3i64NV = unsafePerformIO $ getCommand "glUniform3i64NV"
+
+-- glUniform3i64vARB -----------------------------------------------------------
+
+glUniform3i64vARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64 -- ^ @value@ pointing to @count*3@ elements of type @GLint64@.
+  -> m ()
+glUniform3i64vARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform3i64vARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform3i64vARB #-}
+ptr_glUniform3i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
+ptr_glUniform3i64vARB = unsafePerformIO $ getCommand "glUniform3i64vARB"
+
+-- glUniform3i64vNV ------------------------------------------------------------
+
+glUniform3i64vNV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64EXT -- ^ @value@ pointing to @count*3@ elements of type @GLint64EXT@.
+  -> m ()
+glUniform3i64vNV v1 v2 v3 = liftIO $ dyn787 ptr_glUniform3i64vNV v1 v2 v3
+
+{-# NOINLINE ptr_glUniform3i64vNV #-}
+ptr_glUniform3i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
+ptr_glUniform3i64vNV = unsafePerformIO $ getCommand "glUniform3i64vNV"
+
+-- glUniform3iARB --------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform3i'.
+glUniform3iARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint -- ^ @v0@.
+  -> GLint -- ^ @v1@.
+  -> GLint -- ^ @v2@.
+  -> m ()
+glUniform3iARB v1 v2 v3 v4 = liftIO $ dyn76 ptr_glUniform3iARB v1 v2 v3 v4
+
+{-# NOINLINE ptr_glUniform3iARB #-}
+ptr_glUniform3iARB :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
+ptr_glUniform3iARB = unsafePerformIO $ getCommand "glUniform3iARB"
 
 -- glUniform3iv ----------------------------------------------------------------
 
@@ -1505,86 +1595,4 @@ glValidateProgramARB v1 = liftIO $ dyn137 ptr_glValidateProgramARB v1
 {-# NOINLINE ptr_glValidateProgramARB #-}
 ptr_glValidateProgramARB :: FunPtr (GLhandleARB -> IO ())
 ptr_glValidateProgramARB = unsafePerformIO $ getCommand "glValidateProgramARB"
-
--- glValidateProgramPipeline ---------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glValidateProgramPipeline.xhtml OpenGL 4.x>.
-glValidateProgramPipeline
-  :: MonadIO m
-  => GLuint -- ^ @pipeline@.
-  -> m ()
-glValidateProgramPipeline v1 = liftIO $ dyn2 ptr_glValidateProgramPipeline v1
-
-{-# NOINLINE ptr_glValidateProgramPipeline #-}
-ptr_glValidateProgramPipeline :: FunPtr (GLuint -> IO ())
-ptr_glValidateProgramPipeline = unsafePerformIO $ getCommand "glValidateProgramPipeline"
-
--- glValidateProgramPipelineEXT ------------------------------------------------
-
-glValidateProgramPipelineEXT
-  :: MonadIO m
-  => GLuint -- ^ @pipeline@.
-  -> m ()
-glValidateProgramPipelineEXT v1 = liftIO $ dyn2 ptr_glValidateProgramPipelineEXT v1
-
-{-# NOINLINE ptr_glValidateProgramPipelineEXT #-}
-ptr_glValidateProgramPipelineEXT :: FunPtr (GLuint -> IO ())
-ptr_glValidateProgramPipelineEXT = unsafePerformIO $ getCommand "glValidateProgramPipelineEXT"
-
--- glVariantArrayObjectATI -----------------------------------------------------
-
-glVariantArrayObjectATI
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLenum -- ^ @type@ of type @ScalarType@.
-  -> GLsizei -- ^ @stride@.
-  -> GLuint -- ^ @buffer@.
-  -> GLuint -- ^ @offset@.
-  -> m ()
-glVariantArrayObjectATI v1 v2 v3 v4 v5 = liftIO $ dyn825 ptr_glVariantArrayObjectATI v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glVariantArrayObjectATI #-}
-ptr_glVariantArrayObjectATI :: FunPtr (GLuint -> GLenum -> GLsizei -> GLuint -> GLuint -> IO ())
-ptr_glVariantArrayObjectATI = unsafePerformIO $ getCommand "glVariantArrayObjectATI"
-
--- glVariantPointerEXT ---------------------------------------------------------
-
-glVariantPointerEXT
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLenum -- ^ @type@ of type @ScalarType@.
-  -> GLuint -- ^ @stride@.
-  -> Ptr a -- ^ @addr@ pointing to @COMPSIZE(id,type,stride)@ elements of type @a@.
-  -> m ()
-glVariantPointerEXT v1 v2 v3 v4 = liftIO $ dyn826 ptr_glVariantPointerEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glVariantPointerEXT #-}
-ptr_glVariantPointerEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr a -> IO ())
-ptr_glVariantPointerEXT = unsafePerformIO $ getCommand "glVariantPointerEXT"
-
--- glVariantbvEXT --------------------------------------------------------------
-
-glVariantbvEXT
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> Ptr GLbyte -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLbyte@.
-  -> m ()
-glVariantbvEXT v1 v2 = liftIO $ dyn827 ptr_glVariantbvEXT v1 v2
-
-{-# NOINLINE ptr_glVariantbvEXT #-}
-ptr_glVariantbvEXT :: FunPtr (GLuint -> Ptr GLbyte -> IO ())
-ptr_glVariantbvEXT = unsafePerformIO $ getCommand "glVariantbvEXT"
-
--- glVariantdvEXT --------------------------------------------------------------
-
-glVariantdvEXT
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> Ptr GLdouble -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLdouble@.
-  -> m ()
-glVariantdvEXT v1 v2 = liftIO $ dyn828 ptr_glVariantdvEXT v1 v2
-
-{-# NOINLINE ptr_glVariantdvEXT #-}
-ptr_glVariantdvEXT :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
-ptr_glVariantdvEXT = unsafePerformIO $ getCommand "glVariantdvEXT"
 

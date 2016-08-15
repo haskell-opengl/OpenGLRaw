@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F15 (
+  glIsVertexArray,
+  glIsVertexArrayAPPLE,
+  glIsVertexArrayOES,
   glIsVertexAttribEnabledAPPLE,
   glLabelObjectEXT,
   glLightEnviSGIX,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F15 (
   glMaterialx,
   glMaterialxOES,
   glMaterialxv,
-  glMaterialxvOES,
-  glMatrixFrustumEXT,
-  glMatrixIndexPointerARB,
-  glMatrixIndexPointerOES
+  glMaterialxvOES
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,45 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glIsVertexArray -------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsVertexArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsVertexArray.xhtml OpenGL 4.x>.
+glIsVertexArray
+  :: MonadIO m
+  => GLuint -- ^ @array@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsVertexArray v1 = liftIO $ dyn273 ptr_glIsVertexArray v1
+
+{-# NOINLINE ptr_glIsVertexArray #-}
+ptr_glIsVertexArray :: FunPtr (GLuint -> IO GLboolean)
+ptr_glIsVertexArray = unsafePerformIO $ getCommand "glIsVertexArray"
+
+-- glIsVertexArrayAPPLE --------------------------------------------------------
+
+-- | This command is an alias for 'glIsVertexArray'.
+glIsVertexArrayAPPLE
+  :: MonadIO m
+  => GLuint -- ^ @array@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsVertexArrayAPPLE v1 = liftIO $ dyn273 ptr_glIsVertexArrayAPPLE v1
+
+{-# NOINLINE ptr_glIsVertexArrayAPPLE #-}
+ptr_glIsVertexArrayAPPLE :: FunPtr (GLuint -> IO GLboolean)
+ptr_glIsVertexArrayAPPLE = unsafePerformIO $ getCommand "glIsVertexArrayAPPLE"
+
+-- glIsVertexArrayOES ----------------------------------------------------------
+
+-- | This command is an alias for 'glIsVertexArray'.
+glIsVertexArrayOES
+  :: MonadIO m
+  => GLuint -- ^ @array@.
+  -> m GLboolean
+glIsVertexArrayOES v1 = liftIO $ dyn273 ptr_glIsVertexArrayOES v1
+
+{-# NOINLINE ptr_glIsVertexArrayOES #-}
+ptr_glIsVertexArrayOES :: FunPtr (GLuint -> IO GLboolean)
+ptr_glIsVertexArrayOES = unsafePerformIO $ getCommand "glIsVertexArrayOES"
 
 -- glIsVertexAttribEnabledAPPLE ------------------------------------------------
 
@@ -1520,52 +1559,4 @@ glMaterialxvOES v1 v2 v3 = liftIO $ dyn163 ptr_glMaterialxvOES v1 v2 v3
 {-# NOINLINE ptr_glMaterialxvOES #-}
 ptr_glMaterialxvOES :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
 ptr_glMaterialxvOES = unsafePerformIO $ getCommand "glMaterialxvOES"
-
--- glMatrixFrustumEXT ----------------------------------------------------------
-
-glMatrixFrustumEXT
-  :: MonadIO m
-  => GLenum -- ^ @mode@ of type [MatrixMode](Graphics-GL-Groups.html#MatrixMode).
-  -> GLdouble -- ^ @left@.
-  -> GLdouble -- ^ @right@.
-  -> GLdouble -- ^ @bottom@.
-  -> GLdouble -- ^ @top@.
-  -> GLdouble -- ^ @zNear@.
-  -> GLdouble -- ^ @zFar@.
-  -> m ()
-glMatrixFrustumEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn516 ptr_glMatrixFrustumEXT v1 v2 v3 v4 v5 v6 v7
-
-{-# NOINLINE ptr_glMatrixFrustumEXT #-}
-ptr_glMatrixFrustumEXT :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
-ptr_glMatrixFrustumEXT = unsafePerformIO $ getCommand "glMatrixFrustumEXT"
-
--- glMatrixIndexPointerARB -----------------------------------------------------
-
-glMatrixIndexPointerARB
-  :: MonadIO m
-  => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @MatrixIndexPointerTypeARB@.
-  -> GLsizei -- ^ @stride@.
-  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
-  -> m ()
-glMatrixIndexPointerARB v1 v2 v3 v4 = liftIO $ dyn126 ptr_glMatrixIndexPointerARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glMatrixIndexPointerARB #-}
-ptr_glMatrixIndexPointerARB :: FunPtr (GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
-ptr_glMatrixIndexPointerARB = unsafePerformIO $ getCommand "glMatrixIndexPointerARB"
-
--- glMatrixIndexPointerOES -----------------------------------------------------
-
-glMatrixIndexPointerOES
-  :: MonadIO m
-  => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@.
-  -> GLsizei -- ^ @stride@.
-  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
-  -> m ()
-glMatrixIndexPointerOES v1 v2 v3 v4 = liftIO $ dyn126 ptr_glMatrixIndexPointerOES v1 v2 v3 v4
-
-{-# NOINLINE ptr_glMatrixIndexPointerOES #-}
-ptr_glMatrixIndexPointerOES :: FunPtr (GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
-ptr_glMatrixIndexPointerOES = unsafePerformIO $ getCommand "glMatrixIndexPointerOES"
 

@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F13 (
+  glGetUniformdv,
+  glGetUniformfv,
+  glGetUniformfvARB,
   glGetUniformi64vARB,
   glGetUniformi64vNV,
   glGetUniformiv,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F13 (
   glGetnUniformuiv,
   glGetnUniformuivARB,
   glGetnUniformuivKHR,
-  glGlobalAlphaFactorbSUN,
-  glGlobalAlphaFactordSUN,
-  glGlobalAlphaFactorfSUN,
-  glGlobalAlphaFactoriSUN
+  glGlobalAlphaFactorbSUN
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,51 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetUniformdv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
+glGetUniformdv
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(program,location)@ elements of type @GLdouble@.
+  -> m ()
+glGetUniformdv v1 v2 v3 = liftIO $ dyn430 ptr_glGetUniformdv v1 v2 v3
+
+{-# NOINLINE ptr_glGetUniformdv #-}
+ptr_glGetUniformdv :: FunPtr (GLuint -> GLint -> Ptr GLdouble -> IO ())
+ptr_glGetUniformdv = unsafePerformIO $ getCommand "glGetUniformdv"
+
+-- glGetUniformfv --------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
+glGetUniformfv
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(program,location)@ elements of type @GLfloat@.
+  -> m ()
+glGetUniformfv v1 v2 v3 = liftIO $ dyn431 ptr_glGetUniformfv v1 v2 v3
+
+{-# NOINLINE ptr_glGetUniformfv #-}
+ptr_glGetUniformfv :: FunPtr (GLuint -> GLint -> Ptr GLfloat -> IO ())
+ptr_glGetUniformfv = unsafePerformIO $ getCommand "glGetUniformfv"
+
+-- glGetUniformfvARB -----------------------------------------------------------
+
+-- | This command is an alias for 'glGetUniformfv'.
+glGetUniformfvARB
+  :: MonadIO m
+  => GLhandleARB -- ^ @programObj@ of type @handleARB@.
+  -> GLint -- ^ @location@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(programObj,location)@ elements of type @GLfloat@.
+  -> m ()
+glGetUniformfvARB v1 v2 v3 = liftIO $ dyn432 ptr_glGetUniformfvARB v1 v2 v3
+
+{-# NOINLINE ptr_glGetUniformfvARB #-}
+ptr_glGetUniformfvARB :: FunPtr (GLhandleARB -> GLint -> Ptr GLfloat -> IO ())
+ptr_glGetUniformfvARB = unsafePerformIO $ getCommand "glGetUniformfvARB"
 
 -- glGetUniformi64vARB ---------------------------------------------------------
 
@@ -1575,40 +1620,4 @@ glGlobalAlphaFactorbSUN v1 = liftIO $ dyn462 ptr_glGlobalAlphaFactorbSUN v1
 {-# NOINLINE ptr_glGlobalAlphaFactorbSUN #-}
 ptr_glGlobalAlphaFactorbSUN :: FunPtr (GLbyte -> IO ())
 ptr_glGlobalAlphaFactorbSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactorbSUN"
-
--- glGlobalAlphaFactordSUN -----------------------------------------------------
-
-glGlobalAlphaFactordSUN
-  :: MonadIO m
-  => GLdouble -- ^ @factor@.
-  -> m ()
-glGlobalAlphaFactordSUN v1 = liftIO $ dyn78 ptr_glGlobalAlphaFactordSUN v1
-
-{-# NOINLINE ptr_glGlobalAlphaFactordSUN #-}
-ptr_glGlobalAlphaFactordSUN :: FunPtr (GLdouble -> IO ())
-ptr_glGlobalAlphaFactordSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactordSUN"
-
--- glGlobalAlphaFactorfSUN -----------------------------------------------------
-
-glGlobalAlphaFactorfSUN
-  :: MonadIO m
-  => GLfloat -- ^ @factor@.
-  -> m ()
-glGlobalAlphaFactorfSUN v1 = liftIO $ dyn79 ptr_glGlobalAlphaFactorfSUN v1
-
-{-# NOINLINE ptr_glGlobalAlphaFactorfSUN #-}
-ptr_glGlobalAlphaFactorfSUN :: FunPtr (GLfloat -> IO ())
-ptr_glGlobalAlphaFactorfSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactorfSUN"
-
--- glGlobalAlphaFactoriSUN -----------------------------------------------------
-
-glGlobalAlphaFactoriSUN
-  :: MonadIO m
-  => GLint -- ^ @factor@.
-  -> m ()
-glGlobalAlphaFactoriSUN v1 = liftIO $ dyn12 ptr_glGlobalAlphaFactoriSUN v1
-
-{-# NOINLINE ptr_glGlobalAlphaFactoriSUN #-}
-ptr_glGlobalAlphaFactoriSUN :: FunPtr (GLint -> IO ())
-ptr_glGlobalAlphaFactoriSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactoriSUN"
 

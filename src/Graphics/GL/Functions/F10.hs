@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F10 (
+  glGetFragDataLocationEXT,
+  glGetFragmentLightfvSGIX,
+  glGetFragmentLightivSGIX,
   glGetFragmentMaterialfvSGIX,
   glGetFragmentMaterialivSGIX,
   glGetFramebufferAttachmentParameteriv,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F10 (
   glGetNamedFramebufferAttachmentParameteriv,
   glGetNamedFramebufferAttachmentParameterivEXT,
   glGetNamedFramebufferParameteriv,
-  glGetNamedFramebufferParameterivEXT,
-  glGetNamedProgramLocalParameterIivEXT,
-  glGetNamedProgramLocalParameterIuivEXT,
-  glGetNamedProgramLocalParameterdvEXT
+  glGetNamedFramebufferParameterivEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,48 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetFragDataLocationEXT ----------------------------------------------------
+
+-- | This command is an alias for 'glGetFragDataLocation'.
+glGetFragDataLocationEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
+  -> m GLint
+glGetFragDataLocationEXT v1 v2 = liftIO $ dyn310 ptr_glGetFragDataLocationEXT v1 v2
+
+{-# NOINLINE ptr_glGetFragDataLocationEXT #-}
+ptr_glGetFragDataLocationEXT :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
+ptr_glGetFragDataLocationEXT = unsafePerformIO $ getCommand "glGetFragDataLocationEXT"
+
+-- glGetFragmentLightfvSGIX ----------------------------------------------------
+
+glGetFragmentLightfvSGIX
+  :: MonadIO m
+  => GLenum -- ^ @light@ of type @FragmentLightNameSGIX@.
+  -> GLenum -- ^ @pname@ of type @FragmentLightParameterSGIX@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
+  -> m ()
+glGetFragmentLightfvSGIX v1 v2 v3 = liftIO $ dyn132 ptr_glGetFragmentLightfvSGIX v1 v2 v3
+
+{-# NOINLINE ptr_glGetFragmentLightfvSGIX #-}
+ptr_glGetFragmentLightfvSGIX :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glGetFragmentLightfvSGIX = unsafePerformIO $ getCommand "glGetFragmentLightfvSGIX"
+
+-- glGetFragmentLightivSGIX ----------------------------------------------------
+
+glGetFragmentLightivSGIX
+  :: MonadIO m
+  => GLenum -- ^ @light@ of type @FragmentLightNameSGIX@.
+  -> GLenum -- ^ @pname@ of type @FragmentLightParameterSGIX@.
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glGetFragmentLightivSGIX v1 v2 v3 = liftIO $ dyn133 ptr_glGetFragmentLightivSGIX v1 v2 v3
+
+{-# NOINLINE ptr_glGetFragmentLightivSGIX #-}
+ptr_glGetFragmentLightivSGIX :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetFragmentLightivSGIX = unsafePerformIO $ getCommand "glGetFragmentLightivSGIX"
 
 -- glGetFragmentMaterialfvSGIX -------------------------------------------------
 
@@ -1540,49 +1582,4 @@ glGetNamedFramebufferParameterivEXT v1 v2 v3 = liftIO $ dyn334 ptr_glGetNamedFra
 {-# NOINLINE ptr_glGetNamedFramebufferParameterivEXT #-}
 ptr_glGetNamedFramebufferParameterivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
 ptr_glGetNamedFramebufferParameterivEXT = unsafePerformIO $ getCommand "glGetNamedFramebufferParameterivEXT"
-
--- glGetNamedProgramLocalParameterIivEXT ---------------------------------------
-
-glGetNamedProgramLocalParameterIivEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLenum -- ^ @target@ of type @ProgramTarget@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
-  -> m ()
-glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn364 ptr_glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetNamedProgramLocalParameterIivEXT #-}
-ptr_glGetNamedProgramLocalParameterIivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLint -> IO ())
-ptr_glGetNamedProgramLocalParameterIivEXT = unsafePerformIO $ getCommand "glGetNamedProgramLocalParameterIivEXT"
-
--- glGetNamedProgramLocalParameterIuivEXT --------------------------------------
-
-glGetNamedProgramLocalParameterIuivEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLenum -- ^ @target@ of type @ProgramTarget@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLuint -- ^ @params@ pointing to @4@ elements of type @GLuint@.
-  -> m ()
-glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn365 ptr_glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetNamedProgramLocalParameterIuivEXT #-}
-ptr_glGetNamedProgramLocalParameterIuivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLuint -> IO ())
-ptr_glGetNamedProgramLocalParameterIuivEXT = unsafePerformIO $ getCommand "glGetNamedProgramLocalParameterIuivEXT"
-
--- glGetNamedProgramLocalParameterdvEXT ----------------------------------------
-
-glGetNamedProgramLocalParameterdvEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLenum -- ^ @target@ of type @ProgramTarget@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
-  -> m ()
-glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4 = liftIO $ dyn366 ptr_glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetNamedProgramLocalParameterdvEXT #-}
-ptr_glGetNamedProgramLocalParameterdvEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLdouble -> IO ())
-ptr_glGetNamedProgramLocalParameterdvEXT = unsafePerformIO $ getCommand "glGetNamedProgramLocalParameterdvEXT"
 

@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F09 (
+  glGenVertexShadersEXT,
+  glGenerateMipmap,
   glGenerateMipmapEXT,
   glGenerateMipmapOES,
   glGenerateMultiTexMipmapEXT,
@@ -107,14 +109,12 @@ module Graphics.GL.Functions.F09 (
   glGetFloati_v,
   glGetFloati_vEXT,
   glGetFloati_vNV,
+  glGetFloati_vOES,
   glGetFloatv,
   glGetFogFuncSGIS,
   glGetFragDataIndex,
   glGetFragDataIndexEXT,
-  glGetFragDataLocation,
-  glGetFragDataLocationEXT,
-  glGetFragmentLightfvSGIX,
-  glGetFragmentLightivSGIX
+  glGetFragDataLocation
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,31 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGenVertexShadersEXT -------------------------------------------------------
+
+glGenVertexShadersEXT
+  :: MonadIO m
+  => GLuint -- ^ @range@.
+  -> m GLuint
+glGenVertexShadersEXT v1 = liftIO $ dyn298 ptr_glGenVertexShadersEXT v1
+
+{-# NOINLINE ptr_glGenVertexShadersEXT #-}
+ptr_glGenVertexShadersEXT :: FunPtr (GLuint -> IO GLuint)
+ptr_glGenVertexShadersEXT = unsafePerformIO $ getCommand "glGenVertexShadersEXT"
+
+-- glGenerateMipmap ------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGenerateMipmap.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGenerateMipmap.xhtml OpenGL 4.x>.
+glGenerateMipmap
+  :: MonadIO m
+  => GLenum -- ^ @target@.
+  -> m ()
+glGenerateMipmap v1 = liftIO $ dyn4 ptr_glGenerateMipmap v1
+
+{-# NOINLINE ptr_glGenerateMipmap #-}
+ptr_glGenerateMipmap :: FunPtr (GLenum -> IO ())
+ptr_glGenerateMipmap = unsafePerformIO $ getCommand "glGenerateMipmap"
 
 -- glGenerateMipmapEXT ---------------------------------------------------------
 
@@ -1519,6 +1544,21 @@ glGetFloati_vNV v1 v2 v3 = liftIO $ dyn267 ptr_glGetFloati_vNV v1 v2 v3
 ptr_glGetFloati_vNV :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
 ptr_glGetFloati_vNV = unsafePerformIO $ getCommand "glGetFloati_vNV"
 
+-- glGetFloati_vOES ------------------------------------------------------------
+
+-- | This command is an alias for 'glGetFloati_v'.
+glGetFloati_vOES
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @TypeEnum@.
+  -> GLuint -- ^ @index@.
+  -> Ptr GLfloat -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLfloat@.
+  -> m ()
+glGetFloati_vOES v1 v2 v3 = liftIO $ dyn267 ptr_glGetFloati_vOES v1 v2 v3
+
+{-# NOINLINE ptr_glGetFloati_vOES #-}
+ptr_glGetFloati_vOES :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
+ptr_glGetFloati_vOES = unsafePerformIO $ getCommand "glGetFloati_vOES"
+
 -- glGetFloatv -----------------------------------------------------------------
 
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
@@ -1586,46 +1626,4 @@ glGetFragDataLocation v1 v2 = liftIO $ dyn310 ptr_glGetFragDataLocation v1 v2
 {-# NOINLINE ptr_glGetFragDataLocation #-}
 ptr_glGetFragDataLocation :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
 ptr_glGetFragDataLocation = unsafePerformIO $ getCommand "glGetFragDataLocation"
-
--- glGetFragDataLocationEXT ----------------------------------------------------
-
--- | This command is an alias for 'glGetFragDataLocation'.
-glGetFragDataLocationEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
-  -> m GLint
-glGetFragDataLocationEXT v1 v2 = liftIO $ dyn310 ptr_glGetFragDataLocationEXT v1 v2
-
-{-# NOINLINE ptr_glGetFragDataLocationEXT #-}
-ptr_glGetFragDataLocationEXT :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
-ptr_glGetFragDataLocationEXT = unsafePerformIO $ getCommand "glGetFragDataLocationEXT"
-
--- glGetFragmentLightfvSGIX ----------------------------------------------------
-
-glGetFragmentLightfvSGIX
-  :: MonadIO m
-  => GLenum -- ^ @light@ of type @FragmentLightNameSGIX@.
-  -> GLenum -- ^ @pname@ of type @FragmentLightParameterSGIX@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
-  -> m ()
-glGetFragmentLightfvSGIX v1 v2 v3 = liftIO $ dyn132 ptr_glGetFragmentLightfvSGIX v1 v2 v3
-
-{-# NOINLINE ptr_glGetFragmentLightfvSGIX #-}
-ptr_glGetFragmentLightfvSGIX :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
-ptr_glGetFragmentLightfvSGIX = unsafePerformIO $ getCommand "glGetFragmentLightfvSGIX"
-
--- glGetFragmentLightivSGIX ----------------------------------------------------
-
-glGetFragmentLightivSGIX
-  :: MonadIO m
-  => GLenum -- ^ @light@ of type @FragmentLightNameSGIX@.
-  -> GLenum -- ^ @pname@ of type @FragmentLightParameterSGIX@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
-  -> m ()
-glGetFragmentLightivSGIX v1 v2 v3 = liftIO $ dyn133 ptr_glGetFragmentLightivSGIX v1 v2 v3
-
-{-# NOINLINE ptr_glGetFragmentLightivSGIX #-}
-ptr_glGetFragmentLightivSGIX :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
-ptr_glGetFragmentLightivSGIX = unsafePerformIO $ getCommand "glGetFragmentLightivSGIX"
 

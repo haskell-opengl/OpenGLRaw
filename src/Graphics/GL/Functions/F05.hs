@@ -106,15 +106,15 @@ module Graphics.GL.Functions.F05 (
   glDepthMask,
   glDepthRange,
   glDepthRangeArrayfvNV,
+  glDepthRangeArrayfvOES,
   glDepthRangeArrayv,
   glDepthRangeIndexed,
   glDepthRangeIndexedfNV,
+  glDepthRangeIndexedfOES,
   glDepthRangedNV,
   glDepthRangef,
   glDepthRangefOES,
-  glDepthRangex,
-  glDepthRangexOES,
-  glDetachObjectARB
+  glDepthRangex
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -1394,6 +1394,20 @@ glDepthRangeArrayfvNV v1 v2 v3 = liftIO $ dyn218 ptr_glDepthRangeArrayfvNV v1 v2
 ptr_glDepthRangeArrayfvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
 ptr_glDepthRangeArrayfvNV = unsafePerformIO $ getCommand "glDepthRangeArrayfvNV"
 
+-- glDepthRangeArrayfvOES ------------------------------------------------------
+
+glDepthRangeArrayfvOES
+  :: MonadIO m
+  => GLuint -- ^ @first@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @v@.
+  -> m ()
+glDepthRangeArrayfvOES v1 v2 v3 = liftIO $ dyn218 ptr_glDepthRangeArrayfvOES v1 v2 v3
+
+{-# NOINLINE ptr_glDepthRangeArrayfvOES #-}
+ptr_glDepthRangeArrayfvOES :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glDepthRangeArrayfvOES = unsafePerformIO $ getCommand "glDepthRangeArrayfvOES"
+
 -- glDepthRangeArrayv ----------------------------------------------------------
 
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDepthRangeArray.xhtml OpenGL 4.x>.
@@ -1437,6 +1451,20 @@ glDepthRangeIndexedfNV v1 v2 v3 = liftIO $ dyn221 ptr_glDepthRangeIndexedfNV v1 
 {-# NOINLINE ptr_glDepthRangeIndexedfNV #-}
 ptr_glDepthRangeIndexedfNV :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
 ptr_glDepthRangeIndexedfNV = unsafePerformIO $ getCommand "glDepthRangeIndexedfNV"
+
+-- glDepthRangeIndexedfOES -----------------------------------------------------
+
+glDepthRangeIndexedfOES
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLfloat -- ^ @n@.
+  -> GLfloat -- ^ @f@.
+  -> m ()
+glDepthRangeIndexedfOES v1 v2 v3 = liftIO $ dyn221 ptr_glDepthRangeIndexedfOES v1 v2 v3
+
+{-# NOINLINE ptr_glDepthRangeIndexedfOES #-}
+ptr_glDepthRangeIndexedfOES :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
+ptr_glDepthRangeIndexedfOES = unsafePerformIO $ getCommand "glDepthRangeIndexedfOES"
 
 -- glDepthRangedNV -------------------------------------------------------------
 
@@ -1491,31 +1519,4 @@ glDepthRangex v1 v2 = liftIO $ dyn224 ptr_glDepthRangex v1 v2
 {-# NOINLINE ptr_glDepthRangex #-}
 ptr_glDepthRangex :: FunPtr (GLfixed -> GLfixed -> IO ())
 ptr_glDepthRangex = unsafePerformIO $ getCommand "glDepthRangex"
-
--- glDepthRangexOES ------------------------------------------------------------
-
-glDepthRangexOES
-  :: MonadIO m
-  => GLfixed -- ^ @n@ of type @ClampedFixed@.
-  -> GLfixed -- ^ @f@ of type @ClampedFixed@.
-  -> m ()
-glDepthRangexOES v1 v2 = liftIO $ dyn224 ptr_glDepthRangexOES v1 v2
-
-{-# NOINLINE ptr_glDepthRangexOES #-}
-ptr_glDepthRangexOES :: FunPtr (GLfixed -> GLfixed -> IO ())
-ptr_glDepthRangexOES = unsafePerformIO $ getCommand "glDepthRangexOES"
-
--- glDetachObjectARB -----------------------------------------------------------
-
--- | This command is an alias for 'glDetachShader'.
-glDetachObjectARB
-  :: MonadIO m
-  => GLhandleARB -- ^ @containerObj@ of type @handleARB@.
-  -> GLhandleARB -- ^ @attachedObj@ of type @handleARB@.
-  -> m ()
-glDetachObjectARB v1 v2 = liftIO $ dyn14 ptr_glDetachObjectARB v1 v2
-
-{-# NOINLINE ptr_glDetachObjectARB #-}
-ptr_glDetachObjectARB :: FunPtr (GLhandleARB -> GLhandleARB -> IO ())
-ptr_glDetachObjectARB = unsafePerformIO $ getCommand "glDetachObjectARB"
 

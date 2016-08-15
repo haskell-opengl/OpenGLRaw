@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F07 (
+  glEnableClientStateIndexedEXT,
+  glEnableClientStateiEXT,
   glEnableDriverControlQCOM,
   glEnableIndexedEXT,
   glEnableVariantClientStateEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F07 (
   glFogCoordf,
   glFogCoordfEXT,
   glFogCoordfv,
-  glFogCoordfvEXT,
-  glFogCoordhNV,
-  glFogCoordhvNV
+  glFogCoordfvEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,32 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glEnableClientStateIndexedEXT -----------------------------------------------
+
+glEnableClientStateIndexedEXT
+  :: MonadIO m
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
+  -> GLuint -- ^ @index@.
+  -> m ()
+glEnableClientStateIndexedEXT v1 v2 = liftIO $ dyn16 ptr_glEnableClientStateIndexedEXT v1 v2
+
+{-# NOINLINE ptr_glEnableClientStateIndexedEXT #-}
+ptr_glEnableClientStateIndexedEXT :: FunPtr (GLenum -> GLuint -> IO ())
+ptr_glEnableClientStateIndexedEXT = unsafePerformIO $ getCommand "glEnableClientStateIndexedEXT"
+
+-- glEnableClientStateiEXT -----------------------------------------------------
+
+glEnableClientStateiEXT
+  :: MonadIO m
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
+  -> GLuint -- ^ @index@.
+  -> m ()
+glEnableClientStateiEXT v1 v2 = liftIO $ dyn16 ptr_glEnableClientStateiEXT v1 v2
+
+{-# NOINLINE ptr_glEnableClientStateiEXT #-}
+ptr_glEnableClientStateiEXT :: FunPtr (GLenum -> GLuint -> IO ())
+ptr_glEnableClientStateiEXT = unsafePerformIO $ getCommand "glEnableClientStateiEXT"
 
 -- glEnableDriverControlQCOM ---------------------------------------------------
 
@@ -1417,29 +1443,4 @@ glFogCoordfvEXT v1 = liftIO $ dyn41 ptr_glFogCoordfvEXT v1
 {-# NOINLINE ptr_glFogCoordfvEXT #-}
 ptr_glFogCoordfvEXT :: FunPtr (Ptr GLfloat -> IO ())
 ptr_glFogCoordfvEXT = unsafePerformIO $ getCommand "glFogCoordfvEXT"
-
--- glFogCoordhNV ---------------------------------------------------------------
-
--- | The vector equivalent of this command is 'glFogCoordhvNV'.
-glFogCoordhNV
-  :: MonadIO m
-  => GLhalfNV -- ^ @fog@ of type @Half16NV@.
-  -> m ()
-glFogCoordhNV v1 = liftIO $ dyn281 ptr_glFogCoordhNV v1
-
-{-# NOINLINE ptr_glFogCoordhNV #-}
-ptr_glFogCoordhNV :: FunPtr (GLhalfNV -> IO ())
-ptr_glFogCoordhNV = unsafePerformIO $ getCommand "glFogCoordhNV"
-
--- glFogCoordhvNV --------------------------------------------------------------
-
-glFogCoordhvNV
-  :: MonadIO m
-  => Ptr GLhalfNV -- ^ @fog@ pointing to @1@ element of type @Half16NV@.
-  -> m ()
-glFogCoordhvNV v1 = liftIO $ dyn99 ptr_glFogCoordhvNV v1
-
-{-# NOINLINE ptr_glFogCoordhvNV #-}
-ptr_glFogCoordhvNV :: FunPtr (Ptr GLhalfNV -> IO ())
-ptr_glFogCoordhvNV = unsafePerformIO $ getCommand "glFogCoordhvNV"
 

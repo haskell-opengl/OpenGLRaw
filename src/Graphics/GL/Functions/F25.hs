@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F25 (
+  glTexCoord4i,
+  glTexCoord4iv,
+  glTexCoord4s,
+  glTexCoord4sv,
+  glTexCoord4xOES,
+  glTexCoord4xvOES,
   glTexCoordFormatNV,
   glTexCoordP1ui,
   glTexCoordP1uiv,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F25 (
   glTextureImage3DEXT,
   glTextureImage3DMultisampleCoverageNV,
   glTextureImage3DMultisampleNV,
-  glTextureLightEXT,
-  glTextureMaterialEXT,
-  glTextureNormalEXT,
-  glTexturePageCommitmentEXT,
-  glTextureParameterIiv,
-  glTextureParameterIivEXT,
-  glTextureParameterIuiv
+  glTextureLightEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,91 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTexCoord4i ----------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4iv'.
+glTexCoord4i
+  :: MonadIO m
+  => GLint -- ^ @s@ of type @CoordI@.
+  -> GLint -- ^ @t@ of type @CoordI@.
+  -> GLint -- ^ @r@ of type @CoordI@.
+  -> GLint -- ^ @q@ of type @CoordI@.
+  -> m ()
+glTexCoord4i v1 v2 v3 v4 = liftIO $ dyn76 ptr_glTexCoord4i v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTexCoord4i #-}
+ptr_glTexCoord4i :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
+ptr_glTexCoord4i = unsafePerformIO $ getCommand "glTexCoord4i"
+
+-- glTexCoord4iv ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
+glTexCoord4iv
+  :: MonadIO m
+  => Ptr GLint -- ^ @v@ pointing to @4@ elements of type @CoordI@.
+  -> m ()
+glTexCoord4iv v1 = liftIO $ dyn43 ptr_glTexCoord4iv v1
+
+{-# NOINLINE ptr_glTexCoord4iv #-}
+ptr_glTexCoord4iv :: FunPtr (Ptr GLint -> IO ())
+ptr_glTexCoord4iv = unsafePerformIO $ getCommand "glTexCoord4iv"
+
+-- glTexCoord4s ----------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glTexCoord4sv'.
+glTexCoord4s
+  :: MonadIO m
+  => GLshort -- ^ @s@ of type @CoordS@.
+  -> GLshort -- ^ @t@ of type @CoordS@.
+  -> GLshort -- ^ @r@ of type @CoordS@.
+  -> GLshort -- ^ @q@ of type @CoordS@.
+  -> m ()
+glTexCoord4s v1 v2 v3 v4 = liftIO $ dyn113 ptr_glTexCoord4s v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTexCoord4s #-}
+ptr_glTexCoord4s :: FunPtr (GLshort -> GLshort -> GLshort -> GLshort -> IO ())
+ptr_glTexCoord4s = unsafePerformIO $ getCommand "glTexCoord4s"
+
+-- glTexCoord4sv ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
+glTexCoord4sv
+  :: MonadIO m
+  => Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
+  -> m ()
+glTexCoord4sv v1 = liftIO $ dyn45 ptr_glTexCoord4sv v1
+
+{-# NOINLINE ptr_glTexCoord4sv #-}
+ptr_glTexCoord4sv :: FunPtr (Ptr GLshort -> IO ())
+ptr_glTexCoord4sv = unsafePerformIO $ getCommand "glTexCoord4sv"
+
+-- glTexCoord4xOES -------------------------------------------------------------
+
+glTexCoord4xOES
+  :: MonadIO m
+  => GLfixed -- ^ @s@.
+  -> GLfixed -- ^ @t@.
+  -> GLfixed -- ^ @r@.
+  -> GLfixed -- ^ @q@.
+  -> m ()
+glTexCoord4xOES v1 v2 v3 v4 = liftIO $ dyn50 ptr_glTexCoord4xOES v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTexCoord4xOES #-}
+ptr_glTexCoord4xOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glTexCoord4xOES = unsafePerformIO $ getCommand "glTexCoord4xOES"
+
+-- glTexCoord4xvOES ------------------------------------------------------------
+
+glTexCoord4xvOES
+  :: MonadIO m
+  => Ptr GLfixed -- ^ @coords@ pointing to @4@ elements of type @GLfixed@.
+  -> m ()
+glTexCoord4xvOES v1 = liftIO $ dyn107 ptr_glTexCoord4xvOES v1
+
+{-# NOINLINE ptr_glTexCoord4xvOES #-}
+ptr_glTexCoord4xvOES :: FunPtr (Ptr GLfixed -> IO ())
+ptr_glTexCoord4xvOES = unsafePerformIO $ getCommand "glTexCoord4xvOES"
 
 -- glTexCoordFormatNV ----------------------------------------------------------
 
@@ -1672,94 +1757,4 @@ glTextureLightEXT v1 = liftIO $ dyn4 ptr_glTextureLightEXT v1
 {-# NOINLINE ptr_glTextureLightEXT #-}
 ptr_glTextureLightEXT :: FunPtr (GLenum -> IO ())
 ptr_glTextureLightEXT = unsafePerformIO $ getCommand "glTextureLightEXT"
-
--- glTextureMaterialEXT --------------------------------------------------------
-
-glTextureMaterialEXT
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
-  -> GLenum -- ^ @mode@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
-  -> m ()
-glTextureMaterialEXT v1 v2 = liftIO $ dyn51 ptr_glTextureMaterialEXT v1 v2
-
-{-# NOINLINE ptr_glTextureMaterialEXT #-}
-ptr_glTextureMaterialEXT :: FunPtr (GLenum -> GLenum -> IO ())
-ptr_glTextureMaterialEXT = unsafePerformIO $ getCommand "glTextureMaterialEXT"
-
--- glTextureNormalEXT ----------------------------------------------------------
-
-glTextureNormalEXT
-  :: MonadIO m
-  => GLenum -- ^ @mode@ of type @TextureNormalModeEXT@.
-  -> m ()
-glTextureNormalEXT v1 = liftIO $ dyn4 ptr_glTextureNormalEXT v1
-
-{-# NOINLINE ptr_glTextureNormalEXT #-}
-ptr_glTextureNormalEXT :: FunPtr (GLenum -> IO ())
-ptr_glTextureNormalEXT = unsafePerformIO $ getCommand "glTextureNormalEXT"
-
--- glTexturePageCommitmentEXT --------------------------------------------------
-
-glTexturePageCommitmentEXT
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLint -- ^ @level@.
-  -> GLint -- ^ @xoffset@.
-  -> GLint -- ^ @yoffset@.
-  -> GLint -- ^ @zoffset@.
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @commit@.
-  -> m ()
-glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn755 ptr_glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
-
-{-# NOINLINE ptr_glTexturePageCommitmentEXT #-}
-ptr_glTexturePageCommitmentEXT :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
-ptr_glTexturePageCommitmentEXT = unsafePerformIO $ getCommand "glTexturePageCommitmentEXT"
-
--- glTextureParameterIiv -------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
-glTextureParameterIiv
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLint -- ^ @params@.
-  -> m ()
-glTextureParameterIiv v1 v2 v3 = liftIO $ dyn334 ptr_glTextureParameterIiv v1 v2 v3
-
-{-# NOINLINE ptr_glTextureParameterIiv #-}
-ptr_glTextureParameterIiv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
-ptr_glTextureParameterIiv = unsafePerformIO $ getCommand "glTextureParameterIiv"
-
--- glTextureParameterIivEXT ----------------------------------------------------
-
-glTextureParameterIivEXT
-  :: MonadIO m
-  => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
-  -> m ()
-glTextureParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn363 ptr_glTextureParameterIivEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glTextureParameterIivEXT #-}
-ptr_glTextureParameterIivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
-ptr_glTextureParameterIivEXT = unsafePerformIO $ getCommand "glTextureParameterIivEXT"
-
--- glTextureParameterIuiv ------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexParameter.xhtml OpenGL 4.x>.
-glTextureParameterIuiv
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLuint -- ^ @params@.
-  -> m ()
-glTextureParameterIuiv v1 v2 v3 = liftIO $ dyn375 ptr_glTextureParameterIuiv v1 v2 v3
-
-{-# NOINLINE ptr_glTextureParameterIuiv #-}
-ptr_glTextureParameterIuiv :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
-ptr_glTextureParameterIuiv = unsafePerformIO $ getCommand "glTextureParameterIuiv"
 

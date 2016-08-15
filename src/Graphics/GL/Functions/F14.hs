@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F14 (
+  glGlobalAlphaFactordSUN,
+  glGlobalAlphaFactorfSUN,
+  glGlobalAlphaFactoriSUN,
   glGlobalAlphaFactorsSUN,
   glGlobalAlphaFactorubSUN,
   glGlobalAlphaFactoruiSUN,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F14 (
   glIsTextureHandleResidentNV,
   glIsTransformFeedback,
   glIsTransformFeedbackNV,
-  glIsVariantEnabledEXT,
-  glIsVertexArray,
-  glIsVertexArrayAPPLE,
-  glIsVertexArrayOES
+  glIsVariantEnabledEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,42 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGlobalAlphaFactordSUN -----------------------------------------------------
+
+glGlobalAlphaFactordSUN
+  :: MonadIO m
+  => GLdouble -- ^ @factor@.
+  -> m ()
+glGlobalAlphaFactordSUN v1 = liftIO $ dyn78 ptr_glGlobalAlphaFactordSUN v1
+
+{-# NOINLINE ptr_glGlobalAlphaFactordSUN #-}
+ptr_glGlobalAlphaFactordSUN :: FunPtr (GLdouble -> IO ())
+ptr_glGlobalAlphaFactordSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactordSUN"
+
+-- glGlobalAlphaFactorfSUN -----------------------------------------------------
+
+glGlobalAlphaFactorfSUN
+  :: MonadIO m
+  => GLfloat -- ^ @factor@.
+  -> m ()
+glGlobalAlphaFactorfSUN v1 = liftIO $ dyn79 ptr_glGlobalAlphaFactorfSUN v1
+
+{-# NOINLINE ptr_glGlobalAlphaFactorfSUN #-}
+ptr_glGlobalAlphaFactorfSUN :: FunPtr (GLfloat -> IO ())
+ptr_glGlobalAlphaFactorfSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactorfSUN"
+
+-- glGlobalAlphaFactoriSUN -----------------------------------------------------
+
+glGlobalAlphaFactoriSUN
+  :: MonadIO m
+  => GLint -- ^ @factor@.
+  -> m ()
+glGlobalAlphaFactoriSUN v1 = liftIO $ dyn12 ptr_glGlobalAlphaFactoriSUN v1
+
+{-# NOINLINE ptr_glGlobalAlphaFactoriSUN #-}
+ptr_glGlobalAlphaFactoriSUN :: FunPtr (GLint -> IO ())
+ptr_glGlobalAlphaFactoriSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactoriSUN"
 
 -- glGlobalAlphaFactorsSUN -----------------------------------------------------
 
@@ -1413,43 +1449,4 @@ glIsVariantEnabledEXT v1 v2 = liftIO $ dyn483 ptr_glIsVariantEnabledEXT v1 v2
 {-# NOINLINE ptr_glIsVariantEnabledEXT #-}
 ptr_glIsVariantEnabledEXT :: FunPtr (GLuint -> GLenum -> IO GLboolean)
 ptr_glIsVariantEnabledEXT = unsafePerformIO $ getCommand "glIsVariantEnabledEXT"
-
--- glIsVertexArray -------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsVertexArray.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsVertexArray.xhtml OpenGL 4.x>.
-glIsVertexArray
-  :: MonadIO m
-  => GLuint -- ^ @array@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsVertexArray v1 = liftIO $ dyn273 ptr_glIsVertexArray v1
-
-{-# NOINLINE ptr_glIsVertexArray #-}
-ptr_glIsVertexArray :: FunPtr (GLuint -> IO GLboolean)
-ptr_glIsVertexArray = unsafePerformIO $ getCommand "glIsVertexArray"
-
--- glIsVertexArrayAPPLE --------------------------------------------------------
-
--- | This command is an alias for 'glIsVertexArray'.
-glIsVertexArrayAPPLE
-  :: MonadIO m
-  => GLuint -- ^ @array@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsVertexArrayAPPLE v1 = liftIO $ dyn273 ptr_glIsVertexArrayAPPLE v1
-
-{-# NOINLINE ptr_glIsVertexArrayAPPLE #-}
-ptr_glIsVertexArrayAPPLE :: FunPtr (GLuint -> IO GLboolean)
-ptr_glIsVertexArrayAPPLE = unsafePerformIO $ getCommand "glIsVertexArrayAPPLE"
-
--- glIsVertexArrayOES ----------------------------------------------------------
-
--- | This command is an alias for 'glIsVertexArray'.
-glIsVertexArrayOES
-  :: MonadIO m
-  => GLuint -- ^ @array@.
-  -> m GLboolean
-glIsVertexArrayOES v1 = liftIO $ dyn273 ptr_glIsVertexArrayOES v1
-
-{-# NOINLINE ptr_glIsVertexArrayOES #-}
-ptr_glIsVertexArrayOES :: FunPtr (GLuint -> IO GLboolean)
-ptr_glIsVertexArrayOES = unsafePerformIO $ getCommand "glIsVertexArrayOES"
 
