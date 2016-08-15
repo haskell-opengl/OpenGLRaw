@@ -6,6 +6,7 @@ import qualified Data.List as L
 import qualified Data.Map.Strict as M
 import qualified Data.Maybe as DM
 import qualified Data.Set as S
+import qualified Text.PrettyPrint.HughesPJClass as P
 import qualified System.Directory as D
 import qualified System.Environment as E
 import qualified System.FilePath as F
@@ -78,9 +79,8 @@ printTokens api registry = do
         ["All enumeration tokens from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
   startModule ["Tokens"] (Just "{-# LANGUAGE CPP, PatternSynonyms, ScopedTypeVariables #-}\n#if __GLASGOW_HASKELL__ >= 800\n{-# OPTIONS_GHC -Wno-missing-pattern-synonym-signatures #-}\n#endif") comment $ \moduleName h -> do
-    SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
-    SI.hPutStrLn h ""
-    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
+    hRender h $ Module moduleName P.empty
+    hRender h $ Import (moduleNameFor ["Types"]) P.empty
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . unlines . convertEnum)
       [ e
@@ -94,10 +94,7 @@ printGroups api registry = do
         ["All enumeration groups from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
   startModule ["Groups"] Nothing comment $ \moduleName h -> do
-    SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
-    SI.hPutStrLn h $ "  -- $EnumerantGroups"
-    SI.hPutStrLn h $ ") where"
-    SI.hPutStrLn h ""
+    hRender h $ Module moduleName (P.text "(\n  -- $EnumerantGroups\n)")
     SI.hPutStrLn h $ "-- $EnumerantGroups"
     SI.hPutStrLn h $ "-- Note that the actual set of valid values depend on the OpenGL version, the"
     SI.hPutStrLn h $ "-- chosen profile and the supported extensions. Therefore, the groups mentioned"
@@ -123,7 +120,7 @@ printGroups api registry = do
                            | otherwise = "aliases")
 
 linkToToken :: Enum' -> String
-linkToToken e = "'" ++ moduleNameFor ["Tokens"] ++ "." ++ (unEnumName . enumName) e ++ "'"
+linkToToken e = "'" ++ (case moduleNameFor ["Tokens"] of ModuleName mn -> mn) ++ "." ++ (unEnumName . enumName) e ++ "'"
 
 -- There are several enums which are mentioned in groups, but commented out in
 -- enums (12 GL_*_ICC_SGIX enumerants). These are implicitly filtered out below.
@@ -156,15 +153,14 @@ printForeign :: M.Map String String -> IO ()
 printForeign sigMap = do
   let comment = ["All foreign imports."]
   startModule ["Foreign"] (Just "{-# LANGUAGE CPP #-}\n{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
-    SI.hPutStrLn h $ "module " ++ moduleName ++ " where"
-    SI.hPutStrLn h ""
-    SI.hPutStrLn h "import Foreign.C.Types"
-    SI.hPutStrLn h "import Foreign.Marshal.Error ( throwIf )"
-    SI.hPutStrLn h "import Foreign.Ptr"
-    SI.hPutStrLn h $ "import " ++ moduleNameFor ["GetProcAddress"] ++ " ( getProcAddress )"
-    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
-    SI.hPutStrLn h "import Numeric.Fixed"
-    SI.hPutStrLn h "import Numeric.Half"
+    hRender h $ Module moduleName P.empty
+    hRender h $ Import (ModuleName "Foreign.C.Types") P.empty
+    hRender h $ Import (ModuleName "Foreign.Marshal.Error") (P.text "( throwIf )")
+    hRender h $ Import (ModuleName "Foreign.Ptr") P.empty
+    hRender h $ Import (moduleNameFor ["GetProcAddress"]) (P.text "( getProcAddress )")
+    hRender h $ Import (moduleNameFor ["Types"]) P.empty
+    hRender h $ Import (ModuleName "Numeric.Fixed") P.empty
+    hRender h $ Import (ModuleName "Numeric.Half") P.empty
     SI.hPutStrLn h ""
     SI.hPutStrLn h "getCommand :: String -> IO (FunPtr a)"
     SI.hPutStrLn h "getCommand cmd ="
@@ -189,11 +185,9 @@ printFunctions api registry sigMap = do
       mnames = [ [ "Functions", "F" ++ justifyRight 2 '0' (show i) ] |
                    i <- [ 1 .. length cmds ] ]
   startModule ["Functions"] Nothing comment $ \moduleName h -> do
-    SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
-    SI.hPutStrLn h . separate (("module " ++) . moduleNameFor) $ mnames
-    SI.hPutStrLn h ") where"
-    SI.hPutStrLn h ""
-    mapM_ (SI.hPutStrLn h . ("import " ++) . moduleNameFor) mnames
+    hRender h $ Module moduleName (P.text ("(\n" ++ separate (\x -> "module " ++ (case moduleNameFor x of ModuleName mn -> mn)) mnames ++ "\n)"))
+    CM.forM_ mnames $ \mname ->
+      hRender h $ Import (moduleNameFor mname) P.empty
   CM.zipWithM_ (printSubFunctions api registry sigMap) mnames cmds
 
 printSubFunctions :: API -> Registry -> M.Map String String ->
@@ -203,15 +197,12 @@ printSubFunctions api registry sigMap mname cmds = do
         ["Raw functions from the",
          "<http://www.opengl.org/registry/ OpenGL registry>."]
   startModule mname (Just "{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
-    SI.hPutStrLn h $ "module " ++ moduleName ++ " ("
-    SI.hPutStrLn h . separate unCommandName . map fst $ cmds
-    SI.hPutStrLn h ") where"
-    SI.hPutStrLn h ""
-    SI.hPutStrLn h "import Control.Monad.IO.Class ( MonadIO(..) )"
-    SI.hPutStrLn h "import Foreign.Ptr"
-    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Foreign"]
-    SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
-    SI.hPutStrLn h "import System.IO.Unsafe ( unsafePerformIO )"
+    hRender h $ Module moduleName (P.text ("(\n" ++ separate unCommandName (map fst cmds) ++ "\n)"))
+    hRender h $ Import (ModuleName "Control.Monad.IO.Class") (P.text "( MonadIO(..) )")
+    hRender h $ Import (ModuleName "Foreign.Ptr") P.empty
+    hRender h $ Import (moduleNameFor ["Foreign"]) P.empty
+    hRender h $ Import (moduleNameFor ["Types"]) P.empty
+    hRender h $ Import (ModuleName "System.IO.Unsafe") (P.text "( unsafePerformIO )")
     SI.hPutStrLn h ""
     mapM_ (SI.hPutStrLn h . showCommand api registry sigMap . snd) cmds
 
@@ -341,22 +332,18 @@ printReExports extModules = do
   CM.forM_ reExports $ \((category, mangledCategory), mangledExtNames) -> do
     let comment = ["A convenience module, combining all raw modules containing " ++ category ++ " extensions."]
     startModule [mangledCategory] Nothing comment $ \moduleName h -> do
-      SI.hPutStrLn h $ "module "++ moduleName ++ " ("
-      SI.hPutStrLn h $ separate (\mangledExtName -> "module " ++ extensionNameFor mangledExtName) mangledExtNames
-      SI.hPutStrLn h ") where"
-      SI.hPutStrLn h ""
+      hRender h $ Module moduleName (P.text ("(\n" ++ separate (\mangledExtName -> "module " ++ (case extensionNameFor mangledExtName of ModuleName mn -> mn)) mangledExtNames ++ "\n)"))
       CM.forM_ mangledExtNames $ \mangledExtName ->
-        SI.hPutStrLn h $ "import " ++ extensionNameFor mangledExtName
+        hRender h $ Import (extensionNameFor mangledExtName) P.empty
 
 printExtensionSupport :: [ExtensionModule] -> IO ()
 printExtensionSupport extModules = do
   let comment = ["Extension support predicates."]
   startModule ["ExtensionPredicates"] (Just "{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
-    SI.hPutStrLn h $ "module "++ moduleName ++ " where"
-    SI.hPutStrLn h $ ""
-    SI.hPutStrLn h $ "import Control.Monad.IO.Class ( MonadIO(..) )"
-    SI.hPutStrLn h $ "import Data.Set ( member )"
-    SI.hPutStrLn h $ "import " ++ moduleNameFor ["GetProcAddress"] ++ " ( getExtensions, extensions )"
+    hRender h $ Module moduleName P.empty
+    hRender h $ Import (ModuleName "Control.Monad.IO.Class") (P.text "( MonadIO(..) )")
+    hRender h $ Import (ModuleName "Data.Set") (P.text "( member )")
+    hRender h $ Import (moduleNameFor ["GetProcAddress"]) (P.text "( getExtensions, extensions )")
     let names = sortUnique [ extName | (extName, _, _) <- extModules]
     CM.forM_ names $ \extName -> do
       let predNameMonad = extensionPredicateNameMonad extName
@@ -376,7 +363,7 @@ printExtensionSupport extModules = do
       SI.hPutStrLn h $ predName ++ " = member " ++ show extString ++ " extensions"
       SI.hPutStrLn h $ "{-# NOINLINE " ++ predName ++ " #-}"
 
-extensionNameFor :: ExtensionName -> String
+extensionNameFor :: ExtensionName -> ModuleName
 extensionNameFor mangledExtName = moduleNameFor [extensionNameCategory mangledExtName, extensionNameName mangledExtName]
 
 supports :: API -> Maybe [API] -> Bool
@@ -394,33 +381,32 @@ printExtension :: [String] -> Maybe ExtensionName -> ExtensionParts -> IO ()
 printExtension moduleNameSuffix mbExtName (ts, es, cs) = do
   let pragma = if null es then Nothing else Just "{-# LANGUAGE PatternSynonyms #-}"
   startModule moduleNameSuffix pragma [] $ \moduleName h -> do
-    SI.hPutStrLn h $ "module "++ moduleName ++ " ("
-    flip (maybe (return ())) mbExtName $ \extName -> do
-      SI.hPutStrLn h "  -- * Extension Support"
-      SI.hPutStrLn h $ separate id [ extensionPredicateNameMonad extName
-                                   , extensionPredicateName extName ] ++ ","
-    CM.unless (null ts) $ do
-      SI.hPutStrLn h "  -- * Types"
-      SI.hPutStr h $ separate unTypeName ts
-      SI.hPutStrLn h $ if null es && null cs then "" else ","
-    CM.unless (null es) $ do
-      SI.hPutStrLn h "  -- * Enums"
-      SI.hPutStr h $ separate (("pattern " ++) . unEnumName . enumName) es
-      SI.hPutStrLn h $ if null cs then "" else ","
-    CM.unless (null cs) $ do
-      SI.hPutStrLn h "  -- * Functions"
-      SI.hPutStr h $ separate (unCommandName . commandName) cs
-      SI.hPutStrLn h ""
-    SI.hPutStrLn h ") where"
-    SI.hPutStrLn h ""
+    let extStr = flip (maybe "") mbExtName $ \extName ->
+                   "  -- * Extension Support\n" ++
+                   separate id [ extensionPredicateNameMonad extName
+                               , extensionPredicateName extName ] ++ ",\n"
+        typeStr  | null ts = ""
+                 | otherwise = "  -- * Types\n" ++
+                               separate unTypeName ts ++
+                               if null es && null cs then "\n" else ",\n"
+        enumStr | null es = ""
+                | otherwise = "  -- * Enums\n" ++
+                              separate (("pattern " ++) . unEnumName . enumName) es ++
+                              if null cs then "\n" else ",\n"
+        funcStr | null cs = ""
+                | otherwise = "  -- * Functions\n" ++
+                              separate (unCommandName . commandName) cs ++
+                              "\n"
+
+    hRender h $ Module moduleName (P.text ("(\n" ++ extStr ++ typeStr ++ enumStr ++ funcStr ++ ")"))
     CM.when (DM.isJust mbExtName) $
-      SI.hPutStrLn h $ "import " ++ moduleNameFor ["ExtensionPredicates"]
+      hRender h $ Import (moduleNameFor ["ExtensionPredicates"]) P.empty
     CM.unless (null ts) $
-      SI.hPutStrLn h $ "import " ++ moduleNameFor ["Types"]
+      hRender h $ Import (moduleNameFor ["Types"]) P.empty
     CM.unless (null es) $
-      SI.hPutStrLn h $ "import " ++ moduleNameFor ["Tokens"]
+      hRender h $ Import (moduleNameFor ["Tokens"]) P.empty
     CM.unless (null cs) $
-      SI.hPutStrLn h $ "import " ++ moduleNameFor ["Functions"]
+      hRender h $ Import (moduleNameFor ["Functions"]) P.empty
 
 extensionPredicateName :: ExtensionName -> String
 extensionPredicateName extName =
@@ -450,12 +436,9 @@ printTopLevel api extModules = do
                     , "plus" ]
                 , "all extensions." ]
   startModule [] Nothing comment $ \moduleName h -> do
-    SI.hPutStrLn h $ "module "++ moduleName ++ " ("
-    SI.hPutStrLn h $ separate (\m -> "module " ++ m) moduleNames
-    SI.hPutStrLn h ") where"
-    SI.hPutStrLn h ""
+    hRender h $ Module moduleName (P.text ("(\n" ++ separate (\(ModuleName m) -> "module " ++ m) moduleNames ++ "\n)"))
     CM.forM_ moduleNames $ \theModuleName ->
-      SI.hPutStrLn h $ "import " ++ theModuleName
+      hRender h $ Import theModuleName P.empty
 
 apiName :: API -> String
 apiName api = case unAPI api of
@@ -467,7 +450,7 @@ apiName api = case unAPI api of
 sortUnique :: Ord a => [a] -> [a]
 sortUnique = S.toList . S.fromList
 
-startModule :: [String] -> Maybe String -> [String] -> (String -> SI.Handle -> IO ()) -> IO ()
+startModule :: [String] -> Maybe String -> [String] -> (ModuleName -> SI.Handle -> IO ()) -> IO ()
 startModule moduleNameSuffix mbPragma comments action = do
   let path = modulePathFor moduleNameSuffix
       moduleName = moduleNameFor moduleNameSuffix
@@ -476,8 +459,8 @@ startModule moduleNameSuffix mbPragma comments action = do
     printModuleHeader h mbPragma moduleName comments
     action moduleName h
 
-moduleNameFor :: [String] -> String
-moduleNameFor = L.intercalate "." . moduleNameParts
+moduleNameFor :: [String] -> ModuleName
+moduleNameFor = ModuleName . L.intercalate "." . moduleNameParts
 
 modulePathFor :: [String] -> FilePath
 modulePathFor moduleNameSuffix = F.joinPath (moduleNameParts moduleNameSuffix) `F.addExtension` "hs"
@@ -485,8 +468,8 @@ modulePathFor moduleNameSuffix = F.joinPath (moduleNameParts moduleNameSuffix) `
 moduleNameParts :: [String] -> [String]
 moduleNameParts = (["Graphics", "GL"] ++)
 
-printModuleHeader :: SI.Handle -> Maybe String -> String -> [String] -> IO ()
-printModuleHeader h mbPragma moduleName comments = do
+printModuleHeader :: SI.Handle -> Maybe String -> ModuleName -> [String] -> IO ()
+printModuleHeader h mbPragma (ModuleName moduleName) comments = do
   maybe (return ()) (SI.hPutStrLn h) mbPragma
   SI.hPutStrLn h "--------------------------------------------------------------------------------"
   SI.hPutStrLn h "-- |"
@@ -720,3 +703,27 @@ toEnumType eNamespace eGroup eType suffix eName = TypeName $
 
 isMask :: TypeName -> Bool
 isMask = (== TypeName "GLbitfield")
+
+--------------------------------------------------------------------------------
+
+data Module = Module ModuleName Exports
+
+instance P.Pretty Module where
+  pPrint (Module mn ex) = P.text "module" P.<+> P.pPrint mn P.<+> ex P.<+> P.text "where\n"
+
+type Exports = P.Doc
+
+data Import = Import ModuleName ImportSpecs
+
+instance P.Pretty Import where
+  pPrint (Import mn im) = P.text "import" P.<+> P.pPrint mn P.<+> im
+
+type ImportSpecs = P.Doc
+
+newtype ModuleName = ModuleName String
+
+instance P.Pretty ModuleName where
+  pPrint (ModuleName m) = P.text m
+
+hRender :: P.Pretty a => SI.Handle -> a -> IO ()
+hRender h = SI.hPutStrLn h . P.render . P.pPrint
