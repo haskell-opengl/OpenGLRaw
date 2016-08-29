@@ -75,10 +75,10 @@ featureName version mbProfile =
 
 printTokens :: API -> Registry -> IO ()
 printTokens api registry = do
-  let comment =
-        ["All enumeration tokens from the",
-         "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule ["Tokens"] (Just "{-# LANGUAGE CPP, PatternSynonyms, ScopedTypeVariables #-}\n#if __GLASGOW_HASKELL__ >= 800\n{-# OPTIONS_GHC -Wno-missing-pattern-synonym-signatures #-}\n#endif") comment $ \moduleName h -> do
+  let cmnt =
+        [Comment "All enumeration tokens from the",
+         Comment "<http://www.opengl.org/registry/ OpenGL registry>."]
+  startModule ["Tokens"] (Just "{-# LANGUAGE CPP, PatternSynonyms, ScopedTypeVariables #-}\n#if __GLASGOW_HASKELL__ >= 800\n{-# OPTIONS_GHC -Wno-missing-pattern-synonym-signatures #-}\n#endif") cmnt $ \moduleName h -> do
     hRender h $ Module moduleName P.empty
     hRender h $ Import (moduleNameFor ["Types"]) P.empty
     SI.hPutStrLn h ""
@@ -90,34 +90,34 @@ printTokens api registry = do
 
 printGroups :: API -> Registry -> IO ()
 printGroups api registry = do
-  let comment =
-        ["All enumeration groups from the",
-         "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule ["Groups"] Nothing comment $ \moduleName h -> do
+  let cmnt =
+        [Comment "All enumeration groups from the",
+         Comment "<http://www.opengl.org/registry/ OpenGL registry>."]
+  startModule ["Groups"] Nothing cmnt $ \moduleName h -> do
     hRender h $ Module moduleName (P.text "(\n  -- $EnumerantGroups\n)")
-    SI.hPutStrLn h $ "-- $EnumerantGroups"
-    SI.hPutStrLn h $ "-- Note that the actual set of valid values depend on the OpenGL version, the"
-    SI.hPutStrLn h $ "-- chosen profile and the supported extensions. Therefore, the groups mentioned"
-    SI.hPutStrLn h $ "-- here should only be considered a rough guideline, for details see the OpenGL"
-    SI.hPutStrLn h $ "-- specification."
+    hRender h $ Comment "$EnumerantGroups"
+    hRender h $ Comment "Note that the actual set of valid values depend on the OpenGL version, the"
+    hRender h $ Comment "chosen profile and the supported extensions. Therefore, the groups mentioned"
+    hRender h $ Comment "here should only be considered a rough guideline, for details see the OpenGL"
+    hRender h $ Comment "specification."
     CM.forM_ (M.assocs (groups registry)) $ \(gn, g) -> do
       let ugn = unGroupName gn
           es = getGroupEnums api registry g
-      SI.hPutStrLn h $ "--"
-      SI.hPutStrLn h $ "-- === #" ++ ugn ++ "# " ++ ugn
-      SI.hPutStrLn h $ "-- " ++ groupHeader es
-      SI.hPutStrLn h $ "--"
+      hRender h $ Comment ""
+      hRender h $ Comment ("=== #" ++ ugn ++ "# " ++ ugn)
+      hRender h $ Comment (groupHeader es)
+      hRender h $ Comment ""
       -- TODO: Improve the alias computation below. It takes quadratic time and
       -- is very naive about what is the canonical name and what is an alias.
       CM.forM_ es $ \e -> do
         let same = L.sort [ f | f <- es, enumValue e == enumValue f ]
         CM.when (e == head same) $ do
-          SI.hPutStrLn h $ "-- * " ++ linkToToken e ++
+          hRender h $ Comment ("* " ++ linkToToken e ++
             (case tail same of
                 [] -> ""
                 aliases -> " (" ++ al ++ ": " ++ L.intercalate ", " (map linkToToken aliases) ++ ")"
                   where al | length aliases == 1 = "alias"
-                           | otherwise = "aliases")
+                           | otherwise = "aliases"))
 
 linkToToken :: Enum' -> String
 linkToToken e = "'" ++ (case moduleNameFor ["Tokens"] of ModuleName mn -> mn) ++ "." ++ (unEnumName . enumName) e ++ "'"
@@ -151,8 +151,8 @@ signatureMap registry = fst $ M.foldl' step (M.empty, 0::Integer) (commands regi
 
 printForeign :: M.Map String String -> IO ()
 printForeign sigMap = do
-  let comment = ["All foreign imports."]
-  startModule ["Foreign"] (Just "{-# LANGUAGE CPP #-}\n{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
+  let cmnt = [Comment "All foreign imports."]
+  startModule ["Foreign"] (Just "{-# LANGUAGE CPP #-}\n{-# OPTIONS_HADDOCK hide #-}") cmnt $ \moduleName h -> do
     hRender h $ Module moduleName P.empty
     hRender h $ Import (ModuleName "Foreign.C.Types") P.empty
     hRender h $ Import (ModuleName "Foreign.Marshal.Error") (P.text "( throwIf )")
@@ -178,13 +178,13 @@ justifyRight n c xs = reverse . take (max n (length xs)) . (++ repeat c) . rever
 
 printFunctions :: API -> Registry -> M.Map String String -> IO ()
 printFunctions api registry sigMap = do
-  let comment =
-        ["All raw functions from the",
-         "<http://www.opengl.org/registry/ OpenGL registry>."]
+  let cmnt =
+        [Comment "All raw functions from the",
+         Comment "<http://www.opengl.org/registry/ OpenGL registry>."]
       cmds = chunksOf 100 . M.toAscList . commands $ registry
       mnames = [ [ "Functions", "F" ++ justifyRight 2 '0' (show i) ] |
                    i <- [ 1 .. length cmds ] ]
-  startModule ["Functions"] Nothing comment $ \moduleName h -> do
+  startModule ["Functions"] Nothing cmnt $ \moduleName h -> do
     hRender h $ Module moduleName (P.text ("(\n" ++ separate (\x -> "module " ++ (case moduleNameFor x of ModuleName mn -> mn)) mnames ++ "\n)"))
     CM.forM_ mnames $ \mname ->
       hRender h $ Import (moduleNameFor mname) P.empty
@@ -193,10 +193,10 @@ printFunctions api registry sigMap = do
 printSubFunctions :: API -> Registry -> M.Map String String ->
                      [String] -> [(CommandName, Command)] -> IO ()
 printSubFunctions api registry sigMap mname cmds = do
-  let comment =
-        ["Raw functions from the",
-         "<http://www.opengl.org/registry/ OpenGL registry>."]
-  startModule mname (Just "{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
+  let cmnt =
+        [Comment "Raw functions from the",
+         Comment "<http://www.opengl.org/registry/ OpenGL registry>."]
+  startModule mname (Just "{-# OPTIONS_HADDOCK hide #-}") cmnt $ \moduleName h -> do
     hRender h $ Module moduleName (P.text ("(\n" ++ separate unCommandName (map fst cmds) ++ "\n)"))
     hRender h $ Import (ModuleName "Control.Monad.IO.Class") (P.text "( MonadIO(..) )")
     hRender h $ Import (ModuleName "Foreign.Ptr") P.empty
@@ -330,16 +330,16 @@ printReExports extModules = do
       reExports = [ (cat, L.sort mangledExtNames)
                   | (cat, mangledExtNames) <- M.toList extMap ]
   CM.forM_ reExports $ \((category, mangledCategory), mangledExtNames) -> do
-    let comment = ["A convenience module, combining all raw modules containing " ++ category ++ " extensions."]
-    startModule [mangledCategory] Nothing comment $ \moduleName h -> do
+    let cmnt = [Comment ("A convenience module, combining all raw modules containing " ++ category ++ " extensions.")]
+    startModule [mangledCategory] Nothing cmnt $ \moduleName h -> do
       hRender h $ Module moduleName (P.text ("(\n" ++ separate (\mangledExtName -> "module " ++ (case extensionNameFor mangledExtName of ModuleName mn -> mn)) mangledExtNames ++ "\n)"))
       CM.forM_ mangledExtNames $ \mangledExtName ->
         hRender h $ Import (extensionNameFor mangledExtName) P.empty
 
 printExtensionSupport :: [ExtensionModule] -> IO ()
 printExtensionSupport extModules = do
-  let comment = ["Extension support predicates."]
-  startModule ["ExtensionPredicates"] (Just "{-# OPTIONS_HADDOCK hide #-}") comment $ \moduleName h -> do
+  let cmnt = [Comment "Extension support predicates."]
+  startModule ["ExtensionPredicates"] (Just "{-# OPTIONS_HADDOCK hide #-}") cmnt $ \moduleName h -> do
     hRender h $ Module moduleName P.empty
     hRender h $ Import (ModuleName "Control.Monad.IO.Class") (P.text "( MonadIO(..) )")
     hRender h $ Import (ModuleName "Data.Set") (P.text "( member )")
@@ -352,13 +352,13 @@ printExtensionSupport extModules = do
                                 , extensionNameCategory extName
                                  , extensionNameName extName ]
       SI.hPutStrLn h $ ""
-      SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
+      hRender h $ Comment ("| Is the " ++ extensionHyperlink extName ++ " extension supported?")
       SI.hPutStrLn h $ predNameMonad ++ " :: MonadIO m => m Bool"
       SI.hPutStrLn h $ predNameMonad ++ " = getExtensions >>= (return . member " ++ show extString ++ ")"
       SI.hPutStrLn h $ ""
-      SI.hPutStrLn h $ "-- | Is the " ++ extensionHyperlink extName ++ " extension supported?"
-      SI.hPutStrLn h $ "-- Note that in the presence of multiple contexts with different capabilities,"
-      SI.hPutStrLn h $ "-- this might be wrong. Use '" ++ predNameMonad ++ "' in those cases instead."
+      hRender h $ Comment ("| Is the " ++ extensionHyperlink extName ++ " extension supported?")
+      hRender h $ Comment "Note that in the presence of multiple contexts with different capabilities,"
+      hRender h $ Comment ("this might be wrong. Use '" ++ predNameMonad ++ "' in those cases instead.")
       SI.hPutStrLn h $ predName ++ " :: Bool"
       SI.hPutStrLn h $ predName ++ " = member " ++ show extString ++ " extensions"
       SI.hPutStrLn h $ "{-# NOINLINE " ++ predName ++ " #-}"
@@ -429,13 +429,13 @@ printTopLevel api extModules = do
       profToReExport = profileToReExport api
       lastComp = featureName (latestVersion api) profToReExport
       moduleNames = [ moduleNameFor [c] | c <- [ lastComp, "GetProcAddress" ] ++ mangledCategories ]
-      comment = [ L.intercalate " "
-                    [ "A convenience module, combining the latest"
-                    , apiName api
-                    , maybe "version" (\p -> unProfileName p ++ " profile") profToReExport
-                    , "plus" ]
-                , "all extensions." ]
-  startModule [] Nothing comment $ \moduleName h -> do
+      cmnt = [ Comment (L.intercalate " "
+                 [ "A convenience module, combining the latest"
+                 , apiName api
+                 , maybe "version" (\p -> unProfileName p ++ " profile") profToReExport
+                 , "plus" ])
+             , Comment "all extensions." ]
+  startModule [] Nothing cmnt $ \moduleName h -> do
     hRender h $ Module moduleName (P.text ("(\n" ++ separate (\(ModuleName m) -> "module " ++ m) moduleNames ++ "\n)"))
     CM.forM_ moduleNames $ \theModuleName ->
       hRender h $ Import theModuleName P.empty
@@ -450,7 +450,7 @@ apiName api = case unAPI api of
 sortUnique :: Ord a => [a] -> [a]
 sortUnique = S.toList . S.fromList
 
-startModule :: [String] -> Maybe String -> [String] -> (ModuleName -> SI.Handle -> IO ()) -> IO ()
+startModule :: [String] -> Maybe String -> [Comment] -> (ModuleName -> SI.Handle -> IO ()) -> IO ()
 startModule moduleNameSuffix mbPragma comments action = do
   let path = modulePathFor moduleNameSuffix
       moduleName = moduleNameFor moduleNameSuffix
@@ -468,23 +468,23 @@ modulePathFor moduleNameSuffix = F.joinPath (moduleNameParts moduleNameSuffix) `
 moduleNameParts :: [String] -> [String]
 moduleNameParts = (["Graphics", "GL"] ++)
 
-printModuleHeader :: SI.Handle -> Maybe String -> ModuleName -> [String] -> IO ()
+printModuleHeader :: SI.Handle -> Maybe String -> ModuleName -> [Comment] -> IO ()
 printModuleHeader h mbPragma (ModuleName moduleName) comments = do
   maybe (return ()) (SI.hPutStrLn h) mbPragma
-  SI.hPutStrLn h "--------------------------------------------------------------------------------"
-  SI.hPutStrLn h "-- |"
-  SI.hPutStrLn h $ "-- Module      :  " ++ moduleName
-  SI.hPutStrLn h "-- Copyright   :  (c) Sven Panne 2016"
-  SI.hPutStrLn h "-- License     :  BSD3"
-  SI.hPutStrLn h "--"
-  SI.hPutStrLn h "-- Maintainer  :  Sven Panne <svenpanne@gmail.com>"
-  SI.hPutStrLn h "-- Stability   :  stable"
-  SI.hPutStrLn h "-- Portability :  portable"
-  SI.hPutStrLn h "--"
+  hRender h $ Comment "------------------------------------------------------------------------------"
+  hRender h $ Comment "|"
+  hRender h $ Comment ("Module      :  " ++ moduleName)
+  hRender h $ Comment "Copyright   :  (c) Sven Panne 2016"
+  hRender h $ Comment "License     :  BSD3"
+  hRender h $ Comment ""
+  hRender h $ Comment "Maintainer  :  Sven Panne <svenpanne@gmail.com>"
+  hRender h $ Comment "Stability   :  stable"
+  hRender h $ Comment "Portability :  portable"
+  hRender h $ Comment ""
   CM.unless (null comments) $ do
-    mapM_ (SI.hPutStrLn h . ("-- " ++)) comments
-    SI.hPutStrLn h "--"
-  SI.hPutStrLn h "--------------------------------------------------------------------------------"
+    mapM_ (hRender h) comments
+    hRender h $ Comment ""
+  hRender h $ Comment "------------------------------------------------------------------------------"
   SI.hPutStrLn h ""
 
 -- Annoyingly enough, the OpenGL registry doesn't contain any enums for
@@ -556,9 +556,9 @@ convertEnum e =
 
 showCommand :: API -> Registry -> M.Map String String -> Command -> String
 showCommand api registry sigMap c =
-  showString (take 80 ("-- " ++ name ++ " " ++ repeat '-') ++ "\n\n") .
+  showString (P.render (P.pPrint (Comment (take 77 (name ++ " " ++ repeat '-'))) P.$+$ P.text "" P.$+$ P.text "")) .
 
-  showString comment .
+  showString (P.render cmnt) .
 
   showString (name ++ "\n") .
   showString ("  :: MonadIO m\n") .
@@ -579,9 +579,9 @@ showCommand api registry sigMap c =
         signature withComment = showSignatureFromCommand registry c withComment
         urls = M.findWithDefault [] (api, CommandName name) manPageURLs
         links = L.intercalate " or " (map renderURL urls)
-        comment = case concat (man ++ ve ++ al) of
-                    ""  -> ""
-                    cs -> "-- |" ++ cs ++ "\n"
+        cmnt = case concat (man ++ ve ++ al) of
+                 ""  -> P.empty
+                 cs -> P.pPrint (Comment ("|" ++ cs)) P.$+$ P.text ""
         man = case urls of
                 []  -> []
                 [_] -> [" Manual page for "  ++ links ++ "."]
@@ -604,20 +604,20 @@ showSignatureFromCommand registry c withComment =
      [showSignatureElement registry withComment True (resultType c)])
 
 showSignatureElement :: Registry -> Bool -> Bool -> SignatureElement -> String
-showSignatureElement registry withComment isResult sigElem = el ++ comment
+showSignatureElement registry withComment isResult sigElem = el ++ cmnt
   where el | isResult  = monad ++ " " ++ showsPrec 11 sigElem ""
            | otherwise = show sigElem
         monad | withComment = "m"
               | otherwise = "IO"
-        comment | withComment = showComment registry name sigElem
-                | otherwise   = ""
+        cmnt | withComment = P.render (showComment registry name sigElem P.$+$ P.text "")
+             | otherwise   = ""
         name | isResult  = ""
              | otherwise = signatureElementName sigElem
 
-showComment :: Registry -> String -> SignatureElement -> String
+showComment :: Registry -> String -> SignatureElement -> P.Doc
 showComment registry name sigElem
-  | null name' && null info = "\n"
-  | otherwise = " -- ^" ++ name' ++ info ++ ".\n"
+  | null name' && null info = P.text ""
+  | otherwise = P.text " " P.<> P.pPrint (Comment ("^" ++ name' ++ info ++ "."))
 
   where name' | null name = ""
               | otherwise = " " ++ inlineCode name
@@ -724,6 +724,13 @@ newtype ModuleName = ModuleName String
 
 instance P.Pretty ModuleName where
   pPrint (ModuleName m) = P.text m
+
+newtype Comment = Comment String
+
+instance P.Pretty Comment where
+  pPrint (Comment c) | null c         = P.text "--"
+                     | all (== '-') c = P.pPrint (Comment "") P.<> P.text c
+                     | otherwise      = P.pPrint (Comment "") P.<+> P.text c
 
 hRender :: P.Pretty a => SI.Handle -> a -> IO ()
 hRender h = SI.hPutStrLn h . P.render . P.pPrint
