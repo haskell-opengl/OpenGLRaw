@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F23 (
+  glSamplePatternEXT,
+  glSamplePatternSGIS,
+  glSamplerParameterIiv,
+  glSamplerParameterIivEXT,
+  glSamplerParameterIivOES,
+  glSamplerParameterIuiv,
   glSamplerParameterIuivEXT,
   glSamplerParameterIuivOES,
   glSamplerParameterf,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F23 (
   glStencilFuncSeparate,
   glStencilFuncSeparateATI,
   glStencilMask,
-  glStencilMaskSeparate,
-  glStencilOp,
-  glStencilOpSeparate,
-  glStencilOpSeparateATI,
-  glStencilOpValueAMD,
-  glStencilStrokePathInstancedNV,
-  glStencilStrokePathNV
+  glStencilMaskSeparate
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,91 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glSamplePatternEXT ----------------------------------------------------------
+
+glSamplePatternEXT
+  :: MonadIO m
+  => GLenum -- ^ @pattern@ of type @SamplePatternEXT@.
+  -> m ()
+glSamplePatternEXT v1 = liftIO $ dyn4 ptr_glSamplePatternEXT v1
+
+{-# NOINLINE ptr_glSamplePatternEXT #-}
+ptr_glSamplePatternEXT :: FunPtr (GLenum -> IO ())
+ptr_glSamplePatternEXT = unsafePerformIO $ getCommand "glSamplePatternEXT"
+
+-- glSamplePatternSGIS ---------------------------------------------------------
+
+-- | This command is an alias for 'glSamplePatternEXT'.
+glSamplePatternSGIS
+  :: MonadIO m
+  => GLenum -- ^ @pattern@ of type [SamplePatternSGIS](Graphics-GL-Groups.html#SamplePatternSGIS).
+  -> m ()
+glSamplePatternSGIS v1 = liftIO $ dyn4 ptr_glSamplePatternSGIS v1
+
+{-# NOINLINE ptr_glSamplePatternSGIS #-}
+ptr_glSamplePatternSGIS :: FunPtr (GLenum -> IO ())
+ptr_glSamplePatternSGIS = unsafePerformIO $ getCommand "glSamplePatternSGIS"
+
+-- glSamplerParameterIiv -------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
+glSamplerParameterIiv
+  :: MonadIO m
+  => GLuint -- ^ @sampler@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glSamplerParameterIiv v1 v2 v3 = liftIO $ dyn334 ptr_glSamplerParameterIiv v1 v2 v3
+
+{-# NOINLINE ptr_glSamplerParameterIiv #-}
+ptr_glSamplerParameterIiv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glSamplerParameterIiv = unsafePerformIO $ getCommand "glSamplerParameterIiv"
+
+-- glSamplerParameterIivEXT ----------------------------------------------------
+
+-- | This command is an alias for 'glSamplerParameterIiv'.
+glSamplerParameterIivEXT
+  :: MonadIO m
+  => GLuint -- ^ @sampler@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glSamplerParameterIivEXT v1 v2 v3 = liftIO $ dyn334 ptr_glSamplerParameterIivEXT v1 v2 v3
+
+{-# NOINLINE ptr_glSamplerParameterIivEXT #-}
+ptr_glSamplerParameterIivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glSamplerParameterIivEXT = unsafePerformIO $ getCommand "glSamplerParameterIivEXT"
+
+-- glSamplerParameterIivOES ----------------------------------------------------
+
+-- | This command is an alias for 'glSamplerParameterIiv'.
+glSamplerParameterIivOES
+  :: MonadIO m
+  => GLuint -- ^ @sampler@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glSamplerParameterIivOES v1 v2 v3 = liftIO $ dyn334 ptr_glSamplerParameterIivOES v1 v2 v3
+
+{-# NOINLINE ptr_glSamplerParameterIivOES #-}
+ptr_glSamplerParameterIivOES :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glSamplerParameterIivOES = unsafePerformIO $ getCommand "glSamplerParameterIivOES"
+
+-- glSamplerParameterIuiv ------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glSamplerParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glSamplerParameter.xhtml OpenGL 4.x>.
+glSamplerParameterIuiv
+  :: MonadIO m
+  => GLuint -- ^ @sampler@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLuint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
+  -> m ()
+glSamplerParameterIuiv v1 v2 v3 = liftIO $ dyn375 ptr_glSamplerParameterIuiv v1 v2 v3
+
+{-# NOINLINE ptr_glSamplerParameterIuiv #-}
+ptr_glSamplerParameterIuiv :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
+ptr_glSamplerParameterIuiv = unsafePerformIO $ getCommand "glSamplerParameterIuiv"
 
 -- glSamplerParameterIuivEXT ---------------------------------------------------
 
@@ -1484,97 +1569,4 @@ glStencilMaskSeparate v1 v2 = liftIO $ dyn16 ptr_glStencilMaskSeparate v1 v2
 {-# NOINLINE ptr_glStencilMaskSeparate #-}
 ptr_glStencilMaskSeparate :: FunPtr (GLenum -> GLuint -> IO ())
 ptr_glStencilMaskSeparate = unsafePerformIO $ getCommand "glStencilMaskSeparate"
-
--- glStencilOp -----------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOp.xhtml OpenGL 4.x>.
-glStencilOp
-  :: MonadIO m
-  => GLenum -- ^ @fail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> GLenum -- ^ @zfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> GLenum -- ^ @zpass@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> m ()
-glStencilOp v1 v2 v3 = liftIO $ dyn714 ptr_glStencilOp v1 v2 v3
-
-{-# NOINLINE ptr_glStencilOp #-}
-ptr_glStencilOp :: FunPtr (GLenum -> GLenum -> GLenum -> IO ())
-ptr_glStencilOp = unsafePerformIO $ getCommand "glStencilOp"
-
--- glStencilOpSeparate ---------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOpSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOpSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOpSeparate.xhtml OpenGL 4.x>.
-glStencilOpSeparate
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type @StencilFaceDirection@.
-  -> GLenum -- ^ @sfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> GLenum -- ^ @dpfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> GLenum -- ^ @dppass@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> m ()
-glStencilOpSeparate v1 v2 v3 v4 = liftIO $ dyn53 ptr_glStencilOpSeparate v1 v2 v3 v4
-
-{-# NOINLINE ptr_glStencilOpSeparate #-}
-ptr_glStencilOpSeparate :: FunPtr (GLenum -> GLenum -> GLenum -> GLenum -> IO ())
-ptr_glStencilOpSeparate = unsafePerformIO $ getCommand "glStencilOpSeparate"
-
--- glStencilOpSeparateATI ------------------------------------------------------
-
--- | This command is an alias for 'glStencilOpSeparate'.
-glStencilOpSeparateATI
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type @StencilFaceDirection@.
-  -> GLenum -- ^ @sfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> GLenum -- ^ @dpfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> GLenum -- ^ @dppass@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
-  -> m ()
-glStencilOpSeparateATI v1 v2 v3 v4 = liftIO $ dyn53 ptr_glStencilOpSeparateATI v1 v2 v3 v4
-
-{-# NOINLINE ptr_glStencilOpSeparateATI #-}
-ptr_glStencilOpSeparateATI :: FunPtr (GLenum -> GLenum -> GLenum -> GLenum -> IO ())
-ptr_glStencilOpSeparateATI = unsafePerformIO $ getCommand "glStencilOpSeparateATI"
-
--- glStencilOpValueAMD ---------------------------------------------------------
-
-glStencilOpValueAMD
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type @StencilFaceDirection@.
-  -> GLuint -- ^ @value@.
-  -> m ()
-glStencilOpValueAMD v1 v2 = liftIO $ dyn16 ptr_glStencilOpValueAMD v1 v2
-
-{-# NOINLINE ptr_glStencilOpValueAMD #-}
-ptr_glStencilOpValueAMD :: FunPtr (GLenum -> GLuint -> IO ())
-ptr_glStencilOpValueAMD = unsafePerformIO $ getCommand "glStencilOpValueAMD"
-
--- glStencilStrokePathInstancedNV ----------------------------------------------
-
-glStencilStrokePathInstancedNV
-  :: MonadIO m
-  => GLsizei -- ^ @numPaths@.
-  -> GLenum -- ^ @pathNameType@ of type @PathElementType@.
-  -> Ptr a -- ^ @paths@ pointing to @COMPSIZE(numPaths,pathNameType,paths)@ elements of type @PathElement@.
-  -> GLuint -- ^ @pathBase@ of type @Path@.
-  -> GLint -- ^ @reference@ of type @StencilValue@.
-  -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
-  -> GLenum -- ^ @transformType@ of type @PathTransformType@.
-  -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(numPaths,transformType)@ elements of type @GLfloat@.
-  -> m ()
-glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn715 ptr_glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glStencilStrokePathInstancedNV #-}
-ptr_glStencilStrokePathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLint -> GLuint -> GLenum -> Ptr GLfloat -> IO ())
-ptr_glStencilStrokePathInstancedNV = unsafePerformIO $ getCommand "glStencilStrokePathInstancedNV"
-
--- glStencilStrokePathNV -------------------------------------------------------
-
-glStencilStrokePathNV
-  :: MonadIO m
-  => GLuint -- ^ @path@ of type @Path@.
-  -> GLint -- ^ @reference@ of type @StencilValue@.
-  -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
-  -> m ()
-glStencilStrokePathNV v1 v2 v3 = liftIO $ dyn637 ptr_glStencilStrokePathNV v1 v2 v3
-
-{-# NOINLINE ptr_glStencilStrokePathNV #-}
-ptr_glStencilStrokePathNV :: FunPtr (GLuint -> GLint -> GLuint -> IO ())
-ptr_glStencilStrokePathNV = unsafePerformIO $ getCommand "glStencilStrokePathNV"
 

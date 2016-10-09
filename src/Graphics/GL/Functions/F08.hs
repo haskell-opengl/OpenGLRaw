@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F08 (
+  glFogCoordfv,
+  glFogCoordfvEXT,
   glFogCoordhNV,
   glFogCoordhvNV,
   glFogFuncSGIS,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F08 (
   glGenTexturesEXT,
   glGenTransformFeedbacks,
   glGenTransformFeedbacksNV,
-  glGenVertexArrays,
-  glGenVertexArraysAPPLE,
-  glGenVertexArraysOES
+  glGenVertexArrays
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,32 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glFogCoordfv ----------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>.
+glFogCoordfv
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
+  -> m ()
+glFogCoordfv v1 = liftIO $ dyn41 ptr_glFogCoordfv v1
+
+{-# NOINLINE ptr_glFogCoordfv #-}
+ptr_glFogCoordfv :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glFogCoordfv = unsafePerformIO $ getCommand "glFogCoordfv"
+
+-- glFogCoordfvEXT -------------------------------------------------------------
+
+-- | This command is an alias for 'glFogCoordfv'.
+glFogCoordfvEXT
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
+  -> m ()
+glFogCoordfvEXT v1 = liftIO $ dyn41 ptr_glFogCoordfvEXT v1
+
+{-# NOINLINE ptr_glFogCoordfvEXT #-}
+ptr_glFogCoordfvEXT :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glFogCoordfvEXT = unsafePerformIO $ getCommand "glFogCoordfvEXT"
 
 -- glFogCoordhNV ---------------------------------------------------------------
 
@@ -1545,32 +1571,4 @@ glGenVertexArrays v1 v2 = liftIO $ dyn193 ptr_glGenVertexArrays v1 v2
 {-# NOINLINE ptr_glGenVertexArrays #-}
 ptr_glGenVertexArrays :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
 ptr_glGenVertexArrays = unsafePerformIO $ getCommand "glGenVertexArrays"
-
--- glGenVertexArraysAPPLE ------------------------------------------------------
-
--- | This command is an alias for 'glGenVertexArrays'.
-glGenVertexArraysAPPLE
-  :: MonadIO m
-  => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @arrays@ pointing to @n@ elements of type @GLuint@.
-  -> m ()
-glGenVertexArraysAPPLE v1 v2 = liftIO $ dyn193 ptr_glGenVertexArraysAPPLE v1 v2
-
-{-# NOINLINE ptr_glGenVertexArraysAPPLE #-}
-ptr_glGenVertexArraysAPPLE :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
-ptr_glGenVertexArraysAPPLE = unsafePerformIO $ getCommand "glGenVertexArraysAPPLE"
-
--- glGenVertexArraysOES --------------------------------------------------------
-
--- | This command is an alias for 'glGenVertexArrays'.
-glGenVertexArraysOES
-  :: MonadIO m
-  => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @arrays@ pointing to @n@ elements of type @GLuint@.
-  -> m ()
-glGenVertexArraysOES v1 v2 = liftIO $ dyn193 ptr_glGenVertexArraysOES v1 v2
-
-{-# NOINLINE ptr_glGenVertexArraysOES #-}
-ptr_glGenVertexArraysOES :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
-ptr_glGenVertexArraysOES = unsafePerformIO $ getCommand "glGenVertexArraysOES"
 

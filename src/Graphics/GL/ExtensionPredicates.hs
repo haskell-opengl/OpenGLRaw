@@ -96,6 +96,17 @@ gl_AMD_draw_buffers_blend :: Bool
 gl_AMD_draw_buffers_blend = member "GL_AMD_draw_buffers_blend" extensions
 {-# NOINLINE gl_AMD_draw_buffers_blend #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/AMD/gpu_shader_half_float.txt AMD_gpu_shader_half_float> extension supported?
+glGetAMDGPUShaderHalfFloat :: MonadIO m => m Bool
+glGetAMDGPUShaderHalfFloat = getExtensions >>= (return . member "GL_AMD_gpu_shader_half_float")
+
+-- | Is the <https://www.opengl.org/registry/specs/AMD/gpu_shader_half_float.txt AMD_gpu_shader_half_float> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetAMDGPUShaderHalfFloat' in those cases instead.
+gl_AMD_gpu_shader_half_float :: Bool
+gl_AMD_gpu_shader_half_float = member "GL_AMD_gpu_shader_half_float" extensions
+{-# NOINLINE gl_AMD_gpu_shader_half_float #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/AMD/gpu_shader_int64.txt AMD_gpu_shader_int64> extension supported?
 glGetAMDGPUShaderInt64 :: MonadIO m => m Bool
 glGetAMDGPUShaderInt64 = getExtensions >>= (return . member "GL_AMD_gpu_shader_int64")

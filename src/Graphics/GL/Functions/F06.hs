@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F06 (
+  glDepthRangefOES,
+  glDepthRangex,
   glDepthRangexOES,
   glDetachObjectARB,
   glDetachShader,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F06 (
   glEdgeFlagPointerListIBM,
   glEdgeFlagv,
   glElementPointerAPPLE,
-  glElementPointerATI,
-  glEnable,
-  glEnableClientState
+  glElementPointerATI
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,33 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glDepthRangefOES ------------------------------------------------------------
+
+-- | This command is an alias for 'glDepthRangef'.
+glDepthRangefOES
+  :: MonadIO m
+  => GLclampf -- ^ @n@ of type @ClampedFloat32@.
+  -> GLclampf -- ^ @f@ of type @ClampedFloat32@.
+  -> m ()
+glDepthRangefOES v1 v2 = liftIO $ dyn223 ptr_glDepthRangefOES v1 v2
+
+{-# NOINLINE ptr_glDepthRangefOES #-}
+ptr_glDepthRangefOES :: FunPtr (GLclampf -> GLclampf -> IO ())
+ptr_glDepthRangefOES = unsafePerformIO $ getCommand "glDepthRangefOES"
+
+-- glDepthRangex ---------------------------------------------------------------
+
+glDepthRangex
+  :: MonadIO m
+  => GLfixed -- ^ @n@.
+  -> GLfixed -- ^ @f@.
+  -> m ()
+glDepthRangex v1 v2 = liftIO $ dyn224 ptr_glDepthRangex v1 v2
+
+{-# NOINLINE ptr_glDepthRangex #-}
+ptr_glDepthRangex :: FunPtr (GLfixed -> GLfixed -> IO ())
+ptr_glDepthRangex = unsafePerformIO $ getCommand "glDepthRangex"
 
 -- glDepthRangexOES ------------------------------------------------------------
 
@@ -1597,30 +1624,4 @@ glElementPointerATI v1 v2 = liftIO $ dyn230 ptr_glElementPointerATI v1 v2
 {-# NOINLINE ptr_glElementPointerATI #-}
 ptr_glElementPointerATI :: FunPtr (GLenum -> Ptr a -> IO ())
 ptr_glElementPointerATI = unsafePerformIO $ getCommand "glElementPointerATI"
-
--- glEnable --------------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>.
-glEnable
-  :: MonadIO m
-  => GLenum -- ^ @cap@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
-  -> m ()
-glEnable v1 = liftIO $ dyn4 ptr_glEnable v1
-
-{-# NOINLINE ptr_glEnable #-}
-ptr_glEnable :: FunPtr (GLenum -> IO ())
-ptr_glEnable = unsafePerformIO $ getCommand "glEnable"
-
--- glEnableClientState ---------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>.
-glEnableClientState
-  :: MonadIO m
-  => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
-  -> m ()
-glEnableClientState v1 = liftIO $ dyn4 ptr_glEnableClientState v1
-
-{-# NOINLINE ptr_glEnableClientState #-}
-ptr_glEnableClientState :: FunPtr (GLenum -> IO ())
-ptr_glEnableClientState = unsafePerformIO $ getCommand "glEnableClientState"
 

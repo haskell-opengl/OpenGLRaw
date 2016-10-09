@@ -15,6 +15,10 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F13 (
+  glGetUniformLocation,
+  glGetUniformLocationARB,
+  glGetUniformOffsetEXT,
+  glGetUniformSubroutineuiv,
   glGetUniformdv,
   glGetUniformfv,
   glGetUniformfvARB,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F13 (
   glGetnUniformivARB,
   glGetnUniformivEXT,
   glGetnUniformivKHR,
-  glGetnUniformui64vARB,
-  glGetnUniformuiv,
-  glGetnUniformuivARB,
-  glGetnUniformuivKHR,
-  glGlobalAlphaFactorbSUN
+  glGetnUniformui64vARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,62 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetUniformLocation --------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniformLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformLocation.xhtml OpenGL 4.x>.
+glGetUniformLocation
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> Ptr GLchar -- ^ @name@.
+  -> m GLint
+glGetUniformLocation v1 v2 = liftIO $ dyn310 ptr_glGetUniformLocation v1 v2
+
+{-# NOINLINE ptr_glGetUniformLocation #-}
+ptr_glGetUniformLocation :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
+ptr_glGetUniformLocation = unsafePerformIO $ getCommand "glGetUniformLocation"
+
+-- glGetUniformLocationARB -----------------------------------------------------
+
+-- | This command is an alias for 'glGetUniformLocation'.
+glGetUniformLocationARB
+  :: MonadIO m
+  => GLhandleARB -- ^ @programObj@ of type @handleARB@.
+  -> Ptr GLcharARB -- ^ @name@.
+  -> m GLint
+glGetUniformLocationARB v1 v2 = liftIO $ dyn311 ptr_glGetUniformLocationARB v1 v2
+
+{-# NOINLINE ptr_glGetUniformLocationARB #-}
+ptr_glGetUniformLocationARB :: FunPtr (GLhandleARB -> Ptr GLcharARB -> IO GLint)
+ptr_glGetUniformLocationARB = unsafePerformIO $ getCommand "glGetUniformLocationARB"
+
+-- glGetUniformOffsetEXT -------------------------------------------------------
+
+glGetUniformOffsetEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> m GLintptr -- ^ of type @BufferOffset@.
+glGetUniformOffsetEXT v1 v2 = liftIO $ dyn429 ptr_glGetUniformOffsetEXT v1 v2
+
+{-# NOINLINE ptr_glGetUniformOffsetEXT #-}
+ptr_glGetUniformOffsetEXT :: FunPtr (GLuint -> GLint -> IO GLintptr)
+ptr_glGetUniformOffsetEXT = unsafePerformIO $ getCommand "glGetUniformOffsetEXT"
+
+-- glGetUniformSubroutineuiv ---------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniformSubroutine.xhtml OpenGL 4.x>.
+glGetUniformSubroutineuiv
+  :: MonadIO m
+  => GLenum -- ^ @shadertype@.
+  -> GLint -- ^ @location@.
+  -> Ptr GLuint -- ^ @params@ pointing to @1@ element of type @GLuint@.
+  -> m ()
+glGetUniformSubroutineuiv v1 v2 v3 = liftIO $ dyn75 ptr_glGetUniformSubroutineuiv v1 v2 v3
+
+{-# NOINLINE ptr_glGetUniformSubroutineuiv #-}
+ptr_glGetUniformSubroutineuiv :: FunPtr (GLenum -> GLint -> Ptr GLuint -> IO ())
+ptr_glGetUniformSubroutineuiv = unsafePerformIO $ getCommand "glGetUniformSubroutineuiv"
 
 -- glGetUniformdv --------------------------------------------------------------
 
@@ -1561,63 +1617,4 @@ glGetnUniformui64vARB v1 v2 v3 v4 = liftIO $ dyn460 ptr_glGetnUniformui64vARB v1
 {-# NOINLINE ptr_glGetnUniformui64vARB #-}
 ptr_glGetnUniformui64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
 ptr_glGetnUniformui64vARB = unsafePerformIO $ getCommand "glGetnUniformui64vARB"
-
--- glGetnUniformuiv ------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
-glGetnUniformuiv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLuint -- ^ @params@.
-  -> m ()
-glGetnUniformuiv v1 v2 v3 v4 = liftIO $ dyn461 ptr_glGetnUniformuiv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetnUniformuiv #-}
-ptr_glGetnUniformuiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glGetnUniformuiv = unsafePerformIO $ getCommand "glGetnUniformuiv"
-
--- glGetnUniformuivARB ---------------------------------------------------------
-
-glGetnUniformuivARB
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLuint -- ^ @params@ pointing to @bufSize@ elements of type @GLuint@.
-  -> m ()
-glGetnUniformuivARB v1 v2 v3 v4 = liftIO $ dyn461 ptr_glGetnUniformuivARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetnUniformuivARB #-}
-ptr_glGetnUniformuivARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glGetnUniformuivARB = unsafePerformIO $ getCommand "glGetnUniformuivARB"
-
--- glGetnUniformuivKHR ---------------------------------------------------------
-
--- | This command is an alias for 'glGetnUniformuiv'.
-glGetnUniformuivKHR
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @bufSize@.
-  -> Ptr GLuint -- ^ @params@.
-  -> m ()
-glGetnUniformuivKHR v1 v2 v3 v4 = liftIO $ dyn461 ptr_glGetnUniformuivKHR v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetnUniformuivKHR #-}
-ptr_glGetnUniformuivKHR :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glGetnUniformuivKHR = unsafePerformIO $ getCommand "glGetnUniformuivKHR"
-
--- glGlobalAlphaFactorbSUN -----------------------------------------------------
-
-glGlobalAlphaFactorbSUN
-  :: MonadIO m
-  => GLbyte -- ^ @factor@.
-  -> m ()
-glGlobalAlphaFactorbSUN v1 = liftIO $ dyn462 ptr_glGlobalAlphaFactorbSUN v1
-
-{-# NOINLINE ptr_glGlobalAlphaFactorbSUN #-}
-ptr_glGlobalAlphaFactorbSUN :: FunPtr (GLbyte -> IO ())
-ptr_glGlobalAlphaFactorbSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactorbSUN"
 

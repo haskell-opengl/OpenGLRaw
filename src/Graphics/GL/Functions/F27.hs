@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F27 (
+  glUniform3d,
+  glUniform3dv,
+  glUniform3f,
+  glUniform3fARB,
+  glUniform3fv,
+  glUniform3fvARB,
   glUniform3i,
   glUniform3i64ARB,
   glUniform3i64NV,
@@ -56,8 +62,10 @@ module Graphics.GL.Functions.F27 (
   glUniformBlockBinding,
   glUniformBufferEXT,
   glUniformHandleui64ARB,
+  glUniformHandleui64IMG,
   glUniformHandleui64NV,
   glUniformHandleui64vARB,
+  glUniformHandleui64vIMG,
   glUniformHandleui64vNV,
   glUniformMatrix2dv,
   glUniformMatrix2fv,
@@ -106,15 +114,7 @@ module Graphics.GL.Functions.F27 (
   glVDPAUFiniNV,
   glVDPAUGetSurfaceivNV,
   glVDPAUInitNV,
-  glVDPAUIsSurfaceNV,
-  glVDPAUMapSurfacesNV,
-  glVDPAURegisterOutputSurfaceNV,
-  glVDPAURegisterVideoSurfaceNV,
-  glVDPAUSurfaceAccessNV,
-  glVDPAUUnmapSurfacesNV,
-  glVDPAUUnregisterSurfaceNV,
-  glValidateProgram,
-  glValidateProgramARB
+  glVDPAUIsSurfaceNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,97 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glUniform3d -----------------------------------------------------------------
+
+glUniform3d
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLdouble -- ^ @x@.
+  -> GLdouble -- ^ @y@.
+  -> GLdouble -- ^ @z@.
+  -> m ()
+glUniform3d v1 v2 v3 v4 = liftIO $ dyn800 ptr_glUniform3d v1 v2 v3 v4
+
+{-# NOINLINE ptr_glUniform3d #-}
+ptr_glUniform3d :: FunPtr (GLint -> GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glUniform3d = unsafePerformIO $ getCommand "glUniform3d"
+
+-- glUniform3dv ----------------------------------------------------------------
+
+glUniform3dv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLdouble -- ^ @value@ pointing to @count*3@ elements of type @GLdouble@.
+  -> m ()
+glUniform3dv v1 v2 v3 = liftIO $ dyn781 ptr_glUniform3dv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform3dv #-}
+ptr_glUniform3dv :: FunPtr (GLint -> GLsizei -> Ptr GLdouble -> IO ())
+ptr_glUniform3dv = unsafePerformIO $ getCommand "glUniform3dv"
+
+-- glUniform3f -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform3f
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLfloat -- ^ @v0@.
+  -> GLfloat -- ^ @v1@.
+  -> GLfloat -- ^ @v2@.
+  -> m ()
+glUniform3f v1 v2 v3 v4 = liftIO $ dyn801 ptr_glUniform3f v1 v2 v3 v4
+
+{-# NOINLINE ptr_glUniform3f #-}
+ptr_glUniform3f :: FunPtr (GLint -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glUniform3f = unsafePerformIO $ getCommand "glUniform3f"
+
+-- glUniform3fARB --------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform3f'.
+glUniform3fARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLfloat -- ^ @v0@.
+  -> GLfloat -- ^ @v1@.
+  -> GLfloat -- ^ @v2@.
+  -> m ()
+glUniform3fARB v1 v2 v3 v4 = liftIO $ dyn801 ptr_glUniform3fARB v1 v2 v3 v4
+
+{-# NOINLINE ptr_glUniform3fARB #-}
+ptr_glUniform3fARB :: FunPtr (GLint -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glUniform3fARB = unsafePerformIO $ getCommand "glUniform3fARB"
+
+-- glUniform3fv ----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform3fv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @count*3@ elements of type @GLfloat@.
+  -> m ()
+glUniform3fv v1 v2 v3 = liftIO $ dyn783 ptr_glUniform3fv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform3fv #-}
+ptr_glUniform3fv :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glUniform3fv = unsafePerformIO $ getCommand "glUniform3fv"
+
+-- glUniform3fvARB -------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform3fv'.
+glUniform3fvARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @count*3@ elements of type @GLfloat@.
+  -> m ()
+glUniform3fvARB v1 v2 v3 = liftIO $ dyn783 ptr_glUniform3fvARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform3fvARB #-}
+ptr_glUniform3fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glUniform3fvARB = unsafePerformIO $ getCommand "glUniform3fvARB"
 
 -- glUniform3i -----------------------------------------------------------------
 
@@ -747,6 +838,20 @@ glUniformHandleui64ARB v1 v2 = liftIO $ dyn790 ptr_glUniformHandleui64ARB v1 v2
 ptr_glUniformHandleui64ARB :: FunPtr (GLint -> GLuint64 -> IO ())
 ptr_glUniformHandleui64ARB = unsafePerformIO $ getCommand "glUniformHandleui64ARB"
 
+-- glUniformHandleui64IMG ------------------------------------------------------
+
+-- | This command is an alias for 'glUniformHandleui64ARB'.
+glUniformHandleui64IMG
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLuint64 -- ^ @value@.
+  -> m ()
+glUniformHandleui64IMG v1 v2 = liftIO $ dyn790 ptr_glUniformHandleui64IMG v1 v2
+
+{-# NOINLINE ptr_glUniformHandleui64IMG #-}
+ptr_glUniformHandleui64IMG :: FunPtr (GLint -> GLuint64 -> IO ())
+ptr_glUniformHandleui64IMG = unsafePerformIO $ getCommand "glUniformHandleui64IMG"
+
 -- glUniformHandleui64NV -------------------------------------------------------
 
 glUniformHandleui64NV
@@ -773,6 +878,21 @@ glUniformHandleui64vARB v1 v2 v3 = liftIO $ dyn792 ptr_glUniformHandleui64vARB v
 {-# NOINLINE ptr_glUniformHandleui64vARB #-}
 ptr_glUniformHandleui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
 ptr_glUniformHandleui64vARB = unsafePerformIO $ getCommand "glUniformHandleui64vARB"
+
+-- glUniformHandleui64vIMG -----------------------------------------------------
+
+-- | This command is an alias for 'glUniformHandleui64vARB'.
+glUniformHandleui64vIMG
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint64 -- ^ @value@ pointing to @count@ elements of type @GLuint64@.
+  -> m ()
+glUniformHandleui64vIMG v1 v2 v3 = liftIO $ dyn792 ptr_glUniformHandleui64vIMG v1 v2 v3
+
+{-# NOINLINE ptr_glUniformHandleui64vIMG #-}
+ptr_glUniformHandleui64vIMG :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
+ptr_glUniformHandleui64vIMG = unsafePerformIO $ getCommand "glUniformHandleui64vIMG"
 
 -- glUniformHandleui64vNV ------------------------------------------------------
 
@@ -1488,111 +1608,4 @@ glVDPAUIsSurfaceNV v1 = liftIO $ dyn820 ptr_glVDPAUIsSurfaceNV v1
 {-# NOINLINE ptr_glVDPAUIsSurfaceNV #-}
 ptr_glVDPAUIsSurfaceNV :: FunPtr (GLvdpauSurfaceNV -> IO GLboolean)
 ptr_glVDPAUIsSurfaceNV = unsafePerformIO $ getCommand "glVDPAUIsSurfaceNV"
-
--- glVDPAUMapSurfacesNV --------------------------------------------------------
-
-glVDPAUMapSurfacesNV
-  :: MonadIO m
-  => GLsizei -- ^ @numSurfaces@.
-  -> Ptr GLvdpauSurfaceNV -- ^ @surfaces@ pointing to @numSurfaces@ elements of type @vdpauSurfaceNV@.
-  -> m ()
-glVDPAUMapSurfacesNV v1 v2 = liftIO $ dyn821 ptr_glVDPAUMapSurfacesNV v1 v2
-
-{-# NOINLINE ptr_glVDPAUMapSurfacesNV #-}
-ptr_glVDPAUMapSurfacesNV :: FunPtr (GLsizei -> Ptr GLvdpauSurfaceNV -> IO ())
-ptr_glVDPAUMapSurfacesNV = unsafePerformIO $ getCommand "glVDPAUMapSurfacesNV"
-
--- glVDPAURegisterOutputSurfaceNV ----------------------------------------------
-
-glVDPAURegisterOutputSurfaceNV
-  :: MonadIO m
-  => Ptr a -- ^ @vdpSurface@.
-  -> GLenum -- ^ @target@.
-  -> GLsizei -- ^ @numTextureNames@.
-  -> Ptr GLuint -- ^ @textureNames@ pointing to @numTextureNames@ elements of type @GLuint@.
-  -> m GLvdpauSurfaceNV -- ^ of type @vdpauSurfaceNV@.
-glVDPAURegisterOutputSurfaceNV v1 v2 v3 v4 = liftIO $ dyn822 ptr_glVDPAURegisterOutputSurfaceNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glVDPAURegisterOutputSurfaceNV #-}
-ptr_glVDPAURegisterOutputSurfaceNV :: FunPtr (Ptr a -> GLenum -> GLsizei -> Ptr GLuint -> IO GLvdpauSurfaceNV)
-ptr_glVDPAURegisterOutputSurfaceNV = unsafePerformIO $ getCommand "glVDPAURegisterOutputSurfaceNV"
-
--- glVDPAURegisterVideoSurfaceNV -----------------------------------------------
-
-glVDPAURegisterVideoSurfaceNV
-  :: MonadIO m
-  => Ptr a -- ^ @vdpSurface@.
-  -> GLenum -- ^ @target@.
-  -> GLsizei -- ^ @numTextureNames@.
-  -> Ptr GLuint -- ^ @textureNames@ pointing to @numTextureNames@ elements of type @GLuint@.
-  -> m GLvdpauSurfaceNV -- ^ of type @vdpauSurfaceNV@.
-glVDPAURegisterVideoSurfaceNV v1 v2 v3 v4 = liftIO $ dyn822 ptr_glVDPAURegisterVideoSurfaceNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glVDPAURegisterVideoSurfaceNV #-}
-ptr_glVDPAURegisterVideoSurfaceNV :: FunPtr (Ptr a -> GLenum -> GLsizei -> Ptr GLuint -> IO GLvdpauSurfaceNV)
-ptr_glVDPAURegisterVideoSurfaceNV = unsafePerformIO $ getCommand "glVDPAURegisterVideoSurfaceNV"
-
--- glVDPAUSurfaceAccessNV ------------------------------------------------------
-
-glVDPAUSurfaceAccessNV
-  :: MonadIO m
-  => GLvdpauSurfaceNV -- ^ @surface@ of type @vdpauSurfaceNV@.
-  -> GLenum -- ^ @access@.
-  -> m ()
-glVDPAUSurfaceAccessNV v1 v2 = liftIO $ dyn823 ptr_glVDPAUSurfaceAccessNV v1 v2
-
-{-# NOINLINE ptr_glVDPAUSurfaceAccessNV #-}
-ptr_glVDPAUSurfaceAccessNV :: FunPtr (GLvdpauSurfaceNV -> GLenum -> IO ())
-ptr_glVDPAUSurfaceAccessNV = unsafePerformIO $ getCommand "glVDPAUSurfaceAccessNV"
-
--- glVDPAUUnmapSurfacesNV ------------------------------------------------------
-
-glVDPAUUnmapSurfacesNV
-  :: MonadIO m
-  => GLsizei -- ^ @numSurface@.
-  -> Ptr GLvdpauSurfaceNV -- ^ @surfaces@ pointing to @numSurface@ elements of type @vdpauSurfaceNV@.
-  -> m ()
-glVDPAUUnmapSurfacesNV v1 v2 = liftIO $ dyn821 ptr_glVDPAUUnmapSurfacesNV v1 v2
-
-{-# NOINLINE ptr_glVDPAUUnmapSurfacesNV #-}
-ptr_glVDPAUUnmapSurfacesNV :: FunPtr (GLsizei -> Ptr GLvdpauSurfaceNV -> IO ())
-ptr_glVDPAUUnmapSurfacesNV = unsafePerformIO $ getCommand "glVDPAUUnmapSurfacesNV"
-
--- glVDPAUUnregisterSurfaceNV --------------------------------------------------
-
-glVDPAUUnregisterSurfaceNV
-  :: MonadIO m
-  => GLvdpauSurfaceNV -- ^ @surface@ of type @vdpauSurfaceNV@.
-  -> m ()
-glVDPAUUnregisterSurfaceNV v1 = liftIO $ dyn824 ptr_glVDPAUUnregisterSurfaceNV v1
-
-{-# NOINLINE ptr_glVDPAUUnregisterSurfaceNV #-}
-ptr_glVDPAUUnregisterSurfaceNV :: FunPtr (GLvdpauSurfaceNV -> IO ())
-ptr_glVDPAUUnregisterSurfaceNV = unsafePerformIO $ getCommand "glVDPAUUnregisterSurfaceNV"
-
--- glValidateProgram -----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glValidateProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glValidateProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glValidateProgram.xhtml OpenGL 4.x>.
-glValidateProgram
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> m ()
-glValidateProgram v1 = liftIO $ dyn2 ptr_glValidateProgram v1
-
-{-# NOINLINE ptr_glValidateProgram #-}
-ptr_glValidateProgram :: FunPtr (GLuint -> IO ())
-ptr_glValidateProgram = unsafePerformIO $ getCommand "glValidateProgram"
-
--- glValidateProgramARB --------------------------------------------------------
-
--- | This command is an alias for 'glValidateProgram'.
-glValidateProgramARB
-  :: MonadIO m
-  => GLhandleARB -- ^ @programObj@ of type @handleARB@.
-  -> m ()
-glValidateProgramARB v1 = liftIO $ dyn137 ptr_glValidateProgramARB v1
-
-{-# NOINLINE ptr_glValidateProgramARB #-}
-ptr_glValidateProgramARB :: FunPtr (GLhandleARB -> IO ())
-ptr_glValidateProgramARB = unsafePerformIO $ getCommand "glValidateProgramARB"
 

@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F05 (
+  glCoverStrokePathNV,
+  glCoverageMaskNV,
   glCoverageModulationNV,
   glCoverageModulationTableNV,
   glCoverageOperationNV,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F05 (
   glDepthRangeIndexedfNV,
   glDepthRangeIndexedfOES,
   glDepthRangedNV,
-  glDepthRangef,
-  glDepthRangefOES,
-  glDepthRangex
+  glDepthRangef
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,31 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glCoverStrokePathNV ---------------------------------------------------------
+
+glCoverStrokePathNV
+  :: MonadIO m
+  => GLuint -- ^ @path@ of type @Path@.
+  -> GLenum -- ^ @coverMode@ of type @PathCoverMode@.
+  -> m ()
+glCoverStrokePathNV v1 v2 = liftIO $ dyn15 ptr_glCoverStrokePathNV v1 v2
+
+{-# NOINLINE ptr_glCoverStrokePathNV #-}
+ptr_glCoverStrokePathNV :: FunPtr (GLuint -> GLenum -> IO ())
+ptr_glCoverStrokePathNV = unsafePerformIO $ getCommand "glCoverStrokePathNV"
+
+-- glCoverageMaskNV ------------------------------------------------------------
+
+glCoverageMaskNV
+  :: MonadIO m
+  => GLboolean -- ^ @mask@.
+  -> m ()
+glCoverageMaskNV v1 = liftIO $ dyn191 ptr_glCoverageMaskNV v1
+
+{-# NOINLINE ptr_glCoverageMaskNV #-}
+ptr_glCoverageMaskNV :: FunPtr (GLboolean -> IO ())
+ptr_glCoverageMaskNV = unsafePerformIO $ getCommand "glCoverageMaskNV"
 
 -- glCoverageModulationNV ------------------------------------------------------
 
@@ -1492,31 +1517,4 @@ glDepthRangef v1 v2 = liftIO $ dyn222 ptr_glDepthRangef v1 v2
 {-# NOINLINE ptr_glDepthRangef #-}
 ptr_glDepthRangef :: FunPtr (GLfloat -> GLfloat -> IO ())
 ptr_glDepthRangef = unsafePerformIO $ getCommand "glDepthRangef"
-
--- glDepthRangefOES ------------------------------------------------------------
-
--- | This command is an alias for 'glDepthRangef'.
-glDepthRangefOES
-  :: MonadIO m
-  => GLclampf -- ^ @n@ of type @ClampedFloat32@.
-  -> GLclampf -- ^ @f@ of type @ClampedFloat32@.
-  -> m ()
-glDepthRangefOES v1 v2 = liftIO $ dyn223 ptr_glDepthRangefOES v1 v2
-
-{-# NOINLINE ptr_glDepthRangefOES #-}
-ptr_glDepthRangefOES :: FunPtr (GLclampf -> GLclampf -> IO ())
-ptr_glDepthRangefOES = unsafePerformIO $ getCommand "glDepthRangefOES"
-
--- glDepthRangex ---------------------------------------------------------------
-
-glDepthRangex
-  :: MonadIO m
-  => GLfixed -- ^ @n@.
-  -> GLfixed -- ^ @f@.
-  -> m ()
-glDepthRangex v1 v2 = liftIO $ dyn224 ptr_glDepthRangex v1 v2
-
-{-# NOINLINE ptr_glDepthRangex #-}
-ptr_glDepthRangex :: FunPtr (GLfixed -> GLfixed -> IO ())
-ptr_glDepthRangex = unsafePerformIO $ getCommand "glDepthRangex"
 

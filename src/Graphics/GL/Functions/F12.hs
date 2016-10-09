@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F12 (
+  glGetQueryIndexediv,
+  glGetQueryObjecti64v,
   glGetQueryObjecti64vEXT,
   glGetQueryObjectiv,
   glGetQueryObjectivARB,
@@ -82,6 +84,7 @@ module Graphics.GL.Functions.F12 (
   glGetTexParameterxv,
   glGetTexParameterxvOES,
   glGetTextureHandleARB,
+  glGetTextureHandleIMG,
   glGetTextureHandleNV,
   glGetTextureImage,
   glGetTextureImageEXT,
@@ -98,6 +101,7 @@ module Graphics.GL.Functions.F12 (
   glGetTextureParameteriv,
   glGetTextureParameterivEXT,
   glGetTextureSamplerHandleARB,
+  glGetTextureSamplerHandleIMG,
   glGetTextureSamplerHandleNV,
   glGetTextureSubImage,
   glGetTrackMatrixivNV,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F12 (
   glGetTranslatedShaderSourceANGLE,
   glGetUniformBlockIndex,
   glGetUniformBufferSizeEXT,
-  glGetUniformIndices,
-  glGetUniformLocation,
-  glGetUniformLocationARB,
-  glGetUniformOffsetEXT,
-  glGetUniformSubroutineuiv
+  glGetUniformIndices
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,37 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetQueryIndexediv ---------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetQueryIndexed.xhtml OpenGL 4.x>.
+glGetQueryIndexediv
+  :: MonadIO m
+  => GLenum -- ^ @target@.
+  -> GLuint -- ^ @index@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glGetQueryIndexediv v1 v2 v3 v4 = liftIO $ dyn351 ptr_glGetQueryIndexediv v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetQueryIndexediv #-}
+ptr_glGetQueryIndexediv :: FunPtr (GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetQueryIndexediv = unsafePerformIO $ getCommand "glGetQueryIndexediv"
+
+-- glGetQueryObjecti64v --------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
+glGetQueryObjecti64v
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint64 -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint64@.
+  -> m ()
+glGetQueryObjecti64v v1 v2 v3 = liftIO $ dyn359 ptr_glGetQueryObjecti64v v1 v2 v3
+
+{-# NOINLINE ptr_glGetQueryObjecti64v #-}
+ptr_glGetQueryObjecti64v :: FunPtr (GLuint -> GLenum -> Ptr GLint64 -> IO ())
+ptr_glGetQueryObjecti64v = unsafePerformIO $ getCommand "glGetQueryObjecti64v"
 
 -- glGetQueryObjecti64vEXT -----------------------------------------------------
 
@@ -1118,6 +1149,19 @@ glGetTextureHandleARB v1 = liftIO $ dyn414 ptr_glGetTextureHandleARB v1
 ptr_glGetTextureHandleARB :: FunPtr (GLuint -> IO GLuint64)
 ptr_glGetTextureHandleARB = unsafePerformIO $ getCommand "glGetTextureHandleARB"
 
+-- glGetTextureHandleIMG -------------------------------------------------------
+
+-- | This command is an alias for 'glGetTextureHandleARB'.
+glGetTextureHandleIMG
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> m GLuint64
+glGetTextureHandleIMG v1 = liftIO $ dyn414 ptr_glGetTextureHandleIMG v1
+
+{-# NOINLINE ptr_glGetTextureHandleIMG #-}
+ptr_glGetTextureHandleIMG :: FunPtr (GLuint -> IO GLuint64)
+ptr_glGetTextureHandleIMG = unsafePerformIO $ getCommand "glGetTextureHandleIMG"
+
 -- glGetTextureHandleNV --------------------------------------------------------
 
 glGetTextureHandleNV
@@ -1362,6 +1406,20 @@ glGetTextureSamplerHandleARB v1 v2 = liftIO $ dyn422 ptr_glGetTextureSamplerHand
 ptr_glGetTextureSamplerHandleARB :: FunPtr (GLuint -> GLuint -> IO GLuint64)
 ptr_glGetTextureSamplerHandleARB = unsafePerformIO $ getCommand "glGetTextureSamplerHandleARB"
 
+-- glGetTextureSamplerHandleIMG ------------------------------------------------
+
+-- | This command is an alias for 'glGetTextureSamplerHandleARB'.
+glGetTextureSamplerHandleIMG
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLuint -- ^ @sampler@.
+  -> m GLuint64
+glGetTextureSamplerHandleIMG v1 v2 = liftIO $ dyn422 ptr_glGetTextureSamplerHandleIMG v1 v2
+
+{-# NOINLINE ptr_glGetTextureSamplerHandleIMG #-}
+ptr_glGetTextureSamplerHandleIMG :: FunPtr (GLuint -> GLuint -> IO GLuint64)
+ptr_glGetTextureSamplerHandleIMG = unsafePerformIO $ getCommand "glGetTextureSamplerHandleIMG"
+
 -- glGetTextureSamplerHandleNV -------------------------------------------------
 
 glGetTextureSamplerHandleNV
@@ -1570,60 +1628,4 @@ glGetUniformIndices v1 v2 v3 v4 = liftIO $ dyn428 ptr_glGetUniformIndices v1 v2 
 {-# NOINLINE ptr_glGetUniformIndices #-}
 ptr_glGetUniformIndices :: FunPtr (GLuint -> GLsizei -> Ptr (Ptr GLchar) -> Ptr GLuint -> IO ())
 ptr_glGetUniformIndices = unsafePerformIO $ getCommand "glGetUniformIndices"
-
--- glGetUniformLocation --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetUniformLocation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glGetUniformLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetUniformLocation.xhtml OpenGL 4.x>.
-glGetUniformLocation
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> Ptr GLchar -- ^ @name@.
-  -> m GLint
-glGetUniformLocation v1 v2 = liftIO $ dyn310 ptr_glGetUniformLocation v1 v2
-
-{-# NOINLINE ptr_glGetUniformLocation #-}
-ptr_glGetUniformLocation :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
-ptr_glGetUniformLocation = unsafePerformIO $ getCommand "glGetUniformLocation"
-
--- glGetUniformLocationARB -----------------------------------------------------
-
--- | This command is an alias for 'glGetUniformLocation'.
-glGetUniformLocationARB
-  :: MonadIO m
-  => GLhandleARB -- ^ @programObj@ of type @handleARB@.
-  -> Ptr GLcharARB -- ^ @name@.
-  -> m GLint
-glGetUniformLocationARB v1 v2 = liftIO $ dyn311 ptr_glGetUniformLocationARB v1 v2
-
-{-# NOINLINE ptr_glGetUniformLocationARB #-}
-ptr_glGetUniformLocationARB :: FunPtr (GLhandleARB -> Ptr GLcharARB -> IO GLint)
-ptr_glGetUniformLocationARB = unsafePerformIO $ getCommand "glGetUniformLocationARB"
-
--- glGetUniformOffsetEXT -------------------------------------------------------
-
-glGetUniformOffsetEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> m GLintptr -- ^ of type @BufferOffset@.
-glGetUniformOffsetEXT v1 v2 = liftIO $ dyn429 ptr_glGetUniformOffsetEXT v1 v2
-
-{-# NOINLINE ptr_glGetUniformOffsetEXT #-}
-ptr_glGetUniformOffsetEXT :: FunPtr (GLuint -> GLint -> IO GLintptr)
-ptr_glGetUniformOffsetEXT = unsafePerformIO $ getCommand "glGetUniformOffsetEXT"
-
--- glGetUniformSubroutineuiv ---------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniformSubroutine.xhtml OpenGL 4.x>.
-glGetUniformSubroutineuiv
-  :: MonadIO m
-  => GLenum -- ^ @shadertype@.
-  -> GLint -- ^ @location@.
-  -> Ptr GLuint -- ^ @params@ pointing to @1@ element of type @GLuint@.
-  -> m ()
-glGetUniformSubroutineuiv v1 v2 v3 = liftIO $ dyn75 ptr_glGetUniformSubroutineuiv v1 v2 v3
-
-{-# NOINLINE ptr_glGetUniformSubroutineuiv #-}
-ptr_glGetUniformSubroutineuiv :: FunPtr (GLenum -> GLint -> Ptr GLuint -> IO ())
-ptr_glGetUniformSubroutineuiv = unsafePerformIO $ getCommand "glGetUniformSubroutineuiv"
 

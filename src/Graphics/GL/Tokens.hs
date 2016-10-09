@@ -2969,6 +2969,24 @@ pattern GL_FLAT = 0x1D00 :: GLenum
 
 pattern GL_FLOAT = 0x1406 :: GLenum
 
+pattern GL_FLOAT16_MAT2_AMD = 0x91C5 :: GLenum
+
+pattern GL_FLOAT16_MAT2x3_AMD = 0x91C8 :: GLenum
+
+pattern GL_FLOAT16_MAT2x4_AMD = 0x91C9 :: GLenum
+
+pattern GL_FLOAT16_MAT3_AMD = 0x91C6 :: GLenum
+
+pattern GL_FLOAT16_MAT3x2_AMD = 0x91CA :: GLenum
+
+pattern GL_FLOAT16_MAT3x4_AMD = 0x91CB :: GLenum
+
+pattern GL_FLOAT16_MAT4_AMD = 0x91C7 :: GLenum
+
+pattern GL_FLOAT16_MAT4x2_AMD = 0x91CC :: GLenum
+
+pattern GL_FLOAT16_MAT4x3_AMD = 0x91CD :: GLenum
+
 pattern GL_FLOAT16_NV = 0x8FF8 :: GLenum
 
 pattern GL_FLOAT16_VEC2_NV = 0x8FF9 :: GLenum

@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F09 (
+  glGenVertexArraysAPPLE,
+  glGenVertexArraysOES,
   glGenVertexShadersEXT,
   glGenerateMipmap,
   glGenerateMipmapEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F09 (
   glGetFloati_vOES,
   glGetFloatv,
   glGetFogFuncSGIS,
-  glGetFragDataIndex,
-  glGetFragDataIndexEXT,
-  glGetFragDataLocation
+  glGetFragDataIndex
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,34 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGenVertexArraysAPPLE ------------------------------------------------------
+
+-- | This command is an alias for 'glGenVertexArrays'.
+glGenVertexArraysAPPLE
+  :: MonadIO m
+  => GLsizei -- ^ @n@.
+  -> Ptr GLuint -- ^ @arrays@ pointing to @n@ elements of type @GLuint@.
+  -> m ()
+glGenVertexArraysAPPLE v1 v2 = liftIO $ dyn193 ptr_glGenVertexArraysAPPLE v1 v2
+
+{-# NOINLINE ptr_glGenVertexArraysAPPLE #-}
+ptr_glGenVertexArraysAPPLE :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
+ptr_glGenVertexArraysAPPLE = unsafePerformIO $ getCommand "glGenVertexArraysAPPLE"
+
+-- glGenVertexArraysOES --------------------------------------------------------
+
+-- | This command is an alias for 'glGenVertexArrays'.
+glGenVertexArraysOES
+  :: MonadIO m
+  => GLsizei -- ^ @n@.
+  -> Ptr GLuint -- ^ @arrays@ pointing to @n@ elements of type @GLuint@.
+  -> m ()
+glGenVertexArraysOES v1 v2 = liftIO $ dyn193 ptr_glGenVertexArraysOES v1 v2
+
+{-# NOINLINE ptr_glGenVertexArraysOES #-}
+ptr_glGenVertexArraysOES :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
+ptr_glGenVertexArraysOES = unsafePerformIO $ getCommand "glGenVertexArraysOES"
 
 -- glGenVertexShadersEXT -------------------------------------------------------
 
@@ -1598,32 +1626,4 @@ glGetFragDataIndex v1 v2 = liftIO $ dyn310 ptr_glGetFragDataIndex v1 v2
 {-# NOINLINE ptr_glGetFragDataIndex #-}
 ptr_glGetFragDataIndex :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
 ptr_glGetFragDataIndex = unsafePerformIO $ getCommand "glGetFragDataIndex"
-
--- glGetFragDataIndexEXT -------------------------------------------------------
-
--- | This command is an alias for 'glGetFragDataIndex'.
-glGetFragDataIndexEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> Ptr GLchar -- ^ @name@.
-  -> m GLint
-glGetFragDataIndexEXT v1 v2 = liftIO $ dyn310 ptr_glGetFragDataIndexEXT v1 v2
-
-{-# NOINLINE ptr_glGetFragDataIndexEXT #-}
-ptr_glGetFragDataIndexEXT :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
-ptr_glGetFragDataIndexEXT = unsafePerformIO $ getCommand "glGetFragDataIndexEXT"
-
--- glGetFragDataLocation -------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataLocation.xhtml OpenGL 4.x>.
-glGetFragDataLocation
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
-  -> m GLint
-glGetFragDataLocation v1 v2 = liftIO $ dyn310 ptr_glGetFragDataLocation v1 v2
-
-{-# NOINLINE ptr_glGetFragDataLocation #-}
-ptr_glGetFragDataLocation :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
-ptr_glGetFragDataLocation = unsafePerformIO $ getCommand "glGetFragDataLocation"
 

@@ -15,6 +15,10 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F18 (
+  glNamedBufferPageCommitmentARB,
+  glNamedBufferPageCommitmentEXT,
+  glNamedBufferStorage,
+  glNamedBufferStorageEXT,
   glNamedBufferSubData,
   glNamedBufferSubDataEXT,
   glNamedCopyBufferSubDataEXT,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F18 (
   glPatchParameteriEXT,
   glPatchParameteriOES,
   glPathColorGenNV,
-  glPathCommandsNV,
-  glPathCoordsNV,
-  glPathCoverDepthFuncNV,
-  glPathDashArrayNV,
-  glPathFogGenNV
+  glPathCommandsNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,68 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glNamedBufferPageCommitmentARB ----------------------------------------------
+
+glNamedBufferPageCommitmentARB
+  :: MonadIO m
+  => GLuint -- ^ @buffer@.
+  -> GLintptr -- ^ @offset@.
+  -> GLsizeiptr -- ^ @size@.
+  -> GLboolean -- ^ @commit@.
+  -> m ()
+glNamedBufferPageCommitmentARB v1 v2 v3 v4 = liftIO $ dyn572 ptr_glNamedBufferPageCommitmentARB v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNamedBufferPageCommitmentARB #-}
+ptr_glNamedBufferPageCommitmentARB :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> GLboolean -> IO ())
+ptr_glNamedBufferPageCommitmentARB = unsafePerformIO $ getCommand "glNamedBufferPageCommitmentARB"
+
+-- glNamedBufferPageCommitmentEXT ----------------------------------------------
+
+glNamedBufferPageCommitmentEXT
+  :: MonadIO m
+  => GLuint -- ^ @buffer@.
+  -> GLintptr -- ^ @offset@.
+  -> GLsizeiptr -- ^ @size@.
+  -> GLboolean -- ^ @commit@.
+  -> m ()
+glNamedBufferPageCommitmentEXT v1 v2 v3 v4 = liftIO $ dyn572 ptr_glNamedBufferPageCommitmentEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNamedBufferPageCommitmentEXT #-}
+ptr_glNamedBufferPageCommitmentEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> GLboolean -> IO ())
+ptr_glNamedBufferPageCommitmentEXT = unsafePerformIO $ getCommand "glNamedBufferPageCommitmentEXT"
+
+-- glNamedBufferStorage --------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferStorage.xhtml OpenGL 4.x>.
+glNamedBufferStorage
+  :: MonadIO m
+  => GLuint -- ^ @buffer@.
+  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
+  -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
+  -> GLbitfield -- ^ @flags@.
+  -> m ()
+glNamedBufferStorage v1 v2 v3 v4 = liftIO $ dyn573 ptr_glNamedBufferStorage v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNamedBufferStorage #-}
+ptr_glNamedBufferStorage :: FunPtr (GLuint -> GLsizeiptr -> Ptr a -> GLbitfield -> IO ())
+ptr_glNamedBufferStorage = unsafePerformIO $ getCommand "glNamedBufferStorage"
+
+-- glNamedBufferStorageEXT -----------------------------------------------------
+
+-- | This command is an alias for 'glNamedBufferStorage'.
+glNamedBufferStorageEXT
+  :: MonadIO m
+  => GLuint -- ^ @buffer@.
+  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
+  -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
+  -> GLbitfield -- ^ @flags@.
+  -> m ()
+glNamedBufferStorageEXT v1 v2 v3 v4 = liftIO $ dyn573 ptr_glNamedBufferStorageEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNamedBufferStorageEXT #-}
+ptr_glNamedBufferStorageEXT :: FunPtr (GLuint -> GLsizeiptr -> Ptr a -> GLbitfield -> IO ())
+ptr_glNamedBufferStorageEXT = unsafePerformIO $ getCommand "glNamedBufferStorageEXT"
 
 -- glNamedBufferSubData --------------------------------------------------------
 
@@ -1560,57 +1622,4 @@ glPathCommandsNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn597 ptr_glPathCommandsNV v1 v2 
 {-# NOINLINE ptr_glPathCommandsNV #-}
 ptr_glPathCommandsNV :: FunPtr (GLuint -> GLsizei -> Ptr GLubyte -> GLsizei -> GLenum -> Ptr a -> IO ())
 ptr_glPathCommandsNV = unsafePerformIO $ getCommand "glPathCommandsNV"
-
--- glPathCoordsNV --------------------------------------------------------------
-
-glPathCoordsNV
-  :: MonadIO m
-  => GLuint -- ^ @path@ of type @Path@.
-  -> GLsizei -- ^ @numCoords@.
-  -> GLenum -- ^ @coordType@ of type @PathCoordType@.
-  -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
-  -> m ()
-glPathCoordsNV v1 v2 v3 v4 = liftIO $ dyn598 ptr_glPathCoordsNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glPathCoordsNV #-}
-ptr_glPathCoordsNV :: FunPtr (GLuint -> GLsizei -> GLenum -> Ptr a -> IO ())
-ptr_glPathCoordsNV = unsafePerformIO $ getCommand "glPathCoordsNV"
-
--- glPathCoverDepthFuncNV ------------------------------------------------------
-
-glPathCoverDepthFuncNV
-  :: MonadIO m
-  => GLenum -- ^ @func@ of type [DepthFunction](Graphics-GL-Groups.html#DepthFunction).
-  -> m ()
-glPathCoverDepthFuncNV v1 = liftIO $ dyn4 ptr_glPathCoverDepthFuncNV v1
-
-{-# NOINLINE ptr_glPathCoverDepthFuncNV #-}
-ptr_glPathCoverDepthFuncNV :: FunPtr (GLenum -> IO ())
-ptr_glPathCoverDepthFuncNV = unsafePerformIO $ getCommand "glPathCoverDepthFuncNV"
-
--- glPathDashArrayNV -----------------------------------------------------------
-
-glPathDashArrayNV
-  :: MonadIO m
-  => GLuint -- ^ @path@ of type @Path@.
-  -> GLsizei -- ^ @dashCount@.
-  -> Ptr GLfloat -- ^ @dashArray@ pointing to @dashCount@ elements of type @GLfloat@.
-  -> m ()
-glPathDashArrayNV v1 v2 v3 = liftIO $ dyn218 ptr_glPathDashArrayNV v1 v2 v3
-
-{-# NOINLINE ptr_glPathDashArrayNV #-}
-ptr_glPathDashArrayNV :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
-ptr_glPathDashArrayNV = unsafePerformIO $ getCommand "glPathDashArrayNV"
-
--- glPathFogGenNV --------------------------------------------------------------
-
-glPathFogGenNV
-  :: MonadIO m
-  => GLenum -- ^ @genMode@ of type @PathGenMode@.
-  -> m ()
-glPathFogGenNV v1 = liftIO $ dyn4 ptr_glPathFogGenNV v1
-
-{-# NOINLINE ptr_glPathFogGenNV #-}
-ptr_glPathFogGenNV :: FunPtr (GLenum -> IO ())
-ptr_glPathFogGenNV = unsafePerformIO $ getCommand "glPathFogGenNV"
 

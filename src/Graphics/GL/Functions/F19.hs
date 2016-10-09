@@ -15,6 +15,10 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F19 (
+  glPathCoordsNV,
+  glPathCoverDepthFuncNV,
+  glPathDashArrayNV,
+  glPathFogGenNV,
   glPathGlyphIndexArrayNV,
   glPathGlyphIndexRangeNV,
   glPathGlyphRangeNV,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F19 (
   glProgramBufferParametersIuivNV,
   glProgramBufferParametersfvNV,
   glProgramEnvParameter4dARB,
-  glProgramEnvParameter4dvARB,
-  glProgramEnvParameter4fARB,
-  glProgramEnvParameter4fvARB,
-  glProgramEnvParameterI4iNV,
-  glProgramEnvParameterI4ivNV
+  glProgramEnvParameter4dvARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,59 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glPathCoordsNV --------------------------------------------------------------
+
+glPathCoordsNV
+  :: MonadIO m
+  => GLuint -- ^ @path@ of type @Path@.
+  -> GLsizei -- ^ @numCoords@.
+  -> GLenum -- ^ @coordType@ of type @PathCoordType@.
+  -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
+  -> m ()
+glPathCoordsNV v1 v2 v3 v4 = liftIO $ dyn598 ptr_glPathCoordsNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glPathCoordsNV #-}
+ptr_glPathCoordsNV :: FunPtr (GLuint -> GLsizei -> GLenum -> Ptr a -> IO ())
+ptr_glPathCoordsNV = unsafePerformIO $ getCommand "glPathCoordsNV"
+
+-- glPathCoverDepthFuncNV ------------------------------------------------------
+
+glPathCoverDepthFuncNV
+  :: MonadIO m
+  => GLenum -- ^ @func@ of type [DepthFunction](Graphics-GL-Groups.html#DepthFunction).
+  -> m ()
+glPathCoverDepthFuncNV v1 = liftIO $ dyn4 ptr_glPathCoverDepthFuncNV v1
+
+{-# NOINLINE ptr_glPathCoverDepthFuncNV #-}
+ptr_glPathCoverDepthFuncNV :: FunPtr (GLenum -> IO ())
+ptr_glPathCoverDepthFuncNV = unsafePerformIO $ getCommand "glPathCoverDepthFuncNV"
+
+-- glPathDashArrayNV -----------------------------------------------------------
+
+glPathDashArrayNV
+  :: MonadIO m
+  => GLuint -- ^ @path@ of type @Path@.
+  -> GLsizei -- ^ @dashCount@.
+  -> Ptr GLfloat -- ^ @dashArray@ pointing to @dashCount@ elements of type @GLfloat@.
+  -> m ()
+glPathDashArrayNV v1 v2 v3 = liftIO $ dyn218 ptr_glPathDashArrayNV v1 v2 v3
+
+{-# NOINLINE ptr_glPathDashArrayNV #-}
+ptr_glPathDashArrayNV :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glPathDashArrayNV = unsafePerformIO $ getCommand "glPathDashArrayNV"
+
+-- glPathFogGenNV --------------------------------------------------------------
+
+glPathFogGenNV
+  :: MonadIO m
+  => GLenum -- ^ @genMode@ of type @PathGenMode@.
+  -> m ()
+glPathFogGenNV v1 = liftIO $ dyn4 ptr_glPathFogGenNV v1
+
+{-# NOINLINE ptr_glPathFogGenNV #-}
+ptr_glPathFogGenNV :: FunPtr (GLenum -> IO ())
+ptr_glPathFogGenNV = unsafePerformIO $ getCommand "glPathFogGenNV"
 
 -- glPathGlyphIndexArrayNV -----------------------------------------------------
 
@@ -1515,68 +1568,4 @@ glProgramEnvParameter4dvARB v1 v2 v3 = liftIO $ dyn330 ptr_glProgramEnvParameter
 {-# NOINLINE ptr_glProgramEnvParameter4dvARB #-}
 ptr_glProgramEnvParameter4dvARB :: FunPtr (GLenum -> GLuint -> Ptr GLdouble -> IO ())
 ptr_glProgramEnvParameter4dvARB = unsafePerformIO $ getCommand "glProgramEnvParameter4dvARB"
-
--- glProgramEnvParameter4fARB --------------------------------------------------
-
--- | The vector equivalent of this command is 'glProgramEnvParameter4fvARB'.
-glProgramEnvParameter4fARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
-  -> GLuint -- ^ @index@.
-  -> GLfloat -- ^ @x@.
-  -> GLfloat -- ^ @y@.
-  -> GLfloat -- ^ @z@.
-  -> GLfloat -- ^ @w@.
-  -> m ()
-glProgramEnvParameter4fARB v1 v2 v3 v4 v5 v6 = liftIO $ dyn623 ptr_glProgramEnvParameter4fARB v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glProgramEnvParameter4fARB #-}
-ptr_glProgramEnvParameter4fARB :: FunPtr (GLenum -> GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glProgramEnvParameter4fARB = unsafePerformIO $ getCommand "glProgramEnvParameter4fARB"
-
--- glProgramEnvParameter4fvARB -------------------------------------------------
-
-glProgramEnvParameter4fvARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
-  -> m ()
-glProgramEnvParameter4fvARB v1 v2 v3 = liftIO $ dyn267 ptr_glProgramEnvParameter4fvARB v1 v2 v3
-
-{-# NOINLINE ptr_glProgramEnvParameter4fvARB #-}
-ptr_glProgramEnvParameter4fvARB :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
-ptr_glProgramEnvParameter4fvARB = unsafePerformIO $ getCommand "glProgramEnvParameter4fvARB"
-
--- glProgramEnvParameterI4iNV --------------------------------------------------
-
--- | The vector equivalent of this command is 'glProgramEnvParameterI4ivNV'.
-glProgramEnvParameterI4iNV
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTarget@.
-  -> GLuint -- ^ @index@.
-  -> GLint -- ^ @x@.
-  -> GLint -- ^ @y@.
-  -> GLint -- ^ @z@.
-  -> GLint -- ^ @w@.
-  -> m ()
-glProgramEnvParameterI4iNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn624 ptr_glProgramEnvParameterI4iNV v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glProgramEnvParameterI4iNV #-}
-ptr_glProgramEnvParameterI4iNV :: FunPtr (GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
-ptr_glProgramEnvParameterI4iNV = unsafePerformIO $ getCommand "glProgramEnvParameterI4iNV"
-
--- glProgramEnvParameterI4ivNV -------------------------------------------------
-
-glProgramEnvParameterI4ivNV
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTarget@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
-  -> m ()
-glProgramEnvParameterI4ivNV v1 v2 v3 = liftIO $ dyn342 ptr_glProgramEnvParameterI4ivNV v1 v2 v3
-
-{-# NOINLINE ptr_glProgramEnvParameterI4ivNV #-}
-ptr_glProgramEnvParameterI4ivNV :: FunPtr (GLenum -> GLuint -> Ptr GLint -> IO ())
-ptr_glProgramEnvParameterI4ivNV = unsafePerformIO $ getCommand "glProgramEnvParameterI4ivNV"
 

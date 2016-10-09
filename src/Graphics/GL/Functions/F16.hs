@@ -15,6 +15,10 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F16 (
+  glMaterialx,
+  glMaterialxOES,
+  glMaterialxv,
+  glMaterialxvOES,
   glMatrixFrustumEXT,
   glMatrixIndexPointerARB,
   glMatrixIndexPointerOES,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F16 (
   glMultiTexCoord1svARB,
   glMultiTexCoord1xOES,
   glMultiTexCoord1xvOES,
-  glMultiTexCoord2bOES,
-  glMultiTexCoord2bvOES,
-  glMultiTexCoord2d,
-  glMultiTexCoord2dARB,
-  glMultiTexCoord2dv
+  glMultiTexCoord2bOES
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,62 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glMaterialx -----------------------------------------------------------------
+
+glMaterialx
+  :: MonadIO m
+  => GLenum -- ^ @face@.
+  -> GLenum -- ^ @pname@.
+  -> GLfixed -- ^ @param@.
+  -> m ()
+glMaterialx v1 v2 v3 = liftIO $ dyn162 ptr_glMaterialx v1 v2 v3
+
+{-# NOINLINE ptr_glMaterialx #-}
+ptr_glMaterialx :: FunPtr (GLenum -> GLenum -> GLfixed -> IO ())
+ptr_glMaterialx = unsafePerformIO $ getCommand "glMaterialx"
+
+-- glMaterialxOES --------------------------------------------------------------
+
+glMaterialxOES
+  :: MonadIO m
+  => GLenum -- ^ @face@.
+  -> GLenum -- ^ @pname@.
+  -> GLfixed -- ^ @param@.
+  -> m ()
+glMaterialxOES v1 v2 v3 = liftIO $ dyn162 ptr_glMaterialxOES v1 v2 v3
+
+{-# NOINLINE ptr_glMaterialxOES #-}
+ptr_glMaterialxOES :: FunPtr (GLenum -> GLenum -> GLfixed -> IO ())
+ptr_glMaterialxOES = unsafePerformIO $ getCommand "glMaterialxOES"
+
+-- glMaterialxv ----------------------------------------------------------------
+
+glMaterialxv
+  :: MonadIO m
+  => GLenum -- ^ @face@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
+  -> m ()
+glMaterialxv v1 v2 v3 = liftIO $ dyn163 ptr_glMaterialxv v1 v2 v3
+
+{-# NOINLINE ptr_glMaterialxv #-}
+ptr_glMaterialxv :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
+ptr_glMaterialxv = unsafePerformIO $ getCommand "glMaterialxv"
+
+-- glMaterialxvOES -------------------------------------------------------------
+
+glMaterialxvOES
+  :: MonadIO m
+  => GLenum -- ^ @face@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
+  -> m ()
+glMaterialxvOES v1 v2 v3 = liftIO $ dyn163 ptr_glMaterialxvOES v1 v2 v3
+
+{-# NOINLINE ptr_glMaterialxvOES #-}
+ptr_glMaterialxvOES :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
+ptr_glMaterialxvOES = unsafePerformIO $ getCommand "glMaterialxvOES"
 
 -- glMatrixFrustumEXT ----------------------------------------------------------
 
@@ -1501,61 +1557,4 @@ glMultiTexCoord2bOES v1 v2 v3 = liftIO $ dyn546 ptr_glMultiTexCoord2bOES v1 v2 v
 {-# NOINLINE ptr_glMultiTexCoord2bOES #-}
 ptr_glMultiTexCoord2bOES :: FunPtr (GLenum -> GLbyte -> GLbyte -> IO ())
 ptr_glMultiTexCoord2bOES = unsafePerformIO $ getCommand "glMultiTexCoord2bOES"
-
--- glMultiTexCoord2bvOES -------------------------------------------------------
-
-glMultiTexCoord2bvOES
-  :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> Ptr GLbyte -- ^ @coords@ pointing to @2@ elements of type @GLbyte@.
-  -> m ()
-glMultiTexCoord2bvOES v1 v2 = liftIO $ dyn540 ptr_glMultiTexCoord2bvOES v1 v2
-
-{-# NOINLINE ptr_glMultiTexCoord2bvOES #-}
-ptr_glMultiTexCoord2bvOES :: FunPtr (GLenum -> Ptr GLbyte -> IO ())
-ptr_glMultiTexCoord2bvOES = unsafePerformIO $ getCommand "glMultiTexCoord2bvOES"
-
--- glMultiTexCoord2d -----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord2dv'.
-glMultiTexCoord2d
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> GLdouble -- ^ @s@ of type @CoordD@.
-  -> GLdouble -- ^ @t@ of type @CoordD@.
-  -> m ()
-glMultiTexCoord2d v1 v2 v3 = liftIO $ dyn547 ptr_glMultiTexCoord2d v1 v2 v3
-
-{-# NOINLINE ptr_glMultiTexCoord2d #-}
-ptr_glMultiTexCoord2d :: FunPtr (GLenum -> GLdouble -> GLdouble -> IO ())
-ptr_glMultiTexCoord2d = unsafePerformIO $ getCommand "glMultiTexCoord2d"
-
--- glMultiTexCoord2dARB --------------------------------------------------------
-
--- | The vector equivalent of this command is 'glMultiTexCoord2dv'. This command is an alias for 'glMultiTexCoord2d'.
-glMultiTexCoord2dARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> GLdouble -- ^ @s@ of type @CoordD@.
-  -> GLdouble -- ^ @t@ of type @CoordD@.
-  -> m ()
-glMultiTexCoord2dARB v1 v2 v3 = liftIO $ dyn547 ptr_glMultiTexCoord2dARB v1 v2 v3
-
-{-# NOINLINE ptr_glMultiTexCoord2dARB #-}
-ptr_glMultiTexCoord2dARB :: FunPtr (GLenum -> GLdouble -> GLdouble -> IO ())
-ptr_glMultiTexCoord2dARB = unsafePerformIO $ getCommand "glMultiTexCoord2dARB"
-
--- glMultiTexCoord2dv ----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
-glMultiTexCoord2dv
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @TextureUnit@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
-  -> m ()
-glMultiTexCoord2dv v1 v2 = liftIO $ dyn93 ptr_glMultiTexCoord2dv v1 v2
-
-{-# NOINLINE ptr_glMultiTexCoord2dv #-}
-ptr_glMultiTexCoord2dv :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
-ptr_glMultiTexCoord2dv = unsafePerformIO $ getCommand "glMultiTexCoord2dv"
 

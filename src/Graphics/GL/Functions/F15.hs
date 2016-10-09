@@ -15,6 +15,10 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F15 (
+  glIsTextureHandleResidentNV,
+  glIsTransformFeedback,
+  glIsTransformFeedbackNV,
+  glIsVariantEnabledEXT,
   glIsVertexArray,
   glIsVertexArrayAPPLE,
   glIsVertexArrayOES,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F15 (
   glMaterialf,
   glMaterialfv,
   glMateriali,
-  glMaterialiv,
-  glMaterialx,
-  glMaterialxOES,
-  glMaterialxv,
-  glMaterialxvOES
+  glMaterialiv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,57 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glIsTextureHandleResidentNV -------------------------------------------------
+
+glIsTextureHandleResidentNV
+  :: MonadIO m
+  => GLuint64 -- ^ @handle@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsTextureHandleResidentNV v1 = liftIO $ dyn478 ptr_glIsTextureHandleResidentNV v1
+
+{-# NOINLINE ptr_glIsTextureHandleResidentNV #-}
+ptr_glIsTextureHandleResidentNV :: FunPtr (GLuint64 -> IO GLboolean)
+ptr_glIsTextureHandleResidentNV = unsafePerformIO $ getCommand "glIsTextureHandleResidentNV"
+
+-- glIsTransformFeedback -------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glIsTransformFeedback.xhtml OpenGL 4.x>.
+glIsTransformFeedback
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsTransformFeedback v1 = liftIO $ dyn273 ptr_glIsTransformFeedback v1
+
+{-# NOINLINE ptr_glIsTransformFeedback #-}
+ptr_glIsTransformFeedback :: FunPtr (GLuint -> IO GLboolean)
+ptr_glIsTransformFeedback = unsafePerformIO $ getCommand "glIsTransformFeedback"
+
+-- glIsTransformFeedbackNV -----------------------------------------------------
+
+-- | This command is an alias for 'glIsTransformFeedback'.
+glIsTransformFeedbackNV
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsTransformFeedbackNV v1 = liftIO $ dyn273 ptr_glIsTransformFeedbackNV v1
+
+{-# NOINLINE ptr_glIsTransformFeedbackNV #-}
+ptr_glIsTransformFeedbackNV :: FunPtr (GLuint -> IO GLboolean)
+ptr_glIsTransformFeedbackNV = unsafePerformIO $ getCommand "glIsTransformFeedbackNV"
+
+-- glIsVariantEnabledEXT -------------------------------------------------------
+
+glIsVariantEnabledEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> GLenum -- ^ @cap@ of type @VariantCapEXT@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsVariantEnabledEXT v1 v2 = liftIO $ dyn483 ptr_glIsVariantEnabledEXT v1 v2
+
+{-# NOINLINE ptr_glIsVariantEnabledEXT #-}
+ptr_glIsVariantEnabledEXT :: FunPtr (GLuint -> GLenum -> IO GLboolean)
+ptr_glIsVariantEnabledEXT = unsafePerformIO $ getCommand "glIsVariantEnabledEXT"
 
 -- glIsVertexArray -------------------------------------------------------------
 
@@ -1503,60 +1554,4 @@ glMaterialiv v1 v2 v3 = liftIO $ dyn133 ptr_glMaterialiv v1 v2 v3
 {-# NOINLINE ptr_glMaterialiv #-}
 ptr_glMaterialiv :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
 ptr_glMaterialiv = unsafePerformIO $ getCommand "glMaterialiv"
-
--- glMaterialx -----------------------------------------------------------------
-
-glMaterialx
-  :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
-  -> GLfixed -- ^ @param@.
-  -> m ()
-glMaterialx v1 v2 v3 = liftIO $ dyn162 ptr_glMaterialx v1 v2 v3
-
-{-# NOINLINE ptr_glMaterialx #-}
-ptr_glMaterialx :: FunPtr (GLenum -> GLenum -> GLfixed -> IO ())
-ptr_glMaterialx = unsafePerformIO $ getCommand "glMaterialx"
-
--- glMaterialxOES --------------------------------------------------------------
-
-glMaterialxOES
-  :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
-  -> GLfixed -- ^ @param@.
-  -> m ()
-glMaterialxOES v1 v2 v3 = liftIO $ dyn162 ptr_glMaterialxOES v1 v2 v3
-
-{-# NOINLINE ptr_glMaterialxOES #-}
-ptr_glMaterialxOES :: FunPtr (GLenum -> GLenum -> GLfixed -> IO ())
-ptr_glMaterialxOES = unsafePerformIO $ getCommand "glMaterialxOES"
-
--- glMaterialxv ----------------------------------------------------------------
-
-glMaterialxv
-  :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
-  -> m ()
-glMaterialxv v1 v2 v3 = liftIO $ dyn163 ptr_glMaterialxv v1 v2 v3
-
-{-# NOINLINE ptr_glMaterialxv #-}
-ptr_glMaterialxv :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
-ptr_glMaterialxv = unsafePerformIO $ getCommand "glMaterialxv"
-
--- glMaterialxvOES -------------------------------------------------------------
-
-glMaterialxvOES
-  :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
-  -> m ()
-glMaterialxvOES v1 v2 v3 = liftIO $ dyn163 ptr_glMaterialxvOES v1 v2 v3
-
-{-# NOINLINE ptr_glMaterialxvOES #-}
-ptr_glMaterialxvOES :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
-ptr_glMaterialxvOES = unsafePerformIO $ getCommand "glMaterialxvOES"
 

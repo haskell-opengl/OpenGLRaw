@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F07 (
+  glEnable,
+  glEnableClientState,
   glEnableClientStateIndexedEXT,
   glEnableClientStateiEXT,
   glEnableDriverControlQCOM,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F07 (
   glFogCoorddv,
   glFogCoorddvEXT,
   glFogCoordf,
-  glFogCoordfEXT,
-  glFogCoordfv,
-  glFogCoordfvEXT
+  glFogCoordfEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,32 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glEnable --------------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glEnable.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glEnable.xhtml OpenGL 4.x>.
+glEnable
+  :: MonadIO m
+  => GLenum -- ^ @cap@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
+  -> m ()
+glEnable v1 = liftIO $ dyn4 ptr_glEnable v1
+
+{-# NOINLINE ptr_glEnable #-}
+ptr_glEnable :: FunPtr (GLenum -> IO ())
+ptr_glEnable = unsafePerformIO $ getCommand "glEnable"
+
+-- glEnableClientState ---------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glEnableClientState.xml OpenGL 2.x>.
+glEnableClientState
+  :: MonadIO m
+  => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
+  -> m ()
+glEnableClientState v1 = liftIO $ dyn4 ptr_glEnableClientState v1
+
+{-# NOINLINE ptr_glEnableClientState #-}
+ptr_glEnableClientState :: FunPtr (GLenum -> IO ())
+ptr_glEnableClientState = unsafePerformIO $ getCommand "glEnableClientState"
 
 -- glEnableClientStateIndexedEXT -----------------------------------------------
 
@@ -1417,30 +1443,4 @@ glFogCoordfEXT v1 = liftIO $ dyn79 ptr_glFogCoordfEXT v1
 {-# NOINLINE ptr_glFogCoordfEXT #-}
 ptr_glFogCoordfEXT :: FunPtr (GLfloat -> IO ())
 ptr_glFogCoordfEXT = unsafePerformIO $ getCommand "glFogCoordfEXT"
-
--- glFogCoordfv ----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>.
-glFogCoordfv
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
-  -> m ()
-glFogCoordfv v1 = liftIO $ dyn41 ptr_glFogCoordfv v1
-
-{-# NOINLINE ptr_glFogCoordfv #-}
-ptr_glFogCoordfv :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glFogCoordfv = unsafePerformIO $ getCommand "glFogCoordfv"
-
--- glFogCoordfvEXT -------------------------------------------------------------
-
--- | This command is an alias for 'glFogCoordfv'.
-glFogCoordfvEXT
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @coord@ pointing to @1@ element of type @CoordF@.
-  -> m ()
-glFogCoordfvEXT v1 = liftIO $ dyn41 ptr_glFogCoordfvEXT v1
-
-{-# NOINLINE ptr_glFogCoordfvEXT #-}
-ptr_glFogCoordfvEXT :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glFogCoordfvEXT = unsafePerformIO $ getCommand "glFogCoordfvEXT"
 

@@ -15,6 +15,14 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F29 (
+  glVertexAttrib1fNV,
+  glVertexAttrib1fv,
+  glVertexAttrib1fvARB,
+  glVertexAttrib1fvNV,
+  glVertexAttrib1hNV,
+  glVertexAttrib1hvNV,
+  glVertexAttrib1s,
+  glVertexAttrib1sARB,
   glVertexAttrib1sNV,
   glVertexAttrib1sv,
   glVertexAttrib1svARB,
@@ -106,15 +114,7 @@ module Graphics.GL.Functions.F29 (
   glVertexAttrib4usv,
   glVertexAttrib4usvARB,
   glVertexAttribArrayObjectATI,
-  glVertexAttribBinding,
-  glVertexAttribDivisor,
-  glVertexAttribDivisorANGLE,
-  glVertexAttribDivisorARB,
-  glVertexAttribDivisorEXT,
-  glVertexAttribDivisorNV,
-  glVertexAttribFormat,
-  glVertexAttribFormatNV,
-  glVertexAttribI1i
+  glVertexAttribBinding
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,117 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glVertexAttrib1fNV ----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glVertexAttrib1fvNV'. This command is an alias for 'glVertexAttrib1f'.
+glVertexAttrib1fNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLfloat -- ^ @x@.
+  -> m ()
+glVertexAttrib1fNV v1 v2 = liftIO $ dyn842 ptr_glVertexAttrib1fNV v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1fNV #-}
+ptr_glVertexAttrib1fNV :: FunPtr (GLuint -> GLfloat -> IO ())
+ptr_glVertexAttrib1fNV = unsafePerformIO $ getCommand "glVertexAttrib1fNV"
+
+-- glVertexAttrib1fv -----------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
+glVertexAttrib1fv
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
+  -> m ()
+glVertexAttrib1fv v1 v2 = liftIO $ dyn377 ptr_glVertexAttrib1fv v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1fv #-}
+ptr_glVertexAttrib1fv :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
+ptr_glVertexAttrib1fv = unsafePerformIO $ getCommand "glVertexAttrib1fv"
+
+-- glVertexAttrib1fvARB --------------------------------------------------------
+
+-- | This command is an alias for 'glVertexAttrib1fv'.
+glVertexAttrib1fvARB
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
+  -> m ()
+glVertexAttrib1fvARB v1 v2 = liftIO $ dyn377 ptr_glVertexAttrib1fvARB v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1fvARB #-}
+ptr_glVertexAttrib1fvARB :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
+ptr_glVertexAttrib1fvARB = unsafePerformIO $ getCommand "glVertexAttrib1fvARB"
+
+-- glVertexAttrib1fvNV ---------------------------------------------------------
+
+-- | This command is an alias for 'glVertexAttrib1fv'.
+glVertexAttrib1fvNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
+  -> m ()
+glVertexAttrib1fvNV v1 v2 = liftIO $ dyn377 ptr_glVertexAttrib1fvNV v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1fvNV #-}
+ptr_glVertexAttrib1fvNV :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
+ptr_glVertexAttrib1fvNV = unsafePerformIO $ getCommand "glVertexAttrib1fvNV"
+
+-- glVertexAttrib1hNV ----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glVertexAttrib1hvNV'.
+glVertexAttrib1hNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLhalfNV -- ^ @x@ of type @Half16NV@.
+  -> m ()
+glVertexAttrib1hNV v1 v2 = liftIO $ dyn843 ptr_glVertexAttrib1hNV v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1hNV #-}
+ptr_glVertexAttrib1hNV :: FunPtr (GLuint -> GLhalfNV -> IO ())
+ptr_glVertexAttrib1hNV = unsafePerformIO $ getCommand "glVertexAttrib1hNV"
+
+-- glVertexAttrib1hvNV ---------------------------------------------------------
+
+glVertexAttrib1hvNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLhalfNV -- ^ @v@ pointing to @1@ element of type @Half16NV@.
+  -> m ()
+glVertexAttrib1hvNV v1 v2 = liftIO $ dyn844 ptr_glVertexAttrib1hvNV v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1hvNV #-}
+ptr_glVertexAttrib1hvNV :: FunPtr (GLuint -> Ptr GLhalfNV -> IO ())
+ptr_glVertexAttrib1hvNV = unsafePerformIO $ getCommand "glVertexAttrib1hvNV"
+
+-- glVertexAttrib1s ------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib1sv'.
+glVertexAttrib1s
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLshort -- ^ @x@.
+  -> m ()
+glVertexAttrib1s v1 v2 = liftIO $ dyn845 ptr_glVertexAttrib1s v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1s #-}
+ptr_glVertexAttrib1s :: FunPtr (GLuint -> GLshort -> IO ())
+ptr_glVertexAttrib1s = unsafePerformIO $ getCommand "glVertexAttrib1s"
+
+-- glVertexAttrib1sARB ---------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glVertexAttrib1svARB'. This command is an alias for 'glVertexAttrib1s'.
+glVertexAttrib1sARB
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLshort -- ^ @x@.
+  -> m ()
+glVertexAttrib1sARB v1 v2 = liftIO $ dyn845 ptr_glVertexAttrib1sARB v1 v2
+
+{-# NOINLINE ptr_glVertexAttrib1sARB #-}
+ptr_glVertexAttrib1sARB :: FunPtr (GLuint -> GLshort -> IO ())
+ptr_glVertexAttrib1sARB = unsafePerformIO $ getCommand "glVertexAttrib1sARB"
 
 -- glVertexAttrib1sNV ----------------------------------------------------------
 
@@ -1480,121 +1591,4 @@ glVertexAttribBinding v1 v2 = liftIO $ dyn3 ptr_glVertexAttribBinding v1 v2
 {-# NOINLINE ptr_glVertexAttribBinding #-}
 ptr_glVertexAttribBinding :: FunPtr (GLuint -> GLuint -> IO ())
 ptr_glVertexAttribBinding = unsafePerformIO $ getCommand "glVertexAttribBinding"
-
--- glVertexAttribDivisor -------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribDivisor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribDivisor.xhtml OpenGL 4.x>.
-glVertexAttribDivisor
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLuint -- ^ @divisor@.
-  -> m ()
-glVertexAttribDivisor v1 v2 = liftIO $ dyn3 ptr_glVertexAttribDivisor v1 v2
-
-{-# NOINLINE ptr_glVertexAttribDivisor #-}
-ptr_glVertexAttribDivisor :: FunPtr (GLuint -> GLuint -> IO ())
-ptr_glVertexAttribDivisor = unsafePerformIO $ getCommand "glVertexAttribDivisor"
-
--- glVertexAttribDivisorANGLE --------------------------------------------------
-
--- | This command is an alias for 'glVertexAttribDivisor'.
-glVertexAttribDivisorANGLE
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLuint -- ^ @divisor@.
-  -> m ()
-glVertexAttribDivisorANGLE v1 v2 = liftIO $ dyn3 ptr_glVertexAttribDivisorANGLE v1 v2
-
-{-# NOINLINE ptr_glVertexAttribDivisorANGLE #-}
-ptr_glVertexAttribDivisorANGLE :: FunPtr (GLuint -> GLuint -> IO ())
-ptr_glVertexAttribDivisorANGLE = unsafePerformIO $ getCommand "glVertexAttribDivisorANGLE"
-
--- glVertexAttribDivisorARB ----------------------------------------------------
-
--- | This command is an alias for 'glVertexAttribDivisor'.
-glVertexAttribDivisorARB
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLuint -- ^ @divisor@.
-  -> m ()
-glVertexAttribDivisorARB v1 v2 = liftIO $ dyn3 ptr_glVertexAttribDivisorARB v1 v2
-
-{-# NOINLINE ptr_glVertexAttribDivisorARB #-}
-ptr_glVertexAttribDivisorARB :: FunPtr (GLuint -> GLuint -> IO ())
-ptr_glVertexAttribDivisorARB = unsafePerformIO $ getCommand "glVertexAttribDivisorARB"
-
--- glVertexAttribDivisorEXT ----------------------------------------------------
-
--- | This command is an alias for 'glVertexAttribDivisor'.
-glVertexAttribDivisorEXT
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLuint -- ^ @divisor@.
-  -> m ()
-glVertexAttribDivisorEXT v1 v2 = liftIO $ dyn3 ptr_glVertexAttribDivisorEXT v1 v2
-
-{-# NOINLINE ptr_glVertexAttribDivisorEXT #-}
-ptr_glVertexAttribDivisorEXT :: FunPtr (GLuint -> GLuint -> IO ())
-ptr_glVertexAttribDivisorEXT = unsafePerformIO $ getCommand "glVertexAttribDivisorEXT"
-
--- glVertexAttribDivisorNV -----------------------------------------------------
-
--- | This command is an alias for 'glVertexAttribDivisor'.
-glVertexAttribDivisorNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLuint -- ^ @divisor@.
-  -> m ()
-glVertexAttribDivisorNV v1 v2 = liftIO $ dyn3 ptr_glVertexAttribDivisorNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttribDivisorNV #-}
-ptr_glVertexAttribDivisorNV :: FunPtr (GLuint -> GLuint -> IO ())
-ptr_glVertexAttribDivisorNV = unsafePerformIO $ getCommand "glVertexAttribDivisorNV"
-
--- glVertexAttribFormat --------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glVertexAttribFormat.xhtml OpenGL 4.x>.
-glVertexAttribFormat
-  :: MonadIO m
-  => GLuint -- ^ @attribindex@.
-  -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> GLuint -- ^ @relativeoffset@.
-  -> m ()
-glVertexAttribFormat v1 v2 v3 v4 v5 = liftIO $ dyn857 ptr_glVertexAttribFormat v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glVertexAttribFormat #-}
-ptr_glVertexAttribFormat :: FunPtr (GLuint -> GLint -> GLenum -> GLboolean -> GLuint -> IO ())
-ptr_glVertexAttribFormat = unsafePerformIO $ getCommand "glVertexAttribFormat"
-
--- glVertexAttribFormatNV ------------------------------------------------------
-
-glVertexAttribFormatNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@.
-  -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> GLsizei -- ^ @stride@.
-  -> m ()
-glVertexAttribFormatNV v1 v2 v3 v4 v5 = liftIO $ dyn858 ptr_glVertexAttribFormatNV v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glVertexAttribFormatNV #-}
-ptr_glVertexAttribFormatNV :: FunPtr (GLuint -> GLint -> GLenum -> GLboolean -> GLsizei -> IO ())
-ptr_glVertexAttribFormatNV = unsafePerformIO $ getCommand "glVertexAttribFormatNV"
-
--- glVertexAttribI1i -----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI1iv'.
-glVertexAttribI1i
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLint -- ^ @x@.
-  -> m ()
-glVertexAttribI1i v1 v2 = liftIO $ dyn474 ptr_glVertexAttribI1i v1 v2
-
-{-# NOINLINE ptr_glVertexAttribI1i #-}
-ptr_glVertexAttribI1i :: FunPtr (GLuint -> GLint -> IO ())
-ptr_glVertexAttribI1i = unsafePerformIO $ getCommand "glVertexAttribI1i"
 

@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F11 (
+  glGetNamedFramebufferParameteriv,
+  glGetNamedFramebufferParameterivEXT,
   glGetNamedProgramLocalParameterIivEXT,
   glGetNamedProgramLocalParameterIuivEXT,
   glGetNamedProgramLocalParameterdvEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F11 (
   glGetQueryBufferObjecti64v,
   glGetQueryBufferObjectiv,
   glGetQueryBufferObjectui64v,
-  glGetQueryBufferObjectuiv,
-  glGetQueryIndexediv,
-  glGetQueryObjecti64v
+  glGetQueryBufferObjectuiv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,35 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetNamedFramebufferParameteriv --------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferParameter.xhtml OpenGL 4.x>.
+glGetNamedFramebufferParameteriv
+  :: MonadIO m
+  => GLuint -- ^ @framebuffer@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @param@.
+  -> m ()
+glGetNamedFramebufferParameteriv v1 v2 v3 = liftIO $ dyn334 ptr_glGetNamedFramebufferParameteriv v1 v2 v3
+
+{-# NOINLINE ptr_glGetNamedFramebufferParameteriv #-}
+ptr_glGetNamedFramebufferParameteriv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetNamedFramebufferParameteriv = unsafePerformIO $ getCommand "glGetNamedFramebufferParameteriv"
+
+-- glGetNamedFramebufferParameterivEXT -----------------------------------------
+
+glGetNamedFramebufferParameterivEXT
+  :: MonadIO m
+  => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
+  -> GLenum -- ^ @pname@ of type @GetFramebufferParameter@.
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glGetNamedFramebufferParameterivEXT v1 v2 v3 = liftIO $ dyn334 ptr_glGetNamedFramebufferParameterivEXT v1 v2 v3
+
+{-# NOINLINE ptr_glGetNamedFramebufferParameterivEXT #-}
+ptr_glGetNamedFramebufferParameterivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetNamedFramebufferParameterivEXT = unsafePerformIO $ getCommand "glGetNamedFramebufferParameterivEXT"
 
 -- glGetNamedProgramLocalParameterIivEXT ---------------------------------------
 
@@ -1586,35 +1615,4 @@ glGetQueryBufferObjectuiv v1 v2 v3 v4 = liftIO $ dyn401 ptr_glGetQueryBufferObje
 {-# NOINLINE ptr_glGetQueryBufferObjectuiv #-}
 ptr_glGetQueryBufferObjectuiv :: FunPtr (GLuint -> GLuint -> GLenum -> GLintptr -> IO ())
 ptr_glGetQueryBufferObjectuiv = unsafePerformIO $ getCommand "glGetQueryBufferObjectuiv"
-
--- glGetQueryIndexediv ---------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetQueryIndexed.xhtml OpenGL 4.x>.
-glGetQueryIndexediv
-  :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
-  -> m ()
-glGetQueryIndexediv v1 v2 v3 v4 = liftIO $ dyn351 ptr_glGetQueryIndexediv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetQueryIndexediv #-}
-ptr_glGetQueryIndexediv :: FunPtr (GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ())
-ptr_glGetQueryIndexediv = unsafePerformIO $ getCommand "glGetQueryIndexediv"
-
--- glGetQueryObjecti64v --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetQueryObject.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetQueryObject.xhtml OpenGL 4.x>.
-glGetQueryObjecti64v
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLint64 -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint64@.
-  -> m ()
-glGetQueryObjecti64v v1 v2 v3 = liftIO $ dyn359 ptr_glGetQueryObjecti64v v1 v2 v3
-
-{-# NOINLINE ptr_glGetQueryObjecti64v #-}
-ptr_glGetQueryObjecti64v :: FunPtr (GLuint -> GLenum -> Ptr GLint64 -> IO ())
-ptr_glGetQueryObjecti64v = unsafePerformIO $ getCommand "glGetQueryObjecti64v"
 

@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F04 (
+  glCombinerParameterfNV,
+  glCombinerParameterfvNV,
   glCombinerParameteriNV,
   glCombinerParameterivNV,
   glCombinerStageParameterfvNV,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F04 (
   glCopyTextureSubImage3DEXT,
   glCoverFillPathInstancedNV,
   glCoverFillPathNV,
-  glCoverStrokePathInstancedNV,
-  glCoverStrokePathNV,
-  glCoverageMaskNV
+  glCoverStrokePathInstancedNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,32 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glCombinerParameterfNV ------------------------------------------------------
+
+glCombinerParameterfNV
+  :: MonadIO m
+  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> GLfloat -- ^ @param@.
+  -> m ()
+glCombinerParameterfNV v1 v2 = liftIO $ dyn0 ptr_glCombinerParameterfNV v1 v2
+
+{-# NOINLINE ptr_glCombinerParameterfNV #-}
+ptr_glCombinerParameterfNV :: FunPtr (GLenum -> GLfloat -> IO ())
+ptr_glCombinerParameterfNV = unsafePerformIO $ getCommand "glCombinerParameterfNV"
+
+-- glCombinerParameterfvNV -----------------------------------------------------
+
+glCombinerParameterfvNV
+  :: MonadIO m
+  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
+  -> m ()
+glCombinerParameterfvNV v1 v2 = liftIO $ dyn94 ptr_glCombinerParameterfvNV v1 v2
+
+{-# NOINLINE ptr_glCombinerParameterfvNV #-}
+ptr_glCombinerParameterfvNV :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
+ptr_glCombinerParameterfvNV = unsafePerformIO $ getCommand "glCombinerParameterfvNV"
 
 -- glCombinerParameteriNV ------------------------------------------------------
 
@@ -1937,29 +1963,4 @@ glCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn190 ptr_glCoverS
 {-# NOINLINE ptr_glCoverStrokePathInstancedNV #-}
 ptr_glCoverStrokePathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
 ptr_glCoverStrokePathInstancedNV = unsafePerformIO $ getCommand "glCoverStrokePathInstancedNV"
-
--- glCoverStrokePathNV ---------------------------------------------------------
-
-glCoverStrokePathNV
-  :: MonadIO m
-  => GLuint -- ^ @path@ of type @Path@.
-  -> GLenum -- ^ @coverMode@ of type @PathCoverMode@.
-  -> m ()
-glCoverStrokePathNV v1 v2 = liftIO $ dyn15 ptr_glCoverStrokePathNV v1 v2
-
-{-# NOINLINE ptr_glCoverStrokePathNV #-}
-ptr_glCoverStrokePathNV :: FunPtr (GLuint -> GLenum -> IO ())
-ptr_glCoverStrokePathNV = unsafePerformIO $ getCommand "glCoverStrokePathNV"
-
--- glCoverageMaskNV ------------------------------------------------------------
-
-glCoverageMaskNV
-  :: MonadIO m
-  => GLboolean -- ^ @mask@.
-  -> m ()
-glCoverageMaskNV v1 = liftIO $ dyn191 ptr_glCoverageMaskNV v1
-
-{-# NOINLINE ptr_glCoverageMaskNV #-}
-ptr_glCoverageMaskNV :: FunPtr (GLboolean -> IO ())
-ptr_glCoverageMaskNV = unsafePerformIO $ getCommand "glCoverageMaskNV"
 

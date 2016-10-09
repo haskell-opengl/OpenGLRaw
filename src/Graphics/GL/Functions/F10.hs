@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F10 (
+  glGetFragDataIndexEXT,
+  glGetFragDataLocation,
   glGetFragDataLocationEXT,
   glGetFragmentLightfvSGIX,
   glGetFragmentLightivSGIX,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F10 (
   glGetNamedBufferSubData,
   glGetNamedBufferSubDataEXT,
   glGetNamedFramebufferAttachmentParameteriv,
-  glGetNamedFramebufferAttachmentParameterivEXT,
-  glGetNamedFramebufferParameteriv,
-  glGetNamedFramebufferParameterivEXT
+  glGetNamedFramebufferAttachmentParameterivEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,34 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetFragDataIndexEXT -------------------------------------------------------
+
+-- | This command is an alias for 'glGetFragDataIndex'.
+glGetFragDataIndexEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> Ptr GLchar -- ^ @name@.
+  -> m GLint
+glGetFragDataIndexEXT v1 v2 = liftIO $ dyn310 ptr_glGetFragDataIndexEXT v1 v2
+
+{-# NOINLINE ptr_glGetFragDataIndexEXT #-}
+ptr_glGetFragDataIndexEXT :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
+ptr_glGetFragDataIndexEXT = unsafePerformIO $ getCommand "glGetFragDataIndexEXT"
+
+-- glGetFragDataLocation -------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetFragDataLocation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetFragDataLocation.xhtml OpenGL 4.x>.
+glGetFragDataLocation
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
+  -> m GLint
+glGetFragDataLocation v1 v2 = liftIO $ dyn310 ptr_glGetFragDataLocation v1 v2
+
+{-# NOINLINE ptr_glGetFragDataLocation #-}
+ptr_glGetFragDataLocation :: FunPtr (GLuint -> Ptr GLchar -> IO GLint)
+ptr_glGetFragDataLocation = unsafePerformIO $ getCommand "glGetFragDataLocation"
 
 -- glGetFragDataLocationEXT ----------------------------------------------------
 
@@ -1553,33 +1581,4 @@ glGetNamedFramebufferAttachmentParameterivEXT v1 v2 v3 v4 = liftIO $ dyn363 ptr_
 {-# NOINLINE ptr_glGetNamedFramebufferAttachmentParameterivEXT #-}
 ptr_glGetNamedFramebufferAttachmentParameterivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
 ptr_glGetNamedFramebufferAttachmentParameterivEXT = unsafePerformIO $ getCommand "glGetNamedFramebufferAttachmentParameterivEXT"
-
--- glGetNamedFramebufferParameteriv --------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetFramebufferParameter.xhtml OpenGL 4.x>.
-glGetNamedFramebufferParameteriv
-  :: MonadIO m
-  => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @pname@.
-  -> Ptr GLint -- ^ @param@.
-  -> m ()
-glGetNamedFramebufferParameteriv v1 v2 v3 = liftIO $ dyn334 ptr_glGetNamedFramebufferParameteriv v1 v2 v3
-
-{-# NOINLINE ptr_glGetNamedFramebufferParameteriv #-}
-ptr_glGetNamedFramebufferParameteriv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
-ptr_glGetNamedFramebufferParameteriv = unsafePerformIO $ getCommand "glGetNamedFramebufferParameteriv"
-
--- glGetNamedFramebufferParameterivEXT -----------------------------------------
-
-glGetNamedFramebufferParameterivEXT
-  :: MonadIO m
-  => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @pname@ of type @GetFramebufferParameter@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
-  -> m ()
-glGetNamedFramebufferParameterivEXT v1 v2 v3 = liftIO $ dyn334 ptr_glGetNamedFramebufferParameterivEXT v1 v2 v3
-
-{-# NOINLINE ptr_glGetNamedFramebufferParameterivEXT #-}
-ptr_glGetNamedFramebufferParameterivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
-ptr_glGetNamedFramebufferParameterivEXT = unsafePerformIO $ getCommand "glGetNamedFramebufferParameterivEXT"
 

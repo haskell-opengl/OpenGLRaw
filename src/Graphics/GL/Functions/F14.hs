@@ -15,6 +15,10 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F14 (
+  glGetnUniformuiv,
+  glGetnUniformuivARB,
+  glGetnUniformuivKHR,
+  glGlobalAlphaFactorbSUN,
   glGlobalAlphaFactordSUN,
   glGlobalAlphaFactorfSUN,
   glGlobalAlphaFactoriSUN,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F14 (
   glIsSyncAPPLE,
   glIsTexture,
   glIsTextureEXT,
-  glIsTextureHandleResidentARB,
-  glIsTextureHandleResidentNV,
-  glIsTransformFeedback,
-  glIsTransformFeedbackNV,
-  glIsVariantEnabledEXT
+  glIsTextureHandleResidentARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,65 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetnUniformuiv ------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGetUniform.xhtml OpenGL 4.x>.
+glGetnUniformuiv
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @bufSize@.
+  -> Ptr GLuint -- ^ @params@.
+  -> m ()
+glGetnUniformuiv v1 v2 v3 v4 = liftIO $ dyn461 ptr_glGetnUniformuiv v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetnUniformuiv #-}
+ptr_glGetnUniformuiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glGetnUniformuiv = unsafePerformIO $ getCommand "glGetnUniformuiv"
+
+-- glGetnUniformuivARB ---------------------------------------------------------
+
+glGetnUniformuivARB
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @bufSize@.
+  -> Ptr GLuint -- ^ @params@ pointing to @bufSize@ elements of type @GLuint@.
+  -> m ()
+glGetnUniformuivARB v1 v2 v3 v4 = liftIO $ dyn461 ptr_glGetnUniformuivARB v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetnUniformuivARB #-}
+ptr_glGetnUniformuivARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glGetnUniformuivARB = unsafePerformIO $ getCommand "glGetnUniformuivARB"
+
+-- glGetnUniformuivKHR ---------------------------------------------------------
+
+-- | This command is an alias for 'glGetnUniformuiv'.
+glGetnUniformuivKHR
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @bufSize@.
+  -> Ptr GLuint -- ^ @params@.
+  -> m ()
+glGetnUniformuivKHR v1 v2 v3 v4 = liftIO $ dyn461 ptr_glGetnUniformuivKHR v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetnUniformuivKHR #-}
+ptr_glGetnUniformuivKHR :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glGetnUniformuivKHR = unsafePerformIO $ getCommand "glGetnUniformuivKHR"
+
+-- glGlobalAlphaFactorbSUN -----------------------------------------------------
+
+glGlobalAlphaFactorbSUN
+  :: MonadIO m
+  => GLbyte -- ^ @factor@.
+  -> m ()
+glGlobalAlphaFactorbSUN v1 = liftIO $ dyn462 ptr_glGlobalAlphaFactorbSUN v1
+
+{-# NOINLINE ptr_glGlobalAlphaFactorbSUN #-}
+ptr_glGlobalAlphaFactorbSUN :: FunPtr (GLbyte -> IO ())
+ptr_glGlobalAlphaFactorbSUN = unsafePerformIO $ getCommand "glGlobalAlphaFactorbSUN"
 
 -- glGlobalAlphaFactordSUN -----------------------------------------------------
 
@@ -1398,55 +1457,4 @@ glIsTextureHandleResidentARB v1 = liftIO $ dyn478 ptr_glIsTextureHandleResidentA
 {-# NOINLINE ptr_glIsTextureHandleResidentARB #-}
 ptr_glIsTextureHandleResidentARB :: FunPtr (GLuint64 -> IO GLboolean)
 ptr_glIsTextureHandleResidentARB = unsafePerformIO $ getCommand "glIsTextureHandleResidentARB"
-
--- glIsTextureHandleResidentNV -------------------------------------------------
-
-glIsTextureHandleResidentNV
-  :: MonadIO m
-  => GLuint64 -- ^ @handle@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsTextureHandleResidentNV v1 = liftIO $ dyn478 ptr_glIsTextureHandleResidentNV v1
-
-{-# NOINLINE ptr_glIsTextureHandleResidentNV #-}
-ptr_glIsTextureHandleResidentNV :: FunPtr (GLuint64 -> IO GLboolean)
-ptr_glIsTextureHandleResidentNV = unsafePerformIO $ getCommand "glIsTextureHandleResidentNV"
-
--- glIsTransformFeedback -------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glIsTransformFeedback.xhtml OpenGL 4.x>.
-glIsTransformFeedback
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsTransformFeedback v1 = liftIO $ dyn273 ptr_glIsTransformFeedback v1
-
-{-# NOINLINE ptr_glIsTransformFeedback #-}
-ptr_glIsTransformFeedback :: FunPtr (GLuint -> IO GLboolean)
-ptr_glIsTransformFeedback = unsafePerformIO $ getCommand "glIsTransformFeedback"
-
--- glIsTransformFeedbackNV -----------------------------------------------------
-
--- | This command is an alias for 'glIsTransformFeedback'.
-glIsTransformFeedbackNV
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsTransformFeedbackNV v1 = liftIO $ dyn273 ptr_glIsTransformFeedbackNV v1
-
-{-# NOINLINE ptr_glIsTransformFeedbackNV #-}
-ptr_glIsTransformFeedbackNV :: FunPtr (GLuint -> IO GLboolean)
-ptr_glIsTransformFeedbackNV = unsafePerformIO $ getCommand "glIsTransformFeedbackNV"
-
--- glIsVariantEnabledEXT -------------------------------------------------------
-
-glIsVariantEnabledEXT
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLenum -- ^ @cap@ of type @VariantCapEXT@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsVariantEnabledEXT v1 v2 = liftIO $ dyn483 ptr_glIsVariantEnabledEXT v1 v2
-
-{-# NOINLINE ptr_glIsVariantEnabledEXT #-}
-ptr_glIsVariantEnabledEXT :: FunPtr (GLuint -> GLenum -> IO GLboolean)
-ptr_glIsVariantEnabledEXT = unsafePerformIO $ getCommand "glIsVariantEnabledEXT"
 

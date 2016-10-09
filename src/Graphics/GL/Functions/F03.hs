@@ -20,7 +20,9 @@ module Graphics.GL.Functions.F03 (
   glClearPixelLocalStorageuiEXT,
   glClearStencil,
   glClearTexImage,
+  glClearTexImageEXT,
   glClearTexSubImage,
+  glClearTexSubImageEXT,
   glClientActiveTexture,
   glClientActiveTextureARB,
   glClientActiveVertexStreamATI,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F03 (
   glColorTableParameterivSGI,
   glColorTableSGI,
   glCombinerInputNV,
-  glCombinerOutputNV,
-  glCombinerParameterfNV,
-  glCombinerParameterfvNV
+  glCombinerOutputNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -199,6 +199,23 @@ glClearTexImage v1 v2 v3 v4 v5 = liftIO $ dyn90 ptr_glClearTexImage v1 v2 v3 v4 
 ptr_glClearTexImage :: FunPtr (GLuint -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
 ptr_glClearTexImage = unsafePerformIO $ getCommand "glClearTexImage"
 
+-- glClearTexImageEXT ----------------------------------------------------------
+
+-- | This command is an alias for 'glClearTexImage'.
+glClearTexImageEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLint -- ^ @level@.
+  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @type@.
+  -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
+  -> m ()
+glClearTexImageEXT v1 v2 v3 v4 v5 = liftIO $ dyn90 ptr_glClearTexImageEXT v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glClearTexImageEXT #-}
+ptr_glClearTexImageEXT :: FunPtr (GLuint -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glClearTexImageEXT = unsafePerformIO $ getCommand "glClearTexImageEXT"
+
 -- glClearTexSubImage ----------------------------------------------------------
 
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearTexSubImage.xhtml OpenGL 4.x>.
@@ -221,6 +238,29 @@ glClearTexSubImage v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn91 ptr_glCle
 {-# NOINLINE ptr_glClearTexSubImage #-}
 ptr_glClearTexSubImage :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
 ptr_glClearTexSubImage = unsafePerformIO $ getCommand "glClearTexSubImage"
+
+-- glClearTexSubImageEXT -------------------------------------------------------
+
+-- | This command is an alias for 'glClearTexSubImage'.
+glClearTexSubImageEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLint -- ^ @level@.
+  -> GLint -- ^ @xoffset@.
+  -> GLint -- ^ @yoffset@.
+  -> GLint -- ^ @zoffset@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> GLsizei -- ^ @depth@.
+  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @type@.
+  -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
+  -> m ()
+glClearTexSubImageEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn91 ptr_glClearTexSubImageEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
+
+{-# NOINLINE ptr_glClearTexSubImageEXT #-}
+ptr_glClearTexSubImageEXT :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glClearTexSubImageEXT = unsafePerformIO $ getCommand "glClearTexSubImageEXT"
 
 -- glClientActiveTexture -------------------------------------------------------
 
@@ -1589,30 +1629,4 @@ glCombinerOutputNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn135 ptr_glCombin
 {-# NOINLINE ptr_glCombinerOutputNV #-}
 ptr_glCombinerOutputNV :: FunPtr (GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLenum -> GLboolean -> GLboolean -> GLboolean -> IO ())
 ptr_glCombinerOutputNV = unsafePerformIO $ getCommand "glCombinerOutputNV"
-
--- glCombinerParameterfNV ------------------------------------------------------
-
-glCombinerParameterfNV
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
-  -> GLfloat -- ^ @param@.
-  -> m ()
-glCombinerParameterfNV v1 v2 = liftIO $ dyn0 ptr_glCombinerParameterfNV v1 v2
-
-{-# NOINLINE ptr_glCombinerParameterfNV #-}
-ptr_glCombinerParameterfNV :: FunPtr (GLenum -> GLfloat -> IO ())
-ptr_glCombinerParameterfNV = unsafePerformIO $ getCommand "glCombinerParameterfNV"
-
--- glCombinerParameterfvNV -----------------------------------------------------
-
-glCombinerParameterfvNV
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
-  -> m ()
-glCombinerParameterfvNV v1 v2 = liftIO $ dyn94 ptr_glCombinerParameterfvNV v1 v2
-
-{-# NOINLINE ptr_glCombinerParameterfvNV #-}
-ptr_glCombinerParameterfvNV :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
-ptr_glCombinerParameterfvNV = unsafePerformIO $ getCommand "glCombinerParameterfvNV"
 

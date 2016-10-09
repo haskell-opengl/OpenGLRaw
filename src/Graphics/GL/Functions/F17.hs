@@ -15,6 +15,10 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F17 (
+  glMultiTexCoord2bvOES,
+  glMultiTexCoord2d,
+  glMultiTexCoord2dARB,
+  glMultiTexCoord2dv,
   glMultiTexCoord2dvARB,
   glMultiTexCoord2f,
   glMultiTexCoord2fARB,
@@ -110,11 +114,7 @@ module Graphics.GL.Functions.F17 (
   glMultiTexSubImage2DEXT,
   glMultiTexSubImage3DEXT,
   glNamedBufferData,
-  glNamedBufferDataEXT,
-  glNamedBufferPageCommitmentARB,
-  glNamedBufferPageCommitmentEXT,
-  glNamedBufferStorage,
-  glNamedBufferStorageEXT
+  glNamedBufferDataEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,63 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glMultiTexCoord2bvOES -------------------------------------------------------
+
+glMultiTexCoord2bvOES
+  :: MonadIO m
+  => GLenum -- ^ @texture@.
+  -> Ptr GLbyte -- ^ @coords@ pointing to @2@ elements of type @GLbyte@.
+  -> m ()
+glMultiTexCoord2bvOES v1 v2 = liftIO $ dyn540 ptr_glMultiTexCoord2bvOES v1 v2
+
+{-# NOINLINE ptr_glMultiTexCoord2bvOES #-}
+ptr_glMultiTexCoord2bvOES :: FunPtr (GLenum -> Ptr GLbyte -> IO ())
+ptr_glMultiTexCoord2bvOES = unsafePerformIO $ getCommand "glMultiTexCoord2bvOES"
+
+-- glMultiTexCoord2d -----------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord2dv'.
+glMultiTexCoord2d
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @TextureUnit@.
+  -> GLdouble -- ^ @s@ of type @CoordD@.
+  -> GLdouble -- ^ @t@ of type @CoordD@.
+  -> m ()
+glMultiTexCoord2d v1 v2 v3 = liftIO $ dyn547 ptr_glMultiTexCoord2d v1 v2 v3
+
+{-# NOINLINE ptr_glMultiTexCoord2d #-}
+ptr_glMultiTexCoord2d :: FunPtr (GLenum -> GLdouble -> GLdouble -> IO ())
+ptr_glMultiTexCoord2d = unsafePerformIO $ getCommand "glMultiTexCoord2d"
+
+-- glMultiTexCoord2dARB --------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glMultiTexCoord2dv'. This command is an alias for 'glMultiTexCoord2d'.
+glMultiTexCoord2dARB
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @TextureUnit@.
+  -> GLdouble -- ^ @s@ of type @CoordD@.
+  -> GLdouble -- ^ @t@ of type @CoordD@.
+  -> m ()
+glMultiTexCoord2dARB v1 v2 v3 = liftIO $ dyn547 ptr_glMultiTexCoord2dARB v1 v2 v3
+
+{-# NOINLINE ptr_glMultiTexCoord2dARB #-}
+ptr_glMultiTexCoord2dARB :: FunPtr (GLenum -> GLdouble -> GLdouble -> IO ())
+ptr_glMultiTexCoord2dARB = unsafePerformIO $ getCommand "glMultiTexCoord2dARB"
+
+-- glMultiTexCoord2dv ----------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
+glMultiTexCoord2dv
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @TextureUnit@.
+  -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
+  -> m ()
+glMultiTexCoord2dv v1 v2 = liftIO $ dyn93 ptr_glMultiTexCoord2dv v1 v2
+
+{-# NOINLINE ptr_glMultiTexCoord2dv #-}
+ptr_glMultiTexCoord2dv :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
+ptr_glMultiTexCoord2dv = unsafePerformIO $ getCommand "glMultiTexCoord2dv"
 
 -- glMultiTexCoord2dvARB -------------------------------------------------------
 
@@ -1588,66 +1645,4 @@ glNamedBufferDataEXT v1 v2 v3 v4 = liftIO $ dyn571 ptr_glNamedBufferDataEXT v1 v
 {-# NOINLINE ptr_glNamedBufferDataEXT #-}
 ptr_glNamedBufferDataEXT :: FunPtr (GLuint -> GLsizeiptr -> Ptr a -> GLenum -> IO ())
 ptr_glNamedBufferDataEXT = unsafePerformIO $ getCommand "glNamedBufferDataEXT"
-
--- glNamedBufferPageCommitmentARB ----------------------------------------------
-
-glNamedBufferPageCommitmentARB
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> GLintptr -- ^ @offset@.
-  -> GLsizeiptr -- ^ @size@.
-  -> GLboolean -- ^ @commit@.
-  -> m ()
-glNamedBufferPageCommitmentARB v1 v2 v3 v4 = liftIO $ dyn572 ptr_glNamedBufferPageCommitmentARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glNamedBufferPageCommitmentARB #-}
-ptr_glNamedBufferPageCommitmentARB :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> GLboolean -> IO ())
-ptr_glNamedBufferPageCommitmentARB = unsafePerformIO $ getCommand "glNamedBufferPageCommitmentARB"
-
--- glNamedBufferPageCommitmentEXT ----------------------------------------------
-
-glNamedBufferPageCommitmentEXT
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> GLintptr -- ^ @offset@.
-  -> GLsizeiptr -- ^ @size@.
-  -> GLboolean -- ^ @commit@.
-  -> m ()
-glNamedBufferPageCommitmentEXT v1 v2 v3 v4 = liftIO $ dyn572 ptr_glNamedBufferPageCommitmentEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glNamedBufferPageCommitmentEXT #-}
-ptr_glNamedBufferPageCommitmentEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> GLboolean -> IO ())
-ptr_glNamedBufferPageCommitmentEXT = unsafePerformIO $ getCommand "glNamedBufferPageCommitmentEXT"
-
--- glNamedBufferStorage --------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferStorage.xhtml OpenGL 4.x>.
-glNamedBufferStorage
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
-  -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@.
-  -> m ()
-glNamedBufferStorage v1 v2 v3 v4 = liftIO $ dyn573 ptr_glNamedBufferStorage v1 v2 v3 v4
-
-{-# NOINLINE ptr_glNamedBufferStorage #-}
-ptr_glNamedBufferStorage :: FunPtr (GLuint -> GLsizeiptr -> Ptr a -> GLbitfield -> IO ())
-ptr_glNamedBufferStorage = unsafePerformIO $ getCommand "glNamedBufferStorage"
-
--- glNamedBufferStorageEXT -----------------------------------------------------
-
--- | This command is an alias for 'glNamedBufferStorage'.
-glNamedBufferStorageEXT
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
-  -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@.
-  -> m ()
-glNamedBufferStorageEXT v1 v2 v3 v4 = liftIO $ dyn573 ptr_glNamedBufferStorageEXT v1 v2 v3 v4
-
-{-# NOINLINE ptr_glNamedBufferStorageEXT #-}
-ptr_glNamedBufferStorageEXT :: FunPtr (GLuint -> GLsizeiptr -> Ptr a -> GLbitfield -> IO ())
-ptr_glNamedBufferStorageEXT = unsafePerformIO $ getCommand "glNamedBufferStorageEXT"
 

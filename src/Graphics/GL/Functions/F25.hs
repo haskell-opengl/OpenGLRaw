@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F25 (
+  glTexCoord4fColor4fNormal3fVertex4fvSUN,
+  glTexCoord4fVertex4fSUN,
+  glTexCoord4fVertex4fvSUN,
+  glTexCoord4fv,
+  glTexCoord4hNV,
+  glTexCoord4hvNV,
   glTexCoord4i,
   glTexCoord4iv,
   glTexCoord4s,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F25 (
   glTextureBufferRangeEXT,
   glTextureColorMaskSGIS,
   glTextureImage1DEXT,
-  glTextureImage2DEXT,
-  glTextureImage2DMultisampleCoverageNV,
-  glTextureImage2DMultisampleNV,
-  glTextureImage3DEXT,
-  glTextureImage3DMultisampleCoverageNV,
-  glTextureImage3DMultisampleNV,
-  glTextureLightEXT
+  glTextureImage2DEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,94 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTexCoord4fColor4fNormal3fVertex4fvSUN -------------------------------------
+
+glTexCoord4fColor4fNormal3fVertex4fvSUN
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @tc@ pointing to @4@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @c@ pointing to @4@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @n@ pointing to @3@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
+  -> m ()
+glTexCoord4fColor4fNormal3fVertex4fvSUN v1 v2 v3 v4 = liftIO $ dyn724 ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN #-}
+ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN :: FunPtr (Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> IO ())
+ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN = unsafePerformIO $ getCommand "glTexCoord4fColor4fNormal3fVertex4fvSUN"
+
+-- glTexCoord4fVertex4fSUN -----------------------------------------------------
+
+glTexCoord4fVertex4fSUN
+  :: MonadIO m
+  => GLfloat -- ^ @s@.
+  -> GLfloat -- ^ @t@.
+  -> GLfloat -- ^ @p@.
+  -> GLfloat -- ^ @q@.
+  -> GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> GLfloat -- ^ @z@.
+  -> GLfloat -- ^ @w@.
+  -> m ()
+glTexCoord4fVertex4fSUN v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn613 ptr_glTexCoord4fVertex4fSUN v1 v2 v3 v4 v5 v6 v7 v8
+
+{-# NOINLINE ptr_glTexCoord4fVertex4fSUN #-}
+ptr_glTexCoord4fVertex4fSUN :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glTexCoord4fVertex4fSUN = unsafePerformIO $ getCommand "glTexCoord4fVertex4fSUN"
+
+-- glTexCoord4fVertex4fvSUN ----------------------------------------------------
+
+glTexCoord4fVertex4fvSUN
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @tc@ pointing to @4@ elements of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
+  -> m ()
+glTexCoord4fVertex4fvSUN v1 v2 = liftIO $ dyn97 ptr_glTexCoord4fVertex4fvSUN v1 v2
+
+{-# NOINLINE ptr_glTexCoord4fVertex4fvSUN #-}
+ptr_glTexCoord4fVertex4fvSUN :: FunPtr (Ptr GLfloat -> Ptr GLfloat -> IO ())
+ptr_glTexCoord4fVertex4fvSUN = unsafePerformIO $ getCommand "glTexCoord4fVertex4fvSUN"
+
+-- glTexCoord4fv ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
+glTexCoord4fv
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @CoordF@.
+  -> m ()
+glTexCoord4fv v1 = liftIO $ dyn41 ptr_glTexCoord4fv v1
+
+{-# NOINLINE ptr_glTexCoord4fv #-}
+ptr_glTexCoord4fv :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glTexCoord4fv = unsafePerformIO $ getCommand "glTexCoord4fv"
+
+-- glTexCoord4hNV --------------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glTexCoord4hvNV'.
+glTexCoord4hNV
+  :: MonadIO m
+  => GLhalfNV -- ^ @s@ of type @Half16NV@.
+  -> GLhalfNV -- ^ @t@ of type @Half16NV@.
+  -> GLhalfNV -- ^ @r@ of type @Half16NV@.
+  -> GLhalfNV -- ^ @q@ of type @Half16NV@.
+  -> m ()
+glTexCoord4hNV v1 v2 v3 v4 = liftIO $ dyn112 ptr_glTexCoord4hNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTexCoord4hNV #-}
+ptr_glTexCoord4hNV :: FunPtr (GLhalfNV -> GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
+ptr_glTexCoord4hNV = unsafePerformIO $ getCommand "glTexCoord4hNV"
+
+-- glTexCoord4hvNV -------------------------------------------------------------
+
+glTexCoord4hvNV
+  :: MonadIO m
+  => Ptr GLhalfNV -- ^ @v@ pointing to @4@ elements of type @Half16NV@.
+  -> m ()
+glTexCoord4hvNV v1 = liftIO $ dyn99 ptr_glTexCoord4hvNV v1
+
+{-# NOINLINE ptr_glTexCoord4hvNV #-}
+ptr_glTexCoord4hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
+ptr_glTexCoord4hvNV = unsafePerformIO $ getCommand "glTexCoord4hvNV"
 
 -- glTexCoord4i ----------------------------------------------------------------
 
@@ -1647,114 +1735,4 @@ glTextureImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn749 ptr_glTextu
 {-# NOINLINE ptr_glTextureImage2DEXT #-}
 ptr_glTextureImage2DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLsizei -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
 ptr_glTextureImage2DEXT = unsafePerformIO $ getCommand "glTextureImage2DEXT"
-
--- glTextureImage2DMultisampleCoverageNV ---------------------------------------
-
-glTextureImage2DMultisampleCoverageNV
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLenum -- ^ @target@.
-  -> GLsizei -- ^ @coverageSamples@.
-  -> GLsizei -- ^ @colorSamples@.
-  -> GLint -- ^ @internalFormat@.
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> m ()
-glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn750 ptr_glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glTextureImage2DMultisampleCoverageNV #-}
-ptr_glTextureImage2DMultisampleCoverageNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLboolean -> IO ())
-ptr_glTextureImage2DMultisampleCoverageNV = unsafePerformIO $ getCommand "glTextureImage2DMultisampleCoverageNV"
-
--- glTextureImage2DMultisampleNV -----------------------------------------------
-
-glTextureImage2DMultisampleNV
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLenum -- ^ @target@.
-  -> GLsizei -- ^ @samples@.
-  -> GLint -- ^ @internalFormat@.
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> m ()
-glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn751 ptr_glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7
-
-{-# NOINLINE ptr_glTextureImage2DMultisampleNV #-}
-ptr_glTextureImage2DMultisampleNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLboolean -> IO ())
-ptr_glTextureImage2DMultisampleNV = unsafePerformIO $ getCommand "glTextureImage2DMultisampleNV"
-
--- glTextureImage3DEXT ---------------------------------------------------------
-
-glTextureImage3DEXT
-  :: MonadIO m
-  => GLuint -- ^ @texture@ of type @Texture@.
-  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> GLsizei -- ^ @depth@.
-  -> GLint -- ^ @border@ of type @CheckedInt32@.
-  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
-  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
-  -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
-  -> m ()
-glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn752 ptr_glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
-
-{-# NOINLINE ptr_glTextureImage3DEXT #-}
-ptr_glTextureImage3DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
-ptr_glTextureImage3DEXT = unsafePerformIO $ getCommand "glTextureImage3DEXT"
-
--- glTextureImage3DMultisampleCoverageNV ---------------------------------------
-
-glTextureImage3DMultisampleCoverageNV
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLenum -- ^ @target@.
-  -> GLsizei -- ^ @coverageSamples@.
-  -> GLsizei -- ^ @colorSamples@.
-  -> GLint -- ^ @internalFormat@.
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> m ()
-glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn753 ptr_glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9
-
-{-# NOINLINE ptr_glTextureImage3DMultisampleCoverageNV #-}
-ptr_glTextureImage3DMultisampleCoverageNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
-ptr_glTextureImage3DMultisampleCoverageNV = unsafePerformIO $ getCommand "glTextureImage3DMultisampleCoverageNV"
-
--- glTextureImage3DMultisampleNV -----------------------------------------------
-
-glTextureImage3DMultisampleNV
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLenum -- ^ @target@.
-  -> GLsizei -- ^ @samples@.
-  -> GLint -- ^ @internalFormat@.
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> GLsizei -- ^ @depth@.
-  -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> m ()
-glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn754 ptr_glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glTextureImage3DMultisampleNV #-}
-ptr_glTextureImage3DMultisampleNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
-ptr_glTextureImage3DMultisampleNV = unsafePerformIO $ getCommand "glTextureImage3DMultisampleNV"
-
--- glTextureLightEXT -----------------------------------------------------------
-
-glTextureLightEXT
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @LightTexturePNameEXT@.
-  -> m ()
-glTextureLightEXT v1 = liftIO $ dyn4 ptr_glTextureLightEXT v1
-
-{-# NOINLINE ptr_glTextureLightEXT #-}
-ptr_glTextureLightEXT :: FunPtr (GLenum -> IO ())
-ptr_glTextureLightEXT = unsafePerformIO $ getCommand "glTextureLightEXT"
 

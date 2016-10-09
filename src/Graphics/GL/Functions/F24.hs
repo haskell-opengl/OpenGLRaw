@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F24 (
+  glStencilOp,
+  glStencilOpSeparate,
+  glStencilOpSeparateATI,
+  glStencilOpValueAMD,
+  glStencilStrokePathInstancedNV,
+  glStencilStrokePathNV,
   glStencilThenCoverFillPathInstancedNV,
   glStencilThenCoverFillPathNV,
   glStencilThenCoverStrokePathInstancedNV,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F24 (
   glTexCoord4d,
   glTexCoord4dv,
   glTexCoord4f,
-  glTexCoord4fColor4fNormal3fVertex4fSUN,
-  glTexCoord4fColor4fNormal3fVertex4fvSUN,
-  glTexCoord4fVertex4fSUN,
-  glTexCoord4fVertex4fvSUN,
-  glTexCoord4fv,
-  glTexCoord4hNV,
-  glTexCoord4hvNV
+  glTexCoord4fColor4fNormal3fVertex4fSUN
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,99 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glStencilOp -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOp.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOp.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOp.xhtml OpenGL 4.x>.
+glStencilOp
+  :: MonadIO m
+  => GLenum -- ^ @fail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> GLenum -- ^ @zfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> GLenum -- ^ @zpass@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> m ()
+glStencilOp v1 v2 v3 = liftIO $ dyn714 ptr_glStencilOp v1 v2 v3
+
+{-# NOINLINE ptr_glStencilOp #-}
+ptr_glStencilOp :: FunPtr (GLenum -> GLenum -> GLenum -> IO ())
+ptr_glStencilOp = unsafePerformIO $ getCommand "glStencilOp"
+
+-- glStencilOpSeparate ---------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOpSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glStencilOpSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glStencilOpSeparate.xhtml OpenGL 4.x>.
+glStencilOpSeparate
+  :: MonadIO m
+  => GLenum -- ^ @face@ of type @StencilFaceDirection@.
+  -> GLenum -- ^ @sfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> GLenum -- ^ @dpfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> GLenum -- ^ @dppass@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> m ()
+glStencilOpSeparate v1 v2 v3 v4 = liftIO $ dyn53 ptr_glStencilOpSeparate v1 v2 v3 v4
+
+{-# NOINLINE ptr_glStencilOpSeparate #-}
+ptr_glStencilOpSeparate :: FunPtr (GLenum -> GLenum -> GLenum -> GLenum -> IO ())
+ptr_glStencilOpSeparate = unsafePerformIO $ getCommand "glStencilOpSeparate"
+
+-- glStencilOpSeparateATI ------------------------------------------------------
+
+-- | This command is an alias for 'glStencilOpSeparate'.
+glStencilOpSeparateATI
+  :: MonadIO m
+  => GLenum -- ^ @face@ of type @StencilFaceDirection@.
+  -> GLenum -- ^ @sfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> GLenum -- ^ @dpfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> GLenum -- ^ @dppass@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
+  -> m ()
+glStencilOpSeparateATI v1 v2 v3 v4 = liftIO $ dyn53 ptr_glStencilOpSeparateATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glStencilOpSeparateATI #-}
+ptr_glStencilOpSeparateATI :: FunPtr (GLenum -> GLenum -> GLenum -> GLenum -> IO ())
+ptr_glStencilOpSeparateATI = unsafePerformIO $ getCommand "glStencilOpSeparateATI"
+
+-- glStencilOpValueAMD ---------------------------------------------------------
+
+glStencilOpValueAMD
+  :: MonadIO m
+  => GLenum -- ^ @face@ of type @StencilFaceDirection@.
+  -> GLuint -- ^ @value@.
+  -> m ()
+glStencilOpValueAMD v1 v2 = liftIO $ dyn16 ptr_glStencilOpValueAMD v1 v2
+
+{-# NOINLINE ptr_glStencilOpValueAMD #-}
+ptr_glStencilOpValueAMD :: FunPtr (GLenum -> GLuint -> IO ())
+ptr_glStencilOpValueAMD = unsafePerformIO $ getCommand "glStencilOpValueAMD"
+
+-- glStencilStrokePathInstancedNV ----------------------------------------------
+
+glStencilStrokePathInstancedNV
+  :: MonadIO m
+  => GLsizei -- ^ @numPaths@.
+  -> GLenum -- ^ @pathNameType@ of type @PathElementType@.
+  -> Ptr a -- ^ @paths@ pointing to @COMPSIZE(numPaths,pathNameType,paths)@ elements of type @PathElement@.
+  -> GLuint -- ^ @pathBase@ of type @Path@.
+  -> GLint -- ^ @reference@ of type @StencilValue@.
+  -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
+  -> GLenum -- ^ @transformType@ of type @PathTransformType@.
+  -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(numPaths,transformType)@ elements of type @GLfloat@.
+  -> m ()
+glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn715 ptr_glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8
+
+{-# NOINLINE ptr_glStencilStrokePathInstancedNV #-}
+ptr_glStencilStrokePathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLint -> GLuint -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glStencilStrokePathInstancedNV = unsafePerformIO $ getCommand "glStencilStrokePathInstancedNV"
+
+-- glStencilStrokePathNV -------------------------------------------------------
+
+glStencilStrokePathNV
+  :: MonadIO m
+  => GLuint -- ^ @path@ of type @Path@.
+  -> GLint -- ^ @reference@ of type @StencilValue@.
+  -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
+  -> m ()
+glStencilStrokePathNV v1 v2 v3 = liftIO $ dyn637 ptr_glStencilStrokePathNV v1 v2 v3
+
+{-# NOINLINE ptr_glStencilStrokePathNV #-}
+ptr_glStencilStrokePathNV :: FunPtr (GLuint -> GLint -> GLuint -> IO ())
+ptr_glStencilStrokePathNV = unsafePerformIO $ getCommand "glStencilStrokePathNV"
 
 -- glStencilThenCoverFillPathInstancedNV ---------------------------------------
 
@@ -1446,92 +1539,4 @@ glTexCoord4fColor4fNormal3fVertex4fSUN v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v1
 {-# NOINLINE ptr_glTexCoord4fColor4fNormal3fVertex4fSUN #-}
 ptr_glTexCoord4fColor4fNormal3fVertex4fSUN :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
 ptr_glTexCoord4fColor4fNormal3fVertex4fSUN = unsafePerformIO $ getCommand "glTexCoord4fColor4fNormal3fVertex4fSUN"
-
--- glTexCoord4fColor4fNormal3fVertex4fvSUN -------------------------------------
-
-glTexCoord4fColor4fNormal3fVertex4fvSUN
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @tc@ pointing to @4@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @c@ pointing to @4@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @n@ pointing to @3@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
-  -> m ()
-glTexCoord4fColor4fNormal3fVertex4fvSUN v1 v2 v3 v4 = liftIO $ dyn724 ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN v1 v2 v3 v4
-
-{-# NOINLINE ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN #-}
-ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN :: FunPtr (Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> IO ())
-ptr_glTexCoord4fColor4fNormal3fVertex4fvSUN = unsafePerformIO $ getCommand "glTexCoord4fColor4fNormal3fVertex4fvSUN"
-
--- glTexCoord4fVertex4fSUN -----------------------------------------------------
-
-glTexCoord4fVertex4fSUN
-  :: MonadIO m
-  => GLfloat -- ^ @s@.
-  -> GLfloat -- ^ @t@.
-  -> GLfloat -- ^ @p@.
-  -> GLfloat -- ^ @q@.
-  -> GLfloat -- ^ @x@.
-  -> GLfloat -- ^ @y@.
-  -> GLfloat -- ^ @z@.
-  -> GLfloat -- ^ @w@.
-  -> m ()
-glTexCoord4fVertex4fSUN v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn613 ptr_glTexCoord4fVertex4fSUN v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glTexCoord4fVertex4fSUN #-}
-ptr_glTexCoord4fVertex4fSUN :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glTexCoord4fVertex4fSUN = unsafePerformIO $ getCommand "glTexCoord4fVertex4fSUN"
-
--- glTexCoord4fVertex4fvSUN ----------------------------------------------------
-
-glTexCoord4fVertex4fvSUN
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @tc@ pointing to @4@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
-  -> m ()
-glTexCoord4fVertex4fvSUN v1 v2 = liftIO $ dyn97 ptr_glTexCoord4fVertex4fvSUN v1 v2
-
-{-# NOINLINE ptr_glTexCoord4fVertex4fvSUN #-}
-ptr_glTexCoord4fVertex4fvSUN :: FunPtr (Ptr GLfloat -> Ptr GLfloat -> IO ())
-ptr_glTexCoord4fVertex4fvSUN = unsafePerformIO $ getCommand "glTexCoord4fVertex4fvSUN"
-
--- glTexCoord4fv ---------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml OpenGL 2.x>.
-glTexCoord4fv
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @CoordF@.
-  -> m ()
-glTexCoord4fv v1 = liftIO $ dyn41 ptr_glTexCoord4fv v1
-
-{-# NOINLINE ptr_glTexCoord4fv #-}
-ptr_glTexCoord4fv :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glTexCoord4fv = unsafePerformIO $ getCommand "glTexCoord4fv"
-
--- glTexCoord4hNV --------------------------------------------------------------
-
--- | The vector equivalent of this command is 'glTexCoord4hvNV'.
-glTexCoord4hNV
-  :: MonadIO m
-  => GLhalfNV -- ^ @s@ of type @Half16NV@.
-  -> GLhalfNV -- ^ @t@ of type @Half16NV@.
-  -> GLhalfNV -- ^ @r@ of type @Half16NV@.
-  -> GLhalfNV -- ^ @q@ of type @Half16NV@.
-  -> m ()
-glTexCoord4hNV v1 v2 v3 v4 = liftIO $ dyn112 ptr_glTexCoord4hNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glTexCoord4hNV #-}
-ptr_glTexCoord4hNV :: FunPtr (GLhalfNV -> GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
-ptr_glTexCoord4hNV = unsafePerformIO $ getCommand "glTexCoord4hNV"
-
--- glTexCoord4hvNV -------------------------------------------------------------
-
-glTexCoord4hvNV
-  :: MonadIO m
-  => Ptr GLhalfNV -- ^ @v@ pointing to @4@ elements of type @Half16NV@.
-  -> m ()
-glTexCoord4hvNV v1 = liftIO $ dyn99 ptr_glTexCoord4hvNV v1
-
-{-# NOINLINE ptr_glTexCoord4hvNV #-}
-ptr_glTexCoord4hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
-ptr_glTexCoord4hvNV = unsafePerformIO $ getCommand "glTexCoord4hvNV"
 
