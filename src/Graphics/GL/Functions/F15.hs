@@ -15,6 +15,11 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F15 (
+  glIsSync,
+  glIsSyncAPPLE,
+  glIsTexture,
+  glIsTextureEXT,
+  glIsTextureHandleResidentARB,
   glIsTextureHandleResidentNV,
   glIsTransformFeedback,
   glIsTransformFeedbackNV,
@@ -109,12 +114,7 @@ module Graphics.GL.Functions.F15 (
   glMapTexture2DINTEL,
   glMapVertexAttrib1dAPPLE,
   glMapVertexAttrib1fAPPLE,
-  glMapVertexAttrib2dAPPLE,
-  glMapVertexAttrib2fAPPLE,
-  glMaterialf,
-  glMaterialfv,
-  glMateriali,
-  glMaterialiv
+  glMapVertexAttrib2dAPPLE
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -123,13 +123,76 @@ import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
 
+-- glIsSync --------------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glIsSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsSync.xhtml OpenGL 4.x>.
+glIsSync
+  :: MonadIO m
+  => GLsync -- ^ @sync@ of type @sync@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsSync v1 = liftIO $ dyn484 ptr_glIsSync v1
+
+{-# NOINLINE ptr_glIsSync #-}
+ptr_glIsSync :: FunPtr (GLsync -> IO GLboolean)
+ptr_glIsSync = unsafePerformIO $ getCommand "glIsSync"
+
+-- glIsSyncAPPLE ---------------------------------------------------------------
+
+-- | This command is an alias for 'glIsSync'.
+glIsSyncAPPLE
+  :: MonadIO m
+  => GLsync -- ^ @sync@.
+  -> m GLboolean
+glIsSyncAPPLE v1 = liftIO $ dyn484 ptr_glIsSyncAPPLE v1
+
+{-# NOINLINE ptr_glIsSyncAPPLE #-}
+ptr_glIsSyncAPPLE :: FunPtr (GLsync -> IO GLboolean)
+ptr_glIsSyncAPPLE = unsafePerformIO $ getCommand "glIsSyncAPPLE"
+
+-- glIsTexture -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glIsTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glIsTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glIsTexture.xhtml OpenGL 4.x>.
+glIsTexture
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsTexture v1 = liftIO $ dyn273 ptr_glIsTexture v1
+
+{-# NOINLINE ptr_glIsTexture #-}
+ptr_glIsTexture :: FunPtr (GLuint -> IO GLboolean)
+ptr_glIsTexture = unsafePerformIO $ getCommand "glIsTexture"
+
+-- glIsTextureEXT --------------------------------------------------------------
+
+glIsTextureEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glIsTextureEXT v1 = liftIO $ dyn273 ptr_glIsTextureEXT v1
+
+{-# NOINLINE ptr_glIsTextureEXT #-}
+ptr_glIsTextureEXT :: FunPtr (GLuint -> IO GLboolean)
+ptr_glIsTextureEXT = unsafePerformIO $ getCommand "glIsTextureEXT"
+
+-- glIsTextureHandleResidentARB ------------------------------------------------
+
+glIsTextureHandleResidentARB
+  :: MonadIO m
+  => GLuint64 -- ^ @handle@.
+  -> m GLboolean
+glIsTextureHandleResidentARB v1 = liftIO $ dyn480 ptr_glIsTextureHandleResidentARB v1
+
+{-# NOINLINE ptr_glIsTextureHandleResidentARB #-}
+ptr_glIsTextureHandleResidentARB :: FunPtr (GLuint64 -> IO GLboolean)
+ptr_glIsTextureHandleResidentARB = unsafePerformIO $ getCommand "glIsTextureHandleResidentARB"
+
 -- glIsTextureHandleResidentNV -------------------------------------------------
 
 glIsTextureHandleResidentNV
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsTextureHandleResidentNV v1 = liftIO $ dyn478 ptr_glIsTextureHandleResidentNV v1
+glIsTextureHandleResidentNV v1 = liftIO $ dyn480 ptr_glIsTextureHandleResidentNV v1
 
 {-# NOINLINE ptr_glIsTextureHandleResidentNV #-}
 ptr_glIsTextureHandleResidentNV :: FunPtr (GLuint64 -> IO GLboolean)
@@ -168,7 +231,7 @@ glIsVariantEnabledEXT
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @cap@ of type @VariantCapEXT@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsVariantEnabledEXT v1 v2 = liftIO $ dyn483 ptr_glIsVariantEnabledEXT v1 v2
+glIsVariantEnabledEXT v1 v2 = liftIO $ dyn485 ptr_glIsVariantEnabledEXT v1 v2
 
 {-# NOINLINE ptr_glIsVariantEnabledEXT #-}
 ptr_glIsVariantEnabledEXT :: FunPtr (GLuint -> GLenum -> IO GLboolean)
@@ -220,7 +283,7 @@ glIsVertexAttribEnabledAPPLE
   => GLuint -- ^ @index@.
   -> GLenum -- ^ @pname@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glIsVertexAttribEnabledAPPLE v1 v2 = liftIO $ dyn483 ptr_glIsVertexAttribEnabledAPPLE v1 v2
+glIsVertexAttribEnabledAPPLE v1 v2 = liftIO $ dyn485 ptr_glIsVertexAttribEnabledAPPLE v1 v2
 
 {-# NOINLINE ptr_glIsVertexAttribEnabledAPPLE #-}
 ptr_glIsVertexAttribEnabledAPPLE :: FunPtr (GLuint -> GLenum -> IO GLboolean)
@@ -235,7 +298,7 @@ glLabelObjectEXT
   -> GLsizei -- ^ @length@.
   -> Ptr GLchar -- ^ @label@.
   -> m ()
-glLabelObjectEXT v1 v2 v3 v4 = liftIO $ dyn484 ptr_glLabelObjectEXT v1 v2 v3 v4
+glLabelObjectEXT v1 v2 v3 v4 = liftIO $ dyn486 ptr_glLabelObjectEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glLabelObjectEXT #-}
 ptr_glLabelObjectEXT :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLchar -> IO ())
@@ -486,7 +549,7 @@ glLineStipple
   => GLint -- ^ @factor@ of type @CheckedInt32@.
   -> GLushort -- ^ @pattern@ of type @LineStipple@.
   -> m ()
-glLineStipple v1 v2 = liftIO $ dyn485 ptr_glLineStipple v1 v2
+glLineStipple v1 v2 = liftIO $ dyn487 ptr_glLineStipple v1 v2
 
 {-# NOINLINE ptr_glLineStipple #-}
 ptr_glLineStipple :: FunPtr (GLint -> GLushort -> IO ())
@@ -580,7 +643,7 @@ glListDrawCommandsStatesClientNV
   -> Ptr GLuint -- ^ @fbos@.
   -> GLuint -- ^ @count@.
   -> m ()
-glListDrawCommandsStatesClientNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn486 ptr_glListDrawCommandsStatesClientNV v1 v2 v3 v4 v5 v6 v7
+glListDrawCommandsStatesClientNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn488 ptr_glListDrawCommandsStatesClientNV v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glListDrawCommandsStatesClientNV #-}
 ptr_glListDrawCommandsStatesClientNV :: FunPtr (GLuint -> GLuint -> Ptr (Ptr a) -> Ptr GLsizei -> Ptr GLuint -> Ptr GLuint -> GLuint -> IO ())
@@ -594,7 +657,7 @@ glListParameterfSGIX
   -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-GL-Groups.html#ListParameterName).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
-glListParameterfSGIX v1 v2 v3 = liftIO $ dyn487 ptr_glListParameterfSGIX v1 v2 v3
+glListParameterfSGIX v1 v2 v3 = liftIO $ dyn489 ptr_glListParameterfSGIX v1 v2 v3
 
 {-# NOINLINE ptr_glListParameterfSGIX #-}
 ptr_glListParameterfSGIX :: FunPtr (GLuint -> GLenum -> GLfloat -> IO ())
@@ -608,7 +671,7 @@ glListParameterfvSGIX
   -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-GL-Groups.html#ListParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glListParameterfvSGIX v1 v2 v3 = liftIO $ dyn349 ptr_glListParameterfvSGIX v1 v2 v3
+glListParameterfvSGIX v1 v2 v3 = liftIO $ dyn351 ptr_glListParameterfvSGIX v1 v2 v3
 
 {-# NOINLINE ptr_glListParameterfvSGIX #-}
 ptr_glListParameterfvSGIX :: FunPtr (GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -622,7 +685,7 @@ glListParameteriSGIX
   -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-GL-Groups.html#ListParameterName).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
-glListParameteriSGIX v1 v2 v3 = liftIO $ dyn488 ptr_glListParameteriSGIX v1 v2 v3
+glListParameteriSGIX v1 v2 v3 = liftIO $ dyn490 ptr_glListParameteriSGIX v1 v2 v3
 
 {-# NOINLINE ptr_glListParameteriSGIX #-}
 ptr_glListParameteriSGIX :: FunPtr (GLuint -> GLenum -> GLint -> IO ())
@@ -636,7 +699,7 @@ glListParameterivSGIX
   -> GLenum -- ^ @pname@ of type [ListParameterName](Graphics-GL-Groups.html#ListParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glListParameterivSGIX v1 v2 v3 = liftIO $ dyn334 ptr_glListParameterivSGIX v1 v2 v3
+glListParameterivSGIX v1 v2 v3 = liftIO $ dyn335 ptr_glListParameterivSGIX v1 v2 v3
 
 {-# NOINLINE ptr_glListParameterivSGIX #-}
 ptr_glListParameterivSGIX :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -749,7 +812,7 @@ glLoadProgramNV
   -> GLsizei -- ^ @len@.
   -> Ptr GLubyte -- ^ @program@ pointing to @len@ elements of type @GLubyte@.
   -> m ()
-glLoadProgramNV v1 v2 v3 v4 = liftIO $ dyn489 ptr_glLoadProgramNV v1 v2 v3 v4
+glLoadProgramNV v1 v2 v3 v4 = liftIO $ dyn491 ptr_glLoadProgramNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glLoadProgramNV #-}
 ptr_glLoadProgramNV :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLubyte -> IO ())
@@ -826,7 +889,7 @@ glLockArraysEXT
   => GLint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> m ()
-glLockArraysEXT v1 v2 = liftIO $ dyn490 ptr_glLockArraysEXT v1 v2
+glLockArraysEXT v1 v2 = liftIO $ dyn492 ptr_glLockArraysEXT v1 v2
 
 {-# NOINLINE ptr_glLockArraysEXT #-}
 ptr_glLockArraysEXT :: FunPtr (GLint -> GLsizei -> IO ())
@@ -876,7 +939,7 @@ glMakeImageHandleNonResidentARB
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
   -> m ()
-glMakeImageHandleNonResidentARB v1 = liftIO $ dyn491 ptr_glMakeImageHandleNonResidentARB v1
+glMakeImageHandleNonResidentARB v1 = liftIO $ dyn493 ptr_glMakeImageHandleNonResidentARB v1
 
 {-# NOINLINE ptr_glMakeImageHandleNonResidentARB #-}
 ptr_glMakeImageHandleNonResidentARB :: FunPtr (GLuint64 -> IO ())
@@ -888,7 +951,7 @@ glMakeImageHandleNonResidentNV
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
   -> m ()
-glMakeImageHandleNonResidentNV v1 = liftIO $ dyn491 ptr_glMakeImageHandleNonResidentNV v1
+glMakeImageHandleNonResidentNV v1 = liftIO $ dyn493 ptr_glMakeImageHandleNonResidentNV v1
 
 {-# NOINLINE ptr_glMakeImageHandleNonResidentNV #-}
 ptr_glMakeImageHandleNonResidentNV :: FunPtr (GLuint64 -> IO ())
@@ -901,7 +964,7 @@ glMakeImageHandleResidentARB
   => GLuint64 -- ^ @handle@.
   -> GLenum -- ^ @access@.
   -> m ()
-glMakeImageHandleResidentARB v1 v2 = liftIO $ dyn492 ptr_glMakeImageHandleResidentARB v1 v2
+glMakeImageHandleResidentARB v1 v2 = liftIO $ dyn494 ptr_glMakeImageHandleResidentARB v1 v2
 
 {-# NOINLINE ptr_glMakeImageHandleResidentARB #-}
 ptr_glMakeImageHandleResidentARB :: FunPtr (GLuint64 -> GLenum -> IO ())
@@ -914,7 +977,7 @@ glMakeImageHandleResidentNV
   => GLuint64 -- ^ @handle@.
   -> GLenum -- ^ @access@.
   -> m ()
-glMakeImageHandleResidentNV v1 v2 = liftIO $ dyn492 ptr_glMakeImageHandleResidentNV v1 v2
+glMakeImageHandleResidentNV v1 v2 = liftIO $ dyn494 ptr_glMakeImageHandleResidentNV v1 v2
 
 {-# NOINLINE ptr_glMakeImageHandleResidentNV #-}
 ptr_glMakeImageHandleResidentNV :: FunPtr (GLuint64 -> GLenum -> IO ())
@@ -951,7 +1014,7 @@ glMakeTextureHandleNonResidentARB
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
   -> m ()
-glMakeTextureHandleNonResidentARB v1 = liftIO $ dyn491 ptr_glMakeTextureHandleNonResidentARB v1
+glMakeTextureHandleNonResidentARB v1 = liftIO $ dyn493 ptr_glMakeTextureHandleNonResidentARB v1
 
 {-# NOINLINE ptr_glMakeTextureHandleNonResidentARB #-}
 ptr_glMakeTextureHandleNonResidentARB :: FunPtr (GLuint64 -> IO ())
@@ -963,7 +1026,7 @@ glMakeTextureHandleNonResidentNV
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
   -> m ()
-glMakeTextureHandleNonResidentNV v1 = liftIO $ dyn491 ptr_glMakeTextureHandleNonResidentNV v1
+glMakeTextureHandleNonResidentNV v1 = liftIO $ dyn493 ptr_glMakeTextureHandleNonResidentNV v1
 
 {-# NOINLINE ptr_glMakeTextureHandleNonResidentNV #-}
 ptr_glMakeTextureHandleNonResidentNV :: FunPtr (GLuint64 -> IO ())
@@ -975,7 +1038,7 @@ glMakeTextureHandleResidentARB
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
   -> m ()
-glMakeTextureHandleResidentARB v1 = liftIO $ dyn491 ptr_glMakeTextureHandleResidentARB v1
+glMakeTextureHandleResidentARB v1 = liftIO $ dyn493 ptr_glMakeTextureHandleResidentARB v1
 
 {-# NOINLINE ptr_glMakeTextureHandleResidentARB #-}
 ptr_glMakeTextureHandleResidentARB :: FunPtr (GLuint64 -> IO ())
@@ -987,7 +1050,7 @@ glMakeTextureHandleResidentNV
   :: MonadIO m
   => GLuint64 -- ^ @handle@.
   -> m ()
-glMakeTextureHandleResidentNV v1 = liftIO $ dyn491 ptr_glMakeTextureHandleResidentNV v1
+glMakeTextureHandleResidentNV v1 = liftIO $ dyn493 ptr_glMakeTextureHandleResidentNV v1
 
 {-# NOINLINE ptr_glMakeTextureHandleResidentNV #-}
 ptr_glMakeTextureHandleResidentNV :: FunPtr (GLuint64 -> IO ())
@@ -1005,7 +1068,7 @@ glMap1d
   -> GLint -- ^ @order@ of type @CheckedInt32@.
   -> Ptr GLdouble -- ^ @points@ pointing to @COMPSIZE(target,stride,order)@ elements of type @CoordD@.
   -> m ()
-glMap1d v1 v2 v3 v4 v5 v6 = liftIO $ dyn493 ptr_glMap1d v1 v2 v3 v4 v5 v6
+glMap1d v1 v2 v3 v4 v5 v6 = liftIO $ dyn495 ptr_glMap1d v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMap1d #-}
 ptr_glMap1d :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLint -> GLint -> Ptr GLdouble -> IO ())
@@ -1023,7 +1086,7 @@ glMap1f
   -> GLint -- ^ @order@ of type @CheckedInt32@.
   -> Ptr GLfloat -- ^ @points@ pointing to @COMPSIZE(target,stride,order)@ elements of type @CoordF@.
   -> m ()
-glMap1f v1 v2 v3 v4 v5 v6 = liftIO $ dyn494 ptr_glMap1f v1 v2 v3 v4 v5 v6
+glMap1f v1 v2 v3 v4 v5 v6 = liftIO $ dyn496 ptr_glMap1f v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMap1f #-}
 ptr_glMap1f :: FunPtr (GLenum -> GLfloat -> GLfloat -> GLint -> GLint -> Ptr GLfloat -> IO ())
@@ -1040,7 +1103,7 @@ glMap1xOES
   -> GLint -- ^ @order@.
   -> GLfixed -- ^ @points@.
   -> m ()
-glMap1xOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn495 ptr_glMap1xOES v1 v2 v3 v4 v5 v6
+glMap1xOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn497 ptr_glMap1xOES v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMap1xOES #-}
 ptr_glMap1xOES :: FunPtr (GLenum -> GLfixed -> GLfixed -> GLint -> GLint -> GLfixed -> IO ())
@@ -1062,7 +1125,7 @@ glMap2d
   -> GLint -- ^ @vorder@ of type @CheckedInt32@.
   -> Ptr GLdouble -- ^ @points@ pointing to @COMPSIZE(target,ustride,uorder,vstride,vorder)@ elements of type @CoordD@.
   -> m ()
-glMap2d v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn496 ptr_glMap2d v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
+glMap2d v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn498 ptr_glMap2d v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
 {-# NOINLINE ptr_glMap2d #-}
 ptr_glMap2d :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLint -> GLint -> GLdouble -> GLdouble -> GLint -> GLint -> Ptr GLdouble -> IO ())
@@ -1084,7 +1147,7 @@ glMap2f
   -> GLint -- ^ @vorder@ of type @CheckedInt32@.
   -> Ptr GLfloat -- ^ @points@ pointing to @COMPSIZE(target,ustride,uorder,vstride,vorder)@ elements of type @CoordF@.
   -> m ()
-glMap2f v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn497 ptr_glMap2f v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
+glMap2f v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn499 ptr_glMap2f v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
 {-# NOINLINE ptr_glMap2f #-}
 ptr_glMap2f :: FunPtr (GLenum -> GLfloat -> GLfloat -> GLint -> GLint -> GLfloat -> GLfloat -> GLint -> GLint -> Ptr GLfloat -> IO ())
@@ -1105,7 +1168,7 @@ glMap2xOES
   -> GLint -- ^ @vorder@.
   -> GLfixed -- ^ @points@.
   -> m ()
-glMap2xOES v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn498 ptr_glMap2xOES v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
+glMap2xOES v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn500 ptr_glMap2xOES v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
 {-# NOINLINE ptr_glMap2xOES #-}
 ptr_glMap2xOES :: FunPtr (GLenum -> GLfixed -> GLfixed -> GLint -> GLint -> GLfixed -> GLfixed -> GLint -> GLint -> GLfixed -> IO ())
@@ -1119,7 +1182,7 @@ glMapBuffer
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @access@ of type @BufferAccessARB@.
   -> m (Ptr a)
-glMapBuffer v1 v2 = liftIO $ dyn499 ptr_glMapBuffer v1 v2
+glMapBuffer v1 v2 = liftIO $ dyn501 ptr_glMapBuffer v1 v2
 
 {-# NOINLINE ptr_glMapBuffer #-}
 ptr_glMapBuffer :: FunPtr (GLenum -> GLenum -> IO (Ptr a))
@@ -1133,7 +1196,7 @@ glMapBufferARB
   => GLenum -- ^ @target@ of type @BufferTargetARB@.
   -> GLenum -- ^ @access@ of type @BufferAccessARB@.
   -> m (Ptr a)
-glMapBufferARB v1 v2 = liftIO $ dyn499 ptr_glMapBufferARB v1 v2
+glMapBufferARB v1 v2 = liftIO $ dyn501 ptr_glMapBufferARB v1 v2
 
 {-# NOINLINE ptr_glMapBufferARB #-}
 ptr_glMapBufferARB :: FunPtr (GLenum -> GLenum -> IO (Ptr a))
@@ -1147,7 +1210,7 @@ glMapBufferOES
   => GLenum -- ^ @target@.
   -> GLenum -- ^ @access@.
   -> m (Ptr a)
-glMapBufferOES v1 v2 = liftIO $ dyn499 ptr_glMapBufferOES v1 v2
+glMapBufferOES v1 v2 = liftIO $ dyn501 ptr_glMapBufferOES v1 v2
 
 {-# NOINLINE ptr_glMapBufferOES #-}
 ptr_glMapBufferOES :: FunPtr (GLenum -> GLenum -> IO (Ptr a))
@@ -1163,7 +1226,7 @@ glMapBufferRange
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
   -> GLbitfield -- ^ @access@ of type @BufferAccessMask@.
   -> m (Ptr a)
-glMapBufferRange v1 v2 v3 v4 = liftIO $ dyn500 ptr_glMapBufferRange v1 v2 v3 v4
+glMapBufferRange v1 v2 v3 v4 = liftIO $ dyn502 ptr_glMapBufferRange v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMapBufferRange #-}
 ptr_glMapBufferRange :: FunPtr (GLenum -> GLintptr -> GLsizeiptr -> GLbitfield -> IO (Ptr a))
@@ -1179,7 +1242,7 @@ glMapBufferRangeEXT
   -> GLsizeiptr -- ^ @length@.
   -> GLbitfield -- ^ @access@.
   -> m (Ptr a)
-glMapBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn500 ptr_glMapBufferRangeEXT v1 v2 v3 v4
+glMapBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn502 ptr_glMapBufferRangeEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMapBufferRangeEXT #-}
 ptr_glMapBufferRangeEXT :: FunPtr (GLenum -> GLintptr -> GLsizeiptr -> GLbitfield -> IO (Ptr a))
@@ -1199,7 +1262,7 @@ glMapControlPointsNV
   -> GLboolean -- ^ @packed@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> Ptr a -- ^ @points@ pointing to @COMPSIZE(target,uorder,vorder)@ elements of type @a@.
   -> m ()
-glMapControlPointsNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn501 ptr_glMapControlPointsNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+glMapControlPointsNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn503 ptr_glMapControlPointsNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glMapControlPointsNV #-}
 ptr_glMapControlPointsNV :: FunPtr (GLenum -> GLuint -> GLenum -> GLsizei -> GLsizei -> GLint -> GLint -> GLboolean -> Ptr a -> IO ())
@@ -1214,7 +1277,7 @@ glMapGrid1d
   -> GLdouble -- ^ @u1@ of type @CoordD@.
   -> GLdouble -- ^ @u2@ of type @CoordD@.
   -> m ()
-glMapGrid1d v1 v2 v3 = liftIO $ dyn502 ptr_glMapGrid1d v1 v2 v3
+glMapGrid1d v1 v2 v3 = liftIO $ dyn504 ptr_glMapGrid1d v1 v2 v3
 
 {-# NOINLINE ptr_glMapGrid1d #-}
 ptr_glMapGrid1d :: FunPtr (GLint -> GLdouble -> GLdouble -> IO ())
@@ -1229,7 +1292,7 @@ glMapGrid1f
   -> GLfloat -- ^ @u1@ of type @CoordF@.
   -> GLfloat -- ^ @u2@ of type @CoordF@.
   -> m ()
-glMapGrid1f v1 v2 v3 = liftIO $ dyn503 ptr_glMapGrid1f v1 v2 v3
+glMapGrid1f v1 v2 v3 = liftIO $ dyn505 ptr_glMapGrid1f v1 v2 v3
 
 {-# NOINLINE ptr_glMapGrid1f #-}
 ptr_glMapGrid1f :: FunPtr (GLint -> GLfloat -> GLfloat -> IO ())
@@ -1243,7 +1306,7 @@ glMapGrid1xOES
   -> GLfixed -- ^ @u1@.
   -> GLfixed -- ^ @u2@.
   -> m ()
-glMapGrid1xOES v1 v2 v3 = liftIO $ dyn504 ptr_glMapGrid1xOES v1 v2 v3
+glMapGrid1xOES v1 v2 v3 = liftIO $ dyn506 ptr_glMapGrid1xOES v1 v2 v3
 
 {-# NOINLINE ptr_glMapGrid1xOES #-}
 ptr_glMapGrid1xOES :: FunPtr (GLint -> GLfixed -> GLfixed -> IO ())
@@ -1261,7 +1324,7 @@ glMapGrid2d
   -> GLdouble -- ^ @v1@ of type @CoordD@.
   -> GLdouble -- ^ @v2@ of type @CoordD@.
   -> m ()
-glMapGrid2d v1 v2 v3 v4 v5 v6 = liftIO $ dyn505 ptr_glMapGrid2d v1 v2 v3 v4 v5 v6
+glMapGrid2d v1 v2 v3 v4 v5 v6 = liftIO $ dyn507 ptr_glMapGrid2d v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMapGrid2d #-}
 ptr_glMapGrid2d :: FunPtr (GLint -> GLdouble -> GLdouble -> GLint -> GLdouble -> GLdouble -> IO ())
@@ -1279,7 +1342,7 @@ glMapGrid2f
   -> GLfloat -- ^ @v1@ of type @CoordF@.
   -> GLfloat -- ^ @v2@ of type @CoordF@.
   -> m ()
-glMapGrid2f v1 v2 v3 v4 v5 v6 = liftIO $ dyn506 ptr_glMapGrid2f v1 v2 v3 v4 v5 v6
+glMapGrid2f v1 v2 v3 v4 v5 v6 = liftIO $ dyn508 ptr_glMapGrid2f v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMapGrid2f #-}
 ptr_glMapGrid2f :: FunPtr (GLint -> GLfloat -> GLfloat -> GLint -> GLfloat -> GLfloat -> IO ())
@@ -1295,7 +1358,7 @@ glMapGrid2xOES
   -> GLfixed -- ^ @v1@.
   -> GLfixed -- ^ @v2@.
   -> m ()
-glMapGrid2xOES v1 v2 v3 v4 v5 = liftIO $ dyn507 ptr_glMapGrid2xOES v1 v2 v3 v4 v5
+glMapGrid2xOES v1 v2 v3 v4 v5 = liftIO $ dyn509 ptr_glMapGrid2xOES v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMapGrid2xOES #-}
 ptr_glMapGrid2xOES :: FunPtr (GLint -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
@@ -1309,7 +1372,7 @@ glMapNamedBuffer
   => GLuint -- ^ @buffer@.
   -> GLenum -- ^ @access@.
   -> m (Ptr a)
-glMapNamedBuffer v1 v2 = liftIO $ dyn508 ptr_glMapNamedBuffer v1 v2
+glMapNamedBuffer v1 v2 = liftIO $ dyn510 ptr_glMapNamedBuffer v1 v2
 
 {-# NOINLINE ptr_glMapNamedBuffer #-}
 ptr_glMapNamedBuffer :: FunPtr (GLuint -> GLenum -> IO (Ptr a))
@@ -1322,7 +1385,7 @@ glMapNamedBufferEXT
   => GLuint -- ^ @buffer@.
   -> GLenum -- ^ @access@ of type @VertexBufferObjectAccess@.
   -> m (Ptr a)
-glMapNamedBufferEXT v1 v2 = liftIO $ dyn508 ptr_glMapNamedBufferEXT v1 v2
+glMapNamedBufferEXT v1 v2 = liftIO $ dyn510 ptr_glMapNamedBufferEXT v1 v2
 
 {-# NOINLINE ptr_glMapNamedBufferEXT #-}
 ptr_glMapNamedBufferEXT :: FunPtr (GLuint -> GLenum -> IO (Ptr a))
@@ -1338,7 +1401,7 @@ glMapNamedBufferRange
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
   -> GLbitfield -- ^ @access@.
   -> m (Ptr a)
-glMapNamedBufferRange v1 v2 v3 v4 = liftIO $ dyn509 ptr_glMapNamedBufferRange v1 v2 v3 v4
+glMapNamedBufferRange v1 v2 v3 v4 = liftIO $ dyn511 ptr_glMapNamedBufferRange v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMapNamedBufferRange #-}
 ptr_glMapNamedBufferRange :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> GLbitfield -> IO (Ptr a))
@@ -1353,7 +1416,7 @@ glMapNamedBufferRangeEXT
   -> GLsizeiptr -- ^ @length@.
   -> GLbitfield -- ^ @access@ of type @BufferAccessMask@.
   -> m (Ptr a)
-glMapNamedBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn509 ptr_glMapNamedBufferRangeEXT v1 v2 v3 v4
+glMapNamedBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn511 ptr_glMapNamedBufferRangeEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMapNamedBufferRangeEXT #-}
 ptr_glMapNamedBufferRangeEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> GLbitfield -> IO (Ptr a))
@@ -1365,7 +1428,7 @@ glMapObjectBufferATI
   :: MonadIO m
   => GLuint -- ^ @buffer@.
   -> m (Ptr a)
-glMapObjectBufferATI v1 = liftIO $ dyn510 ptr_glMapObjectBufferATI v1
+glMapObjectBufferATI v1 = liftIO $ dyn512 ptr_glMapObjectBufferATI v1
 
 {-# NOINLINE ptr_glMapObjectBufferATI #-}
 ptr_glMapObjectBufferATI :: FunPtr (GLuint -> IO (Ptr a))
@@ -1409,7 +1472,7 @@ glMapTexture2DINTEL
   -> Ptr GLint -- ^ @stride@ pointing to @1@ element of type @GLint@.
   -> Ptr GLenum -- ^ @layout@ pointing to @1@ element of type @GLenum@.
   -> m (Ptr a)
-glMapTexture2DINTEL v1 v2 v3 v4 v5 = liftIO $ dyn511 ptr_glMapTexture2DINTEL v1 v2 v3 v4 v5
+glMapTexture2DINTEL v1 v2 v3 v4 v5 = liftIO $ dyn513 ptr_glMapTexture2DINTEL v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMapTexture2DINTEL #-}
 ptr_glMapTexture2DINTEL :: FunPtr (GLuint -> GLint -> GLbitfield -> Ptr GLint -> Ptr GLenum -> IO (Ptr a))
@@ -1427,7 +1490,7 @@ glMapVertexAttrib1dAPPLE
   -> GLint -- ^ @order@ of type @CheckedInt32@.
   -> Ptr GLdouble -- ^ @points@ pointing to @COMPSIZE(size,stride,order)@ elements of type @CoordD@.
   -> m ()
-glMapVertexAttrib1dAPPLE v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn512 ptr_glMapVertexAttrib1dAPPLE v1 v2 v3 v4 v5 v6 v7
+glMapVertexAttrib1dAPPLE v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn514 ptr_glMapVertexAttrib1dAPPLE v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glMapVertexAttrib1dAPPLE #-}
 ptr_glMapVertexAttrib1dAPPLE :: FunPtr (GLuint -> GLuint -> GLdouble -> GLdouble -> GLint -> GLint -> Ptr GLdouble -> IO ())
@@ -1445,7 +1508,7 @@ glMapVertexAttrib1fAPPLE
   -> GLint -- ^ @order@ of type @CheckedInt32@.
   -> Ptr GLfloat -- ^ @points@ pointing to @COMPSIZE(size,stride,order)@ elements of type @CoordF@.
   -> m ()
-glMapVertexAttrib1fAPPLE v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn513 ptr_glMapVertexAttrib1fAPPLE v1 v2 v3 v4 v5 v6 v7
+glMapVertexAttrib1fAPPLE v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn515 ptr_glMapVertexAttrib1fAPPLE v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glMapVertexAttrib1fAPPLE #-}
 ptr_glMapVertexAttrib1fAPPLE :: FunPtr (GLuint -> GLuint -> GLfloat -> GLfloat -> GLint -> GLint -> Ptr GLfloat -> IO ())
@@ -1467,91 +1530,9 @@ glMapVertexAttrib2dAPPLE
   -> GLint -- ^ @vorder@ of type @CheckedInt32@.
   -> Ptr GLdouble -- ^ @points@ pointing to @COMPSIZE(size,ustride,uorder,vstride,vorder)@ elements of type @CoordD@.
   -> m ()
-glMapVertexAttrib2dAPPLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn514 ptr_glMapVertexAttrib2dAPPLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
+glMapVertexAttrib2dAPPLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn516 ptr_glMapVertexAttrib2dAPPLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
 
 {-# NOINLINE ptr_glMapVertexAttrib2dAPPLE #-}
 ptr_glMapVertexAttrib2dAPPLE :: FunPtr (GLuint -> GLuint -> GLdouble -> GLdouble -> GLint -> GLint -> GLdouble -> GLdouble -> GLint -> GLint -> Ptr GLdouble -> IO ())
 ptr_glMapVertexAttrib2dAPPLE = unsafePerformIO $ getCommand "glMapVertexAttrib2dAPPLE"
-
--- glMapVertexAttrib2fAPPLE ----------------------------------------------------
-
-glMapVertexAttrib2fAPPLE
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLuint -- ^ @size@.
-  -> GLfloat -- ^ @u1@ of type @CoordF@.
-  -> GLfloat -- ^ @u2@ of type @CoordF@.
-  -> GLint -- ^ @ustride@.
-  -> GLint -- ^ @uorder@ of type @CheckedInt32@.
-  -> GLfloat -- ^ @v1@ of type @CoordF@.
-  -> GLfloat -- ^ @v2@ of type @CoordF@.
-  -> GLint -- ^ @vstride@.
-  -> GLint -- ^ @vorder@ of type @CheckedInt32@.
-  -> Ptr GLfloat -- ^ @points@ pointing to @COMPSIZE(size,ustride,uorder,vstride,vorder)@ elements of type @CoordF@.
-  -> m ()
-glMapVertexAttrib2fAPPLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn515 ptr_glMapVertexAttrib2fAPPLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
-
-{-# NOINLINE ptr_glMapVertexAttrib2fAPPLE #-}
-ptr_glMapVertexAttrib2fAPPLE :: FunPtr (GLuint -> GLuint -> GLfloat -> GLfloat -> GLint -> GLint -> GLfloat -> GLfloat -> GLint -> GLint -> Ptr GLfloat -> IO ())
-ptr_glMapVertexAttrib2fAPPLE = unsafePerformIO $ getCommand "glMapVertexAttrib2fAPPLE"
-
--- glMaterialf -----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
-glMaterialf
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
-  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
-  -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
-  -> m ()
-glMaterialf v1 v2 v3 = liftIO $ dyn161 ptr_glMaterialf v1 v2 v3
-
-{-# NOINLINE ptr_glMaterialf #-}
-ptr_glMaterialf :: FunPtr (GLenum -> GLenum -> GLfloat -> IO ())
-ptr_glMaterialf = unsafePerformIO $ getCommand "glMaterialf"
-
--- glMaterialfv ----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
-glMaterialfv
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
-  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
-  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
-  -> m ()
-glMaterialfv v1 v2 v3 = liftIO $ dyn132 ptr_glMaterialfv v1 v2 v3
-
-{-# NOINLINE ptr_glMaterialfv #-}
-ptr_glMaterialfv :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
-ptr_glMaterialfv = unsafePerformIO $ getCommand "glMaterialfv"
-
--- glMateriali -----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
-glMateriali
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
-  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
-  -> GLint -- ^ @param@ of type @CheckedInt32@.
-  -> m ()
-glMateriali v1 v2 v3 = liftIO $ dyn62 ptr_glMateriali v1 v2 v3
-
-{-# NOINLINE ptr_glMateriali #-}
-ptr_glMateriali :: FunPtr (GLenum -> GLenum -> GLint -> IO ())
-ptr_glMateriali = unsafePerformIO $ getCommand "glMateriali"
-
--- glMaterialiv ----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml OpenGL 2.x>.
-glMaterialiv
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
-  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
-  -> m ()
-glMaterialiv v1 v2 v3 = liftIO $ dyn133 ptr_glMaterialiv v1 v2 v3
-
-{-# NOINLINE ptr_glMaterialiv #-}
-ptr_glMaterialiv :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
-ptr_glMaterialiv = unsafePerformIO $ getCommand "glMaterialiv"
 

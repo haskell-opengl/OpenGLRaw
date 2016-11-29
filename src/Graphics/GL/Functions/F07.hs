@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F07 (
+  glElementPointerAPPLE,
+  glElementPointerATI,
   glEnable,
   glEnableClientState,
   glEnableClientStateIndexedEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F07 (
   glFogCoordd,
   glFogCoorddEXT,
   glFogCoorddv,
-  glFogCoorddvEXT,
-  glFogCoordf,
-  glFogCoordfEXT
+  glFogCoorddvEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,32 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glElementPointerAPPLE -------------------------------------------------------
+
+glElementPointerAPPLE
+  :: MonadIO m
+  => GLenum -- ^ @type@ of type @ElementPointerTypeATI@.
+  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type)@ elements of type @a@.
+  -> m ()
+glElementPointerAPPLE v1 v2 = liftIO $ dyn230 ptr_glElementPointerAPPLE v1 v2
+
+{-# NOINLINE ptr_glElementPointerAPPLE #-}
+ptr_glElementPointerAPPLE :: FunPtr (GLenum -> Ptr a -> IO ())
+ptr_glElementPointerAPPLE = unsafePerformIO $ getCommand "glElementPointerAPPLE"
+
+-- glElementPointerATI ---------------------------------------------------------
+
+glElementPointerATI
+  :: MonadIO m
+  => GLenum -- ^ @type@ of type @ElementPointerTypeATI@.
+  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type)@ elements of type @a@.
+  -> m ()
+glElementPointerATI v1 v2 = liftIO $ dyn230 ptr_glElementPointerATI v1 v2
+
+{-# NOINLINE ptr_glElementPointerATI #-}
+ptr_glElementPointerATI :: FunPtr (GLenum -> Ptr a -> IO ())
+ptr_glElementPointerATI = unsafePerformIO $ getCommand "glElementPointerATI"
 
 -- glEnable --------------------------------------------------------------------
 
@@ -1417,30 +1443,4 @@ glFogCoorddvEXT v1 = liftIO $ dyn39 ptr_glFogCoorddvEXT v1
 {-# NOINLINE ptr_glFogCoorddvEXT #-}
 ptr_glFogCoorddvEXT :: FunPtr (Ptr GLdouble -> IO ())
 ptr_glFogCoorddvEXT = unsafePerformIO $ getCommand "glFogCoorddvEXT"
-
--- glFogCoordf -----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glFogCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glFogCoordfv'.
-glFogCoordf
-  :: MonadIO m
-  => GLfloat -- ^ @coord@ of type @CoordF@.
-  -> m ()
-glFogCoordf v1 = liftIO $ dyn79 ptr_glFogCoordf v1
-
-{-# NOINLINE ptr_glFogCoordf #-}
-ptr_glFogCoordf :: FunPtr (GLfloat -> IO ())
-ptr_glFogCoordf = unsafePerformIO $ getCommand "glFogCoordf"
-
--- glFogCoordfEXT --------------------------------------------------------------
-
--- | The vector equivalent of this command is 'glFogCoordfvEXT'. This command is an alias for 'glFogCoordf'.
-glFogCoordfEXT
-  :: MonadIO m
-  => GLfloat -- ^ @coord@ of type @CoordF@.
-  -> m ()
-glFogCoordfEXT v1 = liftIO $ dyn79 ptr_glFogCoordfEXT v1
-
-{-# NOINLINE ptr_glFogCoordfEXT #-}
-ptr_glFogCoordfEXT :: FunPtr (GLfloat -> IO ())
-ptr_glFogCoordfEXT = unsafePerformIO $ getCommand "glFogCoordfEXT"
 

@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F26 (
+  glTextureBufferEXT,
+  glTextureBufferRange,
+  glTextureBufferRangeEXT,
+  glTextureColorMaskSGIS,
+  glTextureImage1DEXT,
+  glTextureImage2DEXT,
   glTextureImage2DMultisampleCoverageNV,
   glTextureImage2DMultisampleNV,
   glTextureImage3DEXT,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F26 (
   glUniform2iv,
   glUniform2ivARB,
   glUniform2ui,
-  glUniform2ui64ARB,
-  glUniform2ui64NV,
-  glUniform2ui64vARB,
-  glUniform2ui64vNV,
-  glUniform2uiEXT,
-  glUniform2uiv,
-  glUniform2uivEXT
+  glUniform2ui64ARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,111 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTextureBufferEXT ----------------------------------------------------------
+
+glTextureBufferEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLuint -- ^ @buffer@.
+  -> m ()
+glTextureBufferEXT v1 v2 v3 v4 = liftIO $ dyn576 ptr_glTextureBufferEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTextureBufferEXT #-}
+ptr_glTextureBufferEXT :: FunPtr (GLuint -> GLenum -> GLenum -> GLuint -> IO ())
+ptr_glTextureBufferEXT = unsafePerformIO $ getCommand "glTextureBufferEXT"
+
+-- glTextureBufferRange --------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexBufferRange.xhtml OpenGL 4.x>.
+glTextureBufferRange
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLenum -- ^ @internalformat@.
+  -> GLuint -- ^ @buffer@.
+  -> GLintptr -- ^ @offset@.
+  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
+  -> m ()
+glTextureBufferRange v1 v2 v3 v4 v5 = liftIO $ dyn749 ptr_glTextureBufferRange v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glTextureBufferRange #-}
+ptr_glTextureBufferRange :: FunPtr (GLuint -> GLenum -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
+ptr_glTextureBufferRange = unsafePerformIO $ getCommand "glTextureBufferRange"
+
+-- glTextureBufferRangeEXT -----------------------------------------------------
+
+glTextureBufferRangeEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLuint -- ^ @buffer@.
+  -> GLintptr -- ^ @offset@ of type @BufferOffset@.
+  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
+  -> m ()
+glTextureBufferRangeEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn750 ptr_glTextureBufferRangeEXT v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glTextureBufferRangeEXT #-}
+ptr_glTextureBufferRangeEXT :: FunPtr (GLuint -> GLenum -> GLenum -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
+ptr_glTextureBufferRangeEXT = unsafePerformIO $ getCommand "glTextureBufferRangeEXT"
+
+-- glTextureColorMaskSGIS ------------------------------------------------------
+
+glTextureColorMaskSGIS
+  :: MonadIO m
+  => GLboolean -- ^ @red@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+  -> GLboolean -- ^ @green@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+  -> GLboolean -- ^ @blue@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+  -> GLboolean -- ^ @alpha@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+  -> m ()
+glTextureColorMaskSGIS v1 v2 v3 v4 = liftIO $ dyn123 ptr_glTextureColorMaskSGIS v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTextureColorMaskSGIS #-}
+ptr_glTextureColorMaskSGIS :: FunPtr (GLboolean -> GLboolean -> GLboolean -> GLboolean -> IO ())
+ptr_glTextureColorMaskSGIS = unsafePerformIO $ getCommand "glTextureColorMaskSGIS"
+
+-- glTextureImage1DEXT ---------------------------------------------------------
+
+glTextureImage1DEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLint -- ^ @level@ of type @CheckedInt32@.
+  -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
+  -> GLsizei -- ^ @width@.
+  -> GLint -- ^ @border@ of type @CheckedInt32@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
+  -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
+  -> m ()
+glTextureImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn751 ptr_glTextureImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
+
+{-# NOINLINE ptr_glTextureImage1DEXT #-}
+ptr_glTextureImage1DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glTextureImage1DEXT = unsafePerformIO $ getCommand "glTextureImage1DEXT"
+
+-- glTextureImage2DEXT ---------------------------------------------------------
+
+glTextureImage2DEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLint -- ^ @level@ of type @CheckedInt32@.
+  -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> GLint -- ^ @border@ of type @CheckedInt32@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
+  -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
+  -> m ()
+glTextureImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn752 ptr_glTextureImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
+
+{-# NOINLINE ptr_glTextureImage2DEXT #-}
+ptr_glTextureImage2DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLsizei -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glTextureImage2DEXT = unsafePerformIO $ getCommand "glTextureImage2DEXT"
 
 -- glTextureImage2DMultisampleCoverageNV ---------------------------------------
 
@@ -136,7 +241,7 @@ glTextureImage2DMultisampleCoverageNV
   -> GLsizei -- ^ @height@.
   -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn750 ptr_glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8
+glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn753 ptr_glTextureImage2DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureImage2DMultisampleCoverageNV #-}
 ptr_glTextureImage2DMultisampleCoverageNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -154,7 +259,7 @@ glTextureImage2DMultisampleNV
   -> GLsizei -- ^ @height@.
   -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn751 ptr_glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7
+glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn754 ptr_glTextureImage2DMultisampleNV v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glTextureImage2DMultisampleNV #-}
 ptr_glTextureImage2DMultisampleNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -176,7 +281,7 @@ glTextureImage3DEXT
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
-glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn752 ptr_glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
+glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn755 ptr_glTextureImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
 
 {-# NOINLINE ptr_glTextureImage3DEXT #-}
 ptr_glTextureImage3DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -196,7 +301,7 @@ glTextureImage3DMultisampleCoverageNV
   -> GLsizei -- ^ @depth@.
   -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn753 ptr_glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn756 ptr_glTextureImage3DMultisampleCoverageNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glTextureImage3DMultisampleCoverageNV #-}
 ptr_glTextureImage3DMultisampleCoverageNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -215,7 +320,7 @@ glTextureImage3DMultisampleNV
   -> GLsizei -- ^ @depth@.
   -> GLboolean -- ^ @fixedSampleLocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn754 ptr_glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8
+glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn757 ptr_glTextureImage3DMultisampleNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureImage3DMultisampleNV #-}
 ptr_glTextureImage3DMultisampleNV :: FunPtr (GLuint -> GLenum -> GLsizei -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -272,7 +377,7 @@ glTexturePageCommitmentEXT
   -> GLsizei -- ^ @depth@.
   -> GLboolean -- ^ @commit@.
   -> m ()
-glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn755 ptr_glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
+glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn758 ptr_glTexturePageCommitmentEXT v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glTexturePageCommitmentEXT #-}
 ptr_glTexturePageCommitmentEXT :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -287,7 +392,7 @@ glTextureParameterIiv
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@.
   -> m ()
-glTextureParameterIiv v1 v2 v3 = liftIO $ dyn334 ptr_glTextureParameterIiv v1 v2 v3
+glTextureParameterIiv v1 v2 v3 = liftIO $ dyn335 ptr_glTextureParameterIiv v1 v2 v3
 
 {-# NOINLINE ptr_glTextureParameterIiv #-}
 ptr_glTextureParameterIiv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -302,7 +407,7 @@ glTextureParameterIivEXT
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glTextureParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn363 ptr_glTextureParameterIivEXT v1 v2 v3 v4
+glTextureParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn365 ptr_glTextureParameterIivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTextureParameterIivEXT #-}
 ptr_glTextureParameterIivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -317,7 +422,7 @@ glTextureParameterIuiv
   -> GLenum -- ^ @pname@.
   -> Ptr GLuint -- ^ @params@.
   -> m ()
-glTextureParameterIuiv v1 v2 v3 = liftIO $ dyn375 ptr_glTextureParameterIuiv v1 v2 v3
+glTextureParameterIuiv v1 v2 v3 = liftIO $ dyn377 ptr_glTextureParameterIuiv v1 v2 v3
 
 {-# NOINLINE ptr_glTextureParameterIuiv #-}
 ptr_glTextureParameterIuiv :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
@@ -332,7 +437,7 @@ glTextureParameterIuivEXT
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
-glTextureParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn420 ptr_glTextureParameterIuivEXT v1 v2 v3 v4
+glTextureParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn422 ptr_glTextureParameterIuivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTextureParameterIuivEXT #-}
 ptr_glTextureParameterIuivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLuint -> IO ())
@@ -347,7 +452,7 @@ glTextureParameterf
   -> GLenum -- ^ @pname@.
   -> GLfloat -- ^ @param@.
   -> m ()
-glTextureParameterf v1 v2 v3 = liftIO $ dyn487 ptr_glTextureParameterf v1 v2 v3
+glTextureParameterf v1 v2 v3 = liftIO $ dyn489 ptr_glTextureParameterf v1 v2 v3
 
 {-# NOINLINE ptr_glTextureParameterf #-}
 ptr_glTextureParameterf :: FunPtr (GLuint -> GLenum -> GLfloat -> IO ())
@@ -363,7 +468,7 @@ glTextureParameterfEXT
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
-glTextureParameterfEXT v1 v2 v3 v4 = liftIO $ dyn756 ptr_glTextureParameterfEXT v1 v2 v3 v4
+glTextureParameterfEXT v1 v2 v3 v4 = liftIO $ dyn759 ptr_glTextureParameterfEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTextureParameterfEXT #-}
 ptr_glTextureParameterfEXT :: FunPtr (GLuint -> GLenum -> GLenum -> GLfloat -> IO ())
@@ -378,7 +483,7 @@ glTextureParameterfv
   -> GLenum -- ^ @pname@.
   -> Ptr GLfloat -- ^ @param@.
   -> m ()
-glTextureParameterfv v1 v2 v3 = liftIO $ dyn349 ptr_glTextureParameterfv v1 v2 v3
+glTextureParameterfv v1 v2 v3 = liftIO $ dyn351 ptr_glTextureParameterfv v1 v2 v3
 
 {-# NOINLINE ptr_glTextureParameterfv #-}
 ptr_glTextureParameterfv :: FunPtr (GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -393,7 +498,7 @@ glTextureParameterfvEXT
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glTextureParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn421 ptr_glTextureParameterfvEXT v1 v2 v3 v4
+glTextureParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn423 ptr_glTextureParameterfvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTextureParameterfvEXT #-}
 ptr_glTextureParameterfvEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -408,7 +513,7 @@ glTextureParameteri
   -> GLenum -- ^ @pname@.
   -> GLint -- ^ @param@.
   -> m ()
-glTextureParameteri v1 v2 v3 = liftIO $ dyn488 ptr_glTextureParameteri v1 v2 v3
+glTextureParameteri v1 v2 v3 = liftIO $ dyn490 ptr_glTextureParameteri v1 v2 v3
 
 {-# NOINLINE ptr_glTextureParameteri #-}
 ptr_glTextureParameteri :: FunPtr (GLuint -> GLenum -> GLint -> IO ())
@@ -424,7 +529,7 @@ glTextureParameteriEXT
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
-glTextureParameteriEXT v1 v2 v3 v4 = liftIO $ dyn757 ptr_glTextureParameteriEXT v1 v2 v3 v4
+glTextureParameteriEXT v1 v2 v3 v4 = liftIO $ dyn760 ptr_glTextureParameteriEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTextureParameteriEXT #-}
 ptr_glTextureParameteriEXT :: FunPtr (GLuint -> GLenum -> GLenum -> GLint -> IO ())
@@ -439,7 +544,7 @@ glTextureParameteriv
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @param@.
   -> m ()
-glTextureParameteriv v1 v2 v3 = liftIO $ dyn334 ptr_glTextureParameteriv v1 v2 v3
+glTextureParameteriv v1 v2 v3 = liftIO $ dyn335 ptr_glTextureParameteriv v1 v2 v3
 
 {-# NOINLINE ptr_glTextureParameteriv #-}
 ptr_glTextureParameteriv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -454,7 +559,7 @@ glTextureParameterivEXT
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glTextureParameterivEXT v1 v2 v3 v4 = liftIO $ dyn363 ptr_glTextureParameterivEXT v1 v2 v3 v4
+glTextureParameterivEXT v1 v2 v3 v4 = liftIO $ dyn365 ptr_glTextureParameterivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTextureParameterivEXT #-}
 ptr_glTextureParameterivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -482,7 +587,7 @@ glTextureRenderbufferEXT
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
-glTextureRenderbufferEXT v1 v2 v3 = liftIO $ dyn712 ptr_glTextureRenderbufferEXT v1 v2 v3
+glTextureRenderbufferEXT v1 v2 v3 = liftIO $ dyn715 ptr_glTextureRenderbufferEXT v1 v2 v3
 
 {-# NOINLINE ptr_glTextureRenderbufferEXT #-}
 ptr_glTextureRenderbufferEXT :: FunPtr (GLuint -> GLenum -> GLuint -> IO ())
@@ -498,7 +603,7 @@ glTextureStorage1D
   -> GLenum -- ^ @internalformat@.
   -> GLsizei -- ^ @width@.
   -> m ()
-glTextureStorage1D v1 v2 v3 v4 = liftIO $ dyn758 ptr_glTextureStorage1D v1 v2 v3 v4
+glTextureStorage1D v1 v2 v3 v4 = liftIO $ dyn761 ptr_glTextureStorage1D v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTextureStorage1D #-}
 ptr_glTextureStorage1D :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> IO ())
@@ -514,7 +619,7 @@ glTextureStorage1DEXT
   -> GLenum -- ^ @internalformat@.
   -> GLsizei -- ^ @width@.
   -> m ()
-glTextureStorage1DEXT v1 v2 v3 v4 v5 = liftIO $ dyn759 ptr_glTextureStorage1DEXT v1 v2 v3 v4 v5
+glTextureStorage1DEXT v1 v2 v3 v4 v5 = liftIO $ dyn762 ptr_glTextureStorage1DEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glTextureStorage1DEXT #-}
 ptr_glTextureStorage1DEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> IO ())
@@ -531,7 +636,7 @@ glTextureStorage2D
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
-glTextureStorage2D v1 v2 v3 v4 v5 = liftIO $ dyn590 ptr_glTextureStorage2D v1 v2 v3 v4 v5
+glTextureStorage2D v1 v2 v3 v4 v5 = liftIO $ dyn593 ptr_glTextureStorage2D v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glTextureStorage2D #-}
 ptr_glTextureStorage2D :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
@@ -548,7 +653,7 @@ glTextureStorage2DEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
-glTextureStorage2DEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn760 ptr_glTextureStorage2DEXT v1 v2 v3 v4 v5 v6
+glTextureStorage2DEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn763 ptr_glTextureStorage2DEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glTextureStorage2DEXT #-}
 ptr_glTextureStorage2DEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
@@ -566,7 +671,7 @@ glTextureStorage2DMultisample
   -> GLsizei -- ^ @height@.
   -> GLboolean -- ^ @fixedsamplelocations@.
   -> m ()
-glTextureStorage2DMultisample v1 v2 v3 v4 v5 v6 = liftIO $ dyn761 ptr_glTextureStorage2DMultisample v1 v2 v3 v4 v5 v6
+glTextureStorage2DMultisample v1 v2 v3 v4 v5 v6 = liftIO $ dyn764 ptr_glTextureStorage2DMultisample v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glTextureStorage2DMultisample #-}
 ptr_glTextureStorage2DMultisample :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -584,7 +689,7 @@ glTextureStorage2DMultisampleEXT
   -> GLsizei -- ^ @height@.
   -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glTextureStorage2DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn762 ptr_glTextureStorage2DMultisampleEXT v1 v2 v3 v4 v5 v6 v7
+glTextureStorage2DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn765 ptr_glTextureStorage2DMultisampleEXT v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glTextureStorage2DMultisampleEXT #-}
 ptr_glTextureStorage2DMultisampleEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -602,7 +707,7 @@ glTextureStorage3D
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
   -> m ()
-glTextureStorage3D v1 v2 v3 v4 v5 v6 = liftIO $ dyn763 ptr_glTextureStorage3D v1 v2 v3 v4 v5 v6
+glTextureStorage3D v1 v2 v3 v4 v5 v6 = liftIO $ dyn766 ptr_glTextureStorage3D v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glTextureStorage3D #-}
 ptr_glTextureStorage3D :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> GLsizei -> GLsizei -> IO ())
@@ -620,7 +725,7 @@ glTextureStorage3DEXT
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
   -> m ()
-glTextureStorage3DEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn764 ptr_glTextureStorage3DEXT v1 v2 v3 v4 v5 v6 v7
+glTextureStorage3DEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn767 ptr_glTextureStorage3DEXT v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glTextureStorage3DEXT #-}
 ptr_glTextureStorage3DEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> GLsizei -> GLsizei -> IO ())
@@ -639,7 +744,7 @@ glTextureStorage3DMultisample
   -> GLsizei -- ^ @depth@.
   -> GLboolean -- ^ @fixedsamplelocations@.
   -> m ()
-glTextureStorage3DMultisample v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn765 ptr_glTextureStorage3DMultisample v1 v2 v3 v4 v5 v6 v7
+glTextureStorage3DMultisample v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn768 ptr_glTextureStorage3DMultisample v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glTextureStorage3DMultisample #-}
 ptr_glTextureStorage3DMultisample :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -658,7 +763,7 @@ glTextureStorage3DMultisampleEXT
   -> GLsizei -- ^ @depth@.
   -> GLboolean -- ^ @fixedsamplelocations@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glTextureStorage3DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn766 ptr_glTextureStorage3DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 v8
+glTextureStorage3DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn769 ptr_glTextureStorage3DMultisampleEXT v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureStorage3DMultisampleEXT #-}
 ptr_glTextureStorage3DMultisampleEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> GLsizei -> GLsizei -> GLboolean -> IO ())
@@ -677,7 +782,7 @@ glTextureStorageSparseAMD
   -> GLsizei -- ^ @layers@.
   -> GLbitfield -- ^ @flags@.
   -> m ()
-glTextureStorageSparseAMD v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn767 ptr_glTextureStorageSparseAMD v1 v2 v3 v4 v5 v6 v7 v8
+glTextureStorageSparseAMD v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn770 ptr_glTextureStorageSparseAMD v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureStorageSparseAMD #-}
 ptr_glTextureStorageSparseAMD :: FunPtr (GLuint -> GLenum -> GLenum -> GLsizei -> GLsizei -> GLsizei -> GLsizei -> GLbitfield -> IO ())
@@ -696,7 +801,7 @@ glTextureSubImage1D
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @pixels@.
   -> m ()
-glTextureSubImage1D v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn768 ptr_glTextureSubImage1D v1 v2 v3 v4 v5 v6 v7
+glTextureSubImage1D v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn771 ptr_glTextureSubImage1D v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glTextureSubImage1D #-}
 ptr_glTextureSubImage1D :: FunPtr (GLuint -> GLint -> GLint -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -715,7 +820,7 @@ glTextureSubImage1DEXT
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
   -> m ()
-glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn769 ptr_glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8
+glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn772 ptr_glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureSubImage1DEXT #-}
 ptr_glTextureSubImage1DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -736,7 +841,7 @@ glTextureSubImage2D
   -> GLenum -- ^ @type@.
   -> Ptr a -- ^ @pixels@.
   -> m ()
-glTextureSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn770 ptr_glTextureSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9
+glTextureSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn773 ptr_glTextureSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glTextureSubImage2D #-}
 ptr_glTextureSubImage2D :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -757,7 +862,7 @@ glTextureSubImage2DEXT
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
   -> m ()
-glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn771 ptr_glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
+glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn774 ptr_glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
 {-# NOINLINE ptr_glTextureSubImage2DEXT #-}
 ptr_glTextureSubImage2DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -803,7 +908,7 @@ glTextureSubImage3DEXT
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
   -> m ()
-glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO $ dyn772 ptr_glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12
+glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO $ dyn775 ptr_glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12
 
 {-# NOINLINE ptr_glTextureSubImage3DEXT #-}
 ptr_glTextureSubImage3DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -823,7 +928,7 @@ glTextureView
   -> GLuint -- ^ @minlayer@.
   -> GLuint -- ^ @numlayers@.
   -> m ()
-glTextureView v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn773 ptr_glTextureView v1 v2 v3 v4 v5 v6 v7 v8
+glTextureView v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn776 ptr_glTextureView v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureView #-}
 ptr_glTextureView :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -843,7 +948,7 @@ glTextureViewEXT
   -> GLuint -- ^ @minlayer@.
   -> GLuint -- ^ @numlayers@.
   -> m ()
-glTextureViewEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn773 ptr_glTextureViewEXT v1 v2 v3 v4 v5 v6 v7 v8
+glTextureViewEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn776 ptr_glTextureViewEXT v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureViewEXT #-}
 ptr_glTextureViewEXT :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -863,7 +968,7 @@ glTextureViewOES
   -> GLuint -- ^ @minlayer@.
   -> GLuint -- ^ @numlayers@.
   -> m ()
-glTextureViewOES v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn773 ptr_glTextureViewOES v1 v2 v3 v4 v5 v6 v7 v8
+glTextureViewOES v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn776 ptr_glTextureViewOES v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glTextureViewOES #-}
 ptr_glTextureViewOES :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -878,7 +983,7 @@ glTrackMatrixNV
   -> GLenum -- ^ @matrix@ of type @VertexAttribEnumNV@.
   -> GLenum -- ^ @transform@ of type @VertexAttribEnumNV@.
   -> m ()
-glTrackMatrixNV v1 v2 v3 v4 = liftIO $ dyn774 ptr_glTrackMatrixNV v1 v2 v3 v4
+glTrackMatrixNV v1 v2 v3 v4 = liftIO $ dyn777 ptr_glTrackMatrixNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTrackMatrixNV #-}
 ptr_glTrackMatrixNV :: FunPtr (GLenum -> GLuint -> GLenum -> GLenum -> IO ())
@@ -892,7 +997,7 @@ glTransformFeedbackAttribsNV
   -> Ptr GLint -- ^ @attribs@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
   -> GLenum -- ^ @bufferMode@.
   -> m ()
-glTransformFeedbackAttribsNV v1 v2 v3 = liftIO $ dyn775 ptr_glTransformFeedbackAttribsNV v1 v2 v3
+glTransformFeedbackAttribsNV v1 v2 v3 = liftIO $ dyn778 ptr_glTransformFeedbackAttribsNV v1 v2 v3
 
 {-# NOINLINE ptr_glTransformFeedbackAttribsNV #-}
 ptr_glTransformFeedbackAttribsNV :: FunPtr (GLsizei -> Ptr GLint -> GLenum -> IO ())
@@ -924,7 +1029,7 @@ glTransformFeedbackBufferRange
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> m ()
-glTransformFeedbackBufferRange v1 v2 v3 v4 v5 = liftIO $ dyn776 ptr_glTransformFeedbackBufferRange v1 v2 v3 v4 v5
+glTransformFeedbackBufferRange v1 v2 v3 v4 v5 = liftIO $ dyn779 ptr_glTransformFeedbackBufferRange v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glTransformFeedbackBufferRange #-}
 ptr_glTransformFeedbackBufferRange :: FunPtr (GLuint -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
@@ -940,7 +1045,7 @@ glTransformFeedbackStreamAttribsNV
   -> Ptr GLint -- ^ @bufstreams@ pointing to @nbuffers@ elements of type @GLint@.
   -> GLenum -- ^ @bufferMode@.
   -> m ()
-glTransformFeedbackStreamAttribsNV v1 v2 v3 v4 v5 = liftIO $ dyn777 ptr_glTransformFeedbackStreamAttribsNV v1 v2 v3 v4 v5
+glTransformFeedbackStreamAttribsNV v1 v2 v3 v4 v5 = liftIO $ dyn780 ptr_glTransformFeedbackStreamAttribsNV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glTransformFeedbackStreamAttribsNV #-}
 ptr_glTransformFeedbackStreamAttribsNV :: FunPtr (GLsizei -> Ptr GLint -> GLsizei -> Ptr GLint -> GLenum -> IO ())
@@ -956,7 +1061,7 @@ glTransformFeedbackVaryings
   -> Ptr (Ptr GLchar) -- ^ @varyings@ pointing to @count@ elements of type @Ptr GLchar@.
   -> GLenum -- ^ @bufferMode@.
   -> m ()
-glTransformFeedbackVaryings v1 v2 v3 v4 = liftIO $ dyn778 ptr_glTransformFeedbackVaryings v1 v2 v3 v4
+glTransformFeedbackVaryings v1 v2 v3 v4 = liftIO $ dyn781 ptr_glTransformFeedbackVaryings v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTransformFeedbackVaryings #-}
 ptr_glTransformFeedbackVaryings :: FunPtr (GLuint -> GLsizei -> Ptr (Ptr GLchar) -> GLenum -> IO ())
@@ -972,7 +1077,7 @@ glTransformFeedbackVaryingsEXT
   -> Ptr (Ptr GLchar) -- ^ @varyings@ pointing to @count@ elements of type @Ptr GLchar@.
   -> GLenum -- ^ @bufferMode@.
   -> m ()
-glTransformFeedbackVaryingsEXT v1 v2 v3 v4 = liftIO $ dyn778 ptr_glTransformFeedbackVaryingsEXT v1 v2 v3 v4
+glTransformFeedbackVaryingsEXT v1 v2 v3 v4 = liftIO $ dyn781 ptr_glTransformFeedbackVaryingsEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTransformFeedbackVaryingsEXT #-}
 ptr_glTransformFeedbackVaryingsEXT :: FunPtr (GLuint -> GLsizei -> Ptr (Ptr GLchar) -> GLenum -> IO ())
@@ -987,7 +1092,7 @@ glTransformFeedbackVaryingsNV
   -> Ptr GLint -- ^ @locations@ pointing to @count@ elements of type @GLint@.
   -> GLenum -- ^ @bufferMode@.
   -> m ()
-glTransformFeedbackVaryingsNV v1 v2 v3 v4 = liftIO $ dyn779 ptr_glTransformFeedbackVaryingsNV v1 v2 v3 v4
+glTransformFeedbackVaryingsNV v1 v2 v3 v4 = liftIO $ dyn782 ptr_glTransformFeedbackVaryingsNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTransformFeedbackVaryingsNV #-}
 ptr_glTransformFeedbackVaryingsNV :: FunPtr (GLuint -> GLsizei -> Ptr GLint -> GLenum -> IO ())
@@ -1002,7 +1107,7 @@ glTransformPathNV
   -> GLenum -- ^ @transformType@ of type @PathTransformType@.
   -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(transformType)@ elements of type @GLfloat@.
   -> m ()
-glTransformPathNV v1 v2 v3 v4 = liftIO $ dyn445 ptr_glTransformPathNV v1 v2 v3 v4
+glTransformPathNV v1 v2 v3 v4 = liftIO $ dyn447 ptr_glTransformPathNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glTransformPathNV #-}
 ptr_glTransformPathNV :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -1073,7 +1178,7 @@ glUniform1d
   => GLint -- ^ @location@.
   -> GLdouble -- ^ @x@.
   -> m ()
-glUniform1d v1 v2 = liftIO $ dyn780 ptr_glUniform1d v1 v2
+glUniform1d v1 v2 = liftIO $ dyn783 ptr_glUniform1d v1 v2
 
 {-# NOINLINE ptr_glUniform1d #-}
 ptr_glUniform1d :: FunPtr (GLint -> GLdouble -> IO ())
@@ -1087,7 +1192,7 @@ glUniform1dv
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*1@ elements of type @GLdouble@.
   -> m ()
-glUniform1dv v1 v2 v3 = liftIO $ dyn781 ptr_glUniform1dv v1 v2 v3
+glUniform1dv v1 v2 v3 = liftIO $ dyn784 ptr_glUniform1dv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1dv #-}
 ptr_glUniform1dv :: FunPtr (GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -1101,7 +1206,7 @@ glUniform1f
   => GLint -- ^ @location@.
   -> GLfloat -- ^ @v0@.
   -> m ()
-glUniform1f v1 v2 = liftIO $ dyn782 ptr_glUniform1f v1 v2
+glUniform1f v1 v2 = liftIO $ dyn785 ptr_glUniform1f v1 v2
 
 {-# NOINLINE ptr_glUniform1f #-}
 ptr_glUniform1f :: FunPtr (GLint -> GLfloat -> IO ())
@@ -1115,7 +1220,7 @@ glUniform1fARB
   => GLint -- ^ @location@.
   -> GLfloat -- ^ @v0@.
   -> m ()
-glUniform1fARB v1 v2 = liftIO $ dyn782 ptr_glUniform1fARB v1 v2
+glUniform1fARB v1 v2 = liftIO $ dyn785 ptr_glUniform1fARB v1 v2
 
 {-# NOINLINE ptr_glUniform1fARB #-}
 ptr_glUniform1fARB :: FunPtr (GLint -> GLfloat -> IO ())
@@ -1130,7 +1235,7 @@ glUniform1fv
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*1@ elements of type @GLfloat@.
   -> m ()
-glUniform1fv v1 v2 v3 = liftIO $ dyn783 ptr_glUniform1fv v1 v2 v3
+glUniform1fv v1 v2 v3 = liftIO $ dyn786 ptr_glUniform1fv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1fv #-}
 ptr_glUniform1fv :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -1145,7 +1250,7 @@ glUniform1fvARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*1@ elements of type @GLfloat@.
   -> m ()
-glUniform1fvARB v1 v2 v3 = liftIO $ dyn783 ptr_glUniform1fvARB v1 v2 v3
+glUniform1fvARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform1fvARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1fvARB #-}
 ptr_glUniform1fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -1172,7 +1277,7 @@ glUniform1i64ARB
   => GLint -- ^ @location@.
   -> GLint64 -- ^ @x@.
   -> m ()
-glUniform1i64ARB v1 v2 = liftIO $ dyn784 ptr_glUniform1i64ARB v1 v2
+glUniform1i64ARB v1 v2 = liftIO $ dyn787 ptr_glUniform1i64ARB v1 v2
 
 {-# NOINLINE ptr_glUniform1i64ARB #-}
 ptr_glUniform1i64ARB :: FunPtr (GLint -> GLint64 -> IO ())
@@ -1185,7 +1290,7 @@ glUniform1i64NV
   => GLint -- ^ @location@.
   -> GLint64EXT -- ^ @x@.
   -> m ()
-glUniform1i64NV v1 v2 = liftIO $ dyn785 ptr_glUniform1i64NV v1 v2
+glUniform1i64NV v1 v2 = liftIO $ dyn788 ptr_glUniform1i64NV v1 v2
 
 {-# NOINLINE ptr_glUniform1i64NV #-}
 ptr_glUniform1i64NV :: FunPtr (GLint -> GLint64EXT -> IO ())
@@ -1199,7 +1304,7 @@ glUniform1i64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64 -- ^ @value@ pointing to @count*1@ elements of type @GLint64@.
   -> m ()
-glUniform1i64vARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform1i64vARB v1 v2 v3
+glUniform1i64vARB v1 v2 v3 = liftIO $ dyn789 ptr_glUniform1i64vARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1i64vARB #-}
 ptr_glUniform1i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
@@ -1213,7 +1318,7 @@ glUniform1i64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64EXT -- ^ @value@ pointing to @count*1@ elements of type @GLint64EXT@.
   -> m ()
-glUniform1i64vNV v1 v2 v3 = liftIO $ dyn787 ptr_glUniform1i64vNV v1 v2 v3
+glUniform1i64vNV v1 v2 v3 = liftIO $ dyn790 ptr_glUniform1i64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1i64vNV #-}
 ptr_glUniform1i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
@@ -1242,7 +1347,7 @@ glUniform1iv
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*1@ elements of type @GLint@.
   -> m ()
-glUniform1iv v1 v2 v3 = liftIO $ dyn788 ptr_glUniform1iv v1 v2 v3
+glUniform1iv v1 v2 v3 = liftIO $ dyn791 ptr_glUniform1iv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1iv #-}
 ptr_glUniform1iv :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -1257,7 +1362,7 @@ glUniform1ivARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*1@ elements of type @GLint@.
   -> m ()
-glUniform1ivARB v1 v2 v3 = liftIO $ dyn788 ptr_glUniform1ivARB v1 v2 v3
+glUniform1ivARB v1 v2 v3 = liftIO $ dyn791 ptr_glUniform1ivARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1ivARB #-}
 ptr_glUniform1ivARB :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -1271,7 +1376,7 @@ glUniform1ui
   => GLint -- ^ @location@.
   -> GLuint -- ^ @v0@.
   -> m ()
-glUniform1ui v1 v2 = liftIO $ dyn789 ptr_glUniform1ui v1 v2
+glUniform1ui v1 v2 = liftIO $ dyn792 ptr_glUniform1ui v1 v2
 
 {-# NOINLINE ptr_glUniform1ui #-}
 ptr_glUniform1ui :: FunPtr (GLint -> GLuint -> IO ())
@@ -1284,7 +1389,7 @@ glUniform1ui64ARB
   => GLint -- ^ @location@.
   -> GLuint64 -- ^ @x@.
   -> m ()
-glUniform1ui64ARB v1 v2 = liftIO $ dyn790 ptr_glUniform1ui64ARB v1 v2
+glUniform1ui64ARB v1 v2 = liftIO $ dyn793 ptr_glUniform1ui64ARB v1 v2
 
 {-# NOINLINE ptr_glUniform1ui64ARB #-}
 ptr_glUniform1ui64ARB :: FunPtr (GLint -> GLuint64 -> IO ())
@@ -1297,7 +1402,7 @@ glUniform1ui64NV
   => GLint -- ^ @location@.
   -> GLuint64EXT -- ^ @x@.
   -> m ()
-glUniform1ui64NV v1 v2 = liftIO $ dyn791 ptr_glUniform1ui64NV v1 v2
+glUniform1ui64NV v1 v2 = liftIO $ dyn794 ptr_glUniform1ui64NV v1 v2
 
 {-# NOINLINE ptr_glUniform1ui64NV #-}
 ptr_glUniform1ui64NV :: FunPtr (GLint -> GLuint64EXT -> IO ())
@@ -1311,7 +1416,7 @@ glUniform1ui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @value@ pointing to @count*1@ elements of type @GLuint64@.
   -> m ()
-glUniform1ui64vARB v1 v2 v3 = liftIO $ dyn792 ptr_glUniform1ui64vARB v1 v2 v3
+glUniform1ui64vARB v1 v2 v3 = liftIO $ dyn795 ptr_glUniform1ui64vARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1ui64vARB #-}
 ptr_glUniform1ui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -1325,7 +1430,7 @@ glUniform1ui64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*1@ elements of type @GLuint64EXT@.
   -> m ()
-glUniform1ui64vNV v1 v2 v3 = liftIO $ dyn793 ptr_glUniform1ui64vNV v1 v2 v3
+glUniform1ui64vNV v1 v2 v3 = liftIO $ dyn796 ptr_glUniform1ui64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1ui64vNV #-}
 ptr_glUniform1ui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
@@ -1339,7 +1444,7 @@ glUniform1uiEXT
   => GLint -- ^ @location@.
   -> GLuint -- ^ @v0@.
   -> m ()
-glUniform1uiEXT v1 v2 = liftIO $ dyn789 ptr_glUniform1uiEXT v1 v2
+glUniform1uiEXT v1 v2 = liftIO $ dyn792 ptr_glUniform1uiEXT v1 v2
 
 {-# NOINLINE ptr_glUniform1uiEXT #-}
 ptr_glUniform1uiEXT :: FunPtr (GLint -> GLuint -> IO ())
@@ -1354,7 +1459,7 @@ glUniform1uiv
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*1@ elements of type @GLuint@.
   -> m ()
-glUniform1uiv v1 v2 v3 = liftIO $ dyn794 ptr_glUniform1uiv v1 v2 v3
+glUniform1uiv v1 v2 v3 = liftIO $ dyn797 ptr_glUniform1uiv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1uiv #-}
 ptr_glUniform1uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1369,7 +1474,7 @@ glUniform1uivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*1@ elements of type @GLuint@.
   -> m ()
-glUniform1uivEXT v1 v2 v3 = liftIO $ dyn794 ptr_glUniform1uivEXT v1 v2 v3
+glUniform1uivEXT v1 v2 v3 = liftIO $ dyn797 ptr_glUniform1uivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glUniform1uivEXT #-}
 ptr_glUniform1uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1383,7 +1488,7 @@ glUniform2d
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
   -> m ()
-glUniform2d v1 v2 v3 = liftIO $ dyn502 ptr_glUniform2d v1 v2 v3
+glUniform2d v1 v2 v3 = liftIO $ dyn504 ptr_glUniform2d v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2d #-}
 ptr_glUniform2d :: FunPtr (GLint -> GLdouble -> GLdouble -> IO ())
@@ -1397,7 +1502,7 @@ glUniform2dv
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*2@ elements of type @GLdouble@.
   -> m ()
-glUniform2dv v1 v2 v3 = liftIO $ dyn781 ptr_glUniform2dv v1 v2 v3
+glUniform2dv v1 v2 v3 = liftIO $ dyn784 ptr_glUniform2dv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2dv #-}
 ptr_glUniform2dv :: FunPtr (GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -1412,7 +1517,7 @@ glUniform2f
   -> GLfloat -- ^ @v0@.
   -> GLfloat -- ^ @v1@.
   -> m ()
-glUniform2f v1 v2 v3 = liftIO $ dyn503 ptr_glUniform2f v1 v2 v3
+glUniform2f v1 v2 v3 = liftIO $ dyn505 ptr_glUniform2f v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2f #-}
 ptr_glUniform2f :: FunPtr (GLint -> GLfloat -> GLfloat -> IO ())
@@ -1427,7 +1532,7 @@ glUniform2fARB
   -> GLfloat -- ^ @v0@.
   -> GLfloat -- ^ @v1@.
   -> m ()
-glUniform2fARB v1 v2 v3 = liftIO $ dyn503 ptr_glUniform2fARB v1 v2 v3
+glUniform2fARB v1 v2 v3 = liftIO $ dyn505 ptr_glUniform2fARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2fARB #-}
 ptr_glUniform2fARB :: FunPtr (GLint -> GLfloat -> GLfloat -> IO ())
@@ -1442,7 +1547,7 @@ glUniform2fv
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*2@ elements of type @GLfloat@.
   -> m ()
-glUniform2fv v1 v2 v3 = liftIO $ dyn783 ptr_glUniform2fv v1 v2 v3
+glUniform2fv v1 v2 v3 = liftIO $ dyn786 ptr_glUniform2fv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2fv #-}
 ptr_glUniform2fv :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -1457,7 +1562,7 @@ glUniform2fvARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*2@ elements of type @GLfloat@.
   -> m ()
-glUniform2fvARB v1 v2 v3 = liftIO $ dyn783 ptr_glUniform2fvARB v1 v2 v3
+glUniform2fvARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform2fvARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2fvARB #-}
 ptr_glUniform2fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -1486,7 +1591,7 @@ glUniform2i64ARB
   -> GLint64 -- ^ @x@.
   -> GLint64 -- ^ @y@.
   -> m ()
-glUniform2i64ARB v1 v2 v3 = liftIO $ dyn795 ptr_glUniform2i64ARB v1 v2 v3
+glUniform2i64ARB v1 v2 v3 = liftIO $ dyn798 ptr_glUniform2i64ARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2i64ARB #-}
 ptr_glUniform2i64ARB :: FunPtr (GLint -> GLint64 -> GLint64 -> IO ())
@@ -1500,7 +1605,7 @@ glUniform2i64NV
   -> GLint64EXT -- ^ @x@.
   -> GLint64EXT -- ^ @y@.
   -> m ()
-glUniform2i64NV v1 v2 v3 = liftIO $ dyn796 ptr_glUniform2i64NV v1 v2 v3
+glUniform2i64NV v1 v2 v3 = liftIO $ dyn799 ptr_glUniform2i64NV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2i64NV #-}
 ptr_glUniform2i64NV :: FunPtr (GLint -> GLint64EXT -> GLint64EXT -> IO ())
@@ -1514,7 +1619,7 @@ glUniform2i64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64 -- ^ @value@ pointing to @count*2@ elements of type @GLint64@.
   -> m ()
-glUniform2i64vARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform2i64vARB v1 v2 v3
+glUniform2i64vARB v1 v2 v3 = liftIO $ dyn789 ptr_glUniform2i64vARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2i64vARB #-}
 ptr_glUniform2i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
@@ -1528,7 +1633,7 @@ glUniform2i64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64EXT -- ^ @value@ pointing to @count*2@ elements of type @GLint64EXT@.
   -> m ()
-glUniform2i64vNV v1 v2 v3 = liftIO $ dyn787 ptr_glUniform2i64vNV v1 v2 v3
+glUniform2i64vNV v1 v2 v3 = liftIO $ dyn790 ptr_glUniform2i64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2i64vNV #-}
 ptr_glUniform2i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
@@ -1558,7 +1663,7 @@ glUniform2iv
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*2@ elements of type @GLint@.
   -> m ()
-glUniform2iv v1 v2 v3 = liftIO $ dyn788 ptr_glUniform2iv v1 v2 v3
+glUniform2iv v1 v2 v3 = liftIO $ dyn791 ptr_glUniform2iv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2iv #-}
 ptr_glUniform2iv :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -1573,7 +1678,7 @@ glUniform2ivARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*2@ elements of type @GLint@.
   -> m ()
-glUniform2ivARB v1 v2 v3 = liftIO $ dyn788 ptr_glUniform2ivARB v1 v2 v3
+glUniform2ivARB v1 v2 v3 = liftIO $ dyn791 ptr_glUniform2ivARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2ivARB #-}
 ptr_glUniform2ivARB :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -1588,7 +1693,7 @@ glUniform2ui
   -> GLuint -- ^ @v0@.
   -> GLuint -- ^ @v1@.
   -> m ()
-glUniform2ui v1 v2 v3 = liftIO $ dyn797 ptr_glUniform2ui v1 v2 v3
+glUniform2ui v1 v2 v3 = liftIO $ dyn800 ptr_glUniform2ui v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2ui #-}
 ptr_glUniform2ui :: FunPtr (GLint -> GLuint -> GLuint -> IO ())
@@ -1602,96 +1707,9 @@ glUniform2ui64ARB
   -> GLuint64 -- ^ @x@.
   -> GLuint64 -- ^ @y@.
   -> m ()
-glUniform2ui64ARB v1 v2 v3 = liftIO $ dyn798 ptr_glUniform2ui64ARB v1 v2 v3
+glUniform2ui64ARB v1 v2 v3 = liftIO $ dyn801 ptr_glUniform2ui64ARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2ui64ARB #-}
 ptr_glUniform2ui64ARB :: FunPtr (GLint -> GLuint64 -> GLuint64 -> IO ())
 ptr_glUniform2ui64ARB = unsafePerformIO $ getCommand "glUniform2ui64ARB"
-
--- glUniform2ui64NV ------------------------------------------------------------
-
-glUniform2ui64NV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint64EXT -- ^ @x@.
-  -> GLuint64EXT -- ^ @y@.
-  -> m ()
-glUniform2ui64NV v1 v2 v3 = liftIO $ dyn799 ptr_glUniform2ui64NV v1 v2 v3
-
-{-# NOINLINE ptr_glUniform2ui64NV #-}
-ptr_glUniform2ui64NV :: FunPtr (GLint -> GLuint64EXT -> GLuint64EXT -> IO ())
-ptr_glUniform2ui64NV = unsafePerformIO $ getCommand "glUniform2ui64NV"
-
--- glUniform2ui64vARB ----------------------------------------------------------
-
-glUniform2ui64vARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64 -- ^ @value@ pointing to @count*2@ elements of type @GLuint64@.
-  -> m ()
-glUniform2ui64vARB v1 v2 v3 = liftIO $ dyn792 ptr_glUniform2ui64vARB v1 v2 v3
-
-{-# NOINLINE ptr_glUniform2ui64vARB #-}
-ptr_glUniform2ui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
-ptr_glUniform2ui64vARB = unsafePerformIO $ getCommand "glUniform2ui64vARB"
-
--- glUniform2ui64vNV -----------------------------------------------------------
-
-glUniform2ui64vNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*2@ elements of type @GLuint64EXT@.
-  -> m ()
-glUniform2ui64vNV v1 v2 v3 = liftIO $ dyn793 ptr_glUniform2ui64vNV v1 v2 v3
-
-{-# NOINLINE ptr_glUniform2ui64vNV #-}
-ptr_glUniform2ui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
-ptr_glUniform2ui64vNV = unsafePerformIO $ getCommand "glUniform2ui64vNV"
-
--- glUniform2uiEXT -------------------------------------------------------------
-
--- | This command is an alias for 'glUniform2ui'.
-glUniform2uiEXT
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint -- ^ @v0@.
-  -> GLuint -- ^ @v1@.
-  -> m ()
-glUniform2uiEXT v1 v2 v3 = liftIO $ dyn797 ptr_glUniform2uiEXT v1 v2 v3
-
-{-# NOINLINE ptr_glUniform2uiEXT #-}
-ptr_glUniform2uiEXT :: FunPtr (GLint -> GLuint -> GLuint -> IO ())
-ptr_glUniform2uiEXT = unsafePerformIO $ getCommand "glUniform2uiEXT"
-
--- glUniform2uiv ---------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniform2uiv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @count*2@ elements of type @GLuint@.
-  -> m ()
-glUniform2uiv v1 v2 v3 = liftIO $ dyn794 ptr_glUniform2uiv v1 v2 v3
-
-{-# NOINLINE ptr_glUniform2uiv #-}
-ptr_glUniform2uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glUniform2uiv = unsafePerformIO $ getCommand "glUniform2uiv"
-
--- glUniform2uivEXT ------------------------------------------------------------
-
--- | This command is an alias for 'glUniform2uiv'.
-glUniform2uivEXT
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @count*2@ elements of type @GLuint@.
-  -> m ()
-glUniform2uivEXT v1 v2 v3 = liftIO $ dyn794 ptr_glUniform2uivEXT v1 v2 v3
-
-{-# NOINLINE ptr_glUniform2uivEXT #-}
-ptr_glUniform2uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glUniform2uivEXT = unsafePerformIO $ getCommand "glUniform2uivEXT"
 

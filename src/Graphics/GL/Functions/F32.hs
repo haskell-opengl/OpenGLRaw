@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F32 (
+  glWeightivARB,
+  glWeightsvARB,
+  glWeightubvARB,
+  glWeightuivARB,
+  glWeightusvARB,
+  glWindowPos2d,
   glWindowPos2dARB,
   glWindowPos2dMESA,
   glWindowPos2dv,
@@ -79,6 +85,85 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glWeightivARB ---------------------------------------------------------------
+
+glWeightivARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLint -- ^ @weights@ pointing to @size@ elements of type @GLint@.
+  -> m ()
+glWeightivARB v1 v2 = liftIO $ dyn888 ptr_glWeightivARB v1 v2
+
+{-# NOINLINE ptr_glWeightivARB #-}
+ptr_glWeightivARB :: FunPtr (GLint -> Ptr GLint -> IO ())
+ptr_glWeightivARB = unsafePerformIO $ getCommand "glWeightivARB"
+
+-- glWeightsvARB ---------------------------------------------------------------
+
+glWeightsvARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLshort -- ^ @weights@ pointing to @size@ elements of type @GLshort@.
+  -> m ()
+glWeightsvARB v1 v2 = liftIO $ dyn889 ptr_glWeightsvARB v1 v2
+
+{-# NOINLINE ptr_glWeightsvARB #-}
+ptr_glWeightsvARB :: FunPtr (GLint -> Ptr GLshort -> IO ())
+ptr_glWeightsvARB = unsafePerformIO $ getCommand "glWeightsvARB"
+
+-- glWeightubvARB --------------------------------------------------------------
+
+glWeightubvARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLubyte -- ^ @weights@ pointing to @size@ elements of type @GLubyte@.
+  -> m ()
+glWeightubvARB v1 v2 = liftIO $ dyn519 ptr_glWeightubvARB v1 v2
+
+{-# NOINLINE ptr_glWeightubvARB #-}
+ptr_glWeightubvARB :: FunPtr (GLint -> Ptr GLubyte -> IO ())
+ptr_glWeightubvARB = unsafePerformIO $ getCommand "glWeightubvARB"
+
+-- glWeightuivARB --------------------------------------------------------------
+
+glWeightuivARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLuint -- ^ @weights@ pointing to @size@ elements of type @GLuint@.
+  -> m ()
+glWeightuivARB v1 v2 = liftIO $ dyn520 ptr_glWeightuivARB v1 v2
+
+{-# NOINLINE ptr_glWeightuivARB #-}
+ptr_glWeightuivARB :: FunPtr (GLint -> Ptr GLuint -> IO ())
+ptr_glWeightuivARB = unsafePerformIO $ getCommand "glWeightuivARB"
+
+-- glWeightusvARB --------------------------------------------------------------
+
+glWeightusvARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLushort -- ^ @weights@ pointing to @size@ elements of type @GLushort@.
+  -> m ()
+glWeightusvARB v1 v2 = liftIO $ dyn521 ptr_glWeightusvARB v1 v2
+
+{-# NOINLINE ptr_glWeightusvARB #-}
+ptr_glWeightusvARB :: FunPtr (GLint -> Ptr GLushort -> IO ())
+ptr_glWeightusvARB = unsafePerformIO $ getCommand "glWeightusvARB"
+
+-- glWindowPos2d ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos2dv'.
+glWindowPos2d
+  :: MonadIO m
+  => GLdouble -- ^ @x@ of type @CoordD@.
+  -> GLdouble -- ^ @y@ of type @CoordD@.
+  -> m ()
+glWindowPos2d v1 v2 = liftIO $ dyn217 ptr_glWindowPos2d v1 v2
+
+{-# NOINLINE ptr_glWindowPos2d #-}
+ptr_glWindowPos2d :: FunPtr (GLdouble -> GLdouble -> IO ())
+ptr_glWindowPos2d = unsafePerformIO $ getCommand "glWindowPos2d"
 
 -- glWindowPos2dARB ------------------------------------------------------------
 
@@ -317,7 +402,7 @@ glWindowPos2s
   => GLshort -- ^ @x@ of type @CoordS@.
   -> GLshort -- ^ @y@ of type @CoordS@.
   -> m ()
-glWindowPos2s v1 v2 = liftIO $ dyn669 ptr_glWindowPos2s v1 v2
+glWindowPos2s v1 v2 = liftIO $ dyn672 ptr_glWindowPos2s v1 v2
 
 {-# NOINLINE ptr_glWindowPos2s #-}
 ptr_glWindowPos2s :: FunPtr (GLshort -> GLshort -> IO ())
@@ -331,7 +416,7 @@ glWindowPos2sARB
   => GLshort -- ^ @x@ of type @CoordS@.
   -> GLshort -- ^ @y@ of type @CoordS@.
   -> m ()
-glWindowPos2sARB v1 v2 = liftIO $ dyn669 ptr_glWindowPos2sARB v1 v2
+glWindowPos2sARB v1 v2 = liftIO $ dyn672 ptr_glWindowPos2sARB v1 v2
 
 {-# NOINLINE ptr_glWindowPos2sARB #-}
 ptr_glWindowPos2sARB :: FunPtr (GLshort -> GLshort -> IO ())
@@ -345,7 +430,7 @@ glWindowPos2sMESA
   => GLshort -- ^ @x@ of type @CoordS@.
   -> GLshort -- ^ @y@ of type @CoordS@.
   -> m ()
-glWindowPos2sMESA v1 v2 = liftIO $ dyn669 ptr_glWindowPos2sMESA v1 v2
+glWindowPos2sMESA v1 v2 = liftIO $ dyn672 ptr_glWindowPos2sMESA v1 v2
 
 {-# NOINLINE ptr_glWindowPos2sMESA #-}
 ptr_glWindowPos2sMESA :: FunPtr (GLshort -> GLshort -> IO ())
@@ -846,7 +931,7 @@ glWindowRectanglesEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @box@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
   -> m ()
-glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn887 ptr_glWindowRectanglesEXT v1 v2 v3
+glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn890 ptr_glWindowRectanglesEXT v1 v2 v3
 
 {-# NOINLINE ptr_glWindowRectanglesEXT #-}
 ptr_glWindowRectanglesEXT :: FunPtr (GLenum -> GLsizei -> Ptr GLint -> IO ())
@@ -863,7 +948,7 @@ glWriteMaskEXT
   -> GLenum -- ^ @outZ@ of type @VertexShaderWriteMaskEXT@.
   -> GLenum -- ^ @outW@ of type @VertexShaderWriteMaskEXT@.
   -> m ()
-glWriteMaskEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn720 ptr_glWriteMaskEXT v1 v2 v3 v4 v5 v6
+glWriteMaskEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn723 ptr_glWriteMaskEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glWriteMaskEXT #-}
 ptr_glWriteMaskEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())

@@ -101,7 +101,9 @@ module Graphics.GL.Functions.F06 (
   glDrawTexxOES,
   glDrawTexxvOES,
   glDrawTransformFeedback,
+  glDrawTransformFeedbackEXT,
   glDrawTransformFeedbackInstanced,
+  glDrawTransformFeedbackInstancedEXT,
   glDrawTransformFeedbackNV,
   glDrawTransformFeedbackStream,
   glDrawTransformFeedbackStreamInstanced,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F06 (
   glEdgeFlagPointer,
   glEdgeFlagPointerEXT,
   glEdgeFlagPointerListIBM,
-  glEdgeFlagv,
-  glElementPointerAPPLE,
-  glElementPointerATI
+  glEdgeFlagv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -1433,6 +1433,20 @@ glDrawTransformFeedback v1 v2 = liftIO $ dyn16 ptr_glDrawTransformFeedback v1 v2
 ptr_glDrawTransformFeedback :: FunPtr (GLenum -> GLuint -> IO ())
 ptr_glDrawTransformFeedback = unsafePerformIO $ getCommand "glDrawTransformFeedback"
 
+-- glDrawTransformFeedbackEXT --------------------------------------------------
+
+-- | This command is an alias for 'glDrawTransformFeedback'.
+glDrawTransformFeedbackEXT
+  :: MonadIO m
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
+  -> GLuint -- ^ @id@.
+  -> m ()
+glDrawTransformFeedbackEXT v1 v2 = liftIO $ dyn16 ptr_glDrawTransformFeedbackEXT v1 v2
+
+{-# NOINLINE ptr_glDrawTransformFeedbackEXT #-}
+ptr_glDrawTransformFeedbackEXT :: FunPtr (GLenum -> GLuint -> IO ())
+ptr_glDrawTransformFeedbackEXT = unsafePerformIO $ getCommand "glDrawTransformFeedbackEXT"
+
 -- glDrawTransformFeedbackInstanced --------------------------------------------
 
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDrawTransformFeedbackInstanced.xhtml OpenGL 4.x>.
@@ -1447,6 +1461,21 @@ glDrawTransformFeedbackInstanced v1 v2 v3 = liftIO $ dyn257 ptr_glDrawTransformF
 {-# NOINLINE ptr_glDrawTransformFeedbackInstanced #-}
 ptr_glDrawTransformFeedbackInstanced :: FunPtr (GLenum -> GLuint -> GLsizei -> IO ())
 ptr_glDrawTransformFeedbackInstanced = unsafePerformIO $ getCommand "glDrawTransformFeedbackInstanced"
+
+-- glDrawTransformFeedbackInstancedEXT -----------------------------------------
+
+-- | This command is an alias for 'glDrawTransformFeedbackInstanced'.
+glDrawTransformFeedbackInstancedEXT
+  :: MonadIO m
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
+  -> GLuint -- ^ @id@.
+  -> GLsizei -- ^ @instancecount@.
+  -> m ()
+glDrawTransformFeedbackInstancedEXT v1 v2 v3 = liftIO $ dyn257 ptr_glDrawTransformFeedbackInstancedEXT v1 v2 v3
+
+{-# NOINLINE ptr_glDrawTransformFeedbackInstancedEXT #-}
+ptr_glDrawTransformFeedbackInstancedEXT :: FunPtr (GLenum -> GLuint -> GLsizei -> IO ())
+ptr_glDrawTransformFeedbackInstancedEXT = unsafePerformIO $ getCommand "glDrawTransformFeedbackInstancedEXT"
 
 -- glDrawTransformFeedbackNV ---------------------------------------------------
 
@@ -1598,30 +1627,4 @@ glEdgeFlagv v1 = liftIO $ dyn263 ptr_glEdgeFlagv v1
 {-# NOINLINE ptr_glEdgeFlagv #-}
 ptr_glEdgeFlagv :: FunPtr (Ptr GLboolean -> IO ())
 ptr_glEdgeFlagv = unsafePerformIO $ getCommand "glEdgeFlagv"
-
--- glElementPointerAPPLE -------------------------------------------------------
-
-glElementPointerAPPLE
-  :: MonadIO m
-  => GLenum -- ^ @type@ of type @ElementPointerTypeATI@.
-  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type)@ elements of type @a@.
-  -> m ()
-glElementPointerAPPLE v1 v2 = liftIO $ dyn230 ptr_glElementPointerAPPLE v1 v2
-
-{-# NOINLINE ptr_glElementPointerAPPLE #-}
-ptr_glElementPointerAPPLE :: FunPtr (GLenum -> Ptr a -> IO ())
-ptr_glElementPointerAPPLE = unsafePerformIO $ getCommand "glElementPointerAPPLE"
-
--- glElementPointerATI ---------------------------------------------------------
-
-glElementPointerATI
-  :: MonadIO m
-  => GLenum -- ^ @type@ of type @ElementPointerTypeATI@.
-  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type)@ elements of type @a@.
-  -> m ()
-glElementPointerATI v1 v2 = liftIO $ dyn230 ptr_glElementPointerATI v1 v2
-
-{-# NOINLINE ptr_glElementPointerATI #-}
-ptr_glElementPointerATI :: FunPtr (GLenum -> Ptr a -> IO ())
-ptr_glElementPointerATI = unsafePerformIO $ getCommand "glElementPointerATI"
 
