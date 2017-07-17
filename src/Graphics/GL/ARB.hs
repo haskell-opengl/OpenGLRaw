@@ -57,6 +57,7 @@ module Graphics.GL.ARB (
   module Graphics.GL.ARB.GeometryShader4,
   module Graphics.GL.ARB.GetProgramBinary,
   module Graphics.GL.ARB.GetTextureSubImage,
+  module Graphics.GL.ARB.GlSpirv,
   module Graphics.GL.ARB.HalfFloatPixel,
   module Graphics.GL.ARB.HalfFloatVertex,
   module Graphics.GL.ARB.ImagingCompatibility,
@@ -197,6 +198,7 @@ import Graphics.GL.ARB.GPUShaderInt64
 import Graphics.GL.ARB.GeometryShader4
 import Graphics.GL.ARB.GetProgramBinary
 import Graphics.GL.ARB.GetTextureSubImage
+import Graphics.GL.ARB.GlSpirv
 import Graphics.GL.ARB.HalfFloatPixel
 import Graphics.GL.ARB.HalfFloatVertex
 import Graphics.GL.ARB.ImagingCompatibility

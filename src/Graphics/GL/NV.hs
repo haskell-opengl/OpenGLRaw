@@ -13,6 +13,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.NV (
+  module Graphics.GL.NV.AlphaToCoverageDitherControl,
   module Graphics.GL.NV.BindlessMultiDrawIndirect,
   module Graphics.GL.NV.BindlessMultiDrawIndirectCount,
   module Graphics.GL.NV.BindlessTexture,
@@ -31,6 +32,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.DepthBufferFloat,
   module Graphics.GL.NV.DepthClamp,
   module Graphics.GL.NV.DrawTexture,
+  module Graphics.GL.NV.DrawVulkanImage,
   module Graphics.GL.NV.Evaluators,
   module Graphics.GL.NV.ExplicitMultisample,
   module Graphics.GL.NV.Fence,
@@ -42,6 +44,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.FragmentProgram2,
   module Graphics.GL.NV.FramebufferMixedSamples,
   module Graphics.GL.NV.FramebufferMultisampleCoverage,
+  module Graphics.GL.NV.GPUMulticast,
   module Graphics.GL.NV.GPUProgram4,
   module Graphics.GL.NV.GPUProgram5,
   module Graphics.GL.NV.GPUShader5,
@@ -95,6 +98,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.ViewportSwizzle
 ) where
 
+import Graphics.GL.NV.AlphaToCoverageDitherControl
 import Graphics.GL.NV.BindlessMultiDrawIndirect
 import Graphics.GL.NV.BindlessMultiDrawIndirectCount
 import Graphics.GL.NV.BindlessTexture
@@ -113,6 +117,7 @@ import Graphics.GL.NV.DeepTexture3D
 import Graphics.GL.NV.DepthBufferFloat
 import Graphics.GL.NV.DepthClamp
 import Graphics.GL.NV.DrawTexture
+import Graphics.GL.NV.DrawVulkanImage
 import Graphics.GL.NV.Evaluators
 import Graphics.GL.NV.ExplicitMultisample
 import Graphics.GL.NV.Fence
@@ -124,6 +129,7 @@ import Graphics.GL.NV.FragmentProgram
 import Graphics.GL.NV.FragmentProgram2
 import Graphics.GL.NV.FramebufferMixedSamples
 import Graphics.GL.NV.FramebufferMultisampleCoverage
+import Graphics.GL.NV.GPUMulticast
 import Graphics.GL.NV.GPUProgram4
 import Graphics.GL.NV.GPUProgram5
 import Graphics.GL.NV.GPUShader5

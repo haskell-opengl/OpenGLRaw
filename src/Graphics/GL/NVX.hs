@@ -14,8 +14,10 @@
 
 module Graphics.GL.NVX (
   module Graphics.GL.NVX.ConditionalRender,
-  module Graphics.GL.NVX.GPUMemoryInfo
+  module Graphics.GL.NVX.GPUMemoryInfo,
+  module Graphics.GL.NVX.LinkedGPUMulticast
 ) where
 
 import Graphics.GL.NVX.ConditionalRender
 import Graphics.GL.NVX.GPUMemoryInfo
+import Graphics.GL.NVX.LinkedGPUMulticast

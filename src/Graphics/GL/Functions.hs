@@ -45,7 +45,8 @@ module Graphics.GL.Functions (
   module Graphics.GL.Functions.F29,
   module Graphics.GL.Functions.F30,
   module Graphics.GL.Functions.F31,
-  module Graphics.GL.Functions.F32
+  module Graphics.GL.Functions.F32,
+  module Graphics.GL.Functions.F33
 ) where
 
 import Graphics.GL.Functions.F01
@@ -80,3 +81,4 @@ import Graphics.GL.Functions.F29
 import Graphics.GL.Functions.F30
 import Graphics.GL.Functions.F31
 import Graphics.GL.Functions.F32
+import Graphics.GL.Functions.F33

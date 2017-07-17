@@ -57,6 +57,9 @@ module Graphics.GL.Types (
   GLhandleARB,
   GLvdpauSurfaceNV,
   GLeglImageOES,
+  GLeglClientBufferEXT,
+  GLVULKANPROCNVFunc,
+  GLVULKANPROCNV,
 
   -- * Deprecated functions for @gl@ compatibility.
   mkGLDEBUGPROC,
@@ -221,6 +224,12 @@ type GLhandleARB = Word32
 type GLvdpauSurfaceNV = GLintptr
 
 type GLeglImageOES = Ptr ()
+
+type GLeglClientBufferEXT = Ptr ()
+
+type GLVULKANPROCNV = FunPtr GLVULKANPROCNVFunc
+
+type GLVULKANPROCNVFunc = IO ()
 
 {-# DEPRECATED mkGLDEBUGPROC "Use 'makeGLDEBUGPROC' instead." #-}
 mkGLDEBUGPROC :: GLDEBUGPROCFunc -> IO (FunPtr GLDEBUGPROCFunc)

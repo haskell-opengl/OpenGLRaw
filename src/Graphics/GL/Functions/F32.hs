@@ -15,6 +15,67 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F32 (
+  glVertexStream1fATI,
+  glVertexStream1fvATI,
+  glVertexStream1iATI,
+  glVertexStream1ivATI,
+  glVertexStream1sATI,
+  glVertexStream1svATI,
+  glVertexStream2dATI,
+  glVertexStream2dvATI,
+  glVertexStream2fATI,
+  glVertexStream2fvATI,
+  glVertexStream2iATI,
+  glVertexStream2ivATI,
+  glVertexStream2sATI,
+  glVertexStream2svATI,
+  glVertexStream3dATI,
+  glVertexStream3dvATI,
+  glVertexStream3fATI,
+  glVertexStream3fvATI,
+  glVertexStream3iATI,
+  glVertexStream3ivATI,
+  glVertexStream3sATI,
+  glVertexStream3svATI,
+  glVertexStream4dATI,
+  glVertexStream4dvATI,
+  glVertexStream4fATI,
+  glVertexStream4fvATI,
+  glVertexStream4iATI,
+  glVertexStream4ivATI,
+  glVertexStream4sATI,
+  glVertexStream4svATI,
+  glVertexWeightPointerEXT,
+  glVertexWeightfEXT,
+  glVertexWeightfvEXT,
+  glVertexWeighthNV,
+  glVertexWeighthvNV,
+  glVideoCaptureNV,
+  glVideoCaptureStreamParameterdvNV,
+  glVideoCaptureStreamParameterfvNV,
+  glVideoCaptureStreamParameterivNV,
+  glViewport,
+  glViewportArrayv,
+  glViewportArrayvNV,
+  glViewportArrayvOES,
+  glViewportIndexedf,
+  glViewportIndexedfNV,
+  glViewportIndexedfOES,
+  glViewportIndexedfv,
+  glViewportIndexedfvNV,
+  glViewportIndexedfvOES,
+  glViewportPositionWScaleNV,
+  glViewportSwizzleNV,
+  glWaitSemaphoreEXT,
+  glWaitSync,
+  glWaitSyncAPPLE,
+  glWaitVkSemaphoreNV,
+  glWeightPathsNV,
+  glWeightPointerARB,
+  glWeightPointerOES,
+  glWeightbvARB,
+  glWeightdvARB,
+  glWeightfvARB,
   glWeightivARB,
   glWeightsvARB,
   glWeightubvARB,
@@ -53,31 +114,7 @@ module Graphics.GL.Functions.F32 (
   glWindowPos3f,
   glWindowPos3fARB,
   glWindowPos3fMESA,
-  glWindowPos3fv,
-  glWindowPos3fvARB,
-  glWindowPos3fvMESA,
-  glWindowPos3i,
-  glWindowPos3iARB,
-  glWindowPos3iMESA,
-  glWindowPos3iv,
-  glWindowPos3ivARB,
-  glWindowPos3ivMESA,
-  glWindowPos3s,
-  glWindowPos3sARB,
-  glWindowPos3sMESA,
-  glWindowPos3sv,
-  glWindowPos3svARB,
-  glWindowPos3svMESA,
-  glWindowPos4dMESA,
-  glWindowPos4dvMESA,
-  glWindowPos4fMESA,
-  glWindowPos4fvMESA,
-  glWindowPos4iMESA,
-  glWindowPos4ivMESA,
-  glWindowPos4sMESA,
-  glWindowPos4svMESA,
-  glWindowRectanglesEXT,
-  glWriteMaskEXT
+  glWindowPos3fv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -86,6 +123,871 @@ import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
 
+-- glVertexStream1fATI ---------------------------------------------------------
+
+glVertexStream1fATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLfloat -- ^ @x@.
+  -> m ()
+glVertexStream1fATI v1 v2 = liftIO $ dyn0 ptr_glVertexStream1fATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream1fATI #-}
+ptr_glVertexStream1fATI :: FunPtr (GLenum -> GLfloat -> IO ())
+ptr_glVertexStream1fATI = unsafePerformIO $ getCommand "glVertexStream1fATI"
+
+-- glVertexStream1fvATI --------------------------------------------------------
+
+glVertexStream1fvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLfloat -- ^ @coords@ pointing to @1@ element of type @GLfloat@.
+  -> m ()
+glVertexStream1fvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream1fvATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream1fvATI #-}
+ptr_glVertexStream1fvATI :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
+ptr_glVertexStream1fvATI = unsafePerformIO $ getCommand "glVertexStream1fvATI"
+
+-- glVertexStream1iATI ---------------------------------------------------------
+
+glVertexStream1iATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLint -- ^ @x@.
+  -> m ()
+glVertexStream1iATI v1 v2 = liftIO $ dyn56 ptr_glVertexStream1iATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream1iATI #-}
+ptr_glVertexStream1iATI :: FunPtr (GLenum -> GLint -> IO ())
+ptr_glVertexStream1iATI = unsafePerformIO $ getCommand "glVertexStream1iATI"
+
+-- glVertexStream1ivATI --------------------------------------------------------
+
+glVertexStream1ivATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLint -- ^ @coords@ pointing to @1@ element of type @GLint@.
+  -> m ()
+glVertexStream1ivATI v1 v2 = liftIO $ dyn139 ptr_glVertexStream1ivATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream1ivATI #-}
+ptr_glVertexStream1ivATI :: FunPtr (GLenum -> Ptr GLint -> IO ())
+ptr_glVertexStream1ivATI = unsafePerformIO $ getCommand "glVertexStream1ivATI"
+
+-- glVertexStream1sATI ---------------------------------------------------------
+
+glVertexStream1sATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLshort -- ^ @x@.
+  -> m ()
+glVertexStream1sATI v1 v2 = liftIO $ dyn561 ptr_glVertexStream1sATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream1sATI #-}
+ptr_glVertexStream1sATI :: FunPtr (GLenum -> GLshort -> IO ())
+ptr_glVertexStream1sATI = unsafePerformIO $ getCommand "glVertexStream1sATI"
+
+-- glVertexStream1svATI --------------------------------------------------------
+
+glVertexStream1svATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLshort -- ^ @coords@ pointing to @1@ element of type @GLshort@.
+  -> m ()
+glVertexStream1svATI v1 v2 = liftIO $ dyn562 ptr_glVertexStream1svATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream1svATI #-}
+ptr_glVertexStream1svATI :: FunPtr (GLenum -> Ptr GLshort -> IO ())
+ptr_glVertexStream1svATI = unsafePerformIO $ getCommand "glVertexStream1svATI"
+
+-- glVertexStream2dATI ---------------------------------------------------------
+
+glVertexStream2dATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLdouble -- ^ @x@.
+  -> GLdouble -- ^ @y@.
+  -> m ()
+glVertexStream2dATI v1 v2 v3 = liftIO $ dyn564 ptr_glVertexStream2dATI v1 v2 v3
+
+{-# NOINLINE ptr_glVertexStream2dATI #-}
+ptr_glVertexStream2dATI :: FunPtr (GLenum -> GLdouble -> GLdouble -> IO ())
+ptr_glVertexStream2dATI = unsafePerformIO $ getCommand "glVertexStream2dATI"
+
+-- glVertexStream2dvATI --------------------------------------------------------
+
+glVertexStream2dvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLdouble -- ^ @coords@ pointing to @2@ elements of type @GLdouble@.
+  -> m ()
+glVertexStream2dvATI v1 v2 = liftIO $ dyn96 ptr_glVertexStream2dvATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream2dvATI #-}
+ptr_glVertexStream2dvATI :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
+ptr_glVertexStream2dvATI = unsafePerformIO $ getCommand "glVertexStream2dvATI"
+
+-- glVertexStream2fATI ---------------------------------------------------------
+
+glVertexStream2fATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> m ()
+glVertexStream2fATI v1 v2 v3 = liftIO $ dyn565 ptr_glVertexStream2fATI v1 v2 v3
+
+{-# NOINLINE ptr_glVertexStream2fATI #-}
+ptr_glVertexStream2fATI :: FunPtr (GLenum -> GLfloat -> GLfloat -> IO ())
+ptr_glVertexStream2fATI = unsafePerformIO $ getCommand "glVertexStream2fATI"
+
+-- glVertexStream2fvATI --------------------------------------------------------
+
+glVertexStream2fvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLfloat -- ^ @coords@ pointing to @2@ elements of type @GLfloat@.
+  -> m ()
+glVertexStream2fvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream2fvATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream2fvATI #-}
+ptr_glVertexStream2fvATI :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
+ptr_glVertexStream2fvATI = unsafePerformIO $ getCommand "glVertexStream2fvATI"
+
+-- glVertexStream2iATI ---------------------------------------------------------
+
+glVertexStream2iATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLint -- ^ @x@.
+  -> GLint -- ^ @y@.
+  -> m ()
+glVertexStream2iATI v1 v2 v3 = liftIO $ dyn268 ptr_glVertexStream2iATI v1 v2 v3
+
+{-# NOINLINE ptr_glVertexStream2iATI #-}
+ptr_glVertexStream2iATI :: FunPtr (GLenum -> GLint -> GLint -> IO ())
+ptr_glVertexStream2iATI = unsafePerformIO $ getCommand "glVertexStream2iATI"
+
+-- glVertexStream2ivATI --------------------------------------------------------
+
+glVertexStream2ivATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLint -- ^ @coords@ pointing to @2@ elements of type @GLint@.
+  -> m ()
+glVertexStream2ivATI v1 v2 = liftIO $ dyn139 ptr_glVertexStream2ivATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream2ivATI #-}
+ptr_glVertexStream2ivATI :: FunPtr (GLenum -> Ptr GLint -> IO ())
+ptr_glVertexStream2ivATI = unsafePerformIO $ getCommand "glVertexStream2ivATI"
+
+-- glVertexStream2sATI ---------------------------------------------------------
+
+glVertexStream2sATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLshort -- ^ @x@.
+  -> GLshort -- ^ @y@.
+  -> m ()
+glVertexStream2sATI v1 v2 v3 = liftIO $ dyn567 ptr_glVertexStream2sATI v1 v2 v3
+
+{-# NOINLINE ptr_glVertexStream2sATI #-}
+ptr_glVertexStream2sATI :: FunPtr (GLenum -> GLshort -> GLshort -> IO ())
+ptr_glVertexStream2sATI = unsafePerformIO $ getCommand "glVertexStream2sATI"
+
+-- glVertexStream2svATI --------------------------------------------------------
+
+glVertexStream2svATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLshort -- ^ @coords@ pointing to @2@ elements of type @GLshort@.
+  -> m ()
+glVertexStream2svATI v1 v2 = liftIO $ dyn562 ptr_glVertexStream2svATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream2svATI #-}
+ptr_glVertexStream2svATI :: FunPtr (GLenum -> Ptr GLshort -> IO ())
+ptr_glVertexStream2svATI = unsafePerformIO $ getCommand "glVertexStream2svATI"
+
+-- glVertexStream3dATI ---------------------------------------------------------
+
+glVertexStream3dATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLdouble -- ^ @x@.
+  -> GLdouble -- ^ @y@.
+  -> GLdouble -- ^ @z@.
+  -> m ()
+glVertexStream3dATI v1 v2 v3 v4 = liftIO $ dyn539 ptr_glVertexStream3dATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVertexStream3dATI #-}
+ptr_glVertexStream3dATI :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glVertexStream3dATI = unsafePerformIO $ getCommand "glVertexStream3dATI"
+
+-- glVertexStream3dvATI --------------------------------------------------------
+
+glVertexStream3dvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLdouble -- ^ @coords@ pointing to @3@ elements of type @GLdouble@.
+  -> m ()
+glVertexStream3dvATI v1 v2 = liftIO $ dyn96 ptr_glVertexStream3dvATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream3dvATI #-}
+ptr_glVertexStream3dvATI :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
+ptr_glVertexStream3dvATI = unsafePerformIO $ getCommand "glVertexStream3dvATI"
+
+-- glVertexStream3fATI ---------------------------------------------------------
+
+glVertexStream3fATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> GLfloat -- ^ @z@.
+  -> m ()
+glVertexStream3fATI v1 v2 v3 v4 = liftIO $ dyn540 ptr_glVertexStream3fATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVertexStream3fATI #-}
+ptr_glVertexStream3fATI :: FunPtr (GLenum -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glVertexStream3fATI = unsafePerformIO $ getCommand "glVertexStream3fATI"
+
+-- glVertexStream3fvATI --------------------------------------------------------
+
+glVertexStream3fvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLfloat -- ^ @coords@ pointing to @3@ elements of type @GLfloat@.
+  -> m ()
+glVertexStream3fvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream3fvATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream3fvATI #-}
+ptr_glVertexStream3fvATI :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
+ptr_glVertexStream3fvATI = unsafePerformIO $ getCommand "glVertexStream3fvATI"
+
+-- glVertexStream3iATI ---------------------------------------------------------
+
+glVertexStream3iATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLint -- ^ @x@.
+  -> GLint -- ^ @y@.
+  -> GLint -- ^ @z@.
+  -> m ()
+glVertexStream3iATI v1 v2 v3 v4 = liftIO $ dyn571 ptr_glVertexStream3iATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVertexStream3iATI #-}
+ptr_glVertexStream3iATI :: FunPtr (GLenum -> GLint -> GLint -> GLint -> IO ())
+ptr_glVertexStream3iATI = unsafePerformIO $ getCommand "glVertexStream3iATI"
+
+-- glVertexStream3ivATI --------------------------------------------------------
+
+glVertexStream3ivATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLint -- ^ @coords@ pointing to @3@ elements of type @GLint@.
+  -> m ()
+glVertexStream3ivATI v1 v2 = liftIO $ dyn139 ptr_glVertexStream3ivATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream3ivATI #-}
+ptr_glVertexStream3ivATI :: FunPtr (GLenum -> Ptr GLint -> IO ())
+ptr_glVertexStream3ivATI = unsafePerformIO $ getCommand "glVertexStream3ivATI"
+
+-- glVertexStream3sATI ---------------------------------------------------------
+
+glVertexStream3sATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLshort -- ^ @x@.
+  -> GLshort -- ^ @y@.
+  -> GLshort -- ^ @z@.
+  -> m ()
+glVertexStream3sATI v1 v2 v3 v4 = liftIO $ dyn572 ptr_glVertexStream3sATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVertexStream3sATI #-}
+ptr_glVertexStream3sATI :: FunPtr (GLenum -> GLshort -> GLshort -> GLshort -> IO ())
+ptr_glVertexStream3sATI = unsafePerformIO $ getCommand "glVertexStream3sATI"
+
+-- glVertexStream3svATI --------------------------------------------------------
+
+glVertexStream3svATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLshort -- ^ @coords@ pointing to @3@ elements of type @GLshort@.
+  -> m ()
+glVertexStream3svATI v1 v2 = liftIO $ dyn562 ptr_glVertexStream3svATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream3svATI #-}
+ptr_glVertexStream3svATI :: FunPtr (GLenum -> Ptr GLshort -> IO ())
+ptr_glVertexStream3svATI = unsafePerformIO $ getCommand "glVertexStream3svATI"
+
+-- glVertexStream4dATI ---------------------------------------------------------
+
+glVertexStream4dATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLdouble -- ^ @x@.
+  -> GLdouble -- ^ @y@.
+  -> GLdouble -- ^ @z@.
+  -> GLdouble -- ^ @w@.
+  -> m ()
+glVertexStream4dATI v1 v2 v3 v4 v5 = liftIO $ dyn537 ptr_glVertexStream4dATI v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glVertexStream4dATI #-}
+ptr_glVertexStream4dATI :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glVertexStream4dATI = unsafePerformIO $ getCommand "glVertexStream4dATI"
+
+-- glVertexStream4dvATI --------------------------------------------------------
+
+glVertexStream4dvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLdouble -- ^ @coords@ pointing to @4@ elements of type @GLdouble@.
+  -> m ()
+glVertexStream4dvATI v1 v2 = liftIO $ dyn96 ptr_glVertexStream4dvATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream4dvATI #-}
+ptr_glVertexStream4dvATI :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
+ptr_glVertexStream4dvATI = unsafePerformIO $ getCommand "glVertexStream4dvATI"
+
+-- glVertexStream4fATI ---------------------------------------------------------
+
+glVertexStream4fATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> GLfloat -- ^ @z@.
+  -> GLfloat -- ^ @w@.
+  -> m ()
+glVertexStream4fATI v1 v2 v3 v4 v5 = liftIO $ dyn538 ptr_glVertexStream4fATI v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glVertexStream4fATI #-}
+ptr_glVertexStream4fATI :: FunPtr (GLenum -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glVertexStream4fATI = unsafePerformIO $ getCommand "glVertexStream4fATI"
+
+-- glVertexStream4fvATI --------------------------------------------------------
+
+glVertexStream4fvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLfloat -- ^ @coords@ pointing to @4@ elements of type @GLfloat@.
+  -> m ()
+glVertexStream4fvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream4fvATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream4fvATI #-}
+ptr_glVertexStream4fvATI :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
+ptr_glVertexStream4fvATI = unsafePerformIO $ getCommand "glVertexStream4fvATI"
+
+-- glVertexStream4iATI ---------------------------------------------------------
+
+glVertexStream4iATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLint -- ^ @x@.
+  -> GLint -- ^ @y@.
+  -> GLint -- ^ @z@.
+  -> GLint -- ^ @w@.
+  -> m ()
+glVertexStream4iATI v1 v2 v3 v4 v5 = liftIO $ dyn269 ptr_glVertexStream4iATI v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glVertexStream4iATI #-}
+ptr_glVertexStream4iATI :: FunPtr (GLenum -> GLint -> GLint -> GLint -> GLint -> IO ())
+ptr_glVertexStream4iATI = unsafePerformIO $ getCommand "glVertexStream4iATI"
+
+-- glVertexStream4ivATI --------------------------------------------------------
+
+glVertexStream4ivATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLint -- ^ @coords@ pointing to @4@ elements of type @GLint@.
+  -> m ()
+glVertexStream4ivATI v1 v2 = liftIO $ dyn139 ptr_glVertexStream4ivATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream4ivATI #-}
+ptr_glVertexStream4ivATI :: FunPtr (GLenum -> Ptr GLint -> IO ())
+ptr_glVertexStream4ivATI = unsafePerformIO $ getCommand "glVertexStream4ivATI"
+
+-- glVertexStream4sATI ---------------------------------------------------------
+
+glVertexStream4sATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLshort -- ^ @x@.
+  -> GLshort -- ^ @y@.
+  -> GLshort -- ^ @z@.
+  -> GLshort -- ^ @w@.
+  -> m ()
+glVertexStream4sATI v1 v2 v3 v4 v5 = liftIO $ dyn576 ptr_glVertexStream4sATI v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glVertexStream4sATI #-}
+ptr_glVertexStream4sATI :: FunPtr (GLenum -> GLshort -> GLshort -> GLshort -> GLshort -> IO ())
+ptr_glVertexStream4sATI = unsafePerformIO $ getCommand "glVertexStream4sATI"
+
+-- glVertexStream4svATI --------------------------------------------------------
+
+glVertexStream4svATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLshort -- ^ @coords@ pointing to @4@ elements of type @GLshort@.
+  -> m ()
+glVertexStream4svATI v1 v2 = liftIO $ dyn562 ptr_glVertexStream4svATI v1 v2
+
+{-# NOINLINE ptr_glVertexStream4svATI #-}
+ptr_glVertexStream4svATI :: FunPtr (GLenum -> Ptr GLshort -> IO ())
+ptr_glVertexStream4svATI = unsafePerformIO $ getCommand "glVertexStream4svATI"
+
+-- glVertexWeightPointerEXT ----------------------------------------------------
+
+glVertexWeightPointerEXT
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> GLenum -- ^ @type@ of type @VertexWeightPointerTypeEXT@.
+  -> GLsizei -- ^ @stride@.
+  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
+  -> m ()
+glVertexWeightPointerEXT v1 v2 v3 v4 = liftIO $ dyn129 ptr_glVertexWeightPointerEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVertexWeightPointerEXT #-}
+ptr_glVertexWeightPointerEXT :: FunPtr (GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
+ptr_glVertexWeightPointerEXT = unsafePerformIO $ getCommand "glVertexWeightPointerEXT"
+
+-- glVertexWeightfEXT ----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glVertexWeightfvEXT'.
+glVertexWeightfEXT
+  :: MonadIO m
+  => GLfloat -- ^ @weight@.
+  -> m ()
+glVertexWeightfEXT v1 = liftIO $ dyn82 ptr_glVertexWeightfEXT v1
+
+{-# NOINLINE ptr_glVertexWeightfEXT #-}
+ptr_glVertexWeightfEXT :: FunPtr (GLfloat -> IO ())
+ptr_glVertexWeightfEXT = unsafePerformIO $ getCommand "glVertexWeightfEXT"
+
+-- glVertexWeightfvEXT ---------------------------------------------------------
+
+glVertexWeightfvEXT
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @weight@ pointing to @1@ element of type @GLfloat@.
+  -> m ()
+glVertexWeightfvEXT v1 = liftIO $ dyn42 ptr_glVertexWeightfvEXT v1
+
+{-# NOINLINE ptr_glVertexWeightfvEXT #-}
+ptr_glVertexWeightfvEXT :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glVertexWeightfvEXT = unsafePerformIO $ getCommand "glVertexWeightfvEXT"
+
+-- glVertexWeighthNV -----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glVertexWeighthvNV'.
+glVertexWeighthNV
+  :: MonadIO m
+  => GLhalfNV -- ^ @weight@ of type @Half16NV@.
+  -> m ()
+glVertexWeighthNV v1 = liftIO $ dyn285 ptr_glVertexWeighthNV v1
+
+{-# NOINLINE ptr_glVertexWeighthNV #-}
+ptr_glVertexWeighthNV :: FunPtr (GLhalfNV -> IO ())
+ptr_glVertexWeighthNV = unsafePerformIO $ getCommand "glVertexWeighthNV"
+
+-- glVertexWeighthvNV ----------------------------------------------------------
+
+glVertexWeighthvNV
+  :: MonadIO m
+  => Ptr GLhalfNV -- ^ @weight@ pointing to @1@ element of type @Half16NV@.
+  -> m ()
+glVertexWeighthvNV v1 = liftIO $ dyn102 ptr_glVertexWeighthvNV v1
+
+{-# NOINLINE ptr_glVertexWeighthvNV #-}
+ptr_glVertexWeighthvNV :: FunPtr (Ptr GLhalfNV -> IO ())
+ptr_glVertexWeighthvNV = unsafePerformIO $ getCommand "glVertexWeighthvNV"
+
+-- glVideoCaptureNV ------------------------------------------------------------
+
+glVideoCaptureNV
+  :: MonadIO m
+  => GLuint -- ^ @video_capture_slot@.
+  -> Ptr GLuint -- ^ @sequence_num@.
+  -> Ptr GLuint64EXT -- ^ @capture_time@.
+  -> m GLenum
+glVideoCaptureNV v1 v2 v3 = liftIO $ dyn915 ptr_glVideoCaptureNV v1 v2 v3
+
+{-# NOINLINE ptr_glVideoCaptureNV #-}
+ptr_glVideoCaptureNV :: FunPtr (GLuint -> Ptr GLuint -> Ptr GLuint64EXT -> IO GLenum)
+ptr_glVideoCaptureNV = unsafePerformIO $ getCommand "glVideoCaptureNV"
+
+-- glVideoCaptureStreamParameterdvNV -------------------------------------------
+
+glVideoCaptureStreamParameterdvNV
+  :: MonadIO m
+  => GLuint -- ^ @video_capture_slot@.
+  -> GLuint -- ^ @stream@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
+  -> m ()
+glVideoCaptureStreamParameterdvNV v1 v2 v3 v4 = liftIO $ dyn455 ptr_glVideoCaptureStreamParameterdvNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVideoCaptureStreamParameterdvNV #-}
+ptr_glVideoCaptureStreamParameterdvNV :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr GLdouble -> IO ())
+ptr_glVideoCaptureStreamParameterdvNV = unsafePerformIO $ getCommand "glVideoCaptureStreamParameterdvNV"
+
+-- glVideoCaptureStreamParameterfvNV -------------------------------------------
+
+glVideoCaptureStreamParameterfvNV
+  :: MonadIO m
+  => GLuint -- ^ @video_capture_slot@.
+  -> GLuint -- ^ @stream@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
+  -> m ()
+glVideoCaptureStreamParameterfvNV v1 v2 v3 v4 = liftIO $ dyn456 ptr_glVideoCaptureStreamParameterfvNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVideoCaptureStreamParameterfvNV #-}
+ptr_glVideoCaptureStreamParameterfvNV :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glVideoCaptureStreamParameterfvNV = unsafePerformIO $ getCommand "glVideoCaptureStreamParameterfvNV"
+
+-- glVideoCaptureStreamParameterivNV -------------------------------------------
+
+glVideoCaptureStreamParameterivNV
+  :: MonadIO m
+  => GLuint -- ^ @video_capture_slot@.
+  -> GLuint -- ^ @stream@.
+  -> GLenum -- ^ @pname@.
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glVideoCaptureStreamParameterivNV v1 v2 v3 v4 = liftIO $ dyn307 ptr_glVideoCaptureStreamParameterivNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVideoCaptureStreamParameterivNV #-}
+ptr_glVideoCaptureStreamParameterivNV :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr GLint -> IO ())
+ptr_glVideoCaptureStreamParameterivNV = unsafePerformIO $ getCommand "glVideoCaptureStreamParameterivNV"
+
+-- glViewport ------------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glViewport.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glViewport.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glViewport.xhtml OpenGL 4.x>.
+glViewport
+  :: MonadIO m
+  => GLint -- ^ @x@ of type @WinCoord@.
+  -> GLint -- ^ @y@ of type @WinCoord@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> m ()
+glViewport v1 v2 v3 v4 = liftIO $ dyn723 ptr_glViewport v1 v2 v3 v4
+
+{-# NOINLINE ptr_glViewport #-}
+ptr_glViewport :: FunPtr (GLint -> GLint -> GLsizei -> GLsizei -> IO ())
+ptr_glViewport = unsafePerformIO $ getCommand "glViewport"
+
+-- glViewportArrayv ------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportArray.xhtml OpenGL 4.x>.
+glViewportArrayv
+  :: MonadIO m
+  => GLuint -- ^ @first@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @COMPSIZE(count)@ elements of type @GLfloat@.
+  -> m ()
+glViewportArrayv v1 v2 v3 = liftIO $ dyn221 ptr_glViewportArrayv v1 v2 v3
+
+{-# NOINLINE ptr_glViewportArrayv #-}
+ptr_glViewportArrayv :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glViewportArrayv = unsafePerformIO $ getCommand "glViewportArrayv"
+
+-- glViewportArrayvNV ----------------------------------------------------------
+
+-- | This command is an alias for 'glViewportArrayv'.
+glViewportArrayvNV
+  :: MonadIO m
+  => GLuint -- ^ @first@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @COMPSIZE(count)@ elements of type @GLfloat@.
+  -> m ()
+glViewportArrayvNV v1 v2 v3 = liftIO $ dyn221 ptr_glViewportArrayvNV v1 v2 v3
+
+{-# NOINLINE ptr_glViewportArrayvNV #-}
+ptr_glViewportArrayvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glViewportArrayvNV = unsafePerformIO $ getCommand "glViewportArrayvNV"
+
+-- glViewportArrayvOES ---------------------------------------------------------
+
+-- | This command is an alias for 'glViewportArrayv'.
+glViewportArrayvOES
+  :: MonadIO m
+  => GLuint -- ^ @first@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @COMPSIZE(count)@ elements of type @GLfloat@.
+  -> m ()
+glViewportArrayvOES v1 v2 v3 = liftIO $ dyn221 ptr_glViewportArrayvOES v1 v2 v3
+
+{-# NOINLINE ptr_glViewportArrayvOES #-}
+ptr_glViewportArrayvOES :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glViewportArrayvOES = unsafePerformIO $ getCommand "glViewportArrayvOES"
+
+-- glViewportIndexedf ----------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportIndexed.xhtml OpenGL 4.x>.
+glViewportIndexedf
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> GLfloat -- ^ @w@.
+  -> GLfloat -- ^ @h@.
+  -> m ()
+glViewportIndexedf v1 v2 v3 v4 v5 = liftIO $ dyn889 ptr_glViewportIndexedf v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glViewportIndexedf #-}
+ptr_glViewportIndexedf :: FunPtr (GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glViewportIndexedf = unsafePerformIO $ getCommand "glViewportIndexedf"
+
+-- glViewportIndexedfNV --------------------------------------------------------
+
+-- | This command is an alias for 'glViewportIndexedf'.
+glViewportIndexedfNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> GLfloat -- ^ @w@.
+  -> GLfloat -- ^ @h@.
+  -> m ()
+glViewportIndexedfNV v1 v2 v3 v4 v5 = liftIO $ dyn889 ptr_glViewportIndexedfNV v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glViewportIndexedfNV #-}
+ptr_glViewportIndexedfNV :: FunPtr (GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glViewportIndexedfNV = unsafePerformIO $ getCommand "glViewportIndexedfNV"
+
+-- glViewportIndexedfOES -------------------------------------------------------
+
+-- | This command is an alias for 'glViewportIndexedf'.
+glViewportIndexedfOES
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> GLfloat -- ^ @w@.
+  -> GLfloat -- ^ @h@.
+  -> m ()
+glViewportIndexedfOES v1 v2 v3 v4 v5 = liftIO $ dyn889 ptr_glViewportIndexedfOES v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glViewportIndexedfOES #-}
+ptr_glViewportIndexedfOES :: FunPtr (GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glViewportIndexedfOES = unsafePerformIO $ getCommand "glViewportIndexedfOES"
+
+-- glViewportIndexedfv ---------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glViewportIndexed.xhtml OpenGL 4.x>.
+glViewportIndexedfv
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
+  -> m ()
+glViewportIndexedfv v1 v2 = liftIO $ dyn386 ptr_glViewportIndexedfv v1 v2
+
+{-# NOINLINE ptr_glViewportIndexedfv #-}
+ptr_glViewportIndexedfv :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
+ptr_glViewportIndexedfv = unsafePerformIO $ getCommand "glViewportIndexedfv"
+
+-- glViewportIndexedfvNV -------------------------------------------------------
+
+-- | This command is an alias for 'glViewportIndexedfv'.
+glViewportIndexedfvNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
+  -> m ()
+glViewportIndexedfvNV v1 v2 = liftIO $ dyn386 ptr_glViewportIndexedfvNV v1 v2
+
+{-# NOINLINE ptr_glViewportIndexedfvNV #-}
+ptr_glViewportIndexedfvNV :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
+ptr_glViewportIndexedfvNV = unsafePerformIO $ getCommand "glViewportIndexedfvNV"
+
+-- glViewportIndexedfvOES ------------------------------------------------------
+
+-- | This command is an alias for 'glViewportIndexedfv'.
+glViewportIndexedfvOES
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
+  -> m ()
+glViewportIndexedfvOES v1 v2 = liftIO $ dyn386 ptr_glViewportIndexedfvOES v1 v2
+
+{-# NOINLINE ptr_glViewportIndexedfvOES #-}
+ptr_glViewportIndexedfvOES :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
+ptr_glViewportIndexedfvOES = unsafePerformIO $ getCommand "glViewportIndexedfvOES"
+
+-- glViewportPositionWScaleNV --------------------------------------------------
+
+glViewportPositionWScaleNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLfloat -- ^ @xcoeff@.
+  -> GLfloat -- ^ @ycoeff@.
+  -> m ()
+glViewportPositionWScaleNV v1 v2 v3 = liftIO $ dyn224 ptr_glViewportPositionWScaleNV v1 v2 v3
+
+{-# NOINLINE ptr_glViewportPositionWScaleNV #-}
+ptr_glViewportPositionWScaleNV :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
+ptr_glViewportPositionWScaleNV = unsafePerformIO $ getCommand "glViewportPositionWScaleNV"
+
+-- glViewportSwizzleNV ---------------------------------------------------------
+
+glViewportSwizzleNV
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLenum -- ^ @swizzlex@.
+  -> GLenum -- ^ @swizzley@.
+  -> GLenum -- ^ @swizzlez@.
+  -> GLenum -- ^ @swizzlew@.
+  -> m ()
+glViewportSwizzleNV v1 v2 v3 v4 v5 = liftIO $ dyn55 ptr_glViewportSwizzleNV v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glViewportSwizzleNV #-}
+ptr_glViewportSwizzleNV :: FunPtr (GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
+ptr_glViewportSwizzleNV = unsafePerformIO $ getCommand "glViewportSwizzleNV"
+
+-- glWaitSemaphoreEXT ----------------------------------------------------------
+
+glWaitSemaphoreEXT
+  :: MonadIO m
+  => GLuint -- ^ @semaphore@.
+  -> GLuint -- ^ @numBufferBarriers@.
+  -> Ptr GLuint -- ^ @buffers@ pointing to @COMPSIZE(numBufferBarriers)@ elements of type @GLuint@.
+  -> GLuint -- ^ @numTextureBarriers@.
+  -> Ptr GLuint -- ^ @textures@ pointing to @COMPSIZE(numTextureBarriers)@ elements of type @GLuint@.
+  -> Ptr GLenum -- ^ @srcLayouts@ pointing to @COMPSIZE(numTextureBarriers)@ elements of type [TextureLayout](Graphics-GL-Groups.html#TextureLayout).
+  -> m ()
+glWaitSemaphoreEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn733 ptr_glWaitSemaphoreEXT v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glWaitSemaphoreEXT #-}
+ptr_glWaitSemaphoreEXT :: FunPtr (GLuint -> GLuint -> Ptr GLuint -> GLuint -> Ptr GLuint -> Ptr GLenum -> IO ())
+ptr_glWaitSemaphoreEXT = unsafePerformIO $ getCommand "glWaitSemaphoreEXT"
+
+-- glWaitSync ------------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glWaitSync.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glWaitSync.xhtml OpenGL 4.x>.
+glWaitSync
+  :: MonadIO m
+  => GLsync -- ^ @sync@ of type @sync@.
+  -> GLbitfield -- ^ @flags@.
+  -> GLuint64 -- ^ @timeout@.
+  -> m ()
+glWaitSync v1 v2 v3 = liftIO $ dyn916 ptr_glWaitSync v1 v2 v3
+
+{-# NOINLINE ptr_glWaitSync #-}
+ptr_glWaitSync :: FunPtr (GLsync -> GLbitfield -> GLuint64 -> IO ())
+ptr_glWaitSync = unsafePerformIO $ getCommand "glWaitSync"
+
+-- glWaitSyncAPPLE -------------------------------------------------------------
+
+-- | This command is an alias for 'glWaitSync'.
+glWaitSyncAPPLE
+  :: MonadIO m
+  => GLsync -- ^ @sync@.
+  -> GLbitfield -- ^ @flags@.
+  -> GLuint64 -- ^ @timeout@.
+  -> m ()
+glWaitSyncAPPLE v1 v2 v3 = liftIO $ dyn916 ptr_glWaitSyncAPPLE v1 v2 v3
+
+{-# NOINLINE ptr_glWaitSyncAPPLE #-}
+ptr_glWaitSyncAPPLE :: FunPtr (GLsync -> GLbitfield -> GLuint64 -> IO ())
+ptr_glWaitSyncAPPLE = unsafePerformIO $ getCommand "glWaitSyncAPPLE"
+
+-- glWaitVkSemaphoreNV ---------------------------------------------------------
+
+glWaitVkSemaphoreNV
+  :: MonadIO m
+  => GLuint64 -- ^ @vkSemaphore@.
+  -> m ()
+glWaitVkSemaphoreNV v1 = liftIO $ dyn508 ptr_glWaitVkSemaphoreNV v1
+
+{-# NOINLINE ptr_glWaitVkSemaphoreNV #-}
+ptr_glWaitVkSemaphoreNV :: FunPtr (GLuint64 -> IO ())
+ptr_glWaitVkSemaphoreNV = unsafePerformIO $ getCommand "glWaitVkSemaphoreNV"
+
+-- glWeightPathsNV -------------------------------------------------------------
+
+glWeightPathsNV
+  :: MonadIO m
+  => GLuint -- ^ @resultPath@ of type @Path@.
+  -> GLsizei -- ^ @numPaths@.
+  -> Ptr GLuint -- ^ @paths@ pointing to @numPaths@ elements of type @Path@.
+  -> Ptr GLfloat -- ^ @weights@ pointing to @numPaths@ elements of type @GLfloat@.
+  -> m ()
+glWeightPathsNV v1 v2 v3 v4 = liftIO $ dyn917 ptr_glWeightPathsNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glWeightPathsNV #-}
+ptr_glWeightPathsNV :: FunPtr (GLuint -> GLsizei -> Ptr GLuint -> Ptr GLfloat -> IO ())
+ptr_glWeightPathsNV = unsafePerformIO $ getCommand "glWeightPathsNV"
+
+-- glWeightPointerARB ----------------------------------------------------------
+
+glWeightPointerARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> GLenum -- ^ @type@ of type @WeightPointerTypeARB@.
+  -> GLsizei -- ^ @stride@.
+  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
+  -> m ()
+glWeightPointerARB v1 v2 v3 v4 = liftIO $ dyn129 ptr_glWeightPointerARB v1 v2 v3 v4
+
+{-# NOINLINE ptr_glWeightPointerARB #-}
+ptr_glWeightPointerARB :: FunPtr (GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
+ptr_glWeightPointerARB = unsafePerformIO $ getCommand "glWeightPointerARB"
+
+-- glWeightPointerOES ----------------------------------------------------------
+
+glWeightPointerOES
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> GLenum -- ^ @type@.
+  -> GLsizei -- ^ @stride@.
+  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
+  -> m ()
+glWeightPointerOES v1 v2 v3 v4 = liftIO $ dyn129 ptr_glWeightPointerOES v1 v2 v3 v4
+
+{-# NOINLINE ptr_glWeightPointerOES #-}
+ptr_glWeightPointerOES :: FunPtr (GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
+ptr_glWeightPointerOES = unsafePerformIO $ getCommand "glWeightPointerOES"
+
+-- glWeightbvARB ---------------------------------------------------------------
+
+glWeightbvARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLbyte -- ^ @weights@ pointing to @size@ elements of type @GLbyte@.
+  -> m ()
+glWeightbvARB v1 v2 = liftIO $ dyn918 ptr_glWeightbvARB v1 v2
+
+{-# NOINLINE ptr_glWeightbvARB #-}
+ptr_glWeightbvARB :: FunPtr (GLint -> Ptr GLbyte -> IO ())
+ptr_glWeightbvARB = unsafePerformIO $ getCommand "glWeightbvARB"
+
+-- glWeightdvARB ---------------------------------------------------------------
+
+glWeightdvARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLdouble -- ^ @weights@ pointing to @size@ elements of type @GLdouble@.
+  -> m ()
+glWeightdvARB v1 v2 = liftIO $ dyn919 ptr_glWeightdvARB v1 v2
+
+{-# NOINLINE ptr_glWeightdvARB #-}
+ptr_glWeightdvARB :: FunPtr (GLint -> Ptr GLdouble -> IO ())
+ptr_glWeightdvARB = unsafePerformIO $ getCommand "glWeightdvARB"
+
+-- glWeightfvARB ---------------------------------------------------------------
+
+glWeightfvARB
+  :: MonadIO m
+  => GLint -- ^ @size@.
+  -> Ptr GLfloat -- ^ @weights@ pointing to @size@ elements of type @GLfloat@.
+  -> m ()
+glWeightfvARB v1 v2 = liftIO $ dyn920 ptr_glWeightfvARB v1 v2
+
+{-# NOINLINE ptr_glWeightfvARB #-}
+ptr_glWeightfvARB :: FunPtr (GLint -> Ptr GLfloat -> IO ())
+ptr_glWeightfvARB = unsafePerformIO $ getCommand "glWeightfvARB"
+
 -- glWeightivARB ---------------------------------------------------------------
 
 glWeightivARB
@@ -93,7 +995,7 @@ glWeightivARB
   => GLint -- ^ @size@.
   -> Ptr GLint -- ^ @weights@ pointing to @size@ elements of type @GLint@.
   -> m ()
-glWeightivARB v1 v2 = liftIO $ dyn888 ptr_glWeightivARB v1 v2
+glWeightivARB v1 v2 = liftIO $ dyn921 ptr_glWeightivARB v1 v2
 
 {-# NOINLINE ptr_glWeightivARB #-}
 ptr_glWeightivARB :: FunPtr (GLint -> Ptr GLint -> IO ())
@@ -106,7 +1008,7 @@ glWeightsvARB
   => GLint -- ^ @size@.
   -> Ptr GLshort -- ^ @weights@ pointing to @size@ elements of type @GLshort@.
   -> m ()
-glWeightsvARB v1 v2 = liftIO $ dyn889 ptr_glWeightsvARB v1 v2
+glWeightsvARB v1 v2 = liftIO $ dyn922 ptr_glWeightsvARB v1 v2
 
 {-# NOINLINE ptr_glWeightsvARB #-}
 ptr_glWeightsvARB :: FunPtr (GLint -> Ptr GLshort -> IO ())
@@ -119,7 +1021,7 @@ glWeightubvARB
   => GLint -- ^ @size@.
   -> Ptr GLubyte -- ^ @weights@ pointing to @size@ elements of type @GLubyte@.
   -> m ()
-glWeightubvARB v1 v2 = liftIO $ dyn519 ptr_glWeightubvARB v1 v2
+glWeightubvARB v1 v2 = liftIO $ dyn534 ptr_glWeightubvARB v1 v2
 
 {-# NOINLINE ptr_glWeightubvARB #-}
 ptr_glWeightubvARB :: FunPtr (GLint -> Ptr GLubyte -> IO ())
@@ -132,7 +1034,7 @@ glWeightuivARB
   => GLint -- ^ @size@.
   -> Ptr GLuint -- ^ @weights@ pointing to @size@ elements of type @GLuint@.
   -> m ()
-glWeightuivARB v1 v2 = liftIO $ dyn520 ptr_glWeightuivARB v1 v2
+glWeightuivARB v1 v2 = liftIO $ dyn535 ptr_glWeightuivARB v1 v2
 
 {-# NOINLINE ptr_glWeightuivARB #-}
 ptr_glWeightuivARB :: FunPtr (GLint -> Ptr GLuint -> IO ())
@@ -145,7 +1047,7 @@ glWeightusvARB
   => GLint -- ^ @size@.
   -> Ptr GLushort -- ^ @weights@ pointing to @size@ elements of type @GLushort@.
   -> m ()
-glWeightusvARB v1 v2 = liftIO $ dyn521 ptr_glWeightusvARB v1 v2
+glWeightusvARB v1 v2 = liftIO $ dyn536 ptr_glWeightusvARB v1 v2
 
 {-# NOINLINE ptr_glWeightusvARB #-}
 ptr_glWeightusvARB :: FunPtr (GLint -> Ptr GLushort -> IO ())
@@ -159,7 +1061,7 @@ glWindowPos2d
   => GLdouble -- ^ @x@ of type @CoordD@.
   -> GLdouble -- ^ @y@ of type @CoordD@.
   -> m ()
-glWindowPos2d v1 v2 = liftIO $ dyn217 ptr_glWindowPos2d v1 v2
+glWindowPos2d v1 v2 = liftIO $ dyn220 ptr_glWindowPos2d v1 v2
 
 {-# NOINLINE ptr_glWindowPos2d #-}
 ptr_glWindowPos2d :: FunPtr (GLdouble -> GLdouble -> IO ())
@@ -173,7 +1075,7 @@ glWindowPos2dARB
   => GLdouble -- ^ @x@ of type @CoordD@.
   -> GLdouble -- ^ @y@ of type @CoordD@.
   -> m ()
-glWindowPos2dARB v1 v2 = liftIO $ dyn217 ptr_glWindowPos2dARB v1 v2
+glWindowPos2dARB v1 v2 = liftIO $ dyn220 ptr_glWindowPos2dARB v1 v2
 
 {-# NOINLINE ptr_glWindowPos2dARB #-}
 ptr_glWindowPos2dARB :: FunPtr (GLdouble -> GLdouble -> IO ())
@@ -187,7 +1089,7 @@ glWindowPos2dMESA
   => GLdouble -- ^ @x@ of type @CoordD@.
   -> GLdouble -- ^ @y@ of type @CoordD@.
   -> m ()
-glWindowPos2dMESA v1 v2 = liftIO $ dyn217 ptr_glWindowPos2dMESA v1 v2
+glWindowPos2dMESA v1 v2 = liftIO $ dyn220 ptr_glWindowPos2dMESA v1 v2
 
 {-# NOINLINE ptr_glWindowPos2dMESA #-}
 ptr_glWindowPos2dMESA :: FunPtr (GLdouble -> GLdouble -> IO ())
@@ -200,7 +1102,7 @@ glWindowPos2dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
   -> m ()
-glWindowPos2dv v1 = liftIO $ dyn39 ptr_glWindowPos2dv v1
+glWindowPos2dv v1 = liftIO $ dyn40 ptr_glWindowPos2dv v1
 
 {-# NOINLINE ptr_glWindowPos2dv #-}
 ptr_glWindowPos2dv :: FunPtr (Ptr GLdouble -> IO ())
@@ -213,7 +1115,7 @@ glWindowPos2dvARB
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
   -> m ()
-glWindowPos2dvARB v1 = liftIO $ dyn39 ptr_glWindowPos2dvARB v1
+glWindowPos2dvARB v1 = liftIO $ dyn40 ptr_glWindowPos2dvARB v1
 
 {-# NOINLINE ptr_glWindowPos2dvARB #-}
 ptr_glWindowPos2dvARB :: FunPtr (Ptr GLdouble -> IO ())
@@ -226,7 +1128,7 @@ glWindowPos2dvMESA
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
   -> m ()
-glWindowPos2dvMESA v1 = liftIO $ dyn39 ptr_glWindowPos2dvMESA v1
+glWindowPos2dvMESA v1 = liftIO $ dyn40 ptr_glWindowPos2dvMESA v1
 
 {-# NOINLINE ptr_glWindowPos2dvMESA #-}
 ptr_glWindowPos2dvMESA :: FunPtr (Ptr GLdouble -> IO ())
@@ -240,7 +1142,7 @@ glWindowPos2f
   => GLfloat -- ^ @x@ of type @CoordF@.
   -> GLfloat -- ^ @y@ of type @CoordF@.
   -> m ()
-glWindowPos2f v1 v2 = liftIO $ dyn222 ptr_glWindowPos2f v1 v2
+glWindowPos2f v1 v2 = liftIO $ dyn225 ptr_glWindowPos2f v1 v2
 
 {-# NOINLINE ptr_glWindowPos2f #-}
 ptr_glWindowPos2f :: FunPtr (GLfloat -> GLfloat -> IO ())
@@ -254,7 +1156,7 @@ glWindowPos2fARB
   => GLfloat -- ^ @x@ of type @CoordF@.
   -> GLfloat -- ^ @y@ of type @CoordF@.
   -> m ()
-glWindowPos2fARB v1 v2 = liftIO $ dyn222 ptr_glWindowPos2fARB v1 v2
+glWindowPos2fARB v1 v2 = liftIO $ dyn225 ptr_glWindowPos2fARB v1 v2
 
 {-# NOINLINE ptr_glWindowPos2fARB #-}
 ptr_glWindowPos2fARB :: FunPtr (GLfloat -> GLfloat -> IO ())
@@ -268,7 +1170,7 @@ glWindowPos2fMESA
   => GLfloat -- ^ @x@ of type @CoordF@.
   -> GLfloat -- ^ @y@ of type @CoordF@.
   -> m ()
-glWindowPos2fMESA v1 v2 = liftIO $ dyn222 ptr_glWindowPos2fMESA v1 v2
+glWindowPos2fMESA v1 v2 = liftIO $ dyn225 ptr_glWindowPos2fMESA v1 v2
 
 {-# NOINLINE ptr_glWindowPos2fMESA #-}
 ptr_glWindowPos2fMESA :: FunPtr (GLfloat -> GLfloat -> IO ())
@@ -281,7 +1183,7 @@ glWindowPos2fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
   -> m ()
-glWindowPos2fv v1 = liftIO $ dyn41 ptr_glWindowPos2fv v1
+glWindowPos2fv v1 = liftIO $ dyn42 ptr_glWindowPos2fv v1
 
 {-# NOINLINE ptr_glWindowPos2fv #-}
 ptr_glWindowPos2fv :: FunPtr (Ptr GLfloat -> IO ())
@@ -294,7 +1196,7 @@ glWindowPos2fvARB
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
   -> m ()
-glWindowPos2fvARB v1 = liftIO $ dyn41 ptr_glWindowPos2fvARB v1
+glWindowPos2fvARB v1 = liftIO $ dyn42 ptr_glWindowPos2fvARB v1
 
 {-# NOINLINE ptr_glWindowPos2fvARB #-}
 ptr_glWindowPos2fvARB :: FunPtr (Ptr GLfloat -> IO ())
@@ -307,7 +1209,7 @@ glWindowPos2fvMESA
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
   -> m ()
-glWindowPos2fvMESA v1 = liftIO $ dyn41 ptr_glWindowPos2fvMESA v1
+glWindowPos2fvMESA v1 = liftIO $ dyn42 ptr_glWindowPos2fvMESA v1
 
 {-# NOINLINE ptr_glWindowPos2fvMESA #-}
 ptr_glWindowPos2fvMESA :: FunPtr (Ptr GLfloat -> IO ())
@@ -321,7 +1223,7 @@ glWindowPos2i
   => GLint -- ^ @x@ of type @CoordI@.
   -> GLint -- ^ @y@ of type @CoordI@.
   -> m ()
-glWindowPos2i v1 v2 = liftIO $ dyn266 ptr_glWindowPos2i v1 v2
+glWindowPos2i v1 v2 = liftIO $ dyn270 ptr_glWindowPos2i v1 v2
 
 {-# NOINLINE ptr_glWindowPos2i #-}
 ptr_glWindowPos2i :: FunPtr (GLint -> GLint -> IO ())
@@ -335,7 +1237,7 @@ glWindowPos2iARB
   => GLint -- ^ @x@ of type @CoordI@.
   -> GLint -- ^ @y@ of type @CoordI@.
   -> m ()
-glWindowPos2iARB v1 v2 = liftIO $ dyn266 ptr_glWindowPos2iARB v1 v2
+glWindowPos2iARB v1 v2 = liftIO $ dyn270 ptr_glWindowPos2iARB v1 v2
 
 {-# NOINLINE ptr_glWindowPos2iARB #-}
 ptr_glWindowPos2iARB :: FunPtr (GLint -> GLint -> IO ())
@@ -349,7 +1251,7 @@ glWindowPos2iMESA
   => GLint -- ^ @x@ of type @CoordI@.
   -> GLint -- ^ @y@ of type @CoordI@.
   -> m ()
-glWindowPos2iMESA v1 v2 = liftIO $ dyn266 ptr_glWindowPos2iMESA v1 v2
+glWindowPos2iMESA v1 v2 = liftIO $ dyn270 ptr_glWindowPos2iMESA v1 v2
 
 {-# NOINLINE ptr_glWindowPos2iMESA #-}
 ptr_glWindowPos2iMESA :: FunPtr (GLint -> GLint -> IO ())
@@ -362,7 +1264,7 @@ glWindowPos2iv
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
   -> m ()
-glWindowPos2iv v1 = liftIO $ dyn43 ptr_glWindowPos2iv v1
+glWindowPos2iv v1 = liftIO $ dyn44 ptr_glWindowPos2iv v1
 
 {-# NOINLINE ptr_glWindowPos2iv #-}
 ptr_glWindowPos2iv :: FunPtr (Ptr GLint -> IO ())
@@ -375,7 +1277,7 @@ glWindowPos2ivARB
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
   -> m ()
-glWindowPos2ivARB v1 = liftIO $ dyn43 ptr_glWindowPos2ivARB v1
+glWindowPos2ivARB v1 = liftIO $ dyn44 ptr_glWindowPos2ivARB v1
 
 {-# NOINLINE ptr_glWindowPos2ivARB #-}
 ptr_glWindowPos2ivARB :: FunPtr (Ptr GLint -> IO ())
@@ -388,7 +1290,7 @@ glWindowPos2ivMESA
   :: MonadIO m
   => Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
   -> m ()
-glWindowPos2ivMESA v1 = liftIO $ dyn43 ptr_glWindowPos2ivMESA v1
+glWindowPos2ivMESA v1 = liftIO $ dyn44 ptr_glWindowPos2ivMESA v1
 
 {-# NOINLINE ptr_glWindowPos2ivMESA #-}
 ptr_glWindowPos2ivMESA :: FunPtr (Ptr GLint -> IO ())
@@ -402,7 +1304,7 @@ glWindowPos2s
   => GLshort -- ^ @x@ of type @CoordS@.
   -> GLshort -- ^ @y@ of type @CoordS@.
   -> m ()
-glWindowPos2s v1 v2 = liftIO $ dyn672 ptr_glWindowPos2s v1 v2
+glWindowPos2s v1 v2 = liftIO $ dyn694 ptr_glWindowPos2s v1 v2
 
 {-# NOINLINE ptr_glWindowPos2s #-}
 ptr_glWindowPos2s :: FunPtr (GLshort -> GLshort -> IO ())
@@ -416,7 +1318,7 @@ glWindowPos2sARB
   => GLshort -- ^ @x@ of type @CoordS@.
   -> GLshort -- ^ @y@ of type @CoordS@.
   -> m ()
-glWindowPos2sARB v1 v2 = liftIO $ dyn672 ptr_glWindowPos2sARB v1 v2
+glWindowPos2sARB v1 v2 = liftIO $ dyn694 ptr_glWindowPos2sARB v1 v2
 
 {-# NOINLINE ptr_glWindowPos2sARB #-}
 ptr_glWindowPos2sARB :: FunPtr (GLshort -> GLshort -> IO ())
@@ -430,7 +1332,7 @@ glWindowPos2sMESA
   => GLshort -- ^ @x@ of type @CoordS@.
   -> GLshort -- ^ @y@ of type @CoordS@.
   -> m ()
-glWindowPos2sMESA v1 v2 = liftIO $ dyn672 ptr_glWindowPos2sMESA v1 v2
+glWindowPos2sMESA v1 v2 = liftIO $ dyn694 ptr_glWindowPos2sMESA v1 v2
 
 {-# NOINLINE ptr_glWindowPos2sMESA #-}
 ptr_glWindowPos2sMESA :: FunPtr (GLshort -> GLshort -> IO ())
@@ -443,7 +1345,7 @@ glWindowPos2sv
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
   -> m ()
-glWindowPos2sv v1 = liftIO $ dyn45 ptr_glWindowPos2sv v1
+glWindowPos2sv v1 = liftIO $ dyn46 ptr_glWindowPos2sv v1
 
 {-# NOINLINE ptr_glWindowPos2sv #-}
 ptr_glWindowPos2sv :: FunPtr (Ptr GLshort -> IO ())
@@ -456,7 +1358,7 @@ glWindowPos2svARB
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
   -> m ()
-glWindowPos2svARB v1 = liftIO $ dyn45 ptr_glWindowPos2svARB v1
+glWindowPos2svARB v1 = liftIO $ dyn46 ptr_glWindowPos2svARB v1
 
 {-# NOINLINE ptr_glWindowPos2svARB #-}
 ptr_glWindowPos2svARB :: FunPtr (Ptr GLshort -> IO ())
@@ -469,7 +1371,7 @@ glWindowPos2svMESA
   :: MonadIO m
   => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
   -> m ()
-glWindowPos2svMESA v1 = liftIO $ dyn45 ptr_glWindowPos2svMESA v1
+glWindowPos2svMESA v1 = liftIO $ dyn46 ptr_glWindowPos2svMESA v1
 
 {-# NOINLINE ptr_glWindowPos2svMESA #-}
 ptr_glWindowPos2svMESA :: FunPtr (Ptr GLshort -> IO ())
@@ -484,7 +1386,7 @@ glWindowPos3d
   -> GLdouble -- ^ @y@ of type @CoordD@.
   -> GLdouble -- ^ @z@ of type @CoordD@.
   -> m ()
-glWindowPos3d v1 v2 v3 = liftIO $ dyn38 ptr_glWindowPos3d v1 v2 v3
+glWindowPos3d v1 v2 v3 = liftIO $ dyn39 ptr_glWindowPos3d v1 v2 v3
 
 {-# NOINLINE ptr_glWindowPos3d #-}
 ptr_glWindowPos3d :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -499,7 +1401,7 @@ glWindowPos3dARB
   -> GLdouble -- ^ @y@ of type @CoordD@.
   -> GLdouble -- ^ @z@ of type @CoordD@.
   -> m ()
-glWindowPos3dARB v1 v2 v3 = liftIO $ dyn38 ptr_glWindowPos3dARB v1 v2 v3
+glWindowPos3dARB v1 v2 v3 = liftIO $ dyn39 ptr_glWindowPos3dARB v1 v2 v3
 
 {-# NOINLINE ptr_glWindowPos3dARB #-}
 ptr_glWindowPos3dARB :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -514,7 +1416,7 @@ glWindowPos3dMESA
   -> GLdouble -- ^ @y@ of type @CoordD@.
   -> GLdouble -- ^ @z@ of type @CoordD@.
   -> m ()
-glWindowPos3dMESA v1 v2 v3 = liftIO $ dyn38 ptr_glWindowPos3dMESA v1 v2 v3
+glWindowPos3dMESA v1 v2 v3 = liftIO $ dyn39 ptr_glWindowPos3dMESA v1 v2 v3
 
 {-# NOINLINE ptr_glWindowPos3dMESA #-}
 ptr_glWindowPos3dMESA :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -527,7 +1429,7 @@ glWindowPos3dv
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
   -> m ()
-glWindowPos3dv v1 = liftIO $ dyn39 ptr_glWindowPos3dv v1
+glWindowPos3dv v1 = liftIO $ dyn40 ptr_glWindowPos3dv v1
 
 {-# NOINLINE ptr_glWindowPos3dv #-}
 ptr_glWindowPos3dv :: FunPtr (Ptr GLdouble -> IO ())
@@ -540,7 +1442,7 @@ glWindowPos3dvARB
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
   -> m ()
-glWindowPos3dvARB v1 = liftIO $ dyn39 ptr_glWindowPos3dvARB v1
+glWindowPos3dvARB v1 = liftIO $ dyn40 ptr_glWindowPos3dvARB v1
 
 {-# NOINLINE ptr_glWindowPos3dvARB #-}
 ptr_glWindowPos3dvARB :: FunPtr (Ptr GLdouble -> IO ())
@@ -553,7 +1455,7 @@ glWindowPos3dvMESA
   :: MonadIO m
   => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
   -> m ()
-glWindowPos3dvMESA v1 = liftIO $ dyn39 ptr_glWindowPos3dvMESA v1
+glWindowPos3dvMESA v1 = liftIO $ dyn40 ptr_glWindowPos3dvMESA v1
 
 {-# NOINLINE ptr_glWindowPos3dvMESA #-}
 ptr_glWindowPos3dvMESA :: FunPtr (Ptr GLdouble -> IO ())
@@ -568,7 +1470,7 @@ glWindowPos3f
   -> GLfloat -- ^ @y@ of type @CoordF@.
   -> GLfloat -- ^ @z@ of type @CoordF@.
   -> m ()
-glWindowPos3f v1 v2 v3 = liftIO $ dyn40 ptr_glWindowPos3f v1 v2 v3
+glWindowPos3f v1 v2 v3 = liftIO $ dyn41 ptr_glWindowPos3f v1 v2 v3
 
 {-# NOINLINE ptr_glWindowPos3f #-}
 ptr_glWindowPos3f :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -583,7 +1485,7 @@ glWindowPos3fARB
   -> GLfloat -- ^ @y@ of type @CoordF@.
   -> GLfloat -- ^ @z@ of type @CoordF@.
   -> m ()
-glWindowPos3fARB v1 v2 v3 = liftIO $ dyn40 ptr_glWindowPos3fARB v1 v2 v3
+glWindowPos3fARB v1 v2 v3 = liftIO $ dyn41 ptr_glWindowPos3fARB v1 v2 v3
 
 {-# NOINLINE ptr_glWindowPos3fARB #-}
 ptr_glWindowPos3fARB :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -598,7 +1500,7 @@ glWindowPos3fMESA
   -> GLfloat -- ^ @y@ of type @CoordF@.
   -> GLfloat -- ^ @z@ of type @CoordF@.
   -> m ()
-glWindowPos3fMESA v1 v2 v3 = liftIO $ dyn40 ptr_glWindowPos3fMESA v1 v2 v3
+glWindowPos3fMESA v1 v2 v3 = liftIO $ dyn41 ptr_glWindowPos3fMESA v1 v2 v3
 
 {-# NOINLINE ptr_glWindowPos3fMESA #-}
 ptr_glWindowPos3fMESA :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -611,346 +1513,9 @@ glWindowPos3fv
   :: MonadIO m
   => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
   -> m ()
-glWindowPos3fv v1 = liftIO $ dyn41 ptr_glWindowPos3fv v1
+glWindowPos3fv v1 = liftIO $ dyn42 ptr_glWindowPos3fv v1
 
 {-# NOINLINE ptr_glWindowPos3fv #-}
 ptr_glWindowPos3fv :: FunPtr (Ptr GLfloat -> IO ())
 ptr_glWindowPos3fv = unsafePerformIO $ getCommand "glWindowPos3fv"
-
--- glWindowPos3fvARB -----------------------------------------------------------
-
--- | This command is an alias for 'glWindowPos3fv'.
-glWindowPos3fvARB
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
-  -> m ()
-glWindowPos3fvARB v1 = liftIO $ dyn41 ptr_glWindowPos3fvARB v1
-
-{-# NOINLINE ptr_glWindowPos3fvARB #-}
-ptr_glWindowPos3fvARB :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glWindowPos3fvARB = unsafePerformIO $ getCommand "glWindowPos3fvARB"
-
--- glWindowPos3fvMESA ----------------------------------------------------------
-
--- | This command is an alias for 'glWindowPos3fv'.
-glWindowPos3fvMESA
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
-  -> m ()
-glWindowPos3fvMESA v1 = liftIO $ dyn41 ptr_glWindowPos3fvMESA v1
-
-{-# NOINLINE ptr_glWindowPos3fvMESA #-}
-ptr_glWindowPos3fvMESA :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glWindowPos3fvMESA = unsafePerformIO $ getCommand "glWindowPos3fvMESA"
-
--- glWindowPos3i ---------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3iv'.
-glWindowPos3i
-  :: MonadIO m
-  => GLint -- ^ @x@ of type @CoordI@.
-  -> GLint -- ^ @y@ of type @CoordI@.
-  -> GLint -- ^ @z@ of type @CoordI@.
-  -> m ()
-glWindowPos3i v1 v2 v3 = liftIO $ dyn42 ptr_glWindowPos3i v1 v2 v3
-
-{-# NOINLINE ptr_glWindowPos3i #-}
-ptr_glWindowPos3i :: FunPtr (GLint -> GLint -> GLint -> IO ())
-ptr_glWindowPos3i = unsafePerformIO $ getCommand "glWindowPos3i"
-
--- glWindowPos3iARB ------------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos3ivARB'. This command is an alias for 'glWindowPos3i'.
-glWindowPos3iARB
-  :: MonadIO m
-  => GLint -- ^ @x@ of type @CoordI@.
-  -> GLint -- ^ @y@ of type @CoordI@.
-  -> GLint -- ^ @z@ of type @CoordI@.
-  -> m ()
-glWindowPos3iARB v1 v2 v3 = liftIO $ dyn42 ptr_glWindowPos3iARB v1 v2 v3
-
-{-# NOINLINE ptr_glWindowPos3iARB #-}
-ptr_glWindowPos3iARB :: FunPtr (GLint -> GLint -> GLint -> IO ())
-ptr_glWindowPos3iARB = unsafePerformIO $ getCommand "glWindowPos3iARB"
-
--- glWindowPos3iMESA -----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos3ivMESA'. This command is an alias for 'glWindowPos3i'.
-glWindowPos3iMESA
-  :: MonadIO m
-  => GLint -- ^ @x@ of type @CoordI@.
-  -> GLint -- ^ @y@ of type @CoordI@.
-  -> GLint -- ^ @z@ of type @CoordI@.
-  -> m ()
-glWindowPos3iMESA v1 v2 v3 = liftIO $ dyn42 ptr_glWindowPos3iMESA v1 v2 v3
-
-{-# NOINLINE ptr_glWindowPos3iMESA #-}
-ptr_glWindowPos3iMESA :: FunPtr (GLint -> GLint -> GLint -> IO ())
-ptr_glWindowPos3iMESA = unsafePerformIO $ getCommand "glWindowPos3iMESA"
-
--- glWindowPos3iv --------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
-glWindowPos3iv
-  :: MonadIO m
-  => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
-  -> m ()
-glWindowPos3iv v1 = liftIO $ dyn43 ptr_glWindowPos3iv v1
-
-{-# NOINLINE ptr_glWindowPos3iv #-}
-ptr_glWindowPos3iv :: FunPtr (Ptr GLint -> IO ())
-ptr_glWindowPos3iv = unsafePerformIO $ getCommand "glWindowPos3iv"
-
--- glWindowPos3ivARB -----------------------------------------------------------
-
--- | This command is an alias for 'glWindowPos3iv'.
-glWindowPos3ivARB
-  :: MonadIO m
-  => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
-  -> m ()
-glWindowPos3ivARB v1 = liftIO $ dyn43 ptr_glWindowPos3ivARB v1
-
-{-# NOINLINE ptr_glWindowPos3ivARB #-}
-ptr_glWindowPos3ivARB :: FunPtr (Ptr GLint -> IO ())
-ptr_glWindowPos3ivARB = unsafePerformIO $ getCommand "glWindowPos3ivARB"
-
--- glWindowPos3ivMESA ----------------------------------------------------------
-
--- | This command is an alias for 'glWindowPos3iv'.
-glWindowPos3ivMESA
-  :: MonadIO m
-  => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
-  -> m ()
-glWindowPos3ivMESA v1 = liftIO $ dyn43 ptr_glWindowPos3ivMESA v1
-
-{-# NOINLINE ptr_glWindowPos3ivMESA #-}
-ptr_glWindowPos3ivMESA :: FunPtr (Ptr GLint -> IO ())
-ptr_glWindowPos3ivMESA = unsafePerformIO $ getCommand "glWindowPos3ivMESA"
-
--- glWindowPos3s ---------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3sv'.
-glWindowPos3s
-  :: MonadIO m
-  => GLshort -- ^ @x@ of type @CoordS@.
-  -> GLshort -- ^ @y@ of type @CoordS@.
-  -> GLshort -- ^ @z@ of type @CoordS@.
-  -> m ()
-glWindowPos3s v1 v2 v3 = liftIO $ dyn44 ptr_glWindowPos3s v1 v2 v3
-
-{-# NOINLINE ptr_glWindowPos3s #-}
-ptr_glWindowPos3s :: FunPtr (GLshort -> GLshort -> GLshort -> IO ())
-ptr_glWindowPos3s = unsafePerformIO $ getCommand "glWindowPos3s"
-
--- glWindowPos3sARB ------------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos3svARB'. This command is an alias for 'glWindowPos3s'.
-glWindowPos3sARB
-  :: MonadIO m
-  => GLshort -- ^ @x@ of type @CoordS@.
-  -> GLshort -- ^ @y@ of type @CoordS@.
-  -> GLshort -- ^ @z@ of type @CoordS@.
-  -> m ()
-glWindowPos3sARB v1 v2 v3 = liftIO $ dyn44 ptr_glWindowPos3sARB v1 v2 v3
-
-{-# NOINLINE ptr_glWindowPos3sARB #-}
-ptr_glWindowPos3sARB :: FunPtr (GLshort -> GLshort -> GLshort -> IO ())
-ptr_glWindowPos3sARB = unsafePerformIO $ getCommand "glWindowPos3sARB"
-
--- glWindowPos3sMESA -----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos3svMESA'. This command is an alias for 'glWindowPos3s'.
-glWindowPos3sMESA
-  :: MonadIO m
-  => GLshort -- ^ @x@ of type @CoordS@.
-  -> GLshort -- ^ @y@ of type @CoordS@.
-  -> GLshort -- ^ @z@ of type @CoordS@.
-  -> m ()
-glWindowPos3sMESA v1 v2 v3 = liftIO $ dyn44 ptr_glWindowPos3sMESA v1 v2 v3
-
-{-# NOINLINE ptr_glWindowPos3sMESA #-}
-ptr_glWindowPos3sMESA :: FunPtr (GLshort -> GLshort -> GLshort -> IO ())
-ptr_glWindowPos3sMESA = unsafePerformIO $ getCommand "glWindowPos3sMESA"
-
--- glWindowPos3sv --------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
-glWindowPos3sv
-  :: MonadIO m
-  => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
-  -> m ()
-glWindowPos3sv v1 = liftIO $ dyn45 ptr_glWindowPos3sv v1
-
-{-# NOINLINE ptr_glWindowPos3sv #-}
-ptr_glWindowPos3sv :: FunPtr (Ptr GLshort -> IO ())
-ptr_glWindowPos3sv = unsafePerformIO $ getCommand "glWindowPos3sv"
-
--- glWindowPos3svARB -----------------------------------------------------------
-
--- | This command is an alias for 'glWindowPos3sv'.
-glWindowPos3svARB
-  :: MonadIO m
-  => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
-  -> m ()
-glWindowPos3svARB v1 = liftIO $ dyn45 ptr_glWindowPos3svARB v1
-
-{-# NOINLINE ptr_glWindowPos3svARB #-}
-ptr_glWindowPos3svARB :: FunPtr (Ptr GLshort -> IO ())
-ptr_glWindowPos3svARB = unsafePerformIO $ getCommand "glWindowPos3svARB"
-
--- glWindowPos3svMESA ----------------------------------------------------------
-
--- | This command is an alias for 'glWindowPos3sv'.
-glWindowPos3svMESA
-  :: MonadIO m
-  => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
-  -> m ()
-glWindowPos3svMESA v1 = liftIO $ dyn45 ptr_glWindowPos3svMESA v1
-
-{-# NOINLINE ptr_glWindowPos3svMESA #-}
-ptr_glWindowPos3svMESA :: FunPtr (Ptr GLshort -> IO ())
-ptr_glWindowPos3svMESA = unsafePerformIO $ getCommand "glWindowPos3svMESA"
-
--- glWindowPos4dMESA -----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos4dvMESA'.
-glWindowPos4dMESA
-  :: MonadIO m
-  => GLdouble -- ^ @x@ of type @CoordD@.
-  -> GLdouble -- ^ @y@ of type @CoordD@.
-  -> GLdouble -- ^ @z@ of type @CoordD@.
-  -> GLdouble -- ^ @w@ of type @CoordD@.
-  -> m ()
-glWindowPos4dMESA v1 v2 v3 v4 = liftIO $ dyn109 ptr_glWindowPos4dMESA v1 v2 v3 v4
-
-{-# NOINLINE ptr_glWindowPos4dMESA #-}
-ptr_glWindowPos4dMESA :: FunPtr (GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
-ptr_glWindowPos4dMESA = unsafePerformIO $ getCommand "glWindowPos4dMESA"
-
--- glWindowPos4dvMESA ----------------------------------------------------------
-
-glWindowPos4dvMESA
-  :: MonadIO m
-  => Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @CoordD@.
-  -> m ()
-glWindowPos4dvMESA v1 = liftIO $ dyn39 ptr_glWindowPos4dvMESA v1
-
-{-# NOINLINE ptr_glWindowPos4dvMESA #-}
-ptr_glWindowPos4dvMESA :: FunPtr (Ptr GLdouble -> IO ())
-ptr_glWindowPos4dvMESA = unsafePerformIO $ getCommand "glWindowPos4dvMESA"
-
--- glWindowPos4fMESA -----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos4fvMESA'.
-glWindowPos4fMESA
-  :: MonadIO m
-  => GLfloat -- ^ @x@ of type @CoordF@.
-  -> GLfloat -- ^ @y@ of type @CoordF@.
-  -> GLfloat -- ^ @z@ of type @CoordF@.
-  -> GLfloat -- ^ @w@ of type @CoordF@.
-  -> m ()
-glWindowPos4fMESA v1 v2 v3 v4 = liftIO $ dyn49 ptr_glWindowPos4fMESA v1 v2 v3 v4
-
-{-# NOINLINE ptr_glWindowPos4fMESA #-}
-ptr_glWindowPos4fMESA :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glWindowPos4fMESA = unsafePerformIO $ getCommand "glWindowPos4fMESA"
-
--- glWindowPos4fvMESA ----------------------------------------------------------
-
-glWindowPos4fvMESA
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @CoordF@.
-  -> m ()
-glWindowPos4fvMESA v1 = liftIO $ dyn41 ptr_glWindowPos4fvMESA v1
-
-{-# NOINLINE ptr_glWindowPos4fvMESA #-}
-ptr_glWindowPos4fvMESA :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glWindowPos4fvMESA = unsafePerformIO $ getCommand "glWindowPos4fvMESA"
-
--- glWindowPos4iMESA -----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos4ivMESA'.
-glWindowPos4iMESA
-  :: MonadIO m
-  => GLint -- ^ @x@ of type @CoordI@.
-  -> GLint -- ^ @y@ of type @CoordI@.
-  -> GLint -- ^ @z@ of type @CoordI@.
-  -> GLint -- ^ @w@ of type @CoordI@.
-  -> m ()
-glWindowPos4iMESA v1 v2 v3 v4 = liftIO $ dyn76 ptr_glWindowPos4iMESA v1 v2 v3 v4
-
-{-# NOINLINE ptr_glWindowPos4iMESA #-}
-ptr_glWindowPos4iMESA :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
-ptr_glWindowPos4iMESA = unsafePerformIO $ getCommand "glWindowPos4iMESA"
-
--- glWindowPos4ivMESA ----------------------------------------------------------
-
-glWindowPos4ivMESA
-  :: MonadIO m
-  => Ptr GLint -- ^ @v@ pointing to @4@ elements of type @CoordI@.
-  -> m ()
-glWindowPos4ivMESA v1 = liftIO $ dyn43 ptr_glWindowPos4ivMESA v1
-
-{-# NOINLINE ptr_glWindowPos4ivMESA #-}
-ptr_glWindowPos4ivMESA :: FunPtr (Ptr GLint -> IO ())
-ptr_glWindowPos4ivMESA = unsafePerformIO $ getCommand "glWindowPos4ivMESA"
-
--- glWindowPos4sMESA -----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos4svMESA'.
-glWindowPos4sMESA
-  :: MonadIO m
-  => GLshort -- ^ @x@ of type @CoordS@.
-  -> GLshort -- ^ @y@ of type @CoordS@.
-  -> GLshort -- ^ @z@ of type @CoordS@.
-  -> GLshort -- ^ @w@ of type @CoordS@.
-  -> m ()
-glWindowPos4sMESA v1 v2 v3 v4 = liftIO $ dyn113 ptr_glWindowPos4sMESA v1 v2 v3 v4
-
-{-# NOINLINE ptr_glWindowPos4sMESA #-}
-ptr_glWindowPos4sMESA :: FunPtr (GLshort -> GLshort -> GLshort -> GLshort -> IO ())
-ptr_glWindowPos4sMESA = unsafePerformIO $ getCommand "glWindowPos4sMESA"
-
--- glWindowPos4svMESA ----------------------------------------------------------
-
-glWindowPos4svMESA
-  :: MonadIO m
-  => Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
-  -> m ()
-glWindowPos4svMESA v1 = liftIO $ dyn45 ptr_glWindowPos4svMESA v1
-
-{-# NOINLINE ptr_glWindowPos4svMESA #-}
-ptr_glWindowPos4svMESA :: FunPtr (Ptr GLshort -> IO ())
-ptr_glWindowPos4svMESA = unsafePerformIO $ getCommand "glWindowPos4svMESA"
-
--- glWindowRectanglesEXT -------------------------------------------------------
-
-glWindowRectanglesEXT
-  :: MonadIO m
-  => GLenum -- ^ @mode@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLint -- ^ @box@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
-  -> m ()
-glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn890 ptr_glWindowRectanglesEXT v1 v2 v3
-
-{-# NOINLINE ptr_glWindowRectanglesEXT #-}
-ptr_glWindowRectanglesEXT :: FunPtr (GLenum -> GLsizei -> Ptr GLint -> IO ())
-ptr_glWindowRectanglesEXT = unsafePerformIO $ getCommand "glWindowRectanglesEXT"
-
--- glWriteMaskEXT --------------------------------------------------------------
-
-glWriteMaskEXT
-  :: MonadIO m
-  => GLuint -- ^ @res@.
-  -> GLuint -- ^ @in@.
-  -> GLenum -- ^ @outX@ of type @VertexShaderWriteMaskEXT@.
-  -> GLenum -- ^ @outY@ of type @VertexShaderWriteMaskEXT@.
-  -> GLenum -- ^ @outZ@ of type @VertexShaderWriteMaskEXT@.
-  -> GLenum -- ^ @outW@ of type @VertexShaderWriteMaskEXT@.
-  -> m ()
-glWriteMaskEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn723 ptr_glWriteMaskEXT v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glWriteMaskEXT #-}
-ptr_glWriteMaskEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
-ptr_glWriteMaskEXT = unsafePerformIO $ getCommand "glWriteMaskEXT"
 

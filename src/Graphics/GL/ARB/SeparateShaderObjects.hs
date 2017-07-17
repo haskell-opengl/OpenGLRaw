@@ -34,6 +34,7 @@ module Graphics.GL.ARB.SeparateShaderObjects (
   glGetProgramPipelineInfoLog,
   glGetProgramPipelineiv,
   glIsProgramPipeline,
+  glProgramParameteri,
   glProgramUniform1d,
   glProgramUniform1dv,
   glProgramUniform1f,

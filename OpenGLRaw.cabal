@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 3.2.4.0
+version: 3.2.5.0
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 4.5 graphics system and
@@ -37,8 +37,8 @@ extra-source-files:
   CHANGELOG.md
   README.md
   RegistryProcessor/LICENSE
-  RegistryProcessor/OpenGL-Registry/gl.xml
-  RegistryProcessor/OpenGL-Registry/registry.rnc
+  RegistryProcessor/OpenGL-Registry/xml/gl.xml
+  RegistryProcessor/OpenGL-Registry/xml/registry.rnc
   RegistryProcessor/RegistryProcessor.cabal
   RegistryProcessor/Setup.hs
   RegistryProcessor/src/DeclarationParser.hs
@@ -74,6 +74,7 @@ library
     Graphics.GL.AMD.DebugOutput
     Graphics.GL.AMD.DepthClampSeparate
     Graphics.GL.AMD.DrawBuffersBlend
+    Graphics.GL.AMD.FramebufferSamplePositions
     Graphics.GL.AMD.GPUShaderHalfFloat
     Graphics.GL.AMD.GPUShaderInt64
     Graphics.GL.AMD.InterleavedElements
@@ -151,6 +152,7 @@ library
     Graphics.GL.ARB.GeometryShader4
     Graphics.GL.ARB.GetProgramBinary
     Graphics.GL.ARB.GetTextureSubImage
+    Graphics.GL.ARB.GlSpirv
     Graphics.GL.ARB.HalfFloatPixel
     Graphics.GL.ARB.HalfFloatVertex
     Graphics.GL.ARB.ImagingCompatibility
@@ -306,6 +308,7 @@ library
     Graphics.GL.EXT.DrawBuffers2
     Graphics.GL.EXT.DrawInstanced
     Graphics.GL.EXT.DrawRangeElements
+    Graphics.GL.EXT.ExternalBuffer
     Graphics.GL.EXT.FogCoord
     Graphics.GL.EXT.FourTwoTwoPixels
     Graphics.GL.EXT.FramebufferBlit
@@ -321,6 +324,9 @@ library
     Graphics.GL.EXT.IndexFunc
     Graphics.GL.EXT.IndexMaterial
     Graphics.GL.EXT.LightTexture
+    Graphics.GL.EXT.MemoryObject
+    Graphics.GL.EXT.MemoryObjectFd
+    Graphics.GL.EXT.MemoryObjectWin32
     Graphics.GL.EXT.MultiDrawArrays
     Graphics.GL.EXT.Multisample
     Graphics.GL.EXT.PackedDepthStencil
@@ -336,6 +342,9 @@ library
     Graphics.GL.EXT.RasterMultisample
     Graphics.GL.EXT.RescaleNormal
     Graphics.GL.EXT.SecondaryColor
+    Graphics.GL.EXT.Semaphore
+    Graphics.GL.EXT.SemaphoreFd
+    Graphics.GL.EXT.SemaphoreWin32
     Graphics.GL.EXT.SeparateShaderObjects
     Graphics.GL.EXT.SeparateSpecularColor
     Graphics.GL.EXT.ShaderImageLoadStore
@@ -373,6 +382,7 @@ library
     Graphics.GL.EXT.VertexAttrib64Bit
     Graphics.GL.EXT.VertexShader
     Graphics.GL.EXT.VertexWeighting
+    Graphics.GL.EXT.Win32KeyedMutex
     Graphics.GL.EXT.WindowRectangles
     Graphics.GL.EXT.X11SyncObject
     Graphics.GL.Functions
@@ -421,6 +431,7 @@ library
     Graphics.GL.MESAX
     Graphics.GL.MESAX.TextureStack
     Graphics.GL.NV
+    Graphics.GL.NV.AlphaToCoverageDitherControl
     Graphics.GL.NV.BindlessMultiDrawIndirect
     Graphics.GL.NV.BindlessMultiDrawIndirectCount
     Graphics.GL.NV.BindlessTexture
@@ -439,6 +450,7 @@ library
     Graphics.GL.NV.DepthBufferFloat
     Graphics.GL.NV.DepthClamp
     Graphics.GL.NV.DrawTexture
+    Graphics.GL.NV.DrawVulkanImage
     Graphics.GL.NV.Evaluators
     Graphics.GL.NV.ExplicitMultisample
     Graphics.GL.NV.Fence
@@ -450,6 +462,7 @@ library
     Graphics.GL.NV.FragmentProgram2
     Graphics.GL.NV.FramebufferMixedSamples
     Graphics.GL.NV.FramebufferMultisampleCoverage
+    Graphics.GL.NV.GPUMulticast
     Graphics.GL.NV.GPUProgram4
     Graphics.GL.NV.GPUProgram5
     Graphics.GL.NV.GPUShader5
@@ -504,6 +517,7 @@ library
     Graphics.GL.NVX
     Graphics.GL.NVX.ConditionalRender
     Graphics.GL.NVX.GPUMemoryInfo
+    Graphics.GL.NVX.LinkedGPUMulticast
     Graphics.GL.OES
     Graphics.GL.OES.ByteCoordinates
     Graphics.GL.OES.CompressedPalettedTexture
@@ -642,6 +656,7 @@ library
     Graphics.GL.Functions.F30
     Graphics.GL.Functions.F31
     Graphics.GL.Functions.F32
+    Graphics.GL.Functions.F33
   c-sources:
     cbits/HsOpenGLRaw.c
   hs-source-dirs: src

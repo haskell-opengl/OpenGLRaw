@@ -15,6 +15,65 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F27 (
+  glTextureSubImage1DEXT,
+  glTextureSubImage2D,
+  glTextureSubImage2DEXT,
+  glTextureSubImage3D,
+  glTextureSubImage3DEXT,
+  glTextureView,
+  glTextureViewEXT,
+  glTextureViewOES,
+  glTrackMatrixNV,
+  glTransformFeedbackAttribsNV,
+  glTransformFeedbackBufferBase,
+  glTransformFeedbackBufferRange,
+  glTransformFeedbackStreamAttribsNV,
+  glTransformFeedbackVaryings,
+  glTransformFeedbackVaryingsEXT,
+  glTransformFeedbackVaryingsNV,
+  glTransformPathNV,
+  glTranslated,
+  glTranslatef,
+  glTranslatex,
+  glTranslatexOES,
+  glUniform1d,
+  glUniform1dv,
+  glUniform1f,
+  glUniform1fARB,
+  glUniform1fv,
+  glUniform1fvARB,
+  glUniform1i,
+  glUniform1i64ARB,
+  glUniform1i64NV,
+  glUniform1i64vARB,
+  glUniform1i64vNV,
+  glUniform1iARB,
+  glUniform1iv,
+  glUniform1ivARB,
+  glUniform1ui,
+  glUniform1ui64ARB,
+  glUniform1ui64NV,
+  glUniform1ui64vARB,
+  glUniform1ui64vNV,
+  glUniform1uiEXT,
+  glUniform1uiv,
+  glUniform1uivEXT,
+  glUniform2d,
+  glUniform2dv,
+  glUniform2f,
+  glUniform2fARB,
+  glUniform2fv,
+  glUniform2fvARB,
+  glUniform2i,
+  glUniform2i64ARB,
+  glUniform2i64NV,
+  glUniform2i64vARB,
+  glUniform2i64vNV,
+  glUniform2iARB,
+  glUniform2iv,
+  glUniform2ivARB,
+  glUniform2ui,
+  glUniform2ui64ARB,
   glUniform2ui64NV,
   glUniform2ui64vARB,
   glUniform2ui64vNV,
@@ -55,66 +114,7 @@ module Graphics.GL.Functions.F27 (
   glUniform4i64vARB,
   glUniform4i64vNV,
   glUniform4iARB,
-  glUniform4iv,
-  glUniform4ivARB,
-  glUniform4ui,
-  glUniform4ui64ARB,
-  glUniform4ui64NV,
-  glUniform4ui64vARB,
-  glUniform4ui64vNV,
-  glUniform4uiEXT,
-  glUniform4uiv,
-  glUniform4uivEXT,
-  glUniformBlockBinding,
-  glUniformBufferEXT,
-  glUniformHandleui64ARB,
-  glUniformHandleui64IMG,
-  glUniformHandleui64NV,
-  glUniformHandleui64vARB,
-  glUniformHandleui64vIMG,
-  glUniformHandleui64vNV,
-  glUniformMatrix2dv,
-  glUniformMatrix2fv,
-  glUniformMatrix2fvARB,
-  glUniformMatrix2x3dv,
-  glUniformMatrix2x3fv,
-  glUniformMatrix2x3fvNV,
-  glUniformMatrix2x4dv,
-  glUniformMatrix2x4fv,
-  glUniformMatrix2x4fvNV,
-  glUniformMatrix3dv,
-  glUniformMatrix3fv,
-  glUniformMatrix3fvARB,
-  glUniformMatrix3x2dv,
-  glUniformMatrix3x2fv,
-  glUniformMatrix3x2fvNV,
-  glUniformMatrix3x4dv,
-  glUniformMatrix3x4fv,
-  glUniformMatrix3x4fvNV,
-  glUniformMatrix4dv,
-  glUniformMatrix4fv,
-  glUniformMatrix4fvARB,
-  glUniformMatrix4x2dv,
-  glUniformMatrix4x2fv,
-  glUniformMatrix4x2fvNV,
-  glUniformMatrix4x3dv,
-  glUniformMatrix4x3fv,
-  glUniformMatrix4x3fvNV,
-  glUniformSubroutinesuiv,
-  glUniformui64NV,
-  glUniformui64vNV,
-  glUnlockArraysEXT,
-  glUnmapBuffer,
-  glUnmapBufferARB,
-  glUnmapBufferOES,
-  glUnmapNamedBuffer,
-  glUnmapNamedBufferEXT,
-  glUnmapObjectBufferATI,
-  glUnmapTexture2DINTEL,
-  glUpdateObjectBufferATI,
-  glUseProgram,
-  glUseProgramObjectARB,
-  glUseProgramStages
+  glUniform4iv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,912 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTextureSubImage1DEXT ------------------------------------------------------
+
+glTextureSubImage1DEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLint -- ^ @level@ of type @CheckedInt32@.
+  -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
+  -> GLsizei -- ^ @width@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
+  -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width)@ elements of type @a@.
+  -> m ()
+glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn805 ptr_glTextureSubImage1DEXT v1 v2 v3 v4 v5 v6 v7 v8
+
+{-# NOINLINE ptr_glTextureSubImage1DEXT #-}
+ptr_glTextureSubImage1DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glTextureSubImage1DEXT = unsafePerformIO $ getCommand "glTextureSubImage1DEXT"
+
+-- glTextureSubImage2D ---------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage2D.xhtml OpenGL 4.x>.
+glTextureSubImage2D
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLint -- ^ @level@.
+  -> GLint -- ^ @xoffset@.
+  -> GLint -- ^ @yoffset@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @type@.
+  -> Ptr a -- ^ @pixels@.
+  -> m ()
+glTextureSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn806 ptr_glTextureSubImage2D v1 v2 v3 v4 v5 v6 v7 v8 v9
+
+{-# NOINLINE ptr_glTextureSubImage2D #-}
+ptr_glTextureSubImage2D :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glTextureSubImage2D = unsafePerformIO $ getCommand "glTextureSubImage2D"
+
+-- glTextureSubImage2DEXT ------------------------------------------------------
+
+glTextureSubImage2DEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLint -- ^ @level@ of type @CheckedInt32@.
+  -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
+  -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
+  -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height)@ elements of type @a@.
+  -> m ()
+glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn807 ptr_glTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
+
+{-# NOINLINE ptr_glTextureSubImage2DEXT #-}
+ptr_glTextureSubImage2DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glTextureSubImage2DEXT = unsafePerformIO $ getCommand "glTextureSubImage2DEXT"
+
+-- glTextureSubImage3D ---------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexSubImage3D.xhtml OpenGL 4.x>.
+glTextureSubImage3D
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLint -- ^ @level@.
+  -> GLint -- ^ @xoffset@.
+  -> GLint -- ^ @yoffset@.
+  -> GLint -- ^ @zoffset@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> GLsizei -- ^ @depth@.
+  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @type@.
+  -> Ptr a -- ^ @pixels@.
+  -> m ()
+glTextureSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn94 ptr_glTextureSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
+
+{-# NOINLINE ptr_glTextureSubImage3D #-}
+ptr_glTextureSubImage3D :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glTextureSubImage3D = unsafePerformIO $ getCommand "glTextureSubImage3D"
+
+-- glTextureSubImage3DEXT ------------------------------------------------------
+
+glTextureSubImage3DEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@ of type @Texture@.
+  -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
+  -> GLint -- ^ @level@ of type @CheckedInt32@.
+  -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
+  -> GLint -- ^ @yoffset@ of type @CheckedInt32@.
+  -> GLint -- ^ @zoffset@ of type @CheckedInt32@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> GLsizei -- ^ @depth@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
+  -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(format,type,width,height,depth)@ elements of type @a@.
+  -> m ()
+glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO $ dyn808 ptr_glTextureSubImage3DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12
+
+{-# NOINLINE ptr_glTextureSubImage3DEXT #-}
+ptr_glTextureSubImage3DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
+ptr_glTextureSubImage3DEXT = unsafePerformIO $ getCommand "glTextureSubImage3DEXT"
+
+-- glTextureView ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTextureView.xhtml OpenGL 4.x>.
+glTextureView
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLenum -- ^ @target@.
+  -> GLuint -- ^ @origtexture@.
+  -> GLenum -- ^ @internalformat@.
+  -> GLuint -- ^ @minlevel@.
+  -> GLuint -- ^ @numlevels@.
+  -> GLuint -- ^ @minlayer@.
+  -> GLuint -- ^ @numlayers@.
+  -> m ()
+glTextureView v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn809 ptr_glTextureView v1 v2 v3 v4 v5 v6 v7 v8
+
+{-# NOINLINE ptr_glTextureView #-}
+ptr_glTextureView :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
+ptr_glTextureView = unsafePerformIO $ getCommand "glTextureView"
+
+-- glTextureViewEXT ------------------------------------------------------------
+
+-- | This command is an alias for 'glTextureView'.
+glTextureViewEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLenum -- ^ @target@.
+  -> GLuint -- ^ @origtexture@.
+  -> GLenum -- ^ @internalformat@.
+  -> GLuint -- ^ @minlevel@.
+  -> GLuint -- ^ @numlevels@.
+  -> GLuint -- ^ @minlayer@.
+  -> GLuint -- ^ @numlayers@.
+  -> m ()
+glTextureViewEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn809 ptr_glTextureViewEXT v1 v2 v3 v4 v5 v6 v7 v8
+
+{-# NOINLINE ptr_glTextureViewEXT #-}
+ptr_glTextureViewEXT :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
+ptr_glTextureViewEXT = unsafePerformIO $ getCommand "glTextureViewEXT"
+
+-- glTextureViewOES ------------------------------------------------------------
+
+-- | This command is an alias for 'glTextureView'.
+glTextureViewOES
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLenum -- ^ @target@.
+  -> GLuint -- ^ @origtexture@.
+  -> GLenum -- ^ @internalformat@.
+  -> GLuint -- ^ @minlevel@.
+  -> GLuint -- ^ @numlevels@.
+  -> GLuint -- ^ @minlayer@.
+  -> GLuint -- ^ @numlayers@.
+  -> m ()
+glTextureViewOES v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn809 ptr_glTextureViewOES v1 v2 v3 v4 v5 v6 v7 v8
+
+{-# NOINLINE ptr_glTextureViewOES #-}
+ptr_glTextureViewOES :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
+ptr_glTextureViewOES = unsafePerformIO $ getCommand "glTextureViewOES"
+
+-- glTrackMatrixNV -------------------------------------------------------------
+
+glTrackMatrixNV
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  -> GLuint -- ^ @address@.
+  -> GLenum -- ^ @matrix@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @transform@ of type @VertexAttribEnumNV@.
+  -> m ()
+glTrackMatrixNV v1 v2 v3 v4 = liftIO $ dyn810 ptr_glTrackMatrixNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTrackMatrixNV #-}
+ptr_glTrackMatrixNV :: FunPtr (GLenum -> GLuint -> GLenum -> GLenum -> IO ())
+ptr_glTrackMatrixNV = unsafePerformIO $ getCommand "glTrackMatrixNV"
+
+-- glTransformFeedbackAttribsNV ------------------------------------------------
+
+glTransformFeedbackAttribsNV
+  :: MonadIO m
+  => GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @attribs@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
+  -> GLenum -- ^ @bufferMode@.
+  -> m ()
+glTransformFeedbackAttribsNV v1 v2 v3 = liftIO $ dyn811 ptr_glTransformFeedbackAttribsNV v1 v2 v3
+
+{-# NOINLINE ptr_glTransformFeedbackAttribsNV #-}
+ptr_glTransformFeedbackAttribsNV :: FunPtr (GLsizei -> Ptr GLint -> GLenum -> IO ())
+ptr_glTransformFeedbackAttribsNV = unsafePerformIO $ getCommand "glTransformFeedbackAttribsNV"
+
+-- glTransformFeedbackBufferBase -----------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackBufferBase.xhtml OpenGL 4.x>.
+glTransformFeedbackBufferBase
+  :: MonadIO m
+  => GLuint -- ^ @xfb@.
+  -> GLuint -- ^ @index@.
+  -> GLuint -- ^ @buffer@.
+  -> m ()
+glTransformFeedbackBufferBase v1 v2 v3 = liftIO $ dyn105 ptr_glTransformFeedbackBufferBase v1 v2 v3
+
+{-# NOINLINE ptr_glTransformFeedbackBufferBase #-}
+ptr_glTransformFeedbackBufferBase :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
+ptr_glTransformFeedbackBufferBase = unsafePerformIO $ getCommand "glTransformFeedbackBufferBase"
+
+-- glTransformFeedbackBufferRange ----------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackBufferRange.xhtml OpenGL 4.x>.
+glTransformFeedbackBufferRange
+  :: MonadIO m
+  => GLuint -- ^ @xfb@.
+  -> GLuint -- ^ @index@.
+  -> GLuint -- ^ @buffer@.
+  -> GLintptr -- ^ @offset@.
+  -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
+  -> m ()
+glTransformFeedbackBufferRange v1 v2 v3 v4 v5 = liftIO $ dyn812 ptr_glTransformFeedbackBufferRange v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glTransformFeedbackBufferRange #-}
+ptr_glTransformFeedbackBufferRange :: FunPtr (GLuint -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
+ptr_glTransformFeedbackBufferRange = unsafePerformIO $ getCommand "glTransformFeedbackBufferRange"
+
+-- glTransformFeedbackStreamAttribsNV ------------------------------------------
+
+glTransformFeedbackStreamAttribsNV
+  :: MonadIO m
+  => GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @attribs@ pointing to @count@ elements of type @GLint@.
+  -> GLsizei -- ^ @nbuffers@.
+  -> Ptr GLint -- ^ @bufstreams@ pointing to @nbuffers@ elements of type @GLint@.
+  -> GLenum -- ^ @bufferMode@.
+  -> m ()
+glTransformFeedbackStreamAttribsNV v1 v2 v3 v4 v5 = liftIO $ dyn813 ptr_glTransformFeedbackStreamAttribsNV v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glTransformFeedbackStreamAttribsNV #-}
+ptr_glTransformFeedbackStreamAttribsNV :: FunPtr (GLsizei -> Ptr GLint -> GLsizei -> Ptr GLint -> GLenum -> IO ())
+ptr_glTransformFeedbackStreamAttribsNV = unsafePerformIO $ getCommand "glTransformFeedbackStreamAttribsNV"
+
+-- glTransformFeedbackVaryings -------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTransformFeedbackVaryings.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTransformFeedbackVaryings.xhtml OpenGL 4.x>.
+glTransformFeedbackVaryings
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr (Ptr GLchar) -- ^ @varyings@ pointing to @count@ elements of type @Ptr GLchar@.
+  -> GLenum -- ^ @bufferMode@.
+  -> m ()
+glTransformFeedbackVaryings v1 v2 v3 v4 = liftIO $ dyn814 ptr_glTransformFeedbackVaryings v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTransformFeedbackVaryings #-}
+ptr_glTransformFeedbackVaryings :: FunPtr (GLuint -> GLsizei -> Ptr (Ptr GLchar) -> GLenum -> IO ())
+ptr_glTransformFeedbackVaryings = unsafePerformIO $ getCommand "glTransformFeedbackVaryings"
+
+-- glTransformFeedbackVaryingsEXT ----------------------------------------------
+
+-- | This command is an alias for 'glTransformFeedbackVaryings'.
+glTransformFeedbackVaryingsEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr (Ptr GLchar) -- ^ @varyings@ pointing to @count@ elements of type @Ptr GLchar@.
+  -> GLenum -- ^ @bufferMode@.
+  -> m ()
+glTransformFeedbackVaryingsEXT v1 v2 v3 v4 = liftIO $ dyn814 ptr_glTransformFeedbackVaryingsEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTransformFeedbackVaryingsEXT #-}
+ptr_glTransformFeedbackVaryingsEXT :: FunPtr (GLuint -> GLsizei -> Ptr (Ptr GLchar) -> GLenum -> IO ())
+ptr_glTransformFeedbackVaryingsEXT = unsafePerformIO $ getCommand "glTransformFeedbackVaryingsEXT"
+
+-- glTransformFeedbackVaryingsNV -----------------------------------------------
+
+glTransformFeedbackVaryingsNV
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @locations@ pointing to @count@ elements of type @GLint@.
+  -> GLenum -- ^ @bufferMode@.
+  -> m ()
+glTransformFeedbackVaryingsNV v1 v2 v3 v4 = liftIO $ dyn815 ptr_glTransformFeedbackVaryingsNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTransformFeedbackVaryingsNV #-}
+ptr_glTransformFeedbackVaryingsNV :: FunPtr (GLuint -> GLsizei -> Ptr GLint -> GLenum -> IO ())
+ptr_glTransformFeedbackVaryingsNV = unsafePerformIO $ getCommand "glTransformFeedbackVaryingsNV"
+
+-- glTransformPathNV -----------------------------------------------------------
+
+glTransformPathNV
+  :: MonadIO m
+  => GLuint -- ^ @resultPath@ of type @Path@.
+  -> GLuint -- ^ @srcPath@ of type @Path@.
+  -> GLenum -- ^ @transformType@ of type @PathTransformType@.
+  -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(transformType)@ elements of type @GLfloat@.
+  -> m ()
+glTransformPathNV v1 v2 v3 v4 = liftIO $ dyn456 ptr_glTransformPathNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glTransformPathNV #-}
+ptr_glTransformPathNV :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glTransformPathNV = unsafePerformIO $ getCommand "glTransformPathNV"
+
+-- glTranslated ----------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml OpenGL 2.x>.
+glTranslated
+  :: MonadIO m
+  => GLdouble -- ^ @x@.
+  -> GLdouble -- ^ @y@.
+  -> GLdouble -- ^ @z@.
+  -> m ()
+glTranslated v1 v2 v3 = liftIO $ dyn39 ptr_glTranslated v1 v2 v3
+
+{-# NOINLINE ptr_glTranslated #-}
+ptr_glTranslated :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glTranslated = unsafePerformIO $ getCommand "glTranslated"
+
+-- glTranslatef ----------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml OpenGL 2.x>.
+glTranslatef
+  :: MonadIO m
+  => GLfloat -- ^ @x@.
+  -> GLfloat -- ^ @y@.
+  -> GLfloat -- ^ @z@.
+  -> m ()
+glTranslatef v1 v2 v3 = liftIO $ dyn41 ptr_glTranslatef v1 v2 v3
+
+{-# NOINLINE ptr_glTranslatef #-}
+ptr_glTranslatef :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glTranslatef = unsafePerformIO $ getCommand "glTranslatef"
+
+-- glTranslatex ----------------------------------------------------------------
+
+glTranslatex
+  :: MonadIO m
+  => GLfixed -- ^ @x@.
+  -> GLfixed -- ^ @y@.
+  -> GLfixed -- ^ @z@.
+  -> m ()
+glTranslatex v1 v2 v3 = liftIO $ dyn109 ptr_glTranslatex v1 v2 v3
+
+{-# NOINLINE ptr_glTranslatex #-}
+ptr_glTranslatex :: FunPtr (GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glTranslatex = unsafePerformIO $ getCommand "glTranslatex"
+
+-- glTranslatexOES -------------------------------------------------------------
+
+glTranslatexOES
+  :: MonadIO m
+  => GLfixed -- ^ @x@.
+  -> GLfixed -- ^ @y@.
+  -> GLfixed -- ^ @z@.
+  -> m ()
+glTranslatexOES v1 v2 v3 = liftIO $ dyn109 ptr_glTranslatexOES v1 v2 v3
+
+{-# NOINLINE ptr_glTranslatexOES #-}
+ptr_glTranslatexOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glTranslatexOES = unsafePerformIO $ getCommand "glTranslatexOES"
+
+-- glUniform1d -----------------------------------------------------------------
+
+glUniform1d
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLdouble -- ^ @x@.
+  -> m ()
+glUniform1d v1 v2 = liftIO $ dyn816 ptr_glUniform1d v1 v2
+
+{-# NOINLINE ptr_glUniform1d #-}
+ptr_glUniform1d :: FunPtr (GLint -> GLdouble -> IO ())
+ptr_glUniform1d = unsafePerformIO $ getCommand "glUniform1d"
+
+-- glUniform1dv ----------------------------------------------------------------
+
+glUniform1dv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLdouble -- ^ @value@ pointing to @count*1@ elements of type @GLdouble@.
+  -> m ()
+glUniform1dv v1 v2 v3 = liftIO $ dyn817 ptr_glUniform1dv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1dv #-}
+ptr_glUniform1dv :: FunPtr (GLint -> GLsizei -> Ptr GLdouble -> IO ())
+ptr_glUniform1dv = unsafePerformIO $ getCommand "glUniform1dv"
+
+-- glUniform1f -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform1f
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLfloat -- ^ @v0@.
+  -> m ()
+glUniform1f v1 v2 = liftIO $ dyn818 ptr_glUniform1f v1 v2
+
+{-# NOINLINE ptr_glUniform1f #-}
+ptr_glUniform1f :: FunPtr (GLint -> GLfloat -> IO ())
+ptr_glUniform1f = unsafePerformIO $ getCommand "glUniform1f"
+
+-- glUniform1fARB --------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform1f'.
+glUniform1fARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLfloat -- ^ @v0@.
+  -> m ()
+glUniform1fARB v1 v2 = liftIO $ dyn818 ptr_glUniform1fARB v1 v2
+
+{-# NOINLINE ptr_glUniform1fARB #-}
+ptr_glUniform1fARB :: FunPtr (GLint -> GLfloat -> IO ())
+ptr_glUniform1fARB = unsafePerformIO $ getCommand "glUniform1fARB"
+
+-- glUniform1fv ----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform1fv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @count*1@ elements of type @GLfloat@.
+  -> m ()
+glUniform1fv v1 v2 v3 = liftIO $ dyn819 ptr_glUniform1fv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1fv #-}
+ptr_glUniform1fv :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glUniform1fv = unsafePerformIO $ getCommand "glUniform1fv"
+
+-- glUniform1fvARB -------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform1fv'.
+glUniform1fvARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @count*1@ elements of type @GLfloat@.
+  -> m ()
+glUniform1fvARB v1 v2 v3 = liftIO $ dyn819 ptr_glUniform1fvARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1fvARB #-}
+ptr_glUniform1fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glUniform1fvARB = unsafePerformIO $ getCommand "glUniform1fvARB"
+
+-- glUniform1i -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform1i
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint -- ^ @v0@.
+  -> m ()
+glUniform1i v1 v2 = liftIO $ dyn270 ptr_glUniform1i v1 v2
+
+{-# NOINLINE ptr_glUniform1i #-}
+ptr_glUniform1i :: FunPtr (GLint -> GLint -> IO ())
+ptr_glUniform1i = unsafePerformIO $ getCommand "glUniform1i"
+
+-- glUniform1i64ARB ------------------------------------------------------------
+
+glUniform1i64ARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint64 -- ^ @x@.
+  -> m ()
+glUniform1i64ARB v1 v2 = liftIO $ dyn820 ptr_glUniform1i64ARB v1 v2
+
+{-# NOINLINE ptr_glUniform1i64ARB #-}
+ptr_glUniform1i64ARB :: FunPtr (GLint -> GLint64 -> IO ())
+ptr_glUniform1i64ARB = unsafePerformIO $ getCommand "glUniform1i64ARB"
+
+-- glUniform1i64NV -------------------------------------------------------------
+
+glUniform1i64NV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint64EXT -- ^ @x@.
+  -> m ()
+glUniform1i64NV v1 v2 = liftIO $ dyn821 ptr_glUniform1i64NV v1 v2
+
+{-# NOINLINE ptr_glUniform1i64NV #-}
+ptr_glUniform1i64NV :: FunPtr (GLint -> GLint64EXT -> IO ())
+ptr_glUniform1i64NV = unsafePerformIO $ getCommand "glUniform1i64NV"
+
+-- glUniform1i64vARB -----------------------------------------------------------
+
+glUniform1i64vARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64 -- ^ @value@ pointing to @count*1@ elements of type @GLint64@.
+  -> m ()
+glUniform1i64vARB v1 v2 v3 = liftIO $ dyn822 ptr_glUniform1i64vARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1i64vARB #-}
+ptr_glUniform1i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
+ptr_glUniform1i64vARB = unsafePerformIO $ getCommand "glUniform1i64vARB"
+
+-- glUniform1i64vNV ------------------------------------------------------------
+
+glUniform1i64vNV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64EXT -- ^ @value@ pointing to @count*1@ elements of type @GLint64EXT@.
+  -> m ()
+glUniform1i64vNV v1 v2 v3 = liftIO $ dyn823 ptr_glUniform1i64vNV v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1i64vNV #-}
+ptr_glUniform1i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
+ptr_glUniform1i64vNV = unsafePerformIO $ getCommand "glUniform1i64vNV"
+
+-- glUniform1iARB --------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform1i'.
+glUniform1iARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint -- ^ @v0@.
+  -> m ()
+glUniform1iARB v1 v2 = liftIO $ dyn270 ptr_glUniform1iARB v1 v2
+
+{-# NOINLINE ptr_glUniform1iARB #-}
+ptr_glUniform1iARB :: FunPtr (GLint -> GLint -> IO ())
+ptr_glUniform1iARB = unsafePerformIO $ getCommand "glUniform1iARB"
+
+-- glUniform1iv ----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform1iv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @value@ pointing to @count*1@ elements of type @GLint@.
+  -> m ()
+glUniform1iv v1 v2 v3 = liftIO $ dyn824 ptr_glUniform1iv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1iv #-}
+ptr_glUniform1iv :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
+ptr_glUniform1iv = unsafePerformIO $ getCommand "glUniform1iv"
+
+-- glUniform1ivARB -------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform1iv'.
+glUniform1ivARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @value@ pointing to @count*1@ elements of type @GLint@.
+  -> m ()
+glUniform1ivARB v1 v2 v3 = liftIO $ dyn824 ptr_glUniform1ivARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1ivARB #-}
+ptr_glUniform1ivARB :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
+ptr_glUniform1ivARB = unsafePerformIO $ getCommand "glUniform1ivARB"
+
+-- glUniform1ui ----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform1ui
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLuint -- ^ @v0@.
+  -> m ()
+glUniform1ui v1 v2 = liftIO $ dyn825 ptr_glUniform1ui v1 v2
+
+{-# NOINLINE ptr_glUniform1ui #-}
+ptr_glUniform1ui :: FunPtr (GLint -> GLuint -> IO ())
+ptr_glUniform1ui = unsafePerformIO $ getCommand "glUniform1ui"
+
+-- glUniform1ui64ARB -----------------------------------------------------------
+
+glUniform1ui64ARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLuint64 -- ^ @x@.
+  -> m ()
+glUniform1ui64ARB v1 v2 = liftIO $ dyn826 ptr_glUniform1ui64ARB v1 v2
+
+{-# NOINLINE ptr_glUniform1ui64ARB #-}
+ptr_glUniform1ui64ARB :: FunPtr (GLint -> GLuint64 -> IO ())
+ptr_glUniform1ui64ARB = unsafePerformIO $ getCommand "glUniform1ui64ARB"
+
+-- glUniform1ui64NV ------------------------------------------------------------
+
+glUniform1ui64NV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLuint64EXT -- ^ @x@.
+  -> m ()
+glUniform1ui64NV v1 v2 = liftIO $ dyn827 ptr_glUniform1ui64NV v1 v2
+
+{-# NOINLINE ptr_glUniform1ui64NV #-}
+ptr_glUniform1ui64NV :: FunPtr (GLint -> GLuint64EXT -> IO ())
+ptr_glUniform1ui64NV = unsafePerformIO $ getCommand "glUniform1ui64NV"
+
+-- glUniform1ui64vARB ----------------------------------------------------------
+
+glUniform1ui64vARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint64 -- ^ @value@ pointing to @count*1@ elements of type @GLuint64@.
+  -> m ()
+glUniform1ui64vARB v1 v2 v3 = liftIO $ dyn828 ptr_glUniform1ui64vARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1ui64vARB #-}
+ptr_glUniform1ui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
+ptr_glUniform1ui64vARB = unsafePerformIO $ getCommand "glUniform1ui64vARB"
+
+-- glUniform1ui64vNV -----------------------------------------------------------
+
+glUniform1ui64vNV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*1@ elements of type @GLuint64EXT@.
+  -> m ()
+glUniform1ui64vNV v1 v2 v3 = liftIO $ dyn829 ptr_glUniform1ui64vNV v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1ui64vNV #-}
+ptr_glUniform1ui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
+ptr_glUniform1ui64vNV = unsafePerformIO $ getCommand "glUniform1ui64vNV"
+
+-- glUniform1uiEXT -------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform1ui'.
+glUniform1uiEXT
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLuint -- ^ @v0@.
+  -> m ()
+glUniform1uiEXT v1 v2 = liftIO $ dyn825 ptr_glUniform1uiEXT v1 v2
+
+{-# NOINLINE ptr_glUniform1uiEXT #-}
+ptr_glUniform1uiEXT :: FunPtr (GLint -> GLuint -> IO ())
+ptr_glUniform1uiEXT = unsafePerformIO $ getCommand "glUniform1uiEXT"
+
+-- glUniform1uiv ---------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform1uiv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint -- ^ @value@ pointing to @count*1@ elements of type @GLuint@.
+  -> m ()
+glUniform1uiv v1 v2 v3 = liftIO $ dyn830 ptr_glUniform1uiv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1uiv #-}
+ptr_glUniform1uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glUniform1uiv = unsafePerformIO $ getCommand "glUniform1uiv"
+
+-- glUniform1uivEXT ------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform1uiv'.
+glUniform1uivEXT
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint -- ^ @value@ pointing to @count*1@ elements of type @GLuint@.
+  -> m ()
+glUniform1uivEXT v1 v2 v3 = liftIO $ dyn830 ptr_glUniform1uivEXT v1 v2 v3
+
+{-# NOINLINE ptr_glUniform1uivEXT #-}
+ptr_glUniform1uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glUniform1uivEXT = unsafePerformIO $ getCommand "glUniform1uivEXT"
+
+-- glUniform2d -----------------------------------------------------------------
+
+glUniform2d
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLdouble -- ^ @x@.
+  -> GLdouble -- ^ @y@.
+  -> m ()
+glUniform2d v1 v2 v3 = liftIO $ dyn519 ptr_glUniform2d v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2d #-}
+ptr_glUniform2d :: FunPtr (GLint -> GLdouble -> GLdouble -> IO ())
+ptr_glUniform2d = unsafePerformIO $ getCommand "glUniform2d"
+
+-- glUniform2dv ----------------------------------------------------------------
+
+glUniform2dv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLdouble -- ^ @value@ pointing to @count*2@ elements of type @GLdouble@.
+  -> m ()
+glUniform2dv v1 v2 v3 = liftIO $ dyn817 ptr_glUniform2dv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2dv #-}
+ptr_glUniform2dv :: FunPtr (GLint -> GLsizei -> Ptr GLdouble -> IO ())
+ptr_glUniform2dv = unsafePerformIO $ getCommand "glUniform2dv"
+
+-- glUniform2f -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform2f
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLfloat -- ^ @v0@.
+  -> GLfloat -- ^ @v1@.
+  -> m ()
+glUniform2f v1 v2 v3 = liftIO $ dyn520 ptr_glUniform2f v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2f #-}
+ptr_glUniform2f :: FunPtr (GLint -> GLfloat -> GLfloat -> IO ())
+ptr_glUniform2f = unsafePerformIO $ getCommand "glUniform2f"
+
+-- glUniform2fARB --------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform2f'.
+glUniform2fARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLfloat -- ^ @v0@.
+  -> GLfloat -- ^ @v1@.
+  -> m ()
+glUniform2fARB v1 v2 v3 = liftIO $ dyn520 ptr_glUniform2fARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2fARB #-}
+ptr_glUniform2fARB :: FunPtr (GLint -> GLfloat -> GLfloat -> IO ())
+ptr_glUniform2fARB = unsafePerformIO $ getCommand "glUniform2fARB"
+
+-- glUniform2fv ----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform2fv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @count*2@ elements of type @GLfloat@.
+  -> m ()
+glUniform2fv v1 v2 v3 = liftIO $ dyn819 ptr_glUniform2fv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2fv #-}
+ptr_glUniform2fv :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glUniform2fv = unsafePerformIO $ getCommand "glUniform2fv"
+
+-- glUniform2fvARB -------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform2fv'.
+glUniform2fvARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @count*2@ elements of type @GLfloat@.
+  -> m ()
+glUniform2fvARB v1 v2 v3 = liftIO $ dyn819 ptr_glUniform2fvARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2fvARB #-}
+ptr_glUniform2fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glUniform2fvARB = unsafePerformIO $ getCommand "glUniform2fvARB"
+
+-- glUniform2i -----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform2i
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint -- ^ @v0@.
+  -> GLint -- ^ @v1@.
+  -> m ()
+glUniform2i v1 v2 v3 = liftIO $ dyn43 ptr_glUniform2i v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2i #-}
+ptr_glUniform2i :: FunPtr (GLint -> GLint -> GLint -> IO ())
+ptr_glUniform2i = unsafePerformIO $ getCommand "glUniform2i"
+
+-- glUniform2i64ARB ------------------------------------------------------------
+
+glUniform2i64ARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint64 -- ^ @x@.
+  -> GLint64 -- ^ @y@.
+  -> m ()
+glUniform2i64ARB v1 v2 v3 = liftIO $ dyn831 ptr_glUniform2i64ARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2i64ARB #-}
+ptr_glUniform2i64ARB :: FunPtr (GLint -> GLint64 -> GLint64 -> IO ())
+ptr_glUniform2i64ARB = unsafePerformIO $ getCommand "glUniform2i64ARB"
+
+-- glUniform2i64NV -------------------------------------------------------------
+
+glUniform2i64NV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint64EXT -- ^ @x@.
+  -> GLint64EXT -- ^ @y@.
+  -> m ()
+glUniform2i64NV v1 v2 v3 = liftIO $ dyn832 ptr_glUniform2i64NV v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2i64NV #-}
+ptr_glUniform2i64NV :: FunPtr (GLint -> GLint64EXT -> GLint64EXT -> IO ())
+ptr_glUniform2i64NV = unsafePerformIO $ getCommand "glUniform2i64NV"
+
+-- glUniform2i64vARB -----------------------------------------------------------
+
+glUniform2i64vARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64 -- ^ @value@ pointing to @count*2@ elements of type @GLint64@.
+  -> m ()
+glUniform2i64vARB v1 v2 v3 = liftIO $ dyn822 ptr_glUniform2i64vARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2i64vARB #-}
+ptr_glUniform2i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
+ptr_glUniform2i64vARB = unsafePerformIO $ getCommand "glUniform2i64vARB"
+
+-- glUniform2i64vNV ------------------------------------------------------------
+
+glUniform2i64vNV
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64EXT -- ^ @value@ pointing to @count*2@ elements of type @GLint64EXT@.
+  -> m ()
+glUniform2i64vNV v1 v2 v3 = liftIO $ dyn823 ptr_glUniform2i64vNV v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2i64vNV #-}
+ptr_glUniform2i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
+ptr_glUniform2i64vNV = unsafePerformIO $ getCommand "glUniform2i64vNV"
+
+-- glUniform2iARB --------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform2i'.
+glUniform2iARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLint -- ^ @v0@.
+  -> GLint -- ^ @v1@.
+  -> m ()
+glUniform2iARB v1 v2 v3 = liftIO $ dyn43 ptr_glUniform2iARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2iARB #-}
+ptr_glUniform2iARB :: FunPtr (GLint -> GLint -> GLint -> IO ())
+ptr_glUniform2iARB = unsafePerformIO $ getCommand "glUniform2iARB"
+
+-- glUniform2iv ----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform2iv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @value@ pointing to @count*2@ elements of type @GLint@.
+  -> m ()
+glUniform2iv v1 v2 v3 = liftIO $ dyn824 ptr_glUniform2iv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2iv #-}
+ptr_glUniform2iv :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
+ptr_glUniform2iv = unsafePerformIO $ getCommand "glUniform2iv"
+
+-- glUniform2ivARB -------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform2iv'.
+glUniform2ivARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @value@ pointing to @count*2@ elements of type @GLint@.
+  -> m ()
+glUniform2ivARB v1 v2 v3 = liftIO $ dyn824 ptr_glUniform2ivARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2ivARB #-}
+ptr_glUniform2ivARB :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
+ptr_glUniform2ivARB = unsafePerformIO $ getCommand "glUniform2ivARB"
+
+-- glUniform2ui ----------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform2ui
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLuint -- ^ @v0@.
+  -> GLuint -- ^ @v1@.
+  -> m ()
+glUniform2ui v1 v2 v3 = liftIO $ dyn833 ptr_glUniform2ui v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2ui #-}
+ptr_glUniform2ui :: FunPtr (GLint -> GLuint -> GLuint -> IO ())
+ptr_glUniform2ui = unsafePerformIO $ getCommand "glUniform2ui"
+
+-- glUniform2ui64ARB -----------------------------------------------------------
+
+glUniform2ui64ARB
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLuint64 -- ^ @x@.
+  -> GLuint64 -- ^ @y@.
+  -> m ()
+glUniform2ui64ARB v1 v2 v3 = liftIO $ dyn834 ptr_glUniform2ui64ARB v1 v2 v3
+
+{-# NOINLINE ptr_glUniform2ui64ARB #-}
+ptr_glUniform2ui64ARB :: FunPtr (GLint -> GLuint64 -> GLuint64 -> IO ())
+ptr_glUniform2ui64ARB = unsafePerformIO $ getCommand "glUniform2ui64ARB"
 
 -- glUniform2ui64NV ------------------------------------------------------------
 
@@ -131,7 +1037,7 @@ glUniform2ui64NV
   -> GLuint64EXT -- ^ @x@.
   -> GLuint64EXT -- ^ @y@.
   -> m ()
-glUniform2ui64NV v1 v2 v3 = liftIO $ dyn802 ptr_glUniform2ui64NV v1 v2 v3
+glUniform2ui64NV v1 v2 v3 = liftIO $ dyn835 ptr_glUniform2ui64NV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2ui64NV #-}
 ptr_glUniform2ui64NV :: FunPtr (GLint -> GLuint64EXT -> GLuint64EXT -> IO ())
@@ -145,7 +1051,7 @@ glUniform2ui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @value@ pointing to @count*2@ elements of type @GLuint64@.
   -> m ()
-glUniform2ui64vARB v1 v2 v3 = liftIO $ dyn795 ptr_glUniform2ui64vARB v1 v2 v3
+glUniform2ui64vARB v1 v2 v3 = liftIO $ dyn828 ptr_glUniform2ui64vARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2ui64vARB #-}
 ptr_glUniform2ui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -159,7 +1065,7 @@ glUniform2ui64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*2@ elements of type @GLuint64EXT@.
   -> m ()
-glUniform2ui64vNV v1 v2 v3 = liftIO $ dyn796 ptr_glUniform2ui64vNV v1 v2 v3
+glUniform2ui64vNV v1 v2 v3 = liftIO $ dyn829 ptr_glUniform2ui64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2ui64vNV #-}
 ptr_glUniform2ui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
@@ -174,7 +1080,7 @@ glUniform2uiEXT
   -> GLuint -- ^ @v0@.
   -> GLuint -- ^ @v1@.
   -> m ()
-glUniform2uiEXT v1 v2 v3 = liftIO $ dyn800 ptr_glUniform2uiEXT v1 v2 v3
+glUniform2uiEXT v1 v2 v3 = liftIO $ dyn833 ptr_glUniform2uiEXT v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2uiEXT #-}
 ptr_glUniform2uiEXT :: FunPtr (GLint -> GLuint -> GLuint -> IO ())
@@ -189,7 +1095,7 @@ glUniform2uiv
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*2@ elements of type @GLuint@.
   -> m ()
-glUniform2uiv v1 v2 v3 = liftIO $ dyn797 ptr_glUniform2uiv v1 v2 v3
+glUniform2uiv v1 v2 v3 = liftIO $ dyn830 ptr_glUniform2uiv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2uiv #-}
 ptr_glUniform2uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -204,7 +1110,7 @@ glUniform2uivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*2@ elements of type @GLuint@.
   -> m ()
-glUniform2uivEXT v1 v2 v3 = liftIO $ dyn797 ptr_glUniform2uivEXT v1 v2 v3
+glUniform2uivEXT v1 v2 v3 = liftIO $ dyn830 ptr_glUniform2uivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glUniform2uivEXT #-}
 ptr_glUniform2uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -219,7 +1125,7 @@ glUniform3d
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
   -> m ()
-glUniform3d v1 v2 v3 v4 = liftIO $ dyn803 ptr_glUniform3d v1 v2 v3 v4
+glUniform3d v1 v2 v3 v4 = liftIO $ dyn836 ptr_glUniform3d v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3d #-}
 ptr_glUniform3d :: FunPtr (GLint -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -233,7 +1139,7 @@ glUniform3dv
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*3@ elements of type @GLdouble@.
   -> m ()
-glUniform3dv v1 v2 v3 = liftIO $ dyn784 ptr_glUniform3dv v1 v2 v3
+glUniform3dv v1 v2 v3 = liftIO $ dyn817 ptr_glUniform3dv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3dv #-}
 ptr_glUniform3dv :: FunPtr (GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -249,7 +1155,7 @@ glUniform3f
   -> GLfloat -- ^ @v1@.
   -> GLfloat -- ^ @v2@.
   -> m ()
-glUniform3f v1 v2 v3 v4 = liftIO $ dyn804 ptr_glUniform3f v1 v2 v3 v4
+glUniform3f v1 v2 v3 v4 = liftIO $ dyn837 ptr_glUniform3f v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3f #-}
 ptr_glUniform3f :: FunPtr (GLint -> GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -265,7 +1171,7 @@ glUniform3fARB
   -> GLfloat -- ^ @v1@.
   -> GLfloat -- ^ @v2@.
   -> m ()
-glUniform3fARB v1 v2 v3 v4 = liftIO $ dyn804 ptr_glUniform3fARB v1 v2 v3 v4
+glUniform3fARB v1 v2 v3 v4 = liftIO $ dyn837 ptr_glUniform3fARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3fARB #-}
 ptr_glUniform3fARB :: FunPtr (GLint -> GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -280,7 +1186,7 @@ glUniform3fv
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*3@ elements of type @GLfloat@.
   -> m ()
-glUniform3fv v1 v2 v3 = liftIO $ dyn786 ptr_glUniform3fv v1 v2 v3
+glUniform3fv v1 v2 v3 = liftIO $ dyn819 ptr_glUniform3fv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3fv #-}
 ptr_glUniform3fv :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -295,7 +1201,7 @@ glUniform3fvARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*3@ elements of type @GLfloat@.
   -> m ()
-glUniform3fvARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform3fvARB v1 v2 v3
+glUniform3fvARB v1 v2 v3 = liftIO $ dyn819 ptr_glUniform3fvARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3fvARB #-}
 ptr_glUniform3fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -311,7 +1217,7 @@ glUniform3i
   -> GLint -- ^ @v1@.
   -> GLint -- ^ @v2@.
   -> m ()
-glUniform3i v1 v2 v3 v4 = liftIO $ dyn76 ptr_glUniform3i v1 v2 v3 v4
+glUniform3i v1 v2 v3 v4 = liftIO $ dyn79 ptr_glUniform3i v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3i #-}
 ptr_glUniform3i :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
@@ -326,7 +1232,7 @@ glUniform3i64ARB
   -> GLint64 -- ^ @y@.
   -> GLint64 -- ^ @z@.
   -> m ()
-glUniform3i64ARB v1 v2 v3 v4 = liftIO $ dyn805 ptr_glUniform3i64ARB v1 v2 v3 v4
+glUniform3i64ARB v1 v2 v3 v4 = liftIO $ dyn838 ptr_glUniform3i64ARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3i64ARB #-}
 ptr_glUniform3i64ARB :: FunPtr (GLint -> GLint64 -> GLint64 -> GLint64 -> IO ())
@@ -341,7 +1247,7 @@ glUniform3i64NV
   -> GLint64EXT -- ^ @y@.
   -> GLint64EXT -- ^ @z@.
   -> m ()
-glUniform3i64NV v1 v2 v3 v4 = liftIO $ dyn806 ptr_glUniform3i64NV v1 v2 v3 v4
+glUniform3i64NV v1 v2 v3 v4 = liftIO $ dyn839 ptr_glUniform3i64NV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3i64NV #-}
 ptr_glUniform3i64NV :: FunPtr (GLint -> GLint64EXT -> GLint64EXT -> GLint64EXT -> IO ())
@@ -355,7 +1261,7 @@ glUniform3i64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64 -- ^ @value@ pointing to @count*3@ elements of type @GLint64@.
   -> m ()
-glUniform3i64vARB v1 v2 v3 = liftIO $ dyn789 ptr_glUniform3i64vARB v1 v2 v3
+glUniform3i64vARB v1 v2 v3 = liftIO $ dyn822 ptr_glUniform3i64vARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3i64vARB #-}
 ptr_glUniform3i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
@@ -369,7 +1275,7 @@ glUniform3i64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64EXT -- ^ @value@ pointing to @count*3@ elements of type @GLint64EXT@.
   -> m ()
-glUniform3i64vNV v1 v2 v3 = liftIO $ dyn790 ptr_glUniform3i64vNV v1 v2 v3
+glUniform3i64vNV v1 v2 v3 = liftIO $ dyn823 ptr_glUniform3i64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3i64vNV #-}
 ptr_glUniform3i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
@@ -385,7 +1291,7 @@ glUniform3iARB
   -> GLint -- ^ @v1@.
   -> GLint -- ^ @v2@.
   -> m ()
-glUniform3iARB v1 v2 v3 v4 = liftIO $ dyn76 ptr_glUniform3iARB v1 v2 v3 v4
+glUniform3iARB v1 v2 v3 v4 = liftIO $ dyn79 ptr_glUniform3iARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3iARB #-}
 ptr_glUniform3iARB :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
@@ -400,7 +1306,7 @@ glUniform3iv
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*3@ elements of type @GLint@.
   -> m ()
-glUniform3iv v1 v2 v3 = liftIO $ dyn791 ptr_glUniform3iv v1 v2 v3
+glUniform3iv v1 v2 v3 = liftIO $ dyn824 ptr_glUniform3iv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3iv #-}
 ptr_glUniform3iv :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -415,7 +1321,7 @@ glUniform3ivARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*3@ elements of type @GLint@.
   -> m ()
-glUniform3ivARB v1 v2 v3 = liftIO $ dyn791 ptr_glUniform3ivARB v1 v2 v3
+glUniform3ivARB v1 v2 v3 = liftIO $ dyn824 ptr_glUniform3ivARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3ivARB #-}
 ptr_glUniform3ivARB :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -431,7 +1337,7 @@ glUniform3ui
   -> GLuint -- ^ @v1@.
   -> GLuint -- ^ @v2@.
   -> m ()
-glUniform3ui v1 v2 v3 v4 = liftIO $ dyn807 ptr_glUniform3ui v1 v2 v3 v4
+glUniform3ui v1 v2 v3 v4 = liftIO $ dyn840 ptr_glUniform3ui v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3ui #-}
 ptr_glUniform3ui :: FunPtr (GLint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -446,7 +1352,7 @@ glUniform3ui64ARB
   -> GLuint64 -- ^ @y@.
   -> GLuint64 -- ^ @z@.
   -> m ()
-glUniform3ui64ARB v1 v2 v3 v4 = liftIO $ dyn808 ptr_glUniform3ui64ARB v1 v2 v3 v4
+glUniform3ui64ARB v1 v2 v3 v4 = liftIO $ dyn841 ptr_glUniform3ui64ARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3ui64ARB #-}
 ptr_glUniform3ui64ARB :: FunPtr (GLint -> GLuint64 -> GLuint64 -> GLuint64 -> IO ())
@@ -461,7 +1367,7 @@ glUniform3ui64NV
   -> GLuint64EXT -- ^ @y@.
   -> GLuint64EXT -- ^ @z@.
   -> m ()
-glUniform3ui64NV v1 v2 v3 v4 = liftIO $ dyn809 ptr_glUniform3ui64NV v1 v2 v3 v4
+glUniform3ui64NV v1 v2 v3 v4 = liftIO $ dyn842 ptr_glUniform3ui64NV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3ui64NV #-}
 ptr_glUniform3ui64NV :: FunPtr (GLint -> GLuint64EXT -> GLuint64EXT -> GLuint64EXT -> IO ())
@@ -475,7 +1381,7 @@ glUniform3ui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @value@ pointing to @count*3@ elements of type @GLuint64@.
   -> m ()
-glUniform3ui64vARB v1 v2 v3 = liftIO $ dyn795 ptr_glUniform3ui64vARB v1 v2 v3
+glUniform3ui64vARB v1 v2 v3 = liftIO $ dyn828 ptr_glUniform3ui64vARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3ui64vARB #-}
 ptr_glUniform3ui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -489,7 +1395,7 @@ glUniform3ui64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*3@ elements of type @GLuint64EXT@.
   -> m ()
-glUniform3ui64vNV v1 v2 v3 = liftIO $ dyn796 ptr_glUniform3ui64vNV v1 v2 v3
+glUniform3ui64vNV v1 v2 v3 = liftIO $ dyn829 ptr_glUniform3ui64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3ui64vNV #-}
 ptr_glUniform3ui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
@@ -505,7 +1411,7 @@ glUniform3uiEXT
   -> GLuint -- ^ @v1@.
   -> GLuint -- ^ @v2@.
   -> m ()
-glUniform3uiEXT v1 v2 v3 v4 = liftIO $ dyn807 ptr_glUniform3uiEXT v1 v2 v3 v4
+glUniform3uiEXT v1 v2 v3 v4 = liftIO $ dyn840 ptr_glUniform3uiEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glUniform3uiEXT #-}
 ptr_glUniform3uiEXT :: FunPtr (GLint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -520,7 +1426,7 @@ glUniform3uiv
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
   -> m ()
-glUniform3uiv v1 v2 v3 = liftIO $ dyn797 ptr_glUniform3uiv v1 v2 v3
+glUniform3uiv v1 v2 v3 = liftIO $ dyn830 ptr_glUniform3uiv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3uiv #-}
 ptr_glUniform3uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -535,7 +1441,7 @@ glUniform3uivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
   -> m ()
-glUniform3uivEXT v1 v2 v3 = liftIO $ dyn797 ptr_glUniform3uivEXT v1 v2 v3
+glUniform3uivEXT v1 v2 v3 = liftIO $ dyn830 ptr_glUniform3uivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glUniform3uivEXT #-}
 ptr_glUniform3uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -551,7 +1457,7 @@ glUniform4d
   -> GLdouble -- ^ @z@.
   -> GLdouble -- ^ @w@.
   -> m ()
-glUniform4d v1 v2 v3 v4 v5 = liftIO $ dyn810 ptr_glUniform4d v1 v2 v3 v4 v5
+glUniform4d v1 v2 v3 v4 v5 = liftIO $ dyn843 ptr_glUniform4d v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glUniform4d #-}
 ptr_glUniform4d :: FunPtr (GLint -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -565,7 +1471,7 @@ glUniform4dv
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*4@ elements of type @GLdouble@.
   -> m ()
-glUniform4dv v1 v2 v3 = liftIO $ dyn784 ptr_glUniform4dv v1 v2 v3
+glUniform4dv v1 v2 v3 = liftIO $ dyn817 ptr_glUniform4dv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform4dv #-}
 ptr_glUniform4dv :: FunPtr (GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -582,7 +1488,7 @@ glUniform4f
   -> GLfloat -- ^ @v2@.
   -> GLfloat -- ^ @v3@.
   -> m ()
-glUniform4f v1 v2 v3 v4 v5 = liftIO $ dyn811 ptr_glUniform4f v1 v2 v3 v4 v5
+glUniform4f v1 v2 v3 v4 v5 = liftIO $ dyn844 ptr_glUniform4f v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glUniform4f #-}
 ptr_glUniform4f :: FunPtr (GLint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -599,7 +1505,7 @@ glUniform4fARB
   -> GLfloat -- ^ @v2@.
   -> GLfloat -- ^ @v3@.
   -> m ()
-glUniform4fARB v1 v2 v3 v4 v5 = liftIO $ dyn811 ptr_glUniform4fARB v1 v2 v3 v4 v5
+glUniform4fARB v1 v2 v3 v4 v5 = liftIO $ dyn844 ptr_glUniform4fARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glUniform4fARB #-}
 ptr_glUniform4fARB :: FunPtr (GLint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -614,7 +1520,7 @@ glUniform4fv
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
   -> m ()
-glUniform4fv v1 v2 v3 = liftIO $ dyn786 ptr_glUniform4fv v1 v2 v3
+glUniform4fv v1 v2 v3 = liftIO $ dyn819 ptr_glUniform4fv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform4fv #-}
 ptr_glUniform4fv :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -629,7 +1535,7 @@ glUniform4fvARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
   -> m ()
-glUniform4fvARB v1 v2 v3 = liftIO $ dyn786 ptr_glUniform4fvARB v1 v2 v3
+glUniform4fvARB v1 v2 v3 = liftIO $ dyn819 ptr_glUniform4fvARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform4fvARB #-}
 ptr_glUniform4fvARB :: FunPtr (GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -646,7 +1552,7 @@ glUniform4i
   -> GLint -- ^ @v2@.
   -> GLint -- ^ @v3@.
   -> m ()
-glUniform4i v1 v2 v3 v4 v5 = liftIO $ dyn253 ptr_glUniform4i v1 v2 v3 v4 v5
+glUniform4i v1 v2 v3 v4 v5 = liftIO $ dyn256 ptr_glUniform4i v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glUniform4i #-}
 ptr_glUniform4i :: FunPtr (GLint -> GLint -> GLint -> GLint -> GLint -> IO ())
@@ -662,7 +1568,7 @@ glUniform4i64ARB
   -> GLint64 -- ^ @z@.
   -> GLint64 -- ^ @w@.
   -> m ()
-glUniform4i64ARB v1 v2 v3 v4 v5 = liftIO $ dyn812 ptr_glUniform4i64ARB v1 v2 v3 v4 v5
+glUniform4i64ARB v1 v2 v3 v4 v5 = liftIO $ dyn845 ptr_glUniform4i64ARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glUniform4i64ARB #-}
 ptr_glUniform4i64ARB :: FunPtr (GLint -> GLint64 -> GLint64 -> GLint64 -> GLint64 -> IO ())
@@ -678,7 +1584,7 @@ glUniform4i64NV
   -> GLint64EXT -- ^ @z@.
   -> GLint64EXT -- ^ @w@.
   -> m ()
-glUniform4i64NV v1 v2 v3 v4 v5 = liftIO $ dyn813 ptr_glUniform4i64NV v1 v2 v3 v4 v5
+glUniform4i64NV v1 v2 v3 v4 v5 = liftIO $ dyn846 ptr_glUniform4i64NV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glUniform4i64NV #-}
 ptr_glUniform4i64NV :: FunPtr (GLint -> GLint64EXT -> GLint64EXT -> GLint64EXT -> GLint64EXT -> IO ())
@@ -692,7 +1598,7 @@ glUniform4i64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64 -- ^ @value@ pointing to @count*4@ elements of type @GLint64@.
   -> m ()
-glUniform4i64vARB v1 v2 v3 = liftIO $ dyn789 ptr_glUniform4i64vARB v1 v2 v3
+glUniform4i64vARB v1 v2 v3 = liftIO $ dyn822 ptr_glUniform4i64vARB v1 v2 v3
 
 {-# NOINLINE ptr_glUniform4i64vARB #-}
 ptr_glUniform4i64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLint64 -> IO ())
@@ -706,7 +1612,7 @@ glUniform4i64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64EXT -- ^ @value@ pointing to @count*4@ elements of type @GLint64EXT@.
   -> m ()
-glUniform4i64vNV v1 v2 v3 = liftIO $ dyn790 ptr_glUniform4i64vNV v1 v2 v3
+glUniform4i64vNV v1 v2 v3 = liftIO $ dyn823 ptr_glUniform4i64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glUniform4i64vNV #-}
 ptr_glUniform4i64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
@@ -723,7 +1629,7 @@ glUniform4iARB
   -> GLint -- ^ @v2@.
   -> GLint -- ^ @v3@.
   -> m ()
-glUniform4iARB v1 v2 v3 v4 v5 = liftIO $ dyn253 ptr_glUniform4iARB v1 v2 v3 v4 v5
+glUniform4iARB v1 v2 v3 v4 v5 = liftIO $ dyn256 ptr_glUniform4iARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glUniform4iARB #-}
 ptr_glUniform4iARB :: FunPtr (GLint -> GLint -> GLint -> GLint -> GLint -> IO ())
@@ -738,882 +1644,9 @@ glUniform4iv
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*4@ elements of type @GLint@.
   -> m ()
-glUniform4iv v1 v2 v3 = liftIO $ dyn791 ptr_glUniform4iv v1 v2 v3
+glUniform4iv v1 v2 v3 = liftIO $ dyn824 ptr_glUniform4iv v1 v2 v3
 
 {-# NOINLINE ptr_glUniform4iv #-}
 ptr_glUniform4iv :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
 ptr_glUniform4iv = unsafePerformIO $ getCommand "glUniform4iv"
-
--- glUniform4ivARB -------------------------------------------------------------
-
--- | This command is an alias for 'glUniform4iv'.
-glUniform4ivARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLint -- ^ @value@ pointing to @count*4@ elements of type @GLint@.
-  -> m ()
-glUniform4ivARB v1 v2 v3 = liftIO $ dyn791 ptr_glUniform4ivARB v1 v2 v3
-
-{-# NOINLINE ptr_glUniform4ivARB #-}
-ptr_glUniform4ivARB :: FunPtr (GLint -> GLsizei -> Ptr GLint -> IO ())
-ptr_glUniform4ivARB = unsafePerformIO $ getCommand "glUniform4ivARB"
-
--- glUniform4ui ----------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniform4ui
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint -- ^ @v0@.
-  -> GLuint -- ^ @v1@.
-  -> GLuint -- ^ @v2@.
-  -> GLuint -- ^ @v3@.
-  -> m ()
-glUniform4ui v1 v2 v3 v4 v5 = liftIO $ dyn814 ptr_glUniform4ui v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glUniform4ui #-}
-ptr_glUniform4ui :: FunPtr (GLint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
-ptr_glUniform4ui = unsafePerformIO $ getCommand "glUniform4ui"
-
--- glUniform4ui64ARB -----------------------------------------------------------
-
-glUniform4ui64ARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint64 -- ^ @x@.
-  -> GLuint64 -- ^ @y@.
-  -> GLuint64 -- ^ @z@.
-  -> GLuint64 -- ^ @w@.
-  -> m ()
-glUniform4ui64ARB v1 v2 v3 v4 v5 = liftIO $ dyn815 ptr_glUniform4ui64ARB v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glUniform4ui64ARB #-}
-ptr_glUniform4ui64ARB :: FunPtr (GLint -> GLuint64 -> GLuint64 -> GLuint64 -> GLuint64 -> IO ())
-ptr_glUniform4ui64ARB = unsafePerformIO $ getCommand "glUniform4ui64ARB"
-
--- glUniform4ui64NV ------------------------------------------------------------
-
-glUniform4ui64NV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint64EXT -- ^ @x@.
-  -> GLuint64EXT -- ^ @y@.
-  -> GLuint64EXT -- ^ @z@.
-  -> GLuint64EXT -- ^ @w@.
-  -> m ()
-glUniform4ui64NV v1 v2 v3 v4 v5 = liftIO $ dyn816 ptr_glUniform4ui64NV v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glUniform4ui64NV #-}
-ptr_glUniform4ui64NV :: FunPtr (GLint -> GLuint64EXT -> GLuint64EXT -> GLuint64EXT -> GLuint64EXT -> IO ())
-ptr_glUniform4ui64NV = unsafePerformIO $ getCommand "glUniform4ui64NV"
-
--- glUniform4ui64vARB ----------------------------------------------------------
-
-glUniform4ui64vARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64 -- ^ @value@ pointing to @count*4@ elements of type @GLuint64@.
-  -> m ()
-glUniform4ui64vARB v1 v2 v3 = liftIO $ dyn795 ptr_glUniform4ui64vARB v1 v2 v3
-
-{-# NOINLINE ptr_glUniform4ui64vARB #-}
-ptr_glUniform4ui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
-ptr_glUniform4ui64vARB = unsafePerformIO $ getCommand "glUniform4ui64vARB"
-
--- glUniform4ui64vNV -----------------------------------------------------------
-
-glUniform4ui64vNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*4@ elements of type @GLuint64EXT@.
-  -> m ()
-glUniform4ui64vNV v1 v2 v3 = liftIO $ dyn796 ptr_glUniform4ui64vNV v1 v2 v3
-
-{-# NOINLINE ptr_glUniform4ui64vNV #-}
-ptr_glUniform4ui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
-ptr_glUniform4ui64vNV = unsafePerformIO $ getCommand "glUniform4ui64vNV"
-
--- glUniform4uiEXT -------------------------------------------------------------
-
--- | This command is an alias for 'glUniform4ui'.
-glUniform4uiEXT
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint -- ^ @v0@.
-  -> GLuint -- ^ @v1@.
-  -> GLuint -- ^ @v2@.
-  -> GLuint -- ^ @v3@.
-  -> m ()
-glUniform4uiEXT v1 v2 v3 v4 v5 = liftIO $ dyn814 ptr_glUniform4uiEXT v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glUniform4uiEXT #-}
-ptr_glUniform4uiEXT :: FunPtr (GLint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
-ptr_glUniform4uiEXT = unsafePerformIO $ getCommand "glUniform4uiEXT"
-
--- glUniform4uiv ---------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniform4uiv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @count*4@ elements of type @GLuint@.
-  -> m ()
-glUniform4uiv v1 v2 v3 = liftIO $ dyn797 ptr_glUniform4uiv v1 v2 v3
-
-{-# NOINLINE ptr_glUniform4uiv #-}
-ptr_glUniform4uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glUniform4uiv = unsafePerformIO $ getCommand "glUniform4uiv"
-
--- glUniform4uivEXT ------------------------------------------------------------
-
--- | This command is an alias for 'glUniform4uiv'.
-glUniform4uivEXT
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @count*4@ elements of type @GLuint@.
-  -> m ()
-glUniform4uivEXT v1 v2 v3 = liftIO $ dyn797 ptr_glUniform4uivEXT v1 v2 v3
-
-{-# NOINLINE ptr_glUniform4uivEXT #-}
-ptr_glUniform4uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glUniform4uivEXT = unsafePerformIO $ getCommand "glUniform4uivEXT"
-
--- glUniformBlockBinding -------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniformBlockBinding.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniformBlockBinding.xhtml OpenGL 4.x>.
-glUniformBlockBinding
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLuint -- ^ @uniformBlockIndex@.
-  -> GLuint -- ^ @uniformBlockBinding@.
-  -> m ()
-glUniformBlockBinding v1 v2 v3 = liftIO $ dyn102 ptr_glUniformBlockBinding v1 v2 v3
-
-{-# NOINLINE ptr_glUniformBlockBinding #-}
-ptr_glUniformBlockBinding :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
-ptr_glUniformBlockBinding = unsafePerformIO $ getCommand "glUniformBlockBinding"
-
--- glUniformBufferEXT ----------------------------------------------------------
-
-glUniformBufferEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLuint -- ^ @buffer@.
-  -> m ()
-glUniformBufferEXT v1 v2 v3 = liftIO $ dyn640 ptr_glUniformBufferEXT v1 v2 v3
-
-{-# NOINLINE ptr_glUniformBufferEXT #-}
-ptr_glUniformBufferEXT :: FunPtr (GLuint -> GLint -> GLuint -> IO ())
-ptr_glUniformBufferEXT = unsafePerformIO $ getCommand "glUniformBufferEXT"
-
--- glUniformHandleui64ARB ------------------------------------------------------
-
-glUniformHandleui64ARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint64 -- ^ @value@.
-  -> m ()
-glUniformHandleui64ARB v1 v2 = liftIO $ dyn793 ptr_glUniformHandleui64ARB v1 v2
-
-{-# NOINLINE ptr_glUniformHandleui64ARB #-}
-ptr_glUniformHandleui64ARB :: FunPtr (GLint -> GLuint64 -> IO ())
-ptr_glUniformHandleui64ARB = unsafePerformIO $ getCommand "glUniformHandleui64ARB"
-
--- glUniformHandleui64IMG ------------------------------------------------------
-
--- | This command is an alias for 'glUniformHandleui64ARB'.
-glUniformHandleui64IMG
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint64 -- ^ @value@.
-  -> m ()
-glUniformHandleui64IMG v1 v2 = liftIO $ dyn793 ptr_glUniformHandleui64IMG v1 v2
-
-{-# NOINLINE ptr_glUniformHandleui64IMG #-}
-ptr_glUniformHandleui64IMG :: FunPtr (GLint -> GLuint64 -> IO ())
-ptr_glUniformHandleui64IMG = unsafePerformIO $ getCommand "glUniformHandleui64IMG"
-
--- glUniformHandleui64NV -------------------------------------------------------
-
-glUniformHandleui64NV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint64 -- ^ @value@.
-  -> m ()
-glUniformHandleui64NV v1 v2 = liftIO $ dyn793 ptr_glUniformHandleui64NV v1 v2
-
-{-# NOINLINE ptr_glUniformHandleui64NV #-}
-ptr_glUniformHandleui64NV :: FunPtr (GLint -> GLuint64 -> IO ())
-ptr_glUniformHandleui64NV = unsafePerformIO $ getCommand "glUniformHandleui64NV"
-
--- glUniformHandleui64vARB -----------------------------------------------------
-
-glUniformHandleui64vARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64 -- ^ @value@ pointing to @count@ elements of type @GLuint64@.
-  -> m ()
-glUniformHandleui64vARB v1 v2 v3 = liftIO $ dyn795 ptr_glUniformHandleui64vARB v1 v2 v3
-
-{-# NOINLINE ptr_glUniformHandleui64vARB #-}
-ptr_glUniformHandleui64vARB :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
-ptr_glUniformHandleui64vARB = unsafePerformIO $ getCommand "glUniformHandleui64vARB"
-
--- glUniformHandleui64vIMG -----------------------------------------------------
-
--- | This command is an alias for 'glUniformHandleui64vARB'.
-glUniformHandleui64vIMG
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64 -- ^ @value@ pointing to @count@ elements of type @GLuint64@.
-  -> m ()
-glUniformHandleui64vIMG v1 v2 v3 = liftIO $ dyn795 ptr_glUniformHandleui64vIMG v1 v2 v3
-
-{-# NOINLINE ptr_glUniformHandleui64vIMG #-}
-ptr_glUniformHandleui64vIMG :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
-ptr_glUniformHandleui64vIMG = unsafePerformIO $ getCommand "glUniformHandleui64vIMG"
-
--- glUniformHandleui64vNV ------------------------------------------------------
-
-glUniformHandleui64vNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64 -- ^ @value@ pointing to @count@ elements of type @GLuint64@.
-  -> m ()
-glUniformHandleui64vNV v1 v2 v3 = liftIO $ dyn795 ptr_glUniformHandleui64vNV v1 v2 v3
-
-{-# NOINLINE ptr_glUniformHandleui64vNV #-}
-ptr_glUniformHandleui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64 -> IO ())
-ptr_glUniformHandleui64vNV = unsafePerformIO $ getCommand "glUniformHandleui64vNV"
-
--- glUniformMatrix2dv ----------------------------------------------------------
-
-glUniformMatrix2dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*4@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix2dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix2dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2dv #-}
-ptr_glUniformMatrix2dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix2dv = unsafePerformIO $ getCommand "glUniformMatrix2dv"
-
--- glUniformMatrix2fv ----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix2fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix2fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix2fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2fv #-}
-ptr_glUniformMatrix2fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix2fv = unsafePerformIO $ getCommand "glUniformMatrix2fv"
-
--- glUniformMatrix2fvARB -------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix2fv'.
-glUniformMatrix2fvARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix2fvARB v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix2fvARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2fvARB #-}
-ptr_glUniformMatrix2fvARB :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix2fvARB = unsafePerformIO $ getCommand "glUniformMatrix2fvARB"
-
--- glUniformMatrix2x3dv --------------------------------------------------------
-
-glUniformMatrix2x3dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*6@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix2x3dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix2x3dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2x3dv #-}
-ptr_glUniformMatrix2x3dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix2x3dv = unsafePerformIO $ getCommand "glUniformMatrix2x3dv"
-
--- glUniformMatrix2x3fv --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix2x3fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix2x3fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix2x3fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2x3fv #-}
-ptr_glUniformMatrix2x3fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix2x3fv = unsafePerformIO $ getCommand "glUniformMatrix2x3fv"
-
--- glUniformMatrix2x3fvNV ------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix2x3fv'.
-glUniformMatrix2x3fvNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix2x3fvNV v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix2x3fvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2x3fvNV #-}
-ptr_glUniformMatrix2x3fvNV :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix2x3fvNV = unsafePerformIO $ getCommand "glUniformMatrix2x3fvNV"
-
--- glUniformMatrix2x4dv --------------------------------------------------------
-
-glUniformMatrix2x4dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*8@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix2x4dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix2x4dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2x4dv #-}
-ptr_glUniformMatrix2x4dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix2x4dv = unsafePerformIO $ getCommand "glUniformMatrix2x4dv"
-
--- glUniformMatrix2x4fv --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix2x4fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix2x4fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix2x4fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2x4fv #-}
-ptr_glUniformMatrix2x4fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix2x4fv = unsafePerformIO $ getCommand "glUniformMatrix2x4fv"
-
--- glUniformMatrix2x4fvNV ------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix2x4fv'.
-glUniformMatrix2x4fvNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix2x4fvNV v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix2x4fvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix2x4fvNV #-}
-ptr_glUniformMatrix2x4fvNV :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix2x4fvNV = unsafePerformIO $ getCommand "glUniformMatrix2x4fvNV"
-
--- glUniformMatrix3dv ----------------------------------------------------------
-
-glUniformMatrix3dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*9@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix3dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix3dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3dv #-}
-ptr_glUniformMatrix3dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix3dv = unsafePerformIO $ getCommand "glUniformMatrix3dv"
-
--- glUniformMatrix3fv ----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix3fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*9@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix3fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix3fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3fv #-}
-ptr_glUniformMatrix3fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix3fv = unsafePerformIO $ getCommand "glUniformMatrix3fv"
-
--- glUniformMatrix3fvARB -------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix3fv'.
-glUniformMatrix3fvARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*9@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix3fvARB v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix3fvARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3fvARB #-}
-ptr_glUniformMatrix3fvARB :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix3fvARB = unsafePerformIO $ getCommand "glUniformMatrix3fvARB"
-
--- glUniformMatrix3x2dv --------------------------------------------------------
-
-glUniformMatrix3x2dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*6@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix3x2dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix3x2dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3x2dv #-}
-ptr_glUniformMatrix3x2dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix3x2dv = unsafePerformIO $ getCommand "glUniformMatrix3x2dv"
-
--- glUniformMatrix3x2fv --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix3x2fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix3x2fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix3x2fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3x2fv #-}
-ptr_glUniformMatrix3x2fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix3x2fv = unsafePerformIO $ getCommand "glUniformMatrix3x2fv"
-
--- glUniformMatrix3x2fvNV ------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix3x2fv'.
-glUniformMatrix3x2fvNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*6@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix3x2fvNV v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix3x2fvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3x2fvNV #-}
-ptr_glUniformMatrix3x2fvNV :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix3x2fvNV = unsafePerformIO $ getCommand "glUniformMatrix3x2fvNV"
-
--- glUniformMatrix3x4dv --------------------------------------------------------
-
-glUniformMatrix3x4dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*12@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix3x4dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix3x4dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3x4dv #-}
-ptr_glUniformMatrix3x4dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix3x4dv = unsafePerformIO $ getCommand "glUniformMatrix3x4dv"
-
--- glUniformMatrix3x4fv --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix3x4fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix3x4fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix3x4fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3x4fv #-}
-ptr_glUniformMatrix3x4fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix3x4fv = unsafePerformIO $ getCommand "glUniformMatrix3x4fv"
-
--- glUniformMatrix3x4fvNV ------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix3x4fv'.
-glUniformMatrix3x4fvNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix3x4fvNV v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix3x4fvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix3x4fvNV #-}
-ptr_glUniformMatrix3x4fvNV :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix3x4fvNV = unsafePerformIO $ getCommand "glUniformMatrix3x4fvNV"
-
--- glUniformMatrix4dv ----------------------------------------------------------
-
-glUniformMatrix4dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*16@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix4dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix4dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4dv #-}
-ptr_glUniformMatrix4dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix4dv = unsafePerformIO $ getCommand "glUniformMatrix4dv"
-
--- glUniformMatrix4fv ----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix4fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*16@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix4fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix4fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4fv #-}
-ptr_glUniformMatrix4fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix4fv = unsafePerformIO $ getCommand "glUniformMatrix4fv"
-
--- glUniformMatrix4fvARB -------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix4fv'.
-glUniformMatrix4fvARB
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*16@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix4fvARB v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix4fvARB v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4fvARB #-}
-ptr_glUniformMatrix4fvARB :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix4fvARB = unsafePerformIO $ getCommand "glUniformMatrix4fvARB"
-
--- glUniformMatrix4x2dv --------------------------------------------------------
-
-glUniformMatrix4x2dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*8@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix4x2dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix4x2dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4x2dv #-}
-ptr_glUniformMatrix4x2dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix4x2dv = unsafePerformIO $ getCommand "glUniformMatrix4x2dv"
-
--- glUniformMatrix4x2fv --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix4x2fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix4x2fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix4x2fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4x2fv #-}
-ptr_glUniformMatrix4x2fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix4x2fv = unsafePerformIO $ getCommand "glUniformMatrix4x2fv"
-
--- glUniformMatrix4x2fvNV ------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix4x2fv'.
-glUniformMatrix4x2fvNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix4x2fvNV v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix4x2fvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4x2fvNV #-}
-ptr_glUniformMatrix4x2fvNV :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix4x2fvNV = unsafePerformIO $ getCommand "glUniformMatrix4x2fvNV"
-
--- glUniformMatrix4x3dv --------------------------------------------------------
-
-glUniformMatrix4x3dv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*12@ elements of type @GLdouble@.
-  -> m ()
-glUniformMatrix4x3dv v1 v2 v3 v4 = liftIO $ dyn817 ptr_glUniformMatrix4x3dv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4x3dv #-}
-ptr_glUniformMatrix4x3dv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glUniformMatrix4x3dv = unsafePerformIO $ getCommand "glUniformMatrix4x3dv"
-
--- glUniformMatrix4x3fv --------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUniform.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniformMatrix4x3fv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix4x3fv v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix4x3fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4x3fv #-}
-ptr_glUniformMatrix4x3fv :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix4x3fv = unsafePerformIO $ getCommand "glUniformMatrix4x3fv"
-
--- glUniformMatrix4x3fvNV ------------------------------------------------------
-
--- | This command is an alias for 'glUniformMatrix4x3fv'.
-glUniformMatrix4x3fvNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*12@ elements of type @GLfloat@.
-  -> m ()
-glUniformMatrix4x3fvNV v1 v2 v3 v4 = liftIO $ dyn818 ptr_glUniformMatrix4x3fvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glUniformMatrix4x3fvNV #-}
-ptr_glUniformMatrix4x3fvNV :: FunPtr (GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glUniformMatrix4x3fvNV = unsafePerformIO $ getCommand "glUniformMatrix4x3fvNV"
-
--- glUniformSubroutinesuiv -----------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUniformSubroutines.xhtml OpenGL 4.x>.
-glUniformSubroutinesuiv
-  :: MonadIO m
-  => GLenum -- ^ @shadertype@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @indices@ pointing to @count@ elements of type @GLuint@.
-  -> m ()
-glUniformSubroutinesuiv v1 v2 v3 = liftIO $ dyn197 ptr_glUniformSubroutinesuiv v1 v2 v3
-
-{-# NOINLINE ptr_glUniformSubroutinesuiv #-}
-ptr_glUniformSubroutinesuiv :: FunPtr (GLenum -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glUniformSubroutinesuiv = unsafePerformIO $ getCommand "glUniformSubroutinesuiv"
-
--- glUniformui64NV -------------------------------------------------------------
-
-glUniformui64NV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLuint64EXT -- ^ @value@.
-  -> m ()
-glUniformui64NV v1 v2 = liftIO $ dyn794 ptr_glUniformui64NV v1 v2
-
-{-# NOINLINE ptr_glUniformui64NV #-}
-ptr_glUniformui64NV :: FunPtr (GLint -> GLuint64EXT -> IO ())
-ptr_glUniformui64NV = unsafePerformIO $ getCommand "glUniformui64NV"
-
--- glUniformui64vNV ------------------------------------------------------------
-
-glUniformui64vNV
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint64EXT -- ^ @value@ pointing to @count*1@ elements of type @GLuint64EXT@.
-  -> m ()
-glUniformui64vNV v1 v2 v3 = liftIO $ dyn796 ptr_glUniformui64vNV v1 v2 v3
-
-{-# NOINLINE ptr_glUniformui64vNV #-}
-ptr_glUniformui64vNV :: FunPtr (GLint -> GLsizei -> Ptr GLuint64EXT -> IO ())
-ptr_glUniformui64vNV = unsafePerformIO $ getCommand "glUniformui64vNV"
-
--- glUnlockArraysEXT -----------------------------------------------------------
-
-glUnlockArraysEXT
-  :: MonadIO m
-  => m ()
-glUnlockArraysEXT = liftIO $ dyn10 ptr_glUnlockArraysEXT
-
-{-# NOINLINE ptr_glUnlockArraysEXT #-}
-ptr_glUnlockArraysEXT :: FunPtr (IO ())
-ptr_glUnlockArraysEXT = unsafePerformIO $ getCommand "glUnlockArraysEXT"
-
--- glUnmapBuffer ---------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMapBuffer.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMapBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml OpenGL 4.x>.
-glUnmapBuffer
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @BufferTargetARB@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glUnmapBuffer v1 = liftIO $ dyn478 ptr_glUnmapBuffer v1
-
-{-# NOINLINE ptr_glUnmapBuffer #-}
-ptr_glUnmapBuffer :: FunPtr (GLenum -> IO GLboolean)
-ptr_glUnmapBuffer = unsafePerformIO $ getCommand "glUnmapBuffer"
-
--- glUnmapBufferARB ------------------------------------------------------------
-
--- | This command is an alias for 'glUnmapBuffer'.
-glUnmapBufferARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @BufferTargetARB@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glUnmapBufferARB v1 = liftIO $ dyn478 ptr_glUnmapBufferARB v1
-
-{-# NOINLINE ptr_glUnmapBufferARB #-}
-ptr_glUnmapBufferARB :: FunPtr (GLenum -> IO GLboolean)
-ptr_glUnmapBufferARB = unsafePerformIO $ getCommand "glUnmapBufferARB"
-
--- glUnmapBufferOES ------------------------------------------------------------
-
--- | This command is an alias for 'glUnmapBuffer'.
-glUnmapBufferOES
-  :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> m GLboolean
-glUnmapBufferOES v1 = liftIO $ dyn478 ptr_glUnmapBufferOES v1
-
-{-# NOINLINE ptr_glUnmapBufferOES #-}
-ptr_glUnmapBufferOES :: FunPtr (GLenum -> IO GLboolean)
-ptr_glUnmapBufferOES = unsafePerformIO $ getCommand "glUnmapBufferOES"
-
--- glUnmapNamedBuffer ----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUnmapBuffer.xhtml OpenGL 4.x>.
-glUnmapNamedBuffer
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> m GLboolean
-glUnmapNamedBuffer v1 = liftIO $ dyn273 ptr_glUnmapNamedBuffer v1
-
-{-# NOINLINE ptr_glUnmapNamedBuffer #-}
-ptr_glUnmapNamedBuffer :: FunPtr (GLuint -> IO GLboolean)
-ptr_glUnmapNamedBuffer = unsafePerformIO $ getCommand "glUnmapNamedBuffer"
-
--- glUnmapNamedBufferEXT -------------------------------------------------------
-
-glUnmapNamedBufferEXT
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glUnmapNamedBufferEXT v1 = liftIO $ dyn273 ptr_glUnmapNamedBufferEXT v1
-
-{-# NOINLINE ptr_glUnmapNamedBufferEXT #-}
-ptr_glUnmapNamedBufferEXT :: FunPtr (GLuint -> IO GLboolean)
-ptr_glUnmapNamedBufferEXT = unsafePerformIO $ getCommand "glUnmapNamedBufferEXT"
-
--- glUnmapObjectBufferATI ------------------------------------------------------
-
-glUnmapObjectBufferATI
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> m ()
-glUnmapObjectBufferATI v1 = liftIO $ dyn2 ptr_glUnmapObjectBufferATI v1
-
-{-# NOINLINE ptr_glUnmapObjectBufferATI #-}
-ptr_glUnmapObjectBufferATI :: FunPtr (GLuint -> IO ())
-ptr_glUnmapObjectBufferATI = unsafePerformIO $ getCommand "glUnmapObjectBufferATI"
-
--- glUnmapTexture2DINTEL -------------------------------------------------------
-
-glUnmapTexture2DINTEL
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLint -- ^ @level@.
-  -> m ()
-glUnmapTexture2DINTEL v1 v2 = liftIO $ dyn476 ptr_glUnmapTexture2DINTEL v1 v2
-
-{-# NOINLINE ptr_glUnmapTexture2DINTEL #-}
-ptr_glUnmapTexture2DINTEL :: FunPtr (GLuint -> GLint -> IO ())
-ptr_glUnmapTexture2DINTEL = unsafePerformIO $ getCommand "glUnmapTexture2DINTEL"
-
--- glUpdateObjectBufferATI -----------------------------------------------------
-
-glUpdateObjectBufferATI
-  :: MonadIO m
-  => GLuint -- ^ @buffer@.
-  -> GLuint -- ^ @offset@.
-  -> GLsizei -- ^ @size@.
-  -> Ptr a -- ^ @pointer@ pointing to @size@ elements of type @a@.
-  -> GLenum -- ^ @preserve@ of type @PreserveModeATI@.
-  -> m ()
-glUpdateObjectBufferATI v1 v2 v3 v4 v5 = liftIO $ dyn819 ptr_glUpdateObjectBufferATI v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glUpdateObjectBufferATI #-}
-ptr_glUpdateObjectBufferATI :: FunPtr (GLuint -> GLuint -> GLsizei -> Ptr a -> GLenum -> IO ())
-ptr_glUpdateObjectBufferATI = unsafePerformIO $ getCommand "glUpdateObjectBufferATI"
-
--- glUseProgram ----------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glUseProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glUseProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUseProgram.xhtml OpenGL 4.x>.
-glUseProgram
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> m ()
-glUseProgram v1 = liftIO $ dyn2 ptr_glUseProgram v1
-
-{-# NOINLINE ptr_glUseProgram #-}
-ptr_glUseProgram :: FunPtr (GLuint -> IO ())
-ptr_glUseProgram = unsafePerformIO $ getCommand "glUseProgram"
-
--- glUseProgramObjectARB -------------------------------------------------------
-
--- | This command is an alias for 'glUseProgram'.
-glUseProgramObjectARB
-  :: MonadIO m
-  => GLhandleARB -- ^ @programObj@ of type @handleARB@.
-  -> m ()
-glUseProgramObjectARB v1 = liftIO $ dyn137 ptr_glUseProgramObjectARB v1
-
-{-# NOINLINE ptr_glUseProgramObjectARB #-}
-ptr_glUseProgramObjectARB :: FunPtr (GLhandleARB -> IO ())
-ptr_glUseProgramObjectARB = unsafePerformIO $ getCommand "glUseProgramObjectARB"
-
--- glUseProgramStages ----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glUseProgramStages.xhtml OpenGL 4.x>.
-glUseProgramStages
-  :: MonadIO m
-  => GLuint -- ^ @pipeline@.
-  -> GLbitfield -- ^ @stages@.
-  -> GLuint -- ^ @program@.
-  -> m ()
-glUseProgramStages v1 v2 v3 = liftIO $ dyn820 ptr_glUseProgramStages v1 v2 v3
-
-{-# NOINLINE ptr_glUseProgramStages #-}
-ptr_glUseProgramStages :: FunPtr (GLuint -> GLbitfield -> GLuint -> IO ())
-ptr_glUseProgramStages = unsafePerformIO $ getCommand "glUseProgramStages"
 

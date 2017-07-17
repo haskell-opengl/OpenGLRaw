@@ -36,6 +36,7 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.DrawBuffers2,
   module Graphics.GL.EXT.DrawInstanced,
   module Graphics.GL.EXT.DrawRangeElements,
+  module Graphics.GL.EXT.ExternalBuffer,
   module Graphics.GL.EXT.FogCoord,
   module Graphics.GL.EXT.FourTwoTwoPixels,
   module Graphics.GL.EXT.FramebufferBlit,
@@ -51,6 +52,9 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.IndexFunc,
   module Graphics.GL.EXT.IndexMaterial,
   module Graphics.GL.EXT.LightTexture,
+  module Graphics.GL.EXT.MemoryObject,
+  module Graphics.GL.EXT.MemoryObjectFd,
+  module Graphics.GL.EXT.MemoryObjectWin32,
   module Graphics.GL.EXT.MultiDrawArrays,
   module Graphics.GL.EXT.Multisample,
   module Graphics.GL.EXT.PackedDepthStencil,
@@ -66,6 +70,9 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.RasterMultisample,
   module Graphics.GL.EXT.RescaleNormal,
   module Graphics.GL.EXT.SecondaryColor,
+  module Graphics.GL.EXT.Semaphore,
+  module Graphics.GL.EXT.SemaphoreFd,
+  module Graphics.GL.EXT.SemaphoreWin32,
   module Graphics.GL.EXT.SeparateShaderObjects,
   module Graphics.GL.EXT.SeparateSpecularColor,
   module Graphics.GL.EXT.ShaderImageLoadStore,
@@ -103,6 +110,7 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.VertexAttrib64Bit,
   module Graphics.GL.EXT.VertexShader,
   module Graphics.GL.EXT.VertexWeighting,
+  module Graphics.GL.EXT.Win32KeyedMutex,
   module Graphics.GL.EXT.WindowRectangles,
   module Graphics.GL.EXT.X11SyncObject
 ) where
@@ -130,6 +138,7 @@ import Graphics.GL.EXT.DirectStateAccess
 import Graphics.GL.EXT.DrawBuffers2
 import Graphics.GL.EXT.DrawInstanced
 import Graphics.GL.EXT.DrawRangeElements
+import Graphics.GL.EXT.ExternalBuffer
 import Graphics.GL.EXT.FogCoord
 import Graphics.GL.EXT.FourTwoTwoPixels
 import Graphics.GL.EXT.FramebufferBlit
@@ -145,6 +154,9 @@ import Graphics.GL.EXT.IndexArrayFormats
 import Graphics.GL.EXT.IndexFunc
 import Graphics.GL.EXT.IndexMaterial
 import Graphics.GL.EXT.LightTexture
+import Graphics.GL.EXT.MemoryObject
+import Graphics.GL.EXT.MemoryObjectFd
+import Graphics.GL.EXT.MemoryObjectWin32
 import Graphics.GL.EXT.MultiDrawArrays
 import Graphics.GL.EXT.Multisample
 import Graphics.GL.EXT.PackedDepthStencil
@@ -160,6 +172,9 @@ import Graphics.GL.EXT.ProvokingVertex
 import Graphics.GL.EXT.RasterMultisample
 import Graphics.GL.EXT.RescaleNormal
 import Graphics.GL.EXT.SecondaryColor
+import Graphics.GL.EXT.Semaphore
+import Graphics.GL.EXT.SemaphoreFd
+import Graphics.GL.EXT.SemaphoreWin32
 import Graphics.GL.EXT.SeparateShaderObjects
 import Graphics.GL.EXT.SeparateSpecularColor
 import Graphics.GL.EXT.ShaderImageLoadStore
@@ -197,5 +212,6 @@ import Graphics.GL.EXT.VertexArrayBGRA
 import Graphics.GL.EXT.VertexAttrib64Bit
 import Graphics.GL.EXT.VertexShader
 import Graphics.GL.EXT.VertexWeighting
+import Graphics.GL.EXT.Win32KeyedMutex
 import Graphics.GL.EXT.WindowRectangles
 import Graphics.GL.EXT.X11SyncObject

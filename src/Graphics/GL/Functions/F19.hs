@@ -15,6 +15,48 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F19 (
+  glNormal3hNV,
+  glNormal3hvNV,
+  glNormal3i,
+  glNormal3iv,
+  glNormal3s,
+  glNormal3sv,
+  glNormal3x,
+  glNormal3xOES,
+  glNormal3xvOES,
+  glNormalFormatNV,
+  glNormalP3ui,
+  glNormalP3uiv,
+  glNormalPointer,
+  glNormalPointerEXT,
+  glNormalPointerListIBM,
+  glNormalPointervINTEL,
+  glNormalStream3bATI,
+  glNormalStream3bvATI,
+  glNormalStream3dATI,
+  glNormalStream3dvATI,
+  glNormalStream3fATI,
+  glNormalStream3fvATI,
+  glNormalStream3iATI,
+  glNormalStream3ivATI,
+  glNormalStream3sATI,
+  glNormalStream3svATI,
+  glObjectLabel,
+  glObjectLabelKHR,
+  glObjectPtrLabel,
+  glObjectPtrLabelKHR,
+  glObjectPurgeableAPPLE,
+  glObjectUnpurgeableAPPLE,
+  glOrtho,
+  glOrthof,
+  glOrthofOES,
+  glOrthox,
+  glOrthoxOES,
+  glPNTrianglesfATI,
+  glPNTrianglesiATI,
+  glPassTexCoordATI,
+  glPassThrough,
+  glPassThroughxOES,
   glPatchParameterfv,
   glPatchParameteri,
   glPatchParameteriEXT,
@@ -72,49 +114,7 @@ module Graphics.GL.Functions.F19 (
   glPointParameterfv,
   glPointParameterfvARB,
   glPointParameterfvEXT,
-  glPointParameterfvSGIS,
-  glPointParameteri,
-  glPointParameteriNV,
-  glPointParameteriv,
-  glPointParameterivNV,
-  glPointParameterx,
-  glPointParameterxOES,
-  glPointParameterxv,
-  glPointParameterxvOES,
-  glPointSize,
-  glPointSizePointerOES,
-  glPointSizex,
-  glPointSizexOES,
-  glPollAsyncSGIX,
-  glPollInstrumentsSGIX,
-  glPolygonMode,
-  glPolygonModeNV,
-  glPolygonOffset,
-  glPolygonOffsetClampEXT,
-  glPolygonOffsetEXT,
-  glPolygonOffsetx,
-  glPolygonOffsetxOES,
-  glPolygonStipple,
-  glPopAttrib,
-  glPopClientAttrib,
-  glPopDebugGroup,
-  glPopDebugGroupKHR,
-  glPopGroupMarkerEXT,
-  glPopMatrix,
-  glPopName,
-  glPresentFrameDualFillNV,
-  glPresentFrameKeyedNV,
-  glPrimitiveBoundingBox,
-  glPrimitiveBoundingBoxARB,
-  glPrimitiveBoundingBoxEXT,
-  glPrimitiveBoundingBoxOES,
-  glPrimitiveRestartIndex,
-  glPrimitiveRestartIndexNV,
-  glPrimitiveRestartNV,
-  glPrioritizeTextures,
-  glPrioritizeTexturesEXT,
-  glPrioritizeTexturesxOES,
-  glProgramBinary
+  glPointParameterfvSGIS
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,607 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glNormal3hNV ----------------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glNormal3hvNV'.
+glNormal3hNV
+  :: MonadIO m
+  => GLhalfNV -- ^ @nx@ of type @Half16NV@.
+  -> GLhalfNV -- ^ @ny@ of type @Half16NV@.
+  -> GLhalfNV -- ^ @nz@ of type @Half16NV@.
+  -> m ()
+glNormal3hNV v1 v2 v3 = liftIO $ dyn101 ptr_glNormal3hNV v1 v2 v3
+
+{-# NOINLINE ptr_glNormal3hNV #-}
+ptr_glNormal3hNV :: FunPtr (GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
+ptr_glNormal3hNV = unsafePerformIO $ getCommand "glNormal3hNV"
+
+-- glNormal3hvNV ---------------------------------------------------------------
+
+glNormal3hvNV
+  :: MonadIO m
+  => Ptr GLhalfNV -- ^ @v@ pointing to @3@ elements of type @Half16NV@.
+  -> m ()
+glNormal3hvNV v1 = liftIO $ dyn102 ptr_glNormal3hvNV v1
+
+{-# NOINLINE ptr_glNormal3hvNV #-}
+ptr_glNormal3hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
+ptr_glNormal3hvNV = unsafePerformIO $ getCommand "glNormal3hvNV"
+
+-- glNormal3i ------------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3iv'.
+glNormal3i
+  :: MonadIO m
+  => GLint -- ^ @nx@.
+  -> GLint -- ^ @ny@.
+  -> GLint -- ^ @nz@.
+  -> m ()
+glNormal3i v1 v2 v3 = liftIO $ dyn43 ptr_glNormal3i v1 v2 v3
+
+{-# NOINLINE ptr_glNormal3i #-}
+ptr_glNormal3i :: FunPtr (GLint -> GLint -> GLint -> IO ())
+ptr_glNormal3i = unsafePerformIO $ getCommand "glNormal3i"
+
+-- glNormal3iv -----------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
+glNormal3iv
+  :: MonadIO m
+  => Ptr GLint -- ^ @v@ pointing to @3@ elements of type @GLint@.
+  -> m ()
+glNormal3iv v1 = liftIO $ dyn44 ptr_glNormal3iv v1
+
+{-# NOINLINE ptr_glNormal3iv #-}
+ptr_glNormal3iv :: FunPtr (Ptr GLint -> IO ())
+ptr_glNormal3iv = unsafePerformIO $ getCommand "glNormal3iv"
+
+-- glNormal3s ------------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3sv'.
+glNormal3s
+  :: MonadIO m
+  => GLshort -- ^ @nx@.
+  -> GLshort -- ^ @ny@.
+  -> GLshort -- ^ @nz@.
+  -> m ()
+glNormal3s v1 v2 v3 = liftIO $ dyn45 ptr_glNormal3s v1 v2 v3
+
+{-# NOINLINE ptr_glNormal3s #-}
+ptr_glNormal3s :: FunPtr (GLshort -> GLshort -> GLshort -> IO ())
+ptr_glNormal3s = unsafePerformIO $ getCommand "glNormal3s"
+
+-- glNormal3sv -----------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
+glNormal3sv
+  :: MonadIO m
+  => Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @GLshort@.
+  -> m ()
+glNormal3sv v1 = liftIO $ dyn46 ptr_glNormal3sv v1
+
+{-# NOINLINE ptr_glNormal3sv #-}
+ptr_glNormal3sv :: FunPtr (Ptr GLshort -> IO ())
+ptr_glNormal3sv = unsafePerformIO $ getCommand "glNormal3sv"
+
+-- glNormal3x ------------------------------------------------------------------
+
+glNormal3x
+  :: MonadIO m
+  => GLfixed -- ^ @nx@.
+  -> GLfixed -- ^ @ny@.
+  -> GLfixed -- ^ @nz@.
+  -> m ()
+glNormal3x v1 v2 v3 = liftIO $ dyn109 ptr_glNormal3x v1 v2 v3
+
+{-# NOINLINE ptr_glNormal3x #-}
+ptr_glNormal3x :: FunPtr (GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glNormal3x = unsafePerformIO $ getCommand "glNormal3x"
+
+-- glNormal3xOES ---------------------------------------------------------------
+
+glNormal3xOES
+  :: MonadIO m
+  => GLfixed -- ^ @nx@.
+  -> GLfixed -- ^ @ny@.
+  -> GLfixed -- ^ @nz@.
+  -> m ()
+glNormal3xOES v1 v2 v3 = liftIO $ dyn109 ptr_glNormal3xOES v1 v2 v3
+
+{-# NOINLINE ptr_glNormal3xOES #-}
+ptr_glNormal3xOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glNormal3xOES = unsafePerformIO $ getCommand "glNormal3xOES"
+
+-- glNormal3xvOES --------------------------------------------------------------
+
+glNormal3xvOES
+  :: MonadIO m
+  => Ptr GLfixed -- ^ @coords@ pointing to @3@ elements of type @GLfixed@.
+  -> m ()
+glNormal3xvOES v1 = liftIO $ dyn110 ptr_glNormal3xvOES v1
+
+{-# NOINLINE ptr_glNormal3xvOES #-}
+ptr_glNormal3xvOES :: FunPtr (Ptr GLfixed -> IO ())
+ptr_glNormal3xvOES = unsafePerformIO $ getCommand "glNormal3xvOES"
+
+-- glNormalFormatNV ------------------------------------------------------------
+
+glNormalFormatNV
+  :: MonadIO m
+  => GLenum -- ^ @type@.
+  -> GLsizei -- ^ @stride@.
+  -> m ()
+glNormalFormatNV v1 v2 = liftIO $ dyn242 ptr_glNormalFormatNV v1 v2
+
+{-# NOINLINE ptr_glNormalFormatNV #-}
+ptr_glNormalFormatNV :: FunPtr (GLenum -> GLsizei -> IO ())
+ptr_glNormalFormatNV = unsafePerformIO $ getCommand "glNormalFormatNV"
+
+-- glNormalP3ui ----------------------------------------------------------------
+
+glNormalP3ui
+  :: MonadIO m
+  => GLenum -- ^ @type@.
+  -> GLuint -- ^ @coords@.
+  -> m ()
+glNormalP3ui v1 v2 = liftIO $ dyn17 ptr_glNormalP3ui v1 v2
+
+{-# NOINLINE ptr_glNormalP3ui #-}
+ptr_glNormalP3ui :: FunPtr (GLenum -> GLuint -> IO ())
+ptr_glNormalP3ui = unsafePerformIO $ getCommand "glNormalP3ui"
+
+-- glNormalP3uiv ---------------------------------------------------------------
+
+glNormalP3uiv
+  :: MonadIO m
+  => GLenum -- ^ @type@.
+  -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
+  -> m ()
+glNormalP3uiv v1 v2 = liftIO $ dyn128 ptr_glNormalP3uiv v1 v2
+
+{-# NOINLINE ptr_glNormalP3uiv #-}
+ptr_glNormalP3uiv :: FunPtr (GLenum -> Ptr GLuint -> IO ())
+ptr_glNormalP3uiv = unsafePerformIO $ getCommand "glNormalP3uiv"
+
+-- glNormalPointer -------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormalPointer.xml OpenGL 2.x>.
+glNormalPointer
+  :: MonadIO m
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-GL-Groups.html#NormalPointerType).
+  -> GLsizei -- ^ @stride@.
+  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
+  -> m ()
+glNormalPointer v1 v2 v3 = liftIO $ dyn47 ptr_glNormalPointer v1 v2 v3
+
+{-# NOINLINE ptr_glNormalPointer #-}
+ptr_glNormalPointer :: FunPtr (GLenum -> GLsizei -> Ptr a -> IO ())
+ptr_glNormalPointer = unsafePerformIO $ getCommand "glNormalPointer"
+
+-- glNormalPointerEXT ----------------------------------------------------------
+
+glNormalPointerEXT
+  :: MonadIO m
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-GL-Groups.html#NormalPointerType).
+  -> GLsizei -- ^ @stride@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride,count)@ elements of type @a@.
+  -> m ()
+glNormalPointerEXT v1 v2 v3 v4 = liftIO $ dyn484 ptr_glNormalPointerEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNormalPointerEXT #-}
+ptr_glNormalPointerEXT :: FunPtr (GLenum -> GLsizei -> GLsizei -> Ptr a -> IO ())
+ptr_glNormalPointerEXT = unsafePerformIO $ getCommand "glNormalPointerEXT"
+
+-- glNormalPointerListIBM ------------------------------------------------------
+
+glNormalPointerListIBM
+  :: MonadIO m
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-GL-Groups.html#NormalPointerType).
+  -> GLint -- ^ @stride@.
+  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @Ptr a@.
+  -> GLint -- ^ @ptrstride@.
+  -> m ()
+glNormalPointerListIBM v1 v2 v3 v4 = liftIO $ dyn284 ptr_glNormalPointerListIBM v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNormalPointerListIBM #-}
+ptr_glNormalPointerListIBM :: FunPtr (GLenum -> GLint -> Ptr (Ptr a) -> GLint -> IO ())
+ptr_glNormalPointerListIBM = unsafePerformIO $ getCommand "glNormalPointerListIBM"
+
+-- glNormalPointervINTEL -------------------------------------------------------
+
+glNormalPointervINTEL
+  :: MonadIO m
+  => GLenum -- ^ @type@ of type [NormalPointerType](Graphics-GL-Groups.html#NormalPointerType).
+  -> Ptr (Ptr a) -- ^ @pointer@ pointing to @4@ elements of type @Ptr a@.
+  -> m ()
+glNormalPointervINTEL v1 v2 = liftIO $ dyn272 ptr_glNormalPointervINTEL v1 v2
+
+{-# NOINLINE ptr_glNormalPointervINTEL #-}
+ptr_glNormalPointervINTEL :: FunPtr (GLenum -> Ptr (Ptr a) -> IO ())
+ptr_glNormalPointervINTEL = unsafePerformIO $ getCommand "glNormalPointervINTEL"
+
+-- glNormalStream3bATI ---------------------------------------------------------
+
+glNormalStream3bATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLbyte -- ^ @nx@.
+  -> GLbyte -- ^ @ny@.
+  -> GLbyte -- ^ @nz@.
+  -> m ()
+glNormalStream3bATI v1 v2 v3 v4 = liftIO $ dyn569 ptr_glNormalStream3bATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNormalStream3bATI #-}
+ptr_glNormalStream3bATI :: FunPtr (GLenum -> GLbyte -> GLbyte -> GLbyte -> IO ())
+ptr_glNormalStream3bATI = unsafePerformIO $ getCommand "glNormalStream3bATI"
+
+-- glNormalStream3bvATI --------------------------------------------------------
+
+glNormalStream3bvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLbyte -- ^ @coords@ pointing to @3@ elements of type @GLbyte@.
+  -> m ()
+glNormalStream3bvATI v1 v2 = liftIO $ dyn557 ptr_glNormalStream3bvATI v1 v2
+
+{-# NOINLINE ptr_glNormalStream3bvATI #-}
+ptr_glNormalStream3bvATI :: FunPtr (GLenum -> Ptr GLbyte -> IO ())
+ptr_glNormalStream3bvATI = unsafePerformIO $ getCommand "glNormalStream3bvATI"
+
+-- glNormalStream3dATI ---------------------------------------------------------
+
+glNormalStream3dATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLdouble -- ^ @nx@.
+  -> GLdouble -- ^ @ny@.
+  -> GLdouble -- ^ @nz@.
+  -> m ()
+glNormalStream3dATI v1 v2 v3 v4 = liftIO $ dyn539 ptr_glNormalStream3dATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNormalStream3dATI #-}
+ptr_glNormalStream3dATI :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glNormalStream3dATI = unsafePerformIO $ getCommand "glNormalStream3dATI"
+
+-- glNormalStream3dvATI --------------------------------------------------------
+
+glNormalStream3dvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLdouble -- ^ @coords@ pointing to @3@ elements of type @GLdouble@.
+  -> m ()
+glNormalStream3dvATI v1 v2 = liftIO $ dyn96 ptr_glNormalStream3dvATI v1 v2
+
+{-# NOINLINE ptr_glNormalStream3dvATI #-}
+ptr_glNormalStream3dvATI :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
+ptr_glNormalStream3dvATI = unsafePerformIO $ getCommand "glNormalStream3dvATI"
+
+-- glNormalStream3fATI ---------------------------------------------------------
+
+glNormalStream3fATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLfloat -- ^ @nx@.
+  -> GLfloat -- ^ @ny@.
+  -> GLfloat -- ^ @nz@.
+  -> m ()
+glNormalStream3fATI v1 v2 v3 v4 = liftIO $ dyn540 ptr_glNormalStream3fATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNormalStream3fATI #-}
+ptr_glNormalStream3fATI :: FunPtr (GLenum -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glNormalStream3fATI = unsafePerformIO $ getCommand "glNormalStream3fATI"
+
+-- glNormalStream3fvATI --------------------------------------------------------
+
+glNormalStream3fvATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLfloat -- ^ @coords@ pointing to @3@ elements of type @GLfloat@.
+  -> m ()
+glNormalStream3fvATI v1 v2 = liftIO $ dyn97 ptr_glNormalStream3fvATI v1 v2
+
+{-# NOINLINE ptr_glNormalStream3fvATI #-}
+ptr_glNormalStream3fvATI :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
+ptr_glNormalStream3fvATI = unsafePerformIO $ getCommand "glNormalStream3fvATI"
+
+-- glNormalStream3iATI ---------------------------------------------------------
+
+glNormalStream3iATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLint -- ^ @nx@.
+  -> GLint -- ^ @ny@.
+  -> GLint -- ^ @nz@.
+  -> m ()
+glNormalStream3iATI v1 v2 v3 v4 = liftIO $ dyn571 ptr_glNormalStream3iATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNormalStream3iATI #-}
+ptr_glNormalStream3iATI :: FunPtr (GLenum -> GLint -> GLint -> GLint -> IO ())
+ptr_glNormalStream3iATI = unsafePerformIO $ getCommand "glNormalStream3iATI"
+
+-- glNormalStream3ivATI --------------------------------------------------------
+
+glNormalStream3ivATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLint -- ^ @coords@ pointing to @3@ elements of type @GLint@.
+  -> m ()
+glNormalStream3ivATI v1 v2 = liftIO $ dyn139 ptr_glNormalStream3ivATI v1 v2
+
+{-# NOINLINE ptr_glNormalStream3ivATI #-}
+ptr_glNormalStream3ivATI :: FunPtr (GLenum -> Ptr GLint -> IO ())
+ptr_glNormalStream3ivATI = unsafePerformIO $ getCommand "glNormalStream3ivATI"
+
+-- glNormalStream3sATI ---------------------------------------------------------
+
+glNormalStream3sATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> GLshort -- ^ @nx@.
+  -> GLshort -- ^ @ny@.
+  -> GLshort -- ^ @nz@.
+  -> m ()
+glNormalStream3sATI v1 v2 v3 v4 = liftIO $ dyn572 ptr_glNormalStream3sATI v1 v2 v3 v4
+
+{-# NOINLINE ptr_glNormalStream3sATI #-}
+ptr_glNormalStream3sATI :: FunPtr (GLenum -> GLshort -> GLshort -> GLshort -> IO ())
+ptr_glNormalStream3sATI = unsafePerformIO $ getCommand "glNormalStream3sATI"
+
+-- glNormalStream3svATI --------------------------------------------------------
+
+glNormalStream3svATI
+  :: MonadIO m
+  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  -> Ptr GLshort -- ^ @coords@ pointing to @3@ elements of type @GLshort@.
+  -> m ()
+glNormalStream3svATI v1 v2 = liftIO $ dyn562 ptr_glNormalStream3svATI v1 v2
+
+{-# NOINLINE ptr_glNormalStream3svATI #-}
+ptr_glNormalStream3svATI :: FunPtr (GLenum -> Ptr GLshort -> IO ())
+ptr_glNormalStream3svATI = unsafePerformIO $ getCommand "glNormalStream3svATI"
+
+-- glObjectLabel ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glObjectLabel.xhtml OpenGL 4.x>.
+glObjectLabel
+  :: MonadIO m
+  => GLenum -- ^ @identifier@.
+  -> GLuint -- ^ @name@.
+  -> GLsizei -- ^ @length@.
+  -> Ptr GLchar -- ^ @label@ pointing to @COMPSIZE(label,length)@ elements of type @GLchar@.
+  -> m ()
+glObjectLabel v1 v2 v3 v4 = liftIO $ dyn502 ptr_glObjectLabel v1 v2 v3 v4
+
+{-# NOINLINE ptr_glObjectLabel #-}
+ptr_glObjectLabel :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLchar -> IO ())
+ptr_glObjectLabel = unsafePerformIO $ getCommand "glObjectLabel"
+
+-- glObjectLabelKHR ------------------------------------------------------------
+
+-- | This command is an alias for 'glObjectLabel'.
+glObjectLabelKHR
+  :: MonadIO m
+  => GLenum -- ^ @identifier@.
+  -> GLuint -- ^ @name@.
+  -> GLsizei -- ^ @length@.
+  -> Ptr GLchar -- ^ @label@.
+  -> m ()
+glObjectLabelKHR v1 v2 v3 v4 = liftIO $ dyn502 ptr_glObjectLabelKHR v1 v2 v3 v4
+
+{-# NOINLINE ptr_glObjectLabelKHR #-}
+ptr_glObjectLabelKHR :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLchar -> IO ())
+ptr_glObjectLabelKHR = unsafePerformIO $ getCommand "glObjectLabelKHR"
+
+-- glObjectPtrLabel ------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glObjectPtrLabel.xhtml OpenGL 4.x>.
+glObjectPtrLabel
+  :: MonadIO m
+  => Ptr a -- ^ @ptr@.
+  -> GLsizei -- ^ @length@.
+  -> Ptr GLchar -- ^ @label@ pointing to @COMPSIZE(label,length)@ elements of type @GLchar@.
+  -> m ()
+glObjectPtrLabel v1 v2 v3 = liftIO $ dyn619 ptr_glObjectPtrLabel v1 v2 v3
+
+{-# NOINLINE ptr_glObjectPtrLabel #-}
+ptr_glObjectPtrLabel :: FunPtr (Ptr a -> GLsizei -> Ptr GLchar -> IO ())
+ptr_glObjectPtrLabel = unsafePerformIO $ getCommand "glObjectPtrLabel"
+
+-- glObjectPtrLabelKHR ---------------------------------------------------------
+
+-- | This command is an alias for 'glObjectPtrLabel'.
+glObjectPtrLabelKHR
+  :: MonadIO m
+  => Ptr a -- ^ @ptr@.
+  -> GLsizei -- ^ @length@.
+  -> Ptr GLchar -- ^ @label@.
+  -> m ()
+glObjectPtrLabelKHR v1 v2 v3 = liftIO $ dyn619 ptr_glObjectPtrLabelKHR v1 v2 v3
+
+{-# NOINLINE ptr_glObjectPtrLabelKHR #-}
+ptr_glObjectPtrLabelKHR :: FunPtr (Ptr a -> GLsizei -> Ptr GLchar -> IO ())
+ptr_glObjectPtrLabelKHR = unsafePerformIO $ getCommand "glObjectPtrLabelKHR"
+
+-- glObjectPurgeableAPPLE ------------------------------------------------------
+
+glObjectPurgeableAPPLE
+  :: MonadIO m
+  => GLenum -- ^ @objectType@.
+  -> GLuint -- ^ @name@.
+  -> GLenum -- ^ @option@.
+  -> m GLenum
+glObjectPurgeableAPPLE v1 v2 v3 = liftIO $ dyn620 ptr_glObjectPurgeableAPPLE v1 v2 v3
+
+{-# NOINLINE ptr_glObjectPurgeableAPPLE #-}
+ptr_glObjectPurgeableAPPLE :: FunPtr (GLenum -> GLuint -> GLenum -> IO GLenum)
+ptr_glObjectPurgeableAPPLE = unsafePerformIO $ getCommand "glObjectPurgeableAPPLE"
+
+-- glObjectUnpurgeableAPPLE ----------------------------------------------------
+
+glObjectUnpurgeableAPPLE
+  :: MonadIO m
+  => GLenum -- ^ @objectType@.
+  -> GLuint -- ^ @name@.
+  -> GLenum -- ^ @option@.
+  -> m GLenum
+glObjectUnpurgeableAPPLE v1 v2 v3 = liftIO $ dyn620 ptr_glObjectUnpurgeableAPPLE v1 v2 v3
+
+{-# NOINLINE ptr_glObjectUnpurgeableAPPLE #-}
+ptr_glObjectUnpurgeableAPPLE :: FunPtr (GLenum -> GLuint -> GLenum -> IO GLenum)
+ptr_glObjectUnpurgeableAPPLE = unsafePerformIO $ getCommand "glObjectUnpurgeableAPPLE"
+
+-- glOrtho ---------------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml OpenGL 2.x>.
+glOrtho
+  :: MonadIO m
+  => GLdouble -- ^ @left@.
+  -> GLdouble -- ^ @right@.
+  -> GLdouble -- ^ @bottom@.
+  -> GLdouble -- ^ @top@.
+  -> GLdouble -- ^ @zNear@.
+  -> GLdouble -- ^ @zFar@.
+  -> m ()
+glOrtho v1 v2 v3 v4 v5 v6 = liftIO $ dyn302 ptr_glOrtho v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glOrtho #-}
+ptr_glOrtho :: FunPtr (GLdouble -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glOrtho = unsafePerformIO $ getCommand "glOrtho"
+
+-- glOrthof --------------------------------------------------------------------
+
+glOrthof
+  :: MonadIO m
+  => GLfloat -- ^ @l@.
+  -> GLfloat -- ^ @r@.
+  -> GLfloat -- ^ @b@.
+  -> GLfloat -- ^ @t@.
+  -> GLfloat -- ^ @n@.
+  -> GLfloat -- ^ @f@.
+  -> m ()
+glOrthof v1 v2 v3 v4 v5 v6 = liftIO $ dyn99 ptr_glOrthof v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glOrthof #-}
+ptr_glOrthof :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glOrthof = unsafePerformIO $ getCommand "glOrthof"
+
+-- glOrthofOES -----------------------------------------------------------------
+
+glOrthofOES
+  :: MonadIO m
+  => GLfloat -- ^ @l@.
+  -> GLfloat -- ^ @r@.
+  -> GLfloat -- ^ @b@.
+  -> GLfloat -- ^ @t@.
+  -> GLfloat -- ^ @n@.
+  -> GLfloat -- ^ @f@.
+  -> m ()
+glOrthofOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn99 ptr_glOrthofOES v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glOrthofOES #-}
+ptr_glOrthofOES :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glOrthofOES = unsafePerformIO $ getCommand "glOrthofOES"
+
+-- glOrthox --------------------------------------------------------------------
+
+glOrthox
+  :: MonadIO m
+  => GLfixed -- ^ @l@.
+  -> GLfixed -- ^ @r@.
+  -> GLfixed -- ^ @b@.
+  -> GLfixed -- ^ @t@.
+  -> GLfixed -- ^ @n@.
+  -> GLfixed -- ^ @f@.
+  -> m ()
+glOrthox v1 v2 v3 v4 v5 v6 = liftIO $ dyn303 ptr_glOrthox v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glOrthox #-}
+ptr_glOrthox :: FunPtr (GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glOrthox = unsafePerformIO $ getCommand "glOrthox"
+
+-- glOrthoxOES -----------------------------------------------------------------
+
+glOrthoxOES
+  :: MonadIO m
+  => GLfixed -- ^ @l@.
+  -> GLfixed -- ^ @r@.
+  -> GLfixed -- ^ @b@.
+  -> GLfixed -- ^ @t@.
+  -> GLfixed -- ^ @n@.
+  -> GLfixed -- ^ @f@.
+  -> m ()
+glOrthoxOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn303 ptr_glOrthoxOES v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glOrthoxOES #-}
+ptr_glOrthoxOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glOrthoxOES = unsafePerformIO $ getCommand "glOrthoxOES"
+
+-- glPNTrianglesfATI -----------------------------------------------------------
+
+glPNTrianglesfATI
+  :: MonadIO m
+  => GLenum -- ^ @pname@ of type @PNTrianglesPNameATI@.
+  -> GLfloat -- ^ @param@.
+  -> m ()
+glPNTrianglesfATI v1 v2 = liftIO $ dyn0 ptr_glPNTrianglesfATI v1 v2
+
+{-# NOINLINE ptr_glPNTrianglesfATI #-}
+ptr_glPNTrianglesfATI :: FunPtr (GLenum -> GLfloat -> IO ())
+ptr_glPNTrianglesfATI = unsafePerformIO $ getCommand "glPNTrianglesfATI"
+
+-- glPNTrianglesiATI -----------------------------------------------------------
+
+glPNTrianglesiATI
+  :: MonadIO m
+  => GLenum -- ^ @pname@ of type @PNTrianglesPNameATI@.
+  -> GLint -- ^ @param@.
+  -> m ()
+glPNTrianglesiATI v1 v2 = liftIO $ dyn56 ptr_glPNTrianglesiATI v1 v2
+
+{-# NOINLINE ptr_glPNTrianglesiATI #-}
+ptr_glPNTrianglesiATI :: FunPtr (GLenum -> GLint -> IO ())
+ptr_glPNTrianglesiATI = unsafePerformIO $ getCommand "glPNTrianglesiATI"
+
+-- glPassTexCoordATI -----------------------------------------------------------
+
+glPassTexCoordATI
+  :: MonadIO m
+  => GLuint -- ^ @dst@.
+  -> GLuint -- ^ @coord@.
+  -> GLenum -- ^ @swizzle@ of type @SwizzleOpATI@.
+  -> m ()
+glPassTexCoordATI v1 v2 v3 = liftIO $ dyn621 ptr_glPassTexCoordATI v1 v2 v3
+
+{-# NOINLINE ptr_glPassTexCoordATI #-}
+ptr_glPassTexCoordATI :: FunPtr (GLuint -> GLuint -> GLenum -> IO ())
+ptr_glPassTexCoordATI = unsafePerformIO $ getCommand "glPassTexCoordATI"
+
+-- glPassThrough ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPassThrough.xml OpenGL 2.x>.
+glPassThrough
+  :: MonadIO m
+  => GLfloat -- ^ @token@ of type @FeedbackElement@.
+  -> m ()
+glPassThrough v1 = liftIO $ dyn82 ptr_glPassThrough v1
+
+{-# NOINLINE ptr_glPassThrough #-}
+ptr_glPassThrough :: FunPtr (GLfloat -> IO ())
+ptr_glPassThrough = unsafePerformIO $ getCommand "glPassThrough"
+
+-- glPassThroughxOES -----------------------------------------------------------
+
+glPassThroughxOES
+  :: MonadIO m
+  => GLfixed -- ^ @token@.
+  -> m ()
+glPassThroughxOES v1 = liftIO $ dyn84 ptr_glPassThroughxOES v1
+
+{-# NOINLINE ptr_glPassThroughxOES #-}
+ptr_glPassThroughxOES :: FunPtr (GLfixed -> IO ())
+ptr_glPassThroughxOES = unsafePerformIO $ getCommand "glPassThroughxOES"
 
 -- glPatchParameterfv ----------------------------------------------------------
 
@@ -131,7 +732,7 @@ glPatchParameterfv
   => GLenum -- ^ @pname@.
   -> Ptr GLfloat -- ^ @values@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glPatchParameterfv v1 v2 = liftIO $ dyn94 ptr_glPatchParameterfv v1 v2
+glPatchParameterfv v1 v2 = liftIO $ dyn97 ptr_glPatchParameterfv v1 v2
 
 {-# NOINLINE ptr_glPatchParameterfv #-}
 ptr_glPatchParameterfv :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -145,7 +746,7 @@ glPatchParameteri
   => GLenum -- ^ @pname@.
   -> GLint -- ^ @value@.
   -> m ()
-glPatchParameteri v1 v2 = liftIO $ dyn55 ptr_glPatchParameteri v1 v2
+glPatchParameteri v1 v2 = liftIO $ dyn56 ptr_glPatchParameteri v1 v2
 
 {-# NOINLINE ptr_glPatchParameteri #-}
 ptr_glPatchParameteri :: FunPtr (GLenum -> GLint -> IO ())
@@ -159,7 +760,7 @@ glPatchParameteriEXT
   => GLenum -- ^ @pname@.
   -> GLint -- ^ @value@.
   -> m ()
-glPatchParameteriEXT v1 v2 = liftIO $ dyn55 ptr_glPatchParameteriEXT v1 v2
+glPatchParameteriEXT v1 v2 = liftIO $ dyn56 ptr_glPatchParameteriEXT v1 v2
 
 {-# NOINLINE ptr_glPatchParameteriEXT #-}
 ptr_glPatchParameteriEXT :: FunPtr (GLenum -> GLint -> IO ())
@@ -173,7 +774,7 @@ glPatchParameteriOES
   => GLenum -- ^ @pname@.
   -> GLint -- ^ @value@.
   -> m ()
-glPatchParameteriOES v1 v2 = liftIO $ dyn55 ptr_glPatchParameteriOES v1 v2
+glPatchParameteriOES v1 v2 = liftIO $ dyn56 ptr_glPatchParameteriOES v1 v2
 
 {-# NOINLINE ptr_glPatchParameteriOES #-}
 ptr_glPatchParameteriOES :: FunPtr (GLenum -> GLint -> IO ())
@@ -188,7 +789,7 @@ glPathColorGenNV
   -> GLenum -- ^ @colorFormat@ of type @PathColorFormat@.
   -> Ptr GLfloat -- ^ @coeffs@ pointing to @COMPSIZE(genMode,colorFormat)@ elements of type @GLfloat@.
   -> m ()
-glPathColorGenNV v1 v2 v3 v4 = liftIO $ dyn321 ptr_glPathColorGenNV v1 v2 v3 v4
+glPathColorGenNV v1 v2 v3 v4 = liftIO $ dyn327 ptr_glPathColorGenNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glPathColorGenNV #-}
 ptr_glPathColorGenNV :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -205,7 +806,7 @@ glPathCommandsNV
   -> GLenum -- ^ @coordType@ of type @PathCoordType@.
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
-glPathCommandsNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn600 ptr_glPathCommandsNV v1 v2 v3 v4 v5 v6
+glPathCommandsNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn622 ptr_glPathCommandsNV v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glPathCommandsNV #-}
 ptr_glPathCommandsNV :: FunPtr (GLuint -> GLsizei -> Ptr GLubyte -> GLsizei -> GLenum -> Ptr a -> IO ())
@@ -220,7 +821,7 @@ glPathCoordsNV
   -> GLenum -- ^ @coordType@ of type @PathCoordType@.
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
-glPathCoordsNV v1 v2 v3 v4 = liftIO $ dyn601 ptr_glPathCoordsNV v1 v2 v3 v4
+glPathCoordsNV v1 v2 v3 v4 = liftIO $ dyn623 ptr_glPathCoordsNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glPathCoordsNV #-}
 ptr_glPathCoordsNV :: FunPtr (GLuint -> GLsizei -> GLenum -> Ptr a -> IO ())
@@ -232,7 +833,7 @@ glPathCoverDepthFuncNV
   :: MonadIO m
   => GLenum -- ^ @func@ of type [DepthFunction](Graphics-GL-Groups.html#DepthFunction).
   -> m ()
-glPathCoverDepthFuncNV v1 = liftIO $ dyn4 ptr_glPathCoverDepthFuncNV v1
+glPathCoverDepthFuncNV v1 = liftIO $ dyn5 ptr_glPathCoverDepthFuncNV v1
 
 {-# NOINLINE ptr_glPathCoverDepthFuncNV #-}
 ptr_glPathCoverDepthFuncNV :: FunPtr (GLenum -> IO ())
@@ -246,7 +847,7 @@ glPathDashArrayNV
   -> GLsizei -- ^ @dashCount@.
   -> Ptr GLfloat -- ^ @dashArray@ pointing to @dashCount@ elements of type @GLfloat@.
   -> m ()
-glPathDashArrayNV v1 v2 v3 = liftIO $ dyn218 ptr_glPathDashArrayNV v1 v2 v3
+glPathDashArrayNV v1 v2 v3 = liftIO $ dyn221 ptr_glPathDashArrayNV v1 v2 v3
 
 {-# NOINLINE ptr_glPathDashArrayNV #-}
 ptr_glPathDashArrayNV :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -258,7 +859,7 @@ glPathFogGenNV
   :: MonadIO m
   => GLenum -- ^ @genMode@ of type @PathGenMode@.
   -> m ()
-glPathFogGenNV v1 = liftIO $ dyn4 ptr_glPathFogGenNV v1
+glPathFogGenNV v1 = liftIO $ dyn5 ptr_glPathFogGenNV v1
 
 {-# NOINLINE ptr_glPathFogGenNV #-}
 ptr_glPathFogGenNV :: FunPtr (GLenum -> IO ())
@@ -277,7 +878,7 @@ glPathGlyphIndexArrayNV
   -> GLuint -- ^ @pathParameterTemplate@.
   -> GLfloat -- ^ @emScale@.
   -> m GLenum
-glPathGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn602 ptr_glPathGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8
+glPathGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn624 ptr_glPathGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glPathGlyphIndexArrayNV #-}
 ptr_glPathGlyphIndexArrayNV :: FunPtr (GLuint -> GLenum -> Ptr a -> GLbitfield -> GLuint -> GLsizei -> GLuint -> GLfloat -> IO GLenum)
@@ -294,7 +895,7 @@ glPathGlyphIndexRangeNV
   -> GLfloat -- ^ @emScale@.
   -> Ptr GLuint -- ^ @baseAndCount@.
   -> m GLenum
-glPathGlyphIndexRangeNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn603 ptr_glPathGlyphIndexRangeNV v1 v2 v3 v4 v5 v6
+glPathGlyphIndexRangeNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn625 ptr_glPathGlyphIndexRangeNV v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glPathGlyphIndexRangeNV #-}
 ptr_glPathGlyphIndexRangeNV :: FunPtr (GLenum -> Ptr a -> GLbitfield -> GLuint -> GLfloat -> Ptr GLuint -> IO GLenum)
@@ -314,7 +915,7 @@ glPathGlyphRangeNV
   -> GLuint -- ^ @pathParameterTemplate@ of type @Path@.
   -> GLfloat -- ^ @emScale@.
   -> m ()
-glPathGlyphRangeNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn604 ptr_glPathGlyphRangeNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+glPathGlyphRangeNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn626 ptr_glPathGlyphRangeNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glPathGlyphRangeNV #-}
 ptr_glPathGlyphRangeNV :: FunPtr (GLuint -> GLenum -> Ptr a -> GLbitfield -> GLuint -> GLsizei -> GLenum -> GLuint -> GLfloat -> IO ())
@@ -335,7 +936,7 @@ glPathGlyphsNV
   -> GLuint -- ^ @pathParameterTemplate@ of type @Path@.
   -> GLfloat -- ^ @emScale@.
   -> m ()
-glPathGlyphsNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn605 ptr_glPathGlyphsNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
+glPathGlyphsNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn627 ptr_glPathGlyphsNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
 {-# NOINLINE ptr_glPathGlyphsNV #-}
 ptr_glPathGlyphsNV :: FunPtr (GLuint -> GLenum -> Ptr a -> GLbitfield -> GLsizei -> GLenum -> Ptr b -> GLenum -> GLuint -> GLfloat -> IO ())
@@ -355,7 +956,7 @@ glPathMemoryGlyphIndexArrayNV
   -> GLuint -- ^ @pathParameterTemplate@.
   -> GLfloat -- ^ @emScale@.
   -> m GLenum
-glPathMemoryGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn606 ptr_glPathMemoryGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+glPathMemoryGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn628 ptr_glPathMemoryGlyphIndexArrayNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glPathMemoryGlyphIndexArrayNV #-}
 ptr_glPathMemoryGlyphIndexArrayNV :: FunPtr (GLuint -> GLenum -> GLsizeiptr -> Ptr a -> GLsizei -> GLuint -> GLsizei -> GLuint -> GLfloat -> IO GLenum)
@@ -369,7 +970,7 @@ glPathParameterfNV
   -> GLenum -- ^ @pname@ of type @PathParameter@.
   -> GLfloat -- ^ @value@.
   -> m ()
-glPathParameterfNV v1 v2 v3 = liftIO $ dyn489 ptr_glPathParameterfNV v1 v2 v3
+glPathParameterfNV v1 v2 v3 = liftIO $ dyn505 ptr_glPathParameterfNV v1 v2 v3
 
 {-# NOINLINE ptr_glPathParameterfNV #-}
 ptr_glPathParameterfNV :: FunPtr (GLuint -> GLenum -> GLfloat -> IO ())
@@ -383,7 +984,7 @@ glPathParameterfvNV
   -> GLenum -- ^ @pname@ of type @PathParameter@.
   -> Ptr GLfloat -- ^ @value@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glPathParameterfvNV v1 v2 v3 = liftIO $ dyn351 ptr_glPathParameterfvNV v1 v2 v3
+glPathParameterfvNV v1 v2 v3 = liftIO $ dyn357 ptr_glPathParameterfvNV v1 v2 v3
 
 {-# NOINLINE ptr_glPathParameterfvNV #-}
 ptr_glPathParameterfvNV :: FunPtr (GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -397,7 +998,7 @@ glPathParameteriNV
   -> GLenum -- ^ @pname@ of type @PathParameter@.
   -> GLint -- ^ @value@.
   -> m ()
-glPathParameteriNV v1 v2 v3 = liftIO $ dyn490 ptr_glPathParameteriNV v1 v2 v3
+glPathParameteriNV v1 v2 v3 = liftIO $ dyn481 ptr_glPathParameteriNV v1 v2 v3
 
 {-# NOINLINE ptr_glPathParameteriNV #-}
 ptr_glPathParameteriNV :: FunPtr (GLuint -> GLenum -> GLint -> IO ())
@@ -411,7 +1012,7 @@ glPathParameterivNV
   -> GLenum -- ^ @pname@ of type @PathParameter@.
   -> Ptr GLint -- ^ @value@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glPathParameterivNV v1 v2 v3 = liftIO $ dyn335 ptr_glPathParameterivNV v1 v2 v3
+glPathParameterivNV v1 v2 v3 = liftIO $ dyn341 ptr_glPathParameterivNV v1 v2 v3
 
 {-# NOINLINE ptr_glPathParameterivNV #-}
 ptr_glPathParameterivNV :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -424,7 +1025,7 @@ glPathStencilDepthOffsetNV
   => GLfloat -- ^ @factor@.
   -> GLfloat -- ^ @units@.
   -> m ()
-glPathStencilDepthOffsetNV v1 v2 = liftIO $ dyn222 ptr_glPathStencilDepthOffsetNV v1 v2
+glPathStencilDepthOffsetNV v1 v2 = liftIO $ dyn225 ptr_glPathStencilDepthOffsetNV v1 v2
 
 {-# NOINLINE ptr_glPathStencilDepthOffsetNV #-}
 ptr_glPathStencilDepthOffsetNV :: FunPtr (GLfloat -> GLfloat -> IO ())
@@ -438,7 +1039,7 @@ glPathStencilFuncNV
   -> GLint -- ^ @ref@ of type @ClampedStencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
-glPathStencilFuncNV v1 v2 v3 = liftIO $ dyn607 ptr_glPathStencilFuncNV v1 v2 v3
+glPathStencilFuncNV v1 v2 v3 = liftIO $ dyn629 ptr_glPathStencilFuncNV v1 v2 v3
 
 {-# NOINLINE ptr_glPathStencilFuncNV #-}
 ptr_glPathStencilFuncNV :: FunPtr (GLenum -> GLint -> GLuint -> IO ())
@@ -453,7 +1054,7 @@ glPathStringNV
   -> GLsizei -- ^ @length@.
   -> Ptr a -- ^ @pathString@ pointing to @length@ elements of type @a@.
   -> m ()
-glPathStringNV v1 v2 v3 v4 = liftIO $ dyn608 ptr_glPathStringNV v1 v2 v3 v4
+glPathStringNV v1 v2 v3 v4 = liftIO $ dyn630 ptr_glPathStringNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glPathStringNV #-}
 ptr_glPathStringNV :: FunPtr (GLuint -> GLenum -> GLsizei -> Ptr a -> IO ())
@@ -472,7 +1073,7 @@ glPathSubCommandsNV
   -> GLenum -- ^ @coordType@ of type @PathCoordType@.
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
-glPathSubCommandsNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn609 ptr_glPathSubCommandsNV v1 v2 v3 v4 v5 v6 v7 v8
+glPathSubCommandsNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn631 ptr_glPathSubCommandsNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glPathSubCommandsNV #-}
 ptr_glPathSubCommandsNV :: FunPtr (GLuint -> GLsizei -> GLsizei -> GLsizei -> Ptr GLubyte -> GLsizei -> GLenum -> Ptr a -> IO ())
@@ -488,7 +1089,7 @@ glPathSubCoordsNV
   -> GLenum -- ^ @coordType@ of type @PathCoordType@.
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
-glPathSubCoordsNV v1 v2 v3 v4 v5 = liftIO $ dyn610 ptr_glPathSubCoordsNV v1 v2 v3 v4 v5
+glPathSubCoordsNV v1 v2 v3 v4 v5 = liftIO $ dyn632 ptr_glPathSubCoordsNV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glPathSubCoordsNV #-}
 ptr_glPathSubCoordsNV :: FunPtr (GLuint -> GLsizei -> GLsizei -> GLenum -> Ptr a -> IO ())
@@ -503,7 +1104,7 @@ glPathTexGenNV
   -> GLint -- ^ @components@.
   -> Ptr GLfloat -- ^ @coeffs@ pointing to @COMPSIZE(genMode,components)@ elements of type @GLfloat@.
   -> m ()
-glPathTexGenNV v1 v2 v3 v4 = liftIO $ dyn611 ptr_glPathTexGenNV v1 v2 v3 v4
+glPathTexGenNV v1 v2 v3 v4 = liftIO $ dyn633 ptr_glPathTexGenNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glPathTexGenNV #-}
 ptr_glPathTexGenNV :: FunPtr (GLenum -> GLenum -> GLint -> Ptr GLfloat -> IO ())
@@ -515,7 +1116,7 @@ ptr_glPathTexGenNV = unsafePerformIO $ getCommand "glPathTexGenNV"
 glPauseTransformFeedback
   :: MonadIO m
   => m ()
-glPauseTransformFeedback = liftIO $ dyn10 ptr_glPauseTransformFeedback
+glPauseTransformFeedback = liftIO $ dyn11 ptr_glPauseTransformFeedback
 
 {-# NOINLINE ptr_glPauseTransformFeedback #-}
 ptr_glPauseTransformFeedback :: FunPtr (IO ())
@@ -527,7 +1128,7 @@ ptr_glPauseTransformFeedback = unsafePerformIO $ getCommand "glPauseTransformFee
 glPauseTransformFeedbackNV
   :: MonadIO m
   => m ()
-glPauseTransformFeedbackNV = liftIO $ dyn10 ptr_glPauseTransformFeedbackNV
+glPauseTransformFeedbackNV = liftIO $ dyn11 ptr_glPauseTransformFeedbackNV
 
 {-# NOINLINE ptr_glPauseTransformFeedbackNV #-}
 ptr_glPauseTransformFeedbackNV :: FunPtr (IO ())
@@ -541,7 +1142,7 @@ glPixelDataRangeNV
   -> GLsizei -- ^ @length@.
   -> Ptr a -- ^ @pointer@ pointing to @length@ elements of type @a@.
   -> m ()
-glPixelDataRangeNV v1 v2 v3 = liftIO $ dyn46 ptr_glPixelDataRangeNV v1 v2 v3
+glPixelDataRangeNV v1 v2 v3 = liftIO $ dyn47 ptr_glPixelDataRangeNV v1 v2 v3
 
 {-# NOINLINE ptr_glPixelDataRangeNV #-}
 ptr_glPixelDataRangeNV :: FunPtr (GLenum -> GLsizei -> Ptr a -> IO ())
@@ -556,7 +1157,7 @@ glPixelMapfv
   -> GLsizei -- ^ @mapsize@ of type @CheckedInt32@.
   -> Ptr GLfloat -- ^ @values@ pointing to @mapsize@ elements of type @GLfloat@.
   -> m ()
-glPixelMapfv v1 v2 v3 = liftIO $ dyn225 ptr_glPixelMapfv v1 v2 v3
+glPixelMapfv v1 v2 v3 = liftIO $ dyn228 ptr_glPixelMapfv v1 v2 v3
 
 {-# NOINLINE ptr_glPixelMapfv #-}
 ptr_glPixelMapfv :: FunPtr (GLenum -> GLsizei -> Ptr GLfloat -> IO ())
@@ -571,7 +1172,7 @@ glPixelMapuiv
   -> GLsizei -- ^ @mapsize@ of type @CheckedInt32@.
   -> Ptr GLuint -- ^ @values@ pointing to @mapsize@ elements of type @GLuint@.
   -> m ()
-glPixelMapuiv v1 v2 v3 = liftIO $ dyn197 ptr_glPixelMapuiv v1 v2 v3
+glPixelMapuiv v1 v2 v3 = liftIO $ dyn200 ptr_glPixelMapuiv v1 v2 v3
 
 {-# NOINLINE ptr_glPixelMapuiv #-}
 ptr_glPixelMapuiv :: FunPtr (GLenum -> GLsizei -> Ptr GLuint -> IO ())
@@ -586,7 +1187,7 @@ glPixelMapusv
   -> GLsizei -- ^ @mapsize@ of type @CheckedInt32@.
   -> Ptr GLushort -- ^ @values@ pointing to @mapsize@ elements of type @GLushort@.
   -> m ()
-glPixelMapusv v1 v2 v3 = liftIO $ dyn454 ptr_glPixelMapusv v1 v2 v3
+glPixelMapusv v1 v2 v3 = liftIO $ dyn464 ptr_glPixelMapusv v1 v2 v3
 
 {-# NOINLINE ptr_glPixelMapusv #-}
 ptr_glPixelMapusv :: FunPtr (GLenum -> GLsizei -> Ptr GLushort -> IO ())
@@ -600,7 +1201,7 @@ glPixelMapx
   -> GLint -- ^ @size@.
   -> Ptr GLfixed -- ^ @values@ pointing to @size@ elements of type @GLfixed@.
   -> m ()
-glPixelMapx v1 v2 v3 = liftIO $ dyn392 ptr_glPixelMapx v1 v2 v3
+glPixelMapx v1 v2 v3 = liftIO $ dyn399 ptr_glPixelMapx v1 v2 v3
 
 {-# NOINLINE ptr_glPixelMapx #-}
 ptr_glPixelMapx :: FunPtr (GLenum -> GLint -> Ptr GLfixed -> IO ())
@@ -628,7 +1229,7 @@ glPixelStorei
   => GLenum -- ^ @pname@ of type [PixelStoreParameter](Graphics-GL-Groups.html#PixelStoreParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
-glPixelStorei v1 v2 = liftIO $ dyn55 ptr_glPixelStorei v1 v2
+glPixelStorei v1 v2 = liftIO $ dyn56 ptr_glPixelStorei v1 v2
 
 {-# NOINLINE ptr_glPixelStorei #-}
 ptr_glPixelStorei :: FunPtr (GLenum -> GLint -> IO ())
@@ -667,7 +1268,7 @@ glPixelTexGenParameterfvSGIS
   => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-GL-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glPixelTexGenParameterfvSGIS v1 v2 = liftIO $ dyn94 ptr_glPixelTexGenParameterfvSGIS v1 v2
+glPixelTexGenParameterfvSGIS v1 v2 = liftIO $ dyn97 ptr_glPixelTexGenParameterfvSGIS v1 v2
 
 {-# NOINLINE ptr_glPixelTexGenParameterfvSGIS #-}
 ptr_glPixelTexGenParameterfvSGIS :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -680,7 +1281,7 @@ glPixelTexGenParameteriSGIS
   => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-GL-Groups.html#PixelTexGenParameterNameSGIS).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
-glPixelTexGenParameteriSGIS v1 v2 = liftIO $ dyn55 ptr_glPixelTexGenParameteriSGIS v1 v2
+glPixelTexGenParameteriSGIS v1 v2 = liftIO $ dyn56 ptr_glPixelTexGenParameteriSGIS v1 v2
 
 {-# NOINLINE ptr_glPixelTexGenParameteriSGIS #-}
 ptr_glPixelTexGenParameteriSGIS :: FunPtr (GLenum -> GLint -> IO ())
@@ -693,7 +1294,7 @@ glPixelTexGenParameterivSGIS
   => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-GL-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glPixelTexGenParameterivSGIS v1 v2 = liftIO $ dyn136 ptr_glPixelTexGenParameterivSGIS v1 v2
+glPixelTexGenParameterivSGIS v1 v2 = liftIO $ dyn139 ptr_glPixelTexGenParameterivSGIS v1 v2
 
 {-# NOINLINE ptr_glPixelTexGenParameterivSGIS #-}
 ptr_glPixelTexGenParameterivSGIS :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -705,7 +1306,7 @@ glPixelTexGenSGIX
   :: MonadIO m
   => GLenum -- ^ @mode@ of type @PixelTexGenModeSGIX@.
   -> m ()
-glPixelTexGenSGIX v1 = liftIO $ dyn4 ptr_glPixelTexGenSGIX v1
+glPixelTexGenSGIX v1 = liftIO $ dyn5 ptr_glPixelTexGenSGIX v1
 
 {-# NOINLINE ptr_glPixelTexGenSGIX #-}
 ptr_glPixelTexGenSGIX :: FunPtr (GLenum -> IO ())
@@ -733,7 +1334,7 @@ glPixelTransferi
   => GLenum -- ^ @pname@ of type [PixelTransferParameter](Graphics-GL-Groups.html#PixelTransferParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
-glPixelTransferi v1 v2 = liftIO $ dyn55 ptr_glPixelTransferi v1 v2
+glPixelTransferi v1 v2 = liftIO $ dyn56 ptr_glPixelTransferi v1 v2
 
 {-# NOINLINE ptr_glPixelTransferi #-}
 ptr_glPixelTransferi :: FunPtr (GLenum -> GLint -> IO ())
@@ -760,7 +1361,7 @@ glPixelTransformParameterfEXT
   -> GLenum -- ^ @pname@ of type @PixelTransformPNameEXT@.
   -> GLfloat -- ^ @param@.
   -> m ()
-glPixelTransformParameterfEXT v1 v2 v3 = liftIO $ dyn161 ptr_glPixelTransformParameterfEXT v1 v2 v3
+glPixelTransformParameterfEXT v1 v2 v3 = liftIO $ dyn164 ptr_glPixelTransformParameterfEXT v1 v2 v3
 
 {-# NOINLINE ptr_glPixelTransformParameterfEXT #-}
 ptr_glPixelTransformParameterfEXT :: FunPtr (GLenum -> GLenum -> GLfloat -> IO ())
@@ -774,7 +1375,7 @@ glPixelTransformParameterfvEXT
   -> GLenum -- ^ @pname@ of type @PixelTransformPNameEXT@.
   -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
-glPixelTransformParameterfvEXT v1 v2 v3 = liftIO $ dyn132 ptr_glPixelTransformParameterfvEXT v1 v2 v3
+glPixelTransformParameterfvEXT v1 v2 v3 = liftIO $ dyn135 ptr_glPixelTransformParameterfvEXT v1 v2 v3
 
 {-# NOINLINE ptr_glPixelTransformParameterfvEXT #-}
 ptr_glPixelTransformParameterfvEXT :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -788,7 +1389,7 @@ glPixelTransformParameteriEXT
   -> GLenum -- ^ @pname@ of type @PixelTransformPNameEXT@.
   -> GLint -- ^ @param@.
   -> m ()
-glPixelTransformParameteriEXT v1 v2 v3 = liftIO $ dyn62 ptr_glPixelTransformParameteriEXT v1 v2 v3
+glPixelTransformParameteriEXT v1 v2 v3 = liftIO $ dyn63 ptr_glPixelTransformParameteriEXT v1 v2 v3
 
 {-# NOINLINE ptr_glPixelTransformParameteriEXT #-}
 ptr_glPixelTransformParameteriEXT :: FunPtr (GLenum -> GLenum -> GLint -> IO ())
@@ -802,7 +1403,7 @@ glPixelTransformParameterivEXT
   -> GLenum -- ^ @pname@ of type @PixelTransformPNameEXT@.
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
-glPixelTransformParameterivEXT v1 v2 v3 = liftIO $ dyn133 ptr_glPixelTransformParameterivEXT v1 v2 v3
+glPixelTransformParameterivEXT v1 v2 v3 = liftIO $ dyn136 ptr_glPixelTransformParameterivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glPixelTransformParameterivEXT #-}
 ptr_glPixelTransformParameterivEXT :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -816,7 +1417,7 @@ glPixelZoom
   => GLfloat -- ^ @xfactor@.
   -> GLfloat -- ^ @yfactor@.
   -> m ()
-glPixelZoom v1 v2 = liftIO $ dyn222 ptr_glPixelZoom v1 v2
+glPixelZoom v1 v2 = liftIO $ dyn225 ptr_glPixelZoom v1 v2
 
 {-# NOINLINE ptr_glPixelZoom #-}
 ptr_glPixelZoom :: FunPtr (GLfloat -> GLfloat -> IO ())
@@ -829,7 +1430,7 @@ glPixelZoomxOES
   => GLfixed -- ^ @xfactor@.
   -> GLfixed -- ^ @yfactor@.
   -> m ()
-glPixelZoomxOES v1 v2 = liftIO $ dyn224 ptr_glPixelZoomxOES v1 v2
+glPixelZoomxOES v1 v2 = liftIO $ dyn227 ptr_glPixelZoomxOES v1 v2
 
 {-# NOINLINE ptr_glPixelZoomxOES #-}
 ptr_glPixelZoomxOES :: FunPtr (GLfixed -> GLfixed -> IO ())
@@ -848,7 +1449,7 @@ glPointAlongPathNV
   -> Ptr GLfloat -- ^ @tangentX@ pointing to @1@ element of type @GLfloat@.
   -> Ptr GLfloat -- ^ @tangentY@ pointing to @1@ element of type @GLfloat@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn612 ptr_glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8
+glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn634 ptr_glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glPointAlongPathNV #-}
 ptr_glPointAlongPathNV :: FunPtr (GLuint -> GLsizei -> GLsizei -> GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> IO GLboolean)
@@ -918,7 +1519,7 @@ glPointParameterfv
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glPointParameterfv v1 v2 = liftIO $ dyn94 ptr_glPointParameterfv v1 v2
+glPointParameterfv v1 v2 = liftIO $ dyn97 ptr_glPointParameterfv v1 v2
 
 {-# NOINLINE ptr_glPointParameterfv #-}
 ptr_glPointParameterfv :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -932,7 +1533,7 @@ glPointParameterfvARB
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glPointParameterfvARB v1 v2 = liftIO $ dyn94 ptr_glPointParameterfvARB v1 v2
+glPointParameterfvARB v1 v2 = liftIO $ dyn97 ptr_glPointParameterfvARB v1 v2
 
 {-# NOINLINE ptr_glPointParameterfvARB #-}
 ptr_glPointParameterfvARB :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -946,7 +1547,7 @@ glPointParameterfvEXT
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glPointParameterfvEXT v1 v2 = liftIO $ dyn94 ptr_glPointParameterfvEXT v1 v2
+glPointParameterfvEXT v1 v2 = liftIO $ dyn97 ptr_glPointParameterfvEXT v1 v2
 
 {-# NOINLINE ptr_glPointParameterfvEXT #-}
 ptr_glPointParameterfvEXT :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -960,604 +1561,9 @@ glPointParameterfvSGIS
   => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glPointParameterfvSGIS v1 v2 = liftIO $ dyn94 ptr_glPointParameterfvSGIS v1 v2
+glPointParameterfvSGIS v1 v2 = liftIO $ dyn97 ptr_glPointParameterfvSGIS v1 v2
 
 {-# NOINLINE ptr_glPointParameterfvSGIS #-}
 ptr_glPointParameterfvSGIS :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
 ptr_glPointParameterfvSGIS = unsafePerformIO $ getCommand "glPointParameterfvSGIS"
-
--- glPointParameteri -----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
-glPointParameteri
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
-  -> GLint -- ^ @param@.
-  -> m ()
-glPointParameteri v1 v2 = liftIO $ dyn55 ptr_glPointParameteri v1 v2
-
-{-# NOINLINE ptr_glPointParameteri #-}
-ptr_glPointParameteri :: FunPtr (GLenum -> GLint -> IO ())
-ptr_glPointParameteri = unsafePerformIO $ getCommand "glPointParameteri"
-
--- glPointParameteriNV ---------------------------------------------------------
-
--- | This command is an alias for 'glPointParameteri'.
-glPointParameteriNV
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
-  -> GLint -- ^ @param@.
-  -> m ()
-glPointParameteriNV v1 v2 = liftIO $ dyn55 ptr_glPointParameteriNV v1 v2
-
-{-# NOINLINE ptr_glPointParameteriNV #-}
-ptr_glPointParameteriNV :: FunPtr (GLenum -> GLint -> IO ())
-ptr_glPointParameteriNV = unsafePerformIO $ getCommand "glPointParameteriNV"
-
--- glPointParameteriv ----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
-glPointParameteriv
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
-  -> m ()
-glPointParameteriv v1 v2 = liftIO $ dyn136 ptr_glPointParameteriv v1 v2
-
-{-# NOINLINE ptr_glPointParameteriv #-}
-ptr_glPointParameteriv :: FunPtr (GLenum -> Ptr GLint -> IO ())
-ptr_glPointParameteriv = unsafePerformIO $ getCommand "glPointParameteriv"
-
--- glPointParameterivNV --------------------------------------------------------
-
--- | This command is an alias for 'glPointParameteriv'.
-glPointParameterivNV
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
-  -> m ()
-glPointParameterivNV v1 v2 = liftIO $ dyn136 ptr_glPointParameterivNV v1 v2
-
-{-# NOINLINE ptr_glPointParameterivNV #-}
-ptr_glPointParameterivNV :: FunPtr (GLenum -> Ptr GLint -> IO ())
-ptr_glPointParameterivNV = unsafePerformIO $ getCommand "glPointParameterivNV"
-
--- glPointParameterx -----------------------------------------------------------
-
-glPointParameterx
-  :: MonadIO m
-  => GLenum -- ^ @pname@.
-  -> GLfixed -- ^ @param@.
-  -> m ()
-glPointParameterx v1 v2 = liftIO $ dyn1 ptr_glPointParameterx v1 v2
-
-{-# NOINLINE ptr_glPointParameterx #-}
-ptr_glPointParameterx :: FunPtr (GLenum -> GLfixed -> IO ())
-ptr_glPointParameterx = unsafePerformIO $ getCommand "glPointParameterx"
-
--- glPointParameterxOES --------------------------------------------------------
-
-glPointParameterxOES
-  :: MonadIO m
-  => GLenum -- ^ @pname@.
-  -> GLfixed -- ^ @param@.
-  -> m ()
-glPointParameterxOES v1 v2 = liftIO $ dyn1 ptr_glPointParameterxOES v1 v2
-
-{-# NOINLINE ptr_glPointParameterxOES #-}
-ptr_glPointParameterxOES :: FunPtr (GLenum -> GLfixed -> IO ())
-ptr_glPointParameterxOES = unsafePerformIO $ getCommand "glPointParameterxOES"
-
--- glPointParameterxv ----------------------------------------------------------
-
-glPointParameterxv
-  :: MonadIO m
-  => GLenum -- ^ @pname@.
-  -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
-  -> m ()
-glPointParameterxv v1 v2 = liftIO $ dyn95 ptr_glPointParameterxv v1 v2
-
-{-# NOINLINE ptr_glPointParameterxv #-}
-ptr_glPointParameterxv :: FunPtr (GLenum -> Ptr GLfixed -> IO ())
-ptr_glPointParameterxv = unsafePerformIO $ getCommand "glPointParameterxv"
-
--- glPointParameterxvOES -------------------------------------------------------
-
-glPointParameterxvOES
-  :: MonadIO m
-  => GLenum -- ^ @pname@.
-  -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
-  -> m ()
-glPointParameterxvOES v1 v2 = liftIO $ dyn95 ptr_glPointParameterxvOES v1 v2
-
-{-# NOINLINE ptr_glPointParameterxvOES #-}
-ptr_glPointParameterxvOES :: FunPtr (GLenum -> Ptr GLfixed -> IO ())
-ptr_glPointParameterxvOES = unsafePerformIO $ getCommand "glPointParameterxvOES"
-
--- glPointSize -----------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointSize.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointSize.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointSize.xhtml OpenGL 4.x>.
-glPointSize
-  :: MonadIO m
-  => GLfloat -- ^ @size@ of type @CheckedFloat32@.
-  -> m ()
-glPointSize v1 = liftIO $ dyn79 ptr_glPointSize v1
-
-{-# NOINLINE ptr_glPointSize #-}
-ptr_glPointSize :: FunPtr (GLfloat -> IO ())
-ptr_glPointSize = unsafePerformIO $ getCommand "glPointSize"
-
--- glPointSizePointerOES -------------------------------------------------------
-
-glPointSizePointerOES
-  :: MonadIO m
-  => GLenum -- ^ @type@.
-  -> GLsizei -- ^ @stride@.
-  -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @a@.
-  -> m ()
-glPointSizePointerOES v1 v2 v3 = liftIO $ dyn46 ptr_glPointSizePointerOES v1 v2 v3
-
-{-# NOINLINE ptr_glPointSizePointerOES #-}
-ptr_glPointSizePointerOES :: FunPtr (GLenum -> GLsizei -> Ptr a -> IO ())
-ptr_glPointSizePointerOES = unsafePerformIO $ getCommand "glPointSizePointerOES"
-
--- glPointSizex ----------------------------------------------------------------
-
-glPointSizex
-  :: MonadIO m
-  => GLfixed -- ^ @size@.
-  -> m ()
-glPointSizex v1 = liftIO $ dyn81 ptr_glPointSizex v1
-
-{-# NOINLINE ptr_glPointSizex #-}
-ptr_glPointSizex :: FunPtr (GLfixed -> IO ())
-ptr_glPointSizex = unsafePerformIO $ getCommand "glPointSizex"
-
--- glPointSizexOES -------------------------------------------------------------
-
-glPointSizexOES
-  :: MonadIO m
-  => GLfixed -- ^ @size@.
-  -> m ()
-glPointSizexOES v1 = liftIO $ dyn81 ptr_glPointSizexOES v1
-
-{-# NOINLINE ptr_glPointSizexOES #-}
-ptr_glPointSizexOES :: FunPtr (GLfixed -> IO ())
-ptr_glPointSizexOES = unsafePerformIO $ getCommand "glPointSizexOES"
-
--- glPollAsyncSGIX -------------------------------------------------------------
-
-glPollAsyncSGIX
-  :: MonadIO m
-  => Ptr GLuint -- ^ @markerp@ pointing to @1@ element of type @GLuint@.
-  -> m GLint
-glPollAsyncSGIX v1 = liftIO $ dyn277 ptr_glPollAsyncSGIX v1
-
-{-# NOINLINE ptr_glPollAsyncSGIX #-}
-ptr_glPollAsyncSGIX :: FunPtr (Ptr GLuint -> IO GLint)
-ptr_glPollAsyncSGIX = unsafePerformIO $ getCommand "glPollAsyncSGIX"
-
--- glPollInstrumentsSGIX -------------------------------------------------------
-
-glPollInstrumentsSGIX
-  :: MonadIO m
-  => Ptr GLint -- ^ @marker_p@ pointing to @1@ element of type @GLint@.
-  -> m GLint
-glPollInstrumentsSGIX v1 = liftIO $ dyn613 ptr_glPollInstrumentsSGIX v1
-
-{-# NOINLINE ptr_glPollInstrumentsSGIX #-}
-ptr_glPollInstrumentsSGIX :: FunPtr (Ptr GLint -> IO GLint)
-ptr_glPollInstrumentsSGIX = unsafePerformIO $ getCommand "glPollInstrumentsSGIX"
-
--- glPolygonMode ---------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonMode.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonMode.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPolygonMode.xhtml OpenGL 4.x>.
-glPolygonMode
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
-  -> GLenum -- ^ @mode@ of type [PolygonMode](Graphics-GL-Groups.html#PolygonMode).
-  -> m ()
-glPolygonMode v1 v2 = liftIO $ dyn51 ptr_glPolygonMode v1 v2
-
-{-# NOINLINE ptr_glPolygonMode #-}
-ptr_glPolygonMode :: FunPtr (GLenum -> GLenum -> IO ())
-ptr_glPolygonMode = unsafePerformIO $ getCommand "glPolygonMode"
-
--- glPolygonModeNV -------------------------------------------------------------
-
--- | This command is an alias for 'glPolygonMode'.
-glPolygonModeNV
-  :: MonadIO m
-  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
-  -> GLenum -- ^ @mode@ of type [PolygonMode](Graphics-GL-Groups.html#PolygonMode).
-  -> m ()
-glPolygonModeNV v1 v2 = liftIO $ dyn51 ptr_glPolygonModeNV v1 v2
-
-{-# NOINLINE ptr_glPolygonModeNV #-}
-ptr_glPolygonModeNV :: FunPtr (GLenum -> GLenum -> IO ())
-ptr_glPolygonModeNV = unsafePerformIO $ getCommand "glPolygonModeNV"
-
--- glPolygonOffset -------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonOffset.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPolygonOffset.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPolygonOffset.xhtml OpenGL 4.x>.
-glPolygonOffset
-  :: MonadIO m
-  => GLfloat -- ^ @factor@.
-  -> GLfloat -- ^ @units@.
-  -> m ()
-glPolygonOffset v1 v2 = liftIO $ dyn222 ptr_glPolygonOffset v1 v2
-
-{-# NOINLINE ptr_glPolygonOffset #-}
-ptr_glPolygonOffset :: FunPtr (GLfloat -> GLfloat -> IO ())
-ptr_glPolygonOffset = unsafePerformIO $ getCommand "glPolygonOffset"
-
--- glPolygonOffsetClampEXT -----------------------------------------------------
-
-glPolygonOffsetClampEXT
-  :: MonadIO m
-  => GLfloat -- ^ @factor@.
-  -> GLfloat -- ^ @units@.
-  -> GLfloat -- ^ @clamp@.
-  -> m ()
-glPolygonOffsetClampEXT v1 v2 v3 = liftIO $ dyn40 ptr_glPolygonOffsetClampEXT v1 v2 v3
-
-{-# NOINLINE ptr_glPolygonOffsetClampEXT #-}
-ptr_glPolygonOffsetClampEXT :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glPolygonOffsetClampEXT = unsafePerformIO $ getCommand "glPolygonOffsetClampEXT"
-
--- glPolygonOffsetEXT ----------------------------------------------------------
-
-glPolygonOffsetEXT
-  :: MonadIO m
-  => GLfloat -- ^ @factor@.
-  -> GLfloat -- ^ @bias@.
-  -> m ()
-glPolygonOffsetEXT v1 v2 = liftIO $ dyn222 ptr_glPolygonOffsetEXT v1 v2
-
-{-# NOINLINE ptr_glPolygonOffsetEXT #-}
-ptr_glPolygonOffsetEXT :: FunPtr (GLfloat -> GLfloat -> IO ())
-ptr_glPolygonOffsetEXT = unsafePerformIO $ getCommand "glPolygonOffsetEXT"
-
--- glPolygonOffsetx ------------------------------------------------------------
-
-glPolygonOffsetx
-  :: MonadIO m
-  => GLfixed -- ^ @factor@.
-  -> GLfixed -- ^ @units@.
-  -> m ()
-glPolygonOffsetx v1 v2 = liftIO $ dyn224 ptr_glPolygonOffsetx v1 v2
-
-{-# NOINLINE ptr_glPolygonOffsetx #-}
-ptr_glPolygonOffsetx :: FunPtr (GLfixed -> GLfixed -> IO ())
-ptr_glPolygonOffsetx = unsafePerformIO $ getCommand "glPolygonOffsetx"
-
--- glPolygonOffsetxOES ---------------------------------------------------------
-
-glPolygonOffsetxOES
-  :: MonadIO m
-  => GLfixed -- ^ @factor@.
-  -> GLfixed -- ^ @units@.
-  -> m ()
-glPolygonOffsetxOES v1 v2 = liftIO $ dyn224 ptr_glPolygonOffsetxOES v1 v2
-
-{-# NOINLINE ptr_glPolygonOffsetxOES #-}
-ptr_glPolygonOffsetxOES :: FunPtr (GLfixed -> GLfixed -> IO ())
-ptr_glPolygonOffsetxOES = unsafePerformIO $ getCommand "glPolygonOffsetxOES"
-
--- glPolygonStipple ------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonStipple.xml OpenGL 2.x>.
-glPolygonStipple
-  :: MonadIO m
-  => Ptr GLubyte -- ^ @mask@ pointing to @COMPSIZE()@ elements of type @GLubyte@.
-  -> m ()
-glPolygonStipple v1 = liftIO $ dyn101 ptr_glPolygonStipple v1
-
-{-# NOINLINE ptr_glPolygonStipple #-}
-ptr_glPolygonStipple :: FunPtr (Ptr GLubyte -> IO ())
-ptr_glPolygonStipple = unsafePerformIO $ getCommand "glPolygonStipple"
-
--- glPopAttrib -----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushAttrib.xml OpenGL 2.x>.
-glPopAttrib
-  :: MonadIO m
-  => m ()
-glPopAttrib = liftIO $ dyn10 ptr_glPopAttrib
-
-{-# NOINLINE ptr_glPopAttrib #-}
-ptr_glPopAttrib :: FunPtr (IO ())
-ptr_glPopAttrib = unsafePerformIO $ getCommand "glPopAttrib"
-
--- glPopClientAttrib -----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushClientAttrib.xml OpenGL 2.x>.
-glPopClientAttrib
-  :: MonadIO m
-  => m ()
-glPopClientAttrib = liftIO $ dyn10 ptr_glPopClientAttrib
-
-{-# NOINLINE ptr_glPopClientAttrib #-}
-ptr_glPopClientAttrib :: FunPtr (IO ())
-ptr_glPopClientAttrib = unsafePerformIO $ getCommand "glPopClientAttrib"
-
--- glPopDebugGroup -------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glPopDebugGroup.xhtml OpenGL 4.x>.
-glPopDebugGroup
-  :: MonadIO m
-  => m ()
-glPopDebugGroup = liftIO $ dyn10 ptr_glPopDebugGroup
-
-{-# NOINLINE ptr_glPopDebugGroup #-}
-ptr_glPopDebugGroup :: FunPtr (IO ())
-ptr_glPopDebugGroup = unsafePerformIO $ getCommand "glPopDebugGroup"
-
--- glPopDebugGroupKHR ----------------------------------------------------------
-
--- | This command is an alias for 'glPopDebugGroup'.
-glPopDebugGroupKHR
-  :: MonadIO m
-  => m ()
-glPopDebugGroupKHR = liftIO $ dyn10 ptr_glPopDebugGroupKHR
-
-{-# NOINLINE ptr_glPopDebugGroupKHR #-}
-ptr_glPopDebugGroupKHR :: FunPtr (IO ())
-ptr_glPopDebugGroupKHR = unsafePerformIO $ getCommand "glPopDebugGroupKHR"
-
--- glPopGroupMarkerEXT ---------------------------------------------------------
-
-glPopGroupMarkerEXT
-  :: MonadIO m
-  => m ()
-glPopGroupMarkerEXT = liftIO $ dyn10 ptr_glPopGroupMarkerEXT
-
-{-# NOINLINE ptr_glPopGroupMarkerEXT #-}
-ptr_glPopGroupMarkerEXT :: FunPtr (IO ())
-ptr_glPopGroupMarkerEXT = unsafePerformIO $ getCommand "glPopGroupMarkerEXT"
-
--- glPopMatrix -----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushMatrix.xml OpenGL 2.x>.
-glPopMatrix
-  :: MonadIO m
-  => m ()
-glPopMatrix = liftIO $ dyn10 ptr_glPopMatrix
-
-{-# NOINLINE ptr_glPopMatrix #-}
-ptr_glPopMatrix :: FunPtr (IO ())
-ptr_glPopMatrix = unsafePerformIO $ getCommand "glPopMatrix"
-
--- glPopName -------------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPushName.xml OpenGL 2.x>.
-glPopName
-  :: MonadIO m
-  => m ()
-glPopName = liftIO $ dyn10 ptr_glPopName
-
-{-# NOINLINE ptr_glPopName #-}
-ptr_glPopName :: FunPtr (IO ())
-ptr_glPopName = unsafePerformIO $ getCommand "glPopName"
-
--- glPresentFrameDualFillNV ----------------------------------------------------
-
-glPresentFrameDualFillNV
-  :: MonadIO m
-  => GLuint -- ^ @video_slot@.
-  -> GLuint64EXT -- ^ @minPresentTime@.
-  -> GLuint -- ^ @beginPresentTimeId@.
-  -> GLuint -- ^ @presentDurationId@.
-  -> GLenum -- ^ @type@.
-  -> GLenum -- ^ @target0@.
-  -> GLuint -- ^ @fill0@.
-  -> GLenum -- ^ @target1@.
-  -> GLuint -- ^ @fill1@.
-  -> GLenum -- ^ @target2@.
-  -> GLuint -- ^ @fill2@.
-  -> GLenum -- ^ @target3@.
-  -> GLuint -- ^ @fill3@.
-  -> m ()
-glPresentFrameDualFillNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 = liftIO $ dyn614 ptr_glPresentFrameDualFillNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13
-
-{-# NOINLINE ptr_glPresentFrameDualFillNV #-}
-ptr_glPresentFrameDualFillNV :: FunPtr (GLuint -> GLuint64EXT -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> GLenum -> GLuint -> IO ())
-ptr_glPresentFrameDualFillNV = unsafePerformIO $ getCommand "glPresentFrameDualFillNV"
-
--- glPresentFrameKeyedNV -------------------------------------------------------
-
-glPresentFrameKeyedNV
-  :: MonadIO m
-  => GLuint -- ^ @video_slot@.
-  -> GLuint64EXT -- ^ @minPresentTime@.
-  -> GLuint -- ^ @beginPresentTimeId@.
-  -> GLuint -- ^ @presentDurationId@.
-  -> GLenum -- ^ @type@.
-  -> GLenum -- ^ @target0@.
-  -> GLuint -- ^ @fill0@.
-  -> GLuint -- ^ @key0@.
-  -> GLenum -- ^ @target1@.
-  -> GLuint -- ^ @fill1@.
-  -> GLuint -- ^ @key1@.
-  -> m ()
-glPresentFrameKeyedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn615 ptr_glPresentFrameKeyedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
-
-{-# NOINLINE ptr_glPresentFrameKeyedNV #-}
-ptr_glPresentFrameKeyedNV :: FunPtr (GLuint -> GLuint64EXT -> GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> GLuint -> GLenum -> GLuint -> GLuint -> IO ())
-ptr_glPresentFrameKeyedNV = unsafePerformIO $ getCommand "glPresentFrameKeyedNV"
-
--- glPrimitiveBoundingBox ------------------------------------------------------
-
-glPrimitiveBoundingBox
-  :: MonadIO m
-  => GLfloat -- ^ @minX@.
-  -> GLfloat -- ^ @minY@.
-  -> GLfloat -- ^ @minZ@.
-  -> GLfloat -- ^ @minW@.
-  -> GLfloat -- ^ @maxX@.
-  -> GLfloat -- ^ @maxY@.
-  -> GLfloat -- ^ @maxZ@.
-  -> GLfloat -- ^ @maxW@.
-  -> m ()
-glPrimitiveBoundingBox v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn616 ptr_glPrimitiveBoundingBox v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glPrimitiveBoundingBox #-}
-ptr_glPrimitiveBoundingBox :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glPrimitiveBoundingBox = unsafePerformIO $ getCommand "glPrimitiveBoundingBox"
-
--- glPrimitiveBoundingBoxARB ---------------------------------------------------
-
--- | This command is an alias for 'glPrimitiveBoundingBox'.
-glPrimitiveBoundingBoxARB
-  :: MonadIO m
-  => GLfloat -- ^ @minX@.
-  -> GLfloat -- ^ @minY@.
-  -> GLfloat -- ^ @minZ@.
-  -> GLfloat -- ^ @minW@.
-  -> GLfloat -- ^ @maxX@.
-  -> GLfloat -- ^ @maxY@.
-  -> GLfloat -- ^ @maxZ@.
-  -> GLfloat -- ^ @maxW@.
-  -> m ()
-glPrimitiveBoundingBoxARB v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn616 ptr_glPrimitiveBoundingBoxARB v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glPrimitiveBoundingBoxARB #-}
-ptr_glPrimitiveBoundingBoxARB :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glPrimitiveBoundingBoxARB = unsafePerformIO $ getCommand "glPrimitiveBoundingBoxARB"
-
--- glPrimitiveBoundingBoxEXT ---------------------------------------------------
-
--- | This command is an alias for 'glPrimitiveBoundingBox'.
-glPrimitiveBoundingBoxEXT
-  :: MonadIO m
-  => GLfloat -- ^ @minX@.
-  -> GLfloat -- ^ @minY@.
-  -> GLfloat -- ^ @minZ@.
-  -> GLfloat -- ^ @minW@.
-  -> GLfloat -- ^ @maxX@.
-  -> GLfloat -- ^ @maxY@.
-  -> GLfloat -- ^ @maxZ@.
-  -> GLfloat -- ^ @maxW@.
-  -> m ()
-glPrimitiveBoundingBoxEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn616 ptr_glPrimitiveBoundingBoxEXT v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glPrimitiveBoundingBoxEXT #-}
-ptr_glPrimitiveBoundingBoxEXT :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glPrimitiveBoundingBoxEXT = unsafePerformIO $ getCommand "glPrimitiveBoundingBoxEXT"
-
--- glPrimitiveBoundingBoxOES ---------------------------------------------------
-
--- | This command is an alias for 'glPrimitiveBoundingBox'.
-glPrimitiveBoundingBoxOES
-  :: MonadIO m
-  => GLfloat -- ^ @minX@.
-  -> GLfloat -- ^ @minY@.
-  -> GLfloat -- ^ @minZ@.
-  -> GLfloat -- ^ @minW@.
-  -> GLfloat -- ^ @maxX@.
-  -> GLfloat -- ^ @maxY@.
-  -> GLfloat -- ^ @maxZ@.
-  -> GLfloat -- ^ @maxW@.
-  -> m ()
-glPrimitiveBoundingBoxOES v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn616 ptr_glPrimitiveBoundingBoxOES v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glPrimitiveBoundingBoxOES #-}
-ptr_glPrimitiveBoundingBoxOES :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glPrimitiveBoundingBoxOES = unsafePerformIO $ getCommand "glPrimitiveBoundingBoxOES"
-
--- glPrimitiveRestartIndex -----------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glPrimitiveRestartIndex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPrimitiveRestartIndex.xhtml OpenGL 4.x>.
-glPrimitiveRestartIndex
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> m ()
-glPrimitiveRestartIndex v1 = liftIO $ dyn2 ptr_glPrimitiveRestartIndex v1
-
-{-# NOINLINE ptr_glPrimitiveRestartIndex #-}
-ptr_glPrimitiveRestartIndex :: FunPtr (GLuint -> IO ())
-ptr_glPrimitiveRestartIndex = unsafePerformIO $ getCommand "glPrimitiveRestartIndex"
-
--- glPrimitiveRestartIndexNV ---------------------------------------------------
-
-glPrimitiveRestartIndexNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> m ()
-glPrimitiveRestartIndexNV v1 = liftIO $ dyn2 ptr_glPrimitiveRestartIndexNV v1
-
-{-# NOINLINE ptr_glPrimitiveRestartIndexNV #-}
-ptr_glPrimitiveRestartIndexNV :: FunPtr (GLuint -> IO ())
-ptr_glPrimitiveRestartIndexNV = unsafePerformIO $ getCommand "glPrimitiveRestartIndexNV"
-
--- glPrimitiveRestartNV --------------------------------------------------------
-
-glPrimitiveRestartNV
-  :: MonadIO m
-  => m ()
-glPrimitiveRestartNV = liftIO $ dyn10 ptr_glPrimitiveRestartNV
-
-{-# NOINLINE ptr_glPrimitiveRestartNV #-}
-ptr_glPrimitiveRestartNV :: FunPtr (IO ())
-ptr_glPrimitiveRestartNV = unsafePerformIO $ getCommand "glPrimitiveRestartNV"
-
--- glPrioritizeTextures --------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glPrioritizeTextures.xml OpenGL 2.x>.
-glPrioritizeTextures
-  :: MonadIO m
-  => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @Texture@.
-  -> Ptr GLfloat -- ^ @priorities@ pointing to @n@ elements of type @GLfloat@.
-  -> m ()
-glPrioritizeTextures v1 v2 v3 = liftIO $ dyn617 ptr_glPrioritizeTextures v1 v2 v3
-
-{-# NOINLINE ptr_glPrioritizeTextures #-}
-ptr_glPrioritizeTextures :: FunPtr (GLsizei -> Ptr GLuint -> Ptr GLfloat -> IO ())
-ptr_glPrioritizeTextures = unsafePerformIO $ getCommand "glPrioritizeTextures"
-
--- glPrioritizeTexturesEXT -----------------------------------------------------
-
--- | This command is an alias for 'glPrioritizeTextures'.
-glPrioritizeTexturesEXT
-  :: MonadIO m
-  => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @Texture@.
-  -> Ptr GLclampf -- ^ @priorities@ pointing to @n@ elements of type @ClampedFloat32@.
-  -> m ()
-glPrioritizeTexturesEXT v1 v2 v3 = liftIO $ dyn618 ptr_glPrioritizeTexturesEXT v1 v2 v3
-
-{-# NOINLINE ptr_glPrioritizeTexturesEXT #-}
-ptr_glPrioritizeTexturesEXT :: FunPtr (GLsizei -> Ptr GLuint -> Ptr GLclampf -> IO ())
-ptr_glPrioritizeTexturesEXT = unsafePerformIO $ getCommand "glPrioritizeTexturesEXT"
-
--- glPrioritizeTexturesxOES ----------------------------------------------------
-
-glPrioritizeTexturesxOES
-  :: MonadIO m
-  => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @GLuint@.
-  -> Ptr GLfixed -- ^ @priorities@ pointing to @n@ elements of type @ClampedFixed@.
-  -> m ()
-glPrioritizeTexturesxOES v1 v2 v3 = liftIO $ dyn619 ptr_glPrioritizeTexturesxOES v1 v2 v3
-
-{-# NOINLINE ptr_glPrioritizeTexturesxOES #-}
-ptr_glPrioritizeTexturesxOES :: FunPtr (GLsizei -> Ptr GLuint -> Ptr GLfixed -> IO ())
-ptr_glPrioritizeTexturesxOES = unsafePerformIO $ getCommand "glPrioritizeTexturesxOES"
-
--- glProgramBinary -------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramBinary.xhtml OpenGL 4.x>.
-glProgramBinary
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLenum -- ^ @binaryFormat@.
-  -> Ptr a -- ^ @binary@ pointing to @length@ elements of type @a@.
-  -> GLsizei -- ^ @length@.
-  -> m ()
-glProgramBinary v1 v2 v3 v4 = liftIO $ dyn620 ptr_glProgramBinary v1 v2 v3 v4
-
-{-# NOINLINE ptr_glProgramBinary #-}
-ptr_glProgramBinary :: FunPtr (GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
-ptr_glProgramBinary = unsafePerformIO $ getCommand "glProgramBinary"
 

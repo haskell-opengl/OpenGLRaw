@@ -96,6 +96,17 @@ gl_AMD_draw_buffers_blend :: Bool
 gl_AMD_draw_buffers_blend = member "GL_AMD_draw_buffers_blend" extensions
 {-# NOINLINE gl_AMD_draw_buffers_blend #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/AMD/framebuffer_sample_positions.txt AMD_framebuffer_sample_positions> extension supported?
+glGetAMDFramebufferSamplePositions :: MonadIO m => m Bool
+glGetAMDFramebufferSamplePositions = getExtensions >>= (return . member "GL_AMD_framebuffer_sample_positions")
+
+-- | Is the <https://www.opengl.org/registry/specs/AMD/framebuffer_sample_positions.txt AMD_framebuffer_sample_positions> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetAMDFramebufferSamplePositions' in those cases instead.
+gl_AMD_framebuffer_sample_positions :: Bool
+gl_AMD_framebuffer_sample_positions = member "GL_AMD_framebuffer_sample_positions" extensions
+{-# NOINLINE gl_AMD_framebuffer_sample_positions #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/AMD/gpu_shader_half_float.txt AMD_gpu_shader_half_float> extension supported?
 glGetAMDGPUShaderHalfFloat :: MonadIO m => m Bool
 glGetAMDGPUShaderHalfFloat = getExtensions >>= (return . member "GL_AMD_gpu_shader_half_float")
@@ -876,6 +887,17 @@ glGetARBGetTextureSubImage = getExtensions >>= (return . member "GL_ARB_get_text
 gl_ARB_get_texture_sub_image :: Bool
 gl_ARB_get_texture_sub_image = member "GL_ARB_get_texture_sub_image" extensions
 {-# NOINLINE gl_ARB_get_texture_sub_image #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/ARB/gl_spirv.txt ARB_gl_spirv> extension supported?
+glGetARBGlSpirv :: MonadIO m => m Bool
+glGetARBGlSpirv = getExtensions >>= (return . member "GL_ARB_gl_spirv")
+
+-- | Is the <https://www.opengl.org/registry/specs/ARB/gl_spirv.txt ARB_gl_spirv> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetARBGlSpirv' in those cases instead.
+gl_ARB_gl_spirv :: Bool
+gl_ARB_gl_spirv = member "GL_ARB_gl_spirv" extensions
+{-# NOINLINE gl_ARB_gl_spirv #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/gpu_shader5.txt ARB_gpu_shader5> extension supported?
 glGetARBGPUShader5 :: MonadIO m => m Bool
@@ -2351,6 +2373,17 @@ gl_EXT_draw_range_elements :: Bool
 gl_EXT_draw_range_elements = member "GL_EXT_draw_range_elements" extensions
 {-# NOINLINE gl_EXT_draw_range_elements #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/EXT/external_buffer.txt EXT_external_buffer> extension supported?
+glGetEXTExternalBuffer :: MonadIO m => m Bool
+glGetEXTExternalBuffer = getExtensions >>= (return . member "GL_EXT_external_buffer")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/external_buffer.txt EXT_external_buffer> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTExternalBuffer' in those cases instead.
+gl_EXT_external_buffer :: Bool
+gl_EXT_external_buffer = member "GL_EXT_external_buffer" extensions
+{-# NOINLINE gl_EXT_external_buffer #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/EXT/fog_coord.txt EXT_fog_coord> extension supported?
 glGetEXTFogCoord :: MonadIO m => m Bool
 glGetEXTFogCoord = getExtensions >>= (return . member "GL_EXT_fog_coord")
@@ -2504,6 +2537,39 @@ glGetEXTLightTexture = getExtensions >>= (return . member "GL_EXT_light_texture"
 gl_EXT_light_texture :: Bool
 gl_EXT_light_texture = member "GL_EXT_light_texture" extensions
 {-# NOINLINE gl_EXT_light_texture #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/memory_object.txt EXT_memory_object> extension supported?
+glGetEXTMemoryObject :: MonadIO m => m Bool
+glGetEXTMemoryObject = getExtensions >>= (return . member "GL_EXT_memory_object")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/memory_object.txt EXT_memory_object> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTMemoryObject' in those cases instead.
+gl_EXT_memory_object :: Bool
+gl_EXT_memory_object = member "GL_EXT_memory_object" extensions
+{-# NOINLINE gl_EXT_memory_object #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/memory_object_fd.txt EXT_memory_object_fd> extension supported?
+glGetEXTMemoryObjectFd :: MonadIO m => m Bool
+glGetEXTMemoryObjectFd = getExtensions >>= (return . member "GL_EXT_memory_object_fd")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/memory_object_fd.txt EXT_memory_object_fd> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTMemoryObjectFd' in those cases instead.
+gl_EXT_memory_object_fd :: Bool
+gl_EXT_memory_object_fd = member "GL_EXT_memory_object_fd" extensions
+{-# NOINLINE gl_EXT_memory_object_fd #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/memory_object_win32.txt EXT_memory_object_win32> extension supported?
+glGetEXTMemoryObjectWin32 :: MonadIO m => m Bool
+glGetEXTMemoryObjectWin32 = getExtensions >>= (return . member "GL_EXT_memory_object_win32")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/memory_object_win32.txt EXT_memory_object_win32> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTMemoryObjectWin32' in those cases instead.
+gl_EXT_memory_object_win32 :: Bool
+gl_EXT_memory_object_win32 = member "GL_EXT_memory_object_win32" extensions
+{-# NOINLINE gl_EXT_memory_object_win32 #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/multi_draw_arrays.txt EXT_multi_draw_arrays> extension supported?
 glGetEXTMultiDrawArrays :: MonadIO m => m Bool
@@ -2669,6 +2735,39 @@ glGetEXTSecondaryColor = getExtensions >>= (return . member "GL_EXT_secondary_co
 gl_EXT_secondary_color :: Bool
 gl_EXT_secondary_color = member "GL_EXT_secondary_color" extensions
 {-# NOINLINE gl_EXT_secondary_color #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/semaphore.txt EXT_semaphore> extension supported?
+glGetEXTSemaphore :: MonadIO m => m Bool
+glGetEXTSemaphore = getExtensions >>= (return . member "GL_EXT_semaphore")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/semaphore.txt EXT_semaphore> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTSemaphore' in those cases instead.
+gl_EXT_semaphore :: Bool
+gl_EXT_semaphore = member "GL_EXT_semaphore" extensions
+{-# NOINLINE gl_EXT_semaphore #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/semaphore_fd.txt EXT_semaphore_fd> extension supported?
+glGetEXTSemaphoreFd :: MonadIO m => m Bool
+glGetEXTSemaphoreFd = getExtensions >>= (return . member "GL_EXT_semaphore_fd")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/semaphore_fd.txt EXT_semaphore_fd> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTSemaphoreFd' in those cases instead.
+gl_EXT_semaphore_fd :: Bool
+gl_EXT_semaphore_fd = member "GL_EXT_semaphore_fd" extensions
+{-# NOINLINE gl_EXT_semaphore_fd #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/semaphore_win32.txt EXT_semaphore_win32> extension supported?
+glGetEXTSemaphoreWin32 :: MonadIO m => m Bool
+glGetEXTSemaphoreWin32 = getExtensions >>= (return . member "GL_EXT_semaphore_win32")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/semaphore_win32.txt EXT_semaphore_win32> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTSemaphoreWin32' in those cases instead.
+gl_EXT_semaphore_win32 :: Bool
+gl_EXT_semaphore_win32 = member "GL_EXT_semaphore_win32" extensions
+{-# NOINLINE gl_EXT_semaphore_win32 #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/EXT/separate_shader_objects.txt EXT_separate_shader_objects> extension supported?
 glGetEXTSeparateShaderObjects :: MonadIO m => m Bool
@@ -3077,6 +3176,17 @@ gl_EXT_vertex_weighting :: Bool
 gl_EXT_vertex_weighting = member "GL_EXT_vertex_weighting" extensions
 {-# NOINLINE gl_EXT_vertex_weighting #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/EXT/win32_keyed_mutex.txt EXT_win32_keyed_mutex> extension supported?
+glGetEXTWin32KeyedMutex :: MonadIO m => m Bool
+glGetEXTWin32KeyedMutex = getExtensions >>= (return . member "GL_EXT_win32_keyed_mutex")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/win32_keyed_mutex.txt EXT_win32_keyed_mutex> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTWin32KeyedMutex' in those cases instead.
+gl_EXT_win32_keyed_mutex :: Bool
+gl_EXT_win32_keyed_mutex = member "GL_EXT_win32_keyed_mutex" extensions
+{-# NOINLINE gl_EXT_win32_keyed_mutex #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/EXT/window_rectangles.txt EXT_window_rectangles> extension supported?
 glGetEXTWindowRectangles :: MonadIO m => m Bool
 glGetEXTWindowRectangles = getExtensions >>= (return . member "GL_EXT_window_rectangles")
@@ -3462,6 +3572,17 @@ gl_MESAX_texture_stack :: Bool
 gl_MESAX_texture_stack = member "GL_MESAX_texture_stack" extensions
 {-# NOINLINE gl_MESAX_texture_stack #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/alpha_to_coverage_dither_control.txt NV_alpha_to_coverage_dither_control> extension supported?
+glGetNVAlphaToCoverageDitherControl :: MonadIO m => m Bool
+glGetNVAlphaToCoverageDitherControl = getExtensions >>= (return . member "GL_NV_alpha_to_coverage_dither_control")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/alpha_to_coverage_dither_control.txt NV_alpha_to_coverage_dither_control> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVAlphaToCoverageDitherControl' in those cases instead.
+gl_NV_alpha_to_coverage_dither_control :: Bool
+gl_NV_alpha_to_coverage_dither_control = member "GL_NV_alpha_to_coverage_dither_control" extensions
+{-# NOINLINE gl_NV_alpha_to_coverage_dither_control #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NV/bindless_multi_draw_indirect.txt NV_bindless_multi_draw_indirect> extension supported?
 glGetNVBindlessMultiDrawIndirect :: MonadIO m => m Bool
 glGetNVBindlessMultiDrawIndirect = getExtensions >>= (return . member "GL_NV_bindless_multi_draw_indirect")
@@ -3660,6 +3781,17 @@ gl_NV_draw_texture :: Bool
 gl_NV_draw_texture = member "GL_NV_draw_texture" extensions
 {-# NOINLINE gl_NV_draw_texture #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/draw_vulkan_image.txt NV_draw_vulkan_image> extension supported?
+glGetNVDrawVulkanImage :: MonadIO m => m Bool
+glGetNVDrawVulkanImage = getExtensions >>= (return . member "GL_NV_draw_vulkan_image")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/draw_vulkan_image.txt NV_draw_vulkan_image> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVDrawVulkanImage' in those cases instead.
+gl_NV_draw_vulkan_image :: Bool
+gl_NV_draw_vulkan_image = member "GL_NV_draw_vulkan_image" extensions
+{-# NOINLINE gl_NV_draw_vulkan_image #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NV/evaluators.txt NV_evaluators> extension supported?
 glGetNVEvaluators :: MonadIO m => m Bool
 glGetNVEvaluators = getExtensions >>= (return . member "GL_NV_evaluators")
@@ -3791,6 +3923,17 @@ glGetNVGeometryProgram4 = getExtensions >>= (return . member "GL_NV_geometry_pro
 gl_NV_geometry_program4 :: Bool
 gl_NV_geometry_program4 = member "GL_NV_geometry_program4" extensions
 {-# NOINLINE gl_NV_geometry_program4 #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/gpu_multicast.txt NV_gpu_multicast> extension supported?
+glGetNVGPUMulticast :: MonadIO m => m Bool
+glGetNVGPUMulticast = getExtensions >>= (return . member "GL_NV_gpu_multicast")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/gpu_multicast.txt NV_gpu_multicast> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVGPUMulticast' in those cases instead.
+gl_NV_gpu_multicast :: Bool
+gl_NV_gpu_multicast = member "GL_NV_gpu_multicast" extensions
+{-# NOINLINE gl_NV_gpu_multicast #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/gpu_program4.txt NV_gpu_program4> extension supported?
 glGetNVGPUProgram4 :: MonadIO m => m Bool
@@ -4352,6 +4495,17 @@ glGetNVXGPUMemoryInfo = getExtensions >>= (return . member "GL_NVX_gpu_memory_in
 gl_NVX_gpu_memory_info :: Bool
 gl_NVX_gpu_memory_info = member "GL_NVX_gpu_memory_info" extensions
 {-# NOINLINE gl_NVX_gpu_memory_info #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NVX/linked_gpu_multicast.txt NVX_linked_gpu_multicast> extension supported?
+glGetNVXLinkedGPUMulticast :: MonadIO m => m Bool
+glGetNVXLinkedGPUMulticast = getExtensions >>= (return . member "GL_NVX_linked_gpu_multicast")
+
+-- | Is the <https://www.opengl.org/registry/specs/NVX/linked_gpu_multicast.txt NVX_linked_gpu_multicast> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVXLinkedGPUMulticast' in those cases instead.
+gl_NVX_linked_gpu_multicast :: Bool
+gl_NVX_linked_gpu_multicast = member "GL_NVX_linked_gpu_multicast" extensions
+{-# NOINLINE gl_NVX_linked_gpu_multicast #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_byte_coordinates.txt OES_byte_coordinates> extension supported?
 glGetOESByteCoordinates :: MonadIO m => m Bool

@@ -283,6 +283,14 @@ pattern GL_ALPHA_TEST_REF = 0x0BC2 :: GLenum
 
 pattern GL_ALPHA_TEST_REF_QCOM = 0x0BC2 :: GLenum
 
+pattern GL_ALPHA_TO_COVERAGE_DITHER_DEFAULT_NV = 0x934D :: GLenum
+
+pattern GL_ALPHA_TO_COVERAGE_DITHER_DISABLE_NV = 0x934F :: GLenum
+
+pattern GL_ALPHA_TO_COVERAGE_DITHER_ENABLE_NV = 0x934E :: GLenum
+
+pattern GL_ALPHA_TO_COVERAGE_DITHER_MODE_NV = 0x92BF :: GLenum
+
 pattern GL_ALREADY_SIGNALED = 0x911A :: GLenum
 
 pattern GL_ALREADY_SIGNALED_APPLE = 0x911A :: GLenum
@@ -1953,6 +1961,8 @@ pattern GL_CURRENT_WEIGHT_ARB = 0x86A8 :: GLenum
 
 pattern GL_CW = 0x0900 :: GLenum
 
+pattern GL_D3D12_FENCE_VALUE_EXT = 0x9595 :: GLenum
+
 pattern GL_DARKEN = 0x9297 :: GLenum
 
 pattern GL_DARKEN_KHR = 0x9297 :: GLenum
@@ -2147,6 +2157,8 @@ pattern GL_DECR_WRAP_EXT = 0x8508 :: GLenum
 
 pattern GL_DECR_WRAP_OES = 0x8508 :: GLenum
 
+pattern GL_DEDICATED_MEMORY_OBJECT_EXT = 0x9581 :: GLenum
+
 pattern GL_DEFORMATIONS_MASK_SGIX = 0x8196 :: GLenum
 
 pattern GL_DELETE_STATUS = 0x8B80 :: GLenum
@@ -2304,6 +2316,12 @@ pattern GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS = 0x809C :: GLenum
 pattern GL_DETAIL_TEXTURE_LEVEL_SGIS = 0x809A :: GLenum
 
 pattern GL_DETAIL_TEXTURE_MODE_SGIS = 0x809B :: GLenum
+
+pattern GL_DEVICE_LUID_EXT = 0x9599 :: GLenum
+
+pattern GL_DEVICE_NODE_MASK_EXT = 0x959A :: GLenum
+
+pattern GL_DEVICE_UUID_EXT = 0x9597 :: GLenum
 
 pattern GL_DIFFERENCE = 0x929E :: GLenum
 
@@ -2648,6 +2666,8 @@ pattern GL_DRAW_INDIRECT_UNIFIED_NV = 0x8F40 :: GLenum
 pattern GL_DRAW_PIXELS_APPLE = 0x8A0A :: GLenum
 
 pattern GL_DRAW_PIXEL_TOKEN = 0x0705 :: GLenum
+
+pattern GL_DRIVER_UUID_EXT = 0x9598 :: GLenum
 
 pattern GL_DSDT8_MAG8_INTENSITY8_NV = 0x870B :: GLenum
 
@@ -3199,6 +3219,10 @@ pattern GL_FORMAT_SUBSAMPLE_244_244_OML = 0x8983 :: GLenum
 
 pattern GL_FORMAT_SUBSAMPLE_24_24_OML = 0x8982 :: GLenum
 
+pattern GL_FOVEATION_ENABLE_BIT_QCOM = 0x00000001 :: GLbitfield
+
+pattern GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM = 0x00000002 :: GLbitfield
+
 pattern GL_FRACTIONAL_EVEN = 0x8E7C :: GLenum
 
 pattern GL_FRACTIONAL_EVEN_EXT = 0x8E7C :: GLenum
@@ -3426,6 +3450,8 @@ pattern GL_FRAMEBUFFER_DEFAULT_SAMPLES = 0x9313 :: GLenum
 pattern GL_FRAMEBUFFER_DEFAULT_WIDTH = 0x9310 :: GLenum
 
 pattern GL_FRAMEBUFFER_EXT = 0x8D40 :: GLenum
+
+pattern GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM = 0x96A2 :: GLenum
 
 pattern GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT = 0x8CD6 :: GLenum
 
@@ -3734,6 +3760,22 @@ pattern GL_HALF_FLOAT_ARB = 0x140B :: GLenum
 pattern GL_HALF_FLOAT_NV = 0x140B :: GLenum
 
 pattern GL_HALF_FLOAT_OES = 0x8D61 :: GLenum
+
+pattern GL_HANDLE_TYPE_D3D11_IMAGE_EXT = 0x958B :: GLenum
+
+pattern GL_HANDLE_TYPE_D3D11_IMAGE_KMT_EXT = 0x958C :: GLenum
+
+pattern GL_HANDLE_TYPE_D3D12_FENCE_EXT = 0x9594 :: GLenum
+
+pattern GL_HANDLE_TYPE_D3D12_RESOURCE_EXT = 0x958A :: GLenum
+
+pattern GL_HANDLE_TYPE_D3D12_TILEPOOL_EXT = 0x9589 :: GLenum
+
+pattern GL_HANDLE_TYPE_OPAQUE_FD_EXT = 0x9586 :: GLenum
+
+pattern GL_HANDLE_TYPE_OPAQUE_WIN32_EXT = 0x9587 :: GLenum
+
+pattern GL_HANDLE_TYPE_OPAQUE_WIN32_KMT_EXT = 0x9588 :: GLenum
 
 pattern GL_HARDLIGHT = 0x929B :: GLenum
 
@@ -4377,11 +4419,25 @@ pattern GL_LAYER_PROVOKING_VERTEX_EXT = 0x825E :: GLenum
 
 pattern GL_LAYER_PROVOKING_VERTEX_OES = 0x825E :: GLenum
 
+pattern GL_LAYOUT_COLOR_ATTACHMENT_EXT = 0x958E :: GLenum
+
 pattern GL_LAYOUT_DEFAULT_INTEL = 0 :: GLenum
+
+pattern GL_LAYOUT_DEPTH_STENCIL_ATTACHMENT_EXT = 0x958F :: GLenum
+
+pattern GL_LAYOUT_DEPTH_STENCIL_READ_ONLY_EXT = 0x9590 :: GLenum
+
+pattern GL_LAYOUT_GENERAL_EXT = 0x958D :: GLenum
 
 pattern GL_LAYOUT_LINEAR_CPU_CACHED_INTEL = 2 :: GLenum
 
 pattern GL_LAYOUT_LINEAR_INTEL = 1 :: GLenum
+
+pattern GL_LAYOUT_SHADER_READ_ONLY_EXT = 0x9591 :: GLenum
+
+pattern GL_LAYOUT_TRANSFER_DST_EXT = 0x9593 :: GLenum
+
+pattern GL_LAYOUT_TRANSFER_SRC_EXT = 0x9592 :: GLenum
 
 pattern GL_LEFT = 0x0406 :: GLenum
 
@@ -4390,6 +4446,8 @@ pattern GL_LEQUAL = 0x0203 :: GLenum
 pattern GL_LERP_ATI = 0x8969 :: GLenum
 
 pattern GL_LESS = 0x0201 :: GLenum
+
+pattern GL_LGPU_SEPARATE_STORAGE_BIT_NVX = 0x0800 :: GLbitfield
 
 pattern GL_LIGHT0 = 0x4000 :: GLenum
 
@@ -4462,6 +4520,8 @@ pattern GL_LINEAR_SHARPEN_ALPHA_SGIS = 0x80AE :: GLenum
 pattern GL_LINEAR_SHARPEN_COLOR_SGIS = 0x80AF :: GLenum
 
 pattern GL_LINEAR_SHARPEN_SGIS = 0x80AD :: GLenum
+
+pattern GL_LINEAR_TILING_EXT = 0x9585 :: GLenum
 
 pattern GL_LINES = 0x0001 :: GLenum
 
@@ -4566,6 +4626,8 @@ pattern GL_LOW_INT = 0x8DF3 :: GLenum
 pattern GL_LO_BIAS_NV = 0x8715 :: GLenum
 
 pattern GL_LO_SCALE_NV = 0x870F :: GLenum
+
+pattern GL_LUID_SIZE_EXT = 8 :: GLenum
 
 pattern GL_LUMINANCE = 0x1909 :: GLenum
 
@@ -5361,6 +5423,8 @@ pattern GL_MAX_LABEL_LENGTH_KHR = 0x82E8 :: GLenum
 
 pattern GL_MAX_LAYERS = 0x8281 :: GLenum
 
+pattern GL_MAX_LGPU_GPUS_NVX = 0x92BA :: GLenum
+
 pattern GL_MAX_LIGHTS = 0x0D31 :: GLenum
 
 pattern GL_MAX_LIST_NESTING = 0x0B31 :: GLenum
@@ -6043,6 +6107,10 @@ pattern GL_MOV_ATI = 0x8961 :: GLenum
 
 pattern GL_MULT = 0x0103 :: GLenum
 
+pattern GL_MULTICAST_GPUS_NV = 0x92BA :: GLenum
+
+pattern GL_MULTICAST_PROGRAMMABLE_SAMPLE_LOCATION_NV = 0x9549 :: GLenum
+
 pattern GL_MULTIPLY = 0x9294 :: GLenum
 
 pattern GL_MULTIPLY_KHR = 0x9294 :: GLenum
@@ -6233,6 +6301,8 @@ pattern GL_NUM_COMPRESSED_TEXTURE_FORMATS = 0x86A2 :: GLenum
 
 pattern GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB = 0x86A2 :: GLenum
 
+pattern GL_NUM_DEVICE_UUIDS_EXT = 0x9596 :: GLenum
+
 pattern GL_NUM_DOWNSAMPLE_SCALES_IMG = 0x913D :: GLenum
 
 pattern GL_NUM_EXTENSIONS = 0x821D :: GLenum
@@ -6268,6 +6338,8 @@ pattern GL_NUM_SHADING_LANGUAGE_VERSIONS = 0x82E9 :: GLenum
 pattern GL_NUM_SPARSE_LEVELS_ARB = 0x91AA :: GLenum
 
 pattern GL_NUM_SPARSE_LEVELS_EXT = 0x91AA :: GLenum
+
+pattern GL_NUM_TILING_TYPES_EXT = 0x9582 :: GLenum
 
 pattern GL_NUM_VIDEO_CAPTURE_STREAMS_NV = 0x9024 :: GLenum
 
@@ -6434,6 +6506,8 @@ pattern GL_OPERAND2_RGB_EXT = 0x8592 :: GLenum
 pattern GL_OPERAND3_ALPHA_NV = 0x859B :: GLenum
 
 pattern GL_OPERAND3_RGB_NV = 0x8593 :: GLenum
+
+pattern GL_OPTIMAL_TILING_EXT = 0x9584 :: GLenum
 
 pattern GL_OP_ADD_EXT = 0x8787 :: GLenum
 
@@ -6824,6 +6898,10 @@ pattern GL_PERFQUERY_WAIT_INTEL = 0x83FB :: GLenum
 pattern GL_PERSPECTIVE_CORRECTION_HINT = 0x0C50 :: GLenum
 
 pattern GL_PERTURB_EXT = 0x85AE :: GLenum
+
+pattern GL_PER_GPU_STORAGE_BIT_NV = 0x0800 :: GLbitfield
+
+pattern GL_PER_GPU_STORAGE_NV = 0x9548 :: GLenum
 
 pattern GL_PER_STAGE_CONSTANTS_NV = 0x8535 :: GLenum
 
@@ -7380,6 +7458,8 @@ pattern GL_PROJECTION_MATRIX = 0x0BA7 :: GLenum
 pattern GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES = 0x898E :: GLenum
 
 pattern GL_PROJECTION_STACK_DEPTH = 0x0BA4 :: GLenum
+
+pattern GL_PROTECTED_MEMORY_OBJECT_EXT = 0x959B :: GLenum
 
 pattern GL_PROVOKING_VERTEX = 0x8E4F :: GLenum
 
@@ -7956,6 +8036,8 @@ pattern GL_RENDERBUFFER_WIDTH_OES = 0x8D42 :: GLenum
 pattern GL_RENDERER = 0x1F01 :: GLenum
 
 pattern GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM = 0x8FB3 :: GLenum
+
+pattern GL_RENDER_GPU_MASK_NV = 0x9558 :: GLenum
 
 pattern GL_RENDER_MODE = 0x0C40 :: GLenum
 
@@ -8609,6 +8691,8 @@ pattern GL_SHADER_BINARY_DMP = 0x9250 :: GLenum
 
 pattern GL_SHADER_BINARY_FORMATS = 0x8DF8 :: GLenum
 
+pattern GL_SHADER_BINARY_FORMAT_SPIR_V_ARB = 0x9551 :: GLenum
+
 pattern GL_SHADER_BINARY_VIV = 0x8FC4 :: GLenum
 
 pattern GL_SHADER_COMPILER = 0x8DFA :: GLenum
@@ -8864,6 +8948,8 @@ pattern GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT = 0x91A9 :: GLenum
 pattern GL_SPECULAR = 0x1202 :: GLenum
 
 pattern GL_SPHERE_MAP = 0x2402 :: GLenum
+
+pattern GL_SPIR_V_BINARY_ARB = 0x9552 :: GLenum
 
 pattern GL_SPOT_CUTOFF = 0x1206 :: GLenum
 
@@ -9513,6 +9599,8 @@ pattern GL_TEXTURE_ALPHA_TYPE_ARB = 0x8C13 :: GLenum
 
 pattern GL_TEXTURE_APPLICATION_MODE_EXT = 0x834F :: GLenum
 
+pattern GL_TEXTURE_ASTC_DECODE_PRECISION_EXT = 0x8F69 :: GLenum
+
 pattern GL_TEXTURE_BASE_LEVEL = 0x813C :: GLenum
 
 pattern GL_TEXTURE_BASE_LEVEL_SGIS = 0x813C :: GLenum
@@ -10077,6 +10165,8 @@ pattern GL_TEXTURE_TARGET = 0x1006 :: GLenum
 
 pattern GL_TEXTURE_TARGET_QCOM = 0x8BDA :: GLenum
 
+pattern GL_TEXTURE_TILING_EXT = 0x9580 :: GLenum
+
 pattern GL_TEXTURE_TOO_LARGE_EXT = 0x8065 :: GLenum
 
 pattern GL_TEXTURE_TYPE_QCOM = 0x8BD7 :: GLenum
@@ -10132,6 +10222,8 @@ pattern GL_TEXTURE_WRAP_S = 0x2802 :: GLenum
 pattern GL_TEXTURE_WRAP_T = 0x2803 :: GLenum
 
 pattern GL_TEXT_FRAGMENT_SHADER_ATI = 0x8200 :: GLenum
+
+pattern GL_TILING_TYPES_EXT = 0x9583 :: GLenum
 
 pattern GL_TIMEOUT_EXPIRED = 0x911B :: GLenum
 
@@ -10746,6 +10838,8 @@ pattern GL_USE_MISSING_GLYPH_NV = 0x90AA :: GLenum
 pattern GL_UTF16_NV = 0x909B :: GLenum
 
 pattern GL_UTF8_NV = 0x909A :: GLenum
+
+pattern GL_UUID_SIZE_EXT = 16 :: GLenum
 
 pattern GL_V2F = 0x2A20 :: GLenum
 
