@@ -1,3 +1,3 @@
 [submodule "RegistryProcessor/OpenGL-Registry"]
 	path = RegistryProcessor/OpenGL-Registry
-	url = https://github.com/svenpanne/OpenGL-Registry
+	url = https://github.com/KhronosGroup/OpenGL-Registry
