@@ -9,8 +9,8 @@ maintainer: Sven Panne <svenpanne@gmail.com>
 category: Graphics
 build-type: Simple
 extra-source-files:
-  OpenGL-Registry/gl.xml
-  OpenGL-Registry/registry.rnc
+  OpenGL-Registry/xml/gl.xml
+  OpenGL-Registry/xml/registry.rnc
 cabal-version: >=1.10
 
 executable RegistryProcessor
