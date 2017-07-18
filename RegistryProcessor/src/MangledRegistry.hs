@@ -101,7 +101,7 @@ toType t = Type {
   typeAPI = API `fmap` R.typeAPI t,
   typeRequires = R.TypeName `fmap` R.typeRequires t }
 
-data Group = Group {
+newtype Group = Group {
   groupEnums :: [EnumName]
   } deriving (Eq, Ord, Show)
 
@@ -157,9 +157,7 @@ toCommand c = Command {
     -- Make sure that we don't reference pointers to structs, they are mapped to
     -- 'Ptr a' etc., anyway (glCreateSyncFromCLeventARB is an exmaple for this).
     filter (not . ("struct " `L.isPrefixOf`) . R.unTypeName) $
-    DM.catMaybes $
-    map (R.protoPtype . R.paramProto) $
-    (pr : ps),
+    DM.mapMaybe (R.protoPtype . R.paramProto) (pr : ps),
   vecEquiv = (CommandName . R.unName) `fmap` R.commandVecEquiv c,
   alias = (CommandName . R.unName) `fmap` R.commandAlias c }
   where pr = R.Param { R.paramLen = Nothing, R.paramProto = R.commandProto c }
@@ -167,7 +165,7 @@ toCommand c = Command {
         varSupply = map (R.TypeName . showIntUsingDigits ['a' .. 'z']) [0 ..]
         (resTy:paramTys) = snd $ L.mapAccumL toSignatureElement varSupply (pr : ps)
 
-showIntUsingDigits :: [Char] -> Int -> String
+showIntUsingDigits :: String -> Int -> String
 showIntUsingDigits ds x = N.showIntAtBase (length ds) (ds !!) x ""
 
 commandName :: Command -> CommandName
@@ -196,14 +194,14 @@ toSignatureElement varSupply param =
   either error (\(b,n) ->
     renameIf (b == "()" && n > 0)
              varSupply
-             (SignatureElement {
+             SignatureElement {
                 arrayLength = R.paramLen param,
                 belongsToGroup = GroupName `fmap` R.protoGroup proto,
                 numPointer = n,
                 baseType = R.TypeName b,
-                signatureElementName = R.protoName proto})) $
+                signatureElementName = R.protoName proto}) $
   D.parse $
-  L.intercalate " " $
+  unwords $
   map ($ proto) [
     R.protoText1,
     maybe "" R.unTypeName . R.protoPtype,

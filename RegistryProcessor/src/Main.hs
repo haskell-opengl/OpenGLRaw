@@ -111,7 +111,7 @@ printGroups api registry = do
       -- is very naive about what is the canonical name and what is an alias.
       CM.forM_ es $ \e -> do
         let same = L.sort [ f | f <- es, enumValue e == enumValue f ]
-        CM.when (e == head same) $ do
+        CM.when (e == head same) $
           hRender h $ Comment ("* " ++ linkToToken e ++
             (case tail same of
                 [] -> ""
@@ -274,7 +274,7 @@ extensionModules api registry =
   ]
   where suppProfs = latestProfiles api
         isProfileDependent mods = any (`S.member` allProfileNames) (mentionedProfileNames mods)
-        mentionedProfileNames mods = DM.catMaybes . map modificationProfile $ mods
+        mentionedProfileNames = DM.mapMaybe modificationProfile
         allProfileNames = S.fromList . DM.catMaybes $ suppProfs
 
 -- We only consider non-empty supported extensions/modifications for the given API.
@@ -283,7 +283,7 @@ supportedExtensions api registry =
   [ nameAndMods
   | ext <- extensions registry
   , api `supports` extensionSupported ext
-  , nameAndMods@(_,(_:_)) <- [nameAndModifications ext] ]
+  , nameAndMods@(_, _:_) <- [nameAndModifications ext] ]
   where nameAndModifications :: Extension -> (ExtensionName, [Modification])
         nameAndModifications e =
           (extensionName e,
@@ -351,11 +351,11 @@ printExtensionSupport extModules = do
           extString = joinWords [ extensionNameAPI extName
                                 , extensionNameCategory extName
                                  , extensionNameName extName ]
-      SI.hPutStrLn h $ ""
+      SI.hPutStrLn h ""
       hRender h $ Comment ("| Is the " ++ extensionHyperlink extName ++ " extension supported?")
       SI.hPutStrLn h $ predNameMonad ++ " :: MonadIO m => m Bool"
       SI.hPutStrLn h $ predNameMonad ++ " = getExtensions >>= (return . member " ++ show extString ++ ")"
-      SI.hPutStrLn h $ ""
+      SI.hPutStrLn h ""
       hRender h $ Comment ("| Is the " ++ extensionHyperlink extName ++ " extension supported?")
       hRender h $ Comment "Note that in the presence of multiple contexts with different capabilities,"
       hRender h $ Comment ("this might be wrong. Use '" ++ predNameMonad ++ "' in those cases instead.")
@@ -374,7 +374,7 @@ capitalize :: String -> String
 capitalize str = C.toUpper (head str) : map C.toLower (tail str)
 
 separate :: (a -> String) -> [a] -> String
-separate f = L.intercalate ",\n" . map ("  " ++) . map f
+separate f = L.intercalate ",\n" . map (("  " ++) . f)
 
 -- Note that we handle features just like extensions.
 printExtension :: [String] -> Maybe ExtensionName -> ExtensionParts -> IO ()
@@ -429,7 +429,7 @@ printTopLevel api extModules = do
       profToReExport = profileToReExport api
       lastComp = featureName (latestVersion api) profToReExport
       moduleNames = [ moduleNameFor [c] | c <- [ lastComp, "GetProcAddress" ] ++ mangledCategories ]
-      cmnt = [ Comment (L.intercalate " "
+      cmnt = [ Comment (unwords
                  [ "A convenience module, combining the latest"
                  , apiName api
                  , maybe "version" (\p -> unProfileName p ++ " profile") profToReExport
@@ -543,7 +543,7 @@ interfaceElementsFor mbProfile modifications =
         op Remove = S.delete
 
 lookup' :: (Ord k, Show k) => k -> M.Map k a -> a
-lookup' k m = M.findWithDefault (error ("unknown name " ++ show k)) k m
+lookup' k = M.findWithDefault (error ("unknown name " ++ show k)) k
 
 matches :: Eq a => a -> Maybe a -> Bool
 _ `matches` Nothing = True
@@ -561,22 +561,20 @@ showCommand api registry sigMap c =
   showString (P.render cmnt) .
 
   showString (name ++ "\n") .
-  showString ("  :: MonadIO m\n") .
+  showString "  :: MonadIO m\n" .
   showString ("  => " ++ signature True) .
   showString (name ++ args ++ " = liftIO $ " ++ dyn_name ++ " " ++ ptr_name ++ args ++ "\n\n") .
 
   showString ("{-# NOINLINE " ++ ptr_name ++ " #-}\n") .
   showString (ptr_name ++ " :: FunPtr (" ++ compactSignature ++ ")\n") .
-  showString (ptr_name ++ " = unsafePerformIO $ getCommand " ++ str_name ++ "\n") .
-
-  id $ ""
+  showString (ptr_name ++ " = unsafePerformIO $ getCommand " ++ str_name ++ "\n") $ ""
 
   where name = signatureElementName (resultType c)
         dyn_name = lookup' compactSignature sigMap
         ptr_name = "ptr_" ++ name
         str_name = show name
         compactSignature = signature False
-        signature withComment = showSignatureFromCommand registry c withComment
+        signature = showSignatureFromCommand registry c
         urls = M.findWithDefault [] (api, CommandName name) manPageURLs
         links = L.intercalate " or " (map renderURL urls)
         cmnt = case concat (man ++ ve ++ al) of

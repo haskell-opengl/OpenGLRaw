@@ -38,7 +38,7 @@ import Data.Maybe ( maybeToList )
 import Text.XML.HXT.Core
 
 parseRegistry :: String -> Either String Registry
-parseRegistry = head . (runLA $
+parseRegistry = head . runLA (
   xreadDoc >>>
   neg isXmlPi >>>
   removeAllWhiteSpace >>>
@@ -242,7 +242,7 @@ data Commands = Commands {
 
 xpCommands :: PU Commands
 xpCommands =
-  xpWrap (\(a,b) -> Commands a b
+  xpWrap (uncurry Commands
          ,\(Commands a b) -> (a,b)) $
   xpElem "commands" $
   xpPair
@@ -275,7 +275,7 @@ xpCommandTail :: PU (Maybe Name, Maybe Name, [GLX])
 xpCommandTail =
   xpWrapEither (\xs -> do a <- check "alias" [x | AliasElement x <- xs]
                           b <- check "vecequiv" [x | VecEquivElement x <- xs]
-                          c <- return [x | GLXElement x <- xs]
+                          let c = [x | GLXElement x <- xs]
                           return (a,b,c)
                ,\(a,b,c) -> map AliasElement (maybeToList a) ++
                             map VecEquivElement (maybeToList b) ++
@@ -472,7 +472,7 @@ xpInterfaceElement = xpAlt (fromEnum . interfaceElementKind) pus
               , xpIE InterfaceElementEnum "enum"
               , xpIE InterfaceElementCommand "command" ]
         xpIE ty el =
-          xpWrap (\(a,b) -> InterfaceElement ty a b
+          xpWrap (uncurry (InterfaceElement ty)
                  ,\(InterfaceElement _ a b) -> (a,b)) $
           xpElem el $
           xpPair

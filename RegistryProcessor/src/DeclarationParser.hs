@@ -23,7 +23,7 @@ parseDeclaration = do
   return (typeSpec, length pointers + a)
 
 optionalConst :: ReadP ()
-optionalConst = option' () (token "const" >> return ())
+optionalConst = option' () (void (token "const"))
 
 parseTypeSpecifier :: ReadP String
 parseTypeSpecifier = choice' [
