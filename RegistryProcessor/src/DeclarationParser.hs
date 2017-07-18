@@ -1,6 +1,8 @@
 -- A very simple-minded parser for C declarations of the following syntax:
 --   "const"? type-specifier ("*" "const"?)* identifier ("[" number "]")?
-module DeclarationParser ( parse ) where
+module DeclarationParser
+  ( parse
+  ) where
 
 import Control.Monad
 import Data.Char
@@ -26,51 +28,56 @@ optionalConst :: ReadP ()
 optionalConst = option' () (void (token "const"))
 
 parseTypeSpecifier :: ReadP String
-parseTypeSpecifier = choice' [
-  token "void" >> return "()",
-  token "float" >> return "CFloat",
-  token "double" >> return "CDouble",
-  token "int32_t" >> return "Int32",
-  token "int64_t" >> return "Int64",
-  do c <- option' "CChar" (token "signed" >> return "CSChar")
-     choice' [
-       token "char" >> return c,
-       token "short" >> return "CShort",
-       token "int" >> return "CInt",
-       token "long" >> choice' [token "long" >> return "CLLong",
-                                return "CLong"]],
-  do _ <- token "unsigned"
-     choice' [
-       token "char" >> return "CUChar",
-       token "short" >> return "CUShort",
-       token "int" >> return "CUInt",
-       token "long" >> choice' [token "long" >> return "CULLong",
-                                return "CULong"]],
-  token "struct" >> parseIdentifier >> return "()",  -- Hmmm...
-  token "GLvoid" >> return "()",  -- glGetPerfQueryDataINTEL still mentions this
-  parseIdentifier ]
+parseTypeSpecifier =
+  choice'
+    [ token "void" >> return "()"
+    , token "float" >> return "CFloat"
+    , token "double" >> return "CDouble"
+    , token "int32_t" >> return "Int32"
+    , token "int64_t" >> return "Int64"
+    , do c <- option' "CChar" (token "signed" >> return "CSChar")
+         choice'
+           [ token "char" >> return c
+           , token "short" >> return "CShort"
+           , token "int" >> return "CInt"
+           , token "long" >>
+             choice' [token "long" >> return "CLLong", return "CLong"]
+           ]
+    , do _ <- token "unsigned"
+         choice'
+           [ token "char" >> return "CUChar"
+           , token "short" >> return "CUShort"
+           , token "int" >> return "CUInt"
+           , token "long" >>
+             choice' [token "long" >> return "CULLong", return "CULong"]
+           ]
+    , token "struct" >> parseIdentifier >> return "()" -- Hmmm...
+    , token "GLvoid" >> return "()" -- glGetPerfQueryDataINTEL still mentions this
+    , parseIdentifier
+    ]
 
 parseIdentifier :: ReadP String
 parseIdentifier = do
   skipSpaces
   x <- satisfy (\c -> isAlpha c || c == '_')
-  xs <- munch (\c ->isAlphaNum c || c == '_')
-  return (x:xs)
+  xs <- munch (\c -> isAlphaNum c || c == '_')
+  return (x : xs)
 
 parseArray :: ReadP Int
-parseArray = choice' [
-  do _ <- token "["
-     skipSpaces
-     _ <- munch1 isDigit
-     _ <- token "]"
-     return 1,
-  return 0 ]
+parseArray =
+  choice'
+    [ do _ <- token "["
+         skipSpaces
+         _ <- munch1 isDigit
+         _ <- token "]"
+         return 1
+    , return 0
+    ]
 
 token :: String -> ReadP String
 token s = skipSpaces >> string s
 
 -- deterministic versions
-
 choice' :: [ReadP a] -> ReadP a
 choice' = foldr (<++) pfail
 
