@@ -136,7 +136,7 @@ printGroups api registry = do
           es = getGroupEnums api registry g
       hRender h $ Comment ""
       hRender h $ Comment ("=== #" ++ ugn ++ "# " ++ ugn)
-      hRender h $ Comment (groupHeader es)
+      hRender h $ Comment (groupHeader gn es)
       hRender h $ Comment ""
       -- TODO: Improve the alias computation below. It takes quadratic time and
       -- is very naive about what is the canonical name and what is an alias.
@@ -175,16 +175,33 @@ getGroupEnums api registry g =
   , api `matches` enumAPI e
   ]
 
-groupHeader :: [Enum'] -> String
-groupHeader es =
-  case sortUnique (map enumType es)
+groupHeader :: GroupName -> [Enum'] -> String
+groupHeader gn es =
+  case sortUnique (map enumTypeWithFix es)
   -- There are 2 empty groups: DataType and FfdMaskSGIX.
         of
     [] -> "There are no values defined for this enumeration group."
     [t]
       | isMask t -> "A bitwise combination of several of the following values:"
       | otherwise -> "One of the following values:"
-    tys -> error $ "Contradicting enumerant types " ++ show tys
+    tys ->
+      error $
+      "Contradicting enumerant types " ++
+      L.intercalate " and " (map unTypeName tys) ++
+      " in group " ++
+      unGroupName gn ++
+      ":\n" ++
+      unlines
+        [ "  " ++ unEnumName (enumName e) ++ " :: " ++ unTypeName (enumType e)
+        | e <- es
+        ]
+  -- NV_path_rendering screws up typing: It uses GL_NONE as a bitfield, and this
+  -- leads to a collision in the PathFontStyle group. :-/
+  where
+    enumTypeWithFix e
+      | gn == GroupName "PathFontStyle" && enumName e == EnumName "GL_NONE" =
+        TypeName "GLbitfield"
+      | otherwise = enumType e
 
 -- Calulate a map from compact signature to short names.
 signatureMap :: Registry -> M.Map String String
