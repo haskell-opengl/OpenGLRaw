@@ -15,6 +15,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F05 (
+  glCopyTextureSubImage3D,
   glCopyTextureSubImage3DEXT,
   glCoverFillPathInstancedNV,
   glCoverFillPathNV,
@@ -92,6 +93,7 @@ module Graphics.GL.Functions.F05 (
   glDeleteQueries,
   glDeleteQueriesARB,
   glDeleteQueriesEXT,
+  glDeleteQueryResourceTagNV,
   glDeleteRenderbuffers,
   glDeleteRenderbuffersEXT,
   glDeleteRenderbuffersOES,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F05 (
   glDepthBoundsEXT,
   glDepthBoundsdNV,
   glDepthFunc,
-  glDepthMask,
-  glDepthRange,
-  glDepthRangeArrayfvNV
+  glDepthMask
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,27 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glCopyTextureSubImage3D -----------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml OpenGL 4.x>.
+glCopyTextureSubImage3D
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLint -- ^ @level@.
+  -> GLint -- ^ @xoffset@.
+  -> GLint -- ^ @yoffset@.
+  -> GLint -- ^ @zoffset@.
+  -> GLint -- ^ @x@.
+  -> GLint -- ^ @y@.
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> m ()
+glCopyTextureSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn191 ptr_glCopyTextureSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9
+
+{-# NOINLINE ptr_glCopyTextureSubImage3D #-}
+ptr_glCopyTextureSubImage3D :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> IO ())
+ptr_glCopyTextureSubImage3D = unsafePerformIO $ getCommand "glCopyTextureSubImage3D"
 
 -- glCopyTextureSubImage3DEXT --------------------------------------------------
 
@@ -149,11 +170,11 @@ ptr_glCopyTextureSubImage3DEXT = unsafePerformIO $ getCommand "glCopyTextureSubI
 glCoverFillPathInstancedNV
   :: MonadIO m
   => GLsizei -- ^ @numPaths@.
-  -> GLenum -- ^ @pathNameType@ of type @PathElementType@.
+  -> GLenum -- ^ @pathNameType@ of type [PathElementType](Graphics-GL-Groups.html#PathElementType).
   -> Ptr a -- ^ @paths@ pointing to @COMPSIZE(numPaths,pathNameType,paths)@ elements of type @PathElement@.
   -> GLuint -- ^ @pathBase@ of type @Path@.
-  -> GLenum -- ^ @coverMode@ of type @PathCoverMode@.
-  -> GLenum -- ^ @transformType@ of type @PathTransformType@.
+  -> GLenum -- ^ @coverMode@ of type [PathCoverMode](Graphics-GL-Groups.html#PathCoverMode).
+  -> GLenum -- ^ @transformType@ of type [PathTransformType](Graphics-GL-Groups.html#PathTransformType).
   -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(numPaths,transformType)@ elements of type @GLfloat@.
   -> m ()
 glCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn193 ptr_glCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7
@@ -167,7 +188,7 @@ ptr_glCoverFillPathInstancedNV = unsafePerformIO $ getCommand "glCoverFillPathIn
 glCoverFillPathNV
   :: MonadIO m
   => GLuint -- ^ @path@ of type @Path@.
-  -> GLenum -- ^ @coverMode@ of type @PathCoverMode@.
+  -> GLenum -- ^ @coverMode@ of type [PathCoverMode](Graphics-GL-Groups.html#PathCoverMode).
   -> m ()
 glCoverFillPathNV v1 v2 = liftIO $ dyn16 ptr_glCoverFillPathNV v1 v2
 
@@ -180,11 +201,11 @@ ptr_glCoverFillPathNV = unsafePerformIO $ getCommand "glCoverFillPathNV"
 glCoverStrokePathInstancedNV
   :: MonadIO m
   => GLsizei -- ^ @numPaths@.
-  -> GLenum -- ^ @pathNameType@ of type @PathElementType@.
+  -> GLenum -- ^ @pathNameType@ of type [PathElementType](Graphics-GL-Groups.html#PathElementType).
   -> Ptr a -- ^ @paths@ pointing to @COMPSIZE(numPaths,pathNameType,paths)@ elements of type @PathElement@.
   -> GLuint -- ^ @pathBase@ of type @Path@.
-  -> GLenum -- ^ @coverMode@ of type @PathCoverMode@.
-  -> GLenum -- ^ @transformType@ of type @PathTransformType@.
+  -> GLenum -- ^ @coverMode@ of type [PathCoverMode](Graphics-GL-Groups.html#PathCoverMode).
+  -> GLenum -- ^ @transformType@ of type [PathTransformType](Graphics-GL-Groups.html#PathTransformType).
   -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(numPaths,transformType)@ elements of type @GLfloat@.
   -> m ()
 glCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn193 ptr_glCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7
@@ -198,7 +219,7 @@ ptr_glCoverStrokePathInstancedNV = unsafePerformIO $ getCommand "glCoverStrokePa
 glCoverStrokePathNV
   :: MonadIO m
   => GLuint -- ^ @path@ of type @Path@.
-  -> GLenum -- ^ @coverMode@ of type @PathCoverMode@.
+  -> GLenum -- ^ @coverMode@ of type [PathCoverMode](Graphics-GL-Groups.html#PathCoverMode).
   -> m ()
 glCoverStrokePathNV v1 v2 = liftIO $ dyn16 ptr_glCoverStrokePathNV v1 v2
 
@@ -235,7 +256,7 @@ ptr_glCoverageModulationNV = unsafePerformIO $ getCommand "glCoverageModulationN
 glCoverageModulationTableNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLfloat -- ^ @v@.
+  -> Ptr GLfloat -- ^ @v@ pointing to @n@ elements of type @GLfloat@.
   -> m ()
 glCoverageModulationTableNV v1 v2 = liftIO $ dyn195 ptr_glCoverageModulationTableNV v1 v2
 
@@ -261,7 +282,7 @@ ptr_glCoverageOperationNV = unsafePerformIO $ getCommand "glCoverageOperationNV"
 glCreateBuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @buffers@.
+  -> Ptr GLuint -- ^ @buffers@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateBuffers v1 v2 = liftIO $ dyn196 ptr_glCreateBuffers v1 v2
 
@@ -274,7 +295,7 @@ ptr_glCreateBuffers = unsafePerformIO $ getCommand "glCreateBuffers"
 glCreateCommandListsNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @lists@.
+  -> Ptr GLuint -- ^ @lists@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateCommandListsNV v1 v2 = liftIO $ dyn196 ptr_glCreateCommandListsNV v1 v2
 
@@ -288,7 +309,7 @@ ptr_glCreateCommandListsNV = unsafePerformIO $ getCommand "glCreateCommandListsN
 glCreateFramebuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @framebuffers@.
+  -> Ptr GLuint -- ^ @framebuffers@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateFramebuffers v1 v2 = liftIO $ dyn196 ptr_glCreateFramebuffers v1 v2
 
@@ -352,7 +373,7 @@ ptr_glCreateProgramObjectARB = unsafePerformIO $ getCommand "glCreateProgramObje
 glCreateProgramPipelines
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @pipelines@.
+  -> Ptr GLuint -- ^ @pipelines@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateProgramPipelines v1 v2 = liftIO $ dyn196 ptr_glCreateProgramPipelines v1 v2
 
@@ -365,9 +386,9 @@ ptr_glCreateProgramPipelines = unsafePerformIO $ getCommand "glCreateProgramPipe
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateQueries.xhtml OpenGL 4.x>.
 glCreateQueries
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [QueryTarget](Graphics-GL-Groups.html#QueryTarget).
   -> GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @ids@.
+  -> Ptr GLuint -- ^ @ids@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateQueries v1 v2 v3 = liftIO $ dyn200 ptr_glCreateQueries v1 v2 v3
 
@@ -381,7 +402,7 @@ ptr_glCreateQueries = unsafePerformIO $ getCommand "glCreateQueries"
 glCreateRenderbuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @renderbuffers@.
+  -> Ptr GLuint -- ^ @renderbuffers@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateRenderbuffers v1 v2 = liftIO $ dyn196 ptr_glCreateRenderbuffers v1 v2
 
@@ -395,7 +416,7 @@ ptr_glCreateRenderbuffers = unsafePerformIO $ getCommand "glCreateRenderbuffers"
 glCreateSamplers
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @samplers@.
+  -> Ptr GLuint -- ^ @samplers@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateSamplers v1 v2 = liftIO $ dyn196 ptr_glCreateSamplers v1 v2
 
@@ -408,7 +429,7 @@ ptr_glCreateSamplers = unsafePerformIO $ getCommand "glCreateSamplers"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glCreateShader.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glCreateShader.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCreateShader.xhtml OpenGL 4.x>.
 glCreateShader
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ShaderType](Graphics-GL-Groups.html#ShaderType).
   -> m GLuint
 glCreateShader v1 = liftIO $ dyn31 ptr_glCreateShader v1
 
@@ -421,7 +442,7 @@ ptr_glCreateShader = unsafePerformIO $ getCommand "glCreateShader"
 -- | This command is an alias for 'glCreateShader'.
 glCreateShaderObjectARB
   :: MonadIO m
-  => GLenum -- ^ @shaderType@.
+  => GLenum -- ^ @shaderType@ of type [ShaderType](Graphics-GL-Groups.html#ShaderType).
   -> m GLhandleARB -- ^ of type @handleARB@.
 glCreateShaderObjectARB v1 = liftIO $ dyn201 ptr_glCreateShaderObjectARB v1
 
@@ -433,7 +454,7 @@ ptr_glCreateShaderObjectARB = unsafePerformIO $ getCommand "glCreateShaderObject
 
 glCreateShaderProgramEXT
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ShaderType](Graphics-GL-Groups.html#ShaderType).
   -> Ptr GLchar -- ^ @string@.
   -> m GLuint
 glCreateShaderProgramEXT v1 v2 = liftIO $ dyn202 ptr_glCreateShaderProgramEXT v1 v2
@@ -447,7 +468,7 @@ ptr_glCreateShaderProgramEXT = unsafePerformIO $ getCommand "glCreateShaderProgr
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateShaderProgram.xhtml OpenGL 4.x>.
 glCreateShaderProgramv
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ShaderType](Graphics-GL-Groups.html#ShaderType).
   -> GLsizei -- ^ @count@.
   -> Ptr (Ptr GLchar) -- ^ @strings@ pointing to @count@ elements of type @Ptr GLchar@.
   -> m GLuint
@@ -461,7 +482,7 @@ ptr_glCreateShaderProgramv = unsafePerformIO $ getCommand "glCreateShaderProgram
 
 glCreateShaderProgramvEXT
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ShaderType](Graphics-GL-Groups.html#ShaderType).
   -> GLsizei -- ^ @count@.
   -> Ptr (Ptr GLchar) -- ^ @strings@ pointing to @count@ elements of type @Ptr GLchar@.
   -> m GLuint
@@ -476,7 +497,7 @@ ptr_glCreateShaderProgramvEXT = unsafePerformIO $ getCommand "glCreateShaderProg
 glCreateStatesNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @states@.
+  -> Ptr GLuint -- ^ @states@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateStatesNV v1 v2 = liftIO $ dyn196 ptr_glCreateStatesNV v1 v2
 
@@ -503,9 +524,9 @@ ptr_glCreateSyncFromCLeventARB = unsafePerformIO $ getCommand "glCreateSyncFromC
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCreateTextures.xhtml OpenGL 4.x>.
 glCreateTextures
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @textures@.
+  -> Ptr GLuint -- ^ @textures@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateTextures v1 v2 v3 = liftIO $ dyn200 ptr_glCreateTextures v1 v2 v3
 
@@ -519,7 +540,7 @@ ptr_glCreateTextures = unsafePerformIO $ getCommand "glCreateTextures"
 glCreateTransformFeedbacks
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @ids@.
+  -> Ptr GLuint -- ^ @ids@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateTransformFeedbacks v1 v2 = liftIO $ dyn196 ptr_glCreateTransformFeedbacks v1 v2
 
@@ -533,7 +554,7 @@ ptr_glCreateTransformFeedbacks = unsafePerformIO $ getCommand "glCreateTransform
 glCreateVertexArrays
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @arrays@.
+  -> Ptr GLuint -- ^ @arrays@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glCreateVertexArrays v1 v2 = liftIO $ dyn196 ptr_glCreateVertexArrays v1 v2
 
@@ -664,9 +685,9 @@ ptr_glDebugMessageCallbackKHR = unsafePerformIO $ getCommand "glDebugMessageCall
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageControl.xhtml OpenGL 4.x>.
 glDebugMessageControl
   :: MonadIO m
-  => GLenum -- ^ @source@.
-  -> GLenum -- ^ @type@.
-  -> GLenum -- ^ @severity@.
+  => GLenum -- ^ @source@ of type [DebugSource](Graphics-GL-Groups.html#DebugSource).
+  -> GLenum -- ^ @type@ of type [DebugType](Graphics-GL-Groups.html#DebugType).
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @ids@ pointing to @count@ elements of type @GLuint@.
   -> GLboolean -- ^ @enabled@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
@@ -682,9 +703,9 @@ ptr_glDebugMessageControl = unsafePerformIO $ getCommand "glDebugMessageControl"
 -- | This command is an alias for 'glDebugMessageControl'.
 glDebugMessageControlARB
   :: MonadIO m
-  => GLenum -- ^ @source@.
-  -> GLenum -- ^ @type@.
-  -> GLenum -- ^ @severity@.
+  => GLenum -- ^ @source@ of type [DebugSource](Graphics-GL-Groups.html#DebugSource).
+  -> GLenum -- ^ @type@ of type [DebugType](Graphics-GL-Groups.html#DebugType).
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @ids@ pointing to @count@ elements of type @GLuint@.
   -> GLboolean -- ^ @enabled@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
@@ -700,9 +721,9 @@ ptr_glDebugMessageControlARB = unsafePerformIO $ getCommand "glDebugMessageContr
 -- | This command is an alias for 'glDebugMessageControl'.
 glDebugMessageControlKHR
   :: MonadIO m
-  => GLenum -- ^ @source@.
-  -> GLenum -- ^ @type@.
-  -> GLenum -- ^ @severity@.
+  => GLenum -- ^ @source@ of type [DebugSource](Graphics-GL-Groups.html#DebugSource).
+  -> GLenum -- ^ @type@ of type [DebugType](Graphics-GL-Groups.html#DebugType).
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @ids@.
   -> GLboolean -- ^ @enabled@.
@@ -718,7 +739,7 @@ ptr_glDebugMessageControlKHR = unsafePerformIO $ getCommand "glDebugMessageContr
 glDebugMessageEnableAMD
   :: MonadIO m
   => GLenum -- ^ @category@.
-  -> GLenum -- ^ @severity@.
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @ids@ pointing to @count@ elements of type @GLuint@.
   -> GLboolean -- ^ @enabled@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
@@ -734,10 +755,10 @@ ptr_glDebugMessageEnableAMD = unsafePerformIO $ getCommand "glDebugMessageEnable
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glDebugMessageInsert.xhtml OpenGL 4.x>.
 glDebugMessageInsert
   :: MonadIO m
-  => GLenum -- ^ @source@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @source@ of type [DebugSource](Graphics-GL-Groups.html#DebugSource).
+  -> GLenum -- ^ @type@ of type [DebugType](Graphics-GL-Groups.html#DebugType).
   -> GLuint -- ^ @id@.
-  -> GLenum -- ^ @severity@.
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLsizei -- ^ @length@.
   -> Ptr GLchar -- ^ @buf@ pointing to @COMPSIZE(buf,length)@ elements of type @GLchar@.
   -> m ()
@@ -752,7 +773,7 @@ ptr_glDebugMessageInsert = unsafePerformIO $ getCommand "glDebugMessageInsert"
 glDebugMessageInsertAMD
   :: MonadIO m
   => GLenum -- ^ @category@.
-  -> GLenum -- ^ @severity@.
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLuint -- ^ @id@.
   -> GLsizei -- ^ @length@.
   -> Ptr GLchar -- ^ @buf@ pointing to @length@ elements of type @GLchar@.
@@ -768,10 +789,10 @@ ptr_glDebugMessageInsertAMD = unsafePerformIO $ getCommand "glDebugMessageInsert
 -- | This command is an alias for 'glDebugMessageInsert'.
 glDebugMessageInsertARB
   :: MonadIO m
-  => GLenum -- ^ @source@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @source@ of type [DebugSource](Graphics-GL-Groups.html#DebugSource).
+  -> GLenum -- ^ @type@ of type [DebugType](Graphics-GL-Groups.html#DebugType).
   -> GLuint -- ^ @id@.
-  -> GLenum -- ^ @severity@.
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLsizei -- ^ @length@.
   -> Ptr GLchar -- ^ @buf@ pointing to @length@ elements of type @GLchar@.
   -> m ()
@@ -786,10 +807,10 @@ ptr_glDebugMessageInsertARB = unsafePerformIO $ getCommand "glDebugMessageInsert
 -- | This command is an alias for 'glDebugMessageInsert'.
 glDebugMessageInsertKHR
   :: MonadIO m
-  => GLenum -- ^ @source@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @source@ of type [DebugSource](Graphics-GL-Groups.html#DebugSource).
+  -> GLenum -- ^ @type@ of type [DebugType](Graphics-GL-Groups.html#DebugType).
   -> GLuint -- ^ @id@.
-  -> GLenum -- ^ @severity@.
+  -> GLenum -- ^ @severity@ of type [DebugSeverity](Graphics-GL-Groups.html#DebugSeverity).
   -> GLsizei -- ^ @length@.
   -> Ptr GLchar -- ^ @buf@.
   -> m ()
@@ -907,7 +928,7 @@ ptr_glDeleteBuffersARB = unsafePerformIO $ getCommand "glDeleteBuffersARB"
 glDeleteCommandListsNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @lists@.
+  -> Ptr GLuint -- ^ @lists@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glDeleteCommandListsNV v1 v2 = liftIO $ dyn196 ptr_glDeleteCommandListsNV v1 v2
 
@@ -1219,6 +1240,19 @@ glDeleteQueriesEXT v1 v2 = liftIO $ dyn196 ptr_glDeleteQueriesEXT v1 v2
 ptr_glDeleteQueriesEXT :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
 ptr_glDeleteQueriesEXT = unsafePerformIO $ getCommand "glDeleteQueriesEXT"
 
+-- glDeleteQueryResourceTagNV --------------------------------------------------
+
+glDeleteQueryResourceTagNV
+  :: MonadIO m
+  => GLsizei -- ^ @n@.
+  -> Ptr GLint -- ^ @tagIds@ pointing to @n@ elements of type @GLint@.
+  -> m ()
+glDeleteQueryResourceTagNV v1 v2 = liftIO $ dyn218 ptr_glDeleteQueryResourceTagNV v1 v2
+
+{-# NOINLINE ptr_glDeleteQueryResourceTagNV #-}
+ptr_glDeleteQueryResourceTagNV :: FunPtr (GLsizei -> Ptr GLint -> IO ())
+ptr_glDeleteQueryResourceTagNV = unsafePerformIO $ getCommand "glDeleteQueryResourceTagNV"
+
 -- glDeleteRenderbuffers -------------------------------------------------------
 
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteRenderbuffers.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDeleteRenderbuffers.xhtml OpenGL 4.x>.
@@ -1279,7 +1313,7 @@ ptr_glDeleteSamplers = unsafePerformIO $ getCommand "glDeleteSamplers"
 glDeleteSemaphoresEXT
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @semaphores@ pointing to @count@ elements of type @GLuint@.
+  -> Ptr GLuint -- ^ @semaphores@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glDeleteSemaphoresEXT v1 v2 = liftIO $ dyn196 ptr_glDeleteSemaphoresEXT v1 v2
 
@@ -1305,7 +1339,7 @@ ptr_glDeleteShader = unsafePerformIO $ getCommand "glDeleteShader"
 glDeleteStatesNV
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @states@.
+  -> Ptr GLuint -- ^ @states@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glDeleteStatesNV v1 v2 = liftIO $ dyn196 ptr_glDeleteStatesNV v1 v2
 
@@ -1320,7 +1354,7 @@ glDeleteSync
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
   -> m ()
-glDeleteSync v1 = liftIO $ dyn218 ptr_glDeleteSync v1
+glDeleteSync v1 = liftIO $ dyn219 ptr_glDeleteSync v1
 
 {-# NOINLINE ptr_glDeleteSync #-}
 ptr_glDeleteSync :: FunPtr (GLsync -> IO ())
@@ -1333,7 +1367,7 @@ glDeleteSyncAPPLE
   :: MonadIO m
   => GLsync -- ^ @sync@.
   -> m ()
-glDeleteSyncAPPLE v1 = liftIO $ dyn218 ptr_glDeleteSyncAPPLE v1
+glDeleteSyncAPPLE v1 = liftIO $ dyn219 ptr_glDeleteSyncAPPLE v1
 
 {-# NOINLINE ptr_glDeleteSyncAPPLE #-}
 ptr_glDeleteSyncAPPLE :: FunPtr (GLsync -> IO ())
@@ -1455,7 +1489,7 @@ glDepthBoundsEXT
   => GLclampd -- ^ @zmin@ of type @ClampedFloat64@.
   -> GLclampd -- ^ @zmax@ of type @ClampedFloat64@.
   -> m ()
-glDepthBoundsEXT v1 v2 = liftIO $ dyn219 ptr_glDepthBoundsEXT v1 v2
+glDepthBoundsEXT v1 v2 = liftIO $ dyn220 ptr_glDepthBoundsEXT v1 v2
 
 {-# NOINLINE ptr_glDepthBoundsEXT #-}
 ptr_glDepthBoundsEXT :: FunPtr (GLclampd -> GLclampd -> IO ())
@@ -1468,7 +1502,7 @@ glDepthBoundsdNV
   => GLdouble -- ^ @zmin@.
   -> GLdouble -- ^ @zmax@.
   -> m ()
-glDepthBoundsdNV v1 v2 = liftIO $ dyn220 ptr_glDepthBoundsdNV v1 v2
+glDepthBoundsdNV v1 v2 = liftIO $ dyn221 ptr_glDepthBoundsdNV v1 v2
 
 {-# NOINLINE ptr_glDepthBoundsdNV #-}
 ptr_glDepthBoundsdNV :: FunPtr (GLdouble -> GLdouble -> IO ())
@@ -1499,32 +1533,4 @@ glDepthMask v1 = liftIO $ dyn194 ptr_glDepthMask v1
 {-# NOINLINE ptr_glDepthMask #-}
 ptr_glDepthMask :: FunPtr (GLboolean -> IO ())
 ptr_glDepthMask = unsafePerformIO $ getCommand "glDepthMask"
-
--- glDepthRange ----------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthRange.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml OpenGL 4.x>.
-glDepthRange
-  :: MonadIO m
-  => GLdouble -- ^ @near@.
-  -> GLdouble -- ^ @far@.
-  -> m ()
-glDepthRange v1 v2 = liftIO $ dyn220 ptr_glDepthRange v1 v2
-
-{-# NOINLINE ptr_glDepthRange #-}
-ptr_glDepthRange :: FunPtr (GLdouble -> GLdouble -> IO ())
-ptr_glDepthRange = unsafePerformIO $ getCommand "glDepthRange"
-
--- glDepthRangeArrayfvNV -------------------------------------------------------
-
-glDepthRangeArrayfvNV
-  :: MonadIO m
-  => GLuint -- ^ @first@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLfloat -- ^ @v@.
-  -> m ()
-glDepthRangeArrayfvNV v1 v2 v3 = liftIO $ dyn221 ptr_glDepthRangeArrayfvNV v1 v2 v3
-
-{-# NOINLINE ptr_glDepthRangeArrayfvNV #-}
-ptr_glDepthRangeArrayfvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLfloat -> IO ())
-ptr_glDepthRangeArrayfvNV = unsafePerformIO $ getCommand "glDepthRangeArrayfvNV"
 

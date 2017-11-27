@@ -81,6 +81,7 @@ module Graphics.GL.ARB (
   module Graphics.GL.ARB.PixelBufferObject,
   module Graphics.GL.ARB.PointParameters,
   module Graphics.GL.ARB.PointSprite,
+  module Graphics.GL.ARB.PolygonOffsetClamp,
   module Graphics.GL.ARB.ProgramInterfaceQuery,
   module Graphics.GL.ARB.ProvokingVertex,
   module Graphics.GL.ARB.QueryBufferObject,
@@ -103,6 +104,7 @@ module Graphics.GL.ARB (
   module Graphics.GL.ARB.ShadowAmbient,
   module Graphics.GL.ARB.SparseBuffer,
   module Graphics.GL.ARB.SparseTexture,
+  module Graphics.GL.ARB.SpirvExtensions,
   module Graphics.GL.ARB.StencilTexturing,
   module Graphics.GL.ARB.Sync,
   module Graphics.GL.ARB.TessellationShader,
@@ -118,6 +120,7 @@ module Graphics.GL.ARB (
   module Graphics.GL.ARB.TextureCubeMapArray,
   module Graphics.GL.ARB.TextureEnvCombine,
   module Graphics.GL.ARB.TextureEnvDot3,
+  module Graphics.GL.ARB.TextureFilterAnisotropic,
   module Graphics.GL.ARB.TextureFilterMinmax,
   module Graphics.GL.ARB.TextureFloat,
   module Graphics.GL.ARB.TextureGather,
@@ -222,6 +225,7 @@ import Graphics.GL.ARB.PipelineStatisticsQuery
 import Graphics.GL.ARB.PixelBufferObject
 import Graphics.GL.ARB.PointParameters
 import Graphics.GL.ARB.PointSprite
+import Graphics.GL.ARB.PolygonOffsetClamp
 import Graphics.GL.ARB.ProgramInterfaceQuery
 import Graphics.GL.ARB.ProvokingVertex
 import Graphics.GL.ARB.QueryBufferObject
@@ -244,6 +248,7 @@ import Graphics.GL.ARB.Shadow
 import Graphics.GL.ARB.ShadowAmbient
 import Graphics.GL.ARB.SparseBuffer
 import Graphics.GL.ARB.SparseTexture
+import Graphics.GL.ARB.SpirvExtensions
 import Graphics.GL.ARB.StencilTexturing
 import Graphics.GL.ARB.Sync
 import Graphics.GL.ARB.TessellationShader
@@ -259,6 +264,7 @@ import Graphics.GL.ARB.TextureCubeMap
 import Graphics.GL.ARB.TextureCubeMapArray
 import Graphics.GL.ARB.TextureEnvCombine
 import Graphics.GL.ARB.TextureEnvDot3
+import Graphics.GL.ARB.TextureFilterAnisotropic
 import Graphics.GL.ARB.TextureFilterMinmax
 import Graphics.GL.ARB.TextureFloat
 import Graphics.GL.ARB.TextureGather

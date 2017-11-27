@@ -15,6 +15,16 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F33 (
+  glWindowPos3d,
+  glWindowPos3dARB,
+  glWindowPos3dMESA,
+  glWindowPos3dv,
+  glWindowPos3dvARB,
+  glWindowPos3dvMESA,
+  glWindowPos3f,
+  glWindowPos3fARB,
+  glWindowPos3fMESA,
+  glWindowPos3fv,
   glWindowPos3fvARB,
   glWindowPos3fvMESA,
   glWindowPos3i,
@@ -46,6 +56,148 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glWindowPos3d ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3dv'.
+glWindowPos3d
+  :: MonadIO m
+  => GLdouble -- ^ @x@ of type @CoordD@.
+  -> GLdouble -- ^ @y@ of type @CoordD@.
+  -> GLdouble -- ^ @z@ of type @CoordD@.
+  -> m ()
+glWindowPos3d v1 v2 v3 = liftIO $ dyn39 ptr_glWindowPos3d v1 v2 v3
+
+{-# NOINLINE ptr_glWindowPos3d #-}
+ptr_glWindowPos3d :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glWindowPos3d = unsafePerformIO $ getCommand "glWindowPos3d"
+
+-- glWindowPos3dARB ------------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos3dvARB'. This command is an alias for 'glWindowPos3d'.
+glWindowPos3dARB
+  :: MonadIO m
+  => GLdouble -- ^ @x@ of type @CoordD@.
+  -> GLdouble -- ^ @y@ of type @CoordD@.
+  -> GLdouble -- ^ @z@ of type @CoordD@.
+  -> m ()
+glWindowPos3dARB v1 v2 v3 = liftIO $ dyn39 ptr_glWindowPos3dARB v1 v2 v3
+
+{-# NOINLINE ptr_glWindowPos3dARB #-}
+ptr_glWindowPos3dARB :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glWindowPos3dARB = unsafePerformIO $ getCommand "glWindowPos3dARB"
+
+-- glWindowPos3dMESA -----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos3dvMESA'. This command is an alias for 'glWindowPos3d'.
+glWindowPos3dMESA
+  :: MonadIO m
+  => GLdouble -- ^ @x@ of type @CoordD@.
+  -> GLdouble -- ^ @y@ of type @CoordD@.
+  -> GLdouble -- ^ @z@ of type @CoordD@.
+  -> m ()
+glWindowPos3dMESA v1 v2 v3 = liftIO $ dyn39 ptr_glWindowPos3dMESA v1 v2 v3
+
+{-# NOINLINE ptr_glWindowPos3dMESA #-}
+ptr_glWindowPos3dMESA :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
+ptr_glWindowPos3dMESA = unsafePerformIO $ getCommand "glWindowPos3dMESA"
+
+-- glWindowPos3dv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
+glWindowPos3dv
+  :: MonadIO m
+  => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
+  -> m ()
+glWindowPos3dv v1 = liftIO $ dyn40 ptr_glWindowPos3dv v1
+
+{-# NOINLINE ptr_glWindowPos3dv #-}
+ptr_glWindowPos3dv :: FunPtr (Ptr GLdouble -> IO ())
+ptr_glWindowPos3dv = unsafePerformIO $ getCommand "glWindowPos3dv"
+
+-- glWindowPos3dvARB -----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos3dv'.
+glWindowPos3dvARB
+  :: MonadIO m
+  => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
+  -> m ()
+glWindowPos3dvARB v1 = liftIO $ dyn40 ptr_glWindowPos3dvARB v1
+
+{-# NOINLINE ptr_glWindowPos3dvARB #-}
+ptr_glWindowPos3dvARB :: FunPtr (Ptr GLdouble -> IO ())
+ptr_glWindowPos3dvARB = unsafePerformIO $ getCommand "glWindowPos3dvARB"
+
+-- glWindowPos3dvMESA ----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos3dv'.
+glWindowPos3dvMESA
+  :: MonadIO m
+  => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
+  -> m ()
+glWindowPos3dvMESA v1 = liftIO $ dyn40 ptr_glWindowPos3dvMESA v1
+
+{-# NOINLINE ptr_glWindowPos3dvMESA #-}
+ptr_glWindowPos3dvMESA :: FunPtr (Ptr GLdouble -> IO ())
+ptr_glWindowPos3dvMESA = unsafePerformIO $ getCommand "glWindowPos3dvMESA"
+
+-- glWindowPos3f ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>. The vector equivalent of this command is 'glWindowPos3fv'.
+glWindowPos3f
+  :: MonadIO m
+  => GLfloat -- ^ @x@ of type @CoordF@.
+  -> GLfloat -- ^ @y@ of type @CoordF@.
+  -> GLfloat -- ^ @z@ of type @CoordF@.
+  -> m ()
+glWindowPos3f v1 v2 v3 = liftIO $ dyn41 ptr_glWindowPos3f v1 v2 v3
+
+{-# NOINLINE ptr_glWindowPos3f #-}
+ptr_glWindowPos3f :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glWindowPos3f = unsafePerformIO $ getCommand "glWindowPos3f"
+
+-- glWindowPos3fARB ------------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos3fvARB'. This command is an alias for 'glWindowPos3f'.
+glWindowPos3fARB
+  :: MonadIO m
+  => GLfloat -- ^ @x@ of type @CoordF@.
+  -> GLfloat -- ^ @y@ of type @CoordF@.
+  -> GLfloat -- ^ @z@ of type @CoordF@.
+  -> m ()
+glWindowPos3fARB v1 v2 v3 = liftIO $ dyn41 ptr_glWindowPos3fARB v1 v2 v3
+
+{-# NOINLINE ptr_glWindowPos3fARB #-}
+ptr_glWindowPos3fARB :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glWindowPos3fARB = unsafePerformIO $ getCommand "glWindowPos3fARB"
+
+-- glWindowPos3fMESA -----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos3fvMESA'. This command is an alias for 'glWindowPos3f'.
+glWindowPos3fMESA
+  :: MonadIO m
+  => GLfloat -- ^ @x@ of type @CoordF@.
+  -> GLfloat -- ^ @y@ of type @CoordF@.
+  -> GLfloat -- ^ @z@ of type @CoordF@.
+  -> m ()
+glWindowPos3fMESA v1 v2 v3 = liftIO $ dyn41 ptr_glWindowPos3fMESA v1 v2 v3
+
+{-# NOINLINE ptr_glWindowPos3fMESA #-}
+ptr_glWindowPos3fMESA :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
+ptr_glWindowPos3fMESA = unsafePerformIO $ getCommand "glWindowPos3fMESA"
+
+-- glWindowPos3fv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
+glWindowPos3fv
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
+  -> m ()
+glWindowPos3fv v1 = liftIO $ dyn42 ptr_glWindowPos3fv v1
+
+{-# NOINLINE ptr_glWindowPos3fv #-}
+ptr_glWindowPos3fv :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glWindowPos3fv = unsafePerformIO $ getCommand "glWindowPos3fv"
 
 -- glWindowPos3fvARB -----------------------------------------------------------
 
@@ -361,7 +513,7 @@ glWindowRectanglesEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @box@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
   -> m ()
-glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn923 ptr_glWindowRectanglesEXT v1 v2 v3
+glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn924 ptr_glWindowRectanglesEXT v1 v2 v3
 
 {-# NOINLINE ptr_glWindowRectanglesEXT #-}
 ptr_glWindowRectanglesEXT :: FunPtr (GLenum -> GLsizei -> Ptr GLint -> IO ())
@@ -378,7 +530,7 @@ glWriteMaskEXT
   -> GLenum -- ^ @outZ@ of type @VertexShaderWriteMaskEXT@.
   -> GLenum -- ^ @outW@ of type @VertexShaderWriteMaskEXT@.
   -> m ()
-glWriteMaskEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn746 ptr_glWriteMaskEXT v1 v2 v3 v4 v5 v6
+glWriteMaskEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn747 ptr_glWriteMaskEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glWriteMaskEXT #-}
 ptr_glWriteMaskEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())

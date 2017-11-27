@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F16 (
+  glMakeTextureHandleResidentARB,
+  glMakeTextureHandleResidentNV,
+  glMap1d,
   glMap1f,
   glMap1xOES,
   glMap2d,
@@ -84,6 +87,7 @@ module Graphics.GL.Functions.F16 (
   glMatrixTranslatedEXT,
   glMatrixTranslatefEXT,
   glMaxShaderCompilerThreadsARB,
+  glMaxShaderCompilerThreadsKHR,
   glMemoryBarrier,
   glMemoryBarrierByRegion,
   glMemoryBarrierEXT,
@@ -108,13 +112,9 @@ module Graphics.GL.Functions.F16 (
   glMultiDrawArraysIndirectAMD,
   glMultiDrawArraysIndirectBindlessCountNV,
   glMultiDrawArraysIndirectBindlessNV,
+  glMultiDrawArraysIndirectCount,
   glMultiDrawArraysIndirectCountARB,
-  glMultiDrawArraysIndirectEXT,
-  glMultiDrawElementArrayAPPLE,
-  glMultiDrawElements,
-  glMultiDrawElementsBaseVertex,
-  glMultiDrawElementsBaseVertexEXT,
-  glMultiDrawElementsBaseVertexOES
+  glMultiDrawArraysIndirectEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,48 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glMakeTextureHandleResidentARB ----------------------------------------------
+
+glMakeTextureHandleResidentARB
+  :: MonadIO m
+  => GLuint64 -- ^ @handle@.
+  -> m ()
+glMakeTextureHandleResidentARB v1 = liftIO $ dyn508 ptr_glMakeTextureHandleResidentARB v1
+
+{-# NOINLINE ptr_glMakeTextureHandleResidentARB #-}
+ptr_glMakeTextureHandleResidentARB :: FunPtr (GLuint64 -> IO ())
+ptr_glMakeTextureHandleResidentARB = unsafePerformIO $ getCommand "glMakeTextureHandleResidentARB"
+
+-- glMakeTextureHandleResidentNV -----------------------------------------------
+
+glMakeTextureHandleResidentNV
+  :: MonadIO m
+  => GLuint64 -- ^ @handle@.
+  -> m ()
+glMakeTextureHandleResidentNV v1 = liftIO $ dyn508 ptr_glMakeTextureHandleResidentNV v1
+
+{-# NOINLINE ptr_glMakeTextureHandleResidentNV #-}
+ptr_glMakeTextureHandleResidentNV :: FunPtr (GLuint64 -> IO ())
+ptr_glMakeTextureHandleResidentNV = unsafePerformIO $ getCommand "glMakeTextureHandleResidentNV"
+
+-- glMap1d ---------------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml OpenGL 2.x>.
+glMap1d
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-GL-Groups.html#MapTarget).
+  -> GLdouble -- ^ @u1@ of type @CoordD@.
+  -> GLdouble -- ^ @u2@ of type @CoordD@.
+  -> GLint -- ^ @stride@.
+  -> GLint -- ^ @order@ of type @CheckedInt32@.
+  -> Ptr GLdouble -- ^ @points@ pointing to @COMPSIZE(target,stride,order)@ elements of type @CoordD@.
+  -> m ()
+glMap1d v1 v2 v3 v4 v5 v6 = liftIO $ dyn510 ptr_glMap1d v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glMap1d #-}
+ptr_glMap1d :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLint -> GLint -> Ptr GLdouble -> IO ())
+ptr_glMap1d = unsafePerformIO $ getCommand "glMap1d"
 
 -- glMap1f ---------------------------------------------------------------------
 
@@ -145,7 +187,7 @@ ptr_glMap1f = unsafePerformIO $ getCommand "glMap1f"
 
 glMap1xOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-GL-Groups.html#MapTarget).
   -> GLfixed -- ^ @u1@.
   -> GLfixed -- ^ @u2@.
   -> GLint -- ^ @stride@.
@@ -206,7 +248,7 @@ ptr_glMap2f = unsafePerformIO $ getCommand "glMap2f"
 
 glMap2xOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [MapTarget](Graphics-GL-Groups.html#MapTarget).
   -> GLfixed -- ^ @u1@.
   -> GLfixed -- ^ @u2@.
   -> GLint -- ^ @ustride@.
@@ -256,8 +298,8 @@ ptr_glMapBufferARB = unsafePerformIO $ getCommand "glMapBufferARB"
 -- | This command is an alias for 'glMapBuffer'.
 glMapBufferOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @access@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
+  -> GLenum -- ^ @access@ of type [BufferAccessARB](Graphics-GL-Groups.html#BufferAccessARB).
   -> m (Ptr a)
 glMapBufferOES v1 v2 = liftIO $ dyn516 ptr_glMapBufferOES v1 v2
 
@@ -273,7 +315,7 @@ glMapBufferRange
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
-  -> GLbitfield -- ^ @access@ of type @BufferAccessMask@.
+  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
   -> m (Ptr a)
 glMapBufferRange v1 v2 v3 v4 = liftIO $ dyn517 ptr_glMapBufferRange v1 v2 v3 v4
 
@@ -286,10 +328,10 @@ ptr_glMapBufferRange = unsafePerformIO $ getCommand "glMapBufferRange"
 -- | This command is an alias for 'glMapBufferRange'.
 glMapBufferRangeEXT
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@.
-  -> GLbitfield -- ^ @access@.
+  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
   -> m (Ptr a)
 glMapBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn517 ptr_glMapBufferRangeEXT v1 v2 v3 v4
 
@@ -419,7 +461,7 @@ ptr_glMapGrid2xOES = unsafePerformIO $ getCommand "glMapGrid2xOES"
 glMapNamedBuffer
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @access@.
+  -> GLenum -- ^ @access@ of type [BufferAccessARB](Graphics-GL-Groups.html#BufferAccessARB).
   -> m (Ptr a)
 glMapNamedBuffer v1 v2 = liftIO $ dyn525 ptr_glMapNamedBuffer v1 v2
 
@@ -432,7 +474,7 @@ ptr_glMapNamedBuffer = unsafePerformIO $ getCommand "glMapNamedBuffer"
 glMapNamedBufferEXT
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @access@ of type @VertexBufferObjectAccess@.
+  -> GLenum -- ^ @access@ of type [BufferAccessARB](Graphics-GL-Groups.html#BufferAccessARB).
   -> m (Ptr a)
 glMapNamedBufferEXT v1 v2 = liftIO $ dyn525 ptr_glMapNamedBufferEXT v1 v2
 
@@ -448,7 +490,7 @@ glMapNamedBufferRange
   => GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
-  -> GLbitfield -- ^ @access@.
+  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
   -> m (Ptr a)
 glMapNamedBufferRange v1 v2 v3 v4 = liftIO $ dyn526 ptr_glMapNamedBufferRange v1 v2 v3 v4
 
@@ -463,7 +505,7 @@ glMapNamedBufferRangeEXT
   => GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@.
-  -> GLbitfield -- ^ @access@ of type @BufferAccessMask@.
+  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
   -> m (Ptr a)
 glMapNamedBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn526 ptr_glMapNamedBufferRangeEXT v1 v2 v3 v4
 
@@ -671,8 +713,8 @@ ptr_glMaterialiv = unsafePerformIO $ getCommand "glMaterialiv"
 
 glMaterialx
   :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
   -> GLfixed -- ^ @param@.
   -> m ()
 glMaterialx v1 v2 v3 = liftIO $ dyn165 ptr_glMaterialx v1 v2 v3
@@ -685,8 +727,8 @@ ptr_glMaterialx = unsafePerformIO $ getCommand "glMaterialx"
 
 glMaterialxOES
   :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
   -> GLfixed -- ^ @param@.
   -> m ()
 glMaterialxOES v1 v2 v3 = liftIO $ dyn165 ptr_glMaterialxOES v1 v2 v3
@@ -699,8 +741,8 @@ ptr_glMaterialxOES = unsafePerformIO $ getCommand "glMaterialxOES"
 
 glMaterialxv
   :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
   -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
   -> m ()
 glMaterialxv v1 v2 v3 = liftIO $ dyn166 ptr_glMaterialxv v1 v2 v3
@@ -713,8 +755,8 @@ ptr_glMaterialxv = unsafePerformIO $ getCommand "glMaterialxv"
 
 glMaterialxvOES
   :: MonadIO m
-  => GLenum -- ^ @face@.
-  -> GLenum -- ^ @pname@.
+  => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
+  -> GLenum -- ^ @pname@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
   -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
   -> m ()
 glMaterialxvOES v1 v2 v3 = liftIO $ dyn166 ptr_glMaterialxvOES v1 v2 v3
@@ -761,7 +803,7 @@ ptr_glMatrixIndexPointerARB = unsafePerformIO $ getCommand "glMatrixIndexPointer
 glMatrixIndexPointerOES
   :: MonadIO m
   => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @type@ of type @MatrixIndexPointerTypeARB@.
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
@@ -1153,6 +1195,7 @@ ptr_glMatrixTranslatefEXT = unsafePerformIO $ getCommand "glMatrixTranslatefEXT"
 
 -- glMaxShaderCompilerThreadsARB -----------------------------------------------
 
+-- | This command is an alias for 'glMaxShaderCompilerThreadsKHR'.
 glMaxShaderCompilerThreadsARB
   :: MonadIO m
   => GLuint -- ^ @count@.
@@ -1163,12 +1206,24 @@ glMaxShaderCompilerThreadsARB v1 = liftIO $ dyn3 ptr_glMaxShaderCompilerThreadsA
 ptr_glMaxShaderCompilerThreadsARB :: FunPtr (GLuint -> IO ())
 ptr_glMaxShaderCompilerThreadsARB = unsafePerformIO $ getCommand "glMaxShaderCompilerThreadsARB"
 
+-- glMaxShaderCompilerThreadsKHR -----------------------------------------------
+
+glMaxShaderCompilerThreadsKHR
+  :: MonadIO m
+  => GLuint -- ^ @count@.
+  -> m ()
+glMaxShaderCompilerThreadsKHR v1 = liftIO $ dyn3 ptr_glMaxShaderCompilerThreadsKHR v1
+
+{-# NOINLINE ptr_glMaxShaderCompilerThreadsKHR #-}
+ptr_glMaxShaderCompilerThreadsKHR :: FunPtr (GLuint -> IO ())
+ptr_glMaxShaderCompilerThreadsKHR = unsafePerformIO $ getCommand "glMaxShaderCompilerThreadsKHR"
+
 -- glMemoryBarrier -------------------------------------------------------------
 
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMemoryBarrier.xhtml OpenGL 4.x>.
 glMemoryBarrier
   :: MonadIO m
-  => GLbitfield -- ^ @barriers@.
+  => GLbitfield -- ^ @barriers@ of type [MemoryBarrierMask](Graphics-GL-Groups.html#MemoryBarrierMask).
   -> m ()
 glMemoryBarrier v1 = liftIO $ dyn72 ptr_glMemoryBarrier v1
 
@@ -1181,7 +1236,7 @@ ptr_glMemoryBarrier = unsafePerformIO $ getCommand "glMemoryBarrier"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glMemoryBarrier.xhtml OpenGL 4.x>.
 glMemoryBarrierByRegion
   :: MonadIO m
-  => GLbitfield -- ^ @barriers@.
+  => GLbitfield -- ^ @barriers@ of type [MemoryBarrierMask](Graphics-GL-Groups.html#MemoryBarrierMask).
   -> m ()
 glMemoryBarrierByRegion v1 = liftIO $ dyn72 ptr_glMemoryBarrierByRegion v1
 
@@ -1194,7 +1249,7 @@ ptr_glMemoryBarrierByRegion = unsafePerformIO $ getCommand "glMemoryBarrierByReg
 -- | This command is an alias for 'glMemoryBarrier'.
 glMemoryBarrierEXT
   :: MonadIO m
-  => GLbitfield -- ^ @barriers@.
+  => GLbitfield -- ^ @barriers@ of type [MemoryBarrierMask](Graphics-GL-Groups.html#MemoryBarrierMask).
   -> m ()
 glMemoryBarrierEXT v1 = liftIO $ dyn72 ptr_glMemoryBarrierEXT v1
 
@@ -1210,7 +1265,7 @@ glMemoryObjectParameterivEXT
   -> GLenum -- ^ @pname@ of type [MemoryObjectParameterName](Graphics-GL-Groups.html#MemoryObjectParameterName).
   -> Ptr GLint -- ^ @params@.
   -> m ()
-glMemoryObjectParameterivEXT v1 v2 v3 = liftIO $ dyn341 ptr_glMemoryObjectParameterivEXT v1 v2 v3
+glMemoryObjectParameterivEXT v1 v2 v3 = liftIO $ dyn342 ptr_glMemoryObjectParameterivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glMemoryObjectParameterivEXT #-}
 ptr_glMemoryObjectParameterivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -1260,7 +1315,7 @@ ptr_glMinSampleShadingOES = unsafePerformIO $ getCommand "glMinSampleShadingOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMinmax.xml OpenGL 2.x>.
 glMinmax
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @MinmaxTarget@.
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-GL-Groups.html#MinmaxTargetEXT).
   -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLboolean -- ^ @sink@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
@@ -1496,12 +1551,29 @@ glMultiDrawArraysIndirectBindlessNV v1 v2 v3 v4 v5 = liftIO $ dyn545 ptr_glMulti
 ptr_glMultiDrawArraysIndirectBindlessNV :: FunPtr (GLenum -> Ptr a -> GLsizei -> GLsizei -> GLint -> IO ())
 ptr_glMultiDrawArraysIndirectBindlessNV = unsafePerformIO $ getCommand "glMultiDrawArraysIndirectBindlessNV"
 
+-- glMultiDrawArraysIndirectCount ----------------------------------------------
+
+glMultiDrawArraysIndirectCount
+  :: MonadIO m
+  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
+  -> Ptr a -- ^ @indirect@.
+  -> GLintptr -- ^ @drawcount@.
+  -> GLsizei -- ^ @maxdrawcount@.
+  -> GLsizei -- ^ @stride@.
+  -> m ()
+glMultiDrawArraysIndirectCount v1 v2 v3 v4 v5 = liftIO $ dyn546 ptr_glMultiDrawArraysIndirectCount v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glMultiDrawArraysIndirectCount #-}
+ptr_glMultiDrawArraysIndirectCount :: FunPtr (GLenum -> Ptr a -> GLintptr -> GLsizei -> GLsizei -> IO ())
+ptr_glMultiDrawArraysIndirectCount = unsafePerformIO $ getCommand "glMultiDrawArraysIndirectCount"
+
 -- glMultiDrawArraysIndirectCountARB -------------------------------------------
 
+-- | This command is an alias for 'glMultiDrawArraysIndirectCount'.
 glMultiDrawArraysIndirectCountARB
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> GLintptr -- ^ @indirect@.
+  -> Ptr a -- ^ @indirect@.
   -> GLintptr -- ^ @drawcount@.
   -> GLsizei -- ^ @maxdrawcount@.
   -> GLsizei -- ^ @stride@.
@@ -1509,7 +1581,7 @@ glMultiDrawArraysIndirectCountARB
 glMultiDrawArraysIndirectCountARB v1 v2 v3 v4 v5 = liftIO $ dyn546 ptr_glMultiDrawArraysIndirectCountARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirectCountARB #-}
-ptr_glMultiDrawArraysIndirectCountARB :: FunPtr (GLenum -> GLintptr -> GLintptr -> GLsizei -> GLsizei -> IO ())
+ptr_glMultiDrawArraysIndirectCountARB :: FunPtr (GLenum -> Ptr a -> GLintptr -> GLsizei -> GLsizei -> IO ())
 ptr_glMultiDrawArraysIndirectCountARB = unsafePerformIO $ getCommand "glMultiDrawArraysIndirectCountARB"
 
 -- glMultiDrawArraysIndirectEXT ------------------------------------------------
@@ -1527,90 +1599,4 @@ glMultiDrawArraysIndirectEXT v1 v2 v3 v4 = liftIO $ dyn543 ptr_glMultiDrawArrays
 {-# NOINLINE ptr_glMultiDrawArraysIndirectEXT #-}
 ptr_glMultiDrawArraysIndirectEXT :: FunPtr (GLenum -> Ptr a -> GLsizei -> GLsizei -> IO ())
 ptr_glMultiDrawArraysIndirectEXT = unsafePerformIO $ getCommand "glMultiDrawArraysIndirectEXT"
-
--- glMultiDrawElementArrayAPPLE ------------------------------------------------
-
-glMultiDrawElementArrayAPPLE
-  :: MonadIO m
-  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> Ptr GLint -- ^ @first@ pointing to @primcount@ elements of type @GLint@.
-  -> Ptr GLsizei -- ^ @count@ pointing to @primcount@ elements of type @GLsizei@.
-  -> GLsizei -- ^ @primcount@.
-  -> m ()
-glMultiDrawElementArrayAPPLE v1 v2 v3 v4 = liftIO $ dyn542 ptr_glMultiDrawElementArrayAPPLE v1 v2 v3 v4
-
-{-# NOINLINE ptr_glMultiDrawElementArrayAPPLE #-}
-ptr_glMultiDrawElementArrayAPPLE :: FunPtr (GLenum -> Ptr GLint -> Ptr GLsizei -> GLsizei -> IO ())
-ptr_glMultiDrawElementArrayAPPLE = unsafePerformIO $ getCommand "glMultiDrawElementArrayAPPLE"
-
--- glMultiDrawElements ---------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiDrawElements.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElements.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElements.xhtml OpenGL 4.x>.
-glMultiDrawElements
-  :: MonadIO m
-  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
-  -> GLenum -- ^ @type@ of type [DrawElementsType](Graphics-GL-Groups.html#DrawElementsType).
-  -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(drawcount)@ elements of type @Ptr a@.
-  -> GLsizei -- ^ @drawcount@.
-  -> m ()
-glMultiDrawElements v1 v2 v3 v4 v5 = liftIO $ dyn547 ptr_glMultiDrawElements v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glMultiDrawElements #-}
-ptr_glMultiDrawElements :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> IO ())
-ptr_glMultiDrawElements = unsafePerformIO $ getCommand "glMultiDrawElements"
-
--- glMultiDrawElementsBaseVertex -----------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glMultiDrawElementsBaseVertex.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glMultiDrawElementsBaseVertex.xhtml OpenGL 4.x>.
-glMultiDrawElementsBaseVertex
-  :: MonadIO m
-  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
-  -> GLenum -- ^ @type@ of type [DrawElementsType](Graphics-GL-Groups.html#DrawElementsType).
-  -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(drawcount)@ elements of type @Ptr a@.
-  -> GLsizei -- ^ @drawcount@.
-  -> Ptr GLint -- ^ @basevertex@ pointing to @COMPSIZE(drawcount)@ elements of type @GLint@.
-  -> m ()
-glMultiDrawElementsBaseVertex v1 v2 v3 v4 v5 v6 = liftIO $ dyn548 ptr_glMultiDrawElementsBaseVertex v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glMultiDrawElementsBaseVertex #-}
-ptr_glMultiDrawElementsBaseVertex :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> Ptr GLint -> IO ())
-ptr_glMultiDrawElementsBaseVertex = unsafePerformIO $ getCommand "glMultiDrawElementsBaseVertex"
-
--- glMultiDrawElementsBaseVertexEXT --------------------------------------------
-
--- | This command is an alias for 'glMultiDrawElementsBaseVertex'.
-glMultiDrawElementsBaseVertexEXT
-  :: MonadIO m
-  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
-  -> GLenum -- ^ @type@ of type [DrawElementsType](Graphics-GL-Groups.html#DrawElementsType).
-  -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(drawcount)@ elements of type @Ptr a@.
-  -> GLsizei -- ^ @primcount@.
-  -> Ptr GLint -- ^ @basevertex@ pointing to @COMPSIZE(drawcount)@ elements of type @GLint@.
-  -> m ()
-glMultiDrawElementsBaseVertexEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn548 ptr_glMultiDrawElementsBaseVertexEXT v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glMultiDrawElementsBaseVertexEXT #-}
-ptr_glMultiDrawElementsBaseVertexEXT :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> Ptr GLint -> IO ())
-ptr_glMultiDrawElementsBaseVertexEXT = unsafePerformIO $ getCommand "glMultiDrawElementsBaseVertexEXT"
-
--- glMultiDrawElementsBaseVertexOES --------------------------------------------
-
--- | This command is an alias for 'glMultiDrawElementsBaseVertex'.
-glMultiDrawElementsBaseVertexOES
-  :: MonadIO m
-  => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
-  -> GLenum -- ^ @type@ of type [DrawElementsType](Graphics-GL-Groups.html#DrawElementsType).
-  -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(drawcount)@ elements of type @Ptr a@.
-  -> GLsizei -- ^ @primcount@.
-  -> Ptr GLint -- ^ @basevertex@ pointing to @COMPSIZE(drawcount)@ elements of type @GLint@.
-  -> m ()
-glMultiDrawElementsBaseVertexOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn548 ptr_glMultiDrawElementsBaseVertexOES v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glMultiDrawElementsBaseVertexOES #-}
-ptr_glMultiDrawElementsBaseVertexOES :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> Ptr GLint -> IO ())
-ptr_glMultiDrawElementsBaseVertexOES = unsafePerformIO $ getCommand "glMultiDrawElementsBaseVertexOES"
 

@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 3.2.5.0
+version: 3.2.6.0
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 4.5 graphics system and
@@ -176,6 +176,7 @@ library
     Graphics.GL.ARB.PixelBufferObject
     Graphics.GL.ARB.PointParameters
     Graphics.GL.ARB.PointSprite
+    Graphics.GL.ARB.PolygonOffsetClamp
     Graphics.GL.ARB.ProgramInterfaceQuery
     Graphics.GL.ARB.ProvokingVertex
     Graphics.GL.ARB.QueryBufferObject
@@ -198,6 +199,7 @@ library
     Graphics.GL.ARB.ShadowAmbient
     Graphics.GL.ARB.SparseBuffer
     Graphics.GL.ARB.SparseTexture
+    Graphics.GL.ARB.SpirvExtensions
     Graphics.GL.ARB.StencilTexturing
     Graphics.GL.ARB.Sync
     Graphics.GL.ARB.TessellationShader
@@ -213,6 +215,7 @@ library
     Graphics.GL.ARB.TextureCubeMapArray
     Graphics.GL.ARB.TextureEnvCombine
     Graphics.GL.ARB.TextureEnvDot3
+    Graphics.GL.ARB.TextureFilterAnisotropic
     Graphics.GL.ARB.TextureFilterMinmax
     Graphics.GL.ARB.TextureFloat
     Graphics.GL.ARB.TextureGather
@@ -420,12 +423,15 @@ library
     Graphics.GL.KHR.DebugCompatibility
     Graphics.GL.KHR.DebugCore
     Graphics.GL.KHR.NoError
+    Graphics.GL.KHR.ParallelShaderCompile
     Graphics.GL.KHR.Robustness
     Graphics.GL.KHR.TextureCompressionASTCHDR
     Graphics.GL.KHR.TextureCompressionASTCLDR
     Graphics.GL.MESA
     Graphics.GL.MESA.PackInvert
+    Graphics.GL.MESA.ProgramBinaryFormats
     Graphics.GL.MESA.ResizeBuffers
+    Graphics.GL.MESA.TileRasterOrder
     Graphics.GL.MESA.WindowPos
     Graphics.GL.MESA.YCbCrTexture
     Graphics.GL.MESAX
@@ -437,6 +443,7 @@ library
     Graphics.GL.NV.BindlessTexture
     Graphics.GL.NV.BlendEquationAdvanced
     Graphics.GL.NV.BlendEquationAdvancedCoherent
+    Graphics.GL.NV.BlendMinmaxFactor
     Graphics.GL.NV.ClipSpaceWScaling
     Graphics.GL.NV.CommandList
     Graphics.GL.NV.ComputeProgram5
@@ -482,6 +489,8 @@ library
     Graphics.GL.NV.PointSprite
     Graphics.GL.NV.PresentVideo
     Graphics.GL.NV.PrimitiveRestart
+    Graphics.GL.NV.QueryResource
+    Graphics.GL.NV.QueryResourceTag
     Graphics.GL.NV.RegisterCombiners
     Graphics.GL.NV.RegisterCombiners2
     Graphics.GL.NV.RobustnessVideoMemoryPurge

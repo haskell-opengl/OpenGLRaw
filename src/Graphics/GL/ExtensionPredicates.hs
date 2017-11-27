@@ -1174,6 +1174,17 @@ gl_ARB_point_sprite :: Bool
 gl_ARB_point_sprite = member "GL_ARB_point_sprite" extensions
 {-# NOINLINE gl_ARB_point_sprite #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/ARB/polygon_offset_clamp.txt ARB_polygon_offset_clamp> extension supported?
+glGetARBPolygonOffsetClamp :: MonadIO m => m Bool
+glGetARBPolygonOffsetClamp = getExtensions >>= (return . member "GL_ARB_polygon_offset_clamp")
+
+-- | Is the <https://www.opengl.org/registry/specs/ARB/polygon_offset_clamp.txt ARB_polygon_offset_clamp> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetARBPolygonOffsetClamp' in those cases instead.
+gl_ARB_polygon_offset_clamp :: Bool
+gl_ARB_polygon_offset_clamp = member "GL_ARB_polygon_offset_clamp" extensions
+{-# NOINLINE gl_ARB_polygon_offset_clamp #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/ARB/program_interface_query.txt ARB_program_interface_query> extension supported?
 glGetARBProgramInterfaceQuery :: MonadIO m => m Bool
 glGetARBProgramInterfaceQuery = getExtensions >>= (return . member "GL_ARB_program_interface_query")
@@ -1405,6 +1416,17 @@ gl_ARB_sparse_texture :: Bool
 gl_ARB_sparse_texture = member "GL_ARB_sparse_texture" extensions
 {-# NOINLINE gl_ARB_sparse_texture #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/ARB/spirv_extensions.txt ARB_spirv_extensions> extension supported?
+glGetARBSpirvExtensions :: MonadIO m => m Bool
+glGetARBSpirvExtensions = getExtensions >>= (return . member "GL_ARB_spirv_extensions")
+
+-- | Is the <https://www.opengl.org/registry/specs/ARB/spirv_extensions.txt ARB_spirv_extensions> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetARBSpirvExtensions' in those cases instead.
+gl_ARB_spirv_extensions :: Bool
+gl_ARB_spirv_extensions = member "GL_ARB_spirv_extensions" extensions
+{-# NOINLINE gl_ARB_spirv_extensions #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/ARB/stencil_texturing.txt ARB_stencil_texturing> extension supported?
 glGetARBStencilTexturing :: MonadIO m => m Bool
 glGetARBStencilTexturing = getExtensions >>= (return . member "GL_ARB_stencil_texturing")
@@ -1569,6 +1591,17 @@ glGetARBTextureEnvDot3 = getExtensions >>= (return . member "GL_ARB_texture_env_
 gl_ARB_texture_env_dot3 :: Bool
 gl_ARB_texture_env_dot3 = member "GL_ARB_texture_env_dot3" extensions
 {-# NOINLINE gl_ARB_texture_env_dot3 #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/ARB/texture_filter_anisotropic.txt ARB_texture_filter_anisotropic> extension supported?
+glGetARBTextureFilterAnisotropic :: MonadIO m => m Bool
+glGetARBTextureFilterAnisotropic = getExtensions >>= (return . member "GL_ARB_texture_filter_anisotropic")
+
+-- | Is the <https://www.opengl.org/registry/specs/ARB/texture_filter_anisotropic.txt ARB_texture_filter_anisotropic> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetARBTextureFilterAnisotropic' in those cases instead.
+gl_ARB_texture_filter_anisotropic :: Bool
+gl_ARB_texture_filter_anisotropic = member "GL_ARB_texture_filter_anisotropic" extensions
+{-# NOINLINE gl_ARB_texture_filter_anisotropic #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/ARB/texture_filter_minmax.txt ARB_texture_filter_minmax> extension supported?
 glGetARBTextureFilterMinmax :: MonadIO m => m Bool
@@ -3484,6 +3517,17 @@ gl_KHR_no_error :: Bool
 gl_KHR_no_error = member "GL_KHR_no_error" extensions
 {-# NOINLINE gl_KHR_no_error #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/KHR/parallel_shader_compile.txt KHR_parallel_shader_compile> extension supported?
+glGetKHRParallelShaderCompile :: MonadIO m => m Bool
+glGetKHRParallelShaderCompile = getExtensions >>= (return . member "GL_KHR_parallel_shader_compile")
+
+-- | Is the <https://www.opengl.org/registry/specs/KHR/parallel_shader_compile.txt KHR_parallel_shader_compile> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetKHRParallelShaderCompile' in those cases instead.
+gl_KHR_parallel_shader_compile :: Bool
+gl_KHR_parallel_shader_compile = member "GL_KHR_parallel_shader_compile" extensions
+{-# NOINLINE gl_KHR_parallel_shader_compile #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/KHR/robustness.txt KHR_robustness> extension supported?
 glGetKHRRobustness :: MonadIO m => m Bool
 glGetKHRRobustness = getExtensions >>= (return . member "GL_KHR_robustness")
@@ -3528,6 +3572,17 @@ gl_MESA_pack_invert :: Bool
 gl_MESA_pack_invert = member "GL_MESA_pack_invert" extensions
 {-# NOINLINE gl_MESA_pack_invert #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/MESA/program_binary_formats.txt MESA_program_binary_formats> extension supported?
+glGetMESAProgramBinaryFormats :: MonadIO m => m Bool
+glGetMESAProgramBinaryFormats = getExtensions >>= (return . member "GL_MESA_program_binary_formats")
+
+-- | Is the <https://www.opengl.org/registry/specs/MESA/program_binary_formats.txt MESA_program_binary_formats> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetMESAProgramBinaryFormats' in those cases instead.
+gl_MESA_program_binary_formats :: Bool
+gl_MESA_program_binary_formats = member "GL_MESA_program_binary_formats" extensions
+{-# NOINLINE gl_MESA_program_binary_formats #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/MESA/resize_buffers.txt MESA_resize_buffers> extension supported?
 glGetMESAResizeBuffers :: MonadIO m => m Bool
 glGetMESAResizeBuffers = getExtensions >>= (return . member "GL_MESA_resize_buffers")
@@ -3538,6 +3593,17 @@ glGetMESAResizeBuffers = getExtensions >>= (return . member "GL_MESA_resize_buff
 gl_MESA_resize_buffers :: Bool
 gl_MESA_resize_buffers = member "GL_MESA_resize_buffers" extensions
 {-# NOINLINE gl_MESA_resize_buffers #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/MESA/tile_raster_order.txt MESA_tile_raster_order> extension supported?
+glGetMESATileRasterOrder :: MonadIO m => m Bool
+glGetMESATileRasterOrder = getExtensions >>= (return . member "GL_MESA_tile_raster_order")
+
+-- | Is the <https://www.opengl.org/registry/specs/MESA/tile_raster_order.txt MESA_tile_raster_order> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetMESATileRasterOrder' in those cases instead.
+gl_MESA_tile_raster_order :: Bool
+gl_MESA_tile_raster_order = member "GL_MESA_tile_raster_order" extensions
+{-# NOINLINE gl_MESA_tile_raster_order #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/window_pos.txt MESA_window_pos> extension supported?
 glGetMESAWindowPos :: MonadIO m => m Bool
@@ -3637,6 +3703,17 @@ glGetNVBlendEquationAdvancedCoherent = getExtensions >>= (return . member "GL_NV
 gl_NV_blend_equation_advanced_coherent :: Bool
 gl_NV_blend_equation_advanced_coherent = member "GL_NV_blend_equation_advanced_coherent" extensions
 {-# NOINLINE gl_NV_blend_equation_advanced_coherent #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/blend_minmax_factor.txt NV_blend_minmax_factor> extension supported?
+glGetNVBlendMinmaxFactor :: MonadIO m => m Bool
+glGetNVBlendMinmaxFactor = getExtensions >>= (return . member "GL_NV_blend_minmax_factor")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/blend_minmax_factor.txt NV_blend_minmax_factor> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVBlendMinmaxFactor' in those cases instead.
+gl_NV_blend_minmax_factor :: Bool
+gl_NV_blend_minmax_factor = member "GL_NV_blend_minmax_factor" extensions
+{-# NOINLINE gl_NV_blend_minmax_factor #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/clip_space_w_scaling.txt NV_clip_space_w_scaling> extension supported?
 glGetNVClipSpaceWScaling :: MonadIO m => m Bool
@@ -4121,6 +4198,28 @@ glGetNVPrimitiveRestart = getExtensions >>= (return . member "GL_NV_primitive_re
 gl_NV_primitive_restart :: Bool
 gl_NV_primitive_restart = member "GL_NV_primitive_restart" extensions
 {-# NOINLINE gl_NV_primitive_restart #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/query_resource.txt NV_query_resource> extension supported?
+glGetNVQueryResource :: MonadIO m => m Bool
+glGetNVQueryResource = getExtensions >>= (return . member "GL_NV_query_resource")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/query_resource.txt NV_query_resource> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVQueryResource' in those cases instead.
+gl_NV_query_resource :: Bool
+gl_NV_query_resource = member "GL_NV_query_resource" extensions
+{-# NOINLINE gl_NV_query_resource #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/query_resource_tag.txt NV_query_resource_tag> extension supported?
+glGetNVQueryResourceTag :: MonadIO m => m Bool
+glGetNVQueryResourceTag = getExtensions >>= (return . member "GL_NV_query_resource_tag")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/query_resource_tag.txt NV_query_resource_tag> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVQueryResourceTag' in those cases instead.
+gl_NV_query_resource_tag :: Bool
+gl_NV_query_resource_tag = member "GL_NV_query_resource_tag" extensions
+{-# NOINLINE gl_NV_query_resource_tag #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/register_combiners.txt NV_register_combiners> extension supported?
 glGetNVRegisterCombiners :: MonadIO m => m Bool

@@ -15,6 +15,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F04 (
+  glColorTableParameteriv,
   glColorTableParameterivSGI,
   glColorTableSGI,
   glCombinerInputNV,
@@ -113,8 +114,7 @@ module Graphics.GL.Functions.F04 (
   glCopyTextureSubImage1D,
   glCopyTextureSubImage1DEXT,
   glCopyTextureSubImage2D,
-  glCopyTextureSubImage2DEXT,
-  glCopyTextureSubImage3D
+  glCopyTextureSubImage2DEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,21 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glColorTableParameteriv -----------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTableParameter.xml OpenGL 2.x>.
+glColorTableParameteriv
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
+  -> GLenum -- ^ @pname@ of type [ColorTableParameterPNameSGI](Graphics-GL-Groups.html#ColorTableParameterPNameSGI).
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
+  -> m ()
+glColorTableParameteriv v1 v2 v3 = liftIO $ dyn136 ptr_glColorTableParameteriv v1 v2 v3
+
+{-# NOINLINE ptr_glColorTableParameteriv #-}
+ptr_glColorTableParameteriv :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
+ptr_glColorTableParameteriv = unsafePerformIO $ getCommand "glColorTableParameteriv"
 
 -- glColorTableParameterivSGI --------------------------------------------------
 
@@ -330,10 +345,10 @@ ptr_glCompileShaderIncludeARB = unsafePerformIO $ getCommand "glCompileShaderInc
 
 glCompressedMultiTexImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
   -> GLsizei -- ^ @imageSize@.
@@ -349,10 +364,10 @@ ptr_glCompressedMultiTexImage1DEXT = unsafePerformIO $ getCommand "glCompressedM
 
 glCompressedMultiTexImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
@@ -369,10 +384,10 @@ ptr_glCompressedMultiTexImage2DEXT = unsafePerformIO $ getCommand "glCompressedM
 
 glCompressedMultiTexImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
@@ -390,7 +405,7 @@ ptr_glCompressedMultiTexImage3DEXT = unsafePerformIO $ getCommand "glCompressedM
 
 glCompressedMultiTexSubImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -409,7 +424,7 @@ ptr_glCompressedMultiTexSubImage1DEXT = unsafePerformIO $ getCommand "glCompress
 
 glCompressedMultiTexSubImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -430,7 +445,7 @@ ptr_glCompressedMultiTexSubImage2DEXT = unsafePerformIO $ getCommand "glCompress
 
 glCompressedMultiTexSubImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -573,9 +588,9 @@ ptr_glCompressedTexImage3DARB = unsafePerformIO $ getCommand "glCompressedTexIma
 
 glCompressedTexImage3DOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@.
-  -> GLenum -- ^ @internalformat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
@@ -719,7 +734,7 @@ ptr_glCompressedTexSubImage3DARB = unsafePerformIO $ getCommand "glCompressedTex
 
 glCompressedTexSubImage3DOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@.
   -> GLint -- ^ @xoffset@.
   -> GLint -- ^ @yoffset@.
@@ -727,7 +742,7 @@ glCompressedTexSubImage3DOES
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@ pointing to @imageSize@ elements of type @a@.
   -> m ()
@@ -744,7 +759,7 @@ glCompressedTextureImage1DEXT
   => GLuint -- ^ @texture@ of type @Texture@.
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
   -> GLsizei -- ^ @imageSize@.
@@ -763,7 +778,7 @@ glCompressedTextureImage2DEXT
   => GLuint -- ^ @texture@ of type @Texture@.
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
@@ -783,7 +798,7 @@ glCompressedTextureImage3DEXT
   => GLuint -- ^ @texture@ of type @Texture@.
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
@@ -806,7 +821,7 @@ glCompressedTextureSubImage1D
   -> GLint -- ^ @level@.
   -> GLint -- ^ @xoffset@.
   -> GLsizei -- ^ @width@.
-  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@.
   -> m ()
@@ -846,7 +861,7 @@ glCompressedTextureSubImage2D
   -> GLint -- ^ @yoffset@.
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
-  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@.
   -> m ()
@@ -890,7 +905,7 @@ glCompressedTextureSubImage3D
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
   -> GLsizei -- ^ @imageSize@.
   -> Ptr a -- ^ @data@.
   -> m ()
@@ -954,7 +969,7 @@ ptr_glConservativeRasterParameteriNV = unsafePerformIO $ getCommand "glConservat
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionFilter1D.xml OpenGL 2.x>.
 glConvolutionFilter1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
   -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
@@ -990,7 +1005,7 @@ ptr_glConvolutionFilter1DEXT = unsafePerformIO $ getCommand "glConvolutionFilter
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionFilter2D.xml OpenGL 2.x>.
 glConvolutionFilter2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
   -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
@@ -1028,8 +1043,8 @@ ptr_glConvolutionFilter2DEXT = unsafePerformIO $ getCommand "glConvolutionFilter
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameterf
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameter@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-GL-Groups.html#ConvolutionParameterEXT).
   -> GLfloat -- ^ @params@ of type @CheckedFloat32@.
   -> m ()
 glConvolutionParameterf v1 v2 v3 = liftIO $ dyn164 ptr_glConvolutionParameterf v1 v2 v3
@@ -1058,8 +1073,8 @@ ptr_glConvolutionParameterfEXT = unsafePerformIO $ getCommand "glConvolutionPara
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameterfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameter@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-GL-Groups.html#ConvolutionParameterEXT).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glConvolutionParameterfv v1 v2 v3 = liftIO $ dyn135 ptr_glConvolutionParameterfv v1 v2 v3
@@ -1088,8 +1103,8 @@ ptr_glConvolutionParameterfvEXT = unsafePerformIO $ getCommand "glConvolutionPar
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameteri
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameter@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-GL-Groups.html#ConvolutionParameterEXT).
   -> GLint -- ^ @params@ of type @CheckedInt32@.
   -> m ()
 glConvolutionParameteri v1 v2 v3 = liftIO $ dyn63 ptr_glConvolutionParameteri v1 v2 v3
@@ -1118,8 +1133,8 @@ ptr_glConvolutionParameteriEXT = unsafePerformIO $ getCommand "glConvolutionPara
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glConvolutionParameter.xml OpenGL 2.x>.
 glConvolutionParameteriv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
-  -> GLenum -- ^ @pname@ of type @ConvolutionParameter@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-GL-Groups.html#ConvolutionParameterEXT).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glConvolutionParameteriv v1 v2 v3 = liftIO $ dyn136 ptr_glConvolutionParameteriv v1 v2 v3
@@ -1147,8 +1162,8 @@ ptr_glConvolutionParameterivEXT = unsafePerformIO $ getCommand "glConvolutionPar
 
 glConvolutionParameterxOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @pname@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-GL-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-GL-Groups.html#ConvolutionParameterEXT).
   -> GLfixed -- ^ @param@.
   -> m ()
 glConvolutionParameterxOES v1 v2 v3 = liftIO $ dyn165 ptr_glConvolutionParameterxOES v1 v2 v3
@@ -1161,8 +1176,8 @@ ptr_glConvolutionParameterxOES = unsafePerformIO $ getCommand "glConvolutionPara
 
 glConvolutionParameterxvOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @pname@.
+  => GLenum -- ^ @target@ of type [ConvolutionTargetEXT](Graphics-GL-Groups.html#ConvolutionTargetEXT).
+  -> GLenum -- ^ @pname@ of type [ConvolutionParameterEXT](Graphics-GL-Groups.html#ConvolutionParameterEXT).
   -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
   -> m ()
 glConvolutionParameterxvOES v1 v2 v3 = liftIO $ dyn166 ptr_glConvolutionParameterxvOES v1 v2 v3
@@ -1176,8 +1191,8 @@ ptr_glConvolutionParameterxvOES = unsafePerformIO $ getCommand "glConvolutionPar
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glCopyBufferSubData.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCopyBufferSubData.xhtml OpenGL 4.x>.
 glCopyBufferSubData
   :: MonadIO m
-  => GLenum -- ^ @readTarget@.
-  -> GLenum -- ^ @writeTarget@.
+  => GLenum -- ^ @readTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
+  -> GLenum -- ^ @writeTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLintptr -- ^ @readOffset@ of type @BufferOffset@.
   -> GLintptr -- ^ @writeOffset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
@@ -1193,8 +1208,8 @@ ptr_glCopyBufferSubData = unsafePerformIO $ getCommand "glCopyBufferSubData"
 -- | This command is an alias for 'glCopyBufferSubData'.
 glCopyBufferSubDataNV
   :: MonadIO m
-  => GLenum -- ^ @readTarget@.
-  -> GLenum -- ^ @writeTarget@.
+  => GLenum -- ^ @readTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
+  -> GLenum -- ^ @writeTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLintptr -- ^ @readOffset@ of type @BufferOffset@.
   -> GLintptr -- ^ @writeOffset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
@@ -1210,7 +1225,7 @@ ptr_glCopyBufferSubDataNV = unsafePerformIO $ getCommand "glCopyBufferSubDataNV"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyColorSubTable.xml OpenGL 2.x>.
 glCopyColorSubTable
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
   -> GLsizei -- ^ @start@.
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -1227,7 +1242,7 @@ ptr_glCopyColorSubTable = unsafePerformIO $ getCommand "glCopyColorSubTable"
 -- | This command is an alias for 'glCopyColorSubTable'.
 glCopyColorSubTableEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
   -> GLsizei -- ^ @start@.
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -1244,7 +1259,7 @@ ptr_glCopyColorSubTableEXT = unsafePerformIO $ getCommand "glCopyColorSubTableEX
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyColorTable.xml OpenGL 2.x>.
 glCopyColorTable
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
   -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -1278,7 +1293,7 @@ ptr_glCopyColorTableSGI = unsafePerformIO $ getCommand "glCopyColorTableSGI"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyConvolutionFilter1D.xml OpenGL 2.x>.
 glCopyConvolutionFilter1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
   -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -1312,7 +1327,7 @@ ptr_glCopyConvolutionFilter1DEXT = unsafePerformIO $ getCommand "glCopyConvoluti
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glCopyConvolutionFilter2D.xml OpenGL 2.x>.
 glCopyConvolutionFilter2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ConvolutionTarget@.
+  => GLenum -- ^ @target@ of type [ConvolutionTarget](Graphics-GL-Groups.html#ConvolutionTarget).
   -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
@@ -1349,13 +1364,13 @@ ptr_glCopyConvolutionFilter2DEXT = unsafePerformIO $ getCommand "glCopyConvoluti
 glCopyImageSubData
   :: MonadIO m
   => GLuint -- ^ @srcName@.
-  -> GLenum -- ^ @srcTarget@.
+  -> GLenum -- ^ @srcTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @srcLevel@.
   -> GLint -- ^ @srcX@.
   -> GLint -- ^ @srcY@.
   -> GLint -- ^ @srcZ@.
   -> GLuint -- ^ @dstName@.
-  -> GLenum -- ^ @dstTarget@.
+  -> GLenum -- ^ @dstTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @dstLevel@.
   -> GLint -- ^ @dstX@.
   -> GLint -- ^ @dstY@.
@@ -1376,13 +1391,13 @@ ptr_glCopyImageSubData = unsafePerformIO $ getCommand "glCopyImageSubData"
 glCopyImageSubDataEXT
   :: MonadIO m
   => GLuint -- ^ @srcName@.
-  -> GLenum -- ^ @srcTarget@.
+  -> GLenum -- ^ @srcTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @srcLevel@.
   -> GLint -- ^ @srcX@.
   -> GLint -- ^ @srcY@.
   -> GLint -- ^ @srcZ@.
   -> GLuint -- ^ @dstName@.
-  -> GLenum -- ^ @dstTarget@.
+  -> GLenum -- ^ @dstTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @dstLevel@.
   -> GLint -- ^ @dstX@.
   -> GLint -- ^ @dstY@.
@@ -1402,13 +1417,13 @@ ptr_glCopyImageSubDataEXT = unsafePerformIO $ getCommand "glCopyImageSubDataEXT"
 glCopyImageSubDataNV
   :: MonadIO m
   => GLuint -- ^ @srcName@.
-  -> GLenum -- ^ @srcTarget@.
+  -> GLenum -- ^ @srcTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @srcLevel@.
   -> GLint -- ^ @srcX@.
   -> GLint -- ^ @srcY@.
   -> GLint -- ^ @srcZ@.
   -> GLuint -- ^ @dstName@.
-  -> GLenum -- ^ @dstTarget@.
+  -> GLenum -- ^ @dstTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @dstLevel@.
   -> GLint -- ^ @dstX@.
   -> GLint -- ^ @dstY@.
@@ -1429,13 +1444,13 @@ ptr_glCopyImageSubDataNV = unsafePerformIO $ getCommand "glCopyImageSubDataNV"
 glCopyImageSubDataOES
   :: MonadIO m
   => GLuint -- ^ @srcName@.
-  -> GLenum -- ^ @srcTarget@.
+  -> GLenum -- ^ @srcTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @srcLevel@.
   -> GLint -- ^ @srcX@.
   -> GLint -- ^ @srcY@.
   -> GLint -- ^ @srcZ@.
   -> GLuint -- ^ @dstName@.
-  -> GLenum -- ^ @dstTarget@.
+  -> GLenum -- ^ @dstTarget@ of type [CopyBufferSubDataTarget](Graphics-GL-Groups.html#CopyBufferSubDataTarget).
   -> GLint -- ^ @dstLevel@.
   -> GLint -- ^ @dstX@.
   -> GLint -- ^ @dstY@.
@@ -1454,10 +1469,10 @@ ptr_glCopyImageSubDataOES = unsafePerformIO $ getCommand "glCopyImageSubDataOES"
 
 glCopyMultiTexImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -1473,10 +1488,10 @@ ptr_glCopyMultiTexImage1DEXT = unsafePerformIO $ getCommand "glCopyMultiTexImage
 
 glCopyMultiTexImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -1493,7 +1508,7 @@ ptr_glCopyMultiTexImage2DEXT = unsafePerformIO $ getCommand "glCopyMultiTexImage
 
 glCopyMultiTexSubImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -1511,7 +1526,7 @@ ptr_glCopyMultiTexSubImage1DEXT = unsafePerformIO $ getCommand "glCopyMultiTexSu
 
 glCopyMultiTexSubImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -1531,7 +1546,7 @@ ptr_glCopyMultiTexSubImage2DEXT = unsafePerformIO $ getCommand "glCopyMultiTexSu
 
 glCopyMultiTexSubImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -1818,7 +1833,7 @@ glCopyTextureImage1DEXT
   => GLuint -- ^ @texture@ of type @Texture@.
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -1837,7 +1852,7 @@ glCopyTextureImage2DEXT
   => GLuint -- ^ @texture@ of type @Texture@.
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLenum -- ^ @internalformat@ of type @TextureInternalFormat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLint -- ^ @x@ of type @WinCoord@.
   -> GLint -- ^ @y@ of type @WinCoord@.
   -> GLsizei -- ^ @width@.
@@ -1940,25 +1955,4 @@ glCopyTextureSubImage2DEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn190 ptr_glCo
 {-# NOINLINE ptr_glCopyTextureSubImage2DEXT #-}
 ptr_glCopyTextureSubImage2DEXT :: FunPtr (GLuint -> GLenum -> GLint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> IO ())
 ptr_glCopyTextureSubImage2DEXT = unsafePerformIO $ getCommand "glCopyTextureSubImage2DEXT"
-
--- glCopyTextureSubImage3D -----------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glCopyTexSubImage3D.xhtml OpenGL 4.x>.
-glCopyTextureSubImage3D
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLint -- ^ @level@.
-  -> GLint -- ^ @xoffset@.
-  -> GLint -- ^ @yoffset@.
-  -> GLint -- ^ @zoffset@.
-  -> GLint -- ^ @x@.
-  -> GLint -- ^ @y@.
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> m ()
-glCopyTextureSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn191 ptr_glCopyTextureSubImage3D v1 v2 v3 v4 v5 v6 v7 v8 v9
-
-{-# NOINLINE ptr_glCopyTextureSubImage3D #-}
-ptr_glCopyTextureSubImage3D :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> IO ())
-ptr_glCopyTextureSubImage3D = unsafePerformIO $ getCommand "glCopyTextureSubImage3D"
 

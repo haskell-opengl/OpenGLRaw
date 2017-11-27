@@ -15,6 +15,12 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F21 (
+  glProgramUniform1i64NV,
+  glProgramUniform1i64vARB,
+  glProgramUniform1i64vNV,
+  glProgramUniform1iEXT,
+  glProgramUniform1iv,
+  glProgramUniform1ivEXT,
   glProgramUniform1ui,
   glProgramUniform1ui64ARB,
   glProgramUniform1ui64NV,
@@ -108,13 +114,7 @@ module Graphics.GL.Functions.F21 (
   glProgramUniformMatrix2x3dv,
   glProgramUniformMatrix2x3dvEXT,
   glProgramUniformMatrix2x3fv,
-  glProgramUniformMatrix2x3fvEXT,
-  glProgramUniformMatrix2x4dv,
-  glProgramUniformMatrix2x4dvEXT,
-  glProgramUniformMatrix2x4fv,
-  glProgramUniformMatrix2x4fvEXT,
-  glProgramUniformMatrix3dv,
-  glProgramUniformMatrix3dvEXT
+  glProgramUniformMatrix2x3fvEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,97 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glProgramUniform1i64NV ------------------------------------------------------
+
+glProgramUniform1i64NV
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLint64EXT -- ^ @x@.
+  -> m ()
+glProgramUniform1i64NV v1 v2 v3 = liftIO $ dyn660 ptr_glProgramUniform1i64NV v1 v2 v3
+
+{-# NOINLINE ptr_glProgramUniform1i64NV #-}
+ptr_glProgramUniform1i64NV :: FunPtr (GLuint -> GLint -> GLint64EXT -> IO ())
+ptr_glProgramUniform1i64NV = unsafePerformIO $ getCommand "glProgramUniform1i64NV"
+
+-- glProgramUniform1i64vARB ----------------------------------------------------
+
+glProgramUniform1i64vARB
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64 -- ^ @value@ pointing to @count@ elements of type @GLint64@.
+  -> m ()
+glProgramUniform1i64vARB v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform1i64vARB v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramUniform1i64vARB #-}
+ptr_glProgramUniform1i64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint64 -> IO ())
+ptr_glProgramUniform1i64vARB = unsafePerformIO $ getCommand "glProgramUniform1i64vARB"
+
+-- glProgramUniform1i64vNV -----------------------------------------------------
+
+glProgramUniform1i64vNV
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint64EXT -- ^ @value@ pointing to @count@ elements of type @GLint64EXT@.
+  -> m ()
+glProgramUniform1i64vNV v1 v2 v3 v4 = liftIO $ dyn661 ptr_glProgramUniform1i64vNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramUniform1i64vNV #-}
+ptr_glProgramUniform1i64vNV :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint64EXT -> IO ())
+ptr_glProgramUniform1i64vNV = unsafePerformIO $ getCommand "glProgramUniform1i64vNV"
+
+-- glProgramUniform1iEXT -------------------------------------------------------
+
+-- | This command is an alias for 'glProgramUniform1i'.
+glProgramUniform1iEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLint -- ^ @v0@.
+  -> m ()
+glProgramUniform1iEXT v1 v2 v3 = liftIO $ dyn658 ptr_glProgramUniform1iEXT v1 v2 v3
+
+{-# NOINLINE ptr_glProgramUniform1iEXT #-}
+ptr_glProgramUniform1iEXT :: FunPtr (GLuint -> GLint -> GLint -> IO ())
+ptr_glProgramUniform1iEXT = unsafePerformIO $ getCommand "glProgramUniform1iEXT"
+
+-- glProgramUniform1iv ---------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
+glProgramUniform1iv
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @value@ pointing to @count@ elements of type @GLint@.
+  -> m ()
+glProgramUniform1iv v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform1iv v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramUniform1iv #-}
+ptr_glProgramUniform1iv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
+ptr_glProgramUniform1iv = unsafePerformIO $ getCommand "glProgramUniform1iv"
+
+-- glProgramUniform1ivEXT ------------------------------------------------------
+
+-- | This command is an alias for 'glProgramUniform1iv'.
+glProgramUniform1ivEXT
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLint -- ^ @value@ pointing to @count@ elements of type @GLint@.
+  -> m ()
+glProgramUniform1ivEXT v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform1ivEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramUniform1ivEXT #-}
+ptr_glProgramUniform1ivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
+ptr_glProgramUniform1ivEXT = unsafePerformIO $ getCommand "glProgramUniform1ivEXT"
 
 -- glProgramUniform1ui ---------------------------------------------------------
 
@@ -175,7 +266,7 @@ glProgramUniform1ui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @value@ pointing to @count@ elements of type @GLuint64@.
   -> m ()
-glProgramUniform1ui64vARB v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform1ui64vARB v1 v2 v3 v4
+glProgramUniform1ui64vARB v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform1ui64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform1ui64vARB #-}
 ptr_glProgramUniform1ui64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -221,7 +312,7 @@ glProgramUniform1uiv
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count@ elements of type @GLuint@.
   -> m ()
-glProgramUniform1uiv v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform1uiv v1 v2 v3 v4
+glProgramUniform1uiv v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform1uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform1uiv #-}
 ptr_glProgramUniform1uiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -237,7 +328,7 @@ glProgramUniform1uivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count@ elements of type @GLuint@.
   -> m ()
-glProgramUniform1uivEXT v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform1uivEXT v1 v2 v3 v4
+glProgramUniform1uivEXT v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform1uivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform1uivEXT #-}
 ptr_glProgramUniform1uivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -282,7 +373,7 @@ glProgramUniform2dv
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*2@ elements of type @GLdouble@.
   -> m ()
-glProgramUniform2dv v1 v2 v3 v4 = liftIO $ dyn468 ptr_glProgramUniform2dv v1 v2 v3 v4
+glProgramUniform2dv v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform2dv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2dv #-}
 ptr_glProgramUniform2dv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -297,7 +388,7 @@ glProgramUniform2dvEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*2@ elements of type @GLdouble@.
   -> m ()
-glProgramUniform2dvEXT v1 v2 v3 v4 = liftIO $ dyn468 ptr_glProgramUniform2dvEXT v1 v2 v3 v4
+glProgramUniform2dvEXT v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform2dvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2dvEXT #-}
 ptr_glProgramUniform2dvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -345,7 +436,7 @@ glProgramUniform2fv
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*2@ elements of type @GLfloat@.
   -> m ()
-glProgramUniform2fv v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform2fv v1 v2 v3 v4
+glProgramUniform2fv v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform2fv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2fv #-}
 ptr_glProgramUniform2fv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -361,7 +452,7 @@ glProgramUniform2fvEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*2@ elements of type @GLfloat@.
   -> m ()
-glProgramUniform2fvEXT v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform2fvEXT v1 v2 v3 v4
+glProgramUniform2fvEXT v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform2fvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2fvEXT #-}
 ptr_glProgramUniform2fvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -422,7 +513,7 @@ glProgramUniform2i64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64 -- ^ @value@ pointing to @count*2@ elements of type @GLint64@.
   -> m ()
-glProgramUniform2i64vARB v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform2i64vARB v1 v2 v3 v4
+glProgramUniform2i64vARB v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform2i64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2i64vARB #-}
 ptr_glProgramUniform2i64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint64 -> IO ())
@@ -469,7 +560,7 @@ glProgramUniform2iv
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*2@ elements of type @GLint@.
   -> m ()
-glProgramUniform2iv v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform2iv v1 v2 v3 v4
+glProgramUniform2iv v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform2iv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2iv #-}
 ptr_glProgramUniform2iv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -485,7 +576,7 @@ glProgramUniform2ivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*2@ elements of type @GLint@.
   -> m ()
-glProgramUniform2ivEXT v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform2ivEXT v1 v2 v3 v4
+glProgramUniform2ivEXT v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform2ivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2ivEXT #-}
 ptr_glProgramUniform2ivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -546,7 +637,7 @@ glProgramUniform2ui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @value@ pointing to @count*2@ elements of type @GLuint64@.
   -> m ()
-glProgramUniform2ui64vARB v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform2ui64vARB v1 v2 v3 v4
+glProgramUniform2ui64vARB v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform2ui64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2ui64vARB #-}
 ptr_glProgramUniform2ui64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -593,7 +684,7 @@ glProgramUniform2uiv
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*2@ elements of type @GLuint@.
   -> m ()
-glProgramUniform2uiv v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform2uiv v1 v2 v3 v4
+glProgramUniform2uiv v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform2uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2uiv #-}
 ptr_glProgramUniform2uiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -609,7 +700,7 @@ glProgramUniform2uivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*2@ elements of type @GLuint@.
   -> m ()
-glProgramUniform2uivEXT v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform2uivEXT v1 v2 v3 v4
+glProgramUniform2uivEXT v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform2uivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform2uivEXT #-}
 ptr_glProgramUniform2uivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -656,7 +747,7 @@ glProgramUniform3dv
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*3@ elements of type @GLdouble@.
   -> m ()
-glProgramUniform3dv v1 v2 v3 v4 = liftIO $ dyn468 ptr_glProgramUniform3dv v1 v2 v3 v4
+glProgramUniform3dv v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform3dv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3dv #-}
 ptr_glProgramUniform3dv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -671,7 +762,7 @@ glProgramUniform3dvEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*3@ elements of type @GLdouble@.
   -> m ()
-glProgramUniform3dvEXT v1 v2 v3 v4 = liftIO $ dyn468 ptr_glProgramUniform3dvEXT v1 v2 v3 v4
+glProgramUniform3dvEXT v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform3dvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3dvEXT #-}
 ptr_glProgramUniform3dvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -721,7 +812,7 @@ glProgramUniform3fv
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*3@ elements of type @GLfloat@.
   -> m ()
-glProgramUniform3fv v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform3fv v1 v2 v3 v4
+glProgramUniform3fv v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform3fv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3fv #-}
 ptr_glProgramUniform3fv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -737,7 +828,7 @@ glProgramUniform3fvEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*3@ elements of type @GLfloat@.
   -> m ()
-glProgramUniform3fvEXT v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform3fvEXT v1 v2 v3 v4
+glProgramUniform3fvEXT v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform3fvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3fvEXT #-}
 ptr_glProgramUniform3fvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -801,7 +892,7 @@ glProgramUniform3i64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64 -- ^ @value@ pointing to @count*3@ elements of type @GLint64@.
   -> m ()
-glProgramUniform3i64vARB v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform3i64vARB v1 v2 v3 v4
+glProgramUniform3i64vARB v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform3i64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3i64vARB #-}
 ptr_glProgramUniform3i64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint64 -> IO ())
@@ -849,7 +940,7 @@ glProgramUniform3iv
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*3@ elements of type @GLint@.
   -> m ()
-glProgramUniform3iv v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform3iv v1 v2 v3 v4
+glProgramUniform3iv v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform3iv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3iv #-}
 ptr_glProgramUniform3iv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -865,7 +956,7 @@ glProgramUniform3ivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*3@ elements of type @GLint@.
   -> m ()
-glProgramUniform3ivEXT v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform3ivEXT v1 v2 v3 v4
+glProgramUniform3ivEXT v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform3ivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3ivEXT #-}
 ptr_glProgramUniform3ivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -929,7 +1020,7 @@ glProgramUniform3ui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @value@ pointing to @count*3@ elements of type @GLuint64@.
   -> m ()
-glProgramUniform3ui64vARB v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform3ui64vARB v1 v2 v3 v4
+glProgramUniform3ui64vARB v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform3ui64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3ui64vARB #-}
 ptr_glProgramUniform3ui64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -977,7 +1068,7 @@ glProgramUniform3uiv
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
   -> m ()
-glProgramUniform3uiv v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform3uiv v1 v2 v3 v4
+glProgramUniform3uiv v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform3uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3uiv #-}
 ptr_glProgramUniform3uiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -993,7 +1084,7 @@ glProgramUniform3uivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
   -> m ()
-glProgramUniform3uivEXT v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform3uivEXT v1 v2 v3 v4
+glProgramUniform3uivEXT v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform3uivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform3uivEXT #-}
 ptr_glProgramUniform3uivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1042,7 +1133,7 @@ glProgramUniform4dv
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*4@ elements of type @GLdouble@.
   -> m ()
-glProgramUniform4dv v1 v2 v3 v4 = liftIO $ dyn468 ptr_glProgramUniform4dv v1 v2 v3 v4
+glProgramUniform4dv v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform4dv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4dv #-}
 ptr_glProgramUniform4dv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -1057,7 +1148,7 @@ glProgramUniform4dvEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @value@ pointing to @count*4@ elements of type @GLdouble@.
   -> m ()
-glProgramUniform4dvEXT v1 v2 v3 v4 = liftIO $ dyn468 ptr_glProgramUniform4dvEXT v1 v2 v3 v4
+glProgramUniform4dvEXT v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform4dvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4dvEXT #-}
 ptr_glProgramUniform4dvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLdouble -> IO ())
@@ -1109,7 +1200,7 @@ glProgramUniform4fv
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
   -> m ()
-glProgramUniform4fv v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform4fv v1 v2 v3 v4
+glProgramUniform4fv v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform4fv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4fv #-}
 ptr_glProgramUniform4fv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -1125,7 +1216,7 @@ glProgramUniform4fvEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @value@ pointing to @count*4@ elements of type @GLfloat@.
   -> m ()
-glProgramUniform4fvEXT v1 v2 v3 v4 = liftIO $ dyn469 ptr_glProgramUniform4fvEXT v1 v2 v3 v4
+glProgramUniform4fvEXT v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform4fvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4fvEXT #-}
 ptr_glProgramUniform4fvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -1192,7 +1283,7 @@ glProgramUniform4i64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLint64 -- ^ @value@ pointing to @count*4@ elements of type @GLint64@.
   -> m ()
-glProgramUniform4i64vARB v1 v2 v3 v4 = liftIO $ dyn470 ptr_glProgramUniform4i64vARB v1 v2 v3 v4
+glProgramUniform4i64vARB v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform4i64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4i64vARB #-}
 ptr_glProgramUniform4i64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint64 -> IO ())
@@ -1241,7 +1332,7 @@ glProgramUniform4iv
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*4@ elements of type @GLint@.
   -> m ()
-glProgramUniform4iv v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform4iv v1 v2 v3 v4
+glProgramUniform4iv v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform4iv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4iv #-}
 ptr_glProgramUniform4iv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -1257,7 +1348,7 @@ glProgramUniform4ivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @value@ pointing to @count*4@ elements of type @GLint@.
   -> m ()
-glProgramUniform4ivEXT v1 v2 v3 v4 = liftIO $ dyn471 ptr_glProgramUniform4ivEXT v1 v2 v3 v4
+glProgramUniform4ivEXT v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform4ivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4ivEXT #-}
 ptr_glProgramUniform4ivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLint -> IO ())
@@ -1324,7 +1415,7 @@ glProgramUniform4ui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @value@ pointing to @count*4@ elements of type @GLuint64@.
   -> m ()
-glProgramUniform4ui64vARB v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform4ui64vARB v1 v2 v3 v4
+glProgramUniform4ui64vARB v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform4ui64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4ui64vARB #-}
 ptr_glProgramUniform4ui64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -1373,7 +1464,7 @@ glProgramUniform4uiv
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*4@ elements of type @GLuint@.
   -> m ()
-glProgramUniform4uiv v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform4uiv v1 v2 v3 v4
+glProgramUniform4uiv v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform4uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4uiv #-}
 ptr_glProgramUniform4uiv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1389,7 +1480,7 @@ glProgramUniform4uivEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @value@ pointing to @count*4@ elements of type @GLuint@.
   -> m ()
-glProgramUniform4uivEXT v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniform4uivEXT v1 v2 v3 v4
+glProgramUniform4uivEXT v1 v2 v3 v4 = liftIO $ dyn474 ptr_glProgramUniform4uivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniform4uivEXT #-}
 ptr_glProgramUniform4uivEXT :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1447,7 +1538,7 @@ glProgramUniformHandleui64vARB
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @values@ pointing to @count@ elements of type @GLuint64@.
   -> m ()
-glProgramUniformHandleui64vARB v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniformHandleui64vARB v1 v2 v3 v4
+glProgramUniformHandleui64vARB v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniformHandleui64vARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniformHandleui64vARB #-}
 ptr_glProgramUniformHandleui64vARB :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -1463,7 +1554,7 @@ glProgramUniformHandleui64vIMG
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @values@ pointing to @count@ elements of type @GLuint64@.
   -> m ()
-glProgramUniformHandleui64vIMG v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniformHandleui64vIMG v1 v2 v3 v4
+glProgramUniformHandleui64vIMG v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniformHandleui64vIMG v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniformHandleui64vIMG #-}
 ptr_glProgramUniformHandleui64vIMG :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -1478,7 +1569,7 @@ glProgramUniformHandleui64vNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint64 -- ^ @values@ pointing to @count@ elements of type @GLuint64@.
   -> m ()
-glProgramUniformHandleui64vNV v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniformHandleui64vNV v1 v2 v3 v4
+glProgramUniformHandleui64vNV v1 v2 v3 v4 = liftIO $ dyn473 ptr_glProgramUniformHandleui64vNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glProgramUniformHandleui64vNV #-}
 ptr_glProgramUniformHandleui64vNV :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLuint64 -> IO ())
@@ -1615,102 +1706,4 @@ glProgramUniformMatrix2x3fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn691 ptr_glProgramUni
 {-# NOINLINE ptr_glProgramUniformMatrix2x3fvEXT #-}
 ptr_glProgramUniformMatrix2x3fvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
 ptr_glProgramUniformMatrix2x3fvEXT = unsafePerformIO $ getCommand "glProgramUniformMatrix2x3fvEXT"
-
--- glProgramUniformMatrix2x4dv -------------------------------------------------
-
-glProgramUniformMatrix2x4dv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*8@ elements of type @GLdouble@.
-  -> m ()
-glProgramUniformMatrix2x4dv v1 v2 v3 v4 v5 = liftIO $ dyn690 ptr_glProgramUniformMatrix2x4dv v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniformMatrix2x4dv #-}
-ptr_glProgramUniformMatrix2x4dv :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glProgramUniformMatrix2x4dv = unsafePerformIO $ getCommand "glProgramUniformMatrix2x4dv"
-
--- glProgramUniformMatrix2x4dvEXT ----------------------------------------------
-
-glProgramUniformMatrix2x4dvEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*8@ elements of type @GLdouble@.
-  -> m ()
-glProgramUniformMatrix2x4dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn690 ptr_glProgramUniformMatrix2x4dvEXT v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniformMatrix2x4dvEXT #-}
-ptr_glProgramUniformMatrix2x4dvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glProgramUniformMatrix2x4dvEXT = unsafePerformIO $ getCommand "glProgramUniformMatrix2x4dvEXT"
-
--- glProgramUniformMatrix2x4fv -------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
-glProgramUniformMatrix2x4fv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
-  -> m ()
-glProgramUniformMatrix2x4fv v1 v2 v3 v4 v5 = liftIO $ dyn691 ptr_glProgramUniformMatrix2x4fv v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniformMatrix2x4fv #-}
-ptr_glProgramUniformMatrix2x4fv :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glProgramUniformMatrix2x4fv = unsafePerformIO $ getCommand "glProgramUniformMatrix2x4fv"
-
--- glProgramUniformMatrix2x4fvEXT ----------------------------------------------
-
--- | This command is an alias for 'glProgramUniformMatrix2x4fv'.
-glProgramUniformMatrix2x4fvEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLfloat -- ^ @value@ pointing to @count*8@ elements of type @GLfloat@.
-  -> m ()
-glProgramUniformMatrix2x4fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn691 ptr_glProgramUniformMatrix2x4fvEXT v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniformMatrix2x4fvEXT #-}
-ptr_glProgramUniformMatrix2x4fvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
-ptr_glProgramUniformMatrix2x4fvEXT = unsafePerformIO $ getCommand "glProgramUniformMatrix2x4fvEXT"
-
--- glProgramUniformMatrix3dv ---------------------------------------------------
-
-glProgramUniformMatrix3dv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*9@ elements of type @GLdouble@.
-  -> m ()
-glProgramUniformMatrix3dv v1 v2 v3 v4 v5 = liftIO $ dyn690 ptr_glProgramUniformMatrix3dv v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniformMatrix3dv #-}
-ptr_glProgramUniformMatrix3dv :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glProgramUniformMatrix3dv = unsafePerformIO $ getCommand "glProgramUniformMatrix3dv"
-
--- glProgramUniformMatrix3dvEXT ------------------------------------------------
-
-glProgramUniformMatrix3dvEXT
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*9@ elements of type @GLdouble@.
-  -> m ()
-glProgramUniformMatrix3dvEXT v1 v2 v3 v4 v5 = liftIO $ dyn690 ptr_glProgramUniformMatrix3dvEXT v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniformMatrix3dvEXT #-}
-ptr_glProgramUniformMatrix3dvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glProgramUniformMatrix3dvEXT = unsafePerformIO $ getCommand "glProgramUniformMatrix3dvEXT"
 

@@ -14,12 +14,16 @@
 
 module Graphics.GL.MESA (
   module Graphics.GL.MESA.PackInvert,
+  module Graphics.GL.MESA.ProgramBinaryFormats,
   module Graphics.GL.MESA.ResizeBuffers,
+  module Graphics.GL.MESA.TileRasterOrder,
   module Graphics.GL.MESA.WindowPos,
   module Graphics.GL.MESA.YCbCrTexture
 ) where
 
 import Graphics.GL.MESA.PackInvert
+import Graphics.GL.MESA.ProgramBinaryFormats
 import Graphics.GL.MESA.ResizeBuffers
+import Graphics.GL.MESA.TileRasterOrder
 import Graphics.GL.MESA.WindowPos
 import Graphics.GL.MESA.YCbCrTexture

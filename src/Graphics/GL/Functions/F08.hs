@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F08 (
+  glFlushVertexArrayRangeAPPLE,
+  glFlushVertexArrayRangeNV,
   glFogCoordFormatNV,
   glFogCoordPointer,
   glFogCoordPointerEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F08 (
   glGenOcclusionQueriesNV,
   glGenPathsNV,
   glGenPerfMonitorsAMD,
-  glGenProgramPipelines,
-  glGenProgramPipelinesEXT,
-  glGenProgramsARB
+  glGenProgramPipelines
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -123,6 +123,30 @@ import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
 
+-- glFlushVertexArrayRangeAPPLE ------------------------------------------------
+
+glFlushVertexArrayRangeAPPLE
+  :: MonadIO m
+  => GLsizei -- ^ @length@.
+  -> Ptr a -- ^ @pointer@ pointing to @length@ elements of type @a@.
+  -> m ()
+glFlushVertexArrayRangeAPPLE v1 v2 = liftIO $ dyn265 ptr_glFlushVertexArrayRangeAPPLE v1 v2
+
+{-# NOINLINE ptr_glFlushVertexArrayRangeAPPLE #-}
+ptr_glFlushVertexArrayRangeAPPLE :: FunPtr (GLsizei -> Ptr a -> IO ())
+ptr_glFlushVertexArrayRangeAPPLE = unsafePerformIO $ getCommand "glFlushVertexArrayRangeAPPLE"
+
+-- glFlushVertexArrayRangeNV ---------------------------------------------------
+
+glFlushVertexArrayRangeNV
+  :: MonadIO m
+  => m ()
+glFlushVertexArrayRangeNV = liftIO $ dyn11 ptr_glFlushVertexArrayRangeNV
+
+{-# NOINLINE ptr_glFlushVertexArrayRangeNV #-}
+ptr_glFlushVertexArrayRangeNV :: FunPtr (IO ())
+ptr_glFlushVertexArrayRangeNV = unsafePerformIO $ getCommand "glFlushVertexArrayRangeNV"
+
 -- glFogCoordFormatNV ----------------------------------------------------------
 
 glFogCoordFormatNV
@@ -130,7 +154,7 @@ glFogCoordFormatNV
   => GLenum -- ^ @type@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glFogCoordFormatNV v1 v2 = liftIO $ dyn242 ptr_glFogCoordFormatNV v1 v2
+glFogCoordFormatNV v1 v2 = liftIO $ dyn243 ptr_glFogCoordFormatNV v1 v2
 
 {-# NOINLINE ptr_glFogCoordFormatNV #-}
 ptr_glFogCoordFormatNV :: FunPtr (GLenum -> GLsizei -> IO ())
@@ -175,7 +199,7 @@ glFogCoordPointerListIBM
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @COMPSIZE(type,stride)@ elements of type @Ptr a@.
   -> GLint -- ^ @ptrstride@.
   -> m ()
-glFogCoordPointerListIBM v1 v2 v3 v4 = liftIO $ dyn284 ptr_glFogCoordPointerListIBM v1 v2 v3 v4
+glFogCoordPointerListIBM v1 v2 v3 v4 = liftIO $ dyn285 ptr_glFogCoordPointerListIBM v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFogCoordPointerListIBM #-}
 ptr_glFogCoordPointerListIBM :: FunPtr (GLenum -> GLint -> Ptr (Ptr a) -> GLint -> IO ())
@@ -292,7 +316,7 @@ glFogCoordhNV
   :: MonadIO m
   => GLhalfNV -- ^ @fog@ of type @Half16NV@.
   -> m ()
-glFogCoordhNV v1 = liftIO $ dyn285 ptr_glFogCoordhNV v1
+glFogCoordhNV v1 = liftIO $ dyn286 ptr_glFogCoordhNV v1
 
 {-# NOINLINE ptr_glFogCoordhNV #-}
 ptr_glFogCoordhNV :: FunPtr (GLhalfNV -> IO ())
@@ -383,7 +407,7 @@ ptr_glFogiv = unsafePerformIO $ getCommand "glFogiv"
 
 glFogx
   :: MonadIO m
-  => GLenum -- ^ @pname@.
+  => GLenum -- ^ @pname@ of type [FogPName](Graphics-GL-Groups.html#FogPName).
   -> GLfixed -- ^ @param@.
   -> m ()
 glFogx v1 v2 = liftIO $ dyn1 ptr_glFogx v1 v2
@@ -396,7 +420,7 @@ ptr_glFogx = unsafePerformIO $ getCommand "glFogx"
 
 glFogxOES
   :: MonadIO m
-  => GLenum -- ^ @pname@.
+  => GLenum -- ^ @pname@ of type [FogPName](Graphics-GL-Groups.html#FogPName).
   -> GLfixed -- ^ @param@.
   -> m ()
 glFogxOES v1 v2 = liftIO $ dyn1 ptr_glFogxOES v1 v2
@@ -409,7 +433,7 @@ ptr_glFogxOES = unsafePerformIO $ getCommand "glFogxOES"
 
 glFogxv
   :: MonadIO m
-  => GLenum -- ^ @pname@.
+  => GLenum -- ^ @pname@ of type [FogPName](Graphics-GL-Groups.html#FogPName).
   -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
   -> m ()
 glFogxv v1 v2 = liftIO $ dyn98 ptr_glFogxv v1 v2
@@ -422,7 +446,7 @@ ptr_glFogxv = unsafePerformIO $ getCommand "glFogxv"
 
 glFogxvOES
   :: MonadIO m
-  => GLenum -- ^ @pname@.
+  => GLenum -- ^ @pname@ of type [FogPName](Graphics-GL-Groups.html#FogPName).
   -> Ptr GLfixed -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
   -> m ()
 glFogxvOES v1 v2 = liftIO $ dyn98 ptr_glFogxvOES v1 v2
@@ -664,7 +688,7 @@ glFramebufferDrawBuffersEXT
   -> GLsizei -- ^ @n@.
   -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type [DrawBufferMode](Graphics-GL-Groups.html#DrawBufferMode).
   -> m ()
-glFramebufferDrawBuffersEXT v1 v2 v3 = liftIO $ dyn286 ptr_glFramebufferDrawBuffersEXT v1 v2 v3
+glFramebufferDrawBuffersEXT v1 v2 v3 = liftIO $ dyn287 ptr_glFramebufferDrawBuffersEXT v1 v2 v3
 
 {-# NOINLINE ptr_glFramebufferDrawBuffersEXT #-}
 ptr_glFramebufferDrawBuffersEXT :: FunPtr (GLuint -> GLsizei -> Ptr GLenum -> IO ())
@@ -691,7 +715,7 @@ glFramebufferFoveationConfigQCOM
   -> GLuint -- ^ @requestedFeatures@.
   -> Ptr GLuint -- ^ @providedFeatures@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glFramebufferFoveationConfigQCOM v1 v2 v3 v4 v5 = liftIO $ dyn287 ptr_glFramebufferFoveationConfigQCOM v1 v2 v3 v4 v5
+glFramebufferFoveationConfigQCOM v1 v2 v3 v4 v5 = liftIO $ dyn288 ptr_glFramebufferFoveationConfigQCOM v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferFoveationConfigQCOM #-}
 ptr_glFramebufferFoveationConfigQCOM :: FunPtr (GLuint -> GLuint -> GLuint -> GLuint -> Ptr GLuint -> IO ())
@@ -710,7 +734,7 @@ glFramebufferFoveationParametersQCOM
   -> GLfloat -- ^ @gainY@ of type @CheckedFloat32@.
   -> GLfloat -- ^ @foveaArea@ of type @CheckedFloat32@.
   -> m ()
-glFramebufferFoveationParametersQCOM v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn288 ptr_glFramebufferFoveationParametersQCOM v1 v2 v3 v4 v5 v6 v7 v8
+glFramebufferFoveationParametersQCOM v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn289 ptr_glFramebufferFoveationParametersQCOM v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glFramebufferFoveationParametersQCOM #-}
 ptr_glFramebufferFoveationParametersQCOM :: FunPtr (GLuint -> GLuint -> GLuint -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -721,8 +745,8 @@ ptr_glFramebufferFoveationParametersQCOM = unsafePerformIO $ getCommand "glFrame
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glFramebufferParameteri.xhtml OpenGL 4.x>.
 glFramebufferParameteri
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @pname@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @pname@ of type [FramebufferParameterName](Graphics-GL-Groups.html#FramebufferParameterName).
   -> GLint -- ^ @param@.
   -> m ()
 glFramebufferParameteri v1 v2 v3 = liftIO $ dyn63 ptr_glFramebufferParameteri v1 v2 v3
@@ -762,12 +786,12 @@ ptr_glFramebufferReadBufferEXT = unsafePerformIO $ getCommand "glFramebufferRead
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferRenderbuffer.xhtml OpenGL 4.x>.
 glFramebufferRenderbuffer
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @renderbuffertarget@ of type @RenderbufferTarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @renderbuffertarget@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
-glFramebufferRenderbuffer v1 v2 v3 v4 = liftIO $ dyn289 ptr_glFramebufferRenderbuffer v1 v2 v3 v4
+glFramebufferRenderbuffer v1 v2 v3 v4 = liftIO $ dyn290 ptr_glFramebufferRenderbuffer v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferRenderbuffer #-}
 ptr_glFramebufferRenderbuffer :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> IO ())
@@ -778,12 +802,12 @@ ptr_glFramebufferRenderbuffer = unsafePerformIO $ getCommand "glFramebufferRende
 -- | This command is an alias for 'glFramebufferRenderbuffer'.
 glFramebufferRenderbufferEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @renderbuffertarget@ of type @RenderbufferTarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @renderbuffertarget@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
-glFramebufferRenderbufferEXT v1 v2 v3 v4 = liftIO $ dyn289 ptr_glFramebufferRenderbufferEXT v1 v2 v3 v4
+glFramebufferRenderbufferEXT v1 v2 v3 v4 = liftIO $ dyn290 ptr_glFramebufferRenderbufferEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferRenderbufferEXT #-}
 ptr_glFramebufferRenderbufferEXT :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> IO ())
@@ -793,12 +817,12 @@ ptr_glFramebufferRenderbufferEXT = unsafePerformIO $ getCommand "glFramebufferRe
 
 glFramebufferRenderbufferOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @attachment@.
-  -> GLenum -- ^ @renderbuffertarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @renderbuffertarget@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
-glFramebufferRenderbufferOES v1 v2 v3 v4 = liftIO $ dyn289 ptr_glFramebufferRenderbufferOES v1 v2 v3 v4
+glFramebufferRenderbufferOES v1 v2 v3 v4 = liftIO $ dyn290 ptr_glFramebufferRenderbufferOES v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferRenderbufferOES #-}
 ptr_glFramebufferRenderbufferOES :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> IO ())
@@ -808,12 +832,12 @@ ptr_glFramebufferRenderbufferOES = unsafePerformIO $ getCommand "glFramebufferRe
 
 glFramebufferSampleLocationsfvARB
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @start@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @v@.
   -> m ()
-glFramebufferSampleLocationsfvARB v1 v2 v3 v4 = liftIO $ dyn290 ptr_glFramebufferSampleLocationsfvARB v1 v2 v3 v4
+glFramebufferSampleLocationsfvARB v1 v2 v3 v4 = liftIO $ dyn291 ptr_glFramebufferSampleLocationsfvARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferSampleLocationsfvARB #-}
 ptr_glFramebufferSampleLocationsfvARB :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -823,12 +847,12 @@ ptr_glFramebufferSampleLocationsfvARB = unsafePerformIO $ getCommand "glFramebuf
 
 glFramebufferSampleLocationsfvNV
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @start@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @v@.
   -> m ()
-glFramebufferSampleLocationsfvNV v1 v2 v3 v4 = liftIO $ dyn290 ptr_glFramebufferSampleLocationsfvNV v1 v2 v3 v4
+glFramebufferSampleLocationsfvNV v1 v2 v3 v4 = liftIO $ dyn291 ptr_glFramebufferSampleLocationsfvNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferSampleLocationsfvNV #-}
 ptr_glFramebufferSampleLocationsfvNV :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -838,12 +862,12 @@ ptr_glFramebufferSampleLocationsfvNV = unsafePerformIO $ getCommand "glFramebuff
 
 glFramebufferSamplePositionsfvAMD
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @numsamples@.
   -> GLuint -- ^ @pixelindex@.
   -> Ptr GLfloat -- ^ @values@.
   -> m ()
-glFramebufferSamplePositionsfvAMD v1 v2 v3 v4 = liftIO $ dyn291 ptr_glFramebufferSamplePositionsfvAMD v1 v2 v3 v4
+glFramebufferSamplePositionsfvAMD v1 v2 v3 v4 = liftIO $ dyn292 ptr_glFramebufferSamplePositionsfvAMD v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferSamplePositionsfvAMD #-}
 ptr_glFramebufferSamplePositionsfvAMD :: FunPtr (GLenum -> GLuint -> GLuint -> Ptr GLfloat -> IO ())
@@ -854,12 +878,12 @@ ptr_glFramebufferSamplePositionsfvAMD = unsafePerformIO $ getCommand "glFramebuf
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @attachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> m ()
-glFramebufferTexture v1 v2 v3 v4 = liftIO $ dyn292 ptr_glFramebufferTexture v1 v2 v3 v4
+glFramebufferTexture v1 v2 v3 v4 = liftIO $ dyn293 ptr_glFramebufferTexture v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferTexture #-}
 ptr_glFramebufferTexture :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -870,13 +894,13 @@ ptr_glFramebufferTexture = unsafePerformIO $ getCommand "glFramebufferTexture"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture1D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> m ()
-glFramebufferTexture1D v1 v2 v3 v4 v5 = liftIO $ dyn293 ptr_glFramebufferTexture1D v1 v2 v3 v4 v5
+glFramebufferTexture1D v1 v2 v3 v4 v5 = liftIO $ dyn294 ptr_glFramebufferTexture1D v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTexture1D #-}
 ptr_glFramebufferTexture1D :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -887,13 +911,13 @@ ptr_glFramebufferTexture1D = unsafePerformIO $ getCommand "glFramebufferTexture1
 -- | This command is an alias for 'glFramebufferTexture1D'.
 glFramebufferTexture1DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> m ()
-glFramebufferTexture1DEXT v1 v2 v3 v4 v5 = liftIO $ dyn293 ptr_glFramebufferTexture1DEXT v1 v2 v3 v4 v5
+glFramebufferTexture1DEXT v1 v2 v3 v4 v5 = liftIO $ dyn294 ptr_glFramebufferTexture1DEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTexture1DEXT #-}
 ptr_glFramebufferTexture1DEXT :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -904,13 +928,13 @@ ptr_glFramebufferTexture1DEXT = unsafePerformIO $ getCommand "glFramebufferTextu
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture2D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> m ()
-glFramebufferTexture2D v1 v2 v3 v4 v5 = liftIO $ dyn293 ptr_glFramebufferTexture2D v1 v2 v3 v4 v5
+glFramebufferTexture2D v1 v2 v3 v4 v5 = liftIO $ dyn294 ptr_glFramebufferTexture2D v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTexture2D #-}
 ptr_glFramebufferTexture2D :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -920,15 +944,15 @@ ptr_glFramebufferTexture2D = unsafePerformIO $ getCommand "glFramebufferTexture2
 
 glFramebufferTexture2DDownsampleIMG
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @attachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLint -- ^ @xscale@.
   -> GLint -- ^ @yscale@.
   -> m ()
-glFramebufferTexture2DDownsampleIMG v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn294 ptr_glFramebufferTexture2DDownsampleIMG v1 v2 v3 v4 v5 v6 v7
+glFramebufferTexture2DDownsampleIMG v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn295 ptr_glFramebufferTexture2DDownsampleIMG v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glFramebufferTexture2DDownsampleIMG #-}
 ptr_glFramebufferTexture2DDownsampleIMG :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> GLint -> GLint -> IO ())
@@ -939,13 +963,13 @@ ptr_glFramebufferTexture2DDownsampleIMG = unsafePerformIO $ getCommand "glFrameb
 -- | This command is an alias for 'glFramebufferTexture2D'.
 glFramebufferTexture2DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> m ()
-glFramebufferTexture2DEXT v1 v2 v3 v4 v5 = liftIO $ dyn293 ptr_glFramebufferTexture2DEXT v1 v2 v3 v4 v5
+glFramebufferTexture2DEXT v1 v2 v3 v4 v5 = liftIO $ dyn294 ptr_glFramebufferTexture2DEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTexture2DEXT #-}
 ptr_glFramebufferTexture2DEXT :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -955,14 +979,14 @@ ptr_glFramebufferTexture2DEXT = unsafePerformIO $ getCommand "glFramebufferTextu
 
 glFramebufferTexture2DMultisampleEXT
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @attachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLsizei -- ^ @samples@.
   -> m ()
-glFramebufferTexture2DMultisampleEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn295 ptr_glFramebufferTexture2DMultisampleEXT v1 v2 v3 v4 v5 v6
+glFramebufferTexture2DMultisampleEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn296 ptr_glFramebufferTexture2DMultisampleEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFramebufferTexture2DMultisampleEXT #-}
 ptr_glFramebufferTexture2DMultisampleEXT :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> GLsizei -> IO ())
@@ -972,14 +996,14 @@ ptr_glFramebufferTexture2DMultisampleEXT = unsafePerformIO $ getCommand "glFrame
 
 glFramebufferTexture2DMultisampleIMG
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @attachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLsizei -- ^ @samples@.
   -> m ()
-glFramebufferTexture2DMultisampleIMG v1 v2 v3 v4 v5 v6 = liftIO $ dyn295 ptr_glFramebufferTexture2DMultisampleIMG v1 v2 v3 v4 v5 v6
+glFramebufferTexture2DMultisampleIMG v1 v2 v3 v4 v5 v6 = liftIO $ dyn296 ptr_glFramebufferTexture2DMultisampleIMG v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFramebufferTexture2DMultisampleIMG #-}
 ptr_glFramebufferTexture2DMultisampleIMG :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> GLsizei -> IO ())
@@ -989,13 +1013,13 @@ ptr_glFramebufferTexture2DMultisampleIMG = unsafePerformIO $ getCommand "glFrame
 
 glFramebufferTexture2DOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @attachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> m ()
-glFramebufferTexture2DOES v1 v2 v3 v4 v5 = liftIO $ dyn293 ptr_glFramebufferTexture2DOES v1 v2 v3 v4 v5
+glFramebufferTexture2DOES v1 v2 v3 v4 v5 = liftIO $ dyn294 ptr_glFramebufferTexture2DOES v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTexture2DOES #-}
 ptr_glFramebufferTexture2DOES :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -1006,14 +1030,14 @@ ptr_glFramebufferTexture2DOES = unsafePerformIO $ getCommand "glFramebufferTextu
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTexture.xhtml OpenGL 4.x>.
 glFramebufferTexture3D
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLint -- ^ @zoffset@.
   -> m ()
-glFramebufferTexture3D v1 v2 v3 v4 v5 v6 = liftIO $ dyn296 ptr_glFramebufferTexture3D v1 v2 v3 v4 v5 v6
+glFramebufferTexture3D v1 v2 v3 v4 v5 v6 = liftIO $ dyn297 ptr_glFramebufferTexture3D v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFramebufferTexture3D #-}
 ptr_glFramebufferTexture3D :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> GLint -> IO ())
@@ -1024,14 +1048,14 @@ ptr_glFramebufferTexture3D = unsafePerformIO $ getCommand "glFramebufferTexture3
 -- | This command is an alias for 'glFramebufferTexture3D'.
 glFramebufferTexture3DEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLint -- ^ @zoffset@.
   -> m ()
-glFramebufferTexture3DEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn296 ptr_glFramebufferTexture3DEXT v1 v2 v3 v4 v5 v6
+glFramebufferTexture3DEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn297 ptr_glFramebufferTexture3DEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFramebufferTexture3DEXT #-}
 ptr_glFramebufferTexture3DEXT :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> GLint -> IO ())
@@ -1041,14 +1065,14 @@ ptr_glFramebufferTexture3DEXT = unsafePerformIO $ getCommand "glFramebufferTextu
 
 glFramebufferTexture3DOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @attachment@.
-  -> GLenum -- ^ @textarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLint -- ^ @zoffset@.
   -> m ()
-glFramebufferTexture3DOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn296 ptr_glFramebufferTexture3DOES v1 v2 v3 v4 v5 v6
+glFramebufferTexture3DOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn297 ptr_glFramebufferTexture3DOES v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFramebufferTexture3DOES #-}
 ptr_glFramebufferTexture3DOES :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> GLint -> GLint -> IO ())
@@ -1059,12 +1083,12 @@ ptr_glFramebufferTexture3DOES = unsafePerformIO $ getCommand "glFramebufferTextu
 -- | This command is an alias for 'glFramebufferTexture'.
 glFramebufferTextureARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> m ()
-glFramebufferTextureARB v1 v2 v3 v4 = liftIO $ dyn292 ptr_glFramebufferTextureARB v1 v2 v3 v4
+glFramebufferTextureARB v1 v2 v3 v4 = liftIO $ dyn293 ptr_glFramebufferTextureARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferTextureARB #-}
 ptr_glFramebufferTextureARB :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -1075,12 +1099,12 @@ ptr_glFramebufferTextureARB = unsafePerformIO $ getCommand "glFramebufferTexture
 -- | This command is an alias for 'glFramebufferTexture'.
 glFramebufferTextureEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> m ()
-glFramebufferTextureEXT v1 v2 v3 v4 = liftIO $ dyn292 ptr_glFramebufferTextureEXT v1 v2 v3 v4
+glFramebufferTextureEXT v1 v2 v3 v4 = liftIO $ dyn293 ptr_glFramebufferTextureEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferTextureEXT #-}
 ptr_glFramebufferTextureEXT :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -1090,13 +1114,13 @@ ptr_glFramebufferTextureEXT = unsafePerformIO $ getCommand "glFramebufferTexture
 
 glFramebufferTextureFaceARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @face@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> m ()
-glFramebufferTextureFaceARB v1 v2 v3 v4 v5 = liftIO $ dyn297 ptr_glFramebufferTextureFaceARB v1 v2 v3 v4 v5
+glFramebufferTextureFaceARB v1 v2 v3 v4 v5 = liftIO $ dyn298 ptr_glFramebufferTextureFaceARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTextureFaceARB #-}
 ptr_glFramebufferTextureFaceARB :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLenum -> IO ())
@@ -1107,13 +1131,13 @@ ptr_glFramebufferTextureFaceARB = unsafePerformIO $ getCommand "glFramebufferTex
 -- | This command is an alias for 'glFramebufferTextureFaceARB'.
 glFramebufferTextureFaceEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @face@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> m ()
-glFramebufferTextureFaceEXT v1 v2 v3 v4 v5 = liftIO $ dyn297 ptr_glFramebufferTextureFaceEXT v1 v2 v3 v4 v5
+glFramebufferTextureFaceEXT v1 v2 v3 v4 v5 = liftIO $ dyn298 ptr_glFramebufferTextureFaceEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTextureFaceEXT #-}
 ptr_glFramebufferTextureFaceEXT :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLenum -> IO ())
@@ -1124,13 +1148,13 @@ ptr_glFramebufferTextureFaceEXT = unsafePerformIO $ getCommand "glFramebufferTex
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glFramebufferTextureLayer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glFramebufferTextureLayer.xhtml OpenGL 4.x>.
 glFramebufferTextureLayer
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @layer@ of type @CheckedInt32@.
   -> m ()
-glFramebufferTextureLayer v1 v2 v3 v4 v5 = liftIO $ dyn298 ptr_glFramebufferTextureLayer v1 v2 v3 v4 v5
+glFramebufferTextureLayer v1 v2 v3 v4 v5 = liftIO $ dyn299 ptr_glFramebufferTextureLayer v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTextureLayer #-}
 ptr_glFramebufferTextureLayer :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLint -> IO ())
@@ -1141,13 +1165,13 @@ ptr_glFramebufferTextureLayer = unsafePerformIO $ getCommand "glFramebufferTextu
 -- | This command is an alias for 'glFramebufferTextureLayer'.
 glFramebufferTextureLayerARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @layer@ of type @CheckedInt32@.
   -> m ()
-glFramebufferTextureLayerARB v1 v2 v3 v4 v5 = liftIO $ dyn298 ptr_glFramebufferTextureLayerARB v1 v2 v3 v4 v5
+glFramebufferTextureLayerARB v1 v2 v3 v4 v5 = liftIO $ dyn299 ptr_glFramebufferTextureLayerARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTextureLayerARB #-}
 ptr_glFramebufferTextureLayerARB :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLint -> IO ())
@@ -1157,15 +1181,15 @@ ptr_glFramebufferTextureLayerARB = unsafePerformIO $ getCommand "glFramebufferTe
 
 glFramebufferTextureLayerDownsampleIMG
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @layer@ of type @CheckedInt32@.
   -> GLint -- ^ @xscale@.
   -> GLint -- ^ @yscale@.
   -> m ()
-glFramebufferTextureLayerDownsampleIMG v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn299 ptr_glFramebufferTextureLayerDownsampleIMG v1 v2 v3 v4 v5 v6 v7
+glFramebufferTextureLayerDownsampleIMG v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn300 ptr_glFramebufferTextureLayerDownsampleIMG v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glFramebufferTextureLayerDownsampleIMG #-}
 ptr_glFramebufferTextureLayerDownsampleIMG :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
@@ -1176,13 +1200,13 @@ ptr_glFramebufferTextureLayerDownsampleIMG = unsafePerformIO $ getCommand "glFra
 -- | This command is an alias for 'glFramebufferTextureLayer'.
 glFramebufferTextureLayerEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @layer@ of type @CheckedInt32@.
   -> m ()
-glFramebufferTextureLayerEXT v1 v2 v3 v4 v5 = liftIO $ dyn298 ptr_glFramebufferTextureLayerEXT v1 v2 v3 v4 v5
+glFramebufferTextureLayerEXT v1 v2 v3 v4 v5 = liftIO $ dyn299 ptr_glFramebufferTextureLayerEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glFramebufferTextureLayerEXT #-}
 ptr_glFramebufferTextureLayerEXT :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLint -> IO ())
@@ -1192,15 +1216,15 @@ ptr_glFramebufferTextureLayerEXT = unsafePerformIO $ getCommand "glFramebufferTe
 
 glFramebufferTextureMultisampleMultiviewOVR
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLsizei -- ^ @samples@.
   -> GLint -- ^ @baseViewIndex@.
   -> GLsizei -- ^ @numViews@.
   -> m ()
-glFramebufferTextureMultisampleMultiviewOVR v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn300 ptr_glFramebufferTextureMultisampleMultiviewOVR v1 v2 v3 v4 v5 v6 v7
+glFramebufferTextureMultisampleMultiviewOVR v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn301 ptr_glFramebufferTextureMultisampleMultiviewOVR v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glFramebufferTextureMultisampleMultiviewOVR #-}
 ptr_glFramebufferTextureMultisampleMultiviewOVR :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLsizei -> GLint -> GLsizei -> IO ())
@@ -1210,14 +1234,14 @@ ptr_glFramebufferTextureMultisampleMultiviewOVR = unsafePerformIO $ getCommand "
 
 glFramebufferTextureMultiviewOVR
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @baseViewIndex@.
   -> GLsizei -- ^ @numViews@.
   -> m ()
-glFramebufferTextureMultiviewOVR v1 v2 v3 v4 v5 v6 = liftIO $ dyn301 ptr_glFramebufferTextureMultiviewOVR v1 v2 v3 v4 v5 v6
+glFramebufferTextureMultiviewOVR v1 v2 v3 v4 v5 v6 = liftIO $ dyn302 ptr_glFramebufferTextureMultiviewOVR v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFramebufferTextureMultiviewOVR #-}
 ptr_glFramebufferTextureMultiviewOVR :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> GLint -> GLsizei -> IO ())
@@ -1228,12 +1252,12 @@ ptr_glFramebufferTextureMultiviewOVR = unsafePerformIO $ getCommand "glFramebuff
 -- | This command is an alias for 'glFramebufferTexture'.
 glFramebufferTextureOES
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> m ()
-glFramebufferTextureOES v1 v2 v3 v4 = liftIO $ dyn292 ptr_glFramebufferTextureOES v1 v2 v3 v4
+glFramebufferTextureOES v1 v2 v3 v4 = liftIO $ dyn293 ptr_glFramebufferTextureOES v1 v2 v3 v4
 
 {-# NOINLINE ptr_glFramebufferTextureOES #-}
 ptr_glFramebufferTextureOES :: FunPtr (GLenum -> GLenum -> GLuint -> GLint -> IO ())
@@ -1276,7 +1300,7 @@ glFrustum
   -> GLdouble -- ^ @zNear@.
   -> GLdouble -- ^ @zFar@.
   -> m ()
-glFrustum v1 v2 v3 v4 v5 v6 = liftIO $ dyn302 ptr_glFrustum v1 v2 v3 v4 v5 v6
+glFrustum v1 v2 v3 v4 v5 v6 = liftIO $ dyn303 ptr_glFrustum v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFrustum #-}
 ptr_glFrustum :: FunPtr (GLdouble -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -1327,7 +1351,7 @@ glFrustumx
   -> GLfixed -- ^ @n@.
   -> GLfixed -- ^ @f@.
   -> m ()
-glFrustumx v1 v2 v3 v4 v5 v6 = liftIO $ dyn303 ptr_glFrustumx v1 v2 v3 v4 v5 v6
+glFrustumx v1 v2 v3 v4 v5 v6 = liftIO $ dyn304 ptr_glFrustumx v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFrustumx #-}
 ptr_glFrustumx :: FunPtr (GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
@@ -1344,7 +1368,7 @@ glFrustumxOES
   -> GLfixed -- ^ @n@.
   -> GLfixed -- ^ @f@.
   -> m ()
-glFrustumxOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn303 ptr_glFrustumxOES v1 v2 v3 v4 v5 v6
+glFrustumxOES v1 v2 v3 v4 v5 v6 = liftIO $ dyn304 ptr_glFrustumxOES v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glFrustumxOES #-}
 ptr_glFrustumxOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
@@ -1356,7 +1380,7 @@ glGenAsyncMarkersSGIX
   :: MonadIO m
   => GLsizei -- ^ @range@.
   -> m GLuint
-glGenAsyncMarkersSGIX v1 = liftIO $ dyn304 ptr_glGenAsyncMarkersSGIX v1
+glGenAsyncMarkersSGIX v1 = liftIO $ dyn305 ptr_glGenAsyncMarkersSGIX v1
 
 {-# NOINLINE ptr_glGenAsyncMarkersSGIX #-}
 ptr_glGenAsyncMarkersSGIX :: FunPtr (GLsizei -> IO GLuint)
@@ -1422,7 +1446,7 @@ glGenFragmentShadersATI
   :: MonadIO m
   => GLuint -- ^ @range@.
   -> m GLuint
-glGenFragmentShadersATI v1 = liftIO $ dyn305 ptr_glGenFragmentShadersATI v1
+glGenFragmentShadersATI v1 = liftIO $ dyn306 ptr_glGenFragmentShadersATI v1
 
 {-# NOINLINE ptr_glGenFragmentShadersATI #-}
 ptr_glGenFragmentShadersATI :: FunPtr (GLuint -> IO GLuint)
@@ -1476,7 +1500,7 @@ glGenLists
   :: MonadIO m
   => GLsizei -- ^ @range@.
   -> m GLuint -- ^ of type @List@.
-glGenLists v1 = liftIO $ dyn304 ptr_glGenLists v1
+glGenLists v1 = liftIO $ dyn305 ptr_glGenLists v1
 
 {-# NOINLINE ptr_glGenLists #-}
 ptr_glGenLists :: FunPtr (GLsizei -> IO GLuint)
@@ -1515,7 +1539,7 @@ glGenPathsNV
   :: MonadIO m
   => GLsizei -- ^ @range@.
   -> m GLuint -- ^ of type @Path@.
-glGenPathsNV v1 = liftIO $ dyn304 ptr_glGenPathsNV v1
+glGenPathsNV v1 = liftIO $ dyn305 ptr_glGenPathsNV v1
 
 {-# NOINLINE ptr_glGenPathsNV #-}
 ptr_glGenPathsNV :: FunPtr (GLsizei -> IO GLuint)
@@ -1547,30 +1571,4 @@ glGenProgramPipelines v1 v2 = liftIO $ dyn196 ptr_glGenProgramPipelines v1 v2
 {-# NOINLINE ptr_glGenProgramPipelines #-}
 ptr_glGenProgramPipelines :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
 ptr_glGenProgramPipelines = unsafePerformIO $ getCommand "glGenProgramPipelines"
-
--- glGenProgramPipelinesEXT ----------------------------------------------------
-
-glGenProgramPipelinesEXT
-  :: MonadIO m
-  => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @pipelines@ pointing to @n@ elements of type @GLuint@.
-  -> m ()
-glGenProgramPipelinesEXT v1 v2 = liftIO $ dyn196 ptr_glGenProgramPipelinesEXT v1 v2
-
-{-# NOINLINE ptr_glGenProgramPipelinesEXT #-}
-ptr_glGenProgramPipelinesEXT :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
-ptr_glGenProgramPipelinesEXT = unsafePerformIO $ getCommand "glGenProgramPipelinesEXT"
-
--- glGenProgramsARB ------------------------------------------------------------
-
-glGenProgramsARB
-  :: MonadIO m
-  => GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @programs@ pointing to @n@ elements of type @GLuint@.
-  -> m ()
-glGenProgramsARB v1 v2 = liftIO $ dyn196 ptr_glGenProgramsARB v1 v2
-
-{-# NOINLINE ptr_glGenProgramsARB #-}
-ptr_glGenProgramsARB :: FunPtr (GLsizei -> Ptr GLuint -> IO ())
-ptr_glGenProgramsARB = unsafePerformIO $ getCommand "glGenProgramsARB"
 

@@ -220,7 +220,7 @@ ptr_glActiveStencilFaceEXT = unsafePerformIO $ getCommand "glActiveStencilFaceEX
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glActiveTexture.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glActiveTexture.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glActiveTexture.xhtml OpenGL 4.x>.
 glActiveTexture
   :: MonadIO m
-  => GLenum -- ^ @texture@ of type @TextureUnit@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> m ()
 glActiveTexture v1 = liftIO $ dyn5 ptr_glActiveTexture v1
 
@@ -233,7 +233,7 @@ ptr_glActiveTexture = unsafePerformIO $ getCommand "glActiveTexture"
 -- | This command is an alias for 'glActiveTexture'.
 glActiveTextureARB
   :: MonadIO m
-  => GLenum -- ^ @texture@ of type @TextureUnit@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> m ()
 glActiveTextureARB v1 = liftIO $ dyn5 ptr_glActiveTextureARB v1
 
@@ -258,7 +258,7 @@ ptr_glActiveVaryingNV = unsafePerformIO $ getCommand "glActiveVaryingNV"
 
 glAlphaFragmentOp1ATI
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @FragmentOpATI@.
+  => GLenum -- ^ @op@ of type [FragmentOpATI](Graphics-GL-Groups.html#FragmentOpATI).
   -> GLuint -- ^ @dst@.
   -> GLuint -- ^ @dstMod@.
   -> GLuint -- ^ @arg1@.
@@ -275,7 +275,7 @@ ptr_glAlphaFragmentOp1ATI = unsafePerformIO $ getCommand "glAlphaFragmentOp1ATI"
 
 glAlphaFragmentOp2ATI
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @FragmentOpATI@.
+  => GLenum -- ^ @op@ of type [FragmentOpATI](Graphics-GL-Groups.html#FragmentOpATI).
   -> GLuint -- ^ @dst@.
   -> GLuint -- ^ @dstMod@.
   -> GLuint -- ^ @arg1@.
@@ -295,7 +295,7 @@ ptr_glAlphaFragmentOp2ATI = unsafePerformIO $ getCommand "glAlphaFragmentOp2ATI"
 
 glAlphaFragmentOp3ATI
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @FragmentOpATI@.
+  => GLenum -- ^ @op@ of type [FragmentOpATI](Graphics-GL-Groups.html#FragmentOpATI).
   -> GLuint -- ^ @dst@.
   -> GLuint -- ^ @dstMod@.
   -> GLuint -- ^ @arg1@.
@@ -345,7 +345,7 @@ ptr_glAlphaFuncQCOM = unsafePerformIO $ getCommand "glAlphaFuncQCOM"
 
 glAlphaFuncx
   :: MonadIO m
-  => GLenum -- ^ @func@.
+  => GLenum -- ^ @func@ of type [AlphaFunction](Graphics-GL-Groups.html#AlphaFunction).
   -> GLfixed -- ^ @ref@.
   -> m ()
 glAlphaFuncx v1 v2 = liftIO $ dyn1 ptr_glAlphaFuncx v1 v2
@@ -358,7 +358,7 @@ ptr_glAlphaFuncx = unsafePerformIO $ getCommand "glAlphaFuncx"
 
 glAlphaFuncxOES
   :: MonadIO m
-  => GLenum -- ^ @func@.
+  => GLenum -- ^ @func@ of type [AlphaFunction](Graphics-GL-Groups.html#AlphaFunction).
   -> GLfixed -- ^ @ref@ of type @ClampedFixed@.
   -> m ()
 glAlphaFuncxOES v1 v2 = liftIO $ dyn1 ptr_glAlphaFuncxOES v1 v2
@@ -547,7 +547,7 @@ ptr_glBegin = unsafePerformIO $ getCommand "glBegin"
 glBeginConditionalRender
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @mode@ of type @TypeEnum@.
+  -> GLenum -- ^ @mode@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
   -> m ()
 glBeginConditionalRender v1 v2 = liftIO $ dyn16 ptr_glBeginConditionalRender v1 v2
 
@@ -561,7 +561,7 @@ ptr_glBeginConditionalRender = unsafePerformIO $ getCommand "glBeginConditionalR
 glBeginConditionalRenderNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @mode@ of type @TypeEnum@.
+  -> GLenum -- ^ @mode@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
   -> m ()
 glBeginConditionalRenderNV v1 v2 = liftIO $ dyn16 ptr_glBeginConditionalRenderNV v1 v2
 
@@ -633,7 +633,7 @@ ptr_glBeginPerfQueryINTEL = unsafePerformIO $ getCommand "glBeginPerfQueryINTEL"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBeginQuery.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginQuery.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginQuery.xhtml OpenGL 4.x>.
 glBeginQuery
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [QueryTarget](Graphics-GL-Groups.html#QueryTarget).
   -> GLuint -- ^ @id@.
   -> m ()
 glBeginQuery v1 v2 = liftIO $ dyn17 ptr_glBeginQuery v1 v2
@@ -660,7 +660,7 @@ ptr_glBeginQueryARB = unsafePerformIO $ getCommand "glBeginQueryARB"
 
 glBeginQueryEXT
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [QueryTarget](Graphics-GL-Groups.html#QueryTarget).
   -> GLuint -- ^ @id@.
   -> m ()
 glBeginQueryEXT v1 v2 = liftIO $ dyn17 ptr_glBeginQueryEXT v1 v2
@@ -674,7 +674,7 @@ ptr_glBeginQueryEXT = unsafePerformIO $ getCommand "glBeginQueryEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBeginQueryIndexed.xhtml OpenGL 4.x>.
 glBeginQueryIndexed
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [QueryTarget](Graphics-GL-Groups.html#QueryTarget).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @id@.
   -> m ()
@@ -689,7 +689,7 @@ ptr_glBeginQueryIndexed = unsafePerformIO $ getCommand "glBeginQueryIndexed"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBeginTransformFeedback.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBeginTransformFeedback.xhtml OpenGL 4.x>.
 glBeginTransformFeedback
   :: MonadIO m
-  => GLenum -- ^ @primitiveMode@.
+  => GLenum -- ^ @primitiveMode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
   -> m ()
 glBeginTransformFeedback v1 = liftIO $ dyn5 ptr_glBeginTransformFeedback v1
 
@@ -702,7 +702,7 @@ ptr_glBeginTransformFeedback = unsafePerformIO $ getCommand "glBeginTransformFee
 -- | This command is an alias for 'glBeginTransformFeedback'.
 glBeginTransformFeedbackEXT
   :: MonadIO m
-  => GLenum -- ^ @primitiveMode@.
+  => GLenum -- ^ @primitiveMode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
   -> m ()
 glBeginTransformFeedbackEXT v1 = liftIO $ dyn5 ptr_glBeginTransformFeedbackEXT v1
 
@@ -715,7 +715,7 @@ ptr_glBeginTransformFeedbackEXT = unsafePerformIO $ getCommand "glBeginTransform
 -- | This command is an alias for 'glBeginTransformFeedback'.
 glBeginTransformFeedbackNV
   :: MonadIO m
-  => GLenum -- ^ @primitiveMode@.
+  => GLenum -- ^ @primitiveMode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
   -> m ()
 glBeginTransformFeedbackNV v1 = liftIO $ dyn5 ptr_glBeginTransformFeedbackNV v1
 
@@ -809,7 +809,7 @@ ptr_glBindBufferARB = unsafePerformIO $ getCommand "glBindBufferARB"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferBase.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBufferBase.xhtml OpenGL 4.x>.
 glBindBufferBase
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -824,7 +824,7 @@ ptr_glBindBufferBase = unsafePerformIO $ getCommand "glBindBufferBase"
 -- | This command is an alias for 'glBindBufferBase'.
 glBindBufferBaseEXT
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -839,7 +839,7 @@ ptr_glBindBufferBaseEXT = unsafePerformIO $ getCommand "glBindBufferBaseEXT"
 -- | This command is an alias for 'glBindBufferBase'.
 glBindBufferBaseNV
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> m ()
@@ -853,7 +853,7 @@ ptr_glBindBufferBaseNV = unsafePerformIO $ getCommand "glBindBufferBaseNV"
 
 glBindBufferOffsetEXT
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -869,7 +869,7 @@ ptr_glBindBufferOffsetEXT = unsafePerformIO $ getCommand "glBindBufferOffsetEXT"
 -- | This command is an alias for 'glBindBufferOffsetEXT'.
 glBindBufferOffsetNV
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -885,7 +885,7 @@ ptr_glBindBufferOffsetNV = unsafePerformIO $ getCommand "glBindBufferOffsetNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindBufferRange.xhtml OpenGL 4.x>.
 glBindBufferRange
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -902,7 +902,7 @@ ptr_glBindBufferRange = unsafePerformIO $ getCommand "glBindBufferRange"
 -- | This command is an alias for 'glBindBufferRange'.
 glBindBufferRangeEXT
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -919,7 +919,7 @@ ptr_glBindBufferRangeEXT = unsafePerformIO $ getCommand "glBindBufferRangeEXT"
 -- | This command is an alias for 'glBindBufferRange'.
 glBindBufferRangeNV
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
@@ -936,7 +936,7 @@ ptr_glBindBufferRangeNV = unsafePerformIO $ getCommand "glBindBufferRangeNV"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindBuffersBase.xhtml OpenGL 4.x>.
 glBindBuffersBase
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @buffers@ pointing to @count@ elements of type @GLuint@.
@@ -952,7 +952,7 @@ ptr_glBindBuffersBase = unsafePerformIO $ getCommand "glBindBuffersBase"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindBuffersRange.xhtml OpenGL 4.x>.
 glBindBuffersRange
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @first@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @buffers@ pointing to @count@ elements of type @GLuint@.
@@ -1044,7 +1044,7 @@ ptr_glBindFragmentShaderATI = unsafePerformIO $ getCommand "glBindFragmentShader
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindFramebuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindFramebuffer.xhtml OpenGL 4.x>.
 glBindFramebuffer
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @framebuffer@.
   -> m ()
 glBindFramebuffer v1 v2 = liftIO $ dyn17 ptr_glBindFramebuffer v1 v2
@@ -1057,7 +1057,7 @@ ptr_glBindFramebuffer = unsafePerformIO $ getCommand "glBindFramebuffer"
 
 glBindFramebufferEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @framebuffer@.
   -> m ()
 glBindFramebufferEXT v1 v2 = liftIO $ dyn17 ptr_glBindFramebufferEXT v1 v2
@@ -1070,7 +1070,7 @@ ptr_glBindFramebufferEXT = unsafePerformIO $ getCommand "glBindFramebufferEXT"
 
 glBindFramebufferOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @framebuffer@.
   -> m ()
 glBindFramebufferOES v1 v2 = liftIO $ dyn17 ptr_glBindFramebufferOES v1 v2
@@ -1089,8 +1089,8 @@ glBindImageTexture
   -> GLint -- ^ @level@.
   -> GLboolean -- ^ @layered@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLint -- ^ @layer@.
-  -> GLenum -- ^ @access@.
-  -> GLenum -- ^ @format@.
+  -> GLenum -- ^ @access@ of type [BufferAccessARB](Graphics-GL-Groups.html#BufferAccessARB).
+  -> GLenum -- ^ @format@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> m ()
 glBindImageTexture v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn26 ptr_glBindImageTexture v1 v2 v3 v4 v5 v6 v7
 
@@ -1107,7 +1107,7 @@ glBindImageTextureEXT
   -> GLint -- ^ @level@.
   -> GLboolean -- ^ @layered@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLint -- ^ @layer@.
-  -> GLenum -- ^ @access@.
+  -> GLenum -- ^ @access@ of type [BufferAccessARB](Graphics-GL-Groups.html#BufferAccessARB).
   -> GLint -- ^ @format@.
   -> m ()
 glBindImageTextureEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn27 ptr_glBindImageTextureEXT v1 v2 v3 v4 v5 v6 v7
@@ -1161,7 +1161,7 @@ ptr_glBindMaterialParameterEXT = unsafePerformIO $ getCommand "glBindMaterialPar
 
 glBindMultiTextureEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> m ()
@@ -1240,7 +1240,7 @@ ptr_glBindProgramPipelineEXT = unsafePerformIO $ getCommand "glBindProgramPipeli
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glBindRenderbuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBindRenderbuffer.xhtml OpenGL 4.x>.
 glBindRenderbuffer
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @RenderbufferTarget@.
+  => GLenum -- ^ @target@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
 glBindRenderbuffer v1 v2 = liftIO $ dyn17 ptr_glBindRenderbuffer v1 v2
@@ -1253,7 +1253,7 @@ ptr_glBindRenderbuffer = unsafePerformIO $ getCommand "glBindRenderbuffer"
 
 glBindRenderbufferEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @RenderbufferTarget@.
+  => GLenum -- ^ @target@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
 glBindRenderbufferEXT v1 v2 = liftIO $ dyn17 ptr_glBindRenderbufferEXT v1 v2
@@ -1266,7 +1266,7 @@ ptr_glBindRenderbufferEXT = unsafePerformIO $ getCommand "glBindRenderbufferEXT"
 
 glBindRenderbufferOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
 glBindRenderbufferOES v1 v2 = liftIO $ dyn17 ptr_glBindRenderbufferOES v1 v2
@@ -1308,7 +1308,7 @@ ptr_glBindSamplers = unsafePerformIO $ getCommand "glBindSamplers"
 
 glBindTexGenParameterEXT
   :: MonadIO m
-  => GLenum -- ^ @unit@ of type @TextureUnit@.
+  => GLenum -- ^ @unit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @value@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> m GLuint
@@ -1364,7 +1364,7 @@ ptr_glBindTextureUnit = unsafePerformIO $ getCommand "glBindTextureUnit"
 
 glBindTextureUnitParameterEXT
   :: MonadIO m
-  => GLenum -- ^ @unit@ of type @TextureUnit@.
+  => GLenum -- ^ @unit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @value@ of type @VertexShaderTextureUnitParameter@.
   -> m GLuint
 glBindTextureUnitParameterEXT v1 v2 = liftIO $ dyn29 ptr_glBindTextureUnitParameterEXT v1 v2
@@ -1393,7 +1393,7 @@ ptr_glBindTextures = unsafePerformIO $ getCommand "glBindTextures"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBindTransformFeedback.xhtml OpenGL 4.x>.
 glBindTransformFeedback
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BindTransformFeedbackTarget](Graphics-GL-Groups.html#BindTransformFeedbackTarget).
   -> GLuint -- ^ @id@.
   -> m ()
 glBindTransformFeedback v1 v2 = liftIO $ dyn17 ptr_glBindTransformFeedback v1 v2

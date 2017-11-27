@@ -1,3 +1,7 @@
+3.2.6.0
+-------
+* Updated OpenGL registry to 89bede35b.
+
 3.2.5.0
 -------
 * Updated OpenGL registry to 97558118d.

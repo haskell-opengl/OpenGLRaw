@@ -34,6 +34,7 @@ module Graphics.GL.Functions.F03 (
   glClientWaitSync,
   glClientWaitSyncAPPLE,
   glClipControl,
+  glClipControlEXT,
   glClipPlane,
   glClipPlanef,
   glClipPlanefIMG,
@@ -113,8 +114,7 @@ module Graphics.GL.Functions.F03 (
   glColorTable,
   glColorTableEXT,
   glColorTableParameterfv,
-  glColorTableParameterfvSGI,
-  glColorTableParameteriv
+  glColorTableParameterfvSGI
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -129,11 +129,11 @@ import System.IO.Unsafe ( unsafePerformIO )
 glClearNamedBufferSubData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @internalformat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@.
   -> m ()
 glClearNamedBufferSubData v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn86 ptr_glClearNamedBufferSubData v1 v2 v3 v4 v5 v6 v7
@@ -166,7 +166,7 @@ ptr_glClearNamedBufferSubDataEXT = unsafePerformIO $ getCommand "glClearNamedBuf
 glClearNamedFramebufferfi
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @buffer@.
+  -> GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@.
   -> GLfloat -- ^ @depth@.
   -> GLint -- ^ @stencil@.
@@ -183,7 +183,7 @@ ptr_glClearNamedFramebufferfi = unsafePerformIO $ getCommand "glClearNamedFrameb
 glClearNamedFramebufferfv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @buffer@.
+  -> GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@.
   -> Ptr GLfloat -- ^ @value@.
   -> m ()
@@ -199,7 +199,7 @@ ptr_glClearNamedFramebufferfv = unsafePerformIO $ getCommand "glClearNamedFrameb
 glClearNamedFramebufferiv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @buffer@.
+  -> GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@.
   -> Ptr GLint -- ^ @value@.
   -> m ()
@@ -215,7 +215,7 @@ ptr_glClearNamedFramebufferiv = unsafePerformIO $ getCommand "glClearNamedFrameb
 glClearNamedFramebufferuiv
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @buffer@.
+  -> GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@.
   -> Ptr GLuint -- ^ @value@.
   -> m ()
@@ -231,7 +231,7 @@ glClearPixelLocalStorageuiEXT
   :: MonadIO m
   => GLsizei -- ^ @offset@.
   -> GLsizei -- ^ @n@.
-  -> Ptr GLuint -- ^ @values@.
+  -> Ptr GLuint -- ^ @values@ pointing to @n@ elements of type @GLuint@.
   -> m ()
 glClearPixelLocalStorageuiEXT v1 v2 v3 = liftIO $ dyn92 ptr_glClearPixelLocalStorageuiEXT v1 v2 v3
 
@@ -259,8 +259,8 @@ glClearTexImage
   :: MonadIO m
   => GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearTexImage v1 v2 v3 v4 v5 = liftIO $ dyn93 ptr_glClearTexImage v1 v2 v3 v4 v5
@@ -276,8 +276,8 @@ glClearTexImageEXT
   :: MonadIO m
   => GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearTexImageEXT v1 v2 v3 v4 v5 = liftIO $ dyn93 ptr_glClearTexImageEXT v1 v2 v3 v4 v5
@@ -299,8 +299,8 @@ glClearTexSubImage
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearTexSubImage v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn94 ptr_glClearTexSubImage v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
@@ -322,8 +322,8 @@ glClearTexSubImageEXT
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearTexSubImageEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn94 ptr_glClearTexSubImageEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
@@ -337,7 +337,7 @@ ptr_glClearTexSubImageEXT = unsafePerformIO $ getCommand "glClearTexSubImageEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glClientActiveTexture.xml OpenGL 2.x>.
 glClientActiveTexture
   :: MonadIO m
-  => GLenum -- ^ @texture@ of type @TextureUnit@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> m ()
 glClientActiveTexture v1 = liftIO $ dyn5 ptr_glClientActiveTexture v1
 
@@ -350,7 +350,7 @@ ptr_glClientActiveTexture = unsafePerformIO $ getCommand "glClientActiveTexture"
 -- | This command is an alias for 'glClientActiveTexture'.
 glClientActiveTextureARB
   :: MonadIO m
-  => GLenum -- ^ @texture@ of type @TextureUnit@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> m ()
 glClientActiveTextureARB v1 = liftIO $ dyn5 ptr_glClientActiveTextureARB v1
 
@@ -388,9 +388,9 @@ ptr_glClientAttribDefaultEXT = unsafePerformIO $ getCommand "glClientAttribDefau
 glClientWaitSync
   :: MonadIO m
   => GLsync -- ^ @sync@ of type @sync@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [SyncObjectMask](Graphics-GL-Groups.html#SyncObjectMask).
   -> GLuint64 -- ^ @timeout@.
-  -> m GLenum
+  -> m GLenum -- ^ of type [SyncStatus](Graphics-GL-Groups.html#SyncStatus).
 glClientWaitSync v1 v2 v3 = liftIO $ dyn95 ptr_glClientWaitSync v1 v2 v3
 
 {-# NOINLINE ptr_glClientWaitSync #-}
@@ -403,9 +403,9 @@ ptr_glClientWaitSync = unsafePerformIO $ getCommand "glClientWaitSync"
 glClientWaitSyncAPPLE
   :: MonadIO m
   => GLsync -- ^ @sync@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [SyncObjectMask](Graphics-GL-Groups.html#SyncObjectMask).
   -> GLuint64 -- ^ @timeout@.
-  -> m GLenum
+  -> m GLenum -- ^ of type [SyncStatus](Graphics-GL-Groups.html#SyncStatus).
 glClientWaitSyncAPPLE v1 v2 v3 = liftIO $ dyn95 ptr_glClientWaitSyncAPPLE v1 v2 v3
 
 {-# NOINLINE ptr_glClientWaitSyncAPPLE #-}
@@ -417,14 +417,28 @@ ptr_glClientWaitSyncAPPLE = unsafePerformIO $ getCommand "glClientWaitSyncAPPLE"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClipControl.xhtml OpenGL 4.x>.
 glClipControl
   :: MonadIO m
-  => GLenum -- ^ @origin@.
-  -> GLenum -- ^ @depth@.
+  => GLenum -- ^ @origin@ of type [ClipControlOrigin](Graphics-GL-Groups.html#ClipControlOrigin).
+  -> GLenum -- ^ @depth@ of type [ClipControlDepth](Graphics-GL-Groups.html#ClipControlDepth).
   -> m ()
 glClipControl v1 v2 = liftIO $ dyn52 ptr_glClipControl v1 v2
 
 {-# NOINLINE ptr_glClipControl #-}
 ptr_glClipControl :: FunPtr (GLenum -> GLenum -> IO ())
 ptr_glClipControl = unsafePerformIO $ getCommand "glClipControl"
+
+-- glClipControlEXT ------------------------------------------------------------
+
+-- | This command is an alias for 'glClipControlEXT'.
+glClipControlEXT
+  :: MonadIO m
+  => GLenum -- ^ @origin@.
+  -> GLenum -- ^ @depth@.
+  -> m ()
+glClipControlEXT v1 v2 = liftIO $ dyn52 ptr_glClipControlEXT v1 v2
+
+{-# NOINLINE ptr_glClipControlEXT #-}
+ptr_glClipControlEXT :: FunPtr (GLenum -> GLenum -> IO ())
+ptr_glClipControlEXT = unsafePerformIO $ getCommand "glClipControlEXT"
 
 -- glClipPlane -----------------------------------------------------------------
 
@@ -444,7 +458,7 @@ ptr_glClipPlane = unsafePerformIO $ getCommand "glClipPlane"
 
 glClipPlanef
   :: MonadIO m
-  => GLenum -- ^ @p@.
+  => GLenum -- ^ @p@ of type [ClipPlaneName](Graphics-GL-Groups.html#ClipPlaneName).
   -> Ptr GLfloat -- ^ @eqn@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glClipPlanef v1 v2 = liftIO $ dyn97 ptr_glClipPlanef v1 v2
@@ -457,7 +471,7 @@ ptr_glClipPlanef = unsafePerformIO $ getCommand "glClipPlanef"
 
 glClipPlanefIMG
   :: MonadIO m
-  => GLenum -- ^ @p@.
+  => GLenum -- ^ @p@ of type [ClipPlaneName](Graphics-GL-Groups.html#ClipPlaneName).
   -> Ptr GLfloat -- ^ @eqn@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glClipPlanefIMG v1 v2 = liftIO $ dyn97 ptr_glClipPlanefIMG v1 v2
@@ -470,7 +484,7 @@ ptr_glClipPlanefIMG = unsafePerformIO $ getCommand "glClipPlanefIMG"
 
 glClipPlanefOES
   :: MonadIO m
-  => GLenum -- ^ @plane@.
+  => GLenum -- ^ @plane@ of type [ClipPlaneName](Graphics-GL-Groups.html#ClipPlaneName).
   -> Ptr GLfloat -- ^ @equation@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glClipPlanefOES v1 v2 = liftIO $ dyn97 ptr_glClipPlanefOES v1 v2
@@ -483,7 +497,7 @@ ptr_glClipPlanefOES = unsafePerformIO $ getCommand "glClipPlanefOES"
 
 glClipPlanex
   :: MonadIO m
-  => GLenum -- ^ @plane@.
+  => GLenum -- ^ @plane@ of type [ClipPlaneName](Graphics-GL-Groups.html#ClipPlaneName).
   -> Ptr GLfixed -- ^ @equation@ pointing to @4@ elements of type @GLfixed@.
   -> m ()
 glClipPlanex v1 v2 = liftIO $ dyn98 ptr_glClipPlanex v1 v2
@@ -496,7 +510,7 @@ ptr_glClipPlanex = unsafePerformIO $ getCommand "glClipPlanex"
 
 glClipPlanexIMG
   :: MonadIO m
-  => GLenum -- ^ @p@.
+  => GLenum -- ^ @p@ of type [ClipPlaneName](Graphics-GL-Groups.html#ClipPlaneName).
   -> Ptr GLfixed -- ^ @eqn@ pointing to @4@ elements of type @GLfixed@.
   -> m ()
 glClipPlanexIMG v1 v2 = liftIO $ dyn98 ptr_glClipPlanexIMG v1 v2
@@ -509,7 +523,7 @@ ptr_glClipPlanexIMG = unsafePerformIO $ getCommand "glClipPlanexIMG"
 
 glClipPlanexOES
   :: MonadIO m
-  => GLenum -- ^ @plane@.
+  => GLenum -- ^ @plane@ of type [ClipPlaneName](Graphics-GL-Groups.html#ClipPlaneName).
   -> Ptr GLfixed -- ^ @equation@ pointing to @4@ elements of type @GLfixed@.
   -> m ()
 glClipPlanexOES v1 v2 = liftIO $ dyn98 ptr_glClipPlanexOES v1 v2
@@ -1241,7 +1255,7 @@ ptr_glColorFormatNV = unsafePerformIO $ getCommand "glColorFormatNV"
 
 glColorFragmentOp1ATI
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @FragmentOpATI@.
+  => GLenum -- ^ @op@ of type [FragmentOpATI](Graphics-GL-Groups.html#FragmentOpATI).
   -> GLuint -- ^ @dst@.
   -> GLuint -- ^ @dstMask@.
   -> GLuint -- ^ @dstMod@.
@@ -1259,7 +1273,7 @@ ptr_glColorFragmentOp1ATI = unsafePerformIO $ getCommand "glColorFragmentOp1ATI"
 
 glColorFragmentOp2ATI
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @FragmentOpATI@.
+  => GLenum -- ^ @op@ of type [FragmentOpATI](Graphics-GL-Groups.html#FragmentOpATI).
   -> GLuint -- ^ @dst@.
   -> GLuint -- ^ @dstMask@.
   -> GLuint -- ^ @dstMod@.
@@ -1280,7 +1294,7 @@ ptr_glColorFragmentOp2ATI = unsafePerformIO $ getCommand "glColorFragmentOp2ATI"
 
 glColorFragmentOp3ATI
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @FragmentOpATI@.
+  => GLenum -- ^ @op@ of type [FragmentOpATI](Graphics-GL-Groups.html#FragmentOpATI).
   -> GLuint -- ^ @dst@.
   -> GLuint -- ^ @dstMask@.
   -> GLuint -- ^ @dstMod@.
@@ -1402,7 +1416,7 @@ ptr_glColorMaterial = unsafePerformIO $ getCommand "glColorMaterial"
 
 glColorP3ui
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ColorPointerType](Graphics-GL-Groups.html#ColorPointerType).
   -> GLuint -- ^ @color@.
   -> m ()
 glColorP3ui v1 v2 = liftIO $ dyn17 ptr_glColorP3ui v1 v2
@@ -1415,7 +1429,7 @@ ptr_glColorP3ui = unsafePerformIO $ getCommand "glColorP3ui"
 
 glColorP3uiv
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ColorPointerType](Graphics-GL-Groups.html#ColorPointerType).
   -> Ptr GLuint -- ^ @color@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glColorP3uiv v1 v2 = liftIO $ dyn128 ptr_glColorP3uiv v1 v2
@@ -1428,7 +1442,7 @@ ptr_glColorP3uiv = unsafePerformIO $ getCommand "glColorP3uiv"
 
 glColorP4ui
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ColorPointerType](Graphics-GL-Groups.html#ColorPointerType).
   -> GLuint -- ^ @color@.
   -> m ()
 glColorP4ui v1 v2 = liftIO $ dyn17 ptr_glColorP4ui v1 v2
@@ -1441,7 +1455,7 @@ ptr_glColorP4ui = unsafePerformIO $ getCommand "glColorP4ui"
 
 glColorP4uiv
   :: MonadIO m
-  => GLenum -- ^ @type@.
+  => GLenum -- ^ @type@ of type [ColorPointerType](Graphics-GL-Groups.html#ColorPointerType).
   -> Ptr GLuint -- ^ @color@ pointing to @1@ element of type @GLuint@.
   -> m ()
 glColorP4uiv v1 v2 = liftIO $ dyn128 ptr_glColorP4uiv v1 v2
@@ -1517,7 +1531,7 @@ ptr_glColorPointervINTEL = unsafePerformIO $ getCommand "glColorPointervINTEL"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorSubTable.xml OpenGL 2.x>.
 glColorSubTable
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
   -> GLsizei -- ^ @start@.
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
@@ -1535,7 +1549,7 @@ ptr_glColorSubTable = unsafePerformIO $ getCommand "glColorSubTable"
 -- | This command is an alias for 'glColorSubTable'.
 glColorSubTableEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
   -> GLsizei -- ^ @start@.
   -> GLsizei -- ^ @count@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
@@ -1553,7 +1567,7 @@ ptr_glColorSubTableEXT = unsafePerformIO $ getCommand "glColorSubTableEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTable.xml OpenGL 2.x>.
 glColorTable
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
   -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
@@ -1571,7 +1585,7 @@ ptr_glColorTable = unsafePerformIO $ getCommand "glColorTable"
 -- | This command is an alias for 'glColorTable'.
 glColorTableEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
   -> GLenum -- ^ @internalFormat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
@@ -1589,8 +1603,8 @@ ptr_glColorTableEXT = unsafePerformIO $ getCommand "glColorTableEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTableParameter.xml OpenGL 2.x>.
 glColorTableParameterfv
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
-  -> GLenum -- ^ @pname@ of type @ColorTableParameterPName@.
+  => GLenum -- ^ @target@ of type [ColorTableTarget](Graphics-GL-Groups.html#ColorTableTarget).
+  -> GLenum -- ^ @pname@ of type [ColorTableParameterPNameSGI](Graphics-GL-Groups.html#ColorTableParameterPNameSGI).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glColorTableParameterfv v1 v2 v3 = liftIO $ dyn135 ptr_glColorTableParameterfv v1 v2 v3
@@ -1613,19 +1627,4 @@ glColorTableParameterfvSGI v1 v2 v3 = liftIO $ dyn135 ptr_glColorTableParameterf
 {-# NOINLINE ptr_glColorTableParameterfvSGI #-}
 ptr_glColorTableParameterfvSGI :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
 ptr_glColorTableParameterfvSGI = unsafePerformIO $ getCommand "glColorTableParameterfvSGI"
-
--- glColorTableParameteriv -----------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glColorTableParameter.xml OpenGL 2.x>.
-glColorTableParameteriv
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ColorTableTarget@.
-  -> GLenum -- ^ @pname@ of type @ColorTableParameterPName@.
-  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
-  -> m ()
-glColorTableParameteriv v1 v2 v3 = liftIO $ dyn136 ptr_glColorTableParameteriv v1 v2 v3
-
-{-# NOINLINE ptr_glColorTableParameteriv #-}
-ptr_glColorTableParameteriv :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
-ptr_glColorTableParameteriv = unsafePerformIO $ getCommand "glColorTableParameteriv"
 

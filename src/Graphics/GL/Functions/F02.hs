@@ -396,7 +396,7 @@ ptr_glBlendColorxOES = unsafePerformIO $ getCommand "glBlendColorxOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendEquation.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendEquation.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendEquation.xhtml OpenGL 4.x>.
 glBlendEquation
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @BlendEquationMode@.
+  => GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquation v1 = liftIO $ dyn5 ptr_glBlendEquation v1
 
@@ -423,7 +423,7 @@ ptr_glBlendEquationEXT = unsafePerformIO $ getCommand "glBlendEquationEXT"
 glBlendEquationIndexedAMD
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @mode@.
+  -> GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationIndexedAMD v1 v2 = liftIO $ dyn16 ptr_glBlendEquationIndexedAMD v1 v2
 
@@ -435,7 +435,7 @@ ptr_glBlendEquationIndexedAMD = unsafePerformIO $ getCommand "glBlendEquationInd
 
 glBlendEquationOES
   :: MonadIO m
-  => GLenum -- ^ @mode@.
+  => GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationOES v1 = liftIO $ dyn5 ptr_glBlendEquationOES v1
 
@@ -477,8 +477,8 @@ ptr_glBlendEquationSeparateEXT = unsafePerformIO $ getCommand "glBlendEquationSe
 glBlendEquationSeparateIndexedAMD
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @modeRGB@.
-  -> GLenum -- ^ @modeAlpha@.
+  -> GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparateIndexedAMD v1 v2 v3 = liftIO $ dyn53 ptr_glBlendEquationSeparateIndexedAMD v1 v2 v3
 
@@ -490,8 +490,8 @@ ptr_glBlendEquationSeparateIndexedAMD = unsafePerformIO $ getCommand "glBlendEqu
 
 glBlendEquationSeparateOES
   :: MonadIO m
-  => GLenum -- ^ @modeRGB@.
-  -> GLenum -- ^ @modeAlpha@.
+  => GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparateOES v1 v2 = liftIO $ dyn52 ptr_glBlendEquationSeparateOES v1 v2
 
@@ -505,8 +505,8 @@ ptr_glBlendEquationSeparateOES = unsafePerformIO $ getCommand "glBlendEquationSe
 glBlendEquationSeparatei
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @modeRGB@.
-  -> GLenum -- ^ @modeAlpha@.
+  -> GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparatei v1 v2 v3 = liftIO $ dyn53 ptr_glBlendEquationSeparatei v1 v2 v3
 
@@ -520,8 +520,8 @@ ptr_glBlendEquationSeparatei = unsafePerformIO $ getCommand "glBlendEquationSepa
 glBlendEquationSeparateiARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @modeRGB@.
-  -> GLenum -- ^ @modeAlpha@.
+  -> GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparateiARB v1 v2 v3 = liftIO $ dyn53 ptr_glBlendEquationSeparateiARB v1 v2 v3
 
@@ -535,8 +535,8 @@ ptr_glBlendEquationSeparateiARB = unsafePerformIO $ getCommand "glBlendEquationS
 glBlendEquationSeparateiEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @modeRGB@.
-  -> GLenum -- ^ @modeAlpha@.
+  -> GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparateiEXT v1 v2 v3 = liftIO $ dyn53 ptr_glBlendEquationSeparateiEXT v1 v2 v3
 
@@ -550,8 +550,8 @@ ptr_glBlendEquationSeparateiEXT = unsafePerformIO $ getCommand "glBlendEquationS
 glBlendEquationSeparateiOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @modeRGB@.
-  -> GLenum -- ^ @modeAlpha@.
+  -> GLenum -- ^ @modeRGB@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
+  -> GLenum -- ^ @modeAlpha@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationSeparateiOES v1 v2 v3 = liftIO $ dyn53 ptr_glBlendEquationSeparateiOES v1 v2 v3
 
@@ -565,7 +565,7 @@ ptr_glBlendEquationSeparateiOES = unsafePerformIO $ getCommand "glBlendEquationS
 glBlendEquationi
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @mode@.
+  -> GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationi v1 v2 = liftIO $ dyn16 ptr_glBlendEquationi v1 v2
 
@@ -579,7 +579,7 @@ ptr_glBlendEquationi = unsafePerformIO $ getCommand "glBlendEquationi"
 glBlendEquationiARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @mode@.
+  -> GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationiARB v1 v2 = liftIO $ dyn16 ptr_glBlendEquationiARB v1 v2
 
@@ -593,7 +593,7 @@ ptr_glBlendEquationiARB = unsafePerformIO $ getCommand "glBlendEquationiARB"
 glBlendEquationiEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @mode@.
+  -> GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationiEXT v1 v2 = liftIO $ dyn16 ptr_glBlendEquationiEXT v1 v2
 
@@ -607,7 +607,7 @@ ptr_glBlendEquationiEXT = unsafePerformIO $ getCommand "glBlendEquationiEXT"
 glBlendEquationiOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @mode@.
+  -> GLenum -- ^ @mode@ of type [BlendEquationModeEXT](Graphics-GL-Groups.html#BlendEquationModeEXT).
   -> m ()
 glBlendEquationiOES v1 v2 = liftIO $ dyn16 ptr_glBlendEquationiOES v1 v2
 
@@ -620,8 +620,8 @@ ptr_glBlendEquationiOES = unsafePerformIO $ getCommand "glBlendEquationiOES"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFunc.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFunc.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendFunc.xhtml OpenGL 4.x>.
 glBlendFunc
   :: MonadIO m
-  => GLenum -- ^ @sfactor@ of type [BlendingFactorSrc](Graphics-GL-Groups.html#BlendingFactorSrc).
-  -> GLenum -- ^ @dfactor@ of type [BlendingFactorDest](Graphics-GL-Groups.html#BlendingFactorDest).
+  => GLenum -- ^ @sfactor@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dfactor@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFunc v1 v2 = liftIO $ dyn52 ptr_glBlendFunc v1 v2
 
@@ -649,10 +649,10 @@ ptr_glBlendFuncIndexedAMD = unsafePerformIO $ getCommand "glBlendFuncIndexedAMD"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFuncSeparate.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glBlendFuncSeparate.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glBlendFuncSeparate.xhtml OpenGL 4.x>.
 glBlendFuncSeparate
   :: MonadIO m
-  => GLenum -- ^ @sfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @dfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @sfactorAlpha@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @dfactorAlpha@ of type @BlendFuncSeparateParameterEXT@.
+  => GLenum -- ^ @sfactorRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dfactorRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @sfactorAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dfactorAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparate v1 v2 v3 v4 = liftIO $ dyn54 ptr_glBlendFuncSeparate v1 v2 v3 v4
 
@@ -665,10 +665,10 @@ ptr_glBlendFuncSeparate = unsafePerformIO $ getCommand "glBlendFuncSeparate"
 -- | This command is an alias for 'glBlendFuncSeparate'.
 glBlendFuncSeparateEXT
   :: MonadIO m
-  => GLenum -- ^ @sfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @dfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @sfactorAlpha@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @dfactorAlpha@ of type @BlendFuncSeparateParameterEXT@.
+  => GLenum -- ^ @sfactorRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dfactorRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @sfactorAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dfactorAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparateEXT v1 v2 v3 v4 = liftIO $ dyn54 ptr_glBlendFuncSeparateEXT v1 v2 v3 v4
 
@@ -681,10 +681,10 @@ ptr_glBlendFuncSeparateEXT = unsafePerformIO $ getCommand "glBlendFuncSeparateEX
 -- | This command is an alias for 'glBlendFuncSeparate'.
 glBlendFuncSeparateINGR
   :: MonadIO m
-  => GLenum -- ^ @sfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @dfactorRGB@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @sfactorAlpha@ of type @BlendFuncSeparateParameterEXT@.
-  -> GLenum -- ^ @dfactorAlpha@ of type @BlendFuncSeparateParameterEXT@.
+  => GLenum -- ^ @sfactorRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dfactorRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @sfactorAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dfactorAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparateINGR v1 v2 v3 v4 = liftIO $ dyn54 ptr_glBlendFuncSeparateINGR v1 v2 v3 v4
 
@@ -698,10 +698,10 @@ ptr_glBlendFuncSeparateINGR = unsafePerformIO $ getCommand "glBlendFuncSeparateI
 glBlendFuncSeparateIndexedAMD
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @srcRGB@.
-  -> GLenum -- ^ @dstRGB@.
-  -> GLenum -- ^ @srcAlpha@.
-  -> GLenum -- ^ @dstAlpha@.
+  -> GLenum -- ^ @srcRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @srcAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparateIndexedAMD v1 v2 v3 v4 v5 = liftIO $ dyn55 ptr_glBlendFuncSeparateIndexedAMD v1 v2 v3 v4 v5
 
@@ -713,10 +713,10 @@ ptr_glBlendFuncSeparateIndexedAMD = unsafePerformIO $ getCommand "glBlendFuncSep
 
 glBlendFuncSeparateOES
   :: MonadIO m
-  => GLenum -- ^ @srcRGB@.
-  -> GLenum -- ^ @dstRGB@.
-  -> GLenum -- ^ @srcAlpha@.
-  -> GLenum -- ^ @dstAlpha@.
+  => GLenum -- ^ @srcRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @srcAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparateOES v1 v2 v3 v4 = liftIO $ dyn54 ptr_glBlendFuncSeparateOES v1 v2 v3 v4
 
@@ -730,10 +730,10 @@ ptr_glBlendFuncSeparateOES = unsafePerformIO $ getCommand "glBlendFuncSeparateOE
 glBlendFuncSeparatei
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @srcRGB@.
-  -> GLenum -- ^ @dstRGB@.
-  -> GLenum -- ^ @srcAlpha@.
-  -> GLenum -- ^ @dstAlpha@.
+  -> GLenum -- ^ @srcRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @srcAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparatei v1 v2 v3 v4 v5 = liftIO $ dyn55 ptr_glBlendFuncSeparatei v1 v2 v3 v4 v5
 
@@ -747,10 +747,10 @@ ptr_glBlendFuncSeparatei = unsafePerformIO $ getCommand "glBlendFuncSeparatei"
 glBlendFuncSeparateiARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @srcRGB@.
-  -> GLenum -- ^ @dstRGB@.
-  -> GLenum -- ^ @srcAlpha@.
-  -> GLenum -- ^ @dstAlpha@.
+  -> GLenum -- ^ @srcRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @srcAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparateiARB v1 v2 v3 v4 v5 = liftIO $ dyn55 ptr_glBlendFuncSeparateiARB v1 v2 v3 v4 v5
 
@@ -764,10 +764,10 @@ ptr_glBlendFuncSeparateiARB = unsafePerformIO $ getCommand "glBlendFuncSeparatei
 glBlendFuncSeparateiEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @srcRGB@.
-  -> GLenum -- ^ @dstRGB@.
-  -> GLenum -- ^ @srcAlpha@.
-  -> GLenum -- ^ @dstAlpha@.
+  -> GLenum -- ^ @srcRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @srcAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparateiEXT v1 v2 v3 v4 v5 = liftIO $ dyn55 ptr_glBlendFuncSeparateiEXT v1 v2 v3 v4 v5
 
@@ -781,10 +781,10 @@ ptr_glBlendFuncSeparateiEXT = unsafePerformIO $ getCommand "glBlendFuncSeparatei
 glBlendFuncSeparateiOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @srcRGB@.
-  -> GLenum -- ^ @dstRGB@.
-  -> GLenum -- ^ @srcAlpha@.
-  -> GLenum -- ^ @dstAlpha@.
+  -> GLenum -- ^ @srcRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstRGB@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @srcAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dstAlpha@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFuncSeparateiOES v1 v2 v3 v4 v5 = liftIO $ dyn55 ptr_glBlendFuncSeparateiOES v1 v2 v3 v4 v5
 
@@ -798,8 +798,8 @@ ptr_glBlendFuncSeparateiOES = unsafePerformIO $ getCommand "glBlendFuncSeparatei
 glBlendFunci
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @src@.
-  -> GLenum -- ^ @dst@.
+  -> GLenum -- ^ @src@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dst@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFunci v1 v2 v3 = liftIO $ dyn53 ptr_glBlendFunci v1 v2 v3
 
@@ -813,8 +813,8 @@ ptr_glBlendFunci = unsafePerformIO $ getCommand "glBlendFunci"
 glBlendFunciARB
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @src@.
-  -> GLenum -- ^ @dst@.
+  -> GLenum -- ^ @src@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dst@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFunciARB v1 v2 v3 = liftIO $ dyn53 ptr_glBlendFunciARB v1 v2 v3
 
@@ -828,8 +828,8 @@ ptr_glBlendFunciARB = unsafePerformIO $ getCommand "glBlendFunciARB"
 glBlendFunciEXT
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @src@.
-  -> GLenum -- ^ @dst@.
+  -> GLenum -- ^ @src@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dst@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFunciEXT v1 v2 v3 = liftIO $ dyn53 ptr_glBlendFunciEXT v1 v2 v3
 
@@ -843,8 +843,8 @@ ptr_glBlendFunciEXT = unsafePerformIO $ getCommand "glBlendFunciEXT"
 glBlendFunciOES
   :: MonadIO m
   => GLuint -- ^ @buf@.
-  -> GLenum -- ^ @src@.
-  -> GLenum -- ^ @dst@.
+  -> GLenum -- ^ @src@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
+  -> GLenum -- ^ @dst@ of type [BlendingFactor](Graphics-GL-Groups.html#BlendingFactor).
   -> m ()
 glBlendFunciOES v1 v2 v3 = liftIO $ dyn53 ptr_glBlendFunciOES v1 v2 v3
 
@@ -879,7 +879,7 @@ glBlitFramebuffer
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
   -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-GL-Groups.html#ClearBufferMask).
-  -> GLenum -- ^ @filter@.
+  -> GLenum -- ^ @filter@ of type [BlitFramebufferFilter](Graphics-GL-Groups.html#BlitFramebufferFilter).
   -> m ()
 glBlitFramebuffer v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn57 ptr_glBlitFramebuffer v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
@@ -899,8 +899,8 @@ glBlitFramebufferANGLE
   -> GLint -- ^ @dstY0@.
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
-  -> GLbitfield -- ^ @mask@.
-  -> GLenum -- ^ @filter@.
+  -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-GL-Groups.html#ClearBufferMask).
+  -> GLenum -- ^ @filter@ of type [BlitFramebufferFilter](Graphics-GL-Groups.html#BlitFramebufferFilter).
   -> m ()
 glBlitFramebufferANGLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn57 ptr_glBlitFramebufferANGLE v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
@@ -922,7 +922,7 @@ glBlitFramebufferEXT
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
   -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-GL-Groups.html#ClearBufferMask).
-  -> GLenum -- ^ @filter@.
+  -> GLenum -- ^ @filter@ of type [BlitFramebufferFilter](Graphics-GL-Groups.html#BlitFramebufferFilter).
   -> m ()
 glBlitFramebufferEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn57 ptr_glBlitFramebufferEXT v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
@@ -943,8 +943,8 @@ glBlitFramebufferNV
   -> GLint -- ^ @dstY0@.
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
-  -> GLbitfield -- ^ @mask@.
-  -> GLenum -- ^ @filter@.
+  -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-GL-Groups.html#ClearBufferMask).
+  -> GLenum -- ^ @filter@ of type [BlitFramebufferFilter](Graphics-GL-Groups.html#BlitFramebufferFilter).
   -> m ()
 glBlitFramebufferNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 = liftIO $ dyn57 ptr_glBlitFramebufferNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10
 
@@ -967,8 +967,8 @@ glBlitNamedFramebuffer
   -> GLint -- ^ @dstY0@.
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
-  -> GLbitfield -- ^ @mask@.
-  -> GLenum -- ^ @filter@.
+  -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-GL-Groups.html#ClearBufferMask).
+  -> GLenum -- ^ @filter@ of type [BlitFramebufferFilter](Graphics-GL-Groups.html#BlitFramebufferFilter).
   -> m ()
 glBlitNamedFramebuffer v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO $ dyn58 ptr_glBlitNamedFramebuffer v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12
 
@@ -1057,10 +1057,10 @@ ptr_glBufferParameteriAPPLE = unsafePerformIO $ getCommand "glBufferParameteriAP
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glBufferStorage.xhtml OpenGL 4.x>.
 glBufferStorage
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferStorageTarget](Graphics-GL-Groups.html#BufferStorageTarget).
   -> GLsizeiptr -- ^ @size@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
   -> m ()
 glBufferStorage v1 v2 v3 v4 = liftIO $ dyn64 ptr_glBufferStorage v1 v2 v3 v4
 
@@ -1073,10 +1073,10 @@ ptr_glBufferStorage = unsafePerformIO $ getCommand "glBufferStorage"
 -- | This command is an alias for 'glBufferStorage'.
 glBufferStorageEXT
   :: MonadIO m
-  => GLenum -- ^ @target@.
+  => GLenum -- ^ @target@ of type [BufferStorageTarget](Graphics-GL-Groups.html#BufferStorageTarget).
   -> GLsizeiptr -- ^ @size@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
   -> m ()
 glBufferStorageEXT v1 v2 v3 v4 = liftIO $ dyn64 ptr_glBufferStorageEXT v1 v2 v3 v4
 
@@ -1092,7 +1092,7 @@ glBufferStorageExternalEXT
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @size@.
   -> GLeglClientBufferEXT -- ^ @clientBuffer@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
   -> m ()
 glBufferStorageExternalEXT v1 v2 v3 v4 v5 = liftIO $ dyn65 ptr_glBufferStorageExternalEXT v1 v2 v3 v4 v5
 
@@ -1192,8 +1192,8 @@ ptr_glCallLists = unsafePerformIO $ getCommand "glCallLists"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glCheckFramebufferStatus.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glCheckFramebufferStatus.xhtml OpenGL 4.x>.
 glCheckFramebufferStatus
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> m GLenum
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> m GLenum -- ^ of type [FramebufferStatus](Graphics-GL-Groups.html#FramebufferStatus).
 glCheckFramebufferStatus v1 = liftIO $ dyn70 ptr_glCheckFramebufferStatus v1
 
 {-# NOINLINE ptr_glCheckFramebufferStatus #-}
@@ -1205,8 +1205,8 @@ ptr_glCheckFramebufferStatus = unsafePerformIO $ getCommand "glCheckFramebufferS
 -- | This command is an alias for 'glCheckFramebufferStatus'.
 glCheckFramebufferStatusEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> m GLenum
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> m GLenum -- ^ of type [FramebufferStatus](Graphics-GL-Groups.html#FramebufferStatus).
 glCheckFramebufferStatusEXT v1 = liftIO $ dyn70 ptr_glCheckFramebufferStatusEXT v1
 
 {-# NOINLINE ptr_glCheckFramebufferStatusEXT #-}
@@ -1217,8 +1217,8 @@ ptr_glCheckFramebufferStatusEXT = unsafePerformIO $ getCommand "glCheckFramebuff
 
 glCheckFramebufferStatusOES
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> m GLenum
+  => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> m GLenum -- ^ of type [FramebufferStatus](Graphics-GL-Groups.html#FramebufferStatus).
 glCheckFramebufferStatusOES v1 = liftIO $ dyn70 ptr_glCheckFramebufferStatusOES v1
 
 {-# NOINLINE ptr_glCheckFramebufferStatusOES #-}
@@ -1231,8 +1231,8 @@ ptr_glCheckFramebufferStatusOES = unsafePerformIO $ getCommand "glCheckFramebuff
 glCheckNamedFramebufferStatus
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @target@.
-  -> m GLenum
+  -> GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> m GLenum -- ^ of type [FramebufferStatus](Graphics-GL-Groups.html#FramebufferStatus).
 glCheckNamedFramebufferStatus v1 v2 = liftIO $ dyn71 ptr_glCheckNamedFramebufferStatus v1 v2
 
 {-# NOINLINE ptr_glCheckNamedFramebufferStatus #-}
@@ -1244,8 +1244,8 @@ ptr_glCheckNamedFramebufferStatus = unsafePerformIO $ getCommand "glCheckNamedFr
 glCheckNamedFramebufferStatusEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @target@ of type @FramebufferTarget@.
-  -> m GLenum -- ^ of type @FramebufferStatus@.
+  -> GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
+  -> m GLenum -- ^ of type [FramebufferStatus](Graphics-GL-Groups.html#FramebufferStatus).
 glCheckNamedFramebufferStatusEXT v1 v2 = liftIO $ dyn71 ptr_glCheckNamedFramebufferStatusEXT v1 v2
 
 {-# NOINLINE ptr_glCheckNamedFramebufferStatusEXT #-}
@@ -1329,10 +1329,10 @@ ptr_glClearAccumxOES = unsafePerformIO $ getCommand "glClearAccumxOES"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glClearBufferData.xhtml OpenGL 4.x>.
 glClearBufferData
   :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> GLenum -- ^ @internalformat@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @target@ of type [BufferStorageTarget](Graphics-GL-Groups.html#BufferStorageTarget).
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearBufferData v1 v2 v3 v4 v5 = liftIO $ dyn73 ptr_glClearBufferData v1 v2 v3 v4 v5
@@ -1347,11 +1347,11 @@ ptr_glClearBufferData = unsafePerformIO $ getCommand "glClearBufferData"
 glClearBufferSubData
   :: MonadIO m
   => GLenum -- ^ @target@.
-  -> GLenum -- ^ @internalformat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.
   -> m ()
 glClearBufferSubData v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn74 ptr_glClearBufferSubData v1 v2 v3 v4 v5 v6 v7
@@ -1365,7 +1365,7 @@ ptr_glClearBufferSubData = unsafePerformIO $ getCommand "glClearBufferSubData"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferfi
   :: MonadIO m
-  => GLenum -- ^ @buffer@.
+  => GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
   -> GLfloat -- ^ @depth@.
   -> GLint -- ^ @stencil@.
@@ -1381,7 +1381,7 @@ ptr_glClearBufferfi = unsafePerformIO $ getCommand "glClearBufferfi"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferfv
   :: MonadIO m
-  => GLenum -- ^ @buffer@.
+  => GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
   -> Ptr GLfloat -- ^ @value@ pointing to @COMPSIZE(buffer)@ elements of type @GLfloat@.
   -> m ()
@@ -1396,7 +1396,7 @@ ptr_glClearBufferfv = unsafePerformIO $ getCommand "glClearBufferfv"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferiv
   :: MonadIO m
-  => GLenum -- ^ @buffer@.
+  => GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
   -> Ptr GLint -- ^ @value@ pointing to @COMPSIZE(buffer)@ elements of type @GLint@.
   -> m ()
@@ -1411,7 +1411,7 @@ ptr_glClearBufferiv = unsafePerformIO $ getCommand "glClearBufferiv"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClearBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClearBuffer.xhtml OpenGL 4.x>.
 glClearBufferuiv
   :: MonadIO m
-  => GLenum -- ^ @buffer@.
+  => GLenum -- ^ @buffer@ of type [Buffer](Graphics-GL-Groups.html#Buffer).
   -> GLint -- ^ @drawbuffer@ of type @DrawBufferName@.
   -> Ptr GLuint -- ^ @value@ pointing to @COMPSIZE(buffer)@ elements of type @GLuint@.
   -> m ()
@@ -1591,9 +1591,9 @@ ptr_glClearIndex = unsafePerformIO $ getCommand "glClearIndex"
 glClearNamedBufferData
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @internalformat@.
-  -> GLenum -- ^ @format@.
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
+  -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
+  -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@.
   -> m ()
 glClearNamedBufferData v1 v2 v3 v4 v5 = liftIO $ dyn85 ptr_glClearNamedBufferData v1 v2 v3 v4 v5
@@ -1607,7 +1607,7 @@ ptr_glClearNamedBufferData = unsafePerformIO $ getCommand "glClearNamedBufferDat
 glClearNamedBufferDataEXT
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @internalformat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(format,type)@ elements of type @a@.

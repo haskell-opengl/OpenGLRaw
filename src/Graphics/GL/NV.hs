@@ -19,6 +19,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.BindlessTexture,
   module Graphics.GL.NV.BlendEquationAdvanced,
   module Graphics.GL.NV.BlendEquationAdvancedCoherent,
+  module Graphics.GL.NV.BlendMinmaxFactor,
   module Graphics.GL.NV.ClipSpaceWScaling,
   module Graphics.GL.NV.CommandList,
   module Graphics.GL.NV.ComputeProgram5,
@@ -64,6 +65,8 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.PointSprite,
   module Graphics.GL.NV.PresentVideo,
   module Graphics.GL.NV.PrimitiveRestart,
+  module Graphics.GL.NV.QueryResource,
+  module Graphics.GL.NV.QueryResourceTag,
   module Graphics.GL.NV.RegisterCombiners,
   module Graphics.GL.NV.RegisterCombiners2,
   module Graphics.GL.NV.RobustnessVideoMemoryPurge,
@@ -104,6 +107,7 @@ import Graphics.GL.NV.BindlessMultiDrawIndirectCount
 import Graphics.GL.NV.BindlessTexture
 import Graphics.GL.NV.BlendEquationAdvanced
 import Graphics.GL.NV.BlendEquationAdvancedCoherent
+import Graphics.GL.NV.BlendMinmaxFactor
 import Graphics.GL.NV.ClipSpaceWScaling
 import Graphics.GL.NV.CommandList
 import Graphics.GL.NV.ComputeProgram5
@@ -149,6 +153,8 @@ import Graphics.GL.NV.PixelDataRange
 import Graphics.GL.NV.PointSprite
 import Graphics.GL.NV.PresentVideo
 import Graphics.GL.NV.PrimitiveRestart
+import Graphics.GL.NV.QueryResource
+import Graphics.GL.NV.QueryResourceTag
 import Graphics.GL.NV.RegisterCombiners
 import Graphics.GL.NV.RegisterCombiners2
 import Graphics.GL.NV.RobustnessVideoMemoryPurge

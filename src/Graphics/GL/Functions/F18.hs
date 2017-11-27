@@ -15,6 +15,11 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F18 (
+  glMultiTexCoord4sv,
+  glMultiTexCoord4svARB,
+  glMultiTexCoord4x,
+  glMultiTexCoord4xOES,
+  glMultiTexCoord4xvOES,
   glMultiTexCoordP1ui,
   glMultiTexCoordP1uiv,
   glMultiTexCoordP2ui,
@@ -109,12 +114,7 @@ module Graphics.GL.Functions.F18 (
   glNewObjectBufferATI,
   glNormal3b,
   glNormal3bv,
-  glNormal3d,
-  glNormal3dv,
-  glNormal3f,
-  glNormal3fVertex3fSUN,
-  glNormal3fVertex3fvSUN,
-  glNormal3fv
+  glNormal3d
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -123,12 +123,85 @@ import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
 
+-- glMultiTexCoord4sv ----------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
+glMultiTexCoord4sv
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
+  -> m ()
+glMultiTexCoord4sv v1 v2 = liftIO $ dyn562 ptr_glMultiTexCoord4sv v1 v2
+
+{-# NOINLINE ptr_glMultiTexCoord4sv #-}
+ptr_glMultiTexCoord4sv :: FunPtr (GLenum -> Ptr GLshort -> IO ())
+ptr_glMultiTexCoord4sv = unsafePerformIO $ getCommand "glMultiTexCoord4sv"
+
+-- glMultiTexCoord4svARB -------------------------------------------------------
+
+-- | This command is an alias for 'glMultiTexCoord4sv'.
+glMultiTexCoord4svARB
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @CoordS@.
+  -> m ()
+glMultiTexCoord4svARB v1 v2 = liftIO $ dyn562 ptr_glMultiTexCoord4svARB v1 v2
+
+{-# NOINLINE ptr_glMultiTexCoord4svARB #-}
+ptr_glMultiTexCoord4svARB :: FunPtr (GLenum -> Ptr GLshort -> IO ())
+ptr_glMultiTexCoord4svARB = unsafePerformIO $ getCommand "glMultiTexCoord4svARB"
+
+-- glMultiTexCoord4x -----------------------------------------------------------
+
+glMultiTexCoord4x
+  :: MonadIO m
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLfixed -- ^ @s@.
+  -> GLfixed -- ^ @t@.
+  -> GLfixed -- ^ @r@.
+  -> GLfixed -- ^ @q@.
+  -> m ()
+glMultiTexCoord4x v1 v2 v3 v4 v5 = liftIO $ dyn577 ptr_glMultiTexCoord4x v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glMultiTexCoord4x #-}
+ptr_glMultiTexCoord4x :: FunPtr (GLenum -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glMultiTexCoord4x = unsafePerformIO $ getCommand "glMultiTexCoord4x"
+
+-- glMultiTexCoord4xOES --------------------------------------------------------
+
+glMultiTexCoord4xOES
+  :: MonadIO m
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLfixed -- ^ @s@.
+  -> GLfixed -- ^ @t@.
+  -> GLfixed -- ^ @r@.
+  -> GLfixed -- ^ @q@.
+  -> m ()
+glMultiTexCoord4xOES v1 v2 v3 v4 v5 = liftIO $ dyn577 ptr_glMultiTexCoord4xOES v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glMultiTexCoord4xOES #-}
+ptr_glMultiTexCoord4xOES :: FunPtr (GLenum -> GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
+ptr_glMultiTexCoord4xOES = unsafePerformIO $ getCommand "glMultiTexCoord4xOES"
+
+-- glMultiTexCoord4xvOES -------------------------------------------------------
+
+glMultiTexCoord4xvOES
+  :: MonadIO m
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> Ptr GLfixed -- ^ @coords@ pointing to @4@ elements of type @GLfixed@.
+  -> m ()
+glMultiTexCoord4xvOES v1 v2 = liftIO $ dyn98 ptr_glMultiTexCoord4xvOES v1 v2
+
+{-# NOINLINE ptr_glMultiTexCoord4xvOES #-}
+ptr_glMultiTexCoord4xvOES :: FunPtr (GLenum -> Ptr GLfixed -> IO ())
+ptr_glMultiTexCoord4xvOES = unsafePerformIO $ getCommand "glMultiTexCoord4xvOES"
+
 -- glMultiTexCoordP1ui ---------------------------------------------------------
 
 glMultiTexCoordP1ui
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> GLuint -- ^ @coords@.
   -> m ()
 glMultiTexCoordP1ui v1 v2 v3 = liftIO $ dyn30 ptr_glMultiTexCoordP1ui v1 v2 v3
@@ -141,11 +214,11 @@ ptr_glMultiTexCoordP1ui = unsafePerformIO $ getCommand "glMultiTexCoordP1ui"
 
 glMultiTexCoordP1uiv
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glMultiTexCoordP1uiv v1 v2 v3 = liftIO $ dyn422 ptr_glMultiTexCoordP1uiv v1 v2 v3
+glMultiTexCoordP1uiv v1 v2 v3 = liftIO $ dyn423 ptr_glMultiTexCoordP1uiv v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoordP1uiv #-}
 ptr_glMultiTexCoordP1uiv :: FunPtr (GLenum -> GLenum -> Ptr GLuint -> IO ())
@@ -155,8 +228,8 @@ ptr_glMultiTexCoordP1uiv = unsafePerformIO $ getCommand "glMultiTexCoordP1uiv"
 
 glMultiTexCoordP2ui
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> GLuint -- ^ @coords@.
   -> m ()
 glMultiTexCoordP2ui v1 v2 v3 = liftIO $ dyn30 ptr_glMultiTexCoordP2ui v1 v2 v3
@@ -169,11 +242,11 @@ ptr_glMultiTexCoordP2ui = unsafePerformIO $ getCommand "glMultiTexCoordP2ui"
 
 glMultiTexCoordP2uiv
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glMultiTexCoordP2uiv v1 v2 v3 = liftIO $ dyn422 ptr_glMultiTexCoordP2uiv v1 v2 v3
+glMultiTexCoordP2uiv v1 v2 v3 = liftIO $ dyn423 ptr_glMultiTexCoordP2uiv v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoordP2uiv #-}
 ptr_glMultiTexCoordP2uiv :: FunPtr (GLenum -> GLenum -> Ptr GLuint -> IO ())
@@ -183,8 +256,8 @@ ptr_glMultiTexCoordP2uiv = unsafePerformIO $ getCommand "glMultiTexCoordP2uiv"
 
 glMultiTexCoordP3ui
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> GLuint -- ^ @coords@.
   -> m ()
 glMultiTexCoordP3ui v1 v2 v3 = liftIO $ dyn30 ptr_glMultiTexCoordP3ui v1 v2 v3
@@ -197,11 +270,11 @@ ptr_glMultiTexCoordP3ui = unsafePerformIO $ getCommand "glMultiTexCoordP3ui"
 
 glMultiTexCoordP3uiv
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glMultiTexCoordP3uiv v1 v2 v3 = liftIO $ dyn422 ptr_glMultiTexCoordP3uiv v1 v2 v3
+glMultiTexCoordP3uiv v1 v2 v3 = liftIO $ dyn423 ptr_glMultiTexCoordP3uiv v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoordP3uiv #-}
 ptr_glMultiTexCoordP3uiv :: FunPtr (GLenum -> GLenum -> Ptr GLuint -> IO ())
@@ -211,8 +284,8 @@ ptr_glMultiTexCoordP3uiv = unsafePerformIO $ getCommand "glMultiTexCoordP3uiv"
 
 glMultiTexCoordP4ui
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> GLuint -- ^ @coords@.
   -> m ()
 glMultiTexCoordP4ui v1 v2 v3 = liftIO $ dyn30 ptr_glMultiTexCoordP4ui v1 v2 v3
@@ -225,11 +298,11 @@ ptr_glMultiTexCoordP4ui = unsafePerformIO $ getCommand "glMultiTexCoordP4ui"
 
 glMultiTexCoordP4uiv
   :: MonadIO m
-  => GLenum -- ^ @texture@.
-  -> GLenum -- ^ @type@.
+  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> Ptr GLuint -- ^ @coords@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glMultiTexCoordP4uiv v1 v2 v3 = liftIO $ dyn422 ptr_glMultiTexCoordP4uiv v1 v2 v3
+glMultiTexCoordP4uiv v1 v2 v3 = liftIO $ dyn423 ptr_glMultiTexCoordP4uiv v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoordP4uiv #-}
 ptr_glMultiTexCoordP4uiv :: FunPtr (GLenum -> GLenum -> Ptr GLuint -> IO ())
@@ -239,7 +312,7 @@ ptr_glMultiTexCoordP4uiv = unsafePerformIO $ getCommand "glMultiTexCoordP4uiv"
 
 glMultiTexCoordPointerEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLint -- ^ @size@.
   -> GLenum -- ^ @type@ of type [TexCoordPointerType](Graphics-GL-Groups.html#TexCoordPointerType).
   -> GLsizei -- ^ @stride@.
@@ -256,7 +329,7 @@ ptr_glMultiTexCoordPointerEXT = unsafePerformIO $ getCommand "glMultiTexCoordPoi
 -- | The vector equivalent of this command is 'glMultiTexEnvfvEXT'.
 glMultiTexEnvfEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
   -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
@@ -271,12 +344,12 @@ ptr_glMultiTexEnvfEXT = unsafePerformIO $ getCommand "glMultiTexEnvfEXT"
 
 glMultiTexEnvfvEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
   -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glMultiTexEnvfvEXT v1 v2 v3 v4 = liftIO $ dyn327 ptr_glMultiTexEnvfvEXT v1 v2 v3 v4
+glMultiTexEnvfvEXT v1 v2 v3 v4 = liftIO $ dyn328 ptr_glMultiTexEnvfvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexEnvfvEXT #-}
 ptr_glMultiTexEnvfvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -287,7 +360,7 @@ ptr_glMultiTexEnvfvEXT = unsafePerformIO $ getCommand "glMultiTexEnvfvEXT"
 -- | The vector equivalent of this command is 'glMultiTexEnvivEXT'.
 glMultiTexEnviEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
   -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
@@ -302,12 +375,12 @@ ptr_glMultiTexEnviEXT = unsafePerformIO $ getCommand "glMultiTexEnviEXT"
 
 glMultiTexEnvivEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
   -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glMultiTexEnvivEXT v1 v2 v3 v4 = liftIO $ dyn328 ptr_glMultiTexEnvivEXT v1 v2 v3 v4
+glMultiTexEnvivEXT v1 v2 v3 v4 = liftIO $ dyn329 ptr_glMultiTexEnvivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexEnvivEXT #-}
 ptr_glMultiTexEnvivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -318,7 +391,7 @@ ptr_glMultiTexEnvivEXT = unsafePerformIO $ getCommand "glMultiTexEnvivEXT"
 -- | The vector equivalent of this command is 'glMultiTexGendvEXT'.
 glMultiTexGendEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> GLdouble -- ^ @param@.
@@ -333,12 +406,12 @@ ptr_glMultiTexGendEXT = unsafePerformIO $ getCommand "glMultiTexGendEXT"
 
 glMultiTexGendvEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
-glMultiTexGendvEXT v1 v2 v3 v4 = liftIO $ dyn362 ptr_glMultiTexGendvEXT v1 v2 v3 v4
+glMultiTexGendvEXT v1 v2 v3 v4 = liftIO $ dyn363 ptr_glMultiTexGendvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexGendvEXT #-}
 ptr_glMultiTexGendvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLdouble -> IO ())
@@ -349,7 +422,7 @@ ptr_glMultiTexGendvEXT = unsafePerformIO $ getCommand "glMultiTexGendvEXT"
 -- | The vector equivalent of this command is 'glMultiTexGenfvEXT'.
 glMultiTexGenfEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
@@ -364,12 +437,12 @@ ptr_glMultiTexGenfEXT = unsafePerformIO $ getCommand "glMultiTexGenfEXT"
 
 glMultiTexGenfvEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glMultiTexGenfvEXT v1 v2 v3 v4 = liftIO $ dyn327 ptr_glMultiTexGenfvEXT v1 v2 v3 v4
+glMultiTexGenfvEXT v1 v2 v3 v4 = liftIO $ dyn328 ptr_glMultiTexGenfvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexGenfvEXT #-}
 ptr_glMultiTexGenfvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -380,7 +453,7 @@ ptr_glMultiTexGenfvEXT = unsafePerformIO $ getCommand "glMultiTexGenfvEXT"
 -- | The vector equivalent of this command is 'glMultiTexGenivEXT'.
 glMultiTexGeniEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
@@ -395,12 +468,12 @@ ptr_glMultiTexGeniEXT = unsafePerformIO $ getCommand "glMultiTexGeniEXT"
 
 glMultiTexGenivEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glMultiTexGenivEXT v1 v2 v3 v4 = liftIO $ dyn328 ptr_glMultiTexGenivEXT v1 v2 v3 v4
+glMultiTexGenivEXT v1 v2 v3 v4 = liftIO $ dyn329 ptr_glMultiTexGenivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexGenivEXT #-}
 ptr_glMultiTexGenivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -410,10 +483,10 @@ ptr_glMultiTexGenivEXT = unsafePerformIO $ getCommand "glMultiTexGenivEXT"
 
 glMultiTexImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
+  -> GLint -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
   -> GLenum -- ^ @format@ of type [PixelFormat](Graphics-GL-Groups.html#PixelFormat).
@@ -430,10 +503,10 @@ ptr_glMultiTexImage1DEXT = unsafePerformIO $ getCommand "glMultiTexImage1DEXT"
 
 glMultiTexImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
+  -> GLint -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLint -- ^ @border@ of type @CheckedInt32@.
@@ -451,10 +524,10 @@ ptr_glMultiTexImage2DEXT = unsafePerformIO $ getCommand "glMultiTexImage2DEXT"
 
 glMultiTexImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
-  -> GLint -- ^ @internalformat@ of type @TextureComponentCount@.
+  -> GLint -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> GLsizei -- ^ @depth@.
@@ -473,12 +546,12 @@ ptr_glMultiTexImage3DEXT = unsafePerformIO $ getCommand "glMultiTexImage3DEXT"
 
 glMultiTexParameterIivEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glMultiTexParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn328 ptr_glMultiTexParameterIivEXT v1 v2 v3 v4
+glMultiTexParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn329 ptr_glMultiTexParameterIivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexParameterIivEXT #-}
 ptr_glMultiTexParameterIivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -488,12 +561,12 @@ ptr_glMultiTexParameterIivEXT = unsafePerformIO $ getCommand "glMultiTexParamete
 
 glMultiTexParameterIuivEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
-glMultiTexParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn366 ptr_glMultiTexParameterIuivEXT v1 v2 v3 v4
+glMultiTexParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn367 ptr_glMultiTexParameterIuivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexParameterIuivEXT #-}
 ptr_glMultiTexParameterIuivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLuint -> IO ())
@@ -504,7 +577,7 @@ ptr_glMultiTexParameterIuivEXT = unsafePerformIO $ getCommand "glMultiTexParamet
 -- | The vector equivalent of this command is 'glMultiTexParameterfvEXT'.
 glMultiTexParameterfEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
@@ -519,12 +592,12 @@ ptr_glMultiTexParameterfEXT = unsafePerformIO $ getCommand "glMultiTexParameterf
 
 glMultiTexParameterfvEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glMultiTexParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn327 ptr_glMultiTexParameterfvEXT v1 v2 v3 v4
+glMultiTexParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn328 ptr_glMultiTexParameterfvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexParameterfvEXT #-}
 ptr_glMultiTexParameterfvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -535,7 +608,7 @@ ptr_glMultiTexParameterfvEXT = unsafePerformIO $ getCommand "glMultiTexParameter
 -- | The vector equivalent of this command is 'glMultiTexParameterivEXT'.
 glMultiTexParameteriEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
@@ -550,12 +623,12 @@ ptr_glMultiTexParameteriEXT = unsafePerformIO $ getCommand "glMultiTexParameteri
 
 glMultiTexParameterivEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLenum -- ^ @pname@ of type [TextureParameterName](Graphics-GL-Groups.html#TextureParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glMultiTexParameterivEXT v1 v2 v3 v4 = liftIO $ dyn328 ptr_glMultiTexParameterivEXT v1 v2 v3 v4
+glMultiTexParameterivEXT v1 v2 v3 v4 = liftIO $ dyn329 ptr_glMultiTexParameterivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexParameterivEXT #-}
 ptr_glMultiTexParameterivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -565,7 +638,7 @@ ptr_glMultiTexParameterivEXT = unsafePerformIO $ getCommand "glMultiTexParameter
 
 glMultiTexRenderbufferEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
@@ -579,7 +652,7 @@ ptr_glMultiTexRenderbufferEXT = unsafePerformIO $ getCommand "glMultiTexRenderbu
 
 glMultiTexSubImage1DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -598,7 +671,7 @@ ptr_glMultiTexSubImage1DEXT = unsafePerformIO $ getCommand "glMultiTexSubImage1D
 
 glMultiTexSubImage2DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -619,7 +692,7 @@ ptr_glMultiTexSubImage2DEXT = unsafePerformIO $ getCommand "glMultiTexSubImage2D
 
 glMultiTexSubImage3DEXT
   :: MonadIO m
-  => GLenum -- ^ @texunit@ of type @TextureUnit@.
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @xoffset@ of type @CheckedInt32@.
@@ -663,7 +736,7 @@ glMulticastBlitFramebufferNV
   -> GLint -- ^ @dstY0@.
   -> GLint -- ^ @dstX1@.
   -> GLint -- ^ @dstY1@.
-  -> GLbitfield -- ^ @mask@.
+  -> GLbitfield -- ^ @mask@ of type [ClearBufferMask](Graphics-GL-Groups.html#ClearBufferMask).
   -> GLenum -- ^ @filter@.
   -> m ()
 glMulticastBlitFramebufferNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 = liftIO $ dyn58 ptr_glMulticastBlitFramebufferNV v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12
@@ -759,7 +832,7 @@ glMulticastGetQueryObjecti64vNV
   -> GLenum -- ^ @pname@.
   -> Ptr GLint64 -- ^ @params@.
   -> m ()
-glMulticastGetQueryObjecti64vNV v1 v2 v3 v4 = liftIO $ dyn451 ptr_glMulticastGetQueryObjecti64vNV v1 v2 v3 v4
+glMulticastGetQueryObjecti64vNV v1 v2 v3 v4 = liftIO $ dyn452 ptr_glMulticastGetQueryObjecti64vNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMulticastGetQueryObjecti64vNV #-}
 ptr_glMulticastGetQueryObjecti64vNV :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr GLint64 -> IO ())
@@ -774,7 +847,7 @@ glMulticastGetQueryObjectivNV
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@.
   -> m ()
-glMulticastGetQueryObjectivNV v1 v2 v3 v4 = liftIO $ dyn307 ptr_glMulticastGetQueryObjectivNV v1 v2 v3 v4
+glMulticastGetQueryObjectivNV v1 v2 v3 v4 = liftIO $ dyn308 ptr_glMulticastGetQueryObjectivNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMulticastGetQueryObjectivNV #-}
 ptr_glMulticastGetQueryObjectivNV :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -831,7 +904,7 @@ glNamedBufferData
   => GLuint -- ^ @buffer@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@.
-  -> GLenum -- ^ @usage@.
+  -> GLenum -- ^ @usage@ of type [VertexBufferObjectUsage](Graphics-GL-Groups.html#VertexBufferObjectUsage).
   -> m ()
 glNamedBufferData v1 v2 v3 v4 = liftIO $ dyn593 ptr_glNamedBufferData v1 v2 v3 v4
 
@@ -846,7 +919,7 @@ glNamedBufferDataEXT
   => GLuint -- ^ @buffer@.
   -> GLsizeiptr -- ^ @size@.
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
-  -> GLenum -- ^ @usage@ of type @VertexBufferObjectUsage@.
+  -> GLenum -- ^ @usage@ of type [VertexBufferObjectUsage](Graphics-GL-Groups.html#VertexBufferObjectUsage).
   -> m ()
 glNamedBufferDataEXT v1 v2 v3 v4 = liftIO $ dyn593 ptr_glNamedBufferDataEXT v1 v2 v3 v4
 
@@ -892,7 +965,7 @@ glNamedBufferStorage
   => GLuint -- ^ @buffer@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
   -> m ()
 glNamedBufferStorage v1 v2 v3 v4 = liftIO $ dyn595 ptr_glNamedBufferStorage v1 v2 v3 v4
 
@@ -908,7 +981,7 @@ glNamedBufferStorageEXT
   => GLuint -- ^ @buffer@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
   -> m ()
 glNamedBufferStorageEXT v1 v2 v3 v4 = liftIO $ dyn595 ptr_glNamedBufferStorageEXT v1 v2 v3 v4
 
@@ -924,7 +997,7 @@ glNamedBufferStorageExternalEXT
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @size@.
   -> GLeglClientBufferEXT -- ^ @clientBuffer@.
-  -> GLbitfield -- ^ @flags@.
+  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
   -> m ()
 glNamedBufferStorageExternalEXT v1 v2 v3 v4 v5 = liftIO $ dyn596 ptr_glNamedBufferStorageExternalEXT v1 v2 v3 v4 v5
 
@@ -957,7 +1030,7 @@ glNamedBufferSubData
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
   -> m ()
-glNamedBufferSubData v1 v2 v3 v4 = liftIO $ dyn370 ptr_glNamedBufferSubData v1 v2 v3 v4
+glNamedBufferSubData v1 v2 v3 v4 = liftIO $ dyn371 ptr_glNamedBufferSubData v1 v2 v3 v4
 
 {-# NOINLINE ptr_glNamedBufferSubData #-}
 ptr_glNamedBufferSubData :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
@@ -973,7 +1046,7 @@ glNamedBufferSubDataEXT
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
   -> m ()
-glNamedBufferSubDataEXT v1 v2 v3 v4 = liftIO $ dyn370 ptr_glNamedBufferSubDataEXT v1 v2 v3 v4
+glNamedBufferSubDataEXT v1 v2 v3 v4 = liftIO $ dyn371 ptr_glNamedBufferSubDataEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glNamedBufferSubDataEXT #-}
 ptr_glNamedBufferSubDataEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
@@ -1001,7 +1074,7 @@ ptr_glNamedCopyBufferSubDataEXT = unsafePerformIO $ getCommand "glNamedCopyBuffe
 glNamedFramebufferDrawBuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @buf@.
+  -> GLenum -- ^ @buf@ of type [ColorBuffer](Graphics-GL-Groups.html#ColorBuffer).
   -> m ()
 glNamedFramebufferDrawBuffer v1 v2 = liftIO $ dyn16 ptr_glNamedFramebufferDrawBuffer v1 v2
 
@@ -1016,9 +1089,9 @@ glNamedFramebufferDrawBuffers
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
   -> GLsizei -- ^ @n@.
-  -> Ptr GLenum -- ^ @bufs@.
+  -> Ptr GLenum -- ^ @bufs@ pointing to elements of type [ColorBuffer](Graphics-GL-Groups.html#ColorBuffer).
   -> m ()
-glNamedFramebufferDrawBuffers v1 v2 v3 = liftIO $ dyn286 ptr_glNamedFramebufferDrawBuffers v1 v2 v3
+glNamedFramebufferDrawBuffers v1 v2 v3 = liftIO $ dyn287 ptr_glNamedFramebufferDrawBuffers v1 v2 v3
 
 {-# NOINLINE ptr_glNamedFramebufferDrawBuffers #-}
 ptr_glNamedFramebufferDrawBuffers :: FunPtr (GLuint -> GLsizei -> Ptr GLenum -> IO ())
@@ -1030,10 +1103,10 @@ ptr_glNamedFramebufferDrawBuffers = unsafePerformIO $ getCommand "glNamedFramebu
 glNamedFramebufferParameteri
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @pname@.
+  -> GLenum -- ^ @pname@ of type [FramebufferParameterName](Graphics-GL-Groups.html#FramebufferParameterName).
   -> GLint -- ^ @param@.
   -> m ()
-glNamedFramebufferParameteri v1 v2 v3 = liftIO $ dyn481 ptr_glNamedFramebufferParameteri v1 v2 v3
+glNamedFramebufferParameteri v1 v2 v3 = liftIO $ dyn482 ptr_glNamedFramebufferParameteri v1 v2 v3
 
 {-# NOINLINE ptr_glNamedFramebufferParameteri #-}
 ptr_glNamedFramebufferParameteri :: FunPtr (GLuint -> GLenum -> GLint -> IO ())
@@ -1044,10 +1117,10 @@ ptr_glNamedFramebufferParameteri = unsafePerformIO $ getCommand "glNamedFramebuf
 glNamedFramebufferParameteriEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @pname@ of type @FramebufferParameterName@.
+  -> GLenum -- ^ @pname@ of type [FramebufferParameterName](Graphics-GL-Groups.html#FramebufferParameterName).
   -> GLint -- ^ @param@.
   -> m ()
-glNamedFramebufferParameteriEXT v1 v2 v3 = liftIO $ dyn481 ptr_glNamedFramebufferParameteriEXT v1 v2 v3
+glNamedFramebufferParameteriEXT v1 v2 v3 = liftIO $ dyn482 ptr_glNamedFramebufferParameteriEXT v1 v2 v3
 
 {-# NOINLINE ptr_glNamedFramebufferParameteriEXT #-}
 ptr_glNamedFramebufferParameteriEXT :: FunPtr (GLuint -> GLenum -> GLint -> IO ())
@@ -1059,7 +1132,7 @@ ptr_glNamedFramebufferParameteriEXT = unsafePerformIO $ getCommand "glNamedFrame
 glNamedFramebufferReadBuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @src@.
+  -> GLenum -- ^ @src@ of type [ColorBuffer](Graphics-GL-Groups.html#ColorBuffer).
   -> m ()
 glNamedFramebufferReadBuffer v1 v2 = liftIO $ dyn16 ptr_glNamedFramebufferReadBuffer v1 v2
 
@@ -1073,8 +1146,8 @@ ptr_glNamedFramebufferReadBuffer = unsafePerformIO $ getCommand "glNamedFramebuf
 glNamedFramebufferRenderbuffer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @attachment@.
-  -> GLenum -- ^ @renderbuffertarget@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @renderbuffertarget@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
 glNamedFramebufferRenderbuffer v1 v2 v3 v4 = liftIO $ dyn598 ptr_glNamedFramebufferRenderbuffer v1 v2 v3 v4
@@ -1088,8 +1161,8 @@ ptr_glNamedFramebufferRenderbuffer = unsafePerformIO $ getCommand "glNamedFrameb
 glNamedFramebufferRenderbufferEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
-  -> GLenum -- ^ @renderbuffertarget@ of type @RenderbufferTarget@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
+  -> GLenum -- ^ @renderbuffertarget@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@ of type @Renderbuffer@.
   -> m ()
 glNamedFramebufferRenderbufferEXT v1 v2 v3 v4 = liftIO $ dyn598 ptr_glNamedFramebufferRenderbufferEXT v1 v2 v3 v4
@@ -1149,7 +1222,7 @@ ptr_glNamedFramebufferSamplePositionsfvAMD = unsafePerformIO $ getCommand "glNam
 glNamedFramebufferTexture
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @attachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> m ()
@@ -1164,7 +1237,7 @@ ptr_glNamedFramebufferTexture = unsafePerformIO $ getCommand "glNamedFramebuffer
 glNamedFramebufferTexture1DEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -1180,7 +1253,7 @@ ptr_glNamedFramebufferTexture1DEXT = unsafePerformIO $ getCommand "glNamedFrameb
 glNamedFramebufferTexture2DEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -1196,7 +1269,7 @@ ptr_glNamedFramebufferTexture2DEXT = unsafePerformIO $ getCommand "glNamedFrameb
 glNamedFramebufferTexture3DEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLenum -- ^ @textarget@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
@@ -1213,7 +1286,7 @@ ptr_glNamedFramebufferTexture3DEXT = unsafePerformIO $ getCommand "glNamedFrameb
 glNamedFramebufferTextureEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> m ()
@@ -1228,7 +1301,7 @@ ptr_glNamedFramebufferTextureEXT = unsafePerformIO $ getCommand "glNamedFramebuf
 glNamedFramebufferTextureFaceEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLenum -- ^ @face@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
@@ -1245,7 +1318,7 @@ ptr_glNamedFramebufferTextureFaceEXT = unsafePerformIO $ getCommand "glNamedFram
 glNamedFramebufferTextureLayer
   :: MonadIO m
   => GLuint -- ^ @framebuffer@.
-  -> GLenum -- ^ @attachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@.
   -> GLint -- ^ @level@.
   -> GLint -- ^ @layer@.
@@ -1261,7 +1334,7 @@ ptr_glNamedFramebufferTextureLayer = unsafePerformIO $ getCommand "glNamedFrameb
 glNamedFramebufferTextureLayerEXT
   :: MonadIO m
   => GLuint -- ^ @framebuffer@ of type @Framebuffer@.
-  -> GLenum -- ^ @attachment@ of type @FramebufferAttachment@.
+  -> GLenum -- ^ @attachment@ of type [FramebufferAttachment](Graphics-GL-Groups.html#FramebufferAttachment).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> GLint -- ^ @level@ of type @CheckedInt32@.
   -> GLint -- ^ @layer@ of type @CheckedInt32@.
@@ -1300,7 +1373,7 @@ glNamedProgramLocalParameter4dvEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
-glNamedProgramLocalParameter4dvEXT v1 v2 v3 v4 = liftIO $ dyn375 ptr_glNamedProgramLocalParameter4dvEXT v1 v2 v3 v4
+glNamedProgramLocalParameter4dvEXT v1 v2 v3 v4 = liftIO $ dyn376 ptr_glNamedProgramLocalParameter4dvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glNamedProgramLocalParameter4dvEXT #-}
 ptr_glNamedProgramLocalParameter4dvEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLdouble -> IO ())
@@ -1334,7 +1407,7 @@ glNamedProgramLocalParameter4fvEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
-glNamedProgramLocalParameter4fvEXT v1 v2 v3 v4 = liftIO $ dyn376 ptr_glNamedProgramLocalParameter4fvEXT v1 v2 v3 v4
+glNamedProgramLocalParameter4fvEXT v1 v2 v3 v4 = liftIO $ dyn377 ptr_glNamedProgramLocalParameter4fvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glNamedProgramLocalParameter4fvEXT #-}
 ptr_glNamedProgramLocalParameter4fvEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLfloat -> IO ())
@@ -1368,7 +1441,7 @@ glNamedProgramLocalParameterI4ivEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
   -> m ()
-glNamedProgramLocalParameterI4ivEXT v1 v2 v3 v4 = liftIO $ dyn373 ptr_glNamedProgramLocalParameterI4ivEXT v1 v2 v3 v4
+glNamedProgramLocalParameterI4ivEXT v1 v2 v3 v4 = liftIO $ dyn374 ptr_glNamedProgramLocalParameterI4ivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glNamedProgramLocalParameterI4ivEXT #-}
 ptr_glNamedProgramLocalParameterI4ivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLint -> IO ())
@@ -1402,7 +1475,7 @@ glNamedProgramLocalParameterI4uivEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @params@ pointing to @4@ elements of type @GLuint@.
   -> m ()
-glNamedProgramLocalParameterI4uivEXT v1 v2 v3 v4 = liftIO $ dyn374 ptr_glNamedProgramLocalParameterI4uivEXT v1 v2 v3 v4
+glNamedProgramLocalParameterI4uivEXT v1 v2 v3 v4 = liftIO $ dyn375 ptr_glNamedProgramLocalParameterI4uivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glNamedProgramLocalParameterI4uivEXT #-}
 ptr_glNamedProgramLocalParameterI4uivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLuint -> IO ())
@@ -1478,7 +1551,7 @@ ptr_glNamedProgramStringEXT = unsafePerformIO $ getCommand "glNamedProgramString
 glNamedRenderbufferStorage
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
-  -> GLenum -- ^ @internalformat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
@@ -1510,7 +1583,7 @@ glNamedRenderbufferStorageMultisample
   :: MonadIO m
   => GLuint -- ^ @renderbuffer@.
   -> GLsizei -- ^ @samples@.
-  -> GLenum -- ^ @internalformat@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> GLsizei -- ^ @width@.
   -> GLsizei -- ^ @height@.
   -> m ()
@@ -1639,75 +1712,4 @@ glNormal3d v1 v2 v3 = liftIO $ dyn39 ptr_glNormal3d v1 v2 v3
 {-# NOINLINE ptr_glNormal3d #-}
 ptr_glNormal3d :: FunPtr (GLdouble -> GLdouble -> GLdouble -> IO ())
 ptr_glNormal3d = unsafePerformIO $ getCommand "glNormal3d"
-
--- glNormal3dv -----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
-glNormal3dv
-  :: MonadIO m
-  => Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
-  -> m ()
-glNormal3dv v1 = liftIO $ dyn40 ptr_glNormal3dv v1
-
-{-# NOINLINE ptr_glNormal3dv #-}
-ptr_glNormal3dv :: FunPtr (Ptr GLdouble -> IO ())
-ptr_glNormal3dv = unsafePerformIO $ getCommand "glNormal3dv"
-
--- glNormal3f ------------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>. The vector equivalent of this command is 'glNormal3fv'.
-glNormal3f
-  :: MonadIO m
-  => GLfloat -- ^ @nx@ of type @CoordF@.
-  -> GLfloat -- ^ @ny@ of type @CoordF@.
-  -> GLfloat -- ^ @nz@ of type @CoordF@.
-  -> m ()
-glNormal3f v1 v2 v3 = liftIO $ dyn41 ptr_glNormal3f v1 v2 v3
-
-{-# NOINLINE ptr_glNormal3f #-}
-ptr_glNormal3f :: FunPtr (GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glNormal3f = unsafePerformIO $ getCommand "glNormal3f"
-
--- glNormal3fVertex3fSUN -------------------------------------------------------
-
-glNormal3fVertex3fSUN
-  :: MonadIO m
-  => GLfloat -- ^ @nx@.
-  -> GLfloat -- ^ @ny@.
-  -> GLfloat -- ^ @nz@.
-  -> GLfloat -- ^ @x@.
-  -> GLfloat -- ^ @y@.
-  -> GLfloat -- ^ @z@.
-  -> m ()
-glNormal3fVertex3fSUN v1 v2 v3 v4 v5 v6 = liftIO $ dyn99 ptr_glNormal3fVertex3fSUN v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glNormal3fVertex3fSUN #-}
-ptr_glNormal3fVertex3fSUN :: FunPtr (GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> GLfloat -> IO ())
-ptr_glNormal3fVertex3fSUN = unsafePerformIO $ getCommand "glNormal3fVertex3fSUN"
-
--- glNormal3fVertex3fvSUN ------------------------------------------------------
-
-glNormal3fVertex3fvSUN
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @n@ pointing to @3@ elements of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @GLfloat@.
-  -> m ()
-glNormal3fVertex3fvSUN v1 v2 = liftIO $ dyn100 ptr_glNormal3fVertex3fvSUN v1 v2
-
-{-# NOINLINE ptr_glNormal3fVertex3fvSUN #-}
-ptr_glNormal3fVertex3fvSUN :: FunPtr (Ptr GLfloat -> Ptr GLfloat -> IO ())
-ptr_glNormal3fVertex3fvSUN = unsafePerformIO $ getCommand "glNormal3fVertex3fvSUN"
-
--- glNormal3fv -----------------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml OpenGL 2.x>.
-glNormal3fv
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
-  -> m ()
-glNormal3fv v1 = liftIO $ dyn42 ptr_glNormal3fv v1
-
-{-# NOINLINE ptr_glNormal3fv #-}
-ptr_glNormal3fv :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glNormal3fv = unsafePerformIO $ getCommand "glNormal3fv"
 
