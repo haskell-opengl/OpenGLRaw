@@ -14,7 +14,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL (
-  module Graphics.GL.Compatibility45,
+  module Graphics.GL.Compatibility46,
   module Graphics.GL.GetProcAddress,
   module Graphics.GL.AMD,
   module Graphics.GL.APPLE,
@@ -46,7 +46,7 @@ module Graphics.GL (
   module Graphics.GL.WIN
 ) where
 
-import Graphics.GL.Compatibility45
+import Graphics.GL.Compatibility46
 import Graphics.GL.GetProcAddress
 import Graphics.GL.AMD
 import Graphics.GL.APPLE

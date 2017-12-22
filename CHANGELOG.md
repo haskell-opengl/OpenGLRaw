@@ -1,6 +1,7 @@
 3.2.7.0
 -------
-* Updated OpenGL registry to 681c365c0..
+* Updated OpenGL registry to 681c365c0.
+* Added OpenGL 4.6 support.
 
 3.2.6.0
 -------

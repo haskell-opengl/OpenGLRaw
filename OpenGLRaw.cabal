@@ -277,6 +277,7 @@ library
     Graphics.GL.Compatibility43
     Graphics.GL.Compatibility44
     Graphics.GL.Compatibility45
+    Graphics.GL.Compatibility46
     Graphics.GL.Core30
     Graphics.GL.Core31
     Graphics.GL.Core32
@@ -287,6 +288,7 @@ library
     Graphics.GL.Core43
     Graphics.GL.Core44
     Graphics.GL.Core45
+    Graphics.GL.Core46
     Graphics.GL.EXT
     Graphics.GL.EXT.ABGR
     Graphics.GL.EXT.BGRA
