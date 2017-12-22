@@ -3781,6 +3781,17 @@ gl_NV_conservative_raster_dilate :: Bool
 gl_NV_conservative_raster_dilate = member "GL_NV_conservative_raster_dilate" extensions
 {-# NOINLINE gl_NV_conservative_raster_dilate #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster_pre_snap.txt NV_conservative_raster_pre_snap> extension supported?
+glGetNVConservativeRasterPreSnap :: MonadIO m => m Bool
+glGetNVConservativeRasterPreSnap = getExtensions >>= (return . member "GL_NV_conservative_raster_pre_snap")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster_pre_snap.txt NV_conservative_raster_pre_snap> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVConservativeRasterPreSnap' in those cases instead.
+gl_NV_conservative_raster_pre_snap :: Bool
+gl_NV_conservative_raster_pre_snap = member "GL_NV_conservative_raster_pre_snap" extensions
+{-# NOINLINE gl_NV_conservative_raster_pre_snap #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NV/conservative_raster_pre_snap_triangles.txt NV_conservative_raster_pre_snap_triangles> extension supported?
 glGetNVConservativeRasterPreSnapTriangles :: MonadIO m => m Bool
 glGetNVConservativeRasterPreSnapTriangles = getExtensions >>= (return . member "GL_NV_conservative_raster_pre_snap_triangles")

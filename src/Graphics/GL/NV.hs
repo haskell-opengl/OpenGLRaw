@@ -26,6 +26,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.ConditionalRender,
   module Graphics.GL.NV.ConservativeRaster,
   module Graphics.GL.NV.ConservativeRasterDilate,
+  module Graphics.GL.NV.ConservativeRasterPreSnap,
   module Graphics.GL.NV.ConservativeRasterPreSnapTriangles,
   module Graphics.GL.NV.CopyDepthToColor,
   module Graphics.GL.NV.CopyImage,
@@ -114,6 +115,7 @@ import Graphics.GL.NV.ComputeProgram5
 import Graphics.GL.NV.ConditionalRender
 import Graphics.GL.NV.ConservativeRaster
 import Graphics.GL.NV.ConservativeRasterDilate
+import Graphics.GL.NV.ConservativeRasterPreSnap
 import Graphics.GL.NV.ConservativeRasterPreSnapTriangles
 import Graphics.GL.NV.CopyDepthToColor
 import Graphics.GL.NV.CopyImage

@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 3.2.6.0
+version: 3.2.7.0
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 4.5 graphics system and
@@ -450,6 +450,7 @@ library
     Graphics.GL.NV.ConditionalRender
     Graphics.GL.NV.ConservativeRaster
     Graphics.GL.NV.ConservativeRasterDilate
+    Graphics.GL.NV.ConservativeRasterPreSnap
     Graphics.GL.NV.ConservativeRasterPreSnapTriangles
     Graphics.GL.NV.CopyDepthToColor
     Graphics.GL.NV.CopyImage
