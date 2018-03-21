@@ -18,7 +18,9 @@ module Graphics.GL.Functions.F07 (
   glDrawTransformFeedbackStreamInstanced,
   glDrawVkImageNV,
   glEGLImageTargetRenderbufferStorageOES,
+  glEGLImageTargetTexStorageEXT,
   glEGLImageTargetTexture2DOES,
+  glEGLImageTargetTextureStorageEXT,
   glEdgeFlag,
   glEdgeFlagFormatNV,
   glEdgeFlagPointer,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F07 (
   glFlushMappedBufferRangeEXT,
   glFlushMappedNamedBufferRange,
   glFlushMappedNamedBufferRangeEXT,
-  glFlushPixelDataRangeNV,
-  glFlushRasterSGIX,
-  glFlushStaticDataIBM
+  glFlushPixelDataRangeNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -174,6 +174,20 @@ glEGLImageTargetRenderbufferStorageOES v1 v2 = liftIO $ dyn263 ptr_glEGLImageTar
 ptr_glEGLImageTargetRenderbufferStorageOES :: FunPtr (GLenum -> GLeglImageOES -> IO ())
 ptr_glEGLImageTargetRenderbufferStorageOES = unsafePerformIO $ getCommand "glEGLImageTargetRenderbufferStorageOES"
 
+-- glEGLImageTargetTexStorageEXT -----------------------------------------------
+
+glEGLImageTargetTexStorageEXT
+  :: MonadIO m
+  => GLenum -- ^ @target@.
+  -> GLeglImageOES -- ^ @image@.
+  -> Ptr GLint -- ^ @attrib_list@.
+  -> m ()
+glEGLImageTargetTexStorageEXT v1 v2 v3 = liftIO $ dyn264 ptr_glEGLImageTargetTexStorageEXT v1 v2 v3
+
+{-# NOINLINE ptr_glEGLImageTargetTexStorageEXT #-}
+ptr_glEGLImageTargetTexStorageEXT :: FunPtr (GLenum -> GLeglImageOES -> Ptr GLint -> IO ())
+ptr_glEGLImageTargetTexStorageEXT = unsafePerformIO $ getCommand "glEGLImageTargetTexStorageEXT"
+
 -- glEGLImageTargetTexture2DOES ------------------------------------------------
 
 glEGLImageTargetTexture2DOES
@@ -186,6 +200,20 @@ glEGLImageTargetTexture2DOES v1 v2 = liftIO $ dyn263 ptr_glEGLImageTargetTexture
 {-# NOINLINE ptr_glEGLImageTargetTexture2DOES #-}
 ptr_glEGLImageTargetTexture2DOES :: FunPtr (GLenum -> GLeglImageOES -> IO ())
 ptr_glEGLImageTargetTexture2DOES = unsafePerformIO $ getCommand "glEGLImageTargetTexture2DOES"
+
+-- glEGLImageTargetTextureStorageEXT -------------------------------------------
+
+glEGLImageTargetTextureStorageEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLeglImageOES -- ^ @image@.
+  -> Ptr GLint -- ^ @attrib_list@.
+  -> m ()
+glEGLImageTargetTextureStorageEXT v1 v2 v3 = liftIO $ dyn265 ptr_glEGLImageTargetTextureStorageEXT v1 v2 v3
+
+{-# NOINLINE ptr_glEGLImageTargetTextureStorageEXT #-}
+ptr_glEGLImageTargetTextureStorageEXT :: FunPtr (GLuint -> GLeglImageOES -> Ptr GLint -> IO ())
+ptr_glEGLImageTargetTextureStorageEXT = unsafePerformIO $ getCommand "glEGLImageTargetTextureStorageEXT"
 
 -- glEdgeFlag ------------------------------------------------------------------
 
@@ -206,7 +234,7 @@ glEdgeFlagFormatNV
   :: MonadIO m
   => GLsizei -- ^ @stride@.
   -> m ()
-glEdgeFlagFormatNV v1 = liftIO $ dyn264 ptr_glEdgeFlagFormatNV v1
+glEdgeFlagFormatNV v1 = liftIO $ dyn266 ptr_glEdgeFlagFormatNV v1
 
 {-# NOINLINE ptr_glEdgeFlagFormatNV #-}
 ptr_glEdgeFlagFormatNV :: FunPtr (GLsizei -> IO ())
@@ -220,7 +248,7 @@ glEdgeFlagPointer
   => GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(stride)@ elements of type @a@.
   -> m ()
-glEdgeFlagPointer v1 v2 = liftIO $ dyn265 ptr_glEdgeFlagPointer v1 v2
+glEdgeFlagPointer v1 v2 = liftIO $ dyn267 ptr_glEdgeFlagPointer v1 v2
 
 {-# NOINLINE ptr_glEdgeFlagPointer #-}
 ptr_glEdgeFlagPointer :: FunPtr (GLsizei -> Ptr a -> IO ())
@@ -234,7 +262,7 @@ glEdgeFlagPointerEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLboolean -- ^ @pointer@ pointing to @COMPSIZE(stride,count)@ elements of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glEdgeFlagPointerEXT v1 v2 v3 = liftIO $ dyn266 ptr_glEdgeFlagPointerEXT v1 v2 v3
+glEdgeFlagPointerEXT v1 v2 v3 = liftIO $ dyn268 ptr_glEdgeFlagPointerEXT v1 v2 v3
 
 {-# NOINLINE ptr_glEdgeFlagPointerEXT #-}
 ptr_glEdgeFlagPointerEXT :: FunPtr (GLsizei -> GLsizei -> Ptr GLboolean -> IO ())
@@ -248,7 +276,7 @@ glEdgeFlagPointerListIBM
   -> Ptr (Ptr GLboolean) -- ^ @pointer@ pointing to @COMPSIZE(stride)@ elements of type @Ptr BooleanPointer@.
   -> GLint -- ^ @ptrstride@.
   -> m ()
-glEdgeFlagPointerListIBM v1 v2 v3 = liftIO $ dyn267 ptr_glEdgeFlagPointerListIBM v1 v2 v3
+glEdgeFlagPointerListIBM v1 v2 v3 = liftIO $ dyn269 ptr_glEdgeFlagPointerListIBM v1 v2 v3
 
 {-# NOINLINE ptr_glEdgeFlagPointerListIBM #-}
 ptr_glEdgeFlagPointerListIBM :: FunPtr (GLint -> Ptr (Ptr GLboolean) -> GLint -> IO ())
@@ -261,7 +289,7 @@ glEdgeFlagv
   :: MonadIO m
   => Ptr GLboolean -- ^ @flag@ pointing to @1@ element of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> m ()
-glEdgeFlagv v1 = liftIO $ dyn268 ptr_glEdgeFlagv v1
+glEdgeFlagv v1 = liftIO $ dyn270 ptr_glEdgeFlagv v1
 
 {-# NOINLINE ptr_glEdgeFlagv #-}
 ptr_glEdgeFlagv :: FunPtr (Ptr GLboolean -> IO ())
@@ -924,7 +952,7 @@ glEvalMesh1
   -> GLint -- ^ @i1@ of type @CheckedInt32@.
   -> GLint -- ^ @i2@ of type @CheckedInt32@.
   -> m ()
-glEvalMesh1 v1 v2 v3 = liftIO $ dyn269 ptr_glEvalMesh1 v1 v2 v3
+glEvalMesh1 v1 v2 v3 = liftIO $ dyn271 ptr_glEvalMesh1 v1 v2 v3
 
 {-# NOINLINE ptr_glEvalMesh1 #-}
 ptr_glEvalMesh1 :: FunPtr (GLenum -> GLint -> GLint -> IO ())
@@ -941,7 +969,7 @@ glEvalMesh2
   -> GLint -- ^ @j1@ of type @CheckedInt32@.
   -> GLint -- ^ @j2@ of type @CheckedInt32@.
   -> m ()
-glEvalMesh2 v1 v2 v3 v4 v5 = liftIO $ dyn270 ptr_glEvalMesh2 v1 v2 v3 v4 v5
+glEvalMesh2 v1 v2 v3 v4 v5 = liftIO $ dyn272 ptr_glEvalMesh2 v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glEvalMesh2 #-}
 ptr_glEvalMesh2 :: FunPtr (GLenum -> GLint -> GLint -> GLint -> GLint -> IO ())
@@ -968,7 +996,7 @@ glEvalPoint2
   => GLint -- ^ @i@ of type @CheckedInt32@.
   -> GLint -- ^ @j@ of type @CheckedInt32@.
   -> m ()
-glEvalPoint2 v1 v2 = liftIO $ dyn271 ptr_glEvalPoint2 v1 v2
+glEvalPoint2 v1 v2 = liftIO $ dyn273 ptr_glEvalPoint2 v1 v2
 
 {-# NOINLINE ptr_glEvalPoint2 #-}
 ptr_glEvalPoint2 :: FunPtr (GLint -> GLint -> IO ())
@@ -993,7 +1021,7 @@ glExecuteProgramNV
   -> GLuint -- ^ @id@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
-glExecuteProgramNV v1 v2 v3 = liftIO $ dyn272 ptr_glExecuteProgramNV v1 v2 v3
+glExecuteProgramNV v1 v2 v3 = liftIO $ dyn274 ptr_glExecuteProgramNV v1 v2 v3
 
 {-# NOINLINE ptr_glExecuteProgramNV #-}
 ptr_glExecuteProgramNV :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
@@ -1006,7 +1034,7 @@ glExtGetBufferPointervQCOM
   => GLenum -- ^ @target@.
   -> Ptr (Ptr a) -- ^ @params@.
   -> m ()
-glExtGetBufferPointervQCOM v1 v2 = liftIO $ dyn273 ptr_glExtGetBufferPointervQCOM v1 v2
+glExtGetBufferPointervQCOM v1 v2 = liftIO $ dyn275 ptr_glExtGetBufferPointervQCOM v1 v2
 
 {-# NOINLINE ptr_glExtGetBufferPointervQCOM #-}
 ptr_glExtGetBufferPointervQCOM :: FunPtr (GLenum -> Ptr (Ptr a) -> IO ())
@@ -1020,7 +1048,7 @@ glExtGetBuffersQCOM
   -> GLint -- ^ @maxBuffers@.
   -> Ptr GLint -- ^ @numBuffers@ pointing to @1@ element of type @GLint@.
   -> m ()
-glExtGetBuffersQCOM v1 v2 v3 = liftIO $ dyn274 ptr_glExtGetBuffersQCOM v1 v2 v3
+glExtGetBuffersQCOM v1 v2 v3 = liftIO $ dyn276 ptr_glExtGetBuffersQCOM v1 v2 v3
 
 {-# NOINLINE ptr_glExtGetBuffersQCOM #-}
 ptr_glExtGetBuffersQCOM :: FunPtr (Ptr GLuint -> GLint -> Ptr GLint -> IO ())
@@ -1034,7 +1062,7 @@ glExtGetFramebuffersQCOM
   -> GLint -- ^ @maxFramebuffers@.
   -> Ptr GLint -- ^ @numFramebuffers@ pointing to @1@ element of type @GLint@.
   -> m ()
-glExtGetFramebuffersQCOM v1 v2 v3 = liftIO $ dyn274 ptr_glExtGetFramebuffersQCOM v1 v2 v3
+glExtGetFramebuffersQCOM v1 v2 v3 = liftIO $ dyn276 ptr_glExtGetFramebuffersQCOM v1 v2 v3
 
 {-# NOINLINE ptr_glExtGetFramebuffersQCOM #-}
 ptr_glExtGetFramebuffersQCOM :: FunPtr (Ptr GLuint -> GLint -> Ptr GLint -> IO ())
@@ -1049,7 +1077,7 @@ glExtGetProgramBinarySourceQCOM
   -> Ptr GLchar -- ^ @source@.
   -> Ptr GLint -- ^ @length@.
   -> m ()
-glExtGetProgramBinarySourceQCOM v1 v2 v3 v4 = liftIO $ dyn275 ptr_glExtGetProgramBinarySourceQCOM v1 v2 v3 v4
+glExtGetProgramBinarySourceQCOM v1 v2 v3 v4 = liftIO $ dyn277 ptr_glExtGetProgramBinarySourceQCOM v1 v2 v3 v4
 
 {-# NOINLINE ptr_glExtGetProgramBinarySourceQCOM #-}
 ptr_glExtGetProgramBinarySourceQCOM :: FunPtr (GLuint -> GLenum -> Ptr GLchar -> Ptr GLint -> IO ())
@@ -1063,7 +1091,7 @@ glExtGetProgramsQCOM
   -> GLint -- ^ @maxPrograms@.
   -> Ptr GLint -- ^ @numPrograms@ pointing to @1@ element of type @GLint@.
   -> m ()
-glExtGetProgramsQCOM v1 v2 v3 = liftIO $ dyn274 ptr_glExtGetProgramsQCOM v1 v2 v3
+glExtGetProgramsQCOM v1 v2 v3 = liftIO $ dyn276 ptr_glExtGetProgramsQCOM v1 v2 v3
 
 {-# NOINLINE ptr_glExtGetProgramsQCOM #-}
 ptr_glExtGetProgramsQCOM :: FunPtr (Ptr GLuint -> GLint -> Ptr GLint -> IO ())
@@ -1077,7 +1105,7 @@ glExtGetRenderbuffersQCOM
   -> GLint -- ^ @maxRenderbuffers@.
   -> Ptr GLint -- ^ @numRenderbuffers@ pointing to @1@ element of type @GLint@.
   -> m ()
-glExtGetRenderbuffersQCOM v1 v2 v3 = liftIO $ dyn274 ptr_glExtGetRenderbuffersQCOM v1 v2 v3
+glExtGetRenderbuffersQCOM v1 v2 v3 = liftIO $ dyn276 ptr_glExtGetRenderbuffersQCOM v1 v2 v3
 
 {-# NOINLINE ptr_glExtGetRenderbuffersQCOM #-}
 ptr_glExtGetRenderbuffersQCOM :: FunPtr (Ptr GLuint -> GLint -> Ptr GLint -> IO ())
@@ -1091,7 +1119,7 @@ glExtGetShadersQCOM
   -> GLint -- ^ @maxShaders@.
   -> Ptr GLint -- ^ @numShaders@ pointing to @1@ element of type @GLint@.
   -> m ()
-glExtGetShadersQCOM v1 v2 v3 = liftIO $ dyn274 ptr_glExtGetShadersQCOM v1 v2 v3
+glExtGetShadersQCOM v1 v2 v3 = liftIO $ dyn276 ptr_glExtGetShadersQCOM v1 v2 v3
 
 {-# NOINLINE ptr_glExtGetShadersQCOM #-}
 ptr_glExtGetShadersQCOM :: FunPtr (Ptr GLuint -> GLint -> Ptr GLint -> IO ())
@@ -1107,7 +1135,7 @@ glExtGetTexLevelParameterivQCOM
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@.
   -> m ()
-glExtGetTexLevelParameterivQCOM v1 v2 v3 v4 v5 = liftIO $ dyn276 ptr_glExtGetTexLevelParameterivQCOM v1 v2 v3 v4 v5
+glExtGetTexLevelParameterivQCOM v1 v2 v3 v4 v5 = liftIO $ dyn278 ptr_glExtGetTexLevelParameterivQCOM v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glExtGetTexLevelParameterivQCOM #-}
 ptr_glExtGetTexLevelParameterivQCOM :: FunPtr (GLuint -> GLenum -> GLint -> GLenum -> Ptr GLint -> IO ())
@@ -1129,7 +1157,7 @@ glExtGetTexSubImageQCOM
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @texels@.
   -> m ()
-glExtGetTexSubImageQCOM v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn277 ptr_glExtGetTexSubImageQCOM v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
+glExtGetTexSubImageQCOM v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn279 ptr_glExtGetTexSubImageQCOM v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
 
 {-# NOINLINE ptr_glExtGetTexSubImageQCOM #-}
 ptr_glExtGetTexSubImageQCOM :: FunPtr (GLenum -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -1143,7 +1171,7 @@ glExtGetTexturesQCOM
   -> GLint -- ^ @maxTextures@.
   -> Ptr GLint -- ^ @numTextures@.
   -> m ()
-glExtGetTexturesQCOM v1 v2 v3 = liftIO $ dyn274 ptr_glExtGetTexturesQCOM v1 v2 v3
+glExtGetTexturesQCOM v1 v2 v3 = liftIO $ dyn276 ptr_glExtGetTexturesQCOM v1 v2 v3
 
 {-# NOINLINE ptr_glExtGetTexturesQCOM #-}
 ptr_glExtGetTexturesQCOM :: FunPtr (Ptr GLuint -> GLint -> Ptr GLint -> IO ())
@@ -1155,7 +1183,7 @@ glExtIsProgramBinaryQCOM
   :: MonadIO m
   => GLuint -- ^ @program@.
   -> m GLboolean
-glExtIsProgramBinaryQCOM v1 = liftIO $ dyn278 ptr_glExtIsProgramBinaryQCOM v1
+glExtIsProgramBinaryQCOM v1 = liftIO $ dyn280 ptr_glExtIsProgramBinaryQCOM v1
 
 {-# NOINLINE ptr_glExtIsProgramBinaryQCOM #-}
 ptr_glExtIsProgramBinaryQCOM :: FunPtr (GLuint -> IO GLboolean)
@@ -1198,7 +1226,7 @@ glFeedbackBuffer
   -> GLenum -- ^ @type@ of type [FeedbackType](Graphics-GL-Groups.html#FeedbackType).
   -> Ptr GLfloat -- ^ @buffer@ pointing to @size@ elements of type @FeedbackElement@.
   -> m ()
-glFeedbackBuffer v1 v2 v3 = liftIO $ dyn279 ptr_glFeedbackBuffer v1 v2 v3
+glFeedbackBuffer v1 v2 v3 = liftIO $ dyn281 ptr_glFeedbackBuffer v1 v2 v3
 
 {-# NOINLINE ptr_glFeedbackBuffer #-}
 ptr_glFeedbackBuffer :: FunPtr (GLsizei -> GLenum -> Ptr GLfloat -> IO ())
@@ -1212,7 +1240,7 @@ glFeedbackBufferxOES
   -> GLenum -- ^ @type@.
   -> Ptr GLfixed -- ^ @buffer@ pointing to @n@ elements of type @GLfixed@.
   -> m ()
-glFeedbackBufferxOES v1 v2 v3 = liftIO $ dyn280 ptr_glFeedbackBufferxOES v1 v2 v3
+glFeedbackBufferxOES v1 v2 v3 = liftIO $ dyn282 ptr_glFeedbackBufferxOES v1 v2 v3
 
 {-# NOINLINE ptr_glFeedbackBufferxOES #-}
 ptr_glFeedbackBufferxOES :: FunPtr (GLsizei -> GLenum -> Ptr GLfixed -> IO ())
@@ -1226,7 +1254,7 @@ glFenceSync
   => GLenum -- ^ @condition@ of type [SyncCondition](Graphics-GL-Groups.html#SyncCondition).
   -> GLbitfield -- ^ @flags@.
   -> m GLsync -- ^ of type @sync@.
-glFenceSync v1 v2 = liftIO $ dyn281 ptr_glFenceSync v1 v2
+glFenceSync v1 v2 = liftIO $ dyn283 ptr_glFenceSync v1 v2
 
 {-# NOINLINE ptr_glFenceSync #-}
 ptr_glFenceSync :: FunPtr (GLenum -> GLbitfield -> IO GLsync)
@@ -1240,7 +1268,7 @@ glFenceSyncAPPLE
   => GLenum -- ^ @condition@ of type [SyncCondition](Graphics-GL-Groups.html#SyncCondition).
   -> GLbitfield -- ^ @flags@.
   -> m GLsync
-glFenceSyncAPPLE v1 v2 = liftIO $ dyn281 ptr_glFenceSyncAPPLE v1 v2
+glFenceSyncAPPLE v1 v2 = liftIO $ dyn283 ptr_glFenceSyncAPPLE v1 v2
 
 {-# NOINLINE ptr_glFenceSyncAPPLE #-}
 ptr_glFenceSyncAPPLE :: FunPtr (GLenum -> GLbitfield -> IO GLsync)
@@ -1279,7 +1307,7 @@ glFinishAsyncSGIX
   :: MonadIO m
   => Ptr GLuint -- ^ @markerp@ pointing to @1@ element of type @GLuint@.
   -> m GLint
-glFinishAsyncSGIX v1 = liftIO $ dyn282 ptr_glFinishAsyncSGIX v1
+glFinishAsyncSGIX v1 = liftIO $ dyn284 ptr_glFinishAsyncSGIX v1
 
 {-# NOINLINE ptr_glFinishAsyncSGIX #-}
 ptr_glFinishAsyncSGIX :: FunPtr (Ptr GLuint -> IO GLint)
@@ -1354,7 +1382,7 @@ glFlushMappedBufferRange
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
   -> m ()
-glFlushMappedBufferRange v1 v2 v3 = liftIO $ dyn283 ptr_glFlushMappedBufferRange v1 v2 v3
+glFlushMappedBufferRange v1 v2 v3 = liftIO $ dyn285 ptr_glFlushMappedBufferRange v1 v2 v3
 
 {-# NOINLINE ptr_glFlushMappedBufferRange #-}
 ptr_glFlushMappedBufferRange :: FunPtr (GLenum -> GLintptr -> GLsizeiptr -> IO ())
@@ -1369,7 +1397,7 @@ glFlushMappedBufferRangeAPPLE
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> m ()
-glFlushMappedBufferRangeAPPLE v1 v2 v3 = liftIO $ dyn283 ptr_glFlushMappedBufferRangeAPPLE v1 v2 v3
+glFlushMappedBufferRangeAPPLE v1 v2 v3 = liftIO $ dyn285 ptr_glFlushMappedBufferRangeAPPLE v1 v2 v3
 
 {-# NOINLINE ptr_glFlushMappedBufferRangeAPPLE #-}
 ptr_glFlushMappedBufferRangeAPPLE :: FunPtr (GLenum -> GLintptr -> GLsizeiptr -> IO ())
@@ -1384,7 +1412,7 @@ glFlushMappedBufferRangeEXT
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@.
   -> m ()
-glFlushMappedBufferRangeEXT v1 v2 v3 = liftIO $ dyn283 ptr_glFlushMappedBufferRangeEXT v1 v2 v3
+glFlushMappedBufferRangeEXT v1 v2 v3 = liftIO $ dyn285 ptr_glFlushMappedBufferRangeEXT v1 v2 v3
 
 {-# NOINLINE ptr_glFlushMappedBufferRangeEXT #-}
 ptr_glFlushMappedBufferRangeEXT :: FunPtr (GLenum -> GLintptr -> GLsizeiptr -> IO ())
@@ -1399,7 +1427,7 @@ glFlushMappedNamedBufferRange
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
   -> m ()
-glFlushMappedNamedBufferRange v1 v2 v3 = liftIO $ dyn284 ptr_glFlushMappedNamedBufferRange v1 v2 v3
+glFlushMappedNamedBufferRange v1 v2 v3 = liftIO $ dyn286 ptr_glFlushMappedNamedBufferRange v1 v2 v3
 
 {-# NOINLINE ptr_glFlushMappedNamedBufferRange #-}
 ptr_glFlushMappedNamedBufferRange :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> IO ())
@@ -1413,7 +1441,7 @@ glFlushMappedNamedBufferRangeEXT
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@.
   -> m ()
-glFlushMappedNamedBufferRangeEXT v1 v2 v3 = liftIO $ dyn284 ptr_glFlushMappedNamedBufferRangeEXT v1 v2 v3
+glFlushMappedNamedBufferRangeEXT v1 v2 v3 = liftIO $ dyn286 ptr_glFlushMappedNamedBufferRangeEXT v1 v2 v3
 
 {-# NOINLINE ptr_glFlushMappedNamedBufferRangeEXT #-}
 ptr_glFlushMappedNamedBufferRangeEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> IO ())
@@ -1430,27 +1458,4 @@ glFlushPixelDataRangeNV v1 = liftIO $ dyn5 ptr_glFlushPixelDataRangeNV v1
 {-# NOINLINE ptr_glFlushPixelDataRangeNV #-}
 ptr_glFlushPixelDataRangeNV :: FunPtr (GLenum -> IO ())
 ptr_glFlushPixelDataRangeNV = unsafePerformIO $ getCommand "glFlushPixelDataRangeNV"
-
--- glFlushRasterSGIX -----------------------------------------------------------
-
-glFlushRasterSGIX
-  :: MonadIO m
-  => m ()
-glFlushRasterSGIX = liftIO $ dyn11 ptr_glFlushRasterSGIX
-
-{-# NOINLINE ptr_glFlushRasterSGIX #-}
-ptr_glFlushRasterSGIX :: FunPtr (IO ())
-ptr_glFlushRasterSGIX = unsafePerformIO $ getCommand "glFlushRasterSGIX"
-
--- glFlushStaticDataIBM --------------------------------------------------------
-
-glFlushStaticDataIBM
-  :: MonadIO m
-  => GLenum -- ^ @target@.
-  -> m ()
-glFlushStaticDataIBM v1 = liftIO $ dyn5 ptr_glFlushStaticDataIBM v1
-
-{-# NOINLINE ptr_glFlushStaticDataIBM #-}
-ptr_glFlushStaticDataIBM :: FunPtr (GLenum -> IO ())
-ptr_glFlushStaticDataIBM = unsafePerformIO $ getCommand "glFlushStaticDataIBM"
 

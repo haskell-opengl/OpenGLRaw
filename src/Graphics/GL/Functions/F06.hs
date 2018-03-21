@@ -128,8 +128,8 @@ import System.IO.Unsafe ( unsafePerformIO )
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glDepthRange.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glDepthRange.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glDepthRange.xhtml OpenGL 4.x>.
 glDepthRange
   :: MonadIO m
-  => GLdouble -- ^ @near@.
-  -> GLdouble -- ^ @far@.
+  => GLdouble -- ^ @n@.
+  -> GLdouble -- ^ @f@.
   -> m ()
 glDepthRange v1 v2 = liftIO $ dyn221 ptr_glDepthRange v1 v2
 

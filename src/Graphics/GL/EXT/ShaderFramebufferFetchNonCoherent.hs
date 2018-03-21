@@ -1,7 +1,7 @@
 {-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.GL.EXT.TextureFilterMinmax
+-- Module      :  Graphics.GL.EXT.ShaderFramebufferFetchNonCoherent
 -- Copyright   :  (c) Sven Panne 2017
 -- License     :  BSD3
 --
@@ -11,14 +11,16 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.GL.EXT.TextureFilterMinmax (
+module Graphics.GL.EXT.ShaderFramebufferFetchNonCoherent (
   -- * Extension Support
-  glGetEXTTextureFilterMinmax,
-  gl_EXT_texture_filter_minmax,
+  glGetEXTShaderFramebufferFetchNonCoherent,
+  gl_EXT_shader_framebuffer_fetch_non_coherent,
   -- * Enums
-  pattern GL_TEXTURE_REDUCTION_MODE_EXT,
-  pattern GL_WEIGHTED_AVERAGE_EXT
+  pattern GL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT,
+  -- * Functions
+  glFramebufferFetchBarrierEXT
 ) where
 
 import Graphics.GL.ExtensionPredicates
 import Graphics.GL.Tokens
+import Graphics.GL.Functions

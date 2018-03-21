@@ -2153,6 +2153,17 @@ gl_EXT_422_pixels :: Bool
 gl_EXT_422_pixels = member "GL_EXT_422_pixels" extensions
 {-# NOINLINE gl_EXT_422_pixels #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/EXT/EGL_image_storage.txt EXT_EGL_image_storage> extension supported?
+glGetEXTEglImageStorage :: MonadIO m => m Bool
+glGetEXTEglImageStorage = getExtensions >>= (return . member "GL_EXT_EGL_image_storage")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/EGL_image_storage.txt EXT_EGL_image_storage> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTEglImageStorage' in those cases instead.
+gl_EXT_EGL_image_storage :: Bool
+gl_EXT_EGL_image_storage = member "GL_EXT_EGL_image_storage" extensions
+{-# NOINLINE gl_EXT_EGL_image_storage #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/EXT/abgr.txt EXT_abgr> extension supported?
 glGetEXTABGR :: MonadIO m => m Bool
 glGetEXTABGR = getExtensions >>= (return . member "GL_EXT_abgr")
@@ -2824,6 +2835,28 @@ gl_EXT_separate_specular_color :: Bool
 gl_EXT_separate_specular_color = member "GL_EXT_separate_specular_color" extensions
 {-# NOINLINE gl_EXT_separate_specular_color #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/EXT/shader_framebuffer_fetch.txt EXT_shader_framebuffer_fetch> extension supported?
+glGetEXTShaderFramebufferFetch :: MonadIO m => m Bool
+glGetEXTShaderFramebufferFetch = getExtensions >>= (return . member "GL_EXT_shader_framebuffer_fetch")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/shader_framebuffer_fetch.txt EXT_shader_framebuffer_fetch> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTShaderFramebufferFetch' in those cases instead.
+gl_EXT_shader_framebuffer_fetch :: Bool
+gl_EXT_shader_framebuffer_fetch = member "GL_EXT_shader_framebuffer_fetch" extensions
+{-# NOINLINE gl_EXT_shader_framebuffer_fetch #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/shader_framebuffer_fetch_non_coherent.txt EXT_shader_framebuffer_fetch_non_coherent> extension supported?
+glGetEXTShaderFramebufferFetchNonCoherent :: MonadIO m => m Bool
+glGetEXTShaderFramebufferFetchNonCoherent = getExtensions >>= (return . member "GL_EXT_shader_framebuffer_fetch_non_coherent")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/shader_framebuffer_fetch_non_coherent.txt EXT_shader_framebuffer_fetch_non_coherent> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTShaderFramebufferFetchNonCoherent' in those cases instead.
+gl_EXT_shader_framebuffer_fetch_non_coherent :: Bool
+gl_EXT_shader_framebuffer_fetch_non_coherent = member "GL_EXT_shader_framebuffer_fetch_non_coherent" extensions
+{-# NOINLINE gl_EXT_shader_framebuffer_fetch_non_coherent #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/EXT/shader_image_load_store.txt EXT_shader_image_load_store> extension supported?
 glGetEXTShaderImageLoadStore :: MonadIO m => m Bool
 glGetEXTShaderImageLoadStore = getExtensions >>= (return . member "GL_EXT_shader_image_load_store")
@@ -3406,6 +3439,17 @@ glGetINGRInterlaceRead = getExtensions >>= (return . member "GL_INGR_interlace_r
 gl_INGR_interlace_read :: Bool
 gl_INGR_interlace_read = member "GL_INGR_interlace_read" extensions
 {-# NOINLINE gl_INGR_interlace_read #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/INTEL/blackhole_render.txt INTEL_blackhole_render> extension supported?
+glGetINTELBlackholeRender :: MonadIO m => m Bool
+glGetINTELBlackholeRender = getExtensions >>= (return . member "GL_INTEL_blackhole_render")
+
+-- | Is the <https://www.opengl.org/registry/specs/INTEL/blackhole_render.txt INTEL_blackhole_render> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetINTELBlackholeRender' in those cases instead.
+gl_INTEL_blackhole_render :: Bool
+gl_INTEL_blackhole_render = member "GL_INTEL_blackhole_render" extensions
+{-# NOINLINE gl_INTEL_blackhole_render #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/INTEL/conservative_rasterization.txt INTEL_conservative_rasterization> extension supported?
 glGetINTELConservativeRasterization :: MonadIO m => m Bool

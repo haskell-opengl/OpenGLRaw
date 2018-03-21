@@ -1,7 +1,7 @@
 {-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.GL.EXT.TextureFilterMinmax
+-- Module      :  Graphics.GL.EXT.ShaderFramebufferFetch
 -- Copyright   :  (c) Sven Panne 2017
 -- License     :  BSD3
 --
@@ -11,13 +11,12 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.GL.EXT.TextureFilterMinmax (
+module Graphics.GL.EXT.ShaderFramebufferFetch (
   -- * Extension Support
-  glGetEXTTextureFilterMinmax,
-  gl_EXT_texture_filter_minmax,
+  glGetEXTShaderFramebufferFetch,
+  gl_EXT_shader_framebuffer_fetch,
   -- * Enums
-  pattern GL_TEXTURE_REDUCTION_MODE_EXT,
-  pattern GL_WEIGHTED_AVERAGE_EXT
+  pattern GL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT
 ) where
 
 import Graphics.GL.ExtensionPredicates

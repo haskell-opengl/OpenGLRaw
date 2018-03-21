@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F33 (
+  glWindowPos2sv,
+  glWindowPos2svARB,
+  glWindowPos2svMESA,
   glWindowPos3d,
   glWindowPos3dARB,
   glWindowPos3dMESA,
@@ -56,6 +59,45 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glWindowPos2sv --------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glWindowPos.xml OpenGL 2.x>.
+glWindowPos2sv
+  :: MonadIO m
+  => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
+  -> m ()
+glWindowPos2sv v1 = liftIO $ dyn46 ptr_glWindowPos2sv v1
+
+{-# NOINLINE ptr_glWindowPos2sv #-}
+ptr_glWindowPos2sv :: FunPtr (Ptr GLshort -> IO ())
+ptr_glWindowPos2sv = unsafePerformIO $ getCommand "glWindowPos2sv"
+
+-- glWindowPos2svARB -----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos2sv'.
+glWindowPos2svARB
+  :: MonadIO m
+  => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
+  -> m ()
+glWindowPos2svARB v1 = liftIO $ dyn46 ptr_glWindowPos2svARB v1
+
+{-# NOINLINE ptr_glWindowPos2svARB #-}
+ptr_glWindowPos2svARB :: FunPtr (Ptr GLshort -> IO ())
+ptr_glWindowPos2svARB = unsafePerformIO $ getCommand "glWindowPos2svARB"
+
+-- glWindowPos2svMESA ----------------------------------------------------------
+
+-- | This command is an alias for 'glWindowPos2sv'.
+glWindowPos2svMESA
+  :: MonadIO m
+  => Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
+  -> m ()
+glWindowPos2svMESA v1 = liftIO $ dyn46 ptr_glWindowPos2svMESA v1
+
+{-# NOINLINE ptr_glWindowPos2svMESA #-}
+ptr_glWindowPos2svMESA :: FunPtr (Ptr GLshort -> IO ())
+ptr_glWindowPos2svMESA = unsafePerformIO $ getCommand "glWindowPos2svMESA"
 
 -- glWindowPos3d ---------------------------------------------------------------
 
@@ -513,7 +555,7 @@ glWindowRectanglesEXT
   -> GLsizei -- ^ @count@.
   -> Ptr GLint -- ^ @box@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
   -> m ()
-glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn924 ptr_glWindowRectanglesEXT v1 v2 v3
+glWindowRectanglesEXT v1 v2 v3 = liftIO $ dyn926 ptr_glWindowRectanglesEXT v1 v2 v3
 
 {-# NOINLINE ptr_glWindowRectanglesEXT #-}
 ptr_glWindowRectanglesEXT :: FunPtr (GLenum -> GLsizei -> Ptr GLint -> IO ())
@@ -530,7 +572,7 @@ glWriteMaskEXT
   -> GLenum -- ^ @outZ@ of type @VertexShaderWriteMaskEXT@.
   -> GLenum -- ^ @outW@ of type @VertexShaderWriteMaskEXT@.
   -> m ()
-glWriteMaskEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn747 ptr_glWriteMaskEXT v1 v2 v3 v4 v5 v6
+glWriteMaskEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn749 ptr_glWriteMaskEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glWriteMaskEXT #-}
 ptr_glWriteMaskEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())

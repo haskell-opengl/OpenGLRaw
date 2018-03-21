@@ -428,7 +428,7 @@ ptr_glClipControl = unsafePerformIO $ getCommand "glClipControl"
 
 -- glClipControlEXT ------------------------------------------------------------
 
--- | This command is an alias for 'glClipControlEXT'.
+-- | This command is an alias for 'glClipControl'.
 glClipControlEXT
   :: MonadIO m
   => GLenum -- ^ @origin@.

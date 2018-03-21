@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F24 (
+  glSecondaryColor3hvNV,
+  glSecondaryColor3i,
+  glSecondaryColor3iEXT,
   glSecondaryColor3iv,
   glSecondaryColor3ivEXT,
   glSecondaryColor3s,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F24 (
   glTessellationModeAMD,
   glTestFenceAPPLE,
   glTestFenceNV,
-  glTestObjectAPPLE,
-  glTexBuffer,
-  glTexBufferARB,
-  glTexBufferEXT
+  glTestObjectAPPLE
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,48 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glSecondaryColor3hvNV -------------------------------------------------------
+
+glSecondaryColor3hvNV
+  :: MonadIO m
+  => Ptr GLhalfNV -- ^ @v@ pointing to @3@ elements of type @Half16NV@.
+  -> m ()
+glSecondaryColor3hvNV v1 = liftIO $ dyn102 ptr_glSecondaryColor3hvNV v1
+
+{-# NOINLINE ptr_glSecondaryColor3hvNV #-}
+ptr_glSecondaryColor3hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
+ptr_glSecondaryColor3hvNV = unsafePerformIO $ getCommand "glSecondaryColor3hvNV"
+
+-- glSecondaryColor3i ----------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glSecondaryColor.xml OpenGL 2.x>. The vector equivalent of this command is 'glSecondaryColor3iv'.
+glSecondaryColor3i
+  :: MonadIO m
+  => GLint -- ^ @red@ of type @ColorI@.
+  -> GLint -- ^ @green@ of type @ColorI@.
+  -> GLint -- ^ @blue@ of type @ColorI@.
+  -> m ()
+glSecondaryColor3i v1 v2 v3 = liftIO $ dyn43 ptr_glSecondaryColor3i v1 v2 v3
+
+{-# NOINLINE ptr_glSecondaryColor3i #-}
+ptr_glSecondaryColor3i :: FunPtr (GLint -> GLint -> GLint -> IO ())
+ptr_glSecondaryColor3i = unsafePerformIO $ getCommand "glSecondaryColor3i"
+
+-- glSecondaryColor3iEXT -------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glSecondaryColor3ivEXT'. This command is an alias for 'glSecondaryColor3i'.
+glSecondaryColor3iEXT
+  :: MonadIO m
+  => GLint -- ^ @red@ of type @ColorI@.
+  -> GLint -- ^ @green@ of type @ColorI@.
+  -> GLint -- ^ @blue@ of type @ColorI@.
+  -> m ()
+glSecondaryColor3iEXT v1 v2 v3 = liftIO $ dyn43 ptr_glSecondaryColor3iEXT v1 v2 v3
+
+{-# NOINLINE ptr_glSecondaryColor3iEXT #-}
+ptr_glSecondaryColor3iEXT :: FunPtr (GLint -> GLint -> GLint -> IO ())
+ptr_glSecondaryColor3iEXT = unsafePerformIO $ getCommand "glSecondaryColor3iEXT"
 
 -- glSecondaryColor3iv ---------------------------------------------------------
 
@@ -485,7 +527,7 @@ glSelectPerfMonitorCountersAMD
   -> GLint -- ^ @numCounters@.
   -> Ptr GLuint -- ^ @counterList@ pointing to @numCounters@ elements of type @GLuint@.
   -> m ()
-glSelectPerfMonitorCountersAMD v1 v2 v3 v4 v5 = liftIO $ dyn728 ptr_glSelectPerfMonitorCountersAMD v1 v2 v3 v4 v5
+glSelectPerfMonitorCountersAMD v1 v2 v3 v4 v5 = liftIO $ dyn730 ptr_glSelectPerfMonitorCountersAMD v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glSelectPerfMonitorCountersAMD #-}
 ptr_glSelectPerfMonitorCountersAMD :: FunPtr (GLuint -> GLboolean -> GLuint -> GLint -> Ptr GLuint -> IO ())
@@ -499,7 +541,7 @@ glSemaphoreParameterui64vEXT
   -> GLenum -- ^ @pname@ of type [SemaphoreParameterName](Graphics-GL-Groups.html#SemaphoreParameterName).
   -> Ptr GLuint64 -- ^ @params@.
   -> m ()
-glSemaphoreParameterui64vEXT v1 v2 v3 = liftIO $ dyn412 ptr_glSemaphoreParameterui64vEXT v1 v2 v3
+glSemaphoreParameterui64vEXT v1 v2 v3 = liftIO $ dyn414 ptr_glSemaphoreParameterui64vEXT v1 v2 v3
 
 {-# NOINLINE ptr_glSemaphoreParameterui64vEXT #-}
 ptr_glSemaphoreParameterui64vEXT :: FunPtr (GLuint -> GLenum -> Ptr GLuint64 -> IO ())
@@ -519,7 +561,7 @@ glSeparableFilter2D
   -> Ptr a -- ^ @row@ pointing to @COMPSIZE(target,format,type,width)@ elements of type @a@.
   -> Ptr b -- ^ @column@ pointing to @COMPSIZE(target,format,type,height)@ elements of type @b@.
   -> m ()
-glSeparableFilter2D v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn729 ptr_glSeparableFilter2D v1 v2 v3 v4 v5 v6 v7 v8
+glSeparableFilter2D v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn731 ptr_glSeparableFilter2D v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glSeparableFilter2D #-}
 ptr_glSeparableFilter2D :: FunPtr (GLenum -> GLenum -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> Ptr b -> IO ())
@@ -539,7 +581,7 @@ glSeparableFilter2DEXT
   -> Ptr a -- ^ @row@ pointing to @COMPSIZE(target,format,type,width)@ elements of type @a@.
   -> Ptr b -- ^ @column@ pointing to @COMPSIZE(target,format,type,height)@ elements of type @b@.
   -> m ()
-glSeparableFilter2DEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn729 ptr_glSeparableFilter2DEXT v1 v2 v3 v4 v5 v6 v7 v8
+glSeparableFilter2DEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn731 ptr_glSeparableFilter2DEXT v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glSeparableFilter2DEXT #-}
 ptr_glSeparableFilter2DEXT :: FunPtr (GLenum -> GLenum -> GLsizei -> GLsizei -> GLenum -> GLenum -> Ptr a -> Ptr b -> IO ())
@@ -577,7 +619,7 @@ glSetFragmentShaderConstantATI
   => GLuint -- ^ @dst@.
   -> Ptr GLfloat -- ^ @value@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
-glSetFragmentShaderConstantATI v1 v2 = liftIO $ dyn387 ptr_glSetFragmentShaderConstantATI v1 v2
+glSetFragmentShaderConstantATI v1 v2 = liftIO $ dyn389 ptr_glSetFragmentShaderConstantATI v1 v2
 
 {-# NOINLINE ptr_glSetFragmentShaderConstantATI #-}
 ptr_glSetFragmentShaderConstantATI :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
@@ -591,7 +633,7 @@ glSetInvariantEXT
   -> GLenum -- ^ @type@ of type @ScalarType@.
   -> Ptr a -- ^ @addr@ pointing to @COMPSIZE(id,type)@ elements of type @a@.
   -> m ()
-glSetInvariantEXT v1 v2 v3 = liftIO $ dyn483 ptr_glSetInvariantEXT v1 v2 v3
+glSetInvariantEXT v1 v2 v3 = liftIO $ dyn485 ptr_glSetInvariantEXT v1 v2 v3
 
 {-# NOINLINE ptr_glSetInvariantEXT #-}
 ptr_glSetInvariantEXT :: FunPtr (GLuint -> GLenum -> Ptr a -> IO ())
@@ -605,7 +647,7 @@ glSetLocalConstantEXT
   -> GLenum -- ^ @type@ of type @ScalarType@.
   -> Ptr a -- ^ @addr@ pointing to @COMPSIZE(id,type)@ elements of type @a@.
   -> m ()
-glSetLocalConstantEXT v1 v2 v3 = liftIO $ dyn483 ptr_glSetLocalConstantEXT v1 v2 v3
+glSetLocalConstantEXT v1 v2 v3 = liftIO $ dyn485 ptr_glSetLocalConstantEXT v1 v2 v3
 
 {-# NOINLINE ptr_glSetLocalConstantEXT #-}
 ptr_glSetLocalConstantEXT :: FunPtr (GLuint -> GLenum -> Ptr a -> IO ())
@@ -619,7 +661,7 @@ glSetMultisamplefvAMD
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @val@ pointing to @2@ elements of type @GLfloat@.
   -> m ()
-glSetMultisamplefvAMD v1 v2 v3 = liftIO $ dyn272 ptr_glSetMultisamplefvAMD v1 v2 v3
+glSetMultisamplefvAMD v1 v2 v3 = liftIO $ dyn274 ptr_glSetMultisamplefvAMD v1 v2 v3
 
 {-# NOINLINE ptr_glSetMultisamplefvAMD #-}
 ptr_glSetMultisamplefvAMD :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
@@ -649,7 +691,7 @@ glShaderBinary
   -> Ptr a -- ^ @binary@ pointing to @length@ elements of type @a@.
   -> GLsizei -- ^ @length@.
   -> m ()
-glShaderBinary v1 v2 v3 v4 v5 = liftIO $ dyn730 ptr_glShaderBinary v1 v2 v3 v4 v5
+glShaderBinary v1 v2 v3 v4 v5 = liftIO $ dyn732 ptr_glShaderBinary v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glShaderBinary #-}
 ptr_glShaderBinary :: FunPtr (GLsizei -> Ptr GLuint -> GLenum -> Ptr a -> GLsizei -> IO ())
@@ -678,7 +720,7 @@ glShaderOp2EXT
   -> GLuint -- ^ @arg1@.
   -> GLuint -- ^ @arg2@.
   -> m ()
-glShaderOp2EXT v1 v2 v3 v4 = liftIO $ dyn731 ptr_glShaderOp2EXT v1 v2 v3 v4
+glShaderOp2EXT v1 v2 v3 v4 = liftIO $ dyn733 ptr_glShaderOp2EXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glShaderOp2EXT #-}
 ptr_glShaderOp2EXT :: FunPtr (GLenum -> GLuint -> GLuint -> GLuint -> IO ())
@@ -694,7 +736,7 @@ glShaderOp3EXT
   -> GLuint -- ^ @arg2@.
   -> GLuint -- ^ @arg3@.
   -> m ()
-glShaderOp3EXT v1 v2 v3 v4 v5 = liftIO $ dyn732 ptr_glShaderOp3EXT v1 v2 v3 v4 v5
+glShaderOp3EXT v1 v2 v3 v4 v5 = liftIO $ dyn734 ptr_glShaderOp3EXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glShaderOp3EXT #-}
 ptr_glShaderOp3EXT :: FunPtr (GLenum -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -726,7 +768,7 @@ glShaderSourceARB
   -> Ptr (Ptr GLcharARB) -- ^ @string@ pointing to @count@ elements of type @Ptr GLcharARB@.
   -> Ptr GLint -- ^ @length@ pointing to @count@ elements of type @GLint@.
   -> m ()
-glShaderSourceARB v1 v2 v3 v4 = liftIO $ dyn733 ptr_glShaderSourceARB v1 v2 v3 v4
+glShaderSourceARB v1 v2 v3 v4 = liftIO $ dyn735 ptr_glShaderSourceARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glShaderSourceARB #-}
 ptr_glShaderSourceARB :: FunPtr (GLhandleARB -> GLsizei -> Ptr (Ptr GLcharARB) -> Ptr GLint -> IO ())
@@ -772,7 +814,7 @@ glSignalSemaphoreEXT
   -> Ptr GLuint -- ^ @textures@ pointing to @COMPSIZE(numTextureBarriers)@ elements of type @GLuint@.
   -> Ptr GLenum -- ^ @dstLayouts@ pointing to @COMPSIZE(numTextureBarriers)@ elements of type [TextureLayout](Graphics-GL-Groups.html#TextureLayout).
   -> m ()
-glSignalSemaphoreEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn734 ptr_glSignalSemaphoreEXT v1 v2 v3 v4 v5 v6
+glSignalSemaphoreEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn736 ptr_glSignalSemaphoreEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glSignalSemaphoreEXT #-}
 ptr_glSignalSemaphoreEXT :: FunPtr (GLuint -> GLuint -> Ptr GLuint -> GLuint -> Ptr GLuint -> Ptr GLenum -> IO ())
@@ -784,7 +826,7 @@ glSignalVkFenceNV
   :: MonadIO m
   => GLuint64 -- ^ @vkFence@.
   -> m ()
-glSignalVkFenceNV v1 = liftIO $ dyn508 ptr_glSignalVkFenceNV v1
+glSignalVkFenceNV v1 = liftIO $ dyn510 ptr_glSignalVkFenceNV v1
 
 {-# NOINLINE ptr_glSignalVkFenceNV #-}
 ptr_glSignalVkFenceNV :: FunPtr (GLuint64 -> IO ())
@@ -796,7 +838,7 @@ glSignalVkSemaphoreNV
   :: MonadIO m
   => GLuint64 -- ^ @vkSemaphore@.
   -> m ()
-glSignalVkSemaphoreNV v1 = liftIO $ dyn508 ptr_glSignalVkSemaphoreNV v1
+glSignalVkSemaphoreNV v1 = liftIO $ dyn510 ptr_glSignalVkSemaphoreNV v1
 
 {-# NOINLINE ptr_glSignalVkSemaphoreNV #-}
 ptr_glSignalVkSemaphoreNV :: FunPtr (GLuint64 -> IO ())
@@ -812,7 +854,7 @@ glSpecializeShader
   -> Ptr GLuint -- ^ @pConstantIndex@.
   -> Ptr GLuint -- ^ @pConstantValue@.
   -> m ()
-glSpecializeShader v1 v2 v3 v4 v5 = liftIO $ dyn735 ptr_glSpecializeShader v1 v2 v3 v4 v5
+glSpecializeShader v1 v2 v3 v4 v5 = liftIO $ dyn737 ptr_glSpecializeShader v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glSpecializeShader #-}
 ptr_glSpecializeShader :: FunPtr (GLuint -> Ptr GLchar -> GLuint -> Ptr GLuint -> Ptr GLuint -> IO ())
@@ -829,7 +871,7 @@ glSpecializeShaderARB
   -> Ptr GLuint -- ^ @pConstantIndex@.
   -> Ptr GLuint -- ^ @pConstantValue@.
   -> m ()
-glSpecializeShaderARB v1 v2 v3 v4 v5 = liftIO $ dyn735 ptr_glSpecializeShaderARB v1 v2 v3 v4 v5
+glSpecializeShaderARB v1 v2 v3 v4 v5 = liftIO $ dyn737 ptr_glSpecializeShaderARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glSpecializeShaderARB #-}
 ptr_glSpecializeShaderARB :: FunPtr (GLuint -> Ptr GLchar -> GLuint -> Ptr GLuint -> Ptr GLuint -> IO ())
@@ -908,7 +950,7 @@ glStartTilingQCOM
   -> GLuint -- ^ @height@.
   -> GLbitfield -- ^ @preserveMask@ of type [BufferBitQCOM](Graphics-GL-Groups.html#BufferBitQCOM).
   -> m ()
-glStartTilingQCOM v1 v2 v3 v4 v5 = liftIO $ dyn736 ptr_glStartTilingQCOM v1 v2 v3 v4 v5
+glStartTilingQCOM v1 v2 v3 v4 v5 = liftIO $ dyn738 ptr_glStartTilingQCOM v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glStartTilingQCOM #-}
 ptr_glStartTilingQCOM :: FunPtr (GLuint -> GLuint -> GLuint -> GLuint -> GLbitfield -> IO ())
@@ -934,7 +976,7 @@ glStencilClearTagEXT
   => GLsizei -- ^ @stencilTagBits@.
   -> GLuint -- ^ @stencilClearTag@.
   -> m ()
-glStencilClearTagEXT v1 v2 = liftIO $ dyn737 ptr_glStencilClearTagEXT v1 v2
+glStencilClearTagEXT v1 v2 = liftIO $ dyn739 ptr_glStencilClearTagEXT v1 v2
 
 {-# NOINLINE ptr_glStencilClearTagEXT #-}
 ptr_glStencilClearTagEXT :: FunPtr (GLsizei -> GLuint -> IO ())
@@ -953,7 +995,7 @@ glStencilFillPathInstancedNV
   -> GLenum -- ^ @transformType@ of type [PathTransformType](Graphics-GL-Groups.html#PathTransformType).
   -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(numPaths,transformType)@ elements of type @GLfloat@.
   -> m ()
-glStencilFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn738 ptr_glStencilFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8
+glStencilFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn740 ptr_glStencilFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glStencilFillPathInstancedNV #-}
 ptr_glStencilFillPathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLenum -> GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -967,7 +1009,7 @@ glStencilFillPathNV
   -> GLenum -- ^ @fillMode@ of type [PathFillMode](Graphics-GL-Groups.html#PathFillMode).
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
-glStencilFillPathNV v1 v2 v3 = liftIO $ dyn739 ptr_glStencilFillPathNV v1 v2 v3
+glStencilFillPathNV v1 v2 v3 = liftIO $ dyn741 ptr_glStencilFillPathNV v1 v2 v3
 
 {-# NOINLINE ptr_glStencilFillPathNV #-}
 ptr_glStencilFillPathNV :: FunPtr (GLuint -> GLenum -> GLuint -> IO ())
@@ -982,7 +1024,7 @@ glStencilFunc
   -> GLint -- ^ @ref@ of type @StencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
-glStencilFunc v1 v2 v3 = liftIO $ dyn629 ptr_glStencilFunc v1 v2 v3
+glStencilFunc v1 v2 v3 = liftIO $ dyn631 ptr_glStencilFunc v1 v2 v3
 
 {-# NOINLINE ptr_glStencilFunc #-}
 ptr_glStencilFunc :: FunPtr (GLenum -> GLint -> GLuint -> IO ())
@@ -998,7 +1040,7 @@ glStencilFuncSeparate
   -> GLint -- ^ @ref@ of type @StencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
-glStencilFuncSeparate v1 v2 v3 v4 = liftIO $ dyn740 ptr_glStencilFuncSeparate v1 v2 v3 v4
+glStencilFuncSeparate v1 v2 v3 v4 = liftIO $ dyn742 ptr_glStencilFuncSeparate v1 v2 v3 v4
 
 {-# NOINLINE ptr_glStencilFuncSeparate #-}
 ptr_glStencilFuncSeparate :: FunPtr (GLenum -> GLenum -> GLint -> GLuint -> IO ())
@@ -1013,7 +1055,7 @@ glStencilFuncSeparateATI
   -> GLint -- ^ @ref@ of type @ClampedStencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
-glStencilFuncSeparateATI v1 v2 v3 v4 = liftIO $ dyn740 ptr_glStencilFuncSeparateATI v1 v2 v3 v4
+glStencilFuncSeparateATI v1 v2 v3 v4 = liftIO $ dyn742 ptr_glStencilFuncSeparateATI v1 v2 v3 v4
 
 {-# NOINLINE ptr_glStencilFuncSeparateATI #-}
 ptr_glStencilFuncSeparateATI :: FunPtr (GLenum -> GLenum -> GLint -> GLuint -> IO ())
@@ -1055,7 +1097,7 @@ glStencilOp
   -> GLenum -- ^ @zfail@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
   -> GLenum -- ^ @zpass@ of type [StencilOp](Graphics-GL-Groups.html#StencilOp).
   -> m ()
-glStencilOp v1 v2 v3 = liftIO $ dyn741 ptr_glStencilOp v1 v2 v3
+glStencilOp v1 v2 v3 = liftIO $ dyn743 ptr_glStencilOp v1 v2 v3
 
 {-# NOINLINE ptr_glStencilOp #-}
 ptr_glStencilOp :: FunPtr (GLenum -> GLenum -> GLenum -> IO ())
@@ -1119,7 +1161,7 @@ glStencilStrokePathInstancedNV
   -> GLenum -- ^ @transformType@ of type [PathTransformType](Graphics-GL-Groups.html#PathTransformType).
   -> Ptr GLfloat -- ^ @transformValues@ pointing to @COMPSIZE(numPaths,transformType)@ elements of type @GLfloat@.
   -> m ()
-glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn742 ptr_glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8
+glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn744 ptr_glStencilStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glStencilStrokePathInstancedNV #-}
 ptr_glStencilStrokePathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLint -> GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -1133,7 +1175,7 @@ glStencilStrokePathNV
   -> GLint -- ^ @reference@ of type @StencilValue@.
   -> GLuint -- ^ @mask@ of type @MaskedStencilValue@.
   -> m ()
-glStencilStrokePathNV v1 v2 v3 = liftIO $ dyn662 ptr_glStencilStrokePathNV v1 v2 v3
+glStencilStrokePathNV v1 v2 v3 = liftIO $ dyn664 ptr_glStencilStrokePathNV v1 v2 v3
 
 {-# NOINLINE ptr_glStencilStrokePathNV #-}
 ptr_glStencilStrokePathNV :: FunPtr (GLuint -> GLint -> GLuint -> IO ())
@@ -1153,7 +1195,7 @@ glStencilThenCoverFillPathInstancedNV
   -> GLenum -- ^ @transformType@.
   -> Ptr GLfloat -- ^ @transformValues@.
   -> m ()
-glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn743 ptr_glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn745 ptr_glStencilThenCoverFillPathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glStencilThenCoverFillPathInstancedNV #-}
 ptr_glStencilThenCoverFillPathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLenum -> GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -1168,7 +1210,7 @@ glStencilThenCoverFillPathNV
   -> GLuint -- ^ @mask@.
   -> GLenum -- ^ @coverMode@.
   -> m ()
-glStencilThenCoverFillPathNV v1 v2 v3 v4 = liftIO $ dyn744 ptr_glStencilThenCoverFillPathNV v1 v2 v3 v4
+glStencilThenCoverFillPathNV v1 v2 v3 v4 = liftIO $ dyn746 ptr_glStencilThenCoverFillPathNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glStencilThenCoverFillPathNV #-}
 ptr_glStencilThenCoverFillPathNV :: FunPtr (GLuint -> GLenum -> GLuint -> GLenum -> IO ())
@@ -1188,7 +1230,7 @@ glStencilThenCoverStrokePathInstancedNV
   -> GLenum -- ^ @transformType@.
   -> Ptr GLfloat -- ^ @transformValues@.
   -> m ()
-glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn745 ptr_glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn747 ptr_glStencilThenCoverStrokePathInstancedNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glStencilThenCoverStrokePathInstancedNV #-}
 ptr_glStencilThenCoverStrokePathInstancedNV :: FunPtr (GLsizei -> GLenum -> Ptr a -> GLuint -> GLint -> GLuint -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -1203,7 +1245,7 @@ glStencilThenCoverStrokePathNV
   -> GLuint -- ^ @mask@.
   -> GLenum -- ^ @coverMode@.
   -> m ()
-glStencilThenCoverStrokePathNV v1 v2 v3 v4 = liftIO $ dyn746 ptr_glStencilThenCoverStrokePathNV v1 v2 v3 v4
+glStencilThenCoverStrokePathNV v1 v2 v3 v4 = liftIO $ dyn748 ptr_glStencilThenCoverStrokePathNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glStencilThenCoverStrokePathNV #-}
 ptr_glStencilThenCoverStrokePathNV :: FunPtr (GLuint -> GLint -> GLuint -> GLenum -> IO ())
@@ -1228,7 +1270,7 @@ glStringMarkerGREMEDY
   => GLsizei -- ^ @len@.
   -> Ptr a -- ^ @string@ pointing to @len@ elements of type @a@.
   -> m ()
-glStringMarkerGREMEDY v1 v2 = liftIO $ dyn265 ptr_glStringMarkerGREMEDY v1 v2
+glStringMarkerGREMEDY v1 v2 = liftIO $ dyn267 ptr_glStringMarkerGREMEDY v1 v2
 
 {-# NOINLINE ptr_glStringMarkerGREMEDY #-}
 ptr_glStringMarkerGREMEDY :: FunPtr (GLsizei -> Ptr a -> IO ())
@@ -1258,7 +1300,7 @@ glSwizzleEXT
   -> GLenum -- ^ @outZ@ of type @VertexShaderCoordOutEXT@.
   -> GLenum -- ^ @outW@ of type @VertexShaderCoordOutEXT@.
   -> m ()
-glSwizzleEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn747 ptr_glSwizzleEXT v1 v2 v3 v4 v5 v6
+glSwizzleEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn749 ptr_glSwizzleEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glSwizzleEXT #-}
 ptr_glSwizzleEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLenum -> GLenum -> GLenum -> IO ())
@@ -1478,7 +1520,7 @@ glTestFenceAPPLE
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glTestFenceAPPLE v1 = liftIO $ dyn278 ptr_glTestFenceAPPLE v1
+glTestFenceAPPLE v1 = liftIO $ dyn280 ptr_glTestFenceAPPLE v1
 
 {-# NOINLINE ptr_glTestFenceAPPLE #-}
 ptr_glTestFenceAPPLE :: FunPtr (GLuint -> IO GLboolean)
@@ -1490,7 +1532,7 @@ glTestFenceNV
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glTestFenceNV v1 = liftIO $ dyn278 ptr_glTestFenceNV v1
+glTestFenceNV v1 = liftIO $ dyn280 ptr_glTestFenceNV v1
 
 {-# NOINLINE ptr_glTestFenceNV #-}
 ptr_glTestFenceNV :: FunPtr (GLuint -> IO GLboolean)
@@ -1503,54 +1545,9 @@ glTestObjectAPPLE
   => GLenum -- ^ @object@ of type @ObjectTypeAPPLE@.
   -> GLuint -- ^ @name@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glTestObjectAPPLE v1 v2 = liftIO $ dyn493 ptr_glTestObjectAPPLE v1 v2
+glTestObjectAPPLE v1 v2 = liftIO $ dyn495 ptr_glTestObjectAPPLE v1 v2
 
 {-# NOINLINE ptr_glTestObjectAPPLE #-}
 ptr_glTestObjectAPPLE :: FunPtr (GLenum -> GLuint -> IO GLboolean)
 ptr_glTestObjectAPPLE = unsafePerformIO $ getCommand "glTestObjectAPPLE"
-
--- glTexBuffer -----------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glTexBuffer.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glTexBuffer.xhtml OpenGL 4.x>.
-glTexBuffer
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
-  -> GLuint -- ^ @buffer@.
-  -> m ()
-glTexBuffer v1 v2 v3 = liftIO $ dyn30 ptr_glTexBuffer v1 v2 v3
-
-{-# NOINLINE ptr_glTexBuffer #-}
-ptr_glTexBuffer :: FunPtr (GLenum -> GLenum -> GLuint -> IO ())
-ptr_glTexBuffer = unsafePerformIO $ getCommand "glTexBuffer"
-
--- glTexBufferARB --------------------------------------------------------------
-
--- | This command is an alias for 'glTexBuffer'.
-glTexBufferARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
-  -> GLuint -- ^ @buffer@.
-  -> m ()
-glTexBufferARB v1 v2 v3 = liftIO $ dyn30 ptr_glTexBufferARB v1 v2 v3
-
-{-# NOINLINE ptr_glTexBufferARB #-}
-ptr_glTexBufferARB :: FunPtr (GLenum -> GLenum -> GLuint -> IO ())
-ptr_glTexBufferARB = unsafePerformIO $ getCommand "glTexBufferARB"
-
--- glTexBufferEXT --------------------------------------------------------------
-
--- | This command is an alias for 'glTexBuffer'.
-glTexBufferEXT
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
-  -> GLuint -- ^ @buffer@.
-  -> m ()
-glTexBufferEXT v1 v2 v3 = liftIO $ dyn30 ptr_glTexBufferEXT v1 v2 v3
-
-{-# NOINLINE ptr_glTexBufferEXT #-}
-ptr_glTexBufferEXT :: FunPtr (GLenum -> GLenum -> GLuint -> IO ())
-ptr_glTexBufferEXT = unsafePerformIO $ getCommand "glTexBufferEXT"
 

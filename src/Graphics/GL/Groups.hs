@@ -138,11 +138,11 @@ module Graphics.GL.Groups (
 -- * 'Graphics.GL.Tokens.GL_ZERO'
 -- * 'Graphics.GL.Tokens.GL_ONE'
 -- * 'Graphics.GL.Tokens.GL_SRC_COLOR'
--- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_COLOR' (alias: 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_COLOR')
+-- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_COLOR'
 -- * 'Graphics.GL.Tokens.GL_DST_COLOR'
 -- * 'Graphics.GL.Tokens.GL_ONE_MINUS_DST_COLOR'
 -- * 'Graphics.GL.Tokens.GL_SRC_ALPHA'
--- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_ALPHA' (alias: 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_ALPHA')
+-- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_ALPHA'
 -- * 'Graphics.GL.Tokens.GL_DST_ALPHA'
 -- * 'Graphics.GL.Tokens.GL_ONE_MINUS_DST_ALPHA'
 -- * 'Graphics.GL.Tokens.GL_CONSTANT_COLOR'
@@ -151,9 +151,9 @@ module Graphics.GL.Groups (
 -- * 'Graphics.GL.Tokens.GL_ONE_MINUS_CONSTANT_ALPHA'
 -- * 'Graphics.GL.Tokens.GL_SRC_ALPHA_SATURATE'
 -- * 'Graphics.GL.Tokens.GL_SRC1_COLOR'
--- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_COLOR' (alias: 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_COLOR')
+-- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC1_COLOR'
 -- * 'Graphics.GL.Tokens.GL_SRC1_ALPHA'
--- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_ALPHA' (alias: 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC_ALPHA')
+-- * 'Graphics.GL.Tokens.GL_ONE_MINUS_SRC1_ALPHA'
 --
 -- === #BlitFramebufferFilter# BlitFramebufferFilter
 -- One of the following values:
@@ -1188,6 +1188,7 @@ module Graphics.GL.Groups (
 -- * 'Graphics.GL.Tokens.GL_NORMAL_ARRAY_COUNT_EXT'
 -- * 'Graphics.GL.Tokens.GL_NORMAL_ARRAY_STRIDE'
 -- * 'Graphics.GL.Tokens.GL_NORMAL_ARRAY_TYPE'
+-- * 'Graphics.GL.Tokens.GL_NUM_DEVICE_UUIDS_EXT'
 -- * 'Graphics.GL.Tokens.GL_PACK_ALIGNMENT'
 -- * 'Graphics.GL.Tokens.GL_PACK_CMYK_HINT_EXT'
 -- * 'Graphics.GL.Tokens.GL_PACK_IMAGE_DEPTH_SGIS'

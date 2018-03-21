@@ -36,6 +36,7 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.DrawBuffers2,
   module Graphics.GL.EXT.DrawInstanced,
   module Graphics.GL.EXT.DrawRangeElements,
+  module Graphics.GL.EXT.EglImageStorage,
   module Graphics.GL.EXT.ExternalBuffer,
   module Graphics.GL.EXT.FogCoord,
   module Graphics.GL.EXT.FourTwoTwoPixels,
@@ -75,6 +76,8 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.SemaphoreWin32,
   module Graphics.GL.EXT.SeparateShaderObjects,
   module Graphics.GL.EXT.SeparateSpecularColor,
+  module Graphics.GL.EXT.ShaderFramebufferFetch,
+  module Graphics.GL.EXT.ShaderFramebufferFetchNonCoherent,
   module Graphics.GL.EXT.ShaderImageLoadStore,
   module Graphics.GL.EXT.SharedTexturePalette,
   module Graphics.GL.EXT.StencilClearTag,
@@ -138,6 +141,7 @@ import Graphics.GL.EXT.DirectStateAccess
 import Graphics.GL.EXT.DrawBuffers2
 import Graphics.GL.EXT.DrawInstanced
 import Graphics.GL.EXT.DrawRangeElements
+import Graphics.GL.EXT.EglImageStorage
 import Graphics.GL.EXT.ExternalBuffer
 import Graphics.GL.EXT.FogCoord
 import Graphics.GL.EXT.FourTwoTwoPixels
@@ -177,6 +181,8 @@ import Graphics.GL.EXT.SemaphoreFd
 import Graphics.GL.EXT.SemaphoreWin32
 import Graphics.GL.EXT.SeparateShaderObjects
 import Graphics.GL.EXT.SeparateSpecularColor
+import Graphics.GL.EXT.ShaderFramebufferFetch
+import Graphics.GL.EXT.ShaderFramebufferFetchNonCoherent
 import Graphics.GL.EXT.ShaderImageLoadStore
 import Graphics.GL.EXT.SharedTexturePalette
 import Graphics.GL.EXT.StencilClearTag

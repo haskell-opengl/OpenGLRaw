@@ -15,6 +15,9 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F31 (
+  glVertexAttribI2uivEXT,
+  glVertexAttribI3i,
+  glVertexAttribI3iEXT,
   glVertexAttribI3iv,
   glVertexAttribI3ivEXT,
   glVertexAttribI3ui,
@@ -111,10 +114,7 @@ module Graphics.GL.Functions.F31 (
   glVertexBindingDivisor,
   glVertexBlendARB,
   glVertexBlendEnvfATI,
-  glVertexBlendEnviATI,
-  glVertexFormatNV,
-  glVertexP2ui,
-  glVertexP2uiv
+  glVertexBlendEnviATI
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,52 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glVertexAttribI2uivEXT ------------------------------------------------------
+
+-- | This command is an alias for 'glVertexAttribI2uiv'.
+glVertexAttribI2uivEXT
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLuint -- ^ @v@ pointing to @2@ elements of type @GLuint@.
+  -> m ()
+glVertexAttribI2uivEXT v1 v2 = liftIO $ dyn197 ptr_glVertexAttribI2uivEXT v1 v2
+
+{-# NOINLINE ptr_glVertexAttribI2uivEXT #-}
+ptr_glVertexAttribI2uivEXT :: FunPtr (GLuint -> Ptr GLuint -> IO ())
+ptr_glVertexAttribI2uivEXT = unsafePerformIO $ getCommand "glVertexAttribI2uivEXT"
+
+-- glVertexAttribI3i -----------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttribI3iv'.
+glVertexAttribI3i
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLint -- ^ @x@.
+  -> GLint -- ^ @y@.
+  -> GLint -- ^ @z@.
+  -> m ()
+glVertexAttribI3i v1 v2 v3 v4 = liftIO $ dyn670 ptr_glVertexAttribI3i v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVertexAttribI3i #-}
+ptr_glVertexAttribI3i :: FunPtr (GLuint -> GLint -> GLint -> GLint -> IO ())
+ptr_glVertexAttribI3i = unsafePerformIO $ getCommand "glVertexAttribI3i"
+
+-- glVertexAttribI3iEXT --------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glVertexAttribI3ivEXT'. This command is an alias for 'glVertexAttribI3i'.
+glVertexAttribI3iEXT
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLint -- ^ @x@.
+  -> GLint -- ^ @y@.
+  -> GLint -- ^ @z@.
+  -> m ()
+glVertexAttribI3iEXT v1 v2 v3 v4 = liftIO $ dyn670 ptr_glVertexAttribI3iEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVertexAttribI3iEXT #-}
+ptr_glVertexAttribI3iEXT :: FunPtr (GLuint -> GLint -> GLint -> GLint -> IO ())
+ptr_glVertexAttribI3iEXT = unsafePerformIO $ getCommand "glVertexAttribI3iEXT"
 
 -- glVertexAttribI3iv ----------------------------------------------------------
 
@@ -131,7 +177,7 @@ glVertexAttribI3iv
   => GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @3@ elements of type @GLint@.
   -> m ()
-glVertexAttribI3iv v1 v2 = liftIO $ dyn727 ptr_glVertexAttribI3iv v1 v2
+glVertexAttribI3iv v1 v2 = liftIO $ dyn729 ptr_glVertexAttribI3iv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI3iv #-}
 ptr_glVertexAttribI3iv :: FunPtr (GLuint -> Ptr GLint -> IO ())
@@ -145,7 +191,7 @@ glVertexAttribI3ivEXT
   => GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @3@ elements of type @GLint@.
   -> m ()
-glVertexAttribI3ivEXT v1 v2 = liftIO $ dyn727 ptr_glVertexAttribI3ivEXT v1 v2
+glVertexAttribI3ivEXT v1 v2 = liftIO $ dyn729 ptr_glVertexAttribI3ivEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI3ivEXT #-}
 ptr_glVertexAttribI3ivEXT :: FunPtr (GLuint -> Ptr GLint -> IO ())
@@ -219,7 +265,7 @@ glVertexAttribI4bv
   => GLuint -- ^ @index@.
   -> Ptr GLbyte -- ^ @v@ pointing to @4@ elements of type @GLbyte@.
   -> m ()
-glVertexAttribI4bv v1 v2 = liftIO $ dyn864 ptr_glVertexAttribI4bv v1 v2
+glVertexAttribI4bv v1 v2 = liftIO $ dyn866 ptr_glVertexAttribI4bv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4bv #-}
 ptr_glVertexAttribI4bv :: FunPtr (GLuint -> Ptr GLbyte -> IO ())
@@ -233,7 +279,7 @@ glVertexAttribI4bvEXT
   => GLuint -- ^ @index@.
   -> Ptr GLbyte -- ^ @v@ pointing to @4@ elements of type @GLbyte@.
   -> m ()
-glVertexAttribI4bvEXT v1 v2 = liftIO $ dyn864 ptr_glVertexAttribI4bvEXT v1 v2
+glVertexAttribI4bvEXT v1 v2 = liftIO $ dyn866 ptr_glVertexAttribI4bvEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4bvEXT #-}
 ptr_glVertexAttribI4bvEXT :: FunPtr (GLuint -> Ptr GLbyte -> IO ())
@@ -250,7 +296,7 @@ glVertexAttribI4i
   -> GLint -- ^ @z@.
   -> GLint -- ^ @w@.
   -> m ()
-glVertexAttribI4i v1 v2 v3 v4 v5 = liftIO $ dyn676 ptr_glVertexAttribI4i v1 v2 v3 v4 v5
+glVertexAttribI4i v1 v2 v3 v4 v5 = liftIO $ dyn678 ptr_glVertexAttribI4i v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribI4i #-}
 ptr_glVertexAttribI4i :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
@@ -267,7 +313,7 @@ glVertexAttribI4iEXT
   -> GLint -- ^ @z@.
   -> GLint -- ^ @w@.
   -> m ()
-glVertexAttribI4iEXT v1 v2 v3 v4 v5 = liftIO $ dyn676 ptr_glVertexAttribI4iEXT v1 v2 v3 v4 v5
+glVertexAttribI4iEXT v1 v2 v3 v4 v5 = liftIO $ dyn678 ptr_glVertexAttribI4iEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribI4iEXT #-}
 ptr_glVertexAttribI4iEXT :: FunPtr (GLuint -> GLint -> GLint -> GLint -> GLint -> IO ())
@@ -281,7 +327,7 @@ glVertexAttribI4iv
   => GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @4@ elements of type @GLint@.
   -> m ()
-glVertexAttribI4iv v1 v2 = liftIO $ dyn727 ptr_glVertexAttribI4iv v1 v2
+glVertexAttribI4iv v1 v2 = liftIO $ dyn729 ptr_glVertexAttribI4iv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4iv #-}
 ptr_glVertexAttribI4iv :: FunPtr (GLuint -> Ptr GLint -> IO ())
@@ -295,7 +341,7 @@ glVertexAttribI4ivEXT
   => GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @v@ pointing to @4@ elements of type @GLint@.
   -> m ()
-glVertexAttribI4ivEXT v1 v2 = liftIO $ dyn727 ptr_glVertexAttribI4ivEXT v1 v2
+glVertexAttribI4ivEXT v1 v2 = liftIO $ dyn729 ptr_glVertexAttribI4ivEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4ivEXT #-}
 ptr_glVertexAttribI4ivEXT :: FunPtr (GLuint -> Ptr GLint -> IO ())
@@ -309,7 +355,7 @@ glVertexAttribI4sv
   => GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @GLshort@.
   -> m ()
-glVertexAttribI4sv v1 v2 = liftIO $ dyn866 ptr_glVertexAttribI4sv v1 v2
+glVertexAttribI4sv v1 v2 = liftIO $ dyn868 ptr_glVertexAttribI4sv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4sv #-}
 ptr_glVertexAttribI4sv :: FunPtr (GLuint -> Ptr GLshort -> IO ())
@@ -323,7 +369,7 @@ glVertexAttribI4svEXT
   => GLuint -- ^ @index@.
   -> Ptr GLshort -- ^ @v@ pointing to @4@ elements of type @GLshort@.
   -> m ()
-glVertexAttribI4svEXT v1 v2 = liftIO $ dyn866 ptr_glVertexAttribI4svEXT v1 v2
+glVertexAttribI4svEXT v1 v2 = liftIO $ dyn868 ptr_glVertexAttribI4svEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4svEXT #-}
 ptr_glVertexAttribI4svEXT :: FunPtr (GLuint -> Ptr GLshort -> IO ())
@@ -337,7 +383,7 @@ glVertexAttribI4ubv
   => GLuint -- ^ @index@.
   -> Ptr GLubyte -- ^ @v@ pointing to @4@ elements of type @GLubyte@.
   -> m ()
-glVertexAttribI4ubv v1 v2 = liftIO $ dyn386 ptr_glVertexAttribI4ubv v1 v2
+glVertexAttribI4ubv v1 v2 = liftIO $ dyn388 ptr_glVertexAttribI4ubv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4ubv #-}
 ptr_glVertexAttribI4ubv :: FunPtr (GLuint -> Ptr GLubyte -> IO ())
@@ -351,7 +397,7 @@ glVertexAttribI4ubvEXT
   => GLuint -- ^ @index@.
   -> Ptr GLubyte -- ^ @v@ pointing to @4@ elements of type @GLubyte@.
   -> m ()
-glVertexAttribI4ubvEXT v1 v2 = liftIO $ dyn386 ptr_glVertexAttribI4ubvEXT v1 v2
+glVertexAttribI4ubvEXT v1 v2 = liftIO $ dyn388 ptr_glVertexAttribI4ubvEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4ubvEXT #-}
 ptr_glVertexAttribI4ubvEXT :: FunPtr (GLuint -> Ptr GLubyte -> IO ())
@@ -368,7 +414,7 @@ glVertexAttribI4ui
   -> GLuint -- ^ @z@.
   -> GLuint -- ^ @w@.
   -> m ()
-glVertexAttribI4ui v1 v2 v3 v4 v5 = liftIO $ dyn896 ptr_glVertexAttribI4ui v1 v2 v3 v4 v5
+glVertexAttribI4ui v1 v2 v3 v4 v5 = liftIO $ dyn898 ptr_glVertexAttribI4ui v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribI4ui #-}
 ptr_glVertexAttribI4ui :: FunPtr (GLuint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -385,7 +431,7 @@ glVertexAttribI4uiEXT
   -> GLuint -- ^ @z@.
   -> GLuint -- ^ @w@.
   -> m ()
-glVertexAttribI4uiEXT v1 v2 v3 v4 v5 = liftIO $ dyn896 ptr_glVertexAttribI4uiEXT v1 v2 v3 v4 v5
+glVertexAttribI4uiEXT v1 v2 v3 v4 v5 = liftIO $ dyn898 ptr_glVertexAttribI4uiEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribI4uiEXT #-}
 ptr_glVertexAttribI4uiEXT :: FunPtr (GLuint -> GLuint -> GLuint -> GLuint -> GLuint -> IO ())
@@ -427,7 +473,7 @@ glVertexAttribI4usv
   => GLuint -- ^ @index@.
   -> Ptr GLushort -- ^ @v@ pointing to @4@ elements of type @GLushort@.
   -> m ()
-glVertexAttribI4usv v1 v2 = liftIO $ dyn867 ptr_glVertexAttribI4usv v1 v2
+glVertexAttribI4usv v1 v2 = liftIO $ dyn869 ptr_glVertexAttribI4usv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4usv #-}
 ptr_glVertexAttribI4usv :: FunPtr (GLuint -> Ptr GLushort -> IO ())
@@ -441,7 +487,7 @@ glVertexAttribI4usvEXT
   => GLuint -- ^ @index@.
   -> Ptr GLushort -- ^ @v@ pointing to @4@ elements of type @GLushort@.
   -> m ()
-glVertexAttribI4usvEXT v1 v2 = liftIO $ dyn867 ptr_glVertexAttribI4usvEXT v1 v2
+glVertexAttribI4usvEXT v1 v2 = liftIO $ dyn869 ptr_glVertexAttribI4usvEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribI4usvEXT #-}
 ptr_glVertexAttribI4usvEXT :: FunPtr (GLuint -> Ptr GLushort -> IO ())
@@ -457,7 +503,7 @@ glVertexAttribIFormat
   -> GLenum -- ^ @type@.
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexAttribIFormat v1 v2 v3 v4 = liftIO $ dyn897 ptr_glVertexAttribIFormat v1 v2 v3 v4
+glVertexAttribIFormat v1 v2 v3 v4 = liftIO $ dyn899 ptr_glVertexAttribIFormat v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribIFormat #-}
 ptr_glVertexAttribIFormat :: FunPtr (GLuint -> GLint -> GLenum -> GLuint -> IO ())
@@ -472,7 +518,7 @@ glVertexAttribIFormatNV
   -> GLenum -- ^ @type@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glVertexAttribIFormatNV v1 v2 v3 v4 = liftIO $ dyn898 ptr_glVertexAttribIFormatNV v1 v2 v3 v4
+glVertexAttribIFormatNV v1 v2 v3 v4 = liftIO $ dyn900 ptr_glVertexAttribIFormatNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribIFormatNV #-}
 ptr_glVertexAttribIFormatNV :: FunPtr (GLuint -> GLint -> GLenum -> GLsizei -> IO ())
@@ -489,7 +535,7 @@ glVertexAttribIPointer
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
-glVertexAttribIPointer v1 v2 v3 v4 v5 = liftIO $ dyn899 ptr_glVertexAttribIPointer v1 v2 v3 v4 v5
+glVertexAttribIPointer v1 v2 v3 v4 v5 = liftIO $ dyn901 ptr_glVertexAttribIPointer v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribIPointer #-}
 ptr_glVertexAttribIPointer :: FunPtr (GLuint -> GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
@@ -506,7 +552,7 @@ glVertexAttribIPointerEXT
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
-glVertexAttribIPointerEXT v1 v2 v3 v4 v5 = liftIO $ dyn899 ptr_glVertexAttribIPointerEXT v1 v2 v3 v4 v5
+glVertexAttribIPointerEXT v1 v2 v3 v4 v5 = liftIO $ dyn901 ptr_glVertexAttribIPointerEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribIPointerEXT #-}
 ptr_glVertexAttribIPointerEXT :: FunPtr (GLuint -> GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
@@ -520,7 +566,7 @@ glVertexAttribL1d
   => GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> m ()
-glVertexAttribL1d v1 v2 = liftIO $ dyn878 ptr_glVertexAttribL1d v1 v2
+glVertexAttribL1d v1 v2 = liftIO $ dyn880 ptr_glVertexAttribL1d v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1d #-}
 ptr_glVertexAttribL1d :: FunPtr (GLuint -> GLdouble -> IO ())
@@ -534,7 +580,7 @@ glVertexAttribL1dEXT
   => GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> m ()
-glVertexAttribL1dEXT v1 v2 = liftIO $ dyn878 ptr_glVertexAttribL1dEXT v1 v2
+glVertexAttribL1dEXT v1 v2 = liftIO $ dyn880 ptr_glVertexAttribL1dEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1dEXT #-}
 ptr_glVertexAttribL1dEXT :: FunPtr (GLuint -> GLdouble -> IO ())
@@ -548,7 +594,7 @@ glVertexAttribL1dv
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
-glVertexAttribL1dv v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL1dv v1 v2
+glVertexAttribL1dv v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL1dv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1dv #-}
 ptr_glVertexAttribL1dv :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -562,7 +608,7 @@ glVertexAttribL1dvEXT
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
-glVertexAttribL1dvEXT v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL1dvEXT v1 v2
+glVertexAttribL1dvEXT v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL1dvEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1dvEXT #-}
 ptr_glVertexAttribL1dvEXT :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -575,7 +621,7 @@ glVertexAttribL1i64NV
   => GLuint -- ^ @index@.
   -> GLint64EXT -- ^ @x@.
   -> m ()
-glVertexAttribL1i64NV v1 v2 = liftIO $ dyn900 ptr_glVertexAttribL1i64NV v1 v2
+glVertexAttribL1i64NV v1 v2 = liftIO $ dyn902 ptr_glVertexAttribL1i64NV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1i64NV #-}
 ptr_glVertexAttribL1i64NV :: FunPtr (GLuint -> GLint64EXT -> IO ())
@@ -588,7 +634,7 @@ glVertexAttribL1i64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLint64EXT -- ^ @v@ pointing to @1@ element of type @GLint64EXT@.
   -> m ()
-glVertexAttribL1i64vNV v1 v2 = liftIO $ dyn901 ptr_glVertexAttribL1i64vNV v1 v2
+glVertexAttribL1i64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL1i64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1i64vNV #-}
 ptr_glVertexAttribL1i64vNV :: FunPtr (GLuint -> Ptr GLint64EXT -> IO ())
@@ -601,7 +647,7 @@ glVertexAttribL1ui64ARB
   => GLuint -- ^ @index@.
   -> GLuint64EXT -- ^ @x@.
   -> m ()
-glVertexAttribL1ui64ARB v1 v2 = liftIO $ dyn902 ptr_glVertexAttribL1ui64ARB v1 v2
+glVertexAttribL1ui64ARB v1 v2 = liftIO $ dyn904 ptr_glVertexAttribL1ui64ARB v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1ui64ARB #-}
 ptr_glVertexAttribL1ui64ARB :: FunPtr (GLuint -> GLuint64EXT -> IO ())
@@ -614,7 +660,7 @@ glVertexAttribL1ui64NV
   => GLuint -- ^ @index@.
   -> GLuint64EXT -- ^ @x@.
   -> m ()
-glVertexAttribL1ui64NV v1 v2 = liftIO $ dyn902 ptr_glVertexAttribL1ui64NV v1 v2
+glVertexAttribL1ui64NV v1 v2 = liftIO $ dyn904 ptr_glVertexAttribL1ui64NV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1ui64NV #-}
 ptr_glVertexAttribL1ui64NV :: FunPtr (GLuint -> GLuint64EXT -> IO ())
@@ -627,7 +673,7 @@ glVertexAttribL1ui64vARB
   => GLuint -- ^ @index@.
   -> Ptr GLuint64EXT -- ^ @v@.
   -> m ()
-glVertexAttribL1ui64vARB v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL1ui64vARB v1 v2
+glVertexAttribL1ui64vARB v1 v2 = liftIO $ dyn905 ptr_glVertexAttribL1ui64vARB v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1ui64vARB #-}
 ptr_glVertexAttribL1ui64vARB :: FunPtr (GLuint -> Ptr GLuint64EXT -> IO ())
@@ -640,7 +686,7 @@ glVertexAttribL1ui64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLuint64EXT -- ^ @v@ pointing to @1@ element of type @GLuint64EXT@.
   -> m ()
-glVertexAttribL1ui64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL1ui64vNV v1 v2
+glVertexAttribL1ui64vNV v1 v2 = liftIO $ dyn905 ptr_glVertexAttribL1ui64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL1ui64vNV #-}
 ptr_glVertexAttribL1ui64vNV :: FunPtr (GLuint -> Ptr GLuint64EXT -> IO ())
@@ -684,7 +730,7 @@ glVertexAttribL2dv
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @GLdouble@.
   -> m ()
-glVertexAttribL2dv v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL2dv v1 v2
+glVertexAttribL2dv v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL2dv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL2dv #-}
 ptr_glVertexAttribL2dv :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -698,7 +744,7 @@ glVertexAttribL2dvEXT
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @GLdouble@.
   -> m ()
-glVertexAttribL2dvEXT v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL2dvEXT v1 v2
+glVertexAttribL2dvEXT v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL2dvEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL2dvEXT #-}
 ptr_glVertexAttribL2dvEXT :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -712,7 +758,7 @@ glVertexAttribL2i64NV
   -> GLint64EXT -- ^ @x@.
   -> GLint64EXT -- ^ @y@.
   -> m ()
-glVertexAttribL2i64NV v1 v2 v3 = liftIO $ dyn904 ptr_glVertexAttribL2i64NV v1 v2 v3
+glVertexAttribL2i64NV v1 v2 v3 = liftIO $ dyn906 ptr_glVertexAttribL2i64NV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribL2i64NV #-}
 ptr_glVertexAttribL2i64NV :: FunPtr (GLuint -> GLint64EXT -> GLint64EXT -> IO ())
@@ -725,7 +771,7 @@ glVertexAttribL2i64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLint64EXT -- ^ @v@ pointing to @2@ elements of type @GLint64EXT@.
   -> m ()
-glVertexAttribL2i64vNV v1 v2 = liftIO $ dyn901 ptr_glVertexAttribL2i64vNV v1 v2
+glVertexAttribL2i64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL2i64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL2i64vNV #-}
 ptr_glVertexAttribL2i64vNV :: FunPtr (GLuint -> Ptr GLint64EXT -> IO ())
@@ -739,7 +785,7 @@ glVertexAttribL2ui64NV
   -> GLuint64EXT -- ^ @x@.
   -> GLuint64EXT -- ^ @y@.
   -> m ()
-glVertexAttribL2ui64NV v1 v2 v3 = liftIO $ dyn905 ptr_glVertexAttribL2ui64NV v1 v2 v3
+glVertexAttribL2ui64NV v1 v2 v3 = liftIO $ dyn907 ptr_glVertexAttribL2ui64NV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribL2ui64NV #-}
 ptr_glVertexAttribL2ui64NV :: FunPtr (GLuint -> GLuint64EXT -> GLuint64EXT -> IO ())
@@ -752,7 +798,7 @@ glVertexAttribL2ui64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLuint64EXT -- ^ @v@ pointing to @2@ elements of type @GLuint64EXT@.
   -> m ()
-glVertexAttribL2ui64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL2ui64vNV v1 v2
+glVertexAttribL2ui64vNV v1 v2 = liftIO $ dyn905 ptr_glVertexAttribL2ui64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL2ui64vNV #-}
 ptr_glVertexAttribL2ui64vNV :: FunPtr (GLuint -> Ptr GLuint64EXT -> IO ())
@@ -768,7 +814,7 @@ glVertexAttribL3d
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
   -> m ()
-glVertexAttribL3d v1 v2 v3 v4 = liftIO $ dyn885 ptr_glVertexAttribL3d v1 v2 v3 v4
+glVertexAttribL3d v1 v2 v3 v4 = liftIO $ dyn887 ptr_glVertexAttribL3d v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribL3d #-}
 ptr_glVertexAttribL3d :: FunPtr (GLuint -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -784,7 +830,7 @@ glVertexAttribL3dEXT
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
   -> m ()
-glVertexAttribL3dEXT v1 v2 v3 v4 = liftIO $ dyn885 ptr_glVertexAttribL3dEXT v1 v2 v3 v4
+glVertexAttribL3dEXT v1 v2 v3 v4 = liftIO $ dyn887 ptr_glVertexAttribL3dEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribL3dEXT #-}
 ptr_glVertexAttribL3dEXT :: FunPtr (GLuint -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -798,7 +844,7 @@ glVertexAttribL3dv
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @GLdouble@.
   -> m ()
-glVertexAttribL3dv v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL3dv v1 v2
+glVertexAttribL3dv v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL3dv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL3dv #-}
 ptr_glVertexAttribL3dv :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -812,7 +858,7 @@ glVertexAttribL3dvEXT
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @GLdouble@.
   -> m ()
-glVertexAttribL3dvEXT v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL3dvEXT v1 v2
+glVertexAttribL3dvEXT v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL3dvEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL3dvEXT #-}
 ptr_glVertexAttribL3dvEXT :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -827,7 +873,7 @@ glVertexAttribL3i64NV
   -> GLint64EXT -- ^ @y@.
   -> GLint64EXT -- ^ @z@.
   -> m ()
-glVertexAttribL3i64NV v1 v2 v3 v4 = liftIO $ dyn906 ptr_glVertexAttribL3i64NV v1 v2 v3 v4
+glVertexAttribL3i64NV v1 v2 v3 v4 = liftIO $ dyn908 ptr_glVertexAttribL3i64NV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribL3i64NV #-}
 ptr_glVertexAttribL3i64NV :: FunPtr (GLuint -> GLint64EXT -> GLint64EXT -> GLint64EXT -> IO ())
@@ -840,7 +886,7 @@ glVertexAttribL3i64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLint64EXT -- ^ @v@ pointing to @3@ elements of type @GLint64EXT@.
   -> m ()
-glVertexAttribL3i64vNV v1 v2 = liftIO $ dyn901 ptr_glVertexAttribL3i64vNV v1 v2
+glVertexAttribL3i64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL3i64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL3i64vNV #-}
 ptr_glVertexAttribL3i64vNV :: FunPtr (GLuint -> Ptr GLint64EXT -> IO ())
@@ -855,7 +901,7 @@ glVertexAttribL3ui64NV
   -> GLuint64EXT -- ^ @y@.
   -> GLuint64EXT -- ^ @z@.
   -> m ()
-glVertexAttribL3ui64NV v1 v2 v3 v4 = liftIO $ dyn907 ptr_glVertexAttribL3ui64NV v1 v2 v3 v4
+glVertexAttribL3ui64NV v1 v2 v3 v4 = liftIO $ dyn909 ptr_glVertexAttribL3ui64NV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribL3ui64NV #-}
 ptr_glVertexAttribL3ui64NV :: FunPtr (GLuint -> GLuint64EXT -> GLuint64EXT -> GLuint64EXT -> IO ())
@@ -868,7 +914,7 @@ glVertexAttribL3ui64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLuint64EXT -- ^ @v@ pointing to @3@ elements of type @GLuint64EXT@.
   -> m ()
-glVertexAttribL3ui64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL3ui64vNV v1 v2
+glVertexAttribL3ui64vNV v1 v2 = liftIO $ dyn905 ptr_glVertexAttribL3ui64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL3ui64vNV #-}
 ptr_glVertexAttribL3ui64vNV :: FunPtr (GLuint -> Ptr GLuint64EXT -> IO ())
@@ -885,7 +931,7 @@ glVertexAttribL4d
   -> GLdouble -- ^ @z@.
   -> GLdouble -- ^ @w@.
   -> m ()
-glVertexAttribL4d v1 v2 v3 v4 v5 = liftIO $ dyn889 ptr_glVertexAttribL4d v1 v2 v3 v4 v5
+glVertexAttribL4d v1 v2 v3 v4 v5 = liftIO $ dyn891 ptr_glVertexAttribL4d v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribL4d #-}
 ptr_glVertexAttribL4d :: FunPtr (GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -902,7 +948,7 @@ glVertexAttribL4dEXT
   -> GLdouble -- ^ @z@.
   -> GLdouble -- ^ @w@.
   -> m ()
-glVertexAttribL4dEXT v1 v2 v3 v4 v5 = liftIO $ dyn889 ptr_glVertexAttribL4dEXT v1 v2 v3 v4 v5
+glVertexAttribL4dEXT v1 v2 v3 v4 v5 = liftIO $ dyn891 ptr_glVertexAttribL4dEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribL4dEXT #-}
 ptr_glVertexAttribL4dEXT :: FunPtr (GLuint -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -916,7 +962,7 @@ glVertexAttribL4dv
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
-glVertexAttribL4dv v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL4dv v1 v2
+glVertexAttribL4dv v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL4dv v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL4dv #-}
 ptr_glVertexAttribL4dv :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -930,7 +976,7 @@ glVertexAttribL4dvEXT
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
-glVertexAttribL4dvEXT v1 v2 = liftIO $ dyn865 ptr_glVertexAttribL4dvEXT v1 v2
+glVertexAttribL4dvEXT v1 v2 = liftIO $ dyn867 ptr_glVertexAttribL4dvEXT v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL4dvEXT #-}
 ptr_glVertexAttribL4dvEXT :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -946,7 +992,7 @@ glVertexAttribL4i64NV
   -> GLint64EXT -- ^ @z@.
   -> GLint64EXT -- ^ @w@.
   -> m ()
-glVertexAttribL4i64NV v1 v2 v3 v4 v5 = liftIO $ dyn908 ptr_glVertexAttribL4i64NV v1 v2 v3 v4 v5
+glVertexAttribL4i64NV v1 v2 v3 v4 v5 = liftIO $ dyn910 ptr_glVertexAttribL4i64NV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribL4i64NV #-}
 ptr_glVertexAttribL4i64NV :: FunPtr (GLuint -> GLint64EXT -> GLint64EXT -> GLint64EXT -> GLint64EXT -> IO ())
@@ -959,7 +1005,7 @@ glVertexAttribL4i64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLint64EXT -- ^ @v@ pointing to @4@ elements of type @GLint64EXT@.
   -> m ()
-glVertexAttribL4i64vNV v1 v2 = liftIO $ dyn901 ptr_glVertexAttribL4i64vNV v1 v2
+glVertexAttribL4i64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL4i64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL4i64vNV #-}
 ptr_glVertexAttribL4i64vNV :: FunPtr (GLuint -> Ptr GLint64EXT -> IO ())
@@ -975,7 +1021,7 @@ glVertexAttribL4ui64NV
   -> GLuint64EXT -- ^ @z@.
   -> GLuint64EXT -- ^ @w@.
   -> m ()
-glVertexAttribL4ui64NV v1 v2 v3 v4 v5 = liftIO $ dyn909 ptr_glVertexAttribL4ui64NV v1 v2 v3 v4 v5
+glVertexAttribL4ui64NV v1 v2 v3 v4 v5 = liftIO $ dyn911 ptr_glVertexAttribL4ui64NV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribL4ui64NV #-}
 ptr_glVertexAttribL4ui64NV :: FunPtr (GLuint -> GLuint64EXT -> GLuint64EXT -> GLuint64EXT -> GLuint64EXT -> IO ())
@@ -988,7 +1034,7 @@ glVertexAttribL4ui64vNV
   => GLuint -- ^ @index@.
   -> Ptr GLuint64EXT -- ^ @v@ pointing to @4@ elements of type @GLuint64EXT@.
   -> m ()
-glVertexAttribL4ui64vNV v1 v2 = liftIO $ dyn903 ptr_glVertexAttribL4ui64vNV v1 v2
+glVertexAttribL4ui64vNV v1 v2 = liftIO $ dyn905 ptr_glVertexAttribL4ui64vNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttribL4ui64vNV #-}
 ptr_glVertexAttribL4ui64vNV :: FunPtr (GLuint -> Ptr GLuint64EXT -> IO ())
@@ -1004,7 +1050,7 @@ glVertexAttribLFormat
   -> GLenum -- ^ @type@ of type [VertexAttribType](Graphics-GL-Groups.html#VertexAttribType).
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexAttribLFormat v1 v2 v3 v4 = liftIO $ dyn897 ptr_glVertexAttribLFormat v1 v2 v3 v4
+glVertexAttribLFormat v1 v2 v3 v4 = liftIO $ dyn899 ptr_glVertexAttribLFormat v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribLFormat #-}
 ptr_glVertexAttribLFormat :: FunPtr (GLuint -> GLint -> GLenum -> GLuint -> IO ())
@@ -1019,7 +1065,7 @@ glVertexAttribLFormatNV
   -> GLenum -- ^ @type@ of type [VertexAttribType](Graphics-GL-Groups.html#VertexAttribType).
   -> GLsizei -- ^ @stride@.
   -> m ()
-glVertexAttribLFormatNV v1 v2 v3 v4 = liftIO $ dyn898 ptr_glVertexAttribLFormatNV v1 v2 v3 v4
+glVertexAttribLFormatNV v1 v2 v3 v4 = liftIO $ dyn900 ptr_glVertexAttribLFormatNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribLFormatNV #-}
 ptr_glVertexAttribLFormatNV :: FunPtr (GLuint -> GLint -> GLenum -> GLsizei -> IO ())
@@ -1036,7 +1082,7 @@ glVertexAttribLPointer
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @size@ elements of type @a@.
   -> m ()
-glVertexAttribLPointer v1 v2 v3 v4 v5 = liftIO $ dyn899 ptr_glVertexAttribLPointer v1 v2 v3 v4 v5
+glVertexAttribLPointer v1 v2 v3 v4 v5 = liftIO $ dyn901 ptr_glVertexAttribLPointer v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribLPointer #-}
 ptr_glVertexAttribLPointer :: FunPtr (GLuint -> GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
@@ -1053,7 +1099,7 @@ glVertexAttribLPointerEXT
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @size@ elements of type @a@.
   -> m ()
-glVertexAttribLPointerEXT v1 v2 v3 v4 v5 = liftIO $ dyn899 ptr_glVertexAttribLPointerEXT v1 v2 v3 v4 v5
+glVertexAttribLPointerEXT v1 v2 v3 v4 v5 = liftIO $ dyn901 ptr_glVertexAttribLPointerEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribLPointerEXT #-}
 ptr_glVertexAttribLPointerEXT :: FunPtr (GLuint -> GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
@@ -1069,7 +1115,7 @@ glVertexAttribP1ui
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
-glVertexAttribP1ui v1 v2 v3 v4 = liftIO $ dyn910 ptr_glVertexAttribP1ui v1 v2 v3 v4
+glVertexAttribP1ui v1 v2 v3 v4 = liftIO $ dyn912 ptr_glVertexAttribP1ui v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP1ui #-}
 ptr_glVertexAttribP1ui :: FunPtr (GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
@@ -1084,7 +1130,7 @@ glVertexAttribP1uiv
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glVertexAttribP1uiv v1 v2 v3 v4 = liftIO $ dyn911 ptr_glVertexAttribP1uiv v1 v2 v3 v4
+glVertexAttribP1uiv v1 v2 v3 v4 = liftIO $ dyn913 ptr_glVertexAttribP1uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP1uiv #-}
 ptr_glVertexAttribP1uiv :: FunPtr (GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
@@ -1100,7 +1146,7 @@ glVertexAttribP2ui
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
-glVertexAttribP2ui v1 v2 v3 v4 = liftIO $ dyn910 ptr_glVertexAttribP2ui v1 v2 v3 v4
+glVertexAttribP2ui v1 v2 v3 v4 = liftIO $ dyn912 ptr_glVertexAttribP2ui v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP2ui #-}
 ptr_glVertexAttribP2ui :: FunPtr (GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
@@ -1115,7 +1161,7 @@ glVertexAttribP2uiv
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glVertexAttribP2uiv v1 v2 v3 v4 = liftIO $ dyn911 ptr_glVertexAttribP2uiv v1 v2 v3 v4
+glVertexAttribP2uiv v1 v2 v3 v4 = liftIO $ dyn913 ptr_glVertexAttribP2uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP2uiv #-}
 ptr_glVertexAttribP2uiv :: FunPtr (GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
@@ -1131,7 +1177,7 @@ glVertexAttribP3ui
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
-glVertexAttribP3ui v1 v2 v3 v4 = liftIO $ dyn910 ptr_glVertexAttribP3ui v1 v2 v3 v4
+glVertexAttribP3ui v1 v2 v3 v4 = liftIO $ dyn912 ptr_glVertexAttribP3ui v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP3ui #-}
 ptr_glVertexAttribP3ui :: FunPtr (GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
@@ -1146,7 +1192,7 @@ glVertexAttribP3uiv
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glVertexAttribP3uiv v1 v2 v3 v4 = liftIO $ dyn911 ptr_glVertexAttribP3uiv v1 v2 v3 v4
+glVertexAttribP3uiv v1 v2 v3 v4 = liftIO $ dyn913 ptr_glVertexAttribP3uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP3uiv #-}
 ptr_glVertexAttribP3uiv :: FunPtr (GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
@@ -1162,7 +1208,7 @@ glVertexAttribP4ui
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLuint -- ^ @value@.
   -> m ()
-glVertexAttribP4ui v1 v2 v3 v4 = liftIO $ dyn910 ptr_glVertexAttribP4ui v1 v2 v3 v4
+glVertexAttribP4ui v1 v2 v3 v4 = liftIO $ dyn912 ptr_glVertexAttribP4ui v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP4ui #-}
 ptr_glVertexAttribP4ui :: FunPtr (GLuint -> GLenum -> GLboolean -> GLuint -> IO ())
@@ -1177,7 +1223,7 @@ glVertexAttribP4uiv
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
   -> m ()
-glVertexAttribP4uiv v1 v2 v3 v4 = liftIO $ dyn911 ptr_glVertexAttribP4uiv v1 v2 v3 v4
+glVertexAttribP4uiv v1 v2 v3 v4 = liftIO $ dyn913 ptr_glVertexAttribP4uiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexAttribP4uiv #-}
 ptr_glVertexAttribP4uiv :: FunPtr (GLuint -> GLenum -> GLboolean -> Ptr GLuint -> IO ())
@@ -1191,7 +1237,7 @@ glVertexAttribParameteriAMD
   -> GLenum -- ^ @pname@.
   -> GLint -- ^ @param@.
   -> m ()
-glVertexAttribParameteriAMD v1 v2 v3 = liftIO $ dyn482 ptr_glVertexAttribParameteriAMD v1 v2 v3
+glVertexAttribParameteriAMD v1 v2 v3 = liftIO $ dyn484 ptr_glVertexAttribParameteriAMD v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribParameteriAMD #-}
 ptr_glVertexAttribParameteriAMD :: FunPtr (GLuint -> GLenum -> GLint -> IO ())
@@ -1209,7 +1255,7 @@ glVertexAttribPointer
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
-glVertexAttribPointer v1 v2 v3 v4 v5 v6 = liftIO $ dyn912 ptr_glVertexAttribPointer v1 v2 v3 v4 v5 v6
+glVertexAttribPointer v1 v2 v3 v4 v5 v6 = liftIO $ dyn914 ptr_glVertexAttribPointer v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexAttribPointer #-}
 ptr_glVertexAttribPointer :: FunPtr (GLuint -> GLint -> GLenum -> GLboolean -> GLsizei -> Ptr a -> IO ())
@@ -1227,7 +1273,7 @@ glVertexAttribPointerARB
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(size,type,stride)@ elements of type @a@.
   -> m ()
-glVertexAttribPointerARB v1 v2 v3 v4 v5 v6 = liftIO $ dyn912 ptr_glVertexAttribPointerARB v1 v2 v3 v4 v5 v6
+glVertexAttribPointerARB v1 v2 v3 v4 v5 v6 = liftIO $ dyn914 ptr_glVertexAttribPointerARB v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexAttribPointerARB #-}
 ptr_glVertexAttribPointerARB :: FunPtr (GLuint -> GLint -> GLenum -> GLboolean -> GLsizei -> Ptr a -> IO ())
@@ -1243,7 +1289,7 @@ glVertexAttribPointerNV
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(fsize,type,stride)@ elements of type @a@.
   -> m ()
-glVertexAttribPointerNV v1 v2 v3 v4 v5 = liftIO $ dyn899 ptr_glVertexAttribPointerNV v1 v2 v3 v4 v5
+glVertexAttribPointerNV v1 v2 v3 v4 v5 = liftIO $ dyn901 ptr_glVertexAttribPointerNV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexAttribPointerNV #-}
 ptr_glVertexAttribPointerNV :: FunPtr (GLuint -> GLint -> GLenum -> GLsizei -> Ptr a -> IO ())
@@ -1285,7 +1331,7 @@ glVertexAttribs1hvNV
   -> GLsizei -- ^ @n@.
   -> Ptr GLhalfNV -- ^ @v@ pointing to @n@ elements of type @Half16NV@.
   -> m ()
-glVertexAttribs1hvNV v1 v2 v3 = liftIO $ dyn913 ptr_glVertexAttribs1hvNV v1 v2 v3
+glVertexAttribs1hvNV v1 v2 v3 = liftIO $ dyn915 ptr_glVertexAttribs1hvNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs1hvNV #-}
 ptr_glVertexAttribs1hvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLhalfNV -> IO ())
@@ -1299,7 +1345,7 @@ glVertexAttribs1svNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLshort -- ^ @v@ pointing to @count@ elements of type @GLshort@.
   -> m ()
-glVertexAttribs1svNV v1 v2 v3 = liftIO $ dyn914 ptr_glVertexAttribs1svNV v1 v2 v3
+glVertexAttribs1svNV v1 v2 v3 = liftIO $ dyn916 ptr_glVertexAttribs1svNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs1svNV #-}
 ptr_glVertexAttribs1svNV :: FunPtr (GLuint -> GLsizei -> Ptr GLshort -> IO ())
@@ -1341,7 +1387,7 @@ glVertexAttribs2hvNV
   -> GLsizei -- ^ @n@.
   -> Ptr GLhalfNV -- ^ @v@ pointing to @n@ elements of type @Half16NV@.
   -> m ()
-glVertexAttribs2hvNV v1 v2 v3 = liftIO $ dyn913 ptr_glVertexAttribs2hvNV v1 v2 v3
+glVertexAttribs2hvNV v1 v2 v3 = liftIO $ dyn915 ptr_glVertexAttribs2hvNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs2hvNV #-}
 ptr_glVertexAttribs2hvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLhalfNV -> IO ())
@@ -1355,7 +1401,7 @@ glVertexAttribs2svNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLshort -- ^ @v@ pointing to @count*2@ elements of type @GLshort@.
   -> m ()
-glVertexAttribs2svNV v1 v2 v3 = liftIO $ dyn914 ptr_glVertexAttribs2svNV v1 v2 v3
+glVertexAttribs2svNV v1 v2 v3 = liftIO $ dyn916 ptr_glVertexAttribs2svNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs2svNV #-}
 ptr_glVertexAttribs2svNV :: FunPtr (GLuint -> GLsizei -> Ptr GLshort -> IO ())
@@ -1397,7 +1443,7 @@ glVertexAttribs3hvNV
   -> GLsizei -- ^ @n@.
   -> Ptr GLhalfNV -- ^ @v@ pointing to @n@ elements of type @Half16NV@.
   -> m ()
-glVertexAttribs3hvNV v1 v2 v3 = liftIO $ dyn913 ptr_glVertexAttribs3hvNV v1 v2 v3
+glVertexAttribs3hvNV v1 v2 v3 = liftIO $ dyn915 ptr_glVertexAttribs3hvNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs3hvNV #-}
 ptr_glVertexAttribs3hvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLhalfNV -> IO ())
@@ -1411,7 +1457,7 @@ glVertexAttribs3svNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLshort -- ^ @v@ pointing to @count*3@ elements of type @GLshort@.
   -> m ()
-glVertexAttribs3svNV v1 v2 v3 = liftIO $ dyn914 ptr_glVertexAttribs3svNV v1 v2 v3
+glVertexAttribs3svNV v1 v2 v3 = liftIO $ dyn916 ptr_glVertexAttribs3svNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs3svNV #-}
 ptr_glVertexAttribs3svNV :: FunPtr (GLuint -> GLsizei -> Ptr GLshort -> IO ())
@@ -1453,7 +1499,7 @@ glVertexAttribs4hvNV
   -> GLsizei -- ^ @n@.
   -> Ptr GLhalfNV -- ^ @v@ pointing to @n@ elements of type @Half16NV@.
   -> m ()
-glVertexAttribs4hvNV v1 v2 v3 = liftIO $ dyn913 ptr_glVertexAttribs4hvNV v1 v2 v3
+glVertexAttribs4hvNV v1 v2 v3 = liftIO $ dyn915 ptr_glVertexAttribs4hvNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs4hvNV #-}
 ptr_glVertexAttribs4hvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLhalfNV -> IO ())
@@ -1467,7 +1513,7 @@ glVertexAttribs4svNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLshort -- ^ @v@ pointing to @count*4@ elements of type @GLshort@.
   -> m ()
-glVertexAttribs4svNV v1 v2 v3 = liftIO $ dyn914 ptr_glVertexAttribs4svNV v1 v2 v3
+glVertexAttribs4svNV v1 v2 v3 = liftIO $ dyn916 ptr_glVertexAttribs4svNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs4svNV #-}
 ptr_glVertexAttribs4svNV :: FunPtr (GLuint -> GLsizei -> Ptr GLshort -> IO ())
@@ -1481,7 +1527,7 @@ glVertexAttribs4ubvNV
   -> GLsizei -- ^ @count@.
   -> Ptr GLubyte -- ^ @v@ pointing to @count*4@ elements of type @ColorUB@.
   -> m ()
-glVertexAttribs4ubvNV v1 v2 v3 = liftIO $ dyn915 ptr_glVertexAttribs4ubvNV v1 v2 v3
+glVertexAttribs4ubvNV v1 v2 v3 = liftIO $ dyn917 ptr_glVertexAttribs4ubvNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertexAttribs4ubvNV #-}
 ptr_glVertexAttribs4ubvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLubyte -> IO ())
@@ -1538,44 +1584,4 @@ glVertexBlendEnviATI v1 v2 = liftIO $ dyn56 ptr_glVertexBlendEnviATI v1 v2
 {-# NOINLINE ptr_glVertexBlendEnviATI #-}
 ptr_glVertexBlendEnviATI :: FunPtr (GLenum -> GLint -> IO ())
 ptr_glVertexBlendEnviATI = unsafePerformIO $ getCommand "glVertexBlendEnviATI"
-
--- glVertexFormatNV ------------------------------------------------------------
-
-glVertexFormatNV
-  :: MonadIO m
-  => GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type [VertexPointerType](Graphics-GL-Groups.html#VertexPointerType).
-  -> GLsizei -- ^ @stride@.
-  -> m ()
-glVertexFormatNV v1 v2 v3 = liftIO $ dyn122 ptr_glVertexFormatNV v1 v2 v3
-
-{-# NOINLINE ptr_glVertexFormatNV #-}
-ptr_glVertexFormatNV :: FunPtr (GLint -> GLenum -> GLsizei -> IO ())
-ptr_glVertexFormatNV = unsafePerformIO $ getCommand "glVertexFormatNV"
-
--- glVertexP2ui ----------------------------------------------------------------
-
-glVertexP2ui
-  :: MonadIO m
-  => GLenum -- ^ @type@ of type [VertexPointerType](Graphics-GL-Groups.html#VertexPointerType).
-  -> GLuint -- ^ @value@.
-  -> m ()
-glVertexP2ui v1 v2 = liftIO $ dyn17 ptr_glVertexP2ui v1 v2
-
-{-# NOINLINE ptr_glVertexP2ui #-}
-ptr_glVertexP2ui :: FunPtr (GLenum -> GLuint -> IO ())
-ptr_glVertexP2ui = unsafePerformIO $ getCommand "glVertexP2ui"
-
--- glVertexP2uiv ---------------------------------------------------------------
-
-glVertexP2uiv
-  :: MonadIO m
-  => GLenum -- ^ @type@ of type [VertexPointerType](Graphics-GL-Groups.html#VertexPointerType).
-  -> Ptr GLuint -- ^ @value@ pointing to @1@ element of type @GLuint@.
-  -> m ()
-glVertexP2uiv v1 v2 = liftIO $ dyn128 ptr_glVertexP2uiv v1 v2
-
-{-# NOINLINE ptr_glVertexP2uiv #-}
-ptr_glVertexP2uiv :: FunPtr (GLenum -> Ptr GLuint -> IO ())
-ptr_glVertexP2uiv = unsafePerformIO $ getCommand "glVertexP2uiv"
 

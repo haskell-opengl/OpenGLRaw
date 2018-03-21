@@ -1,7 +1,7 @@
 {-# LANGUAGE PatternSynonyms #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.GL.EXT.TextureFilterMinmax
+-- Module      :  Graphics.GL.INTEL.BlackholeRender
 -- Copyright   :  (c) Sven Panne 2017
 -- License     :  BSD3
 --
@@ -11,13 +11,12 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.GL.EXT.TextureFilterMinmax (
+module Graphics.GL.INTEL.BlackholeRender (
   -- * Extension Support
-  glGetEXTTextureFilterMinmax,
-  gl_EXT_texture_filter_minmax,
+  glGetINTELBlackholeRender,
+  gl_INTEL_blackhole_render,
   -- * Enums
-  pattern GL_TEXTURE_REDUCTION_MODE_EXT,
-  pattern GL_WEIGHTED_AVERAGE_EXT
+  pattern GL_BLACKHOLE_RENDER_INTEL
 ) where
 
 import Graphics.GL.ExtensionPredicates
