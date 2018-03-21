@@ -699,7 +699,7 @@ printModuleHeader h mbPragma (ModuleName moduleName) comments = do
       "------------------------------------------------------------------------------"
   hRender h $ Comment "|"
   hRender h $ Comment ("Module      :  " ++ moduleName)
-  hRender h $ Comment "Copyright   :  (c) Sven Panne 2017"
+  hRender h $ Comment "Copyright   :  (c) Sven Panne 2018"
   hRender h $ Comment "License     :  BSD3"
   hRender h $ Comment ""
   hRender h $ Comment "Maintainer  :  Sven Panne <svenpanne@gmail.com>"

@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ATI.TextFragmentShader
--- Copyright   :  (c) Sven Panne 2017
+-- Copyright   :  (c) Sven Panne 2018
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
