@@ -1414,6 +1414,7 @@ ptr_glDrawRangeElementsEXT = unsafePerformIO $ getCommand "glDrawRangeElementsEX
 
 -- glDrawTexfOES ---------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glDrawTexfvOES'.
 glDrawTexfOES
   :: MonadIO m
   => GLfloat -- ^ @x@.
@@ -1432,7 +1433,7 @@ ptr_glDrawTexfOES = unsafePerformIO $ getCommand "glDrawTexfOES"
 
 glDrawTexfvOES
   :: MonadIO m
-  => Ptr GLfloat -- ^ @coords@.
+  => Ptr GLfloat -- ^ @coords@ pointing to @5@ elements of type @GLfloat@.
   -> m ()
 glDrawTexfvOES v1 = liftIO $ dyn42 ptr_glDrawTexfvOES v1
 
@@ -1442,6 +1443,7 @@ ptr_glDrawTexfvOES = unsafePerformIO $ getCommand "glDrawTexfvOES"
 
 -- glDrawTexiOES ---------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glDrawTexivOES'.
 glDrawTexiOES
   :: MonadIO m
   => GLint -- ^ @x@.
@@ -1460,7 +1462,7 @@ ptr_glDrawTexiOES = unsafePerformIO $ getCommand "glDrawTexiOES"
 
 glDrawTexivOES
   :: MonadIO m
-  => Ptr GLint -- ^ @coords@.
+  => Ptr GLint -- ^ @coords@ pointing to @5@ elements of type @GLint@.
   -> m ()
 glDrawTexivOES v1 = liftIO $ dyn44 ptr_glDrawTexivOES v1
 
@@ -1470,6 +1472,7 @@ ptr_glDrawTexivOES = unsafePerformIO $ getCommand "glDrawTexivOES"
 
 -- glDrawTexsOES ---------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glDrawTexsvOES'.
 glDrawTexsOES
   :: MonadIO m
   => GLshort -- ^ @x@.
@@ -1488,7 +1491,7 @@ ptr_glDrawTexsOES = unsafePerformIO $ getCommand "glDrawTexsOES"
 
 glDrawTexsvOES
   :: MonadIO m
-  => Ptr GLshort -- ^ @coords@.
+  => Ptr GLshort -- ^ @coords@ pointing to @5@ elements of type @GLshort@.
   -> m ()
 glDrawTexsvOES v1 = liftIO $ dyn46 ptr_glDrawTexsvOES v1
 
@@ -1520,6 +1523,7 @@ ptr_glDrawTextureNV = unsafePerformIO $ getCommand "glDrawTextureNV"
 
 -- glDrawTexxOES ---------------------------------------------------------------
 
+-- | The vector equivalent of this command is 'glDrawTexxvOES'.
 glDrawTexxOES
   :: MonadIO m
   => GLfixed -- ^ @x@.
@@ -1538,7 +1542,7 @@ ptr_glDrawTexxOES = unsafePerformIO $ getCommand "glDrawTexxOES"
 
 glDrawTexxvOES
   :: MonadIO m
-  => Ptr GLfixed -- ^ @coords@.
+  => Ptr GLfixed -- ^ @coords@ pointing to @5@ elements of type @GLfixed@.
   -> m ()
 glDrawTexxvOES v1 = liftIO $ dyn110 ptr_glDrawTexxvOES v1
 

@@ -1,3 +1,8 @@
+3.3.0.1
+-------
+* Updated OpenGL registry to fe1a89f35.
+* Relaxed version bound of `half` package.
+
 3.3.0.0
 -------
 * Updated OpenGL registry to 6565c242f.
