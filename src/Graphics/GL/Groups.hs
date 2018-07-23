@@ -974,6 +974,7 @@ module Graphics.GL.Groups (
 -- * 'Graphics.GL.Tokens.GL_ACCUM_CLEAR_VALUE'
 -- * 'Graphics.GL.Tokens.GL_ACCUM_GREEN_BITS'
 -- * 'Graphics.GL.Tokens.GL_ACCUM_RED_BITS'
+-- * 'Graphics.GL.Tokens.GL_ACTIVE_TEXTURE'
 -- * 'Graphics.GL.Tokens.GL_ALIASED_LINE_WIDTH_RANGE'
 -- * 'Graphics.GL.Tokens.GL_ALIASED_POINT_SIZE_RANGE'
 -- * 'Graphics.GL.Tokens.GL_ALPHA_BIAS'
@@ -1165,6 +1166,7 @@ module Graphics.GL.Groups (
 -- * 'Graphics.GL.Tokens.GL_MAX_CLIPMAP_VIRTUAL_DEPTH_SGIX'
 -- * 'Graphics.GL.Tokens.GL_MAX_CLIP_DISTANCES' (alias: 'Graphics.GL.Tokens.GL_MAX_CLIP_PLANES')
 -- * 'Graphics.GL.Tokens.GL_MAX_COLOR_MATRIX_STACK_DEPTH_SGI'
+-- * 'Graphics.GL.Tokens.GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS'
 -- * 'Graphics.GL.Tokens.GL_MAX_EVAL_ORDER'
 -- * 'Graphics.GL.Tokens.GL_MAX_FOG_FUNC_POINTS_SGIS'
 -- * 'Graphics.GL.Tokens.GL_MAX_FRAGMENT_LIGHTS_SGIX'

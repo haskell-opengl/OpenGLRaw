@@ -646,6 +646,7 @@ ptr_glGetGraphicsResetStatusARB = unsafePerformIO $ getCommand "glGetGraphicsRes
 
 -- glGetGraphicsResetStatusEXT -------------------------------------------------
 
+-- | This command is an alias for 'glGetGraphicsResetStatus'.
 glGetGraphicsResetStatusEXT
   :: MonadIO m
   => m GLenum -- ^ of type [GraphicsResetStatus](Graphics-GL-Groups.html#GraphicsResetStatus).
