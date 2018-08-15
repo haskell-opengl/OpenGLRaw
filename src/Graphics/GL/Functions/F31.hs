@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F31 (
+  glVertexAttribI2uiEXT,
+  glVertexAttribI2uiv,
   glVertexAttribI2uivEXT,
   glVertexAttribI3i,
   glVertexAttribI3iEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F31 (
   glVertexAttribs4svNV,
   glVertexAttribs4ubvNV,
   glVertexBindingDivisor,
-  glVertexBlendARB,
-  glVertexBlendEnvfATI,
-  glVertexBlendEnviATI
+  glVertexBlendARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,35 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glVertexAttribI2uiEXT -------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glVertexAttribI2uivEXT'. This command is an alias for 'glVertexAttribI2ui'.
+glVertexAttribI2uiEXT
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> GLuint -- ^ @x@.
+  -> GLuint -- ^ @y@.
+  -> m ()
+glVertexAttribI2uiEXT v1 v2 v3 = liftIO $ dyn105 ptr_glVertexAttribI2uiEXT v1 v2 v3
+
+{-# NOINLINE ptr_glVertexAttribI2uiEXT #-}
+ptr_glVertexAttribI2uiEXT :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
+ptr_glVertexAttribI2uiEXT = unsafePerformIO $ getCommand "glVertexAttribI2uiEXT"
+
+-- glVertexAttribI2uiv ---------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
+glVertexAttribI2uiv
+  :: MonadIO m
+  => GLuint -- ^ @index@.
+  -> Ptr GLuint -- ^ @v@ pointing to @2@ elements of type @GLuint@.
+  -> m ()
+glVertexAttribI2uiv v1 v2 = liftIO $ dyn197 ptr_glVertexAttribI2uiv v1 v2
+
+{-# NOINLINE ptr_glVertexAttribI2uiv #-}
+ptr_glVertexAttribI2uiv :: FunPtr (GLuint -> Ptr GLuint -> IO ())
+ptr_glVertexAttribI2uiv = unsafePerformIO $ getCommand "glVertexAttribI2uiv"
 
 -- glVertexAttribI2uivEXT ------------------------------------------------------
 
@@ -1558,30 +1587,4 @@ glVertexBlendARB v1 = liftIO $ dyn13 ptr_glVertexBlendARB v1
 {-# NOINLINE ptr_glVertexBlendARB #-}
 ptr_glVertexBlendARB :: FunPtr (GLint -> IO ())
 ptr_glVertexBlendARB = unsafePerformIO $ getCommand "glVertexBlendARB"
-
--- glVertexBlendEnvfATI --------------------------------------------------------
-
-glVertexBlendEnvfATI
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @VertexStreamATI@.
-  -> GLfloat -- ^ @param@.
-  -> m ()
-glVertexBlendEnvfATI v1 v2 = liftIO $ dyn0 ptr_glVertexBlendEnvfATI v1 v2
-
-{-# NOINLINE ptr_glVertexBlendEnvfATI #-}
-ptr_glVertexBlendEnvfATI :: FunPtr (GLenum -> GLfloat -> IO ())
-ptr_glVertexBlendEnvfATI = unsafePerformIO $ getCommand "glVertexBlendEnvfATI"
-
--- glVertexBlendEnviATI --------------------------------------------------------
-
-glVertexBlendEnviATI
-  :: MonadIO m
-  => GLenum -- ^ @pname@ of type @VertexStreamATI@.
-  -> GLint -- ^ @param@.
-  -> m ()
-glVertexBlendEnviATI v1 v2 = liftIO $ dyn56 ptr_glVertexBlendEnviATI v1 v2
-
-{-# NOINLINE ptr_glVertexBlendEnviATI #-}
-ptr_glVertexBlendEnviATI :: FunPtr (GLenum -> GLint -> IO ())
-ptr_glVertexBlendEnviATI = unsafePerformIO $ getCommand "glVertexBlendEnviATI"
 

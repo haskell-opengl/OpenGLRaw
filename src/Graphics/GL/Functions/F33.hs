@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F33 (
+  glWindowPos2sARB,
+  glWindowPos2sMESA,
   glWindowPos2sv,
   glWindowPos2svARB,
   glWindowPos2svMESA,
@@ -59,6 +61,34 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glWindowPos2sARB ------------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos2svARB'. This command is an alias for 'glWindowPos2s'.
+glWindowPos2sARB
+  :: MonadIO m
+  => GLshort -- ^ @x@ of type @CoordS@.
+  -> GLshort -- ^ @y@ of type @CoordS@.
+  -> m ()
+glWindowPos2sARB v1 v2 = liftIO $ dyn697 ptr_glWindowPos2sARB v1 v2
+
+{-# NOINLINE ptr_glWindowPos2sARB #-}
+ptr_glWindowPos2sARB :: FunPtr (GLshort -> GLshort -> IO ())
+ptr_glWindowPos2sARB = unsafePerformIO $ getCommand "glWindowPos2sARB"
+
+-- glWindowPos2sMESA -----------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glWindowPos2svMESA'. This command is an alias for 'glWindowPos2s'.
+glWindowPos2sMESA
+  :: MonadIO m
+  => GLshort -- ^ @x@ of type @CoordS@.
+  -> GLshort -- ^ @y@ of type @CoordS@.
+  -> m ()
+glWindowPos2sMESA v1 v2 = liftIO $ dyn697 ptr_glWindowPos2sMESA v1 v2
+
+{-# NOINLINE ptr_glWindowPos2sMESA #-}
+ptr_glWindowPos2sMESA :: FunPtr (GLshort -> GLshort -> IO ())
+ptr_glWindowPos2sMESA = unsafePerformIO $ getCommand "glWindowPos2sMESA"
 
 -- glWindowPos2sv --------------------------------------------------------------
 

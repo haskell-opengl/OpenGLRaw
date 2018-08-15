@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F26 (
+  glTexEnvxv,
+  glTexEnvxvOES,
   glTexFilterFuncSGIS,
   glTexGend,
   glTexGendv,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F26 (
   glTextureRangeAPPLE,
   glTextureRenderbufferEXT,
   glTextureStorage1D,
-  glTextureStorage1DEXT,
-  glTextureStorage2D,
-  glTextureStorage2DEXT
+  glTextureStorage1DEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,34 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTexEnvxv ------------------------------------------------------------------
+
+glTexEnvxv
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
+  -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
+  -> m ()
+glTexEnvxv v1 v2 v3 = liftIO $ dyn166 ptr_glTexEnvxv v1 v2 v3
+
+{-# NOINLINE ptr_glTexEnvxv #-}
+ptr_glTexEnvxv :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
+ptr_glTexEnvxv = unsafePerformIO $ getCommand "glTexEnvxv"
+
+-- glTexEnvxvOES ---------------------------------------------------------------
+
+glTexEnvxvOES
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
+  -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
+  -> m ()
+glTexEnvxvOES v1 v2 v3 = liftIO $ dyn166 ptr_glTexEnvxvOES v1 v2 v3
+
+{-# NOINLINE ptr_glTexEnvxvOES #-}
+ptr_glTexEnvxvOES :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
+ptr_glTexEnvxvOES = unsafePerformIO $ getCommand "glTexEnvxvOES"
 
 -- glTexFilterFuncSGIS ---------------------------------------------------------
 
@@ -1773,38 +1801,4 @@ glTextureStorage1DEXT v1 v2 v3 v4 v5 = liftIO $ dyn793 ptr_glTextureStorage1DEXT
 {-# NOINLINE ptr_glTextureStorage1DEXT #-}
 ptr_glTextureStorage1DEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> IO ())
 ptr_glTextureStorage1DEXT = unsafePerformIO $ getCommand "glTextureStorage1DEXT"
-
--- glTextureStorage2D ----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2D.xhtml OpenGL 4.x>.
-glTextureStorage2D
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLsizei -- ^ @levels@.
-  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> m ()
-glTextureStorage2D v1 v2 v3 v4 v5 = liftIO $ dyn617 ptr_glTextureStorage2D v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glTextureStorage2D #-}
-ptr_glTextureStorage2D :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
-ptr_glTextureStorage2D = unsafePerformIO $ getCommand "glTextureStorage2D"
-
--- glTextureStorage2DEXT -------------------------------------------------------
-
-glTextureStorage2DEXT
-  :: MonadIO m
-  => GLuint -- ^ @texture@.
-  -> GLenum -- ^ @target@.
-  -> GLsizei -- ^ @levels@.
-  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
-  -> GLsizei -- ^ @width@.
-  -> GLsizei -- ^ @height@.
-  -> m ()
-glTextureStorage2DEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn794 ptr_glTextureStorage2DEXT v1 v2 v3 v4 v5 v6
-
-{-# NOINLINE ptr_glTextureStorage2DEXT #-}
-ptr_glTextureStorage2DEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
-ptr_glTextureStorage2DEXT = unsafePerformIO $ getCommand "glTextureStorage2DEXT"
 

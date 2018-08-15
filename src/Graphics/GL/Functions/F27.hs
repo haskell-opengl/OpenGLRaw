@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F27 (
+  glTextureStorage2D,
+  glTextureStorage2DEXT,
   glTextureStorage2DMultisample,
   glTextureStorage2DMultisampleEXT,
   glTextureStorage3D,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F27 (
   glUniform3ui64NV,
   glUniform3ui64vARB,
   glUniform3ui64vNV,
-  glUniform3uiEXT,
-  glUniform3uiv,
-  glUniform3uivEXT
+  glUniform3uiEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,40 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTextureStorage2D ----------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glTexStorage2D.xhtml OpenGL 4.x>.
+glTextureStorage2D
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLsizei -- ^ @levels@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> m ()
+glTextureStorage2D v1 v2 v3 v4 v5 = liftIO $ dyn617 ptr_glTextureStorage2D v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glTextureStorage2D #-}
+ptr_glTextureStorage2D :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
+ptr_glTextureStorage2D = unsafePerformIO $ getCommand "glTextureStorage2D"
+
+-- glTextureStorage2DEXT -------------------------------------------------------
+
+glTextureStorage2DEXT
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> GLenum -- ^ @target@.
+  -> GLsizei -- ^ @levels@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> m ()
+glTextureStorage2DEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn794 ptr_glTextureStorage2DEXT v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glTextureStorage2DEXT #-}
+ptr_glTextureStorage2DEXT :: FunPtr (GLuint -> GLenum -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
+ptr_glTextureStorage2DEXT = unsafePerformIO $ getCommand "glTextureStorage2DEXT"
 
 -- glTextureStorage2DMultisample -----------------------------------------------
 
@@ -1657,34 +1691,4 @@ glUniform3uiEXT v1 v2 v3 v4 = liftIO $ dyn843 ptr_glUniform3uiEXT v1 v2 v3 v4
 {-# NOINLINE ptr_glUniform3uiEXT #-}
 ptr_glUniform3uiEXT :: FunPtr (GLint -> GLuint -> GLuint -> GLuint -> IO ())
 ptr_glUniform3uiEXT = unsafePerformIO $ getCommand "glUniform3uiEXT"
-
--- glUniform3uiv ---------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
-glUniform3uiv
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
-  -> m ()
-glUniform3uiv v1 v2 v3 = liftIO $ dyn833 ptr_glUniform3uiv v1 v2 v3
-
-{-# NOINLINE ptr_glUniform3uiv #-}
-ptr_glUniform3uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glUniform3uiv = unsafePerformIO $ getCommand "glUniform3uiv"
-
--- glUniform3uivEXT ------------------------------------------------------------
-
--- | This command is an alias for 'glUniform3uiv'.
-glUniform3uivEXT
-  :: MonadIO m
-  => GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
-  -> m ()
-glUniform3uivEXT v1 v2 v3 = liftIO $ dyn833 ptr_glUniform3uivEXT v1 v2 v3
-
-{-# NOINLINE ptr_glUniform3uivEXT #-}
-ptr_glUniform3uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
-ptr_glUniform3uivEXT = unsafePerformIO $ getCommand "glUniform3uivEXT"
 

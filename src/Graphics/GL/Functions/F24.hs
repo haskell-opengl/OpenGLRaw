@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F24 (
+  glSecondaryColor3fvEXT,
+  glSecondaryColor3hNV,
   glSecondaryColor3hvNV,
   glSecondaryColor3i,
   glSecondaryColor3iEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F24 (
   glTbufferMask3DFX,
   glTessellationFactorAMD,
   glTessellationModeAMD,
-  glTestFenceAPPLE,
-  glTestFenceNV,
-  glTestObjectAPPLE
+  glTestFenceAPPLE
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,34 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glSecondaryColor3fvEXT ------------------------------------------------------
+
+-- | This command is an alias for 'glSecondaryColor3fv'.
+glSecondaryColor3fvEXT
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @ColorF@.
+  -> m ()
+glSecondaryColor3fvEXT v1 = liftIO $ dyn42 ptr_glSecondaryColor3fvEXT v1
+
+{-# NOINLINE ptr_glSecondaryColor3fvEXT #-}
+ptr_glSecondaryColor3fvEXT :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glSecondaryColor3fvEXT = unsafePerformIO $ getCommand "glSecondaryColor3fvEXT"
+
+-- glSecondaryColor3hNV --------------------------------------------------------
+
+-- | The vector equivalent of this command is 'glSecondaryColor3hvNV'.
+glSecondaryColor3hNV
+  :: MonadIO m
+  => GLhalfNV -- ^ @red@ of type @Half16NV@.
+  -> GLhalfNV -- ^ @green@ of type @Half16NV@.
+  -> GLhalfNV -- ^ @blue@ of type @Half16NV@.
+  -> m ()
+glSecondaryColor3hNV v1 v2 v3 = liftIO $ dyn101 ptr_glSecondaryColor3hNV v1 v2 v3
+
+{-# NOINLINE ptr_glSecondaryColor3hNV #-}
+ptr_glSecondaryColor3hNV :: FunPtr (GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
+ptr_glSecondaryColor3hNV = unsafePerformIO $ getCommand "glSecondaryColor3hNV"
 
 -- glSecondaryColor3hvNV -------------------------------------------------------
 
@@ -1525,29 +1553,4 @@ glTestFenceAPPLE v1 = liftIO $ dyn280 ptr_glTestFenceAPPLE v1
 {-# NOINLINE ptr_glTestFenceAPPLE #-}
 ptr_glTestFenceAPPLE :: FunPtr (GLuint -> IO GLboolean)
 ptr_glTestFenceAPPLE = unsafePerformIO $ getCommand "glTestFenceAPPLE"
-
--- glTestFenceNV ---------------------------------------------------------------
-
-glTestFenceNV
-  :: MonadIO m
-  => GLuint -- ^ @fence@ of type @FenceNV@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glTestFenceNV v1 = liftIO $ dyn280 ptr_glTestFenceNV v1
-
-{-# NOINLINE ptr_glTestFenceNV #-}
-ptr_glTestFenceNV :: FunPtr (GLuint -> IO GLboolean)
-ptr_glTestFenceNV = unsafePerformIO $ getCommand "glTestFenceNV"
-
--- glTestObjectAPPLE -----------------------------------------------------------
-
-glTestObjectAPPLE
-  :: MonadIO m
-  => GLenum -- ^ @object@ of type @ObjectTypeAPPLE@.
-  -> GLuint -- ^ @name@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glTestObjectAPPLE v1 v2 = liftIO $ dyn495 ptr_glTestObjectAPPLE v1 v2
-
-{-# NOINLINE ptr_glTestObjectAPPLE #-}
-ptr_glTestObjectAPPLE :: FunPtr (GLenum -> GLuint -> IO GLboolean)
-ptr_glTestObjectAPPLE = unsafePerformIO $ getCommand "glTestObjectAPPLE"
 

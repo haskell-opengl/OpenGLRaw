@@ -15,6 +15,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F22 (
+  glProgramUniformMatrix2x3dv,
   glProgramUniformMatrix2x3dvEXT,
   glProgramUniformMatrix2x3fv,
   glProgramUniformMatrix2x3fvEXT,
@@ -113,8 +114,7 @@ module Graphics.GL.Functions.F22 (
   glRectiv,
   glRects,
   glRectsv,
-  glRectxOES,
-  glRectxvOES
+  glRectxOES
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,22 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glProgramUniformMatrix2x3dv -------------------------------------------------
+
+glProgramUniformMatrix2x3dv
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+  -> Ptr GLdouble -- ^ @value@ pointing to @count*6@ elements of type @GLdouble@.
+  -> m ()
+glProgramUniformMatrix2x3dv v1 v2 v3 v4 v5 = liftIO $ dyn692 ptr_glProgramUniformMatrix2x3dv v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glProgramUniformMatrix2x3dv #-}
+ptr_glProgramUniformMatrix2x3dv :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
+ptr_glProgramUniformMatrix2x3dv = unsafePerformIO $ getCommand "glProgramUniformMatrix2x3dv"
 
 -- glProgramUniformMatrix2x3dvEXT ----------------------------------------------
 
@@ -1605,17 +1621,4 @@ glRectxOES v1 v2 v3 v4 = liftIO $ dyn51 ptr_glRectxOES v1 v2 v3 v4
 {-# NOINLINE ptr_glRectxOES #-}
 ptr_glRectxOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> GLfixed -> IO ())
 ptr_glRectxOES = unsafePerformIO $ getCommand "glRectxOES"
-
--- glRectxvOES -----------------------------------------------------------------
-
-glRectxvOES
-  :: MonadIO m
-  => Ptr GLfixed -- ^ @v1@ pointing to @2@ elements of type @GLfixed@.
-  -> Ptr GLfixed -- ^ @v2@ pointing to @2@ elements of type @GLfixed@.
-  -> m ()
-glRectxvOES v1 v2 = liftIO $ dyn704 ptr_glRectxvOES v1 v2
-
-{-# NOINLINE ptr_glRectxvOES #-}
-ptr_glRectxvOES :: FunPtr (Ptr GLfixed -> Ptr GLfixed -> IO ())
-ptr_glRectxvOES = unsafePerformIO $ getCommand "glRectxvOES"
 

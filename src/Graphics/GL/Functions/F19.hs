@@ -15,6 +15,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F19 (
+  glNewObjectBufferATI,
   glNormal3b,
   glNormal3bv,
   glNormal3d,
@@ -113,8 +114,7 @@ module Graphics.GL.Functions.F19 (
   glPixelTransformParameteriEXT,
   glPixelTransformParameterivEXT,
   glPixelZoom,
-  glPixelZoomxOES,
-  glPointAlongPathNV
+  glPixelZoomxOES
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,20 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glNewObjectBufferATI --------------------------------------------------------
+
+glNewObjectBufferATI
+  :: MonadIO m
+  => GLsizei -- ^ @size@.
+  -> Ptr a -- ^ @pointer@ pointing to @size@ elements of type @a@.
+  -> GLenum -- ^ @usage@ of type @ArrayObjectUsageATI@.
+  -> m GLuint
+glNewObjectBufferATI v1 v2 v3 = liftIO $ dyn620 ptr_glNewObjectBufferATI v1 v2 v3
+
+{-# NOINLINE ptr_glNewObjectBufferATI #-}
+ptr_glNewObjectBufferATI :: FunPtr (GLsizei -> Ptr a -> GLenum -> IO GLuint)
+ptr_glNewObjectBufferATI = unsafePerformIO $ getCommand "glNewObjectBufferATI"
 
 -- glNormal3b ------------------------------------------------------------------
 
@@ -1549,23 +1563,4 @@ glPixelZoomxOES v1 v2 = liftIO $ dyn228 ptr_glPixelZoomxOES v1 v2
 {-# NOINLINE ptr_glPixelZoomxOES #-}
 ptr_glPixelZoomxOES :: FunPtr (GLfixed -> GLfixed -> IO ())
 ptr_glPixelZoomxOES = unsafePerformIO $ getCommand "glPixelZoomxOES"
-
--- glPointAlongPathNV ----------------------------------------------------------
-
-glPointAlongPathNV
-  :: MonadIO m
-  => GLuint -- ^ @path@ of type @Path@.
-  -> GLsizei -- ^ @startSegment@.
-  -> GLsizei -- ^ @numSegments@.
-  -> GLfloat -- ^ @distance@.
-  -> Ptr GLfloat -- ^ @x@ pointing to @1@ element of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @y@ pointing to @1@ element of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @tangentX@ pointing to @1@ element of type @GLfloat@.
-  -> Ptr GLfloat -- ^ @tangentY@ pointing to @1@ element of type @GLfloat@.
-  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn636 ptr_glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8
-
-{-# NOINLINE ptr_glPointAlongPathNV #-}
-ptr_glPointAlongPathNV :: FunPtr (GLuint -> GLsizei -> GLsizei -> GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> IO GLboolean)
-ptr_glPointAlongPathNV = unsafePerformIO $ getCommand "glPointAlongPathNV"
 

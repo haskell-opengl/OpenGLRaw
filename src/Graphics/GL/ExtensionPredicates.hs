@@ -96,6 +96,17 @@ gl_AMD_draw_buffers_blend :: Bool
 gl_AMD_draw_buffers_blend = member "GL_AMD_draw_buffers_blend" extensions
 {-# NOINLINE gl_AMD_draw_buffers_blend #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/AMD/framebuffer_multisample_advanced.txt AMD_framebuffer_multisample_advanced> extension supported?
+glGetAMDFramebufferMultisampleAdvanced :: MonadIO m => m Bool
+glGetAMDFramebufferMultisampleAdvanced = getExtensions >>= (return . member "GL_AMD_framebuffer_multisample_advanced")
+
+-- | Is the <https://www.opengl.org/registry/specs/AMD/framebuffer_multisample_advanced.txt AMD_framebuffer_multisample_advanced> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetAMDFramebufferMultisampleAdvanced' in those cases instead.
+gl_AMD_framebuffer_multisample_advanced :: Bool
+gl_AMD_framebuffer_multisample_advanced = member "GL_AMD_framebuffer_multisample_advanced" extensions
+{-# NOINLINE gl_AMD_framebuffer_multisample_advanced #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/AMD/framebuffer_sample_positions.txt AMD_framebuffer_sample_positions> extension supported?
 glGetAMDFramebufferSamplePositions :: MonadIO m => m Bool
 glGetAMDFramebufferSamplePositions = getExtensions >>= (return . member "GL_AMD_framebuffer_sample_positions")

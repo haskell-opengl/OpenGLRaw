@@ -15,6 +15,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F20 (
+  glPointAlongPathNV,
   glPointParameterf,
   glPointParameterfARB,
   glPointParameterfEXT,
@@ -113,8 +114,7 @@ module Graphics.GL.Functions.F20 (
   glProgramUniform1dv,
   glProgramUniform1dvEXT,
   glProgramUniform1f,
-  glProgramUniform1fEXT,
-  glProgramUniform1fv
+  glProgramUniform1fEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,25 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glPointAlongPathNV ----------------------------------------------------------
+
+glPointAlongPathNV
+  :: MonadIO m
+  => GLuint -- ^ @path@ of type @Path@.
+  -> GLsizei -- ^ @startSegment@.
+  -> GLsizei -- ^ @numSegments@.
+  -> GLfloat -- ^ @distance@.
+  -> Ptr GLfloat -- ^ @x@ pointing to @1@ element of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @y@ pointing to @1@ element of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @tangentX@ pointing to @1@ element of type @GLfloat@.
+  -> Ptr GLfloat -- ^ @tangentY@ pointing to @1@ element of type @GLfloat@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn636 ptr_glPointAlongPathNV v1 v2 v3 v4 v5 v6 v7 v8
+
+{-# NOINLINE ptr_glPointAlongPathNV #-}
+ptr_glPointAlongPathNV :: FunPtr (GLuint -> GLsizei -> GLsizei -> GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> Ptr GLfloat -> IO GLboolean)
+ptr_glPointAlongPathNV = unsafePerformIO $ getCommand "glPointAlongPathNV"
 
 -- glPointParameterf -----------------------------------------------------------
 
@@ -1594,20 +1613,4 @@ glProgramUniform1fEXT v1 v2 v3 = liftIO $ dyn659 ptr_glProgramUniform1fEXT v1 v2
 {-# NOINLINE ptr_glProgramUniform1fEXT #-}
 ptr_glProgramUniform1fEXT :: FunPtr (GLuint -> GLint -> GLfloat -> IO ())
 ptr_glProgramUniform1fEXT = unsafePerformIO $ getCommand "glProgramUniform1fEXT"
-
--- glProgramUniform1fv ---------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
-glProgramUniform1fv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
-  -> m ()
-glProgramUniform1fv v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform1fv v1 v2 v3 v4
-
-{-# NOINLINE ptr_glProgramUniform1fv #-}
-ptr_glProgramUniform1fv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
-ptr_glProgramUniform1fv = unsafePerformIO $ getCommand "glProgramUniform1fv"
 

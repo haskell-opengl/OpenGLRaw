@@ -110,11 +110,11 @@ module Graphics.GL.Functions.F18 (
   glNamedRenderbufferStorage,
   glNamedRenderbufferStorageEXT,
   glNamedRenderbufferStorageMultisample,
+  glNamedRenderbufferStorageMultisampleAdvancedAMD,
   glNamedRenderbufferStorageMultisampleCoverageEXT,
   glNamedRenderbufferStorageMultisampleEXT,
   glNamedStringARB,
-  glNewList,
-  glNewObjectBufferATI
+  glNewList
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -1641,6 +1641,23 @@ glNamedRenderbufferStorageMultisample v1 v2 v3 v4 v5 = liftIO $ dyn617 ptr_glNam
 ptr_glNamedRenderbufferStorageMultisample :: FunPtr (GLuint -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
 ptr_glNamedRenderbufferStorageMultisample = unsafePerformIO $ getCommand "glNamedRenderbufferStorageMultisample"
 
+-- glNamedRenderbufferStorageMultisampleAdvancedAMD ----------------------------
+
+glNamedRenderbufferStorageMultisampleAdvancedAMD
+  :: MonadIO m
+  => GLuint -- ^ @renderbuffer@ of type @Renderbuffer@.
+  -> GLsizei -- ^ @samples@.
+  -> GLsizei -- ^ @storageSamples@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> m ()
+glNamedRenderbufferStorageMultisampleAdvancedAMD v1 v2 v3 v4 v5 v6 = liftIO $ dyn618 ptr_glNamedRenderbufferStorageMultisampleAdvancedAMD v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glNamedRenderbufferStorageMultisampleAdvancedAMD #-}
+ptr_glNamedRenderbufferStorageMultisampleAdvancedAMD :: FunPtr (GLuint -> GLsizei -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
+ptr_glNamedRenderbufferStorageMultisampleAdvancedAMD = unsafePerformIO $ getCommand "glNamedRenderbufferStorageMultisampleAdvancedAMD"
+
 -- glNamedRenderbufferStorageMultisampleCoverageEXT ----------------------------
 
 glNamedRenderbufferStorageMultisampleCoverageEXT
@@ -1703,18 +1720,4 @@ glNewList v1 v2 = liftIO $ dyn16 ptr_glNewList v1 v2
 {-# NOINLINE ptr_glNewList #-}
 ptr_glNewList :: FunPtr (GLuint -> GLenum -> IO ())
 ptr_glNewList = unsafePerformIO $ getCommand "glNewList"
-
--- glNewObjectBufferATI --------------------------------------------------------
-
-glNewObjectBufferATI
-  :: MonadIO m
-  => GLsizei -- ^ @size@.
-  -> Ptr a -- ^ @pointer@ pointing to @size@ elements of type @a@.
-  -> GLenum -- ^ @usage@ of type @ArrayObjectUsageATI@.
-  -> m GLuint
-glNewObjectBufferATI v1 v2 v3 = liftIO $ dyn620 ptr_glNewObjectBufferATI v1 v2 v3
-
-{-# NOINLINE ptr_glNewObjectBufferATI #-}
-ptr_glNewObjectBufferATI :: FunPtr (GLsizei -> Ptr a -> GLenum -> IO GLuint)
-ptr_glNewObjectBufferATI = unsafePerformIO $ getCommand "glNewObjectBufferATI"
 

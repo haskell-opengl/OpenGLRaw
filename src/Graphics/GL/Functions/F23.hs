@@ -15,6 +15,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F23 (
+  glRectxvOES,
   glReferencePlaneSGIX,
   glReleaseKeyedMutexWin32EXT,
   glReleaseShaderCompiler,
@@ -25,6 +26,7 @@ module Graphics.GL.Functions.F23 (
   glRenderbufferStorageMultisample,
   glRenderbufferStorageMultisampleANGLE,
   glRenderbufferStorageMultisampleAPPLE,
+  glRenderbufferStorageMultisampleAdvancedAMD,
   glRenderbufferStorageMultisampleCoverageNV,
   glRenderbufferStorageMultisampleEXT,
   glRenderbufferStorageMultisampleIMG,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F23 (
   glSecondaryColor3dvEXT,
   glSecondaryColor3f,
   glSecondaryColor3fEXT,
-  glSecondaryColor3fv,
-  glSecondaryColor3fvEXT,
-  glSecondaryColor3hNV
+  glSecondaryColor3fv
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,19 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glRectxvOES -----------------------------------------------------------------
+
+glRectxvOES
+  :: MonadIO m
+  => Ptr GLfixed -- ^ @v1@ pointing to @2@ elements of type @GLfixed@.
+  -> Ptr GLfixed -- ^ @v2@ pointing to @2@ elements of type @GLfixed@.
+  -> m ()
+glRectxvOES v1 v2 = liftIO $ dyn704 ptr_glRectxvOES v1 v2
+
+{-# NOINLINE ptr_glRectxvOES #-}
+ptr_glRectxvOES :: FunPtr (Ptr GLfixed -> Ptr GLfixed -> IO ())
+ptr_glRectxvOES = unsafePerformIO $ getCommand "glRectxvOES"
 
 -- glReferencePlaneSGIX --------------------------------------------------------
 
@@ -265,6 +278,23 @@ glRenderbufferStorageMultisampleAPPLE v1 v2 v3 v4 v5 = liftIO $ dyn708 ptr_glRen
 {-# NOINLINE ptr_glRenderbufferStorageMultisampleAPPLE #-}
 ptr_glRenderbufferStorageMultisampleAPPLE :: FunPtr (GLenum -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
 ptr_glRenderbufferStorageMultisampleAPPLE = unsafePerformIO $ getCommand "glRenderbufferStorageMultisampleAPPLE"
+
+-- glRenderbufferStorageMultisampleAdvancedAMD ---------------------------------
+
+glRenderbufferStorageMultisampleAdvancedAMD
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
+  -> GLsizei -- ^ @samples@.
+  -> GLsizei -- ^ @storageSamples@.
+  -> GLenum -- ^ @internalformat@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
+  -> GLsizei -- ^ @width@.
+  -> GLsizei -- ^ @height@.
+  -> m ()
+glRenderbufferStorageMultisampleAdvancedAMD v1 v2 v3 v4 v5 v6 = liftIO $ dyn709 ptr_glRenderbufferStorageMultisampleAdvancedAMD v1 v2 v3 v4 v5 v6
+
+{-# NOINLINE ptr_glRenderbufferStorageMultisampleAdvancedAMD #-}
+ptr_glRenderbufferStorageMultisampleAdvancedAMD :: FunPtr (GLenum -> GLsizei -> GLsizei -> GLenum -> GLsizei -> GLsizei -> IO ())
+ptr_glRenderbufferStorageMultisampleAdvancedAMD = unsafePerformIO $ getCommand "glRenderbufferStorageMultisampleAdvancedAMD"
 
 -- glRenderbufferStorageMultisampleCoverageNV ----------------------------------
 
@@ -1549,32 +1579,4 @@ glSecondaryColor3fv v1 = liftIO $ dyn42 ptr_glSecondaryColor3fv v1
 {-# NOINLINE ptr_glSecondaryColor3fv #-}
 ptr_glSecondaryColor3fv :: FunPtr (Ptr GLfloat -> IO ())
 ptr_glSecondaryColor3fv = unsafePerformIO $ getCommand "glSecondaryColor3fv"
-
--- glSecondaryColor3fvEXT ------------------------------------------------------
-
--- | This command is an alias for 'glSecondaryColor3fv'.
-glSecondaryColor3fvEXT
-  :: MonadIO m
-  => Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @ColorF@.
-  -> m ()
-glSecondaryColor3fvEXT v1 = liftIO $ dyn42 ptr_glSecondaryColor3fvEXT v1
-
-{-# NOINLINE ptr_glSecondaryColor3fvEXT #-}
-ptr_glSecondaryColor3fvEXT :: FunPtr (Ptr GLfloat -> IO ())
-ptr_glSecondaryColor3fvEXT = unsafePerformIO $ getCommand "glSecondaryColor3fvEXT"
-
--- glSecondaryColor3hNV --------------------------------------------------------
-
--- | The vector equivalent of this command is 'glSecondaryColor3hvNV'.
-glSecondaryColor3hNV
-  :: MonadIO m
-  => GLhalfNV -- ^ @red@ of type @Half16NV@.
-  -> GLhalfNV -- ^ @green@ of type @Half16NV@.
-  -> GLhalfNV -- ^ @blue@ of type @Half16NV@.
-  -> m ()
-glSecondaryColor3hNV v1 v2 v3 = liftIO $ dyn101 ptr_glSecondaryColor3hNV v1 v2 v3
-
-{-# NOINLINE ptr_glSecondaryColor3hNV #-}
-ptr_glSecondaryColor3hNV :: FunPtr (GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
-ptr_glSecondaryColor3hNV = unsafePerformIO $ getCommand "glSecondaryColor3hNV"
 

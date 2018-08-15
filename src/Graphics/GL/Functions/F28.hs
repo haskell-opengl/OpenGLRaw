@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F28 (
+  glUniform3uiv,
+  glUniform3uivEXT,
   glUniform4d,
   glUniform4dv,
   glUniform4f,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F28 (
   glVariantsvEXT,
   glVariantubvEXT,
   glVariantuivEXT,
-  glVariantusvEXT,
-  glVertex2bOES,
-  glVertex2bvOES
+  glVariantusvEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,36 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glUniform3uiv ---------------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glUniform.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glUniform.xhtml OpenGL 4.x>.
+glUniform3uiv
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
+  -> m ()
+glUniform3uiv v1 v2 v3 = liftIO $ dyn833 ptr_glUniform3uiv v1 v2 v3
+
+{-# NOINLINE ptr_glUniform3uiv #-}
+ptr_glUniform3uiv :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glUniform3uiv = unsafePerformIO $ getCommand "glUniform3uiv"
+
+-- glUniform3uivEXT ------------------------------------------------------------
+
+-- | This command is an alias for 'glUniform3uiv'.
+glUniform3uivEXT
+  :: MonadIO m
+  => GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLuint -- ^ @value@ pointing to @count*3@ elements of type @GLuint@.
+  -> m ()
+glUniform3uivEXT v1 v2 v3 = liftIO $ dyn833 ptr_glUniform3uivEXT v1 v2 v3
+
+{-# NOINLINE ptr_glUniform3uivEXT #-}
+ptr_glUniform3uivEXT :: FunPtr (GLint -> GLsizei -> Ptr GLuint -> IO ())
+ptr_glUniform3uivEXT = unsafePerformIO $ getCommand "glUniform3uivEXT"
 
 -- glUniform4d -----------------------------------------------------------------
 
@@ -1544,29 +1574,4 @@ glVariantusvEXT v1 v2 = liftIO $ dyn869 ptr_glVariantusvEXT v1 v2
 {-# NOINLINE ptr_glVariantusvEXT #-}
 ptr_glVariantusvEXT :: FunPtr (GLuint -> Ptr GLushort -> IO ())
 ptr_glVariantusvEXT = unsafePerformIO $ getCommand "glVariantusvEXT"
-
--- glVertex2bOES ---------------------------------------------------------------
-
-glVertex2bOES
-  :: MonadIO m
-  => GLbyte -- ^ @x@.
-  -> GLbyte -- ^ @y@.
-  -> m ()
-glVertex2bOES v1 v2 = liftIO $ dyn751 ptr_glVertex2bOES v1 v2
-
-{-# NOINLINE ptr_glVertex2bOES #-}
-ptr_glVertex2bOES :: FunPtr (GLbyte -> GLbyte -> IO ())
-ptr_glVertex2bOES = unsafePerformIO $ getCommand "glVertex2bOES"
-
--- glVertex2bvOES --------------------------------------------------------------
-
-glVertex2bvOES
-  :: MonadIO m
-  => Ptr GLbyte -- ^ @coords@ pointing to @2@ elements of type @GLbyte@.
-  -> m ()
-glVertex2bvOES v1 = liftIO $ dyn38 ptr_glVertex2bvOES v1
-
-{-# NOINLINE ptr_glVertex2bvOES #-}
-ptr_glVertex2bvOES :: FunPtr (Ptr GLbyte -> IO ())
-ptr_glVertex2bvOES = unsafePerformIO $ getCommand "glVertex2bvOES"
 

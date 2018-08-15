@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F29 (
+  glVertex2bOES,
+  glVertex2bvOES,
   glVertex2d,
   glVertex2dv,
   glVertex2f,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F29 (
   glVertexAttrib2dvARB,
   glVertexAttrib2dvNV,
   glVertexAttrib2f,
-  glVertexAttrib2fARB,
-  glVertexAttrib2fNV,
-  glVertexAttrib2fv
+  glVertexAttrib2fARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,31 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glVertex2bOES ---------------------------------------------------------------
+
+glVertex2bOES
+  :: MonadIO m
+  => GLbyte -- ^ @x@.
+  -> GLbyte -- ^ @y@.
+  -> m ()
+glVertex2bOES v1 v2 = liftIO $ dyn751 ptr_glVertex2bOES v1 v2
+
+{-# NOINLINE ptr_glVertex2bOES #-}
+ptr_glVertex2bOES :: FunPtr (GLbyte -> GLbyte -> IO ())
+ptr_glVertex2bOES = unsafePerformIO $ getCommand "glVertex2bOES"
+
+-- glVertex2bvOES --------------------------------------------------------------
+
+glVertex2bvOES
+  :: MonadIO m
+  => Ptr GLbyte -- ^ @coords@ pointing to @2@ elements of type @GLbyte@.
+  -> m ()
+glVertex2bvOES v1 = liftIO $ dyn38 ptr_glVertex2bvOES v1
+
+{-# NOINLINE ptr_glVertex2bvOES #-}
+ptr_glVertex2bvOES :: FunPtr (Ptr GLbyte -> IO ())
+ptr_glVertex2bvOES = unsafePerformIO $ getCommand "glVertex2bvOES"
 
 -- glVertex2d ------------------------------------------------------------------
 
@@ -1544,33 +1569,4 @@ glVertexAttrib2fARB v1 v2 v3 = liftIO $ dyn225 ptr_glVertexAttrib2fARB v1 v2 v3
 {-# NOINLINE ptr_glVertexAttrib2fARB #-}
 ptr_glVertexAttrib2fARB :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
 ptr_glVertexAttrib2fARB = unsafePerformIO $ getCommand "glVertexAttrib2fARB"
-
--- glVertexAttrib2fNV ----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib2fvNV'. This command is an alias for 'glVertexAttrib2f'.
-glVertexAttrib2fNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLfloat -- ^ @x@.
-  -> GLfloat -- ^ @y@.
-  -> m ()
-glVertexAttrib2fNV v1 v2 v3 = liftIO $ dyn225 ptr_glVertexAttrib2fNV v1 v2 v3
-
-{-# NOINLINE ptr_glVertexAttrib2fNV #-}
-ptr_glVertexAttrib2fNV :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
-ptr_glVertexAttrib2fNV = unsafePerformIO $ getCommand "glVertexAttrib2fNV"
-
--- glVertexAttrib2fv -----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
-glVertexAttrib2fv
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @GLfloat@.
-  -> m ()
-glVertexAttrib2fv v1 v2 = liftIO $ dyn389 ptr_glVertexAttrib2fv v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib2fv #-}
-ptr_glVertexAttrib2fv :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
-ptr_glVertexAttrib2fv = unsafePerformIO $ getCommand "glVertexAttrib2fv"
 

@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F25 (
+  glTestFenceNV,
+  glTestObjectAPPLE,
   glTexBuffer,
   glTexBufferARB,
   glTexBufferEXT,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F25 (
   glTexEnvi,
   glTexEnviv,
   glTexEnvx,
-  glTexEnvxOES,
-  glTexEnvxv,
-  glTexEnvxvOES
+  glTexEnvxOES
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,31 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glTestFenceNV ---------------------------------------------------------------
+
+glTestFenceNV
+  :: MonadIO m
+  => GLuint -- ^ @fence@ of type @FenceNV@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glTestFenceNV v1 = liftIO $ dyn280 ptr_glTestFenceNV v1
+
+{-# NOINLINE ptr_glTestFenceNV #-}
+ptr_glTestFenceNV :: FunPtr (GLuint -> IO GLboolean)
+ptr_glTestFenceNV = unsafePerformIO $ getCommand "glTestFenceNV"
+
+-- glTestObjectAPPLE -----------------------------------------------------------
+
+glTestObjectAPPLE
+  :: MonadIO m
+  => GLenum -- ^ @object@ of type @ObjectTypeAPPLE@.
+  -> GLuint -- ^ @name@.
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+glTestObjectAPPLE v1 v2 = liftIO $ dyn495 ptr_glTestObjectAPPLE v1 v2
+
+{-# NOINLINE ptr_glTestObjectAPPLE #-}
+ptr_glTestObjectAPPLE :: FunPtr (GLenum -> GLuint -> IO GLboolean)
+ptr_glTestObjectAPPLE = unsafePerformIO $ getCommand "glTestObjectAPPLE"
 
 -- glTexBuffer -----------------------------------------------------------------
 
@@ -1517,32 +1542,4 @@ glTexEnvxOES v1 v2 v3 = liftIO $ dyn165 ptr_glTexEnvxOES v1 v2 v3
 {-# NOINLINE ptr_glTexEnvxOES #-}
 ptr_glTexEnvxOES :: FunPtr (GLenum -> GLenum -> GLfixed -> IO ())
 ptr_glTexEnvxOES = unsafePerformIO $ getCommand "glTexEnvxOES"
-
--- glTexEnvxv ------------------------------------------------------------------
-
-glTexEnvxv
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
-  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
-  -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
-  -> m ()
-glTexEnvxv v1 v2 v3 = liftIO $ dyn166 ptr_glTexEnvxv v1 v2 v3
-
-{-# NOINLINE ptr_glTexEnvxv #-}
-ptr_glTexEnvxv :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
-ptr_glTexEnvxv = unsafePerformIO $ getCommand "glTexEnvxv"
-
--- glTexEnvxvOES ---------------------------------------------------------------
-
-glTexEnvxvOES
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
-  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
-  -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
-  -> m ()
-glTexEnvxvOES v1 v2 v3 = liftIO $ dyn166 ptr_glTexEnvxvOES v1 v2 v3
-
-{-# NOINLINE ptr_glTexEnvxvOES #-}
-ptr_glTexEnvxvOES :: FunPtr (GLenum -> GLenum -> Ptr GLfixed -> IO ())
-ptr_glTexEnvxvOES = unsafePerformIO $ getCommand "glTexEnvxvOES"
 

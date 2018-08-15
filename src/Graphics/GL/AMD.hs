@@ -17,6 +17,7 @@ module Graphics.GL.AMD (
   module Graphics.GL.AMD.DebugOutput,
   module Graphics.GL.AMD.DepthClampSeparate,
   module Graphics.GL.AMD.DrawBuffersBlend,
+  module Graphics.GL.AMD.FramebufferMultisampleAdvanced,
   module Graphics.GL.AMD.FramebufferSamplePositions,
   module Graphics.GL.AMD.GPUShaderHalfFloat,
   module Graphics.GL.AMD.GPUShaderInt64,
@@ -39,6 +40,7 @@ import Graphics.GL.AMD.BlendMinmaxFactor
 import Graphics.GL.AMD.DebugOutput
 import Graphics.GL.AMD.DepthClampSeparate
 import Graphics.GL.AMD.DrawBuffersBlend
+import Graphics.GL.AMD.FramebufferMultisampleAdvanced
 import Graphics.GL.AMD.FramebufferSamplePositions
 import Graphics.GL.AMD.GPUShaderHalfFloat
 import Graphics.GL.AMD.GPUShaderInt64

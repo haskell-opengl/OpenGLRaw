@@ -15,6 +15,8 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F32 (
+  glVertexBlendEnvfATI,
+  glVertexBlendEnviATI,
   glVertexFormatNV,
   glVertexP2ui,
   glVertexP2uiv,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F32 (
   glWindowPos2iv,
   glWindowPos2ivARB,
   glWindowPos2ivMESA,
-  glWindowPos2s,
-  glWindowPos2sARB,
-  glWindowPos2sMESA
+  glWindowPos2s
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,32 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glVertexBlendEnvfATI --------------------------------------------------------
+
+glVertexBlendEnvfATI
+  :: MonadIO m
+  => GLenum -- ^ @pname@ of type @VertexStreamATI@.
+  -> GLfloat -- ^ @param@.
+  -> m ()
+glVertexBlendEnvfATI v1 v2 = liftIO $ dyn0 ptr_glVertexBlendEnvfATI v1 v2
+
+{-# NOINLINE ptr_glVertexBlendEnvfATI #-}
+ptr_glVertexBlendEnvfATI :: FunPtr (GLenum -> GLfloat -> IO ())
+ptr_glVertexBlendEnvfATI = unsafePerformIO $ getCommand "glVertexBlendEnvfATI"
+
+-- glVertexBlendEnviATI --------------------------------------------------------
+
+glVertexBlendEnviATI
+  :: MonadIO m
+  => GLenum -- ^ @pname@ of type @VertexStreamATI@.
+  -> GLint -- ^ @param@.
+  -> m ()
+glVertexBlendEnviATI v1 v2 = liftIO $ dyn56 ptr_glVertexBlendEnviATI v1 v2
+
+{-# NOINLINE ptr_glVertexBlendEnviATI #-}
+ptr_glVertexBlendEnviATI :: FunPtr (GLenum -> GLint -> IO ())
+ptr_glVertexBlendEnviATI = unsafePerformIO $ getCommand "glVertexBlendEnviATI"
 
 -- glVertexFormatNV ------------------------------------------------------------
 
@@ -1489,32 +1515,4 @@ glWindowPos2s v1 v2 = liftIO $ dyn697 ptr_glWindowPos2s v1 v2
 {-# NOINLINE ptr_glWindowPos2s #-}
 ptr_glWindowPos2s :: FunPtr (GLshort -> GLshort -> IO ())
 ptr_glWindowPos2s = unsafePerformIO $ getCommand "glWindowPos2s"
-
--- glWindowPos2sARB ------------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos2svARB'. This command is an alias for 'glWindowPos2s'.
-glWindowPos2sARB
-  :: MonadIO m
-  => GLshort -- ^ @x@ of type @CoordS@.
-  -> GLshort -- ^ @y@ of type @CoordS@.
-  -> m ()
-glWindowPos2sARB v1 v2 = liftIO $ dyn697 ptr_glWindowPos2sARB v1 v2
-
-{-# NOINLINE ptr_glWindowPos2sARB #-}
-ptr_glWindowPos2sARB :: FunPtr (GLshort -> GLshort -> IO ())
-ptr_glWindowPos2sARB = unsafePerformIO $ getCommand "glWindowPos2sARB"
-
--- glWindowPos2sMESA -----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glWindowPos2svMESA'. This command is an alias for 'glWindowPos2s'.
-glWindowPos2sMESA
-  :: MonadIO m
-  => GLshort -- ^ @x@ of type @CoordS@.
-  -> GLshort -- ^ @y@ of type @CoordS@.
-  -> m ()
-glWindowPos2sMESA v1 v2 = liftIO $ dyn697 ptr_glWindowPos2sMESA v1 v2
-
-{-# NOINLINE ptr_glWindowPos2sMESA #-}
-ptr_glWindowPos2sMESA :: FunPtr (GLshort -> GLshort -> IO ())
-ptr_glWindowPos2sMESA = unsafePerformIO $ getCommand "glWindowPos2sMESA"
 

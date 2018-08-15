@@ -15,6 +15,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F21 (
+  glProgramUniform1fv,
   glProgramUniform1fvEXT,
   glProgramUniform1i,
   glProgramUniform1i64ARB,
@@ -113,8 +114,7 @@ module Graphics.GL.Functions.F21 (
   glProgramUniformMatrix2dv,
   glProgramUniformMatrix2dvEXT,
   glProgramUniformMatrix2fv,
-  glProgramUniformMatrix2fvEXT,
-  glProgramUniformMatrix2x3dv
+  glProgramUniformMatrix2fvEXT
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,22 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glProgramUniform1fv ---------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glProgramUniform.xhtml OpenGL 4.x>.
+glProgramUniform1fv
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> GLint -- ^ @location@.
+  -> GLsizei -- ^ @count@.
+  -> Ptr GLfloat -- ^ @value@ pointing to @count@ elements of type @GLfloat@.
+  -> m ()
+glProgramUniform1fv v1 v2 v3 v4 = liftIO $ dyn472 ptr_glProgramUniform1fv v1 v2 v3 v4
+
+{-# NOINLINE ptr_glProgramUniform1fv #-}
+ptr_glProgramUniform1fv :: FunPtr (GLuint -> GLint -> GLsizei -> Ptr GLfloat -> IO ())
+ptr_glProgramUniform1fv = unsafePerformIO $ getCommand "glProgramUniform1fv"
 
 -- glProgramUniform1fvEXT ------------------------------------------------------
 
@@ -1685,20 +1701,4 @@ glProgramUniformMatrix2fvEXT v1 v2 v3 v4 v5 = liftIO $ dyn693 ptr_glProgramUnifo
 {-# NOINLINE ptr_glProgramUniformMatrix2fvEXT #-}
 ptr_glProgramUniformMatrix2fvEXT :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLfloat -> IO ())
 ptr_glProgramUniformMatrix2fvEXT = unsafePerformIO $ getCommand "glProgramUniformMatrix2fvEXT"
-
--- glProgramUniformMatrix2x3dv -------------------------------------------------
-
-glProgramUniformMatrix2x3dv
-  :: MonadIO m
-  => GLuint -- ^ @program@.
-  -> GLint -- ^ @location@.
-  -> GLsizei -- ^ @count@.
-  -> GLboolean -- ^ @transpose@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
-  -> Ptr GLdouble -- ^ @value@ pointing to @count*6@ elements of type @GLdouble@.
-  -> m ()
-glProgramUniformMatrix2x3dv v1 v2 v3 v4 v5 = liftIO $ dyn692 ptr_glProgramUniformMatrix2x3dv v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glProgramUniformMatrix2x3dv #-}
-ptr_glProgramUniformMatrix2x3dv :: FunPtr (GLuint -> GLint -> GLsizei -> GLboolean -> Ptr GLdouble -> IO ())
-ptr_glProgramUniformMatrix2x3dv = unsafePerformIO $ getCommand "glProgramUniformMatrix2x3dv"
 

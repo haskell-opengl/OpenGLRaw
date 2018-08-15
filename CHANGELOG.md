@@ -1,6 +1,10 @@
+3.3.1.0
+-------
+* Updated OpenGL registry to accf5ad3c.
+
 3.3.0.2
 -------
-* Updated OpenGL registry tob7aee529f.
+* Updated OpenGL registry to b7aee529f.
 * Relaxed version bound of `containers` package.
 
 3.3.0.1
