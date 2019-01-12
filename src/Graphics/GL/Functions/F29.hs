@@ -15,6 +15,26 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F29 (
+  glVDPAURegisterOutputSurfaceNV,
+  glVDPAURegisterVideoSurfaceNV,
+  glVDPAURegisterVideoSurfaceWithPictureStructureNV,
+  glVDPAUSurfaceAccessNV,
+  glVDPAUUnmapSurfacesNV,
+  glVDPAUUnregisterSurfaceNV,
+  glValidateProgram,
+  glValidateProgramARB,
+  glValidateProgramPipeline,
+  glValidateProgramPipelineEXT,
+  glVariantArrayObjectATI,
+  glVariantPointerEXT,
+  glVariantbvEXT,
+  glVariantdvEXT,
+  glVariantfvEXT,
+  glVariantivEXT,
+  glVariantsvEXT,
+  glVariantubvEXT,
+  glVariantuivEXT,
+  glVariantusvEXT,
   glVertex2bOES,
   glVertex2bvOES,
   glVertex2d,
@@ -94,27 +114,7 @@ module Graphics.GL.Functions.F29 (
   glVertexAttrib1dvARB,
   glVertexAttrib1dvNV,
   glVertexAttrib1f,
-  glVertexAttrib1fARB,
-  glVertexAttrib1fNV,
-  glVertexAttrib1fv,
-  glVertexAttrib1fvARB,
-  glVertexAttrib1fvNV,
-  glVertexAttrib1hNV,
-  glVertexAttrib1hvNV,
-  glVertexAttrib1s,
-  glVertexAttrib1sARB,
-  glVertexAttrib1sNV,
-  glVertexAttrib1sv,
-  glVertexAttrib1svARB,
-  glVertexAttrib1svNV,
-  glVertexAttrib2d,
-  glVertexAttrib2dARB,
-  glVertexAttrib2dNV,
-  glVertexAttrib2dv,
-  glVertexAttrib2dvARB,
-  glVertexAttrib2dvNV,
-  glVertexAttrib2f,
-  glVertexAttrib2fARB
+  glVertexAttrib1fARB
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -123,6 +123,276 @@ import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
 
+-- glVDPAURegisterOutputSurfaceNV ----------------------------------------------
+
+glVDPAURegisterOutputSurfaceNV
+  :: MonadIO m
+  => Ptr a -- ^ @vdpSurface@.
+  -> GLenum -- ^ @target@.
+  -> GLsizei -- ^ @numTextureNames@.
+  -> Ptr GLuint -- ^ @textureNames@ pointing to @numTextureNames@ elements of type @GLuint@.
+  -> m GLvdpauSurfaceNV -- ^ of type @vdpauSurfaceNV@.
+glVDPAURegisterOutputSurfaceNV v1 v2 v3 v4 = liftIO $ dyn869 ptr_glVDPAURegisterOutputSurfaceNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVDPAURegisterOutputSurfaceNV #-}
+ptr_glVDPAURegisterOutputSurfaceNV :: FunPtr (Ptr a -> GLenum -> GLsizei -> Ptr GLuint -> IO GLvdpauSurfaceNV)
+ptr_glVDPAURegisterOutputSurfaceNV = unsafePerformIO $ getCommand "glVDPAURegisterOutputSurfaceNV"
+
+-- glVDPAURegisterVideoSurfaceNV -----------------------------------------------
+
+glVDPAURegisterVideoSurfaceNV
+  :: MonadIO m
+  => Ptr a -- ^ @vdpSurface@.
+  -> GLenum -- ^ @target@.
+  -> GLsizei -- ^ @numTextureNames@.
+  -> Ptr GLuint -- ^ @textureNames@ pointing to @numTextureNames@ elements of type @GLuint@.
+  -> m GLvdpauSurfaceNV -- ^ of type @vdpauSurfaceNV@.
+glVDPAURegisterVideoSurfaceNV v1 v2 v3 v4 = liftIO $ dyn869 ptr_glVDPAURegisterVideoSurfaceNV v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVDPAURegisterVideoSurfaceNV #-}
+ptr_glVDPAURegisterVideoSurfaceNV :: FunPtr (Ptr a -> GLenum -> GLsizei -> Ptr GLuint -> IO GLvdpauSurfaceNV)
+ptr_glVDPAURegisterVideoSurfaceNV = unsafePerformIO $ getCommand "glVDPAURegisterVideoSurfaceNV"
+
+-- glVDPAURegisterVideoSurfaceWithPictureStructureNV ---------------------------
+
+glVDPAURegisterVideoSurfaceWithPictureStructureNV
+  :: MonadIO m
+  => Ptr a -- ^ @vdpSurface@.
+  -> GLenum -- ^ @target@.
+  -> GLsizei -- ^ @numTextureNames@.
+  -> Ptr GLuint -- ^ @textureNames@ pointing to @numTextureNames@ elements of type @GLuint@.
+  -> GLboolean -- ^ @isFrameStructure@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
+  -> m GLvdpauSurfaceNV -- ^ of type @vdpauSurfaceNV@.
+glVDPAURegisterVideoSurfaceWithPictureStructureNV v1 v2 v3 v4 v5 = liftIO $ dyn870 ptr_glVDPAURegisterVideoSurfaceWithPictureStructureNV v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glVDPAURegisterVideoSurfaceWithPictureStructureNV #-}
+ptr_glVDPAURegisterVideoSurfaceWithPictureStructureNV :: FunPtr (Ptr a -> GLenum -> GLsizei -> Ptr GLuint -> GLboolean -> IO GLvdpauSurfaceNV)
+ptr_glVDPAURegisterVideoSurfaceWithPictureStructureNV = unsafePerformIO $ getCommand "glVDPAURegisterVideoSurfaceWithPictureStructureNV"
+
+-- glVDPAUSurfaceAccessNV ------------------------------------------------------
+
+glVDPAUSurfaceAccessNV
+  :: MonadIO m
+  => GLvdpauSurfaceNV -- ^ @surface@ of type @vdpauSurfaceNV@.
+  -> GLenum -- ^ @access@.
+  -> m ()
+glVDPAUSurfaceAccessNV v1 v2 = liftIO $ dyn871 ptr_glVDPAUSurfaceAccessNV v1 v2
+
+{-# NOINLINE ptr_glVDPAUSurfaceAccessNV #-}
+ptr_glVDPAUSurfaceAccessNV :: FunPtr (GLvdpauSurfaceNV -> GLenum -> IO ())
+ptr_glVDPAUSurfaceAccessNV = unsafePerformIO $ getCommand "glVDPAUSurfaceAccessNV"
+
+-- glVDPAUUnmapSurfacesNV ------------------------------------------------------
+
+glVDPAUUnmapSurfacesNV
+  :: MonadIO m
+  => GLsizei -- ^ @numSurface@.
+  -> Ptr GLvdpauSurfaceNV -- ^ @surfaces@ pointing to @numSurface@ elements of type @vdpauSurfaceNV@.
+  -> m ()
+glVDPAUUnmapSurfacesNV v1 v2 = liftIO $ dyn868 ptr_glVDPAUUnmapSurfacesNV v1 v2
+
+{-# NOINLINE ptr_glVDPAUUnmapSurfacesNV #-}
+ptr_glVDPAUUnmapSurfacesNV :: FunPtr (GLsizei -> Ptr GLvdpauSurfaceNV -> IO ())
+ptr_glVDPAUUnmapSurfacesNV = unsafePerformIO $ getCommand "glVDPAUUnmapSurfacesNV"
+
+-- glVDPAUUnregisterSurfaceNV --------------------------------------------------
+
+glVDPAUUnregisterSurfaceNV
+  :: MonadIO m
+  => GLvdpauSurfaceNV -- ^ @surface@ of type @vdpauSurfaceNV@.
+  -> m ()
+glVDPAUUnregisterSurfaceNV v1 = liftIO $ dyn872 ptr_glVDPAUUnregisterSurfaceNV v1
+
+{-# NOINLINE ptr_glVDPAUUnregisterSurfaceNV #-}
+ptr_glVDPAUUnregisterSurfaceNV :: FunPtr (GLvdpauSurfaceNV -> IO ())
+ptr_glVDPAUUnregisterSurfaceNV = unsafePerformIO $ getCommand "glVDPAUUnregisterSurfaceNV"
+
+-- glValidateProgram -----------------------------------------------------------
+
+-- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glValidateProgram.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glValidateProgram.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glValidateProgram.xhtml OpenGL 4.x>.
+glValidateProgram
+  :: MonadIO m
+  => GLuint -- ^ @program@.
+  -> m ()
+glValidateProgram v1 = liftIO $ dyn3 ptr_glValidateProgram v1
+
+{-# NOINLINE ptr_glValidateProgram #-}
+ptr_glValidateProgram :: FunPtr (GLuint -> IO ())
+ptr_glValidateProgram = unsafePerformIO $ getCommand "glValidateProgram"
+
+-- glValidateProgramARB --------------------------------------------------------
+
+-- | This command is an alias for 'glValidateProgram'.
+glValidateProgramARB
+  :: MonadIO m
+  => GLhandleARB -- ^ @programObj@ of type @handleARB@.
+  -> m ()
+glValidateProgramARB v1 = liftIO $ dyn141 ptr_glValidateProgramARB v1
+
+{-# NOINLINE ptr_glValidateProgramARB #-}
+ptr_glValidateProgramARB :: FunPtr (GLhandleARB -> IO ())
+ptr_glValidateProgramARB = unsafePerformIO $ getCommand "glValidateProgramARB"
+
+-- glValidateProgramPipeline ---------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glValidateProgramPipeline.xhtml OpenGL 4.x>.
+glValidateProgramPipeline
+  :: MonadIO m
+  => GLuint -- ^ @pipeline@.
+  -> m ()
+glValidateProgramPipeline v1 = liftIO $ dyn3 ptr_glValidateProgramPipeline v1
+
+{-# NOINLINE ptr_glValidateProgramPipeline #-}
+ptr_glValidateProgramPipeline :: FunPtr (GLuint -> IO ())
+ptr_glValidateProgramPipeline = unsafePerformIO $ getCommand "glValidateProgramPipeline"
+
+-- glValidateProgramPipelineEXT ------------------------------------------------
+
+glValidateProgramPipelineEXT
+  :: MonadIO m
+  => GLuint -- ^ @pipeline@.
+  -> m ()
+glValidateProgramPipelineEXT v1 = liftIO $ dyn3 ptr_glValidateProgramPipelineEXT v1
+
+{-# NOINLINE ptr_glValidateProgramPipelineEXT #-}
+ptr_glValidateProgramPipelineEXT :: FunPtr (GLuint -> IO ())
+ptr_glValidateProgramPipelineEXT = unsafePerformIO $ getCommand "glValidateProgramPipelineEXT"
+
+-- glVariantArrayObjectATI -----------------------------------------------------
+
+glVariantArrayObjectATI
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> GLenum -- ^ @type@ of type @ScalarType@.
+  -> GLsizei -- ^ @stride@.
+  -> GLuint -- ^ @buffer@.
+  -> GLuint -- ^ @offset@.
+  -> m ()
+glVariantArrayObjectATI v1 v2 v3 v4 v5 = liftIO $ dyn873 ptr_glVariantArrayObjectATI v1 v2 v3 v4 v5
+
+{-# NOINLINE ptr_glVariantArrayObjectATI #-}
+ptr_glVariantArrayObjectATI :: FunPtr (GLuint -> GLenum -> GLsizei -> GLuint -> GLuint -> IO ())
+ptr_glVariantArrayObjectATI = unsafePerformIO $ getCommand "glVariantArrayObjectATI"
+
+-- glVariantPointerEXT ---------------------------------------------------------
+
+glVariantPointerEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> GLenum -- ^ @type@ of type @ScalarType@.
+  -> GLuint -- ^ @stride@.
+  -> Ptr a -- ^ @addr@ pointing to @COMPSIZE(id,type,stride)@ elements of type @a@.
+  -> m ()
+glVariantPointerEXT v1 v2 v3 v4 = liftIO $ dyn874 ptr_glVariantPointerEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glVariantPointerEXT #-}
+ptr_glVariantPointerEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr a -> IO ())
+ptr_glVariantPointerEXT = unsafePerformIO $ getCommand "glVariantPointerEXT"
+
+-- glVariantbvEXT --------------------------------------------------------------
+
+glVariantbvEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLbyte -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLbyte@.
+  -> m ()
+glVariantbvEXT v1 v2 = liftIO $ dyn875 ptr_glVariantbvEXT v1 v2
+
+{-# NOINLINE ptr_glVariantbvEXT #-}
+ptr_glVariantbvEXT :: FunPtr (GLuint -> Ptr GLbyte -> IO ())
+ptr_glVariantbvEXT = unsafePerformIO $ getCommand "glVariantbvEXT"
+
+-- glVariantdvEXT --------------------------------------------------------------
+
+glVariantdvEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLdouble -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLdouble@.
+  -> m ()
+glVariantdvEXT v1 v2 = liftIO $ dyn876 ptr_glVariantdvEXT v1 v2
+
+{-# NOINLINE ptr_glVariantdvEXT #-}
+ptr_glVariantdvEXT :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
+ptr_glVariantdvEXT = unsafePerformIO $ getCommand "glVariantdvEXT"
+
+-- glVariantfvEXT --------------------------------------------------------------
+
+glVariantfvEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLfloat -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLfloat@.
+  -> m ()
+glVariantfvEXT v1 v2 = liftIO $ dyn391 ptr_glVariantfvEXT v1 v2
+
+{-# NOINLINE ptr_glVariantfvEXT #-}
+ptr_glVariantfvEXT :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
+ptr_glVariantfvEXT = unsafePerformIO $ getCommand "glVariantfvEXT"
+
+-- glVariantivEXT --------------------------------------------------------------
+
+glVariantivEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLint -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLint@.
+  -> m ()
+glVariantivEXT v1 v2 = liftIO $ dyn736 ptr_glVariantivEXT v1 v2
+
+{-# NOINLINE ptr_glVariantivEXT #-}
+ptr_glVariantivEXT :: FunPtr (GLuint -> Ptr GLint -> IO ())
+ptr_glVariantivEXT = unsafePerformIO $ getCommand "glVariantivEXT"
+
+-- glVariantsvEXT --------------------------------------------------------------
+
+glVariantsvEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLshort -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLshort@.
+  -> m ()
+glVariantsvEXT v1 v2 = liftIO $ dyn877 ptr_glVariantsvEXT v1 v2
+
+{-# NOINLINE ptr_glVariantsvEXT #-}
+ptr_glVariantsvEXT :: FunPtr (GLuint -> Ptr GLshort -> IO ())
+ptr_glVariantsvEXT = unsafePerformIO $ getCommand "glVariantsvEXT"
+
+-- glVariantubvEXT -------------------------------------------------------------
+
+glVariantubvEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLubyte -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLubyte@.
+  -> m ()
+glVariantubvEXT v1 v2 = liftIO $ dyn390 ptr_glVariantubvEXT v1 v2
+
+{-# NOINLINE ptr_glVariantubvEXT #-}
+ptr_glVariantubvEXT :: FunPtr (GLuint -> Ptr GLubyte -> IO ())
+ptr_glVariantubvEXT = unsafePerformIO $ getCommand "glVariantubvEXT"
+
+-- glVariantuivEXT -------------------------------------------------------------
+
+glVariantuivEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLuint -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLuint@.
+  -> m ()
+glVariantuivEXT v1 v2 = liftIO $ dyn198 ptr_glVariantuivEXT v1 v2
+
+{-# NOINLINE ptr_glVariantuivEXT #-}
+ptr_glVariantuivEXT :: FunPtr (GLuint -> Ptr GLuint -> IO ())
+ptr_glVariantuivEXT = unsafePerformIO $ getCommand "glVariantuivEXT"
+
+-- glVariantusvEXT -------------------------------------------------------------
+
+glVariantusvEXT
+  :: MonadIO m
+  => GLuint -- ^ @id@.
+  -> Ptr GLushort -- ^ @addr@ pointing to @COMPSIZE(id)@ elements of type @GLushort@.
+  -> m ()
+glVariantusvEXT v1 v2 = liftIO $ dyn878 ptr_glVariantusvEXT v1 v2
+
+{-# NOINLINE ptr_glVariantusvEXT #-}
+ptr_glVariantusvEXT :: FunPtr (GLuint -> Ptr GLushort -> IO ())
+ptr_glVariantusvEXT = unsafePerformIO $ getCommand "glVariantusvEXT"
+
 -- glVertex2bOES ---------------------------------------------------------------
 
 glVertex2bOES
@@ -130,7 +400,7 @@ glVertex2bOES
   => GLbyte -- ^ @x@.
   -> GLbyte -- ^ @y@.
   -> m ()
-glVertex2bOES v1 v2 = liftIO $ dyn751 ptr_glVertex2bOES v1 v2
+glVertex2bOES v1 v2 = liftIO $ dyn759 ptr_glVertex2bOES v1 v2
 
 {-# NOINLINE ptr_glVertex2bOES #-}
 ptr_glVertex2bOES :: FunPtr (GLbyte -> GLbyte -> IO ())
@@ -156,7 +426,7 @@ glVertex2d
   => GLdouble -- ^ @x@ of type @CoordD@.
   -> GLdouble -- ^ @y@ of type @CoordD@.
   -> m ()
-glVertex2d v1 v2 = liftIO $ dyn221 ptr_glVertex2d v1 v2
+glVertex2d v1 v2 = liftIO $ dyn222 ptr_glVertex2d v1 v2
 
 {-# NOINLINE ptr_glVertex2d #-}
 ptr_glVertex2d :: FunPtr (GLdouble -> GLdouble -> IO ())
@@ -183,7 +453,7 @@ glVertex2f
   => GLfloat -- ^ @x@ of type @CoordF@.
   -> GLfloat -- ^ @y@ of type @CoordF@.
   -> m ()
-glVertex2f v1 v2 = liftIO $ dyn226 ptr_glVertex2f v1 v2
+glVertex2f v1 v2 = liftIO $ dyn227 ptr_glVertex2f v1 v2
 
 {-# NOINLINE ptr_glVertex2f #-}
 ptr_glVertex2f :: FunPtr (GLfloat -> GLfloat -> IO ())
@@ -210,7 +480,7 @@ glVertex2hNV
   => GLhalfNV -- ^ @x@ of type @Half16NV@.
   -> GLhalfNV -- ^ @y@ of type @Half16NV@.
   -> m ()
-glVertex2hNV v1 v2 = liftIO $ dyn756 ptr_glVertex2hNV v1 v2
+glVertex2hNV v1 v2 = liftIO $ dyn764 ptr_glVertex2hNV v1 v2
 
 {-# NOINLINE ptr_glVertex2hNV #-}
 ptr_glVertex2hNV :: FunPtr (GLhalfNV -> GLhalfNV -> IO ())
@@ -222,7 +492,7 @@ glVertex2hvNV
   :: MonadIO m
   => Ptr GLhalfNV -- ^ @v@ pointing to @2@ elements of type @Half16NV@.
   -> m ()
-glVertex2hvNV v1 = liftIO $ dyn102 ptr_glVertex2hvNV v1
+glVertex2hvNV v1 = liftIO $ dyn103 ptr_glVertex2hvNV v1
 
 {-# NOINLINE ptr_glVertex2hvNV #-}
 ptr_glVertex2hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
@@ -236,7 +506,7 @@ glVertex2i
   => GLint -- ^ @x@ of type @CoordI@.
   -> GLint -- ^ @y@ of type @CoordI@.
   -> m ()
-glVertex2i v1 v2 = liftIO $ dyn273 ptr_glVertex2i v1 v2
+glVertex2i v1 v2 = liftIO $ dyn274 ptr_glVertex2i v1 v2
 
 {-# NOINLINE ptr_glVertex2i #-}
 ptr_glVertex2i :: FunPtr (GLint -> GLint -> IO ())
@@ -263,7 +533,7 @@ glVertex2s
   => GLshort -- ^ @x@ of type @CoordS@.
   -> GLshort -- ^ @y@ of type @CoordS@.
   -> m ()
-glVertex2s v1 v2 = liftIO $ dyn697 ptr_glVertex2s v1 v2
+glVertex2s v1 v2 = liftIO $ dyn704 ptr_glVertex2s v1 v2
 
 {-# NOINLINE ptr_glVertex2s #-}
 ptr_glVertex2s :: FunPtr (GLshort -> GLshort -> IO ())
@@ -288,7 +558,7 @@ glVertex2xOES
   :: MonadIO m
   => GLfixed -- ^ @x@.
   -> m ()
-glVertex2xOES v1 = liftIO $ dyn84 ptr_glVertex2xOES v1
+glVertex2xOES v1 = liftIO $ dyn85 ptr_glVertex2xOES v1
 
 {-# NOINLINE ptr_glVertex2xOES #-}
 ptr_glVertex2xOES :: FunPtr (GLfixed -> IO ())
@@ -300,7 +570,7 @@ glVertex2xvOES
   :: MonadIO m
   => Ptr GLfixed -- ^ @coords@ pointing to @2@ elements of type @GLfixed@.
   -> m ()
-glVertex2xvOES v1 = liftIO $ dyn110 ptr_glVertex2xvOES v1
+glVertex2xvOES v1 = liftIO $ dyn111 ptr_glVertex2xvOES v1
 
 {-# NOINLINE ptr_glVertex2xvOES #-}
 ptr_glVertex2xvOES :: FunPtr (Ptr GLfixed -> IO ())
@@ -397,7 +667,7 @@ glVertex3hNV
   -> GLhalfNV -- ^ @y@ of type @Half16NV@.
   -> GLhalfNV -- ^ @z@ of type @Half16NV@.
   -> m ()
-glVertex3hNV v1 v2 v3 = liftIO $ dyn101 ptr_glVertex3hNV v1 v2 v3
+glVertex3hNV v1 v2 v3 = liftIO $ dyn102 ptr_glVertex3hNV v1 v2 v3
 
 {-# NOINLINE ptr_glVertex3hNV #-}
 ptr_glVertex3hNV :: FunPtr (GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
@@ -409,7 +679,7 @@ glVertex3hvNV
   :: MonadIO m
   => Ptr GLhalfNV -- ^ @v@ pointing to @3@ elements of type @Half16NV@.
   -> m ()
-glVertex3hvNV v1 = liftIO $ dyn102 ptr_glVertex3hvNV v1
+glVertex3hvNV v1 = liftIO $ dyn103 ptr_glVertex3hvNV v1
 
 {-# NOINLINE ptr_glVertex3hvNV #-}
 ptr_glVertex3hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
@@ -478,7 +748,7 @@ glVertex3xOES
   => GLfixed -- ^ @x@.
   -> GLfixed -- ^ @y@.
   -> m ()
-glVertex3xOES v1 v2 = liftIO $ dyn228 ptr_glVertex3xOES v1 v2
+glVertex3xOES v1 v2 = liftIO $ dyn229 ptr_glVertex3xOES v1 v2
 
 {-# NOINLINE ptr_glVertex3xOES #-}
 ptr_glVertex3xOES :: FunPtr (GLfixed -> GLfixed -> IO ())
@@ -490,7 +760,7 @@ glVertex3xvOES
   :: MonadIO m
   => Ptr GLfixed -- ^ @coords@ pointing to @3@ elements of type @GLfixed@.
   -> m ()
-glVertex3xvOES v1 = liftIO $ dyn110 ptr_glVertex3xvOES v1
+glVertex3xvOES v1 = liftIO $ dyn111 ptr_glVertex3xvOES v1
 
 {-# NOINLINE ptr_glVertex3xvOES #-}
 ptr_glVertex3xvOES :: FunPtr (Ptr GLfixed -> IO ())
@@ -505,7 +775,7 @@ glVertex4bOES
   -> GLbyte -- ^ @z@.
   -> GLbyte -- ^ @w@.
   -> m ()
-glVertex4bOES v1 v2 v3 v4 = liftIO $ dyn111 ptr_glVertex4bOES v1 v2 v3 v4
+glVertex4bOES v1 v2 v3 v4 = liftIO $ dyn112 ptr_glVertex4bOES v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertex4bOES #-}
 ptr_glVertex4bOES :: FunPtr (GLbyte -> GLbyte -> GLbyte -> GLbyte -> IO ())
@@ -533,7 +803,7 @@ glVertex4d
   -> GLdouble -- ^ @z@ of type @CoordD@.
   -> GLdouble -- ^ @w@ of type @CoordD@.
   -> m ()
-glVertex4d v1 v2 v3 v4 = liftIO $ dyn112 ptr_glVertex4d v1 v2 v3 v4
+glVertex4d v1 v2 v3 v4 = liftIO $ dyn113 ptr_glVertex4d v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertex4d #-}
 ptr_glVertex4d :: FunPtr (GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -591,7 +861,7 @@ glVertex4hNV
   -> GLhalfNV -- ^ @z@ of type @Half16NV@.
   -> GLhalfNV -- ^ @w@ of type @Half16NV@.
   -> m ()
-glVertex4hNV v1 v2 v3 v4 = liftIO $ dyn115 ptr_glVertex4hNV v1 v2 v3 v4
+glVertex4hNV v1 v2 v3 v4 = liftIO $ dyn116 ptr_glVertex4hNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertex4hNV #-}
 ptr_glVertex4hNV :: FunPtr (GLhalfNV -> GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
@@ -603,7 +873,7 @@ glVertex4hvNV
   :: MonadIO m
   => Ptr GLhalfNV -- ^ @v@ pointing to @4@ elements of type @Half16NV@.
   -> m ()
-glVertex4hvNV v1 = liftIO $ dyn102 ptr_glVertex4hvNV v1
+glVertex4hvNV v1 = liftIO $ dyn103 ptr_glVertex4hvNV v1
 
 {-# NOINLINE ptr_glVertex4hvNV #-}
 ptr_glVertex4hvNV :: FunPtr (Ptr GLhalfNV -> IO ())
@@ -619,7 +889,7 @@ glVertex4i
   -> GLint -- ^ @z@ of type @CoordI@.
   -> GLint -- ^ @w@ of type @CoordI@.
   -> m ()
-glVertex4i v1 v2 v3 v4 = liftIO $ dyn79 ptr_glVertex4i v1 v2 v3 v4
+glVertex4i v1 v2 v3 v4 = liftIO $ dyn80 ptr_glVertex4i v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertex4i #-}
 ptr_glVertex4i :: FunPtr (GLint -> GLint -> GLint -> GLint -> IO ())
@@ -648,7 +918,7 @@ glVertex4s
   -> GLshort -- ^ @z@ of type @CoordS@.
   -> GLshort -- ^ @w@ of type @CoordS@.
   -> m ()
-glVertex4s v1 v2 v3 v4 = liftIO $ dyn116 ptr_glVertex4s v1 v2 v3 v4
+glVertex4s v1 v2 v3 v4 = liftIO $ dyn117 ptr_glVertex4s v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertex4s #-}
 ptr_glVertex4s :: FunPtr (GLshort -> GLshort -> GLshort -> GLshort -> IO ())
@@ -675,7 +945,7 @@ glVertex4xOES
   -> GLfixed -- ^ @y@.
   -> GLfixed -- ^ @z@.
   -> m ()
-glVertex4xOES v1 v2 v3 = liftIO $ dyn109 ptr_glVertex4xOES v1 v2 v3
+glVertex4xOES v1 v2 v3 = liftIO $ dyn110 ptr_glVertex4xOES v1 v2 v3
 
 {-# NOINLINE ptr_glVertex4xOES #-}
 ptr_glVertex4xOES :: FunPtr (GLfixed -> GLfixed -> GLfixed -> IO ())
@@ -687,7 +957,7 @@ glVertex4xvOES
   :: MonadIO m
   => Ptr GLfixed -- ^ @coords@ pointing to @4@ elements of type @GLfixed@.
   -> m ()
-glVertex4xvOES v1 = liftIO $ dyn110 ptr_glVertex4xvOES v1
+glVertex4xvOES v1 = liftIO $ dyn111 ptr_glVertex4xvOES v1
 
 {-# NOINLINE ptr_glVertex4xvOES #-}
 ptr_glVertex4xvOES :: FunPtr (Ptr GLfixed -> IO ())
@@ -702,7 +972,7 @@ glVertexArrayAttribBinding
   -> GLuint -- ^ @attribindex@.
   -> GLuint -- ^ @bindingindex@.
   -> m ()
-glVertexArrayAttribBinding v1 v2 v3 = liftIO $ dyn105 ptr_glVertexArrayAttribBinding v1 v2 v3
+glVertexArrayAttribBinding v1 v2 v3 = liftIO $ dyn106 ptr_glVertexArrayAttribBinding v1 v2 v3
 
 {-# NOINLINE ptr_glVertexArrayAttribBinding #-}
 ptr_glVertexArrayAttribBinding :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
@@ -720,7 +990,7 @@ glVertexArrayAttribFormat
   -> GLboolean -- ^ @normalized@.
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexArrayAttribFormat v1 v2 v3 v4 v5 v6 = liftIO $ dyn870 ptr_glVertexArrayAttribFormat v1 v2 v3 v4 v5 v6
+glVertexArrayAttribFormat v1 v2 v3 v4 v5 v6 = liftIO $ dyn879 ptr_glVertexArrayAttribFormat v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexArrayAttribFormat #-}
 ptr_glVertexArrayAttribFormat :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLboolean -> GLuint -> IO ())
@@ -737,7 +1007,7 @@ glVertexArrayAttribIFormat
   -> GLenum -- ^ @type@ of type [VertexAttribType](Graphics-GL-Groups.html#VertexAttribType).
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexArrayAttribIFormat v1 v2 v3 v4 v5 = liftIO $ dyn871 ptr_glVertexArrayAttribIFormat v1 v2 v3 v4 v5
+glVertexArrayAttribIFormat v1 v2 v3 v4 v5 = liftIO $ dyn880 ptr_glVertexArrayAttribIFormat v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayAttribIFormat #-}
 ptr_glVertexArrayAttribIFormat :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLuint -> IO ())
@@ -754,7 +1024,7 @@ glVertexArrayAttribLFormat
   -> GLenum -- ^ @type@ of type [VertexAttribType](Graphics-GL-Groups.html#VertexAttribType).
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexArrayAttribLFormat v1 v2 v3 v4 v5 = liftIO $ dyn871 ptr_glVertexArrayAttribLFormat v1 v2 v3 v4 v5
+glVertexArrayAttribLFormat v1 v2 v3 v4 v5 = liftIO $ dyn880 ptr_glVertexArrayAttribLFormat v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayAttribLFormat #-}
 ptr_glVertexArrayAttribLFormat :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLuint -> IO ())
@@ -770,7 +1040,7 @@ glVertexArrayBindVertexBufferEXT
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glVertexArrayBindVertexBufferEXT v1 v2 v3 v4 v5 = liftIO $ dyn872 ptr_glVertexArrayBindVertexBufferEXT v1 v2 v3 v4 v5
+glVertexArrayBindVertexBufferEXT v1 v2 v3 v4 v5 = liftIO $ dyn881 ptr_glVertexArrayBindVertexBufferEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayBindVertexBufferEXT #-}
 ptr_glVertexArrayBindVertexBufferEXT :: FunPtr (GLuint -> GLuint -> GLuint -> GLintptr -> GLsizei -> IO ())
@@ -785,7 +1055,7 @@ glVertexArrayBindingDivisor
   -> GLuint -- ^ @bindingindex@.
   -> GLuint -- ^ @divisor@.
   -> m ()
-glVertexArrayBindingDivisor v1 v2 v3 = liftIO $ dyn105 ptr_glVertexArrayBindingDivisor v1 v2 v3
+glVertexArrayBindingDivisor v1 v2 v3 = liftIO $ dyn106 ptr_glVertexArrayBindingDivisor v1 v2 v3
 
 {-# NOINLINE ptr_glVertexArrayBindingDivisor #-}
 ptr_glVertexArrayBindingDivisor :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
@@ -802,7 +1072,7 @@ glVertexArrayColorOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayColorOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn873 ptr_glVertexArrayColorOffsetEXT v1 v2 v3 v4 v5 v6
+glVertexArrayColorOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn882 ptr_glVertexArrayColorOffsetEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexArrayColorOffsetEXT #-}
 ptr_glVertexArrayColorOffsetEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -817,7 +1087,7 @@ glVertexArrayEdgeFlagOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayEdgeFlagOffsetEXT v1 v2 v3 v4 = liftIO $ dyn874 ptr_glVertexArrayEdgeFlagOffsetEXT v1 v2 v3 v4
+glVertexArrayEdgeFlagOffsetEXT v1 v2 v3 v4 = liftIO $ dyn883 ptr_glVertexArrayEdgeFlagOffsetEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glVertexArrayEdgeFlagOffsetEXT #-}
 ptr_glVertexArrayEdgeFlagOffsetEXT :: FunPtr (GLuint -> GLuint -> GLsizei -> GLintptr -> IO ())
@@ -847,7 +1117,7 @@ glVertexArrayFogCoordOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayFogCoordOffsetEXT v1 v2 v3 v4 v5 = liftIO $ dyn875 ptr_glVertexArrayFogCoordOffsetEXT v1 v2 v3 v4 v5
+glVertexArrayFogCoordOffsetEXT v1 v2 v3 v4 v5 = liftIO $ dyn884 ptr_glVertexArrayFogCoordOffsetEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayFogCoordOffsetEXT #-}
 ptr_glVertexArrayFogCoordOffsetEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -863,7 +1133,7 @@ glVertexArrayIndexOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayIndexOffsetEXT v1 v2 v3 v4 v5 = liftIO $ dyn875 ptr_glVertexArrayIndexOffsetEXT v1 v2 v3 v4 v5
+glVertexArrayIndexOffsetEXT v1 v2 v3 v4 v5 = liftIO $ dyn884 ptr_glVertexArrayIndexOffsetEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayIndexOffsetEXT #-}
 ptr_glVertexArrayIndexOffsetEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -881,7 +1151,7 @@ glVertexArrayMultiTexCoordOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayMultiTexCoordOffsetEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn876 ptr_glVertexArrayMultiTexCoordOffsetEXT v1 v2 v3 v4 v5 v6 v7
+glVertexArrayMultiTexCoordOffsetEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn885 ptr_glVertexArrayMultiTexCoordOffsetEXT v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glVertexArrayMultiTexCoordOffsetEXT #-}
 ptr_glVertexArrayMultiTexCoordOffsetEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -897,7 +1167,7 @@ glVertexArrayNormalOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayNormalOffsetEXT v1 v2 v3 v4 v5 = liftIO $ dyn875 ptr_glVertexArrayNormalOffsetEXT v1 v2 v3 v4 v5
+glVertexArrayNormalOffsetEXT v1 v2 v3 v4 v5 = liftIO $ dyn884 ptr_glVertexArrayNormalOffsetEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayNormalOffsetEXT #-}
 ptr_glVertexArrayNormalOffsetEXT :: FunPtr (GLuint -> GLuint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -923,7 +1193,7 @@ glVertexArrayRangeAPPLE
   => GLsizei -- ^ @length@.
   -> Ptr a -- ^ @pointer@ pointing to @length@ elements of type @a@.
   -> m ()
-glVertexArrayRangeAPPLE v1 v2 = liftIO $ dyn267 ptr_glVertexArrayRangeAPPLE v1 v2
+glVertexArrayRangeAPPLE v1 v2 = liftIO $ dyn268 ptr_glVertexArrayRangeAPPLE v1 v2
 
 {-# NOINLINE ptr_glVertexArrayRangeAPPLE #-}
 ptr_glVertexArrayRangeAPPLE :: FunPtr (GLsizei -> Ptr a -> IO ())
@@ -936,7 +1206,7 @@ glVertexArrayRangeNV
   => GLsizei -- ^ @length@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(length)@ elements of type @a@.
   -> m ()
-glVertexArrayRangeNV v1 v2 = liftIO $ dyn267 ptr_glVertexArrayRangeNV v1 v2
+glVertexArrayRangeNV v1 v2 = liftIO $ dyn268 ptr_glVertexArrayRangeNV v1 v2
 
 {-# NOINLINE ptr_glVertexArrayRangeNV #-}
 ptr_glVertexArrayRangeNV :: FunPtr (GLsizei -> Ptr a -> IO ())
@@ -953,7 +1223,7 @@ glVertexArraySecondaryColorOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArraySecondaryColorOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn873 ptr_glVertexArraySecondaryColorOffsetEXT v1 v2 v3 v4 v5 v6
+glVertexArraySecondaryColorOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn882 ptr_glVertexArraySecondaryColorOffsetEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexArraySecondaryColorOffsetEXT #-}
 ptr_glVertexArraySecondaryColorOffsetEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -970,7 +1240,7 @@ glVertexArrayTexCoordOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayTexCoordOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn873 ptr_glVertexArrayTexCoordOffsetEXT v1 v2 v3 v4 v5 v6
+glVertexArrayTexCoordOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn882 ptr_glVertexArrayTexCoordOffsetEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexArrayTexCoordOffsetEXT #-}
 ptr_glVertexArrayTexCoordOffsetEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -984,7 +1254,7 @@ glVertexArrayVertexAttribBindingEXT
   -> GLuint -- ^ @attribindex@.
   -> GLuint -- ^ @bindingindex@.
   -> m ()
-glVertexArrayVertexAttribBindingEXT v1 v2 v3 = liftIO $ dyn105 ptr_glVertexArrayVertexAttribBindingEXT v1 v2 v3
+glVertexArrayVertexAttribBindingEXT v1 v2 v3 = liftIO $ dyn106 ptr_glVertexArrayVertexAttribBindingEXT v1 v2 v3
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribBindingEXT #-}
 ptr_glVertexArrayVertexAttribBindingEXT :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
@@ -998,7 +1268,7 @@ glVertexArrayVertexAttribDivisorEXT
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @divisor@.
   -> m ()
-glVertexArrayVertexAttribDivisorEXT v1 v2 v3 = liftIO $ dyn105 ptr_glVertexArrayVertexAttribDivisorEXT v1 v2 v3
+glVertexArrayVertexAttribDivisorEXT v1 v2 v3 = liftIO $ dyn106 ptr_glVertexArrayVertexAttribDivisorEXT v1 v2 v3
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribDivisorEXT #-}
 ptr_glVertexArrayVertexAttribDivisorEXT :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
@@ -1015,7 +1285,7 @@ glVertexArrayVertexAttribFormatEXT
   -> GLboolean -- ^ @normalized@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexArrayVertexAttribFormatEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn870 ptr_glVertexArrayVertexAttribFormatEXT v1 v2 v3 v4 v5 v6
+glVertexArrayVertexAttribFormatEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn879 ptr_glVertexArrayVertexAttribFormatEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribFormatEXT #-}
 ptr_glVertexArrayVertexAttribFormatEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLboolean -> GLuint -> IO ())
@@ -1031,7 +1301,7 @@ glVertexArrayVertexAttribIFormatEXT
   -> GLenum -- ^ @type@.
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexArrayVertexAttribIFormatEXT v1 v2 v3 v4 v5 = liftIO $ dyn871 ptr_glVertexArrayVertexAttribIFormatEXT v1 v2 v3 v4 v5
+glVertexArrayVertexAttribIFormatEXT v1 v2 v3 v4 v5 = liftIO $ dyn880 ptr_glVertexArrayVertexAttribIFormatEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribIFormatEXT #-}
 ptr_glVertexArrayVertexAttribIFormatEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLuint -> IO ())
@@ -1049,7 +1319,7 @@ glVertexArrayVertexAttribIOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayVertexAttribIOffsetEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn877 ptr_glVertexArrayVertexAttribIOffsetEXT v1 v2 v3 v4 v5 v6 v7
+glVertexArrayVertexAttribIOffsetEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn886 ptr_glVertexArrayVertexAttribIOffsetEXT v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribIOffsetEXT #-}
 ptr_glVertexArrayVertexAttribIOffsetEXT :: FunPtr (GLuint -> GLuint -> GLuint -> GLint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -1065,7 +1335,7 @@ glVertexArrayVertexAttribLFormatEXT
   -> GLenum -- ^ @type@.
   -> GLuint -- ^ @relativeoffset@.
   -> m ()
-glVertexArrayVertexAttribLFormatEXT v1 v2 v3 v4 v5 = liftIO $ dyn871 ptr_glVertexArrayVertexAttribLFormatEXT v1 v2 v3 v4 v5
+glVertexArrayVertexAttribLFormatEXT v1 v2 v3 v4 v5 = liftIO $ dyn880 ptr_glVertexArrayVertexAttribLFormatEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribLFormatEXT #-}
 ptr_glVertexArrayVertexAttribLFormatEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLuint -> IO ())
@@ -1083,7 +1353,7 @@ glVertexArrayVertexAttribLOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> m ()
-glVertexArrayVertexAttribLOffsetEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn877 ptr_glVertexArrayVertexAttribLOffsetEXT v1 v2 v3 v4 v5 v6 v7
+glVertexArrayVertexAttribLOffsetEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn886 ptr_glVertexArrayVertexAttribLOffsetEXT v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribLOffsetEXT #-}
 ptr_glVertexArrayVertexAttribLOffsetEXT :: FunPtr (GLuint -> GLuint -> GLuint -> GLint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -1102,7 +1372,7 @@ glVertexArrayVertexAttribOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayVertexAttribOffsetEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn878 ptr_glVertexArrayVertexAttribOffsetEXT v1 v2 v3 v4 v5 v6 v7 v8
+glVertexArrayVertexAttribOffsetEXT v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn887 ptr_glVertexArrayVertexAttribOffsetEXT v1 v2 v3 v4 v5 v6 v7 v8
 
 {-# NOINLINE ptr_glVertexArrayVertexAttribOffsetEXT #-}
 ptr_glVertexArrayVertexAttribOffsetEXT :: FunPtr (GLuint -> GLuint -> GLuint -> GLint -> GLenum -> GLboolean -> GLsizei -> GLintptr -> IO ())
@@ -1116,7 +1386,7 @@ glVertexArrayVertexBindingDivisorEXT
   -> GLuint -- ^ @bindingindex@.
   -> GLuint -- ^ @divisor@.
   -> m ()
-glVertexArrayVertexBindingDivisorEXT v1 v2 v3 = liftIO $ dyn105 ptr_glVertexArrayVertexBindingDivisorEXT v1 v2 v3
+glVertexArrayVertexBindingDivisorEXT v1 v2 v3 = liftIO $ dyn106 ptr_glVertexArrayVertexBindingDivisorEXT v1 v2 v3
 
 {-# NOINLINE ptr_glVertexArrayVertexBindingDivisorEXT #-}
 ptr_glVertexArrayVertexBindingDivisorEXT :: FunPtr (GLuint -> GLuint -> GLuint -> IO ())
@@ -1133,7 +1403,7 @@ glVertexArrayVertexBuffer
   -> GLintptr -- ^ @offset@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glVertexArrayVertexBuffer v1 v2 v3 v4 v5 = liftIO $ dyn872 ptr_glVertexArrayVertexBuffer v1 v2 v3 v4 v5
+glVertexArrayVertexBuffer v1 v2 v3 v4 v5 = liftIO $ dyn881 ptr_glVertexArrayVertexBuffer v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glVertexArrayVertexBuffer #-}
 ptr_glVertexArrayVertexBuffer :: FunPtr (GLuint -> GLuint -> GLuint -> GLintptr -> GLsizei -> IO ())
@@ -1151,7 +1421,7 @@ glVertexArrayVertexBuffers
   -> Ptr GLintptr -- ^ @offsets@.
   -> Ptr GLsizei -- ^ @strides@.
   -> m ()
-glVertexArrayVertexBuffers v1 v2 v3 v4 v5 v6 = liftIO $ dyn879 ptr_glVertexArrayVertexBuffers v1 v2 v3 v4 v5 v6
+glVertexArrayVertexBuffers v1 v2 v3 v4 v5 v6 = liftIO $ dyn888 ptr_glVertexArrayVertexBuffers v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexArrayVertexBuffers #-}
 ptr_glVertexArrayVertexBuffers :: FunPtr (GLuint -> GLuint -> GLsizei -> Ptr GLuint -> Ptr GLintptr -> Ptr GLsizei -> IO ())
@@ -1168,7 +1438,7 @@ glVertexArrayVertexOffsetEXT
   -> GLsizei -- ^ @stride@.
   -> GLintptr -- ^ @offset@.
   -> m ()
-glVertexArrayVertexOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn873 ptr_glVertexArrayVertexOffsetEXT v1 v2 v3 v4 v5 v6
+glVertexArrayVertexOffsetEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn882 ptr_glVertexArrayVertexOffsetEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glVertexArrayVertexOffsetEXT #-}
 ptr_glVertexArrayVertexOffsetEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLenum -> GLsizei -> GLintptr -> IO ())
@@ -1182,7 +1452,7 @@ glVertexAttrib1d
   => GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> m ()
-glVertexAttrib1d v1 v2 = liftIO $ dyn880 ptr_glVertexAttrib1d v1 v2
+glVertexAttrib1d v1 v2 = liftIO $ dyn889 ptr_glVertexAttrib1d v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1d #-}
 ptr_glVertexAttrib1d :: FunPtr (GLuint -> GLdouble -> IO ())
@@ -1196,7 +1466,7 @@ glVertexAttrib1dARB
   => GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> m ()
-glVertexAttrib1dARB v1 v2 = liftIO $ dyn880 ptr_glVertexAttrib1dARB v1 v2
+glVertexAttrib1dARB v1 v2 = liftIO $ dyn889 ptr_glVertexAttrib1dARB v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1dARB #-}
 ptr_glVertexAttrib1dARB :: FunPtr (GLuint -> GLdouble -> IO ())
@@ -1210,7 +1480,7 @@ glVertexAttrib1dNV
   => GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> m ()
-glVertexAttrib1dNV v1 v2 = liftIO $ dyn880 ptr_glVertexAttrib1dNV v1 v2
+glVertexAttrib1dNV v1 v2 = liftIO $ dyn889 ptr_glVertexAttrib1dNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1dNV #-}
 ptr_glVertexAttrib1dNV :: FunPtr (GLuint -> GLdouble -> IO ())
@@ -1224,7 +1494,7 @@ glVertexAttrib1dv
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
-glVertexAttrib1dv v1 v2 = liftIO $ dyn867 ptr_glVertexAttrib1dv v1 v2
+glVertexAttrib1dv v1 v2 = liftIO $ dyn876 ptr_glVertexAttrib1dv v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1dv #-}
 ptr_glVertexAttrib1dv :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -1238,7 +1508,7 @@ glVertexAttrib1dvARB
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
-glVertexAttrib1dvARB v1 v2 = liftIO $ dyn867 ptr_glVertexAttrib1dvARB v1 v2
+glVertexAttrib1dvARB v1 v2 = liftIO $ dyn876 ptr_glVertexAttrib1dvARB v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1dvARB #-}
 ptr_glVertexAttrib1dvARB :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -1252,7 +1522,7 @@ glVertexAttrib1dvNV
   => GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @GLdouble@.
   -> m ()
-glVertexAttrib1dvNV v1 v2 = liftIO $ dyn867 ptr_glVertexAttrib1dvNV v1 v2
+glVertexAttrib1dvNV v1 v2 = liftIO $ dyn876 ptr_glVertexAttrib1dvNV v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1dvNV #-}
 ptr_glVertexAttrib1dvNV :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
@@ -1266,7 +1536,7 @@ glVertexAttrib1f
   => GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
   -> m ()
-glVertexAttrib1f v1 v2 = liftIO $ dyn881 ptr_glVertexAttrib1f v1 v2
+glVertexAttrib1f v1 v2 = liftIO $ dyn890 ptr_glVertexAttrib1f v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1f #-}
 ptr_glVertexAttrib1f :: FunPtr (GLuint -> GLfloat -> IO ())
@@ -1280,293 +1550,9 @@ glVertexAttrib1fARB
   => GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
   -> m ()
-glVertexAttrib1fARB v1 v2 = liftIO $ dyn881 ptr_glVertexAttrib1fARB v1 v2
+glVertexAttrib1fARB v1 v2 = liftIO $ dyn890 ptr_glVertexAttrib1fARB v1 v2
 
 {-# NOINLINE ptr_glVertexAttrib1fARB #-}
 ptr_glVertexAttrib1fARB :: FunPtr (GLuint -> GLfloat -> IO ())
 ptr_glVertexAttrib1fARB = unsafePerformIO $ getCommand "glVertexAttrib1fARB"
-
--- glVertexAttrib1fNV ----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib1fvNV'. This command is an alias for 'glVertexAttrib1f'.
-glVertexAttrib1fNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLfloat -- ^ @x@.
-  -> m ()
-glVertexAttrib1fNV v1 v2 = liftIO $ dyn881 ptr_glVertexAttrib1fNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1fNV #-}
-ptr_glVertexAttrib1fNV :: FunPtr (GLuint -> GLfloat -> IO ())
-ptr_glVertexAttrib1fNV = unsafePerformIO $ getCommand "glVertexAttrib1fNV"
-
--- glVertexAttrib1fv -----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
-glVertexAttrib1fv
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
-  -> m ()
-glVertexAttrib1fv v1 v2 = liftIO $ dyn389 ptr_glVertexAttrib1fv v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1fv #-}
-ptr_glVertexAttrib1fv :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
-ptr_glVertexAttrib1fv = unsafePerformIO $ getCommand "glVertexAttrib1fv"
-
--- glVertexAttrib1fvARB --------------------------------------------------------
-
--- | This command is an alias for 'glVertexAttrib1fv'.
-glVertexAttrib1fvARB
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
-  -> m ()
-glVertexAttrib1fvARB v1 v2 = liftIO $ dyn389 ptr_glVertexAttrib1fvARB v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1fvARB #-}
-ptr_glVertexAttrib1fvARB :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
-ptr_glVertexAttrib1fvARB = unsafePerformIO $ getCommand "glVertexAttrib1fvARB"
-
--- glVertexAttrib1fvNV ---------------------------------------------------------
-
--- | This command is an alias for 'glVertexAttrib1fv'.
-glVertexAttrib1fvNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @GLfloat@.
-  -> m ()
-glVertexAttrib1fvNV v1 v2 = liftIO $ dyn389 ptr_glVertexAttrib1fvNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1fvNV #-}
-ptr_glVertexAttrib1fvNV :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
-ptr_glVertexAttrib1fvNV = unsafePerformIO $ getCommand "glVertexAttrib1fvNV"
-
--- glVertexAttrib1hNV ----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib1hvNV'.
-glVertexAttrib1hNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLhalfNV -- ^ @x@ of type @Half16NV@.
-  -> m ()
-glVertexAttrib1hNV v1 v2 = liftIO $ dyn882 ptr_glVertexAttrib1hNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1hNV #-}
-ptr_glVertexAttrib1hNV :: FunPtr (GLuint -> GLhalfNV -> IO ())
-ptr_glVertexAttrib1hNV = unsafePerformIO $ getCommand "glVertexAttrib1hNV"
-
--- glVertexAttrib1hvNV ---------------------------------------------------------
-
-glVertexAttrib1hvNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLhalfNV -- ^ @v@ pointing to @1@ element of type @Half16NV@.
-  -> m ()
-glVertexAttrib1hvNV v1 v2 = liftIO $ dyn883 ptr_glVertexAttrib1hvNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1hvNV #-}
-ptr_glVertexAttrib1hvNV :: FunPtr (GLuint -> Ptr GLhalfNV -> IO ())
-ptr_glVertexAttrib1hvNV = unsafePerformIO $ getCommand "glVertexAttrib1hvNV"
-
--- glVertexAttrib1s ------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib1sv'.
-glVertexAttrib1s
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLshort -- ^ @x@.
-  -> m ()
-glVertexAttrib1s v1 v2 = liftIO $ dyn884 ptr_glVertexAttrib1s v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1s #-}
-ptr_glVertexAttrib1s :: FunPtr (GLuint -> GLshort -> IO ())
-ptr_glVertexAttrib1s = unsafePerformIO $ getCommand "glVertexAttrib1s"
-
--- glVertexAttrib1sARB ---------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib1svARB'. This command is an alias for 'glVertexAttrib1s'.
-glVertexAttrib1sARB
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLshort -- ^ @x@.
-  -> m ()
-glVertexAttrib1sARB v1 v2 = liftIO $ dyn884 ptr_glVertexAttrib1sARB v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1sARB #-}
-ptr_glVertexAttrib1sARB :: FunPtr (GLuint -> GLshort -> IO ())
-ptr_glVertexAttrib1sARB = unsafePerformIO $ getCommand "glVertexAttrib1sARB"
-
--- glVertexAttrib1sNV ----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib1svNV'. This command is an alias for 'glVertexAttrib1s'.
-glVertexAttrib1sNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLshort -- ^ @x@.
-  -> m ()
-glVertexAttrib1sNV v1 v2 = liftIO $ dyn884 ptr_glVertexAttrib1sNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1sNV #-}
-ptr_glVertexAttrib1sNV :: FunPtr (GLuint -> GLshort -> IO ())
-ptr_glVertexAttrib1sNV = unsafePerformIO $ getCommand "glVertexAttrib1sNV"
-
--- glVertexAttrib1sv -----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
-glVertexAttrib1sv
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @GLshort@.
-  -> m ()
-glVertexAttrib1sv v1 v2 = liftIO $ dyn868 ptr_glVertexAttrib1sv v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1sv #-}
-ptr_glVertexAttrib1sv :: FunPtr (GLuint -> Ptr GLshort -> IO ())
-ptr_glVertexAttrib1sv = unsafePerformIO $ getCommand "glVertexAttrib1sv"
-
--- glVertexAttrib1svARB --------------------------------------------------------
-
--- | This command is an alias for 'glVertexAttrib1sv'.
-glVertexAttrib1svARB
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @GLshort@.
-  -> m ()
-glVertexAttrib1svARB v1 v2 = liftIO $ dyn868 ptr_glVertexAttrib1svARB v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1svARB #-}
-ptr_glVertexAttrib1svARB :: FunPtr (GLuint -> Ptr GLshort -> IO ())
-ptr_glVertexAttrib1svARB = unsafePerformIO $ getCommand "glVertexAttrib1svARB"
-
--- glVertexAttrib1svNV ---------------------------------------------------------
-
--- | This command is an alias for 'glVertexAttrib1sv'.
-glVertexAttrib1svNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @GLshort@.
-  -> m ()
-glVertexAttrib1svNV v1 v2 = liftIO $ dyn868 ptr_glVertexAttrib1svNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib1svNV #-}
-ptr_glVertexAttrib1svNV :: FunPtr (GLuint -> Ptr GLshort -> IO ())
-ptr_glVertexAttrib1svNV = unsafePerformIO $ getCommand "glVertexAttrib1svNV"
-
--- glVertexAttrib2d ------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib2dv'.
-glVertexAttrib2d
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLdouble -- ^ @x@.
-  -> GLdouble -- ^ @y@.
-  -> m ()
-glVertexAttrib2d v1 v2 v3 = liftIO $ dyn224 ptr_glVertexAttrib2d v1 v2 v3
-
-{-# NOINLINE ptr_glVertexAttrib2d #-}
-ptr_glVertexAttrib2d :: FunPtr (GLuint -> GLdouble -> GLdouble -> IO ())
-ptr_glVertexAttrib2d = unsafePerformIO $ getCommand "glVertexAttrib2d"
-
--- glVertexAttrib2dARB ---------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib2dvARB'. This command is an alias for 'glVertexAttrib2d'.
-glVertexAttrib2dARB
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLdouble -- ^ @x@.
-  -> GLdouble -- ^ @y@.
-  -> m ()
-glVertexAttrib2dARB v1 v2 v3 = liftIO $ dyn224 ptr_glVertexAttrib2dARB v1 v2 v3
-
-{-# NOINLINE ptr_glVertexAttrib2dARB #-}
-ptr_glVertexAttrib2dARB :: FunPtr (GLuint -> GLdouble -> GLdouble -> IO ())
-ptr_glVertexAttrib2dARB = unsafePerformIO $ getCommand "glVertexAttrib2dARB"
-
--- glVertexAttrib2dNV ----------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib2dvNV'. This command is an alias for 'glVertexAttrib2d'.
-glVertexAttrib2dNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLdouble -- ^ @x@.
-  -> GLdouble -- ^ @y@.
-  -> m ()
-glVertexAttrib2dNV v1 v2 v3 = liftIO $ dyn224 ptr_glVertexAttrib2dNV v1 v2 v3
-
-{-# NOINLINE ptr_glVertexAttrib2dNV #-}
-ptr_glVertexAttrib2dNV :: FunPtr (GLuint -> GLdouble -> GLdouble -> IO ())
-ptr_glVertexAttrib2dNV = unsafePerformIO $ getCommand "glVertexAttrib2dNV"
-
--- glVertexAttrib2dv -----------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>.
-glVertexAttrib2dv
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @GLdouble@.
-  -> m ()
-glVertexAttrib2dv v1 v2 = liftIO $ dyn867 ptr_glVertexAttrib2dv v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib2dv #-}
-ptr_glVertexAttrib2dv :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
-ptr_glVertexAttrib2dv = unsafePerformIO $ getCommand "glVertexAttrib2dv"
-
--- glVertexAttrib2dvARB --------------------------------------------------------
-
--- | This command is an alias for 'glVertexAttrib2dv'.
-glVertexAttrib2dvARB
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @GLdouble@.
-  -> m ()
-glVertexAttrib2dvARB v1 v2 = liftIO $ dyn867 ptr_glVertexAttrib2dvARB v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib2dvARB #-}
-ptr_glVertexAttrib2dvARB :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
-ptr_glVertexAttrib2dvARB = unsafePerformIO $ getCommand "glVertexAttrib2dvARB"
-
--- glVertexAttrib2dvNV ---------------------------------------------------------
-
--- | This command is an alias for 'glVertexAttrib2dv'.
-glVertexAttrib2dvNV
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @GLdouble@.
-  -> m ()
-glVertexAttrib2dvNV v1 v2 = liftIO $ dyn867 ptr_glVertexAttrib2dvNV v1 v2
-
-{-# NOINLINE ptr_glVertexAttrib2dvNV #-}
-ptr_glVertexAttrib2dvNV :: FunPtr (GLuint -> Ptr GLdouble -> IO ())
-ptr_glVertexAttrib2dvNV = unsafePerformIO $ getCommand "glVertexAttrib2dvNV"
-
--- glVertexAttrib2f ------------------------------------------------------------
-
--- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glVertexAttrib.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttrib.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glVertexAttrib.xhtml OpenGL 4.x>. The vector equivalent of this command is 'glVertexAttrib2fv'.
-glVertexAttrib2f
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLfloat -- ^ @x@.
-  -> GLfloat -- ^ @y@.
-  -> m ()
-glVertexAttrib2f v1 v2 v3 = liftIO $ dyn225 ptr_glVertexAttrib2f v1 v2 v3
-
-{-# NOINLINE ptr_glVertexAttrib2f #-}
-ptr_glVertexAttrib2f :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
-ptr_glVertexAttrib2f = unsafePerformIO $ getCommand "glVertexAttrib2f"
-
--- glVertexAttrib2fARB ---------------------------------------------------------
-
--- | The vector equivalent of this command is 'glVertexAttrib2fvARB'. This command is an alias for 'glVertexAttrib2f'.
-glVertexAttrib2fARB
-  :: MonadIO m
-  => GLuint -- ^ @index@.
-  -> GLfloat -- ^ @x@.
-  -> GLfloat -- ^ @y@.
-  -> m ()
-glVertexAttrib2fARB v1 v2 v3 = liftIO $ dyn225 ptr_glVertexAttrib2fARB v1 v2 v3
-
-{-# NOINLINE ptr_glVertexAttrib2fARB #-}
-ptr_glVertexAttrib2fARB :: FunPtr (GLuint -> GLfloat -> GLfloat -> IO ())
-ptr_glVertexAttrib2fARB = unsafePerformIO $ getCommand "glVertexAttrib2fARB"
 

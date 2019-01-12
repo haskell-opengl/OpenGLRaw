@@ -3132,6 +3132,17 @@ gl_EXT_texture_sRGB :: Bool
 gl_EXT_texture_sRGB = member "GL_EXT_texture_sRGB" extensions
 {-# NOINLINE gl_EXT_texture_sRGB #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/EXT/texture_sRGB_R8.txt EXT_texture_sRGB_R8> extension supported?
+glGetEXTTextureSRGBR8 :: MonadIO m => m Bool
+glGetEXTTextureSRGBR8 = getExtensions >>= (return . member "GL_EXT_texture_sRGB_R8")
+
+-- | Is the <https://www.opengl.org/registry/specs/EXT/texture_sRGB_R8.txt EXT_texture_sRGB_R8> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetEXTTextureSRGBR8' in those cases instead.
+gl_EXT_texture_sRGB_R8 :: Bool
+gl_EXT_texture_sRGB_R8 = member "GL_EXT_texture_sRGB_R8" extensions
+{-# NOINLINE gl_EXT_texture_sRGB_R8 #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/EXT/texture_sRGB_decode.txt EXT_texture_sRGB_decode> extension supported?
 glGetEXTTextureSRGBDecode :: MonadIO m => m Bool
 glGetEXTTextureSRGBDecode = getExtensions >>= (return . member "GL_EXT_texture_sRGB_decode")
@@ -4144,6 +4155,28 @@ gl_NV_light_max_exponent :: Bool
 gl_NV_light_max_exponent = member "GL_NV_light_max_exponent" extensions
 {-# NOINLINE gl_NV_light_max_exponent #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/memory_attachment.txt NV_memory_attachment> extension supported?
+glGetNVMemoryAttachment :: MonadIO m => m Bool
+glGetNVMemoryAttachment = getExtensions >>= (return . member "GL_NV_memory_attachment")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/memory_attachment.txt NV_memory_attachment> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVMemoryAttachment' in those cases instead.
+gl_NV_memory_attachment :: Bool
+gl_NV_memory_attachment = member "GL_NV_memory_attachment" extensions
+{-# NOINLINE gl_NV_memory_attachment #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/mesh_shader.txt NV_mesh_shader> extension supported?
+glGetNVMeshShader :: MonadIO m => m Bool
+glGetNVMeshShader = getExtensions >>= (return . member "GL_NV_mesh_shader")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/mesh_shader.txt NV_mesh_shader> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVMeshShader' in those cases instead.
+gl_NV_mesh_shader :: Bool
+gl_NV_mesh_shader = member "GL_NV_mesh_shader" extensions
+{-# NOINLINE gl_NV_mesh_shader #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NV/multisample_coverage.txt NV_multisample_coverage> extension supported?
 glGetNVMultisampleCoverage :: MonadIO m => m Bool
 glGetNVMultisampleCoverage = getExtensions >>= (return . member "GL_NV_multisample_coverage")
@@ -4309,6 +4342,17 @@ gl_NV_register_combiners2 :: Bool
 gl_NV_register_combiners2 = member "GL_NV_register_combiners2" extensions
 {-# NOINLINE gl_NV_register_combiners2 #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/representative_fragment_test.txt NV_representative_fragment_test> extension supported?
+glGetNVRepresentativeFragmentTest :: MonadIO m => m Bool
+glGetNVRepresentativeFragmentTest = getExtensions >>= (return . member "GL_NV_representative_fragment_test")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/representative_fragment_test.txt NV_representative_fragment_test> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVRepresentativeFragmentTest' in those cases instead.
+gl_NV_representative_fragment_test :: Bool
+gl_NV_representative_fragment_test = member "GL_NV_representative_fragment_test" extensions
+{-# NOINLINE gl_NV_representative_fragment_test #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NV/robustness_video_memory_purge.txt NV_robustness_video_memory_purge> extension supported?
 glGetNVRobustnessVideoMemoryPurge :: MonadIO m => m Bool
 glGetNVRobustnessVideoMemoryPurge = getExtensions >>= (return . member "GL_NV_robustness_video_memory_purge")
@@ -4330,6 +4374,17 @@ glGetNVSampleLocations = getExtensions >>= (return . member "GL_NV_sample_locati
 gl_NV_sample_locations :: Bool
 gl_NV_sample_locations = member "GL_NV_sample_locations" extensions
 {-# NOINLINE gl_NV_sample_locations #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/scissor_exclusive.txt NV_scissor_exclusive> extension supported?
+glGetNVScissorExclusive :: MonadIO m => m Bool
+glGetNVScissorExclusive = getExtensions >>= (return . member "GL_NV_scissor_exclusive")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/scissor_exclusive.txt NV_scissor_exclusive> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVScissorExclusive' in those cases instead.
+gl_NV_scissor_exclusive :: Bool
+gl_NV_scissor_exclusive = member "GL_NV_scissor_exclusive" extensions
+{-# NOINLINE gl_NV_scissor_exclusive #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_buffer_load.txt NV_shader_buffer_load> extension supported?
 glGetNVShaderBufferLoad :: MonadIO m => m Bool
@@ -4363,6 +4418,17 @@ glGetNVShaderThreadGroup = getExtensions >>= (return . member "GL_NV_shader_thre
 gl_NV_shader_thread_group :: Bool
 gl_NV_shader_thread_group = member "GL_NV_shader_thread_group" extensions
 {-# NOINLINE gl_NV_shader_thread_group #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/shading_rate_image.txt NV_shading_rate_image> extension supported?
+glGetNVShadingRateImage :: MonadIO m => m Bool
+glGetNVShadingRateImage = getExtensions >>= (return . member "GL_NV_shading_rate_image")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/shading_rate_image.txt NV_shading_rate_image> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVShadingRateImage' in those cases instead.
+gl_NV_shading_rate_image :: Bool
+gl_NV_shading_rate_image = member "GL_NV_shading_rate_image" extensions
+{-# NOINLINE gl_NV_shading_rate_image #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/tessellation_program5.txt NV_tessellation_program5> extension supported?
 glGetNVTessellationProgram5 :: MonadIO m => m Bool
@@ -4528,6 +4594,17 @@ glGetNVVDPAUInterop = getExtensions >>= (return . member "GL_NV_vdpau_interop")
 gl_NV_vdpau_interop :: Bool
 gl_NV_vdpau_interop = member "GL_NV_vdpau_interop" extensions
 {-# NOINLINE gl_NV_vdpau_interop #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/vdpau_interop2.txt NV_vdpau_interop2> extension supported?
+glGetNVVDPAUInterop2 :: MonadIO m => m Bool
+glGetNVVDPAUInterop2 = getExtensions >>= (return . member "GL_NV_vdpau_interop2")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/vdpau_interop2.txt NV_vdpau_interop2> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVVDPAUInterop2' in those cases instead.
+gl_NV_vdpau_interop2 :: Bool
+gl_NV_vdpau_interop2 = member "GL_NV_vdpau_interop2" extensions
+{-# NOINLINE gl_NV_vdpau_interop2 #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/NV/vertex_array_range.txt NV_vertex_array_range> extension supported?
 glGetNVVertexArrayRange :: MonadIO m => m Bool

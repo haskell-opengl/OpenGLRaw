@@ -54,6 +54,8 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.HalfFloat,
   module Graphics.GL.NV.InternalformatSampleQuery,
   module Graphics.GL.NV.LightMaxExponent,
+  module Graphics.GL.NV.MemoryAttachment,
+  module Graphics.GL.NV.MeshShader,
   module Graphics.GL.NV.MultisampleCoverage,
   module Graphics.GL.NV.MultisampleFilterHint,
   module Graphics.GL.NV.OcclusionQuery,
@@ -70,11 +72,14 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.QueryResourceTag,
   module Graphics.GL.NV.RegisterCombiners,
   module Graphics.GL.NV.RegisterCombiners2,
+  module Graphics.GL.NV.RepresentativeFragmentTest,
   module Graphics.GL.NV.RobustnessVideoMemoryPurge,
   module Graphics.GL.NV.SampleLocations,
+  module Graphics.GL.NV.ScissorExclusive,
   module Graphics.GL.NV.ShaderBufferLoad,
   module Graphics.GL.NV.ShaderBufferStore,
   module Graphics.GL.NV.ShaderThreadGroup,
+  module Graphics.GL.NV.ShadingRateImage,
   module Graphics.GL.NV.TessellationProgram5,
   module Graphics.GL.NV.TexgenEmboss,
   module Graphics.GL.NV.TexgenReflection,
@@ -90,6 +95,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.TransformFeedback2,
   module Graphics.GL.NV.UniformBufferUnifiedMemory,
   module Graphics.GL.NV.VDPAUInterop,
+  module Graphics.GL.NV.VDPAUInterop2,
   module Graphics.GL.NV.VertexArrayRange,
   module Graphics.GL.NV.VertexArrayRange2,
   module Graphics.GL.NV.VertexAttribInteger64Bit,
@@ -143,6 +149,8 @@ import Graphics.GL.NV.GeometryProgram4
 import Graphics.GL.NV.HalfFloat
 import Graphics.GL.NV.InternalformatSampleQuery
 import Graphics.GL.NV.LightMaxExponent
+import Graphics.GL.NV.MemoryAttachment
+import Graphics.GL.NV.MeshShader
 import Graphics.GL.NV.MultisampleCoverage
 import Graphics.GL.NV.MultisampleFilterHint
 import Graphics.GL.NV.OcclusionQuery
@@ -159,11 +167,14 @@ import Graphics.GL.NV.QueryResource
 import Graphics.GL.NV.QueryResourceTag
 import Graphics.GL.NV.RegisterCombiners
 import Graphics.GL.NV.RegisterCombiners2
+import Graphics.GL.NV.RepresentativeFragmentTest
 import Graphics.GL.NV.RobustnessVideoMemoryPurge
 import Graphics.GL.NV.SampleLocations
+import Graphics.GL.NV.ScissorExclusive
 import Graphics.GL.NV.ShaderBufferLoad
 import Graphics.GL.NV.ShaderBufferStore
 import Graphics.GL.NV.ShaderThreadGroup
+import Graphics.GL.NV.ShadingRateImage
 import Graphics.GL.NV.TessellationProgram5
 import Graphics.GL.NV.TexgenEmboss
 import Graphics.GL.NV.TexgenReflection
@@ -179,6 +190,7 @@ import Graphics.GL.NV.TransformFeedback
 import Graphics.GL.NV.TransformFeedback2
 import Graphics.GL.NV.UniformBufferUnifiedMemory
 import Graphics.GL.NV.VDPAUInterop
+import Graphics.GL.NV.VDPAUInterop2
 import Graphics.GL.NV.VertexArrayRange
 import Graphics.GL.NV.VertexArrayRange2
 import Graphics.GL.NV.VertexAttribInteger64Bit

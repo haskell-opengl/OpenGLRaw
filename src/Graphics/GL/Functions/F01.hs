@@ -99,6 +99,7 @@ module Graphics.GL.Functions.F01 (
   glBindRenderbufferOES,
   glBindSampler,
   glBindSamplers,
+  glBindShadingRateImageNV,
   glBindTexGenParameterEXT,
   glBindTexture,
   glBindTextureEXT,
@@ -113,8 +114,7 @@ module Graphics.GL.Functions.F01 (
   glBindVertexBuffer,
   glBindVertexBuffers,
   glBindVertexShaderEXT,
-  glBindVideoCaptureStreamBufferNV,
-  glBindVideoCaptureStreamTextureNV
+  glBindVideoCaptureStreamBufferNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -1304,6 +1304,18 @@ glBindSamplers v1 v2 v3 = liftIO $ dyn28 ptr_glBindSamplers v1 v2 v3
 ptr_glBindSamplers :: FunPtr (GLuint -> GLsizei -> Ptr GLuint -> IO ())
 ptr_glBindSamplers = unsafePerformIO $ getCommand "glBindSamplers"
 
+-- glBindShadingRateImageNV ----------------------------------------------------
+
+glBindShadingRateImageNV
+  :: MonadIO m
+  => GLuint -- ^ @texture@.
+  -> m ()
+glBindShadingRateImageNV v1 = liftIO $ dyn3 ptr_glBindShadingRateImageNV v1
+
+{-# NOINLINE ptr_glBindShadingRateImageNV #-}
+ptr_glBindShadingRateImageNV :: FunPtr (GLuint -> IO ())
+ptr_glBindShadingRateImageNV = unsafePerformIO $ getCommand "glBindShadingRateImageNV"
+
 -- glBindTexGenParameterEXT ----------------------------------------------------
 
 glBindTexGenParameterEXT
@@ -1512,20 +1524,4 @@ glBindVideoCaptureStreamBufferNV v1 v2 v3 v4 = liftIO $ dyn35 ptr_glBindVideoCap
 {-# NOINLINE ptr_glBindVideoCaptureStreamBufferNV #-}
 ptr_glBindVideoCaptureStreamBufferNV :: FunPtr (GLuint -> GLuint -> GLenum -> GLintptrARB -> IO ())
 ptr_glBindVideoCaptureStreamBufferNV = unsafePerformIO $ getCommand "glBindVideoCaptureStreamBufferNV"
-
--- glBindVideoCaptureStreamTextureNV -------------------------------------------
-
-glBindVideoCaptureStreamTextureNV
-  :: MonadIO m
-  => GLuint -- ^ @video_capture_slot@.
-  -> GLuint -- ^ @stream@.
-  -> GLenum -- ^ @frame_region@.
-  -> GLenum -- ^ @target@.
-  -> GLuint -- ^ @texture@.
-  -> m ()
-glBindVideoCaptureStreamTextureNV v1 v2 v3 v4 v5 = liftIO $ dyn36 ptr_glBindVideoCaptureStreamTextureNV v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glBindVideoCaptureStreamTextureNV #-}
-ptr_glBindVideoCaptureStreamTextureNV :: FunPtr (GLuint -> GLuint -> GLenum -> GLenum -> GLuint -> IO ())
-ptr_glBindVideoCaptureStreamTextureNV = unsafePerformIO $ getCommand "glBindVideoCaptureStreamTextureNV"
 

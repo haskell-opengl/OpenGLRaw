@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 3.3.1.0
+version: 3.3.2.0
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 4.6 graphics system and
@@ -33,7 +33,7 @@ tested-with:
   GHC == 8.0.2
   GHC == 8.2.2
   GHC == 8.4.3
-  GHC == 8.6.1
+  GHC == 8.6.3
   GHC == 8.7.*
 cabal-version: >= 1.10
 extra-source-files:
@@ -385,6 +385,7 @@ library
     Graphics.GL.EXT.TextureSNorm
     Graphics.GL.EXT.TextureSRGB
     Graphics.GL.EXT.TextureSRGBDecode
+    Graphics.GL.EXT.TextureSRGBR8
     Graphics.GL.EXT.TextureSharedExponent
     Graphics.GL.EXT.TextureSwizzle
     Graphics.GL.EXT.TimerQuery
@@ -488,6 +489,8 @@ library
     Graphics.GL.NV.HalfFloat
     Graphics.GL.NV.InternalformatSampleQuery
     Graphics.GL.NV.LightMaxExponent
+    Graphics.GL.NV.MemoryAttachment
+    Graphics.GL.NV.MeshShader
     Graphics.GL.NV.MultisampleCoverage
     Graphics.GL.NV.MultisampleFilterHint
     Graphics.GL.NV.OcclusionQuery
@@ -504,11 +507,14 @@ library
     Graphics.GL.NV.QueryResourceTag
     Graphics.GL.NV.RegisterCombiners
     Graphics.GL.NV.RegisterCombiners2
+    Graphics.GL.NV.RepresentativeFragmentTest
     Graphics.GL.NV.RobustnessVideoMemoryPurge
     Graphics.GL.NV.SampleLocations
+    Graphics.GL.NV.ScissorExclusive
     Graphics.GL.NV.ShaderBufferLoad
     Graphics.GL.NV.ShaderBufferStore
     Graphics.GL.NV.ShaderThreadGroup
+    Graphics.GL.NV.ShadingRateImage
     Graphics.GL.NV.TessellationProgram5
     Graphics.GL.NV.TexgenEmboss
     Graphics.GL.NV.TexgenReflection
@@ -524,6 +530,7 @@ library
     Graphics.GL.NV.TransformFeedback2
     Graphics.GL.NV.UniformBufferUnifiedMemory
     Graphics.GL.NV.VDPAUInterop
+    Graphics.GL.NV.VDPAUInterop2
     Graphics.GL.NV.VertexArrayRange
     Graphics.GL.NV.VertexArrayRange2
     Graphics.GL.NV.VertexAttribInteger64Bit

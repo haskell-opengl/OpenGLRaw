@@ -104,6 +104,7 @@ module Graphics.GL.EXT (
   module Graphics.GL.EXT.TextureSNorm,
   module Graphics.GL.EXT.TextureSRGB,
   module Graphics.GL.EXT.TextureSRGBDecode,
+  module Graphics.GL.EXT.TextureSRGBR8,
   module Graphics.GL.EXT.TextureSharedExponent,
   module Graphics.GL.EXT.TextureSwizzle,
   module Graphics.GL.EXT.TimerQuery,
@@ -209,6 +210,7 @@ import Graphics.GL.EXT.TexturePerturbNormal
 import Graphics.GL.EXT.TextureSNorm
 import Graphics.GL.EXT.TextureSRGB
 import Graphics.GL.EXT.TextureSRGBDecode
+import Graphics.GL.EXT.TextureSRGBR8
 import Graphics.GL.EXT.TextureSharedExponent
 import Graphics.GL.EXT.TextureSwizzle
 import Graphics.GL.EXT.TimerQuery

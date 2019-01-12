@@ -15,6 +15,11 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F11 (
+  glGetMinmaxParameterfv,
+  glGetMinmaxParameterfvEXT,
+  glGetMinmaxParameteriv,
+  glGetMinmaxParameterivEXT,
+  glGetMultiTexEnvfvEXT,
   glGetMultiTexEnvivEXT,
   glGetMultiTexGendvEXT,
   glGetMultiTexGenfvEXT,
@@ -109,12 +114,7 @@ module Graphics.GL.Functions.F11 (
   glGetProgramEnvParameterfvARB,
   glGetProgramInfoLog,
   glGetProgramInterfaceiv,
-  glGetProgramLocalParameterIivNV,
-  glGetProgramLocalParameterIuivNV,
-  glGetProgramLocalParameterdvARB,
-  glGetProgramLocalParameterfvARB,
-  glGetProgramNamedParameterdvNV,
-  glGetProgramNamedParameterfvNV
+  glGetProgramLocalParameterIivNV
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -122,6 +122,79 @@ import Foreign.Ptr
 import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
+
+-- glGetMinmaxParameterfv ------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmaxParameter.xml OpenGL 2.x>.
+glGetMinmaxParameterfv
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-GL-Groups.html#MinmaxTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetMinmaxParameterPNameEXT](Graphics-GL-Groups.html#GetMinmaxParameterPNameEXT).
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
+  -> m ()
+glGetMinmaxParameterfv v1 v2 v3 = liftIO $ dyn136 ptr_glGetMinmaxParameterfv v1 v2 v3
+
+{-# NOINLINE ptr_glGetMinmaxParameterfv #-}
+ptr_glGetMinmaxParameterfv :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glGetMinmaxParameterfv = unsafePerformIO $ getCommand "glGetMinmaxParameterfv"
+
+-- glGetMinmaxParameterfvEXT ---------------------------------------------------
+
+glGetMinmaxParameterfvEXT
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-GL-Groups.html#MinmaxTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetMinmaxParameterPNameEXT](Graphics-GL-Groups.html#GetMinmaxParameterPNameEXT).
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
+  -> m ()
+glGetMinmaxParameterfvEXT v1 v2 v3 = liftIO $ dyn136 ptr_glGetMinmaxParameterfvEXT v1 v2 v3
+
+{-# NOINLINE ptr_glGetMinmaxParameterfvEXT #-}
+ptr_glGetMinmaxParameterfvEXT :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glGetMinmaxParameterfvEXT = unsafePerformIO $ getCommand "glGetMinmaxParameterfvEXT"
+
+-- glGetMinmaxParameteriv ------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glGetMinmaxParameter.xml OpenGL 2.x>.
+glGetMinmaxParameteriv
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-GL-Groups.html#MinmaxTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetMinmaxParameterPNameEXT](Graphics-GL-Groups.html#GetMinmaxParameterPNameEXT).
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glGetMinmaxParameteriv v1 v2 v3 = liftIO $ dyn137 ptr_glGetMinmaxParameteriv v1 v2 v3
+
+{-# NOINLINE ptr_glGetMinmaxParameteriv #-}
+ptr_glGetMinmaxParameteriv :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetMinmaxParameteriv = unsafePerformIO $ getCommand "glGetMinmaxParameteriv"
+
+-- glGetMinmaxParameterivEXT ---------------------------------------------------
+
+glGetMinmaxParameterivEXT
+  :: MonadIO m
+  => GLenum -- ^ @target@ of type [MinmaxTargetEXT](Graphics-GL-Groups.html#MinmaxTargetEXT).
+  -> GLenum -- ^ @pname@ of type [GetMinmaxParameterPNameEXT](Graphics-GL-Groups.html#GetMinmaxParameterPNameEXT).
+  -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
+  -> m ()
+glGetMinmaxParameterivEXT v1 v2 v3 = liftIO $ dyn137 ptr_glGetMinmaxParameterivEXT v1 v2 v3
+
+{-# NOINLINE ptr_glGetMinmaxParameterivEXT #-}
+ptr_glGetMinmaxParameterivEXT :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
+ptr_glGetMinmaxParameterivEXT = unsafePerformIO $ getCommand "glGetMinmaxParameterivEXT"
+
+-- glGetMultiTexEnvfvEXT -------------------------------------------------------
+
+glGetMultiTexEnvfvEXT
+  :: MonadIO m
+  => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
+  -> GLenum -- ^ @target@ of type [TextureEnvTarget](Graphics-GL-Groups.html#TextureEnvTarget).
+  -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
+  -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
+  -> m ()
+glGetMultiTexEnvfvEXT v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetMultiTexEnvfvEXT v1 v2 v3 v4
+
+{-# NOINLINE ptr_glGetMultiTexEnvfvEXT #-}
+ptr_glGetMultiTexEnvfvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
+ptr_glGetMultiTexEnvfvEXT = unsafePerformIO $ getCommand "glGetMultiTexEnvfvEXT"
 
 -- glGetMultiTexEnvivEXT -------------------------------------------------------
 
@@ -132,7 +205,7 @@ glGetMultiTexEnvivEXT
   -> GLenum -- ^ @pname@ of type [TextureEnvParameter](Graphics-GL-Groups.html#TextureEnvParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetMultiTexEnvivEXT v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetMultiTexEnvivEXT v1 v2 v3 v4
+glGetMultiTexEnvivEXT v1 v2 v3 v4 = liftIO $ dyn332 ptr_glGetMultiTexEnvivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexEnvivEXT #-}
 ptr_glGetMultiTexEnvivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -147,7 +220,7 @@ glGetMultiTexGendvEXT
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
-glGetMultiTexGendvEXT v1 v2 v3 v4 = liftIO $ dyn365 ptr_glGetMultiTexGendvEXT v1 v2 v3 v4
+glGetMultiTexGendvEXT v1 v2 v3 v4 = liftIO $ dyn367 ptr_glGetMultiTexGendvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexGendvEXT #-}
 ptr_glGetMultiTexGendvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLdouble -> IO ())
@@ -162,7 +235,7 @@ glGetMultiTexGenfvEXT
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetMultiTexGenfvEXT v1 v2 v3 v4 = liftIO $ dyn330 ptr_glGetMultiTexGenfvEXT v1 v2 v3 v4
+glGetMultiTexGenfvEXT v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetMultiTexGenfvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexGenfvEXT #-}
 ptr_glGetMultiTexGenfvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -177,7 +250,7 @@ glGetMultiTexGenivEXT
   -> GLenum -- ^ @pname@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetMultiTexGenivEXT v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetMultiTexGenivEXT v1 v2 v3 v4
+glGetMultiTexGenivEXT v1 v2 v3 v4 = liftIO $ dyn332 ptr_glGetMultiTexGenivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexGenivEXT #-}
 ptr_glGetMultiTexGenivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -194,7 +267,7 @@ glGetMultiTexImageEXT
   -> GLenum -- ^ @type@ of type [PixelType](Graphics-GL-Groups.html#PixelType).
   -> Ptr a -- ^ @pixels@ pointing to @COMPSIZE(target,level,format,type)@ elements of type @a@.
   -> m ()
-glGetMultiTexImageEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn366 ptr_glGetMultiTexImageEXT v1 v2 v3 v4 v5 v6
+glGetMultiTexImageEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn368 ptr_glGetMultiTexImageEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glGetMultiTexImageEXT #-}
 ptr_glGetMultiTexImageEXT :: FunPtr (GLenum -> GLenum -> GLint -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -210,7 +283,7 @@ glGetMultiTexLevelParameterfvEXT
   -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-GL-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetMultiTexLevelParameterfvEXT v1 v2 v3 v4 v5 = liftIO $ dyn367 ptr_glGetMultiTexLevelParameterfvEXT v1 v2 v3 v4 v5
+glGetMultiTexLevelParameterfvEXT v1 v2 v3 v4 v5 = liftIO $ dyn369 ptr_glGetMultiTexLevelParameterfvEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetMultiTexLevelParameterfvEXT #-}
 ptr_glGetMultiTexLevelParameterfvEXT :: FunPtr (GLenum -> GLenum -> GLint -> GLenum -> Ptr GLfloat -> IO ())
@@ -226,7 +299,7 @@ glGetMultiTexLevelParameterivEXT
   -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-GL-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetMultiTexLevelParameterivEXT v1 v2 v3 v4 v5 = liftIO $ dyn368 ptr_glGetMultiTexLevelParameterivEXT v1 v2 v3 v4 v5
+glGetMultiTexLevelParameterivEXT v1 v2 v3 v4 v5 = liftIO $ dyn370 ptr_glGetMultiTexLevelParameterivEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetMultiTexLevelParameterivEXT #-}
 ptr_glGetMultiTexLevelParameterivEXT :: FunPtr (GLenum -> GLenum -> GLint -> GLenum -> Ptr GLint -> IO ())
@@ -241,7 +314,7 @@ glGetMultiTexParameterIivEXT
   -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-GL-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetMultiTexParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetMultiTexParameterIivEXT v1 v2 v3 v4
+glGetMultiTexParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn332 ptr_glGetMultiTexParameterIivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexParameterIivEXT #-}
 ptr_glGetMultiTexParameterIivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -256,7 +329,7 @@ glGetMultiTexParameterIuivEXT
   -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-GL-Groups.html#GetTextureParameter).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
-glGetMultiTexParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn369 ptr_glGetMultiTexParameterIuivEXT v1 v2 v3 v4
+glGetMultiTexParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn371 ptr_glGetMultiTexParameterIuivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexParameterIuivEXT #-}
 ptr_glGetMultiTexParameterIuivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLuint -> IO ())
@@ -271,7 +344,7 @@ glGetMultiTexParameterfvEXT
   -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-GL-Groups.html#GetTextureParameter).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetMultiTexParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn330 ptr_glGetMultiTexParameterfvEXT v1 v2 v3 v4
+glGetMultiTexParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetMultiTexParameterfvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexParameterfvEXT #-}
 ptr_glGetMultiTexParameterfvEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -286,7 +359,7 @@ glGetMultiTexParameterivEXT
   -> GLenum -- ^ @pname@ of type [GetTextureParameter](Graphics-GL-Groups.html#GetTextureParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetMultiTexParameterivEXT v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetMultiTexParameterivEXT v1 v2 v3 v4
+glGetMultiTexParameterivEXT v1 v2 v3 v4 = liftIO $ dyn332 ptr_glGetMultiTexParameterivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetMultiTexParameterivEXT #-}
 ptr_glGetMultiTexParameterivEXT :: FunPtr (GLenum -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -301,7 +374,7 @@ glGetMultisamplefv
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @val@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetMultisamplefv v1 v2 v3 = liftIO $ dyn274 ptr_glGetMultisamplefv v1 v2 v3
+glGetMultisamplefv v1 v2 v3 = liftIO $ dyn275 ptr_glGetMultisamplefv v1 v2 v3
 
 {-# NOINLINE ptr_glGetMultisamplefv #-}
 ptr_glGetMultisamplefv :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
@@ -316,7 +389,7 @@ glGetMultisamplefvNV
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @val@ pointing to @2@ elements of type @GLfloat@.
   -> m ()
-glGetMultisamplefvNV v1 v2 v3 = liftIO $ dyn274 ptr_glGetMultisamplefvNV v1 v2 v3
+glGetMultisamplefvNV v1 v2 v3 = liftIO $ dyn275 ptr_glGetMultisamplefvNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetMultisamplefvNV #-}
 ptr_glGetMultisamplefvNV :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
@@ -331,7 +404,7 @@ glGetNamedBufferParameteri64v
   -> GLenum -- ^ @pname@ of type [VertexBufferObjectParameter](Graphics-GL-Groups.html#VertexBufferObjectParameter).
   -> Ptr GLint64 -- ^ @params@.
   -> m ()
-glGetNamedBufferParameteri64v v1 v2 v3 = liftIO $ dyn370 ptr_glGetNamedBufferParameteri64v v1 v2 v3
+glGetNamedBufferParameteri64v v1 v2 v3 = liftIO $ dyn372 ptr_glGetNamedBufferParameteri64v v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedBufferParameteri64v #-}
 ptr_glGetNamedBufferParameteri64v :: FunPtr (GLuint -> GLenum -> Ptr GLint64 -> IO ())
@@ -346,7 +419,7 @@ glGetNamedBufferParameteriv
   -> GLenum -- ^ @pname@ of type [VertexBufferObjectParameter](Graphics-GL-Groups.html#VertexBufferObjectParameter).
   -> Ptr GLint -- ^ @params@.
   -> m ()
-glGetNamedBufferParameteriv v1 v2 v3 = liftIO $ dyn344 ptr_glGetNamedBufferParameteriv v1 v2 v3
+glGetNamedBufferParameteriv v1 v2 v3 = liftIO $ dyn345 ptr_glGetNamedBufferParameteriv v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedBufferParameteriv #-}
 ptr_glGetNamedBufferParameteriv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -360,7 +433,7 @@ glGetNamedBufferParameterivEXT
   -> GLenum -- ^ @pname@ of type [VertexBufferObjectParameter](Graphics-GL-Groups.html#VertexBufferObjectParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetNamedBufferParameterivEXT v1 v2 v3 = liftIO $ dyn344 ptr_glGetNamedBufferParameterivEXT v1 v2 v3
+glGetNamedBufferParameterivEXT v1 v2 v3 = liftIO $ dyn345 ptr_glGetNamedBufferParameterivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedBufferParameterivEXT #-}
 ptr_glGetNamedBufferParameterivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -374,7 +447,7 @@ glGetNamedBufferParameterui64vNV
   -> GLenum -- ^ @pname@ of type [VertexBufferObjectParameter](Graphics-GL-Groups.html#VertexBufferObjectParameter).
   -> Ptr GLuint64EXT -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint64EXT@.
   -> m ()
-glGetNamedBufferParameterui64vNV v1 v2 v3 = liftIO $ dyn371 ptr_glGetNamedBufferParameterui64vNV v1 v2 v3
+glGetNamedBufferParameterui64vNV v1 v2 v3 = liftIO $ dyn373 ptr_glGetNamedBufferParameterui64vNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedBufferParameterui64vNV #-}
 ptr_glGetNamedBufferParameterui64vNV :: FunPtr (GLuint -> GLenum -> Ptr GLuint64EXT -> IO ())
@@ -389,7 +462,7 @@ glGetNamedBufferPointerv
   -> GLenum -- ^ @pname@ of type [VertexBufferObjectParameter](Graphics-GL-Groups.html#VertexBufferObjectParameter).
   -> Ptr (Ptr a) -- ^ @params@.
   -> m ()
-glGetNamedBufferPointerv v1 v2 v3 = liftIO $ dyn372 ptr_glGetNamedBufferPointerv v1 v2 v3
+glGetNamedBufferPointerv v1 v2 v3 = liftIO $ dyn374 ptr_glGetNamedBufferPointerv v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedBufferPointerv #-}
 ptr_glGetNamedBufferPointerv :: FunPtr (GLuint -> GLenum -> Ptr (Ptr a) -> IO ())
@@ -403,7 +476,7 @@ glGetNamedBufferPointervEXT
   -> GLenum -- ^ @pname@ of type [VertexBufferObjectParameter](Graphics-GL-Groups.html#VertexBufferObjectParameter).
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
-glGetNamedBufferPointervEXT v1 v2 v3 = liftIO $ dyn372 ptr_glGetNamedBufferPointervEXT v1 v2 v3
+glGetNamedBufferPointervEXT v1 v2 v3 = liftIO $ dyn374 ptr_glGetNamedBufferPointervEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedBufferPointervEXT #-}
 ptr_glGetNamedBufferPointervEXT :: FunPtr (GLuint -> GLenum -> Ptr (Ptr a) -> IO ())
@@ -419,7 +492,7 @@ glGetNamedBufferSubData
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@.
   -> m ()
-glGetNamedBufferSubData v1 v2 v3 v4 = liftIO $ dyn373 ptr_glGetNamedBufferSubData v1 v2 v3 v4
+glGetNamedBufferSubData v1 v2 v3 v4 = liftIO $ dyn375 ptr_glGetNamedBufferSubData v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedBufferSubData #-}
 ptr_glGetNamedBufferSubData :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
@@ -434,7 +507,7 @@ glGetNamedBufferSubDataEXT
   -> GLsizeiptr -- ^ @size@.
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(size)@ elements of type @a@.
   -> m ()
-glGetNamedBufferSubDataEXT v1 v2 v3 v4 = liftIO $ dyn373 ptr_glGetNamedBufferSubDataEXT v1 v2 v3 v4
+glGetNamedBufferSubDataEXT v1 v2 v3 v4 = liftIO $ dyn375 ptr_glGetNamedBufferSubDataEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedBufferSubDataEXT #-}
 ptr_glGetNamedBufferSubDataEXT :: FunPtr (GLuint -> GLintptr -> GLsizeiptr -> Ptr a -> IO ())
@@ -450,7 +523,7 @@ glGetNamedFramebufferAttachmentParameteriv
   -> GLenum -- ^ @pname@ of type [FramebufferAttachmentParameterName](Graphics-GL-Groups.html#FramebufferAttachmentParameterName).
   -> Ptr GLint -- ^ @params@.
   -> m ()
-glGetNamedFramebufferAttachmentParameteriv v1 v2 v3 v4 = liftIO $ dyn374 ptr_glGetNamedFramebufferAttachmentParameteriv v1 v2 v3 v4
+glGetNamedFramebufferAttachmentParameteriv v1 v2 v3 v4 = liftIO $ dyn376 ptr_glGetNamedFramebufferAttachmentParameteriv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedFramebufferAttachmentParameteriv #-}
 ptr_glGetNamedFramebufferAttachmentParameteriv :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -465,7 +538,7 @@ glGetNamedFramebufferAttachmentParameterivEXT
   -> GLenum -- ^ @pname@ of type [FramebufferAttachmentParameterName](Graphics-GL-Groups.html#FramebufferAttachmentParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetNamedFramebufferAttachmentParameterivEXT v1 v2 v3 v4 = liftIO $ dyn374 ptr_glGetNamedFramebufferAttachmentParameterivEXT v1 v2 v3 v4
+glGetNamedFramebufferAttachmentParameterivEXT v1 v2 v3 v4 = liftIO $ dyn376 ptr_glGetNamedFramebufferAttachmentParameterivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedFramebufferAttachmentParameterivEXT #-}
 ptr_glGetNamedFramebufferAttachmentParameterivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -482,7 +555,7 @@ glGetNamedFramebufferParameterfvAMD
   -> GLsizei -- ^ @size@.
   -> Ptr GLfloat -- ^ @values@.
   -> m ()
-glGetNamedFramebufferParameterfvAMD v1 v2 v3 v4 v5 v6 = liftIO $ dyn375 ptr_glGetNamedFramebufferParameterfvAMD v1 v2 v3 v4 v5 v6
+glGetNamedFramebufferParameterfvAMD v1 v2 v3 v4 v5 v6 = liftIO $ dyn377 ptr_glGetNamedFramebufferParameterfvAMD v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glGetNamedFramebufferParameterfvAMD #-}
 ptr_glGetNamedFramebufferParameterfvAMD :: FunPtr (GLuint -> GLenum -> GLuint -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -497,7 +570,7 @@ glGetNamedFramebufferParameteriv
   -> GLenum -- ^ @pname@ of type [GetFramebufferParameter](Graphics-GL-Groups.html#GetFramebufferParameter).
   -> Ptr GLint -- ^ @param@.
   -> m ()
-glGetNamedFramebufferParameteriv v1 v2 v3 = liftIO $ dyn344 ptr_glGetNamedFramebufferParameteriv v1 v2 v3
+glGetNamedFramebufferParameteriv v1 v2 v3 = liftIO $ dyn345 ptr_glGetNamedFramebufferParameteriv v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedFramebufferParameteriv #-}
 ptr_glGetNamedFramebufferParameteriv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -511,7 +584,7 @@ glGetNamedFramebufferParameterivEXT
   -> GLenum -- ^ @pname@ of type [GetFramebufferParameter](Graphics-GL-Groups.html#GetFramebufferParameter).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetNamedFramebufferParameterivEXT v1 v2 v3 = liftIO $ dyn344 ptr_glGetNamedFramebufferParameterivEXT v1 v2 v3
+glGetNamedFramebufferParameterivEXT v1 v2 v3 = liftIO $ dyn345 ptr_glGetNamedFramebufferParameterivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedFramebufferParameterivEXT #-}
 ptr_glGetNamedFramebufferParameterivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -526,7 +599,7 @@ glGetNamedProgramLocalParameterIivEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
   -> m ()
-glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn376 ptr_glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4
+glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4 = liftIO $ dyn378 ptr_glGetNamedProgramLocalParameterIivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedProgramLocalParameterIivEXT #-}
 ptr_glGetNamedProgramLocalParameterIivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLint -> IO ())
@@ -541,7 +614,7 @@ glGetNamedProgramLocalParameterIuivEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @params@ pointing to @4@ elements of type @GLuint@.
   -> m ()
-glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn377 ptr_glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4
+glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4 = liftIO $ dyn379 ptr_glGetNamedProgramLocalParameterIuivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedProgramLocalParameterIuivEXT #-}
 ptr_glGetNamedProgramLocalParameterIuivEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLuint -> IO ())
@@ -556,7 +629,7 @@ glGetNamedProgramLocalParameterdvEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
-glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4 = liftIO $ dyn378 ptr_glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4
+glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4 = liftIO $ dyn380 ptr_glGetNamedProgramLocalParameterdvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedProgramLocalParameterdvEXT #-}
 ptr_glGetNamedProgramLocalParameterdvEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLdouble -> IO ())
@@ -571,7 +644,7 @@ glGetNamedProgramLocalParameterfvEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
-glGetNamedProgramLocalParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn379 ptr_glGetNamedProgramLocalParameterfvEXT v1 v2 v3 v4
+glGetNamedProgramLocalParameterfvEXT v1 v2 v3 v4 = liftIO $ dyn381 ptr_glGetNamedProgramLocalParameterfvEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedProgramLocalParameterfvEXT #-}
 ptr_glGetNamedProgramLocalParameterfvEXT :: FunPtr (GLuint -> GLenum -> GLuint -> Ptr GLfloat -> IO ())
@@ -586,7 +659,7 @@ glGetNamedProgramStringEXT
   -> GLenum -- ^ @pname@ of type @ProgramStringProperty@.
   -> Ptr a -- ^ @string@ pointing to @COMPSIZE(program,pname)@ elements of type @a@.
   -> m ()
-glGetNamedProgramStringEXT v1 v2 v3 v4 = liftIO $ dyn380 ptr_glGetNamedProgramStringEXT v1 v2 v3 v4
+glGetNamedProgramStringEXT v1 v2 v3 v4 = liftIO $ dyn382 ptr_glGetNamedProgramStringEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedProgramStringEXT #-}
 ptr_glGetNamedProgramStringEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr a -> IO ())
@@ -601,7 +674,7 @@ glGetNamedProgramivEXT
   -> GLenum -- ^ @pname@ of type [ProgramPropertyARB](Graphics-GL-Groups.html#ProgramPropertyARB).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
-glGetNamedProgramivEXT v1 v2 v3 v4 = liftIO $ dyn374 ptr_glGetNamedProgramivEXT v1 v2 v3 v4
+glGetNamedProgramivEXT v1 v2 v3 v4 = liftIO $ dyn376 ptr_glGetNamedProgramivEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedProgramivEXT #-}
 ptr_glGetNamedProgramivEXT :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -616,7 +689,7 @@ glGetNamedRenderbufferParameteriv
   -> GLenum -- ^ @pname@ of type [RenderbufferParameterName](Graphics-GL-Groups.html#RenderbufferParameterName).
   -> Ptr GLint -- ^ @params@.
   -> m ()
-glGetNamedRenderbufferParameteriv v1 v2 v3 = liftIO $ dyn344 ptr_glGetNamedRenderbufferParameteriv v1 v2 v3
+glGetNamedRenderbufferParameteriv v1 v2 v3 = liftIO $ dyn345 ptr_glGetNamedRenderbufferParameteriv v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedRenderbufferParameteriv #-}
 ptr_glGetNamedRenderbufferParameteriv :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -630,7 +703,7 @@ glGetNamedRenderbufferParameterivEXT
   -> GLenum -- ^ @pname@ of type [RenderbufferParameterName](Graphics-GL-Groups.html#RenderbufferParameterName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetNamedRenderbufferParameterivEXT v1 v2 v3 = liftIO $ dyn344 ptr_glGetNamedRenderbufferParameterivEXT v1 v2 v3
+glGetNamedRenderbufferParameterivEXT v1 v2 v3 = liftIO $ dyn345 ptr_glGetNamedRenderbufferParameterivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetNamedRenderbufferParameterivEXT #-}
 ptr_glGetNamedRenderbufferParameterivEXT :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -646,7 +719,7 @@ glGetNamedStringARB
   -> Ptr GLint -- ^ @stringlen@ pointing to @1@ element of type @GLint@.
   -> Ptr GLchar -- ^ @string@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetNamedStringARB v1 v2 v3 v4 v5 = liftIO $ dyn381 ptr_glGetNamedStringARB v1 v2 v3 v4 v5
+glGetNamedStringARB v1 v2 v3 v4 v5 = liftIO $ dyn383 ptr_glGetNamedStringARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetNamedStringARB #-}
 ptr_glGetNamedStringARB :: FunPtr (GLint -> Ptr GLchar -> GLsizei -> Ptr GLint -> Ptr GLchar -> IO ())
@@ -661,7 +734,7 @@ glGetNamedStringivARB
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetNamedStringivARB v1 v2 v3 v4 = liftIO $ dyn382 ptr_glGetNamedStringivARB v1 v2 v3 v4
+glGetNamedStringivARB v1 v2 v3 v4 = liftIO $ dyn384 ptr_glGetNamedStringivARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetNamedStringivARB #-}
 ptr_glGetNamedStringivARB :: FunPtr (GLint -> Ptr GLchar -> GLenum -> Ptr GLint -> IO ())
@@ -674,7 +747,7 @@ glGetNextPerfQueryIdINTEL
   => GLuint -- ^ @queryId@.
   -> Ptr GLuint -- ^ @nextQueryId@.
   -> m ()
-glGetNextPerfQueryIdINTEL v1 v2 = liftIO $ dyn197 ptr_glGetNextPerfQueryIdINTEL v1 v2
+glGetNextPerfQueryIdINTEL v1 v2 = liftIO $ dyn198 ptr_glGetNextPerfQueryIdINTEL v1 v2
 
 {-# NOINLINE ptr_glGetNextPerfQueryIdINTEL #-}
 ptr_glGetNextPerfQueryIdINTEL :: FunPtr (GLuint -> Ptr GLuint -> IO ())
@@ -688,7 +761,7 @@ glGetObjectBufferfvATI
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
   -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
-glGetObjectBufferfvATI v1 v2 v3 = liftIO $ dyn360 ptr_glGetObjectBufferfvATI v1 v2 v3
+glGetObjectBufferfvATI v1 v2 v3 = liftIO $ dyn361 ptr_glGetObjectBufferfvATI v1 v2 v3
 
 {-# NOINLINE ptr_glGetObjectBufferfvATI #-}
 ptr_glGetObjectBufferfvATI :: FunPtr (GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -702,7 +775,7 @@ glGetObjectBufferivATI
   -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
-glGetObjectBufferivATI v1 v2 v3 = liftIO $ dyn344 ptr_glGetObjectBufferivATI v1 v2 v3
+glGetObjectBufferivATI v1 v2 v3 = liftIO $ dyn345 ptr_glGetObjectBufferivATI v1 v2 v3
 
 {-# NOINLINE ptr_glGetObjectBufferivATI #-}
 ptr_glGetObjectBufferivATI :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -719,7 +792,7 @@ glGetObjectLabel
   -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetObjectLabel v1 v2 v3 v4 v5 = liftIO $ dyn383 ptr_glGetObjectLabel v1 v2 v3 v4 v5
+glGetObjectLabel v1 v2 v3 v4 v5 = liftIO $ dyn385 ptr_glGetObjectLabel v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetObjectLabel #-}
 ptr_glGetObjectLabel :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -735,7 +808,7 @@ glGetObjectLabelEXT
   -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetObjectLabelEXT v1 v2 v3 v4 v5 = liftIO $ dyn383 ptr_glGetObjectLabelEXT v1 v2 v3 v4 v5
+glGetObjectLabelEXT v1 v2 v3 v4 v5 = liftIO $ dyn385 ptr_glGetObjectLabelEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetObjectLabelEXT #-}
 ptr_glGetObjectLabelEXT :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -752,7 +825,7 @@ glGetObjectLabelKHR
   -> Ptr GLsizei -- ^ @length@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetObjectLabelKHR v1 v2 v3 v4 v5 = liftIO $ dyn383 ptr_glGetObjectLabelKHR v1 v2 v3 v4 v5
+glGetObjectLabelKHR v1 v2 v3 v4 v5 = liftIO $ dyn385 ptr_glGetObjectLabelKHR v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetObjectLabelKHR #-}
 ptr_glGetObjectLabelKHR :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -766,7 +839,7 @@ glGetObjectParameterfvARB
   -> GLenum -- ^ @pname@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetObjectParameterfvARB v1 v2 v3 = liftIO $ dyn384 ptr_glGetObjectParameterfvARB v1 v2 v3
+glGetObjectParameterfvARB v1 v2 v3 = liftIO $ dyn386 ptr_glGetObjectParameterfvARB v1 v2 v3
 
 {-# NOINLINE ptr_glGetObjectParameterfvARB #-}
 ptr_glGetObjectParameterfvARB :: FunPtr (GLhandleARB -> GLenum -> Ptr GLfloat -> IO ())
@@ -781,7 +854,7 @@ glGetObjectParameterivAPPLE
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetObjectParameterivAPPLE v1 v2 v3 v4 = liftIO $ dyn362 ptr_glGetObjectParameterivAPPLE v1 v2 v3 v4
+glGetObjectParameterivAPPLE v1 v2 v3 v4 = liftIO $ dyn363 ptr_glGetObjectParameterivAPPLE v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetObjectParameterivAPPLE #-}
 ptr_glGetObjectParameterivAPPLE :: FunPtr (GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -795,7 +868,7 @@ glGetObjectParameterivARB
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetObjectParameterivARB v1 v2 v3 = liftIO $ dyn385 ptr_glGetObjectParameterivARB v1 v2 v3
+glGetObjectParameterivARB v1 v2 v3 = liftIO $ dyn387 ptr_glGetObjectParameterivARB v1 v2 v3
 
 {-# NOINLINE ptr_glGetObjectParameterivARB #-}
 ptr_glGetObjectParameterivARB :: FunPtr (GLhandleARB -> GLenum -> Ptr GLint -> IO ())
@@ -811,7 +884,7 @@ glGetObjectPtrLabel
   -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetObjectPtrLabel v1 v2 v3 v4 = liftIO $ dyn386 ptr_glGetObjectPtrLabel v1 v2 v3 v4
+glGetObjectPtrLabel v1 v2 v3 v4 = liftIO $ dyn388 ptr_glGetObjectPtrLabel v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetObjectPtrLabel #-}
 ptr_glGetObjectPtrLabel :: FunPtr (Ptr a -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -827,7 +900,7 @@ glGetObjectPtrLabelKHR
   -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @label@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetObjectPtrLabelKHR v1 v2 v3 v4 = liftIO $ dyn386 ptr_glGetObjectPtrLabelKHR v1 v2 v3 v4
+glGetObjectPtrLabelKHR v1 v2 v3 v4 = liftIO $ dyn388 ptr_glGetObjectPtrLabelKHR v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetObjectPtrLabelKHR #-}
 ptr_glGetObjectPtrLabelKHR :: FunPtr (Ptr a -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -841,7 +914,7 @@ glGetOcclusionQueryivNV
   -> GLenum -- ^ @pname@ of type @OcclusionQueryParameterNameNV@.
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetOcclusionQueryivNV v1 v2 v3 = liftIO $ dyn344 ptr_glGetOcclusionQueryivNV v1 v2 v3
+glGetOcclusionQueryivNV v1 v2 v3 = liftIO $ dyn345 ptr_glGetOcclusionQueryivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetOcclusionQueryivNV #-}
 ptr_glGetOcclusionQueryivNV :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -855,7 +928,7 @@ glGetOcclusionQueryuivNV
   -> GLenum -- ^ @pname@ of type @OcclusionQueryParameterNameNV@.
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
-glGetOcclusionQueryuivNV v1 v2 v3 = liftIO $ dyn387 ptr_glGetOcclusionQueryuivNV v1 v2 v3
+glGetOcclusionQueryuivNV v1 v2 v3 = liftIO $ dyn389 ptr_glGetOcclusionQueryuivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetOcclusionQueryuivNV #-}
 ptr_glGetOcclusionQueryuivNV :: FunPtr (GLuint -> GLenum -> Ptr GLuint -> IO ())
@@ -869,7 +942,7 @@ glGetPathColorGenfvNV
   -> GLenum -- ^ @pname@ of type [PathGenMode](Graphics-GL-Groups.html#PathGenMode).
   -> Ptr GLfloat -- ^ @value@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetPathColorGenfvNV v1 v2 v3 = liftIO $ dyn135 ptr_glGetPathColorGenfvNV v1 v2 v3
+glGetPathColorGenfvNV v1 v2 v3 = liftIO $ dyn136 ptr_glGetPathColorGenfvNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetPathColorGenfvNV #-}
 ptr_glGetPathColorGenfvNV :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -883,7 +956,7 @@ glGetPathColorGenivNV
   -> GLenum -- ^ @pname@ of type [PathGenMode](Graphics-GL-Groups.html#PathGenMode).
   -> Ptr GLint -- ^ @value@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetPathColorGenivNV v1 v2 v3 = liftIO $ dyn136 ptr_glGetPathColorGenivNV v1 v2 v3
+glGetPathColorGenivNV v1 v2 v3 = liftIO $ dyn137 ptr_glGetPathColorGenivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetPathColorGenivNV #-}
 ptr_glGetPathColorGenivNV :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -896,7 +969,7 @@ glGetPathCommandsNV
   => GLuint -- ^ @path@ of type @Path@.
   -> Ptr GLubyte -- ^ @commands@ pointing to @COMPSIZE(path)@ elements of type @PathCommand@.
   -> m ()
-glGetPathCommandsNV v1 v2 = liftIO $ dyn388 ptr_glGetPathCommandsNV v1 v2
+glGetPathCommandsNV v1 v2 = liftIO $ dyn390 ptr_glGetPathCommandsNV v1 v2
 
 {-# NOINLINE ptr_glGetPathCommandsNV #-}
 ptr_glGetPathCommandsNV :: FunPtr (GLuint -> Ptr GLubyte -> IO ())
@@ -909,7 +982,7 @@ glGetPathCoordsNV
   => GLuint -- ^ @path@ of type @Path@.
   -> Ptr GLfloat -- ^ @coords@ pointing to @COMPSIZE(path)@ elements of type @GLfloat@.
   -> m ()
-glGetPathCoordsNV v1 v2 = liftIO $ dyn389 ptr_glGetPathCoordsNV v1 v2
+glGetPathCoordsNV v1 v2 = liftIO $ dyn391 ptr_glGetPathCoordsNV v1 v2
 
 {-# NOINLINE ptr_glGetPathCoordsNV #-}
 ptr_glGetPathCoordsNV :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
@@ -922,7 +995,7 @@ glGetPathDashArrayNV
   => GLuint -- ^ @path@ of type @Path@.
   -> Ptr GLfloat -- ^ @dashArray@ pointing to @COMPSIZE(path)@ elements of type @GLfloat@.
   -> m ()
-glGetPathDashArrayNV v1 v2 = liftIO $ dyn389 ptr_glGetPathDashArrayNV v1 v2
+glGetPathDashArrayNV v1 v2 = liftIO $ dyn391 ptr_glGetPathDashArrayNV v1 v2
 
 {-# NOINLINE ptr_glGetPathDashArrayNV #-}
 ptr_glGetPathDashArrayNV :: FunPtr (GLuint -> Ptr GLfloat -> IO ())
@@ -936,7 +1009,7 @@ glGetPathLengthNV
   -> GLsizei -- ^ @startSegment@.
   -> GLsizei -- ^ @numSegments@.
   -> m GLfloat
-glGetPathLengthNV v1 v2 v3 = liftIO $ dyn390 ptr_glGetPathLengthNV v1 v2 v3
+glGetPathLengthNV v1 v2 v3 = liftIO $ dyn392 ptr_glGetPathLengthNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetPathLengthNV #-}
 ptr_glGetPathLengthNV :: FunPtr (GLuint -> GLsizei -> GLsizei -> IO GLfloat)
@@ -952,7 +1025,7 @@ glGetPathMetricRangeNV
   -> GLsizei -- ^ @stride@.
   -> Ptr GLfloat -- ^ @metrics@ pointing to @COMPSIZE(metricQueryMask,numPaths,stride)@ elements of type @GLfloat@.
   -> m ()
-glGetPathMetricRangeNV v1 v2 v3 v4 v5 = liftIO $ dyn391 ptr_glGetPathMetricRangeNV v1 v2 v3 v4 v5
+glGetPathMetricRangeNV v1 v2 v3 v4 v5 = liftIO $ dyn393 ptr_glGetPathMetricRangeNV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetPathMetricRangeNV #-}
 ptr_glGetPathMetricRangeNV :: FunPtr (GLbitfield -> GLuint -> GLsizei -> GLsizei -> Ptr GLfloat -> IO ())
@@ -970,7 +1043,7 @@ glGetPathMetricsNV
   -> GLsizei -- ^ @stride@.
   -> Ptr GLfloat -- ^ @metrics@ pointing to @COMPSIZE(metricQueryMask,numPaths,stride)@ elements of type @GLfloat@.
   -> m ()
-glGetPathMetricsNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn392 ptr_glGetPathMetricsNV v1 v2 v3 v4 v5 v6 v7
+glGetPathMetricsNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn394 ptr_glGetPathMetricsNV v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glGetPathMetricsNV #-}
 ptr_glGetPathMetricsNV :: FunPtr (GLbitfield -> GLsizei -> GLenum -> Ptr a -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
@@ -984,7 +1057,7 @@ glGetPathParameterfvNV
   -> GLenum -- ^ @pname@ of type [PathParameter](Graphics-GL-Groups.html#PathParameter).
   -> Ptr GLfloat -- ^ @value@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
-glGetPathParameterfvNV v1 v2 v3 = liftIO $ dyn360 ptr_glGetPathParameterfvNV v1 v2 v3
+glGetPathParameterfvNV v1 v2 v3 = liftIO $ dyn361 ptr_glGetPathParameterfvNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetPathParameterfvNV #-}
 ptr_glGetPathParameterfvNV :: FunPtr (GLuint -> GLenum -> Ptr GLfloat -> IO ())
@@ -998,7 +1071,7 @@ glGetPathParameterivNV
   -> GLenum -- ^ @pname@ of type [PathParameter](Graphics-GL-Groups.html#PathParameter).
   -> Ptr GLint -- ^ @value@ pointing to @4@ elements of type @GLint@.
   -> m ()
-glGetPathParameterivNV v1 v2 v3 = liftIO $ dyn344 ptr_glGetPathParameterivNV v1 v2 v3
+glGetPathParameterivNV v1 v2 v3 = liftIO $ dyn345 ptr_glGetPathParameterivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetPathParameterivNV #-}
 ptr_glGetPathParameterivNV :: FunPtr (GLuint -> GLenum -> Ptr GLint -> IO ())
@@ -1018,7 +1091,7 @@ glGetPathSpacingNV
   -> GLenum -- ^ @transformType@ of type [PathTransformType](Graphics-GL-Groups.html#PathTransformType).
   -> Ptr GLfloat -- ^ @returnedSpacing@ pointing to @COMPSIZE(pathListMode,numPaths)@ elements of type @GLfloat@.
   -> m ()
-glGetPathSpacingNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn393 ptr_glGetPathSpacingNV v1 v2 v3 v4 v5 v6 v7 v8 v9
+glGetPathSpacingNV v1 v2 v3 v4 v5 v6 v7 v8 v9 = liftIO $ dyn395 ptr_glGetPathSpacingNV v1 v2 v3 v4 v5 v6 v7 v8 v9
 
 {-# NOINLINE ptr_glGetPathSpacingNV #-}
 ptr_glGetPathSpacingNV :: FunPtr (GLenum -> GLsizei -> GLenum -> Ptr a -> GLuint -> GLfloat -> GLfloat -> GLenum -> Ptr GLfloat -> IO ())
@@ -1032,7 +1105,7 @@ glGetPathTexGenfvNV
   -> GLenum -- ^ @pname@ of type [PathGenMode](Graphics-GL-Groups.html#PathGenMode).
   -> Ptr GLfloat -- ^ @value@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetPathTexGenfvNV v1 v2 v3 = liftIO $ dyn135 ptr_glGetPathTexGenfvNV v1 v2 v3
+glGetPathTexGenfvNV v1 v2 v3 = liftIO $ dyn136 ptr_glGetPathTexGenfvNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetPathTexGenfvNV #-}
 ptr_glGetPathTexGenfvNV :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -1046,7 +1119,7 @@ glGetPathTexGenivNV
   -> GLenum -- ^ @pname@ of type [PathGenMode](Graphics-GL-Groups.html#PathGenMode).
   -> Ptr GLint -- ^ @value@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetPathTexGenivNV v1 v2 v3 = liftIO $ dyn136 ptr_glGetPathTexGenivNV v1 v2 v3
+glGetPathTexGenivNV v1 v2 v3 = liftIO $ dyn137 ptr_glGetPathTexGenivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetPathTexGenivNV #-}
 ptr_glGetPathTexGenivNV :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -1068,7 +1141,7 @@ glGetPerfCounterInfoINTEL
   -> Ptr GLuint -- ^ @counterDataTypeEnum@.
   -> Ptr GLuint64 -- ^ @rawCounterMaxValue@.
   -> m ()
-glGetPerfCounterInfoINTEL v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn394 ptr_glGetPerfCounterInfoINTEL v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
+glGetPerfCounterInfoINTEL v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 = liftIO $ dyn396 ptr_glGetPerfCounterInfoINTEL v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11
 
 {-# NOINLINE ptr_glGetPerfCounterInfoINTEL #-}
 ptr_glGetPerfCounterInfoINTEL :: FunPtr (GLuint -> GLuint -> GLuint -> Ptr GLchar -> GLuint -> Ptr GLchar -> Ptr GLuint -> Ptr GLuint -> Ptr GLuint -> Ptr GLuint -> Ptr GLuint64 -> IO ())
@@ -1084,7 +1157,7 @@ glGetPerfMonitorCounterDataAMD
   -> Ptr GLuint -- ^ @data@ pointing to @dataSize@ elements of type @GLuint@.
   -> Ptr GLint -- ^ @bytesWritten@ pointing to @1@ element of type @GLint@.
   -> m ()
-glGetPerfMonitorCounterDataAMD v1 v2 v3 v4 v5 = liftIO $ dyn395 ptr_glGetPerfMonitorCounterDataAMD v1 v2 v3 v4 v5
+glGetPerfMonitorCounterDataAMD v1 v2 v3 v4 v5 = liftIO $ dyn397 ptr_glGetPerfMonitorCounterDataAMD v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetPerfMonitorCounterDataAMD #-}
 ptr_glGetPerfMonitorCounterDataAMD :: FunPtr (GLuint -> GLenum -> GLsizei -> Ptr GLuint -> Ptr GLint -> IO ())
@@ -1099,7 +1172,7 @@ glGetPerfMonitorCounterInfoAMD
   -> GLenum -- ^ @pname@.
   -> Ptr a -- ^ @data@ pointing to @COMPSIZE(pname)@ elements of type @a@.
   -> m ()
-glGetPerfMonitorCounterInfoAMD v1 v2 v3 v4 = liftIO $ dyn396 ptr_glGetPerfMonitorCounterInfoAMD v1 v2 v3 v4
+glGetPerfMonitorCounterInfoAMD v1 v2 v3 v4 = liftIO $ dyn398 ptr_glGetPerfMonitorCounterInfoAMD v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetPerfMonitorCounterInfoAMD #-}
 ptr_glGetPerfMonitorCounterInfoAMD :: FunPtr (GLuint -> GLuint -> GLenum -> Ptr a -> IO ())
@@ -1115,7 +1188,7 @@ glGetPerfMonitorCounterStringAMD
   -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @counterString@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetPerfMonitorCounterStringAMD v1 v2 v3 v4 v5 = liftIO $ dyn315 ptr_glGetPerfMonitorCounterStringAMD v1 v2 v3 v4 v5
+glGetPerfMonitorCounterStringAMD v1 v2 v3 v4 v5 = liftIO $ dyn316 ptr_glGetPerfMonitorCounterStringAMD v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetPerfMonitorCounterStringAMD #-}
 ptr_glGetPerfMonitorCounterStringAMD :: FunPtr (GLuint -> GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -1131,7 +1204,7 @@ glGetPerfMonitorCountersAMD
   -> GLsizei -- ^ @counterSize@.
   -> Ptr GLuint -- ^ @counters@ pointing to @counterSize@ elements of type @GLuint@.
   -> m ()
-glGetPerfMonitorCountersAMD v1 v2 v3 v4 v5 = liftIO $ dyn397 ptr_glGetPerfMonitorCountersAMD v1 v2 v3 v4 v5
+glGetPerfMonitorCountersAMD v1 v2 v3 v4 v5 = liftIO $ dyn399 ptr_glGetPerfMonitorCountersAMD v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetPerfMonitorCountersAMD #-}
 ptr_glGetPerfMonitorCountersAMD :: FunPtr (GLuint -> Ptr GLint -> Ptr GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1146,7 +1219,7 @@ glGetPerfMonitorGroupStringAMD
   -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @groupString@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetPerfMonitorGroupStringAMD v1 v2 v3 v4 = liftIO $ dyn341 ptr_glGetPerfMonitorGroupStringAMD v1 v2 v3 v4
+glGetPerfMonitorGroupStringAMD v1 v2 v3 v4 = liftIO $ dyn342 ptr_glGetPerfMonitorGroupStringAMD v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetPerfMonitorGroupStringAMD #-}
 ptr_glGetPerfMonitorGroupStringAMD :: FunPtr (GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -1160,7 +1233,7 @@ glGetPerfMonitorGroupsAMD
   -> GLsizei -- ^ @groupsSize@.
   -> Ptr GLuint -- ^ @groups@ pointing to @groupsSize@ elements of type @GLuint@.
   -> m ()
-glGetPerfMonitorGroupsAMD v1 v2 v3 = liftIO $ dyn342 ptr_glGetPerfMonitorGroupsAMD v1 v2 v3
+glGetPerfMonitorGroupsAMD v1 v2 v3 = liftIO $ dyn343 ptr_glGetPerfMonitorGroupsAMD v1 v2 v3
 
 {-# NOINLINE ptr_glGetPerfMonitorGroupsAMD #-}
 ptr_glGetPerfMonitorGroupsAMD :: FunPtr (Ptr GLint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1176,7 +1249,7 @@ glGetPerfQueryDataINTEL
   -> Ptr a -- ^ @data@.
   -> Ptr GLuint -- ^ @bytesWritten@.
   -> m ()
-glGetPerfQueryDataINTEL v1 v2 v3 v4 v5 = liftIO $ dyn398 ptr_glGetPerfQueryDataINTEL v1 v2 v3 v4 v5
+glGetPerfQueryDataINTEL v1 v2 v3 v4 v5 = liftIO $ dyn400 ptr_glGetPerfQueryDataINTEL v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetPerfQueryDataINTEL #-}
 ptr_glGetPerfQueryDataINTEL :: FunPtr (GLuint -> GLuint -> GLsizei -> Ptr a -> Ptr GLuint -> IO ())
@@ -1189,7 +1262,7 @@ glGetPerfQueryIdByNameINTEL
   => Ptr GLchar -- ^ @queryName@.
   -> Ptr GLuint -- ^ @queryId@.
   -> m ()
-glGetPerfQueryIdByNameINTEL v1 v2 = liftIO $ dyn399 ptr_glGetPerfQueryIdByNameINTEL v1 v2
+glGetPerfQueryIdByNameINTEL v1 v2 = liftIO $ dyn401 ptr_glGetPerfQueryIdByNameINTEL v1 v2
 
 {-# NOINLINE ptr_glGetPerfQueryIdByNameINTEL #-}
 ptr_glGetPerfQueryIdByNameINTEL :: FunPtr (Ptr GLchar -> Ptr GLuint -> IO ())
@@ -1207,7 +1280,7 @@ glGetPerfQueryInfoINTEL
   -> Ptr GLuint -- ^ @noInstances@.
   -> Ptr GLuint -- ^ @capsMask@.
   -> m ()
-glGetPerfQueryInfoINTEL v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn400 ptr_glGetPerfQueryInfoINTEL v1 v2 v3 v4 v5 v6 v7
+glGetPerfQueryInfoINTEL v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn402 ptr_glGetPerfQueryInfoINTEL v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glGetPerfQueryInfoINTEL #-}
 ptr_glGetPerfQueryInfoINTEL :: FunPtr (GLuint -> GLuint -> Ptr GLchar -> Ptr GLuint -> Ptr GLuint -> Ptr GLuint -> Ptr GLuint -> IO ())
@@ -1221,7 +1294,7 @@ glGetPixelMapfv
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-GL-Groups.html#PixelMap).
   -> Ptr GLfloat -- ^ @values@ pointing to @COMPSIZE(map)@ elements of type @GLfloat@.
   -> m ()
-glGetPixelMapfv v1 v2 = liftIO $ dyn97 ptr_glGetPixelMapfv v1 v2
+glGetPixelMapfv v1 v2 = liftIO $ dyn98 ptr_glGetPixelMapfv v1 v2
 
 {-# NOINLINE ptr_glGetPixelMapfv #-}
 ptr_glGetPixelMapfv :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -1235,7 +1308,7 @@ glGetPixelMapuiv
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-GL-Groups.html#PixelMap).
   -> Ptr GLuint -- ^ @values@ pointing to @COMPSIZE(map)@ elements of type @GLuint@.
   -> m ()
-glGetPixelMapuiv v1 v2 = liftIO $ dyn128 ptr_glGetPixelMapuiv v1 v2
+glGetPixelMapuiv v1 v2 = liftIO $ dyn129 ptr_glGetPixelMapuiv v1 v2
 
 {-# NOINLINE ptr_glGetPixelMapuiv #-}
 ptr_glGetPixelMapuiv :: FunPtr (GLenum -> Ptr GLuint -> IO ())
@@ -1249,7 +1322,7 @@ glGetPixelMapusv
   => GLenum -- ^ @map@ of type [PixelMap](Graphics-GL-Groups.html#PixelMap).
   -> Ptr GLushort -- ^ @values@ pointing to @COMPSIZE(map)@ elements of type @GLushort@.
   -> m ()
-glGetPixelMapusv v1 v2 = liftIO $ dyn401 ptr_glGetPixelMapusv v1 v2
+glGetPixelMapusv v1 v2 = liftIO $ dyn403 ptr_glGetPixelMapusv v1 v2
 
 {-# NOINLINE ptr_glGetPixelMapusv #-}
 ptr_glGetPixelMapusv :: FunPtr (GLenum -> Ptr GLushort -> IO ())
@@ -1263,7 +1336,7 @@ glGetPixelMapxv
   -> GLint -- ^ @size@.
   -> Ptr GLfixed -- ^ @values@ pointing to @size@ elements of type @GLfixed@.
   -> m ()
-glGetPixelMapxv v1 v2 v3 = liftIO $ dyn402 ptr_glGetPixelMapxv v1 v2 v3
+glGetPixelMapxv v1 v2 v3 = liftIO $ dyn404 ptr_glGetPixelMapxv v1 v2 v3
 
 {-# NOINLINE ptr_glGetPixelMapxv #-}
 ptr_glGetPixelMapxv :: FunPtr (GLenum -> GLint -> Ptr GLfixed -> IO ())
@@ -1276,7 +1349,7 @@ glGetPixelTexGenParameterfvSGIS
   => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-GL-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
-glGetPixelTexGenParameterfvSGIS v1 v2 = liftIO $ dyn97 ptr_glGetPixelTexGenParameterfvSGIS v1 v2
+glGetPixelTexGenParameterfvSGIS v1 v2 = liftIO $ dyn98 ptr_glGetPixelTexGenParameterfvSGIS v1 v2
 
 {-# NOINLINE ptr_glGetPixelTexGenParameterfvSGIS #-}
 ptr_glGetPixelTexGenParameterfvSGIS :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -1289,7 +1362,7 @@ glGetPixelTexGenParameterivSGIS
   => GLenum -- ^ @pname@ of type [PixelTexGenParameterNameSGIS](Graphics-GL-Groups.html#PixelTexGenParameterNameSGIS).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
-glGetPixelTexGenParameterivSGIS v1 v2 = liftIO $ dyn139 ptr_glGetPixelTexGenParameterivSGIS v1 v2
+glGetPixelTexGenParameterivSGIS v1 v2 = liftIO $ dyn140 ptr_glGetPixelTexGenParameterivSGIS v1 v2
 
 {-# NOINLINE ptr_glGetPixelTexGenParameterivSGIS #-}
 ptr_glGetPixelTexGenParameterivSGIS :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -1303,7 +1376,7 @@ glGetPixelTransformParameterfvEXT
   -> GLenum -- ^ @pname@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
-glGetPixelTransformParameterfvEXT v1 v2 v3 = liftIO $ dyn135 ptr_glGetPixelTransformParameterfvEXT v1 v2 v3
+glGetPixelTransformParameterfvEXT v1 v2 v3 = liftIO $ dyn136 ptr_glGetPixelTransformParameterfvEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetPixelTransformParameterfvEXT #-}
 ptr_glGetPixelTransformParameterfvEXT :: FunPtr (GLenum -> GLenum -> Ptr GLfloat -> IO ())
@@ -1317,7 +1390,7 @@ glGetPixelTransformParameterivEXT
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetPixelTransformParameterivEXT v1 v2 v3 = liftIO $ dyn136 ptr_glGetPixelTransformParameterivEXT v1 v2 v3
+glGetPixelTransformParameterivEXT v1 v2 v3 = liftIO $ dyn137 ptr_glGetPixelTransformParameterivEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetPixelTransformParameterivEXT #-}
 ptr_glGetPixelTransformParameterivEXT :: FunPtr (GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -1331,7 +1404,7 @@ glGetPointerIndexedvEXT
   -> GLuint -- ^ @index@.
   -> Ptr (Ptr a) -- ^ @data@ pointing to @1@ element of type @Ptr a@.
   -> m ()
-glGetPointerIndexedvEXT v1 v2 v3 = liftIO $ dyn403 ptr_glGetPointerIndexedvEXT v1 v2 v3
+glGetPointerIndexedvEXT v1 v2 v3 = liftIO $ dyn405 ptr_glGetPointerIndexedvEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetPointerIndexedvEXT #-}
 ptr_glGetPointerIndexedvEXT :: FunPtr (GLenum -> GLuint -> Ptr (Ptr a) -> IO ())
@@ -1345,7 +1418,7 @@ glGetPointeri_vEXT
   -> GLuint -- ^ @index@.
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
-glGetPointeri_vEXT v1 v2 v3 = liftIO $ dyn403 ptr_glGetPointeri_vEXT v1 v2 v3
+glGetPointeri_vEXT v1 v2 v3 = liftIO $ dyn405 ptr_glGetPointeri_vEXT v1 v2 v3
 
 {-# NOINLINE ptr_glGetPointeri_vEXT #-}
 ptr_glGetPointeri_vEXT :: FunPtr (GLenum -> GLuint -> Ptr (Ptr a) -> IO ())
@@ -1359,7 +1432,7 @@ glGetPointerv
   => GLenum -- ^ @pname@ of type [GetPointervPName](Graphics-GL-Groups.html#GetPointervPName).
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
-glGetPointerv v1 v2 = liftIO $ dyn275 ptr_glGetPointerv v1 v2
+glGetPointerv v1 v2 = liftIO $ dyn276 ptr_glGetPointerv v1 v2
 
 {-# NOINLINE ptr_glGetPointerv #-}
 ptr_glGetPointerv :: FunPtr (GLenum -> Ptr (Ptr a) -> IO ())
@@ -1373,7 +1446,7 @@ glGetPointervEXT
   => GLenum -- ^ @pname@ of type [GetPointervPName](Graphics-GL-Groups.html#GetPointervPName).
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
-glGetPointervEXT v1 v2 = liftIO $ dyn275 ptr_glGetPointervEXT v1 v2
+glGetPointervEXT v1 v2 = liftIO $ dyn276 ptr_glGetPointervEXT v1 v2
 
 {-# NOINLINE ptr_glGetPointervEXT #-}
 ptr_glGetPointervEXT :: FunPtr (GLenum -> Ptr (Ptr a) -> IO ())
@@ -1387,7 +1460,7 @@ glGetPointervKHR
   => GLenum -- ^ @pname@.
   -> Ptr (Ptr a) -- ^ @params@.
   -> m ()
-glGetPointervKHR v1 v2 = liftIO $ dyn275 ptr_glGetPointervKHR v1 v2
+glGetPointervKHR v1 v2 = liftIO $ dyn276 ptr_glGetPointervKHR v1 v2
 
 {-# NOINLINE ptr_glGetPointervKHR #-}
 ptr_glGetPointervKHR :: FunPtr (GLenum -> Ptr (Ptr a) -> IO ())
@@ -1400,7 +1473,7 @@ glGetPolygonStipple
   :: MonadIO m
   => Ptr GLubyte -- ^ @mask@ pointing to @COMPSIZE()@ elements of type @GLubyte@.
   -> m ()
-glGetPolygonStipple v1 = liftIO $ dyn104 ptr_glGetPolygonStipple v1
+glGetPolygonStipple v1 = liftIO $ dyn105 ptr_glGetPolygonStipple v1
 
 {-# NOINLINE ptr_glGetPolygonStipple #-}
 ptr_glGetPolygonStipple :: FunPtr (Ptr GLubyte -> IO ())
@@ -1417,7 +1490,7 @@ glGetProgramBinary
   -> Ptr GLenum -- ^ @binaryFormat@ pointing to @1@ element of type @GLenum@.
   -> Ptr a -- ^ @binary@ pointing to @bufSize@ elements of type @a@.
   -> m ()
-glGetProgramBinary v1 v2 v3 v4 v5 = liftIO $ dyn404 ptr_glGetProgramBinary v1 v2 v3 v4 v5
+glGetProgramBinary v1 v2 v3 v4 v5 = liftIO $ dyn406 ptr_glGetProgramBinary v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetProgramBinary #-}
 ptr_glGetProgramBinary :: FunPtr (GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr a -> IO ())
@@ -1434,7 +1507,7 @@ glGetProgramBinaryOES
   -> Ptr GLenum -- ^ @binaryFormat@ pointing to @1@ element of type @GLenum@.
   -> Ptr a -- ^ @binary@ pointing to @bufSize@ elements of type @a@.
   -> m ()
-glGetProgramBinaryOES v1 v2 v3 v4 v5 = liftIO $ dyn404 ptr_glGetProgramBinaryOES v1 v2 v3 v4 v5
+glGetProgramBinaryOES v1 v2 v3 v4 v5 = liftIO $ dyn406 ptr_glGetProgramBinaryOES v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glGetProgramBinaryOES #-}
 ptr_glGetProgramBinaryOES :: FunPtr (GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLenum -> Ptr a -> IO ())
@@ -1448,7 +1521,7 @@ glGetProgramEnvParameterIivNV
   -> GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
   -> m ()
-glGetProgramEnvParameterIivNV v1 v2 v3 = liftIO $ dyn353 ptr_glGetProgramEnvParameterIivNV v1 v2 v3
+glGetProgramEnvParameterIivNV v1 v2 v3 = liftIO $ dyn354 ptr_glGetProgramEnvParameterIivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetProgramEnvParameterIivNV #-}
 ptr_glGetProgramEnvParameterIivNV :: FunPtr (GLenum -> GLuint -> Ptr GLint -> IO ())
@@ -1462,7 +1535,7 @@ glGetProgramEnvParameterIuivNV
   -> GLuint -- ^ @index@.
   -> Ptr GLuint -- ^ @params@ pointing to @4@ elements of type @GLuint@.
   -> m ()
-glGetProgramEnvParameterIuivNV v1 v2 v3 = liftIO $ dyn217 ptr_glGetProgramEnvParameterIuivNV v1 v2 v3
+glGetProgramEnvParameterIuivNV v1 v2 v3 = liftIO $ dyn218 ptr_glGetProgramEnvParameterIuivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetProgramEnvParameterIuivNV #-}
 ptr_glGetProgramEnvParameterIuivNV :: FunPtr (GLenum -> GLuint -> Ptr GLuint -> IO ())
@@ -1476,7 +1549,7 @@ glGetProgramEnvParameterdvARB
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
-glGetProgramEnvParameterdvARB v1 v2 v3 = liftIO $ dyn340 ptr_glGetProgramEnvParameterdvARB v1 v2 v3
+glGetProgramEnvParameterdvARB v1 v2 v3 = liftIO $ dyn341 ptr_glGetProgramEnvParameterdvARB v1 v2 v3
 
 {-# NOINLINE ptr_glGetProgramEnvParameterdvARB #-}
 ptr_glGetProgramEnvParameterdvARB :: FunPtr (GLenum -> GLuint -> Ptr GLdouble -> IO ())
@@ -1490,7 +1563,7 @@ glGetProgramEnvParameterfvARB
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
-glGetProgramEnvParameterfvARB v1 v2 v3 = liftIO $ dyn274 ptr_glGetProgramEnvParameterfvARB v1 v2 v3
+glGetProgramEnvParameterfvARB v1 v2 v3 = liftIO $ dyn275 ptr_glGetProgramEnvParameterfvARB v1 v2 v3
 
 {-# NOINLINE ptr_glGetProgramEnvParameterfvARB #-}
 ptr_glGetProgramEnvParameterfvARB :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
@@ -1506,7 +1579,7 @@ glGetProgramInfoLog
   -> Ptr GLsizei -- ^ @length@ pointing to @1@ element of type @GLsizei@.
   -> Ptr GLchar -- ^ @infoLog@ pointing to @bufSize@ elements of type @GLchar@.
   -> m ()
-glGetProgramInfoLog v1 v2 v3 v4 = liftIO $ dyn341 ptr_glGetProgramInfoLog v1 v2 v3 v4
+glGetProgramInfoLog v1 v2 v3 v4 = liftIO $ dyn342 ptr_glGetProgramInfoLog v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetProgramInfoLog #-}
 ptr_glGetProgramInfoLog :: FunPtr (GLuint -> GLsizei -> Ptr GLsizei -> Ptr GLchar -> IO ())
@@ -1522,7 +1595,7 @@ glGetProgramInterfaceiv
   -> GLenum -- ^ @pname@ of type [ProgramInterfacePName](Graphics-GL-Groups.html#ProgramInterfacePName).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
-glGetProgramInterfaceiv v1 v2 v3 v4 = liftIO $ dyn374 ptr_glGetProgramInterfaceiv v1 v2 v3 v4
+glGetProgramInterfaceiv v1 v2 v3 v4 = liftIO $ dyn376 ptr_glGetProgramInterfaceiv v1 v2 v3 v4
 
 {-# NOINLINE ptr_glGetProgramInterfaceiv #-}
 ptr_glGetProgramInterfaceiv :: FunPtr (GLuint -> GLenum -> GLenum -> Ptr GLint -> IO ())
@@ -1536,81 +1609,9 @@ glGetProgramLocalParameterIivNV
   -> GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
   -> m ()
-glGetProgramLocalParameterIivNV v1 v2 v3 = liftIO $ dyn353 ptr_glGetProgramLocalParameterIivNV v1 v2 v3
+glGetProgramLocalParameterIivNV v1 v2 v3 = liftIO $ dyn354 ptr_glGetProgramLocalParameterIivNV v1 v2 v3
 
 {-# NOINLINE ptr_glGetProgramLocalParameterIivNV #-}
 ptr_glGetProgramLocalParameterIivNV :: FunPtr (GLenum -> GLuint -> Ptr GLint -> IO ())
 ptr_glGetProgramLocalParameterIivNV = unsafePerformIO $ getCommand "glGetProgramLocalParameterIivNV"
-
--- glGetProgramLocalParameterIuivNV --------------------------------------------
-
-glGetProgramLocalParameterIuivNV
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTarget@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLuint -- ^ @params@ pointing to @4@ elements of type @GLuint@.
-  -> m ()
-glGetProgramLocalParameterIuivNV v1 v2 v3 = liftIO $ dyn217 ptr_glGetProgramLocalParameterIuivNV v1 v2 v3
-
-{-# NOINLINE ptr_glGetProgramLocalParameterIuivNV #-}
-ptr_glGetProgramLocalParameterIuivNV :: FunPtr (GLenum -> GLuint -> Ptr GLuint -> IO ())
-ptr_glGetProgramLocalParameterIuivNV = unsafePerformIO $ getCommand "glGetProgramLocalParameterIuivNV"
-
--- glGetProgramLocalParameterdvARB ---------------------------------------------
-
-glGetProgramLocalParameterdvARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
-  -> m ()
-glGetProgramLocalParameterdvARB v1 v2 v3 = liftIO $ dyn340 ptr_glGetProgramLocalParameterdvARB v1 v2 v3
-
-{-# NOINLINE ptr_glGetProgramLocalParameterdvARB #-}
-ptr_glGetProgramLocalParameterdvARB :: FunPtr (GLenum -> GLuint -> Ptr GLdouble -> IO ())
-ptr_glGetProgramLocalParameterdvARB = unsafePerformIO $ getCommand "glGetProgramLocalParameterdvARB"
-
--- glGetProgramLocalParameterfvARB ---------------------------------------------
-
-glGetProgramLocalParameterfvARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
-  -> GLuint -- ^ @index@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
-  -> m ()
-glGetProgramLocalParameterfvARB v1 v2 v3 = liftIO $ dyn274 ptr_glGetProgramLocalParameterfvARB v1 v2 v3
-
-{-# NOINLINE ptr_glGetProgramLocalParameterfvARB #-}
-ptr_glGetProgramLocalParameterfvARB :: FunPtr (GLenum -> GLuint -> Ptr GLfloat -> IO ())
-ptr_glGetProgramLocalParameterfvARB = unsafePerformIO $ getCommand "glGetProgramLocalParameterfvARB"
-
--- glGetProgramNamedParameterdvNV ----------------------------------------------
-
-glGetProgramNamedParameterdvNV
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
-  -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
-  -> m ()
-glGetProgramNamedParameterdvNV v1 v2 v3 v4 = liftIO $ dyn405 ptr_glGetProgramNamedParameterdvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetProgramNamedParameterdvNV #-}
-ptr_glGetProgramNamedParameterdvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLdouble -> IO ())
-ptr_glGetProgramNamedParameterdvNV = unsafePerformIO $ getCommand "glGetProgramNamedParameterdvNV"
-
--- glGetProgramNamedParameterfvNV ----------------------------------------------
-
-glGetProgramNamedParameterfvNV
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> GLsizei -- ^ @len@.
-  -> Ptr GLubyte -- ^ @name@ pointing to @1@ element of type @GLubyte@.
-  -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
-  -> m ()
-glGetProgramNamedParameterfvNV v1 v2 v3 v4 = liftIO $ dyn406 ptr_glGetProgramNamedParameterfvNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glGetProgramNamedParameterfvNV #-}
-ptr_glGetProgramNamedParameterfvNV :: FunPtr (GLuint -> GLsizei -> Ptr GLubyte -> Ptr GLfloat -> IO ())
-ptr_glGetProgramNamedParameterfvNV = unsafePerformIO $ getCommand "glGetProgramNamedParameterfvNV"
 
