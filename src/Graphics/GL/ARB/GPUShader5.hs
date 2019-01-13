@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.ARB.GPUShader5
--- Copyright   :  (c) Sven Panne 2018
+-- Copyright   :  (c) Sven Panne 2019
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>

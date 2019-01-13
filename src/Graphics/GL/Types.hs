@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------
 -- |
 -- Module      :  Graphics.GL.Types
--- Copyright   :  (c) Sven Panne 2009-2018
+-- Copyright   :  (c) Sven Panne 2009-2019
 -- License     :  BSD3
 --
 -- Maintainer  :  Sven Panne <svenpanne@gmail.com>
