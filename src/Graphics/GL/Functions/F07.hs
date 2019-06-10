@@ -993,7 +993,7 @@ ptr_glEvalCoord2xvOES = unsafePerformIO $ getCommand "glEvalCoord2xvOES"
 
 glEvalMapsNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
   -> GLenum -- ^ @mode@ of type @EvalMapsModeNV@.
   -> m ()
 glEvalMapsNV v1 v2 = liftIO $ dyn52 ptr_glEvalMapsNV v1 v2
@@ -1076,7 +1076,7 @@ ptr_glEvaluateDepthValuesARB = unsafePerformIO $ getCommand "glEvaluateDepthValu
 
 glExecuteProgramNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @id@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -1337,9 +1337,9 @@ ptr_glFenceSyncAPPLE = unsafePerformIO $ getCommand "glFenceSyncAPPLE"
 
 glFinalCombinerInputNV
   :: MonadIO m
-  => GLenum -- ^ @variable@ of type @CombinerVariableNV@.
-  -> GLenum -- ^ @input@ of type @CombinerRegisterNV@.
-  -> GLenum -- ^ @mapping@ of type @CombinerMappingNV@.
+  => GLenum -- ^ @variable@ of type [CombinerVariableNV](Graphics-GL-Groups.html#CombinerVariableNV).
+  -> GLenum -- ^ @input@ of type [CombinerRegisterNV](Graphics-GL-Groups.html#CombinerRegisterNV).
+  -> GLenum -- ^ @mapping@ of type [CombinerMappingNV](Graphics-GL-Groups.html#CombinerMappingNV).
   -> GLenum -- ^ @componentUsage@ of type @CombinerComponentUsageNV@.
   -> m ()
 glFinalCombinerInputNV v1 v2 v3 v4 = liftIO $ dyn54 ptr_glFinalCombinerInputNV v1 v2 v3 v4
@@ -1400,7 +1400,7 @@ ptr_glFinishFenceNV = unsafePerformIO $ getCommand "glFinishFenceNV"
 
 glFinishObjectAPPLE
   :: MonadIO m
-  => GLenum -- ^ @object@ of type @ObjectTypeAPPLE@.
+  => GLenum -- ^ @object@ of type [ObjectTypeAPPLE](Graphics-GL-Groups.html#ObjectTypeAPPLE).
   -> GLint -- ^ @name@.
   -> m ()
 glFinishObjectAPPLE v1 v2 = liftIO $ dyn56 ptr_glFinishObjectAPPLE v1 v2

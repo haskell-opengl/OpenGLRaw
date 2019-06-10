@@ -1177,7 +1177,7 @@ ptr_glVertexArrayNormalOffsetEXT = unsafePerformIO $ getCommand "glVertexArrayNo
 
 glVertexArrayParameteriAPPLE
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @VertexArrayPNameAPPLE@.
+  => GLenum -- ^ @pname@ of type [VertexArrayPNameAPPLE](Graphics-GL-Groups.html#VertexArrayPNameAPPLE).
   -> GLint -- ^ @param@.
   -> m ()
 glVertexArrayParameteriAPPLE v1 v2 = liftIO $ dyn56 ptr_glVertexArrayParameteriAPPLE v1 v2

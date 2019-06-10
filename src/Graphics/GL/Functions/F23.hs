@@ -1144,7 +1144,7 @@ glSampleMapATI
   :: MonadIO m
   => GLuint -- ^ @dst@.
   -> GLuint -- ^ @interp@.
-  -> GLenum -- ^ @swizzle@ of type @SwizzleOpATI@.
+  -> GLenum -- ^ @swizzle@ of type [SwizzleOpATI](Graphics-GL-Groups.html#SwizzleOpATI).
   -> m ()
 glSampleMapATI v1 v2 v3 = liftIO $ dyn630 ptr_glSampleMapATI v1 v2 v3
 
@@ -1210,7 +1210,7 @@ ptr_glSampleMaski = unsafePerformIO $ getCommand "glSampleMaski"
 
 glSamplePatternEXT
   :: MonadIO m
-  => GLenum -- ^ @pattern@ of type @SamplePatternEXT@.
+  => GLenum -- ^ @pattern@ of type [SamplePatternEXT](Graphics-GL-Groups.html#SamplePatternEXT).
   -> m ()
 glSamplePatternEXT v1 = liftIO $ dyn5 ptr_glSamplePatternEXT v1
 

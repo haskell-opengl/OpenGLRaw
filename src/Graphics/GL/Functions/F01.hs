@@ -394,7 +394,7 @@ ptr_glApplyFramebufferAttachmentCMAAINTEL = unsafePerformIO $ getCommand "glAppl
 
 glApplyTextureEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @LightTextureModeEXT@.
+  => GLenum -- ^ @mode@ of type [LightTextureModeEXT](Graphics-GL-Groups.html#LightTextureModeEXT).
   -> m ()
 glApplyTextureEXT v1 = liftIO $ dyn5 ptr_glApplyTextureEXT v1
 
@@ -547,7 +547,7 @@ ptr_glBegin = unsafePerformIO $ getCommand "glBegin"
 glBeginConditionalRender
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @mode@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  -> GLenum -- ^ @mode@ of type [ConditionalRenderMode](Graphics-GL-Groups.html#ConditionalRenderMode).
   -> m ()
 glBeginConditionalRender v1 v2 = liftIO $ dyn16 ptr_glBeginConditionalRender v1 v2
 
@@ -561,7 +561,7 @@ ptr_glBeginConditionalRender = unsafePerformIO $ getCommand "glBeginConditionalR
 glBeginConditionalRenderNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @mode@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  -> GLenum -- ^ @mode@ of type [ConditionalRenderMode](Graphics-GL-Groups.html#ConditionalRenderMode).
   -> m ()
 glBeginConditionalRenderNV v1 v2 = liftIO $ dyn16 ptr_glBeginConditionalRenderNV v1 v2
 
@@ -1175,7 +1175,7 @@ ptr_glBindMultiTextureEXT = unsafePerformIO $ getCommand "glBindMultiTextureEXT"
 
 glBindParameterEXT
   :: MonadIO m
-  => GLenum -- ^ @value@ of type @VertexShaderParameterEXT@.
+  => GLenum -- ^ @value@ of type [VertexShaderParameterEXT](Graphics-GL-Groups.html#VertexShaderParameterEXT).
   -> m GLuint
 glBindParameterEXT v1 = liftIO $ dyn31 ptr_glBindParameterEXT v1
 
@@ -1187,7 +1187,7 @@ ptr_glBindParameterEXT = unsafePerformIO $ getCommand "glBindParameterEXT"
 
 glBindProgramARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @program@.
   -> m ()
 glBindProgramARB v1 v2 = liftIO $ dyn17 ptr_glBindProgramARB v1 v2
@@ -1201,7 +1201,7 @@ ptr_glBindProgramARB = unsafePerformIO $ getCommand "glBindProgramARB"
 -- | This command is an alias for 'glBindProgramARB'.
 glBindProgramNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @id@.
   -> m ()
 glBindProgramNV v1 v2 = liftIO $ dyn17 ptr_glBindProgramNV v1 v2

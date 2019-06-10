@@ -1090,7 +1090,7 @@ glBufferStorage
   => GLenum -- ^ @target@ of type [BufferStorageTarget](Graphics-GL-Groups.html#BufferStorageTarget).
   -> GLsizeiptr -- ^ @size@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
+  -> GLbitfield -- ^ @flags@ of type [BufferStorageMask](Graphics-GL-Groups.html#BufferStorageMask).
   -> m ()
 glBufferStorage v1 v2 v3 v4 = liftIO $ dyn65 ptr_glBufferStorage v1 v2 v3 v4
 
@@ -1106,7 +1106,7 @@ glBufferStorageEXT
   => GLenum -- ^ @target@ of type [BufferStorageTarget](Graphics-GL-Groups.html#BufferStorageTarget).
   -> GLsizeiptr -- ^ @size@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
+  -> GLbitfield -- ^ @flags@ of type [BufferStorageMask](Graphics-GL-Groups.html#BufferStorageMask).
   -> m ()
 glBufferStorageEXT v1 v2 v3 v4 = liftIO $ dyn65 ptr_glBufferStorageEXT v1 v2 v3 v4
 
@@ -1122,7 +1122,7 @@ glBufferStorageExternalEXT
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @size@.
   -> GLeglClientBufferEXT -- ^ @clientBuffer@.
-  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
+  -> GLbitfield -- ^ @flags@ of type [BufferStorageMask](Graphics-GL-Groups.html#BufferStorageMask).
   -> m ()
 glBufferStorageExternalEXT v1 v2 v3 v4 v5 = liftIO $ dyn66 ptr_glBufferStorageExternalEXT v1 v2 v3 v4 v5
 
@@ -1287,8 +1287,8 @@ ptr_glCheckNamedFramebufferStatusEXT = unsafePerformIO $ getCommand "glCheckName
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glClampColor.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glClampColor.xhtml OpenGL 4.x>.
 glClampColor
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ClampColorTargetARB@.
-  -> GLenum -- ^ @clamp@ of type @ClampColorModeARB@.
+  => GLenum -- ^ @target@ of type [ClampColorTargetARB](Graphics-GL-Groups.html#ClampColorTargetARB).
+  -> GLenum -- ^ @clamp@ of type [ClampColorModeARB](Graphics-GL-Groups.html#ClampColorModeARB).
   -> m ()
 glClampColor v1 v2 = liftIO $ dyn52 ptr_glClampColor v1 v2
 
@@ -1301,8 +1301,8 @@ ptr_glClampColor = unsafePerformIO $ getCommand "glClampColor"
 -- | This command is an alias for 'glClampColor'.
 glClampColorARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ClampColorTargetARB@.
-  -> GLenum -- ^ @clamp@ of type @ClampColorModeARB@.
+  => GLenum -- ^ @target@ of type [ClampColorTargetARB](Graphics-GL-Groups.html#ClampColorTargetARB).
+  -> GLenum -- ^ @clamp@ of type [ClampColorModeARB](Graphics-GL-Groups.html#ClampColorModeARB).
   -> m ()
 glClampColorARB v1 v2 = liftIO $ dyn52 ptr_glClampColorARB v1 v2
 

@@ -828,7 +828,7 @@ ptr_glHint = unsafePerformIO $ getCommand "glHint"
 
 glHintPGI
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @HintTargetPGI@.
+  => GLenum -- ^ @target@ of type [HintTargetPGI](Graphics-GL-Groups.html#HintTargetPGI).
   -> GLint -- ^ @mode@.
   -> m ()
 glHintPGI v1 v2 = liftIO $ dyn56 ptr_glHintPGI v1 v2
@@ -873,7 +873,7 @@ ptr_glHistogramEXT = unsafePerformIO $ getCommand "glHistogramEXT"
 
 glIglooInterfaceSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @IglooFunctionSelectSGIX@.
+  => GLenum -- ^ @pname@ of type [IglooFunctionSelectSGIX](Graphics-GL-Groups.html#IglooFunctionSelectSGIX).
   -> Ptr a -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @IglooParameterSGIX@.
   -> m ()
 glIglooInterfaceSGIX v1 v2 = liftIO $ dyn235 ptr_glIglooInterfaceSGIX v1 v2
@@ -886,8 +886,8 @@ ptr_glIglooInterfaceSGIX = unsafePerformIO $ getCommand "glIglooInterfaceSGIX"
 
 glImageTransformParameterfHP
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ImageTransformTargetHP@.
-  -> GLenum -- ^ @pname@ of type @ImageTransformPNameHP@.
+  => GLenum -- ^ @target@ of type [ImageTransformTargetHP](Graphics-GL-Groups.html#ImageTransformTargetHP).
+  -> GLenum -- ^ @pname@ of type [ImageTransformPNameHP](Graphics-GL-Groups.html#ImageTransformPNameHP).
   -> GLfloat -- ^ @param@.
   -> m ()
 glImageTransformParameterfHP v1 v2 v3 = liftIO $ dyn165 ptr_glImageTransformParameterfHP v1 v2 v3
@@ -900,8 +900,8 @@ ptr_glImageTransformParameterfHP = unsafePerformIO $ getCommand "glImageTransfor
 
 glImageTransformParameterfvHP
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ImageTransformTargetHP@.
-  -> GLenum -- ^ @pname@ of type @ImageTransformPNameHP@.
+  => GLenum -- ^ @target@ of type [ImageTransformTargetHP](Graphics-GL-Groups.html#ImageTransformTargetHP).
+  -> GLenum -- ^ @pname@ of type [ImageTransformPNameHP](Graphics-GL-Groups.html#ImageTransformPNameHP).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glImageTransformParameterfvHP v1 v2 v3 = liftIO $ dyn136 ptr_glImageTransformParameterfvHP v1 v2 v3
@@ -914,8 +914,8 @@ ptr_glImageTransformParameterfvHP = unsafePerformIO $ getCommand "glImageTransfo
 
 glImageTransformParameteriHP
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ImageTransformTargetHP@.
-  -> GLenum -- ^ @pname@ of type @ImageTransformPNameHP@.
+  => GLenum -- ^ @target@ of type [ImageTransformTargetHP](Graphics-GL-Groups.html#ImageTransformTargetHP).
+  -> GLenum -- ^ @pname@ of type [ImageTransformPNameHP](Graphics-GL-Groups.html#ImageTransformPNameHP).
   -> GLint -- ^ @param@.
   -> m ()
 glImageTransformParameteriHP v1 v2 v3 = liftIO $ dyn64 ptr_glImageTransformParameteriHP v1 v2 v3
@@ -928,8 +928,8 @@ ptr_glImageTransformParameteriHP = unsafePerformIO $ getCommand "glImageTransfor
 
 glImageTransformParameterivHP
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ImageTransformTargetHP@.
-  -> GLenum -- ^ @pname@ of type @ImageTransformPNameHP@.
+  => GLenum -- ^ @target@ of type [ImageTransformTargetHP](Graphics-GL-Groups.html#ImageTransformTargetHP).
+  -> GLenum -- ^ @pname@ of type [ImageTransformPNameHP](Graphics-GL-Groups.html#ImageTransformPNameHP).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glImageTransformParameterivHP v1 v2 v3 = liftIO $ dyn137 ptr_glImageTransformParameterivHP v1 v2 v3

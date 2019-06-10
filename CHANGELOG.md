@@ -1,3 +1,8 @@
+3.3.3.0
+-------
+* Updated OpenGL registry to 696ac2296.
+* Relaxed version bound of `fixed` package.
+
 3.3.2.0
 -------
 * Updated OpenGL registry to 39e37f838.

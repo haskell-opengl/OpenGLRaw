@@ -572,7 +572,7 @@ glMultiTexBufferEXT
   :: MonadIO m
   => GLenum -- ^ @texunit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLenum -- ^ @internalformat@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  -> GLenum -- ^ @internalformat@.
   -> GLuint -- ^ @buffer@.
   -> m ()
 glMultiTexBufferEXT v1 v2 v3 v4 = liftIO $ dyn293 ptr_glMultiTexBufferEXT v1 v2 v3 v4

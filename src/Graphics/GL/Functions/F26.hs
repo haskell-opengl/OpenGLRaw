@@ -410,7 +410,7 @@ ptr_glTexEnvxvOES = unsafePerformIO $ getCommand "glTexEnvxvOES"
 glTexFilterFuncSGIS
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLenum -- ^ @filter@ of type @TextureFilterSGIS@.
+  -> GLenum -- ^ @filter@ of type [TextureFilterSGIS](Graphics-GL-Groups.html#TextureFilterSGIS).
   -> GLsizei -- ^ @n@.
   -> Ptr GLfloat -- ^ @weights@ pointing to @n@ elements of type @GLfloat@.
   -> m ()
@@ -1775,7 +1775,7 @@ ptr_glTextureImage3DMultisampleNV = unsafePerformIO $ getCommand "glTextureImage
 
 glTextureLightEXT
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @LightTexturePNameEXT@.
+  => GLenum -- ^ @pname@ of type [LightTexturePNameEXT](Graphics-GL-Groups.html#LightTexturePNameEXT).
   -> m ()
 glTextureLightEXT v1 = liftIO $ dyn5 ptr_glTextureLightEXT v1
 

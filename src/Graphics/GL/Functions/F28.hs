@@ -1466,7 +1466,7 @@ glUpdateObjectBufferATI
   -> GLuint -- ^ @offset@.
   -> GLsizei -- ^ @size@.
   -> Ptr a -- ^ @pointer@ pointing to @size@ elements of type @a@.
-  -> GLenum -- ^ @preserve@ of type @PreserveModeATI@.
+  -> GLenum -- ^ @preserve@ of type [PreserveModeATI](Graphics-GL-Groups.html#PreserveModeATI).
   -> m ()
 glUpdateObjectBufferATI v1 v2 v3 v4 v5 = liftIO $ dyn863 ptr_glUpdateObjectBufferATI v1 v2 v3 v4 v5
 

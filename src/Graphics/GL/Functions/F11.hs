@@ -370,7 +370,7 @@ ptr_glGetMultiTexParameterivEXT = unsafePerformIO $ getCommand "glGetMultiTexPar
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGetMultisample.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGetMultisample.xhtml OpenGL 4.x>.
 glGetMultisamplefv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetMultisamplePNameNV@.
+  => GLenum -- ^ @pname@ of type [GetMultisamplePNameNV](Graphics-GL-Groups.html#GetMultisamplePNameNV).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @val@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
@@ -385,7 +385,7 @@ ptr_glGetMultisamplefv = unsafePerformIO $ getCommand "glGetMultisamplefv"
 -- | This command is an alias for 'glGetMultisamplefv'.
 glGetMultisamplefvNV
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetMultisamplePNameNV@.
+  => GLenum -- ^ @pname@ of type [GetMultisamplePNameNV](Graphics-GL-Groups.html#GetMultisamplePNameNV).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @val@ pointing to @2@ elements of type @GLfloat@.
   -> m ()
@@ -758,7 +758,7 @@ ptr_glGetNextPerfQueryIdINTEL = unsafePerformIO $ getCommand "glGetNextPerfQuery
 glGetObjectBufferfvATI
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetObjectBufferfvATI v1 v2 v3 = liftIO $ dyn361 ptr_glGetObjectBufferfvATI v1 v2 v3
@@ -772,7 +772,7 @@ ptr_glGetObjectBufferfvATI = unsafePerformIO $ getCommand "glGetObjectBufferfvAT
 glGetObjectBufferivATI
   :: MonadIO m
   => GLuint -- ^ @buffer@.
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetObjectBufferivATI v1 v2 v3 = liftIO $ dyn345 ptr_glGetObjectBufferivATI v1 v2 v3
@@ -911,7 +911,7 @@ ptr_glGetObjectPtrLabelKHR = unsafePerformIO $ getCommand "glGetObjectPtrLabelKH
 glGetOcclusionQueryivNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@ of type @OcclusionQueryParameterNameNV@.
+  -> GLenum -- ^ @pname@ of type [OcclusionQueryParameterNameNV](Graphics-GL-Groups.html#OcclusionQueryParameterNameNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetOcclusionQueryivNV v1 v2 v3 = liftIO $ dyn345 ptr_glGetOcclusionQueryivNV v1 v2 v3
@@ -925,7 +925,7 @@ ptr_glGetOcclusionQueryivNV = unsafePerformIO $ getCommand "glGetOcclusionQueryi
 glGetOcclusionQueryuivNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@ of type @OcclusionQueryParameterNameNV@.
+  -> GLenum -- ^ @pname@ of type [OcclusionQueryParameterNameNV](Graphics-GL-Groups.html#OcclusionQueryParameterNameNV).
   -> Ptr GLuint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLuint@.
   -> m ()
 glGetOcclusionQueryuivNV v1 v2 v3 = liftIO $ dyn389 ptr_glGetOcclusionQueryuivNV v1 v2 v3
@@ -1372,7 +1372,7 @@ ptr_glGetPixelTexGenParameterivSGIS = unsafePerformIO $ getCommand "glGetPixelTe
 
 glGetPixelTransformParameterfvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLenum -- ^ @pname@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
@@ -1386,7 +1386,7 @@ ptr_glGetPixelTransformParameterfvEXT = unsafePerformIO $ getCommand "glGetPixel
 
 glGetPixelTransformParameterivEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLenum -- ^ @pname@.
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
@@ -1400,7 +1400,7 @@ ptr_glGetPixelTransformParameterivEXT = unsafePerformIO $ getCommand "glGetPixel
 
 glGetPointerIndexedvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr (Ptr a) -- ^ @data@ pointing to @1@ element of type @Ptr a@.
   -> m ()
@@ -1414,7 +1414,7 @@ ptr_glGetPointerIndexedvEXT = unsafePerformIO $ getCommand "glGetPointerIndexedv
 
 glGetPointeri_vEXT
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @pname@.
   -> GLuint -- ^ @index@.
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
@@ -1545,7 +1545,7 @@ ptr_glGetProgramEnvParameterIuivNV = unsafePerformIO $ getCommand "glGetProgramE
 
 glGetProgramEnvParameterdvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -1559,7 +1559,7 @@ ptr_glGetProgramEnvParameterdvARB = unsafePerformIO $ getCommand "glGetProgramEn
 
 glGetProgramEnvParameterfvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()

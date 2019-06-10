@@ -141,7 +141,7 @@ ptr_glGetProgramLocalParameterIuivNV = unsafePerformIO $ getCommand "glGetProgra
 
 glGetProgramLocalParameterdvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -155,7 +155,7 @@ ptr_glGetProgramLocalParameterdvARB = unsafePerformIO $ getCommand "glGetProgram
 
 glGetProgramLocalParameterfvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -199,9 +199,9 @@ ptr_glGetProgramNamedParameterfvNV = unsafePerformIO $ getCommand "glGetProgramN
 
 glGetProgramParameterdvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glGetProgramParameterdvNV v1 v2 v3 v4 = liftIO $ dyn409 ptr_glGetProgramParameterdvNV v1 v2 v3 v4
@@ -214,9 +214,9 @@ ptr_glGetProgramParameterdvNV = unsafePerformIO $ getCommand "glGetProgramParame
 
 glGetProgramParameterfvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glGetProgramParameterfvNV v1 v2 v3 v4 = liftIO $ dyn362 ptr_glGetProgramParameterfvNV v1 v2 v3 v4
@@ -421,8 +421,8 @@ ptr_glGetProgramStageiv = unsafePerformIO $ getCommand "glGetProgramStageiv"
 
 glGetProgramStringARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
-  -> GLenum -- ^ @pname@ of type @ProgramStringPropertyARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  -> GLenum -- ^ @pname@ of type [ProgramStringPropertyARB](Graphics-GL-Groups.html#ProgramStringPropertyARB).
   -> Ptr a -- ^ @string@ pointing to @COMPSIZE(target,pname)@ elements of type @a@.
   -> m ()
 glGetProgramStringARB v1 v2 v3 = liftIO $ dyn247 ptr_glGetProgramStringARB v1 v2 v3
@@ -436,7 +436,7 @@ ptr_glGetProgramStringARB = unsafePerformIO $ getCommand "glGetProgramStringARB"
 glGetProgramStringNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLubyte -- ^ @program@ pointing to @COMPSIZE(id,pname)@ elements of type @ProgramCharacterNV@.
   -> m ()
 glGetProgramStringNV v1 v2 v3 = liftIO $ dyn414 ptr_glGetProgramStringNV v1 v2 v3
@@ -478,7 +478,7 @@ ptr_glGetProgramiv = unsafePerformIO $ getCommand "glGetProgramiv"
 
 glGetProgramivARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLenum -- ^ @pname@ of type [ProgramPropertyARB](Graphics-GL-Groups.html#ProgramPropertyARB).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
@@ -493,7 +493,7 @@ ptr_glGetProgramivARB = unsafePerformIO $ getCommand "glGetProgramivARB"
 glGetProgramivNV
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
   -> m ()
 glGetProgramivNV v1 v2 v3 = liftIO $ dyn345 ptr_glGetProgramivNV v1 v2 v3
@@ -1212,7 +1212,7 @@ ptr_glGetSyncivAPPLE = unsafePerformIO $ getCommand "glGetSyncivAPPLE"
 
 glGetTexBumpParameterfvATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetTexBumpParameterATI@.
+  => GLenum -- ^ @pname@ of type [GetTexBumpParameterATI](Graphics-GL-Groups.html#GetTexBumpParameterATI).
   -> Ptr GLfloat -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetTexBumpParameterfvATI v1 v2 = liftIO $ dyn98 ptr_glGetTexBumpParameterfvATI v1 v2
@@ -1225,7 +1225,7 @@ ptr_glGetTexBumpParameterfvATI = unsafePerformIO $ getCommand "glGetTexBumpParam
 
 glGetTexBumpParameterivATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @GetTexBumpParameterATI@.
+  => GLenum -- ^ @pname@ of type [GetTexBumpParameterATI](Graphics-GL-Groups.html#GetTexBumpParameterATI).
   -> Ptr GLint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetTexBumpParameterivATI v1 v2 = liftIO $ dyn140 ptr_glGetTexBumpParameterivATI v1 v2
@@ -1297,7 +1297,7 @@ ptr_glGetTexEnvxvOES = unsafePerformIO $ getCommand "glGetTexEnvxvOES"
 glGetTexFilterFuncSGIS
   :: MonadIO m
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
-  -> GLenum -- ^ @filter@ of type @TextureFilterSGIS@.
+  -> GLenum -- ^ @filter@ of type [TextureFilterSGIS](Graphics-GL-Groups.html#TextureFilterSGIS).
   -> Ptr GLfloat -- ^ @weights@ pointing to @COMPSIZE(target,filter)@ elements of type @GLfloat@.
   -> m ()
 glGetTexFilterFuncSGIS v1 v2 v3 = liftIO $ dyn136 ptr_glGetTexFilterFuncSGIS v1 v2 v3

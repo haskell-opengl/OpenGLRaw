@@ -129,7 +129,7 @@ glVertexAttribPointerNV
   :: MonadIO m
   => GLuint -- ^ @index@.
   -> GLint -- ^ @fsize@.
-  -> GLenum -- ^ @type@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @type@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLsizei -- ^ @stride@.
   -> Ptr a -- ^ @pointer@ pointing to @COMPSIZE(fsize,type,stride)@ elements of type @a@.
   -> m ()
@@ -407,7 +407,7 @@ ptr_glVertexBlendARB = unsafePerformIO $ getCommand "glVertexBlendARB"
 
 glVertexBlendEnvfATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @VertexStreamATI@.
+  => GLenum -- ^ @pname@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLfloat -- ^ @param@.
   -> m ()
 glVertexBlendEnvfATI v1 v2 = liftIO $ dyn0 ptr_glVertexBlendEnvfATI v1 v2
@@ -420,7 +420,7 @@ ptr_glVertexBlendEnvfATI = unsafePerformIO $ getCommand "glVertexBlendEnvfATI"
 
 glVertexBlendEnviATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @VertexStreamATI@.
+  => GLenum -- ^ @pname@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLint -- ^ @param@.
   -> m ()
 glVertexBlendEnviATI v1 v2 = liftIO $ dyn56 ptr_glVertexBlendEnviATI v1 v2
@@ -587,7 +587,7 @@ ptr_glVertexPointervINTEL = unsafePerformIO $ getCommand "glVertexPointervINTEL"
 
 glVertexStream1dATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLdouble -- ^ @x@.
   -> m ()
 glVertexStream1dATI v1 v2 = liftIO $ dyn566 ptr_glVertexStream1dATI v1 v2
@@ -600,7 +600,7 @@ ptr_glVertexStream1dATI = unsafePerformIO $ getCommand "glVertexStream1dATI"
 
 glVertexStream1dvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLdouble -- ^ @coords@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glVertexStream1dvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream1dvATI v1 v2
@@ -613,7 +613,7 @@ ptr_glVertexStream1dvATI = unsafePerformIO $ getCommand "glVertexStream1dvATI"
 
 glVertexStream1fATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLfloat -- ^ @x@.
   -> m ()
 glVertexStream1fATI v1 v2 = liftIO $ dyn0 ptr_glVertexStream1fATI v1 v2
@@ -626,7 +626,7 @@ ptr_glVertexStream1fATI = unsafePerformIO $ getCommand "glVertexStream1fATI"
 
 glVertexStream1fvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLfloat -- ^ @coords@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glVertexStream1fvATI v1 v2 = liftIO $ dyn98 ptr_glVertexStream1fvATI v1 v2
@@ -639,7 +639,7 @@ ptr_glVertexStream1fvATI = unsafePerformIO $ getCommand "glVertexStream1fvATI"
 
 glVertexStream1iATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLint -- ^ @x@.
   -> m ()
 glVertexStream1iATI v1 v2 = liftIO $ dyn56 ptr_glVertexStream1iATI v1 v2
@@ -652,7 +652,7 @@ ptr_glVertexStream1iATI = unsafePerformIO $ getCommand "glVertexStream1iATI"
 
 glVertexStream1ivATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLint -- ^ @coords@ pointing to @1@ element of type @GLint@.
   -> m ()
 glVertexStream1ivATI v1 v2 = liftIO $ dyn140 ptr_glVertexStream1ivATI v1 v2
@@ -665,7 +665,7 @@ ptr_glVertexStream1ivATI = unsafePerformIO $ getCommand "glVertexStream1ivATI"
 
 glVertexStream1sATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLshort -- ^ @x@.
   -> m ()
 glVertexStream1sATI v1 v2 = liftIO $ dyn569 ptr_glVertexStream1sATI v1 v2
@@ -678,7 +678,7 @@ ptr_glVertexStream1sATI = unsafePerformIO $ getCommand "glVertexStream1sATI"
 
 glVertexStream1svATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLshort -- ^ @coords@ pointing to @1@ element of type @GLshort@.
   -> m ()
 glVertexStream1svATI v1 v2 = liftIO $ dyn570 ptr_glVertexStream1svATI v1 v2
@@ -691,7 +691,7 @@ ptr_glVertexStream1svATI = unsafePerformIO $ getCommand "glVertexStream1svATI"
 
 glVertexStream2dATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
   -> m ()
@@ -705,7 +705,7 @@ ptr_glVertexStream2dATI = unsafePerformIO $ getCommand "glVertexStream2dATI"
 
 glVertexStream2dvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLdouble -- ^ @coords@ pointing to @2@ elements of type @GLdouble@.
   -> m ()
 glVertexStream2dvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream2dvATI v1 v2
@@ -718,7 +718,7 @@ ptr_glVertexStream2dvATI = unsafePerformIO $ getCommand "glVertexStream2dvATI"
 
 glVertexStream2fATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
   -> m ()
@@ -732,7 +732,7 @@ ptr_glVertexStream2fATI = unsafePerformIO $ getCommand "glVertexStream2fATI"
 
 glVertexStream2fvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLfloat -- ^ @coords@ pointing to @2@ elements of type @GLfloat@.
   -> m ()
 glVertexStream2fvATI v1 v2 = liftIO $ dyn98 ptr_glVertexStream2fvATI v1 v2
@@ -745,7 +745,7 @@ ptr_glVertexStream2fvATI = unsafePerformIO $ getCommand "glVertexStream2fvATI"
 
 glVertexStream2iATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLint -- ^ @x@.
   -> GLint -- ^ @y@.
   -> m ()
@@ -759,7 +759,7 @@ ptr_glVertexStream2iATI = unsafePerformIO $ getCommand "glVertexStream2iATI"
 
 glVertexStream2ivATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLint -- ^ @coords@ pointing to @2@ elements of type @GLint@.
   -> m ()
 glVertexStream2ivATI v1 v2 = liftIO $ dyn140 ptr_glVertexStream2ivATI v1 v2
@@ -772,7 +772,7 @@ ptr_glVertexStream2ivATI = unsafePerformIO $ getCommand "glVertexStream2ivATI"
 
 glVertexStream2sATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLshort -- ^ @x@.
   -> GLshort -- ^ @y@.
   -> m ()
@@ -786,7 +786,7 @@ ptr_glVertexStream2sATI = unsafePerformIO $ getCommand "glVertexStream2sATI"
 
 glVertexStream2svATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLshort -- ^ @coords@ pointing to @2@ elements of type @GLshort@.
   -> m ()
 glVertexStream2svATI v1 v2 = liftIO $ dyn570 ptr_glVertexStream2svATI v1 v2
@@ -799,7 +799,7 @@ ptr_glVertexStream2svATI = unsafePerformIO $ getCommand "glVertexStream2svATI"
 
 glVertexStream3dATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
@@ -814,7 +814,7 @@ ptr_glVertexStream3dATI = unsafePerformIO $ getCommand "glVertexStream3dATI"
 
 glVertexStream3dvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLdouble -- ^ @coords@ pointing to @3@ elements of type @GLdouble@.
   -> m ()
 glVertexStream3dvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream3dvATI v1 v2
@@ -827,7 +827,7 @@ ptr_glVertexStream3dvATI = unsafePerformIO $ getCommand "glVertexStream3dvATI"
 
 glVertexStream3fATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
   -> GLfloat -- ^ @z@.
@@ -842,7 +842,7 @@ ptr_glVertexStream3fATI = unsafePerformIO $ getCommand "glVertexStream3fATI"
 
 glVertexStream3fvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLfloat -- ^ @coords@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
 glVertexStream3fvATI v1 v2 = liftIO $ dyn98 ptr_glVertexStream3fvATI v1 v2
@@ -855,7 +855,7 @@ ptr_glVertexStream3fvATI = unsafePerformIO $ getCommand "glVertexStream3fvATI"
 
 glVertexStream3iATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLint -- ^ @x@.
   -> GLint -- ^ @y@.
   -> GLint -- ^ @z@.
@@ -870,7 +870,7 @@ ptr_glVertexStream3iATI = unsafePerformIO $ getCommand "glVertexStream3iATI"
 
 glVertexStream3ivATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLint -- ^ @coords@ pointing to @3@ elements of type @GLint@.
   -> m ()
 glVertexStream3ivATI v1 v2 = liftIO $ dyn140 ptr_glVertexStream3ivATI v1 v2
@@ -883,7 +883,7 @@ ptr_glVertexStream3ivATI = unsafePerformIO $ getCommand "glVertexStream3ivATI"
 
 glVertexStream3sATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLshort -- ^ @x@.
   -> GLshort -- ^ @y@.
   -> GLshort -- ^ @z@.
@@ -898,7 +898,7 @@ ptr_glVertexStream3sATI = unsafePerformIO $ getCommand "glVertexStream3sATI"
 
 glVertexStream3svATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLshort -- ^ @coords@ pointing to @3@ elements of type @GLshort@.
   -> m ()
 glVertexStream3svATI v1 v2 = liftIO $ dyn570 ptr_glVertexStream3svATI v1 v2
@@ -911,7 +911,7 @@ ptr_glVertexStream3svATI = unsafePerformIO $ getCommand "glVertexStream3svATI"
 
 glVertexStream4dATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
   -> GLdouble -- ^ @z@.
@@ -927,7 +927,7 @@ ptr_glVertexStream4dATI = unsafePerformIO $ getCommand "glVertexStream4dATI"
 
 glVertexStream4dvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLdouble -- ^ @coords@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glVertexStream4dvATI v1 v2 = liftIO $ dyn97 ptr_glVertexStream4dvATI v1 v2
@@ -940,7 +940,7 @@ ptr_glVertexStream4dvATI = unsafePerformIO $ getCommand "glVertexStream4dvATI"
 
 glVertexStream4fATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
   -> GLfloat -- ^ @z@.
@@ -956,7 +956,7 @@ ptr_glVertexStream4fATI = unsafePerformIO $ getCommand "glVertexStream4fATI"
 
 glVertexStream4fvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLfloat -- ^ @coords@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glVertexStream4fvATI v1 v2 = liftIO $ dyn98 ptr_glVertexStream4fvATI v1 v2
@@ -969,7 +969,7 @@ ptr_glVertexStream4fvATI = unsafePerformIO $ getCommand "glVertexStream4fvATI"
 
 glVertexStream4iATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLint -- ^ @x@.
   -> GLint -- ^ @y@.
   -> GLint -- ^ @z@.
@@ -985,7 +985,7 @@ ptr_glVertexStream4iATI = unsafePerformIO $ getCommand "glVertexStream4iATI"
 
 glVertexStream4ivATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLint -- ^ @coords@ pointing to @4@ elements of type @GLint@.
   -> m ()
 glVertexStream4ivATI v1 v2 = liftIO $ dyn140 ptr_glVertexStream4ivATI v1 v2
@@ -998,7 +998,7 @@ ptr_glVertexStream4ivATI = unsafePerformIO $ getCommand "glVertexStream4ivATI"
 
 glVertexStream4sATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLshort -- ^ @x@.
   -> GLshort -- ^ @y@.
   -> GLshort -- ^ @z@.
@@ -1014,7 +1014,7 @@ ptr_glVertexStream4sATI = unsafePerformIO $ getCommand "glVertexStream4sATI"
 
 glVertexStream4svATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLshort -- ^ @coords@ pointing to @4@ elements of type @GLshort@.
   -> m ()
 glVertexStream4svATI v1 v2 = liftIO $ dyn570 ptr_glVertexStream4svATI v1 v2

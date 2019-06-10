@@ -207,9 +207,9 @@ glCombinerInputNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
   -> GLenum -- ^ @portion@ of type @CombinerPortionNV@.
-  -> GLenum -- ^ @variable@ of type @CombinerVariableNV@.
-  -> GLenum -- ^ @input@ of type @CombinerRegisterNV@.
-  -> GLenum -- ^ @mapping@ of type @CombinerMappingNV@.
+  -> GLenum -- ^ @variable@ of type [CombinerVariableNV](Graphics-GL-Groups.html#CombinerVariableNV).
+  -> GLenum -- ^ @input@ of type [CombinerRegisterNV](Graphics-GL-Groups.html#CombinerRegisterNV).
+  -> GLenum -- ^ @mapping@ of type [CombinerMappingNV](Graphics-GL-Groups.html#CombinerMappingNV).
   -> GLenum -- ^ @componentUsage@ of type @CombinerComponentUsageNV@.
   -> m ()
 glCombinerInputNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn138 ptr_glCombinerInputNV v1 v2 v3 v4 v5 v6
@@ -224,11 +224,11 @@ glCombinerOutputNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
   -> GLenum -- ^ @portion@ of type @CombinerPortionNV@.
-  -> GLenum -- ^ @abOutput@ of type @CombinerRegisterNV@.
-  -> GLenum -- ^ @cdOutput@ of type @CombinerRegisterNV@.
-  -> GLenum -- ^ @sumOutput@ of type @CombinerRegisterNV@.
-  -> GLenum -- ^ @scale@ of type @CombinerScaleNV@.
-  -> GLenum -- ^ @bias@ of type @CombinerBiasNV@.
+  -> GLenum -- ^ @abOutput@ of type [CombinerRegisterNV](Graphics-GL-Groups.html#CombinerRegisterNV).
+  -> GLenum -- ^ @cdOutput@ of type [CombinerRegisterNV](Graphics-GL-Groups.html#CombinerRegisterNV).
+  -> GLenum -- ^ @sumOutput@ of type [CombinerRegisterNV](Graphics-GL-Groups.html#CombinerRegisterNV).
+  -> GLenum -- ^ @scale@ of type [CombinerScaleNV](Graphics-GL-Groups.html#CombinerScaleNV).
+  -> GLenum -- ^ @bias@ of type [CombinerBiasNV](Graphics-GL-Groups.html#CombinerBiasNV).
   -> GLboolean -- ^ @abDotProduct@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLboolean -- ^ @cdDotProduct@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
   -> GLboolean -- ^ @muxSum@ of type [Boolean](Graphics-GL-Groups.html#Boolean).
@@ -243,7 +243,7 @@ ptr_glCombinerOutputNV = unsafePerformIO $ getCommand "glCombinerOutputNV"
 
 glCombinerParameterfNV
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  => GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> GLfloat -- ^ @param@.
   -> m ()
 glCombinerParameterfNV v1 v2 = liftIO $ dyn0 ptr_glCombinerParameterfNV v1 v2
@@ -256,7 +256,7 @@ ptr_glCombinerParameterfNV = unsafePerformIO $ getCommand "glCombinerParameterfN
 
 glCombinerParameterfvNV
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  => GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glCombinerParameterfvNV v1 v2 = liftIO $ dyn98 ptr_glCombinerParameterfvNV v1 v2
@@ -269,7 +269,7 @@ ptr_glCombinerParameterfvNV = unsafePerformIO $ getCommand "glCombinerParameterf
 
 glCombinerParameteriNV
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  => GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> GLint -- ^ @param@.
   -> m ()
 glCombinerParameteriNV v1 v2 = liftIO $ dyn56 ptr_glCombinerParameteriNV v1 v2
@@ -282,7 +282,7 @@ ptr_glCombinerParameteriNV = unsafePerformIO $ getCommand "glCombinerParameteriN
 
 glCombinerParameterivNV
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  => GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glCombinerParameterivNV v1 v2 = liftIO $ dyn140 ptr_glCombinerParameterivNV v1 v2
@@ -296,7 +296,7 @@ ptr_glCombinerParameterivNV = unsafePerformIO $ getCommand "glCombinerParameteri
 glCombinerStageParameterfvNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glCombinerStageParameterfvNV v1 v2 v3 = liftIO $ dyn136 ptr_glCombinerStageParameterfvNV v1 v2 v3

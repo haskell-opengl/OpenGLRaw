@@ -289,7 +289,7 @@ glNewObjectBufferATI
   :: MonadIO m
   => GLsizei -- ^ @size@.
   -> Ptr a -- ^ @pointer@ pointing to @size@ elements of type @a@.
-  -> GLenum -- ^ @usage@ of type @ArrayObjectUsageATI@.
+  -> GLenum -- ^ @usage@ of type [ArrayObjectUsageATI](Graphics-GL-Groups.html#ArrayObjectUsageATI).
   -> m GLuint
 glNewObjectBufferATI v1 v2 v3 = liftIO $ dyn627 ptr_glNewObjectBufferATI v1 v2 v3
 
@@ -635,7 +635,7 @@ ptr_glNormalPointervINTEL = unsafePerformIO $ getCommand "glNormalPointervINTEL"
 
 glNormalStream3bATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLbyte -- ^ @nx@.
   -> GLbyte -- ^ @ny@.
   -> GLbyte -- ^ @nz@.
@@ -650,7 +650,7 @@ ptr_glNormalStream3bATI = unsafePerformIO $ getCommand "glNormalStream3bATI"
 
 glNormalStream3bvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLbyte -- ^ @coords@ pointing to @3@ elements of type @GLbyte@.
   -> m ()
 glNormalStream3bvATI v1 v2 = liftIO $ dyn565 ptr_glNormalStream3bvATI v1 v2
@@ -663,7 +663,7 @@ ptr_glNormalStream3bvATI = unsafePerformIO $ getCommand "glNormalStream3bvATI"
 
 glNormalStream3dATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLdouble -- ^ @nx@.
   -> GLdouble -- ^ @ny@.
   -> GLdouble -- ^ @nz@.
@@ -678,7 +678,7 @@ ptr_glNormalStream3dATI = unsafePerformIO $ getCommand "glNormalStream3dATI"
 
 glNormalStream3dvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLdouble -- ^ @coords@ pointing to @3@ elements of type @GLdouble@.
   -> m ()
 glNormalStream3dvATI v1 v2 = liftIO $ dyn97 ptr_glNormalStream3dvATI v1 v2
@@ -691,7 +691,7 @@ ptr_glNormalStream3dvATI = unsafePerformIO $ getCommand "glNormalStream3dvATI"
 
 glNormalStream3fATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLfloat -- ^ @nx@.
   -> GLfloat -- ^ @ny@.
   -> GLfloat -- ^ @nz@.
@@ -706,7 +706,7 @@ ptr_glNormalStream3fATI = unsafePerformIO $ getCommand "glNormalStream3fATI"
 
 glNormalStream3fvATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLfloat -- ^ @coords@ pointing to @3@ elements of type @GLfloat@.
   -> m ()
 glNormalStream3fvATI v1 v2 = liftIO $ dyn98 ptr_glNormalStream3fvATI v1 v2
@@ -719,7 +719,7 @@ ptr_glNormalStream3fvATI = unsafePerformIO $ getCommand "glNormalStream3fvATI"
 
 glNormalStream3iATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLint -- ^ @nx@.
   -> GLint -- ^ @ny@.
   -> GLint -- ^ @nz@.
@@ -734,7 +734,7 @@ ptr_glNormalStream3iATI = unsafePerformIO $ getCommand "glNormalStream3iATI"
 
 glNormalStream3ivATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLint -- ^ @coords@ pointing to @3@ elements of type @GLint@.
   -> m ()
 glNormalStream3ivATI v1 v2 = liftIO $ dyn140 ptr_glNormalStream3ivATI v1 v2
@@ -747,7 +747,7 @@ ptr_glNormalStream3ivATI = unsafePerformIO $ getCommand "glNormalStream3ivATI"
 
 glNormalStream3sATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> GLshort -- ^ @nx@.
   -> GLshort -- ^ @ny@.
   -> GLshort -- ^ @nz@.
@@ -762,7 +762,7 @@ ptr_glNormalStream3sATI = unsafePerformIO $ getCommand "glNormalStream3sATI"
 
 glNormalStream3svATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> Ptr GLshort -- ^ @coords@ pointing to @3@ elements of type @GLshort@.
   -> m ()
 glNormalStream3svATI v1 v2 = liftIO $ dyn570 ptr_glNormalStream3svATI v1 v2
@@ -951,7 +951,7 @@ ptr_glOrthoxOES = unsafePerformIO $ getCommand "glOrthoxOES"
 
 glPNTrianglesfATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PNTrianglesPNameATI@.
+  => GLenum -- ^ @pname@ of type [PNTrianglesPNameATI](Graphics-GL-Groups.html#PNTrianglesPNameATI).
   -> GLfloat -- ^ @param@.
   -> m ()
 glPNTrianglesfATI v1 v2 = liftIO $ dyn0 ptr_glPNTrianglesfATI v1 v2
@@ -964,7 +964,7 @@ ptr_glPNTrianglesfATI = unsafePerformIO $ getCommand "glPNTrianglesfATI"
 
 glPNTrianglesiATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PNTrianglesPNameATI@.
+  => GLenum -- ^ @pname@ of type [PNTrianglesPNameATI](Graphics-GL-Groups.html#PNTrianglesPNameATI).
   -> GLint -- ^ @param@.
   -> m ()
 glPNTrianglesiATI v1 v2 = liftIO $ dyn56 ptr_glPNTrianglesiATI v1 v2
@@ -979,7 +979,7 @@ glPassTexCoordATI
   :: MonadIO m
   => GLuint -- ^ @dst@.
   -> GLuint -- ^ @coord@.
-  -> GLenum -- ^ @swizzle@ of type @SwizzleOpATI@.
+  -> GLenum -- ^ @swizzle@ of type [SwizzleOpATI](Graphics-GL-Groups.html#SwizzleOpATI).
   -> m ()
 glPassTexCoordATI v1 v2 v3 = liftIO $ dyn630 ptr_glPassTexCoordATI v1 v2 v3
 
@@ -1091,7 +1091,7 @@ glPathCommandsNV
   -> GLsizei -- ^ @numCommands@.
   -> Ptr GLubyte -- ^ @commands@ pointing to @numCommands@ elements of type @PathCommand@.
   -> GLsizei -- ^ @numCoords@.
-  -> GLenum -- ^ @coordType@ of type @PathCoordType@.
+  -> GLenum -- ^ @coordType@ of type [PathCoordType](Graphics-GL-Groups.html#PathCoordType).
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
 glPathCommandsNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn631 ptr_glPathCommandsNV v1 v2 v3 v4 v5 v6
@@ -1106,7 +1106,7 @@ glPathCoordsNV
   :: MonadIO m
   => GLuint -- ^ @path@ of type @Path@.
   -> GLsizei -- ^ @numCoords@.
-  -> GLenum -- ^ @coordType@ of type @PathCoordType@.
+  -> GLenum -- ^ @coordType@ of type [PathCoordType](Graphics-GL-Groups.html#PathCoordType).
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
 glPathCoordsNV v1 v2 v3 v4 = liftIO $ dyn632 ptr_glPathCoordsNV v1 v2 v3 v4
@@ -1358,7 +1358,7 @@ glPathSubCommandsNV
   -> GLsizei -- ^ @numCommands@.
   -> Ptr GLubyte -- ^ @commands@ pointing to @numCommands@ elements of type @PathCommand@.
   -> GLsizei -- ^ @numCoords@.
-  -> GLenum -- ^ @coordType@ of type @PathCoordType@.
+  -> GLenum -- ^ @coordType@ of type [PathCoordType](Graphics-GL-Groups.html#PathCoordType).
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
 glPathSubCommandsNV v1 v2 v3 v4 v5 v6 v7 v8 = liftIO $ dyn640 ptr_glPathSubCommandsNV v1 v2 v3 v4 v5 v6 v7 v8
@@ -1374,7 +1374,7 @@ glPathSubCoordsNV
   => GLuint -- ^ @path@ of type @Path@.
   -> GLsizei -- ^ @coordStart@.
   -> GLsizei -- ^ @numCoords@.
-  -> GLenum -- ^ @coordType@ of type @PathCoordType@.
+  -> GLenum -- ^ @coordType@ of type [PathCoordType](Graphics-GL-Groups.html#PathCoordType).
   -> Ptr a -- ^ @coords@ pointing to @COMPSIZE(numCoords,coordType)@ elements of type @a@.
   -> m ()
 glPathSubCoordsNV v1 v2 v3 v4 v5 = liftIO $ dyn641 ptr_glPathSubCoordsNV v1 v2 v3 v4 v5
@@ -1426,7 +1426,7 @@ ptr_glPauseTransformFeedbackNV = unsafePerformIO $ getCommand "glPauseTransformF
 
 glPixelDataRangeNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @PixelDataRangeTargetNV@.
+  => GLenum -- ^ @target@ of type [PixelDataRangeTargetNV](Graphics-GL-Groups.html#PixelDataRangeTargetNV).
   -> GLsizei -- ^ @length@.
   -> Ptr a -- ^ @pointer@ pointing to @length@ elements of type @a@.
   -> m ()

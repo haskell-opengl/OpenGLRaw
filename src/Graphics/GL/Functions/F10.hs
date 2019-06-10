@@ -199,7 +199,7 @@ ptr_glGetDetailTexFuncSGIS = unsafePerformIO $ getCommand "glGetDetailTexFuncSGI
 -- | This command is an alias for 'glGetDoublei_v'.
 glGetDoubleIndexedvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLdouble@.
   -> m ()
@@ -214,7 +214,7 @@ ptr_glGetDoubleIndexedvEXT = unsafePerformIO $ getCommand "glGetDoubleIndexedvEX
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetDoublei_v
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLdouble@.
   -> m ()
@@ -229,7 +229,7 @@ ptr_glGetDoublei_v = unsafePerformIO $ getCommand "glGetDoublei_v"
 -- | This command is an alias for 'glGetDoublei_v'.
 glGetDoublei_vEXT
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @pname@.
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLdouble@.
   -> m ()
@@ -299,7 +299,7 @@ ptr_glGetError = unsafePerformIO $ getCommand "glGetError"
 glGetFenceivNV
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
-  -> GLenum -- ^ @pname@ of type @FenceParameterNameNV@.
+  -> GLenum -- ^ @pname@ of type [FenceParameterNameNV](Graphics-GL-Groups.html#FenceParameterNameNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetFenceivNV v1 v2 v3 = liftIO $ dyn345 ptr_glGetFenceivNV v1 v2 v3
@@ -312,8 +312,8 @@ ptr_glGetFenceivNV = unsafePerformIO $ getCommand "glGetFenceivNV"
 
 glGetFinalCombinerInputParameterfvNV
   :: MonadIO m
-  => GLenum -- ^ @variable@ of type @CombinerVariableNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  => GLenum -- ^ @variable@ of type [CombinerVariableNV](Graphics-GL-Groups.html#CombinerVariableNV).
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetFinalCombinerInputParameterfvNV v1 v2 v3 = liftIO $ dyn136 ptr_glGetFinalCombinerInputParameterfvNV v1 v2 v3
@@ -326,8 +326,8 @@ ptr_glGetFinalCombinerInputParameterfvNV = unsafePerformIO $ getCommand "glGetFi
 
 glGetFinalCombinerInputParameterivNV
   :: MonadIO m
-  => GLenum -- ^ @variable@ of type @CombinerVariableNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  => GLenum -- ^ @variable@ of type [CombinerVariableNV](Graphics-GL-Groups.html#CombinerVariableNV).
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetFinalCombinerInputParameterivNV v1 v2 v3 = liftIO $ dyn137 ptr_glGetFinalCombinerInputParameterivNV v1 v2 v3
@@ -379,7 +379,7 @@ ptr_glGetFixedvOES = unsafePerformIO $ getCommand "glGetFixedvOES"
 -- | This command is an alias for 'glGetFloati_v'.
 glGetFloatIndexedvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLfloat@.
   -> m ()
@@ -394,7 +394,7 @@ ptr_glGetFloatIndexedvEXT = unsafePerformIO $ getCommand "glGetFloatIndexedvEXT"
 -- | Manual page for <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetFloati_v
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLfloat@.
   -> m ()
@@ -409,7 +409,7 @@ ptr_glGetFloati_v = unsafePerformIO $ getCommand "glGetFloati_v"
 -- | This command is an alias for 'glGetFloati_v'.
 glGetFloati_vEXT
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @pname@.
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
@@ -424,7 +424,7 @@ ptr_glGetFloati_vEXT = unsafePerformIO $ getCommand "glGetFloati_vEXT"
 -- | This command is an alias for 'glGetFloati_v'.
 glGetFloati_vNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLfloat@.
   -> m ()
@@ -439,7 +439,7 @@ ptr_glGetFloati_vNV = unsafePerformIO $ getCommand "glGetFloati_vNV"
 -- | This command is an alias for 'glGetFloati_v'.
 glGetFloati_vOES
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLfloat@.
   -> m ()
@@ -892,8 +892,8 @@ ptr_glGetImageHandleNV = unsafePerformIO $ getCommand "glGetImageHandleNV"
 
 glGetImageTransformParameterfvHP
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ImageTransformTargetHP@.
-  -> GLenum -- ^ @pname@ of type @ImageTransformPNameHP@.
+  => GLenum -- ^ @target@ of type [ImageTransformTargetHP](Graphics-GL-Groups.html#ImageTransformTargetHP).
+  -> GLenum -- ^ @pname@ of type [ImageTransformPNameHP](Graphics-GL-Groups.html#ImageTransformPNameHP).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetImageTransformParameterfvHP v1 v2 v3 = liftIO $ dyn136 ptr_glGetImageTransformParameterfvHP v1 v2 v3
@@ -906,8 +906,8 @@ ptr_glGetImageTransformParameterfvHP = unsafePerformIO $ getCommand "glGetImageT
 
 glGetImageTransformParameterivHP
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ImageTransformTargetHP@.
-  -> GLenum -- ^ @pname@ of type @ImageTransformPNameHP@.
+  => GLenum -- ^ @target@ of type [ImageTransformTargetHP](Graphics-GL-Groups.html#ImageTransformTargetHP).
+  -> GLenum -- ^ @pname@ of type [ImageTransformPNameHP](Graphics-GL-Groups.html#ImageTransformPNameHP).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetImageTransformParameterivHP v1 v2 v3 = liftIO $ dyn137 ptr_glGetImageTransformParameterivHP v1 v2 v3
@@ -947,7 +947,7 @@ ptr_glGetInstrumentsSGIX = unsafePerformIO $ getCommand "glGetInstrumentsSGIX"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetInteger64i_v
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLint64 -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLint64@.
   -> m ()
@@ -1005,7 +1005,7 @@ ptr_glGetIntegerIndexedvEXT = unsafePerformIO $ getCommand "glGetIntegerIndexedv
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man3/xhtml/glGet.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glGet.xhtml OpenGL 4.x>.
 glGetIntegeri_v
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @data@ pointing to @COMPSIZE(target)@ elements of type @GLint@.
   -> m ()
@@ -1019,7 +1019,7 @@ ptr_glGetIntegeri_v = unsafePerformIO $ getCommand "glGetIntegeri_v"
 
 glGetIntegeri_vEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [TypeEnum](Graphics-GL-Groups.html#TypeEnum).
+  => GLenum -- ^ @target@.
   -> GLuint -- ^ @index@.
   -> Ptr GLint -- ^ @data@.
   -> m ()
@@ -1309,9 +1309,9 @@ ptr_glGetLocalConstantIntegervEXT = unsafePerformIO $ getCommand "glGetLocalCons
 
 glGetMapAttribParameterfvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
   -> GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @MapAttribParameterNV@.
+  -> GLenum -- ^ @pname@ of type [MapAttribParameterNV](Graphics-GL-Groups.html#MapAttribParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMapAttribParameterfvNV v1 v2 v3 v4 = liftIO $ dyn362 ptr_glGetMapAttribParameterfvNV v1 v2 v3 v4
@@ -1324,9 +1324,9 @@ ptr_glGetMapAttribParameterfvNV = unsafePerformIO $ getCommand "glGetMapAttribPa
 
 glGetMapAttribParameterivNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
   -> GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @MapAttribParameterNV@.
+  -> GLenum -- ^ @pname@ of type [MapAttribParameterNV](Graphics-GL-Groups.html#MapAttribParameterNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetMapAttribParameterivNV v1 v2 v3 v4 = liftIO $ dyn363 ptr_glGetMapAttribParameterivNV v1 v2 v3 v4
@@ -1339,7 +1339,7 @@ ptr_glGetMapAttribParameterivNV = unsafePerformIO $ getCommand "glGetMapAttribPa
 
 glGetMapControlPointsNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
   -> GLuint -- ^ @index@.
   -> GLenum -- ^ @type@ of type @MapTypeNV@.
   -> GLsizei -- ^ @ustride@.
@@ -1357,8 +1357,8 @@ ptr_glGetMapControlPointsNV = unsafePerformIO $ getCommand "glGetMapControlPoint
 
 glGetMapParameterfvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
-  -> GLenum -- ^ @pname@ of type @MapParameterNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
+  -> GLenum -- ^ @pname@ of type [MapParameterNV](Graphics-GL-Groups.html#MapParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(target,pname)@ elements of type @GLfloat@.
   -> m ()
 glGetMapParameterfvNV v1 v2 v3 = liftIO $ dyn136 ptr_glGetMapParameterfvNV v1 v2 v3
@@ -1371,8 +1371,8 @@ ptr_glGetMapParameterfvNV = unsafePerformIO $ getCommand "glGetMapParameterfvNV"
 
 glGetMapParameterivNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
-  -> GLenum -- ^ @pname@ of type @MapParameterNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
+  -> GLenum -- ^ @pname@ of type [MapParameterNV](Graphics-GL-Groups.html#MapParameterNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(target,pname)@ elements of type @GLint@.
   -> m ()
 glGetMapParameterivNV v1 v2 v3 = liftIO $ dyn137 ptr_glGetMapParameterivNV v1 v2 v3

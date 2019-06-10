@@ -447,9 +447,9 @@ ptr_glGetTextureSubImage = unsafePerformIO $ getCommand "glGetTextureSubImage"
 
 glGetTrackMatrixivNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @address@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetTrackMatrixivNV v1 v2 v3 v4 = liftIO $ dyn363 ptr_glGetTrackMatrixivNV v1 v2 v3 v4
@@ -864,7 +864,7 @@ ptr_glGetUnsignedBytevEXT = unsafePerformIO $ getCommand "glGetUnsignedBytevEXT"
 glGetVariantArrayObjectfvATI
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetVariantArrayObjectfvATI v1 v2 v3 = liftIO $ dyn361 ptr_glGetVariantArrayObjectfvATI v1 v2 v3
@@ -878,7 +878,7 @@ ptr_glGetVariantArrayObjectfvATI = unsafePerformIO $ getCommand "glGetVariantArr
 glGetVariantArrayObjectivATI
   :: MonadIO m
   => GLuint -- ^ @id@.
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetVariantArrayObjectivATI v1 v2 v3 = liftIO $ dyn345 ptr_glGetVariantArrayObjectivATI v1 v2 v3
@@ -1066,7 +1066,7 @@ ptr_glGetVertexArrayiv = unsafePerformIO $ getCommand "glGetVertexArrayiv"
 glGetVertexAttribArrayObjectfvATI
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetVertexAttribArrayObjectfvATI v1 v2 v3 = liftIO $ dyn361 ptr_glGetVertexAttribArrayObjectfvATI v1 v2 v3
@@ -1080,7 +1080,7 @@ ptr_glGetVertexAttribArrayObjectfvATI = unsafePerformIO $ getCommand "glGetVerte
 glGetVertexAttribArrayObjectivATI
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetVertexAttribArrayObjectivATI v1 v2 v3 = liftIO $ dyn345 ptr_glGetVertexAttribArrayObjectivATI v1 v2 v3
@@ -1227,7 +1227,7 @@ ptr_glGetVertexAttribLui64vNV = unsafePerformIO $ getCommand "glGetVertexAttribL
 glGetVertexAttribPointerv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPointerPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPointerPropertyARB](Graphics-GL-Groups.html#VertexAttribPointerPropertyARB).
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetVertexAttribPointerv v1 v2 v3 = liftIO $ dyn374 ptr_glGetVertexAttribPointerv v1 v2 v3
@@ -1242,7 +1242,7 @@ ptr_glGetVertexAttribPointerv = unsafePerformIO $ getCommand "glGetVertexAttribP
 glGetVertexAttribPointervARB
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPointerPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPointerPropertyARB](Graphics-GL-Groups.html#VertexAttribPointerPropertyARB).
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetVertexAttribPointervARB v1 v2 v3 = liftIO $ dyn374 ptr_glGetVertexAttribPointervARB v1 v2 v3
@@ -1257,7 +1257,7 @@ ptr_glGetVertexAttribPointervARB = unsafePerformIO $ getCommand "glGetVertexAttr
 glGetVertexAttribPointervNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr (Ptr a) -- ^ @pointer@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetVertexAttribPointervNV v1 v2 v3 = liftIO $ dyn374 ptr_glGetVertexAttribPointervNV v1 v2 v3
@@ -1272,7 +1272,7 @@ ptr_glGetVertexAttribPointervNV = unsafePerformIO $ getCommand "glGetVertexAttri
 glGetVertexAttribdv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPropertyARB](Graphics-GL-Groups.html#VertexAttribPropertyARB).
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glGetVertexAttribdv v1 v2 v3 = liftIO $ dyn460 ptr_glGetVertexAttribdv v1 v2 v3
@@ -1287,7 +1287,7 @@ ptr_glGetVertexAttribdv = unsafePerformIO $ getCommand "glGetVertexAttribdv"
 glGetVertexAttribdvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPropertyARB](Graphics-GL-Groups.html#VertexAttribPropertyARB).
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
 glGetVertexAttribdvARB v1 v2 v3 = liftIO $ dyn460 ptr_glGetVertexAttribdvARB v1 v2 v3
@@ -1302,7 +1302,7 @@ ptr_glGetVertexAttribdvARB = unsafePerformIO $ getCommand "glGetVertexAttribdvAR
 glGetVertexAttribdvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLdouble -- ^ @params@ pointing to @1@ element of type @GLdouble@.
   -> m ()
 glGetVertexAttribdvNV v1 v2 v3 = liftIO $ dyn460 ptr_glGetVertexAttribdvNV v1 v2 v3
@@ -1317,7 +1317,7 @@ ptr_glGetVertexAttribdvNV = unsafePerformIO $ getCommand "glGetVertexAttribdvNV"
 glGetVertexAttribfv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPropertyARB](Graphics-GL-Groups.html#VertexAttribPropertyARB).
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glGetVertexAttribfv v1 v2 v3 = liftIO $ dyn361 ptr_glGetVertexAttribfv v1 v2 v3
@@ -1332,7 +1332,7 @@ ptr_glGetVertexAttribfv = unsafePerformIO $ getCommand "glGetVertexAttribfv"
 glGetVertexAttribfvARB
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPropertyARB](Graphics-GL-Groups.html#VertexAttribPropertyARB).
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
 glGetVertexAttribfvARB v1 v2 v3 = liftIO $ dyn361 ptr_glGetVertexAttribfvARB v1 v2 v3
@@ -1347,7 +1347,7 @@ ptr_glGetVertexAttribfvARB = unsafePerformIO $ getCommand "glGetVertexAttribfvAR
 glGetVertexAttribfvNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetVertexAttribfvNV v1 v2 v3 = liftIO $ dyn361 ptr_glGetVertexAttribfvNV v1 v2 v3
@@ -1362,7 +1362,7 @@ ptr_glGetVertexAttribfvNV = unsafePerformIO $ getCommand "glGetVertexAttribfvNV"
 glGetVertexAttribiv
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPropertyARB](Graphics-GL-Groups.html#VertexAttribPropertyARB).
   -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
   -> m ()
 glGetVertexAttribiv v1 v2 v3 = liftIO $ dyn345 ptr_glGetVertexAttribiv v1 v2 v3
@@ -1377,7 +1377,7 @@ ptr_glGetVertexAttribiv = unsafePerformIO $ getCommand "glGetVertexAttribiv"
 glGetVertexAttribivARB
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribPropertyARB@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribPropertyARB](Graphics-GL-Groups.html#VertexAttribPropertyARB).
   -> Ptr GLint -- ^ @params@ pointing to @4@ elements of type @GLint@.
   -> m ()
 glGetVertexAttribivARB v1 v2 v3 = liftIO $ dyn345 ptr_glGetVertexAttribivARB v1 v2 v3
@@ -1392,7 +1392,7 @@ ptr_glGetVertexAttribivARB = unsafePerformIO $ getCommand "glGetVertexAttribivAR
 glGetVertexAttribivNV
   :: MonadIO m
   => GLuint -- ^ @index@.
-  -> GLenum -- ^ @pname@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @pname@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetVertexAttribivNV v1 v2 v3 = liftIO $ dyn345 ptr_glGetVertexAttribivNV v1 v2 v3

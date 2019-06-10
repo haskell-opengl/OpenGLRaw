@@ -439,7 +439,7 @@ glMapBufferRange
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
-  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
+  -> GLbitfield -- ^ @access@ of type [MapBufferAccessMask](Graphics-GL-Groups.html#MapBufferAccessMask).
   -> m (Ptr a)
 glMapBufferRange v1 v2 v3 v4 = liftIO $ dyn523 ptr_glMapBufferRange v1 v2 v3 v4
 
@@ -455,7 +455,7 @@ glMapBufferRangeEXT
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@.
-  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
+  -> GLbitfield -- ^ @access@ of type [MapBufferAccessMask](Graphics-GL-Groups.html#MapBufferAccessMask).
   -> m (Ptr a)
 glMapBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn523 ptr_glMapBufferRangeEXT v1 v2 v3 v4
 
@@ -467,7 +467,7 @@ ptr_glMapBufferRangeEXT = unsafePerformIO $ getCommand "glMapBufferRangeEXT"
 
 glMapControlPointsNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
   -> GLuint -- ^ @index@.
   -> GLenum -- ^ @type@ of type @MapTypeNV@.
   -> GLsizei -- ^ @ustride@.
@@ -614,7 +614,7 @@ glMapNamedBufferRange
   => GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@ of type @BufferSize@.
-  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
+  -> GLbitfield -- ^ @access@ of type [MapBufferAccessMask](Graphics-GL-Groups.html#MapBufferAccessMask).
   -> m (Ptr a)
 glMapNamedBufferRange v1 v2 v3 v4 = liftIO $ dyn532 ptr_glMapNamedBufferRange v1 v2 v3 v4
 
@@ -629,7 +629,7 @@ glMapNamedBufferRangeEXT
   => GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @length@.
-  -> GLbitfield -- ^ @access@ of type [BufferAccessMask](Graphics-GL-Groups.html#BufferAccessMask).
+  -> GLbitfield -- ^ @access@ of type [MapBufferAccessMask](Graphics-GL-Groups.html#MapBufferAccessMask).
   -> m (Ptr a)
 glMapNamedBufferRangeEXT v1 v2 v3 v4 = liftIO $ dyn532 ptr_glMapNamedBufferRangeEXT v1 v2 v3 v4
 
@@ -653,8 +653,8 @@ ptr_glMapObjectBufferATI = unsafePerformIO $ getCommand "glMapObjectBufferATI"
 
 glMapParameterfvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
-  -> GLenum -- ^ @pname@ of type @MapParameterNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
+  -> GLenum -- ^ @pname@ of type [MapParameterNV](Graphics-GL-Groups.html#MapParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(target,pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glMapParameterfvNV v1 v2 v3 = liftIO $ dyn136 ptr_glMapParameterfvNV v1 v2 v3
@@ -667,8 +667,8 @@ ptr_glMapParameterfvNV = unsafePerformIO $ getCommand "glMapParameterfvNV"
 
 glMapParameterivNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @EvalTargetNV@.
-  -> GLenum -- ^ @pname@ of type @MapParameterNV@.
+  => GLenum -- ^ @target@ of type [EvalTargetNV](Graphics-GL-Groups.html#EvalTargetNV).
+  -> GLenum -- ^ @pname@ of type [MapParameterNV](Graphics-GL-Groups.html#MapParameterNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(target,pname)@ elements of type @CheckedInt32@.
   -> m ()
 glMapParameterivNV v1 v2 v3 = liftIO $ dyn137 ptr_glMapParameterivNV v1 v2 v3

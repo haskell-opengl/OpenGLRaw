@@ -127,7 +127,7 @@ import System.IO.Unsafe ( unsafePerformIO )
 
 glProgramParameters4fvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @v@ pointing to @count*4@ elements of type @GLfloat@.
@@ -158,8 +158,8 @@ ptr_glProgramPathFragmentInputGenNV = unsafePerformIO $ getCommand "glProgramPat
 
 glProgramStringARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
-  -> GLenum -- ^ @format@ of type @ProgramFormatARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  -> GLenum -- ^ @format@ of type [ProgramFormatARB](Graphics-GL-Groups.html#ProgramFormatARB).
   -> GLsizei -- ^ @len@.
   -> Ptr a -- ^ @string@ pointing to @len@ elements of type @a@.
   -> m ()

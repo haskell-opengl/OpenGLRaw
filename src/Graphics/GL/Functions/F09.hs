@@ -382,7 +382,7 @@ ptr_glGenSemaphoresEXT = unsafePerformIO $ getCommand "glGenSemaphoresEXT"
 glGenSymbolsEXT
   :: MonadIO m
   => GLenum -- ^ @datatype@ of type @DataTypeEXT@.
-  -> GLenum -- ^ @storagetype@ of type @VertexShaderStorageTypeEXT@.
+  -> GLenum -- ^ @storagetype@ of type [VertexShaderStorageTypeEXT](Graphics-GL-Groups.html#VertexShaderStorageTypeEXT).
   -> GLenum -- ^ @range@ of type @ParameterRangeEXT@.
   -> GLuint -- ^ @components@.
   -> m GLuint
@@ -813,7 +813,7 @@ ptr_glGetActiveVaryingNV = unsafePerformIO $ getCommand "glGetActiveVaryingNV"
 glGetArrayObjectfvATI
   :: MonadIO m
   => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLfloat -- ^ @params@ pointing to @1@ element of type @GLfloat@.
   -> m ()
 glGetArrayObjectfvATI v1 v2 v3 = liftIO $ dyn136 ptr_glGetArrayObjectfvATI v1 v2 v3
@@ -827,7 +827,7 @@ ptr_glGetArrayObjectfvATI = unsafePerformIO $ getCommand "glGetArrayObjectfvATI"
 glGetArrayObjectivATI
   :: MonadIO m
   => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
-  -> GLenum -- ^ @pname@ of type @ArrayObjectPNameATI@.
+  -> GLenum -- ^ @pname@ of type [ArrayObjectPNameATI](Graphics-GL-Groups.html#ArrayObjectPNameATI).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()
 glGetArrayObjectivATI v1 v2 v3 = liftIO $ dyn137 ptr_glGetArrayObjectivATI v1 v2 v3
@@ -945,7 +945,7 @@ ptr_glGetBooleanv = unsafePerformIO $ getCommand "glGetBooleanv"
 glGetBufferParameteri64v
   :: MonadIO m
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
-  -> GLenum -- ^ @pname@ of type @BufferPNameARB@.
+  -> GLenum -- ^ @pname@ of type [BufferPNameARB](Graphics-GL-Groups.html#BufferPNameARB).
   -> Ptr GLint64 -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint64@.
   -> m ()
 glGetBufferParameteri64v v1 v2 v3 = liftIO $ dyn325 ptr_glGetBufferParameteri64v v1 v2 v3
@@ -960,7 +960,7 @@ ptr_glGetBufferParameteri64v = unsafePerformIO $ getCommand "glGetBufferParamete
 glGetBufferParameteriv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
-  -> GLenum -- ^ @pname@ of type @BufferPNameARB@.
+  -> GLenum -- ^ @pname@ of type [BufferPNameARB](Graphics-GL-Groups.html#BufferPNameARB).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetBufferParameteriv v1 v2 v3 = liftIO $ dyn137 ptr_glGetBufferParameteriv v1 v2 v3
@@ -975,7 +975,7 @@ ptr_glGetBufferParameteriv = unsafePerformIO $ getCommand "glGetBufferParameteri
 glGetBufferParameterivARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
-  -> GLenum -- ^ @pname@ of type @BufferPNameARB@.
+  -> GLenum -- ^ @pname@ of type [BufferPNameARB](Graphics-GL-Groups.html#BufferPNameARB).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetBufferParameterivARB v1 v2 v3 = liftIO $ dyn137 ptr_glGetBufferParameterivARB v1 v2 v3
@@ -1004,7 +1004,7 @@ ptr_glGetBufferParameterui64vNV = unsafePerformIO $ getCommand "glGetBufferParam
 glGetBufferPointerv
   :: MonadIO m
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
-  -> GLenum -- ^ @pname@ of type @BufferPointerNameARB@.
+  -> GLenum -- ^ @pname@ of type [BufferPointerNameARB](Graphics-GL-Groups.html#BufferPointerNameARB).
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetBufferPointerv v1 v2 v3 = liftIO $ dyn327 ptr_glGetBufferPointerv v1 v2 v3
@@ -1019,7 +1019,7 @@ ptr_glGetBufferPointerv = unsafePerformIO $ getCommand "glGetBufferPointerv"
 glGetBufferPointervARB
   :: MonadIO m
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
-  -> GLenum -- ^ @pname@ of type @BufferPointerNameARB@.
+  -> GLenum -- ^ @pname@ of type [BufferPointerNameARB](Graphics-GL-Groups.html#BufferPointerNameARB).
   -> Ptr (Ptr a) -- ^ @params@ pointing to @1@ element of type @Ptr a@.
   -> m ()
 glGetBufferPointervARB v1 v2 v3 = liftIO $ dyn327 ptr_glGetBufferPointervARB v1 v2 v3
@@ -1034,7 +1034,7 @@ ptr_glGetBufferPointervARB = unsafePerformIO $ getCommand "glGetBufferPointervAR
 glGetBufferPointervOES
   :: MonadIO m
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
-  -> GLenum -- ^ @pname@ of type @BufferPointerNameARB@.
+  -> GLenum -- ^ @pname@ of type [BufferPointerNameARB](Graphics-GL-Groups.html#BufferPointerNameARB).
   -> Ptr (Ptr a) -- ^ @params@.
   -> m ()
 glGetBufferPointervOES v1 v2 v3 = liftIO $ dyn327 ptr_glGetBufferPointervOES v1 v2 v3
@@ -1282,8 +1282,8 @@ glGetCombinerInputParameterfvNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
   -> GLenum -- ^ @portion@ of type @CombinerPortionNV@.
-  -> GLenum -- ^ @variable@ of type @CombinerVariableNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> GLenum -- ^ @variable@ of type [CombinerVariableNV](Graphics-GL-Groups.html#CombinerVariableNV).
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetCombinerInputParameterfvNV v1 v2 v3 v4 v5 = liftIO $ dyn329 ptr_glGetCombinerInputParameterfvNV v1 v2 v3 v4 v5
@@ -1298,8 +1298,8 @@ glGetCombinerInputParameterivNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
   -> GLenum -- ^ @portion@ of type @CombinerPortionNV@.
-  -> GLenum -- ^ @variable@ of type @CombinerVariableNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> GLenum -- ^ @variable@ of type [CombinerVariableNV](Graphics-GL-Groups.html#CombinerVariableNV).
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetCombinerInputParameterivNV v1 v2 v3 v4 v5 = liftIO $ dyn330 ptr_glGetCombinerInputParameterivNV v1 v2 v3 v4 v5
@@ -1314,7 +1314,7 @@ glGetCombinerOutputParameterfvNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
   -> GLenum -- ^ @portion@ of type @CombinerPortionNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetCombinerOutputParameterfvNV v1 v2 v3 v4 = liftIO $ dyn331 ptr_glGetCombinerOutputParameterfvNV v1 v2 v3 v4
@@ -1329,7 +1329,7 @@ glGetCombinerOutputParameterivNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
   -> GLenum -- ^ @portion@ of type @CombinerPortionNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glGetCombinerOutputParameterivNV v1 v2 v3 v4 = liftIO $ dyn332 ptr_glGetCombinerOutputParameterivNV v1 v2 v3 v4
@@ -1343,7 +1343,7 @@ ptr_glGetCombinerOutputParameterivNV = unsafePerformIO $ getCommand "glGetCombin
 glGetCombinerStageParameterfvNV
   :: MonadIO m
   => GLenum -- ^ @stage@ of type @CombinerStageNV@.
-  -> GLenum -- ^ @pname@ of type @CombinerParameterNV@.
+  -> GLenum -- ^ @pname@ of type [CombinerParameterNV](Graphics-GL-Groups.html#CombinerParameterNV).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glGetCombinerStageParameterfvNV v1 v2 v3 = liftIO $ dyn136 ptr_glGetCombinerStageParameterfvNV v1 v2 v3

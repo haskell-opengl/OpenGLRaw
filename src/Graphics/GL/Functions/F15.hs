@@ -1348,7 +1348,7 @@ ptr_glLoadPaletteFromModelViewMatrixOES = unsafePerformIO $ getCommand "glLoadPa
 
 glLoadProgramNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @id@.
   -> GLsizei -- ^ @len@.
   -> Ptr GLubyte -- ^ @program@ pointing to @len@ elements of type @GLubyte@.

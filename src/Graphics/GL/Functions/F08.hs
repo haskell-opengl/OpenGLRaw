@@ -171,7 +171,7 @@ ptr_glFlushMappedNamedBufferRangeEXT = unsafePerformIO $ getCommand "glFlushMapp
 
 glFlushPixelDataRangeNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @PixelDataRangeTargetNV@.
+  => GLenum -- ^ @target@ of type [PixelDataRangeTargetNV](Graphics-GL-Groups.html#PixelDataRangeTargetNV).
   -> m ()
 glFlushPixelDataRangeNV v1 = liftIO $ dyn5 ptr_glFlushPixelDataRangeNV v1
 

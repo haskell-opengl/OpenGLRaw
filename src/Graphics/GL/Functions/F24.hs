@@ -815,7 +815,7 @@ ptr_glSetFenceAPPLE = unsafePerformIO $ getCommand "glSetFenceAPPLE"
 glSetFenceNV
   :: MonadIO m
   => GLuint -- ^ @fence@ of type @FenceNV@.
-  -> GLenum -- ^ @condition@ of type @FenceConditionNV@.
+  -> GLenum -- ^ @condition@ of type [FenceConditionNV](Graphics-GL-Groups.html#FenceConditionNV).
   -> m ()
 glSetFenceNV v1 v2 = liftIO $ dyn16 ptr_glSetFenceNV v1 v2
 
@@ -912,7 +912,7 @@ ptr_glShaderBinary = unsafePerformIO $ getCommand "glShaderBinary"
 
 glShaderOp1EXT
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @VertexShaderOpEXT@.
+  => GLenum -- ^ @op@ of type [VertexShaderOpEXT](Graphics-GL-Groups.html#VertexShaderOpEXT).
   -> GLuint -- ^ @res@.
   -> GLuint -- ^ @arg1@.
   -> m ()
@@ -926,7 +926,7 @@ ptr_glShaderOp1EXT = unsafePerformIO $ getCommand "glShaderOp1EXT"
 
 glShaderOp2EXT
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @VertexShaderOpEXT@.
+  => GLenum -- ^ @op@ of type [VertexShaderOpEXT](Graphics-GL-Groups.html#VertexShaderOpEXT).
   -> GLuint -- ^ @res@.
   -> GLuint -- ^ @arg1@.
   -> GLuint -- ^ @arg2@.
@@ -941,7 +941,7 @@ ptr_glShaderOp2EXT = unsafePerformIO $ getCommand "glShaderOp2EXT"
 
 glShaderOp3EXT
   :: MonadIO m
-  => GLenum -- ^ @op@ of type @VertexShaderOpEXT@.
+  => GLenum -- ^ @op@ of type [VertexShaderOpEXT](Graphics-GL-Groups.html#VertexShaderOpEXT).
   -> GLuint -- ^ @res@.
   -> GLuint -- ^ @arg1@.
   -> GLuint -- ^ @arg2@.
@@ -1145,7 +1145,7 @@ ptr_glSpecializeShaderARB = unsafePerformIO $ getCommand "glSpecializeShaderARB"
 
 glSpriteParameterfSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @SpriteParameterNameSGIX@.
+  => GLenum -- ^ @pname@ of type [SpriteParameterNameSGIX](Graphics-GL-Groups.html#SpriteParameterNameSGIX).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glSpriteParameterfSGIX v1 v2 = liftIO $ dyn0 ptr_glSpriteParameterfSGIX v1 v2
@@ -1158,7 +1158,7 @@ ptr_glSpriteParameterfSGIX = unsafePerformIO $ getCommand "glSpriteParameterfSGI
 
 glSpriteParameterfvSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @SpriteParameterNameSGIX@.
+  => GLenum -- ^ @pname@ of type [SpriteParameterNameSGIX](Graphics-GL-Groups.html#SpriteParameterNameSGIX).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glSpriteParameterfvSGIX v1 v2 = liftIO $ dyn98 ptr_glSpriteParameterfvSGIX v1 v2
@@ -1171,7 +1171,7 @@ ptr_glSpriteParameterfvSGIX = unsafePerformIO $ getCommand "glSpriteParameterfvS
 
 glSpriteParameteriSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @SpriteParameterNameSGIX@.
+  => GLenum -- ^ @pname@ of type [SpriteParameterNameSGIX](Graphics-GL-Groups.html#SpriteParameterNameSGIX).
   -> GLint -- ^ @param@ of type @CheckedInt32@.
   -> m ()
 glSpriteParameteriSGIX v1 v2 = liftIO $ dyn56 ptr_glSpriteParameteriSGIX v1 v2
@@ -1184,7 +1184,7 @@ ptr_glSpriteParameteriSGIX = unsafePerformIO $ getCommand "glSpriteParameteriSGI
 
 glSpriteParameterivSGIX
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @SpriteParameterNameSGIX@.
+  => GLenum -- ^ @pname@ of type [SpriteParameterNameSGIX](Graphics-GL-Groups.html#SpriteParameterNameSGIX).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedInt32@.
   -> m ()
 glSpriteParameterivSGIX v1 v2 = liftIO $ dyn140 ptr_glSpriteParameterivSGIX v1 v2
@@ -1559,10 +1559,10 @@ glSwizzleEXT
   :: MonadIO m
   => GLuint -- ^ @res@.
   -> GLuint -- ^ @in@.
-  -> GLenum -- ^ @outX@ of type @VertexShaderCoordOutEXT@.
-  -> GLenum -- ^ @outY@ of type @VertexShaderCoordOutEXT@.
-  -> GLenum -- ^ @outZ@ of type @VertexShaderCoordOutEXT@.
-  -> GLenum -- ^ @outW@ of type @VertexShaderCoordOutEXT@.
+  -> GLenum -- ^ @outX@ of type [VertexShaderCoordOutEXT](Graphics-GL-Groups.html#VertexShaderCoordOutEXT).
+  -> GLenum -- ^ @outY@ of type [VertexShaderCoordOutEXT](Graphics-GL-Groups.html#VertexShaderCoordOutEXT).
+  -> GLenum -- ^ @outZ@ of type [VertexShaderCoordOutEXT](Graphics-GL-Groups.html#VertexShaderCoordOutEXT).
+  -> GLenum -- ^ @outW@ of type [VertexShaderCoordOutEXT](Graphics-GL-Groups.html#VertexShaderCoordOutEXT).
   -> m ()
 glSwizzleEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn757 ptr_glSwizzleEXT v1 v2 v3 v4 v5 v6
 

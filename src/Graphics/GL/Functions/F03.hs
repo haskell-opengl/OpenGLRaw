@@ -395,7 +395,7 @@ ptr_glClientActiveTextureARB = unsafePerformIO $ getCommand "glClientActiveTextu
 
 glClientActiveVertexStreamATI
   :: MonadIO m
-  => GLenum -- ^ @stream@ of type @VertexStreamATI@.
+  => GLenum -- ^ @stream@ of type [VertexStreamATI](Graphics-GL-Groups.html#VertexStreamATI).
   -> m ()
 glClientActiveVertexStreamATI v1 = liftIO $ dyn5 ptr_glClientActiveVertexStreamATI v1
 

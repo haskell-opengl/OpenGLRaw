@@ -2255,6 +2255,8 @@ pattern GL_DEPTH_BUFFER_FLOAT_MODE_NV = 0x8DAF :: GLenum
 
 pattern GL_DEPTH_CLAMP = 0x864F :: GLenum
 
+pattern GL_DEPTH_CLAMP_EXT = 0x864F :: GLenum
+
 pattern GL_DEPTH_CLAMP_FAR_AMD = 0x901F :: GLenum
 
 pattern GL_DEPTH_CLAMP_NEAR_AMD = 0x901E :: GLenum
@@ -11142,6 +11144,8 @@ pattern GL_UUID_SIZE_EXT = 16 :: GLenum
 pattern GL_V2F = 0x2A20 :: GLenum
 
 pattern GL_V3F = 0x2A21 :: GLenum
+
+pattern GL_VALIDATE_SHADER_BINARY_QCOM = 0x96A3 :: GLenum
 
 pattern GL_VALIDATE_STATUS = 0x8B83 :: GLenum
 

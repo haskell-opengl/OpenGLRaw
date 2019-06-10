@@ -359,7 +359,7 @@ ptr_glTestFenceNV = unsafePerformIO $ getCommand "glTestFenceNV"
 
 glTestObjectAPPLE
   :: MonadIO m
-  => GLenum -- ^ @object@ of type @ObjectTypeAPPLE@.
+  => GLenum -- ^ @object@ of type [ObjectTypeAPPLE](Graphics-GL-Groups.html#ObjectTypeAPPLE).
   -> GLuint -- ^ @name@.
   -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
 glTestObjectAPPLE v1 v2 = liftIO $ dyn499 ptr_glTestObjectAPPLE v1 v2
@@ -497,7 +497,7 @@ ptr_glTexBufferRangeOES = unsafePerformIO $ getCommand "glTexBufferRangeOES"
 
 glTexBumpParameterfvATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @TexBumpParameterATI@.
+  => GLenum -- ^ @pname@ of type [TexBumpParameterATI](Graphics-GL-Groups.html#TexBumpParameterATI).
   -> Ptr GLfloat -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLfloat@.
   -> m ()
 glTexBumpParameterfvATI v1 v2 = liftIO $ dyn98 ptr_glTexBumpParameterfvATI v1 v2
@@ -510,7 +510,7 @@ ptr_glTexBumpParameterfvATI = unsafePerformIO $ getCommand "glTexBumpParameterfv
 
 glTexBumpParameterivATI
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @TexBumpParameterATI@.
+  => GLenum -- ^ @pname@ of type [TexBumpParameterATI](Graphics-GL-Groups.html#TexBumpParameterATI).
   -> Ptr GLint -- ^ @param@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glTexBumpParameterivATI v1 v2 = liftIO $ dyn140 ptr_glTexBumpParameterivATI v1 v2

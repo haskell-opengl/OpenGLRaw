@@ -127,7 +127,7 @@ import System.IO.Unsafe ( unsafePerformIO )
 
 glPixelTexGenSGIX
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @PixelTexGenModeSGIX@.
+  => GLenum -- ^ @mode@ of type [PixelTexGenModeSGIX](Graphics-GL-Groups.html#PixelTexGenModeSGIX).
   -> m ()
 glPixelTexGenSGIX v1 = liftIO $ dyn5 ptr_glPixelTexGenSGIX v1
 
@@ -283,7 +283,7 @@ ptr_glPointAlongPathNV = unsafePerformIO $ getCommand "glPointAlongPathNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameterf
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glPointParameterf v1 v2 = liftIO $ dyn0 ptr_glPointParameterf v1 v2
@@ -297,7 +297,7 @@ ptr_glPointParameterf = unsafePerformIO $ getCommand "glPointParameterf"
 -- | This command is an alias for 'glPointParameterf'.
 glPointParameterfARB
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glPointParameterfARB v1 v2 = liftIO $ dyn0 ptr_glPointParameterfARB v1 v2
@@ -311,7 +311,7 @@ ptr_glPointParameterfARB = unsafePerformIO $ getCommand "glPointParameterfARB"
 -- | This command is an alias for 'glPointParameterf'.
 glPointParameterfEXT
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glPointParameterfEXT v1 v2 = liftIO $ dyn0 ptr_glPointParameterfEXT v1 v2
@@ -325,7 +325,7 @@ ptr_glPointParameterfEXT = unsafePerformIO $ getCommand "glPointParameterfEXT"
 -- | This command is an alias for 'glPointParameterf'.
 glPointParameterfSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLfloat -- ^ @param@ of type @CheckedFloat32@.
   -> m ()
 glPointParameterfSGIS v1 v2 = liftIO $ dyn0 ptr_glPointParameterfSGIS v1 v2
@@ -339,7 +339,7 @@ ptr_glPointParameterfSGIS = unsafePerformIO $ getCommand "glPointParameterfSGIS"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameterfv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glPointParameterfv v1 v2 = liftIO $ dyn98 ptr_glPointParameterfv v1 v2
@@ -353,7 +353,7 @@ ptr_glPointParameterfv = unsafePerformIO $ getCommand "glPointParameterfv"
 -- | This command is an alias for 'glPointParameterfv'.
 glPointParameterfvARB
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glPointParameterfvARB v1 v2 = liftIO $ dyn98 ptr_glPointParameterfvARB v1 v2
@@ -367,7 +367,7 @@ ptr_glPointParameterfvARB = unsafePerformIO $ getCommand "glPointParameterfvARB"
 -- | This command is an alias for 'glPointParameterfv'.
 glPointParameterfvEXT
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glPointParameterfvEXT v1 v2 = liftIO $ dyn98 ptr_glPointParameterfvEXT v1 v2
@@ -381,7 +381,7 @@ ptr_glPointParameterfvEXT = unsafePerformIO $ getCommand "glPointParameterfvEXT"
 -- | This command is an alias for 'glPointParameterfv'.
 glPointParameterfvSGIS
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLfloat -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @CheckedFloat32@.
   -> m ()
 glPointParameterfvSGIS v1 v2 = liftIO $ dyn98 ptr_glPointParameterfvSGIS v1 v2
@@ -395,7 +395,7 @@ ptr_glPointParameterfvSGIS = unsafePerformIO $ getCommand "glPointParameterfvSGI
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameteri
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLint -- ^ @param@.
   -> m ()
 glPointParameteri v1 v2 = liftIO $ dyn56 ptr_glPointParameteri v1 v2
@@ -409,7 +409,7 @@ ptr_glPointParameteri = unsafePerformIO $ getCommand "glPointParameteri"
 -- | This command is an alias for 'glPointParameteri'.
 glPointParameteriNV
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLint -- ^ @param@.
   -> m ()
 glPointParameteriNV v1 v2 = liftIO $ dyn56 ptr_glPointParameteriNV v1 v2
@@ -423,7 +423,7 @@ ptr_glPointParameteriNV = unsafePerformIO $ getCommand "glPointParameteriNV"
 -- | Manual pages for <https://www.opengl.org/sdk/docs/man2/xhtml/glPointParameter.xml OpenGL 2.x> or <https://www.opengl.org/sdk/docs/man3/xhtml/glPointParameter.xml OpenGL 3.x> or <https://www.opengl.org/sdk/docs/man4/html/glPointParameter.xhtml OpenGL 4.x>.
 glPointParameteriv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glPointParameteriv v1 v2 = liftIO $ dyn140 ptr_glPointParameteriv v1 v2
@@ -437,7 +437,7 @@ ptr_glPointParameteriv = unsafePerformIO $ getCommand "glPointParameteriv"
 -- | This command is an alias for 'glPointParameteriv'.
 glPointParameterivNV
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLint -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLint@.
   -> m ()
 glPointParameterivNV v1 v2 = liftIO $ dyn140 ptr_glPointParameterivNV v1 v2
@@ -450,7 +450,7 @@ ptr_glPointParameterivNV = unsafePerformIO $ getCommand "glPointParameterivNV"
 
 glPointParameterx
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLfixed -- ^ @param@.
   -> m ()
 glPointParameterx v1 v2 = liftIO $ dyn1 ptr_glPointParameterx v1 v2
@@ -463,7 +463,7 @@ ptr_glPointParameterx = unsafePerformIO $ getCommand "glPointParameterx"
 
 glPointParameterxOES
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> GLfixed -- ^ @param@.
   -> m ()
 glPointParameterxOES v1 v2 = liftIO $ dyn1 ptr_glPointParameterxOES v1 v2
@@ -476,7 +476,7 @@ ptr_glPointParameterxOES = unsafePerformIO $ getCommand "glPointParameterxOES"
 
 glPointParameterxv
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
   -> m ()
 glPointParameterxv v1 v2 = liftIO $ dyn99 ptr_glPointParameterxv v1 v2
@@ -489,7 +489,7 @@ ptr_glPointParameterxv = unsafePerformIO $ getCommand "glPointParameterxv"
 
 glPointParameterxvOES
   :: MonadIO m
-  => GLenum -- ^ @pname@ of type @PointParameterNameARB@.
+  => GLenum -- ^ @pname@ of type [PointParameterNameARB](Graphics-GL-Groups.html#PointParameterNameARB).
   -> Ptr GLfixed -- ^ @params@ pointing to @COMPSIZE(pname)@ elements of type @GLfixed@.
   -> m ()
 glPointParameterxvOES v1 v2 = liftIO $ dyn99 ptr_glPointParameterxvOES v1 v2
@@ -1069,7 +1069,7 @@ ptr_glProgramBufferParametersfvNV = unsafePerformIO $ getCommand "glProgramBuffe
 -- | The vector equivalent of this command is 'glProgramEnvParameter4dvARB'.
 glProgramEnvParameter4dARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
@@ -1086,7 +1086,7 @@ ptr_glProgramEnvParameter4dARB = unsafePerformIO $ getCommand "glProgramEnvParam
 
 glProgramEnvParameter4dvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -1101,7 +1101,7 @@ ptr_glProgramEnvParameter4dvARB = unsafePerformIO $ getCommand "glProgramEnvPara
 -- | The vector equivalent of this command is 'glProgramEnvParameter4fvARB'.
 glProgramEnvParameter4fARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
@@ -1118,7 +1118,7 @@ ptr_glProgramEnvParameter4fARB = unsafePerformIO $ getCommand "glProgramEnvParam
 
 glProgramEnvParameter4fvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -1196,7 +1196,7 @@ ptr_glProgramEnvParameterI4uivNV = unsafePerformIO $ getCommand "glProgramEnvPar
 
 glProgramEnvParameters4fvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @params@ pointing to @count*4@ elements of type @GLfloat@.
@@ -1242,7 +1242,7 @@ ptr_glProgramEnvParametersI4uivNV = unsafePerformIO $ getCommand "glProgramEnvPa
 -- | The vector equivalent of this command is 'glProgramLocalParameter4dvARB'.
 glProgramLocalParameter4dARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
@@ -1259,7 +1259,7 @@ ptr_glProgramLocalParameter4dARB = unsafePerformIO $ getCommand "glProgramLocalP
 
 glProgramLocalParameter4dvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -1274,7 +1274,7 @@ ptr_glProgramLocalParameter4dvARB = unsafePerformIO $ getCommand "glProgramLocal
 -- | The vector equivalent of this command is 'glProgramLocalParameter4fvARB'.
 glProgramLocalParameter4fARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
@@ -1291,7 +1291,7 @@ ptr_glProgramLocalParameter4fARB = unsafePerformIO $ getCommand "glProgramLocalP
 
 glProgramLocalParameter4fvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -1369,7 +1369,7 @@ ptr_glProgramLocalParameterI4uivNV = unsafePerformIO $ getCommand "glProgramLoca
 
 glProgramLocalParameters4fvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @ProgramTargetARB@.
+  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @params@ pointing to @count*4@ elements of type @GLfloat@.
@@ -1483,7 +1483,7 @@ ptr_glProgramNamedParameter4fvNV = unsafePerformIO $ getCommand "glProgramNamedP
 -- | The vector equivalent of this command is 'glProgramParameter4dvNV'.
 glProgramParameter4dNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
@@ -1500,7 +1500,7 @@ ptr_glProgramParameter4dNV = unsafePerformIO $ getCommand "glProgramParameter4dN
 
 glProgramParameter4dvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -1515,7 +1515,7 @@ ptr_glProgramParameter4dvNV = unsafePerformIO $ getCommand "glProgramParameter4d
 -- | The vector equivalent of this command is 'glProgramParameter4fvNV'.
 glProgramParameter4fNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
@@ -1532,7 +1532,7 @@ ptr_glProgramParameter4fNV = unsafePerformIO $ getCommand "glProgramParameter4fN
 
 glProgramParameter4fvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @v@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -1591,7 +1591,7 @@ ptr_glProgramParameteriEXT = unsafePerformIO $ getCommand "glProgramParameteriEX
 
 glProgramParameters4dvNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLdouble -- ^ @v@ pointing to @count*4@ elements of type @GLdouble@.

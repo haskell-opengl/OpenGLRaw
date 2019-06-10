@@ -140,7 +140,7 @@ ptr_glTextureMaterialEXT = unsafePerformIO $ getCommand "glTextureMaterialEXT"
 
 glTextureNormalEXT
   :: MonadIO m
-  => GLenum -- ^ @mode@ of type @TextureNormalModeEXT@.
+  => GLenum -- ^ @mode@ of type [TextureNormalModeEXT](Graphics-GL-Groups.html#TextureNormalModeEXT).
   -> m ()
 glTextureNormalEXT v1 = liftIO $ dyn5 ptr_glTextureNormalEXT v1
 
@@ -856,10 +856,10 @@ ptr_glTextureViewOES = unsafePerformIO $ getCommand "glTextureViewOES"
 
 glTrackMatrixNV
   :: MonadIO m
-  => GLenum -- ^ @target@ of type @VertexAttribEnumNV@.
+  => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @address@.
-  -> GLenum -- ^ @matrix@ of type @VertexAttribEnumNV@.
-  -> GLenum -- ^ @transform@ of type @VertexAttribEnumNV@.
+  -> GLenum -- ^ @matrix@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
+  -> GLenum -- ^ @transform@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> m ()
 glTrackMatrixNV v1 v2 v3 v4 = liftIO $ dyn821 ptr_glTrackMatrixNV v1 v2 v3 v4
 

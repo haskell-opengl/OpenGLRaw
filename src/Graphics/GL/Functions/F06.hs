@@ -819,7 +819,7 @@ ptr_glDrawBuffer = unsafePerformIO $ getCommand "glDrawBuffer"
 glDrawBuffers
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type @DrawBufferModeATI@.
+  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type [DrawBufferModeATI](Graphics-GL-Groups.html#DrawBufferModeATI).
   -> m ()
 glDrawBuffers v1 v2 = liftIO $ dyn238 ptr_glDrawBuffers v1 v2
 
@@ -833,7 +833,7 @@ ptr_glDrawBuffers = unsafePerformIO $ getCommand "glDrawBuffers"
 glDrawBuffersARB
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type @DrawBufferModeATI@.
+  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type [DrawBufferModeATI](Graphics-GL-Groups.html#DrawBufferModeATI).
   -> m ()
 glDrawBuffersARB v1 v2 = liftIO $ dyn238 ptr_glDrawBuffersARB v1 v2
 
@@ -847,7 +847,7 @@ ptr_glDrawBuffersARB = unsafePerformIO $ getCommand "glDrawBuffersARB"
 glDrawBuffersATI
   :: MonadIO m
   => GLsizei -- ^ @n@.
-  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type @DrawBufferModeATI@.
+  -> Ptr GLenum -- ^ @bufs@ pointing to @n@ elements of type [DrawBufferModeATI](Graphics-GL-Groups.html#DrawBufferModeATI).
   -> m ()
 glDrawBuffersATI v1 v2 = liftIO $ dyn238 ptr_glDrawBuffersATI v1 v2
 
@@ -1181,7 +1181,7 @@ glDrawElementsInstancedBaseVertexBaseInstance
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
-  -> GLenum -- ^ @type@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
+  -> GLenum -- ^ @type@ of type [DrawElementsType](Graphics-GL-Groups.html#DrawElementsType).
   -> Ptr a -- ^ @indices@ pointing to @count@ elements of type @a@.
   -> GLsizei -- ^ @instancecount@.
   -> GLint -- ^ @basevertex@.
@@ -1200,7 +1200,7 @@ glDrawElementsInstancedBaseVertexBaseInstanceEXT
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
   -> GLsizei -- ^ @count@.
-  -> GLenum -- ^ @type@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
+  -> GLenum -- ^ @type@ of type [DrawElementsType](Graphics-GL-Groups.html#DrawElementsType).
   -> Ptr a -- ^ @indices@ pointing to @count@ elements of type @a@.
   -> GLsizei -- ^ @instancecount@.
   -> GLint -- ^ @basevertex@.

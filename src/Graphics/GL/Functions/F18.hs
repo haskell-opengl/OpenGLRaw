@@ -1167,7 +1167,7 @@ glNamedBufferStorage
   => GLuint -- ^ @buffer@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
+  -> GLbitfield -- ^ @flags@ of type [BufferStorageMask](Graphics-GL-Groups.html#BufferStorageMask).
   -> m ()
 glNamedBufferStorage v1 v2 v3 v4 = liftIO $ dyn604 ptr_glNamedBufferStorage v1 v2 v3 v4
 
@@ -1183,7 +1183,7 @@ glNamedBufferStorageEXT
   => GLuint -- ^ @buffer@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> Ptr a -- ^ @data@ pointing to @size@ elements of type @a@.
-  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
+  -> GLbitfield -- ^ @flags@ of type [BufferStorageMask](Graphics-GL-Groups.html#BufferStorageMask).
   -> m ()
 glNamedBufferStorageEXT v1 v2 v3 v4 = liftIO $ dyn604 ptr_glNamedBufferStorageEXT v1 v2 v3 v4
 
@@ -1199,7 +1199,7 @@ glNamedBufferStorageExternalEXT
   -> GLintptr -- ^ @offset@.
   -> GLsizeiptr -- ^ @size@.
   -> GLeglClientBufferEXT -- ^ @clientBuffer@.
-  -> GLbitfield -- ^ @flags@ of type [MapBufferUsageMask](Graphics-GL-Groups.html#MapBufferUsageMask).
+  -> GLbitfield -- ^ @flags@ of type [BufferStorageMask](Graphics-GL-Groups.html#BufferStorageMask).
   -> m ()
 glNamedBufferStorageExternalEXT v1 v2 v3 v4 v5 = liftIO $ dyn605 ptr_glNamedBufferStorageExternalEXT v1 v2 v3 v4 v5
 
