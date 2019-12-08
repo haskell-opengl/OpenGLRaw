@@ -15,6 +15,13 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.Functions.F17 (
+  glMultMatrixf,
+  glMultMatrixx,
+  glMultMatrixxOES,
+  glMultTransposeMatrixd,
+  glMultTransposeMatrixdARB,
+  glMultTransposeMatrixf,
+  glMultTransposeMatrixfARB,
   glMultTransposeMatrixxOES,
   glMultiDrawArrays,
   glMultiDrawArraysEXT,
@@ -107,14 +114,7 @@ module Graphics.GL.Functions.F17 (
   glMultiTexCoord3sARB,
   glMultiTexCoord3sv,
   glMultiTexCoord3svARB,
-  glMultiTexCoord3xOES,
-  glMultiTexCoord3xvOES,
-  glMultiTexCoord4bOES,
-  glMultiTexCoord4bvOES,
-  glMultiTexCoord4d,
-  glMultiTexCoord4dARB,
-  glMultiTexCoord4dv,
-  glMultiTexCoord4dvARB
+  glMultiTexCoord3xOES
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -123,13 +123,102 @@ import Graphics.GL.Foreign
 import Graphics.GL.Types
 import System.IO.Unsafe ( unsafePerformIO )
 
+-- glMultMatrixf ---------------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultMatrix.xml OpenGL 2.x>.
+glMultMatrixf
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
+  -> m ()
+glMultMatrixf v1 = liftIO $ dyn44 ptr_glMultMatrixf v1
+
+{-# NOINLINE ptr_glMultMatrixf #-}
+ptr_glMultMatrixf :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glMultMatrixf = unsafePerformIO $ getCommand "glMultMatrixf"
+
+-- glMultMatrixx ---------------------------------------------------------------
+
+glMultMatrixx
+  :: MonadIO m
+  => Ptr GLfixed -- ^ @m@ pointing to @16@ elements of type @GLfixed@.
+  -> m ()
+glMultMatrixx v1 = liftIO $ dyn114 ptr_glMultMatrixx v1
+
+{-# NOINLINE ptr_glMultMatrixx #-}
+ptr_glMultMatrixx :: FunPtr (Ptr GLfixed -> IO ())
+ptr_glMultMatrixx = unsafePerformIO $ getCommand "glMultMatrixx"
+
+-- glMultMatrixxOES ------------------------------------------------------------
+
+glMultMatrixxOES
+  :: MonadIO m
+  => Ptr GLfixed -- ^ @m@ pointing to @16@ elements of type @GLfixed@.
+  -> m ()
+glMultMatrixxOES v1 = liftIO $ dyn114 ptr_glMultMatrixxOES v1
+
+{-# NOINLINE ptr_glMultMatrixxOES #-}
+ptr_glMultMatrixxOES :: FunPtr (Ptr GLfixed -> IO ())
+ptr_glMultMatrixxOES = unsafePerformIO $ getCommand "glMultMatrixxOES"
+
+-- glMultTransposeMatrixd ------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultTransposeMatrix.xml OpenGL 2.x>.
+glMultTransposeMatrixd
+  :: MonadIO m
+  => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
+  -> m ()
+glMultTransposeMatrixd v1 = liftIO $ dyn42 ptr_glMultTransposeMatrixd v1
+
+{-# NOINLINE ptr_glMultTransposeMatrixd #-}
+ptr_glMultTransposeMatrixd :: FunPtr (Ptr GLdouble -> IO ())
+ptr_glMultTransposeMatrixd = unsafePerformIO $ getCommand "glMultTransposeMatrixd"
+
+-- glMultTransposeMatrixdARB ---------------------------------------------------
+
+-- | This command is an alias for 'glMultTransposeMatrixd'.
+glMultTransposeMatrixdARB
+  :: MonadIO m
+  => Ptr GLdouble -- ^ @m@ pointing to @16@ elements of type @GLdouble@.
+  -> m ()
+glMultTransposeMatrixdARB v1 = liftIO $ dyn42 ptr_glMultTransposeMatrixdARB v1
+
+{-# NOINLINE ptr_glMultTransposeMatrixdARB #-}
+ptr_glMultTransposeMatrixdARB :: FunPtr (Ptr GLdouble -> IO ())
+ptr_glMultTransposeMatrixdARB = unsafePerformIO $ getCommand "glMultTransposeMatrixdARB"
+
+-- glMultTransposeMatrixf ------------------------------------------------------
+
+-- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultTransposeMatrix.xml OpenGL 2.x>.
+glMultTransposeMatrixf
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
+  -> m ()
+glMultTransposeMatrixf v1 = liftIO $ dyn44 ptr_glMultTransposeMatrixf v1
+
+{-# NOINLINE ptr_glMultTransposeMatrixf #-}
+ptr_glMultTransposeMatrixf :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glMultTransposeMatrixf = unsafePerformIO $ getCommand "glMultTransposeMatrixf"
+
+-- glMultTransposeMatrixfARB ---------------------------------------------------
+
+-- | This command is an alias for 'glMultTransposeMatrixf'.
+glMultTransposeMatrixfARB
+  :: MonadIO m
+  => Ptr GLfloat -- ^ @m@ pointing to @16@ elements of type @GLfloat@.
+  -> m ()
+glMultTransposeMatrixfARB v1 = liftIO $ dyn44 ptr_glMultTransposeMatrixfARB v1
+
+{-# NOINLINE ptr_glMultTransposeMatrixfARB #-}
+ptr_glMultTransposeMatrixfARB :: FunPtr (Ptr GLfloat -> IO ())
+ptr_glMultTransposeMatrixfARB = unsafePerformIO $ getCommand "glMultTransposeMatrixfARB"
+
 -- glMultTransposeMatrixxOES ---------------------------------------------------
 
 glMultTransposeMatrixxOES
   :: MonadIO m
   => Ptr GLfixed -- ^ @m@ pointing to @16@ elements of type @GLfixed@.
   -> m ()
-glMultTransposeMatrixxOES v1 = liftIO $ dyn111 ptr_glMultTransposeMatrixxOES v1
+glMultTransposeMatrixxOES v1 = liftIO $ dyn114 ptr_glMultTransposeMatrixxOES v1
 
 {-# NOINLINE ptr_glMultTransposeMatrixxOES #-}
 ptr_glMultTransposeMatrixxOES :: FunPtr (Ptr GLfixed -> IO ())
@@ -141,11 +230,11 @@ ptr_glMultTransposeMatrixxOES = unsafePerformIO $ getCommand "glMultTransposeMat
 glMultiDrawArrays
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> Ptr GLint -- ^ @first@ pointing to @COMPSIZE(count)@ elements of type @GLint@.
+  -> Ptr GLint -- ^ @first@ pointing to @COMPSIZE(drawcount)@ elements of type @GLint@.
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(drawcount)@ elements of type @GLsizei@.
   -> GLsizei -- ^ @drawcount@.
   -> m ()
-glMultiDrawArrays v1 v2 v3 v4 = liftIO $ dyn548 ptr_glMultiDrawArrays v1 v2 v3 v4
+glMultiDrawArrays v1 v2 v3 v4 = liftIO $ dyn551 ptr_glMultiDrawArrays v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiDrawArrays #-}
 ptr_glMultiDrawArrays :: FunPtr (GLenum -> Ptr GLint -> Ptr GLsizei -> GLsizei -> IO ())
@@ -161,7 +250,7 @@ glMultiDrawArraysEXT
   -> Ptr GLsizei -- ^ @count@ pointing to @COMPSIZE(primcount)@ elements of type @GLsizei@.
   -> GLsizei -- ^ @primcount@.
   -> m ()
-glMultiDrawArraysEXT v1 v2 v3 v4 = liftIO $ dyn548 ptr_glMultiDrawArraysEXT v1 v2 v3 v4
+glMultiDrawArraysEXT v1 v2 v3 v4 = liftIO $ dyn551 ptr_glMultiDrawArraysEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiDrawArraysEXT #-}
 ptr_glMultiDrawArraysEXT :: FunPtr (GLenum -> Ptr GLint -> Ptr GLsizei -> GLsizei -> IO ())
@@ -177,7 +266,7 @@ glMultiDrawArraysIndirect
   -> GLsizei -- ^ @drawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawArraysIndirect v1 v2 v3 v4 = liftIO $ dyn549 ptr_glMultiDrawArraysIndirect v1 v2 v3 v4
+glMultiDrawArraysIndirect v1 v2 v3 v4 = liftIO $ dyn552 ptr_glMultiDrawArraysIndirect v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirect #-}
 ptr_glMultiDrawArraysIndirect :: FunPtr (GLenum -> Ptr a -> GLsizei -> GLsizei -> IO ())
@@ -193,7 +282,7 @@ glMultiDrawArraysIndirectAMD
   -> GLsizei -- ^ @primcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawArraysIndirectAMD v1 v2 v3 v4 = liftIO $ dyn549 ptr_glMultiDrawArraysIndirectAMD v1 v2 v3 v4
+glMultiDrawArraysIndirectAMD v1 v2 v3 v4 = liftIO $ dyn552 ptr_glMultiDrawArraysIndirectAMD v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirectAMD #-}
 ptr_glMultiDrawArraysIndirectAMD :: FunPtr (GLenum -> Ptr a -> GLsizei -> GLsizei -> IO ())
@@ -210,7 +299,7 @@ glMultiDrawArraysIndirectBindlessCountNV
   -> GLsizei -- ^ @stride@.
   -> GLint -- ^ @vertexBufferCount@.
   -> m ()
-glMultiDrawArraysIndirectBindlessCountNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn550 ptr_glMultiDrawArraysIndirectBindlessCountNV v1 v2 v3 v4 v5 v6
+glMultiDrawArraysIndirectBindlessCountNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn553 ptr_glMultiDrawArraysIndirectBindlessCountNV v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirectBindlessCountNV #-}
 ptr_glMultiDrawArraysIndirectBindlessCountNV :: FunPtr (GLenum -> Ptr a -> GLsizei -> GLsizei -> GLsizei -> GLint -> IO ())
@@ -226,7 +315,7 @@ glMultiDrawArraysIndirectBindlessNV
   -> GLsizei -- ^ @stride@.
   -> GLint -- ^ @vertexBufferCount@.
   -> m ()
-glMultiDrawArraysIndirectBindlessNV v1 v2 v3 v4 v5 = liftIO $ dyn551 ptr_glMultiDrawArraysIndirectBindlessNV v1 v2 v3 v4 v5
+glMultiDrawArraysIndirectBindlessNV v1 v2 v3 v4 v5 = liftIO $ dyn554 ptr_glMultiDrawArraysIndirectBindlessNV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirectBindlessNV #-}
 ptr_glMultiDrawArraysIndirectBindlessNV :: FunPtr (GLenum -> Ptr a -> GLsizei -> GLsizei -> GLint -> IO ())
@@ -242,7 +331,7 @@ glMultiDrawArraysIndirectCount
   -> GLsizei -- ^ @maxdrawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawArraysIndirectCount v1 v2 v3 v4 v5 = liftIO $ dyn552 ptr_glMultiDrawArraysIndirectCount v1 v2 v3 v4 v5
+glMultiDrawArraysIndirectCount v1 v2 v3 v4 v5 = liftIO $ dyn555 ptr_glMultiDrawArraysIndirectCount v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirectCount #-}
 ptr_glMultiDrawArraysIndirectCount :: FunPtr (GLenum -> Ptr a -> GLintptr -> GLsizei -> GLsizei -> IO ())
@@ -259,7 +348,7 @@ glMultiDrawArraysIndirectCountARB
   -> GLsizei -- ^ @maxdrawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawArraysIndirectCountARB v1 v2 v3 v4 v5 = liftIO $ dyn552 ptr_glMultiDrawArraysIndirectCountARB v1 v2 v3 v4 v5
+glMultiDrawArraysIndirectCountARB v1 v2 v3 v4 v5 = liftIO $ dyn555 ptr_glMultiDrawArraysIndirectCountARB v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirectCountARB #-}
 ptr_glMultiDrawArraysIndirectCountARB :: FunPtr (GLenum -> Ptr a -> GLintptr -> GLsizei -> GLsizei -> IO ())
@@ -275,7 +364,7 @@ glMultiDrawArraysIndirectEXT
   -> GLsizei -- ^ @drawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawArraysIndirectEXT v1 v2 v3 v4 = liftIO $ dyn549 ptr_glMultiDrawArraysIndirectEXT v1 v2 v3 v4
+glMultiDrawArraysIndirectEXT v1 v2 v3 v4 = liftIO $ dyn552 ptr_glMultiDrawArraysIndirectEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiDrawArraysIndirectEXT #-}
 ptr_glMultiDrawArraysIndirectEXT :: FunPtr (GLenum -> Ptr a -> GLsizei -> GLsizei -> IO ())
@@ -290,7 +379,7 @@ glMultiDrawElementArrayAPPLE
   -> Ptr GLsizei -- ^ @count@ pointing to @primcount@ elements of type @GLsizei@.
   -> GLsizei -- ^ @primcount@.
   -> m ()
-glMultiDrawElementArrayAPPLE v1 v2 v3 v4 = liftIO $ dyn548 ptr_glMultiDrawElementArrayAPPLE v1 v2 v3 v4
+glMultiDrawElementArrayAPPLE v1 v2 v3 v4 = liftIO $ dyn551 ptr_glMultiDrawElementArrayAPPLE v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiDrawElementArrayAPPLE #-}
 ptr_glMultiDrawElementArrayAPPLE :: FunPtr (GLenum -> Ptr GLint -> Ptr GLsizei -> GLsizei -> IO ())
@@ -307,7 +396,7 @@ glMultiDrawElements
   -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(drawcount)@ elements of type @Ptr a@.
   -> GLsizei -- ^ @drawcount@.
   -> m ()
-glMultiDrawElements v1 v2 v3 v4 v5 = liftIO $ dyn553 ptr_glMultiDrawElements v1 v2 v3 v4 v5
+glMultiDrawElements v1 v2 v3 v4 v5 = liftIO $ dyn556 ptr_glMultiDrawElements v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawElements #-}
 ptr_glMultiDrawElements :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> IO ())
@@ -325,7 +414,7 @@ glMultiDrawElementsBaseVertex
   -> GLsizei -- ^ @drawcount@.
   -> Ptr GLint -- ^ @basevertex@ pointing to @COMPSIZE(drawcount)@ elements of type @GLint@.
   -> m ()
-glMultiDrawElementsBaseVertex v1 v2 v3 v4 v5 v6 = liftIO $ dyn554 ptr_glMultiDrawElementsBaseVertex v1 v2 v3 v4 v5 v6
+glMultiDrawElementsBaseVertex v1 v2 v3 v4 v5 v6 = liftIO $ dyn557 ptr_glMultiDrawElementsBaseVertex v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiDrawElementsBaseVertex #-}
 ptr_glMultiDrawElementsBaseVertex :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> Ptr GLint -> IO ())
@@ -343,7 +432,7 @@ glMultiDrawElementsBaseVertexEXT
   -> GLsizei -- ^ @primcount@.
   -> Ptr GLint -- ^ @basevertex@ pointing to @COMPSIZE(drawcount)@ elements of type @GLint@.
   -> m ()
-glMultiDrawElementsBaseVertexEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn554 ptr_glMultiDrawElementsBaseVertexEXT v1 v2 v3 v4 v5 v6
+glMultiDrawElementsBaseVertexEXT v1 v2 v3 v4 v5 v6 = liftIO $ dyn557 ptr_glMultiDrawElementsBaseVertexEXT v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiDrawElementsBaseVertexEXT #-}
 ptr_glMultiDrawElementsBaseVertexEXT :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> Ptr GLint -> IO ())
@@ -360,7 +449,7 @@ glMultiDrawElementsEXT
   -> Ptr (Ptr a) -- ^ @indices@ pointing to @COMPSIZE(primcount)@ elements of type @Ptr a@.
   -> GLsizei -- ^ @primcount@.
   -> m ()
-glMultiDrawElementsEXT v1 v2 v3 v4 v5 = liftIO $ dyn553 ptr_glMultiDrawElementsEXT v1 v2 v3 v4 v5
+glMultiDrawElementsEXT v1 v2 v3 v4 v5 = liftIO $ dyn556 ptr_glMultiDrawElementsEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawElementsEXT #-}
 ptr_glMultiDrawElementsEXT :: FunPtr (GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> IO ())
@@ -377,7 +466,7 @@ glMultiDrawElementsIndirect
   -> GLsizei -- ^ @drawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawElementsIndirect v1 v2 v3 v4 v5 = liftIO $ dyn555 ptr_glMultiDrawElementsIndirect v1 v2 v3 v4 v5
+glMultiDrawElementsIndirect v1 v2 v3 v4 v5 = liftIO $ dyn558 ptr_glMultiDrawElementsIndirect v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawElementsIndirect #-}
 ptr_glMultiDrawElementsIndirect :: FunPtr (GLenum -> GLenum -> Ptr a -> GLsizei -> GLsizei -> IO ())
@@ -394,7 +483,7 @@ glMultiDrawElementsIndirectAMD
   -> GLsizei -- ^ @primcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawElementsIndirectAMD v1 v2 v3 v4 v5 = liftIO $ dyn555 ptr_glMultiDrawElementsIndirectAMD v1 v2 v3 v4 v5
+glMultiDrawElementsIndirectAMD v1 v2 v3 v4 v5 = liftIO $ dyn558 ptr_glMultiDrawElementsIndirectAMD v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawElementsIndirectAMD #-}
 ptr_glMultiDrawElementsIndirectAMD :: FunPtr (GLenum -> GLenum -> Ptr a -> GLsizei -> GLsizei -> IO ())
@@ -412,7 +501,7 @@ glMultiDrawElementsIndirectBindlessCountNV
   -> GLsizei -- ^ @stride@.
   -> GLint -- ^ @vertexBufferCount@.
   -> m ()
-glMultiDrawElementsIndirectBindlessCountNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn556 ptr_glMultiDrawElementsIndirectBindlessCountNV v1 v2 v3 v4 v5 v6 v7
+glMultiDrawElementsIndirectBindlessCountNV v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn559 ptr_glMultiDrawElementsIndirectBindlessCountNV v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glMultiDrawElementsIndirectBindlessCountNV #-}
 ptr_glMultiDrawElementsIndirectBindlessCountNV :: FunPtr (GLenum -> GLenum -> Ptr a -> GLsizei -> GLsizei -> GLsizei -> GLint -> IO ())
@@ -429,7 +518,7 @@ glMultiDrawElementsIndirectBindlessNV
   -> GLsizei -- ^ @stride@.
   -> GLint -- ^ @vertexBufferCount@.
   -> m ()
-glMultiDrawElementsIndirectBindlessNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn557 ptr_glMultiDrawElementsIndirectBindlessNV v1 v2 v3 v4 v5 v6
+glMultiDrawElementsIndirectBindlessNV v1 v2 v3 v4 v5 v6 = liftIO $ dyn560 ptr_glMultiDrawElementsIndirectBindlessNV v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiDrawElementsIndirectBindlessNV #-}
 ptr_glMultiDrawElementsIndirectBindlessNV :: FunPtr (GLenum -> GLenum -> Ptr a -> GLsizei -> GLsizei -> GLint -> IO ())
@@ -440,13 +529,13 @@ ptr_glMultiDrawElementsIndirectBindlessNV = unsafePerformIO $ getCommand "glMult
 glMultiDrawElementsIndirectCount
   :: MonadIO m
   => GLenum -- ^ @mode@ of type [PrimitiveType](Graphics-GL-Groups.html#PrimitiveType).
-  -> GLenum -- ^ @type@.
+  -> GLenum -- ^ @type@ of type [DrawElementsType](Graphics-GL-Groups.html#DrawElementsType).
   -> Ptr a -- ^ @indirect@.
   -> GLintptr -- ^ @drawcount@.
   -> GLsizei -- ^ @maxdrawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawElementsIndirectCount v1 v2 v3 v4 v5 v6 = liftIO $ dyn558 ptr_glMultiDrawElementsIndirectCount v1 v2 v3 v4 v5 v6
+glMultiDrawElementsIndirectCount v1 v2 v3 v4 v5 v6 = liftIO $ dyn561 ptr_glMultiDrawElementsIndirectCount v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiDrawElementsIndirectCount #-}
 ptr_glMultiDrawElementsIndirectCount :: FunPtr (GLenum -> GLenum -> Ptr a -> GLintptr -> GLsizei -> GLsizei -> IO ())
@@ -464,7 +553,7 @@ glMultiDrawElementsIndirectCountARB
   -> GLsizei -- ^ @maxdrawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawElementsIndirectCountARB v1 v2 v3 v4 v5 v6 = liftIO $ dyn558 ptr_glMultiDrawElementsIndirectCountARB v1 v2 v3 v4 v5 v6
+glMultiDrawElementsIndirectCountARB v1 v2 v3 v4 v5 v6 = liftIO $ dyn561 ptr_glMultiDrawElementsIndirectCountARB v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiDrawElementsIndirectCountARB #-}
 ptr_glMultiDrawElementsIndirectCountARB :: FunPtr (GLenum -> GLenum -> Ptr a -> GLintptr -> GLsizei -> GLsizei -> IO ())
@@ -481,7 +570,7 @@ glMultiDrawElementsIndirectEXT
   -> GLsizei -- ^ @drawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawElementsIndirectEXT v1 v2 v3 v4 v5 = liftIO $ dyn555 ptr_glMultiDrawElementsIndirectEXT v1 v2 v3 v4 v5
+glMultiDrawElementsIndirectEXT v1 v2 v3 v4 v5 = liftIO $ dyn558 ptr_glMultiDrawElementsIndirectEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiDrawElementsIndirectEXT #-}
 ptr_glMultiDrawElementsIndirectEXT :: FunPtr (GLenum -> GLenum -> Ptr a -> GLsizei -> GLsizei -> IO ())
@@ -496,7 +585,7 @@ glMultiDrawMeshTasksIndirectCountNV
   -> GLsizei -- ^ @maxdrawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawMeshTasksIndirectCountNV v1 v2 v3 v4 = liftIO $ dyn559 ptr_glMultiDrawMeshTasksIndirectCountNV v1 v2 v3 v4
+glMultiDrawMeshTasksIndirectCountNV v1 v2 v3 v4 = liftIO $ dyn562 ptr_glMultiDrawMeshTasksIndirectCountNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiDrawMeshTasksIndirectCountNV #-}
 ptr_glMultiDrawMeshTasksIndirectCountNV :: FunPtr (GLintptr -> GLintptr -> GLsizei -> GLsizei -> IO ())
@@ -510,7 +599,7 @@ glMultiDrawMeshTasksIndirectNV
   -> GLsizei -- ^ @drawcount@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glMultiDrawMeshTasksIndirectNV v1 v2 v3 = liftIO $ dyn560 ptr_glMultiDrawMeshTasksIndirectNV v1 v2 v3
+glMultiDrawMeshTasksIndirectNV v1 v2 v3 = liftIO $ dyn563 ptr_glMultiDrawMeshTasksIndirectNV v1 v2 v3
 
 {-# NOINLINE ptr_glMultiDrawMeshTasksIndirectNV #-}
 ptr_glMultiDrawMeshTasksIndirectNV :: FunPtr (GLintptr -> GLsizei -> GLsizei -> IO ())
@@ -527,7 +616,7 @@ glMultiDrawRangeElementArrayAPPLE
   -> Ptr GLsizei -- ^ @count@ pointing to @primcount@ elements of type @GLsizei@.
   -> GLsizei -- ^ @primcount@.
   -> m ()
-glMultiDrawRangeElementArrayAPPLE v1 v2 v3 v4 v5 v6 = liftIO $ dyn561 ptr_glMultiDrawRangeElementArrayAPPLE v1 v2 v3 v4 v5 v6
+glMultiDrawRangeElementArrayAPPLE v1 v2 v3 v4 v5 v6 = liftIO $ dyn564 ptr_glMultiDrawRangeElementArrayAPPLE v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiDrawRangeElementArrayAPPLE #-}
 ptr_glMultiDrawRangeElementArrayAPPLE :: FunPtr (GLenum -> GLuint -> GLuint -> Ptr GLint -> Ptr GLsizei -> GLsizei -> IO ())
@@ -543,7 +632,7 @@ glMultiModeDrawArraysIBM
   -> GLsizei -- ^ @primcount@.
   -> GLint -- ^ @modestride@.
   -> m ()
-glMultiModeDrawArraysIBM v1 v2 v3 v4 v5 = liftIO $ dyn562 ptr_glMultiModeDrawArraysIBM v1 v2 v3 v4 v5
+glMultiModeDrawArraysIBM v1 v2 v3 v4 v5 = liftIO $ dyn565 ptr_glMultiModeDrawArraysIBM v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glMultiModeDrawArraysIBM #-}
 ptr_glMultiModeDrawArraysIBM :: FunPtr (Ptr GLenum -> Ptr GLint -> Ptr GLsizei -> GLsizei -> GLint -> IO ())
@@ -560,7 +649,7 @@ glMultiModeDrawElementsIBM
   -> GLsizei -- ^ @primcount@.
   -> GLint -- ^ @modestride@.
   -> m ()
-glMultiModeDrawElementsIBM v1 v2 v3 v4 v5 v6 = liftIO $ dyn563 ptr_glMultiModeDrawElementsIBM v1 v2 v3 v4 v5 v6
+glMultiModeDrawElementsIBM v1 v2 v3 v4 v5 v6 = liftIO $ dyn566 ptr_glMultiModeDrawElementsIBM v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glMultiModeDrawElementsIBM #-}
 ptr_glMultiModeDrawElementsIBM :: FunPtr (Ptr GLenum -> Ptr GLsizei -> GLenum -> Ptr (Ptr a) -> GLsizei -> GLint -> IO ())
@@ -575,7 +664,7 @@ glMultiTexBufferEXT
   -> GLenum -- ^ @internalformat@.
   -> GLuint -- ^ @buffer@.
   -> m ()
-glMultiTexBufferEXT v1 v2 v3 v4 = liftIO $ dyn293 ptr_glMultiTexBufferEXT v1 v2 v3 v4
+glMultiTexBufferEXT v1 v2 v3 v4 = liftIO $ dyn296 ptr_glMultiTexBufferEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexBufferEXT #-}
 ptr_glMultiTexBufferEXT :: FunPtr (GLenum -> GLenum -> GLenum -> GLuint -> IO ())
@@ -588,7 +677,7 @@ glMultiTexCoord1bOES
   => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLbyte -- ^ @s@.
   -> m ()
-glMultiTexCoord1bOES v1 v2 = liftIO $ dyn564 ptr_glMultiTexCoord1bOES v1 v2
+glMultiTexCoord1bOES v1 v2 = liftIO $ dyn567 ptr_glMultiTexCoord1bOES v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1bOES #-}
 ptr_glMultiTexCoord1bOES :: FunPtr (GLenum -> GLbyte -> IO ())
@@ -601,7 +690,7 @@ glMultiTexCoord1bvOES
   => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLbyte -- ^ @coords@ pointing to @1@ element of type @GLbyte@.
   -> m ()
-glMultiTexCoord1bvOES v1 v2 = liftIO $ dyn565 ptr_glMultiTexCoord1bvOES v1 v2
+glMultiTexCoord1bvOES v1 v2 = liftIO $ dyn568 ptr_glMultiTexCoord1bvOES v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1bvOES #-}
 ptr_glMultiTexCoord1bvOES :: FunPtr (GLenum -> Ptr GLbyte -> IO ())
@@ -615,7 +704,7 @@ glMultiTexCoord1d
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLdouble -- ^ @s@ of type @CoordD@.
   -> m ()
-glMultiTexCoord1d v1 v2 = liftIO $ dyn566 ptr_glMultiTexCoord1d v1 v2
+glMultiTexCoord1d v1 v2 = liftIO $ dyn569 ptr_glMultiTexCoord1d v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1d #-}
 ptr_glMultiTexCoord1d :: FunPtr (GLenum -> GLdouble -> IO ())
@@ -629,7 +718,7 @@ glMultiTexCoord1dARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLdouble -- ^ @s@ of type @CoordD@.
   -> m ()
-glMultiTexCoord1dARB v1 v2 = liftIO $ dyn566 ptr_glMultiTexCoord1dARB v1 v2
+glMultiTexCoord1dARB v1 v2 = liftIO $ dyn569 ptr_glMultiTexCoord1dARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1dARB #-}
 ptr_glMultiTexCoord1dARB :: FunPtr (GLenum -> GLdouble -> IO ())
@@ -643,7 +732,7 @@ glMultiTexCoord1dv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @CoordD@.
   -> m ()
-glMultiTexCoord1dv v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord1dv v1 v2
+glMultiTexCoord1dv v1 v2 = liftIO $ dyn100 ptr_glMultiTexCoord1dv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1dv #-}
 ptr_glMultiTexCoord1dv :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
@@ -657,7 +746,7 @@ glMultiTexCoord1dvARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLdouble -- ^ @v@ pointing to @1@ element of type @CoordD@.
   -> m ()
-glMultiTexCoord1dvARB v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord1dvARB v1 v2
+glMultiTexCoord1dvARB v1 v2 = liftIO $ dyn100 ptr_glMultiTexCoord1dvARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1dvARB #-}
 ptr_glMultiTexCoord1dvARB :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
@@ -699,7 +788,7 @@ glMultiTexCoord1fv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @CoordF@.
   -> m ()
-glMultiTexCoord1fv v1 v2 = liftIO $ dyn98 ptr_glMultiTexCoord1fv v1 v2
+glMultiTexCoord1fv v1 v2 = liftIO $ dyn101 ptr_glMultiTexCoord1fv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1fv #-}
 ptr_glMultiTexCoord1fv :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -713,7 +802,7 @@ glMultiTexCoord1fvARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfloat -- ^ @v@ pointing to @1@ element of type @CoordF@.
   -> m ()
-glMultiTexCoord1fvARB v1 v2 = liftIO $ dyn98 ptr_glMultiTexCoord1fvARB v1 v2
+glMultiTexCoord1fvARB v1 v2 = liftIO $ dyn101 ptr_glMultiTexCoord1fvARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1fvARB #-}
 ptr_glMultiTexCoord1fvARB :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -727,7 +816,7 @@ glMultiTexCoord1hNV
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLhalfNV -- ^ @s@ of type @Half16NV@.
   -> m ()
-glMultiTexCoord1hNV v1 v2 = liftIO $ dyn567 ptr_glMultiTexCoord1hNV v1 v2
+glMultiTexCoord1hNV v1 v2 = liftIO $ dyn570 ptr_glMultiTexCoord1hNV v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1hNV #-}
 ptr_glMultiTexCoord1hNV :: FunPtr (GLenum -> GLhalfNV -> IO ())
@@ -740,7 +829,7 @@ glMultiTexCoord1hvNV
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLhalfNV -- ^ @v@ pointing to @1@ element of type @Half16NV@.
   -> m ()
-glMultiTexCoord1hvNV v1 v2 = liftIO $ dyn568 ptr_glMultiTexCoord1hvNV v1 v2
+glMultiTexCoord1hvNV v1 v2 = liftIO $ dyn571 ptr_glMultiTexCoord1hvNV v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1hvNV #-}
 ptr_glMultiTexCoord1hvNV :: FunPtr (GLenum -> Ptr GLhalfNV -> IO ())
@@ -754,7 +843,7 @@ glMultiTexCoord1i
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLint -- ^ @s@ of type @CoordI@.
   -> m ()
-glMultiTexCoord1i v1 v2 = liftIO $ dyn56 ptr_glMultiTexCoord1i v1 v2
+glMultiTexCoord1i v1 v2 = liftIO $ dyn58 ptr_glMultiTexCoord1i v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1i #-}
 ptr_glMultiTexCoord1i :: FunPtr (GLenum -> GLint -> IO ())
@@ -768,7 +857,7 @@ glMultiTexCoord1iARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLint -- ^ @s@ of type @CoordI@.
   -> m ()
-glMultiTexCoord1iARB v1 v2 = liftIO $ dyn56 ptr_glMultiTexCoord1iARB v1 v2
+glMultiTexCoord1iARB v1 v2 = liftIO $ dyn58 ptr_glMultiTexCoord1iARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1iARB #-}
 ptr_glMultiTexCoord1iARB :: FunPtr (GLenum -> GLint -> IO ())
@@ -782,7 +871,7 @@ glMultiTexCoord1iv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLint -- ^ @v@ pointing to @1@ element of type @CoordI@.
   -> m ()
-glMultiTexCoord1iv v1 v2 = liftIO $ dyn140 ptr_glMultiTexCoord1iv v1 v2
+glMultiTexCoord1iv v1 v2 = liftIO $ dyn143 ptr_glMultiTexCoord1iv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1iv #-}
 ptr_glMultiTexCoord1iv :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -796,7 +885,7 @@ glMultiTexCoord1ivARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLint -- ^ @v@ pointing to @1@ element of type @CoordI@.
   -> m ()
-glMultiTexCoord1ivARB v1 v2 = liftIO $ dyn140 ptr_glMultiTexCoord1ivARB v1 v2
+glMultiTexCoord1ivARB v1 v2 = liftIO $ dyn143 ptr_glMultiTexCoord1ivARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1ivARB #-}
 ptr_glMultiTexCoord1ivARB :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -810,7 +899,7 @@ glMultiTexCoord1s
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLshort -- ^ @s@ of type @CoordS@.
   -> m ()
-glMultiTexCoord1s v1 v2 = liftIO $ dyn569 ptr_glMultiTexCoord1s v1 v2
+glMultiTexCoord1s v1 v2 = liftIO $ dyn572 ptr_glMultiTexCoord1s v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1s #-}
 ptr_glMultiTexCoord1s :: FunPtr (GLenum -> GLshort -> IO ())
@@ -824,7 +913,7 @@ glMultiTexCoord1sARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> GLshort -- ^ @s@ of type @CoordS@.
   -> m ()
-glMultiTexCoord1sARB v1 v2 = liftIO $ dyn569 ptr_glMultiTexCoord1sARB v1 v2
+glMultiTexCoord1sARB v1 v2 = liftIO $ dyn572 ptr_glMultiTexCoord1sARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1sARB #-}
 ptr_glMultiTexCoord1sARB :: FunPtr (GLenum -> GLshort -> IO ())
@@ -838,7 +927,7 @@ glMultiTexCoord1sv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @CoordS@.
   -> m ()
-glMultiTexCoord1sv v1 v2 = liftIO $ dyn570 ptr_glMultiTexCoord1sv v1 v2
+glMultiTexCoord1sv v1 v2 = liftIO $ dyn573 ptr_glMultiTexCoord1sv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1sv #-}
 ptr_glMultiTexCoord1sv :: FunPtr (GLenum -> Ptr GLshort -> IO ())
@@ -852,7 +941,7 @@ glMultiTexCoord1svARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLshort -- ^ @v@ pointing to @1@ element of type @CoordS@.
   -> m ()
-glMultiTexCoord1svARB v1 v2 = liftIO $ dyn570 ptr_glMultiTexCoord1svARB v1 v2
+glMultiTexCoord1svARB v1 v2 = liftIO $ dyn573 ptr_glMultiTexCoord1svARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1svARB #-}
 ptr_glMultiTexCoord1svARB :: FunPtr (GLenum -> Ptr GLshort -> IO ())
@@ -878,7 +967,7 @@ glMultiTexCoord1xvOES
   => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfixed -- ^ @coords@ pointing to @1@ element of type @GLfixed@.
   -> m ()
-glMultiTexCoord1xvOES v1 v2 = liftIO $ dyn99 ptr_glMultiTexCoord1xvOES v1 v2
+glMultiTexCoord1xvOES v1 v2 = liftIO $ dyn102 ptr_glMultiTexCoord1xvOES v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord1xvOES #-}
 ptr_glMultiTexCoord1xvOES :: FunPtr (GLenum -> Ptr GLfixed -> IO ())
@@ -892,7 +981,7 @@ glMultiTexCoord2bOES
   -> GLbyte -- ^ @s@.
   -> GLbyte -- ^ @t@.
   -> m ()
-glMultiTexCoord2bOES v1 v2 v3 = liftIO $ dyn571 ptr_glMultiTexCoord2bOES v1 v2 v3
+glMultiTexCoord2bOES v1 v2 v3 = liftIO $ dyn574 ptr_glMultiTexCoord2bOES v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2bOES #-}
 ptr_glMultiTexCoord2bOES :: FunPtr (GLenum -> GLbyte -> GLbyte -> IO ())
@@ -905,7 +994,7 @@ glMultiTexCoord2bvOES
   => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLbyte -- ^ @coords@ pointing to @2@ elements of type @GLbyte@.
   -> m ()
-glMultiTexCoord2bvOES v1 v2 = liftIO $ dyn565 ptr_glMultiTexCoord2bvOES v1 v2
+glMultiTexCoord2bvOES v1 v2 = liftIO $ dyn568 ptr_glMultiTexCoord2bvOES v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2bvOES #-}
 ptr_glMultiTexCoord2bvOES :: FunPtr (GLenum -> Ptr GLbyte -> IO ())
@@ -920,7 +1009,7 @@ glMultiTexCoord2d
   -> GLdouble -- ^ @s@ of type @CoordD@.
   -> GLdouble -- ^ @t@ of type @CoordD@.
   -> m ()
-glMultiTexCoord2d v1 v2 v3 = liftIO $ dyn572 ptr_glMultiTexCoord2d v1 v2 v3
+glMultiTexCoord2d v1 v2 v3 = liftIO $ dyn575 ptr_glMultiTexCoord2d v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2d #-}
 ptr_glMultiTexCoord2d :: FunPtr (GLenum -> GLdouble -> GLdouble -> IO ())
@@ -935,7 +1024,7 @@ glMultiTexCoord2dARB
   -> GLdouble -- ^ @s@ of type @CoordD@.
   -> GLdouble -- ^ @t@ of type @CoordD@.
   -> m ()
-glMultiTexCoord2dARB v1 v2 v3 = liftIO $ dyn572 ptr_glMultiTexCoord2dARB v1 v2 v3
+glMultiTexCoord2dARB v1 v2 v3 = liftIO $ dyn575 ptr_glMultiTexCoord2dARB v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2dARB #-}
 ptr_glMultiTexCoord2dARB :: FunPtr (GLenum -> GLdouble -> GLdouble -> IO ())
@@ -949,7 +1038,7 @@ glMultiTexCoord2dv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
   -> m ()
-glMultiTexCoord2dv v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord2dv v1 v2
+glMultiTexCoord2dv v1 v2 = liftIO $ dyn100 ptr_glMultiTexCoord2dv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2dv #-}
 ptr_glMultiTexCoord2dv :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
@@ -963,7 +1052,7 @@ glMultiTexCoord2dvARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLdouble -- ^ @v@ pointing to @2@ elements of type @CoordD@.
   -> m ()
-glMultiTexCoord2dvARB v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord2dvARB v1 v2
+glMultiTexCoord2dvARB v1 v2 = liftIO $ dyn100 ptr_glMultiTexCoord2dvARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2dvARB #-}
 ptr_glMultiTexCoord2dvARB :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
@@ -978,7 +1067,7 @@ glMultiTexCoord2f
   -> GLfloat -- ^ @s@ of type @CoordF@.
   -> GLfloat -- ^ @t@ of type @CoordF@.
   -> m ()
-glMultiTexCoord2f v1 v2 v3 = liftIO $ dyn573 ptr_glMultiTexCoord2f v1 v2 v3
+glMultiTexCoord2f v1 v2 v3 = liftIO $ dyn576 ptr_glMultiTexCoord2f v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2f #-}
 ptr_glMultiTexCoord2f :: FunPtr (GLenum -> GLfloat -> GLfloat -> IO ())
@@ -993,7 +1082,7 @@ glMultiTexCoord2fARB
   -> GLfloat -- ^ @s@ of type @CoordF@.
   -> GLfloat -- ^ @t@ of type @CoordF@.
   -> m ()
-glMultiTexCoord2fARB v1 v2 v3 = liftIO $ dyn573 ptr_glMultiTexCoord2fARB v1 v2 v3
+glMultiTexCoord2fARB v1 v2 v3 = liftIO $ dyn576 ptr_glMultiTexCoord2fARB v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2fARB #-}
 ptr_glMultiTexCoord2fARB :: FunPtr (GLenum -> GLfloat -> GLfloat -> IO ())
@@ -1007,7 +1096,7 @@ glMultiTexCoord2fv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
   -> m ()
-glMultiTexCoord2fv v1 v2 = liftIO $ dyn98 ptr_glMultiTexCoord2fv v1 v2
+glMultiTexCoord2fv v1 v2 = liftIO $ dyn101 ptr_glMultiTexCoord2fv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2fv #-}
 ptr_glMultiTexCoord2fv :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -1021,7 +1110,7 @@ glMultiTexCoord2fvARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfloat -- ^ @v@ pointing to @2@ elements of type @CoordF@.
   -> m ()
-glMultiTexCoord2fvARB v1 v2 = liftIO $ dyn98 ptr_glMultiTexCoord2fvARB v1 v2
+glMultiTexCoord2fvARB v1 v2 = liftIO $ dyn101 ptr_glMultiTexCoord2fvARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2fvARB #-}
 ptr_glMultiTexCoord2fvARB :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -1036,7 +1125,7 @@ glMultiTexCoord2hNV
   -> GLhalfNV -- ^ @s@ of type @Half16NV@.
   -> GLhalfNV -- ^ @t@ of type @Half16NV@.
   -> m ()
-glMultiTexCoord2hNV v1 v2 v3 = liftIO $ dyn574 ptr_glMultiTexCoord2hNV v1 v2 v3
+glMultiTexCoord2hNV v1 v2 v3 = liftIO $ dyn577 ptr_glMultiTexCoord2hNV v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2hNV #-}
 ptr_glMultiTexCoord2hNV :: FunPtr (GLenum -> GLhalfNV -> GLhalfNV -> IO ())
@@ -1049,7 +1138,7 @@ glMultiTexCoord2hvNV
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLhalfNV -- ^ @v@ pointing to @2@ elements of type @Half16NV@.
   -> m ()
-glMultiTexCoord2hvNV v1 v2 = liftIO $ dyn568 ptr_glMultiTexCoord2hvNV v1 v2
+glMultiTexCoord2hvNV v1 v2 = liftIO $ dyn571 ptr_glMultiTexCoord2hvNV v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2hvNV #-}
 ptr_glMultiTexCoord2hvNV :: FunPtr (GLenum -> Ptr GLhalfNV -> IO ())
@@ -1064,7 +1153,7 @@ glMultiTexCoord2i
   -> GLint -- ^ @s@ of type @CoordI@.
   -> GLint -- ^ @t@ of type @CoordI@.
   -> m ()
-glMultiTexCoord2i v1 v2 v3 = liftIO $ dyn272 ptr_glMultiTexCoord2i v1 v2 v3
+glMultiTexCoord2i v1 v2 v3 = liftIO $ dyn275 ptr_glMultiTexCoord2i v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2i #-}
 ptr_glMultiTexCoord2i :: FunPtr (GLenum -> GLint -> GLint -> IO ())
@@ -1079,7 +1168,7 @@ glMultiTexCoord2iARB
   -> GLint -- ^ @s@ of type @CoordI@.
   -> GLint -- ^ @t@ of type @CoordI@.
   -> m ()
-glMultiTexCoord2iARB v1 v2 v3 = liftIO $ dyn272 ptr_glMultiTexCoord2iARB v1 v2 v3
+glMultiTexCoord2iARB v1 v2 v3 = liftIO $ dyn275 ptr_glMultiTexCoord2iARB v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2iARB #-}
 ptr_glMultiTexCoord2iARB :: FunPtr (GLenum -> GLint -> GLint -> IO ())
@@ -1093,7 +1182,7 @@ glMultiTexCoord2iv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
   -> m ()
-glMultiTexCoord2iv v1 v2 = liftIO $ dyn140 ptr_glMultiTexCoord2iv v1 v2
+glMultiTexCoord2iv v1 v2 = liftIO $ dyn143 ptr_glMultiTexCoord2iv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2iv #-}
 ptr_glMultiTexCoord2iv :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -1107,7 +1196,7 @@ glMultiTexCoord2ivARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLint -- ^ @v@ pointing to @2@ elements of type @CoordI@.
   -> m ()
-glMultiTexCoord2ivARB v1 v2 = liftIO $ dyn140 ptr_glMultiTexCoord2ivARB v1 v2
+glMultiTexCoord2ivARB v1 v2 = liftIO $ dyn143 ptr_glMultiTexCoord2ivARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2ivARB #-}
 ptr_glMultiTexCoord2ivARB :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -1122,7 +1211,7 @@ glMultiTexCoord2s
   -> GLshort -- ^ @s@ of type @CoordS@.
   -> GLshort -- ^ @t@ of type @CoordS@.
   -> m ()
-glMultiTexCoord2s v1 v2 v3 = liftIO $ dyn575 ptr_glMultiTexCoord2s v1 v2 v3
+glMultiTexCoord2s v1 v2 v3 = liftIO $ dyn578 ptr_glMultiTexCoord2s v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2s #-}
 ptr_glMultiTexCoord2s :: FunPtr (GLenum -> GLshort -> GLshort -> IO ())
@@ -1137,7 +1226,7 @@ glMultiTexCoord2sARB
   -> GLshort -- ^ @s@ of type @CoordS@.
   -> GLshort -- ^ @t@ of type @CoordS@.
   -> m ()
-glMultiTexCoord2sARB v1 v2 v3 = liftIO $ dyn575 ptr_glMultiTexCoord2sARB v1 v2 v3
+glMultiTexCoord2sARB v1 v2 v3 = liftIO $ dyn578 ptr_glMultiTexCoord2sARB v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2sARB #-}
 ptr_glMultiTexCoord2sARB :: FunPtr (GLenum -> GLshort -> GLshort -> IO ())
@@ -1151,7 +1240,7 @@ glMultiTexCoord2sv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
   -> m ()
-glMultiTexCoord2sv v1 v2 = liftIO $ dyn570 ptr_glMultiTexCoord2sv v1 v2
+glMultiTexCoord2sv v1 v2 = liftIO $ dyn573 ptr_glMultiTexCoord2sv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2sv #-}
 ptr_glMultiTexCoord2sv :: FunPtr (GLenum -> Ptr GLshort -> IO ())
@@ -1165,7 +1254,7 @@ glMultiTexCoord2svARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLshort -- ^ @v@ pointing to @2@ elements of type @CoordS@.
   -> m ()
-glMultiTexCoord2svARB v1 v2 = liftIO $ dyn570 ptr_glMultiTexCoord2svARB v1 v2
+glMultiTexCoord2svARB v1 v2 = liftIO $ dyn573 ptr_glMultiTexCoord2svARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2svARB #-}
 ptr_glMultiTexCoord2svARB :: FunPtr (GLenum -> Ptr GLshort -> IO ())
@@ -1179,7 +1268,7 @@ glMultiTexCoord2xOES
   -> GLfixed -- ^ @s@.
   -> GLfixed -- ^ @t@.
   -> m ()
-glMultiTexCoord2xOES v1 v2 v3 = liftIO $ dyn576 ptr_glMultiTexCoord2xOES v1 v2 v3
+glMultiTexCoord2xOES v1 v2 v3 = liftIO $ dyn579 ptr_glMultiTexCoord2xOES v1 v2 v3
 
 {-# NOINLINE ptr_glMultiTexCoord2xOES #-}
 ptr_glMultiTexCoord2xOES :: FunPtr (GLenum -> GLfixed -> GLfixed -> IO ())
@@ -1192,7 +1281,7 @@ glMultiTexCoord2xvOES
   => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfixed -- ^ @coords@ pointing to @2@ elements of type @GLfixed@.
   -> m ()
-glMultiTexCoord2xvOES v1 v2 = liftIO $ dyn99 ptr_glMultiTexCoord2xvOES v1 v2
+glMultiTexCoord2xvOES v1 v2 = liftIO $ dyn102 ptr_glMultiTexCoord2xvOES v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord2xvOES #-}
 ptr_glMultiTexCoord2xvOES :: FunPtr (GLenum -> Ptr GLfixed -> IO ())
@@ -1207,7 +1296,7 @@ glMultiTexCoord3bOES
   -> GLbyte -- ^ @t@.
   -> GLbyte -- ^ @r@.
   -> m ()
-glMultiTexCoord3bOES v1 v2 v3 v4 = liftIO $ dyn577 ptr_glMultiTexCoord3bOES v1 v2 v3 v4
+glMultiTexCoord3bOES v1 v2 v3 v4 = liftIO $ dyn580 ptr_glMultiTexCoord3bOES v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3bOES #-}
 ptr_glMultiTexCoord3bOES :: FunPtr (GLenum -> GLbyte -> GLbyte -> GLbyte -> IO ())
@@ -1220,7 +1309,7 @@ glMultiTexCoord3bvOES
   => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLbyte -- ^ @coords@ pointing to @3@ elements of type @GLbyte@.
   -> m ()
-glMultiTexCoord3bvOES v1 v2 = liftIO $ dyn565 ptr_glMultiTexCoord3bvOES v1 v2
+glMultiTexCoord3bvOES v1 v2 = liftIO $ dyn568 ptr_glMultiTexCoord3bvOES v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3bvOES #-}
 ptr_glMultiTexCoord3bvOES :: FunPtr (GLenum -> Ptr GLbyte -> IO ())
@@ -1236,7 +1325,7 @@ glMultiTexCoord3d
   -> GLdouble -- ^ @t@ of type @CoordD@.
   -> GLdouble -- ^ @r@ of type @CoordD@.
   -> m ()
-glMultiTexCoord3d v1 v2 v3 v4 = liftIO $ dyn545 ptr_glMultiTexCoord3d v1 v2 v3 v4
+glMultiTexCoord3d v1 v2 v3 v4 = liftIO $ dyn548 ptr_glMultiTexCoord3d v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3d #-}
 ptr_glMultiTexCoord3d :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -1252,7 +1341,7 @@ glMultiTexCoord3dARB
   -> GLdouble -- ^ @t@ of type @CoordD@.
   -> GLdouble -- ^ @r@ of type @CoordD@.
   -> m ()
-glMultiTexCoord3dARB v1 v2 v3 v4 = liftIO $ dyn545 ptr_glMultiTexCoord3dARB v1 v2 v3 v4
+glMultiTexCoord3dARB v1 v2 v3 v4 = liftIO $ dyn548 ptr_glMultiTexCoord3dARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3dARB #-}
 ptr_glMultiTexCoord3dARB :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> IO ())
@@ -1266,7 +1355,7 @@ glMultiTexCoord3dv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
   -> m ()
-glMultiTexCoord3dv v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord3dv v1 v2
+glMultiTexCoord3dv v1 v2 = liftIO $ dyn100 ptr_glMultiTexCoord3dv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3dv #-}
 ptr_glMultiTexCoord3dv :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
@@ -1280,7 +1369,7 @@ glMultiTexCoord3dvARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLdouble -- ^ @v@ pointing to @3@ elements of type @CoordD@.
   -> m ()
-glMultiTexCoord3dvARB v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord3dvARB v1 v2
+glMultiTexCoord3dvARB v1 v2 = liftIO $ dyn100 ptr_glMultiTexCoord3dvARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3dvARB #-}
 ptr_glMultiTexCoord3dvARB :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
@@ -1296,7 +1385,7 @@ glMultiTexCoord3f
   -> GLfloat -- ^ @t@ of type @CoordF@.
   -> GLfloat -- ^ @r@ of type @CoordF@.
   -> m ()
-glMultiTexCoord3f v1 v2 v3 v4 = liftIO $ dyn546 ptr_glMultiTexCoord3f v1 v2 v3 v4
+glMultiTexCoord3f v1 v2 v3 v4 = liftIO $ dyn549 ptr_glMultiTexCoord3f v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3f #-}
 ptr_glMultiTexCoord3f :: FunPtr (GLenum -> GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -1312,7 +1401,7 @@ glMultiTexCoord3fARB
   -> GLfloat -- ^ @t@ of type @CoordF@.
   -> GLfloat -- ^ @r@ of type @CoordF@.
   -> m ()
-glMultiTexCoord3fARB v1 v2 v3 v4 = liftIO $ dyn546 ptr_glMultiTexCoord3fARB v1 v2 v3 v4
+glMultiTexCoord3fARB v1 v2 v3 v4 = liftIO $ dyn549 ptr_glMultiTexCoord3fARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3fARB #-}
 ptr_glMultiTexCoord3fARB :: FunPtr (GLenum -> GLfloat -> GLfloat -> GLfloat -> IO ())
@@ -1326,7 +1415,7 @@ glMultiTexCoord3fv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
   -> m ()
-glMultiTexCoord3fv v1 v2 = liftIO $ dyn98 ptr_glMultiTexCoord3fv v1 v2
+glMultiTexCoord3fv v1 v2 = liftIO $ dyn101 ptr_glMultiTexCoord3fv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3fv #-}
 ptr_glMultiTexCoord3fv :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -1340,7 +1429,7 @@ glMultiTexCoord3fvARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLfloat -- ^ @v@ pointing to @3@ elements of type @CoordF@.
   -> m ()
-glMultiTexCoord3fvARB v1 v2 = liftIO $ dyn98 ptr_glMultiTexCoord3fvARB v1 v2
+glMultiTexCoord3fvARB v1 v2 = liftIO $ dyn101 ptr_glMultiTexCoord3fvARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3fvARB #-}
 ptr_glMultiTexCoord3fvARB :: FunPtr (GLenum -> Ptr GLfloat -> IO ())
@@ -1356,7 +1445,7 @@ glMultiTexCoord3hNV
   -> GLhalfNV -- ^ @t@ of type @Half16NV@.
   -> GLhalfNV -- ^ @r@ of type @Half16NV@.
   -> m ()
-glMultiTexCoord3hNV v1 v2 v3 v4 = liftIO $ dyn578 ptr_glMultiTexCoord3hNV v1 v2 v3 v4
+glMultiTexCoord3hNV v1 v2 v3 v4 = liftIO $ dyn581 ptr_glMultiTexCoord3hNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3hNV #-}
 ptr_glMultiTexCoord3hNV :: FunPtr (GLenum -> GLhalfNV -> GLhalfNV -> GLhalfNV -> IO ())
@@ -1369,7 +1458,7 @@ glMultiTexCoord3hvNV
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLhalfNV -- ^ @v@ pointing to @3@ elements of type @Half16NV@.
   -> m ()
-glMultiTexCoord3hvNV v1 v2 = liftIO $ dyn568 ptr_glMultiTexCoord3hvNV v1 v2
+glMultiTexCoord3hvNV v1 v2 = liftIO $ dyn571 ptr_glMultiTexCoord3hvNV v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3hvNV #-}
 ptr_glMultiTexCoord3hvNV :: FunPtr (GLenum -> Ptr GLhalfNV -> IO ())
@@ -1385,7 +1474,7 @@ glMultiTexCoord3i
   -> GLint -- ^ @t@ of type @CoordI@.
   -> GLint -- ^ @r@ of type @CoordI@.
   -> m ()
-glMultiTexCoord3i v1 v2 v3 v4 = liftIO $ dyn579 ptr_glMultiTexCoord3i v1 v2 v3 v4
+glMultiTexCoord3i v1 v2 v3 v4 = liftIO $ dyn582 ptr_glMultiTexCoord3i v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3i #-}
 ptr_glMultiTexCoord3i :: FunPtr (GLenum -> GLint -> GLint -> GLint -> IO ())
@@ -1401,7 +1490,7 @@ glMultiTexCoord3iARB
   -> GLint -- ^ @t@ of type @CoordI@.
   -> GLint -- ^ @r@ of type @CoordI@.
   -> m ()
-glMultiTexCoord3iARB v1 v2 v3 v4 = liftIO $ dyn579 ptr_glMultiTexCoord3iARB v1 v2 v3 v4
+glMultiTexCoord3iARB v1 v2 v3 v4 = liftIO $ dyn582 ptr_glMultiTexCoord3iARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3iARB #-}
 ptr_glMultiTexCoord3iARB :: FunPtr (GLenum -> GLint -> GLint -> GLint -> IO ())
@@ -1415,7 +1504,7 @@ glMultiTexCoord3iv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
   -> m ()
-glMultiTexCoord3iv v1 v2 = liftIO $ dyn140 ptr_glMultiTexCoord3iv v1 v2
+glMultiTexCoord3iv v1 v2 = liftIO $ dyn143 ptr_glMultiTexCoord3iv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3iv #-}
 ptr_glMultiTexCoord3iv :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -1429,7 +1518,7 @@ glMultiTexCoord3ivARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLint -- ^ @v@ pointing to @3@ elements of type @CoordI@.
   -> m ()
-glMultiTexCoord3ivARB v1 v2 = liftIO $ dyn140 ptr_glMultiTexCoord3ivARB v1 v2
+glMultiTexCoord3ivARB v1 v2 = liftIO $ dyn143 ptr_glMultiTexCoord3ivARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3ivARB #-}
 ptr_glMultiTexCoord3ivARB :: FunPtr (GLenum -> Ptr GLint -> IO ())
@@ -1445,7 +1534,7 @@ glMultiTexCoord3s
   -> GLshort -- ^ @t@ of type @CoordS@.
   -> GLshort -- ^ @r@ of type @CoordS@.
   -> m ()
-glMultiTexCoord3s v1 v2 v3 v4 = liftIO $ dyn580 ptr_glMultiTexCoord3s v1 v2 v3 v4
+glMultiTexCoord3s v1 v2 v3 v4 = liftIO $ dyn583 ptr_glMultiTexCoord3s v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3s #-}
 ptr_glMultiTexCoord3s :: FunPtr (GLenum -> GLshort -> GLshort -> GLshort -> IO ())
@@ -1461,7 +1550,7 @@ glMultiTexCoord3sARB
   -> GLshort -- ^ @t@ of type @CoordS@.
   -> GLshort -- ^ @r@ of type @CoordS@.
   -> m ()
-glMultiTexCoord3sARB v1 v2 v3 v4 = liftIO $ dyn580 ptr_glMultiTexCoord3sARB v1 v2 v3 v4
+glMultiTexCoord3sARB v1 v2 v3 v4 = liftIO $ dyn583 ptr_glMultiTexCoord3sARB v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3sARB #-}
 ptr_glMultiTexCoord3sARB :: FunPtr (GLenum -> GLshort -> GLshort -> GLshort -> IO ())
@@ -1475,7 +1564,7 @@ glMultiTexCoord3sv
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
   -> m ()
-glMultiTexCoord3sv v1 v2 = liftIO $ dyn570 ptr_glMultiTexCoord3sv v1 v2
+glMultiTexCoord3sv v1 v2 = liftIO $ dyn573 ptr_glMultiTexCoord3sv v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3sv #-}
 ptr_glMultiTexCoord3sv :: FunPtr (GLenum -> Ptr GLshort -> IO ())
@@ -1489,7 +1578,7 @@ glMultiTexCoord3svARB
   => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
   -> Ptr GLshort -- ^ @v@ pointing to @3@ elements of type @CoordS@.
   -> m ()
-glMultiTexCoord3svARB v1 v2 = liftIO $ dyn570 ptr_glMultiTexCoord3svARB v1 v2
+glMultiTexCoord3svARB v1 v2 = liftIO $ dyn573 ptr_glMultiTexCoord3svARB v1 v2
 
 {-# NOINLINE ptr_glMultiTexCoord3svARB #-}
 ptr_glMultiTexCoord3svARB :: FunPtr (GLenum -> Ptr GLshort -> IO ())
@@ -1504,113 +1593,9 @@ glMultiTexCoord3xOES
   -> GLfixed -- ^ @t@.
   -> GLfixed -- ^ @r@.
   -> m ()
-glMultiTexCoord3xOES v1 v2 v3 v4 = liftIO $ dyn581 ptr_glMultiTexCoord3xOES v1 v2 v3 v4
+glMultiTexCoord3xOES v1 v2 v3 v4 = liftIO $ dyn584 ptr_glMultiTexCoord3xOES v1 v2 v3 v4
 
 {-# NOINLINE ptr_glMultiTexCoord3xOES #-}
 ptr_glMultiTexCoord3xOES :: FunPtr (GLenum -> GLfixed -> GLfixed -> GLfixed -> IO ())
 ptr_glMultiTexCoord3xOES = unsafePerformIO $ getCommand "glMultiTexCoord3xOES"
-
--- glMultiTexCoord3xvOES -------------------------------------------------------
-
-glMultiTexCoord3xvOES
-  :: MonadIO m
-  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> Ptr GLfixed -- ^ @coords@ pointing to @3@ elements of type @GLfixed@.
-  -> m ()
-glMultiTexCoord3xvOES v1 v2 = liftIO $ dyn99 ptr_glMultiTexCoord3xvOES v1 v2
-
-{-# NOINLINE ptr_glMultiTexCoord3xvOES #-}
-ptr_glMultiTexCoord3xvOES :: FunPtr (GLenum -> Ptr GLfixed -> IO ())
-ptr_glMultiTexCoord3xvOES = unsafePerformIO $ getCommand "glMultiTexCoord3xvOES"
-
--- glMultiTexCoord4bOES --------------------------------------------------------
-
-glMultiTexCoord4bOES
-  :: MonadIO m
-  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> GLbyte -- ^ @s@.
-  -> GLbyte -- ^ @t@.
-  -> GLbyte -- ^ @r@.
-  -> GLbyte -- ^ @q@.
-  -> m ()
-glMultiTexCoord4bOES v1 v2 v3 v4 v5 = liftIO $ dyn582 ptr_glMultiTexCoord4bOES v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glMultiTexCoord4bOES #-}
-ptr_glMultiTexCoord4bOES :: FunPtr (GLenum -> GLbyte -> GLbyte -> GLbyte -> GLbyte -> IO ())
-ptr_glMultiTexCoord4bOES = unsafePerformIO $ getCommand "glMultiTexCoord4bOES"
-
--- glMultiTexCoord4bvOES -------------------------------------------------------
-
-glMultiTexCoord4bvOES
-  :: MonadIO m
-  => GLenum -- ^ @texture@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> Ptr GLbyte -- ^ @coords@ pointing to @4@ elements of type @GLbyte@.
-  -> m ()
-glMultiTexCoord4bvOES v1 v2 = liftIO $ dyn565 ptr_glMultiTexCoord4bvOES v1 v2
-
-{-# NOINLINE ptr_glMultiTexCoord4bvOES #-}
-ptr_glMultiTexCoord4bvOES :: FunPtr (GLenum -> Ptr GLbyte -> IO ())
-ptr_glMultiTexCoord4bvOES = unsafePerformIO $ getCommand "glMultiTexCoord4bvOES"
-
--- glMultiTexCoord4d -----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>. The vector equivalent of this command is 'glMultiTexCoord4dv'.
-glMultiTexCoord4d
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> GLdouble -- ^ @s@ of type @CoordD@.
-  -> GLdouble -- ^ @t@ of type @CoordD@.
-  -> GLdouble -- ^ @r@ of type @CoordD@.
-  -> GLdouble -- ^ @q@ of type @CoordD@.
-  -> m ()
-glMultiTexCoord4d v1 v2 v3 v4 v5 = liftIO $ dyn543 ptr_glMultiTexCoord4d v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glMultiTexCoord4d #-}
-ptr_glMultiTexCoord4d :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
-ptr_glMultiTexCoord4d = unsafePerformIO $ getCommand "glMultiTexCoord4d"
-
--- glMultiTexCoord4dARB --------------------------------------------------------
-
--- | The vector equivalent of this command is 'glMultiTexCoord4dv'. This command is an alias for 'glMultiTexCoord4d'.
-glMultiTexCoord4dARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> GLdouble -- ^ @s@ of type @CoordD@.
-  -> GLdouble -- ^ @t@ of type @CoordD@.
-  -> GLdouble -- ^ @r@ of type @CoordD@.
-  -> GLdouble -- ^ @q@ of type @CoordD@.
-  -> m ()
-glMultiTexCoord4dARB v1 v2 v3 v4 v5 = liftIO $ dyn543 ptr_glMultiTexCoord4dARB v1 v2 v3 v4 v5
-
-{-# NOINLINE ptr_glMultiTexCoord4dARB #-}
-ptr_glMultiTexCoord4dARB :: FunPtr (GLenum -> GLdouble -> GLdouble -> GLdouble -> GLdouble -> IO ())
-ptr_glMultiTexCoord4dARB = unsafePerformIO $ getCommand "glMultiTexCoord4dARB"
-
--- glMultiTexCoord4dv ----------------------------------------------------------
-
--- | Manual page for <https://www.opengl.org/sdk/docs/man2/xhtml/glMultiTexCoord.xml OpenGL 2.x>.
-glMultiTexCoord4dv
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @CoordD@.
-  -> m ()
-glMultiTexCoord4dv v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord4dv v1 v2
-
-{-# NOINLINE ptr_glMultiTexCoord4dv #-}
-ptr_glMultiTexCoord4dv :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
-ptr_glMultiTexCoord4dv = unsafePerformIO $ getCommand "glMultiTexCoord4dv"
-
--- glMultiTexCoord4dvARB -------------------------------------------------------
-
--- | This command is an alias for 'glMultiTexCoord4dv'.
-glMultiTexCoord4dvARB
-  :: MonadIO m
-  => GLenum -- ^ @target@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> Ptr GLdouble -- ^ @v@ pointing to @4@ elements of type @CoordD@.
-  -> m ()
-glMultiTexCoord4dvARB v1 v2 = liftIO $ dyn97 ptr_glMultiTexCoord4dvARB v1 v2
-
-{-# NOINLINE ptr_glMultiTexCoord4dvARB #-}
-ptr_glMultiTexCoord4dvARB :: FunPtr (GLenum -> Ptr GLdouble -> IO ())
-ptr_glMultiTexCoord4dvARB = unsafePerformIO $ getCommand "glMultiTexCoord4dvARB"
 

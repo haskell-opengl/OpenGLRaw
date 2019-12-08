@@ -78,6 +78,7 @@ module Graphics.GL.NV (
   module Graphics.GL.NV.ScissorExclusive,
   module Graphics.GL.NV.ShaderBufferLoad,
   module Graphics.GL.NV.ShaderBufferStore,
+  module Graphics.GL.NV.ShaderSubgroupPartitioned,
   module Graphics.GL.NV.ShaderThreadGroup,
   module Graphics.GL.NV.ShadingRateImage,
   module Graphics.GL.NV.TessellationProgram5,
@@ -173,6 +174,7 @@ import Graphics.GL.NV.SampleLocations
 import Graphics.GL.NV.ScissorExclusive
 import Graphics.GL.NV.ShaderBufferLoad
 import Graphics.GL.NV.ShaderBufferStore
+import Graphics.GL.NV.ShaderSubgroupPartitioned
 import Graphics.GL.NV.ShaderThreadGroup
 import Graphics.GL.NV.ShadingRateImage
 import Graphics.GL.NV.TessellationProgram5

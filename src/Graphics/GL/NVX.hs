@@ -15,9 +15,13 @@
 module Graphics.GL.NVX (
   module Graphics.GL.NVX.ConditionalRender,
   module Graphics.GL.NVX.GPUMemoryInfo,
-  module Graphics.GL.NVX.LinkedGPUMulticast
+  module Graphics.GL.NVX.GPUMulticast2,
+  module Graphics.GL.NVX.LinkedGPUMulticast,
+  module Graphics.GL.NVX.ProgressFence
 ) where
 
 import Graphics.GL.NVX.ConditionalRender
 import Graphics.GL.NVX.GPUMemoryInfo
+import Graphics.GL.NVX.GPUMulticast2
 import Graphics.GL.NVX.LinkedGPUMulticast
+import Graphics.GL.NVX.ProgressFence

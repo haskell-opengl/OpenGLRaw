@@ -3605,6 +3605,17 @@ gl_KHR_robustness :: Bool
 gl_KHR_robustness = member "GL_KHR_robustness" extensions
 {-# NOINLINE gl_KHR_robustness #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/KHR/shader_subgroup.txt KHR_shader_subgroup> extension supported?
+glGetKHRShaderSubgroup :: MonadIO m => m Bool
+glGetKHRShaderSubgroup = getExtensions >>= (return . member "GL_KHR_shader_subgroup")
+
+-- | Is the <https://www.opengl.org/registry/specs/KHR/shader_subgroup.txt KHR_shader_subgroup> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetKHRShaderSubgroup' in those cases instead.
+gl_KHR_shader_subgroup :: Bool
+gl_KHR_shader_subgroup = member "GL_KHR_shader_subgroup" extensions
+{-# NOINLINE gl_KHR_shader_subgroup #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/KHR/texture_compression_astc_hdr.txt KHR_texture_compression_astc_hdr> extension supported?
 glGetKHRTextureCompressionASTCHDR :: MonadIO m => m Bool
 glGetKHRTextureCompressionASTCHDR = getExtensions >>= (return . member "GL_KHR_texture_compression_astc_hdr")
@@ -3626,6 +3637,17 @@ glGetKHRTextureCompressionASTCLDR = getExtensions >>= (return . member "GL_KHR_t
 gl_KHR_texture_compression_astc_ldr :: Bool
 gl_KHR_texture_compression_astc_ldr = member "GL_KHR_texture_compression_astc_ldr" extensions
 {-# NOINLINE gl_KHR_texture_compression_astc_ldr #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/MESA/framebuffer_flip_y.txt MESA_framebuffer_flip_y> extension supported?
+glGetMESAFramebufferFlipY :: MonadIO m => m Bool
+glGetMESAFramebufferFlipY = getExtensions >>= (return . member "GL_MESA_framebuffer_flip_y")
+
+-- | Is the <https://www.opengl.org/registry/specs/MESA/framebuffer_flip_y.txt MESA_framebuffer_flip_y> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetMESAFramebufferFlipY' in those cases instead.
+gl_MESA_framebuffer_flip_y :: Bool
+gl_MESA_framebuffer_flip_y = member "GL_MESA_framebuffer_flip_y" extensions
+{-# NOINLINE gl_MESA_framebuffer_flip_y #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/MESA/pack_invert.txt MESA_pack_invert> extension supported?
 glGetMESAPackInvert :: MonadIO m => m Bool
@@ -4408,6 +4430,17 @@ gl_NV_shader_buffer_store :: Bool
 gl_NV_shader_buffer_store = member "GL_NV_shader_buffer_store" extensions
 {-# NOINLINE gl_NV_shader_buffer_store #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NV/shader_subgroup_partitioned.txt NV_shader_subgroup_partitioned> extension supported?
+glGetNVShaderSubgroupPartitioned :: MonadIO m => m Bool
+glGetNVShaderSubgroupPartitioned = getExtensions >>= (return . member "GL_NV_shader_subgroup_partitioned")
+
+-- | Is the <https://www.opengl.org/registry/specs/NV/shader_subgroup_partitioned.txt NV_shader_subgroup_partitioned> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVShaderSubgroupPartitioned' in those cases instead.
+gl_NV_shader_subgroup_partitioned :: Bool
+gl_NV_shader_subgroup_partitioned = member "GL_NV_shader_subgroup_partitioned" extensions
+{-# NOINLINE gl_NV_shader_subgroup_partitioned #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NV/shader_thread_group.txt NV_shader_thread_group> extension supported?
 glGetNVShaderThreadGroup :: MonadIO m => m Bool
 glGetNVShaderThreadGroup = getExtensions >>= (return . member "GL_NV_shader_thread_group")
@@ -4738,6 +4771,17 @@ gl_NVX_gpu_memory_info :: Bool
 gl_NVX_gpu_memory_info = member "GL_NVX_gpu_memory_info" extensions
 {-# NOINLINE gl_NVX_gpu_memory_info #-}
 
+-- | Is the <https://www.opengl.org/registry/specs/NVX/gpu_multicast2.txt NVX_gpu_multicast2> extension supported?
+glGetNVXGPUMulticast2 :: MonadIO m => m Bool
+glGetNVXGPUMulticast2 = getExtensions >>= (return . member "GL_NVX_gpu_multicast2")
+
+-- | Is the <https://www.opengl.org/registry/specs/NVX/gpu_multicast2.txt NVX_gpu_multicast2> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVXGPUMulticast2' in those cases instead.
+gl_NVX_gpu_multicast2 :: Bool
+gl_NVX_gpu_multicast2 = member "GL_NVX_gpu_multicast2" extensions
+{-# NOINLINE gl_NVX_gpu_multicast2 #-}
+
 -- | Is the <https://www.opengl.org/registry/specs/NVX/linked_gpu_multicast.txt NVX_linked_gpu_multicast> extension supported?
 glGetNVXLinkedGPUMulticast :: MonadIO m => m Bool
 glGetNVXLinkedGPUMulticast = getExtensions >>= (return . member "GL_NVX_linked_gpu_multicast")
@@ -4748,6 +4792,17 @@ glGetNVXLinkedGPUMulticast = getExtensions >>= (return . member "GL_NVX_linked_g
 gl_NVX_linked_gpu_multicast :: Bool
 gl_NVX_linked_gpu_multicast = member "GL_NVX_linked_gpu_multicast" extensions
 {-# NOINLINE gl_NVX_linked_gpu_multicast #-}
+
+-- | Is the <https://www.opengl.org/registry/specs/NVX/progress_fence.txt NVX_progress_fence> extension supported?
+glGetNVXProgressFence :: MonadIO m => m Bool
+glGetNVXProgressFence = getExtensions >>= (return . member "GL_NVX_progress_fence")
+
+-- | Is the <https://www.opengl.org/registry/specs/NVX/progress_fence.txt NVX_progress_fence> extension supported?
+-- Note that in the presence of multiple contexts with different capabilities,
+-- this might be wrong. Use 'glGetNVXProgressFence' in those cases instead.
+gl_NVX_progress_fence :: Bool
+gl_NVX_progress_fence = member "GL_NVX_progress_fence" extensions
+{-# NOINLINE gl_NVX_progress_fence #-}
 
 -- | Is the <https://www.opengl.org/registry/specs/OES/OES_byte_coordinates.txt OES_byte_coordinates> extension supported?
 glGetOESByteCoordinates :: MonadIO m => m Bool

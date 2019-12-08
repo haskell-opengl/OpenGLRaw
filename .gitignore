@@ -5,6 +5,7 @@
 **/dist
 **/highlight.js
 **/stack.yaml
+**/stack.yaml.lock
 **/style.css
 cabal.sandbox.config
 /RegistryProcessor/Graphics/

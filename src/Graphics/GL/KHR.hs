@@ -21,6 +21,7 @@ module Graphics.GL.KHR (
   module Graphics.GL.KHR.NoError,
   module Graphics.GL.KHR.ParallelShaderCompile,
   module Graphics.GL.KHR.Robustness,
+  module Graphics.GL.KHR.ShaderSubgroup,
   module Graphics.GL.KHR.TextureCompressionASTCHDR,
   module Graphics.GL.KHR.TextureCompressionASTCLDR
 ) where
@@ -33,5 +34,6 @@ import Graphics.GL.KHR.DebugCore
 import Graphics.GL.KHR.NoError
 import Graphics.GL.KHR.ParallelShaderCompile
 import Graphics.GL.KHR.Robustness
+import Graphics.GL.KHR.ShaderSubgroup
 import Graphics.GL.KHR.TextureCompressionASTCHDR
 import Graphics.GL.KHR.TextureCompressionASTCLDR

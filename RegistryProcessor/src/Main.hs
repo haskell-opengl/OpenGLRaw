@@ -198,10 +198,15 @@ groupHeader gn es =
         ]
   -- NV_path_rendering screws up typing: It uses GL_NONE as a bitfield, and this
   -- leads to a collision in the PathFontStyle group. :-/
+  -- Furthermore, glClampColor uses GL_TRUE and GL_FALSE as a GLenum.
   where
     enumTypeWithFix e
       | gn == GroupName "PathFontStyle" && enumName e == EnumName "GL_NONE" =
         TypeName "GLbitfield"
+      | gn == GroupName "ClampColorModeARB" && enumName e == EnumName "GL_TRUE" =
+        TypeName "GLenum"
+      | gn == GroupName "ClampColorModeARB" && enumName e == EnumName "GL_FALSE" =
+        TypeName "GLenum"
       | otherwise = enumType e
 
 -- Calulate a map from compact signature to short names.

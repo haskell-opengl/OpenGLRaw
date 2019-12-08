@@ -13,6 +13,7 @@
 --------------------------------------------------------------------------------
 
 module Graphics.GL.MESA (
+  module Graphics.GL.MESA.FramebufferFlipY,
   module Graphics.GL.MESA.PackInvert,
   module Graphics.GL.MESA.ProgramBinaryFormats,
   module Graphics.GL.MESA.ResizeBuffers,
@@ -21,6 +22,7 @@ module Graphics.GL.MESA (
   module Graphics.GL.MESA.YCbCrTexture
 ) where
 
+import Graphics.GL.MESA.FramebufferFlipY
 import Graphics.GL.MESA.PackInvert
 import Graphics.GL.MESA.ProgramBinaryFormats
 import Graphics.GL.MESA.ResizeBuffers

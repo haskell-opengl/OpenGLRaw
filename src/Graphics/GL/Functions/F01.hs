@@ -41,6 +41,8 @@ module Graphics.GL.Functions.F01 (
   glArrayElement,
   glArrayElementEXT,
   glArrayObjectATI,
+  glAsyncCopyBufferSubDataNVX,
+  glAsyncCopyImageSubDataNVX,
   glAsyncMarkerSGIX,
   glAttachObjectARB,
   glAttachShader,
@@ -112,9 +114,7 @@ module Graphics.GL.Functions.F01 (
   glBindVertexArrayAPPLE,
   glBindVertexArrayOES,
   glBindVertexBuffer,
-  glBindVertexBuffers,
-  glBindVertexShaderEXT,
-  glBindVideoCaptureStreamBufferNV
+  glBindVertexBuffers
 ) where
 
 import Control.Monad.IO.Class ( MonadIO(..) )
@@ -157,7 +157,7 @@ glAcquireKeyedMutexWin32EXT
   => GLuint -- ^ @memory@.
   -> GLuint64 -- ^ @key@.
   -> GLuint -- ^ @timeout@.
-  -> m GLboolean
+  -> m GLboolean -- ^ of type [Boolean](Graphics-GL-Groups.html#Boolean).
 glAcquireKeyedMutexWin32EXT v1 v2 v3 = liftIO $ dyn2 ptr_glAcquireKeyedMutexWin32EXT v1 v2 v3
 
 {-# NOINLINE ptr_glAcquireKeyedMutexWin32EXT #-}
@@ -477,7 +477,7 @@ glArrayObjectATI
   :: MonadIO m
   => GLenum -- ^ @array@ of type [EnableCap](Graphics-GL-Groups.html#EnableCap).
   -> GLint -- ^ @size@.
-  -> GLenum -- ^ @type@ of type @ScalarType@.
+  -> GLenum -- ^ @type@ of type [ScalarType](Graphics-GL-Groups.html#ScalarType).
   -> GLsizei -- ^ @stride@.
   -> GLuint -- ^ @buffer@.
   -> GLuint -- ^ @offset@.
@@ -487,6 +487,64 @@ glArrayObjectATI v1 v2 v3 v4 v5 v6 = liftIO $ dyn14 ptr_glArrayObjectATI v1 v2 v
 {-# NOINLINE ptr_glArrayObjectATI #-}
 ptr_glArrayObjectATI :: FunPtr (GLenum -> GLint -> GLenum -> GLsizei -> GLuint -> GLuint -> IO ())
 ptr_glArrayObjectATI = unsafePerformIO $ getCommand "glArrayObjectATI"
+
+-- glAsyncCopyBufferSubDataNVX -------------------------------------------------
+
+glAsyncCopyBufferSubDataNVX
+  :: MonadIO m
+  => GLsizei -- ^ @waitSemaphoreCount@.
+  -> Ptr GLuint -- ^ @waitSemaphoreArray@ pointing to @waitSemaphoreCount@ elements of type @GLuint@.
+  -> Ptr GLuint64 -- ^ @fenceValueArray@ pointing to @waitSemaphoreCount@ elements of type @GLuint64@.
+  -> GLuint -- ^ @readGpu@.
+  -> GLbitfield -- ^ @writeGpuMask@.
+  -> GLuint -- ^ @readBuffer@.
+  -> GLuint -- ^ @writeBuffer@.
+  -> GLintptr -- ^ @readOffset@.
+  -> GLintptr -- ^ @writeOffset@.
+  -> GLsizeiptr -- ^ @size@.
+  -> GLsizei -- ^ @signalSemaphoreCount@.
+  -> Ptr GLuint -- ^ @signalSemaphoreArray@ pointing to @signalSemaphoreCount@ elements of type @GLuint@.
+  -> Ptr GLuint64 -- ^ @signalValueArray@ pointing to @signalSemaphoreCount@ elements of type @GLuint64@.
+  -> m GLuint
+glAsyncCopyBufferSubDataNVX v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 = liftIO $ dyn15 ptr_glAsyncCopyBufferSubDataNVX v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13
+
+{-# NOINLINE ptr_glAsyncCopyBufferSubDataNVX #-}
+ptr_glAsyncCopyBufferSubDataNVX :: FunPtr (GLsizei -> Ptr GLuint -> Ptr GLuint64 -> GLuint -> GLbitfield -> GLuint -> GLuint -> GLintptr -> GLintptr -> GLsizeiptr -> GLsizei -> Ptr GLuint -> Ptr GLuint64 -> IO GLuint)
+ptr_glAsyncCopyBufferSubDataNVX = unsafePerformIO $ getCommand "glAsyncCopyBufferSubDataNVX"
+
+-- glAsyncCopyImageSubDataNVX --------------------------------------------------
+
+glAsyncCopyImageSubDataNVX
+  :: MonadIO m
+  => GLsizei -- ^ @waitSemaphoreCount@.
+  -> Ptr GLuint -- ^ @waitSemaphoreArray@ pointing to @waitSemaphoreCount@ elements of type @GLuint@.
+  -> Ptr GLuint64 -- ^ @waitValueArray@ pointing to @waitSemaphoreCount@ elements of type @GLuint64@.
+  -> GLuint -- ^ @srcGpu@.
+  -> GLbitfield -- ^ @dstGpuMask@.
+  -> GLuint -- ^ @srcName@.
+  -> GLenum -- ^ @srcTarget@.
+  -> GLint -- ^ @srcLevel@.
+  -> GLint -- ^ @srcX@.
+  -> GLint -- ^ @srcY@.
+  -> GLint -- ^ @srcZ@.
+  -> GLuint -- ^ @dstName@.
+  -> GLenum -- ^ @dstTarget@.
+  -> GLint -- ^ @dstLevel@.
+  -> GLint -- ^ @dstX@.
+  -> GLint -- ^ @dstY@.
+  -> GLint -- ^ @dstZ@.
+  -> GLsizei -- ^ @srcWidth@.
+  -> GLsizei -- ^ @srcHeight@.
+  -> GLsizei -- ^ @srcDepth@.
+  -> GLsizei -- ^ @signalSemaphoreCount@.
+  -> Ptr GLuint -- ^ @signalSemaphoreArray@ pointing to @signalSemaphoreCount@ elements of type @GLuint@.
+  -> Ptr GLuint64 -- ^ @signalValueArray@ pointing to @signalSemaphoreCount@ elements of type @GLuint64@.
+  -> m GLuint
+glAsyncCopyImageSubDataNVX v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19 v20 v21 v22 v23 = liftIO $ dyn16 ptr_glAsyncCopyImageSubDataNVX v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19 v20 v21 v22 v23
+
+{-# NOINLINE ptr_glAsyncCopyImageSubDataNVX #-}
+ptr_glAsyncCopyImageSubDataNVX :: FunPtr (GLsizei -> Ptr GLuint -> Ptr GLuint64 -> GLuint -> GLbitfield -> GLuint -> GLenum -> GLint -> GLint -> GLint -> GLint -> GLuint -> GLenum -> GLint -> GLint -> GLint -> GLint -> GLsizei -> GLsizei -> GLsizei -> GLsizei -> Ptr GLuint -> Ptr GLuint64 -> IO GLuint)
+ptr_glAsyncCopyImageSubDataNVX = unsafePerformIO $ getCommand "glAsyncCopyImageSubDataNVX"
 
 -- glAsyncMarkerSGIX -----------------------------------------------------------
 
@@ -508,7 +566,7 @@ glAttachObjectARB
   => GLhandleARB -- ^ @containerObj@ of type @handleARB@.
   -> GLhandleARB -- ^ @obj@ of type @handleARB@.
   -> m ()
-glAttachObjectARB v1 v2 = liftIO $ dyn15 ptr_glAttachObjectARB v1 v2
+glAttachObjectARB v1 v2 = liftIO $ dyn17 ptr_glAttachObjectARB v1 v2
 
 {-# NOINLINE ptr_glAttachObjectARB #-}
 ptr_glAttachObjectARB :: FunPtr (GLhandleARB -> GLhandleARB -> IO ())
@@ -549,7 +607,7 @@ glBeginConditionalRender
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @mode@ of type [ConditionalRenderMode](Graphics-GL-Groups.html#ConditionalRenderMode).
   -> m ()
-glBeginConditionalRender v1 v2 = liftIO $ dyn16 ptr_glBeginConditionalRender v1 v2
+glBeginConditionalRender v1 v2 = liftIO $ dyn18 ptr_glBeginConditionalRender v1 v2
 
 {-# NOINLINE ptr_glBeginConditionalRender #-}
 ptr_glBeginConditionalRender :: FunPtr (GLuint -> GLenum -> IO ())
@@ -563,7 +621,7 @@ glBeginConditionalRenderNV
   => GLuint -- ^ @id@.
   -> GLenum -- ^ @mode@ of type [ConditionalRenderMode](Graphics-GL-Groups.html#ConditionalRenderMode).
   -> m ()
-glBeginConditionalRenderNV v1 v2 = liftIO $ dyn16 ptr_glBeginConditionalRenderNV v1 v2
+glBeginConditionalRenderNV v1 v2 = liftIO $ dyn18 ptr_glBeginConditionalRenderNV v1 v2
 
 {-# NOINLINE ptr_glBeginConditionalRenderNV #-}
 ptr_glBeginConditionalRenderNV :: FunPtr (GLuint -> GLenum -> IO ())
@@ -636,7 +694,7 @@ glBeginQuery
   => GLenum -- ^ @target@ of type [QueryTarget](Graphics-GL-Groups.html#QueryTarget).
   -> GLuint -- ^ @id@.
   -> m ()
-glBeginQuery v1 v2 = liftIO $ dyn17 ptr_glBeginQuery v1 v2
+glBeginQuery v1 v2 = liftIO $ dyn19 ptr_glBeginQuery v1 v2
 
 {-# NOINLINE ptr_glBeginQuery #-}
 ptr_glBeginQuery :: FunPtr (GLenum -> GLuint -> IO ())
@@ -650,7 +708,7 @@ glBeginQueryARB
   => GLenum -- ^ @target@.
   -> GLuint -- ^ @id@.
   -> m ()
-glBeginQueryARB v1 v2 = liftIO $ dyn17 ptr_glBeginQueryARB v1 v2
+glBeginQueryARB v1 v2 = liftIO $ dyn19 ptr_glBeginQueryARB v1 v2
 
 {-# NOINLINE ptr_glBeginQueryARB #-}
 ptr_glBeginQueryARB :: FunPtr (GLenum -> GLuint -> IO ())
@@ -663,7 +721,7 @@ glBeginQueryEXT
   => GLenum -- ^ @target@ of type [QueryTarget](Graphics-GL-Groups.html#QueryTarget).
   -> GLuint -- ^ @id@.
   -> m ()
-glBeginQueryEXT v1 v2 = liftIO $ dyn17 ptr_glBeginQueryEXT v1 v2
+glBeginQueryEXT v1 v2 = liftIO $ dyn19 ptr_glBeginQueryEXT v1 v2
 
 {-# NOINLINE ptr_glBeginQueryEXT #-}
 ptr_glBeginQueryEXT :: FunPtr (GLenum -> GLuint -> IO ())
@@ -678,7 +736,7 @@ glBeginQueryIndexed
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @id@.
   -> m ()
-glBeginQueryIndexed v1 v2 v3 = liftIO $ dyn18 ptr_glBeginQueryIndexed v1 v2 v3
+glBeginQueryIndexed v1 v2 v3 = liftIO $ dyn20 ptr_glBeginQueryIndexed v1 v2 v3
 
 {-# NOINLINE ptr_glBeginQueryIndexed #-}
 ptr_glBeginQueryIndexed :: FunPtr (GLenum -> GLuint -> GLuint -> IO ())
@@ -755,7 +813,7 @@ glBindAttribLocation
   -> GLuint -- ^ @index@.
   -> Ptr GLchar -- ^ @name@.
   -> m ()
-glBindAttribLocation v1 v2 v3 = liftIO $ dyn19 ptr_glBindAttribLocation v1 v2 v3
+glBindAttribLocation v1 v2 v3 = liftIO $ dyn21 ptr_glBindAttribLocation v1 v2 v3
 
 {-# NOINLINE ptr_glBindAttribLocation #-}
 ptr_glBindAttribLocation :: FunPtr (GLuint -> GLuint -> Ptr GLchar -> IO ())
@@ -770,7 +828,7 @@ glBindAttribLocationARB
   -> GLuint -- ^ @index@.
   -> Ptr GLcharARB -- ^ @name@.
   -> m ()
-glBindAttribLocationARB v1 v2 v3 = liftIO $ dyn20 ptr_glBindAttribLocationARB v1 v2 v3
+glBindAttribLocationARB v1 v2 v3 = liftIO $ dyn22 ptr_glBindAttribLocationARB v1 v2 v3
 
 {-# NOINLINE ptr_glBindAttribLocationARB #-}
 ptr_glBindAttribLocationARB :: FunPtr (GLhandleARB -> GLuint -> Ptr GLcharARB -> IO ())
@@ -784,7 +842,7 @@ glBindBuffer
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @buffer@.
   -> m ()
-glBindBuffer v1 v2 = liftIO $ dyn17 ptr_glBindBuffer v1 v2
+glBindBuffer v1 v2 = liftIO $ dyn19 ptr_glBindBuffer v1 v2
 
 {-# NOINLINE ptr_glBindBuffer #-}
 ptr_glBindBuffer :: FunPtr (GLenum -> GLuint -> IO ())
@@ -798,7 +856,7 @@ glBindBufferARB
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @buffer@.
   -> m ()
-glBindBufferARB v1 v2 = liftIO $ dyn17 ptr_glBindBufferARB v1 v2
+glBindBufferARB v1 v2 = liftIO $ dyn19 ptr_glBindBufferARB v1 v2
 
 {-# NOINLINE ptr_glBindBufferARB #-}
 ptr_glBindBufferARB :: FunPtr (GLenum -> GLuint -> IO ())
@@ -813,7 +871,7 @@ glBindBufferBase
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> m ()
-glBindBufferBase v1 v2 v3 = liftIO $ dyn18 ptr_glBindBufferBase v1 v2 v3
+glBindBufferBase v1 v2 v3 = liftIO $ dyn20 ptr_glBindBufferBase v1 v2 v3
 
 {-# NOINLINE ptr_glBindBufferBase #-}
 ptr_glBindBufferBase :: FunPtr (GLenum -> GLuint -> GLuint -> IO ())
@@ -828,7 +886,7 @@ glBindBufferBaseEXT
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> m ()
-glBindBufferBaseEXT v1 v2 v3 = liftIO $ dyn18 ptr_glBindBufferBaseEXT v1 v2 v3
+glBindBufferBaseEXT v1 v2 v3 = liftIO $ dyn20 ptr_glBindBufferBaseEXT v1 v2 v3
 
 {-# NOINLINE ptr_glBindBufferBaseEXT #-}
 ptr_glBindBufferBaseEXT :: FunPtr (GLenum -> GLuint -> GLuint -> IO ())
@@ -843,7 +901,7 @@ glBindBufferBaseNV
   -> GLuint -- ^ @index@.
   -> GLuint -- ^ @buffer@.
   -> m ()
-glBindBufferBaseNV v1 v2 v3 = liftIO $ dyn18 ptr_glBindBufferBaseNV v1 v2 v3
+glBindBufferBaseNV v1 v2 v3 = liftIO $ dyn20 ptr_glBindBufferBaseNV v1 v2 v3
 
 {-# NOINLINE ptr_glBindBufferBaseNV #-}
 ptr_glBindBufferBaseNV :: FunPtr (GLenum -> GLuint -> GLuint -> IO ())
@@ -858,7 +916,7 @@ glBindBufferOffsetEXT
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> m ()
-glBindBufferOffsetEXT v1 v2 v3 v4 = liftIO $ dyn21 ptr_glBindBufferOffsetEXT v1 v2 v3 v4
+glBindBufferOffsetEXT v1 v2 v3 v4 = liftIO $ dyn23 ptr_glBindBufferOffsetEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glBindBufferOffsetEXT #-}
 ptr_glBindBufferOffsetEXT :: FunPtr (GLenum -> GLuint -> GLuint -> GLintptr -> IO ())
@@ -874,7 +932,7 @@ glBindBufferOffsetNV
   -> GLuint -- ^ @buffer@.
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> m ()
-glBindBufferOffsetNV v1 v2 v3 v4 = liftIO $ dyn21 ptr_glBindBufferOffsetNV v1 v2 v3 v4
+glBindBufferOffsetNV v1 v2 v3 v4 = liftIO $ dyn23 ptr_glBindBufferOffsetNV v1 v2 v3 v4
 
 {-# NOINLINE ptr_glBindBufferOffsetNV #-}
 ptr_glBindBufferOffsetNV :: FunPtr (GLenum -> GLuint -> GLuint -> GLintptr -> IO ())
@@ -891,7 +949,7 @@ glBindBufferRange
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> m ()
-glBindBufferRange v1 v2 v3 v4 v5 = liftIO $ dyn22 ptr_glBindBufferRange v1 v2 v3 v4 v5
+glBindBufferRange v1 v2 v3 v4 v5 = liftIO $ dyn24 ptr_glBindBufferRange v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glBindBufferRange #-}
 ptr_glBindBufferRange :: FunPtr (GLenum -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
@@ -908,7 +966,7 @@ glBindBufferRangeEXT
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> m ()
-glBindBufferRangeEXT v1 v2 v3 v4 v5 = liftIO $ dyn22 ptr_glBindBufferRangeEXT v1 v2 v3 v4 v5
+glBindBufferRangeEXT v1 v2 v3 v4 v5 = liftIO $ dyn24 ptr_glBindBufferRangeEXT v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glBindBufferRangeEXT #-}
 ptr_glBindBufferRangeEXT :: FunPtr (GLenum -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
@@ -925,7 +983,7 @@ glBindBufferRangeNV
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizeiptr -- ^ @size@ of type @BufferSize@.
   -> m ()
-glBindBufferRangeNV v1 v2 v3 v4 v5 = liftIO $ dyn22 ptr_glBindBufferRangeNV v1 v2 v3 v4 v5
+glBindBufferRangeNV v1 v2 v3 v4 v5 = liftIO $ dyn24 ptr_glBindBufferRangeNV v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glBindBufferRangeNV #-}
 ptr_glBindBufferRangeNV :: FunPtr (GLenum -> GLuint -> GLuint -> GLintptr -> GLsizeiptr -> IO ())
@@ -941,7 +999,7 @@ glBindBuffersBase
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @buffers@ pointing to @count@ elements of type @GLuint@.
   -> m ()
-glBindBuffersBase v1 v2 v3 v4 = liftIO $ dyn23 ptr_glBindBuffersBase v1 v2 v3 v4
+glBindBuffersBase v1 v2 v3 v4 = liftIO $ dyn25 ptr_glBindBuffersBase v1 v2 v3 v4
 
 {-# NOINLINE ptr_glBindBuffersBase #-}
 ptr_glBindBuffersBase :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLuint -> IO ())
@@ -959,7 +1017,7 @@ glBindBuffersRange
   -> Ptr GLintptr -- ^ @offsets@ pointing to @count@ elements of type @GLintptr@.
   -> Ptr GLsizeiptr -- ^ @sizes@ pointing to @count@ elements of type @GLsizeiptr@.
   -> m ()
-glBindBuffersRange v1 v2 v3 v4 v5 v6 = liftIO $ dyn24 ptr_glBindBuffersRange v1 v2 v3 v4 v5 v6
+glBindBuffersRange v1 v2 v3 v4 v5 v6 = liftIO $ dyn26 ptr_glBindBuffersRange v1 v2 v3 v4 v5 v6
 
 {-# NOINLINE ptr_glBindBuffersRange #-}
 ptr_glBindBuffersRange :: FunPtr (GLenum -> GLuint -> GLsizei -> Ptr GLuint -> Ptr GLintptr -> Ptr GLsizeiptr -> IO ())
@@ -974,7 +1032,7 @@ glBindFragDataLocation
   -> GLuint -- ^ @color@.
   -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
   -> m ()
-glBindFragDataLocation v1 v2 v3 = liftIO $ dyn19 ptr_glBindFragDataLocation v1 v2 v3
+glBindFragDataLocation v1 v2 v3 = liftIO $ dyn21 ptr_glBindFragDataLocation v1 v2 v3
 
 {-# NOINLINE ptr_glBindFragDataLocation #-}
 ptr_glBindFragDataLocation :: FunPtr (GLuint -> GLuint -> Ptr GLchar -> IO ())
@@ -989,7 +1047,7 @@ glBindFragDataLocationEXT
   -> GLuint -- ^ @color@.
   -> Ptr GLchar -- ^ @name@ pointing to @COMPSIZE(name)@ elements of type @GLchar@.
   -> m ()
-glBindFragDataLocationEXT v1 v2 v3 = liftIO $ dyn19 ptr_glBindFragDataLocationEXT v1 v2 v3
+glBindFragDataLocationEXT v1 v2 v3 = liftIO $ dyn21 ptr_glBindFragDataLocationEXT v1 v2 v3
 
 {-# NOINLINE ptr_glBindFragDataLocationEXT #-}
 ptr_glBindFragDataLocationEXT :: FunPtr (GLuint -> GLuint -> Ptr GLchar -> IO ())
@@ -1005,7 +1063,7 @@ glBindFragDataLocationIndexed
   -> GLuint -- ^ @index@.
   -> Ptr GLchar -- ^ @name@.
   -> m ()
-glBindFragDataLocationIndexed v1 v2 v3 v4 = liftIO $ dyn25 ptr_glBindFragDataLocationIndexed v1 v2 v3 v4
+glBindFragDataLocationIndexed v1 v2 v3 v4 = liftIO $ dyn27 ptr_glBindFragDataLocationIndexed v1 v2 v3 v4
 
 {-# NOINLINE ptr_glBindFragDataLocationIndexed #-}
 ptr_glBindFragDataLocationIndexed :: FunPtr (GLuint -> GLuint -> GLuint -> Ptr GLchar -> IO ())
@@ -1021,7 +1079,7 @@ glBindFragDataLocationIndexedEXT
   -> GLuint -- ^ @index@.
   -> Ptr GLchar -- ^ @name@.
   -> m ()
-glBindFragDataLocationIndexedEXT v1 v2 v3 v4 = liftIO $ dyn25 ptr_glBindFragDataLocationIndexedEXT v1 v2 v3 v4
+glBindFragDataLocationIndexedEXT v1 v2 v3 v4 = liftIO $ dyn27 ptr_glBindFragDataLocationIndexedEXT v1 v2 v3 v4
 
 {-# NOINLINE ptr_glBindFragDataLocationIndexedEXT #-}
 ptr_glBindFragDataLocationIndexedEXT :: FunPtr (GLuint -> GLuint -> GLuint -> Ptr GLchar -> IO ())
@@ -1047,7 +1105,7 @@ glBindFramebuffer
   => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @framebuffer@.
   -> m ()
-glBindFramebuffer v1 v2 = liftIO $ dyn17 ptr_glBindFramebuffer v1 v2
+glBindFramebuffer v1 v2 = liftIO $ dyn19 ptr_glBindFramebuffer v1 v2
 
 {-# NOINLINE ptr_glBindFramebuffer #-}
 ptr_glBindFramebuffer :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1060,7 +1118,7 @@ glBindFramebufferEXT
   => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @framebuffer@.
   -> m ()
-glBindFramebufferEXT v1 v2 = liftIO $ dyn17 ptr_glBindFramebufferEXT v1 v2
+glBindFramebufferEXT v1 v2 = liftIO $ dyn19 ptr_glBindFramebufferEXT v1 v2
 
 {-# NOINLINE ptr_glBindFramebufferEXT #-}
 ptr_glBindFramebufferEXT :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1073,7 +1131,7 @@ glBindFramebufferOES
   => GLenum -- ^ @target@ of type [FramebufferTarget](Graphics-GL-Groups.html#FramebufferTarget).
   -> GLuint -- ^ @framebuffer@.
   -> m ()
-glBindFramebufferOES v1 v2 = liftIO $ dyn17 ptr_glBindFramebufferOES v1 v2
+glBindFramebufferOES v1 v2 = liftIO $ dyn19 ptr_glBindFramebufferOES v1 v2
 
 {-# NOINLINE ptr_glBindFramebufferOES #-}
 ptr_glBindFramebufferOES :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1092,7 +1150,7 @@ glBindImageTexture
   -> GLenum -- ^ @access@ of type [BufferAccessARB](Graphics-GL-Groups.html#BufferAccessARB).
   -> GLenum -- ^ @format@ of type [InternalFormat](Graphics-GL-Groups.html#InternalFormat).
   -> m ()
-glBindImageTexture v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn26 ptr_glBindImageTexture v1 v2 v3 v4 v5 v6 v7
+glBindImageTexture v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn28 ptr_glBindImageTexture v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glBindImageTexture #-}
 ptr_glBindImageTexture :: FunPtr (GLuint -> GLuint -> GLint -> GLboolean -> GLint -> GLenum -> GLenum -> IO ())
@@ -1110,7 +1168,7 @@ glBindImageTextureEXT
   -> GLenum -- ^ @access@ of type [BufferAccessARB](Graphics-GL-Groups.html#BufferAccessARB).
   -> GLint -- ^ @format@.
   -> m ()
-glBindImageTextureEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn27 ptr_glBindImageTextureEXT v1 v2 v3 v4 v5 v6 v7
+glBindImageTextureEXT v1 v2 v3 v4 v5 v6 v7 = liftIO $ dyn29 ptr_glBindImageTextureEXT v1 v2 v3 v4 v5 v6 v7
 
 {-# NOINLINE ptr_glBindImageTextureEXT #-}
 ptr_glBindImageTextureEXT :: FunPtr (GLuint -> GLuint -> GLint -> GLboolean -> GLint -> GLenum -> GLint -> IO ())
@@ -1125,7 +1183,7 @@ glBindImageTextures
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @textures@ pointing to @count@ elements of type @GLuint@.
   -> m ()
-glBindImageTextures v1 v2 v3 = liftIO $ dyn28 ptr_glBindImageTextures v1 v2 v3
+glBindImageTextures v1 v2 v3 = liftIO $ dyn30 ptr_glBindImageTextures v1 v2 v3
 
 {-# NOINLINE ptr_glBindImageTextures #-}
 ptr_glBindImageTextures :: FunPtr (GLuint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1138,7 +1196,7 @@ glBindLightParameterEXT
   => GLenum -- ^ @light@ of type [LightName](Graphics-GL-Groups.html#LightName).
   -> GLenum -- ^ @value@ of type [LightParameter](Graphics-GL-Groups.html#LightParameter).
   -> m GLuint
-glBindLightParameterEXT v1 v2 = liftIO $ dyn29 ptr_glBindLightParameterEXT v1 v2
+glBindLightParameterEXT v1 v2 = liftIO $ dyn31 ptr_glBindLightParameterEXT v1 v2
 
 {-# NOINLINE ptr_glBindLightParameterEXT #-}
 ptr_glBindLightParameterEXT :: FunPtr (GLenum -> GLenum -> IO GLuint)
@@ -1151,7 +1209,7 @@ glBindMaterialParameterEXT
   => GLenum -- ^ @face@ of type [MaterialFace](Graphics-GL-Groups.html#MaterialFace).
   -> GLenum -- ^ @value@ of type [MaterialParameter](Graphics-GL-Groups.html#MaterialParameter).
   -> m GLuint
-glBindMaterialParameterEXT v1 v2 = liftIO $ dyn29 ptr_glBindMaterialParameterEXT v1 v2
+glBindMaterialParameterEXT v1 v2 = liftIO $ dyn31 ptr_glBindMaterialParameterEXT v1 v2
 
 {-# NOINLINE ptr_glBindMaterialParameterEXT #-}
 ptr_glBindMaterialParameterEXT :: FunPtr (GLenum -> GLenum -> IO GLuint)
@@ -1165,7 +1223,7 @@ glBindMultiTextureEXT
   -> GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> m ()
-glBindMultiTextureEXT v1 v2 v3 = liftIO $ dyn30 ptr_glBindMultiTextureEXT v1 v2 v3
+glBindMultiTextureEXT v1 v2 v3 = liftIO $ dyn32 ptr_glBindMultiTextureEXT v1 v2 v3
 
 {-# NOINLINE ptr_glBindMultiTextureEXT #-}
 ptr_glBindMultiTextureEXT :: FunPtr (GLenum -> GLenum -> GLuint -> IO ())
@@ -1177,7 +1235,7 @@ glBindParameterEXT
   :: MonadIO m
   => GLenum -- ^ @value@ of type [VertexShaderParameterEXT](Graphics-GL-Groups.html#VertexShaderParameterEXT).
   -> m GLuint
-glBindParameterEXT v1 = liftIO $ dyn31 ptr_glBindParameterEXT v1
+glBindParameterEXT v1 = liftIO $ dyn33 ptr_glBindParameterEXT v1
 
 {-# NOINLINE ptr_glBindParameterEXT #-}
 ptr_glBindParameterEXT :: FunPtr (GLenum -> IO GLuint)
@@ -1190,7 +1248,7 @@ glBindProgramARB
   => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
   -> GLuint -- ^ @program@.
   -> m ()
-glBindProgramARB v1 v2 = liftIO $ dyn17 ptr_glBindProgramARB v1 v2
+glBindProgramARB v1 v2 = liftIO $ dyn19 ptr_glBindProgramARB v1 v2
 
 {-# NOINLINE ptr_glBindProgramARB #-}
 ptr_glBindProgramARB :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1204,7 +1262,7 @@ glBindProgramNV
   => GLenum -- ^ @target@ of type [VertexAttribEnumNV](Graphics-GL-Groups.html#VertexAttribEnumNV).
   -> GLuint -- ^ @id@.
   -> m ()
-glBindProgramNV v1 v2 = liftIO $ dyn17 ptr_glBindProgramNV v1 v2
+glBindProgramNV v1 v2 = liftIO $ dyn19 ptr_glBindProgramNV v1 v2
 
 {-# NOINLINE ptr_glBindProgramNV #-}
 ptr_glBindProgramNV :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1243,7 +1301,7 @@ glBindRenderbuffer
   => GLenum -- ^ @target@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
-glBindRenderbuffer v1 v2 = liftIO $ dyn17 ptr_glBindRenderbuffer v1 v2
+glBindRenderbuffer v1 v2 = liftIO $ dyn19 ptr_glBindRenderbuffer v1 v2
 
 {-# NOINLINE ptr_glBindRenderbuffer #-}
 ptr_glBindRenderbuffer :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1256,7 +1314,7 @@ glBindRenderbufferEXT
   => GLenum -- ^ @target@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
-glBindRenderbufferEXT v1 v2 = liftIO $ dyn17 ptr_glBindRenderbufferEXT v1 v2
+glBindRenderbufferEXT v1 v2 = liftIO $ dyn19 ptr_glBindRenderbufferEXT v1 v2
 
 {-# NOINLINE ptr_glBindRenderbufferEXT #-}
 ptr_glBindRenderbufferEXT :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1269,7 +1327,7 @@ glBindRenderbufferOES
   => GLenum -- ^ @target@ of type [RenderbufferTarget](Graphics-GL-Groups.html#RenderbufferTarget).
   -> GLuint -- ^ @renderbuffer@.
   -> m ()
-glBindRenderbufferOES v1 v2 = liftIO $ dyn17 ptr_glBindRenderbufferOES v1 v2
+glBindRenderbufferOES v1 v2 = liftIO $ dyn19 ptr_glBindRenderbufferOES v1 v2
 
 {-# NOINLINE ptr_glBindRenderbufferOES #-}
 ptr_glBindRenderbufferOES :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1298,7 +1356,7 @@ glBindSamplers
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @samplers@ pointing to @count@ elements of type @GLuint@.
   -> m ()
-glBindSamplers v1 v2 v3 = liftIO $ dyn28 ptr_glBindSamplers v1 v2 v3
+glBindSamplers v1 v2 v3 = liftIO $ dyn30 ptr_glBindSamplers v1 v2 v3
 
 {-# NOINLINE ptr_glBindSamplers #-}
 ptr_glBindSamplers :: FunPtr (GLuint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1324,7 +1382,7 @@ glBindTexGenParameterEXT
   -> GLenum -- ^ @coord@ of type [TextureCoordName](Graphics-GL-Groups.html#TextureCoordName).
   -> GLenum -- ^ @value@ of type [TextureGenParameter](Graphics-GL-Groups.html#TextureGenParameter).
   -> m GLuint
-glBindTexGenParameterEXT v1 v2 v3 = liftIO $ dyn32 ptr_glBindTexGenParameterEXT v1 v2 v3
+glBindTexGenParameterEXT v1 v2 v3 = liftIO $ dyn34 ptr_glBindTexGenParameterEXT v1 v2 v3
 
 {-# NOINLINE ptr_glBindTexGenParameterEXT #-}
 ptr_glBindTexGenParameterEXT :: FunPtr (GLenum -> GLenum -> GLenum -> IO GLuint)
@@ -1338,7 +1396,7 @@ glBindTexture
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> m ()
-glBindTexture v1 v2 = liftIO $ dyn17 ptr_glBindTexture v1 v2
+glBindTexture v1 v2 = liftIO $ dyn19 ptr_glBindTexture v1 v2
 
 {-# NOINLINE ptr_glBindTexture #-}
 ptr_glBindTexture :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1352,7 +1410,7 @@ glBindTextureEXT
   => GLenum -- ^ @target@ of type [TextureTarget](Graphics-GL-Groups.html#TextureTarget).
   -> GLuint -- ^ @texture@ of type @Texture@.
   -> m ()
-glBindTextureEXT v1 v2 = liftIO $ dyn17 ptr_glBindTextureEXT v1 v2
+glBindTextureEXT v1 v2 = liftIO $ dyn19 ptr_glBindTextureEXT v1 v2
 
 {-# NOINLINE ptr_glBindTextureEXT #-}
 ptr_glBindTextureEXT :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1377,9 +1435,9 @@ ptr_glBindTextureUnit = unsafePerformIO $ getCommand "glBindTextureUnit"
 glBindTextureUnitParameterEXT
   :: MonadIO m
   => GLenum -- ^ @unit@ of type [TextureUnit](Graphics-GL-Groups.html#TextureUnit).
-  -> GLenum -- ^ @value@ of type @VertexShaderTextureUnitParameter@.
+  -> GLenum -- ^ @value@ of type [VertexShaderTextureUnitParameter](Graphics-GL-Groups.html#VertexShaderTextureUnitParameter).
   -> m GLuint
-glBindTextureUnitParameterEXT v1 v2 = liftIO $ dyn29 ptr_glBindTextureUnitParameterEXT v1 v2
+glBindTextureUnitParameterEXT v1 v2 = liftIO $ dyn31 ptr_glBindTextureUnitParameterEXT v1 v2
 
 {-# NOINLINE ptr_glBindTextureUnitParameterEXT #-}
 ptr_glBindTextureUnitParameterEXT :: FunPtr (GLenum -> GLenum -> IO GLuint)
@@ -1394,7 +1452,7 @@ glBindTextures
   -> GLsizei -- ^ @count@.
   -> Ptr GLuint -- ^ @textures@ pointing to @count@ elements of type @GLuint@.
   -> m ()
-glBindTextures v1 v2 v3 = liftIO $ dyn28 ptr_glBindTextures v1 v2 v3
+glBindTextures v1 v2 v3 = liftIO $ dyn30 ptr_glBindTextures v1 v2 v3
 
 {-# NOINLINE ptr_glBindTextures #-}
 ptr_glBindTextures :: FunPtr (GLuint -> GLsizei -> Ptr GLuint -> IO ())
@@ -1408,7 +1466,7 @@ glBindTransformFeedback
   => GLenum -- ^ @target@ of type [BindTransformFeedbackTarget](Graphics-GL-Groups.html#BindTransformFeedbackTarget).
   -> GLuint -- ^ @id@.
   -> m ()
-glBindTransformFeedback v1 v2 = liftIO $ dyn17 ptr_glBindTransformFeedback v1 v2
+glBindTransformFeedback v1 v2 = liftIO $ dyn19 ptr_glBindTransformFeedback v1 v2
 
 {-# NOINLINE ptr_glBindTransformFeedback #-}
 ptr_glBindTransformFeedback :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1421,7 +1479,7 @@ glBindTransformFeedbackNV
   => GLenum -- ^ @target@ of type [BufferTargetARB](Graphics-GL-Groups.html#BufferTargetARB).
   -> GLuint -- ^ @id@.
   -> m ()
-glBindTransformFeedbackNV v1 v2 = liftIO $ dyn17 ptr_glBindTransformFeedbackNV v1 v2
+glBindTransformFeedbackNV v1 v2 = liftIO $ dyn19 ptr_glBindTransformFeedbackNV v1 v2
 
 {-# NOINLINE ptr_glBindTransformFeedbackNV #-}
 ptr_glBindTransformFeedbackNV :: FunPtr (GLenum -> GLuint -> IO ())
@@ -1475,7 +1533,7 @@ glBindVertexBuffer
   -> GLintptr -- ^ @offset@ of type @BufferOffset@.
   -> GLsizei -- ^ @stride@.
   -> m ()
-glBindVertexBuffer v1 v2 v3 v4 = liftIO $ dyn33 ptr_glBindVertexBuffer v1 v2 v3 v4
+glBindVertexBuffer v1 v2 v3 v4 = liftIO $ dyn35 ptr_glBindVertexBuffer v1 v2 v3 v4
 
 {-# NOINLINE ptr_glBindVertexBuffer #-}
 ptr_glBindVertexBuffer :: FunPtr (GLuint -> GLuint -> GLintptr -> GLsizei -> IO ())
@@ -1492,36 +1550,9 @@ glBindVertexBuffers
   -> Ptr GLintptr -- ^ @offsets@ pointing to @count@ elements of type @GLintptr@.
   -> Ptr GLsizei -- ^ @strides@ pointing to @count@ elements of type @GLsizei@.
   -> m ()
-glBindVertexBuffers v1 v2 v3 v4 v5 = liftIO $ dyn34 ptr_glBindVertexBuffers v1 v2 v3 v4 v5
+glBindVertexBuffers v1 v2 v3 v4 v5 = liftIO $ dyn36 ptr_glBindVertexBuffers v1 v2 v3 v4 v5
 
 {-# NOINLINE ptr_glBindVertexBuffers #-}
 ptr_glBindVertexBuffers :: FunPtr (GLuint -> GLsizei -> Ptr GLuint -> Ptr GLintptr -> Ptr GLsizei -> IO ())
 ptr_glBindVertexBuffers = unsafePerformIO $ getCommand "glBindVertexBuffers"
-
--- glBindVertexShaderEXT -------------------------------------------------------
-
-glBindVertexShaderEXT
-  :: MonadIO m
-  => GLuint -- ^ @id@.
-  -> m ()
-glBindVertexShaderEXT v1 = liftIO $ dyn3 ptr_glBindVertexShaderEXT v1
-
-{-# NOINLINE ptr_glBindVertexShaderEXT #-}
-ptr_glBindVertexShaderEXT :: FunPtr (GLuint -> IO ())
-ptr_glBindVertexShaderEXT = unsafePerformIO $ getCommand "glBindVertexShaderEXT"
-
--- glBindVideoCaptureStreamBufferNV --------------------------------------------
-
-glBindVideoCaptureStreamBufferNV
-  :: MonadIO m
-  => GLuint -- ^ @video_capture_slot@.
-  -> GLuint -- ^ @stream@.
-  -> GLenum -- ^ @frame_region@.
-  -> GLintptrARB -- ^ @offset@ of type @BufferOffsetARB@.
-  -> m ()
-glBindVideoCaptureStreamBufferNV v1 v2 v3 v4 = liftIO $ dyn35 ptr_glBindVideoCaptureStreamBufferNV v1 v2 v3 v4
-
-{-# NOINLINE ptr_glBindVideoCaptureStreamBufferNV #-}
-ptr_glBindVideoCaptureStreamBufferNV :: FunPtr (GLuint -> GLuint -> GLenum -> GLintptrARB -> IO ())
-ptr_glBindVideoCaptureStreamBufferNV = unsafePerformIO $ getCommand "glBindVideoCaptureStreamBufferNV"
 
