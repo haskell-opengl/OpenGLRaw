@@ -709,6 +709,12 @@ library
     CPP
     PatternSynonyms
     ScopedTypeVariables
+  if os(openbsd)
+    -- OpenBSD keeps OpenGL libs under /usr/X11R6. Without the following line,
+    -- we get an error like this:
+    --   cabal: Missing dependency on a foreign library:
+    --   * Missing (or bad) C library: GL
+    pkgconfig-depends: gl
   if os(windows) && flag(UseNativeWindowsLibraries)
     if arch(i386)
       cpp-options: "-DCALLCONV=stdcall"
