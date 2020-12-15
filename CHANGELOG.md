@@ -1,3 +1,7 @@
+3.3.4.1
+-------
+* Relaxed upper version bound for `bytestring`.
+
 3.3.4.0
 -------
 * Updated OpenGL registry to 9b214157e.
