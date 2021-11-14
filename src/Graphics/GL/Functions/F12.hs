@@ -155,7 +155,7 @@ ptr_glGetProgramEnvParameterIuivNV = unsafePerformIO $ getCommand "glGetProgramE
 
 glGetProgramEnvParameterdvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -169,7 +169,7 @@ ptr_glGetProgramEnvParameterdvARB = unsafePerformIO $ getCommand "glGetProgramEn
 
 glGetProgramEnvParameterfvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -243,7 +243,7 @@ ptr_glGetProgramLocalParameterIuivNV = unsafePerformIO $ getCommand "glGetProgra
 
 glGetProgramLocalParameterdvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -257,7 +257,7 @@ ptr_glGetProgramLocalParameterdvARB = unsafePerformIO $ getCommand "glGetProgram
 
 glGetProgramLocalParameterfvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -523,8 +523,8 @@ ptr_glGetProgramStageiv = unsafePerformIO $ getCommand "glGetProgramStageiv"
 
 glGetProgramStringARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
-  -> GLenum -- ^ @pname@ of type [ProgramStringPropertyARB](Graphics-GL-Groups.html#ProgramStringPropertyARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
+  -> GLenum -- ^ @pname@ of type [ProgramStringProperty](Graphics-GL-Groups.html#ProgramStringProperty).
   -> Ptr a -- ^ @string@ pointing to @COMPSIZE(target,pname)@ elements of type @a@.
   -> m ()
 glGetProgramStringARB v1 v2 v3 = liftIO $ dyn250 ptr_glGetProgramStringARB v1 v2 v3
@@ -580,7 +580,7 @@ ptr_glGetProgramiv = unsafePerformIO $ getCommand "glGetProgramiv"
 
 glGetProgramivARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLenum -- ^ @pname@ of type [ProgramPropertyARB](Graphics-GL-Groups.html#ProgramPropertyARB).
   -> Ptr GLint -- ^ @params@ pointing to @1@ element of type @GLint@.
   -> m ()

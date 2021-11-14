@@ -1245,7 +1245,7 @@ ptr_glBindParameterEXT = unsafePerformIO $ getCommand "glBindParameterEXT"
 
 glBindProgramARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @program@.
   -> m ()
 glBindProgramARB v1 v2 = liftIO $ dyn19 ptr_glBindProgramARB v1 v2

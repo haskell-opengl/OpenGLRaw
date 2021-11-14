@@ -1206,7 +1206,7 @@ ptr_glProgramBufferParametersfvNV = unsafePerformIO $ getCommand "glProgramBuffe
 -- | The vector equivalent of this command is 'glProgramEnvParameter4dvARB'.
 glProgramEnvParameter4dARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
@@ -1223,7 +1223,7 @@ ptr_glProgramEnvParameter4dARB = unsafePerformIO $ getCommand "glProgramEnvParam
 
 glProgramEnvParameter4dvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -1238,7 +1238,7 @@ ptr_glProgramEnvParameter4dvARB = unsafePerformIO $ getCommand "glProgramEnvPara
 -- | The vector equivalent of this command is 'glProgramEnvParameter4fvARB'.
 glProgramEnvParameter4fARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
@@ -1255,7 +1255,7 @@ ptr_glProgramEnvParameter4fARB = unsafePerformIO $ getCommand "glProgramEnvParam
 
 glProgramEnvParameter4fvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -1333,7 +1333,7 @@ ptr_glProgramEnvParameterI4uivNV = unsafePerformIO $ getCommand "glProgramEnvPar
 
 glProgramEnvParameters4fvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @params@ pointing to @count*4@ elements of type @GLfloat@.
@@ -1379,7 +1379,7 @@ ptr_glProgramEnvParametersI4uivNV = unsafePerformIO $ getCommand "glProgramEnvPa
 -- | The vector equivalent of this command is 'glProgramLocalParameter4dvARB'.
 glProgramLocalParameter4dARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> GLdouble -- ^ @x@.
   -> GLdouble -- ^ @y@.
@@ -1396,7 +1396,7 @@ ptr_glProgramLocalParameter4dARB = unsafePerformIO $ getCommand "glProgramLocalP
 
 glProgramLocalParameter4dvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLdouble -- ^ @params@ pointing to @4@ elements of type @GLdouble@.
   -> m ()
@@ -1411,7 +1411,7 @@ ptr_glProgramLocalParameter4dvARB = unsafePerformIO $ getCommand "glProgramLocal
 -- | The vector equivalent of this command is 'glProgramLocalParameter4fvARB'.
 glProgramLocalParameter4fARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> GLfloat -- ^ @x@.
   -> GLfloat -- ^ @y@.
@@ -1428,7 +1428,7 @@ ptr_glProgramLocalParameter4fARB = unsafePerformIO $ getCommand "glProgramLocalP
 
 glProgramLocalParameter4fvARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> Ptr GLfloat -- ^ @params@ pointing to @4@ elements of type @GLfloat@.
   -> m ()
@@ -1506,7 +1506,7 @@ ptr_glProgramLocalParameterI4uivNV = unsafePerformIO $ getCommand "glProgramLoca
 
 glProgramLocalParameters4fvEXT
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
   -> GLuint -- ^ @index@.
   -> GLsizei -- ^ @count@.
   -> Ptr GLfloat -- ^ @params@ pointing to @count*4@ elements of type @GLfloat@.

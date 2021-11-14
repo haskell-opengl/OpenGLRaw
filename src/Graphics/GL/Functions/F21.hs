@@ -316,8 +316,8 @@ ptr_glProgramPathFragmentInputGenNV = unsafePerformIO $ getCommand "glProgramPat
 
 glProgramStringARB
   :: MonadIO m
-  => GLenum -- ^ @target@ of type [ProgramTargetARB](Graphics-GL-Groups.html#ProgramTargetARB).
-  -> GLenum -- ^ @format@ of type [ProgramFormatARB](Graphics-GL-Groups.html#ProgramFormatARB).
+  => GLenum -- ^ @target@ of type [ProgramTarget](Graphics-GL-Groups.html#ProgramTarget).
+  -> GLenum -- ^ @format@ of type [ProgramFormat](Graphics-GL-Groups.html#ProgramFormat).
   -> GLsizei -- ^ @len@.
   -> Ptr a -- ^ @string@ pointing to @len@ elements of type @a@.
   -> m ()

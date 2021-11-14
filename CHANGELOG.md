@@ -1,6 +1,8 @@
 3.3.4.1
 -------
-* Relaxed upper version bound for `bytestring`.
+* Updated OpenGL registry to fdaa98e456.
+* Relaxed upper version bounds for `bytestring` and `transformers`.
+* Fixed OpenBSD build.
 
 3.3.4.0
 -------
