@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 3.3.4.1
+version: 3.3.4.2
 synopsis: A raw binding for the OpenGL graphics system
 description:
   OpenGLRaw is a raw Haskell binding for the OpenGL 4.6 graphics system and
