@@ -1,28 +1,28 @@
+cabal-version: 3.4
 name: RegistryProcessor
 version: 0.1.0.1
-synopsis: A processor for the OpenGL Registry
-description: A tool for generating OpenGLRaw from the OpenGL Registry
-license: BSD3
+license: BSD-3-Clause
 license-file: LICENSE
+category: Graphics
 author: Sven Panne
 maintainer: Sven Panne <svenpanne@gmail.com>
-category: Graphics
+synopsis: A processor for the OpenGL Registry
+description: A tool for generating OpenGLRaw from the OpenGL Registry
 build-type: Simple
 extra-source-files:
-  OpenGL-Registry/xml/gl.xml
-  OpenGL-Registry/xml/registry.rnc
-cabal-version: >=1.10
+    OpenGL-Registry/xml/gl.xml
+    OpenGL-Registry/xml/registry.rnc
 
 executable RegistryProcessor
-  main-is: Main.hs
-  other-modules: DeclarationParser ManPages MangledRegistry Registry
-  build-depends:
-    base       >= 4   && < 5,
-    containers >= 0.3 && < 0.8,
-    hxt        >= 9.3 && < 9.4,
-    directory  >= 1.0 && < 1.4,
-    filepath   >= 1.0 && < 1.6,
-    pretty     >= 1.1 && < 1.2
-  hs-source-dirs: src
-  default-language: Haskell2010
-  ghc-options: -Wall
+    main-is: Main.hs
+    default-language: Haskell2010
+    hs-source-dirs: src
+    build-depends:
+        , base       >=4 && <5
+        , containers >=0.3 && <0.8
+        , directory  >=1.0 && <1.4
+        , filepath   >=1.0 && <1.6
+        , hxt        >=9.3 && <9.4
+        , pretty     >=1.1 && <1.2
+    other-modules: DeclarationParser ManPages MangledRegistry Registry
+    ghc-options: -Wall
